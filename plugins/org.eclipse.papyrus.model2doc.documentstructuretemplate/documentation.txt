@@ -1,0 +1,24 @@
+The visitor descriptor model allows to describe the rules to apply to cross a model and generate the 
+documentation. 
+
+
+This model will allow to the user how to visit the model to generate the documentation.
+
+#Start points:
+##an object of the user model, by default, the root of the model
+##all objects matching a given metaclass (EClass concept in Ecore)
+##all objects stereotyped with a given stereotype
+
+
+#Second point: 
+##an EStructuralFeature of the choose object or Stereotype
+
+#Third point
+##all objects matching a given metaclass (EClass concept in Ecore)
+##all objects stereotyped with a given stereotype
+
+#Next point
+##We continue alterning Second Point and Third Point
+	
+
+

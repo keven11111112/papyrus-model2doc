@@ -1,0 +1,19 @@
+Association > Label:sourceMultiplicity {
+	visible:true;
+}
+ 
+Association > Label:targetMultiplicity {
+	visible:true;
+}
+ 
+Association > Label:sourceRole {
+	visible:true;
+}
+ 
+Association > Label:targetRole {
+	visible:false;
+}
+ 
+Association > Label:name {
+	visible:false;
+}

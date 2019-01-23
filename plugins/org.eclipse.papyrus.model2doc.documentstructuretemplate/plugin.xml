@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated documentstructuretemplate -->
+      <package
+            uri="http://www.eclipse.org/papyrus/model2doc/1.0.0/documentstructuretemplate"
+            class="org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentStructureTemplatePackage"
+            genModel="model/documentstructuretemplate.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated documentstructuretemplate -->
+      <package
+            uri="http://www.eclipse.org/papyrus/model2doc/1.0.0/documentstructuretemplate/modelvisitor"
+            class="org.eclipse.papyrus.model2doc.modelvisitor.ModelVisitorPackage"
+            genModel="model/documentstructuretemplate.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated documentstructuretemplate -->
+      <package
+            uri="http://www.eclipse.org/papyrus/model2doc/1.0.0/documentstructuretemplate/documentparttemplate"
+            class="org.eclipse.papyrus.model2doc.documentparttemplate.DocumentPartTemplatePackage"
+            genModel="model/documentstructuretemplate.genmodel"/>
+   </extension>
+</plugin>
