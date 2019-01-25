@@ -19,15 +19,8 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.papyrus.model2doc.documentparttemplate.DocumentPartTemplate;
-import org.eclipse.papyrus.model2doc.documentparttemplate.EClassDocumentPartTemplate;
-import org.eclipse.papyrus.model2doc.documentparttemplate.EObjectDocumentPartTemplate;
-import org.eclipse.papyrus.model2doc.documentparttemplate.EStructuralFeatureDocumentPartTemplate;
-import org.eclipse.papyrus.model2doc.documentstructuretemplate.*;
 
-import org.eclipse.papyrus.model2doc.modelvisitor.FeatureVisitor;
-import org.eclipse.papyrus.model2doc.modelvisitor.ObjectVisitor;
-import org.eclipse.papyrus.model2doc.modelvisitor.StartModelVisitor;
+import org.eclipse.papyrus.model2doc.documentstructuretemplate.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -100,43 +93,23 @@ public class DocumentStructureTemplateAdapterFactory extends AdapterFactoryImpl 
 		}
 
 		@Override
-		public Adapter caseStartEObjectVisitorTemplate(StartEObjectVisitorTemplate object) {
-			return createStartEObjectVisitorTemplateAdapter();
-		}
-
-		@Override
-		public Adapter caseStartEClassVisitorTemplate(StartEClassVisitorTemplate object) {
-			return createStartEClassVisitorTemplateAdapter();
-		}
-
-		@Override
-		public Adapter caseEClassVisitorTemplate(EClassVisitorTemplate object) {
-			return createEClassVisitorTemplateAdapter();
-		}
-
-		@Override
-		public Adapter caseEStructuralFeatureVisitorTemplate(EStructuralFeatureVisitorTemplate object) {
-			return createEStructuralFeatureVisitorTemplateAdapter();
-		}
-
-		@Override
-		public Adapter caseObjectVisitor(ObjectVisitor object) {
-			return createObjectVisitorAdapter();
-		}
-
-		@Override
-		public Adapter caseStartModelVisitor(StartModelVisitor object) {
-			return createStartModelVisitorAdapter();
-		}
-
-		@Override
 		public Adapter caseDocumentPartTemplate(DocumentPartTemplate object) {
 			return createDocumentPartTemplateAdapter();
 		}
 
 		@Override
-		public Adapter caseEObjectDocumentPartTemplate(EObjectDocumentPartTemplate object) {
-			return createEObjectDocumentPartTemplateAdapter();
+		public Adapter caseEStructuralFeatureDocumentPartTemplate(EStructuralFeatureDocumentPartTemplate object) {
+			return createEStructuralFeatureDocumentPartTemplateAdapter();
+		}
+
+		@Override
+		public Adapter caseFeaturePartTemplate(FeaturePartTemplate object) {
+			return createFeaturePartTemplateAdapter();
+		}
+
+		@Override
+		public Adapter caseObjectPartTemplate(ObjectPartTemplate object) {
+			return createObjectPartTemplateAdapter();
 		}
 
 		@Override
@@ -145,13 +118,8 @@ public class DocumentStructureTemplateAdapterFactory extends AdapterFactoryImpl 
 		}
 
 		@Override
-		public Adapter caseFeatureVisitor(FeatureVisitor object) {
-			return createFeatureVisitorAdapter();
-		}
-
-		@Override
-		public Adapter caseEStructuralFeatureDocumentPartTemplate(EStructuralFeatureDocumentPartTemplate object) {
-			return createEStructuralFeatureDocumentPartTemplateAdapter();
+		public Adapter caseEObjectDocumentPartTemplate(EObjectDocumentPartTemplate object) {
+			return createEObjectDocumentPartTemplateAdapter();
 		}
 
 		@Override
@@ -207,104 +175,14 @@ public class DocumentStructureTemplateAdapterFactory extends AdapterFactoryImpl 
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.StartEObjectVisitorTemplate <em>Start EObject Visitor Template</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentPartTemplate <em>Document Part Template</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.StartEObjectVisitorTemplate
-	 * @generated
-	 */
-	public Adapter createStartEObjectVisitorTemplateAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.StartEClassVisitorTemplate <em>Start EClass Visitor Template</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.StartEClassVisitorTemplate
-	 * @generated
-	 */
-	public Adapter createStartEClassVisitorTemplateAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.EClassVisitorTemplate <em>EClass Visitor Template</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.EClassVisitorTemplate
-	 * @generated
-	 */
-	public Adapter createEClassVisitorTemplateAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.EStructuralFeatureVisitorTemplate <em>EStructural Feature Visitor Template</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.EStructuralFeatureVisitorTemplate
-	 * @generated
-	 */
-	public Adapter createEStructuralFeatureVisitorTemplateAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.modelvisitor.ObjectVisitor <em>Object Visitor</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.model2doc.modelvisitor.ObjectVisitor
-	 * @generated
-	 */
-	public Adapter createObjectVisitorAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.modelvisitor.StartModelVisitor <em>Start Model Visitor</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.model2doc.modelvisitor.StartModelVisitor
-	 * @generated
-	 */
-	public Adapter createStartModelVisitorAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.documentparttemplate.DocumentPartTemplate <em>Document Part Template</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.model2doc.documentparttemplate.DocumentPartTemplate
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentPartTemplate
 	 * @generated
 	 */
 	public Adapter createDocumentPartTemplateAdapter() {
@@ -312,29 +190,59 @@ public class DocumentStructureTemplateAdapterFactory extends AdapterFactoryImpl 
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.documentparttemplate.EObjectDocumentPartTemplate <em>EObject Document Part Template</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.EStructuralFeatureDocumentPartTemplate <em>EStructural Feature Document Part Template</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.model2doc.documentparttemplate.EObjectDocumentPartTemplate
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.EStructuralFeatureDocumentPartTemplate
 	 * @generated
 	 */
-	public Adapter createEObjectDocumentPartTemplateAdapter() {
+	public Adapter createEStructuralFeatureDocumentPartTemplateAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.documentparttemplate.EClassDocumentPartTemplate <em>EClass Document Part Template</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.FeaturePartTemplate <em>Feature Part Template</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.model2doc.documentparttemplate.EClassDocumentPartTemplate
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.FeaturePartTemplate
+	 * @generated
+	 */
+	public Adapter createFeaturePartTemplateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.ObjectPartTemplate <em>Object Part Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.ObjectPartTemplate
+	 * @generated
+	 */
+	public Adapter createObjectPartTemplateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.EClassDocumentPartTemplate <em>EClass Document Part Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.EClassDocumentPartTemplate
 	 * @generated
 	 */
 	public Adapter createEClassDocumentPartTemplateAdapter() {
@@ -342,32 +250,17 @@ public class DocumentStructureTemplateAdapterFactory extends AdapterFactoryImpl 
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.modelvisitor.FeatureVisitor <em>Feature Visitor</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.EObjectDocumentPartTemplate <em>EObject Document Part Template</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.model2doc.modelvisitor.FeatureVisitor
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.EObjectDocumentPartTemplate
 	 * @generated
 	 */
-	public Adapter createFeatureVisitorAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.documentparttemplate.EStructuralFeatureDocumentPartTemplate <em>EStructural Feature Document Part Template</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.model2doc.documentparttemplate.EStructuralFeatureDocumentPartTemplate
-	 * @generated
-	 */
-	public Adapter createEStructuralFeatureDocumentPartTemplateAdapter() {
+	public Adapter createEObjectDocumentPartTemplateAdapter() {
 		return null;
 	}
 

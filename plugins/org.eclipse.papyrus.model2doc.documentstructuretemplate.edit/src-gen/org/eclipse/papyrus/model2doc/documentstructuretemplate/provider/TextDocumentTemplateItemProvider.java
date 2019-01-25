@@ -93,7 +93,7 @@ public class TextDocumentTemplateItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.TEXT_DOCUMENT_TEMPLATE__START_MODEL_VISITOR);
+			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART_TEMPLATE);
 		}
 		return childrenFeatures;
 	}
@@ -161,7 +161,7 @@ public class TextDocumentTemplateItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(TextDocumentTemplate.class)) {
-		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__START_MODEL_VISITOR:
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART_TEMPLATE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -180,11 +180,14 @@ public class TextDocumentTemplateItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.TEXT_DOCUMENT_TEMPLATE__START_MODEL_VISITOR,
-				DocumentStructureTemplateFactory.eINSTANCE.createStartEObjectVisitorTemplate()));
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART_TEMPLATE,
+				DocumentStructureTemplateFactory.eINSTANCE.createEStructuralFeatureDocumentPartTemplate()));
 
-		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.TEXT_DOCUMENT_TEMPLATE__START_MODEL_VISITOR,
-				DocumentStructureTemplateFactory.eINSTANCE.createStartEClassVisitorTemplate()));
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART_TEMPLATE,
+				DocumentStructureTemplateFactory.eINSTANCE.createEClassDocumentPartTemplate()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART_TEMPLATE,
+				DocumentStructureTemplateFactory.eINSTANCE.createEObjectDocumentPartTemplate()));
 	}
 
 	/**

@@ -36,22 +36,18 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.eclipse.papyrus.model2doc.documentparttemplate.DocumentPartTemplatePackage;
-
 import org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentStructureTemplateFactory;
 import org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentStructureTemplatePackage;
-import org.eclipse.papyrus.model2doc.documentstructuretemplate.EStructuralFeatureVisitorTemplate;
-
-import org.eclipse.papyrus.model2doc.modelvisitor.ModelVisitorPackage;
+import org.eclipse.papyrus.model2doc.documentstructuretemplate.EObjectDocumentPartTemplate;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.documentstructuretemplate.EStructuralFeatureVisitorTemplate} object.
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.documentstructuretemplate.EObjectDocumentPartTemplate} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class EStructuralFeatureVisitorTemplateItemProvider
+public class EObjectDocumentPartTemplateItemProvider
 		extends ItemProviderAdapter
 		implements
 		IEditingDomainItemProvider,
@@ -66,7 +62,7 @@ public class EStructuralFeatureVisitorTemplateItemProvider
 	 *
 	 * @generated
 	 */
-	public EStructuralFeatureVisitorTemplateItemProvider(AdapterFactory adapterFactory) {
+	public EObjectDocumentPartTemplateItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -86,7 +82,7 @@ public class EStructuralFeatureVisitorTemplateItemProvider
 			addGenerateTitlePropertyDescriptor(object);
 			addDefaultTitlePropertyDescriptor(object);
 			addCustomTitlePropertyDescriptor(object);
-			addFeaturePropertyDescriptor(object);
+			addEobjectPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -103,7 +99,7 @@ public class EStructuralFeatureVisitorTemplateItemProvider
 				getResourceLocator(),
 				getString("_UI_DocumentPartTemplate_generate_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_DocumentPartTemplate_generate_feature", "_UI_DocumentPartTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				DocumentPartTemplatePackage.Literals.DOCUMENT_PART_TEMPLATE__GENERATE,
+				DocumentStructureTemplatePackage.Literals.DOCUMENT_PART_TEMPLATE__GENERATE,
 				true,
 				false,
 				false,
@@ -124,7 +120,7 @@ public class EStructuralFeatureVisitorTemplateItemProvider
 				getResourceLocator(),
 				getString("_UI_DocumentPartTemplate_generateTitle_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_DocumentPartTemplate_generateTitle_feature", "_UI_DocumentPartTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				DocumentPartTemplatePackage.Literals.DOCUMENT_PART_TEMPLATE__GENERATE_TITLE,
+				DocumentStructureTemplatePackage.Literals.DOCUMENT_PART_TEMPLATE__GENERATE_TITLE,
 				true,
 				false,
 				false,
@@ -145,7 +141,7 @@ public class EStructuralFeatureVisitorTemplateItemProvider
 				getResourceLocator(),
 				getString("_UI_DocumentPartTemplate_defaultTitle_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_DocumentPartTemplate_defaultTitle_feature", "_UI_DocumentPartTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				DocumentPartTemplatePackage.Literals.DOCUMENT_PART_TEMPLATE__DEFAULT_TITLE,
+				DocumentStructureTemplatePackage.Literals.DOCUMENT_PART_TEMPLATE__DEFAULT_TITLE,
 				false,
 				false,
 				false,
@@ -166,7 +162,7 @@ public class EStructuralFeatureVisitorTemplateItemProvider
 				getResourceLocator(),
 				getString("_UI_DocumentPartTemplate_customTitle_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_DocumentPartTemplate_customTitle_feature", "_UI_DocumentPartTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				DocumentPartTemplatePackage.Literals.DOCUMENT_PART_TEMPLATE__CUSTOM_TITLE,
+				DocumentStructureTemplatePackage.Literals.DOCUMENT_PART_TEMPLATE__CUSTOM_TITLE,
 				true,
 				false,
 				false,
@@ -176,18 +172,18 @@ public class EStructuralFeatureVisitorTemplateItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Feature feature.
+	 * This adds a property descriptor for the Eobject feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 */
-	protected void addFeaturePropertyDescriptor(Object object) {
+	protected void addEobjectPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
-				getString("_UI_EStructuralFeatureVisitorTemplate_feature_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_EStructuralFeatureVisitorTemplate_feature_feature", "_UI_EStructuralFeatureVisitorTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				DocumentStructureTemplatePackage.Literals.ESTRUCTURAL_FEATURE_VISITOR_TEMPLATE__FEATURE,
+				getString("_UI_EObjectDocumentPartTemplate_eobject_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EObjectDocumentPartTemplate_eobject_feature", "_UI_EObjectDocumentPartTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				DocumentStructureTemplatePackage.Literals.EOBJECT_DOCUMENT_PART_TEMPLATE__EOBJECT,
 				true,
 				false,
 				true,
@@ -209,7 +205,7 @@ public class EStructuralFeatureVisitorTemplateItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ModelVisitorPackage.Literals.FEATURE_VISITOR__MODEL_VISITOR);
+			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.OBJECT_PART_TEMPLATE__FEATURE_PART_TEMPLATE);
 		}
 		return childrenFeatures;
 	}
@@ -229,7 +225,7 @@ public class EStructuralFeatureVisitorTemplateItemProvider
 	}
 
 	/**
-	 * This returns EStructuralFeatureVisitorTemplate.gif.
+	 * This returns EObjectDocumentPartTemplate.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -237,7 +233,7 @@ public class EStructuralFeatureVisitorTemplateItemProvider
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/EStructuralFeatureVisitorTemplate")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/EObjectDocumentPartTemplate")); //$NON-NLS-1$
 	}
 
 	/**
@@ -260,8 +256,8 @@ public class EStructuralFeatureVisitorTemplateItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		EStructuralFeatureVisitorTemplate eStructuralFeatureVisitorTemplate = (EStructuralFeatureVisitorTemplate) object;
-		return getString("_UI_EStructuralFeatureVisitorTemplate_type") + " " + eStructuralFeatureVisitorTemplate.isGenerate(); //$NON-NLS-1$ //$NON-NLS-2$
+		EObjectDocumentPartTemplate eObjectDocumentPartTemplate = (EObjectDocumentPartTemplate) object;
+		return getString("_UI_EObjectDocumentPartTemplate_type") + " " + eObjectDocumentPartTemplate.isGenerate(); //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 
@@ -277,14 +273,14 @@ public class EStructuralFeatureVisitorTemplateItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(EStructuralFeatureVisitorTemplate.class)) {
-		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_VISITOR_TEMPLATE__GENERATE:
-		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_VISITOR_TEMPLATE__GENERATE_TITLE:
-		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_VISITOR_TEMPLATE__DEFAULT_TITLE:
-		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_VISITOR_TEMPLATE__CUSTOM_TITLE:
+		switch (notification.getFeatureID(EObjectDocumentPartTemplate.class)) {
+		case DocumentStructureTemplatePackage.EOBJECT_DOCUMENT_PART_TEMPLATE__GENERATE:
+		case DocumentStructureTemplatePackage.EOBJECT_DOCUMENT_PART_TEMPLATE__GENERATE_TITLE:
+		case DocumentStructureTemplatePackage.EOBJECT_DOCUMENT_PART_TEMPLATE__DEFAULT_TITLE:
+		case DocumentStructureTemplatePackage.EOBJECT_DOCUMENT_PART_TEMPLATE__CUSTOM_TITLE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_VISITOR_TEMPLATE__MODEL_VISITOR:
+		case DocumentStructureTemplatePackage.EOBJECT_DOCUMENT_PART_TEMPLATE__FEATURE_PART_TEMPLATE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -303,14 +299,8 @@ public class EStructuralFeatureVisitorTemplateItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(ModelVisitorPackage.Literals.FEATURE_VISITOR__MODEL_VISITOR,
-				DocumentStructureTemplateFactory.eINSTANCE.createStartEObjectVisitorTemplate()));
-
-		newChildDescriptors.add(createChildParameter(ModelVisitorPackage.Literals.FEATURE_VISITOR__MODEL_VISITOR,
-				DocumentStructureTemplateFactory.eINSTANCE.createEClassVisitorTemplate()));
-
-		newChildDescriptors.add(createChildParameter(ModelVisitorPackage.Literals.FEATURE_VISITOR__MODEL_VISITOR,
-				DocumentStructureTemplateFactory.eINSTANCE.createStartEClassVisitorTemplate()));
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.OBJECT_PART_TEMPLATE__FEATURE_PART_TEMPLATE,
+				DocumentStructureTemplateFactory.eINSTANCE.createEStructuralFeatureDocumentPartTemplate()));
 	}
 
 	/**

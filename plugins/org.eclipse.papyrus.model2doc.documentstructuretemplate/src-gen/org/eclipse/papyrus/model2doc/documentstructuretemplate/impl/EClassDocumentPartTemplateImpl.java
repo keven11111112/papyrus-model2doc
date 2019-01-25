@@ -28,44 +28,30 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.eclipse.papyrus.model2doc.documentparttemplate.DocumentPartTemplate;
-import org.eclipse.papyrus.model2doc.documentparttemplate.DocumentPartTemplatePackage;
-import org.eclipse.papyrus.model2doc.documentparttemplate.EClassDocumentPartTemplate;
-import org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentStructureTemplatePackage;
-import org.eclipse.papyrus.model2doc.documentstructuretemplate.EClassVisitorTemplate;
 
-import org.eclipse.papyrus.model2doc.modelvisitor.FeatureVisitor;
+import org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentStructureTemplatePackage;
+import org.eclipse.papyrus.model2doc.documentstructuretemplate.EClassDocumentPartTemplate;
+import org.eclipse.papyrus.model2doc.documentstructuretemplate.FeaturePartTemplate;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>EClass Visitor Template</b></em>'.
+ * An implementation of the model object '<em><b>EClass Document Part Template</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.EClassVisitorTemplateImpl#getFeatureVisitor <em>Feature Visitor</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.EClassVisitorTemplateImpl#isGenerate <em>Generate</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.EClassVisitorTemplateImpl#isGenerateTitle <em>Generate Title</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.EClassVisitorTemplateImpl#getDefaultTitle <em>Default Title</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.EClassVisitorTemplateImpl#getCustomTitle <em>Custom Title</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.EClassVisitorTemplateImpl#getEclass <em>Eclass</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.EClassDocumentPartTemplateImpl#isGenerate <em>Generate</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.EClassDocumentPartTemplateImpl#isGenerateTitle <em>Generate Title</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.EClassDocumentPartTemplateImpl#getDefaultTitle <em>Default Title</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.EClassDocumentPartTemplateImpl#getCustomTitle <em>Custom Title</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.EClassDocumentPartTemplateImpl#getFeaturePartTemplate <em>Feature Part Template</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.EClassDocumentPartTemplateImpl#getEclass <em>Eclass</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class EClassVisitorTemplateImpl extends MinimalEObjectImpl.Container implements EClassVisitorTemplate {
-	/**
-	 * The cached value of the '{@link #getFeatureVisitor() <em>Feature Visitor</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see #getFeatureVisitor()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<FeatureVisitor> featureVisitor;
-
+public class EClassDocumentPartTemplateImpl extends MinimalEObjectImpl.Container implements EClassDocumentPartTemplate {
 	/**
 	 * The default value of the '{@link #isGenerate() <em>Generate</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -144,6 +130,17 @@ public class EClassVisitorTemplateImpl extends MinimalEObjectImpl.Container impl
 	protected String customTitle = CUSTOM_TITLE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getFeaturePartTemplate() <em>Feature Part Template</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getFeaturePartTemplate()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<FeaturePartTemplate> featurePartTemplate;
+
+	/**
 	 * The cached value of the '{@link #getEclass() <em>Eclass</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -160,7 +157,7 @@ public class EClassVisitorTemplateImpl extends MinimalEObjectImpl.Container impl
 	 *
 	 * @generated
 	 */
-	protected EClassVisitorTemplateImpl() {
+	protected EClassDocumentPartTemplateImpl() {
 		super();
 	}
 
@@ -172,21 +169,7 @@ public class EClassVisitorTemplateImpl extends MinimalEObjectImpl.Container impl
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return DocumentStructureTemplatePackage.Literals.ECLASS_VISITOR_TEMPLATE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EList<FeatureVisitor> getFeatureVisitor() {
-		if (featureVisitor == null) {
-			featureVisitor = new EObjectContainmentEList<>(FeatureVisitor.class, this, DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE__FEATURE_VISITOR);
-		}
-		return featureVisitor;
+		return DocumentStructureTemplatePackage.Literals.ECLASS_DOCUMENT_PART_TEMPLATE;
 	}
 
 	/**
@@ -211,7 +194,7 @@ public class EClassVisitorTemplateImpl extends MinimalEObjectImpl.Container impl
 		boolean oldGenerate = generate;
 		generate = newGenerate;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE__GENERATE, oldGenerate, generate));
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__GENERATE, oldGenerate, generate));
 		}
 	}
 
@@ -237,7 +220,7 @@ public class EClassVisitorTemplateImpl extends MinimalEObjectImpl.Container impl
 		boolean oldGenerateTitle = generateTitle;
 		generateTitle = newGenerateTitle;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE__GENERATE_TITLE, oldGenerateTitle, generateTitle));
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__GENERATE_TITLE, oldGenerateTitle, generateTitle));
 		}
 	}
 
@@ -251,7 +234,7 @@ public class EClassVisitorTemplateImpl extends MinimalEObjectImpl.Container impl
 	public String getDefaultTitle() {
 		// TODO: implement this method to return the 'Default Title' attribute
 		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return "tutu";
 	}
 
 	/**
@@ -276,8 +259,22 @@ public class EClassVisitorTemplateImpl extends MinimalEObjectImpl.Container impl
 		String oldCustomTitle = customTitle;
 		customTitle = newCustomTitle;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE__CUSTOM_TITLE, oldCustomTitle, customTitle));
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__CUSTOM_TITLE, oldCustomTitle, customTitle));
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EList<FeaturePartTemplate> getFeaturePartTemplate() {
+		if (featurePartTemplate == null) {
+			featurePartTemplate = new EObjectContainmentEList<>(FeaturePartTemplate.class, this, DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__FEATURE_PART_TEMPLATE);
+		}
+		return featurePartTemplate;
 	}
 
 	/**
@@ -293,7 +290,7 @@ public class EClassVisitorTemplateImpl extends MinimalEObjectImpl.Container impl
 			eclass = (EClass) eResolveProxy(oldEclass);
 			if (eclass != oldEclass) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE__ECLASS, oldEclass, eclass));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__ECLASS, oldEclass, eclass));
 				}
 			}
 		}
@@ -321,7 +318,7 @@ public class EClassVisitorTemplateImpl extends MinimalEObjectImpl.Container impl
 		EClass oldEclass = eclass;
 		eclass = newEclass;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE__ECLASS, oldEclass, eclass));
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__ECLASS, oldEclass, eclass));
 		}
 	}
 
@@ -334,8 +331,8 @@ public class EClassVisitorTemplateImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE__FEATURE_VISITOR:
-			return ((InternalEList<?>) getFeatureVisitor()).basicRemove(otherEnd, msgs);
+		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__FEATURE_PART_TEMPLATE:
+			return ((InternalEList<?>) getFeaturePartTemplate()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -349,17 +346,17 @@ public class EClassVisitorTemplateImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE__FEATURE_VISITOR:
-			return getFeatureVisitor();
-		case DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE__GENERATE:
+		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__GENERATE:
 			return isGenerate();
-		case DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE__GENERATE_TITLE:
+		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__GENERATE_TITLE:
 			return isGenerateTitle();
-		case DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE__DEFAULT_TITLE:
+		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__DEFAULT_TITLE:
 			return getDefaultTitle();
-		case DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE__CUSTOM_TITLE:
+		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__CUSTOM_TITLE:
 			return getCustomTitle();
-		case DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE__ECLASS:
+		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__FEATURE_PART_TEMPLATE:
+			return getFeaturePartTemplate();
+		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__ECLASS:
 			if (resolve) {
 				return getEclass();
 			}
@@ -378,20 +375,20 @@ public class EClassVisitorTemplateImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE__FEATURE_VISITOR:
-			getFeatureVisitor().clear();
-			getFeatureVisitor().addAll((Collection<? extends FeatureVisitor>) newValue);
-			return;
-		case DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE__GENERATE:
+		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__GENERATE:
 			setGenerate((Boolean) newValue);
 			return;
-		case DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE__GENERATE_TITLE:
+		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__GENERATE_TITLE:
 			setGenerateTitle((Boolean) newValue);
 			return;
-		case DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE__CUSTOM_TITLE:
+		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__CUSTOM_TITLE:
 			setCustomTitle((String) newValue);
 			return;
-		case DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE__ECLASS:
+		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__FEATURE_PART_TEMPLATE:
+			getFeaturePartTemplate().clear();
+			getFeaturePartTemplate().addAll((Collection<? extends FeaturePartTemplate>) newValue);
+			return;
+		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__ECLASS:
 			setEclass((EClass) newValue);
 			return;
 		}
@@ -407,19 +404,19 @@ public class EClassVisitorTemplateImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE__FEATURE_VISITOR:
-			getFeatureVisitor().clear();
-			return;
-		case DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE__GENERATE:
+		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__GENERATE:
 			setGenerate(GENERATE_EDEFAULT);
 			return;
-		case DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE__GENERATE_TITLE:
+		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__GENERATE_TITLE:
 			setGenerateTitle(GENERATE_TITLE_EDEFAULT);
 			return;
-		case DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE__CUSTOM_TITLE:
+		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__CUSTOM_TITLE:
 			setCustomTitle(CUSTOM_TITLE_EDEFAULT);
 			return;
-		case DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE__ECLASS:
+		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__FEATURE_PART_TEMPLATE:
+			getFeaturePartTemplate().clear();
+			return;
+		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__ECLASS:
 			setEclass((EClass) null);
 			return;
 		}
@@ -435,82 +432,20 @@ public class EClassVisitorTemplateImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE__FEATURE_VISITOR:
-			return featureVisitor != null && !featureVisitor.isEmpty();
-		case DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE__GENERATE:
+		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__GENERATE:
 			return generate != GENERATE_EDEFAULT;
-		case DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE__GENERATE_TITLE:
+		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__GENERATE_TITLE:
 			return generateTitle != GENERATE_TITLE_EDEFAULT;
-		case DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE__DEFAULT_TITLE:
+		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__DEFAULT_TITLE:
 			return DEFAULT_TITLE_EDEFAULT == null ? getDefaultTitle() != null : !DEFAULT_TITLE_EDEFAULT.equals(getDefaultTitle());
-		case DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE__CUSTOM_TITLE:
+		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__CUSTOM_TITLE:
 			return CUSTOM_TITLE_EDEFAULT == null ? customTitle != null : !CUSTOM_TITLE_EDEFAULT.equals(customTitle);
-		case DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE__ECLASS:
+		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__FEATURE_PART_TEMPLATE:
+			return featurePartTemplate != null && !featurePartTemplate.isEmpty();
+		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__ECLASS:
 			return eclass != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == DocumentPartTemplate.class) {
-			switch (derivedFeatureID) {
-			case DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE__GENERATE:
-				return DocumentPartTemplatePackage.DOCUMENT_PART_TEMPLATE__GENERATE;
-			case DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE__GENERATE_TITLE:
-				return DocumentPartTemplatePackage.DOCUMENT_PART_TEMPLATE__GENERATE_TITLE;
-			case DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE__DEFAULT_TITLE:
-				return DocumentPartTemplatePackage.DOCUMENT_PART_TEMPLATE__DEFAULT_TITLE;
-			case DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE__CUSTOM_TITLE:
-				return DocumentPartTemplatePackage.DOCUMENT_PART_TEMPLATE__CUSTOM_TITLE;
-			default:
-				return -1;
-			}
-		}
-		if (baseClass == EClassDocumentPartTemplate.class) {
-			switch (derivedFeatureID) {
-			default:
-				return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == DocumentPartTemplate.class) {
-			switch (baseFeatureID) {
-			case DocumentPartTemplatePackage.DOCUMENT_PART_TEMPLATE__GENERATE:
-				return DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE__GENERATE;
-			case DocumentPartTemplatePackage.DOCUMENT_PART_TEMPLATE__GENERATE_TITLE:
-				return DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE__GENERATE_TITLE;
-			case DocumentPartTemplatePackage.DOCUMENT_PART_TEMPLATE__DEFAULT_TITLE:
-				return DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE__DEFAULT_TITLE;
-			case DocumentPartTemplatePackage.DOCUMENT_PART_TEMPLATE__CUSTOM_TITLE:
-				return DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE__CUSTOM_TITLE;
-			default:
-				return -1;
-			}
-		}
-		if (baseClass == EClassDocumentPartTemplate.class) {
-			switch (baseFeatureID) {
-			default:
-				return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**
@@ -536,4 +471,4 @@ public class EClassVisitorTemplateImpl extends MinimalEObjectImpl.Container impl
 		return result.toString();
 	}
 
-} // EClassVisitorTemplateImpl
+} // EClassDocumentPartTemplateImpl

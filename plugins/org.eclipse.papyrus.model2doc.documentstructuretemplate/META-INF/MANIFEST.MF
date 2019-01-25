@@ -8,17 +8,17 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Automatic-Module-Name: org.eclipse.papyrus.model2doc.documentstructuretemplate
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: org.eclipse.papyrus.model2doc.documentparttemplate,
- org.eclipse.papyrus.model2doc.documentparttemplate.impl,
- org.eclipse.papyrus.model2doc.documentparttemplate.util,
- org.eclipse.papyrus.model2doc.documentstructuretemplate,
+Export-Package: org.eclipse.papyrus.model2doc.documentstructuretemplate,
  org.eclipse.papyrus.model2doc.documentstructuretemplate.impl,
+ org.eclipse.papyrus.model2doc.documentstructuretemplate.resource,
  org.eclipse.papyrus.model2doc.documentstructuretemplate.util,
- org.eclipse.papyrus.model2doc.modelvisitor,
- org.eclipse.papyrus.model2doc.modelvisitor.impl,
- org.eclipse.papyrus.model2doc.modelvisitor.util
+ org.eclipse.papyrus.model2doc.documentstructuretemplate.validation
 Require-Bundle: org.eclipse.core.runtime;resolution:=optional;x-installation:=greedy,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.papyrus.emf,
- org.eclipse.emf.ecore.xmi;bundle-version="2.15.0"
+ org.eclipse.emf.ecore.xmi;bundle-version="2.15.0",
+ org.eclipse.emf.validation;bundle-version="1.8.0",
+ org.eclipse.ui.workbench
 Bundle-ActivationPolicy: lazy
+Bundle-Activator: org.eclipse.papyrus.model2doc.documentstructuretemplate.Activator
+

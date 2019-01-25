@@ -11,7 +11,7 @@
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
-package org.eclipse.papyrus.model2doc.documentparttemplate;
+package org.eclipse.papyrus.model2doc.documentstructuretemplate;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -24,13 +24,13 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.papyrus.model2doc.documentparttemplate.DocumentPartTemplate#isGenerate <em>Generate</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.documentparttemplate.DocumentPartTemplate#isGenerateTitle <em>Generate Title</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.documentparttemplate.DocumentPartTemplate#getDefaultTitle <em>Default Title</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.documentparttemplate.DocumentPartTemplate#getCustomTitle <em>Custom Title</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentPartTemplate#isGenerate <em>Generate</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentPartTemplate#isGenerateTitle <em>Generate Title</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentPartTemplate#getDefaultTitle <em>Default Title</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentPartTemplate#getCustomTitle <em>Custom Title</em>}</li>
  * </ul>
  *
- * @see org.eclipse.papyrus.model2doc.documentparttemplate.DocumentPartTemplatePackage#getDocumentPartTemplate()
+ * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentStructureTemplatePackage#getDocumentPartTemplate()
  * @model interface="true" abstract="true"
  * @generated
  */
@@ -46,14 +46,14 @@ public interface DocumentPartTemplate extends EObject {
 	 *
 	 * @return the value of the '<em>Generate</em>' attribute.
 	 * @see #setGenerate(boolean)
-	 * @see org.eclipse.papyrus.model2doc.documentparttemplate.DocumentPartTemplatePackage#getDocumentPartTemplate_Generate()
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentStructureTemplatePackage#getDocumentPartTemplate_Generate()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	boolean isGenerate();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.documentparttemplate.DocumentPartTemplate#isGenerate <em>Generate</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentPartTemplate#isGenerate <em>Generate</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -75,14 +75,14 @@ public interface DocumentPartTemplate extends EObject {
 	 *
 	 * @return the value of the '<em>Generate Title</em>' attribute.
 	 * @see #setGenerateTitle(boolean)
-	 * @see org.eclipse.papyrus.model2doc.documentparttemplate.DocumentPartTemplatePackage#getDocumentPartTemplate_GenerateTitle()
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentStructureTemplatePackage#getDocumentPartTemplate_GenerateTitle()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	boolean isGenerateTitle();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.documentparttemplate.DocumentPartTemplate#isGenerateTitle <em>Generate Title</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentPartTemplate#isGenerateTitle <em>Generate Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -103,7 +103,7 @@ public interface DocumentPartTemplate extends EObject {
 	 * <!-- end-user-doc -->
 	 *
 	 * @return the value of the '<em>Default Title</em>' attribute.
-	 * @see org.eclipse.papyrus.model2doc.documentparttemplate.DocumentPartTemplatePackage#getDocumentPartTemplate_DefaultTitle()
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentStructureTemplatePackage#getDocumentPartTemplate_DefaultTitle()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true" ordered="false"
 	 * @generated
 	 */
@@ -120,14 +120,14 @@ public interface DocumentPartTemplate extends EObject {
 	 *
 	 * @return the value of the '<em>Custom Title</em>' attribute.
 	 * @see #setCustomTitle(String)
-	 * @see org.eclipse.papyrus.model2doc.documentparttemplate.DocumentPartTemplatePackage#getDocumentPartTemplate_CustomTitle()
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentStructureTemplatePackage#getDocumentPartTemplate_CustomTitle()
 	 * @model ordered="false"
 	 * @generated
 	 */
 	String getCustomTitle();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.documentparttemplate.DocumentPartTemplate#getCustomTitle <em>Custom Title</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentPartTemplate#getCustomTitle <em>Custom Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *

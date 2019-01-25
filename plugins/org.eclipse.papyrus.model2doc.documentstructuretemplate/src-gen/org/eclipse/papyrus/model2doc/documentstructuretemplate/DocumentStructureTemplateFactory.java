@@ -45,44 +45,34 @@ public interface DocumentStructureTemplateFactory extends EFactory {
 	TextDocumentTemplate createTextDocumentTemplate();
 
 	/**
-	 * Returns a new object of class '<em>Start EObject Visitor Template</em>'.
+	 * Returns a new object of class '<em>EStructural Feature Document Part Template</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @return a new object of class '<em>Start EObject Visitor Template</em>'.
+	 * @return a new object of class '<em>EStructural Feature Document Part Template</em>'.
 	 * @generated
 	 */
-	StartEObjectVisitorTemplate createStartEObjectVisitorTemplate();
+	EStructuralFeatureDocumentPartTemplate createEStructuralFeatureDocumentPartTemplate();
 
 	/**
-	 * Returns a new object of class '<em>Start EClass Visitor Template</em>'.
+	 * Returns a new object of class '<em>EClass Document Part Template</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @return a new object of class '<em>Start EClass Visitor Template</em>'.
+	 * @return a new object of class '<em>EClass Document Part Template</em>'.
 	 * @generated
 	 */
-	StartEClassVisitorTemplate createStartEClassVisitorTemplate();
+	EClassDocumentPartTemplate createEClassDocumentPartTemplate();
 
 	/**
-	 * Returns a new object of class '<em>EClass Visitor Template</em>'.
+	 * Returns a new object of class '<em>EObject Document Part Template</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @return a new object of class '<em>EClass Visitor Template</em>'.
+	 * @return a new object of class '<em>EObject Document Part Template</em>'.
 	 * @generated
 	 */
-	EClassVisitorTemplate createEClassVisitorTemplate();
-
-	/**
-	 * Returns a new object of class '<em>EStructural Feature Visitor Template</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @return a new object of class '<em>EStructural Feature Visitor Template</em>'.
-	 * @generated
-	 */
-	EStructuralFeatureVisitorTemplate createEStructuralFeatureVisitorTemplate();
+	EObjectDocumentPartTemplate createEObjectDocumentPartTemplate();
 
 	/**
 	 * Returns the package supported by this factory.

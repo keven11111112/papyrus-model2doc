@@ -31,6 +31,7 @@ public class DocumentStructureTemplateResource extends AbstractEMFResourceWithUU
 	 */
 	public static final String FILE_EXTENSION = "documentstructuretemplate"; //$NON-NLS-1$
 
+	
 	/**
 	 * 
 	 * Constructor.

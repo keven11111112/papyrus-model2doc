@@ -131,103 +131,78 @@ public class DocumentStructureTemplateItemProviderAdapterFactory extends Documen
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.documentstructuretemplate.StartEObjectVisitorTemplate} instances.
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.documentstructuretemplate.EStructuralFeatureDocumentPartTemplate} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 */
-	protected StartEObjectVisitorTemplateItemProvider startEObjectVisitorTemplateItemProvider;
+	protected EStructuralFeatureDocumentPartTemplateItemProvider eStructuralFeatureDocumentPartTemplateItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.documentstructuretemplate.StartEObjectVisitorTemplate}.
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.documentstructuretemplate.EStructuralFeatureDocumentPartTemplate}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 */
 	@Override
-	public Adapter createStartEObjectVisitorTemplateAdapter() {
-		if (startEObjectVisitorTemplateItemProvider == null) {
-			startEObjectVisitorTemplateItemProvider = new StartEObjectVisitorTemplateItemProvider(this);
+	public Adapter createEStructuralFeatureDocumentPartTemplateAdapter() {
+		if (eStructuralFeatureDocumentPartTemplateItemProvider == null) {
+			eStructuralFeatureDocumentPartTemplateItemProvider = new EStructuralFeatureDocumentPartTemplateItemProvider(this);
 		}
 
-		return startEObjectVisitorTemplateItemProvider;
+		return eStructuralFeatureDocumentPartTemplateItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.documentstructuretemplate.StartEClassVisitorTemplate} instances.
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.documentstructuretemplate.EClassDocumentPartTemplate} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 */
-	protected StartEClassVisitorTemplateItemProvider startEClassVisitorTemplateItemProvider;
+	protected EClassDocumentPartTemplateItemProvider eClassDocumentPartTemplateItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.documentstructuretemplate.StartEClassVisitorTemplate}.
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.documentstructuretemplate.EClassDocumentPartTemplate}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 */
 	@Override
-	public Adapter createStartEClassVisitorTemplateAdapter() {
-		if (startEClassVisitorTemplateItemProvider == null) {
-			startEClassVisitorTemplateItemProvider = new StartEClassVisitorTemplateItemProvider(this);
+	public Adapter createEClassDocumentPartTemplateAdapter() {
+		if (eClassDocumentPartTemplateItemProvider == null) {
+			eClassDocumentPartTemplateItemProvider = new EClassDocumentPartTemplateItemProvider(this);
 		}
 
-		return startEClassVisitorTemplateItemProvider;
+		return eClassDocumentPartTemplateItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.documentstructuretemplate.EClassVisitorTemplate} instances.
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.documentstructuretemplate.EObjectDocumentPartTemplate} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 */
-	protected EClassVisitorTemplateItemProvider eClassVisitorTemplateItemProvider;
+	protected EObjectDocumentPartTemplateItemProvider eObjectDocumentPartTemplateItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.documentstructuretemplate.EClassVisitorTemplate}.
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.documentstructuretemplate.EObjectDocumentPartTemplate}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 */
 	@Override
-	public Adapter createEClassVisitorTemplateAdapter() {
-		if (eClassVisitorTemplateItemProvider == null) {
-			eClassVisitorTemplateItemProvider = new EClassVisitorTemplateItemProvider(this);
+	public Adapter createEObjectDocumentPartTemplateAdapter() {
+		if (eObjectDocumentPartTemplateItemProvider == null) {
+			eObjectDocumentPartTemplateItemProvider = new EObjectDocumentPartTemplateItemProvider(this);
 		}
 
-		return eClassVisitorTemplateItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.documentstructuretemplate.EStructuralFeatureVisitorTemplate} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected EStructuralFeatureVisitorTemplateItemProvider eStructuralFeatureVisitorTemplateItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.documentstructuretemplate.EStructuralFeatureVisitorTemplate}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public Adapter createEStructuralFeatureVisitorTemplateAdapter() {
-		if (eStructuralFeatureVisitorTemplateItemProvider == null) {
-			eStructuralFeatureVisitorTemplateItemProvider = new EStructuralFeatureVisitorTemplateItemProvider(this);
-		}
-
-		return eStructuralFeatureVisitorTemplateItemProvider;
+		return eObjectDocumentPartTemplateItemProvider;
 	}
 
 	/**
@@ -379,17 +354,14 @@ public class DocumentStructureTemplateItemProviderAdapterFactory extends Documen
 		if (textDocumentTemplateItemProvider != null) {
 			textDocumentTemplateItemProvider.dispose();
 		}
-		if (startEObjectVisitorTemplateItemProvider != null) {
-			startEObjectVisitorTemplateItemProvider.dispose();
+		if (eStructuralFeatureDocumentPartTemplateItemProvider != null) {
+			eStructuralFeatureDocumentPartTemplateItemProvider.dispose();
 		}
-		if (startEClassVisitorTemplateItemProvider != null) {
-			startEClassVisitorTemplateItemProvider.dispose();
+		if (eClassDocumentPartTemplateItemProvider != null) {
+			eClassDocumentPartTemplateItemProvider.dispose();
 		}
-		if (eClassVisitorTemplateItemProvider != null) {
-			eClassVisitorTemplateItemProvider.dispose();
-		}
-		if (eStructuralFeatureVisitorTemplateItemProvider != null) {
-			eStructuralFeatureVisitorTemplateItemProvider.dispose();
+		if (eObjectDocumentPartTemplateItemProvider != null) {
+			eObjectDocumentPartTemplateItemProvider.dispose();
 		}
 	}
 

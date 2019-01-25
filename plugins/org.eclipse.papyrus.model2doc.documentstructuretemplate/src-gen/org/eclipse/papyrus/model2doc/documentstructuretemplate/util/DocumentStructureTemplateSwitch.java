@@ -17,15 +17,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
-import org.eclipse.papyrus.model2doc.documentparttemplate.DocumentPartTemplate;
-import org.eclipse.papyrus.model2doc.documentparttemplate.EClassDocumentPartTemplate;
-import org.eclipse.papyrus.model2doc.documentparttemplate.EObjectDocumentPartTemplate;
-import org.eclipse.papyrus.model2doc.documentparttemplate.EStructuralFeatureDocumentPartTemplate;
-import org.eclipse.papyrus.model2doc.documentstructuretemplate.*;
 
-import org.eclipse.papyrus.model2doc.modelvisitor.FeatureVisitor;
-import org.eclipse.papyrus.model2doc.modelvisitor.ObjectVisitor;
-import org.eclipse.papyrus.model2doc.modelvisitor.StartModelVisitor;
+import org.eclipse.papyrus.model2doc.documentstructuretemplate.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -109,77 +102,72 @@ public class DocumentStructureTemplateSwitch<T> extends Switch<T> {
 			}
 			return result;
 		}
-		case DocumentStructureTemplatePackage.START_EOBJECT_VISITOR_TEMPLATE: {
-			StartEObjectVisitorTemplate startEObjectVisitorTemplate = (StartEObjectVisitorTemplate) theEObject;
-			T result = caseStartEObjectVisitorTemplate(startEObjectVisitorTemplate);
+		case DocumentStructureTemplatePackage.DOCUMENT_PART_TEMPLATE: {
+			DocumentPartTemplate documentPartTemplate = (DocumentPartTemplate) theEObject;
+			T result = caseDocumentPartTemplate(documentPartTemplate);
 			if (result == null) {
-				result = caseStartModelVisitor(startEObjectVisitorTemplate);
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE: {
+			EStructuralFeatureDocumentPartTemplate eStructuralFeatureDocumentPartTemplate = (EStructuralFeatureDocumentPartTemplate) theEObject;
+			T result = caseEStructuralFeatureDocumentPartTemplate(eStructuralFeatureDocumentPartTemplate);
+			if (result == null) {
+				result = caseFeaturePartTemplate(eStructuralFeatureDocumentPartTemplate);
 			}
 			if (result == null) {
-				result = caseEObjectDocumentPartTemplate(startEObjectVisitorTemplate);
-			}
-			if (result == null) {
-				result = caseObjectVisitor(startEObjectVisitorTemplate);
-			}
-			if (result == null) {
-				result = caseDocumentPartTemplate(startEObjectVisitorTemplate);
+				result = caseDocumentPartTemplate(eStructuralFeatureDocumentPartTemplate);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
 			}
 			return result;
 		}
-		case DocumentStructureTemplatePackage.START_ECLASS_VISITOR_TEMPLATE: {
-			StartEClassVisitorTemplate startEClassVisitorTemplate = (StartEClassVisitorTemplate) theEObject;
-			T result = caseStartEClassVisitorTemplate(startEClassVisitorTemplate);
+		case DocumentStructureTemplatePackage.FEATURE_PART_TEMPLATE: {
+			FeaturePartTemplate featurePartTemplate = (FeaturePartTemplate) theEObject;
+			T result = caseFeaturePartTemplate(featurePartTemplate);
 			if (result == null) {
-				result = caseEClassVisitorTemplate(startEClassVisitorTemplate);
-			}
-			if (result == null) {
-				result = caseStartModelVisitor(startEClassVisitorTemplate);
-			}
-			if (result == null) {
-				result = caseObjectVisitor(startEClassVisitorTemplate);
-			}
-			if (result == null) {
-				result = caseEClassDocumentPartTemplate(startEClassVisitorTemplate);
-			}
-			if (result == null) {
-				result = caseDocumentPartTemplate(startEClassVisitorTemplate);
+				result = caseDocumentPartTemplate(featurePartTemplate);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
 			}
 			return result;
 		}
-		case DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE: {
-			EClassVisitorTemplate eClassVisitorTemplate = (EClassVisitorTemplate) theEObject;
-			T result = caseEClassVisitorTemplate(eClassVisitorTemplate);
+		case DocumentStructureTemplatePackage.OBJECT_PART_TEMPLATE: {
+			ObjectPartTemplate objectPartTemplate = (ObjectPartTemplate) theEObject;
+			T result = caseObjectPartTemplate(objectPartTemplate);
 			if (result == null) {
-				result = caseObjectVisitor(eClassVisitorTemplate);
-			}
-			if (result == null) {
-				result = caseEClassDocumentPartTemplate(eClassVisitorTemplate);
-			}
-			if (result == null) {
-				result = caseDocumentPartTemplate(eClassVisitorTemplate);
+				result = caseDocumentPartTemplate(objectPartTemplate);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
 			}
 			return result;
 		}
-		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_VISITOR_TEMPLATE: {
-			EStructuralFeatureVisitorTemplate eStructuralFeatureVisitorTemplate = (EStructuralFeatureVisitorTemplate) theEObject;
-			T result = caseEStructuralFeatureVisitorTemplate(eStructuralFeatureVisitorTemplate);
+		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE: {
+			EClassDocumentPartTemplate eClassDocumentPartTemplate = (EClassDocumentPartTemplate) theEObject;
+			T result = caseEClassDocumentPartTemplate(eClassDocumentPartTemplate);
 			if (result == null) {
-				result = caseFeatureVisitor(eStructuralFeatureVisitorTemplate);
+				result = caseObjectPartTemplate(eClassDocumentPartTemplate);
 			}
 			if (result == null) {
-				result = caseEStructuralFeatureDocumentPartTemplate(eStructuralFeatureVisitorTemplate);
+				result = caseDocumentPartTemplate(eClassDocumentPartTemplate);
 			}
 			if (result == null) {
-				result = caseDocumentPartTemplate(eStructuralFeatureVisitorTemplate);
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructureTemplatePackage.EOBJECT_DOCUMENT_PART_TEMPLATE: {
+			EObjectDocumentPartTemplate eObjectDocumentPartTemplate = (EObjectDocumentPartTemplate) theEObject;
+			T result = caseEObjectDocumentPartTemplate(eObjectDocumentPartTemplate);
+			if (result == null) {
+				result = caseObjectPartTemplate(eObjectDocumentPartTemplate);
+			}
+			if (result == null) {
+				result = caseDocumentPartTemplate(eObjectDocumentPartTemplate);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
@@ -226,108 +214,6 @@ public class DocumentStructureTemplateSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Start EObject Visitor Template</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 *
-	 * @param object
-	 *                   the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Start EObject Visitor Template</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseStartEObjectVisitorTemplate(StartEObjectVisitorTemplate object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Start EClass Visitor Template</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 *
-	 * @param object
-	 *                   the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Start EClass Visitor Template</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseStartEClassVisitorTemplate(StartEClassVisitorTemplate object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>EClass Visitor Template</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 *
-	 * @param object
-	 *                   the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>EClass Visitor Template</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEClassVisitorTemplate(EClassVisitorTemplate object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>EStructural Feature Visitor Template</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 *
-	 * @param object
-	 *                   the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>EStructural Feature Visitor Template</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEStructuralFeatureVisitorTemplate(EStructuralFeatureVisitorTemplate object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Object Visitor</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 *
-	 * @param object
-	 *                   the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Object Visitor</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseObjectVisitor(ObjectVisitor object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Start Model Visitor</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 *
-	 * @param object
-	 *                   the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Start Model Visitor</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseStartModelVisitor(StartModelVisitor object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Document Part Template</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -345,7 +231,7 @@ public class DocumentStructureTemplateSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>EObject Document Part Template</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>EStructural Feature Document Part Template</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
@@ -353,11 +239,45 @@ public class DocumentStructureTemplateSwitch<T> extends Switch<T> {
 	 *
 	 * @param object
 	 *                   the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>EObject Document Part Template</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>EStructural Feature Document Part Template</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEObjectDocumentPartTemplate(EObjectDocumentPartTemplate object) {
+	public T caseEStructuralFeatureDocumentPartTemplate(EStructuralFeatureDocumentPartTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Feature Part Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Feature Part Template</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFeaturePartTemplate(FeaturePartTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Object Part Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Object Part Template</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseObjectPartTemplate(ObjectPartTemplate object) {
 		return null;
 	}
 
@@ -379,7 +299,7 @@ public class DocumentStructureTemplateSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Feature Visitor</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>EObject Document Part Template</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
@@ -387,28 +307,11 @@ public class DocumentStructureTemplateSwitch<T> extends Switch<T> {
 	 *
 	 * @param object
 	 *                   the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Feature Visitor</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>EObject Document Part Template</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseFeatureVisitor(FeatureVisitor object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>EStructural Feature Document Part Template</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 *
-	 * @param object
-	 *                   the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>EStructural Feature Document Part Template</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEStructuralFeatureDocumentPartTemplate(EStructuralFeatureDocumentPartTemplate object) {
+	public T caseEObjectDocumentPartTemplate(EObjectDocumentPartTemplate object) {
 		return null;
 	}
 

@@ -13,11 +13,10 @@
  */
 package org.eclipse.papyrus.model2doc.documentstructuretemplate;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
-import org.eclipse.papyrus.model2doc.modelvisitor.ModelVisitorPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -117,14 +116,14 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int TEXT_DOCUMENT_TEMPLATE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Start Model Visitor</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Document Part Template</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_DOCUMENT_TEMPLATE__START_MODEL_VISITOR = DOCUMENT_TEMPLATE_FEATURE_COUNT + 0;
+	int TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART_TEMPLATE = DOCUMENT_TEMPLATE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Text Document Template</em>' class.
@@ -147,25 +146,15 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int TEXT_DOCUMENT_TEMPLATE_OPERATION_COUNT = DOCUMENT_TEMPLATE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.StartEObjectVisitorTemplateImpl <em>Start EObject Visitor Template</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentPartTemplate <em>Document Part Template</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.StartEObjectVisitorTemplateImpl
-	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getStartEObjectVisitorTemplate()
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentPartTemplate
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getDocumentPartTemplate()
 	 * @generated
 	 */
-	int START_EOBJECT_VISITOR_TEMPLATE = 2;
-
-	/**
-	 * The feature id for the '<em><b>Feature Visitor</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int START_EOBJECT_VISITOR_TEMPLATE__FEATURE_VISITOR = ModelVisitorPackage.START_MODEL_VISITOR__FEATURE_VISITOR;
+	int DOCUMENT_PART_TEMPLATE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Generate</b></em>' attribute.
@@ -175,7 +164,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int START_EOBJECT_VISITOR_TEMPLATE__GENERATE = ModelVisitorPackage.START_MODEL_VISITOR_FEATURE_COUNT + 0;
+	int DOCUMENT_PART_TEMPLATE__GENERATE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Generate Title</b></em>' attribute.
@@ -185,7 +174,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int START_EOBJECT_VISITOR_TEMPLATE__GENERATE_TITLE = ModelVisitorPackage.START_MODEL_VISITOR_FEATURE_COUNT + 1;
+	int DOCUMENT_PART_TEMPLATE__GENERATE_TITLE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Default Title</b></em>' attribute.
@@ -195,7 +184,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int START_EOBJECT_VISITOR_TEMPLATE__DEFAULT_TITLE = ModelVisitorPackage.START_MODEL_VISITOR_FEATURE_COUNT + 2;
+	int DOCUMENT_PART_TEMPLATE__DEFAULT_TITLE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Custom Title</b></em>' attribute.
@@ -205,58 +194,38 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int START_EOBJECT_VISITOR_TEMPLATE__CUSTOM_TITLE = ModelVisitorPackage.START_MODEL_VISITOR_FEATURE_COUNT + 3;
+	int DOCUMENT_PART_TEMPLATE__CUSTOM_TITLE = 3;
 
 	/**
-	 * The feature id for the '<em><b>Eobject</b></em>' reference.
+	 * The number of structural features of the '<em>Document Part Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int START_EOBJECT_VISITOR_TEMPLATE__EOBJECT = ModelVisitorPackage.START_MODEL_VISITOR_FEATURE_COUNT + 4;
+	int DOCUMENT_PART_TEMPLATE_FEATURE_COUNT = 4;
 
 	/**
-	 * The number of structural features of the '<em>Start EObject Visitor Template</em>' class.
+	 * The number of operations of the '<em>Document Part Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int START_EOBJECT_VISITOR_TEMPLATE_FEATURE_COUNT = ModelVisitorPackage.START_MODEL_VISITOR_FEATURE_COUNT + 5;
+	int DOCUMENT_PART_TEMPLATE_OPERATION_COUNT = 0;
 
 	/**
-	 * The number of operations of the '<em>Start EObject Visitor Template</em>' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.FeaturePartTemplate <em>Feature Part Template</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @generated
-	 * @ordered
-	 */
-	int START_EOBJECT_VISITOR_TEMPLATE_OPERATION_COUNT = ModelVisitorPackage.START_MODEL_VISITOR_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.EClassVisitorTemplateImpl <em>EClass Visitor Template</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.EClassVisitorTemplateImpl
-	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEClassVisitorTemplate()
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.FeaturePartTemplate
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getFeaturePartTemplate()
 	 * @generated
 	 */
-	int ECLASS_VISITOR_TEMPLATE = 4;
-
-	/**
-	 * The feature id for the '<em><b>Feature Visitor</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int ECLASS_VISITOR_TEMPLATE__FEATURE_VISITOR = ModelVisitorPackage.OBJECT_VISITOR__FEATURE_VISITOR;
+	int FEATURE_PART_TEMPLATE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Generate</b></em>' attribute.
@@ -266,7 +235,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECLASS_VISITOR_TEMPLATE__GENERATE = ModelVisitorPackage.OBJECT_VISITOR_FEATURE_COUNT + 0;
+	int FEATURE_PART_TEMPLATE__GENERATE = DOCUMENT_PART_TEMPLATE__GENERATE;
 
 	/**
 	 * The feature id for the '<em><b>Generate Title</b></em>' attribute.
@@ -276,7 +245,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECLASS_VISITOR_TEMPLATE__GENERATE_TITLE = ModelVisitorPackage.OBJECT_VISITOR_FEATURE_COUNT + 1;
+	int FEATURE_PART_TEMPLATE__GENERATE_TITLE = DOCUMENT_PART_TEMPLATE__GENERATE_TITLE;
 
 	/**
 	 * The feature id for the '<em><b>Default Title</b></em>' attribute.
@@ -286,7 +255,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECLASS_VISITOR_TEMPLATE__DEFAULT_TITLE = ModelVisitorPackage.OBJECT_VISITOR_FEATURE_COUNT + 2;
+	int FEATURE_PART_TEMPLATE__DEFAULT_TITLE = DOCUMENT_PART_TEMPLATE__DEFAULT_TITLE;
 
 	/**
 	 * The feature id for the '<em><b>Custom Title</b></em>' attribute.
@@ -296,58 +265,48 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECLASS_VISITOR_TEMPLATE__CUSTOM_TITLE = ModelVisitorPackage.OBJECT_VISITOR_FEATURE_COUNT + 3;
+	int FEATURE_PART_TEMPLATE__CUSTOM_TITLE = DOCUMENT_PART_TEMPLATE__CUSTOM_TITLE;
 
 	/**
-	 * The feature id for the '<em><b>Eclass</b></em>' reference.
+	 * The feature id for the '<em><b>Object Part Template</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int ECLASS_VISITOR_TEMPLATE__ECLASS = ModelVisitorPackage.OBJECT_VISITOR_FEATURE_COUNT + 4;
+	int FEATURE_PART_TEMPLATE__OBJECT_PART_TEMPLATE = DOCUMENT_PART_TEMPLATE_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>EClass Visitor Template</em>' class.
+	 * The number of structural features of the '<em>Feature Part Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int ECLASS_VISITOR_TEMPLATE_FEATURE_COUNT = ModelVisitorPackage.OBJECT_VISITOR_FEATURE_COUNT + 5;
+	int FEATURE_PART_TEMPLATE_FEATURE_COUNT = DOCUMENT_PART_TEMPLATE_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of operations of the '<em>EClass Visitor Template</em>' class.
+	 * The number of operations of the '<em>Feature Part Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int ECLASS_VISITOR_TEMPLATE_OPERATION_COUNT = ModelVisitorPackage.OBJECT_VISITOR_OPERATION_COUNT + 0;
+	int FEATURE_PART_TEMPLATE_OPERATION_COUNT = DOCUMENT_PART_TEMPLATE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.StartEClassVisitorTemplateImpl <em>Start EClass Visitor Template</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.EStructuralFeatureDocumentPartTemplateImpl <em>EStructural Feature Document Part Template</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.StartEClassVisitorTemplateImpl
-	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getStartEClassVisitorTemplate()
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.EStructuralFeatureDocumentPartTemplateImpl
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEStructuralFeatureDocumentPartTemplate()
 	 * @generated
 	 */
-	int START_ECLASS_VISITOR_TEMPLATE = 3;
-
-	/**
-	 * The feature id for the '<em><b>Feature Visitor</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int START_ECLASS_VISITOR_TEMPLATE__FEATURE_VISITOR = ECLASS_VISITOR_TEMPLATE__FEATURE_VISITOR;
+	int ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Generate</b></em>' attribute.
@@ -357,7 +316,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int START_ECLASS_VISITOR_TEMPLATE__GENERATE = ECLASS_VISITOR_TEMPLATE__GENERATE;
+	int ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__GENERATE = FEATURE_PART_TEMPLATE__GENERATE;
 
 	/**
 	 * The feature id for the '<em><b>Generate Title</b></em>' attribute.
@@ -367,7 +326,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int START_ECLASS_VISITOR_TEMPLATE__GENERATE_TITLE = ECLASS_VISITOR_TEMPLATE__GENERATE_TITLE;
+	int ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__GENERATE_TITLE = FEATURE_PART_TEMPLATE__GENERATE_TITLE;
 
 	/**
 	 * The feature id for the '<em><b>Default Title</b></em>' attribute.
@@ -377,7 +336,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int START_ECLASS_VISITOR_TEMPLATE__DEFAULT_TITLE = ECLASS_VISITOR_TEMPLATE__DEFAULT_TITLE;
+	int ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__DEFAULT_TITLE = FEATURE_PART_TEMPLATE__DEFAULT_TITLE;
 
 	/**
 	 * The feature id for the '<em><b>Custom Title</b></em>' attribute.
@@ -387,98 +346,17 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int START_ECLASS_VISITOR_TEMPLATE__CUSTOM_TITLE = ECLASS_VISITOR_TEMPLATE__CUSTOM_TITLE;
+	int ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__CUSTOM_TITLE = FEATURE_PART_TEMPLATE__CUSTOM_TITLE;
 
 	/**
-	 * The feature id for the '<em><b>Eclass</b></em>' reference.
+	 * The feature id for the '<em><b>Object Part Template</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int START_ECLASS_VISITOR_TEMPLATE__ECLASS = ECLASS_VISITOR_TEMPLATE__ECLASS;
-
-	/**
-	 * The number of structural features of the '<em>Start EClass Visitor Template</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int START_ECLASS_VISITOR_TEMPLATE_FEATURE_COUNT = ECLASS_VISITOR_TEMPLATE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Start EClass Visitor Template</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int START_ECLASS_VISITOR_TEMPLATE_OPERATION_COUNT = ECLASS_VISITOR_TEMPLATE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.EStructuralFeatureVisitorTemplateImpl <em>EStructural Feature Visitor Template</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.EStructuralFeatureVisitorTemplateImpl
-	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEStructuralFeatureVisitorTemplate()
-	 * @generated
-	 */
-	int ESTRUCTURAL_FEATURE_VISITOR_TEMPLATE = 5;
-
-	/**
-	 * The feature id for the '<em><b>Model Visitor</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int ESTRUCTURAL_FEATURE_VISITOR_TEMPLATE__MODEL_VISITOR = ModelVisitorPackage.FEATURE_VISITOR__MODEL_VISITOR;
-
-	/**
-	 * The feature id for the '<em><b>Generate</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int ESTRUCTURAL_FEATURE_VISITOR_TEMPLATE__GENERATE = ModelVisitorPackage.FEATURE_VISITOR_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Generate Title</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int ESTRUCTURAL_FEATURE_VISITOR_TEMPLATE__GENERATE_TITLE = ModelVisitorPackage.FEATURE_VISITOR_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Default Title</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int ESTRUCTURAL_FEATURE_VISITOR_TEMPLATE__DEFAULT_TITLE = ModelVisitorPackage.FEATURE_VISITOR_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Custom Title</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int ESTRUCTURAL_FEATURE_VISITOR_TEMPLATE__CUSTOM_TITLE = ModelVisitorPackage.FEATURE_VISITOR_FEATURE_COUNT + 3;
+	int ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__OBJECT_PART_TEMPLATE = FEATURE_PART_TEMPLATE__OBJECT_PART_TEMPLATE;
 
 	/**
 	 * The feature id for the '<em><b>Feature</b></em>' reference.
@@ -488,27 +366,290 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ESTRUCTURAL_FEATURE_VISITOR_TEMPLATE__FEATURE = ModelVisitorPackage.FEATURE_VISITOR_FEATURE_COUNT + 4;
+	int ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__FEATURE = FEATURE_PART_TEMPLATE_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>EStructural Feature Visitor Template</em>' class.
+	 * The number of structural features of the '<em>EStructural Feature Document Part Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int ESTRUCTURAL_FEATURE_VISITOR_TEMPLATE_FEATURE_COUNT = ModelVisitorPackage.FEATURE_VISITOR_FEATURE_COUNT + 5;
+	int ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE_FEATURE_COUNT = FEATURE_PART_TEMPLATE_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of operations of the '<em>EStructural Feature Visitor Template</em>' class.
+	 * The number of operations of the '<em>EStructural Feature Document Part Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int ESTRUCTURAL_FEATURE_VISITOR_TEMPLATE_OPERATION_COUNT = ModelVisitorPackage.FEATURE_VISITOR_OPERATION_COUNT + 0;
+	int ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE_OPERATION_COUNT = FEATURE_PART_TEMPLATE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.ObjectPartTemplate <em>Object Part Template</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.ObjectPartTemplate
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getObjectPartTemplate()
+	 * @generated
+	 */
+	int OBJECT_PART_TEMPLATE = 5;
+
+	/**
+	 * The feature id for the '<em><b>Generate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_PART_TEMPLATE__GENERATE = DOCUMENT_PART_TEMPLATE__GENERATE;
+
+	/**
+	 * The feature id for the '<em><b>Generate Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_PART_TEMPLATE__GENERATE_TITLE = DOCUMENT_PART_TEMPLATE__GENERATE_TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Default Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_PART_TEMPLATE__DEFAULT_TITLE = DOCUMENT_PART_TEMPLATE__DEFAULT_TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Custom Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_PART_TEMPLATE__CUSTOM_TITLE = DOCUMENT_PART_TEMPLATE__CUSTOM_TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Feature Part Template</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_PART_TEMPLATE__FEATURE_PART_TEMPLATE = DOCUMENT_PART_TEMPLATE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Object Part Template</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_PART_TEMPLATE_FEATURE_COUNT = DOCUMENT_PART_TEMPLATE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Object Part Template</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_PART_TEMPLATE_OPERATION_COUNT = DOCUMENT_PART_TEMPLATE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.EClassDocumentPartTemplateImpl <em>EClass Document Part Template</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.EClassDocumentPartTemplateImpl
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEClassDocumentPartTemplate()
+	 * @generated
+	 */
+	int ECLASS_DOCUMENT_PART_TEMPLATE = 6;
+
+	/**
+	 * The feature id for the '<em><b>Generate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ECLASS_DOCUMENT_PART_TEMPLATE__GENERATE = OBJECT_PART_TEMPLATE__GENERATE;
+
+	/**
+	 * The feature id for the '<em><b>Generate Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ECLASS_DOCUMENT_PART_TEMPLATE__GENERATE_TITLE = OBJECT_PART_TEMPLATE__GENERATE_TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Default Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ECLASS_DOCUMENT_PART_TEMPLATE__DEFAULT_TITLE = OBJECT_PART_TEMPLATE__DEFAULT_TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Custom Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ECLASS_DOCUMENT_PART_TEMPLATE__CUSTOM_TITLE = OBJECT_PART_TEMPLATE__CUSTOM_TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Feature Part Template</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ECLASS_DOCUMENT_PART_TEMPLATE__FEATURE_PART_TEMPLATE = OBJECT_PART_TEMPLATE__FEATURE_PART_TEMPLATE;
+
+	/**
+	 * The feature id for the '<em><b>Eclass</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ECLASS_DOCUMENT_PART_TEMPLATE__ECLASS = OBJECT_PART_TEMPLATE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>EClass Document Part Template</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ECLASS_DOCUMENT_PART_TEMPLATE_FEATURE_COUNT = OBJECT_PART_TEMPLATE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>EClass Document Part Template</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ECLASS_DOCUMENT_PART_TEMPLATE_OPERATION_COUNT = OBJECT_PART_TEMPLATE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.EObjectDocumentPartTemplateImpl <em>EObject Document Part Template</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.EObjectDocumentPartTemplateImpl
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEObjectDocumentPartTemplate()
+	 * @generated
+	 */
+	int EOBJECT_DOCUMENT_PART_TEMPLATE = 7;
+
+	/**
+	 * The feature id for the '<em><b>Generate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EOBJECT_DOCUMENT_PART_TEMPLATE__GENERATE = OBJECT_PART_TEMPLATE__GENERATE;
+
+	/**
+	 * The feature id for the '<em><b>Generate Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EOBJECT_DOCUMENT_PART_TEMPLATE__GENERATE_TITLE = OBJECT_PART_TEMPLATE__GENERATE_TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Default Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EOBJECT_DOCUMENT_PART_TEMPLATE__DEFAULT_TITLE = OBJECT_PART_TEMPLATE__DEFAULT_TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Custom Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EOBJECT_DOCUMENT_PART_TEMPLATE__CUSTOM_TITLE = OBJECT_PART_TEMPLATE__CUSTOM_TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Feature Part Template</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EOBJECT_DOCUMENT_PART_TEMPLATE__FEATURE_PART_TEMPLATE = OBJECT_PART_TEMPLATE__FEATURE_PART_TEMPLATE;
+
+	/**
+	 * The feature id for the '<em><b>Eobject</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EOBJECT_DOCUMENT_PART_TEMPLATE__EOBJECT = OBJECT_PART_TEMPLATE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>EObject Document Part Template</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EOBJECT_DOCUMENT_PART_TEMPLATE_FEATURE_COUNT = OBJECT_PART_TEMPLATE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>EObject Document Part Template</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EOBJECT_DOCUMENT_PART_TEMPLATE_OPERATION_COUNT = OBJECT_PART_TEMPLATE_OPERATION_COUNT + 0;
 
 
 	/**
@@ -534,96 +675,190 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	EClass getTextDocumentTemplate();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.TextDocumentTemplate#getStartModelVisitor <em>Start Model Visitor</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.TextDocumentTemplate#getDocumentPartTemplate <em>Document Part Template</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the meta object for the containment reference list '<em>Start Model Visitor</em>'.
-	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.TextDocumentTemplate#getStartModelVisitor()
+	 * @return the meta object for the containment reference list '<em>Document Part Template</em>'.
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.TextDocumentTemplate#getDocumentPartTemplate()
 	 * @see #getTextDocumentTemplate()
 	 * @generated
 	 */
-	EReference getTextDocumentTemplate_StartModelVisitor();
+	EReference getTextDocumentTemplate_DocumentPartTemplate();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.StartEObjectVisitorTemplate <em>Start EObject Visitor Template</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentPartTemplate <em>Document Part Template</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the meta object for class '<em>Start EObject Visitor Template</em>'.
-	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.StartEObjectVisitorTemplate
+	 * @return the meta object for class '<em>Document Part Template</em>'.
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentPartTemplate
 	 * @generated
 	 */
-	EClass getStartEObjectVisitorTemplate();
+	EClass getDocumentPartTemplate();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.StartEObjectVisitorTemplate#getEobject <em>Eobject</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentPartTemplate#isGenerate <em>Generate</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the meta object for the reference '<em>Eobject</em>'.
-	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.StartEObjectVisitorTemplate#getEobject()
-	 * @see #getStartEObjectVisitorTemplate()
+	 * @return the meta object for the attribute '<em>Generate</em>'.
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentPartTemplate#isGenerate()
+	 * @see #getDocumentPartTemplate()
 	 * @generated
 	 */
-	EReference getStartEObjectVisitorTemplate_Eobject();
+	EAttribute getDocumentPartTemplate_Generate();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.StartEClassVisitorTemplate <em>Start EClass Visitor Template</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentPartTemplate#isGenerateTitle <em>Generate Title</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the meta object for class '<em>Start EClass Visitor Template</em>'.
-	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.StartEClassVisitorTemplate
+	 * @return the meta object for the attribute '<em>Generate Title</em>'.
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentPartTemplate#isGenerateTitle()
+	 * @see #getDocumentPartTemplate()
 	 * @generated
 	 */
-	EClass getStartEClassVisitorTemplate();
+	EAttribute getDocumentPartTemplate_GenerateTitle();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.EClassVisitorTemplate <em>EClass Visitor Template</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentPartTemplate#getDefaultTitle <em>Default Title</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the meta object for class '<em>EClass Visitor Template</em>'.
-	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.EClassVisitorTemplate
+	 * @return the meta object for the attribute '<em>Default Title</em>'.
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentPartTemplate#getDefaultTitle()
+	 * @see #getDocumentPartTemplate()
 	 * @generated
 	 */
-	EClass getEClassVisitorTemplate();
+	EAttribute getDocumentPartTemplate_DefaultTitle();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.EClassVisitorTemplate#getEclass <em>Eclass</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentPartTemplate#getCustomTitle <em>Custom Title</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the meta object for the reference '<em>Eclass</em>'.
-	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.EClassVisitorTemplate#getEclass()
-	 * @see #getEClassVisitorTemplate()
+	 * @return the meta object for the attribute '<em>Custom Title</em>'.
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentPartTemplate#getCustomTitle()
+	 * @see #getDocumentPartTemplate()
 	 * @generated
 	 */
-	EReference getEClassVisitorTemplate_Eclass();
+	EAttribute getDocumentPartTemplate_CustomTitle();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.EStructuralFeatureVisitorTemplate <em>EStructural Feature Visitor Template</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.EStructuralFeatureDocumentPartTemplate <em>EStructural Feature Document Part Template</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the meta object for class '<em>EStructural Feature Visitor Template</em>'.
-	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.EStructuralFeatureVisitorTemplate
+	 * @return the meta object for class '<em>EStructural Feature Document Part Template</em>'.
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.EStructuralFeatureDocumentPartTemplate
 	 * @generated
 	 */
-	EClass getEStructuralFeatureVisitorTemplate();
+	EClass getEStructuralFeatureDocumentPartTemplate();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.EStructuralFeatureVisitorTemplate#getFeature <em>Feature</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.EStructuralFeatureDocumentPartTemplate#getFeature <em>Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the reference '<em>Feature</em>'.
-	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.EStructuralFeatureVisitorTemplate#getFeature()
-	 * @see #getEStructuralFeatureVisitorTemplate()
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.EStructuralFeatureDocumentPartTemplate#getFeature()
+	 * @see #getEStructuralFeatureDocumentPartTemplate()
 	 * @generated
 	 */
-	EReference getEStructuralFeatureVisitorTemplate_Feature();
+	EReference getEStructuralFeatureDocumentPartTemplate_Feature();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.FeaturePartTemplate <em>Feature Part Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>Feature Part Template</em>'.
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.FeaturePartTemplate
+	 * @generated
+	 */
+	EClass getFeaturePartTemplate();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.FeaturePartTemplate#getObjectPartTemplate <em>Object Part Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference list '<em>Object Part Template</em>'.
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.FeaturePartTemplate#getObjectPartTemplate()
+	 * @see #getFeaturePartTemplate()
+	 * @generated
+	 */
+	EReference getFeaturePartTemplate_ObjectPartTemplate();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.ObjectPartTemplate <em>Object Part Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>Object Part Template</em>'.
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.ObjectPartTemplate
+	 * @generated
+	 */
+	EClass getObjectPartTemplate();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.ObjectPartTemplate#getFeaturePartTemplate <em>Feature Part Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference list '<em>Feature Part Template</em>'.
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.ObjectPartTemplate#getFeaturePartTemplate()
+	 * @see #getObjectPartTemplate()
+	 * @generated
+	 */
+	EReference getObjectPartTemplate_FeaturePartTemplate();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.EClassDocumentPartTemplate <em>EClass Document Part Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EClass Document Part Template</em>'.
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.EClassDocumentPartTemplate
+	 * @generated
+	 */
+	EClass getEClassDocumentPartTemplate();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.EClassDocumentPartTemplate#getEclass <em>Eclass</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the reference '<em>Eclass</em>'.
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.EClassDocumentPartTemplate#getEclass()
+	 * @see #getEClassDocumentPartTemplate()
+	 * @generated
+	 */
+	EReference getEClassDocumentPartTemplate_Eclass();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.EObjectDocumentPartTemplate <em>EObject Document Part Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EObject Document Part Template</em>'.
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.EObjectDocumentPartTemplate
+	 * @generated
+	 */
+	EClass getEObjectDocumentPartTemplate();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.EObjectDocumentPartTemplate#getEobject <em>Eobject</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the reference '<em>Eobject</em>'.
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.EObjectDocumentPartTemplate#getEobject()
+	 * @see #getEObjectDocumentPartTemplate()
+	 * @generated
+	 */
+	EReference getEObjectDocumentPartTemplate_Eobject();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -673,75 +908,71 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 		EClass TEXT_DOCUMENT_TEMPLATE = eINSTANCE.getTextDocumentTemplate();
 
 		/**
-		 * The meta object literal for the '<em><b>Start Model Visitor</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Document Part Template</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
 		 * @generated
 		 */
-		EReference TEXT_DOCUMENT_TEMPLATE__START_MODEL_VISITOR = eINSTANCE.getTextDocumentTemplate_StartModelVisitor();
+		EReference TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART_TEMPLATE = eINSTANCE.getTextDocumentTemplate_DocumentPartTemplate();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.StartEObjectVisitorTemplateImpl <em>Start EObject Visitor Template</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentPartTemplate <em>Document Part Template</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
-		 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.StartEObjectVisitorTemplateImpl
-		 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getStartEObjectVisitorTemplate()
+		 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentPartTemplate
+		 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getDocumentPartTemplate()
 		 * @generated
 		 */
-		EClass START_EOBJECT_VISITOR_TEMPLATE = eINSTANCE.getStartEObjectVisitorTemplate();
+		EClass DOCUMENT_PART_TEMPLATE = eINSTANCE.getDocumentPartTemplate();
 
 		/**
-		 * The meta object literal for the '<em><b>Eobject</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Generate</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
 		 * @generated
 		 */
-		EReference START_EOBJECT_VISITOR_TEMPLATE__EOBJECT = eINSTANCE.getStartEObjectVisitorTemplate_Eobject();
+		EAttribute DOCUMENT_PART_TEMPLATE__GENERATE = eINSTANCE.getDocumentPartTemplate_Generate();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.StartEClassVisitorTemplateImpl <em>Start EClass Visitor Template</em>}' class.
+		 * The meta object literal for the '<em><b>Generate Title</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
-		 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.StartEClassVisitorTemplateImpl
-		 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getStartEClassVisitorTemplate()
 		 * @generated
 		 */
-		EClass START_ECLASS_VISITOR_TEMPLATE = eINSTANCE.getStartEClassVisitorTemplate();
+		EAttribute DOCUMENT_PART_TEMPLATE__GENERATE_TITLE = eINSTANCE.getDocumentPartTemplate_GenerateTitle();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.EClassVisitorTemplateImpl <em>EClass Visitor Template</em>}' class.
+		 * The meta object literal for the '<em><b>Default Title</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
-		 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.EClassVisitorTemplateImpl
-		 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEClassVisitorTemplate()
 		 * @generated
 		 */
-		EClass ECLASS_VISITOR_TEMPLATE = eINSTANCE.getEClassVisitorTemplate();
+		EAttribute DOCUMENT_PART_TEMPLATE__DEFAULT_TITLE = eINSTANCE.getDocumentPartTemplate_DefaultTitle();
 
 		/**
-		 * The meta object literal for the '<em><b>Eclass</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Custom Title</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
 		 * @generated
 		 */
-		EReference ECLASS_VISITOR_TEMPLATE__ECLASS = eINSTANCE.getEClassVisitorTemplate_Eclass();
+		EAttribute DOCUMENT_PART_TEMPLATE__CUSTOM_TITLE = eINSTANCE.getDocumentPartTemplate_CustomTitle();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.EStructuralFeatureVisitorTemplateImpl <em>EStructural Feature Visitor Template</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.EStructuralFeatureDocumentPartTemplateImpl <em>EStructural Feature Document Part Template</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
-		 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.EStructuralFeatureVisitorTemplateImpl
-		 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEStructuralFeatureVisitorTemplate()
+		 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.EStructuralFeatureDocumentPartTemplateImpl
+		 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEStructuralFeatureDocumentPartTemplate()
 		 * @generated
 		 */
-		EClass ESTRUCTURAL_FEATURE_VISITOR_TEMPLATE = eINSTANCE.getEStructuralFeatureVisitorTemplate();
+		EClass ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE = eINSTANCE.getEStructuralFeatureDocumentPartTemplate();
 
 		/**
 		 * The meta object literal for the '<em><b>Feature</b></em>' reference feature.
@@ -750,7 +981,87 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 		 *
 		 * @generated
 		 */
-		EReference ESTRUCTURAL_FEATURE_VISITOR_TEMPLATE__FEATURE = eINSTANCE.getEStructuralFeatureVisitorTemplate_Feature();
+		EReference ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__FEATURE = eINSTANCE.getEStructuralFeatureDocumentPartTemplate_Feature();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.FeaturePartTemplate <em>Feature Part Template</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.FeaturePartTemplate
+		 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getFeaturePartTemplate()
+		 * @generated
+		 */
+		EClass FEATURE_PART_TEMPLATE = eINSTANCE.getFeaturePartTemplate();
+
+		/**
+		 * The meta object literal for the '<em><b>Object Part Template</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference FEATURE_PART_TEMPLATE__OBJECT_PART_TEMPLATE = eINSTANCE.getFeaturePartTemplate_ObjectPartTemplate();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.ObjectPartTemplate <em>Object Part Template</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.ObjectPartTemplate
+		 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getObjectPartTemplate()
+		 * @generated
+		 */
+		EClass OBJECT_PART_TEMPLATE = eINSTANCE.getObjectPartTemplate();
+
+		/**
+		 * The meta object literal for the '<em><b>Feature Part Template</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference OBJECT_PART_TEMPLATE__FEATURE_PART_TEMPLATE = eINSTANCE.getObjectPartTemplate_FeaturePartTemplate();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.EClassDocumentPartTemplateImpl <em>EClass Document Part Template</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.EClassDocumentPartTemplateImpl
+		 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEClassDocumentPartTemplate()
+		 * @generated
+		 */
+		EClass ECLASS_DOCUMENT_PART_TEMPLATE = eINSTANCE.getEClassDocumentPartTemplate();
+
+		/**
+		 * The meta object literal for the '<em><b>Eclass</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference ECLASS_DOCUMENT_PART_TEMPLATE__ECLASS = eINSTANCE.getEClassDocumentPartTemplate_Eclass();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.EObjectDocumentPartTemplateImpl <em>EObject Document Part Template</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.EObjectDocumentPartTemplateImpl
+		 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEObjectDocumentPartTemplate()
+		 * @generated
+		 */
+		EClass EOBJECT_DOCUMENT_PART_TEMPLATE = eINSTANCE.getEObjectDocumentPartTemplate();
+
+		/**
+		 * The meta object literal for the '<em><b>Eobject</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EOBJECT_DOCUMENT_PART_TEMPLATE__EOBJECT = eINSTANCE.getEObjectDocumentPartTemplate_Eobject();
 
 	}
 

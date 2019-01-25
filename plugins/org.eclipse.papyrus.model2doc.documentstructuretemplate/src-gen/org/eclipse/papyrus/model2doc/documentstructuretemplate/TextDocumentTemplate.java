@@ -15,8 +15,6 @@ package org.eclipse.papyrus.model2doc.documentstructuretemplate;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.papyrus.model2doc.modelvisitor.StartModelVisitor;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Text Document Template</b></em>'.
@@ -26,7 +24,7 @@ import org.eclipse.papyrus.model2doc.modelvisitor.StartModelVisitor;
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.TextDocumentTemplate#getStartModelVisitor <em>Start Model Visitor</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.TextDocumentTemplate#getDocumentPartTemplate <em>Document Part Template</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentStructureTemplatePackage#getTextDocumentTemplate()
@@ -35,20 +33,20 @@ import org.eclipse.papyrus.model2doc.modelvisitor.StartModelVisitor;
  */
 public interface TextDocumentTemplate extends DocumentTemplate {
 	/**
-	 * Returns the value of the '<em><b>Start Model Visitor</b></em>' containment reference list.
-	 * The list contents are of type {@link org.eclipse.papyrus.model2doc.modelvisitor.StartModelVisitor}.
+	 * Returns the value of the '<em><b>Document Part Template</b></em>' containment reference list.
+	 * The list contents are of type {@link org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentPartTemplate}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Start Model Visitor</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Document Part Template</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the value of the '<em>Start Model Visitor</em>' containment reference list.
-	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentStructureTemplatePackage#getTextDocumentTemplate_StartModelVisitor()
-	 * @model containment="true" ordered="false"
+	 * @return the value of the '<em>Document Part Template</em>' containment reference list.
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentStructureTemplatePackage#getTextDocumentTemplate_DocumentPartTemplate()
+	 * @model containment="true" required="true" ordered="false"
 	 * @generated
 	 */
-	EList<StartModelVisitor> getStartModelVisitor();
+	EList<DocumentPartTemplate> getDocumentPartTemplate();
 
 } // TextDocumentTemplate

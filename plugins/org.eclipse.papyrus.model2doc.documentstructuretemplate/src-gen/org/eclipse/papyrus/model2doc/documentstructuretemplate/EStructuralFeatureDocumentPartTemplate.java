@@ -14,26 +14,24 @@
 package org.eclipse.papyrus.model2doc.documentstructuretemplate;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.papyrus.model2doc.documentparttemplate.EStructuralFeatureDocumentPartTemplate;
-import org.eclipse.papyrus.model2doc.modelvisitor.FeatureVisitor;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>EStructural Feature Visitor Template</b></em>'.
+ * A representation of the model object '<em><b>EStructural Feature Document Part Template</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.EStructuralFeatureVisitorTemplate#getFeature <em>Feature</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.EStructuralFeatureDocumentPartTemplate#getFeature <em>Feature</em>}</li>
  * </ul>
  *
- * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentStructureTemplatePackage#getEStructuralFeatureVisitorTemplate()
+ * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentStructureTemplatePackage#getEStructuralFeatureDocumentPartTemplate()
  * @model
  * @generated
  */
-public interface EStructuralFeatureVisitorTemplate extends FeatureVisitor, EStructuralFeatureDocumentPartTemplate {
+public interface EStructuralFeatureDocumentPartTemplate extends FeaturePartTemplate {
 	/**
 	 * Returns the value of the '<em><b>Feature</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -45,14 +43,14 @@ public interface EStructuralFeatureVisitorTemplate extends FeatureVisitor, EStru
 	 *
 	 * @return the value of the '<em>Feature</em>' reference.
 	 * @see #setFeature(EStructuralFeature)
-	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentStructureTemplatePackage#getEStructuralFeatureVisitorTemplate_Feature()
+	 * @see org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentStructureTemplatePackage#getEStructuralFeatureDocumentPartTemplate_Feature()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	EStructuralFeature getFeature();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.EStructuralFeatureVisitorTemplate#getFeature <em>Feature</em>}' reference.
+	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.EStructuralFeatureDocumentPartTemplate#getFeature <em>Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -63,4 +61,4 @@ public interface EStructuralFeatureVisitorTemplate extends FeatureVisitor, EStru
 	 */
 	void setFeature(EStructuralFeature value);
 
-} // EStructuralFeatureVisitorTemplate
+} // EStructuralFeatureDocumentPartTemplate

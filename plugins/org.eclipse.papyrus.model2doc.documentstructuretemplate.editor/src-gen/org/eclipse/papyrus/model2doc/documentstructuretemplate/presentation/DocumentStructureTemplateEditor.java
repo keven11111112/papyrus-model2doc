@@ -82,13 +82,14 @@ import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.graphics.Rectangle;
 
 import org.eclipse.swt.layout.FillLayout;
+
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.Tree;
-
 import org.eclipse.swt.widgets.TreeColumn;
+
 import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
@@ -121,8 +122,8 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.ui.MarkerHelper;
-
 import org.eclipse.emf.common.ui.ViewerPane;
+
 import org.eclipse.emf.common.ui.editor.ProblemEditorPart;
 
 import org.eclipse.emf.common.ui.viewer.IViewerProvider;
@@ -167,10 +168,6 @@ import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 import org.eclipse.papyrus.model2doc.documentstructuretemplate.provider.DocumentStructureTemplateItemProviderAdapterFactory;
 
 import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
-
-import org.eclipse.papyrus.model2doc.documentparttemplate.provider.DocumentPartTemplateItemProviderAdapterFactory;
-
-import org.eclipse.papyrus.model2doc.modelvisitor.provider.ModelVisitorItemProviderAdapterFactory;
 
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
@@ -741,8 +738,6 @@ public class DocumentStructureTemplateEditor
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new DocumentStructureTemplateItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new ModelVisitorItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new DocumentPartTemplateItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 

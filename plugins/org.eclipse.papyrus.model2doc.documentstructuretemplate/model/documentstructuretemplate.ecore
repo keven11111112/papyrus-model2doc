@@ -7,64 +7,49 @@
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="DocumentTemplate" abstract="true" interface="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="TextDocumentTemplate" eSuperTypes="#//DocumentTemplate">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="startModelVisitor" ordered="false"
-        upperBound="-1" eType="#//modelvisitor/StartModelVisitor" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="documentPartTemplate" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//DocumentPartTemplate" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="StartEObjectVisitorTemplate" eSuperTypes="#//modelvisitor/StartModelVisitor #//documentparttemplate/EObjectDocumentPartTemplate">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="eobject" ordered="false"
-        eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The field eobject is [0..1], in order to be get a valid model when we use this model as a registered &#xD;&#xA;prototype and not as a user visitor description.&#xD;&#xA;&#xD;&#xA;The field eobject must reference an object of the user model. In other case the model validation will return an error.&#xD;&#xA;"/>
-      </eAnnotations>
-    </eStructuralFeatures>
+  <eClassifiers xsi:type="ecore:EClass" name="DocumentPartTemplate" abstract="true"
+      interface="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="generate" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="generateTitle" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultTitle" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="customTitle" ordered="false"
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="StartEClassVisitorTemplate" eSuperTypes="#//EClassVisitorTemplate #//modelvisitor/StartModelVisitor"/>
-  <eClassifiers xsi:type="ecore:EClass" name="EClassVisitorTemplate" eSuperTypes="#//modelvisitor/ObjectVisitor #//documentparttemplate/EClassDocumentPartTemplate">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="eclass" ordered="false"
-        lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EStructuralFeatureVisitorTemplate" eSuperTypes="#//modelvisitor/FeatureVisitor #//documentparttemplate/EStructuralFeatureDocumentPartTemplate">
+  <eClassifiers xsi:type="ecore:EClass" name="EStructuralFeatureDocumentPartTemplate"
+      eSuperTypes="#//FeaturePartTemplate">
     <eStructuralFeatures xsi:type="ecore:EReference" name="feature" ordered="false"
         lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EStructuralFeature"/>
   </eClassifiers>
-  <eSubpackages name="modelvisitor" nsURI="http://www.eclipse.org/papyrus/model2doc/1.0.0/documentstructuretemplate/modelvisitor"
-      nsPrefix="modelvisitor">
-    <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
-      <details key="originalName" value="ModelVisitor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FeaturePartTemplate" abstract="true"
+      interface="true" eSuperTypes="#//DocumentPartTemplate">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="objectPartTemplate" ordered="false"
+        upperBound="-1" eType="#//ObjectPartTemplate" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ObjectPartTemplate" abstract="true"
+      interface="true" eSuperTypes="#//DocumentPartTemplate">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="featurePartTemplate" ordered="false"
+        upperBound="-1" eType="#//FeaturePartTemplate" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EClassDocumentPartTemplate" eSuperTypes="#//ObjectPartTemplate">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eclass" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EObjectDocumentPartTemplate" eSuperTypes="#//ObjectPartTemplate">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This element allow to define from which specific element of a model, the documentation process must start&#xD;&#xA;This element can only be owned by a DocumentTemplate. In other case, we will return a validation error."/>
     </eAnnotations>
-    <eClassifiers xsi:type="ecore:EClass" name="ObjectVisitor" abstract="true" interface="true">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="featureVisitor" ordered="false"
-          upperBound="-1" eType="#//modelvisitor/FeatureVisitor" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="FeatureVisitor" abstract="true" interface="true">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="modelVisitor" ordered="false"
-          upperBound="-1" eType="#//modelvisitor/ObjectVisitor" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="StartModelVisitor" abstract="true"
-        interface="true" eSuperTypes="#//modelvisitor/ObjectVisitor"/>
-  </eSubpackages>
-  <eSubpackages name="documentparttemplate" nsURI="http://www.eclipse.org/papyrus/model2doc/1.0.0/documentstructuretemplate/documentparttemplate"
-      nsPrefix="documentparttemplate">
-    <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
-      <details key="originalName" value="DocumentPartTemplate"/>
-    </eAnnotations>
-    <eClassifiers xsi:type="ecore:EClass" name="DocumentPartTemplate" abstract="true"
-        interface="true">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="generate" ordered="false"
-          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="generateTitle" ordered="false"
-          lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultTitle" ordered="false"
-          lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
-          changeable="false" volatile="true" transient="true" derived="true"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="customTitle" ordered="false"
-          eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="EClassDocumentPartTemplate" abstract="true"
-        interface="true" eSuperTypes="#//documentparttemplate/DocumentPartTemplate"/>
-    <eClassifiers xsi:type="ecore:EClass" name="EStructuralFeatureDocumentPartTemplate"
-        abstract="true" interface="true" eSuperTypes="#//documentparttemplate/DocumentPartTemplate"/>
-    <eClassifiers xsi:type="ecore:EClass" name="EObjectDocumentPartTemplate" abstract="true"
-        interface="true" eSuperTypes="#//documentparttemplate/DocumentPartTemplate"/>
-  </eSubpackages>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eobject" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The field eobject is [0..1], in order to be get a valid model when we use this model as a registered template prototype and not as a final user template&#xD;&#xA;The field eobject must reference an eobject of the user model, in other case the model validation will return an error.&#xD;&#xA;&#xD;&#xA;"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
 </ecore:EPackage>

@@ -27,10 +27,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentPartTemplate;
 import org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentStructureTemplatePackage;
 import org.eclipse.papyrus.model2doc.documentstructuretemplate.TextDocumentTemplate;
-
-import org.eclipse.papyrus.model2doc.modelvisitor.StartModelVisitor;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,22 +39,22 @@ import org.eclipse.papyrus.model2doc.modelvisitor.StartModelVisitor;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.TextDocumentTemplateImpl#getStartModelVisitor <em>Start Model Visitor</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.documentstructuretemplate.impl.TextDocumentTemplateImpl#getDocumentPartTemplate <em>Document Part Template</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container implements TextDocumentTemplate {
 	/**
-	 * The cached value of the '{@link #getStartModelVisitor() <em>Start Model Visitor</em>}' containment reference list.
+	 * The cached value of the '{@link #getDocumentPartTemplate() <em>Document Part Template</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see #getStartModelVisitor()
+	 * @see #getDocumentPartTemplate()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<StartModelVisitor> startModelVisitor;
+	protected EList<DocumentPartTemplate> documentPartTemplate;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -85,11 +84,11 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 	 * @generated
 	 */
 	@Override
-	public EList<StartModelVisitor> getStartModelVisitor() {
-		if (startModelVisitor == null) {
-			startModelVisitor = new EObjectContainmentEList<>(StartModelVisitor.class, this, DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__START_MODEL_VISITOR);
+	public EList<DocumentPartTemplate> getDocumentPartTemplate() {
+		if (documentPartTemplate == null) {
+			documentPartTemplate = new EObjectContainmentEList<>(DocumentPartTemplate.class, this, DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART_TEMPLATE);
 		}
-		return startModelVisitor;
+		return documentPartTemplate;
 	}
 
 	/**
@@ -101,8 +100,8 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__START_MODEL_VISITOR:
-			return ((InternalEList<?>) getStartModelVisitor()).basicRemove(otherEnd, msgs);
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART_TEMPLATE:
+			return ((InternalEList<?>) getDocumentPartTemplate()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -116,8 +115,8 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__START_MODEL_VISITOR:
-			return getStartModelVisitor();
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART_TEMPLATE:
+			return getDocumentPartTemplate();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -132,9 +131,9 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__START_MODEL_VISITOR:
-			getStartModelVisitor().clear();
-			getStartModelVisitor().addAll((Collection<? extends StartModelVisitor>) newValue);
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART_TEMPLATE:
+			getDocumentPartTemplate().clear();
+			getDocumentPartTemplate().addAll((Collection<? extends DocumentPartTemplate>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -149,8 +148,8 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__START_MODEL_VISITOR:
-			getStartModelVisitor().clear();
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART_TEMPLATE:
+			getDocumentPartTemplate().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -165,8 +164,8 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__START_MODEL_VISITOR:
-			return startModelVisitor != null && !startModelVisitor.isEmpty();
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART_TEMPLATE:
+			return documentPartTemplate != null && !documentPartTemplate.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -13,26 +13,24 @@
  */
 package org.eclipse.papyrus.model2doc.documentstructuretemplate.impl;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-import org.eclipse.papyrus.model2doc.documentparttemplate.DocumentPartTemplatePackage;
-import org.eclipse.papyrus.model2doc.documentparttemplate.impl.DocumentPartTemplatePackageImpl;
+
+import org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentPartTemplate;
 import org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentStructureTemplateFactory;
 import org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentStructureTemplatePackage;
 import org.eclipse.papyrus.model2doc.documentstructuretemplate.DocumentTemplate;
-import org.eclipse.papyrus.model2doc.documentstructuretemplate.EClassVisitorTemplate;
-import org.eclipse.papyrus.model2doc.documentstructuretemplate.EStructuralFeatureVisitorTemplate;
-import org.eclipse.papyrus.model2doc.documentstructuretemplate.StartEClassVisitorTemplate;
-import org.eclipse.papyrus.model2doc.documentstructuretemplate.StartEObjectVisitorTemplate;
+import org.eclipse.papyrus.model2doc.documentstructuretemplate.EClassDocumentPartTemplate;
+import org.eclipse.papyrus.model2doc.documentstructuretemplate.EObjectDocumentPartTemplate;
+import org.eclipse.papyrus.model2doc.documentstructuretemplate.EStructuralFeatureDocumentPartTemplate;
+import org.eclipse.papyrus.model2doc.documentstructuretemplate.FeaturePartTemplate;
+import org.eclipse.papyrus.model2doc.documentstructuretemplate.ObjectPartTemplate;
 import org.eclipse.papyrus.model2doc.documentstructuretemplate.TextDocumentTemplate;
-
-import org.eclipse.papyrus.model2doc.modelvisitor.ModelVisitorPackage;
-
-import org.eclipse.papyrus.model2doc.modelvisitor.impl.ModelVisitorPackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -64,7 +62,7 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 *
 	 * @generated
 	 */
-	private EClass startEObjectVisitorTemplateEClass = null;
+	private EClass documentPartTemplateEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -72,7 +70,7 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 *
 	 * @generated
 	 */
-	private EClass startEClassVisitorTemplateEClass = null;
+	private EClass eStructuralFeatureDocumentPartTemplateEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -80,7 +78,7 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 *
 	 * @generated
 	 */
-	private EClass eClassVisitorTemplateEClass = null;
+	private EClass featurePartTemplateEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -88,7 +86,23 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 *
 	 * @generated
 	 */
-	private EClass eStructuralFeatureVisitorTemplateEClass = null;
+	private EClass objectPartTemplateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eClassDocumentPartTemplateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eObjectDocumentPartTemplateEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -148,21 +162,11 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		// Initialize simple dependencies
 		EcorePackage.eINSTANCE.eClass();
 
-		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ModelVisitorPackage.eNS_URI);
-		ModelVisitorPackageImpl theModelVisitorPackage = (ModelVisitorPackageImpl) (registeredPackage instanceof ModelVisitorPackageImpl ? registeredPackage : ModelVisitorPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DocumentPartTemplatePackage.eNS_URI);
-		DocumentPartTemplatePackageImpl theDocumentPartTemplatePackage = (DocumentPartTemplatePackageImpl) (registeredPackage instanceof DocumentPartTemplatePackageImpl ? registeredPackage : DocumentPartTemplatePackage.eINSTANCE);
-
 		// Create package meta-data objects
 		theDocumentStructureTemplatePackage.createPackageContents();
-		theModelVisitorPackage.createPackageContents();
-		theDocumentPartTemplatePackage.createPackageContents();
 
 		// Initialize created meta-data
 		theDocumentStructureTemplatePackage.initializePackageContents();
-		theModelVisitorPackage.initializePackageContents();
-		theDocumentPartTemplatePackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theDocumentStructureTemplatePackage.freeze();
@@ -201,7 +205,7 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
-	public EReference getTextDocumentTemplate_StartModelVisitor() {
+	public EReference getTextDocumentTemplate_DocumentPartTemplate() {
 		return (EReference) textDocumentTemplateEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -212,8 +216,8 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
-	public EClass getStartEObjectVisitorTemplate() {
-		return startEObjectVisitorTemplateEClass;
+	public EClass getDocumentPartTemplate() {
+		return documentPartTemplateEClass;
 	}
 
 	/**
@@ -223,8 +227,8 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
-	public EReference getStartEObjectVisitorTemplate_Eobject() {
-		return (EReference) startEObjectVisitorTemplateEClass.getEStructuralFeatures().get(0);
+	public EAttribute getDocumentPartTemplate_Generate() {
+		return (EAttribute) documentPartTemplateEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -234,8 +238,8 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
-	public EClass getStartEClassVisitorTemplate() {
-		return startEClassVisitorTemplateEClass;
+	public EAttribute getDocumentPartTemplate_GenerateTitle() {
+		return (EAttribute) documentPartTemplateEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -245,8 +249,8 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
-	public EClass getEClassVisitorTemplate() {
-		return eClassVisitorTemplateEClass;
+	public EAttribute getDocumentPartTemplate_DefaultTitle() {
+		return (EAttribute) documentPartTemplateEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -256,8 +260,8 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
-	public EReference getEClassVisitorTemplate_Eclass() {
-		return (EReference) eClassVisitorTemplateEClass.getEStructuralFeatures().get(0);
+	public EAttribute getDocumentPartTemplate_CustomTitle() {
+		return (EAttribute) documentPartTemplateEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -267,8 +271,8 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
-	public EClass getEStructuralFeatureVisitorTemplate() {
-		return eStructuralFeatureVisitorTemplateEClass;
+	public EClass getEStructuralFeatureDocumentPartTemplate() {
+		return eStructuralFeatureDocumentPartTemplateEClass;
 	}
 
 	/**
@@ -278,8 +282,96 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
-	public EReference getEStructuralFeatureVisitorTemplate_Feature() {
-		return (EReference) eStructuralFeatureVisitorTemplateEClass.getEStructuralFeatures().get(0);
+	public EReference getEStructuralFeatureDocumentPartTemplate_Feature() {
+		return (EReference) eStructuralFeatureDocumentPartTemplateEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getFeaturePartTemplate() {
+		return featurePartTemplateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getFeaturePartTemplate_ObjectPartTemplate() {
+		return (EReference) featurePartTemplateEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getObjectPartTemplate() {
+		return objectPartTemplateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getObjectPartTemplate_FeaturePartTemplate() {
+		return (EReference) objectPartTemplateEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getEClassDocumentPartTemplate() {
+		return eClassDocumentPartTemplateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEClassDocumentPartTemplate_Eclass() {
+		return (EReference) eClassDocumentPartTemplateEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getEObjectDocumentPartTemplate() {
+		return eObjectDocumentPartTemplateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEObjectDocumentPartTemplate_Eobject() {
+		return (EReference) eObjectDocumentPartTemplateEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -319,18 +411,28 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		documentTemplateEClass = createEClass(DOCUMENT_TEMPLATE);
 
 		textDocumentTemplateEClass = createEClass(TEXT_DOCUMENT_TEMPLATE);
-		createEReference(textDocumentTemplateEClass, TEXT_DOCUMENT_TEMPLATE__START_MODEL_VISITOR);
+		createEReference(textDocumentTemplateEClass, TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART_TEMPLATE);
 
-		startEObjectVisitorTemplateEClass = createEClass(START_EOBJECT_VISITOR_TEMPLATE);
-		createEReference(startEObjectVisitorTemplateEClass, START_EOBJECT_VISITOR_TEMPLATE__EOBJECT);
+		documentPartTemplateEClass = createEClass(DOCUMENT_PART_TEMPLATE);
+		createEAttribute(documentPartTemplateEClass, DOCUMENT_PART_TEMPLATE__GENERATE);
+		createEAttribute(documentPartTemplateEClass, DOCUMENT_PART_TEMPLATE__GENERATE_TITLE);
+		createEAttribute(documentPartTemplateEClass, DOCUMENT_PART_TEMPLATE__DEFAULT_TITLE);
+		createEAttribute(documentPartTemplateEClass, DOCUMENT_PART_TEMPLATE__CUSTOM_TITLE);
 
-		startEClassVisitorTemplateEClass = createEClass(START_ECLASS_VISITOR_TEMPLATE);
+		eStructuralFeatureDocumentPartTemplateEClass = createEClass(ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE);
+		createEReference(eStructuralFeatureDocumentPartTemplateEClass, ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__FEATURE);
 
-		eClassVisitorTemplateEClass = createEClass(ECLASS_VISITOR_TEMPLATE);
-		createEReference(eClassVisitorTemplateEClass, ECLASS_VISITOR_TEMPLATE__ECLASS);
+		featurePartTemplateEClass = createEClass(FEATURE_PART_TEMPLATE);
+		createEReference(featurePartTemplateEClass, FEATURE_PART_TEMPLATE__OBJECT_PART_TEMPLATE);
 
-		eStructuralFeatureVisitorTemplateEClass = createEClass(ESTRUCTURAL_FEATURE_VISITOR_TEMPLATE);
-		createEReference(eStructuralFeatureVisitorTemplateEClass, ESTRUCTURAL_FEATURE_VISITOR_TEMPLATE__FEATURE);
+		objectPartTemplateEClass = createEClass(OBJECT_PART_TEMPLATE);
+		createEReference(objectPartTemplateEClass, OBJECT_PART_TEMPLATE__FEATURE_PART_TEMPLATE);
+
+		eClassDocumentPartTemplateEClass = createEClass(ECLASS_DOCUMENT_PART_TEMPLATE);
+		createEReference(eClassDocumentPartTemplateEClass, ECLASS_DOCUMENT_PART_TEMPLATE__ECLASS);
+
+		eObjectDocumentPartTemplateEClass = createEClass(EOBJECT_DOCUMENT_PART_TEMPLATE);
+		createEReference(eObjectDocumentPartTemplateEClass, EOBJECT_DOCUMENT_PART_TEMPLATE__EOBJECT);
 	}
 
 	/**
@@ -361,13 +463,7 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		ModelVisitorPackage theModelVisitorPackage = (ModelVisitorPackage) EPackage.Registry.INSTANCE.getEPackage(ModelVisitorPackage.eNS_URI);
-		DocumentPartTemplatePackage theDocumentPartTemplatePackage = (DocumentPartTemplatePackage) EPackage.Registry.INSTANCE.getEPackage(DocumentPartTemplatePackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
-
-		// Add subpackages
-		getESubpackages().add(theModelVisitorPackage);
-		getESubpackages().add(theDocumentPartTemplatePackage);
 
 		// Create type parameters
 
@@ -375,35 +471,44 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 
 		// Add supertypes to classes
 		textDocumentTemplateEClass.getESuperTypes().add(this.getDocumentTemplate());
-		startEObjectVisitorTemplateEClass.getESuperTypes().add(theModelVisitorPackage.getStartModelVisitor());
-		startEObjectVisitorTemplateEClass.getESuperTypes().add(theDocumentPartTemplatePackage.getEObjectDocumentPartTemplate());
-		startEClassVisitorTemplateEClass.getESuperTypes().add(this.getEClassVisitorTemplate());
-		startEClassVisitorTemplateEClass.getESuperTypes().add(theModelVisitorPackage.getStartModelVisitor());
-		eClassVisitorTemplateEClass.getESuperTypes().add(theModelVisitorPackage.getObjectVisitor());
-		eClassVisitorTemplateEClass.getESuperTypes().add(theDocumentPartTemplatePackage.getEClassDocumentPartTemplate());
-		eStructuralFeatureVisitorTemplateEClass.getESuperTypes().add(theModelVisitorPackage.getFeatureVisitor());
-		eStructuralFeatureVisitorTemplateEClass.getESuperTypes().add(theDocumentPartTemplatePackage.getEStructuralFeatureDocumentPartTemplate());
+		eStructuralFeatureDocumentPartTemplateEClass.getESuperTypes().add(this.getFeaturePartTemplate());
+		featurePartTemplateEClass.getESuperTypes().add(this.getDocumentPartTemplate());
+		objectPartTemplateEClass.getESuperTypes().add(this.getDocumentPartTemplate());
+		eClassDocumentPartTemplateEClass.getESuperTypes().add(this.getObjectPartTemplate());
+		eObjectDocumentPartTemplateEClass.getESuperTypes().add(this.getObjectPartTemplate());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(documentTemplateEClass, DocumentTemplate.class, "DocumentTemplate", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		initEClass(textDocumentTemplateEClass, TextDocumentTemplate.class, "TextDocumentTemplate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getTextDocumentTemplate_StartModelVisitor(), theModelVisitorPackage.getStartModelVisitor(), null, "startModelVisitor", null, 0, -1, TextDocumentTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, //$NON-NLS-1$
-				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getTextDocumentTemplate_DocumentPartTemplate(), this.getDocumentPartTemplate(), null, "documentPartTemplate", null, 1, -1, TextDocumentTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, //$NON-NLS-1$
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(startEObjectVisitorTemplateEClass, StartEObjectVisitorTemplate.class, "StartEObjectVisitorTemplate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getStartEObjectVisitorTemplate_Eobject(), theEcorePackage.getEObject(), null, "eobject", null, 0, 1, StartEObjectVisitorTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, //$NON-NLS-1$
+		initEClass(documentPartTemplateEClass, DocumentPartTemplate.class, "DocumentPartTemplate", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(getDocumentPartTemplate_Generate(), ecorePackage.getEBoolean(), "generate", null, 1, 1, DocumentPartTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getDocumentPartTemplate_GenerateTitle(), theEcorePackage.getEBoolean(), "generateTitle", null, 1, 1, DocumentPartTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getDocumentPartTemplate_DefaultTitle(), theEcorePackage.getEString(), "defaultTitle", null, 1, 1, DocumentPartTemplate.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getDocumentPartTemplate_CustomTitle(), theEcorePackage.getEString(), "customTitle", null, 0, 1, DocumentPartTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+
+		initEClass(eStructuralFeatureDocumentPartTemplateEClass, EStructuralFeatureDocumentPartTemplate.class, "EStructuralFeatureDocumentPartTemplate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getEStructuralFeatureDocumentPartTemplate_Feature(), theEcorePackage.getEStructuralFeature(), null, "feature", null, 1, 1, EStructuralFeatureDocumentPartTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, //$NON-NLS-1$
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(featurePartTemplateEClass, FeaturePartTemplate.class, "FeaturePartTemplate", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getFeaturePartTemplate_ObjectPartTemplate(), this.getObjectPartTemplate(), null, "objectPartTemplate", null, 0, -1, FeaturePartTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, //$NON-NLS-1$
 				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(startEClassVisitorTemplateEClass, StartEClassVisitorTemplate.class, "StartEClassVisitorTemplate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEClass(objectPartTemplateEClass, ObjectPartTemplate.class, "ObjectPartTemplate", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getObjectPartTemplate_FeaturePartTemplate(), this.getFeaturePartTemplate(), null, "featurePartTemplate", null, 0, -1, ObjectPartTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, //$NON-NLS-1$
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(eClassVisitorTemplateEClass, EClassVisitorTemplate.class, "EClassVisitorTemplate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getEClassVisitorTemplate_Eclass(), theEcorePackage.getEClass(), null, "eclass", null, 1, 1, EClassVisitorTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, //$NON-NLS-1$
+		initEClass(eClassDocumentPartTemplateEClass, EClassDocumentPartTemplate.class, "EClassDocumentPartTemplate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getEClassDocumentPartTemplate_Eclass(), theEcorePackage.getEClass(), null, "eclass", null, 1, 1, EClassDocumentPartTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, //$NON-NLS-1$
 				!IS_DERIVED, !IS_ORDERED);
 
-		initEClass(eStructuralFeatureVisitorTemplateEClass, EStructuralFeatureVisitorTemplate.class, "EStructuralFeatureVisitorTemplate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getEStructuralFeatureVisitorTemplate_Feature(), theEcorePackage.getEStructuralFeature(), null, "feature", null, 1, 1, EStructuralFeatureVisitorTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, //$NON-NLS-1$
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(eObjectDocumentPartTemplateEClass, EObjectDocumentPartTemplate.class, "EObjectDocumentPartTemplate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getEObjectDocumentPartTemplate_Eobject(), theEcorePackage.getEObject(), null, "eobject", null, 1, 1, EObjectDocumentPartTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, //$NON-NLS-1$
+				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

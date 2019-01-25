@@ -15,19 +15,109 @@
             genModel="model/documentstructuretemplate.genmodel"/>
    </extension>
 
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated documentstructuretemplate -->
-      <package
-            uri="http://www.eclipse.org/papyrus/model2doc/1.0.0/documentstructuretemplate/modelvisitor"
-            class="org.eclipse.papyrus.model2doc.modelvisitor.ModelVisitorPackage"
-            genModel="model/documentstructuretemplate.genmodel"/>
+   <extension
+         point="org.eclipse.emf.ecore.uri_mapping">
+      <mapping
+            source="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/"
+            target="platform:/plugin/org.eclipse.papyrus.model2doc.documentstructuretemplate/model/">
+      </mapping>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.uml.extensionpoints.UMLLibrary">
+      <library
+            description="The basic document structure template"
+            name="DocumentStructureTemplate"
+            path="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml">
+      </library>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            class="org.eclipse.papyrus.model2doc.documentstructuretemplate.resource.DocumentStructureTemplateResourceFactory"
+            type="documentstructuretemplate">
+      </parser>
+   </extension>
+ 
+   <extension point="org.eclipse.emf.validation.constraintProviders">
+      <category id="org.eclipse.papyrus.model2doc.documentstructuretemplate.constraints" mandatory="true" name="Document Structure Template (Papyrus)">
+      </category>
+      <category
+            id="org.eclipse.papyrus.model2doc.documentstructuretemplate.constraints/checkParent"
+            mandatory="true"
+            name="Check DocumentPartTemplate parent">
+      </category>
+      <category
+            id="org.eclipse.papyrus.model2doc.documentstructuretemplate.constraints/checkFeature"
+            mandatory="false"
+            name="Check Feature Consistency">
+      </category>
+      <constraintProvider cache="true">
+         <package namespaceUri="http://www.eclipse.org/papyrus/model2doc/1.0.0/documentstructuretemplate"/>
+         <constraints categories="org.eclipse.papyrus.model2doc.documentstructuretemplate.constraints/checkParent">
+         <constraint id="org.eclipse.papyrus.model2doc.documentstructuretemplate.EObjectDocumentPartTemplateConstraint"
+            lang="Java"
+            name="CheckEObjectDocumentPartTemplate"
+            class="org.eclipse.papyrus.model2doc.documentstructuretemplate.validation.CheckEObjectDocumentPartTemplateConstraint"
+            severity="ERROR" statusCode="2">
+            <description>This constraint checks the owner of a EObjectDocumentPartTemplate is a TextDocument.</description>
+            <target
+                  class="EObjectDocumentPartTemplate">
+            </target>
+            <message>
+               The parent of an EObjectDocumentPartTemplate must be a DocumentPartTemplate.
+            </message>
+         </constraint>
+         </constraints>
+      </constraintProvider>
+      <constraintProvider
+            cache="true">
+         <package
+               namespaceUri="http://www.eclipse.org/papyrus/model2doc/1.0.0/documentstructuretemplate">
+         </package>
+         <constraints
+               categories="org.eclipse.papyrus.model2doc.documentstructuretemplate.constraints/checkFeature">
+            <constraint
+                  class="org.eclipse.papyrus.model2doc.documentstructuretemplate.validation.EStructuralFeatureDocumentPartTemplate_FeatureConstraint"
+                  id="org.eclipse.papyrus.model2doc.documentstructuretemplate_FeatureConstraint "
+                  lang="Java"
+                  name="Check feature field in EStructuralFeatureDocumentPartTemplate"
+                  severity="WARNING"
+                  statusCode="1">
+               <description>
+                  This constraint checks that the referenced feature in a EStrcuturalFeatureDocumentPart Template exists in the EClass referenced by its parent. This constraint generates a warning when not. We choose to generate a warning and not an error due to subtype of the choosen EClass which can have the feature.
+               </description>
+               <target
+                     class="EStructuralFeatureDocumentPartTemplate">
+               </target>
+               <message>
+                  The choosen EClass {0} referenced in the parent EClassDocumentPartTemplate doesn&apos;t have feature &apos;{1}&apos;.
+               </message>
+            </constraint>
+         </constraints>
+      </constraintProvider>
+   </extension>
+   
+      <extension point="org.eclipse.emf.validation.constraintBindings">
+      <clientContext default="true" id="org.eclipse.papyrus.documentstructuretemplate.Context">
+         <selector class="org.eclipse.papyrus.model2doc.documentstructuretemplate.validation.ValidationClientSelector"/>
+      </clientContext>
+      <binding
+            category="org.eclipse.papyrus.model2doc.documentstructuretemplate.constraints"
+            context="org.eclipse.papyrus.documentstructuretemplate.Context">
+      </binding>
+      <binding
+            category="org.eclipse.papyrus.model2doc.documentstructuretemplate.constraints/checkParent"
+            context="org.eclipse.papyrus.documentstructuretemplate.Context">
+      </binding>
+      <binding
+            category="org.eclipse.papyrus.model2doc.documentstructuretemplate.constraints/checkFeature"
+            context="org.eclipse.papyrus.documentstructuretemplate.Context">
+      </binding>
    </extension>
 
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated documentstructuretemplate -->
-      <package
-            uri="http://www.eclipse.org/papyrus/model2doc/1.0.0/documentstructuretemplate/documentparttemplate"
-            class="org.eclipse.papyrus.model2doc.documentparttemplate.DocumentPartTemplatePackage"
-            genModel="model/documentstructuretemplate.genmodel"/>
+   <extension point="org.eclipse.emf.validation.ui.UIRegisteredClientContext">
+      <clientContext
+            id="org.eclipse.papyrus.documentstructuretemplate.Context">
+      </clientContext>
    </extension>
 </plugin>

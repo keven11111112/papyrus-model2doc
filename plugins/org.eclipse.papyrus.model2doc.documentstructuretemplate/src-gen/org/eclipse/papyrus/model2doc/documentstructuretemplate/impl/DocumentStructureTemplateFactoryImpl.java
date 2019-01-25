@@ -72,14 +72,12 @@ public class DocumentStructureTemplateFactoryImpl extends EFactoryImpl implement
 		switch (eClass.getClassifierID()) {
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE:
 			return createTextDocumentTemplate();
-		case DocumentStructureTemplatePackage.START_EOBJECT_VISITOR_TEMPLATE:
-			return createStartEObjectVisitorTemplate();
-		case DocumentStructureTemplatePackage.START_ECLASS_VISITOR_TEMPLATE:
-			return createStartEClassVisitorTemplate();
-		case DocumentStructureTemplatePackage.ECLASS_VISITOR_TEMPLATE:
-			return createEClassVisitorTemplate();
-		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_VISITOR_TEMPLATE:
-			return createEStructuralFeatureVisitorTemplate();
+		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE:
+			return createEStructuralFeatureDocumentPartTemplate();
+		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE:
+			return createEClassDocumentPartTemplate();
+		case DocumentStructureTemplatePackage.EOBJECT_DOCUMENT_PART_TEMPLATE:
+			return createEObjectDocumentPartTemplate();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -104,9 +102,9 @@ public class DocumentStructureTemplateFactoryImpl extends EFactoryImpl implement
 	 * @generated
 	 */
 	@Override
-	public StartEObjectVisitorTemplate createStartEObjectVisitorTemplate() {
-		StartEObjectVisitorTemplateImpl startEObjectVisitorTemplate = new StartEObjectVisitorTemplateImpl();
-		return startEObjectVisitorTemplate;
+	public EStructuralFeatureDocumentPartTemplate createEStructuralFeatureDocumentPartTemplate() {
+		EStructuralFeatureDocumentPartTemplateImpl eStructuralFeatureDocumentPartTemplate = new EStructuralFeatureDocumentPartTemplateImpl();
+		return eStructuralFeatureDocumentPartTemplate;
 	}
 
 	/**
@@ -116,9 +114,9 @@ public class DocumentStructureTemplateFactoryImpl extends EFactoryImpl implement
 	 * @generated
 	 */
 	@Override
-	public StartEClassVisitorTemplate createStartEClassVisitorTemplate() {
-		StartEClassVisitorTemplateImpl startEClassVisitorTemplate = new StartEClassVisitorTemplateImpl();
-		return startEClassVisitorTemplate;
+	public EClassDocumentPartTemplate createEClassDocumentPartTemplate() {
+		EClassDocumentPartTemplateImpl eClassDocumentPartTemplate = new EClassDocumentPartTemplateImpl();
+		return eClassDocumentPartTemplate;
 	}
 
 	/**
@@ -128,21 +126,9 @@ public class DocumentStructureTemplateFactoryImpl extends EFactoryImpl implement
 	 * @generated
 	 */
 	@Override
-	public EClassVisitorTemplate createEClassVisitorTemplate() {
-		EClassVisitorTemplateImpl eClassVisitorTemplate = new EClassVisitorTemplateImpl();
-		return eClassVisitorTemplate;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EStructuralFeatureVisitorTemplate createEStructuralFeatureVisitorTemplate() {
-		EStructuralFeatureVisitorTemplateImpl eStructuralFeatureVisitorTemplate = new EStructuralFeatureVisitorTemplateImpl();
-		return eStructuralFeatureVisitorTemplate;
+	public EObjectDocumentPartTemplate createEObjectDocumentPartTemplate() {
+		EObjectDocumentPartTemplateImpl eObjectDocumentPartTemplate = new EObjectDocumentPartTemplateImpl();
+		return eObjectDocumentPartTemplate;
 	}
 
 	/**
