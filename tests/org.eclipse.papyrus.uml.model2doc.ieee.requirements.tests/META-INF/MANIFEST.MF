@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Papyrus model2Doc IEEE Requirements Tests
+Bundle-SymbolicName: org.eclipse.papyrus.uml.model2doc.ieee.requirements.tests
+Bundle-Version: 0.7.0.qualifier
+Bundle-Vendor: Eclipse Modeling Project
+Automatic-Module-Name: org.eclipse.papyrus.uml.model2doc.ieee.requirements.tests
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
