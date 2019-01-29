@@ -1,0 +1,15 @@
+UML Transcriber behavior:
+#main title: the name of the root package
+##images of the diagram owned by the root package
+##a paragraph for each owned class is created with the name of the class
+###a list of all properties owned by the class is generated
+##A table with all subpackages and their classes is created
+##A title for each subpackage
+###an image of all diagrams owned by the subpackage is inserted
+#### a title for each subpackage is generated with the name of the package
+#####images of the diagram owned by the root package
+#####a paragraph for each owned class is created with the name of the class
+#####a list of all properties owned by the class is generated
+###a paragraph for each owned class is created with the name of the class
+####a list of all properties owned by the class is generated
+
