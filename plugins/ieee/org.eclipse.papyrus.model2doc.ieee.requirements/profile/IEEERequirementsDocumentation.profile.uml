@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
+  <uml:Profile xmi:id="_eyFzYDmKEeivd-iqhJ4b3A" name="IEEERequirementsDocumentation" metaclassReference="_jsR1cDmKEeivd-iqhJ4b3A">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DycVETmVEeivd-iqhJ4b3A" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <contents xmi:type="ecore:EPackage" xmi:id="_SFL2YDmfEeivd-iqhJ4b3A" name="documentation" nsURI="http://www.eclipse.org/papyrus/docgenconfig/IEEERequirementsDocumentation" nsPrefix="IEEERequirementsDocumentation">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SFL2YTmfEeivd-iqhJ4b3A" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SFL2YjmfEeivd-iqhJ4b3A" key="originalName" value="IEEERequirementsDocumentation"/>
+        </eAnnotations>
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SFL2iTmfEeivd-iqhJ4b3A" source="PapyrusVersion">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SFL2ijmfEeivd-iqhJ4b3A" key="Version" value="0.0.5"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SFL2izmfEeivd-iqhJ4b3A" key="Comment" value=""/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SFL2jDmfEeivd-iqhJ4b3A" key="Copyright" value=""/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SFL2jTmfEeivd-iqhJ4b3A" key="Date" value="2018-04-06"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SFL2jjmfEeivd-iqhJ4b3A" key="Author" value=""/>
+        </eAnnotations>
+        <eClassifiers xmi:type="ecore:EClass" xmi:id="_SFL2YzmfEeivd-iqhJ4b3A" name="IEEERequirements" eSuperTypes="_SFL2aDmfEeivd-iqhJ4b3A">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SFL2ZDmfEeivd-iqhJ4b3A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_gryf8DmKEeivd-iqhJ4b3A"/>
+          <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_SFL2ZTmfEeivd-iqhJ4b3A" name="category" ordered="false" lowerBound="1" eType="_SFL2cDmfEeivd-iqhJ4b3A"/>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EClass" xmi:id="_SFL2aDmfEeivd-iqhJ4b3A" name="AbstractRequirements" abstract="true">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SFL2aTmfEeivd-iqhJ4b3A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_oSl5QDmKEeivd-iqhJ4b3A"/>
+          <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_SFL2ajmfEeivd-iqhJ4b3A" name="base_Package" ordered="false" lowerBound="1">
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+          </eStructuralFeatures>
+          <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_SFL2bDmfEeivd-iqhJ4b3A" name="reqCategory" ordered="false" eType="_SFL2bjmfEeivd-iqhJ4b3A"/>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EEnum" xmi:id="_SFL2bjmfEeivd-iqhJ4b3A" name="AbstractRequirementCategory">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SFL2bzmfEeivd-iqhJ4b3A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_NrgzUDmSEeivd-iqhJ4b3A"/>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EEnum" xmi:id="_SFL2cDmfEeivd-iqhJ4b3A" name="IEEERequirementCategory">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SFL2cTmfEeivd-iqhJ4b3A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_DaDucDmOEeivd-iqhJ4b3A"/>
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SFL2cjmfEeivd-iqhJ4b3A" source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SFL2czmfEeivd-iqhJ4b3A" key="baseType" value="AbstractRequirementCategory"/>
+          </eAnnotations>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_SFL2dDmfEeivd-iqhJ4b3A" name="SPECIFIC_REQUIREMENTS"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_SFL2dTmfEeivd-iqhJ4b3A" name="EXTERNAL_INTERFACE_REQUIREMENTS" value="1"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_SFL2djmfEeivd-iqhJ4b3A" name="USER_INTERFACES" value="2"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_SFL2dzmfEeivd-iqhJ4b3A" name="HARDWARE_INTERFACES" value="3"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_SFL2eDmfEeivd-iqhJ4b3A" name="SOFTWARE_INTERFACES" value="4"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_SFL2eTmfEeivd-iqhJ4b3A" name="COMMUNICATION_INTERFACES" value="5"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_SFL2ejmfEeivd-iqhJ4b3A" name="FUNCTIONAL_REQUIREMENTS" value="6"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_SFL2ezmfEeivd-iqhJ4b3A" name="PERFORMANCE_REQUIREMENTS" value="7"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_SFL2fDmfEeivd-iqhJ4b3A" name="DESIGN_CONSTRAINTS" value="8"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_SFL2fTmfEeivd-iqhJ4b3A" name="SOFTWARE_SYSTEM_ATTRIBUTES" value="9"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_SFL2fjmfEeivd-iqhJ4b3A" name="OTHER_REQUIREMENTS" value="10"/>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EClass" xmi:id="_SFL2fzmfEeivd-iqhJ4b3A" name="IEEEFunctionalRequirements" eSuperTypes="_SFL2YzmfEeivd-iqhJ4b3A">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SFL2gDmfEeivd-iqhJ4b3A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_Z4KTMDmOEeivd-iqhJ4b3A"/>
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SFL2gTmfEeivd-iqhJ4b3A" source="duplicates">
+            <contents xmi:type="ecore:EAttribute" xmi:id="_SFL2gjmfEeivd-iqhJ4b3A" name="category" ordered="false" lowerBound="1" eType="_SFL2cDmfEeivd-iqhJ4b3A" changeable="false" defaultValueLiteral="FUNCTIONAL_REQUIREMENTS">
+              <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SFL2gzmfEeivd-iqhJ4b3A" source="redefines" references="_SFL2ZTmfEeivd-iqhJ4b3A"/>
+            </contents>
+          </eAnnotations>
+          <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_SFL2hTmfEeivd-iqhJ4b3A" name="mode" ordered="false" lowerBound="1" defaultValueLiteral="1">
+            <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//Integer"/>
+          </eStructuralFeatures>
+        </eClassifiers>
+      </contents>
+      <contents xmi:type="ecore:EPackage" xmi:id="_GYV0wDmfEeivd-iqhJ4b3A" name="documentation" nsURI="http://www.eclipse.org/papyrus/docgenconfig/IEEERequirementsDocumentation" nsPrefix="IEEERequirementsDocumentation">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GYV0wTmfEeivd-iqhJ4b3A" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GYV0wjmfEeivd-iqhJ4b3A" key="originalName" value="IEEERequirementsDocumentation"/>
+        </eAnnotations>
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GYV06TmfEeivd-iqhJ4b3A" source="PapyrusVersion">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GYV06jmfEeivd-iqhJ4b3A" key="Version" value="0.0.4"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GYV06zmfEeivd-iqhJ4b3A" key="Comment" value=""/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GYV07DmfEeivd-iqhJ4b3A" key="Copyright" value=""/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GYV07TmfEeivd-iqhJ4b3A" key="Date" value="2018-04-06"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GYV07jmfEeivd-iqhJ4b3A" key="Author" value=""/>
+        </eAnnotations>
+        <eClassifiers xmi:type="ecore:EClass" xmi:id="_GYV0wzmfEeivd-iqhJ4b3A" name="IEEERequirements" eSuperTypes="_GYV0yDmfEeivd-iqhJ4b3A">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GYV0xDmfEeivd-iqhJ4b3A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_gryf8DmKEeivd-iqhJ4b3A"/>
+          <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_GYV0xTmfEeivd-iqhJ4b3A" name="category" ordered="false" lowerBound="1" eType="_GYV00DmfEeivd-iqhJ4b3A"/>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EClass" xmi:id="_GYV0yDmfEeivd-iqhJ4b3A" name="AbstractRequirements" abstract="true">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GYV0yTmfEeivd-iqhJ4b3A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_oSl5QDmKEeivd-iqhJ4b3A"/>
+          <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_GYV0yjmfEeivd-iqhJ4b3A" name="base_Package" ordered="false" lowerBound="1">
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+          </eStructuralFeatures>
+          <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_GYV0zDmfEeivd-iqhJ4b3A" name="reqCategory" ordered="false" eType="_GYV0zjmfEeivd-iqhJ4b3A"/>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EEnum" xmi:id="_GYV0zjmfEeivd-iqhJ4b3A" name="AbstractRequirementCategory">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GYV0zzmfEeivd-iqhJ4b3A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_NrgzUDmSEeivd-iqhJ4b3A"/>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EEnum" xmi:id="_GYV00DmfEeivd-iqhJ4b3A" name="IEEERequirementCategory">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GYV00TmfEeivd-iqhJ4b3A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_DaDucDmOEeivd-iqhJ4b3A"/>
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GYV00jmfEeivd-iqhJ4b3A" source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GYV00zmfEeivd-iqhJ4b3A" key="baseType" value="AbstractRequirementCategory"/>
+          </eAnnotations>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_GYV01DmfEeivd-iqhJ4b3A" name="SPECIFIC_REQUIREMENTS"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_GYV01TmfEeivd-iqhJ4b3A" name="EXTERNAL_INTERFACE_REQUIREMENTS" value="1"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_GYV01jmfEeivd-iqhJ4b3A" name="USER_INTERFACES" value="2"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_GYV01zmfEeivd-iqhJ4b3A" name="HARDWARE_INTERFACES" value="3"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_GYV02DmfEeivd-iqhJ4b3A" name="SOFTWARE_INTERFACES" value="4"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_GYV02TmfEeivd-iqhJ4b3A" name="COMMUNICATION_INTERFACES" value="5"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_GYV02jmfEeivd-iqhJ4b3A" name="FUNCTIONAL_REQUIREMENTS" value="6"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_GYV02zmfEeivd-iqhJ4b3A" name="PERFORMANCE_REQUIREMENTS" value="7"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_GYV03DmfEeivd-iqhJ4b3A" name="DESIGN_CONSTRAINTS" value="8"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_GYV03TmfEeivd-iqhJ4b3A" name="SOFTWARE_SYSTEM_ATTRIBUTES" value="9"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_GYV03jmfEeivd-iqhJ4b3A" name="OTHER_REQUIREMENTS" value="10"/>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EClass" xmi:id="_GYV03zmfEeivd-iqhJ4b3A" name="IEEEFunctionalRequirements" eSuperTypes="_GYV0wzmfEeivd-iqhJ4b3A">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GYV04DmfEeivd-iqhJ4b3A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_Z4KTMDmOEeivd-iqhJ4b3A"/>
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GYV04TmfEeivd-iqhJ4b3A" source="duplicates">
+            <contents xmi:type="ecore:EAttribute" xmi:id="_GYV04jmfEeivd-iqhJ4b3A" name="category" ordered="false" lowerBound="1" eType="_GYV00DmfEeivd-iqhJ4b3A" changeable="false" defaultValueLiteral="FUNCTIONAL_REQUIREMENTS">
+              <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GYV04zmfEeivd-iqhJ4b3A" source="redefines" references="_GYV0xTmfEeivd-iqhJ4b3A"/>
+            </contents>
+          </eAnnotations>
+          <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_GYV05TmfEeivd-iqhJ4b3A" name="mode" ordered="false" lowerBound="1" defaultValueLiteral="1">
+            <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//Integer"/>
+          </eStructuralFeatures>
+        </eClassifiers>
+      </contents>
+      <contents xmi:type="ecore:EPackage" xmi:id="_4ip3UDmeEeivd-iqhJ4b3A" name="documentation" nsURI="http://www.eclipse.org/papyrus/docgenconfig/IEEERequirementsDocumentation" nsPrefix="IEEERequirementsDocumentation">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_4ip3UTmeEeivd-iqhJ4b3A" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_4ip3UjmeEeivd-iqhJ4b3A" key="originalName" value="IEEERequirementsDocumentation"/>
+        </eAnnotations>
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_4ip3eTmeEeivd-iqhJ4b3A" source="PapyrusVersion">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_4ip3ejmeEeivd-iqhJ4b3A" key="Version" value="0.0.3"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_4ip3ezmeEeivd-iqhJ4b3A" key="Comment" value=""/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_4ip3fDmeEeivd-iqhJ4b3A" key="Copyright" value=""/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_4ip3fTmeEeivd-iqhJ4b3A" key="Date" value="2018-04-06"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_4ip3fjmeEeivd-iqhJ4b3A" key="Author" value=""/>
+        </eAnnotations>
+        <eClassifiers xmi:type="ecore:EClass" xmi:id="_4ip3UzmeEeivd-iqhJ4b3A" name="IEEERequirements" eSuperTypes="_4ip3WDmeEeivd-iqhJ4b3A">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_4ip3VDmeEeivd-iqhJ4b3A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_gryf8DmKEeivd-iqhJ4b3A"/>
+          <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_4ip3VTmeEeivd-iqhJ4b3A" name="category" ordered="false" lowerBound="1" eType="_4ip3YDmeEeivd-iqhJ4b3A"/>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EClass" xmi:id="_4ip3WDmeEeivd-iqhJ4b3A" name="AbstractRequirements" abstract="true">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_4ip3WTmeEeivd-iqhJ4b3A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_oSl5QDmKEeivd-iqhJ4b3A"/>
+          <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_4ip3WjmeEeivd-iqhJ4b3A" name="base_Package" ordered="false" lowerBound="1">
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+          </eStructuralFeatures>
+          <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_4ip3XDmeEeivd-iqhJ4b3A" name="reqCategory" ordered="false" eType="_4ip3XjmeEeivd-iqhJ4b3A"/>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EEnum" xmi:id="_4ip3XjmeEeivd-iqhJ4b3A" name="AbstractRequirementCategory">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_4ip3XzmeEeivd-iqhJ4b3A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_NrgzUDmSEeivd-iqhJ4b3A"/>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EEnum" xmi:id="_4ip3YDmeEeivd-iqhJ4b3A" name="IEEERequirementCategory">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_4ip3YTmeEeivd-iqhJ4b3A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_DaDucDmOEeivd-iqhJ4b3A"/>
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_4ip3YjmeEeivd-iqhJ4b3A" source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_4ip3YzmeEeivd-iqhJ4b3A" key="baseType" value="AbstractRequirementCategory"/>
+          </eAnnotations>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_4ip3ZDmeEeivd-iqhJ4b3A" name="SPECIFIC_REQUIREMENTS"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_4ip3ZTmeEeivd-iqhJ4b3A" name="EXTERNAL_INTERFACE_REQUIREMENTS" value="1"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_4ip3ZjmeEeivd-iqhJ4b3A" name="USER_INTERFACES" value="2"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_4ip3ZzmeEeivd-iqhJ4b3A" name="HARDWARE_INTERFACES" value="3"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_4ip3aDmeEeivd-iqhJ4b3A" name="SOFTWARE_INTERFACES" value="4"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_4ip3aTmeEeivd-iqhJ4b3A" name="COMMUNICATION_INTERFACES" value="5"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_4ip3ajmeEeivd-iqhJ4b3A" name="FUNCTIONAL_REQUIREMENTS" value="6"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_4ip3azmeEeivd-iqhJ4b3A" name="PERFORMANCE_REQUIREMENTS" value="7"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_4ip3bDmeEeivd-iqhJ4b3A" name="DESIGN_CONSTRAINTS" value="8"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_4ip3bTmeEeivd-iqhJ4b3A" name="SOFTWARE_SYSTEM_ATTRIBUTES" value="9"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_4ip3bjmeEeivd-iqhJ4b3A" name="OTHER_REQUIREMENTS" value="10"/>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EClass" xmi:id="_4ip3bzmeEeivd-iqhJ4b3A" name="IEEEFunctionalRequirements" eSuperTypes="_4ip3UzmeEeivd-iqhJ4b3A">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_4ip3cDmeEeivd-iqhJ4b3A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_Z4KTMDmOEeivd-iqhJ4b3A"/>
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_4ip3cTmeEeivd-iqhJ4b3A" source="duplicates">
+            <contents xmi:type="ecore:EAttribute" xmi:id="_4ip3cjmeEeivd-iqhJ4b3A" name="category" ordered="false" lowerBound="1" eType="_4ip3YDmeEeivd-iqhJ4b3A" changeable="false" defaultValueLiteral="FUNCTIONAL_REQUIREMENTS">
+              <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_4ip3czmeEeivd-iqhJ4b3A" source="redefines" references="_4ip3VTmeEeivd-iqhJ4b3A"/>
+            </contents>
+          </eAnnotations>
+          <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_4ip3dTmeEeivd-iqhJ4b3A" name="mode" ordered="false" lowerBound="1" defaultValueLiteral="1">
+            <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//Integer"/>
+          </eStructuralFeatures>
+        </eClassifiers>
+      </contents>
+      <contents xmi:type="ecore:EPackage" xmi:id="_pKJcQDmeEeivd-iqhJ4b3A" name="IEEERequirementsDocumentation" nsURI="http://www.eclipse.org/papyrus/docgenconfig/IEEERequirementsDocumentation" nsPrefix="IEEERequirementsDocumentation">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_pKJcZzmeEeivd-iqhJ4b3A" source="PapyrusVersion">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_pKJcaDmeEeivd-iqhJ4b3A" key="Version" value="0.0.2"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_pKJcaTmeEeivd-iqhJ4b3A" key="Comment" value=""/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_pKJcajmeEeivd-iqhJ4b3A" key="Copyright" value=""/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_pKJcazmeEeivd-iqhJ4b3A" key="Date" value="2018-04-06"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_pKJcbDmeEeivd-iqhJ4b3A" key="Author" value=""/>
+        </eAnnotations>
+        <eClassifiers xmi:type="ecore:EClass" xmi:id="_pKJcQTmeEeivd-iqhJ4b3A" name="IEEERequirements" eSuperTypes="_pKJcRjmeEeivd-iqhJ4b3A">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_pKJcQjmeEeivd-iqhJ4b3A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_gryf8DmKEeivd-iqhJ4b3A"/>
+          <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_pKJcQzmeEeivd-iqhJ4b3A" name="category" ordered="false" lowerBound="1" eType="_pKJcTjmeEeivd-iqhJ4b3A"/>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EClass" xmi:id="_pKJcRjmeEeivd-iqhJ4b3A" name="AbstractRequirements" abstract="true">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_pKJcRzmeEeivd-iqhJ4b3A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_oSl5QDmKEeivd-iqhJ4b3A"/>
+          <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_pKJcSDmeEeivd-iqhJ4b3A" name="base_Package" ordered="false" lowerBound="1">
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+          </eStructuralFeatures>
+          <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_pKJcSjmeEeivd-iqhJ4b3A" name="reqCategory" ordered="false" eType="_pKJcTDmeEeivd-iqhJ4b3A"/>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EEnum" xmi:id="_pKJcTDmeEeivd-iqhJ4b3A" name="AbstractRequirementCategory">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_pKJcTTmeEeivd-iqhJ4b3A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_NrgzUDmSEeivd-iqhJ4b3A"/>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EEnum" xmi:id="_pKJcTjmeEeivd-iqhJ4b3A" name="IEEERequirementCategory">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_pKJcTzmeEeivd-iqhJ4b3A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_DaDucDmOEeivd-iqhJ4b3A"/>
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_pKJcUDmeEeivd-iqhJ4b3A" source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_pKJcUTmeEeivd-iqhJ4b3A" key="baseType" value="AbstractRequirementCategory"/>
+          </eAnnotations>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_pKJcUjmeEeivd-iqhJ4b3A" name="SPECIFIC_REQUIREMENTS"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_pKJcUzmeEeivd-iqhJ4b3A" name="EXTERNAL_INTERFACE_REQUIREMENTS" value="1"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_pKJcVDmeEeivd-iqhJ4b3A" name="USER_INTERFACES" value="2"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_pKJcVTmeEeivd-iqhJ4b3A" name="HARDWARE_INTERFACES" value="3"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_pKJcVjmeEeivd-iqhJ4b3A" name="SOFTWARE_INTERFACES" value="4"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_pKJcVzmeEeivd-iqhJ4b3A" name="COMMUNICATION_INTERFACES" value="5"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_pKJcWDmeEeivd-iqhJ4b3A" name="FUNCTIONAL_REQUIREMENTS" value="6"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_pKJcWTmeEeivd-iqhJ4b3A" name="PERFORMANCE_REQUIREMENTS" value="7"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_pKJcWjmeEeivd-iqhJ4b3A" name="DESIGN_CONSTRAINTS" value="8"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_pKJcWzmeEeivd-iqhJ4b3A" name="SOFTWARE_SYSTEM_ATTRIBUTES" value="9"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_pKJcXDmeEeivd-iqhJ4b3A" name="OTHER_REQUIREMENTS" value="10"/>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EClass" xmi:id="_pKJcXTmeEeivd-iqhJ4b3A" name="IEEEFunctionalRequirements" eSuperTypes="_pKJcQTmeEeivd-iqhJ4b3A">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_pKJcXjmeEeivd-iqhJ4b3A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_Z4KTMDmOEeivd-iqhJ4b3A"/>
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_pKJcXzmeEeivd-iqhJ4b3A" source="duplicates">
+            <contents xmi:type="ecore:EAttribute" xmi:id="_pKJcYDmeEeivd-iqhJ4b3A" name="category" ordered="false" lowerBound="1" eType="_pKJcTjmeEeivd-iqhJ4b3A" changeable="false" defaultValueLiteral="FUNCTIONAL_REQUIREMENTS">
+              <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_pKJcYTmeEeivd-iqhJ4b3A" source="redefines" references="_pKJcQzmeEeivd-iqhJ4b3A"/>
+            </contents>
+          </eAnnotations>
+          <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_pKJcYzmeEeivd-iqhJ4b3A" name="mode" ordered="false" lowerBound="1" defaultValueLiteral="1">
+            <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//Integer"/>
+          </eStructuralFeatures>
+        </eClassifiers>
+      </contents>
+      <contents xmi:type="ecore:EPackage" xmi:id="_M-YRcDmbEeivd-iqhJ4b3A" name="IEEERequirementsDocumentation" nsURI="http://www.eclipse.org/papyrus/docgenconfig/IEEERequirementsDocumentation" nsPrefix="IEEERequirementsDocumentation">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_M-ci4DmbEeivd-iqhJ4b3A" source="PapyrusVersion">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_M-ci4TmbEeivd-iqhJ4b3A" key="Version" value="0.0.1"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_M-ci4jmbEeivd-iqhJ4b3A" key="Comment" value=""/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_M-ci4zmbEeivd-iqhJ4b3A" key="Copyright" value=""/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_M-ci5DmbEeivd-iqhJ4b3A" key="Date" value="2018-04-06"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_M-ci5TmbEeivd-iqhJ4b3A" key="Author" value=""/>
+        </eAnnotations>
+        <eClassifiers xmi:type="ecore:EClass" xmi:id="_M-YRcTmbEeivd-iqhJ4b3A" name="IEEERequirements" eSuperTypes="_M-YRdjmbEeivd-iqhJ4b3A">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_M-YRcjmbEeivd-iqhJ4b3A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_gryf8DmKEeivd-iqhJ4b3A"/>
+          <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_M-YRczmbEeivd-iqhJ4b3A" name="category" ordered="false" lowerBound="1" eType="_M-YRfjmbEeivd-iqhJ4b3A"/>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EClass" xmi:id="_M-YRdjmbEeivd-iqhJ4b3A" name="AbstractRequirements" abstract="true">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_M-YRdzmbEeivd-iqhJ4b3A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_oSl5QDmKEeivd-iqhJ4b3A"/>
+          <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_M-YReDmbEeivd-iqhJ4b3A" name="base_Package" ordered="false" lowerBound="1">
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+          </eStructuralFeatures>
+          <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_M-YRejmbEeivd-iqhJ4b3A" name="reqCategory" ordered="false" eType="_M-YRfDmbEeivd-iqhJ4b3A"/>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EEnum" xmi:id="_M-YRfDmbEeivd-iqhJ4b3A" name="AbstractRequirementCategory">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_M-YRfTmbEeivd-iqhJ4b3A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_NrgzUDmSEeivd-iqhJ4b3A"/>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EEnum" xmi:id="_M-YRfjmbEeivd-iqhJ4b3A" name="IEEERequirementCategory">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_M-YRfzmbEeivd-iqhJ4b3A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_DaDucDmOEeivd-iqhJ4b3A"/>
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_M-YRgDmbEeivd-iqhJ4b3A" source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_M-YRgTmbEeivd-iqhJ4b3A" key="baseType" value="AbstractRequirementCategory"/>
+          </eAnnotations>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_M-YRgjmbEeivd-iqhJ4b3A" name="SPECIFIC_REQUIREMENTS"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_M-YRgzmbEeivd-iqhJ4b3A" name="EXTERNAL_INTERFACE_REQUIREMENTS" value="1"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_M-YRhDmbEeivd-iqhJ4b3A" name="USER_INTERFACES" value="2"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_M-YRhTmbEeivd-iqhJ4b3A" name="HARDWARE_INTERFACES" value="3"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_M-YRhjmbEeivd-iqhJ4b3A" name="SOFTWARE_INTERFACES" value="4"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_M-YRhzmbEeivd-iqhJ4b3A" name="COMMUNICATION_INTERFACES" value="5"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_M-YRiDmbEeivd-iqhJ4b3A" name="FUNCTIONAL_REQUIREMENTS" value="6"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_M-YRiTmbEeivd-iqhJ4b3A" name="PERFORMANCE_REQUIREMENTS" value="7"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_M-YRijmbEeivd-iqhJ4b3A" name="DESIGN_CONSTRAINTS" value="8"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_M-YRizmbEeivd-iqhJ4b3A" name="SOFTWARE_SYSTEM_ATTRIBUTES" value="9"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_M-YRjDmbEeivd-iqhJ4b3A" name="OTHER_REQUIREMENTS" value="10"/>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EClass" xmi:id="_M-YRjTmbEeivd-iqhJ4b3A" name="IEEEFunctionalRequirements" eSuperTypes="_M-YRcTmbEeivd-iqhJ4b3A">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_M-YRjjmbEeivd-iqhJ4b3A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_Z4KTMDmOEeivd-iqhJ4b3A"/>
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_M-YRjzmbEeivd-iqhJ4b3A" source="duplicates">
+            <contents xmi:type="ecore:EAttribute" xmi:id="_M-YRkDmbEeivd-iqhJ4b3A" name="category" ordered="false" lowerBound="1" eType="_M-YRfjmbEeivd-iqhJ4b3A" changeable="false" defaultValueLiteral="FUNCTIONAL_REQUIREMENTS">
+              <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_M-YRkTmbEeivd-iqhJ4b3A" source="redefines" references="_M-YRczmbEeivd-iqhJ4b3A"/>
+            </contents>
+          </eAnnotations>
+          <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_M-YRkzmbEeivd-iqhJ4b3A" name="mode" ordered="false" lowerBound="1" defaultValueLiteral="1">
+            <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//Integer"/>
+          </eStructuralFeatures>
+        </eClassifiers>
+      </contents>
+    </eAnnotations>
+    <ownedComment xmi:type="uml:Comment" xmi:id="_3UNn4DmWEeivd-iqhJ4b3A">
+      <body>&lt;p>This profile provides the stereotypes to be able to generate a documentation compliant with the standard defined&amp;nbsp;in &amp;quot;IEEE Recommended Pratice for Software Requirements Specification&amp;quot;.&lt;/p>
+</body>
+    </ownedComment>
+    <elementImport xmi:type="uml:ElementImport" xmi:id="_jsR1cDmKEeivd-iqhJ4b3A" alias="Package">
+      <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Package"/>
+    </elementImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_e1H5QDmKEeivd-iqhJ4b3A">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_e1H5QTmKEeivd-iqhJ4b3A">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_METAMODELS/UML.metamodel.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="_gryf8DmKEeivd-iqhJ4b3A" name="IEEERequirements">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_Rr9-wDmXEeivd-iqhJ4b3A" annotatedElement="_gryf8DmKEeivd-iqhJ4b3A">
+        <body>Stereotype to apply on Package. It will allows to document user's model according to the IEEE specification.</body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_q5zzIDmKEeivd-iqhJ4b3A" general="_oSl5QDmKEeivd-iqhJ4b3A"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_J3x7oDmVEeivd-iqhJ4b3A" name="category" type="_DaDucDmOEeivd-iqhJ4b3A" redefinedProperty="_EuJvYDmVEeivd-iqhJ4b3A">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_wm9QQDmXEeivd-iqhJ4b3A">
+          <body>&lt;p>This field allows to define the kind of requirements owned by&amp;nbsp;the package.&lt;/p>
+</body>
+        </ownedComment>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="_oSl5QDmKEeivd-iqhJ4b3A" name="AbstractRequirements" isAbstract="true">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_Lu6xgDmXEeivd-iqhJ4b3A" annotatedElement="_DaDucDmOEeivd-iqhJ4b3A _oSl5QDmKEeivd-iqhJ4b3A">
+        <body>&lt;p>Abstract Stereotype created to ease future extension&lt;/p>
+</body>
+      </ownedComment>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_o2aYATmKEeivd-iqhJ4b3A" name="base_Package" association="_o2Zw8DmKEeivd-iqhJ4b3A">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Package"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_EuJvYDmVEeivd-iqhJ4b3A" name="reqCategory" visibility="public" type="_NrgzUDmSEeivd-iqhJ4b3A">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_0eMAgDmXEeivd-iqhJ4b3A">
+          <body>&lt;p>This field allows to define the kind of requirements owned by&amp;nbsp;the package.&lt;/p>
+
+&lt;p>NOTE : It is not named cateogy, because we get a validation error with a such name.&lt;/p>
+</body>
+        </ownedComment>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_AaJuIDmWEeivd-iqhJ4b3A"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AaS4EDmWEeivd-iqhJ4b3A" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="_o2Zw8DmKEeivd-iqhJ4b3A" name="E_AbstractRequirements_Package1" memberEnd="_o2aYADmKEeivd-iqhJ4b3A _o2aYATmKEeivd-iqhJ4b3A">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_o2aYADmKEeivd-iqhJ4b3A" name="extension_AbstractRequirements" type="_oSl5QDmKEeivd-iqhJ4b3A" aggregation="composite" association="_o2Zw8DmKEeivd-iqhJ4b3A"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_DaDucDmOEeivd-iqhJ4b3A" name="IEEERequirementCategory">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_SgL0gDmYEeivd-iqhJ4b3A">
+        <body>&lt;p>This enumeration contains all kinds of requirements defined in the IEEE standart.&lt;/p>
+</body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_5UCnEDmVEeivd-iqhJ4b3A" general="_NrgzUDmSEeivd-iqhJ4b3A"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_DtOiEDmOEeivd-iqhJ4b3A" name="SPECIFIC_REQUIREMENTS"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_FQ6iYDmOEeivd-iqhJ4b3A" name="EXTERNAL_INTERFACE_REQUIREMENTS"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Ko-MMDmOEeivd-iqhJ4b3A" name="USER_INTERFACES"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_MU7-wDmOEeivd-iqhJ4b3A" name="HARDWARE_INTERFACES"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_NwtZMDmOEeivd-iqhJ4b3A" name="SOFTWARE_INTERFACES"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_QZA4MDmOEeivd-iqhJ4b3A" name="COMMUNICATION_INTERFACES"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_TeHA4DmOEeivd-iqhJ4b3A" name="FUNCTIONAL_REQUIREMENTS"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_fCPV8DmPEeivd-iqhJ4b3A" name="PERFORMANCE_REQUIREMENTS"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_iSXC4DmPEeivd-iqhJ4b3A" name="DESIGN_CONSTRAINTS"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_j4RQwDmPEeivd-iqhJ4b3A" name="SOFTWARE_SYSTEM_ATTRIBUTES"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_l-RT8DmPEeivd-iqhJ4b3A" name="OTHER_REQUIREMENTS"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="_Z4KTMDmOEeivd-iqhJ4b3A" name="IEEEFunctionalRequirements">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_gP9MoDmXEeivd-iqhJ4b3A" annotatedElement="_Z4KTMDmOEeivd-iqhJ4b3A">
+        <body>&lt;p>Functional Requirement Stereotype allowing to define the mode of the Package requirements&lt;/p>
+</body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_T7ttcDmPEeivd-iqhJ4b3A" general="_gryf8DmKEeivd-iqhJ4b3A"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_dK6dYDmOEeivd-iqhJ4b3A" name="mode">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_DwCZ8DmYEeivd-iqhJ4b3A">
+          <body>&lt;p>The mode of the requirements owned by the package.&lt;/p>
+</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_kKJgYDmOEeivd-iqhJ4b3A" name="MODE_DEFAULT_VALUE" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_GSqZoDmWEeivd-iqhJ4b3A" name="category" type="_DaDucDmOEeivd-iqhJ4b3A" isReadOnly="true" redefinedProperty="_J3x7oDmVEeivd-iqhJ4b3A">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_8Q8yMDmXEeivd-iqhJ4b3A">
+          <body>&lt;p>This field is read-only and as always the value FUNCTIONAL_REQUIREMENTS?&lt;/p>
+</body>
+        </ownedComment>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_Sc7-IDmWEeivd-iqhJ4b3A" name="FUNCTIONAL_REQUIREMENTS" type="_DaDucDmOEeivd-iqhJ4b3A" instance="_TeHA4DmOEeivd-iqhJ4b3A"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_NrgzUDmSEeivd-iqhJ4b3A" name="AbstractRequirementCategory" isAbstract="true">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_OxPdkDmYEeivd-iqhJ4b3A" annotatedElement="_NrgzUDmSEeivd-iqhJ4b3A">
+        <body>&lt;p>Abtract Enumeration created to ease extension of this profile. It doesn&amp;#39;t have EnumerationLiteral to&amp;nbsp;avoid edition troubles with an extension of it.&lt;/p>
+</body>
+      </ownedComment>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_KLou8DmZEeivd-iqhJ4b3A">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KLp9EDmZEeivd-iqhJ4b3A" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Ecore.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Profile>
+  <Ecore:EPackage xmi:id="_KnrKsDmZEeivd-iqhJ4b3A" base_Package="_eyFzYDmKEeivd-iqhJ4b3A" packageName="documentation" nsURI="http://www.eclipse.org/papyrus/docgenconfig/IEEERequirementsDocumentation" basePackage="org.eclipse.papyrus.model2doc.ieee.requirements" prefix="IEEERequirementsDocumentation"/>
+</xmi:XMI>

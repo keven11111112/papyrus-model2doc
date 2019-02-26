@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:documentView="http://www.eclipse.org/papyrus/model2doc/documentview/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/papyrus/infra/gmfdiag/style" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <notation:Diagram xmi:id="_mNDOIOEEEeiYosq-e4PMeA" type="CompositeStructure" name="Robot CompositeStructureDiagram" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_mNUT4OEEEeiYosq-e4PMeA" type="Class_Shape">
+      <children xmi:type="notation:DecorationNode" xmi:id="_mNViAOEEEeiYosq-e4PMeA" type="Class_NameLabel"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_mNViAeEEEeiYosq-e4PMeA" type="Class_FloatingNameLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_mNViAuEEEeiYosq-e4PMeA" y="15"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_mNWJEOEEEeiYosq-e4PMeA" type="Class_StructureCompartment">
+        <children xmi:type="notation:Shape" xmi:id="_li0v8OEFEeiYosq-e4PMeA" type="Property_Shape">
+          <children xmi:type="notation:DecorationNode" xmi:id="_li1XAOEFEeiYosq-e4PMeA" type="Property_NameLabel"/>
+          <children xmi:type="notation:DecorationNode" xmi:id="_li1XAeEFEeiYosq-e4PMeA" type="Property_FloatingNameLabel">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_li1XAuEFEeiYosq-e4PMeA" y="15"/>
+          </children>
+          <children xmi:type="notation:BasicCompartment" xmi:id="_li1-EOEFEeiYosq-e4PMeA" type="Property_StructureCompartment">
+            <styles xmi:type="notation:TitleStyle" xmi:id="_li1-EeEFEeiYosq-e4PMeA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_li1-EuEFEeiYosq-e4PMeA"/>
+          </children>
+          <children xmi:type="notation:BasicCompartment" xmi:id="_ljVGQOEFEeiYosq-e4PMeA" type="compartment_shape_display">
+            <styles xmi:type="notation:TitleStyle" xmi:id="_ljVGQeEFEeiYosq-e4PMeA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ljVGQuEFEeiYosq-e4PMeA"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_oZIOsOEFEeiYosq-e4PMeA" type="Port_Shape">
+            <children xmi:type="notation:DecorationNode" xmi:id="_oZIOsuEFEeiYosq-e4PMeA" type="Port_NameLabel">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_oZIOs-EFEeiYosq-e4PMeA" x="-51" y="10"/>
+            </children>
+            <children xmi:type="notation:DecorationNode" xmi:id="_oZIOtOEFEeiYosq-e4PMeA" visible="false" type="Port_StereotypeLabel">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_oZIOteEFEeiYosq-e4PMeA" x="25" y="-10"/>
+            </children>
+            <styles xmi:type="notation:StringListValueStyle" xmi:id="_DeWIgOEGEeiYosq-e4PMeA" name="maskLabel"/>
+            <element xmi:type="uml:Port" href="RobotSystem.uml#_oZFLYOEFEeiYosq-e4PMeA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oZIOseEFEeiYosq-e4PMeA" x="108" y="30"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_y3Ur4OEFEeiYosq-e4PMeA" type="Port_Shape">
+            <children xmi:type="notation:DecorationNode" xmi:id="_y3Ur4uEFEeiYosq-e4PMeA" type="Port_NameLabel">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_y3VS8OEFEeiYosq-e4PMeA" x="30" y="40"/>
+            </children>
+            <children xmi:type="notation:DecorationNode" xmi:id="_y3VS8eEFEeiYosq-e4PMeA" type="Port_StereotypeLabel">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_y3VS8uEFEeiYosq-e4PMeA" x="25" y="-10"/>
+            </children>
+            <styles xmi:type="notation:StringListValueStyle" xmi:id="_FBbE0OEGEeiYosq-e4PMeA" name="maskLabel"/>
+            <element xmi:type="uml:Port" href="RobotSystem.uml#_y3TdwOEFEeiYosq-e4PMeA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_y3Ur4eEFEeiYosq-e4PMeA" x="-10" y="30"/>
+          </children>
+          <styles xmi:type="notation:StringListValueStyle" xmi:id="_XlEmMOEGEeiYosq-e4PMeA" name="maskLabel">
+            <stringListValue>name</stringListValue>
+          </styles>
+          <element xmi:type="uml:Property" href="RobotSystem.uml#_ligm4OEFEeiYosq-e4PMeA"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_li0v8eEFEeiYosq-e4PMeA" x="54" y="115" width="181" height="61"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_mVos8OEFEeiYosq-e4PMeA" type="Property_Shape">
+          <children xmi:type="notation:DecorationNode" xmi:id="_mVpUAOEFEeiYosq-e4PMeA" type="Property_NameLabel"/>
+          <children xmi:type="notation:DecorationNode" xmi:id="_mVpUAeEFEeiYosq-e4PMeA" type="Property_FloatingNameLabel">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_mVpUAuEFEeiYosq-e4PMeA" y="15"/>
+          </children>
+          <children xmi:type="notation:BasicCompartment" xmi:id="_mVpUA-EFEeiYosq-e4PMeA" type="Property_StructureCompartment">
+            <styles xmi:type="notation:TitleStyle" xmi:id="_mVpUBOEFEeiYosq-e4PMeA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mVpUBeEFEeiYosq-e4PMeA"/>
+          </children>
+          <children xmi:type="notation:BasicCompartment" xmi:id="_mVzsEOEFEeiYosq-e4PMeA" type="compartment_shape_display">
+            <styles xmi:type="notation:TitleStyle" xmi:id="_mVzsEeEFEeiYosq-e4PMeA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mVzsEuEFEeiYosq-e4PMeA"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_xwwFYOEFEeiYosq-e4PMeA" type="Port_Shape">
+            <children xmi:type="notation:DecorationNode" xmi:id="_xwwFYuEFEeiYosq-e4PMeA" type="Port_NameLabel">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_xwwFY-EFEeiYosq-e4PMeA" x="25" y="3"/>
+            </children>
+            <children xmi:type="notation:DecorationNode" xmi:id="_xwwFZOEFEeiYosq-e4PMeA" type="Port_StereotypeLabel">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_xwwFZeEFEeiYosq-e4PMeA" x="25" y="-10"/>
+            </children>
+            <styles xmi:type="notation:StringListValueStyle" xmi:id="_KMJdQOEGEeiYosq-e4PMeA" name="maskLabel"/>
+            <element xmi:type="uml:Port" href="RobotSystem.uml#_xwu3QOEFEeiYosq-e4PMeA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xwwFYeEFEeiYosq-e4PMeA" x="-10" y="30"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_yUBKgOEFEeiYosq-e4PMeA" type="Port_Shape">
+            <children xmi:type="notation:DecorationNode" xmi:id="_yUBxkOEFEeiYosq-e4PMeA" type="Port_NameLabel">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_yUBxkeEFEeiYosq-e4PMeA" x="25" y="3"/>
+            </children>
+            <children xmi:type="notation:DecorationNode" xmi:id="_yUBxkuEFEeiYosq-e4PMeA" type="Port_StereotypeLabel">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_yUBxk-EFEeiYosq-e4PMeA" x="25" y="-10"/>
+            </children>
+            <styles xmi:type="notation:StringListValueStyle" xmi:id="_MmqX4OEGEeiYosq-e4PMeA" name="maskLabel"/>
+            <element xmi:type="uml:Port" href="RobotSystem.uml#_yT_VUOEFEeiYosq-e4PMeA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yUBKgeEFEeiYosq-e4PMeA" x="171" y="30"/>
+          </children>
+          <styles xmi:type="notation:StringListValueStyle" xmi:id="_Zf7wYOEGEeiYosq-e4PMeA" name="maskLabel">
+            <stringListValue>name</stringListValue>
+          </styles>
+          <element xmi:type="uml:Property" href="RobotSystem.uml#_mVm3wOEFEeiYosq-e4PMeA"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mVos8eEFEeiYosq-e4PMeA" x="574" y="115" width="181" height="61"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_m3I3gOEFEeiYosq-e4PMeA" type="Property_Shape">
+          <children xmi:type="notation:DecorationNode" xmi:id="_m3I3guEFEeiYosq-e4PMeA" type="Property_NameLabel"/>
+          <children xmi:type="notation:DecorationNode" xmi:id="_m3KFoOEFEeiYosq-e4PMeA" type="Property_FloatingNameLabel">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_m3KFoeEFEeiYosq-e4PMeA" y="15"/>
+          </children>
+          <children xmi:type="notation:BasicCompartment" xmi:id="_m3KFouEFEeiYosq-e4PMeA" type="Property_StructureCompartment">
+            <styles xmi:type="notation:TitleStyle" xmi:id="_m3KFo-EFEeiYosq-e4PMeA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m3KFpOEFEeiYosq-e4PMeA"/>
+          </children>
+          <children xmi:type="notation:BasicCompartment" xmi:id="_m3QzUOEFEeiYosq-e4PMeA" type="compartment_shape_display">
+            <styles xmi:type="notation:TitleStyle" xmi:id="_m3QzUeEFEeiYosq-e4PMeA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m3QzUuEFEeiYosq-e4PMeA"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_vc068OEFEeiYosq-e4PMeA" type="Port_Shape">
+            <children xmi:type="notation:DecorationNode" xmi:id="_vc1iAOEFEeiYosq-e4PMeA" type="Port_NameLabel">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_vc1iAeEFEeiYosq-e4PMeA" x="25" y="3"/>
+            </children>
+            <children xmi:type="notation:DecorationNode" xmi:id="_vc1iAuEFEeiYosq-e4PMeA" type="Port_StereotypeLabel">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_vc1iA-EFEeiYosq-e4PMeA" x="25" y="-10"/>
+            </children>
+            <styles xmi:type="notation:StringListValueStyle" xmi:id="_Jd1lwOEGEeiYosq-e4PMeA" name="maskLabel"/>
+            <element xmi:type="uml:Port" href="RobotSystem.uml#_vczFwOEFEeiYosq-e4PMeA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vc068eEFEeiYosq-e4PMeA" x="-10" y="30"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_v8Qo8OEFEeiYosq-e4PMeA" type="Port_Shape">
+            <children xmi:type="notation:DecorationNode" xmi:id="_v8Qo8uEFEeiYosq-e4PMeA" type="Port_NameLabel">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_v8Qo8-EFEeiYosq-e4PMeA" x="25" y="3"/>
+            </children>
+            <children xmi:type="notation:DecorationNode" xmi:id="_v8Qo9OEFEeiYosq-e4PMeA" type="Port_StereotypeLabel">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_v8Qo9eEFEeiYosq-e4PMeA" x="25" y="-10"/>
+            </children>
+            <styles xmi:type="notation:StringListValueStyle" xmi:id="_IonN8OEGEeiYosq-e4PMeA" name="maskLabel"/>
+            <element xmi:type="uml:Port" href="RobotSystem.uml#_v8Pa0OEFEeiYosq-e4PMeA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_v8Qo8eEFEeiYosq-e4PMeA" x="171" y="30"/>
+          </children>
+          <styles xmi:type="notation:StringListValueStyle" xmi:id="_Y0TZcOEGEeiYosq-e4PMeA" name="maskLabel">
+            <stringListValue>name</stringListValue>
+          </styles>
+          <element xmi:type="uml:Property" href="RobotSystem.uml#_m3HpYOEFEeiYosq-e4PMeA"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m3I3geEFEeiYosq-e4PMeA" x="314" y="115" width="181" height="61"/>
+        </children>
+        <styles xmi:type="notation:TitleStyle" xmi:id="_mNWJEeEEEeiYosq-e4PMeA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mNWJEuEEEeiYosq-e4PMeA"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_mP5GwOEEEeiYosq-e4PMeA" type="compartment_shape_display">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_mP5GweEEEeiYosq-e4PMeA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mP5GwuEEEeiYosq-e4PMeA"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_xPz7gOEFEeiYosq-e4PMeA" type="Port_Shape">
+        <children xmi:type="notation:DecorationNode" xmi:id="_xP0ikOEFEeiYosq-e4PMeA" type="Port_NameLabel">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_xP0ikeEFEeiYosq-e4PMeA" x="25" y="3"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_xP0ikuEFEeiYosq-e4PMeA" type="Port_StereotypeLabel">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_xP0ik-EFEeiYosq-e4PMeA" x="25" y="-10"/>
+        </children>
+        <styles xmi:type="notation:StringListValueStyle" xmi:id="_Pv6n0OEGEeiYosq-e4PMeA" name="maskLabel"/>
+        <element xmi:type="uml:Port" href="RobotSystem.uml#_xPi1wOEFEeiYosq-e4PMeA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xPz7geEFEeiYosq-e4PMeA" x="811" y="170"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_zSSwoOEFEeiYosq-e4PMeA" type="Port_Shape">
+        <children xmi:type="notation:DecorationNode" xmi:id="_zSSwouEFEeiYosq-e4PMeA" type="Port_NameLabel">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_zSSwo-EFEeiYosq-e4PMeA" x="-50"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_zSSwpOEFEeiYosq-e4PMeA" type="Port_StereotypeLabel">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_zSSwpeEFEeiYosq-e4PMeA" x="25" y="-10"/>
+        </children>
+        <styles xmi:type="notation:StringListValueStyle" xmi:id="_AtZq4OEGEeiYosq-e4PMeA" name="maskLabel"/>
+        <element xmi:type="uml:Port" href="RobotSystem.uml#_zSGjYOEFEeiYosq-e4PMeA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zSSwoeEFEeiYosq-e4PMeA" x="-10" y="170"/>
+      </children>
+      <element xmi:type="uml:Class" href="RobotSystem.uml#_dn8ZgOEEEeiYosq-e4PMeA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mNUT4eEEEeiYosq-e4PMeA" x="40" y="40" width="821" height="281"/>
+    </children>
+    <styles xmi:type="notation:StringValueStyle" xmi:id="_mNDOIeEEEeiYosq-e4PMeA" name="diagram_compatibility_version" stringValue="1.4.0"/>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_mNDOIuEEEeiYosq-e4PMeA"/>
+    <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_mNDOI-EEEeiYosq-e4PMeA" diagramKindId="org.eclipse.papyrus.uml.diagram.compositeStructure.root.structuredClassifier">
+      <owner xmi:type="uml:Class" href="RobotSystem.uml#_dn8ZgOEEEeiYosq-e4PMeA"/>
+    </styles>
+    <element xmi:type="uml:Class" href="RobotSystem.uml#_dn8ZgOEEEeiYosq-e4PMeA"/>
+    <edges xmi:type="notation:Connector" xmi:id="_RyDesOEGEeiYosq-e4PMeA" type="Connector_Edge" source="_zSSwoOEFEeiYosq-e4PMeA" target="_y3Ur4OEFEeiYosq-e4PMeA">
+      <children xmi:type="notation:DecorationNode" xmi:id="_RyEFwOEGEeiYosq-e4PMeA" visible="false" type="Connector_StereotypeLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_RyEFweEGEeiYosq-e4PMeA" y="60"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_RyEFwuEGEeiYosq-e4PMeA" visible="false" type="Connector_NameLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_RyEFw-EGEeiYosq-e4PMeA" y="-20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_RyEFxOEGEeiYosq-e4PMeA" visible="false" type="Connector_SourceMultiplicityLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_RyEFxeEGEeiYosq-e4PMeA" y="20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_RyEFxuEGEeiYosq-e4PMeA" visible="false" type="Connector_TargetMultiplicityLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_RyEFx-EGEeiYosq-e4PMeA" y="20"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_RyDeseEGEeiYosq-e4PMeA"/>
+      <element xmi:type="uml:Connector" href="RobotSystem.uml#_Rxon8OEGEeiYosq-e4PMeA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_RyDesuEGEeiYosq-e4PMeA" points="[50, 221, -643984, -643984]$[102, 230, -643984, -643984]"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_Sq_R0OEGEeiYosq-e4PMeA" type="Connector_Edge" source="_oZIOsOEFEeiYosq-e4PMeA" target="_vc068OEFEeiYosq-e4PMeA">
+      <children xmi:type="notation:DecorationNode" xmi:id="_Sq_R0-EGEeiYosq-e4PMeA" visible="false" type="Connector_StereotypeLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Sq_44OEGEeiYosq-e4PMeA" y="60"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_Sq_44eEGEeiYosq-e4PMeA" visible="false" type="Connector_NameLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Sq_44uEGEeiYosq-e4PMeA" y="-20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_Sq_44-EGEeiYosq-e4PMeA" visible="false" type="Connector_SourceMultiplicityLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Sq_45OEGEeiYosq-e4PMeA" y="20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_Sq_45eEGEeiYosq-e4PMeA" visible="false" type="Connector_TargetMultiplicityLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Sq_45uEGEeiYosq-e4PMeA" y="20"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_Sq_R0eEGEeiYosq-e4PMeA"/>
+      <element xmi:type="uml:Connector" href="RobotSystem.uml#_SqIWMOEGEeiYosq-e4PMeA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Sq_R0uEGEeiYosq-e4PMeA" points="[291, 217, -643984, -643984]$[363, 210, -643984, -643984]"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_T3GfoOEGEeiYosq-e4PMeA" type="Connector_Edge" source="_v8Qo8OEFEeiYosq-e4PMeA" target="_xwwFYOEFEeiYosq-e4PMeA">
+      <children xmi:type="notation:DecorationNode" xmi:id="_T3HGsOEGEeiYosq-e4PMeA" visible="false" type="Connector_StereotypeLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_T3HGseEGEeiYosq-e4PMeA" y="60"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_T3HGsuEGEeiYosq-e4PMeA" visible="false" type="Connector_NameLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_T3HGs-EGEeiYosq-e4PMeA" y="-20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_T3HGtOEGEeiYosq-e4PMeA" visible="false" type="Connector_SourceMultiplicityLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_T3HGteEGEeiYosq-e4PMeA" y="20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_T3HGtuEGEeiYosq-e4PMeA" visible="false" type="Connector_TargetMultiplicityLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_T3HGt-EGEeiYosq-e4PMeA" y="20"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_T3GfoeEGEeiYosq-e4PMeA"/>
+      <element xmi:type="uml:Connector" href="RobotSystem.uml#_T2whYOEGEeiYosq-e4PMeA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_T3GfouEGEeiYosq-e4PMeA" points="[551, 215, -643984, -643984]$[619, 210, -643984, -643984]"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_UX5fkOEGEeiYosq-e4PMeA" type="Connector_Edge" source="_yUBKgOEFEeiYosq-e4PMeA" target="_xPz7gOEFEeiYosq-e4PMeA">
+      <children xmi:type="notation:DecorationNode" xmi:id="_UX6GoOEGEeiYosq-e4PMeA" visible="false" type="Connector_StereotypeLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_UX6GoeEGEeiYosq-e4PMeA" y="60"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_UX6GouEGEeiYosq-e4PMeA" visible="false" type="Connector_NameLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_UX6Go-EGEeiYosq-e4PMeA" y="-20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_UX6GpOEGEeiYosq-e4PMeA" visible="false" type="Connector_SourceMultiplicityLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_UX6GpeEGEeiYosq-e4PMeA" y="20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_UX6GpuEGEeiYosq-e4PMeA" visible="false" type="Connector_TargetMultiplicityLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_UX6Gp-EGEeiYosq-e4PMeA" y="20"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_UX5fkeEGEeiYosq-e4PMeA"/>
+      <element xmi:type="uml:Connector" href="RobotSystem.uml#_UXkIYOEGEeiYosq-e4PMeA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_UX5fkuEGEeiYosq-e4PMeA" points="[811, 219, -643984, -643984]$[851, 218, -643984, -643984]"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_UYbrEOEGEeiYosq-e4PMeA" id="(0.1,0.45)"/>
+    </edges>
+  </notation:Diagram>
+  <documentView:Document xmi:id="_L1ykYPibEeiKd9N2xul68Q" name="IEEE Requirements Document0" documentKind="odt" documentRepresentationKindId="org.eclipse.papyrus.model2doc.documentation.odt.ieeererquirements" generatedDocumentFileURI="/RobotSystem/RobotSystem_Functional Requirements_IEEE Requirements Document0.odt"/>
+</xmi:XMI>

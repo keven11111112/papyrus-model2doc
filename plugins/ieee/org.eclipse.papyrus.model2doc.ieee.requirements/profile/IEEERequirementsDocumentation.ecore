@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="documentation" nsURI="http://www.eclipse.org/papyrus/docgenconfig/IEEERequirementsDocumentation"
+    nsPrefix="IEEERequirementsDocumentation">
+  <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <details key="originalName" value="IEEERequirementsDocumentation"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="IEEERequirements" eSuperTypes="#//AbstractRequirements">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Stereotype to apply on Package. It will allows to document user's model according to the IEEE specification."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="category" ordered="false"
+        lowerBound="1" eType="#//IEEERequirementCategory"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractRequirements" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="&lt;p>Abstract Stereotype created to ease future extension&lt;/p>&#xA;"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Package" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Package"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reqCategory" ordered="false"
+        eType="#//AbstractRequirementCategory"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="IEEERequirementCategory">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="baseType" value="AbstractRequirementCategory"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="&lt;p>Abstract Stereotype created to ease future extension&lt;/p>&#xA;"/>
+    </eAnnotations>
+    <eLiterals name="SPECIFIC_REQUIREMENTS"/>
+    <eLiterals name="EXTERNAL_INTERFACE_REQUIREMENTS" value="1"/>
+    <eLiterals name="USER_INTERFACES" value="2"/>
+    <eLiterals name="HARDWARE_INTERFACES" value="3"/>
+    <eLiterals name="SOFTWARE_INTERFACES" value="4"/>
+    <eLiterals name="COMMUNICATION_INTERFACES" value="5"/>
+    <eLiterals name="FUNCTIONAL_REQUIREMENTS" value="6"/>
+    <eLiterals name="PERFORMANCE_REQUIREMENTS" value="7"/>
+    <eLiterals name="DESIGN_CONSTRAINTS" value="8"/>
+    <eLiterals name="SOFTWARE_SYSTEM_ATTRIBUTES" value="9"/>
+    <eLiterals name="OTHER_REQUIREMENTS" value="10"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AbstractRequirementCategory">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="&lt;p>Abtract Enumeration created to ease extension of this profile. It doesn&amp;#39;t have EnumerationLiteral to&amp;nbsp;avoid edition troubles with an extension of it.&lt;/p>&#xA;"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IEEEFunctionalRequirements" eSuperTypes="#//IEEERequirements">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="&lt;p>Functional Requirement Stereotype allowing to define the mode of the Package requirements&lt;/p>&#xA;"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mode" ordered="false" lowerBound="1"
+        eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//Integer"
+        defaultValueLiteral="1"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,8 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Papyrus Model2Doc Documentation
-Bundle-SymbolicName: org.eclipse.papyrus.model2doc.doc
+Bundle-Name: %pluginName
+Bundle-Vendor: %providerName
 Bundle-Version: 0.7.0.qualifier
-Bundle-Vendor: Eclipse Modeling Project
+Bundle-Localization: plugin
+Bundle-SymbolicName: org.eclipse.papyrus.model2doc.doc;singleton:=true
 Automatic-Module-Name: org.eclipse.papyrus.model2doc.doc
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.help;bundle-version="3.8.200"

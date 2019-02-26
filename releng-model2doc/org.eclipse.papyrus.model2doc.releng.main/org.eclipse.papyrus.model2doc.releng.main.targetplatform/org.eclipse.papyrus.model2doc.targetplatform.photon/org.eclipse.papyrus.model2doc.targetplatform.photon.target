@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.8"?><target name="Tycho Tutorial" sequenceNumber="1465317053">
+<locations>
+
+<location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.papyrus.sdk.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.papyrus.uml.assistants.feature.feature.group" version="0.0.0"/>
+      <repository id="papyrus-master" location="http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/master/"/>
+</location>
+<location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+	<unit id="org.eclipse.emf.sdk.feature.group" version="0.0.0"/>
+	<unit id="org.eclipse.core.databinding" version="0.0.0"/>
+	<repository location="http://download.eclipse.org/releases/2018-09"/>
+</location>
+<location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+	<unit id="org.eclipse.papyrus.sysml14.feature.feature.group" version="0.0.0"/>
+    <repository id="sysml14" location="https://hudson.eclipse.org/papyrus/job/papyrus-sysml-master/lastSuccessfulBuild/artifact/releng/org.eclipse.papyrus.sysml14.p2/target/repository/"/>
+ </location>
+</locations>
+</target>

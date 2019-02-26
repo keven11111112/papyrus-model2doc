@@ -1,0 +1,53 @@
+# Requirements defined for the Model2Doc Core plug-in
+# This file must be filled by developer when a task is done in this plug-in
+
+Requirement: ReqFuctional_Core_001: The system must generate the same document contents (from UML model) to many file kind (e.g., html, odt, odp, ods).
+Requirement: ReqFuctional_Core_001_001: The system must read any data source (e.g., UML model).
+Code instruction: - see ReqTechnical_Core_001, ReqTechnical_Core_002 and ReqTechnical_Core_003
+Requirement: ReqFuctional_Core_001_002: The system must write any file kind (e.g., html, odt, odp, ods).
+Code instruction: - see ReqTechnical_Core_004, ReqTechnical_Core_005, ReqTechnical_Core_006 and ReqTechnical_Core_007
+
+Requirement: ReqFuctional_Core_002: The system must deal with Internationalization name provide by Papyrus.
+Code instruction: - see ReqTechnical_Core_005
+
+Requirement: ReqTechnical_Core_001: The system must provide an interface for transcriber. Transcriber must be separated of how and kind of file that contents will be transcribe.   
+Code instruction: - org.eclipse.papyrus.model2doc.core/src/com/cea/papyrus/model2doc/core/transcriber/ITranscriber.java
+
+Requirement: ReqTechnical_Core_002: The system must provide a transcriber factory for retrieving of default transcriber implementation.  
+Code instruction: - org.eclipse.papyrus.model2doc.core/src/com/cea/papyrus/model2doc/core/transcriber/TranscriberFactory.java
+
+Requirement: ReqTechnical_Core_003: The system must provide a default transcriber for UML Model.  
+Code instruction: - org.eclipse.papyrus.model2doc.core/src/com/cea/papyrus/model2doc/core/internal/transcriber/UMLTranscriber.java
+
+Requirement: ReqTechnical_Core_004: The system must provide an interface for transcription. It is up to each implementation to define how and kind of file that contents will be transcribe.
+Code instruction: - org.eclipse.papyrus.model2doc.core/src/com/cea/papyrus/model2doc/core/transcription/ITranscription.java
+
+Requirement: ReqTechnical_Core_005: The system must provide an interface for production of a cover page. It is up to each implementation to define cover page contents.
+Code instruction: - org.eclipse.papyrus.model2doc.core/src/com/cea/papyrus/model2doc/core/transcription/ICoverPage.java
+
+Requirement: ReqTechnical_Core_006: The system must provide a cover page factory for retrieving of default cover page implementation.  
+Code instruction: - org.eclipse.papyrus.model2doc.core/src/com/cea/papyrus/model2doc/core/transcription/CoverPageFactory.java
+
+Requirement: ReqTechnical_Core_007: The system must provide a default cover page implementation.  
+Code instruction: - org.eclipse.papyrus.model2doc.core/src/com/cea/papyrus/model2doc/core/internal/transcription/CoverPage.java
+
+Requirement: ReqTechnical_Core_005: Java code must use Internationalization name to reference UML Element.
+Code instruction: - org.eclipse.papyrus.model2doc.core/src/com/cea/papyrus/model2doc/core/transcriber/UMLTranscriber.java
+
+Requirement: ReqTechnical_Core_008: The system must provide a service interface for management of workspace resources.  
+Code instruction: - org.eclipse.papyrus.model2doc.core/src/com/cea/papyrus/model2doc/core/service/WorkspaceResourceService.java
+
+Requirement: ReqTechnical_Core_009: The system must provide a implementation by delegation of service for management of workspace resources. 
+Code instruction: - org.eclipse.papyrus.model2doc.core/src/com/cea/papyrus/model2doc/core/service/WorkspaceResourceServiceImpl.java
+
+Requirement: ReqTechnical_Core_010: The system must provide a delegate class who implements the service for management of workspace resources.  
+Code instruction: - org.eclipse.papyrus.model2doc.core/src/com/cea/papyrus/model2doc/core/internal/util/WorkspaceResourceUtil.java
+
+Requirement: ReqTechnical_Core_011: The system must provide a service interface for management of template resource.  
+Code instruction: - org.eclipse.papyrus.model2doc.core/src/com/cea/papyrus/model2doc/core/service/TemplateResourceService.java
+
+Requirement: ReqTechnical_Core_012: The system must provide a implementation by delegation of service for management of template resource. 
+Code instruction: - org.eclipse.papyrus.model2doc.core/src/com/cea/papyrus/model2doc/core/service/TemplateResourceServiceImpl.java
+
+Requirement: ReqTechnical_Core_013: The system must provide a delegate class who implements the service for management of template resource.  
+Code instruction: - org.eclipse.papyrus.model2doc.core/src/com/cea/papyrus/model2doc/core/internal/util/TemplateResourceUtil.java

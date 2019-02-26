@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="representation" nsURI="http://www.eclipse.org/papyrus/model2doc/documentview/representation/1.0.0"
+    nsPrefix="documentviewrepresentation">
+  <eClassifiers xsi:type="ecore:EClass" name="PapyrusDocument" eSuperTypes="../../org.eclipse.papyrus.infra.architecture.representation/model/Representation.ecore#//PapyrusRepresentationKind">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="creationCommandClass" lowerBound="1">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
+        <eTypeArguments/>
+      </eGenericType>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="documentKind" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

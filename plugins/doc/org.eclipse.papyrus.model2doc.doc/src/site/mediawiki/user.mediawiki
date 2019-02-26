@@ -1,0 +1,27 @@
+=User guide=
+ 
+==Load PapyrusDocument in Customize Model Explorer==
+
+Open ''Model Explorer'' and load ''PapyrusDocument'' customization:
+
+[[Image:images/user/User01_Load Customizations.png]]
+
+====Generated Document====
+Select model element (model or package), open menu context and select '''New Document > Generic Document'''.
+
+[[Image:images/user/User02_Generate Document.png]]
+
+A ''Document Element'' is created in the model and in the project.
+
+[[Image:images/user/User03_DocumentGenerated.png]]
+
+====Other Features====
+=====Send Document=====
+Select ''Document Element'' in the ''Model Explorer'', open menu context and select '''Send Document > E-mail Document...''' or '''Send Document > E-mail as PDF...'''.
+
+[[Image:images/user/User04_SendDocument.png]]
+
+=====Export Document=====
+Select ''Document Element'' in the ''Model Explorer'', open menu context and select '''Export Document > Export as PDF'''.
+
+[[Image:images/user/User05_ExportDocument.png]]
