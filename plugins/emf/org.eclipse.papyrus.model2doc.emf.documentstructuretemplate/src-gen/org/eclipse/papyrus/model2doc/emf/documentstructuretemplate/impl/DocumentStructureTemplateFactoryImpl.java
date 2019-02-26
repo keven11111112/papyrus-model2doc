@@ -70,6 +70,8 @@ public class DocumentStructureTemplateFactoryImpl extends EFactoryImpl implement
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+		case DocumentStructureTemplatePackage.DOCUMENT_TEMPLATE_PROTOTYPE:
+			return createDocumentTemplatePrototype();
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE:
 			return createTextDocumentTemplate();
 		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE:
@@ -78,6 +80,10 @@ public class DocumentStructureTemplateFactoryImpl extends EFactoryImpl implement
 			return createEClassDocumentPartTemplate();
 		case DocumentStructureTemplatePackage.EOBJECT_DOCUMENT_PART_TEMPLATE:
 			return createEObjectDocumentPartTemplate();
+		case DocumentStructureTemplatePackage.TABLE_OF_CONTENTS:
+			return createTableOfContents();
+		case DocumentStructureTemplatePackage.BODY:
+			return createBody();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -129,6 +135,42 @@ public class DocumentStructureTemplateFactoryImpl extends EFactoryImpl implement
 	public EObjectDocumentPartTemplate createEObjectDocumentPartTemplate() {
 		EObjectDocumentPartTemplateImpl eObjectDocumentPartTemplate = new EObjectDocumentPartTemplateImpl();
 		return eObjectDocumentPartTemplate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public TableOfContents createTableOfContents() {
+		TableOfContentsImpl tableOfContents = new TableOfContentsImpl();
+		return tableOfContents;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Body createBody() {
+		BodyImpl body = new BodyImpl();
+		return body;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public DocumentTemplatePrototype createDocumentTemplatePrototype() {
+		DocumentTemplatePrototypeImpl documentTemplatePrototype = new DocumentTemplatePrototypeImpl();
+		return documentTemplatePrototype;
 	}
 
 	/**

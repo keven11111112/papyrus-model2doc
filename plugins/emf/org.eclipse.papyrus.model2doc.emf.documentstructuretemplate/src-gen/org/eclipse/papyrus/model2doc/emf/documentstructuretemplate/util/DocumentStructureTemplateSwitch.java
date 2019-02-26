@@ -91,6 +91,14 @@ public class DocumentStructureTemplateSwitch<T> extends Switch<T> {
 			}
 			return result;
 		}
+		case DocumentStructureTemplatePackage.DOCUMENT_TEMPLATE_PROTOTYPE: {
+			DocumentTemplatePrototype documentTemplatePrototype = (DocumentTemplatePrototype) theEObject;
+			T result = caseDocumentTemplatePrototype(documentTemplatePrototype);
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE: {
 			TextDocumentTemplate textDocumentTemplate = (TextDocumentTemplate) theEObject;
 			T result = caseTextDocumentTemplate(textDocumentTemplate);
@@ -102,9 +110,9 @@ public class DocumentStructureTemplateSwitch<T> extends Switch<T> {
 			}
 			return result;
 		}
-		case DocumentStructureTemplatePackage.DOCUMENT_PART_TEMPLATE: {
-			DocumentPartTemplate documentPartTemplate = (DocumentPartTemplate) theEObject;
-			T result = caseDocumentPartTemplate(documentPartTemplate);
+		case DocumentStructureTemplatePackage.DOCUMENT_PART: {
+			DocumentPart documentPart = (DocumentPart) theEObject;
+			T result = caseDocumentPart(documentPart);
 			if (result == null) {
 				result = defaultCase(theEObject);
 			}
@@ -130,6 +138,14 @@ public class DocumentStructureTemplateSwitch<T> extends Switch<T> {
 			if (result == null) {
 				result = caseDocumentPartTemplate(featurePartTemplate);
 			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructureTemplatePackage.DOCUMENT_PART_TEMPLATE: {
+			DocumentPartTemplate documentPartTemplate = (DocumentPartTemplate) theEObject;
+			T result = caseDocumentPartTemplate(documentPartTemplate);
 			if (result == null) {
 				result = defaultCase(theEObject);
 			}
@@ -174,6 +190,28 @@ public class DocumentStructureTemplateSwitch<T> extends Switch<T> {
 			}
 			return result;
 		}
+		case DocumentStructureTemplatePackage.TABLE_OF_CONTENTS: {
+			TableOfContents tableOfContents = (TableOfContents) theEObject;
+			T result = caseTableOfContents(tableOfContents);
+			if (result == null) {
+				result = caseDocumentPart(tableOfContents);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructureTemplatePackage.BODY: {
+			Body body = (Body) theEObject;
+			T result = caseBody(body);
+			if (result == null) {
+				result = caseDocumentPart(body);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -210,6 +248,23 @@ public class DocumentStructureTemplateSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTextDocumentTemplate(TextDocumentTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Document Part</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Document Part</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDocumentPart(DocumentPart object) {
 		return null;
 	}
 
@@ -312,6 +367,57 @@ public class DocumentStructureTemplateSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEObjectDocumentPartTemplate(EObjectDocumentPartTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Table Of Contents</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Table Of Contents</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTableOfContents(TableOfContents object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Body</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Body</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBody(Body object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Document Template Prototype</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Document Template Prototype</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDocumentTemplatePrototype(DocumentTemplatePrototype object) {
 		return null;
 	}
 

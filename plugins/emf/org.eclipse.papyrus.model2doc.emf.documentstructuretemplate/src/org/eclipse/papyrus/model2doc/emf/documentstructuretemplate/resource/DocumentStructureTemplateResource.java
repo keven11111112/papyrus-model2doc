@@ -29,7 +29,7 @@ public class DocumentStructureTemplateResource extends AbstractEMFResourceWithUU
 	/**
 	 * The extension for the file owning Expressions
 	 */
-	public static final String FILE_EXTENSION = "documentstructuretemplate"; //$NON-NLS-1$
+	public static final String FILE_EXTENSION = "pdst"; //$NON-NLS-1$ //pdst for Papyrus Document Structure Template
 
 	
 	/**

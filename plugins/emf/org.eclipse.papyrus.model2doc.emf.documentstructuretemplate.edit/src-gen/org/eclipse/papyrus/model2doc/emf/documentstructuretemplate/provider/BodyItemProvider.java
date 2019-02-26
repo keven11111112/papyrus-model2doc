@@ -24,29 +24,27 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.Body;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplateFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentTemplate;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentTemplate} object.
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.Body} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class TextDocumentTemplateItemProvider
+public class BodyItemProvider
 		extends ItemProviderAdapter
 		implements
 		IEditingDomainItemProvider,
@@ -61,7 +59,7 @@ public class TextDocumentTemplateItemProvider
 	 *
 	 * @generated
 	 */
-	public TextDocumentTemplateItemProvider(AdapterFactory adapterFactory) {
+	public BodyItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -77,96 +75,8 @@ public class TextDocumentTemplateItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSemanticContextPropertyDescriptor(object);
-			addGraphicalContentPropertyDescriptor(object);
-			addTypePropertyDescriptor(object);
-			addDocumentTemplatePrototypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Semantic Context feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected void addSemanticContextPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_DocumentTemplate_semanticContext_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_DocumentTemplate_semanticContext_feature", "_UI_DocumentTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				DocumentStructureTemplatePackage.Literals.DOCUMENT_TEMPLATE__SEMANTIC_CONTEXT,
-				true,
-				false,
-				true,
-				null,
-				null,
-				null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Graphical Content feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected void addGraphicalContentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_DocumentTemplate_graphicalContent_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_DocumentTemplate_graphicalContent_feature", "_UI_DocumentTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				DocumentStructureTemplatePackage.Literals.DOCUMENT_TEMPLATE__GRAPHICAL_CONTENT,
-				true,
-				false,
-				true,
-				null,
-				null,
-				null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_DocumentTemplate_type_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_DocumentTemplate_type_feature", "_UI_DocumentTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				DocumentStructureTemplatePackage.Literals.DOCUMENT_TEMPLATE__TYPE,
-				false,
-				false,
-				false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				null,
-				null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Document Template Prototype feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected void addDocumentTemplatePrototypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_DocumentTemplate_documentTemplatePrototype_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_DocumentTemplate_documentTemplatePrototype_feature", "_UI_DocumentTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				DocumentStructureTemplatePackage.Literals.DOCUMENT_TEMPLATE__DOCUMENT_TEMPLATE_PROTOTYPE,
-				true,
-				false,
-				true,
-				null,
-				null,
-				null));
 	}
 
 	/**
@@ -182,7 +92,7 @@ public class TextDocumentTemplateItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART);
+			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.BODY__OBJECT_PART_TEMPLATE);
 		}
 		return childrenFeatures;
 	}
@@ -213,7 +123,7 @@ public class TextDocumentTemplateItemProvider
 	}
 
 	/**
-	 * This returns TextDocumentTemplate.gif.
+	 * This returns Body.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -221,7 +131,7 @@ public class TextDocumentTemplateItemProvider
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/TextDocumentTemplate")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Body")); //$NON-NLS-1$
 	}
 
 	/**
@@ -244,9 +154,7 @@ public class TextDocumentTemplateItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((TextDocumentTemplate) object).getType();
-		return label == null || label.length() == 0 ? getString("_UI_TextDocumentTemplate_type") : //$NON-NLS-1$
-				getString("_UI_TextDocumentTemplate_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		return getString("_UI_Body_type"); //$NON-NLS-1$
 	}
 
 
@@ -262,11 +170,8 @@ public class TextDocumentTemplateItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(TextDocumentTemplate.class)) {
-		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__TYPE:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART:
+		switch (notification.getFeatureID(Body.class)) {
+		case DocumentStructureTemplatePackage.BODY__OBJECT_PART_TEMPLATE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -285,11 +190,11 @@ public class TextDocumentTemplateItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART,
-				DocumentStructureTemplateFactory.eINSTANCE.createTableOfContents()));
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.BODY__OBJECT_PART_TEMPLATE,
+				DocumentStructureTemplateFactory.eINSTANCE.createEClassDocumentPartTemplate()));
 
-		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART,
-				DocumentStructureTemplateFactory.eINSTANCE.createBody()));
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.BODY__OBJECT_PART_TEMPLATE,
+				DocumentStructureTemplateFactory.eINSTANCE.createEObjectDocumentPartTemplate()));
 	}
 
 	/**

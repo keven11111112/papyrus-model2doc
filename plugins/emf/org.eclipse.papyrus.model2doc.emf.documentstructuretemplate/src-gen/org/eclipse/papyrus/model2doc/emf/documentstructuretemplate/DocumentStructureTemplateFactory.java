@@ -75,6 +75,36 @@ public interface DocumentStructureTemplateFactory extends EFactory {
 	EObjectDocumentPartTemplate createEObjectDocumentPartTemplate();
 
 	/**
+	 * Returns a new object of class '<em>Table Of Contents</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>Table Of Contents</em>'.
+	 * @generated
+	 */
+	TableOfContents createTableOfContents();
+
+	/**
+	 * Returns a new object of class '<em>Body</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>Body</em>'.
+	 * @generated
+	 */
+	Body createBody();
+
+	/**
+	 * Returns a new object of class '<em>Document Template Prototype</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>Document Template Prototype</em>'.
+	 * @generated
+	 */
+	DocumentTemplatePrototype createDocumentTemplatePrototype();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

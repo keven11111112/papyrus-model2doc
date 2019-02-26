@@ -235,7 +235,7 @@ public class EStructuralFeatureDocumentPartTemplateImpl extends MinimalEObjectIm
 	public String getDefaultTitle() {
 		// TODO: implement this method to return the 'Default Title' attribute
 		// Ensure that you remove @generated or mark it @generated NOT
-		return "tutu";
+		throw new UnsupportedOperationException();
 	}
 
 	/**

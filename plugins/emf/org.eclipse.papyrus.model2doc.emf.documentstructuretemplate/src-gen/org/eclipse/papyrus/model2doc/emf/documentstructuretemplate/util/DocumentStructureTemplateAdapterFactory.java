@@ -88,13 +88,18 @@ public class DocumentStructureTemplateAdapterFactory extends AdapterFactoryImpl 
 		}
 
 		@Override
+		public Adapter caseDocumentTemplatePrototype(DocumentTemplatePrototype object) {
+			return createDocumentTemplatePrototypeAdapter();
+		}
+
+		@Override
 		public Adapter caseTextDocumentTemplate(TextDocumentTemplate object) {
 			return createTextDocumentTemplateAdapter();
 		}
 
 		@Override
-		public Adapter caseDocumentPartTemplate(DocumentPartTemplate object) {
-			return createDocumentPartTemplateAdapter();
+		public Adapter caseDocumentPart(DocumentPart object) {
+			return createDocumentPartAdapter();
 		}
 
 		@Override
@@ -105,6 +110,11 @@ public class DocumentStructureTemplateAdapterFactory extends AdapterFactoryImpl 
 		@Override
 		public Adapter caseFeaturePartTemplate(FeaturePartTemplate object) {
 			return createFeaturePartTemplateAdapter();
+		}
+
+		@Override
+		public Adapter caseDocumentPartTemplate(DocumentPartTemplate object) {
+			return createDocumentPartTemplateAdapter();
 		}
 
 		@Override
@@ -120,6 +130,16 @@ public class DocumentStructureTemplateAdapterFactory extends AdapterFactoryImpl 
 		@Override
 		public Adapter caseEObjectDocumentPartTemplate(EObjectDocumentPartTemplate object) {
 			return createEObjectDocumentPartTemplateAdapter();
+		}
+
+		@Override
+		public Adapter caseTableOfContents(TableOfContents object) {
+			return createTableOfContentsAdapter();
+		}
+
+		@Override
+		public Adapter caseBody(Body object) {
+			return createBodyAdapter();
 		}
 
 		@Override
@@ -171,6 +191,21 @@ public class DocumentStructureTemplateAdapterFactory extends AdapterFactoryImpl 
 	 * @generated
 	 */
 	public Adapter createTextDocumentTemplateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentPart <em>Document Part</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentPart
+	 * @generated
+	 */
+	public Adapter createDocumentPartAdapter() {
 		return null;
 	}
 
@@ -261,6 +296,51 @@ public class DocumentStructureTemplateAdapterFactory extends AdapterFactoryImpl 
 	 * @generated
 	 */
 	public Adapter createEObjectDocumentPartTemplateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TableOfContents <em>Table Of Contents</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TableOfContents
+	 * @generated
+	 */
+	public Adapter createTableOfContentsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.Body <em>Body</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.Body
+	 * @generated
+	 */
+	public Adapter createBodyAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplatePrototype <em>Document Template Prototype</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplatePrototype
+	 * @generated
+	 */
+	public Adapter createDocumentTemplatePrototypeAdapter() {
 		return null;
 	}
 

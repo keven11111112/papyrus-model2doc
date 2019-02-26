@@ -15,22 +15,15 @@ package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.provider;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
 
-import org.eclipse.emf.common.util.ResourceLocator;
-
-import org.eclipse.emf.edit.domain.EditingDomain;
-
 import org.eclipse.emf.edit.provider.ChangeNotifier;
-import org.eclipse.emf.edit.provider.ChildCreationExtenderManager;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IChangeNotifier;
-import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IDisposable;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -38,8 +31,6 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.util.DocumentStructureTemplateAdapterFactory;
 
@@ -53,7 +44,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.util.Document
  *
  * @generated
  */
-public class DocumentStructureTemplateItemProviderAdapterFactory extends DocumentStructureTemplateAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
+public class DocumentStructureTemplateItemProviderAdapterFactory extends DocumentStructureTemplateAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -71,15 +62,6 @@ public class DocumentStructureTemplateItemProviderAdapterFactory extends Documen
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
-
-	/**
-	 * This helps manage the child creation extenders.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(DocumentstructuretemplateEditPlugin.INSTANCE, DocumentStructureTemplatePackage.eNS_URI);
 
 	/**
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
@@ -206,6 +188,81 @@ public class DocumentStructureTemplateItemProviderAdapterFactory extends Documen
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TableOfContents} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected TableOfContentsItemProvider tableOfContentsItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TableOfContents}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Adapter createTableOfContentsAdapter() {
+		if (tableOfContentsItemProvider == null) {
+			tableOfContentsItemProvider = new TableOfContentsItemProvider(this);
+		}
+
+		return tableOfContentsItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.Body} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected BodyItemProvider bodyItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.Body}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Adapter createBodyAdapter() {
+		if (bodyItemProvider == null) {
+			bodyItemProvider = new BodyItemProvider(this);
+		}
+
+		return bodyItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplatePrototype} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected DocumentTemplatePrototypeItemProvider documentTemplatePrototypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplatePrototype}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Adapter createDocumentTemplatePrototypeAdapter() {
+		if (documentTemplatePrototypeItemProvider == null) {
+			documentTemplatePrototypeItemProvider = new DocumentTemplatePrototypeItemProvider(this);
+		}
+
+		return documentTemplatePrototypeItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -271,38 +328,6 @@ public class DocumentStructureTemplateItemProviderAdapterFactory extends Documen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	public List<IChildCreationExtender> getChildCreationExtenders() {
-		return childCreationExtenderManager.getChildCreationExtenders();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public Collection<?> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
-		return childCreationExtenderManager.getNewChildDescriptors(object, editingDomain);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return childCreationExtenderManager;
-	}
-
-	/**
 	 * This adds a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -351,6 +376,9 @@ public class DocumentStructureTemplateItemProviderAdapterFactory extends Documen
 	 */
 	@Override
 	public void dispose() {
+		if (documentTemplatePrototypeItemProvider != null) {
+			documentTemplatePrototypeItemProvider.dispose();
+		}
 		if (textDocumentTemplateItemProvider != null) {
 			textDocumentTemplateItemProvider.dispose();
 		}
@@ -362,6 +390,12 @@ public class DocumentStructureTemplateItemProviderAdapterFactory extends Documen
 		}
 		if (eObjectDocumentPartTemplateItemProvider != null) {
 			eObjectDocumentPartTemplateItemProvider.dispose();
+		}
+		if (tableOfContentsItemProvider != null) {
+			tableOfContentsItemProvider.dispose();
+		}
+		if (bodyItemProvider != null) {
+			bodyItemProvider.dispose();
 		}
 	}
 

@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentTemplate#getDocumentPartTemplate <em>Document Part Template</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentTemplate#getDocumentPart <em>Document Part</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getTextDocumentTemplate()
@@ -33,20 +33,20 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface TextDocumentTemplate extends DocumentTemplate {
 	/**
-	 * Returns the value of the '<em><b>Document Part Template</b></em>' containment reference list.
-	 * The list contents are of type {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentPartTemplate}.
+	 * Returns the value of the '<em><b>Document Part</b></em>' containment reference list.
+	 * The list contents are of type {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentPart}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Document Part Template</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Document Part</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the value of the '<em>Document Part Template</em>' containment reference list.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getTextDocumentTemplate_DocumentPartTemplate()
-	 * @model containment="true" required="true" ordered="false"
+	 * @return the value of the '<em>Document Part</em>' containment reference list.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getTextDocumentTemplate_DocumentPart()
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<DocumentPartTemplate> getDocumentPartTemplate();
+	EList<DocumentPart> getDocumentPart();
 
 } // TextDocumentTemplate
