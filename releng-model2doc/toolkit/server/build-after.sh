@@ -25,7 +25,7 @@
 ## BUILD_ALIAS=M4
 ##
 
-p2UpdateSiteDir=${WORKSPACE}/source/releng-model2doc/main/site/target/repository
+p2UpdateSiteDir=${WORKSPACE}/source/releng-model2doc/org.eclipse.papyrus.model2doc.p2 
 updateSite=${WORKSPACE}/repository
 
 if [ -n "$BUILD_ALIAS" ]; then
