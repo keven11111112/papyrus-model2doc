@@ -40,6 +40,8 @@
 							<goal>generate-repository-facade</goal>
 						</goals>
 						<configuration>
+							<!-- do not generate the pesky web folder and index.html -->
+							<skipWebContentGeneration>true</skipWebContentGeneration>
 							<!-- <symbols> <update.site.name>Papyrus UML Versioning</update.site.name> 
 								<update.site.description>Use this URL in Eclipse to install Papyrus UML Versioning</update.site.description> 
 								<update.site.version>${project.version}</update.site.version> <project.website>https://hudson.eclipse.org/papyrus/view/Interoperability/job/papyrus-interoperability-website/ws/site-staging/index.html</project.website> 
