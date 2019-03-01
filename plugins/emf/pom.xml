@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.eclipse.papyrus.model2doc-plugins</groupId>
+		<artifactId>org.eclipse.papyrus.model2doc.plugins</artifactId>
+		<version>0.7.0-SNAPSHOT</version>
+	</parent>
+
+	<groupId>org.eclipse.papyrus.model2doc.plugins-emf</groupId>
+	<artifactId>org.eclipse.papyrus.model2doc.plugins.emf</artifactId>
+	<version>0.7.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>Papyrus DocumentStructureTemplate plugins</name>
+	<description>Container of the Papyrus DocumentStructureTemplate plugins</description>
+
+	<modules>
+		<module>org.eclipse.papyrus.model2doc.emf.documentstructuretemplate</module>
+		<module>org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit</module>
+		<module>org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.editor</module>
+	</modules>
+</project>

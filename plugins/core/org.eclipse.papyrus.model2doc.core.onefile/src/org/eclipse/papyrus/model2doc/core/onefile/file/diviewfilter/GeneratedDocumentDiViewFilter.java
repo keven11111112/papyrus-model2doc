@@ -112,6 +112,7 @@ public abstract class GeneratedDocumentDiViewFilter implements IDiViewFilter {
 					if (isFileExists(currentName, parent)) {
 						return currentName;
 					}
+					index++;
 				}
 			}
 		}

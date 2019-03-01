@@ -22,5 +22,6 @@
 		<module>documentview</module>
 		<module>ieee</module>
 		<module>odt</module>
+		<module>emf</module>
 	</modules>
 </project>
