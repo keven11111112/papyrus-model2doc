@@ -1,0 +1,40 @@
+target "Papyrus Model2Doc - 2018-12" with source requirements
+
+
+
+/** Manual dependencies */
+
+//manualUpdate
+location papyrusMasterN "https://hudson.eclipse.org/papyrus/job/Papyrus-Master/lastSuccessfulBuild/artifact/repository/" {
+ org.eclipse.papyrus.sdk.feature.feature.group lazy
+}
+
+//manualUpdate
+location papyrusMasterToolsmithsN "https://hudson.eclipse.org/papyrus/job/Papyrus-Master-Toolsmiths/lastSuccessfulBuild/artifact/repository/" {
+ org.eclipse.papyrus.junit.utils lazy
+ org.eclipse.papyrus.junit.framework lazy
+ org.eclipse.papyrus.toolsmiths.feature.feature.group lazy
+}
+
+location "http://download.eclipse.org/releases/2018-09" eclipse-2018-09 {
+ org.eclipse.sdk.feature.group 
+}
+
+
+/** Automatic dependencies */
+ 
+ location Sysml "http://download.eclipse.org/modeling/mdt/papyrus/components/sysml14/2018-09"{
+ 	org.eclipse.papyrus.sysml14.feature.feature.group
+}
+
+//updateFrom("MDT UML2",0) 
+
+location uml "http://download.eclipse.org/modeling/mdt/uml2/updates/5.5" {
+	org.eclipse.uml2.sdk.feature.group
+}
+
+//updateFrom("EMF (Core)",0)
+
+location emf "http://download.eclipse.org/modeling/emf/emf/builds/milestone/S201902091045" {
+	org.eclipse.emf.sdk.feature.group
+}
