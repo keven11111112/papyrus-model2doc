@@ -9,7 +9,7 @@
         <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Hnyi4DnWEem5-oyJMXJtFA"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_ub48IDnKEem5-oyJMXJtFA" name="graphicalContent" visibility="public">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_ub48IDnKEem5-oyJMXJtFA" name="graphicalContext" visibility="public">
         <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IRoxIDnWEem5-oyJMXJtFA"/>
       </ownedAttribute>

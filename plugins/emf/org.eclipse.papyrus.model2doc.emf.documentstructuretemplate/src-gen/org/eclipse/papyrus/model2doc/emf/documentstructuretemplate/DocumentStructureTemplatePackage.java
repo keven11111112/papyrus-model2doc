@@ -95,14 +95,14 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int DOCUMENT_TEMPLATE__SEMANTIC_CONTEXT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Graphical Content</b></em>' reference.
+	 * The feature id for the '<em><b>Graphical Context</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_TEMPLATE__GRAPHICAL_CONTENT = 1;
+	int DOCUMENT_TEMPLATE__GRAPHICAL_CONTEXT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -346,14 +346,14 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int TEXT_DOCUMENT_TEMPLATE__SEMANTIC_CONTEXT = DOCUMENT_TEMPLATE__SEMANTIC_CONTEXT;
 
 	/**
-	 * The feature id for the '<em><b>Graphical Content</b></em>' reference.
+	 * The feature id for the '<em><b>Graphical Context</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_DOCUMENT_TEMPLATE__GRAPHICAL_CONTENT = DOCUMENT_TEMPLATE__GRAPHICAL_CONTENT;
+	int TEXT_DOCUMENT_TEMPLATE__GRAPHICAL_CONTEXT = DOCUMENT_TEMPLATE__GRAPHICAL_CONTEXT;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -970,16 +970,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	EReference getDocumentTemplate_SemanticContext();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getGraphicalContent <em>Graphical Content</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getGraphicalContext <em>Graphical Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the meta object for the reference '<em>Graphical Content</em>'.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getGraphicalContent()
+	 * @return the meta object for the reference '<em>Graphical Context</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getGraphicalContext()
 	 * @see #getDocumentTemplate()
 	 * @generated
 	 */
-	EReference getDocumentTemplate_GraphicalContent();
+	EReference getDocumentTemplate_GraphicalContext();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getType <em>Type</em>}'.
@@ -1376,13 +1376,13 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 		EReference DOCUMENT_TEMPLATE__SEMANTIC_CONTEXT = eINSTANCE.getDocumentTemplate_SemanticContext();
 
 		/**
-		 * The meta object literal for the '<em><b>Graphical Content</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Graphical Context</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
 		 * @generated
 		 */
-		EReference DOCUMENT_TEMPLATE__GRAPHICAL_CONTENT = eINSTANCE.getDocumentTemplate_GraphicalContent();
+		EReference DOCUMENT_TEMPLATE__GRAPHICAL_CONTEXT = eINSTANCE.getDocumentTemplate_GraphicalContext();
 
 		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.

@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getSemanticContext <em>Semantic Context</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getGraphicalContent <em>Graphical Content</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getGraphicalContext <em>Graphical Context</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getType <em>Type</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getDocumentTemplatePrototype <em>Document Template Prototype</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getName <em>Name</em>}</li>
@@ -68,33 +68,33 @@ public interface DocumentTemplate extends EObject {
 	void setSemanticContext(EObject value);
 
 	/**
-	 * Returns the value of the '<em><b>Graphical Content</b></em>' reference.
+	 * Returns the value of the '<em><b>Graphical Context</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Graphical Content</em>' reference isn't clear,
+	 * If the meaning of the '<em>Graphical Context</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the value of the '<em>Graphical Content</em>' reference.
-	 * @see #setGraphicalContent(EObject)
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getDocumentTemplate_GraphicalContent()
+	 * @return the value of the '<em>Graphical Context</em>' reference.
+	 * @see #setGraphicalContext(EObject)
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getDocumentTemplate_GraphicalContext()
 	 * @model ordered="false"
 	 * @generated
 	 */
-	EObject getGraphicalContent();
+	EObject getGraphicalContext();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getGraphicalContent <em>Graphical Content</em>}' reference.
+	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getGraphicalContext <em>Graphical Context</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *                  the new value of the '<em>Graphical Content</em>' reference.
-	 * @see #getGraphicalContent()
+	 *                  the new value of the '<em>Graphical Context</em>' reference.
+	 * @see #getGraphicalContext()
 	 * @generated
 	 */
-	void setGraphicalContent(EObject value);
+	void setGraphicalContext(EObject value);
 
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.

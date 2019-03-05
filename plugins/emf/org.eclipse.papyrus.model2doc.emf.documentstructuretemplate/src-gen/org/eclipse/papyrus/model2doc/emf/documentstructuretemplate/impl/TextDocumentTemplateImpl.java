@@ -44,7 +44,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentT
  * </p>
  * <ul>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl#getSemanticContext <em>Semantic Context</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl#getGraphicalContent <em>Graphical Content</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl#getGraphicalContext <em>Graphical Context</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl#getType <em>Type</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl#getDocumentTemplatePrototype <em>Document Template Prototype</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl#getName <em>Name</em>}</li>
@@ -67,15 +67,15 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 	protected EObject semanticContext;
 
 	/**
-	 * The cached value of the '{@link #getGraphicalContent() <em>Graphical Content</em>}' reference.
+	 * The cached value of the '{@link #getGraphicalContext() <em>Graphical Context</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see #getGraphicalContent()
+	 * @see #getGraphicalContext()
 	 * @generated
 	 * @ordered
 	 */
-	protected EObject graphicalContent;
+	protected EObject graphicalContext;
 
 	/**
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -225,17 +225,17 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 	 * @generated
 	 */
 	@Override
-	public EObject getGraphicalContent() {
-		if (graphicalContent != null && graphicalContent.eIsProxy()) {
-			InternalEObject oldGraphicalContent = (InternalEObject) graphicalContent;
-			graphicalContent = eResolveProxy(oldGraphicalContent);
-			if (graphicalContent != oldGraphicalContent) {
+	public EObject getGraphicalContext() {
+		if (graphicalContext != null && graphicalContext.eIsProxy()) {
+			InternalEObject oldGraphicalContext = (InternalEObject) graphicalContext;
+			graphicalContext = eResolveProxy(oldGraphicalContext);
+			if (graphicalContext != oldGraphicalContext) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__GRAPHICAL_CONTENT, oldGraphicalContent, graphicalContent));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__GRAPHICAL_CONTEXT, oldGraphicalContext, graphicalContext));
 				}
 			}
 		}
-		return graphicalContent;
+		return graphicalContext;
 	}
 
 	/**
@@ -244,8 +244,8 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 	 *
 	 * @generated
 	 */
-	public EObject basicGetGraphicalContent() {
-		return graphicalContent;
+	public EObject basicGetGraphicalContext() {
+		return graphicalContext;
 	}
 
 	/**
@@ -255,11 +255,11 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 	 * @generated
 	 */
 	@Override
-	public void setGraphicalContent(EObject newGraphicalContent) {
-		EObject oldGraphicalContent = graphicalContent;
-		graphicalContent = newGraphicalContent;
+	public void setGraphicalContext(EObject newGraphicalContext) {
+		EObject oldGraphicalContext = graphicalContext;
+		graphicalContext = newGraphicalContext;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__GRAPHICAL_CONTENT, oldGraphicalContent, graphicalContent));
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__GRAPHICAL_CONTEXT, oldGraphicalContext, graphicalContext));
 		}
 	}
 
@@ -416,11 +416,11 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 				return getSemanticContext();
 			}
 			return basicGetSemanticContext();
-		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__GRAPHICAL_CONTENT:
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__GRAPHICAL_CONTEXT:
 			if (resolve) {
-				return getGraphicalContent();
+				return getGraphicalContext();
 			}
-			return basicGetGraphicalContent();
+			return basicGetGraphicalContext();
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__TYPE:
 			return getType();
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_TEMPLATE_PROTOTYPE:
@@ -451,8 +451,8 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__SEMANTIC_CONTEXT:
 			setSemanticContext((EObject) newValue);
 			return;
-		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__GRAPHICAL_CONTENT:
-			setGraphicalContent((EObject) newValue);
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__GRAPHICAL_CONTEXT:
+			setGraphicalContext((EObject) newValue);
 			return;
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_TEMPLATE_PROTOTYPE:
 			setDocumentTemplatePrototype((DocumentTemplatePrototype) newValue);
@@ -483,8 +483,8 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__SEMANTIC_CONTEXT:
 			setSemanticContext((EObject) null);
 			return;
-		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__GRAPHICAL_CONTENT:
-			setGraphicalContent((EObject) null);
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__GRAPHICAL_CONTEXT:
+			setGraphicalContext((EObject) null);
 			return;
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_TEMPLATE_PROTOTYPE:
 			setDocumentTemplatePrototype((DocumentTemplatePrototype) null);
@@ -513,8 +513,8 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 		switch (featureID) {
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__SEMANTIC_CONTEXT:
 			return semanticContext != null;
-		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__GRAPHICAL_CONTENT:
-			return graphicalContent != null;
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__GRAPHICAL_CONTEXT:
+			return graphicalContext != null;
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__TYPE:
 			return TYPE_EDEFAULT == null ? getType() != null : !TYPE_EDEFAULT.equals(getType());
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_TEMPLATE_PROTOTYPE:

@@ -241,7 +241,7 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
-	public EReference getDocumentTemplate_GraphicalContent() {
+	public EReference getDocumentTemplate_GraphicalContext() {
 		return (EReference) documentTemplateEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -611,7 +611,7 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		// Create classes and their features
 		documentTemplateEClass = createEClass(DOCUMENT_TEMPLATE);
 		createEReference(documentTemplateEClass, DOCUMENT_TEMPLATE__SEMANTIC_CONTEXT);
-		createEReference(documentTemplateEClass, DOCUMENT_TEMPLATE__GRAPHICAL_CONTENT);
+		createEReference(documentTemplateEClass, DOCUMENT_TEMPLATE__GRAPHICAL_CONTEXT);
 		createEAttribute(documentTemplateEClass, DOCUMENT_TEMPLATE__TYPE);
 		createEReference(documentTemplateEClass, DOCUMENT_TEMPLATE__DOCUMENT_TEMPLATE_PROTOTYPE);
 		createEAttribute(documentTemplateEClass, DOCUMENT_TEMPLATE__NAME);
@@ -703,7 +703,7 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		initEClass(documentTemplateEClass, DocumentTemplate.class, "DocumentTemplate", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(getDocumentTemplate_SemanticContext(), theEcorePackage.getEObject(), null, "semanticContext", null, 0, 1, DocumentTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, //$NON-NLS-1$
 				!IS_DERIVED, !IS_ORDERED);
-		initEReference(getDocumentTemplate_GraphicalContent(), theEcorePackage.getEObject(), null, "graphicalContent", null, 0, 1, DocumentTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, //$NON-NLS-1$
+		initEReference(getDocumentTemplate_GraphicalContext(), theEcorePackage.getEObject(), null, "graphicalContext", null, 0, 1, DocumentTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, //$NON-NLS-1$
 				!IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getDocumentTemplate_Type(), theEcorePackage.getEString(), "type", null, 1, 1, DocumentTemplate.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 		initEReference(getDocumentTemplate_DocumentTemplatePrototype(), this.getDocumentTemplatePrototype(), null, "documentTemplatePrototype", null, 1, 1, DocumentTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, //$NON-NLS-1$

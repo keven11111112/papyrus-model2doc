@@ -78,7 +78,7 @@ public class TextDocumentTemplateItemProvider
 			super.getPropertyDescriptors(object);
 
 			addSemanticContextPropertyDescriptor(object);
-			addGraphicalContentPropertyDescriptor(object);
+			addGraphicalContextPropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
 			addDocumentTemplatePrototypePropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
@@ -109,18 +109,18 @@ public class TextDocumentTemplateItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Graphical Content feature.
+	 * This adds a property descriptor for the Graphical Context feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 */
-	protected void addGraphicalContentPropertyDescriptor(Object object) {
+	protected void addGraphicalContextPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
-				getString("_UI_DocumentTemplate_graphicalContent_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_DocumentTemplate_graphicalContent_feature", "_UI_DocumentTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				DocumentStructureTemplatePackage.Literals.DOCUMENT_TEMPLATE__GRAPHICAL_CONTENT,
+				getString("_UI_DocumentTemplate_graphicalContext_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_DocumentTemplate_graphicalContext_feature", "_UI_DocumentTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				DocumentStructureTemplatePackage.Literals.DOCUMENT_TEMPLATE__GRAPHICAL_CONTEXT,
 				true,
 				false,
 				true,

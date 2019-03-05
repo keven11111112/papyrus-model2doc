@@ -42,7 +42,7 @@
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//DocumentTemplate/semanticContext"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//DocumentTemplate/graphicalContent"/>
+          propertySortChoices="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//DocumentTemplate/graphicalContext"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" createChild="false"
           ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//DocumentTemplate/type"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
