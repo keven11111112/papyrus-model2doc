@@ -17,6 +17,13 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWkisX_EduPJbEsMYXjUQ"/>
       </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_2Eq_gDnXEem5-oyJMXJtFA" name="documentTemplatePrototype" type="_xkiHEDnVEem5-oyJMXJtFA" aggregation="shared" association="_2EojQDnXEem5-oyJMXJtFA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_UOsFoD8_EemRfNnBSp4rTg" name="name">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWkisX_EduPJbEsMYXjUQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_WYPzID8_EemRfNnBSp4rTg" name="description">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWkisX_EduPJbEsMYXjUQ"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XaRQ0D8_EemRfNnBSp4rTg"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_tLqTYB17Eem3fboELVTtYQ" name="TextDocumentTemplate">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_EPjnUjnMEem5-oyJMXJtFA" name="documentPart" type="_zXDZIDnLEem5-oyJMXJtFA" aggregation="composite" association="_EPiZMDnMEem5-oyJMXJtFA">
@@ -108,7 +115,7 @@ The field eobject must reference an eobject of the user model, in other case the
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_Omg0EDnMEem5-oyJMXJtFA" client="_f03L4DnLEem5-oyJMXJtFA" supplier="_zXDZIDnLEem5-oyJMXJtFA" contract="_zXDZIDnLEem5-oyJMXJtFA"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_xzVjoDnLEem5-oyJMXJtFA" name="Body">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_Pkz2AB-6EempQZhnl_zCWg" name="objectPartTemplate" type="_Fsn10B1-Eem3fboELVTtYQ" aggregation="composite" association="_PkrTIB-6EempQZhnl_zCWg">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Pkz2AB-6EempQZhnl_zCWg" name="objectPartTemplate" type="_Fsn10B1-Eem3fboELVTtYQ" isOrdered="true" aggregation="composite" association="_PkrTIB-6EempQZhnl_zCWg">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Pk0dER-6EempQZhnl_zCWg" value="*"/>
       </ownedAttribute>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_PHIN0DnMEem5-oyJMXJtFA" client="_xzVjoDnLEem5-oyJMXJtFA" supplier="_zXDZIDnLEem5-oyJMXJtFA" contract="_zXDZIDnLEem5-oyJMXJtFA"/>
@@ -118,7 +125,7 @@ The field eobject must reference an eobject of the user model, in other case the
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_EPjnUDnMEem5-oyJMXJtFA" source="org.eclipse.papyrus">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_EPjnUTnMEem5-oyJMXJtFA" key="nature" value="UML_Nature"/>
       </eAnnotations>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_EPkOYDnMEem5-oyJMXJtFA" name="textdocumenttemplate" type="_tLqTYB17Eem3fboELVTtYQ" association="_EPiZMDnMEem5-oyJMXJtFA"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_EPkOYDnMEem5-oyJMXJtFA" name="textDocumentTemplate" type="_tLqTYB17Eem3fboELVTtYQ" association="_EPiZMDnMEem5-oyJMXJtFA"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_xkiHEDnVEem5-oyJMXJtFA" name="DocumentTemplatePrototype">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_7PfJcDnVEem5-oyJMXJtFA" name="type">

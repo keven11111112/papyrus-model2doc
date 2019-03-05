@@ -47,6 +47,8 @@
           ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//DocumentTemplate/type"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//DocumentTemplate/documentTemplatePrototype"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//DocumentTemplate/name"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//DocumentTemplate/description"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructuretemplate.ecore#//DocumentTemplatePrototype">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//DocumentTemplatePrototype/type"/>

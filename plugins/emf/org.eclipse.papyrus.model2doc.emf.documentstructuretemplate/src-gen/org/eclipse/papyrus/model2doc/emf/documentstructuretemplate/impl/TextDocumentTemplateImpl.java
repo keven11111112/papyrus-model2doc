@@ -47,6 +47,8 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentT
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl#getGraphicalContent <em>Graphical Content</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl#getType <em>Type</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl#getDocumentTemplatePrototype <em>Document Template Prototype</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl#getDescription <em>Description</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl#getDocumentPart <em>Document Part</em>}</li>
  * </ul>
  *
@@ -95,6 +97,50 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 	 * @ordered
 	 */
 	protected DocumentTemplatePrototype documentTemplatePrototype;
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DESCRIPTION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected String description = DESCRIPTION_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getDocumentPart() <em>Document Part</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -282,6 +328,58 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 	 * @generated
 	 */
 	@Override
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__NAME, oldName, name));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setDescription(String newDescription) {
+		String oldDescription = description;
+		description = newDescription;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DESCRIPTION, oldDescription, description));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EList<DocumentPart> getDocumentPart() {
 		if (documentPart == null) {
 			documentPart = new EObjectContainmentEList<>(DocumentPart.class, this, DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART);
@@ -330,6 +428,10 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 				return getDocumentTemplatePrototype();
 			}
 			return basicGetDocumentTemplatePrototype();
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__NAME:
+			return getName();
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DESCRIPTION:
+			return getDescription();
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART:
 			return getDocumentPart();
 		}
@@ -354,6 +456,12 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 			return;
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_TEMPLATE_PROTOTYPE:
 			setDocumentTemplatePrototype((DocumentTemplatePrototype) newValue);
+			return;
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__NAME:
+			setName((String) newValue);
+			return;
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DESCRIPTION:
+			setDescription((String) newValue);
 			return;
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART:
 			getDocumentPart().clear();
@@ -381,6 +489,12 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_TEMPLATE_PROTOTYPE:
 			setDocumentTemplatePrototype((DocumentTemplatePrototype) null);
 			return;
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DESCRIPTION:
+			setDescription(DESCRIPTION_EDEFAULT);
+			return;
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART:
 			getDocumentPart().clear();
 			return;
@@ -405,10 +519,35 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 			return TYPE_EDEFAULT == null ? getType() != null : !TYPE_EDEFAULT.equals(getType());
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_TEMPLATE_PROTOTYPE:
 			return documentTemplatePrototype != null;
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DESCRIPTION:
+			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART:
 			return documentPart != null && !documentPart.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) {
+			return super.toString();
+		}
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (name: "); //$NON-NLS-1$
+		result.append(name);
+		result.append(", description: "); //$NON-NLS-1$
+		result.append(description);
+		result.append(')');
+		return result.toString();
 	}
 
 } // TextDocumentTemplateImpl

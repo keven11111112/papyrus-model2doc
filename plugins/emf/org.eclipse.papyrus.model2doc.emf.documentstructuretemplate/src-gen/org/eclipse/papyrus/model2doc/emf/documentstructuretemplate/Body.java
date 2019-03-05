@@ -44,7 +44,7 @@ public interface Body extends DocumentPart {
 	 *
 	 * @return the value of the '<em>Object Part Template</em>' containment reference list.
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getBody_ObjectPartTemplate()
-	 * @model containment="true" required="true" ordered="false"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	EList<ObjectPartTemplate> getObjectPartTemplate();

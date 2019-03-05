@@ -15,6 +15,10 @@
         changeable="false" volatile="true" transient="true" derived="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="documentTemplatePrototype"
         ordered="false" lowerBound="1" eType="#//DocumentTemplatePrototype"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DocumentTemplatePrototype">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" ordered="false" lowerBound="1"
@@ -77,7 +81,7 @@
         defaultValueLiteral="Table Of Contents"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Body" eSuperTypes="#//DocumentPart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="objectPartTemplate" ordered="false"
-        lowerBound="1" upperBound="-1" eType="#//ObjectPartTemplate" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="objectPartTemplate" lowerBound="1"
+        upperBound="-1" eType="#//ObjectPartTemplate" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

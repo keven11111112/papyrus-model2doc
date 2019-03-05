@@ -125,6 +125,26 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int DOCUMENT_TEMPLATE__DOCUMENT_TEMPLATE_PROTOTYPE = 3;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT_TEMPLATE__NAME = 4;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT_TEMPLATE__DESCRIPTION = 5;
+
+	/**
 	 * The number of structural features of the '<em>Document Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -132,7 +152,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_TEMPLATE_FEATURE_COUNT = 4;
+	int DOCUMENT_TEMPLATE_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Document Template</em>' class.
@@ -354,6 +374,26 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @ordered
 	 */
 	int TEXT_DOCUMENT_TEMPLATE__DOCUMENT_TEMPLATE_PROTOTYPE = DOCUMENT_TEMPLATE__DOCUMENT_TEMPLATE_PROTOTYPE;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_DOCUMENT_TEMPLATE__NAME = DOCUMENT_TEMPLATE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_DOCUMENT_TEMPLATE__DESCRIPTION = DOCUMENT_TEMPLATE__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Document Part</b></em>' containment reference list.
@@ -966,6 +1006,30 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	EReference getDocumentTemplate_DocumentTemplatePrototype();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getName()
+	 * @see #getDocumentTemplate()
+	 * @generated
+	 */
+	EAttribute getDocumentTemplate_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getDescription()
+	 * @see #getDocumentTemplate()
+	 * @generated
+	 */
+	EAttribute getDocumentTemplate_Description();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentTemplate <em>Text Document Template</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1337,6 +1401,24 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 		 * @generated
 		 */
 		EReference DOCUMENT_TEMPLATE__DOCUMENT_TEMPLATE_PROTOTYPE = eINSTANCE.getDocumentTemplate_DocumentTemplatePrototype();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute DOCUMENT_TEMPLATE__NAME = eINSTANCE.getDocumentTemplate_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute DOCUMENT_TEMPLATE__DESCRIPTION = eINSTANCE.getDocumentTemplate_Description();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl <em>Text Document Template</em>}' class.

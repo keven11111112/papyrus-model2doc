@@ -321,6 +321,14 @@
           <element xmi:type="uml:Property" href="documentstructuretemplate.uml#_ZoXMYDnWEem5-oyJMXJtFA"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_Zo-QYTnWEem5-oyJMXJtFA"/>
         </children>
+        <children xmi:type="notation:Shape" xmi:id="_iIGFcD8_EemRfNnBSp4rTg" type="Property_InterfaceAttributeLabel">
+          <element xmi:type="uml:Property" href="documentstructuretemplate.uml#_WYPzID8_EemRfNnBSp4rTg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_iIGFcT8_EemRfNnBSp4rTg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_iHXssD8_EemRfNnBSp4rTg" type="Property_InterfaceAttributeLabel">
+          <element xmi:type="uml:Property" href="documentstructuretemplate.uml#_UOsFoD8_EemRfNnBSp4rTg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_iHXssT8_EemRfNnBSp4rTg"/>
+        </children>
         <styles xmi:type="notation:TitleStyle" xmi:id="_uf3dcR5QEemmq_cjeiIGww"/>
         <styles xmi:type="notation:SortingStyle" xmi:id="_uf3dch5QEemmq_cjeiIGww"/>
         <styles xmi:type="notation:FilteringStyle" xmi:id="_uf3dcx5QEemmq_cjeiIGww"/>

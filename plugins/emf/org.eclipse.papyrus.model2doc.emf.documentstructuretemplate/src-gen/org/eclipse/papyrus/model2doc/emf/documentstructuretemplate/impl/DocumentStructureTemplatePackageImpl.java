@@ -274,6 +274,28 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
+	public EAttribute getDocumentTemplate_Name() {
+		return (EAttribute) documentTemplateEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getDocumentTemplate_Description() {
+		return (EAttribute) documentTemplateEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EClass getTextDocumentTemplate() {
 		return textDocumentTemplateEClass;
 	}
@@ -592,6 +614,8 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		createEReference(documentTemplateEClass, DOCUMENT_TEMPLATE__GRAPHICAL_CONTENT);
 		createEAttribute(documentTemplateEClass, DOCUMENT_TEMPLATE__TYPE);
 		createEReference(documentTemplateEClass, DOCUMENT_TEMPLATE__DOCUMENT_TEMPLATE_PROTOTYPE);
+		createEAttribute(documentTemplateEClass, DOCUMENT_TEMPLATE__NAME);
+		createEAttribute(documentTemplateEClass, DOCUMENT_TEMPLATE__DESCRIPTION);
 
 		documentTemplatePrototypeEClass = createEClass(DOCUMENT_TEMPLATE_PROTOTYPE);
 		createEAttribute(documentTemplatePrototypeEClass, DOCUMENT_TEMPLATE_PROTOTYPE__TYPE);
@@ -684,6 +708,8 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		initEAttribute(getDocumentTemplate_Type(), theEcorePackage.getEString(), "type", null, 1, 1, DocumentTemplate.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 		initEReference(getDocumentTemplate_DocumentTemplatePrototype(), this.getDocumentTemplatePrototype(), null, "documentTemplatePrototype", null, 1, 1, DocumentTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, //$NON-NLS-1$
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getDocumentTemplate_Name(), theEcorePackage.getEString(), "name", null, 1, 1, DocumentTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getDocumentTemplate_Description(), theEcorePackage.getEString(), "description", null, 0, 1, DocumentTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(documentTemplatePrototypeEClass, DocumentTemplatePrototype.class, "DocumentTemplatePrototype", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEAttribute(getDocumentTemplatePrototype_Type(), theEcorePackage.getEString(), "type", null, 1, 1, DocumentTemplatePrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
@@ -729,7 +755,7 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 
 		initEClass(bodyEClass, Body.class, "Body", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(getBody_ObjectPartTemplate(), this.getObjectPartTemplate(), null, "objectPartTemplate", null, 1, -1, Body.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, //$NON-NLS-1$
-				!IS_ORDERED);
+				IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
