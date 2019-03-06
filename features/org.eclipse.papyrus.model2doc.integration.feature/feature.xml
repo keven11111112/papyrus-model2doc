@@ -10,7 +10,6 @@
  SPDX-License-Identifier: EPL-2.0
 
  Contributors:
-  Yupanqui Munoz (CEA LIST) yupanqui.munozjulho@cea.fr - Initial API and implementation
   Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
 -->
 <feature
@@ -35,6 +34,20 @@
 
    <plugin
          id="org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.modelexplorer"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"

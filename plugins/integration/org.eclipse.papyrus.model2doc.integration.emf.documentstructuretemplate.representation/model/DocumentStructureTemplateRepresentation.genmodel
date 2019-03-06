@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2019 CEA LIST.&#xA;&#xA; All rights reserved. This program and the accompanying materials&#xA; are made available under the terms of the Eclipse Public License 2.0&#xA; which accompanies this distribution, and is available at&#xA; https://www.eclipse.org/legal/epl-2.0/&#xA;&#xA; SPDX-License-Identifier: EPL-2.0&#xA;&#xA; Contributors:&#xA; Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation"
+    modelDirectory="/org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation/src-gen"
+    creationIcons="false" editDirectory="/org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation.edit/src-gen"
+    editorDirectory="/org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation.editor/src-gen"
+    modelPluginID="org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation"
+    modelName="DocumentStructureTemplateRepresentation" nonNLSMarkers="true" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" commentFormatting="true" testsDirectory="/org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation.tests/src-gen"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    testsPluginID="org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation.tests"
+    usedGenPackages="../../org.eclipse.papyrus.infra.core.architecture/model/Architecture.genmodel#//architecture ../../org.eclipse.papyrus.infra.constraints/Model/Constraints.genmodel#//constraints ../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.genmodel#//documentstructuretemplate ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eclipse.papyrus.infra.types/model/ElementTypesConfigurations.genmodel#//types ../../org.eclipse.papyrus.infra.architecture.representation/model/Representation.genmodel#//representation"
+    operationReflection="true" importOrganizing="true" cleanup="true" oSGiCompatible="true">
+  <foreignModel>DocumentStructureTemplateRepresentation.ecore</foreignModel>
+  <genPackages prefix="Representation" basePackage="org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate"
+      disposableProviderFactory="true" multipleEditorPages="false" generateModelWizard="false"
+      extensibleProviderFactory="true" childCreationExtenders="true" ecorePackage="DocumentStructureTemplateRepresentation.ecore#/">
+    <genClasses ecoreClass="DocumentStructureTemplateRepresentation.ecore#//PapyrusDocumentPrototype">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DocumentStructureTemplateRepresentation.ecore#//PapyrusDocumentPrototype/documentTemplatePrototype"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DocumentStructureTemplateRepresentation.ecore#//PapyrusDocumentPrototype/creationCommandClass"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
