@@ -33,6 +33,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTempl
  * </p>
  * <ul>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentTemplatePrototypeImpl#getType <em>Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentTemplatePrototypeImpl#getIconPath <em>Icon Path</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentTemplatePrototypeImpl#getDescription <em>Description</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentTemplatePrototypeImpl#getDocumentTemplate <em>Document Template</em>}</li>
  * </ul>
@@ -61,6 +62,28 @@ public class DocumentTemplatePrototypeImpl extends MinimalEObjectImpl.Container 
 	 * @ordered
 	 */
 	protected String type = TYPE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getIconPath() <em>Icon Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getIconPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ICON_PATH_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getIconPath() <em>Icon Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getIconPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected String iconPath = ICON_PATH_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -139,6 +162,32 @@ public class DocumentTemplatePrototypeImpl extends MinimalEObjectImpl.Container 
 		type = newType;
 		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.DOCUMENT_TEMPLATE_PROTOTYPE__TYPE, oldType, type));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public String getIconPath() {
+		return iconPath;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setIconPath(String newIconPath) {
+		String oldIconPath = iconPath;
+		iconPath = newIconPath;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.DOCUMENT_TEMPLATE_PROTOTYPE__ICON_PATH, oldIconPath, iconPath));
 		}
 	}
 
@@ -250,6 +299,8 @@ public class DocumentTemplatePrototypeImpl extends MinimalEObjectImpl.Container 
 		switch (featureID) {
 		case DocumentStructureTemplatePackage.DOCUMENT_TEMPLATE_PROTOTYPE__TYPE:
 			return getType();
+		case DocumentStructureTemplatePackage.DOCUMENT_TEMPLATE_PROTOTYPE__ICON_PATH:
+			return getIconPath();
 		case DocumentStructureTemplatePackage.DOCUMENT_TEMPLATE_PROTOTYPE__DESCRIPTION:
 			return getDescription();
 		case DocumentStructureTemplatePackage.DOCUMENT_TEMPLATE_PROTOTYPE__DOCUMENT_TEMPLATE:
@@ -269,6 +320,9 @@ public class DocumentTemplatePrototypeImpl extends MinimalEObjectImpl.Container 
 		switch (featureID) {
 		case DocumentStructureTemplatePackage.DOCUMENT_TEMPLATE_PROTOTYPE__TYPE:
 			setType((String) newValue);
+			return;
+		case DocumentStructureTemplatePackage.DOCUMENT_TEMPLATE_PROTOTYPE__ICON_PATH:
+			setIconPath((String) newValue);
 			return;
 		case DocumentStructureTemplatePackage.DOCUMENT_TEMPLATE_PROTOTYPE__DESCRIPTION:
 			setDescription((String) newValue);
@@ -292,6 +346,9 @@ public class DocumentTemplatePrototypeImpl extends MinimalEObjectImpl.Container 
 		case DocumentStructureTemplatePackage.DOCUMENT_TEMPLATE_PROTOTYPE__TYPE:
 			setType(TYPE_EDEFAULT);
 			return;
+		case DocumentStructureTemplatePackage.DOCUMENT_TEMPLATE_PROTOTYPE__ICON_PATH:
+			setIconPath(ICON_PATH_EDEFAULT);
+			return;
 		case DocumentStructureTemplatePackage.DOCUMENT_TEMPLATE_PROTOTYPE__DESCRIPTION:
 			setDescription(DESCRIPTION_EDEFAULT);
 			return;
@@ -313,6 +370,8 @@ public class DocumentTemplatePrototypeImpl extends MinimalEObjectImpl.Container 
 		switch (featureID) {
 		case DocumentStructureTemplatePackage.DOCUMENT_TEMPLATE_PROTOTYPE__TYPE:
 			return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+		case DocumentStructureTemplatePackage.DOCUMENT_TEMPLATE_PROTOTYPE__ICON_PATH:
+			return ICON_PATH_EDEFAULT == null ? iconPath != null : !ICON_PATH_EDEFAULT.equals(iconPath);
 		case DocumentStructureTemplatePackage.DOCUMENT_TEMPLATE_PROTOTYPE__DESCRIPTION:
 			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		case DocumentStructureTemplatePackage.DOCUMENT_TEMPLATE_PROTOTYPE__DOCUMENT_TEMPLATE:
@@ -336,6 +395,8 @@ public class DocumentTemplatePrototypeImpl extends MinimalEObjectImpl.Container 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (type: "); //$NON-NLS-1$
 		result.append(type);
+		result.append(", iconPath: "); //$NON-NLS-1$
+		result.append(iconPath);
 		result.append(", description: "); //$NON-NLS-1$
 		result.append(description);
 		result.append(')');

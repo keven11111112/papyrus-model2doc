@@ -30,4 +30,18 @@ public class CustomTextDocumentTemplateImpl extends TextDocumentTemplateImpl {
 		}
 		return null;
 	}
+
+	/**
+	 * 
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl#getIconPath()
+	 *
+	 * @return
+	 */
+	@Override
+	public String getIconPath() {
+		if (null != getDocumentTemplatePrototype()) {
+			return getDocumentTemplatePrototype().getIconPath();
+		}
+		return null;
+	}
 }

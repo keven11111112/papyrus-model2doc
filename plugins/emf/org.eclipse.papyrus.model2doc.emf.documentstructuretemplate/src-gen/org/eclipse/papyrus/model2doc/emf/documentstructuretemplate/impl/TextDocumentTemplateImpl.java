@@ -46,9 +46,11 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentT
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl#getSemanticContext <em>Semantic Context</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl#getGraphicalContext <em>Graphical Context</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl#getType <em>Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl#getIconPath <em>Icon Path</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl#getDocumentTemplatePrototype <em>Document Template Prototype</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl#getName <em>Name</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl#getDescription <em>Description</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl#getKindId <em>Kind Id</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl#getDocumentPart <em>Document Part</em>}</li>
  * </ul>
  *
@@ -87,6 +89,17 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 	 * @ordered
 	 */
 	protected static final String TYPE_EDEFAULT = null;
+	/**
+	 * The default value of the '{@link #getIconPath() <em>Icon Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getIconPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ICON_PATH_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getDocumentTemplatePrototype() <em>Document Template Prototype</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -140,6 +153,28 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getKindId() <em>Kind Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getKindId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String KIND_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getKindId() <em>Kind Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getKindId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String kindId = KIND_ID_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getDocumentPart() <em>Document Part</em>}' containment reference list.
@@ -283,6 +318,32 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 	 * @generated
 	 */
 	@Override
+	public String getIconPath() {
+		// TODO: implement this method to return the 'Icon Path' attribute
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setIconPath(String newIconPath) {
+		// TODO: implement this method to set the 'Icon Path' attribute
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public DocumentTemplatePrototype getDocumentTemplatePrototype() {
 		if (documentTemplatePrototype != null && documentTemplatePrototype.eIsProxy()) {
 			InternalEObject oldDocumentTemplatePrototype = (InternalEObject) documentTemplatePrototype;
@@ -380,6 +441,32 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 	 * @generated
 	 */
 	@Override
+	public String getKindId() {
+		return kindId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setKindId(String newKindId) {
+		String oldKindId = kindId;
+		kindId = newKindId;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__KIND_ID, oldKindId, kindId));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EList<DocumentPart> getDocumentPart() {
 		if (documentPart == null) {
 			documentPart = new EObjectContainmentEList<>(DocumentPart.class, this, DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART);
@@ -423,6 +510,8 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 			return basicGetGraphicalContext();
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__TYPE:
 			return getType();
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__ICON_PATH:
+			return getIconPath();
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_TEMPLATE_PROTOTYPE:
 			if (resolve) {
 				return getDocumentTemplatePrototype();
@@ -432,6 +521,8 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 			return getName();
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DESCRIPTION:
 			return getDescription();
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__KIND_ID:
+			return getKindId();
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART:
 			return getDocumentPart();
 		}
@@ -454,6 +545,9 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__GRAPHICAL_CONTEXT:
 			setGraphicalContext((EObject) newValue);
 			return;
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__ICON_PATH:
+			setIconPath((String) newValue);
+			return;
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_TEMPLATE_PROTOTYPE:
 			setDocumentTemplatePrototype((DocumentTemplatePrototype) newValue);
 			return;
@@ -462,6 +556,9 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 			return;
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DESCRIPTION:
 			setDescription((String) newValue);
+			return;
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__KIND_ID:
+			setKindId((String) newValue);
 			return;
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART:
 			getDocumentPart().clear();
@@ -486,6 +583,9 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__GRAPHICAL_CONTEXT:
 			setGraphicalContext((EObject) null);
 			return;
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__ICON_PATH:
+			setIconPath(ICON_PATH_EDEFAULT);
+			return;
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_TEMPLATE_PROTOTYPE:
 			setDocumentTemplatePrototype((DocumentTemplatePrototype) null);
 			return;
@@ -494,6 +594,9 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 			return;
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DESCRIPTION:
 			setDescription(DESCRIPTION_EDEFAULT);
+			return;
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__KIND_ID:
+			setKindId(KIND_ID_EDEFAULT);
 			return;
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART:
 			getDocumentPart().clear();
@@ -517,12 +620,16 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 			return graphicalContext != null;
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__TYPE:
 			return TYPE_EDEFAULT == null ? getType() != null : !TYPE_EDEFAULT.equals(getType());
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__ICON_PATH:
+			return ICON_PATH_EDEFAULT == null ? getIconPath() != null : !ICON_PATH_EDEFAULT.equals(getIconPath());
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_TEMPLATE_PROTOTYPE:
 			return documentTemplatePrototype != null;
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DESCRIPTION:
 			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__KIND_ID:
+			return KIND_ID_EDEFAULT == null ? kindId != null : !KIND_ID_EDEFAULT.equals(kindId);
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART:
 			return documentPart != null && !documentPart.isEmpty();
 		}
@@ -546,6 +653,8 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 		result.append(name);
 		result.append(", description: "); //$NON-NLS-1$
 		result.append(description);
+		result.append(", kindId: "); //$NON-NLS-1$
+		result.append(kindId);
 		result.append(')');
 		return result.toString();
 	}

@@ -74,6 +74,7 @@ public class DocumentTemplatePrototypeItemProvider
 			super.getPropertyDescriptors(object);
 
 			addTypePropertyDescriptor(object);
+			addIconPathPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -92,6 +93,27 @@ public class DocumentTemplatePrototypeItemProvider
 				getString("_UI_DocumentTemplatePrototype_type_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_DocumentTemplatePrototype_type_feature", "_UI_DocumentTemplatePrototype_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				DocumentStructureTemplatePackage.Literals.DOCUMENT_TEMPLATE_PROTOTYPE__TYPE,
+				true,
+				false,
+				false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				null,
+				null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Icon Path feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected void addIconPathPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_DocumentTemplatePrototype_iconPath_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_DocumentTemplatePrototype_iconPath_feature", "_UI_DocumentTemplatePrototype_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				DocumentStructureTemplatePackage.Literals.DOCUMENT_TEMPLATE_PROTOTYPE__ICON_PATH,
 				true,
 				false,
 				false,
@@ -216,6 +238,7 @@ public class DocumentTemplatePrototypeItemProvider
 
 		switch (notification.getFeatureID(DocumentTemplatePrototype.class)) {
 		case DocumentStructureTemplatePackage.DOCUMENT_TEMPLATE_PROTOTYPE__TYPE:
+		case DocumentStructureTemplatePackage.DOCUMENT_TEMPLATE_PROTOTYPE__ICON_PATH:
 		case DocumentStructureTemplatePackage.DOCUMENT_TEMPLATE_PROTOTYPE__DESCRIPTION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;

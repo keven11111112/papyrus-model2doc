@@ -263,8 +263,19 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
+	public EAttribute getDocumentTemplate_IconPath() {
+		return (EAttribute) documentTemplateEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EReference getDocumentTemplate_DocumentTemplatePrototype() {
-		return (EReference) documentTemplateEClass.getEStructuralFeatures().get(3);
+		return (EReference) documentTemplateEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -275,7 +286,7 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 */
 	@Override
 	public EAttribute getDocumentTemplate_Name() {
-		return (EAttribute) documentTemplateEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) documentTemplateEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -286,7 +297,18 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 */
 	@Override
 	public EAttribute getDocumentTemplate_Description() {
-		return (EAttribute) documentTemplateEClass.getEStructuralFeatures().get(5);
+		return (EAttribute) documentTemplateEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getDocumentTemplate_KindId() {
+		return (EAttribute) documentTemplateEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -560,7 +582,7 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDocumentTemplatePrototype_Description() {
+	public EAttribute getDocumentTemplatePrototype_IconPath() {
 		return (EAttribute) documentTemplatePrototypeEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -571,8 +593,19 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
+	public EAttribute getDocumentTemplatePrototype_Description() {
+		return (EAttribute) documentTemplatePrototypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EReference getDocumentTemplatePrototype_DocumentTemplate() {
-		return (EReference) documentTemplatePrototypeEClass.getEStructuralFeatures().get(2);
+		return (EReference) documentTemplatePrototypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -613,12 +646,15 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		createEReference(documentTemplateEClass, DOCUMENT_TEMPLATE__SEMANTIC_CONTEXT);
 		createEReference(documentTemplateEClass, DOCUMENT_TEMPLATE__GRAPHICAL_CONTEXT);
 		createEAttribute(documentTemplateEClass, DOCUMENT_TEMPLATE__TYPE);
+		createEAttribute(documentTemplateEClass, DOCUMENT_TEMPLATE__ICON_PATH);
 		createEReference(documentTemplateEClass, DOCUMENT_TEMPLATE__DOCUMENT_TEMPLATE_PROTOTYPE);
 		createEAttribute(documentTemplateEClass, DOCUMENT_TEMPLATE__NAME);
 		createEAttribute(documentTemplateEClass, DOCUMENT_TEMPLATE__DESCRIPTION);
+		createEAttribute(documentTemplateEClass, DOCUMENT_TEMPLATE__KIND_ID);
 
 		documentTemplatePrototypeEClass = createEClass(DOCUMENT_TEMPLATE_PROTOTYPE);
 		createEAttribute(documentTemplatePrototypeEClass, DOCUMENT_TEMPLATE_PROTOTYPE__TYPE);
+		createEAttribute(documentTemplatePrototypeEClass, DOCUMENT_TEMPLATE_PROTOTYPE__ICON_PATH);
 		createEAttribute(documentTemplatePrototypeEClass, DOCUMENT_TEMPLATE_PROTOTYPE__DESCRIPTION);
 		createEReference(documentTemplatePrototypeEClass, DOCUMENT_TEMPLATE_PROTOTYPE__DOCUMENT_TEMPLATE);
 
@@ -706,13 +742,16 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		initEReference(getDocumentTemplate_GraphicalContext(), theEcorePackage.getEObject(), null, "graphicalContext", null, 0, 1, DocumentTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, //$NON-NLS-1$
 				!IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getDocumentTemplate_Type(), theEcorePackage.getEString(), "type", null, 1, 1, DocumentTemplate.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getDocumentTemplate_IconPath(), theEcorePackage.getEString(), "iconPath", null, 1, 1, DocumentTemplate.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 		initEReference(getDocumentTemplate_DocumentTemplatePrototype(), this.getDocumentTemplatePrototype(), null, "documentTemplatePrototype", null, 1, 1, DocumentTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, //$NON-NLS-1$
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getDocumentTemplate_Name(), theEcorePackage.getEString(), "name", null, 1, 1, DocumentTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 		initEAttribute(getDocumentTemplate_Description(), theEcorePackage.getEString(), "description", null, 0, 1, DocumentTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getDocumentTemplate_KindId(), ecorePackage.getEString(), "kindId", null, 1, 1, DocumentTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(documentTemplatePrototypeEClass, DocumentTemplatePrototype.class, "DocumentTemplatePrototype", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEAttribute(getDocumentTemplatePrototype_Type(), theEcorePackage.getEString(), "type", null, 1, 1, DocumentTemplatePrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getDocumentTemplatePrototype_IconPath(), theEcorePackage.getEString(), "iconPath", null, 1, 1, DocumentTemplatePrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 		initEAttribute(getDocumentTemplatePrototype_Description(), theEcorePackage.getEString(), "description", null, 0, 1, DocumentTemplatePrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, //$NON-NLS-1$
 				!IS_ORDERED);
 		initEReference(getDocumentTemplatePrototype_DocumentTemplate(), this.getDocumentTemplate(), null, "documentTemplate", null, 1, 1, DocumentTemplatePrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, //$NON-NLS-1$

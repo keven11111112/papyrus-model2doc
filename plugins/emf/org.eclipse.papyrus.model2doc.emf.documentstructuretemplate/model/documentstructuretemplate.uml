@@ -6,23 +6,59 @@
     </packageImport>
     <packagedElement xmi:type="uml:Interface" xmi:id="_pmiT0B5MEemmq_cjeiIGww" name="DocumentTemplate">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_sAROQDnKEem5-oyJMXJtFA" name="semanticContext" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_h4riAEBTEemAE9dcWhaqZw" annotatedElement="_sAROQDnKEem5-oyJMXJtFA">
+          <body>Reference to the element of the documented model from which the generated documentation will start.</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Hnyi4DnWEem5-oyJMXJtFA"/>
       </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_ub48IDnKEem5-oyJMXJtFA" name="graphicalContext" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_p_ml0EBTEemAE9dcWhaqZw" annotatedElement="_ub48IDnKEem5-oyJMXJtFA">
+          <body>Reference the element under which the DocumentTemplate will be displayed in a TreeViewer (for example).</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IRoxIDnWEem5-oyJMXJtFA"/>
       </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_ZoXMYDnWEem5-oyJMXJtFA" name="type" isReadOnly="true" isDerived="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_PeEn4EBTEemAE9dcWhaqZw" annotatedElement="_ZoXMYDnWEem5-oyJMXJtFA">
+          <body>Field derived from the type defined in the referenced DocumentTemplatePrototype.</body>
+        </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWkisX_EduPJbEsMYXjUQ"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_2Eq_gDnXEem5-oyJMXJtFA" name="documentTemplatePrototype" type="_xkiHEDnVEem5-oyJMXJtFA" aggregation="shared" association="_2EojQDnXEem5-oyJMXJtFA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_9CJfIEBSEemAE9dcWhaqZw" name="iconPath" isDerived="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_KBpbcEBTEemAE9dcWhaqZw" annotatedElement="_9CJfIEBSEemAE9dcWhaqZw">
+          <body>Field derived from the iconPath defined in the referenced DocumentTemplatePrototype.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWkisX_EduPJbEsMYXjUQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_2Eq_gDnXEem5-oyJMXJtFA" name="documentTemplatePrototype" type="_xkiHEDnVEem5-oyJMXJtFA" aggregation="shared" association="_2EojQDnXEem5-oyJMXJtFA">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_FQbSsEBUEemAE9dcWhaqZw" annotatedElement="_2Eq_gDnXEem5-oyJMXJtFA">
+          <body>Reference the DocumentTemplatePrototype used to initialize this DocumentTemplate.</body>
+        </ownedComment>
+      </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_UOsFoD8_EemRfNnBSp4rTg" name="name">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_wqcGIEBTEemAE9dcWhaqZw" annotatedElement="_UOsFoD8_EemRfNnBSp4rTg">
+          <body>The name of the document. This name will be used as label in widget displaying the DocumentTemplate.&#xD;
+This field won't be used in the generated document.</body>
+        </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWkisX_EduPJbEsMYXjUQ"/>
       </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_WYPzID8_EemRfNnBSp4rTg" name="description">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_6oOk8EBTEemAE9dcWhaqZw" annotatedElement="_WYPzID8_EemRfNnBSp4rTg">
+          <body>The description of the DocumentTemplate. &#xD;
+This field is here for documentation of the DocumentStructureModel, but won't be used in the generated document.</body>
+        </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWkisX_EduPJbEsMYXjUQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XaRQ0D8_EemRfNnBSp4rTg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_yO3_QEBREemAE9dcWhaqZw" name="kindId" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_i7thwEBSEemAE9dcWhaqZw" annotatedElement="_yO3_QEBREemAE9dcWhaqZw">
+          <body>This field will allow a better integration with the Papyrus Architecture Framework.&#xD;
+The value will be something like &quot;org.eclipse.papyrus.uml.genericdocumenttemplate&quot;.&#xD;
+This field will be used to find the ViewPrototype of an instance of DocumentTemplate.&#xD;
+This field is useless for usage outside of Papyrus, but we set its multiplicity to [1] to avoid possible mistake in Papyrus usages.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_tLqTYB17Eem3fboELVTtYQ" name="TextDocumentTemplate">
@@ -129,6 +165,9 @@ The field eobject must reference an eobject of the user model, in other case the
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_xkiHEDnVEem5-oyJMXJtFA" name="DocumentTemplatePrototype">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_7PfJcDnVEem5-oyJMXJtFA" name="type">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWkisX_EduPJbEsMYXjUQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_xCf2QEBSEemAE9dcWhaqZw" name="iconPath">
         <type xmi:type="uml:PrimitiveType" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWkisX_EduPJbEsMYXjUQ"/>
       </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_AZyrIDnWEem5-oyJMXJtFA" name="description">

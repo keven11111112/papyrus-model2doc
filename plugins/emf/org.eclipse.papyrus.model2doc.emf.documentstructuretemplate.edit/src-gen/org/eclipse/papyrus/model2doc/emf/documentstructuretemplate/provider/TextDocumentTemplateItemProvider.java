@@ -80,9 +80,11 @@ public class TextDocumentTemplateItemProvider
 			addSemanticContextPropertyDescriptor(object);
 			addGraphicalContextPropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
+			addIconPathPropertyDescriptor(object);
 			addDocumentTemplatePrototypePropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
+			addKindIdPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -151,6 +153,27 @@ public class TextDocumentTemplateItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Icon Path feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected void addIconPathPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_DocumentTemplate_iconPath_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_DocumentTemplate_iconPath_feature", "_UI_DocumentTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				DocumentStructureTemplatePackage.Literals.DOCUMENT_TEMPLATE__ICON_PATH,
+				true,
+				false,
+				false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				null,
+				null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Document Template Prototype feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -205,6 +228,27 @@ public class TextDocumentTemplateItemProvider
 				getString("_UI_DocumentTemplate_description_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_DocumentTemplate_description_feature", "_UI_DocumentTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				DocumentStructureTemplatePackage.Literals.DOCUMENT_TEMPLATE__DESCRIPTION,
+				true,
+				false,
+				false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				null,
+				null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Kind Id feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected void addKindIdPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_DocumentTemplate_kindId_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_DocumentTemplate_kindId_feature", "_UI_DocumentTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				DocumentStructureTemplatePackage.Literals.DOCUMENT_TEMPLATE__KIND_ID,
 				true,
 				false,
 				false,
@@ -308,8 +352,10 @@ public class TextDocumentTemplateItemProvider
 
 		switch (notification.getFeatureID(TextDocumentTemplate.class)) {
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__TYPE:
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__ICON_PATH:
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__NAME:
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DESCRIPTION:
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__KIND_ID:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART:

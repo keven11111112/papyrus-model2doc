@@ -115,6 +115,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int DOCUMENT_TEMPLATE__TYPE = 2;
 
 	/**
+	 * The feature id for the '<em><b>Icon Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT_TEMPLATE__ICON_PATH = 3;
+
+	/**
 	 * The feature id for the '<em><b>Document Template Prototype</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -122,7 +132,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_TEMPLATE__DOCUMENT_TEMPLATE_PROTOTYPE = 3;
+	int DOCUMENT_TEMPLATE__DOCUMENT_TEMPLATE_PROTOTYPE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -132,7 +142,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_TEMPLATE__NAME = 4;
+	int DOCUMENT_TEMPLATE__NAME = 5;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -142,7 +152,17 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_TEMPLATE__DESCRIPTION = 5;
+	int DOCUMENT_TEMPLATE__DESCRIPTION = 6;
+
+	/**
+	 * The feature id for the '<em><b>Kind Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT_TEMPLATE__KIND_ID = 7;
 
 	/**
 	 * The number of structural features of the '<em>Document Template</em>' class.
@@ -152,7 +172,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_TEMPLATE_FEATURE_COUNT = 6;
+	int DOCUMENT_TEMPLATE_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>Document Template</em>' class.
@@ -296,6 +316,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int DOCUMENT_TEMPLATE_PROTOTYPE__TYPE = 0;
 
 	/**
+	 * The feature id for the '<em><b>Icon Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT_TEMPLATE_PROTOTYPE__ICON_PATH = 1;
+
+	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -303,7 +333,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_TEMPLATE_PROTOTYPE__DESCRIPTION = 1;
+	int DOCUMENT_TEMPLATE_PROTOTYPE__DESCRIPTION = 2;
 
 	/**
 	 * The feature id for the '<em><b>Document Template</b></em>' containment reference.
@@ -313,7 +343,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_TEMPLATE_PROTOTYPE__DOCUMENT_TEMPLATE = 2;
+	int DOCUMENT_TEMPLATE_PROTOTYPE__DOCUMENT_TEMPLATE = 3;
 
 	/**
 	 * The number of structural features of the '<em>Document Template Prototype</em>' class.
@@ -323,7 +353,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_TEMPLATE_PROTOTYPE_FEATURE_COUNT = 3;
+	int DOCUMENT_TEMPLATE_PROTOTYPE_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Document Template Prototype</em>' class.
@@ -366,6 +396,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int TEXT_DOCUMENT_TEMPLATE__TYPE = DOCUMENT_TEMPLATE__TYPE;
 
 	/**
+	 * The feature id for the '<em><b>Icon Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_DOCUMENT_TEMPLATE__ICON_PATH = DOCUMENT_TEMPLATE__ICON_PATH;
+
+	/**
 	 * The feature id for the '<em><b>Document Template Prototype</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -394,6 +434,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @ordered
 	 */
 	int TEXT_DOCUMENT_TEMPLATE__DESCRIPTION = DOCUMENT_TEMPLATE__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Kind Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_DOCUMENT_TEMPLATE__KIND_ID = DOCUMENT_TEMPLATE__KIND_ID;
 
 	/**
 	 * The feature id for the '<em><b>Document Part</b></em>' containment reference list.
@@ -994,6 +1044,18 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	EAttribute getDocumentTemplate_Type();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getIconPath <em>Icon Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Icon Path</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getIconPath()
+	 * @see #getDocumentTemplate()
+	 * @generated
+	 */
+	EAttribute getDocumentTemplate_IconPath();
+
+	/**
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getDocumentTemplatePrototype <em>Document Template Prototype</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1028,6 +1090,18 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDocumentTemplate_Description();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getKindId <em>Kind Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Kind Id</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getKindId()
+	 * @see #getDocumentTemplate()
+	 * @generated
+	 */
+	EAttribute getDocumentTemplate_KindId();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentTemplate <em>Text Document Template</em>}'.
@@ -1307,6 +1381,18 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	EAttribute getDocumentTemplatePrototype_Type();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplatePrototype#getIconPath <em>Icon Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Icon Path</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplatePrototype#getIconPath()
+	 * @see #getDocumentTemplatePrototype()
+	 * @generated
+	 */
+	EAttribute getDocumentTemplatePrototype_IconPath();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplatePrototype#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1394,6 +1480,15 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 		EAttribute DOCUMENT_TEMPLATE__TYPE = eINSTANCE.getDocumentTemplate_Type();
 
 		/**
+		 * The meta object literal for the '<em><b>Icon Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute DOCUMENT_TEMPLATE__ICON_PATH = eINSTANCE.getDocumentTemplate_IconPath();
+
+		/**
 		 * The meta object literal for the '<em><b>Document Template Prototype</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1419,6 +1514,15 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DOCUMENT_TEMPLATE__DESCRIPTION = eINSTANCE.getDocumentTemplate_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>Kind Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute DOCUMENT_TEMPLATE__KIND_ID = eINSTANCE.getDocumentTemplate_KindId();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl <em>Text Document Template</em>}' class.
@@ -1657,6 +1761,15 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DOCUMENT_TEMPLATE_PROTOTYPE__TYPE = eINSTANCE.getDocumentTemplatePrototype_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Icon Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute DOCUMENT_TEMPLATE_PROTOTYPE__ICON_PATH = eINSTANCE.getDocumentTemplatePrototype_IconPath();
 
 		/**
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
