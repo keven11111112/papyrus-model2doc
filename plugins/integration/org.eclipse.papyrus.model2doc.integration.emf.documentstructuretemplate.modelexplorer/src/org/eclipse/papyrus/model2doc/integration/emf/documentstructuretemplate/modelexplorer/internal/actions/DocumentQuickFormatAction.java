@@ -10,7 +10,7 @@
  *
  * Contributors:
  *  Yupanqui Munoz (CEA LIST) yupanqui.munozjulho@cea.fr - Initial API and implementation
- *	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *****************************************************************************/
 package org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.modelexplorer.internal.actions;
 
