@@ -19,6 +19,9 @@
 	<description>Container of the Papyrus DocumentStructureTemplate plugins</description>
 
 	<modules>
+		<module>org.eclipse.papyrus.model2doc.emf.documentstructure</module>
+		<module>org.eclipse.papyrus.model2doc.emf.documentstructure.edit</module>
+		<module>org.eclipse.papyrus.model2doc.emf.documentstructure.editor</module>
 		<module>org.eclipse.papyrus.model2doc.emf.documentstructuretemplate</module>
 		<module>org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit</module>
 		<module>org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.editor</module>

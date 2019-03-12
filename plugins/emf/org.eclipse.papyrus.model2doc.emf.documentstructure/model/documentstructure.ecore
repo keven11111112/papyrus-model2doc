@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="documentstructure" nsURI="http://www.eclipse.org/papyrus/model2doc/emf/1.0.0/documentstructure"
+    nsPrefix="documentstructure">
+  <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <details key="originalName" value="DocumentStructure"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="Text" abstract="true" interface="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="We create a Text Interface in order to be able to get&#xD;&#xA;pure text String and RTF String."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TextDocument" eSuperTypes="#//Document">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="textDocumentPart" ordered="false"
+        upperBound="-1" eType="#//TextDocumentPart" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tocTitle" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="Table Of Contents"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TextDocumentPart" abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Document" abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Body" eSuperTypes="#//TextDocumentPart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bodyPart" ordered="false"
+        upperBound="-1" eType="#//BodyPart" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BodyPart" abstract="true" interface="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataSource" ordered="false"
+        eType="#//DataSource" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subBodyPart" ordered="false"
+        upperBound="-1" eType="#//BodyPart" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataSource" abstract="true" interface="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This object is used to refer to the model object source providing the given part of the document."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="List" eSuperTypes="#//BodyPart"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Paragraph" eSuperTypes="#//TextPart"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TextPart" abstract="true" interface="true"
+      eSuperTypes="#//BodyPart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="text" ordered="false" eType="#//Text"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Title" eSuperTypes="#//TextPart"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Image" eSuperTypes="#//TextPart"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StringText" eSuperTypes="#//Text">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" ordered="false" lowerBound="1"
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EMFDataSource" eSuperTypes="#//DataSource">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eobject" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EStructuralFeature"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TableOfContents" eSuperTypes="#//TextDocumentPart"/>
+</ecore:EPackage>
