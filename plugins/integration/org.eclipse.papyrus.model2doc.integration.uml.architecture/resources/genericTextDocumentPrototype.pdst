@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<documentstructuretemplate:DocumentTemplatePrototype xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:documentstructuretemplate="http://www.eclipse.org/papyrus/model2doc/emf/1.0.0/documentstructuretemplate" xmi:id="_N7ViMD6EEemyE7d-JqIr-A" type="GenericUMLDocumentStructureTemplate" iconPath="platform:/plugin/org.eclipse.papyrus.model2doc.integration.uml.architecture/icons/generic_document.png" description="Generic Template for UML documentation">
+  <documentTemplate xmi:type="documentstructuretemplate:TextDocumentTemplate" xmi:id="_QsjsoD6EEemyE7d-JqIr-A" documentTemplatePrototype="_N7ViMD6EEemyE7d-JqIr-A" name="UML Document" kindId="org.eclipse.papyrus.model2doc.uml.architecture"/>
+</documentstructuretemplate:DocumentTemplatePrototype>

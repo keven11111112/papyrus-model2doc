@@ -18,6 +18,7 @@
 	<description>Container of the Papyrus DocumentStructureTemplate Integration plugins</description>
 
 	<modules>
+		<module>org.eclipse.papyrus.model2doc.integration.uml.architecture</module>
 		<module>org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.modelexplorer</module>
 		<module>org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation</module>
 		<module>org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation.edit</module>

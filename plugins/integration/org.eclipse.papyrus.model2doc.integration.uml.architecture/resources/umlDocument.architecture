@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<architecture:ArchitectureDomain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:architecture="http://www.eclipse.org/papyrus/infra/core/architecture" xmlns:documentstructuretemplate="http://www.eclipse.org/papyrus/model2doc/emf/1.0.0/documentstructuretemplate" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:elementtypesconfigurations="http://www.eclipse.org/papyrus/infra/elementtypesconfigurations/1.2" xmlns:representation="http://www.eclipse.org/papyrus/model2doc/integration/1.0.0/emf/documentstructuretemplate/representation" xmlns:representation_1="http://www.eclipse.org/papyrus/infra/core/architecture/representation" xmi:id="_pNW38LaHEeiKuPQLywy7Og" id="org.eclipse.papyrus.softwareEngineering" name="Software Engineering" description="The domain of developing software systems" icon="platform:/plugin/org.eclipse.papyrus.uml.architecture/icons/domain.gif">
+  <contexts xmi:type="architecture:ArchitectureDescriptionLanguage" xmi:id="_-tAb0Lp2EeiViqj5DY8SRQ" id="org.eclipse.papyrus.infra.services.edit.TypeContext" name="UML">
+    <viewpoints xmi:type="architecture:ArchitectureViewpoint" xmi:id="_1tp4cOEIEeiLVapXeWCJtQ" id="org.eclipse.papyrus.uml.analysis" name="Software Analysis" icon="platform:/plugin/org.eclipse.papyrus.uml.architecture/icons/viewpoint.gif" representationKinds="_xPrtEDoEEemsSYTK9MkLEw"/>
+    <viewpoints xmi:type="architecture:ArchitectureViewpoint" xmi:id="_dmWHgLp3EeiViqj5DY8SRQ" id="org.eclipse.papyrus.uml.design" name="Software Design" description="" icon="platform:/plugin/org.eclipse.papyrus.uml.architecture/icons/viewpoint.gif" representationKinds="_xPrtEDoEEemsSYTK9MkLEw"/>
+    <elementTypes xmi:type="elementtypesconfigurations:ElementTypeSetConfiguration" href="platform:/plugin/org.eclipse.papyrus.model2doc.documentview.ui/resources/model/documentviewadvices.elementtypesconfigurations#_rWI4YHPzEeSnGJwaJWHCSg"/>
+    <representationKinds xmi:type="representation:PapyrusDocumentPrototype" xmi:id="_xPrtEDoEEemsSYTK9MkLEw" id="org.eclipse.papyrus.model2doc.uml.architecture" name="Generic Text Document" description="Generate generic odt document from UML models." icon="platform:/plugin/org.eclipse.papyrus.model2doc.integration.uml.architecture/icons/generic_document.png" implementationID="GenericUMLDocumentStructureTemplate" creationCommandClass="org.eclipse.papyrus.model2doc.integration.uml.architecture.CreateDocumentEditorCommand">
+      <modelRules xmi:type="representation_1:ModelRule" xmi:id="_6Rfr0DoEEemsSYTK9MkLEw" permit="true" elementMultiplicity="1" multiplicity="-1">
+        <element xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement"/>
+      </modelRules>
+      <owningRules xmi:type="representation_1:OwningRule" xmi:id="_6Rfr0ToEEemsSYTK9MkLEw" permit="true" multiplicity="-1">
+        <element xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement"/>
+      </owningRules>
+      <documentTemplatePrototype xmi:type="documentstructuretemplate:DocumentTemplatePrototype" href="platform:/plugin/org.eclipse.papyrus.model2doc.integration.uml.architecture/resources/genericTextDocumentPrototype.pdst#_N7ViMD6EEemyE7d-JqIr-A"/>
+    </representationKinds>
+    <metamodel xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/5.0.0/Types#/"/>
+  </contexts>
+</architecture:ArchitectureDomain>
