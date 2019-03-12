@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.papyrus.views.modelexplorer.modelexplorer.popup?after=org.eclipse.papyrus.views.modelexplorer.popupmenu.creatediagram">
+         <menu
+               icon="icons/new_document.png"
+               id="org.eclipse.papyrus.model2doc.integration.documentstructuretemplate.ui.popupmenu.createdocumenttemplate"
+               label="New Document Template"
+               tooltip="The Papyrus Document Template Menu">
+            <dynamic
+                  class="org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.ui.internal.menus.DocumentTemplateDynamicContribution"
+                  id="org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.ui.internal.menus.DocumentTemplateDynamicContribution">
+            </dynamic>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.infra.viewpoints.policy.viewType">
+      <helper
+            class="org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.ui.internal.viewpoint.CreatePapyrusDocumentTemplateViewTypeCommandHelper"
+            priority="0">
+      </helper>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.infra.ui.papyrusDiagram">
+      <editorDiagram
+            actionBarContributorId="org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.ui.actionBarContributor"
+            factoryClass="org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.ui.internal.editor.DocumentStructureTemplateEditorFactory"
+            icon="icons/new_document.png"
+            order="0">
+      </editorDiagram>
+      <actionBarContributor
+            id="org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.ui.actionBarContributor"
+            implementingClass="org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.presentation.DocumentStructureTemplateActionBarContributor">
+      </actionBarContributor>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.adapters">
+      <factory
+            adaptableType="org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate"
+            class="org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.ui.internal.adapter.DocumentTemplateViewAdapterFactory">
+         <adapter
+               type="org.eclipse.papyrus.infra.core.sasheditor.di.contentprovider.IOpenable">
+         </adapter>
+      </factory>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.infra.core.model">
+      <model
+            classname="org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.ui.modelresource.DocumentTemplateModel"
+            description="Model for Papyrus Document Template View editors">
+      </model>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.infra.services.labelprovider.labelProvider">
+      <labelProvider
+            priority="10"
+            provider="org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.ui.internal.provider.DocumentTemplateLabelProvider">
+      </labelProvider>
+   </extension>
+
+</plugin>
