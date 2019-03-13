@@ -19,6 +19,7 @@
 
 	<modules>
 		<module>core</module>
+		<module>dev</module>
 		<module>documentview</module>
 		<module>ieee</module>
 		<module>odt</module>

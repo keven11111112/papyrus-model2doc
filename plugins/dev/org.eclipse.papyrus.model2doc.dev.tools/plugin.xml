@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+    <extension
+         point="org.eclipse.ui.menus">   
+     <menuContribution
+              allPopups="false"
+              locationURI="popup:org.eclipse.ui.popup.any">
+         <separator
+                  name="org.eclipse.papyrus.model2doc.dev.tools.ui.menu.separator.before"
+                  visible="true">
+         </separator>
+         <menu
+               id="org.eclipse.papyrus.model2doc.dev.tools.ui.menu"
+               label="Papyrus-Model2doc Developer"
+               icon="icons/Papyrus_16x16.gif"
+               tooltip="Papyrus-Model2Doc Developer Menu">
+               <command
+                     commandId="org.eclipse.papyrus.model2doc.dev.tools.extractXMLContents"
+               label="Extract Contents XML File"
+               style="push">
+            <visibleWhen
+                  checkEnabled="true">
+            </visibleWhen>
+            </command>
+            <separator
+                  name="org.eclipse.papyrus.model2doc.dev.tools.ui.menu.separator.after"
+                  visible="true">
+         	</separator>
+         </menu>
+      </menuContribution> 
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            description="This command allows to extract the file Contents.xml from an odt file"
+            id="org.eclipse.papyrus.model2doc.dev.tools.extractXMLContents"
+            name="Extract Contents.xml file">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="org.eclipse.papyrus.model2doc.dev.tools.handlers.ExtractContentsXmlFileHandler"
+            commandId="org.eclipse.papyrus.model2doc.dev.tools.extractXMLContents">
+         <activeWhen>
+            <with
+                  variable="selection">
+               <iterate
+                     ifEmpty="false"
+                     operator="and">
+                  <adapt
+                        type="org.eclipse.core.resources.IFile">
+                     <or>
+                        <test
+                              property="org.eclipse.core.resources.name"
+                              value="*.odt">
+                        </test>
+                        <test
+                              property="org.eclipse.core.resources.name"
+                              value="*.ott">
+                        </test>
+                     </or>
+                  </adapt>
+               </iterate>
+            </with>
+         </activeWhen>
+      </handler>
+   </extension>
+
+</plugin>

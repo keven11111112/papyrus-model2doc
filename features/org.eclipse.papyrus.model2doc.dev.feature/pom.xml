@@ -10,10 +10,10 @@
 		<version>0.7.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>org.eclipse.papyrus.model2doc.integration.feature</artifactId>
+	<artifactId>org.eclipse.papyrus.model2doc.dev.feature</artifactId>
 	<packaging>eclipse-feature</packaging>
 
-	<name>Papyrus Model to Documentation Integration </name>
-	<description>Papyrus Model to Documentation Integration as Papyrus Editor Feature</description>
+	<name>Papyrus-Model2Doc developer tools feature </name>
+	<description>This feature provides tools for Model2Doc developers</description>
 
 </project>

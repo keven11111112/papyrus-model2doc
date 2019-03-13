@@ -19,6 +19,7 @@
 
 	<modules>
 		<module>org.eclipse.papyrus.model2doc.feature</module>
+		<module>org.eclipse.papyrus.model2doc.dev.feature</module>
 		<module>org.eclipse.papyrus.model2doc.integration.feature</module>
 	</modules>
 
