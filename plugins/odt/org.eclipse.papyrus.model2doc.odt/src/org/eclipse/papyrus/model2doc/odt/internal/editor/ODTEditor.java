@@ -491,8 +491,9 @@ public class ODTEditor {
 
 		try {
 			store.storeToURL(saveFileURL, storeProps);
+			Activator.log.info("Saving document: " + saveFileURL);//$NON-NLS-1$
 		} catch (com.sun.star.io.IOException e) {
-			Activator.log.error(fileName + " have not been saved: ", e); //$NON-NLS-1$
+			Activator.log.error(saveFileURL + " have not been saved: ", e); //$NON-NLS-1$
 		}
 
 		return saveFileURL;

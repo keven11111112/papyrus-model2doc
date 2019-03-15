@@ -16,7 +16,9 @@ package org.eclipse.papyrus.model2doc.core.internal.transcriber;
 
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.eclipse.papyrus.uml.internationalization.utils.utils.UMLLabelInternationalization;
 import org.eclipse.uml2.uml.Class;
@@ -105,18 +107,18 @@ public class UMLTranscriber implements Transcriber {
 			rowTitles.add(Integer.toString(nbRow));
 			nbRow++;
 			StringBuilder classNames = new StringBuilder();
-			ArrayList<String> rowContents = new ArrayList<>();
+			List<String> rowContents = new ArrayList<>();
 			rowContents.add(umlLabelInternationalization.getLabel(nestedPackage));
-			
-			for (Type type : nestedPackage.getOwnedTypes()) {
-				if (type instanceof Class) {
-					classNames.append(umlLabelInternationalization.getLabel((Class) type));
+
+			final Iterator<Class> classIterator = nestedPackage.getOwnedTypes().stream().filter(Class.class::isInstance).map(Class.class::cast).collect(Collectors.toList()).iterator();
+			while (classIterator.hasNext()) {
+				final Class current = classIterator.next();
+				classNames.append(umlLabelInternationalization.getLabel(current));
+				if (classIterator.hasNext()) {
 					classNames.append(", "); //$NON-NLS-1$
 				}
 			}
-			
-			// Remove ", " at the end
-			rowContents.add(classNames.toString().substring(0, classNames.toString().length() - 2));
+
 			table.setRowContents(rowContents);
 		}
 		transcription.addTable(table, 0xE06666); //$NON-NLS-1$

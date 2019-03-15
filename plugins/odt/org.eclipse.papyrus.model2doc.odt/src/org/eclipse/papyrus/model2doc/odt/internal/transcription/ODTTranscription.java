@@ -232,6 +232,9 @@ public class ODTTranscription implements Transcription {
 			// mxDocCursor.gotoEnd(false);
 			// WriteUtil.addControlCharacter(xTextCursor, controlCharacter);addControlCharacter
 
+			writeService.endParagraph(xParaCursor);
+
+			
 			XPropertySet cursorProperty = UnoRuntime.queryInterface(XPropertySet.class, xParaCursor);
 			try {
 				// TODO

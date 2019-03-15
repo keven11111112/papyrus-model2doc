@@ -153,7 +153,7 @@ public class WriteUtil {
 			// Inserting image to the container
 			bitmapContainer.insertByName(imageFilePath, imageFilePath);
 
-			PropertySetUtil.setProperty(graphicContent, "AnchorType", TextContentAnchorType.AS_CHARACTER); //$NON-NLS-1$
+			PropertySetUtil.setProperty(graphicContent, "AnchorType", TextContentAnchorType.AT_CHARACTER); //$NON-NLS-1$
 			PropertySetUtil.setProperty(graphicContent, "GraphicURL", bitmapContainer.getByName(imageFilePath)); //$NON-NLS-1$
 
 			graphicContent = ImageUtil.resizeImage(graphicContent, imageFilePath, odtEditor.getXTextDocument(), odtEditor.getXMultiComponentFactory(), odtEditor.getXComponentContext());
@@ -206,7 +206,7 @@ public class WriteUtil {
 			}
 
 
-
+			endParagraph(xTextCursor);
 			fileIOService.removeFile(new File(image.getPath()));
 
 		} catch (Exception e) {
