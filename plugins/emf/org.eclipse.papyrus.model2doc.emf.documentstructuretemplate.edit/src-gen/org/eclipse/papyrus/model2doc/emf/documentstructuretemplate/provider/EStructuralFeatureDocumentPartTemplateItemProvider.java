@@ -204,7 +204,7 @@ public class EStructuralFeatureDocumentPartTemplateItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.FEATURE_PART_TEMPLATE__OBJECT_PART_TEMPLATE);
+			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.FEATURE_PART_TEMPLATE__OBJECT_PART_TEMPLATES);
 		}
 		return childrenFeatures;
 	}
@@ -290,7 +290,7 @@ public class EStructuralFeatureDocumentPartTemplateItemProvider
 		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__CUSTOM_TITLE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__OBJECT_PART_TEMPLATE:
+		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__OBJECT_PART_TEMPLATES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -309,10 +309,10 @@ public class EStructuralFeatureDocumentPartTemplateItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.FEATURE_PART_TEMPLATE__OBJECT_PART_TEMPLATE,
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.FEATURE_PART_TEMPLATE__OBJECT_PART_TEMPLATES,
 				DocumentStructureTemplateFactory.eINSTANCE.createEClassDocumentPartTemplate()));
 
-		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.FEATURE_PART_TEMPLATE__OBJECT_PART_TEMPLATE,
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.FEATURE_PART_TEMPLATE__OBJECT_PART_TEMPLATES,
 				DocumentStructureTemplateFactory.eINSTANCE.createEObjectDocumentPartTemplate()));
 	}
 

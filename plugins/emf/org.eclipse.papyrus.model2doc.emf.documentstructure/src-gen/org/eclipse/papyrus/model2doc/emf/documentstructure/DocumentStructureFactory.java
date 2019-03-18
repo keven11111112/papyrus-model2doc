@@ -45,6 +45,26 @@ public interface DocumentStructureFactory extends EFactory {
 	TextDocument createTextDocument();
 
 	/**
+	 * Returns a new object of class '<em>Cover Page</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>Cover Page</em>'.
+	 * @generated
+	 */
+	CoverPage createCoverPage();
+
+	/**
+	 * Returns a new object of class '<em>Generation Configuration</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>Generation Configuration</em>'.
+	 * @generated
+	 */
+	GenerationConfiguration createGenerationConfiguration();
+
+	/**
 	 * Returns a new object of class '<em>Body</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

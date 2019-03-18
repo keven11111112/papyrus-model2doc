@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ObjectPartTemplate#getFeaturePartTemplate <em>Feature Part Template</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ObjectPartTemplate#getFeaturePartTemplates <em>Feature Part Templates</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getObjectPartTemplate()
@@ -33,20 +33,20 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface ObjectPartTemplate extends DocumentPartTemplate {
 	/**
-	 * Returns the value of the '<em><b>Feature Part Template</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Feature Part Templates</b></em>' containment reference list.
 	 * The list contents are of type {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.FeaturePartTemplate}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Feature Part Template</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Feature Part Templates</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the value of the '<em>Feature Part Template</em>' containment reference list.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getObjectPartTemplate_FeaturePartTemplate()
+	 * @return the value of the '<em>Feature Part Templates</em>' containment reference list.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getObjectPartTemplate_FeaturePartTemplates()
 	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<FeaturePartTemplate> getFeaturePartTemplate();
+	EList<FeaturePartTemplate> getFeaturePartTemplates();
 
 } // ObjectPartTemplate

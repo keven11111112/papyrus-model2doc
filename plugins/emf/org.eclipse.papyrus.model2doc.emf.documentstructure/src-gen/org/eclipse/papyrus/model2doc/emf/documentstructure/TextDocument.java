@@ -24,8 +24,8 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument#getMainTitle <em>Main Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument#getTextDocumentPart <em>Text Document Part</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument#getTocTitle <em>Toc Title</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage#getTextDocument()
@@ -33,6 +33,35 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface TextDocument extends Document {
+	/**
+	 * Returns the value of the '<em><b>Main Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Main Title</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the value of the '<em>Main Title</em>' attribute.
+	 * @see #setMainTitle(String)
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage#getTextDocument_MainTitle()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	String getMainTitle();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument#getMainTitle <em>Main Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *                  the new value of the '<em>Main Title</em>' attribute.
+	 * @see #getMainTitle()
+	 * @generated
+	 */
+	void setMainTitle(String value);
+
 	/**
 	 * Returns the value of the '<em><b>Text Document Part</b></em>' containment reference list.
 	 * The list contents are of type {@link org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocumentPart}.
@@ -49,35 +78,5 @@ public interface TextDocument extends Document {
 	 * @generated
 	 */
 	EList<TextDocumentPart> getTextDocumentPart();
-
-	/**
-	 * Returns the value of the '<em><b>Toc Title</b></em>' attribute.
-	 * The default value is <code>"Table Of Contents"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Toc Title</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the value of the '<em>Toc Title</em>' attribute.
-	 * @see #setTocTitle(String)
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage#getTextDocument_TocTitle()
-	 * @model default="Table Of Contents" required="true" ordered="false"
-	 * @generated
-	 */
-	String getTocTitle();
-
-	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument#getTocTitle <em>Toc Title</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *                  the new value of the '<em>Toc Title</em>' attribute.
-	 * @see #getTocTitle()
-	 * @generated
-	 */
-	void setTocTitle(String value);
 
 } // TextDocument

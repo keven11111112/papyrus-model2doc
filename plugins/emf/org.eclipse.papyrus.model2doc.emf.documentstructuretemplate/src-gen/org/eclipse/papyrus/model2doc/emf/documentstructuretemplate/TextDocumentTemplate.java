@@ -24,6 +24,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentTemplate#getMainTitle <em>Main Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentTemplate#getDocumentPart <em>Document Part</em>}</li>
  * </ul>
  *
@@ -32,6 +33,35 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface TextDocumentTemplate extends DocumentTemplate {
+	/**
+	 * Returns the value of the '<em><b>Main Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Main Title</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the value of the '<em>Main Title</em>' attribute.
+	 * @see #setMainTitle(String)
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getTextDocumentTemplate_MainTitle()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	String getMainTitle();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentTemplate#getMainTitle <em>Main Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *                  the new value of the '<em>Main Title</em>' attribute.
+	 * @see #getMainTitle()
+	 * @generated
+	 */
+	void setMainTitle(String value);
+
 	/**
 	 * Returns the value of the '<em><b>Document Part</b></em>' containment reference list.
 	 * The list contents are of type {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentPart}.

@@ -11,7 +11,7 @@
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
-package org.eclipse.papyrus.model2doc.emf.documentstructure.impl;
+package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -20,44 +20,44 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage;
-import org.eclipse.papyrus.model2doc.emf.documentstructure.TableOfContents;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.CoverPage;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Table Of Contents</b></em>'.
+ * An implementation of the model object '<em><b>Cover Page</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TableOfContentsImpl#getTocTitle <em>Toc Title</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.CoverPageImpl#getPath <em>Path</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class TableOfContentsImpl extends MinimalEObjectImpl.Container implements TableOfContents {
+public class CoverPageImpl extends MinimalEObjectImpl.Container implements CoverPage {
 	/**
-	 * The default value of the '{@link #getTocTitle() <em>Toc Title</em>}' attribute.
+	 * The default value of the '{@link #getPath() <em>Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see #getTocTitle()
+	 * @see #getPath()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TOC_TITLE_EDEFAULT = "Table Of Contents"; //$NON-NLS-1$
+	protected static final String PATH_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getTocTitle() <em>Toc Title</em>}' attribute.
+	 * The cached value of the '{@link #getPath() <em>Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see #getTocTitle()
+	 * @see #getPath()
 	 * @generated
 	 * @ordered
 	 */
-	protected String tocTitle = TOC_TITLE_EDEFAULT;
+	protected String path = PATH_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -65,7 +65,7 @@ public class TableOfContentsImpl extends MinimalEObjectImpl.Container implements
 	 *
 	 * @generated
 	 */
-	protected TableOfContentsImpl() {
+	protected CoverPageImpl() {
 		super();
 	}
 
@@ -77,7 +77,7 @@ public class TableOfContentsImpl extends MinimalEObjectImpl.Container implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return DocumentStructurePackage.Literals.TABLE_OF_CONTENTS;
+		return DocumentStructureTemplatePackage.Literals.COVER_PAGE;
 	}
 
 	/**
@@ -87,8 +87,8 @@ public class TableOfContentsImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	@Override
-	public String getTocTitle() {
-		return tocTitle;
+	public String getPath() {
+		return path;
 	}
 
 	/**
@@ -98,11 +98,11 @@ public class TableOfContentsImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	@Override
-	public void setTocTitle(String newTocTitle) {
-		String oldTocTitle = tocTitle;
-		tocTitle = newTocTitle;
+	public void setPath(String newPath) {
+		String oldPath = path;
+		path = newPath;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructurePackage.TABLE_OF_CONTENTS__TOC_TITLE, oldTocTitle, tocTitle));
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.COVER_PAGE__PATH, oldPath, path));
 		}
 	}
 
@@ -115,8 +115,8 @@ public class TableOfContentsImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case DocumentStructurePackage.TABLE_OF_CONTENTS__TOC_TITLE:
-			return getTocTitle();
+		case DocumentStructureTemplatePackage.COVER_PAGE__PATH:
+			return getPath();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -130,8 +130,8 @@ public class TableOfContentsImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DocumentStructurePackage.TABLE_OF_CONTENTS__TOC_TITLE:
-			setTocTitle((String) newValue);
+		case DocumentStructureTemplatePackage.COVER_PAGE__PATH:
+			setPath((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -146,8 +146,8 @@ public class TableOfContentsImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DocumentStructurePackage.TABLE_OF_CONTENTS__TOC_TITLE:
-			setTocTitle(TOC_TITLE_EDEFAULT);
+		case DocumentStructureTemplatePackage.COVER_PAGE__PATH:
+			setPath(PATH_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -162,8 +162,8 @@ public class TableOfContentsImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case DocumentStructurePackage.TABLE_OF_CONTENTS__TOC_TITLE:
-			return TOC_TITLE_EDEFAULT == null ? tocTitle != null : !TOC_TITLE_EDEFAULT.equals(tocTitle);
+		case DocumentStructureTemplatePackage.COVER_PAGE__PATH:
+			return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -181,10 +181,10 @@ public class TableOfContentsImpl extends MinimalEObjectImpl.Container implements
 		}
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (tocTitle: "); //$NON-NLS-1$
-		result.append(tocTitle);
+		result.append(" (path: "); //$NON-NLS-1$
+		result.append(path);
 		result.append(')');
 		return result.toString();
 	}
 
-} // TableOfContentsImpl
+} // CoverPageImpl

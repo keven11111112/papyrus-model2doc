@@ -19,18 +19,6 @@
         <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IRoxIDnWEem5-oyJMXJtFA"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_ZoXMYDnWEem5-oyJMXJtFA" name="type" isReadOnly="true" isDerived="true">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_PeEn4EBTEemAE9dcWhaqZw" annotatedElement="_ZoXMYDnWEem5-oyJMXJtFA">
-          <body>Field derived from the type defined in the referenced DocumentTemplatePrototype.</body>
-        </ownedComment>
-        <type xmi:type="uml:PrimitiveType" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWkisX_EduPJbEsMYXjUQ"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_9CJfIEBSEemAE9dcWhaqZw" name="iconPath" isDerived="true">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_KBpbcEBTEemAE9dcWhaqZw" annotatedElement="_9CJfIEBSEemAE9dcWhaqZw">
-          <body>Field derived from the iconPath defined in the referenced DocumentTemplatePrototype.</body>
-        </ownedComment>
-        <type xmi:type="uml:PrimitiveType" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWkisX_EduPJbEsMYXjUQ"/>
-      </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_2Eq_gDnXEem5-oyJMXJtFA" name="documentTemplatePrototype" type="_xkiHEDnVEem5-oyJMXJtFA" aggregation="shared" association="_2EojQDnXEem5-oyJMXJtFA">
         <ownedComment xmi:type="uml:Comment" xmi:id="_FQbSsEBUEemAE9dcWhaqZw" annotatedElement="_2Eq_gDnXEem5-oyJMXJtFA">
           <body>Reference the DocumentTemplatePrototype used to initialize this DocumentTemplate.</body>
@@ -60,8 +48,27 @@ This field is useless for usage outside of Papyrus, but we set its multiplicity 
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
       </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_SGtggEmHEem4wpUXttaNpQ" name="generationConfiguration" type="_FoN_gEmHEem4wpUXttaNpQ" aggregation="composite" association="_SGjvgEmHEem4wpUXttaNpQ"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_RtZr0kmLEem4wpUXttaNpQ" name="coverPage" type="_KOiGgEmLEem4wpUXttaNpQ" aggregation="composite" association="_RtZEwEmLEem4wpUXttaNpQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RtaS4EmLEem4wpUXttaNpQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RtaS4UmLEem4wpUXttaNpQ" value="1"/>
+      </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_MW0s4EmEEem4wpUXttaNpQ" name="getType">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_UHiQIEmEEem4wpUXttaNpQ" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_WUMU8EmEEem4wpUXttaNpQ" name="getIconPath">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_WUMU8UmEEem4wpUXttaNpQ" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_tLqTYB17Eem3fboELVTtYQ" name="TextDocumentTemplate">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_-rx1AEmKEem4wpUXttaNpQ" name="mainTitle">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_AYvGEEmLEem4wpUXttaNpQ"/>
+      </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_EPjnUjnMEem5-oyJMXJtFA" name="documentPart" type="_zXDZIDnLEem5-oyJMXJtFA" aggregation="composite" association="_EPiZMDnMEem5-oyJMXJtFA">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EPjnUznMEem5-oyJMXJtFA"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EPjnVDnMEem5-oyJMXJtFA" value="*"/>
@@ -76,14 +83,14 @@ This field is useless for usage outside of Papyrus, but we set its multiplicity 
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_Fsn10B1-Eem3fboELVTtYQ" name="ObjectPartTemplate">
       <generalization xmi:type="uml:Generalization" xmi:id="_klpWEB-7EempQZhnl_zCWg" general="_xVVWEB5NEemmq_cjeiIGww"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_njqvIB2GEemmq_cjeiIGww" name="featurePartTemplate" visibility="public" type="_ZeO_IB1-Eem3fboELVTtYQ" aggregation="composite" association="_njmdsB2GEemmq_cjeiIGww">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_njqvIB2GEemmq_cjeiIGww" name="featurePartTemplates" visibility="public" type="_ZeO_IB1-Eem3fboELVTtYQ" aggregation="composite" association="_njmdsB2GEemmq_cjeiIGww">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_trIcoB2GEemmq_cjeiIGww"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_trkhgB2GEemmq_cjeiIGww" value="*"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_ZeO_IB1-Eem3fboELVTtYQ" name="FeaturePartTemplate">
       <generalization xmi:type="uml:Generalization" xmi:id="_j5v5YB-7EempQZhnl_zCWg" general="_xVVWEB5NEemmq_cjeiIGww"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_xv888B2GEemmq_cjeiIGww" name="objectPartTemplate" visibility="public" type="_Fsn10B1-Eem3fboELVTtYQ" aggregation="composite" association="_xv4EcB2GEemmq_cjeiIGww">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_xv888B2GEemmq_cjeiIGww" name="objectPartTemplates" visibility="public" type="_Fsn10B1-Eem3fboELVTtYQ" aggregation="composite" association="_xv4EcB2GEemmq_cjeiIGww">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xv888R2GEemmq_cjeiIGww"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xv9kAB2GEemmq_cjeiIGww" value="*"/>
       </ownedAttribute>
@@ -124,6 +131,9 @@ This field is useless for usage outside of Papyrus, but we set its multiplicity 
     <packagedElement xmi:type="uml:Class" xmi:id="_65g2MB-6EempQZhnl_zCWg" name="EClassDocumentPartTemplate">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_TArosR2FEemmq_cjeiIGww" name="eclass">
         <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWizcX_EduPJbEsMYXjUQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_hk9eUEojEem4wpUXttaNpQ" name="filterRule" type="_SKJWIEojEem4wpUXttaNpQ">
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_nFZoEEojEem4wpUXttaNpQ" name="TYPE_OF" value="TYPE_OF"/>
       </ownedAttribute>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_z99j4B-7EempQZhnl_zCWg" client="_65g2MB-6EempQZhnl_zCWg" supplier="_Fsn10B1-Eem3fboELVTtYQ" contract="_Fsn10B1-Eem3fboELVTtYQ"/>
     </packagedElement>
@@ -188,6 +198,39 @@ The field eobject must reference an eobject of the user model, in other case the
       </eAnnotations>
       <ownedEnd xmi:type="uml:Property" xmi:id="_2Eq_gznXEem5-oyJMXJtFA" name="documentTemplate" type="_pmiT0B5MEemmq_cjeiIGww" association="_2EojQDnXEem5-oyJMXJtFA"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_FoN_gEmHEem4wpUXttaNpQ" name="GenerationConfiguration">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_o7M-QEmCEem4wpUXttaNpQ" name="ouputFile">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GjxloEmDEem4wpUXttaNpQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_HMsm0EmDEem4wpUXttaNpQ" name="ouputFolder">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HMsm0UmDEem4wpUXttaNpQ"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_SGjvgEmHEem4wpUXttaNpQ" memberEnd="_SGtggEmHEem4wpUXttaNpQ _SGuHkkmHEem4wpUXttaNpQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SGsSYEmHEem4wpUXttaNpQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SGs5cEmHEem4wpUXttaNpQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_SGuHkkmHEem4wpUXttaNpQ" name="documentTemplate" type="_pmiT0B5MEemmq_cjeiIGww" association="_SGjvgEmHEem4wpUXttaNpQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_KOiGgEmLEem4wpUXttaNpQ" name="CoverPage">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_REkD0EmDEem4wpUXttaNpQ" name="path" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_RtZEwEmLEem4wpUXttaNpQ" memberEnd="_RtZr0kmLEem4wpUXttaNpQ _RtaS4kmLEem4wpUXttaNpQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_RtZr0EmLEem4wpUXttaNpQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_RtZr0UmLEem4wpUXttaNpQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_RtaS4kmLEem4wpUXttaNpQ" name="documenttemplate" type="_pmiT0B5MEemmq_cjeiIGww" association="_RtZEwEmLEem4wpUXttaNpQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_SKJWIEojEem4wpUXttaNpQ" name="EClassFilterBehavior">
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_YPrJ8EojEem4wpUXttaNpQ" name="TYPE_OF"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_c0QIYEojEem4wpUXttaNpQ" name="KIND_OF"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:EnumerationLiteral" xmi:id="_NUQBYEonEem4wpUXttaNpQ" name="TYPE_OF"/>
+    <packagedElement xmi:type="uml:EnumerationLiteral" xmi:id="_Ngg7wEonEem4wpUXttaNpQ" name="CopyOf_TYPE_OF_27"/>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Dwr3IB2KEemmq_cjeiIGww">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DwseMB2KEemmq_cjeiIGww" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>

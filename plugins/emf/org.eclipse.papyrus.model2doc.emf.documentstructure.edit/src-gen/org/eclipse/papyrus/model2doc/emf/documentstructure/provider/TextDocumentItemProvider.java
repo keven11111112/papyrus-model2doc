@@ -77,24 +77,24 @@ public class TextDocumentItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTocTitlePropertyDescriptor(object);
+			addMainTitlePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Toc Title feature.
+	 * This adds a property descriptor for the Main Title feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 */
-	protected void addTocTitlePropertyDescriptor(Object object) {
+	protected void addMainTitlePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
-				getString("_UI_TextDocument_tocTitle_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_TextDocument_tocTitle_feature", "_UI_TextDocument_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				DocumentStructurePackage.Literals.TEXT_DOCUMENT__TOC_TITLE,
+				getString("_UI_TextDocument_mainTitle_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_TextDocument_mainTitle_feature", "_UI_TextDocument_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				DocumentStructurePackage.Literals.TEXT_DOCUMENT__MAIN_TITLE,
 				true,
 				false,
 				false,
@@ -116,6 +116,8 @@ public class TextDocumentItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(DocumentStructurePackage.Literals.DOCUMENT__COVER_PAGE);
+			childrenFeatures.add(DocumentStructurePackage.Literals.DOCUMENT__GENERATION_CONFIGURATION);
 			childrenFeatures.add(DocumentStructurePackage.Literals.TEXT_DOCUMENT__TEXT_DOCUMENT_PART);
 		}
 		return childrenFeatures;
@@ -167,7 +169,7 @@ public class TextDocumentItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((TextDocument) object).getTocTitle();
+		String label = ((TextDocument) object).getMainTitle();
 		return label == null || label.length() == 0 ? getString("_UI_TextDocument_type") : //$NON-NLS-1$
 				getString("_UI_TextDocument_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
@@ -186,9 +188,11 @@ public class TextDocumentItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(TextDocument.class)) {
-		case DocumentStructurePackage.TEXT_DOCUMENT__TOC_TITLE:
+		case DocumentStructurePackage.TEXT_DOCUMENT__MAIN_TITLE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
+		case DocumentStructurePackage.TEXT_DOCUMENT__COVER_PAGE:
+		case DocumentStructurePackage.TEXT_DOCUMENT__GENERATION_CONFIGURATION:
 		case DocumentStructurePackage.TEXT_DOCUMENT__TEXT_DOCUMENT_PART:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
@@ -207,6 +211,12 @@ public class TextDocumentItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.DOCUMENT__COVER_PAGE,
+				DocumentStructureFactory.eINSTANCE.createCoverPage()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.DOCUMENT__GENERATION_CONFIGURATION,
+				DocumentStructureFactory.eINSTANCE.createGenerationConfiguration()));
 
 		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.TEXT_DOCUMENT__TEXT_DOCUMENT_PART,
 				DocumentStructureFactory.eINSTANCE.createBody()));

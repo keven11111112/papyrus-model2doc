@@ -29,7 +29,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.eclipse.papyrus.model2doc.emf.documentstructure.CoverPage;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.GenerationConfiguration;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocumentPart;
 
@@ -41,13 +43,59 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocumentPart;
  * The following features are implemented:
  * </p>
  * <ul>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TextDocumentImpl#getCoverPage <em>Cover Page</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TextDocumentImpl#getGenerationConfiguration <em>Generation Configuration</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TextDocumentImpl#getMainTitle <em>Main Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TextDocumentImpl#getTextDocumentPart <em>Text Document Part</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TextDocumentImpl#getTocTitle <em>Toc Title</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class TextDocumentImpl extends MinimalEObjectImpl.Container implements TextDocument {
+	/**
+	 * The cached value of the '{@link #getCoverPage() <em>Cover Page</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getCoverPage()
+	 * @generated
+	 * @ordered
+	 */
+	protected CoverPage coverPage;
+
+	/**
+	 * The cached value of the '{@link #getGenerationConfiguration() <em>Generation Configuration</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getGenerationConfiguration()
+	 * @generated
+	 * @ordered
+	 */
+	protected GenerationConfiguration generationConfiguration;
+
+	/**
+	 * The default value of the '{@link #getMainTitle() <em>Main Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getMainTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String MAIN_TITLE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getMainTitle() <em>Main Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getMainTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected String mainTitle = MAIN_TITLE_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getTextDocumentPart() <em>Text Document Part</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -58,27 +106,6 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 	 * @ordered
 	 */
 	protected EList<TextDocumentPart> textDocumentPart;
-
-	/**
-	 * The default value of the '{@link #getTocTitle() <em>Toc Title</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see #getTocTitle()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TOC_TITLE_EDEFAULT = "Table Of Contents"; //$NON-NLS-1$
-	/**
-	 * The cached value of the '{@link #getTocTitle() <em>Toc Title</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see #getTocTitle()
-	 * @generated
-	 * @ordered
-	 */
-	protected String tocTitle = TOC_TITLE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -108,6 +135,144 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 	 * @generated
 	 */
 	@Override
+	public CoverPage getCoverPage() {
+		return coverPage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public NotificationChain basicSetCoverPage(CoverPage newCoverPage, NotificationChain msgs) {
+		CoverPage oldCoverPage = coverPage;
+		coverPage = newCoverPage;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DocumentStructurePackage.TEXT_DOCUMENT__COVER_PAGE, oldCoverPage, newCoverPage);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setCoverPage(CoverPage newCoverPage) {
+		if (newCoverPage != coverPage) {
+			NotificationChain msgs = null;
+			if (coverPage != null) {
+				msgs = ((InternalEObject) coverPage).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DocumentStructurePackage.TEXT_DOCUMENT__COVER_PAGE, null, msgs);
+			}
+			if (newCoverPage != null) {
+				msgs = ((InternalEObject) newCoverPage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DocumentStructurePackage.TEXT_DOCUMENT__COVER_PAGE, null, msgs);
+			}
+			msgs = basicSetCoverPage(newCoverPage, msgs);
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructurePackage.TEXT_DOCUMENT__COVER_PAGE, newCoverPage, newCoverPage));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public GenerationConfiguration getGenerationConfiguration() {
+		return generationConfiguration;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public NotificationChain basicSetGenerationConfiguration(GenerationConfiguration newGenerationConfiguration, NotificationChain msgs) {
+		GenerationConfiguration oldGenerationConfiguration = generationConfiguration;
+		generationConfiguration = newGenerationConfiguration;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DocumentStructurePackage.TEXT_DOCUMENT__GENERATION_CONFIGURATION, oldGenerationConfiguration, newGenerationConfiguration);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setGenerationConfiguration(GenerationConfiguration newGenerationConfiguration) {
+		if (newGenerationConfiguration != generationConfiguration) {
+			NotificationChain msgs = null;
+			if (generationConfiguration != null) {
+				msgs = ((InternalEObject) generationConfiguration).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DocumentStructurePackage.TEXT_DOCUMENT__GENERATION_CONFIGURATION, null, msgs);
+			}
+			if (newGenerationConfiguration != null) {
+				msgs = ((InternalEObject) newGenerationConfiguration).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DocumentStructurePackage.TEXT_DOCUMENT__GENERATION_CONFIGURATION, null, msgs);
+			}
+			msgs = basicSetGenerationConfiguration(newGenerationConfiguration, msgs);
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructurePackage.TEXT_DOCUMENT__GENERATION_CONFIGURATION, newGenerationConfiguration, newGenerationConfiguration));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public String getMainTitle() {
+		return mainTitle;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setMainTitle(String newMainTitle) {
+		String oldMainTitle = mainTitle;
+		mainTitle = newMainTitle;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructurePackage.TEXT_DOCUMENT__MAIN_TITLE, oldMainTitle, mainTitle));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EList<TextDocumentPart> getTextDocumentPart() {
 		if (textDocumentPart == null) {
 			textDocumentPart = new EObjectContainmentEList<>(TextDocumentPart.class, this, DocumentStructurePackage.TEXT_DOCUMENT__TEXT_DOCUMENT_PART);
@@ -122,34 +287,12 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 	 * @generated
 	 */
 	@Override
-	public String getTocTitle() {
-		return tocTitle;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public void setTocTitle(String newTocTitle) {
-		String oldTocTitle = tocTitle;
-		tocTitle = newTocTitle;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructurePackage.TEXT_DOCUMENT__TOC_TITLE, oldTocTitle, tocTitle));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+		case DocumentStructurePackage.TEXT_DOCUMENT__COVER_PAGE:
+			return basicSetCoverPage(null, msgs);
+		case DocumentStructurePackage.TEXT_DOCUMENT__GENERATION_CONFIGURATION:
+			return basicSetGenerationConfiguration(null, msgs);
 		case DocumentStructurePackage.TEXT_DOCUMENT__TEXT_DOCUMENT_PART:
 			return ((InternalEList<?>) getTextDocumentPart()).basicRemove(otherEnd, msgs);
 		}
@@ -165,10 +308,14 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case DocumentStructurePackage.TEXT_DOCUMENT__COVER_PAGE:
+			return getCoverPage();
+		case DocumentStructurePackage.TEXT_DOCUMENT__GENERATION_CONFIGURATION:
+			return getGenerationConfiguration();
+		case DocumentStructurePackage.TEXT_DOCUMENT__MAIN_TITLE:
+			return getMainTitle();
 		case DocumentStructurePackage.TEXT_DOCUMENT__TEXT_DOCUMENT_PART:
 			return getTextDocumentPart();
-		case DocumentStructurePackage.TEXT_DOCUMENT__TOC_TITLE:
-			return getTocTitle();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -183,12 +330,18 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+		case DocumentStructurePackage.TEXT_DOCUMENT__COVER_PAGE:
+			setCoverPage((CoverPage) newValue);
+			return;
+		case DocumentStructurePackage.TEXT_DOCUMENT__GENERATION_CONFIGURATION:
+			setGenerationConfiguration((GenerationConfiguration) newValue);
+			return;
+		case DocumentStructurePackage.TEXT_DOCUMENT__MAIN_TITLE:
+			setMainTitle((String) newValue);
+			return;
 		case DocumentStructurePackage.TEXT_DOCUMENT__TEXT_DOCUMENT_PART:
 			getTextDocumentPart().clear();
 			getTextDocumentPart().addAll((Collection<? extends TextDocumentPart>) newValue);
-			return;
-		case DocumentStructurePackage.TEXT_DOCUMENT__TOC_TITLE:
-			setTocTitle((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -203,11 +356,17 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+		case DocumentStructurePackage.TEXT_DOCUMENT__COVER_PAGE:
+			setCoverPage((CoverPage) null);
+			return;
+		case DocumentStructurePackage.TEXT_DOCUMENT__GENERATION_CONFIGURATION:
+			setGenerationConfiguration((GenerationConfiguration) null);
+			return;
+		case DocumentStructurePackage.TEXT_DOCUMENT__MAIN_TITLE:
+			setMainTitle(MAIN_TITLE_EDEFAULT);
+			return;
 		case DocumentStructurePackage.TEXT_DOCUMENT__TEXT_DOCUMENT_PART:
 			getTextDocumentPart().clear();
-			return;
-		case DocumentStructurePackage.TEXT_DOCUMENT__TOC_TITLE:
-			setTocTitle(TOC_TITLE_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -222,10 +381,14 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case DocumentStructurePackage.TEXT_DOCUMENT__COVER_PAGE:
+			return coverPage != null;
+		case DocumentStructurePackage.TEXT_DOCUMENT__GENERATION_CONFIGURATION:
+			return generationConfiguration != null;
+		case DocumentStructurePackage.TEXT_DOCUMENT__MAIN_TITLE:
+			return MAIN_TITLE_EDEFAULT == null ? mainTitle != null : !MAIN_TITLE_EDEFAULT.equals(mainTitle);
 		case DocumentStructurePackage.TEXT_DOCUMENT__TEXT_DOCUMENT_PART:
 			return textDocumentPart != null && !textDocumentPart.isEmpty();
-		case DocumentStructurePackage.TEXT_DOCUMENT__TOC_TITLE:
-			return TOC_TITLE_EDEFAULT == null ? tocTitle != null : !TOC_TITLE_EDEFAULT.equals(tocTitle);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -243,8 +406,8 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 		}
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (tocTitle: "); //$NON-NLS-1$
-		result.append(tocTitle);
+		result.append(" (mainTitle: "); //$NON-NLS-1$
+		result.append(mainTitle);
 		result.append(')');
 		return result.toString();
 	}

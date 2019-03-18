@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassDocumentPartTemplate#getEclass <em>Eclass</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassDocumentPartTemplate#getFilterRule <em>Filter Rule</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getEClassDocumentPartTemplate()
@@ -60,5 +61,38 @@ public interface EClassDocumentPartTemplate extends ObjectPartTemplate {
 	 * @generated
 	 */
 	void setEclass(EClass value);
+
+	/**
+	 * Returns the value of the '<em><b>Filter Rule</b></em>' attribute.
+	 * The default value is <code>"TYPE_OF"</code>.
+	 * The literals are from the enumeration {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassFilterBehavior}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Filter Rule</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the value of the '<em>Filter Rule</em>' attribute.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassFilterBehavior
+	 * @see #setFilterRule(EClassFilterBehavior)
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getEClassDocumentPartTemplate_FilterRule()
+	 * @model default="TYPE_OF" required="true" ordered="false"
+	 * @generated
+	 */
+	EClassFilterBehavior getFilterRule();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassDocumentPartTemplate#getFilterRule <em>Filter Rule</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *                  the new value of the '<em>Filter Rule</em>' attribute.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassFilterBehavior
+	 * @see #getFilterRule()
+	 * @generated
+	 */
+	void setFilterRule(EClassFilterBehavior value);
 
 } // EClassDocumentPartTemplate

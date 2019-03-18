@@ -9,13 +9,13 @@ pure text String and RTF String.</body>
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
     </packageImport>
     <packagedElement xmi:type="uml:Class" xmi:id="_A-JM4B4gEemmq_cjeiIGww" name="TextDocument">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_dNLh0EmLEem4wpUXttaNpQ" name="mainTitle">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_e_GLYEmLEem4wpUXttaNpQ"/>
+      </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_Ln5WcUUHEemuabBpL8rs_Q" name="textDocumentPart" type="_5oa5IEUGEemuabBpL8rs_Q" aggregation="composite" association="_Ln3hQEUHEemuabBpL8rs_Q">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Ln59gEUHEemuabBpL8rs_Q"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Ln59gUUHEemuabBpL8rs_Q" value="*"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_y8NHYEj5EemfLoWJW7kHbg" name="tocTitle">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-        <defaultValue xmi:type="uml:LiteralString" xmi:id="_AqT2IEj6EemfLoWJW7kHbg" name="DEFAULT_TOC_TITLE" value="Table Of Contents"/>
       </ownedAttribute>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_1ZL-IB4uEemmq_cjeiIGww" client="_A-JM4B4gEemmq_cjeiIGww" supplier="_zPfGsB4uEemmq_cjeiIGww" contract="_zPfGsB4uEemmq_cjeiIGww"/>
     </packagedElement>
@@ -100,8 +100,18 @@ pure text String and RTF String.</body>
       </eAnnotations>
       <ownedEnd xmi:type="uml:Property" xmi:id="_qiLucB4lEemmq_cjeiIGww" name="bodyPart" type="_P0JX0B4gEemmq_cjeiIGww" association="_qiEZsB4lEemmq_cjeiIGww"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Interface" xmi:id="_zPfGsB4uEemmq_cjeiIGww" name="Document"/>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_zPfGsB4uEemmq_cjeiIGww" name="Document">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_wNz6IkmLEem4wpUXttaNpQ" name="coverPage" type="_hVsPUEmLEem4wpUXttaNpQ" aggregation="composite" association="_wNzTEEmLEem4wpUXttaNpQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wN0hMEmLEem4wpUXttaNpQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wN0hMUmLEem4wpUXttaNpQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_9gsFcEmLEem4wpUXttaNpQ" name="generationConfiguration" type="_kEWN8EmLEem4wpUXttaNpQ" aggregation="composite" association="_9gqQQEmLEem4wpUXttaNpQ"/>
+    </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_ZnvK4EUGEemuabBpL8rs_Q" name="TableOfContents">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_qq5tMEl1Eem4wpUXttaNpQ" name="tocTitle">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_ztZocEl1Eem4wpUXttaNpQ" name="DEFAULT_TOC_TITLE" value="Table Of Contents"/>
+      </ownedAttribute>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_Z0f_EEUHEemuabBpL8rs_Q" client="_ZnvK4EUGEemuabBpL8rs_Q" supplier="_5oa5IEUGEemuabBpL8rs_Q" contract="_5oa5IEUGEemuabBpL8rs_Q"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_5oa5IEUGEemuabBpL8rs_Q" name="TextDocumentPart"/>
@@ -110,6 +120,31 @@ pure text String and RTF String.</body>
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ln5WcEUHEemuabBpL8rs_Q" key="nature" value="UML_Nature"/>
       </eAnnotations>
       <ownedEnd xmi:type="uml:Property" xmi:id="_Ln6kkEUHEemuabBpL8rs_Q" name="textDocument" type="_A-JM4B4gEemmq_cjeiIGww" association="_Ln3hQEUHEemuabBpL8rs_Q"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_hVsPUEmLEem4wpUXttaNpQ" name="CoverPage">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Xq_d4EmGEem4wpUXttaNpQ" name="path">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_kEWN8EmLEem4wpUXttaNpQ" name="GenerationConfiguration">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_xz6kAEmFEem4wpUXttaNpQ" name="outputFile">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_GxGIkEmGEem4wpUXttaNpQ" name="outputFolder">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_wNzTEEmLEem4wpUXttaNpQ" memberEnd="_wNz6IkmLEem4wpUXttaNpQ _wN0hMkmLEem4wpUXttaNpQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_wNz6IEmLEem4wpUXttaNpQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_wNz6IUmLEem4wpUXttaNpQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_wN0hMkmLEem4wpUXttaNpQ" name="document" type="_zPfGsB4uEemmq_cjeiIGww" association="_wNzTEEmLEem4wpUXttaNpQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_9gqQQEmLEem4wpUXttaNpQ" memberEnd="_9gsFcEmLEem4wpUXttaNpQ _9gsFc0mLEem4wpUXttaNpQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9greYEmLEem4wpUXttaNpQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9greYUmLEem4wpUXttaNpQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_9gsFc0mLEem4wpUXttaNpQ" name="document" type="_zPfGsB4uEemmq_cjeiIGww" association="_9gqQQEmLEem4wpUXttaNpQ"/>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_llmqQB4mEemmq_cjeiIGww">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_lln4YB4mEemmq_cjeiIGww" source="http://www.eclipse.org/uml2/2.0.0/UML">

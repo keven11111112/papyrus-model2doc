@@ -43,12 +43,24 @@
       disposableProviderFactory="true" ecorePackage="documentstructure.ecore#/">
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructure.ecore#//Text"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructure.ecore#//TextDocument">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructure.ecore#//TextDocument/mainTitle"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference documentstructure.ecore#//TextDocument/textDocumentPart"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructure.ecore#//TextDocument/tocTitle"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructure.ecore#//TextDocumentPart"/>
-    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructure.ecore#//Document"/>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructure.ecore#//Document">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference documentstructure.ecore#//Document/coverPage"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference documentstructure.ecore#//Document/generationConfiguration"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructure.ecore#//CoverPage">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructure.ecore#//CoverPage/path"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructure.ecore#//GenerationConfiguration">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructure.ecore#//GenerationConfiguration/outputFile"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructure.ecore#//GenerationConfiguration/outputFolder"/>
+    </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructure.ecore#//Body">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference documentstructure.ecore#//Body/bodyPart"/>
@@ -77,6 +89,8 @@
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference documentstructure.ecore#//EMFDataSource/feature"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructure.ecore#//TableOfContents"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructure.ecore#//TableOfContents">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructure.ecore#//TableOfContents/tocTitle"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

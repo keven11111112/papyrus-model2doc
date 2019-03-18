@@ -11,14 +11,28 @@
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TextDocument" eSuperTypes="#//Document">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mainTitle" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="textDocumentPart" ordered="false"
         upperBound="-1" eType="#//TextDocumentPart" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tocTitle" ordered="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral="Table Of Contents"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TextDocumentPart" abstract="true" interface="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Document" abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Document" abstract="true" interface="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="coverPage" ordered="false"
+        eType="#//CoverPage" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="generationConfiguration"
+        ordered="false" lowerBound="1" eType="#//GenerationConfiguration" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CoverPage">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GenerationConfiguration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="outputFile" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="outputFolder" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Body" eSuperTypes="#//TextDocumentPart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="bodyPart" ordered="false"
         upperBound="-1" eType="#//BodyPart" containment="true"/>
@@ -53,5 +67,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="feature" ordered="false"
         lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EStructuralFeature"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TableOfContents" eSuperTypes="#//TextDocumentPart"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TableOfContents" eSuperTypes="#//TextDocumentPart">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tocTitle" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="Table Of Contents"/>
+  </eClassifiers>
 </ecore:EPackage>

@@ -113,6 +113,56 @@ public class DocumentStructureItemProviderAdapterFactory extends DocumentStructu
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructure.CoverPage} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected CoverPageItemProvider coverPageItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructure.CoverPage}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Adapter createCoverPageAdapter() {
+		if (coverPageItemProvider == null) {
+			coverPageItemProvider = new CoverPageItemProvider(this);
+		}
+
+		return coverPageItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructure.GenerationConfiguration} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected GenerationConfigurationItemProvider generationConfigurationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructure.GenerationConfiguration}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Adapter createGenerationConfigurationAdapter() {
+		if (generationConfigurationItemProvider == null) {
+			generationConfigurationItemProvider = new GenerationConfigurationItemProvider(this);
+		}
+
+		return generationConfigurationItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructure.Body} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -428,6 +478,12 @@ public class DocumentStructureItemProviderAdapterFactory extends DocumentStructu
 	public void dispose() {
 		if (textDocumentItemProvider != null) {
 			textDocumentItemProvider.dispose();
+		}
+		if (coverPageItemProvider != null) {
+			coverPageItemProvider.dispose();
+		}
+		if (generationConfigurationItemProvider != null) {
+			generationConfigurationItemProvider.dispose();
 		}
 		if (bodyItemProvider != null) {
 			bodyItemProvider.dispose();

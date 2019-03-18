@@ -82,6 +82,7 @@ public class EClassDocumentPartTemplateItemProvider
 			addDefaultTitlePropertyDescriptor(object);
 			addCustomTitlePropertyDescriptor(object);
 			addEclassPropertyDescriptor(object);
+			addFilterRulePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -192,6 +193,27 @@ public class EClassDocumentPartTemplateItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Filter Rule feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected void addFilterRulePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_EClassDocumentPartTemplate_filterRule_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EClassDocumentPartTemplate_filterRule_feature", "_UI_EClassDocumentPartTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				DocumentStructureTemplatePackage.Literals.ECLASS_DOCUMENT_PART_TEMPLATE__FILTER_RULE,
+				true,
+				false,
+				false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				null,
+				null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -204,7 +226,7 @@ public class EClassDocumentPartTemplateItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.OBJECT_PART_TEMPLATE__FEATURE_PART_TEMPLATE);
+			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.OBJECT_PART_TEMPLATE__FEATURE_PART_TEMPLATES);
 		}
 		return childrenFeatures;
 	}
@@ -288,9 +310,10 @@ public class EClassDocumentPartTemplateItemProvider
 		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__GENERATE_TITLE:
 		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__DEFAULT_TITLE:
 		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__CUSTOM_TITLE:
+		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__FILTER_RULE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__FEATURE_PART_TEMPLATE:
+		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__FEATURE_PART_TEMPLATES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -309,7 +332,7 @@ public class EClassDocumentPartTemplateItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.OBJECT_PART_TEMPLATE__FEATURE_PART_TEMPLATE,
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.OBJECT_PART_TEMPLATE__FEATURE_PART_TEMPLATES,
 				DocumentStructureTemplateFactory.eINSTANCE.createEStructuralFeatureDocumentPartTemplate()));
 	}
 

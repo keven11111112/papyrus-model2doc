@@ -26,12 +26,12 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getSemanticContext <em>Semantic Context</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getGraphicalContext <em>Graphical Context</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getType <em>Type</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getIconPath <em>Icon Path</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getDocumentTemplatePrototype <em>Document Template Prototype</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getName <em>Name</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getDescription <em>Description</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getKindId <em>Kind Id</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getGenerationConfiguration <em>Generation Configuration</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getCoverPage <em>Cover Page</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getDocumentTemplate()
@@ -105,51 +105,26 @@ public interface DocumentTemplate extends EObject {
 	void setGraphicalContext(EObject value);
 
 	/**
-	 * Returns the value of the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Type</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Field derived from the type defined in the referenced DocumentTemplatePrototype.
-	 * <!-- end-model-doc -->
 	 *
-	 * @return the value of the '<em>Type</em>' attribute.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getDocumentTemplate_Type()
-	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true" ordered="false"
+	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
 	String getType();
 
 	/**
-	 * Returns the value of the '<em><b>Icon Path</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Field derived from the iconPath defined in the referenced DocumentTemplatePrototype.
-	 * <!-- end-model-doc -->
 	 *
-	 * @return the value of the '<em>Icon Path</em>' attribute.
-	 * @see #setIconPath(String)
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getDocumentTemplate_IconPath()
-	 * @model required="true" transient="true" volatile="true" derived="true" ordered="false"
+	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
 	String getIconPath();
-
-	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getIconPath <em>Icon Path</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *                  the new value of the '<em>Icon Path</em>' attribute.
-	 * @see #getIconPath()
-	 * @generated
-	 */
-	void setIconPath(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Document Template Prototype</b></em>' reference.
@@ -279,4 +254,62 @@ public interface DocumentTemplate extends EObject {
 	 * @generated
 	 */
 	void setKindId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Generation Configuration</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Generation Configuration</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the value of the '<em>Generation Configuration</em>' containment reference.
+	 * @see #setGenerationConfiguration(GenerationConfiguration)
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getDocumentTemplate_GenerationConfiguration()
+	 * @model containment="true" required="true" ordered="false"
+	 * @generated
+	 */
+	GenerationConfiguration getGenerationConfiguration();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getGenerationConfiguration <em>Generation Configuration</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *                  the new value of the '<em>Generation Configuration</em>' containment reference.
+	 * @see #getGenerationConfiguration()
+	 * @generated
+	 */
+	void setGenerationConfiguration(GenerationConfiguration value);
+
+	/**
+	 * Returns the value of the '<em><b>Cover Page</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Cover Page</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the value of the '<em>Cover Page</em>' containment reference.
+	 * @see #setCoverPage(CoverPage)
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getDocumentTemplate_CoverPage()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	CoverPage getCoverPage();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getCoverPage <em>Cover Page</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *                  the new value of the '<em>Cover Page</em>' containment reference.
+	 * @see #getCoverPage()
+	 * @generated
+	 */
+	void setCoverPage(CoverPage value);
 } // DocumentTemplate

@@ -204,7 +204,7 @@ public class EObjectDocumentPartTemplateItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.OBJECT_PART_TEMPLATE__FEATURE_PART_TEMPLATE);
+			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.OBJECT_PART_TEMPLATE__FEATURE_PART_TEMPLATES);
 		}
 		return childrenFeatures;
 	}
@@ -290,7 +290,7 @@ public class EObjectDocumentPartTemplateItemProvider
 		case DocumentStructureTemplatePackage.EOBJECT_DOCUMENT_PART_TEMPLATE__CUSTOM_TITLE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case DocumentStructureTemplatePackage.EOBJECT_DOCUMENT_PART_TEMPLATE__FEATURE_PART_TEMPLATE:
+		case DocumentStructureTemplatePackage.EOBJECT_DOCUMENT_PART_TEMPLATE__FEATURE_PART_TEMPLATES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -309,7 +309,7 @@ public class EObjectDocumentPartTemplateItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.OBJECT_PART_TEMPLATE__FEATURE_PART_TEMPLATE,
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.OBJECT_PART_TEMPLATE__FEATURE_PART_TEMPLATES,
 				DocumentStructureTemplateFactory.eINSTANCE.createEStructuralFeatureDocumentPartTemplate()));
 	}
 

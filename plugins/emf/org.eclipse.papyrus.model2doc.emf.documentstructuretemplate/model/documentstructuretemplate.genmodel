@@ -38,19 +38,26 @@
   <foreignModel>documentstructuretemplate.uml</foreignModel>
   <genPackages xsi:type="genmodel:GenPackage" prefix="DocumentStructureTemplate" basePackage="org.eclipse.papyrus.model2doc.emf"
       disposableProviderFactory="true" fileExtensions="pdst" ecorePackage="documentstructuretemplate.ecore#/">
+    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="documentstructuretemplate.ecore#//EClassFilterBehavior">
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="documentstructuretemplate.ecore#//EClassFilterBehavior/TYPE_OF"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="documentstructuretemplate.ecore#//EClassFilterBehavior/KIND_OF"/>
+    </genEnums>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructuretemplate.ecore#//DocumentTemplate">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//DocumentTemplate/semanticContext"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//DocumentTemplate/graphicalContext"/>
-      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" createChild="false"
-          ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//DocumentTemplate/type"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//DocumentTemplate/iconPath"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//DocumentTemplate/documentTemplatePrototype"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//DocumentTemplate/name"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//DocumentTemplate/description"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//DocumentTemplate/kindId"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//DocumentTemplate/generationConfiguration"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//DocumentTemplate/coverPage"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="documentstructuretemplate.ecore#//DocumentTemplate/getType"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="documentstructuretemplate.ecore#//DocumentTemplate/getIconPath"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructuretemplate.ecore#//DocumentTemplatePrototype">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//DocumentTemplatePrototype/type"/>
@@ -59,7 +66,15 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//DocumentTemplatePrototype/documentTemplate"/>
     </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructuretemplate.ecore#//GenerationConfiguration">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//GenerationConfiguration/ouputFile"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//GenerationConfiguration/ouputFolder"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructuretemplate.ecore#//CoverPage">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//CoverPage/path"/>
+    </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructuretemplate.ecore#//TextDocumentTemplate">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//TextDocumentTemplate/mainTitle"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//TextDocumentTemplate/documentPart"/>
     </genClasses>
@@ -70,7 +85,7 @@
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructuretemplate.ecore#//FeaturePartTemplate">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//FeaturePartTemplate/objectPartTemplate"/>
+          createChild="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//FeaturePartTemplate/objectPartTemplates"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructuretemplate.ecore#//DocumentPartTemplate">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//DocumentPartTemplate/generate"/>
@@ -81,11 +96,12 @@
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructuretemplate.ecore#//ObjectPartTemplate">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//ObjectPartTemplate/featurePartTemplate"/>
+          createChild="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//ObjectPartTemplate/featurePartTemplates"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructuretemplate.ecore#//EClassDocumentPartTemplate">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//EClassDocumentPartTemplate/eclass"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//EClassDocumentPartTemplate/filterRule"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructuretemplate.ecore#//EObjectDocumentPartTemplate">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"

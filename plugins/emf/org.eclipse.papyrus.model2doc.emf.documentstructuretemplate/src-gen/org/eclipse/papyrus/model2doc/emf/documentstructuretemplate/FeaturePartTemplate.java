@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.FeaturePartTemplate#getObjectPartTemplate <em>Object Part Template</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.FeaturePartTemplate#getObjectPartTemplates <em>Object Part Templates</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getFeaturePartTemplate()
@@ -33,20 +33,20 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface FeaturePartTemplate extends DocumentPartTemplate {
 	/**
-	 * Returns the value of the '<em><b>Object Part Template</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Object Part Templates</b></em>' containment reference list.
 	 * The list contents are of type {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ObjectPartTemplate}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Object Part Template</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Object Part Templates</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the value of the '<em>Object Part Template</em>' containment reference list.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getFeaturePartTemplate_ObjectPartTemplate()
+	 * @return the value of the '<em>Object Part Templates</em>' containment reference list.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getFeaturePartTemplate_ObjectPartTemplates()
 	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<ObjectPartTemplate> getObjectPartTemplate();
+	EList<ObjectPartTemplate> getObjectPartTemplates();
 
 } // FeaturePartTemplate

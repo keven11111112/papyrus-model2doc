@@ -116,6 +116,26 @@ public interface DocumentStructurePackage extends EPackage {
 	int DOCUMENT = 3;
 
 	/**
+	 * The feature id for the '<em><b>Cover Page</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT__COVER_PAGE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Generation Configuration</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT__GENERATION_CONFIGURATION = 1;
+
+	/**
 	 * The number of structural features of the '<em>Document</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -123,7 +143,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_FEATURE_COUNT = 0;
+	int DOCUMENT_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Document</em>' class.
@@ -147,6 +167,36 @@ public interface DocumentStructurePackage extends EPackage {
 	int TEXT_DOCUMENT = 1;
 
 	/**
+	 * The feature id for the '<em><b>Cover Page</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_DOCUMENT__COVER_PAGE = DOCUMENT__COVER_PAGE;
+
+	/**
+	 * The feature id for the '<em><b>Generation Configuration</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_DOCUMENT__GENERATION_CONFIGURATION = DOCUMENT__GENERATION_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Main Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_DOCUMENT__MAIN_TITLE = DOCUMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Text Document Part</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -154,17 +204,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_DOCUMENT__TEXT_DOCUMENT_PART = DOCUMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Toc Title</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int TEXT_DOCUMENT__TOC_TITLE = DOCUMENT_FEATURE_COUNT + 1;
+	int TEXT_DOCUMENT__TEXT_DOCUMENT_PART = DOCUMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Text Document</em>' class.
@@ -218,6 +258,98 @@ public interface DocumentStructurePackage extends EPackage {
 	int TEXT_DOCUMENT_PART_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.CoverPageImpl <em>Cover Page</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.CoverPageImpl
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getCoverPage()
+	 * @generated
+	 */
+	int COVER_PAGE = 4;
+
+	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int COVER_PAGE__PATH = 0;
+
+	/**
+	 * The number of structural features of the '<em>Cover Page</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int COVER_PAGE_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Cover Page</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int COVER_PAGE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.GenerationConfigurationImpl <em>Generation Configuration</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.GenerationConfigurationImpl
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getGenerationConfiguration()
+	 * @generated
+	 */
+	int GENERATION_CONFIGURATION = 5;
+
+	/**
+	 * The feature id for the '<em><b>Output File</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int GENERATION_CONFIGURATION__OUTPUT_FILE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Output Folder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int GENERATION_CONFIGURATION__OUTPUT_FOLDER = 1;
+
+	/**
+	 * The number of structural features of the '<em>Generation Configuration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int GENERATION_CONFIGURATION_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Generation Configuration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int GENERATION_CONFIGURATION_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.BodyImpl <em>Body</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -226,7 +358,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getBody()
 	 * @generated
 	 */
-	int BODY = 4;
+	int BODY = 6;
 
 	/**
 	 * The feature id for the '<em><b>Body Part</b></em>' containment reference list.
@@ -267,7 +399,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getBodyPart()
 	 * @generated
 	 */
-	int BODY_PART = 5;
+	int BODY_PART = 7;
 
 	/**
 	 * The feature id for the '<em><b>Data Source</b></em>' containment reference.
@@ -318,7 +450,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getDataSource()
 	 * @generated
 	 */
-	int DATA_SOURCE = 6;
+	int DATA_SOURCE = 8;
 
 	/**
 	 * The number of structural features of the '<em>Data Source</em>' class.
@@ -349,7 +481,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getList()
 	 * @generated
 	 */
-	int LIST = 7;
+	int LIST = 9;
 
 	/**
 	 * The feature id for the '<em><b>Data Source</b></em>' containment reference.
@@ -400,7 +532,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getTextPart()
 	 * @generated
 	 */
-	int TEXT_PART = 9;
+	int TEXT_PART = 11;
 
 	/**
 	 * The feature id for the '<em><b>Data Source</b></em>' containment reference.
@@ -461,7 +593,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getParagraph()
 	 * @generated
 	 */
-	int PARAGRAPH = 8;
+	int PARAGRAPH = 10;
 
 	/**
 	 * The feature id for the '<em><b>Data Source</b></em>' containment reference.
@@ -522,7 +654,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getTitle()
 	 * @generated
 	 */
-	int TITLE = 10;
+	int TITLE = 12;
 
 	/**
 	 * The feature id for the '<em><b>Data Source</b></em>' containment reference.
@@ -583,7 +715,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getImage()
 	 * @generated
 	 */
-	int IMAGE = 11;
+	int IMAGE = 13;
 
 	/**
 	 * The feature id for the '<em><b>Data Source</b></em>' containment reference.
@@ -644,7 +776,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getStringText()
 	 * @generated
 	 */
-	int STRING_TEXT = 12;
+	int STRING_TEXT = 14;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -685,7 +817,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getEMFDataSource()
 	 * @generated
 	 */
-	int EMF_DATA_SOURCE = 13;
+	int EMF_DATA_SOURCE = 15;
 
 	/**
 	 * The feature id for the '<em><b>Eobject</b></em>' reference.
@@ -736,7 +868,17 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getTableOfContents()
 	 * @generated
 	 */
-	int TABLE_OF_CONTENTS = 14;
+	int TABLE_OF_CONTENTS = 16;
+
+	/**
+	 * The feature id for the '<em><b>Toc Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_OF_CONTENTS__TOC_TITLE = TEXT_DOCUMENT_PART_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Table Of Contents</em>' class.
@@ -746,7 +888,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE_OF_CONTENTS_FEATURE_COUNT = TEXT_DOCUMENT_PART_FEATURE_COUNT + 0;
+	int TABLE_OF_CONTENTS_FEATURE_COUNT = TEXT_DOCUMENT_PART_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Table Of Contents</em>' class.
@@ -757,6 +899,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @ordered
 	 */
 	int TABLE_OF_CONTENTS_OPERATION_COUNT = TEXT_DOCUMENT_PART_OPERATION_COUNT + 0;
+
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.Text <em>Text</em>}'.
@@ -781,6 +924,18 @@ public interface DocumentStructurePackage extends EPackage {
 	EClass getTextDocument();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument#getMainTitle <em>Main Title</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Main Title</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument#getMainTitle()
+	 * @see #getTextDocument()
+	 * @generated
+	 */
+	EAttribute getTextDocument_MainTitle();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument#getTextDocumentPart <em>Text Document Part</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -791,18 +946,6 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getTextDocument_TextDocumentPart();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument#getTocTitle <em>Toc Title</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the meta object for the attribute '<em>Toc Title</em>'.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument#getTocTitle()
-	 * @see #getTextDocument()
-	 * @generated
-	 */
-	EAttribute getTextDocument_TocTitle();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocumentPart <em>Text Document Part</em>}'.
@@ -825,6 +968,88 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getDocument();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.Document#getCoverPage <em>Cover Page</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference '<em>Cover Page</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.Document#getCoverPage()
+	 * @see #getDocument()
+	 * @generated
+	 */
+	EReference getDocument_CoverPage();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.Document#getGenerationConfiguration <em>Generation Configuration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference '<em>Generation Configuration</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.Document#getGenerationConfiguration()
+	 * @see #getDocument()
+	 * @generated
+	 */
+	EReference getDocument_GenerationConfiguration();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.CoverPage <em>Cover Page</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>Cover Page</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.CoverPage
+	 * @generated
+	 */
+	EClass getCoverPage();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.CoverPage#getPath <em>Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Path</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.CoverPage#getPath()
+	 * @see #getCoverPage()
+	 * @generated
+	 */
+	EAttribute getCoverPage_Path();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.GenerationConfiguration <em>Generation Configuration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>Generation Configuration</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.GenerationConfiguration
+	 * @generated
+	 */
+	EClass getGenerationConfiguration();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.GenerationConfiguration#getOutputFile <em>Output File</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Output File</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.GenerationConfiguration#getOutputFile()
+	 * @see #getGenerationConfiguration()
+	 * @generated
+	 */
+	EAttribute getGenerationConfiguration_OutputFile();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.GenerationConfiguration#getOutputFolder <em>Output Folder</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Output Folder</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.GenerationConfiguration#getOutputFolder()
+	 * @see #getGenerationConfiguration()
+	 * @generated
+	 */
+	EAttribute getGenerationConfiguration_OutputFolder();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.Body <em>Body</em>}'.
@@ -1032,6 +1257,18 @@ public interface DocumentStructurePackage extends EPackage {
 	EClass getTableOfContents();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.TableOfContents#getTocTitle <em>Toc Title</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Toc Title</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.TableOfContents#getTocTitle()
+	 * @see #getTableOfContents()
+	 * @generated
+	 */
+	EAttribute getTableOfContents_TocTitle();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1079,6 +1316,15 @@ public interface DocumentStructurePackage extends EPackage {
 		EClass TEXT_DOCUMENT = eINSTANCE.getTextDocument();
 
 		/**
+		 * The meta object literal for the '<em><b>Main Title</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute TEXT_DOCUMENT__MAIN_TITLE = eINSTANCE.getTextDocument_MainTitle();
+
+		/**
 		 * The meta object literal for the '<em><b>Text Document Part</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1086,15 +1332,6 @@ public interface DocumentStructurePackage extends EPackage {
 		 * @generated
 		 */
 		EReference TEXT_DOCUMENT__TEXT_DOCUMENT_PART = eINSTANCE.getTextDocument_TextDocumentPart();
-
-		/**
-		 * The meta object literal for the '<em><b>Toc Title</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 *
-		 * @generated
-		 */
-		EAttribute TEXT_DOCUMENT__TOC_TITLE = eINSTANCE.getTextDocument_TocTitle();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocumentPart <em>Text Document Part</em>}' class.
@@ -1117,6 +1354,73 @@ public interface DocumentStructurePackage extends EPackage {
 		 * @generated
 		 */
 		EClass DOCUMENT = eINSTANCE.getDocument();
+
+		/**
+		 * The meta object literal for the '<em><b>Cover Page</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference DOCUMENT__COVER_PAGE = eINSTANCE.getDocument_CoverPage();
+
+		/**
+		 * The meta object literal for the '<em><b>Generation Configuration</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference DOCUMENT__GENERATION_CONFIGURATION = eINSTANCE.getDocument_GenerationConfiguration();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.CoverPageImpl <em>Cover Page</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.CoverPageImpl
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getCoverPage()
+		 * @generated
+		 */
+		EClass COVER_PAGE = eINSTANCE.getCoverPage();
+
+		/**
+		 * The meta object literal for the '<em><b>Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute COVER_PAGE__PATH = eINSTANCE.getCoverPage_Path();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.GenerationConfigurationImpl <em>Generation Configuration</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.GenerationConfigurationImpl
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getGenerationConfiguration()
+		 * @generated
+		 */
+		EClass GENERATION_CONFIGURATION = eINSTANCE.getGenerationConfiguration();
+
+		/**
+		 * The meta object literal for the '<em><b>Output File</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute GENERATION_CONFIGURATION__OUTPUT_FILE = eINSTANCE.getGenerationConfiguration_OutputFile();
+
+		/**
+		 * The meta object literal for the '<em><b>Output Folder</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute GENERATION_CONFIGURATION__OUTPUT_FOLDER = eINSTANCE.getGenerationConfiguration_OutputFolder();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.BodyImpl <em>Body</em>}' class.
@@ -1301,6 +1605,15 @@ public interface DocumentStructurePackage extends EPackage {
 		 * @generated
 		 */
 		EClass TABLE_OF_CONTENTS = eINSTANCE.getTableOfContents();
+
+		/**
+		 * The meta object literal for the '<em><b>Toc Title</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute TABLE_OF_CONTENTS__TOC_TITLE = eINSTANCE.getTableOfContents_TocTitle();
 
 	}
 

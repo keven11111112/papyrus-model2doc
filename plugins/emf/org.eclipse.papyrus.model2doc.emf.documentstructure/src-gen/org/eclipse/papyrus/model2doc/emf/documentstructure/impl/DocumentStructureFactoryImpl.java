@@ -72,6 +72,10 @@ public class DocumentStructureFactoryImpl extends EFactoryImpl implements Docume
 		switch (eClass.getClassifierID()) {
 		case DocumentStructurePackage.TEXT_DOCUMENT:
 			return createTextDocument();
+		case DocumentStructurePackage.COVER_PAGE:
+			return createCoverPage();
+		case DocumentStructurePackage.GENERATION_CONFIGURATION:
+			return createGenerationConfiguration();
 		case DocumentStructurePackage.BODY:
 			return createBody();
 		case DocumentStructurePackage.LIST:
@@ -103,6 +107,30 @@ public class DocumentStructureFactoryImpl extends EFactoryImpl implements Docume
 	public TextDocument createTextDocument() {
 		TextDocumentImpl textDocument = new TextDocumentImpl();
 		return textDocument;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public CoverPage createCoverPage() {
+		CoverPageImpl coverPage = new CoverPageImpl();
+		return coverPage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public GenerationConfiguration createGenerationConfiguration() {
+		GenerationConfigurationImpl generationConfiguration = new GenerationConfigurationImpl();
+		return generationConfiguration;
 	}
 
 	/**

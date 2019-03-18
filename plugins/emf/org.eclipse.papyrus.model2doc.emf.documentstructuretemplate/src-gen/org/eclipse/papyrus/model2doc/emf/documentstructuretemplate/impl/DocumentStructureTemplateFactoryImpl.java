@@ -14,6 +14,7 @@
 package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -72,6 +73,10 @@ public class DocumentStructureTemplateFactoryImpl extends EFactoryImpl implement
 		switch (eClass.getClassifierID()) {
 		case DocumentStructureTemplatePackage.DOCUMENT_TEMPLATE_PROTOTYPE:
 			return createDocumentTemplatePrototype();
+		case DocumentStructureTemplatePackage.GENERATION_CONFIGURATION:
+			return createGenerationConfiguration();
+		case DocumentStructureTemplatePackage.COVER_PAGE:
+			return createCoverPage();
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE:
 			return createTextDocumentTemplate();
 		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE:
@@ -86,6 +91,38 @@ public class DocumentStructureTemplateFactoryImpl extends EFactoryImpl implement
 			return createBody();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+		case DocumentStructureTemplatePackage.ECLASS_FILTER_BEHAVIOR:
+			return createEClassFilterBehaviorFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+		case DocumentStructureTemplatePackage.ECLASS_FILTER_BEHAVIOR:
+			return convertEClassFilterBehaviorToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -167,10 +204,59 @@ public class DocumentStructureTemplateFactoryImpl extends EFactoryImpl implement
 	 *
 	 * @generated
 	 */
+	public EClassFilterBehavior createEClassFilterBehaviorFromString(EDataType eDataType, String initialValue) {
+		EClassFilterBehavior result = EClassFilterBehavior.get(initialValue);
+		if (result == null)
+		 {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		}
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public String convertEClassFilterBehaviorToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
 	@Override
 	public DocumentTemplatePrototype createDocumentTemplatePrototype() {
 		DocumentTemplatePrototypeImpl documentTemplatePrototype = new DocumentTemplatePrototypeImpl();
 		return documentTemplatePrototype;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public GenerationConfiguration createGenerationConfiguration() {
+		GenerationConfigurationImpl generationConfiguration = new GenerationConfigurationImpl();
+		return generationConfiguration;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public CoverPage createCoverPage() {
+		CoverPageImpl coverPage = new CoverPageImpl();
+		return coverPage;
 	}
 
 	/**

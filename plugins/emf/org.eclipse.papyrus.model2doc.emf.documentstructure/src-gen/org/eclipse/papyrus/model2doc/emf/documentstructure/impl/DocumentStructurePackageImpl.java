@@ -23,11 +23,13 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Body;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.CoverPage;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DataSource;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Document;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructureFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.EMFDataSource;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.GenerationConfiguration;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Image;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.List;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Paragraph;
@@ -78,6 +80,22 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	 * @generated
 	 */
 	private EClass documentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass coverPageEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass generationConfigurationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -267,8 +285,8 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	 * @generated
 	 */
 	@Override
-	public EReference getTextDocument_TextDocumentPart() {
-		return (EReference) textDocumentEClass.getEStructuralFeatures().get(0);
+	public EAttribute getTextDocument_MainTitle() {
+		return (EAttribute) textDocumentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -278,8 +296,8 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTextDocument_TocTitle() {
-		return (EAttribute) textDocumentEClass.getEStructuralFeatures().get(1);
+	public EReference getTextDocument_TextDocumentPart() {
+		return (EReference) textDocumentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -302,6 +320,83 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	@Override
 	public EClass getDocument() {
 		return documentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getDocument_CoverPage() {
+		return (EReference) documentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getDocument_GenerationConfiguration() {
+		return (EReference) documentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getCoverPage() {
+		return coverPageEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getCoverPage_Path() {
+		return (EAttribute) coverPageEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getGenerationConfiguration() {
+		return generationConfigurationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getGenerationConfiguration_OutputFile() {
+		return (EAttribute) generationConfigurationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getGenerationConfiguration_OutputFolder() {
+		return (EAttribute) generationConfigurationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -509,6 +604,17 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	 * @generated
 	 */
 	@Override
+	public EAttribute getTableOfContents_TocTitle() {
+		return (EAttribute) tableOfContentsEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public DocumentStructureFactory getDocumentStructureFactory() {
 		return (DocumentStructureFactory) getEFactoryInstance();
 	}
@@ -539,12 +645,21 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 		textEClass = createEClass(TEXT);
 
 		textDocumentEClass = createEClass(TEXT_DOCUMENT);
+		createEAttribute(textDocumentEClass, TEXT_DOCUMENT__MAIN_TITLE);
 		createEReference(textDocumentEClass, TEXT_DOCUMENT__TEXT_DOCUMENT_PART);
-		createEAttribute(textDocumentEClass, TEXT_DOCUMENT__TOC_TITLE);
 
 		textDocumentPartEClass = createEClass(TEXT_DOCUMENT_PART);
 
 		documentEClass = createEClass(DOCUMENT);
+		createEReference(documentEClass, DOCUMENT__COVER_PAGE);
+		createEReference(documentEClass, DOCUMENT__GENERATION_CONFIGURATION);
+
+		coverPageEClass = createEClass(COVER_PAGE);
+		createEAttribute(coverPageEClass, COVER_PAGE__PATH);
+
+		generationConfigurationEClass = createEClass(GENERATION_CONFIGURATION);
+		createEAttribute(generationConfigurationEClass, GENERATION_CONFIGURATION__OUTPUT_FILE);
+		createEAttribute(generationConfigurationEClass, GENERATION_CONFIGURATION__OUTPUT_FOLDER);
 
 		bodyEClass = createEClass(BODY);
 		createEReference(bodyEClass, BODY__BODY_PART);
@@ -574,6 +689,7 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 		createEReference(emfDataSourceEClass, EMF_DATA_SOURCE__FEATURE);
 
 		tableOfContentsEClass = createEClass(TABLE_OF_CONTENTS);
+		createEAttribute(tableOfContentsEClass, TABLE_OF_CONTENTS__TOC_TITLE);
 	}
 
 	/**
@@ -626,13 +742,23 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 		initEClass(textEClass, Text.class, "Text", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		initEClass(textDocumentEClass, TextDocument.class, "TextDocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(getTextDocument_MainTitle(), ecorePackage.getEString(), "mainTitle", null, 0, 1, TextDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 		initEReference(getTextDocument_TextDocumentPart(), this.getTextDocumentPart(), null, "textDocumentPart", null, 0, -1, TextDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, //$NON-NLS-1$
 				!IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getTextDocument_TocTitle(), ecorePackage.getEString(), "tocTitle", "Table Of Contents", 1, 1, TextDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
 
 		initEClass(textDocumentPartEClass, TextDocumentPart.class, "TextDocumentPart", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		initEClass(documentEClass, Document.class, "Document", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getDocument_CoverPage(), this.getCoverPage(), null, "coverPage", null, 0, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getDocument_GenerationConfiguration(), this.getGenerationConfiguration(), null, "generationConfiguration", null, 1, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, //$NON-NLS-1$
+				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(coverPageEClass, CoverPage.class, "CoverPage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(getCoverPage_Path(), ecorePackage.getEString(), "path", null, 1, 1, CoverPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+
+		initEClass(generationConfigurationEClass, GenerationConfiguration.class, "GenerationConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(getGenerationConfiguration_OutputFile(), ecorePackage.getEString(), "outputFile", null, 1, 1, GenerationConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getGenerationConfiguration_OutputFolder(), ecorePackage.getEString(), "outputFolder", null, 1, 1, GenerationConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(bodyEClass, Body.class, "Body", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(getBody_BodyPart(), this.getBodyPart(), null, "bodyPart", null, 0, -1, Body.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
@@ -664,6 +790,7 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 				!IS_ORDERED);
 
 		initEClass(tableOfContentsEClass, TableOfContents.class, "TableOfContents", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(getTableOfContents_TocTitle(), ecorePackage.getEString(), "tocTitle", "Table Of Contents", 1, 1, TableOfContents.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
 
 		// Create resource
 		createResource(eNS_URI);

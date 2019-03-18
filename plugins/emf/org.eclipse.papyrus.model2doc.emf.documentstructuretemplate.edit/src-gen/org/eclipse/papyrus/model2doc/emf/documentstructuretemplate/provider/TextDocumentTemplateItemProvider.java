@@ -79,12 +79,11 @@ public class TextDocumentTemplateItemProvider
 
 			addSemanticContextPropertyDescriptor(object);
 			addGraphicalContextPropertyDescriptor(object);
-			addTypePropertyDescriptor(object);
-			addIconPathPropertyDescriptor(object);
 			addDocumentTemplatePrototypePropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 			addKindIdPropertyDescriptor(object);
+			addMainTitlePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -127,48 +126,6 @@ public class TextDocumentTemplateItemProvider
 				false,
 				true,
 				null,
-				null,
-				null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_DocumentTemplate_type_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_DocumentTemplate_type_feature", "_UI_DocumentTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				DocumentStructureTemplatePackage.Literals.DOCUMENT_TEMPLATE__TYPE,
-				false,
-				false,
-				false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				null,
-				null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Icon Path feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected void addIconPathPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_DocumentTemplate_iconPath_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_DocumentTemplate_iconPath_feature", "_UI_DocumentTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				DocumentStructureTemplatePackage.Literals.DOCUMENT_TEMPLATE__ICON_PATH,
-				true,
-				false,
-				false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				null,
 				null));
 	}
@@ -258,6 +215,27 @@ public class TextDocumentTemplateItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Main Title feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected void addMainTitlePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_TextDocumentTemplate_mainTitle_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_TextDocumentTemplate_mainTitle_feature", "_UI_TextDocumentTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				DocumentStructureTemplatePackage.Literals.TEXT_DOCUMENT_TEMPLATE__MAIN_TITLE,
+				true,
+				false,
+				false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				null,
+				null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -270,6 +248,8 @@ public class TextDocumentTemplateItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.DOCUMENT_TEMPLATE__GENERATION_CONFIGURATION);
+			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.DOCUMENT_TEMPLATE__COVER_PAGE);
 			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART);
 		}
 		return childrenFeatures;
@@ -351,13 +331,14 @@ public class TextDocumentTemplateItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(TextDocumentTemplate.class)) {
-		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__TYPE:
-		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__ICON_PATH:
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__NAME:
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DESCRIPTION:
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__KIND_ID:
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__MAIN_TITLE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__GENERATION_CONFIGURATION:
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__COVER_PAGE:
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
@@ -376,6 +357,12 @@ public class TextDocumentTemplateItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.DOCUMENT_TEMPLATE__GENERATION_CONFIGURATION,
+				DocumentStructureTemplateFactory.eINSTANCE.createGenerationConfiguration()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.DOCUMENT_TEMPLATE__COVER_PAGE,
+				DocumentStructureTemplateFactory.eINSTANCE.createCoverPage()));
 
 		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART,
 				DocumentStructureTemplateFactory.eINSTANCE.createTableOfContents()));

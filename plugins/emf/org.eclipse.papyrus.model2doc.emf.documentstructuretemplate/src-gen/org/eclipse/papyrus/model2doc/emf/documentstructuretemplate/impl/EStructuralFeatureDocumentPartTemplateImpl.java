@@ -46,7 +46,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ObjectPartTem
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EStructuralFeatureDocumentPartTemplateImpl#isGenerateTitle <em>Generate Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EStructuralFeatureDocumentPartTemplateImpl#getDefaultTitle <em>Default Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EStructuralFeatureDocumentPartTemplateImpl#getCustomTitle <em>Custom Title</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EStructuralFeatureDocumentPartTemplateImpl#getObjectPartTemplate <em>Object Part Template</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EStructuralFeatureDocumentPartTemplateImpl#getObjectPartTemplates <em>Object Part Templates</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EStructuralFeatureDocumentPartTemplateImpl#getFeature <em>Feature</em>}</li>
  * </ul>
  *
@@ -131,15 +131,15 @@ public class EStructuralFeatureDocumentPartTemplateImpl extends MinimalEObjectIm
 	protected String customTitle = CUSTOM_TITLE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getObjectPartTemplate() <em>Object Part Template</em>}' containment reference list.
+	 * The cached value of the '{@link #getObjectPartTemplates() <em>Object Part Templates</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see #getObjectPartTemplate()
+	 * @see #getObjectPartTemplates()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ObjectPartTemplate> objectPartTemplate;
+	protected EList<ObjectPartTemplate> objectPartTemplates;
 
 	/**
 	 * The cached value of the '{@link #getFeature() <em>Feature</em>}' reference.
@@ -271,11 +271,11 @@ public class EStructuralFeatureDocumentPartTemplateImpl extends MinimalEObjectIm
 	 * @generated
 	 */
 	@Override
-	public EList<ObjectPartTemplate> getObjectPartTemplate() {
-		if (objectPartTemplate == null) {
-			objectPartTemplate = new EObjectContainmentEList<>(ObjectPartTemplate.class, this, DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__OBJECT_PART_TEMPLATE);
+	public EList<ObjectPartTemplate> getObjectPartTemplates() {
+		if (objectPartTemplates == null) {
+			objectPartTemplates = new EObjectContainmentEList<>(ObjectPartTemplate.class, this, DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__OBJECT_PART_TEMPLATES);
 		}
-		return objectPartTemplate;
+		return objectPartTemplates;
 	}
 
 	/**
@@ -332,8 +332,8 @@ public class EStructuralFeatureDocumentPartTemplateImpl extends MinimalEObjectIm
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__OBJECT_PART_TEMPLATE:
-			return ((InternalEList<?>) getObjectPartTemplate()).basicRemove(otherEnd, msgs);
+		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__OBJECT_PART_TEMPLATES:
+			return ((InternalEList<?>) getObjectPartTemplates()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -355,8 +355,8 @@ public class EStructuralFeatureDocumentPartTemplateImpl extends MinimalEObjectIm
 			return getDefaultTitle();
 		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__CUSTOM_TITLE:
 			return getCustomTitle();
-		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__OBJECT_PART_TEMPLATE:
-			return getObjectPartTemplate();
+		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__OBJECT_PART_TEMPLATES:
+			return getObjectPartTemplates();
 		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__FEATURE:
 			if (resolve) {
 				return getFeature();
@@ -385,9 +385,9 @@ public class EStructuralFeatureDocumentPartTemplateImpl extends MinimalEObjectIm
 		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__CUSTOM_TITLE:
 			setCustomTitle((String) newValue);
 			return;
-		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__OBJECT_PART_TEMPLATE:
-			getObjectPartTemplate().clear();
-			getObjectPartTemplate().addAll((Collection<? extends ObjectPartTemplate>) newValue);
+		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__OBJECT_PART_TEMPLATES:
+			getObjectPartTemplates().clear();
+			getObjectPartTemplates().addAll((Collection<? extends ObjectPartTemplate>) newValue);
 			return;
 		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__FEATURE:
 			setFeature((EStructuralFeature) newValue);
@@ -414,8 +414,8 @@ public class EStructuralFeatureDocumentPartTemplateImpl extends MinimalEObjectIm
 		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__CUSTOM_TITLE:
 			setCustomTitle(CUSTOM_TITLE_EDEFAULT);
 			return;
-		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__OBJECT_PART_TEMPLATE:
-			getObjectPartTemplate().clear();
+		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__OBJECT_PART_TEMPLATES:
+			getObjectPartTemplates().clear();
 			return;
 		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__FEATURE:
 			setFeature((EStructuralFeature) null);
@@ -441,8 +441,8 @@ public class EStructuralFeatureDocumentPartTemplateImpl extends MinimalEObjectIm
 			return DEFAULT_TITLE_EDEFAULT == null ? getDefaultTitle() != null : !DEFAULT_TITLE_EDEFAULT.equals(getDefaultTitle());
 		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__CUSTOM_TITLE:
 			return CUSTOM_TITLE_EDEFAULT == null ? customTitle != null : !CUSTOM_TITLE_EDEFAULT.equals(customTitle);
-		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__OBJECT_PART_TEMPLATE:
-			return objectPartTemplate != null && !objectPartTemplate.isEmpty();
+		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__OBJECT_PART_TEMPLATES:
+			return objectPartTemplates != null && !objectPartTemplates.isEmpty();
 		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__FEATURE:
 			return feature != null;
 		}

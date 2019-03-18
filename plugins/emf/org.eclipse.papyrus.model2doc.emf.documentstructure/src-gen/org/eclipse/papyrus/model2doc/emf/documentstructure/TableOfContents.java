@@ -19,10 +19,46 @@ package org.eclipse.papyrus.model2doc.emf.documentstructure;
  * A representation of the model object '<em><b>Table Of Contents</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.TableOfContents#getTocTitle <em>Toc Title</em>}</li>
+ * </ul>
  *
  * @see org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage#getTableOfContents()
  * @model
  * @generated
  */
 public interface TableOfContents extends TextDocumentPart {
+	/**
+	 * Returns the value of the '<em><b>Toc Title</b></em>' attribute.
+	 * The default value is <code>"Table Of Contents"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Toc Title</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the value of the '<em>Toc Title</em>' attribute.
+	 * @see #setTocTitle(String)
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage#getTableOfContents_TocTitle()
+	 * @model default="Table Of Contents" required="true" ordered="false"
+	 * @generated
+	 */
+	String getTocTitle();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.TableOfContents#getTocTitle <em>Toc Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *                  the new value of the '<em>Toc Title</em>' attribute.
+	 * @see #getTocTitle()
+	 * @generated
+	 */
+	void setTocTitle(String value);
+
 } // TableOfContents
