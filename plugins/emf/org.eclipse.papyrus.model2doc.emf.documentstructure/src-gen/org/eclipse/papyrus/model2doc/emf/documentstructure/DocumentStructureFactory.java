@@ -115,16 +115,6 @@ public interface DocumentStructureFactory extends EFactory {
 	Image createImage();
 
 	/**
-	 * Returns a new object of class '<em>String Text</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @return a new object of class '<em>String Text</em>'.
-	 * @generated
-	 */
-	StringText createStringText();
-
-	/**
 	 * Returns a new object of class '<em>EMF Data Source</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

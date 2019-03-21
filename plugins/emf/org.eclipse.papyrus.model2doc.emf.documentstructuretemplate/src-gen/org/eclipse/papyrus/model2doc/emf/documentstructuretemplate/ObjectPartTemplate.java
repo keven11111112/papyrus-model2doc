@@ -14,6 +14,7 @@
 package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -48,5 +49,14 @@ public interface ObjectPartTemplate extends DocumentPartTemplate {
 	 * @generated
 	 */
 	EList<FeaturePartTemplate> getFeaturePartTemplates();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @model required="true" ordered="false" inputEObjectRequired="true" inputEObjectOrdered="false"
+	 * @generated
+	 */
+	boolean isMatchingFilterRule(EObject inputEObject);
 
 } // ObjectPartTemplate

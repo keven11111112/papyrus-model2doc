@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
   <uml:Model xmi:id="_6m4v4B4fEemmq_cjeiIGww" name="DocumentStructure" URI="http://www.eclipse.org/papyrus/model2doc/emf/1.0.0/documentstructure">
-    <ownedComment xmi:type="uml:Comment" xmi:id="_EbWWwB4kEemmq_cjeiIGww" annotatedElement="_4J7ocB4jEemmq_cjeiIGww">
-      <body>We create a Text Interface in order to be able to get&#xD;
-pure text String and RTF String.</body>
-    </ownedComment>
     <packageImport xmi:type="uml:PackageImport" xmi:id="_6qbzIB4fEemmq_cjeiIGww">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
     </packageImport>
@@ -47,18 +43,24 @@ pure text String and RTF String.</body>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_YYTKMB4gEemmq_cjeiIGww" name="Paragraph">
       <generalization xmi:type="uml:Generalization" xmi:id="_MwgOYB4lEemmq_cjeiIGww" general="_2KV50B4kEemmq_cjeiIGww"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_NSocwEwUEem4wpUXttaNpQ" name="text">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Zd0n0B4gEemmq_cjeiIGww" name="Title">
       <generalization xmi:type="uml:Generalization" xmi:id="_Nm7gEB4lEemmq_cjeiIGww" general="_2KV50B4kEemmq_cjeiIGww"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_EnJTUEwUEem4wpUXttaNpQ" name="title">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_TPxJkEwUEem4wpUXttaNpQ" name="getLevel">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Z9gM4EwUEem4wpUXttaNpQ" name="getDepth" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWkZcX_EduPJbEsMYXjUQ"/>
+          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_Z9gM4UwUEem4wpUXttaNpQ" name="DEFAULT_VALUE" value="1"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_bYgy4B4gEemmq_cjeiIGww" name="Image">
       <generalization xmi:type="uml:Generalization" xmi:id="_PKXowB4lEemmq_cjeiIGww" general="_2KV50B4kEemmq_cjeiIGww"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_d-7bgB4gEemmq_cjeiIGww" name="StringText">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_zHPxsB4jEemmq_cjeiIGww" name="text">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWkisX_EduPJbEsMYXjUQ"/>
-      </ownedAttribute>
-      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_9OMzkB4jEemmq_cjeiIGww" client="_d-7bgB4gEemmq_cjeiIGww" supplier="_4J7ocB4jEemmq_cjeiIGww" contract="_4J7ocB4jEemmq_cjeiIGww"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_TufmIB4jEemmq_cjeiIGww" name="EMFDataSource">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_pbjvgB4jEemmq_cjeiIGww" name="eobject">
@@ -74,7 +76,6 @@ pure text String and RTF String.</body>
         <body>This object is used to refer to the model object source providing the given part of the document.</body>
       </ownedComment>
     </packagedElement>
-    <packagedElement xmi:type="uml:Interface" xmi:id="_4J7ocB4jEemmq_cjeiIGww" name="Text"/>
     <packagedElement xmi:type="uml:Association" xmi:id="_mkKPIB4kEemmq_cjeiIGww" memberEnd="_mkK2Mh4kEemmq_cjeiIGww _mkLdQh4kEemmq_cjeiIGww">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_mkK2MB4kEemmq_cjeiIGww" source="org.eclipse.papyrus">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_mkK2MR4kEemmq_cjeiIGww" key="nature" value="UML_Nature"/>
@@ -83,16 +84,6 @@ pure text String and RTF String.</body>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_2KV50B4kEemmq_cjeiIGww" name="TextPart">
       <generalization xmi:type="uml:Generalization" xmi:id="_OnWbQB4lEemmq_cjeiIGww" general="_P0JX0B4gEemmq_cjeiIGww"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_GkG9kB4lEemmq_cjeiIGww" name="text" type="_4J7ocB4jEemmq_cjeiIGww" aggregation="composite" association="_GkFIYB4lEemmq_cjeiIGww">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GkHkoB4lEemmq_cjeiIGww"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GkHkoR4lEemmq_cjeiIGww" value="1"/>
-      </ownedAttribute>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_GkFIYB4lEemmq_cjeiIGww" memberEnd="_GkG9kB4lEemmq_cjeiIGww _GkHkoh4lEemmq_cjeiIGww">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GkGWgB4lEemmq_cjeiIGww" source="org.eclipse.papyrus">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GkGWgR4lEemmq_cjeiIGww" key="nature" value="UML_Nature"/>
-      </eAnnotations>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_GkHkoh4lEemmq_cjeiIGww" name="textPart" type="_2KV50B4kEemmq_cjeiIGww" association="_GkFIYB4lEemmq_cjeiIGww"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_qiEZsB4lEemmq_cjeiIGww" memberEnd="_qiKgUB4lEemmq_cjeiIGww _qiLucB4lEemmq_cjeiIGww">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_qiJ5QB4lEemmq_cjeiIGww" source="org.eclipse.papyrus">

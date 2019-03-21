@@ -35,6 +35,6 @@ location uml "http://download.eclipse.org/modeling/mdt/uml2/updates/5.5" {
 
 //updateFrom("EMF (Core)",0)
 
-location emf "http://download.eclipse.org/modeling/emf/emf/builds/milestone/S201902091045" {
+location emf "http://download.eclipse.org/modeling/emf/emf/builds/release/2.17" {
 	org.eclipse.emf.sdk.feature.group
 }

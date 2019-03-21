@@ -288,31 +288,6 @@ public class DocumentStructureItemProviderAdapterFactory extends DocumentStructu
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructure.StringText} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected StringTextItemProvider stringTextItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructure.StringText}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public Adapter createStringTextAdapter() {
-		if (stringTextItemProvider == null) {
-			stringTextItemProvider = new StringTextItemProvider(this);
-		}
-
-		return stringTextItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructure.EMFDataSource} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -499,9 +474,6 @@ public class DocumentStructureItemProviderAdapterFactory extends DocumentStructu
 		}
 		if (imageItemProvider != null) {
 			imageItemProvider.dispose();
-		}
-		if (stringTextItemProvider != null) {
-			stringTextItemProvider.dispose();
 		}
 		if (emfDataSourceItemProvider != null) {
 			emfDataSourceItemProvider.dispose();

@@ -83,14 +83,6 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-		case DocumentStructurePackage.TEXT: {
-			Text text = (Text) theEObject;
-			T result = caseText(text);
-			if (result == null) {
-				result = defaultCase(theEObject);
-			}
-			return result;
-		}
 		case DocumentStructurePackage.TEXT_DOCUMENT: {
 			TextDocument textDocument = (TextDocument) theEObject;
 			T result = caseTextDocument(textDocument);
@@ -225,17 +217,6 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 			}
 			return result;
 		}
-		case DocumentStructurePackage.STRING_TEXT: {
-			StringText stringText = (StringText) theEObject;
-			T result = caseStringText(stringText);
-			if (result == null) {
-				result = caseText(stringText);
-			}
-			if (result == null) {
-				result = defaultCase(theEObject);
-			}
-			return result;
-		}
 		case DocumentStructurePackage.EMF_DATA_SOURCE: {
 			EMFDataSource emfDataSource = (EMFDataSource) theEObject;
 			T result = caseEMFDataSource(emfDataSource);
@@ -261,23 +242,6 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 		default:
 			return defaultCase(theEObject);
 		}
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Text</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 *
-	 * @param object
-	 *                   the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Text</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseText(Text object) {
-		return null;
 	}
 
 	/**
@@ -498,23 +462,6 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseImage(Image object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>String Text</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 *
-	 * @param object
-	 *                   the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>String Text</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseStringText(StringText object) {
 		return null;
 	}
 

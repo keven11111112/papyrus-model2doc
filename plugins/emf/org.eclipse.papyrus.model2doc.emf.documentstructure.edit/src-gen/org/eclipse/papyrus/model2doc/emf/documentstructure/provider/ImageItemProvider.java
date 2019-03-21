@@ -94,7 +94,6 @@ public class ImageItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DocumentStructurePackage.Literals.BODY_PART__DATA_SOURCE);
 			childrenFeatures.add(DocumentStructurePackage.Literals.BODY_PART__SUB_BODY_PART);
-			childrenFeatures.add(DocumentStructurePackage.Literals.TEXT_PART__TEXT);
 		}
 		return childrenFeatures;
 	}
@@ -164,7 +163,6 @@ public class ImageItemProvider
 		switch (notification.getFeatureID(Image.class)) {
 		case DocumentStructurePackage.IMAGE__DATA_SOURCE:
 		case DocumentStructurePackage.IMAGE__SUB_BODY_PART:
-		case DocumentStructurePackage.IMAGE__TEXT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -197,9 +195,6 @@ public class ImageItemProvider
 
 		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY_PART__SUB_BODY_PART,
 				DocumentStructureFactory.eINSTANCE.createImage()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.TEXT_PART__TEXT,
-				DocumentStructureFactory.eINSTANCE.createStringText()));
 	}
 
 	/**

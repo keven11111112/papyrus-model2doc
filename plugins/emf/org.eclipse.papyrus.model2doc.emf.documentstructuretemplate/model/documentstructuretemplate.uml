@@ -87,6 +87,14 @@ This field is useless for usage outside of Papyrus, but we set its multiplicity 
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_trIcoB2GEemmq_cjeiIGww"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_trkhgB2GEemmq_cjeiIGww" value="*"/>
       </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="__m2m4EvfEem4wpUXttaNpQ" name="isMatchingFilterRule">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_JaK7EEvgEem4wpUXttaNpQ" name="inputEObject">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_NpI14EvgEem4wpUXttaNpQ" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_ZeO_IB1-Eem3fboELVTtYQ" name="FeaturePartTemplate">
       <generalization xmi:type="uml:Generalization" xmi:id="_j5v5YB-7EempQZhnl_zCWg" general="_xVVWEB5NEemmq_cjeiIGww"/>
@@ -129,7 +137,7 @@ This field is useless for usage outside of Papyrus, but we set its multiplicity 
       <ownedEnd xmi:type="uml:Property" xmi:id="_Pk1EIB-6EempQZhnl_zCWg" name="body" type="_xzVjoDnLEem5-oyJMXJtFA" association="_PkrTIB-6EempQZhnl_zCWg"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_65g2MB-6EempQZhnl_zCWg" name="EClassDocumentPartTemplate">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_TArosR2FEemmq_cjeiIGww" name="eclass">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_TArosR2FEemmq_cjeiIGww" name="eClass">
         <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWizcX_EduPJbEsMYXjUQ"/>
       </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_hk9eUEojEem4wpUXttaNpQ" name="filterRule" type="_SKJWIEojEem4wpUXttaNpQ">
@@ -142,7 +150,7 @@ This field is useless for usage outside of Papyrus, but we set its multiplicity 
         <body>This element allow to define from which specific element of a model, the documentation process must start&#xD;
 This element can only be owned by a DocumentTemplate. In other case, we will return a validation error.</body>
       </ownedComment>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_616TIB-7EempQZhnl_zCWg" name="eobject">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_616TIB-7EempQZhnl_zCWg" name="eObject">
         <ownedComment xmi:type="uml:Comment" xmi:id="_-zqq4B2GEemmq_cjeiIGww" annotatedElement="_616TIB-7EempQZhnl_zCWg">
           <body>The field eobject is [0..1], in order to be get a valid model when we use this model as a registered template prototype and not as a final user template&#xD;
 The field eobject must reference an eobject of the user model, in other case the model validation will return an error.&#xD;

@@ -13,6 +13,8 @@
  */
 package org.eclipse.papyrus.model2doc.emf.documentstructure.impl;
 
+import java.lang.reflect.InvocationTargetException;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -32,7 +34,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DataSource;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage;
-import org.eclipse.papyrus.model2doc.emf.documentstructure.Text;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Title;
 
 /**
@@ -45,7 +46,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.Title;
  * <ul>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TitleImpl#getDataSource <em>Data Source</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TitleImpl#getSubBodyPart <em>Sub Body Part</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TitleImpl#getText <em>Text</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TitleImpl#getTitle <em>Title</em>}</li>
  * </ul>
  *
  * @generated
@@ -74,15 +75,26 @@ public class TitleImpl extends MinimalEObjectImpl.Container implements Title {
 	protected EList<BodyPart> subBodyPart;
 
 	/**
-	 * The cached value of the '{@link #getText() <em>Text</em>}' containment reference.
+	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see #getText()
+	 * @see #getTitle()
 	 * @generated
 	 * @ordered
 	 */
-	protected Text text;
+	protected static final String TITLE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected String title = TITLE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -182,28 +194,8 @@ public class TitleImpl extends MinimalEObjectImpl.Container implements Title {
 	 * @generated
 	 */
 	@Override
-	public Text getText() {
-		return text;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	public NotificationChain basicSetText(Text newText, NotificationChain msgs) {
-		Text oldText = text;
-		text = newText;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DocumentStructurePackage.TITLE__TEXT, oldText, newText);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
-		}
-		return msgs;
+	public String getTitle() {
+		return title;
 	}
 
 	/**
@@ -213,22 +205,25 @@ public class TitleImpl extends MinimalEObjectImpl.Container implements Title {
 	 * @generated
 	 */
 	@Override
-	public void setText(Text newText) {
-		if (newText != text) {
-			NotificationChain msgs = null;
-			if (text != null) {
-				msgs = ((InternalEObject) text).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DocumentStructurePackage.TITLE__TEXT, null, msgs);
-			}
-			if (newText != null) {
-				msgs = ((InternalEObject) newText).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DocumentStructurePackage.TITLE__TEXT, null, msgs);
-			}
-			msgs = basicSetText(newText, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructurePackage.TITLE__TEXT, newText, newText));
+	public void setTitle(String newTitle) {
+		String oldTitle = title;
+		title = newTitle;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructurePackage.TITLE__TITLE, oldTitle, title));
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public int getLevel() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -244,8 +239,6 @@ public class TitleImpl extends MinimalEObjectImpl.Container implements Title {
 			return basicSetDataSource(null, msgs);
 		case DocumentStructurePackage.TITLE__SUB_BODY_PART:
 			return ((InternalEList<?>) getSubBodyPart()).basicRemove(otherEnd, msgs);
-		case DocumentStructurePackage.TITLE__TEXT:
-			return basicSetText(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -263,8 +256,8 @@ public class TitleImpl extends MinimalEObjectImpl.Container implements Title {
 			return getDataSource();
 		case DocumentStructurePackage.TITLE__SUB_BODY_PART:
 			return getSubBodyPart();
-		case DocumentStructurePackage.TITLE__TEXT:
-			return getText();
+		case DocumentStructurePackage.TITLE__TITLE:
+			return getTitle();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -286,8 +279,8 @@ public class TitleImpl extends MinimalEObjectImpl.Container implements Title {
 			getSubBodyPart().clear();
 			getSubBodyPart().addAll((Collection<? extends BodyPart>) newValue);
 			return;
-		case DocumentStructurePackage.TITLE__TEXT:
-			setText((Text) newValue);
+		case DocumentStructurePackage.TITLE__TITLE:
+			setTitle((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -308,8 +301,8 @@ public class TitleImpl extends MinimalEObjectImpl.Container implements Title {
 		case DocumentStructurePackage.TITLE__SUB_BODY_PART:
 			getSubBodyPart().clear();
 			return;
-		case DocumentStructurePackage.TITLE__TEXT:
-			setText((Text) null);
+		case DocumentStructurePackage.TITLE__TITLE:
+			setTitle(TITLE_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -328,10 +321,44 @@ public class TitleImpl extends MinimalEObjectImpl.Container implements Title {
 			return dataSource != null;
 		case DocumentStructurePackage.TITLE__SUB_BODY_PART:
 			return subBodyPart != null && !subBodyPart.isEmpty();
-		case DocumentStructurePackage.TITLE__TEXT:
-			return text != null;
+		case DocumentStructurePackage.TITLE__TITLE:
+			return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case DocumentStructurePackage.TITLE___GET_LEVEL:
+			return getLevel();
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) {
+			return super.toString();
+		}
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (title: "); //$NON-NLS-1$
+		result.append(title);
+		result.append(')');
+		return result.toString();
 	}
 
 } // TitleImpl

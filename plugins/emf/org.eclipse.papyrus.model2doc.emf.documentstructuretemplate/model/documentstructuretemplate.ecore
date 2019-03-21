@@ -100,11 +100,14 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ObjectPartTemplate" abstract="true"
       interface="true" eSuperTypes="#//DocumentPartTemplate">
+    <eOperations name="isMatchingFilterRule" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="inputEObject" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="featurePartTemplates" ordered="false"
         upperBound="-1" eType="#//FeaturePartTemplate" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EClassDocumentPartTemplate" eSuperTypes="#//ObjectPartTemplate">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="eclass" ordered="false"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eClass" ordered="false"
         lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="filterRule" ordered="false"
         lowerBound="1" eType="#//EClassFilterBehavior" defaultValueLiteral="TYPE_OF"/>
@@ -117,7 +120,7 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This element allow to define from which specific element of a model, the documentation process must start&#xD;&#xA;This element can only be owned by a DocumentTemplate. In other case, we will return a validation error."/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="eobject" ordered="false"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eObject" ordered="false"
         lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The field eobject is [0..1], in order to be get a valid model when we use this model as a registered template prototype and not as a final user template&#xD;&#xA;The field eobject must reference an eobject of the user model, in other case the model validation will return an error.&#xD;&#xA;&#xD;&#xA;"/>

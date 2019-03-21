@@ -33,7 +33,6 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DataSource;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Paragraph;
-import org.eclipse.papyrus.model2doc.emf.documentstructure.Text;
 
 /**
  * <!-- begin-user-doc -->
@@ -74,7 +73,7 @@ public class ParagraphImpl extends MinimalEObjectImpl.Container implements Parag
 	protected EList<BodyPart> subBodyPart;
 
 	/**
-	 * The cached value of the '{@link #getText() <em>Text</em>}' containment reference.
+	 * The default value of the '{@link #getText() <em>Text</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -82,7 +81,18 @@ public class ParagraphImpl extends MinimalEObjectImpl.Container implements Parag
 	 * @generated
 	 * @ordered
 	 */
-	protected Text text;
+	protected static final String TEXT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getText() <em>Text</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getText()
+	 * @generated
+	 * @ordered
+	 */
+	protected String text = TEXT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -182,7 +192,7 @@ public class ParagraphImpl extends MinimalEObjectImpl.Container implements Parag
 	 * @generated
 	 */
 	@Override
-	public Text getText() {
+	public String getText() {
 		return text;
 	}
 
@@ -192,42 +202,12 @@ public class ParagraphImpl extends MinimalEObjectImpl.Container implements Parag
 	 *
 	 * @generated
 	 */
-	public NotificationChain basicSetText(Text newText, NotificationChain msgs) {
-		Text oldText = text;
+	@Override
+	public void setText(String newText) {
+		String oldText = text;
 		text = newText;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DocumentStructurePackage.PARAGRAPH__TEXT, oldText, newText);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public void setText(Text newText) {
-		if (newText != text) {
-			NotificationChain msgs = null;
-			if (text != null) {
-				msgs = ((InternalEObject) text).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DocumentStructurePackage.PARAGRAPH__TEXT, null, msgs);
-			}
-			if (newText != null) {
-				msgs = ((InternalEObject) newText).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DocumentStructurePackage.PARAGRAPH__TEXT, null, msgs);
-			}
-			msgs = basicSetText(newText, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructurePackage.PARAGRAPH__TEXT, newText, newText));
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructurePackage.PARAGRAPH__TEXT, oldText, text));
 		}
 	}
 
@@ -244,8 +224,6 @@ public class ParagraphImpl extends MinimalEObjectImpl.Container implements Parag
 			return basicSetDataSource(null, msgs);
 		case DocumentStructurePackage.PARAGRAPH__SUB_BODY_PART:
 			return ((InternalEList<?>) getSubBodyPart()).basicRemove(otherEnd, msgs);
-		case DocumentStructurePackage.PARAGRAPH__TEXT:
-			return basicSetText(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -287,7 +265,7 @@ public class ParagraphImpl extends MinimalEObjectImpl.Container implements Parag
 			getSubBodyPart().addAll((Collection<? extends BodyPart>) newValue);
 			return;
 		case DocumentStructurePackage.PARAGRAPH__TEXT:
-			setText((Text) newValue);
+			setText((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -309,7 +287,7 @@ public class ParagraphImpl extends MinimalEObjectImpl.Container implements Parag
 			getSubBodyPart().clear();
 			return;
 		case DocumentStructurePackage.PARAGRAPH__TEXT:
-			setText((Text) null);
+			setText(TEXT_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -329,9 +307,28 @@ public class ParagraphImpl extends MinimalEObjectImpl.Container implements Parag
 		case DocumentStructurePackage.PARAGRAPH__SUB_BODY_PART:
 			return subBodyPart != null && !subBodyPart.isEmpty();
 		case DocumentStructurePackage.PARAGRAPH__TEXT:
-			return text != null;
+			return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) {
+			return super.toString();
+		}
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (text: "); //$NON-NLS-1$
+		result.append(text);
+		result.append(')');
+		return result.toString();
 	}
 
 } // ParagraphImpl

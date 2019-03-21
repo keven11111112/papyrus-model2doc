@@ -81,7 +81,7 @@ public class EClassDocumentPartTemplateItemProvider
 			addGenerateTitlePropertyDescriptor(object);
 			addDefaultTitlePropertyDescriptor(object);
 			addCustomTitlePropertyDescriptor(object);
-			addEclassPropertyDescriptor(object);
+			addEClassPropertyDescriptor(object);
 			addFilterRulePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -172,17 +172,17 @@ public class EClassDocumentPartTemplateItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Eclass feature.
+	 * This adds a property descriptor for the EClass feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 */
-	protected void addEclassPropertyDescriptor(Object object) {
+	protected void addEClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
-				getString("_UI_EClassDocumentPartTemplate_eclass_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_EClassDocumentPartTemplate_eclass_feature", "_UI_EClassDocumentPartTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				getString("_UI_EClassDocumentPartTemplate_eClass_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EClassDocumentPartTemplate_eClass_feature", "_UI_EClassDocumentPartTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				DocumentStructureTemplatePackage.Literals.ECLASS_DOCUMENT_PART_TEMPLATE__ECLASS,
 				true,
 				false,

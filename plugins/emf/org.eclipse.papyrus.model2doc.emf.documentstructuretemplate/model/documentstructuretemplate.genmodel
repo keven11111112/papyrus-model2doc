@@ -97,15 +97,18 @@
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructuretemplate.ecore#//ObjectPartTemplate">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//ObjectPartTemplate/featurePartTemplates"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="documentstructuretemplate.ecore#//ObjectPartTemplate/isMatchingFilterRule">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="documentstructuretemplate.ecore#//ObjectPartTemplate/isMatchingFilterRule/inputEObject"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructuretemplate.ecore#//EClassDocumentPartTemplate">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//EClassDocumentPartTemplate/eclass"/>
+          propertySortChoices="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//EClassDocumentPartTemplate/eClass"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//EClassDocumentPartTemplate/filterRule"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructuretemplate.ecore#//EObjectDocumentPartTemplate">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//EObjectDocumentPartTemplate/eobject"/>
+          propertySortChoices="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//EObjectDocumentPartTemplate/eObject"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructuretemplate.ecore#//TableOfContents">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//TableOfContents/tocTitle"/>

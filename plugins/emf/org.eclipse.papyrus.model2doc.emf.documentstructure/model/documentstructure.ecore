@@ -5,11 +5,6 @@
   <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
     <details key="originalName" value="DocumentStructure"/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="Text" abstract="true" interface="true">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="We create a Text Interface in order to be able to get&#xD;&#xA;pure text String and RTF String."/>
-    </eAnnotations>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TextDocument" eSuperTypes="#//Document">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mainTitle" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -49,18 +44,18 @@
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="List" eSuperTypes="#//BodyPart"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Paragraph" eSuperTypes="#//TextPart"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TextPart" abstract="true" interface="true"
-      eSuperTypes="#//BodyPart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="text" ordered="false" eType="#//Text"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Title" eSuperTypes="#//TextPart"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Image" eSuperTypes="#//TextPart"/>
-  <eClassifiers xsi:type="ecore:EClass" name="StringText" eSuperTypes="#//Text">
+  <eClassifiers xsi:type="ecore:EClass" name="Paragraph" eSuperTypes="#//TextPart">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" ordered="false" lowerBound="1"
-        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TextPart" abstract="true" interface="true"
+      eSuperTypes="#//BodyPart"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Title" eSuperTypes="#//TextPart">
+    <eOperations name="getLevel" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Image" eSuperTypes="#//TextPart"/>
   <eClassifiers xsi:type="ecore:EClass" name="EMFDataSource" eSuperTypes="#//DataSource">
     <eStructuralFeatures xsi:type="ecore:EReference" name="eobject" ordered="false"
         lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>

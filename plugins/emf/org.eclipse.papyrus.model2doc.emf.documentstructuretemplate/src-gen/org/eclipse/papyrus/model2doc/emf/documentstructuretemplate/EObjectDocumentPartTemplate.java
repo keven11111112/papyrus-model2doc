@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EObjectDocumentPartTemplate#getEobject <em>Eobject</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EObjectDocumentPartTemplate#getEObject <em>EObject</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getEObjectDocumentPartTemplate()
@@ -38,7 +38,7 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface EObjectDocumentPartTemplate extends ObjectPartTemplate {
 	/**
-	 * Returns the value of the '<em><b>Eobject</b></em>' reference.
+	 * Returns the value of the '<em><b>EObject</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -48,24 +48,24 @@ public interface EObjectDocumentPartTemplate extends ObjectPartTemplate {
 	 *
 	 * <!-- end-model-doc -->
 	 *
-	 * @return the value of the '<em>Eobject</em>' reference.
-	 * @see #setEobject(EObject)
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getEObjectDocumentPartTemplate_Eobject()
+	 * @return the value of the '<em>EObject</em>' reference.
+	 * @see #setEObject(EObject)
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getEObjectDocumentPartTemplate_EObject()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	EObject getEobject();
+	EObject getEObject();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EObjectDocumentPartTemplate#getEobject <em>Eobject</em>}' reference.
+	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EObjectDocumentPartTemplate#getEObject <em>EObject</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *                  the new value of the '<em>Eobject</em>' reference.
-	 * @see #getEobject()
+	 *                  the new value of the '<em>EObject</em>' reference.
+	 * @see #getEObject()
 	 * @generated
 	 */
-	void setEobject(EObject value);
+	void setEObject(EObject value);
 
 } // EObjectDocumentPartTemplate

@@ -534,6 +534,17 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
+	public EOperation getObjectPartTemplate__IsMatchingFilterRule__EObject() {
+		return objectPartTemplateEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EClass getEClassDocumentPartTemplate() {
 		return eClassDocumentPartTemplateEClass;
 	}
@@ -545,7 +556,7 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
-	public EReference getEClassDocumentPartTemplate_Eclass() {
+	public EReference getEClassDocumentPartTemplate_EClass() {
 		return (EReference) eClassDocumentPartTemplateEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -578,7 +589,7 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
-	public EReference getEObjectDocumentPartTemplate_Eobject() {
+	public EReference getEObjectDocumentPartTemplate_EObject() {
 		return (EReference) eObjectDocumentPartTemplateEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -826,6 +837,7 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 
 		objectPartTemplateEClass = createEClass(OBJECT_PART_TEMPLATE);
 		createEReference(objectPartTemplateEClass, OBJECT_PART_TEMPLATE__FEATURE_PART_TEMPLATES);
+		createEOperation(objectPartTemplateEClass, OBJECT_PART_TEMPLATE___IS_MATCHING_FILTER_RULE__EOBJECT);
 
 		eClassDocumentPartTemplateEClass = createEClass(ECLASS_DOCUMENT_PART_TEMPLATE);
 		createEReference(eClassDocumentPartTemplateEClass, ECLASS_DOCUMENT_PART_TEMPLATE__ECLASS);
@@ -948,14 +960,17 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		initEReference(getObjectPartTemplate_FeaturePartTemplates(), this.getFeaturePartTemplate(), null, "featurePartTemplates", null, 0, -1, ObjectPartTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, //$NON-NLS-1$
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
+		EOperation op = initEOperation(getObjectPartTemplate__IsMatchingFilterRule__EObject(), ecorePackage.getEBoolean(), "isMatchingFilterRule", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+		addEParameter(op, theEcorePackage.getEObject(), "inputEObject", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
 		initEClass(eClassDocumentPartTemplateEClass, EClassDocumentPartTemplate.class, "EClassDocumentPartTemplate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getEClassDocumentPartTemplate_Eclass(), theEcorePackage.getEClass(), null, "eclass", null, 1, 1, EClassDocumentPartTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, //$NON-NLS-1$
+		initEReference(getEClassDocumentPartTemplate_EClass(), theEcorePackage.getEClass(), null, "eClass", null, 1, 1, EClassDocumentPartTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, //$NON-NLS-1$
 				!IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getEClassDocumentPartTemplate_FilterRule(), this.getEClassFilterBehavior(), "filterRule", "TYPE_OF", 1, 1, EClassDocumentPartTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, //$NON-NLS-1$ //$NON-NLS-2$
 				!IS_ORDERED);
 
 		initEClass(eObjectDocumentPartTemplateEClass, EObjectDocumentPartTemplate.class, "EObjectDocumentPartTemplate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getEObjectDocumentPartTemplate_Eobject(), theEcorePackage.getEObject(), null, "eobject", null, 1, 1, EObjectDocumentPartTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, //$NON-NLS-1$
+		initEReference(getEObjectDocumentPartTemplate_EObject(), theEcorePackage.getEObject(), null, "eObject", null, 1, 1, EObjectDocumentPartTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, //$NON-NLS-1$
 				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(tableOfContentsEClass, TableOfContents.class, "TableOfContents", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$

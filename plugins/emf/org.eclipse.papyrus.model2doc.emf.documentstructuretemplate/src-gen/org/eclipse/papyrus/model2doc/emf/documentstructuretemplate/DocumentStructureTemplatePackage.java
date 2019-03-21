@@ -910,6 +910,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int OBJECT_PART_TEMPLATE_FEATURE_COUNT = DOCUMENT_PART_TEMPLATE_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Is Matching Filter Rule</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_PART_TEMPLATE___IS_MATCHING_FILTER_RULE__EOBJECT = DOCUMENT_PART_TEMPLATE_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Object Part Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -917,7 +927,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_PART_TEMPLATE_OPERATION_COUNT = DOCUMENT_PART_TEMPLATE_OPERATION_COUNT + 0;
+	int OBJECT_PART_TEMPLATE_OPERATION_COUNT = DOCUMENT_PART_TEMPLATE_OPERATION_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Generate</b></em>' attribute.
@@ -970,7 +980,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int ECLASS_DOCUMENT_PART_TEMPLATE__FEATURE_PART_TEMPLATES = OBJECT_PART_TEMPLATE__FEATURE_PART_TEMPLATES;
 
 	/**
-	 * The feature id for the '<em><b>Eclass</b></em>' reference.
+	 * The feature id for the '<em><b>EClass</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -998,6 +1008,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @ordered
 	 */
 	int ECLASS_DOCUMENT_PART_TEMPLATE_FEATURE_COUNT = OBJECT_PART_TEMPLATE_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Is Matching Filter Rule</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ECLASS_DOCUMENT_PART_TEMPLATE___IS_MATCHING_FILTER_RULE__EOBJECT = OBJECT_PART_TEMPLATE___IS_MATCHING_FILTER_RULE__EOBJECT;
 
 	/**
 	 * The number of operations of the '<em>EClass Document Part Template</em>' class.
@@ -1060,7 +1080,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int EOBJECT_DOCUMENT_PART_TEMPLATE__FEATURE_PART_TEMPLATES = OBJECT_PART_TEMPLATE__FEATURE_PART_TEMPLATES;
 
 	/**
-	 * The feature id for the '<em><b>Eobject</b></em>' reference.
+	 * The feature id for the '<em><b>EObject</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -1078,6 +1098,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @ordered
 	 */
 	int EOBJECT_DOCUMENT_PART_TEMPLATE_FEATURE_COUNT = OBJECT_PART_TEMPLATE_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Is Matching Filter Rule</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EOBJECT_DOCUMENT_PART_TEMPLATE___IS_MATCHING_FILTER_RULE__EOBJECT = OBJECT_PART_TEMPLATE___IS_MATCHING_FILTER_RULE__EOBJECT;
 
 	/**
 	 * The number of operations of the '<em>EObject Document Part Template</em>' class.
@@ -1466,6 +1496,17 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	EReference getObjectPartTemplate_FeaturePartTemplates();
 
 	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ObjectPartTemplate#isMatchingFilterRule(org.eclipse.emf.ecore.EObject) <em>Is Matching Filter Rule</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the '<em>Is Matching Filter Rule</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ObjectPartTemplate#isMatchingFilterRule(org.eclipse.emf.ecore.EObject)
+	 * @generated
+	 */
+	EOperation getObjectPartTemplate__IsMatchingFilterRule__EObject();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassDocumentPartTemplate <em>EClass Document Part Template</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1477,16 +1518,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	EClass getEClassDocumentPartTemplate();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassDocumentPartTemplate#getEclass <em>Eclass</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassDocumentPartTemplate#getEClass <em>EClass</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the meta object for the reference '<em>Eclass</em>'.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassDocumentPartTemplate#getEclass()
+	 * @return the meta object for the reference '<em>EClass</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassDocumentPartTemplate#getEClass()
 	 * @see #getEClassDocumentPartTemplate()
 	 * @generated
 	 */
-	EReference getEClassDocumentPartTemplate_Eclass();
+	EReference getEClassDocumentPartTemplate_EClass();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassDocumentPartTemplate#getFilterRule <em>Filter Rule</em>}'.
@@ -1512,16 +1553,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	EClass getEObjectDocumentPartTemplate();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EObjectDocumentPartTemplate#getEobject <em>Eobject</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EObjectDocumentPartTemplate#getEObject <em>EObject</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the meta object for the reference '<em>Eobject</em>'.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EObjectDocumentPartTemplate#getEobject()
+	 * @return the meta object for the reference '<em>EObject</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EObjectDocumentPartTemplate#getEObject()
 	 * @see #getEObjectDocumentPartTemplate()
 	 * @generated
 	 */
-	EReference getEObjectDocumentPartTemplate_Eobject();
+	EReference getEObjectDocumentPartTemplate_EObject();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TableOfContents <em>Table Of Contents</em>}'.
@@ -1971,6 +2012,15 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 		EReference OBJECT_PART_TEMPLATE__FEATURE_PART_TEMPLATES = eINSTANCE.getObjectPartTemplate_FeaturePartTemplates();
 
 		/**
+		 * The meta object literal for the '<em><b>Is Matching Filter Rule</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EOperation OBJECT_PART_TEMPLATE___IS_MATCHING_FILTER_RULE__EOBJECT = eINSTANCE.getObjectPartTemplate__IsMatchingFilterRule__EObject();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassDocumentPartTemplateImpl <em>EClass Document Part Template</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1982,13 +2032,13 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 		EClass ECLASS_DOCUMENT_PART_TEMPLATE = eINSTANCE.getEClassDocumentPartTemplate();
 
 		/**
-		 * The meta object literal for the '<em><b>Eclass</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>EClass</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
 		 * @generated
 		 */
-		EReference ECLASS_DOCUMENT_PART_TEMPLATE__ECLASS = eINSTANCE.getEClassDocumentPartTemplate_Eclass();
+		EReference ECLASS_DOCUMENT_PART_TEMPLATE__ECLASS = eINSTANCE.getEClassDocumentPartTemplate_EClass();
 
 		/**
 		 * The meta object literal for the '<em><b>Filter Rule</b></em>' attribute feature.
@@ -2011,13 +2061,13 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 		EClass EOBJECT_DOCUMENT_PART_TEMPLATE = eINSTANCE.getEObjectDocumentPartTemplate();
 
 		/**
-		 * The meta object literal for the '<em><b>Eobject</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>EObject</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
 		 * @generated
 		 */
-		EReference EOBJECT_DOCUMENT_PART_TEMPLATE__EOBJECT = eINSTANCE.getEObjectDocumentPartTemplate_Eobject();
+		EReference EOBJECT_DOCUMENT_PART_TEMPLATE__EOBJECT = eINSTANCE.getEObjectDocumentPartTemplate_EObject();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TableOfContentsImpl <em>Table Of Contents</em>}' class.

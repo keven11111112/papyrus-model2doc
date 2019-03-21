@@ -40,8 +40,8 @@ public class EStructuralFeatureDocumentPartTemplate_FeatureConstraint extends Ab
 		final EStructuralFeatureDocumentPartTemplate template = (EStructuralFeatureDocumentPartTemplate) arg0.getTarget();
 		final EObject parent = template.eContainer();
 		final EStructuralFeature feature = template.getFeature();
-		if (null != feature && parent instanceof EClassDocumentPartTemplate && null != ((EClassDocumentPartTemplate) parent).getEclass()) {
-			final EClass eclass = ((EClassDocumentPartTemplate) parent).getEclass();
+		if (null != feature && parent instanceof EClassDocumentPartTemplate && null != ((EClassDocumentPartTemplate) parent).getEClass()) {
+			final EClass eclass = ((EClassDocumentPartTemplate) parent).getEClass();
 			if (false == eclass.getEAllStructuralFeatures().contains(feature)) {
 				return arg0.createFailureStatus(eclass.getName(), feature.getName());// message is defined in the plugin.xml
 			}

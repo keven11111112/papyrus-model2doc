@@ -81,7 +81,7 @@ public class EObjectDocumentPartTemplateItemProvider
 			addGenerateTitlePropertyDescriptor(object);
 			addDefaultTitlePropertyDescriptor(object);
 			addCustomTitlePropertyDescriptor(object);
-			addEobjectPropertyDescriptor(object);
+			addEObjectPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -171,17 +171,17 @@ public class EObjectDocumentPartTemplateItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Eobject feature.
+	 * This adds a property descriptor for the EObject feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 */
-	protected void addEobjectPropertyDescriptor(Object object) {
+	protected void addEObjectPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
-				getString("_UI_EObjectDocumentPartTemplate_eobject_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_EObjectDocumentPartTemplate_eobject_feature", "_UI_EObjectDocumentPartTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				getString("_UI_EObjectDocumentPartTemplate_eObject_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EObjectDocumentPartTemplate_eObject_feature", "_UI_EObjectDocumentPartTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				DocumentStructureTemplatePackage.Literals.EOBJECT_DOCUMENT_PART_TEMPLATE__EOBJECT,
 				true,
 				false,

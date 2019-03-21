@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EClass;
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassDocumentPartTemplate#getEclass <em>Eclass</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassDocumentPartTemplate#getEClass <em>EClass</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassDocumentPartTemplate#getFilterRule <em>Filter Rule</em>}</li>
  * </ul>
  *
@@ -34,33 +34,33 @@ import org.eclipse.emf.ecore.EClass;
  */
 public interface EClassDocumentPartTemplate extends ObjectPartTemplate {
 	/**
-	 * Returns the value of the '<em><b>Eclass</b></em>' reference.
+	 * Returns the value of the '<em><b>EClass</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Eclass</em>' reference isn't clear,
+	 * If the meaning of the '<em>EClass</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the value of the '<em>Eclass</em>' reference.
-	 * @see #setEclass(EClass)
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getEClassDocumentPartTemplate_Eclass()
+	 * @return the value of the '<em>EClass</em>' reference.
+	 * @see #setEClass(EClass)
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getEClassDocumentPartTemplate_EClass()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	EClass getEclass();
+	EClass getEClass();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassDocumentPartTemplate#getEclass <em>Eclass</em>}' reference.
+	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassDocumentPartTemplate#getEClass <em>EClass</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *                  the new value of the '<em>Eclass</em>' reference.
-	 * @see #getEclass()
+	 *                  the new value of the '<em>EClass</em>' reference.
+	 * @see #getEClass()
 	 * @generated
 	 */
-	void setEclass(EClass value);
+	void setEClass(EClass value);
 
 	/**
 	 * Returns the value of the '<em><b>Filter Rule</b></em>' attribute.

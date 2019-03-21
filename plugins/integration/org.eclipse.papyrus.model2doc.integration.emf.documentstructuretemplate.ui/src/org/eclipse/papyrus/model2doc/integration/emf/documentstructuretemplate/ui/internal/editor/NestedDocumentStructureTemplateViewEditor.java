@@ -37,6 +37,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTempl
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.provider.DocumentStructureTemplateItemProviderAdapterFactory;
 import org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.ui.Activator;
 import org.eclipse.ui.IEditorInput;
+import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IEditorSite;
 
 /**
@@ -195,6 +196,17 @@ public class NestedDocumentStructureTemplateViewEditor extends CustomDocumentStr
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 	}
 
+	/**
+	 * @see org.eclipse.ui.part.MultiPageEditorPart#createSite(org.eclipse.ui.IEditorPart)
+	 *
+	 * @param editor
+	 * @return
+	 */
+	@Override
+	protected IEditorSite createSite(IEditorPart editor) {
+		// used to be able to have the error editor part nested in the embedded emf editor
+		return getEditorSite();
+	}
 
 	/**
 	 *
@@ -326,6 +338,5 @@ public class NestedDocumentStructureTemplateViewEditor extends CustomDocumentStr
 		}
 
 	}
-
 
 }

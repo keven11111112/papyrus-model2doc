@@ -33,7 +33,6 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DataSource;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Image;
-import org.eclipse.papyrus.model2doc.emf.documentstructure.Text;
 
 /**
  * <!-- begin-user-doc -->
@@ -45,7 +44,6 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.Text;
  * <ul>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ImageImpl#getDataSource <em>Data Source</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ImageImpl#getSubBodyPart <em>Sub Body Part</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ImageImpl#getText <em>Text</em>}</li>
  * </ul>
  *
  * @generated
@@ -72,17 +70,6 @@ public class ImageImpl extends MinimalEObjectImpl.Container implements Image {
 	 * @ordered
 	 */
 	protected EList<BodyPart> subBodyPart;
-
-	/**
-	 * The cached value of the '{@link #getText() <em>Text</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see #getText()
-	 * @generated
-	 * @ordered
-	 */
-	protected Text text;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -182,70 +169,12 @@ public class ImageImpl extends MinimalEObjectImpl.Container implements Image {
 	 * @generated
 	 */
 	@Override
-	public Text getText() {
-		return text;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	public NotificationChain basicSetText(Text newText, NotificationChain msgs) {
-		Text oldText = text;
-		text = newText;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DocumentStructurePackage.IMAGE__TEXT, oldText, newText);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public void setText(Text newText) {
-		if (newText != text) {
-			NotificationChain msgs = null;
-			if (text != null) {
-				msgs = ((InternalEObject) text).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DocumentStructurePackage.IMAGE__TEXT, null, msgs);
-			}
-			if (newText != null) {
-				msgs = ((InternalEObject) newText).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DocumentStructurePackage.IMAGE__TEXT, null, msgs);
-			}
-			msgs = basicSetText(newText, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructurePackage.IMAGE__TEXT, newText, newText));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case DocumentStructurePackage.IMAGE__DATA_SOURCE:
 			return basicSetDataSource(null, msgs);
 		case DocumentStructurePackage.IMAGE__SUB_BODY_PART:
 			return ((InternalEList<?>) getSubBodyPart()).basicRemove(otherEnd, msgs);
-		case DocumentStructurePackage.IMAGE__TEXT:
-			return basicSetText(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -263,8 +192,6 @@ public class ImageImpl extends MinimalEObjectImpl.Container implements Image {
 			return getDataSource();
 		case DocumentStructurePackage.IMAGE__SUB_BODY_PART:
 			return getSubBodyPart();
-		case DocumentStructurePackage.IMAGE__TEXT:
-			return getText();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -286,9 +213,6 @@ public class ImageImpl extends MinimalEObjectImpl.Container implements Image {
 			getSubBodyPart().clear();
 			getSubBodyPart().addAll((Collection<? extends BodyPart>) newValue);
 			return;
-		case DocumentStructurePackage.IMAGE__TEXT:
-			setText((Text) newValue);
-			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -308,9 +232,6 @@ public class ImageImpl extends MinimalEObjectImpl.Container implements Image {
 		case DocumentStructurePackage.IMAGE__SUB_BODY_PART:
 			getSubBodyPart().clear();
 			return;
-		case DocumentStructurePackage.IMAGE__TEXT:
-			setText((Text) null);
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -328,8 +249,6 @@ public class ImageImpl extends MinimalEObjectImpl.Container implements Image {
 			return dataSource != null;
 		case DocumentStructurePackage.IMAGE__SUB_BODY_PART:
 			return subBodyPart != null && !subBodyPart.isEmpty();
-		case DocumentStructurePackage.IMAGE__TEXT:
-			return text != null;
 		}
 		return super.eIsSet(featureID);
 	}

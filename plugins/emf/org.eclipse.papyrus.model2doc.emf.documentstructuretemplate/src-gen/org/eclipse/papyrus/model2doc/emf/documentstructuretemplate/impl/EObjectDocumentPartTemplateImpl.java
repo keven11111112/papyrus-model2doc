@@ -13,6 +13,7 @@
  */
 package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -47,7 +48,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.FeaturePartTe
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EObjectDocumentPartTemplateImpl#getDefaultTitle <em>Default Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EObjectDocumentPartTemplateImpl#getCustomTitle <em>Custom Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EObjectDocumentPartTemplateImpl#getFeaturePartTemplates <em>Feature Part Templates</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EObjectDocumentPartTemplateImpl#getEobject <em>Eobject</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EObjectDocumentPartTemplateImpl#getEObject <em>EObject</em>}</li>
  * </ul>
  *
  * @generated
@@ -142,15 +143,15 @@ public class EObjectDocumentPartTemplateImpl extends MinimalEObjectImpl.Containe
 	protected EList<FeaturePartTemplate> featurePartTemplates;
 
 	/**
-	 * The cached value of the '{@link #getEobject() <em>Eobject</em>}' reference.
+	 * The cached value of the '{@link #getEObject() <em>EObject</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see #getEobject()
+	 * @see #getEObject()
 	 * @generated
 	 * @ordered
 	 */
-	protected EObject eobject;
+	protected EObject eObject;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -285,17 +286,17 @@ public class EObjectDocumentPartTemplateImpl extends MinimalEObjectImpl.Containe
 	 * @generated
 	 */
 	@Override
-	public EObject getEobject() {
-		if (eobject != null && eobject.eIsProxy()) {
-			InternalEObject oldEobject = (InternalEObject) eobject;
-			eobject = eResolveProxy(oldEobject);
-			if (eobject != oldEobject) {
+	public EObject getEObject() {
+		if (eObject != null && eObject.eIsProxy()) {
+			InternalEObject oldEObject = (InternalEObject) eObject;
+			eObject = eResolveProxy(oldEObject);
+			if (eObject != oldEObject) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DocumentStructureTemplatePackage.EOBJECT_DOCUMENT_PART_TEMPLATE__EOBJECT, oldEobject, eobject));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DocumentStructureTemplatePackage.EOBJECT_DOCUMENT_PART_TEMPLATE__EOBJECT, oldEObject, eObject));
 				}
 			}
 		}
-		return eobject;
+		return eObject;
 	}
 
 	/**
@@ -304,8 +305,8 @@ public class EObjectDocumentPartTemplateImpl extends MinimalEObjectImpl.Containe
 	 *
 	 * @generated
 	 */
-	public EObject basicGetEobject() {
-		return eobject;
+	public EObject basicGetEObject() {
+		return eObject;
 	}
 
 	/**
@@ -315,12 +316,25 @@ public class EObjectDocumentPartTemplateImpl extends MinimalEObjectImpl.Containe
 	 * @generated
 	 */
 	@Override
-	public void setEobject(EObject newEobject) {
-		EObject oldEobject = eobject;
-		eobject = newEobject;
+	public void setEObject(EObject newEObject) {
+		EObject oldEObject = eObject;
+		eObject = newEObject;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.EOBJECT_DOCUMENT_PART_TEMPLATE__EOBJECT, oldEobject, eobject));
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.EOBJECT_DOCUMENT_PART_TEMPLATE__EOBJECT, oldEObject, eObject));
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public boolean isMatchingFilterRule(EObject inputEObject) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -359,9 +373,9 @@ public class EObjectDocumentPartTemplateImpl extends MinimalEObjectImpl.Containe
 			return getFeaturePartTemplates();
 		case DocumentStructureTemplatePackage.EOBJECT_DOCUMENT_PART_TEMPLATE__EOBJECT:
 			if (resolve) {
-				return getEobject();
+				return getEObject();
 			}
-			return basicGetEobject();
+			return basicGetEObject();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -390,7 +404,7 @@ public class EObjectDocumentPartTemplateImpl extends MinimalEObjectImpl.Containe
 			getFeaturePartTemplates().addAll((Collection<? extends FeaturePartTemplate>) newValue);
 			return;
 		case DocumentStructureTemplatePackage.EOBJECT_DOCUMENT_PART_TEMPLATE__EOBJECT:
-			setEobject((EObject) newValue);
+			setEObject((EObject) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -418,7 +432,7 @@ public class EObjectDocumentPartTemplateImpl extends MinimalEObjectImpl.Containe
 			getFeaturePartTemplates().clear();
 			return;
 		case DocumentStructureTemplatePackage.EOBJECT_DOCUMENT_PART_TEMPLATE__EOBJECT:
-			setEobject((EObject) null);
+			setEObject((EObject) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -444,9 +458,24 @@ public class EObjectDocumentPartTemplateImpl extends MinimalEObjectImpl.Containe
 		case DocumentStructureTemplatePackage.EOBJECT_DOCUMENT_PART_TEMPLATE__FEATURE_PART_TEMPLATES:
 			return featurePartTemplates != null && !featurePartTemplates.isEmpty();
 		case DocumentStructureTemplatePackage.EOBJECT_DOCUMENT_PART_TEMPLATE__EOBJECT:
-			return eobject != null;
+			return eObject != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case DocumentStructureTemplatePackage.EOBJECT_DOCUMENT_PART_TEMPLATE___IS_MATCHING_FILTER_RULE__EOBJECT:
+			return isMatchingFilterRule((EObject) arguments.get(0));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

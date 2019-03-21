@@ -83,11 +83,6 @@ public class DocumentStructureAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected DocumentStructureSwitch<Adapter> modelSwitch = new DocumentStructureSwitch<Adapter>() {
 		@Override
-		public Adapter caseText(Text object) {
-			return createTextAdapter();
-		}
-
-		@Override
 		public Adapter caseTextDocument(TextDocument object) {
 			return createTextDocumentAdapter();
 		}
@@ -153,11 +148,6 @@ public class DocumentStructureAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseStringText(StringText object) {
-			return createStringTextAdapter();
-		}
-
-		@Override
 		public Adapter caseEMFDataSource(EMFDataSource object) {
 			return createEMFDataSourceAdapter();
 		}
@@ -188,21 +178,6 @@ public class DocumentStructureAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject) target);
 	}
 
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.Text <em>Text</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.Text
-	 * @generated
-	 */
-	public Adapter createTextAdapter() {
-		return null;
-	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument <em>Text Document</em>}'.
@@ -396,21 +371,6 @@ public class DocumentStructureAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createImageAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.StringText <em>String Text</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.StringText
-	 * @generated
-	 */
-	public Adapter createStringTextAdapter() {
 		return null;
 	}
 

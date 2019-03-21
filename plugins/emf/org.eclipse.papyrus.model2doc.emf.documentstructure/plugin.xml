@@ -21,7 +21,7 @@
          point="org.eclipse.emf.ecore.extension_parser">
       <parser
             class="org.eclipse.papyrus.model2doc.emf.documentstructure.internal.resource.DocumentStructureResourceFactory"
-            type="documentstructure">
+            type="pds">
       </parser>
    </extension>
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -30,6 +30,13 @@
             uri="http://www.eclipse.org/papyrus/model2doc/emf/1.0.0/documentstructure"
             class="org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage"
             genModel="model/documentstructure.genmodel"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.factory_override">
+      <factory
+            class="org.eclipse.papyrus.model2doc.emf.documentstructure.internal.impl.CustomDocumentStructureFactory"
+            uri="http://www.eclipse.org/papyrus/model2doc/emf/1.0.0/documentstructure">
+      </factory>
    </extension>
 
 </plugin>

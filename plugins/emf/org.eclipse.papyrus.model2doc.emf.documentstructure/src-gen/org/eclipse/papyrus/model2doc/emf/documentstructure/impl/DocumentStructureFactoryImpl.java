@@ -86,8 +86,6 @@ public class DocumentStructureFactoryImpl extends EFactoryImpl implements Docume
 			return createTitle();
 		case DocumentStructurePackage.IMAGE:
 			return createImage();
-		case DocumentStructurePackage.STRING_TEXT:
-			return createStringText();
 		case DocumentStructurePackage.EMF_DATA_SOURCE:
 			return createEMFDataSource();
 		case DocumentStructurePackage.TABLE_OF_CONTENTS:
@@ -191,18 +189,6 @@ public class DocumentStructureFactoryImpl extends EFactoryImpl implements Docume
 	public Image createImage() {
 		ImageImpl image = new ImageImpl();
 		return image;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public StringText createStringText() {
-		StringTextImpl stringText = new StringTextImpl();
-		return stringText;
 	}
 
 	/**

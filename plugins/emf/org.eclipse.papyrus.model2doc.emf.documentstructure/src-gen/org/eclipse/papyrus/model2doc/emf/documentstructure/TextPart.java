@@ -19,45 +19,10 @@ package org.eclipse.papyrus.model2doc.emf.documentstructure;
  * A representation of the model object '<em><b>Text Part</b></em>'.
  * <!-- end-user-doc -->
  *
- * <p>
- * The following features are supported:
- * </p>
- * <ul>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.TextPart#getText <em>Text</em>}</li>
- * </ul>
  *
  * @see org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage#getTextPart()
  * @model interface="true" abstract="true"
  * @generated
  */
 public interface TextPart extends BodyPart {
-	/**
-	 * Returns the value of the '<em><b>Text</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Text</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the value of the '<em>Text</em>' containment reference.
-	 * @see #setText(Text)
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage#getTextPart_Text()
-	 * @model containment="true" ordered="false"
-	 * @generated
-	 */
-	Text getText();
-
-	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.TextPart#getText <em>Text</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *                  the new value of the '<em>Text</em>' containment reference.
-	 * @see #getText()
-	 * @generated
-	 */
-	void setText(Text value);
-
 } // TextPart

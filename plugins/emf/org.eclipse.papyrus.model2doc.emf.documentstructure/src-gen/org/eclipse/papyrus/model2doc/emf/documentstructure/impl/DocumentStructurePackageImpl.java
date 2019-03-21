@@ -15,6 +15,7 @@ package org.eclipse.papyrus.model2doc.emf.documentstructure.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
@@ -33,9 +34,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.GenerationConfigurati
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Image;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.List;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Paragraph;
-import org.eclipse.papyrus.model2doc.emf.documentstructure.StringText;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TableOfContents;
-import org.eclipse.papyrus.model2doc.emf.documentstructure.Text;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocumentPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TextPart;
@@ -49,14 +48,6 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.Title;
  * @generated
  */
 public class DocumentStructurePackageImpl extends EPackageImpl implements DocumentStructurePackage {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	private EClass textEClass = null;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -167,14 +158,6 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	 *
 	 * @generated
 	 */
-	private EClass stringTextEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
 	private EClass emfDataSourceEClass = null;
 
 	/**
@@ -254,17 +237,6 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(DocumentStructurePackage.eNS_URI, theDocumentStructurePackage);
 		return theDocumentStructurePackage;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EClass getText() {
-		return textEClass;
 	}
 
 	/**
@@ -494,8 +466,8 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	 * @generated
 	 */
 	@Override
-	public EClass getTextPart() {
-		return textPartEClass;
+	public EAttribute getParagraph_Text() {
+		return (EAttribute) paragraphEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -505,8 +477,8 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	 * @generated
 	 */
 	@Override
-	public EReference getTextPart_Text() {
-		return (EReference) textPartEClass.getEStructuralFeatures().get(0);
+	public EClass getTextPart() {
+		return textPartEClass;
 	}
 
 	/**
@@ -527,30 +499,30 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	 * @generated
 	 */
 	@Override
+	public EAttribute getTitle_Title() {
+		return (EAttribute) titleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EOperation getTitle__GetLevel() {
+		return titleEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EClass getImage() {
 		return imageEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EClass getStringText() {
-		return stringTextEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EAttribute getStringText_Text() {
-		return (EAttribute) stringTextEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -642,8 +614,6 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 		isCreated = true;
 
 		// Create classes and their features
-		textEClass = createEClass(TEXT);
-
 		textDocumentEClass = createEClass(TEXT_DOCUMENT);
 		createEAttribute(textDocumentEClass, TEXT_DOCUMENT__MAIN_TITLE);
 		createEReference(textDocumentEClass, TEXT_DOCUMENT__TEXT_DOCUMENT_PART);
@@ -673,16 +643,15 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 		listEClass = createEClass(LIST);
 
 		paragraphEClass = createEClass(PARAGRAPH);
+		createEAttribute(paragraphEClass, PARAGRAPH__TEXT);
 
 		textPartEClass = createEClass(TEXT_PART);
-		createEReference(textPartEClass, TEXT_PART__TEXT);
 
 		titleEClass = createEClass(TITLE);
+		createEAttribute(titleEClass, TITLE__TITLE);
+		createEOperation(titleEClass, TITLE___GET_LEVEL);
 
 		imageEClass = createEClass(IMAGE);
-
-		stringTextEClass = createEClass(STRING_TEXT);
-		createEAttribute(stringTextEClass, STRING_TEXT__TEXT);
 
 		emfDataSourceEClass = createEClass(EMF_DATA_SOURCE);
 		createEReference(emfDataSourceEClass, EMF_DATA_SOURCE__EOBJECT);
@@ -734,13 +703,10 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 		textPartEClass.getESuperTypes().add(this.getBodyPart());
 		titleEClass.getESuperTypes().add(this.getTextPart());
 		imageEClass.getESuperTypes().add(this.getTextPart());
-		stringTextEClass.getESuperTypes().add(this.getText());
 		emfDataSourceEClass.getESuperTypes().add(this.getDataSource());
 		tableOfContentsEClass.getESuperTypes().add(this.getTextDocumentPart());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(textEClass, Text.class, "Text", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-
 		initEClass(textDocumentEClass, TextDocument.class, "TextDocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEAttribute(getTextDocument_MainTitle(), ecorePackage.getEString(), "mainTitle", null, 0, 1, TextDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 		initEReference(getTextDocument_TextDocumentPart(), this.getTextDocumentPart(), null, "textDocumentPart", null, 0, -1, TextDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, //$NON-NLS-1$
@@ -772,16 +738,16 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 		initEClass(listEClass, List.class, "List", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		initEClass(paragraphEClass, Paragraph.class, "Paragraph", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(getParagraph_Text(), ecorePackage.getEString(), "text", null, 1, 1, Paragraph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(textPartEClass, TextPart.class, "TextPart", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getTextPart_Text(), this.getText(), null, "text", null, 0, 1, TextPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(titleEClass, Title.class, "Title", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(getTitle_Title(), ecorePackage.getEString(), "title", null, 1, 1, Title.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+
+		initEOperation(getTitle__GetLevel(), theEcorePackage.getEInt(), "getLevel", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(imageEClass, Image.class, "Image", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-
-		initEClass(stringTextEClass, StringText.class, "StringText", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getStringText_Text(), theEcorePackage.getEString(), "text", null, 1, 1, StringText.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(emfDataSourceEClass, EMFDataSource.class, "EMFDataSource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(getEMFDataSource_Eobject(), theEcorePackage.getEObject(), null, "eobject", null, 1, 1, EMFDataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, //$NON-NLS-1$

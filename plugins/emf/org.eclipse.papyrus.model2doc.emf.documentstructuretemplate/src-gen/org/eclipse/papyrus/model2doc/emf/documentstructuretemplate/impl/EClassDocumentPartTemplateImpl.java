@@ -13,6 +13,7 @@
  */
 package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -21,6 +22,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -47,7 +49,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.FeaturePartTe
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassDocumentPartTemplateImpl#getDefaultTitle <em>Default Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassDocumentPartTemplateImpl#getCustomTitle <em>Custom Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassDocumentPartTemplateImpl#getFeaturePartTemplates <em>Feature Part Templates</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassDocumentPartTemplateImpl#getEclass <em>Eclass</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassDocumentPartTemplateImpl#getEClass <em>EClass</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassDocumentPartTemplateImpl#getFilterRule <em>Filter Rule</em>}</li>
  * </ul>
  *
@@ -143,15 +145,15 @@ public class EClassDocumentPartTemplateImpl extends MinimalEObjectImpl.Container
 	protected EList<FeaturePartTemplate> featurePartTemplates;
 
 	/**
-	 * The cached value of the '{@link #getEclass() <em>Eclass</em>}' reference.
+	 * The cached value of the '{@link #getEClass() <em>EClass</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see #getEclass()
+	 * @see #getEClass()
 	 * @generated
 	 * @ordered
 	 */
-	protected EClass eclass;
+	protected EClass eClass;
 
 	/**
 	 * The default value of the '{@link #getFilterRule() <em>Filter Rule</em>}' attribute.
@@ -308,17 +310,17 @@ public class EClassDocumentPartTemplateImpl extends MinimalEObjectImpl.Container
 	 * @generated
 	 */
 	@Override
-	public EClass getEclass() {
-		if (eclass != null && eclass.eIsProxy()) {
-			InternalEObject oldEclass = (InternalEObject) eclass;
-			eclass = (EClass) eResolveProxy(oldEclass);
-			if (eclass != oldEclass) {
+	public EClass getEClass() {
+		if (eClass != null && eClass.eIsProxy()) {
+			InternalEObject oldEClass = (InternalEObject) eClass;
+			eClass = (EClass) eResolveProxy(oldEClass);
+			if (eClass != oldEClass) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__ECLASS, oldEclass, eclass));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__ECLASS, oldEClass, eClass));
 				}
 			}
 		}
-		return eclass;
+		return eClass;
 	}
 
 	/**
@@ -327,8 +329,8 @@ public class EClassDocumentPartTemplateImpl extends MinimalEObjectImpl.Container
 	 *
 	 * @generated
 	 */
-	public EClass basicGetEclass() {
-		return eclass;
+	public EClass basicGetEClass() {
+		return eClass;
 	}
 
 	/**
@@ -338,11 +340,11 @@ public class EClassDocumentPartTemplateImpl extends MinimalEObjectImpl.Container
 	 * @generated
 	 */
 	@Override
-	public void setEclass(EClass newEclass) {
-		EClass oldEclass = eclass;
-		eclass = newEclass;
+	public void setEClass(EClass newEClass) {
+		EClass oldEClass = eClass;
+		eClass = newEClass;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__ECLASS, oldEclass, eclass));
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__ECLASS, oldEClass, eClass));
 		}
 	}
 
@@ -370,6 +372,19 @@ public class EClassDocumentPartTemplateImpl extends MinimalEObjectImpl.Container
 		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__FILTER_RULE, oldFilterRule, filterRule));
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public boolean isMatchingFilterRule(EObject inputEObject) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -408,9 +423,9 @@ public class EClassDocumentPartTemplateImpl extends MinimalEObjectImpl.Container
 			return getFeaturePartTemplates();
 		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__ECLASS:
 			if (resolve) {
-				return getEclass();
+				return getEClass();
 			}
-			return basicGetEclass();
+			return basicGetEClass();
 		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__FILTER_RULE:
 			return getFilterRule();
 		}
@@ -441,7 +456,7 @@ public class EClassDocumentPartTemplateImpl extends MinimalEObjectImpl.Container
 			getFeaturePartTemplates().addAll((Collection<? extends FeaturePartTemplate>) newValue);
 			return;
 		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__ECLASS:
-			setEclass((EClass) newValue);
+			setEClass((EClass) newValue);
 			return;
 		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__FILTER_RULE:
 			setFilterRule((EClassFilterBehavior) newValue);
@@ -472,7 +487,7 @@ public class EClassDocumentPartTemplateImpl extends MinimalEObjectImpl.Container
 			getFeaturePartTemplates().clear();
 			return;
 		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__ECLASS:
-			setEclass((EClass) null);
+			setEClass((EClass) null);
 			return;
 		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__FILTER_RULE:
 			setFilterRule(FILTER_RULE_EDEFAULT);
@@ -501,11 +516,26 @@ public class EClassDocumentPartTemplateImpl extends MinimalEObjectImpl.Container
 		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__FEATURE_PART_TEMPLATES:
 			return featurePartTemplates != null && !featurePartTemplates.isEmpty();
 		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__ECLASS:
-			return eclass != null;
+			return eClass != null;
 		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE__FILTER_RULE:
 			return filterRule != FILTER_RULE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE___IS_MATCHING_FILTER_RULE__EOBJECT:
+			return isMatchingFilterRule((EObject) arguments.get(0));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

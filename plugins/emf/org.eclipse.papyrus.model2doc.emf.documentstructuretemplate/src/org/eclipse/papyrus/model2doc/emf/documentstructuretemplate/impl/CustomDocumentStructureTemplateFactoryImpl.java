@@ -14,6 +14,8 @@
  */
 package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl;
 
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassDocumentPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EObjectDocumentPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentTemplate;
 
 public class CustomDocumentStructureTemplateFactoryImpl extends DocumentStructureTemplateFactoryImpl {
@@ -33,4 +35,25 @@ public class CustomDocumentStructureTemplateFactoryImpl extends DocumentStructur
 		return new CustomTextDocumentTemplateImpl();
 	}
 
+	/**
+	 * 
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplateFactoryImpl#createEObjectDocumentPartTemplate()
+	 *
+	 * @return
+	 */
+	@Override
+	public EObjectDocumentPartTemplate createEObjectDocumentPartTemplate() {
+		return new CustomEObjectDocumentPartTemplate();
+	}
+	
+	/**
+	 * 
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplateFactoryImpl#createEClassDocumentPartTemplate()
+	 *
+	 * @return
+	 */
+	@Override
+	public EClassDocumentPartTemplate createEClassDocumentPartTemplate() {
+		return new CustomEClassDocumentPartTemplate();
+	}
 }

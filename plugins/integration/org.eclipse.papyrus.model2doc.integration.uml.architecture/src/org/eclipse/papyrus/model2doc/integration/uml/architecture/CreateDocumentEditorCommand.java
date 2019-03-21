@@ -14,7 +14,10 @@
 
 package org.eclipse.papyrus.model2doc.integration.uml.architecture;
 
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -26,8 +29,11 @@ import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 import org.eclipse.papyrus.infra.core.utils.ServiceUtils;
 import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForEObject;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplateFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplatePrototype;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.GenerationConfiguration;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentTemplate;
 import org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation.PapyrusDocumentPrototype;
 import org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.ui.internal.command.ICreateDocumentTemplateEditorCommand;
 import org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.ui.internal.viewpoint.PapyrusDocumentTemplateViewPrototype;
@@ -75,7 +81,31 @@ public class CreateDocumentEditorCommand implements ICreateDocumentTemplateEdito
 		// documentFileNameBuilder.append(name);
 		//
 		// final String documentFileName = documentFileNameBuilder.toString();
-		final String documentName = name;
+
+
+		final EStructuralFeature nameFeature = semanticContext.eClass().getEStructuralFeature("name"); // TODO use a label provider for that
+		final String elementName = (String) semanticContext.eGet(nameFeature);
+
+		final Resource res = semanticContext.eResource();
+		final URI semanticURI = res.getURI();
+		if (semanticURI.isPlatformPlugin()) {
+			System.out.println("Documentation for Platform resource is not yet supported");
+			return false;
+		}
+		final URI uriWithoutExtention = semanticURI.trimFileExtension();
+		final URI folderURI = semanticURI.trimSegments(1); // TODO check me with profile uri?!
+		final String outputFolderURI = folderURI.toString();
+
+
+		// TODO : clearly need clean and enhancement
+
+		final String outputFile = semanticURI.trimFileExtension().lastSegment() + "_" + elementName + ".odt";
+		// URI ouputFileName = URI.createFileURI(semanticURI.trimFileExtension().lastSegment()).append).appendFileExtension("odt");// TODO reference the extension!
+
+
+		final String outputFileName = outputFile;// ouputFileName.toString();
+
+
 		try {
 			final ServicesRegistry serviceRegistry = ServiceUtilsForEObject.getInstance().getServiceRegistry(semanticContext);
 			final TransactionalEditingDomain domain = ServiceUtils.getInstance().getTransactionalEditingDomain(serviceRegistry);
@@ -85,9 +115,18 @@ public class CreateDocumentEditorCommand implements ICreateDocumentTemplateEdito
 					final DocumentTemplate template = docTemplateProto.getDocumentTemplate();
 					final DocumentTemplate newInstance = EcoreUtil.copy(template);
 
+					if (newInstance instanceof TextDocumentTemplate) {
+						((TextDocumentTemplate) newInstance).setMainTitle(elementName);
+					}
+
 					newInstance.setDocumentTemplatePrototype(docTemplateProto);
 					newInstance.setGraphicalContext(semanticContext);
 					newInstance.setSemanticContext(semanticContext);
+					final GenerationConfiguration configuration = DocumentStructureTemplateFactory.eINSTANCE.createGenerationConfiguration();
+					configuration.setOuputFile(outputFileName);
+					configuration.setOuputFolder(outputFolderURI);
+					newInstance.setGenerationConfiguration(configuration);
+
 
 					ModelSet modelSet = null;
 					try {
