@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Title;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFeatureDocumentPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceDocumentPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ObjectPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.service.TemplateToStructureMappingService;
 
@@ -33,7 +33,7 @@ import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.service.Temp
  * @author VL222926
  *
  */
-public class EStructuralFeatureMapper extends AbstractEMFTemplateToStructureMapper<EStructuralFeatureDocumentPartTemplate, BodyPart> {
+public class EReferenceMapper extends AbstractEMFTemplateToStructureMapper<EReferenceDocumentPartTemplate, BodyPart> {
 
 	/**
 	 * Constructor.
@@ -41,8 +41,8 @@ public class EStructuralFeatureMapper extends AbstractEMFTemplateToStructureMapp
 	 * @param inputEClass
 	 * @param outputEClass
 	 */
-	public EStructuralFeatureMapper() {
-		super(TEMPLATE_EPACKAGE.getEStructuralFeatureDocumentPartTemplate(), STRUCTURE_EPACKAGE.getBodyPart());
+	public EReferenceMapper() {
+		super(TEMPLATE_EPACKAGE.getEReferenceDocumentPartTemplate(), STRUCTURE_EPACKAGE.getBodyPart());
 	}
 
 	/**
@@ -53,7 +53,7 @@ public class EStructuralFeatureMapper extends AbstractEMFTemplateToStructureMapp
 	 * @return
 	 */
 	@Override
-	protected Collection<BodyPart> doMap(final EStructuralFeatureDocumentPartTemplate documentTemplateElement, final EObject semanticModelElement) {
+	protected Collection<BodyPart> doMap(final EReferenceDocumentPartTemplate documentTemplateElement, final EObject semanticModelElement) {
 		Collection<BodyPart> returnedElements = new ArrayList<>();
 
 		final Collection<EObject> matchingElements = getMatchingElement(documentTemplateElement, semanticModelElement);
@@ -71,7 +71,7 @@ public class EStructuralFeatureMapper extends AbstractEMFTemplateToStructureMapp
 					// TODO search emf label provider for that
 
 					// here, the title is the feature name
-					title.setTitle(documentTemplateElement.getFeature().getName());
+					title.setTitle(documentTemplateElement.getEReference().getName());
 					returnedElements.add(title);
 				}
 
@@ -96,14 +96,14 @@ public class EStructuralFeatureMapper extends AbstractEMFTemplateToStructureMapp
 
 
 
-	protected Collection<EObject> getMatchingElement(final EStructuralFeatureDocumentPartTemplate documentTemplateElement, final EObject semanticModelElement) {
+	protected Collection<EObject> getMatchingElement(final EReferenceDocumentPartTemplate documentTemplateElement, final EObject semanticModelElement) {
 		final List<EObject> elements = new ArrayList<>();
-		final EStructuralFeature feature = documentTemplateElement.getFeature();
+		final EStructuralFeature feature = documentTemplateElement.getEReference();
 		if (feature.getEType() instanceof EObject) {
 			if (feature.isMany()) {
-				elements.addAll((Collection<EObject>) semanticModelElement.eGet(documentTemplateElement.getFeature()));
+				elements.addAll((Collection<EObject>) semanticModelElement.eGet(documentTemplateElement.getEReference()));
 			} else {
-				elements.add((EObject) semanticModelElement.eGet(documentTemplateElement.getFeature()));
+				elements.add((EObject) semanticModelElement.eGet(documentTemplateElement.getEReference()));
 			}
 		}
 		final ListIterator<EObject> iter = elements.listIterator();

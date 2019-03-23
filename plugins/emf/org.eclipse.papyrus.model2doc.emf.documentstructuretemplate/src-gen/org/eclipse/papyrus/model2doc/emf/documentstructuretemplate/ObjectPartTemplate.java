@@ -14,6 +14,7 @@
 package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**

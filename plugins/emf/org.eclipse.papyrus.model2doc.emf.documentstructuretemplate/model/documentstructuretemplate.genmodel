@@ -79,9 +79,9 @@
           createChild="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//TextDocumentTemplate/documentPart"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructuretemplate.ecore#//DocumentPart"/>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructuretemplate.ecore#//EStructuralFeatureDocumentPartTemplate">
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructuretemplate.ecore#//EReferenceDocumentPartTemplate">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//EStructuralFeatureDocumentPartTemplate/feature"/>
+          propertySortChoices="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//EReferenceDocumentPartTemplate/eReference"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructuretemplate.ecore#//FeaturePartTemplate">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"

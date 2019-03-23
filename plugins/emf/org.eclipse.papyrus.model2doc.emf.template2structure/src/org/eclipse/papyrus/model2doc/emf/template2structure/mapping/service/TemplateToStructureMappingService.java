@@ -25,7 +25,7 @@ import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.model2doc.emf.template2structure.Activator;
 import org.eclipse.papyrus.model2doc.emf.template2structure.internal.mapping.BodyMapper;
 import org.eclipse.papyrus.model2doc.emf.template2structure.internal.mapping.EClassMapper;
-import org.eclipse.papyrus.model2doc.emf.template2structure.internal.mapping.EStructuralFeatureMapper;
+import org.eclipse.papyrus.model2doc.emf.template2structure.internal.mapping.EReferenceMapper;
 import org.eclipse.papyrus.model2doc.emf.template2structure.internal.mapping.TableOfContentsMapper;
 import org.eclipse.papyrus.model2doc.emf.template2structure.internal.mapping.TextDocumentTemplateTemplateToTextDocumentMapper;
 
@@ -51,7 +51,7 @@ public class TemplateToStructureMappingService {
 		allContributors.add(new BodyMapper());
 		allContributors.add(new TableOfContentsMapper());
 		allContributors.add(new EClassMapper());
-		allContributors.add(new EStructuralFeatureMapper());
+		allContributors.add(new EReferenceMapper());
 	}
 
 	/**

@@ -35,6 +35,36 @@ public interface DocumentStructureTemplateFactory extends EFactory {
 	DocumentStructureTemplateFactory eINSTANCE = org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplateFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Document Template Prototype</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>Document Template Prototype</em>'.
+	 * @generated
+	 */
+	DocumentTemplatePrototype createDocumentTemplatePrototype();
+
+	/**
+	 * Returns a new object of class '<em>Generation Configuration</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>Generation Configuration</em>'.
+	 * @generated
+	 */
+	GenerationConfiguration createGenerationConfiguration();
+
+	/**
+	 * Returns a new object of class '<em>Cover Page</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>Cover Page</em>'.
+	 * @generated
+	 */
+	CoverPage createCoverPage();
+
+	/**
 	 * Returns a new object of class '<em>Text Document Template</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -45,14 +75,14 @@ public interface DocumentStructureTemplateFactory extends EFactory {
 	TextDocumentTemplate createTextDocumentTemplate();
 
 	/**
-	 * Returns a new object of class '<em>EStructural Feature Document Part Template</em>'.
+	 * Returns a new object of class '<em>EReference Document Part Template</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @return a new object of class '<em>EStructural Feature Document Part Template</em>'.
+	 * @return a new object of class '<em>EReference Document Part Template</em>'.
 	 * @generated
 	 */
-	EStructuralFeatureDocumentPartTemplate createEStructuralFeatureDocumentPartTemplate();
+	EReferenceDocumentPartTemplate createEReferenceDocumentPartTemplate();
 
 	/**
 	 * Returns a new object of class '<em>EClass Document Part Template</em>'.
@@ -93,36 +123,6 @@ public interface DocumentStructureTemplateFactory extends EFactory {
 	 * @generated
 	 */
 	Body createBody();
-
-	/**
-	 * Returns a new object of class '<em>Document Template Prototype</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @return a new object of class '<em>Document Template Prototype</em>'.
-	 * @generated
-	 */
-	DocumentTemplatePrototype createDocumentTemplatePrototype();
-
-	/**
-	 * Returns a new object of class '<em>Generation Configuration</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @return a new object of class '<em>Generation Configuration</em>'.
-	 * @generated
-	 */
-	GenerationConfiguration createGenerationConfiguration();
-
-	/**
-	 * Returns a new object of class '<em>Cover Page</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @return a new object of class '<em>Cover Page</em>'.
-	 * @generated
-	 */
-	CoverPage createCoverPage();
 
 	/**
 	 * Returns the package supported by this factory.

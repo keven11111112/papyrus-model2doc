@@ -39,14 +39,9 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface DocumentTemplate extends EObject {
-
 	/**
 	 * Returns the value of the '<em><b>Semantic Context</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Semantic Context</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Reference to the element of the documented model from which the generated documentation will start.
@@ -75,10 +70,6 @@ public interface DocumentTemplate extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Graphical Context</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Graphical Context</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Reference the element under which the DocumentTemplate will be displayed in a TreeViewer (for example).
@@ -105,34 +96,8 @@ public interface DocumentTemplate extends EObject {
 	void setGraphicalContext(EObject value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Type</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 *
-	 * @model kind="operation" required="true" ordered="false"
-	 * @generated
-	 */
-	String getType();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @model kind="operation" required="true" ordered="false"
-	 * @generated
-	 */
-	String getIconPath();
-
-	/**
 	 * Returns the value of the '<em><b>Document Template Prototype</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Document Template Prototype</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Reference the DocumentTemplatePrototype used to initialize this DocumentTemplate.
@@ -161,10 +126,6 @@ public interface DocumentTemplate extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The name of the document. This name will be used as label in widget displaying the DocumentTemplate.
@@ -194,10 +155,6 @@ public interface DocumentTemplate extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Description</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The description of the DocumentTemplate.
@@ -312,4 +269,23 @@ public interface DocumentTemplate extends EObject {
 	 * @generated
 	 */
 	void setCoverPage(CoverPage value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	String getType();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	String getIconPath();
+
 } // DocumentTemplate

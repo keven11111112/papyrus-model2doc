@@ -75,9 +75,9 @@ This field is useless for usage outside of Papyrus, but we set its multiplicity 
       </ownedAttribute>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_nWOeEB5MEemmq_cjeiIGww" client="_tLqTYB17Eem3fboELVTtYQ" supplier="_pmiT0B5MEemmq_cjeiIGww" contract="_pmiT0B5MEemmq_cjeiIGww"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_jWFJ0B2FEemmq_cjeiIGww" name="EStructuralFeatureDocumentPartTemplate">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_pjBNMB2FEemmq_cjeiIGww" name="feature">
-        <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWiSMX_EduPJbEsMYXjUQ"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_jWFJ0B2FEemmq_cjeiIGww" name="EReferenceDocumentPartTemplate">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_pjBNMB2FEemmq_cjeiIGww" name="eReference">
+        <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWjvsX_EduPJbEsMYXjUQ"/>
       </ownedAttribute>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_mNzk4B2FEemmq_cjeiIGww" client="_jWFJ0B2FEemmq_cjeiIGww" supplier="_ZeO_IB1-Eem3fboELVTtYQ" contract="_ZeO_IB1-Eem3fboELVTtYQ"/>
     </packagedElement>

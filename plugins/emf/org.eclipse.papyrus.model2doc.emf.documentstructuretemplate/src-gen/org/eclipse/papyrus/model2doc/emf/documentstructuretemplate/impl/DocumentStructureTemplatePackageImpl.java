@@ -34,7 +34,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTempl
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassDocumentPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassFilterBehavior;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EObjectDocumentPartTemplate;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFeatureDocumentPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceDocumentPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.FeaturePartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.GenerationConfiguration;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ObjectPartTemplate;
@@ -63,6 +63,30 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 *
 	 * @generated
 	 */
+	private EClass documentTemplatePrototypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass generationConfigurationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass coverPageEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
 	private EClass textDocumentTemplateEClass = null;
 
 	/**
@@ -79,7 +103,7 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 *
 	 * @generated
 	 */
-	private EClass eStructuralFeatureDocumentPartTemplateEClass = null;
+	private EClass eReferenceDocumentPartTemplateEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -144,30 +168,6 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	private EEnum eClassFilterBehaviorEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	private EClass documentTemplatePrototypeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	private EClass generationConfigurationEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	private EClass coverPageEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -369,6 +369,116 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
+	public EClass getDocumentTemplatePrototype() {
+		return documentTemplatePrototypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getDocumentTemplatePrototype_Type() {
+		return (EAttribute) documentTemplatePrototypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getDocumentTemplatePrototype_IconPath() {
+		return (EAttribute) documentTemplatePrototypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getDocumentTemplatePrototype_Description() {
+		return (EAttribute) documentTemplatePrototypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getDocumentTemplatePrototype_DocumentTemplate() {
+		return (EReference) documentTemplatePrototypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getGenerationConfiguration() {
+		return generationConfigurationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getGenerationConfiguration_OuputFile() {
+		return (EAttribute) generationConfigurationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getGenerationConfiguration_OuputFolder() {
+		return (EAttribute) generationConfigurationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getCoverPage() {
+		return coverPageEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getCoverPage_Path() {
+		return (EAttribute) coverPageEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EClass getTextDocumentTemplate() {
 		return textDocumentTemplateEClass;
 	}
@@ -413,8 +523,8 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
-	public EClass getEStructuralFeatureDocumentPartTemplate() {
-		return eStructuralFeatureDocumentPartTemplateEClass;
+	public EClass getEReferenceDocumentPartTemplate() {
+		return eReferenceDocumentPartTemplateEClass;
 	}
 
 	/**
@@ -424,8 +534,8 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
-	public EReference getEStructuralFeatureDocumentPartTemplate_Feature() {
-		return (EReference) eStructuralFeatureDocumentPartTemplateEClass.getEStructuralFeatures().get(0);
+	public EReference getEReferenceDocumentPartTemplate_EReference() {
+		return (EReference) eReferenceDocumentPartTemplateEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -655,116 +765,6 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
-	public EClass getDocumentTemplatePrototype() {
-		return documentTemplatePrototypeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EAttribute getDocumentTemplatePrototype_Type() {
-		return (EAttribute) documentTemplatePrototypeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EAttribute getDocumentTemplatePrototype_IconPath() {
-		return (EAttribute) documentTemplatePrototypeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EAttribute getDocumentTemplatePrototype_Description() {
-		return (EAttribute) documentTemplatePrototypeEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EReference getDocumentTemplatePrototype_DocumentTemplate() {
-		return (EReference) documentTemplatePrototypeEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EClass getGenerationConfiguration() {
-		return generationConfigurationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EAttribute getGenerationConfiguration_OuputFile() {
-		return (EAttribute) generationConfigurationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EAttribute getGenerationConfiguration_OuputFolder() {
-		return (EAttribute) generationConfigurationEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EClass getCoverPage() {
-		return coverPageEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EAttribute getCoverPage_Path() {
-		return (EAttribute) coverPageEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
 	public DocumentStructureTemplateFactory getDocumentStructureTemplateFactory() {
 		return (DocumentStructureTemplateFactory) getEFactoryInstance();
 	}
@@ -823,8 +823,8 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 
 		documentPartEClass = createEClass(DOCUMENT_PART);
 
-		eStructuralFeatureDocumentPartTemplateEClass = createEClass(ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE);
-		createEReference(eStructuralFeatureDocumentPartTemplateEClass, ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__FEATURE);
+		eReferenceDocumentPartTemplateEClass = createEClass(EREFERENCE_DOCUMENT_PART_TEMPLATE);
+		createEReference(eReferenceDocumentPartTemplateEClass, EREFERENCE_DOCUMENT_PART_TEMPLATE__EREFERENCE);
 
 		featurePartTemplateEClass = createEClass(FEATURE_PART_TEMPLATE);
 		createEReference(featurePartTemplateEClass, FEATURE_PART_TEMPLATE__OBJECT_PART_TEMPLATES);
@@ -892,7 +892,7 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 
 		// Add supertypes to classes
 		textDocumentTemplateEClass.getESuperTypes().add(this.getDocumentTemplate());
-		eStructuralFeatureDocumentPartTemplateEClass.getESuperTypes().add(this.getFeaturePartTemplate());
+		eReferenceDocumentPartTemplateEClass.getESuperTypes().add(this.getFeaturePartTemplate());
 		featurePartTemplateEClass.getESuperTypes().add(this.getDocumentPartTemplate());
 		objectPartTemplateEClass.getESuperTypes().add(this.getDocumentPartTemplate());
 		eClassDocumentPartTemplateEClass.getESuperTypes().add(this.getObjectPartTemplate());
@@ -942,9 +942,9 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 
 		initEClass(documentPartEClass, DocumentPart.class, "DocumentPart", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
-		initEClass(eStructuralFeatureDocumentPartTemplateEClass, EStructuralFeatureDocumentPartTemplate.class, "EStructuralFeatureDocumentPartTemplate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getEStructuralFeatureDocumentPartTemplate_Feature(), theEcorePackage.getEStructuralFeature(), null, "feature", null, 1, 1, EStructuralFeatureDocumentPartTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, //$NON-NLS-1$
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(eReferenceDocumentPartTemplateEClass, EReferenceDocumentPartTemplate.class, "EReferenceDocumentPartTemplate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getEReferenceDocumentPartTemplate_EReference(), theEcorePackage.getEReference(), null, "eReference", null, 1, 1, EReferenceDocumentPartTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, //$NON-NLS-1$
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(featurePartTemplateEClass, FeaturePartTemplate.class, "FeaturePartTemplate", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(getFeaturePartTemplate_ObjectPartTemplates(), this.getObjectPartTemplate(), null, "objectPartTemplates", null, 0, -1, FeaturePartTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, //$NON-NLS-1$

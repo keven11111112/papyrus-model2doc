@@ -37,16 +37,16 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplateFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFeatureDocumentPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceDocumentPartTemplate;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFeatureDocumentPartTemplate} object.
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceDocumentPartTemplate} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class EStructuralFeatureDocumentPartTemplateItemProvider
+public class EReferenceDocumentPartTemplateItemProvider
 		extends ItemProviderAdapter
 		implements
 		IEditingDomainItemProvider,
@@ -61,7 +61,7 @@ public class EStructuralFeatureDocumentPartTemplateItemProvider
 	 *
 	 * @generated
 	 */
-	public EStructuralFeatureDocumentPartTemplateItemProvider(AdapterFactory adapterFactory) {
+	public EReferenceDocumentPartTemplateItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -81,7 +81,7 @@ public class EStructuralFeatureDocumentPartTemplateItemProvider
 			addGenerateTitlePropertyDescriptor(object);
 			addDefaultTitlePropertyDescriptor(object);
 			addCustomTitlePropertyDescriptor(object);
-			addFeaturePropertyDescriptor(object);
+			addEReferencePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -171,18 +171,18 @@ public class EStructuralFeatureDocumentPartTemplateItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Feature feature.
+	 * This adds a property descriptor for the EReference feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 */
-	protected void addFeaturePropertyDescriptor(Object object) {
+	protected void addEReferencePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
-				getString("_UI_EStructuralFeatureDocumentPartTemplate_feature_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_EStructuralFeatureDocumentPartTemplate_feature_feature", "_UI_EStructuralFeatureDocumentPartTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				DocumentStructureTemplatePackage.Literals.ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__FEATURE,
+				getString("_UI_EReferenceDocumentPartTemplate_eReference_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EReferenceDocumentPartTemplate_eReference_feature", "_UI_EReferenceDocumentPartTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				DocumentStructureTemplatePackage.Literals.EREFERENCE_DOCUMENT_PART_TEMPLATE__EREFERENCE,
 				true,
 				false,
 				true,
@@ -235,7 +235,7 @@ public class EStructuralFeatureDocumentPartTemplateItemProvider
 	}
 
 	/**
-	 * This returns EStructuralFeatureDocumentPartTemplate.gif.
+	 * This returns EReferenceDocumentPartTemplate.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -243,7 +243,7 @@ public class EStructuralFeatureDocumentPartTemplateItemProvider
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/EStructuralFeatureDocumentPartTemplate")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/EReferenceDocumentPartTemplate")); //$NON-NLS-1$
 	}
 
 	/**
@@ -266,8 +266,8 @@ public class EStructuralFeatureDocumentPartTemplateItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		EStructuralFeatureDocumentPartTemplate eStructuralFeatureDocumentPartTemplate = (EStructuralFeatureDocumentPartTemplate) object;
-		return getString("_UI_EStructuralFeatureDocumentPartTemplate_type") + " " + eStructuralFeatureDocumentPartTemplate.isGenerate(); //$NON-NLS-1$ //$NON-NLS-2$
+		EReferenceDocumentPartTemplate eReferenceDocumentPartTemplate = (EReferenceDocumentPartTemplate) object;
+		return getString("_UI_EReferenceDocumentPartTemplate_type") + " " + eReferenceDocumentPartTemplate.isGenerate(); //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 
@@ -283,14 +283,14 @@ public class EStructuralFeatureDocumentPartTemplateItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(EStructuralFeatureDocumentPartTemplate.class)) {
-		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__GENERATE:
-		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__GENERATE_TITLE:
-		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__DEFAULT_TITLE:
-		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__CUSTOM_TITLE:
+		switch (notification.getFeatureID(EReferenceDocumentPartTemplate.class)) {
+		case DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE__GENERATE:
+		case DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE__GENERATE_TITLE:
+		case DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE__DEFAULT_TITLE:
+		case DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE__CUSTOM_TITLE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE__OBJECT_PART_TEMPLATES:
+		case DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE__OBJECT_PART_TEMPLATES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}

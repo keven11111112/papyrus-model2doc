@@ -14,6 +14,7 @@
 package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl;
 
 import java.lang.reflect.InvocationTargetException;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;

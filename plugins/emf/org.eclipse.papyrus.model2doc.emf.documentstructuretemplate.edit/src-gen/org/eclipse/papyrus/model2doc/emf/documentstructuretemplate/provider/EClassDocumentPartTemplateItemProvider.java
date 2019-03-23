@@ -333,7 +333,7 @@ public class EClassDocumentPartTemplateItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.OBJECT_PART_TEMPLATE__FEATURE_PART_TEMPLATES,
-				DocumentStructureTemplateFactory.eINSTANCE.createEStructuralFeatureDocumentPartTemplate()));
+				DocumentStructureTemplateFactory.eINSTANCE.createEReferenceDocumentPartTemplate()));
 	}
 
 	/**

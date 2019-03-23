@@ -88,6 +88,81 @@ public class DocumentStructureTemplateItemProviderAdapterFactory extends Documen
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplatePrototype} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected DocumentTemplatePrototypeItemProvider documentTemplatePrototypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplatePrototype}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Adapter createDocumentTemplatePrototypeAdapter() {
+		if (documentTemplatePrototypeItemProvider == null) {
+			documentTemplatePrototypeItemProvider = new DocumentTemplatePrototypeItemProvider(this);
+		}
+
+		return documentTemplatePrototypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.GenerationConfiguration} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected GenerationConfigurationItemProvider generationConfigurationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.GenerationConfiguration}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Adapter createGenerationConfigurationAdapter() {
+		if (generationConfigurationItemProvider == null) {
+			generationConfigurationItemProvider = new GenerationConfigurationItemProvider(this);
+		}
+
+		return generationConfigurationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.CoverPage} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected CoverPageItemProvider coverPageItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.CoverPage}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Adapter createCoverPageAdapter() {
+		if (coverPageItemProvider == null) {
+			coverPageItemProvider = new CoverPageItemProvider(this);
+		}
+
+		return coverPageItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentTemplate} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -113,28 +188,28 @@ public class DocumentStructureTemplateItemProviderAdapterFactory extends Documen
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFeatureDocumentPartTemplate} instances.
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceDocumentPartTemplate} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 */
-	protected EStructuralFeatureDocumentPartTemplateItemProvider eStructuralFeatureDocumentPartTemplateItemProvider;
+	protected EReferenceDocumentPartTemplateItemProvider eReferenceDocumentPartTemplateItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFeatureDocumentPartTemplate}.
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceDocumentPartTemplate}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 */
 	@Override
-	public Adapter createEStructuralFeatureDocumentPartTemplateAdapter() {
-		if (eStructuralFeatureDocumentPartTemplateItemProvider == null) {
-			eStructuralFeatureDocumentPartTemplateItemProvider = new EStructuralFeatureDocumentPartTemplateItemProvider(this);
+	public Adapter createEReferenceDocumentPartTemplateAdapter() {
+		if (eReferenceDocumentPartTemplateItemProvider == null) {
+			eReferenceDocumentPartTemplateItemProvider = new EReferenceDocumentPartTemplateItemProvider(this);
 		}
 
-		return eStructuralFeatureDocumentPartTemplateItemProvider;
+		return eReferenceDocumentPartTemplateItemProvider;
 	}
 
 	/**
@@ -235,81 +310,6 @@ public class DocumentStructureTemplateItemProviderAdapterFactory extends Documen
 		}
 
 		return bodyItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplatePrototype} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected DocumentTemplatePrototypeItemProvider documentTemplatePrototypeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplatePrototype}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public Adapter createDocumentTemplatePrototypeAdapter() {
-		if (documentTemplatePrototypeItemProvider == null) {
-			documentTemplatePrototypeItemProvider = new DocumentTemplatePrototypeItemProvider(this);
-		}
-
-		return documentTemplatePrototypeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.GenerationConfiguration} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected GenerationConfigurationItemProvider generationConfigurationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.GenerationConfiguration}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public Adapter createGenerationConfigurationAdapter() {
-		if (generationConfigurationItemProvider == null) {
-			generationConfigurationItemProvider = new GenerationConfigurationItemProvider(this);
-		}
-
-		return generationConfigurationItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.CoverPage} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected CoverPageItemProvider coverPageItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.CoverPage}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public Adapter createCoverPageAdapter() {
-		if (coverPageItemProvider == null) {
-			coverPageItemProvider = new CoverPageItemProvider(this);
-		}
-
-		return coverPageItemProvider;
 	}
 
 	/**
@@ -438,8 +438,8 @@ public class DocumentStructureTemplateItemProviderAdapterFactory extends Documen
 		if (textDocumentTemplateItemProvider != null) {
 			textDocumentTemplateItemProvider.dispose();
 		}
-		if (eStructuralFeatureDocumentPartTemplateItemProvider != null) {
-			eStructuralFeatureDocumentPartTemplateItemProvider.dispose();
+		if (eReferenceDocumentPartTemplateItemProvider != null) {
+			eReferenceDocumentPartTemplateItemProvider.dispose();
 		}
 		if (eClassDocumentPartTemplateItemProvider != null) {
 			eClassDocumentPartTemplateItemProvider.dispose();

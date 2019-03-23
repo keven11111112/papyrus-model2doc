@@ -76,10 +76,9 @@
         upperBound="-1" eType="#//DocumentPart" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DocumentPart" abstract="true" interface="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="EStructuralFeatureDocumentPartTemplate"
-      eSuperTypes="#//FeaturePartTemplate">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" ordered="false"
-        lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EStructuralFeature"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EReferenceDocumentPartTemplate" eSuperTypes="#//FeaturePartTemplate">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eReference" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EReference"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FeaturePartTemplate" abstract="true"
       interface="true" eSuperTypes="#//DocumentPartTemplate">

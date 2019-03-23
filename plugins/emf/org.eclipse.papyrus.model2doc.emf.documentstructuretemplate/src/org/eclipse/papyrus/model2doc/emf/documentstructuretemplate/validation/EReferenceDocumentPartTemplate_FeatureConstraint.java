@@ -22,9 +22,9 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.validation.AbstractModelConstraint;
 import org.eclipse.emf.validation.IValidationContext;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassDocumentPartTemplate;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFeatureDocumentPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceDocumentPartTemplate;
 
-public class EStructuralFeatureDocumentPartTemplate_FeatureConstraint extends AbstractModelConstraint {
+public class EReferenceDocumentPartTemplate_FeatureConstraint extends AbstractModelConstraint {
 
 
 
@@ -37,12 +37,12 @@ public class EStructuralFeatureDocumentPartTemplate_FeatureConstraint extends Ab
 	 */
 	@Override
 	public IStatus validate(IValidationContext arg0) {
-		final EStructuralFeatureDocumentPartTemplate template = (EStructuralFeatureDocumentPartTemplate) arg0.getTarget();
+		final EReferenceDocumentPartTemplate template = (EReferenceDocumentPartTemplate) arg0.getTarget();
 		final EObject parent = template.eContainer();
-		final EStructuralFeature feature = template.getFeature();
+		final EStructuralFeature feature = template.getEReference();
 		if (null != feature && parent instanceof EClassDocumentPartTemplate && null != ((EClassDocumentPartTemplate) parent).getEClass()) {
 			final EClass eclass = ((EClassDocumentPartTemplate) parent).getEClass();
-			if (false == eclass.getEAllStructuralFeatures().contains(feature)) {
+			if (false == eclass.getEAllReferences().contains(feature)) {
 				return arg0.createFailureStatus(eclass.getName(), feature.getName());// message is defined in the plugin.xml
 			}
 		}

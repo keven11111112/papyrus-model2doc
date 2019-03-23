@@ -79,8 +79,8 @@ public class DocumentStructureTemplateFactoryImpl extends EFactoryImpl implement
 			return createCoverPage();
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE:
 			return createTextDocumentTemplate();
-		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_DOCUMENT_PART_TEMPLATE:
-			return createEStructuralFeatureDocumentPartTemplate();
+		case DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE:
+			return createEReferenceDocumentPartTemplate();
 		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE:
 			return createEClassDocumentPartTemplate();
 		case DocumentStructureTemplatePackage.EOBJECT_DOCUMENT_PART_TEMPLATE:
@@ -133,6 +133,42 @@ public class DocumentStructureTemplateFactoryImpl extends EFactoryImpl implement
 	 * @generated
 	 */
 	@Override
+	public DocumentTemplatePrototype createDocumentTemplatePrototype() {
+		DocumentTemplatePrototypeImpl documentTemplatePrototype = new DocumentTemplatePrototypeImpl();
+		return documentTemplatePrototype;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public GenerationConfiguration createGenerationConfiguration() {
+		GenerationConfigurationImpl generationConfiguration = new GenerationConfigurationImpl();
+		return generationConfiguration;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public CoverPage createCoverPage() {
+		CoverPageImpl coverPage = new CoverPageImpl();
+		return coverPage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public TextDocumentTemplate createTextDocumentTemplate() {
 		TextDocumentTemplateImpl textDocumentTemplate = new TextDocumentTemplateImpl();
 		return textDocumentTemplate;
@@ -145,9 +181,9 @@ public class DocumentStructureTemplateFactoryImpl extends EFactoryImpl implement
 	 * @generated
 	 */
 	@Override
-	public EStructuralFeatureDocumentPartTemplate createEStructuralFeatureDocumentPartTemplate() {
-		EStructuralFeatureDocumentPartTemplateImpl eStructuralFeatureDocumentPartTemplate = new EStructuralFeatureDocumentPartTemplateImpl();
-		return eStructuralFeatureDocumentPartTemplate;
+	public EReferenceDocumentPartTemplate createEReferenceDocumentPartTemplate() {
+		EReferenceDocumentPartTemplateImpl eReferenceDocumentPartTemplate = new EReferenceDocumentPartTemplateImpl();
+		return eReferenceDocumentPartTemplate;
 	}
 
 	/**
@@ -221,42 +257,6 @@ public class DocumentStructureTemplateFactoryImpl extends EFactoryImpl implement
 	 */
 	public String convertEClassFilterBehaviorToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public DocumentTemplatePrototype createDocumentTemplatePrototype() {
-		DocumentTemplatePrototypeImpl documentTemplatePrototype = new DocumentTemplatePrototypeImpl();
-		return documentTemplatePrototype;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public GenerationConfiguration createGenerationConfiguration() {
-		GenerationConfigurationImpl generationConfiguration = new GenerationConfigurationImpl();
-		return generationConfiguration;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public CoverPage createCoverPage() {
-		CoverPageImpl coverPage = new CoverPageImpl();
-		return coverPage;
 	}
 
 	/**
