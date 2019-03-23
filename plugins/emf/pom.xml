@@ -25,5 +25,6 @@
 		<module>org.eclipse.papyrus.model2doc.emf.documentstructuretemplate</module>
 		<module>org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit</module>
 		<module>org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.editor</module>
+		<module>org.eclipse.papyrus.model2doc.emf.template2structure</module>
 	</modules>
 </project>
