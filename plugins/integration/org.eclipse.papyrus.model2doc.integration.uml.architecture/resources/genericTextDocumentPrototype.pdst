@@ -5,11 +5,11 @@
     <documentPart xmi:type="documentstructuretemplate:TableOfContents" xmi:id="_74eOgEsMEemzsPCsrzvLCg" tocTitle="Table Of Contents"/>
     <documentPart xmi:type="documentstructuretemplate:Body" xmi:id="_9oFyAEsMEemzsPCsrzvLCg">
       <objectPartTemplate xmi:type="documentstructuretemplate:EClassDocumentPartTemplate" xmi:id="_-OWgwEsMEemzsPCsrzvLCg" generate="true" generateTitle="true" filterRule="TYPE_OF">
-        <featurePartTemplates xmi:type="documentstructuretemplate:EStructuralFeatureDocumentPartTemplate" xmi:id="_N5VL4EsNEemzsPCsrzvLCg" generate="true" generateTitle="true">
+        <featurePartTemplates xmi:type="documentstructuretemplate:EReferenceDocumentPartTemplate" xmi:id="_atztsE2vEembQoQG_SIkHw" generate="true" generateTitle="true">
           <objectPartTemplates xmi:type="documentstructuretemplate:EClassDocumentPartTemplate" xmi:id="_XirrwEsNEemzsPCsrzvLCg" generate="true" generateTitle="true" filterRule="TYPE_OF">
             <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Property"/>
           </objectPartTemplates>
-          <feature xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//StructuredClassifier/ownedAttribute"/>
+          <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//StructuredClassifier/ownedAttribute"/>
         </featurePartTemplates>
         <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
       </objectPartTemplate>
