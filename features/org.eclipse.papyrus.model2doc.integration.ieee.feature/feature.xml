@@ -28,25 +28,25 @@
    </requires>
 
    <plugin
-         id="org.eclipse.papyrus.model2doc.ieee.requirements.odt.architecture"
+         id="org.eclipse.papyrus.model2doc.integration.ieee.requirements.odt.architecture"
          download-size="0"
          install-size="0"
          version="0.0.0"/>
 
    <plugin
-         id="org.eclipse.papyrus.model2doc.ieee.requirements"
+         id="org.eclipse.papyrus.model2doc.integration.ieee.requirements"
          download-size="0"
          install-size="0"
          version="0.0.0"/>
 
    <plugin
-         id="org.eclipse.papyrus.model2doc.ieee.requirements.odt.ui"
+         id="org.eclipse.papyrus.model2doc.integration.ieee.requirements.odt.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"/>
 
    <plugin
-         id="org.eclipse.papyrus.model2doc.ieee.requirements.odt"
+         id="org.eclipse.papyrus.model2doc.integration.ieee.requirements.odt"
          download-size="0"
          install-size="0"
          version="0.0.0"/>
