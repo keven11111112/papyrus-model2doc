@@ -21,7 +21,7 @@
    <feature url="features/org.eclipse.papyrus.model2doc.dev.feature_0.7.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.dev.feature" version="0.7.0.qualifier">
       <category name="org.eclipse.papyrus.model2doc.dev.category"/>
    </feature>
-   <feature url="features/org.eclipse.papyrus.model2doc.dev.feature.source_0.7.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.dev.feature" version="0.7.0.qualifier">
+   <feature url="features/org.eclipse.papyrus.model2doc.dev.feature.source_0.7.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.dev.feature.source" version="0.7.0.qualifier">
       <category name="org.eclipse.papyrus.model2doc.dev.category"/>
    </feature>
    <category-def name="org.eclipse.papyrus.model2doc.category" label="Papyrus-Model2Doc">
@@ -34,7 +34,7 @@
          Papyrus-Model2Doc : Integration as Papyrus Editor.
       </description>
    </category-def>
-   <category-def name="org.eclipse.papyrus.model2doc.integration.ieee.category" label="Papyrus-Model2Doc Papyrus Integration">
+   <category-def name="org.eclipse.papyrus.model2doc.integration.ieee.category" label="Papyrus-Model2Doc Papyrus IEEE Integration">
       <description>
          Papyrus-Model2Doc : Documentation Tools to generate SysML Requirements as recommended by IEEE.
       </description>
