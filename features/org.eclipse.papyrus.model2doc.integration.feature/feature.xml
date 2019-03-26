@@ -19,6 +19,10 @@
       %license
    </license>
 
+   <requires>
+      <import feature="org.eclipse.papyrus.sdk.feature" version="4.2.0" match="compatible"/>
+   </requires>
+
    <plugin
          id="org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.modelexplorer"
          download-size="0"
@@ -46,12 +50,12 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         
+
    <plugin
          id="org.eclipse.papyrus.model2doc.integration.uml.architecture"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         
+
 </feature>

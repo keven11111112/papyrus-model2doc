@@ -12,6 +12,12 @@
    <feature url="features/org.eclipse.papyrus.model2doc.integration.feature.source_0.7.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.integration.feature.source" version="0.7.0.qualifier">
       <category name="org.eclipse.papyrus.model2doc.integration.category"/>
    </feature>
+    <feature url="features/org.eclipse.papyrus.model2doc.integration.ieee.feature_0.7.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.integration.ieee.feature" version="0.7.0.qualifier">
+      <category name="org.eclipse.papyrus.model2doc.integration.ieee.category"/>
+   </feature>
+   <feature url="features/org.eclipse.papyrus.model2doc.integration.ieee.feature.source_0.7.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.integration.ieee.feature.source" version="0.7.0.qualifier">
+      <category name="org.eclipse.papyrus.model2doc.integration.ieee.category"/>
+   </feature>
    <feature url="features/org.eclipse.papyrus.model2doc.dev.feature_0.7.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.dev.feature" version="0.7.0.qualifier">
       <category name="org.eclipse.papyrus.model2doc.dev.category"/>
    </feature>
@@ -20,17 +26,22 @@
    </feature>
    <category-def name="org.eclipse.papyrus.model2doc.category" label="Papyrus-Model2Doc">
       <description>
-         Papyrus-Model2Doc : EMF and UML Model to Documentation
+         Papyrus-Model2Doc : EMF and UML Model to Documentation.
       </description>
    </category-def>
    <category-def name="org.eclipse.papyrus.model2doc.integration.category" label="Papyrus-Model2Doc Papyrus Integration">
       <description>
-         Papyrus-Model2Doc : Integration as Papyrus Editor
+         Papyrus-Model2Doc : Integration as Papyrus Editor.
+      </description>
+   </category-def>
+   <category-def name="org.eclipse.papyrus.model2doc.integration.category" label="Papyrus-Model2Doc Papyrus Integration">
+      <description>
+         Papyrus-Model2Doc : Documentation Tools to generate SysML Requirements as recommended by IEEE.
       </description>
    </category-def>
    <category-def name="org.eclipse.papyrus.model2doc.dev.category" label="Papyrus-Model2Doc Developer Tools">
       <description>
-         Papyrus-Model2Doc : Developer Tools
+         Papyrus-Model2Doc : Developer Tools.
       </description>
    </category-def>
 </site>

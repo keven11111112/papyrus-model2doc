@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.papyrus.model2doc.integration.ieee.feature"
+      label="%featureName"
+      version="0.7.0.qualifier"
+      provider-name="%providerName"
+      license-feature="org.eclipse.license"
+      license-feature-version="2.0.0">
+
+   <description url="http://www.example.com/description">
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <requires>
+      <import feature="org.eclipse.papyrus.sysml14.feature" version="1.3.0" match="compatible"/>
+   </requires>
+
+   <plugin
+         id="org.eclipse.papyrus.model2doc.ieee.requirements.odt.architecture"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.papyrus.model2doc.ieee.requirements"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.papyrus.model2doc.ieee.requirements.odt.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.papyrus.model2doc.ieee.requirements.odt"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+</feature>

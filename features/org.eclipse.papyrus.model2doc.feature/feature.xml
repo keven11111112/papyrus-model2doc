@@ -116,7 +116,7 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
- 
+
    <plugin
          id="org.eclipse.papyrus.model2doc.odt.lib"
          download-size="0"
@@ -130,30 +130,6 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-
-   <plugin
-         id="org.eclipse.papyrus.model2doc.ieee.requirements"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
-
-   <plugin
-         id="org.eclipse.papyrus.model2doc.ieee.requirements.odt"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
-
-   <plugin
-         id="org.eclipse.papyrus.model2doc.ieee.requirements.odt.architecture"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
-
-   <plugin
-         id="org.eclipse.papyrus.model2doc.ieee.requirements.odt.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
 
    <plugin
          id="org.eclipse.papyrus.model2doc.emf.documentstructure"
@@ -175,7 +151,7 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         
+
    <plugin
          id="org.eclipse.papyrus.model2doc.emf.documentstructuretemplate"
          download-size="0"

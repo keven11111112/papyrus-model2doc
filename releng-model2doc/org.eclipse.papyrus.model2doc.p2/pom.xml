@@ -42,13 +42,10 @@
 						<configuration>
 							<!-- do not generate the pesky web folder and index.html -->
 							<skipWebContentGeneration>true</skipWebContentGeneration>
-							<!-- <symbols> <update.site.name>Papyrus UML Versioning</update.site.name> 
-								<update.site.description>Use this URL in Eclipse to install Papyrus UML Versioning</update.site.description> 
-								<update.site.version>${project.version}</update.site.version> <project.website>https://hudson.eclipse.org/papyrus/view/Interoperability/job/papyrus-interoperability-website/ws/site-staging/index.html</project.website> 
-								<project.issues>${project.issueManagement.url}</project.issues> <eclipse.target>${eclipse.targetrelease}</eclipse.target> 
-								<update.site.nightly>https://hudson.eclipse.org/papyrus/view/Interoperability/job/papyrus-interoperability-rpy-oxygen/ws/rpy/releng/org.eclipse.papyrus.interoperability.rpy.p2/target/repository/</update.site.nightly> 
-								</symbols> <associateSites> <site>https://hudson.eclipse.org/papyrus/view/Interoperability/job/papyrus-interoperability-website/ws/site-staging/index.html</site> 
-								</associateSites> <siteTemplateFolder>siteTemplate</siteTemplateFolder> <p2StatsUrl>http://download.eclipse.org/stats</p2StatsUrl> -->
+							<associateSites>
+								<!-- SysML Update site -->
+								<site>https://download.eclipse.org/modeling/mdt/papyrus/components/sysml14</site>
+							</associateSites>
 						</configuration>
 					</execution>
 				</executions>
