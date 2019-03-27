@@ -15,18 +15,13 @@
   <eClassifiers xsi:type="ecore:EClass" name="Document" abstract="true" interface="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="coverPage" ordered="false"
         eType="#//CoverPage" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="generationConfiguration"
-        ordered="false" lowerBound="1" eType="#//GenerationConfiguration" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="documentGeneratorConfiguration"
+        ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.papyrus.model2doc.core.generatorconfiguration/model/generatorconfiguration.ecore#//IDocumentGeneratorConfiguration"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CoverPage">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" ordered="false" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GenerationConfiguration">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="outputFile" ordered="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="outputFolder" ordered="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Body" eSuperTypes="#//TextDocumentPart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="bodyPart" ordered="false"

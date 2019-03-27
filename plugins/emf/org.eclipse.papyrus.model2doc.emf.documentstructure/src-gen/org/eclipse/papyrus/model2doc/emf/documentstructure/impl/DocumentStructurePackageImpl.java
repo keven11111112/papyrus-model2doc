@@ -22,6 +22,8 @@ import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationPackage;
+
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Body;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.CoverPage;
@@ -30,7 +32,6 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.Document;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructureFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.EMFDataSource;
-import org.eclipse.papyrus.model2doc.emf.documentstructure.GenerationConfiguration;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Image;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.List;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Paragraph;
@@ -79,14 +80,6 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	 * @generated
 	 */
 	private EClass coverPageEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	private EClass generationConfigurationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -224,6 +217,7 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 
 		// Initialize simple dependencies
 		EcorePackage.eINSTANCE.eClass();
+		GeneratorConfigurationPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theDocumentStructurePackage.createPackageContents();
@@ -312,7 +306,7 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	 * @generated
 	 */
 	@Override
-	public EReference getDocument_GenerationConfiguration() {
+	public EReference getDocument_DocumentGeneratorConfiguration() {
 		return (EReference) documentEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -336,39 +330,6 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	@Override
 	public EAttribute getCoverPage_Path() {
 		return (EAttribute) coverPageEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EClass getGenerationConfiguration() {
-		return generationConfigurationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EAttribute getGenerationConfiguration_OutputFile() {
-		return (EAttribute) generationConfigurationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EAttribute getGenerationConfiguration_OutputFolder() {
-		return (EAttribute) generationConfigurationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -622,14 +583,10 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 
 		documentEClass = createEClass(DOCUMENT);
 		createEReference(documentEClass, DOCUMENT__COVER_PAGE);
-		createEReference(documentEClass, DOCUMENT__GENERATION_CONFIGURATION);
+		createEReference(documentEClass, DOCUMENT__DOCUMENT_GENERATOR_CONFIGURATION);
 
 		coverPageEClass = createEClass(COVER_PAGE);
 		createEAttribute(coverPageEClass, COVER_PAGE__PATH);
-
-		generationConfigurationEClass = createEClass(GENERATION_CONFIGURATION);
-		createEAttribute(generationConfigurationEClass, GENERATION_CONFIGURATION__OUTPUT_FILE);
-		createEAttribute(generationConfigurationEClass, GENERATION_CONFIGURATION__OUTPUT_FOLDER);
 
 		bodyEClass = createEClass(BODY);
 		createEReference(bodyEClass, BODY__BODY_PART);
@@ -689,6 +646,7 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		GeneratorConfigurationPackage theGeneratorConfigurationPackage = (GeneratorConfigurationPackage) EPackage.Registry.INSTANCE.getEPackage(GeneratorConfigurationPackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
@@ -716,15 +674,11 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 
 		initEClass(documentEClass, Document.class, "Document", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(getDocument_CoverPage(), this.getCoverPage(), null, "coverPage", null, 0, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
-		initEReference(getDocument_GenerationConfiguration(), this.getGenerationConfiguration(), null, "generationConfiguration", null, 1, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, //$NON-NLS-1$
-				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getDocument_DocumentGeneratorConfiguration(), theGeneratorConfigurationPackage.getIDocumentGeneratorConfiguration(), null, "documentGeneratorConfiguration", null, 1, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, //$NON-NLS-1$
+				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(coverPageEClass, CoverPage.class, "CoverPage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEAttribute(getCoverPage_Path(), ecorePackage.getEString(), "path", null, 1, 1, CoverPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
-
-		initEClass(generationConfigurationEClass, GenerationConfiguration.class, "GenerationConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getGenerationConfiguration_OutputFile(), ecorePackage.getEString(), "outputFile", null, 1, 1, GenerationConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(getGenerationConfiguration_OutputFolder(), ecorePackage.getEString(), "outputFolder", null, 1, 1, GenerationConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(bodyEClass, Body.class, "Body", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(getBody_BodyPart(), this.getBodyPart(), null, "bodyPart", null, 0, -1, Body.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$

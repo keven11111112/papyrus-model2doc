@@ -12,8 +12,8 @@
     codeFormatting="true" commentFormatting="true" testsDirectory="/org.eclipse.papyrus.model2doc.emf.documentstructure.tests/src-gen"
     testSuiteClass="org.eclipse.papyrus.model2doc.emf.documentstructure.tests.DocumentstructureAllTests"
     importerID="org.eclipse.uml2.uml.ecore.importer" complianceLevel="8.0" copyrightFields="false"
-    usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore" operationReflection="true"
-    importOrganizing="true" cleanup="true" oSGiCompatible="true">
+    usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eclipse.papyrus.model2doc.core.generatorconfiguration/model/generatorconfiguration.genmodel#//generatorconfiguration"
+    operationReflection="true" importOrganizing="true" cleanup="true" oSGiCompatible="true">
   <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
     <details key="OPPOSITE_ROLE_NAMES" value="IGNORE"/>
     <details key="DUPLICATE_FEATURES" value="DISCARD"/>
@@ -52,14 +52,10 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference documentstructure.ecore#//Document/coverPage"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EReference documentstructure.ecore#//Document/generationConfiguration"/>
+          createChild="true" ecoreFeature="ecore:EReference documentstructure.ecore#//Document/documentGeneratorConfiguration"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructure.ecore#//CoverPage">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructure.ecore#//CoverPage/path"/>
-    </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructure.ecore#//GenerationConfiguration">
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructure.ecore#//GenerationConfiguration/outputFile"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructure.ecore#//GenerationConfiguration/outputFolder"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructure.ecore#//Body">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"

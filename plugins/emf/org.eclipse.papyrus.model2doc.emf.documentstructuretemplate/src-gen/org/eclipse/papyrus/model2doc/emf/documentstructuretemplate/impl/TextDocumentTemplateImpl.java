@@ -32,11 +32,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration;
+
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.CoverPage;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplatePrototype;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.GenerationConfiguration;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentTemplate;
 
 /**
@@ -53,8 +54,8 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentT
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl#getName <em>Name</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl#getDescription <em>Description</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl#getKindId <em>Kind Id</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl#getGenerationConfiguration <em>Generation Configuration</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl#getCoverPage <em>Cover Page</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl#getDocumentStructureGenerator <em>Document Structure Generator</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl#getMainTitle <em>Main Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl#getDocumentPart <em>Document Part</em>}</li>
  * </ul>
@@ -162,17 +163,6 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 	protected String kindId = KIND_ID_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getGenerationConfiguration() <em>Generation Configuration</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see #getGenerationConfiguration()
-	 * @generated
-	 * @ordered
-	 */
-	protected GenerationConfiguration generationConfiguration;
-
-	/**
 	 * The cached value of the '{@link #getCoverPage() <em>Cover Page</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -182,6 +172,17 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 	 * @ordered
 	 */
 	protected CoverPage coverPage;
+
+	/**
+	 * The cached value of the '{@link #getDocumentStructureGenerator() <em>Document Structure Generator</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getDocumentStructureGenerator()
+	 * @generated
+	 * @ordered
+	 */
+	protected IDocumentStructureGeneratorConfiguration documentStructureGenerator;
 
 	/**
 	 * The default value of the '{@link #getMainTitle() <em>Main Title</em>}' attribute.
@@ -457,62 +458,6 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 	 * @generated
 	 */
 	@Override
-	public GenerationConfiguration getGenerationConfiguration() {
-		return generationConfiguration;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	public NotificationChain basicSetGenerationConfiguration(GenerationConfiguration newGenerationConfiguration, NotificationChain msgs) {
-		GenerationConfiguration oldGenerationConfiguration = generationConfiguration;
-		generationConfiguration = newGenerationConfiguration;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__GENERATION_CONFIGURATION, oldGenerationConfiguration, newGenerationConfiguration);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public void setGenerationConfiguration(GenerationConfiguration newGenerationConfiguration) {
-		if (newGenerationConfiguration != generationConfiguration) {
-			NotificationChain msgs = null;
-			if (generationConfiguration != null) {
-				msgs = ((InternalEObject) generationConfiguration).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__GENERATION_CONFIGURATION, null, msgs);
-			}
-			if (newGenerationConfiguration != null) {
-				msgs = ((InternalEObject) newGenerationConfiguration).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__GENERATION_CONFIGURATION, null, msgs);
-			}
-			msgs = basicSetGenerationConfiguration(newGenerationConfiguration, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__GENERATION_CONFIGURATION, newGenerationConfiguration, newGenerationConfiguration));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
 	public CoverPage getCoverPage() {
 		return coverPage;
 	}
@@ -559,6 +504,62 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 			}
 		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__COVER_PAGE, newCoverPage, newCoverPage));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public IDocumentStructureGeneratorConfiguration getDocumentStructureGenerator() {
+		return documentStructureGenerator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public NotificationChain basicSetDocumentStructureGenerator(IDocumentStructureGeneratorConfiguration newDocumentStructureGenerator, NotificationChain msgs) {
+		IDocumentStructureGeneratorConfiguration oldDocumentStructureGenerator = documentStructureGenerator;
+		documentStructureGenerator = newDocumentStructureGenerator;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR, oldDocumentStructureGenerator, newDocumentStructureGenerator);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setDocumentStructureGenerator(IDocumentStructureGeneratorConfiguration newDocumentStructureGenerator) {
+		if (newDocumentStructureGenerator != documentStructureGenerator) {
+			NotificationChain msgs = null;
+			if (documentStructureGenerator != null) {
+				msgs = ((InternalEObject) documentStructureGenerator).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR, null, msgs);
+			}
+			if (newDocumentStructureGenerator != null) {
+				msgs = ((InternalEObject) newDocumentStructureGenerator).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR, null, msgs);
+			}
+			msgs = basicSetDocumentStructureGenerator(newDocumentStructureGenerator, msgs);
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR, newDocumentStructureGenerator, newDocumentStructureGenerator));
 		}
 	}
 
@@ -637,10 +638,10 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__GENERATION_CONFIGURATION:
-			return basicSetGenerationConfiguration(null, msgs);
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__COVER_PAGE:
 			return basicSetCoverPage(null, msgs);
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR:
+			return basicSetDocumentStructureGenerator(null, msgs);
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART:
 			return ((InternalEList<?>) getDocumentPart()).basicRemove(otherEnd, msgs);
 		}
@@ -677,10 +678,10 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 			return getDescription();
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__KIND_ID:
 			return getKindId();
-		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__GENERATION_CONFIGURATION:
-			return getGenerationConfiguration();
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__COVER_PAGE:
 			return getCoverPage();
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR:
+			return getDocumentStructureGenerator();
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__MAIN_TITLE:
 			return getMainTitle();
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART:
@@ -717,11 +718,11 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__KIND_ID:
 			setKindId((String) newValue);
 			return;
-		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__GENERATION_CONFIGURATION:
-			setGenerationConfiguration((GenerationConfiguration) newValue);
-			return;
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__COVER_PAGE:
 			setCoverPage((CoverPage) newValue);
+			return;
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR:
+			setDocumentStructureGenerator((IDocumentStructureGeneratorConfiguration) newValue);
 			return;
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__MAIN_TITLE:
 			setMainTitle((String) newValue);
@@ -761,11 +762,11 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__KIND_ID:
 			setKindId(KIND_ID_EDEFAULT);
 			return;
-		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__GENERATION_CONFIGURATION:
-			setGenerationConfiguration((GenerationConfiguration) null);
-			return;
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__COVER_PAGE:
 			setCoverPage((CoverPage) null);
+			return;
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR:
+			setDocumentStructureGenerator((IDocumentStructureGeneratorConfiguration) null);
 			return;
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__MAIN_TITLE:
 			setMainTitle(MAIN_TITLE_EDEFAULT);
@@ -798,10 +799,10 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__KIND_ID:
 			return KIND_ID_EDEFAULT == null ? kindId != null : !KIND_ID_EDEFAULT.equals(kindId);
-		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__GENERATION_CONFIGURATION:
-			return generationConfiguration != null;
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__COVER_PAGE:
 			return coverPage != null;
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR:
+			return documentStructureGenerator != null;
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__MAIN_TITLE:
 			return MAIN_TITLE_EDEFAULT == null ? mainTitle != null : !MAIN_TITLE_EDEFAULT.equals(mainTitle);
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART:

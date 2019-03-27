@@ -103,11 +103,6 @@ public class DocumentStructureAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseGenerationConfiguration(GenerationConfiguration object) {
-			return createGenerationConfigurationAdapter();
-		}
-
-		@Override
 		public Adapter caseBody(Body object) {
 			return createBodyAdapter();
 		}
@@ -236,21 +231,6 @@ public class DocumentStructureAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCoverPageAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.GenerationConfiguration <em>Generation Configuration</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.GenerationConfiguration
-	 * @generated
-	 */
-	public Adapter createGenerationConfigurationAdapter() {
 		return null;
 	}
 

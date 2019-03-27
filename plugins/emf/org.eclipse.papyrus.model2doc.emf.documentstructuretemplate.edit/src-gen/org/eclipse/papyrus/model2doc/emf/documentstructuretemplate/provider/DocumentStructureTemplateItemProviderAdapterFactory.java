@@ -113,31 +113,6 @@ public class DocumentStructureTemplateItemProviderAdapterFactory extends Documen
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.GenerationConfiguration} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected GenerationConfigurationItemProvider generationConfigurationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.GenerationConfiguration}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public Adapter createGenerationConfigurationAdapter() {
-		if (generationConfigurationItemProvider == null) {
-			generationConfigurationItemProvider = new GenerationConfigurationItemProvider(this);
-		}
-
-		return generationConfigurationItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.CoverPage} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -428,9 +403,6 @@ public class DocumentStructureTemplateItemProviderAdapterFactory extends Documen
 	public void dispose() {
 		if (documentTemplatePrototypeItemProvider != null) {
 			documentTemplatePrototypeItemProvider.dispose();
-		}
-		if (generationConfigurationItemProvider != null) {
-			generationConfigurationItemProvider.dispose();
 		}
 		if (coverPageItemProvider != null) {
 			coverPageItemProvider.dispose();

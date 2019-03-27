@@ -35,6 +35,8 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationFactory;
+
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplateFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentTemplate;
@@ -248,8 +250,8 @@ public class TextDocumentTemplateItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.DOCUMENT_TEMPLATE__GENERATION_CONFIGURATION);
 			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.DOCUMENT_TEMPLATE__COVER_PAGE);
+			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR);
 			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART);
 		}
 		return childrenFeatures;
@@ -337,8 +339,8 @@ public class TextDocumentTemplateItemProvider
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__MAIN_TITLE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__GENERATION_CONFIGURATION:
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__COVER_PAGE:
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR:
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
@@ -358,11 +360,11 @@ public class TextDocumentTemplateItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.DOCUMENT_TEMPLATE__GENERATION_CONFIGURATION,
-				DocumentStructureTemplateFactory.eINSTANCE.createGenerationConfiguration()));
-
 		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.DOCUMENT_TEMPLATE__COVER_PAGE,
 				DocumentStructureTemplateFactory.eINSTANCE.createCoverPage()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR,
+				GeneratorConfigurationFactory.eINSTANCE.createDefaultDocumentStructureGeneratorConfiguration()));
 
 		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART,
 				DocumentStructureTemplateFactory.eINSTANCE.createTableOfContents()));

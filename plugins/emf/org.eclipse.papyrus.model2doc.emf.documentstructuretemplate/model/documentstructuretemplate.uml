@@ -48,10 +48,12 @@ This field is useless for usage outside of Papyrus, but we set its multiplicity 
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_SGtggEmHEem4wpUXttaNpQ" name="generationConfiguration" type="_FoN_gEmHEem4wpUXttaNpQ" aggregation="composite" association="_SGjvgEmHEem4wpUXttaNpQ"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_RtZr0kmLEem4wpUXttaNpQ" name="coverPage" type="_KOiGgEmLEem4wpUXttaNpQ" aggregation="composite" association="_RtZEwEmLEem4wpUXttaNpQ">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RtaS4EmLEem4wpUXttaNpQ"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RtaS4UmLEem4wpUXttaNpQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_TBR2gFCGEems8PYEpvQE1w" name="documentStructureGenerator" aggregation="composite" association="_TBJToFCGEems8PYEpvQE1w">
+        <type xmi:type="uml:Interface" href="pathmap://GENERATOR_CONFIGURATION/generatorconfiguration.uml#_fUlRoFB6EemNlsOH2YnpzQ"/>
       </ownedAttribute>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_MW0s4EmEEem4wpUXttaNpQ" name="getType">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_UHiQIEmEEem4wpUXttaNpQ" direction="return">
@@ -206,22 +208,6 @@ The field eobject must reference an eobject of the user model, in other case the
       </eAnnotations>
       <ownedEnd xmi:type="uml:Property" xmi:id="_2Eq_gznXEem5-oyJMXJtFA" name="documentTemplate" type="_pmiT0B5MEemmq_cjeiIGww" association="_2EojQDnXEem5-oyJMXJtFA"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_FoN_gEmHEem4wpUXttaNpQ" name="GenerationConfiguration">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_o7M-QEmCEem4wpUXttaNpQ" name="ouputFile">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GjxloEmDEem4wpUXttaNpQ"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_HMsm0EmDEem4wpUXttaNpQ" name="ouputFolder">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HMsm0UmDEem4wpUXttaNpQ"/>
-      </ownedAttribute>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_SGjvgEmHEem4wpUXttaNpQ" memberEnd="_SGtggEmHEem4wpUXttaNpQ _SGuHkkmHEem4wpUXttaNpQ">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SGsSYEmHEem4wpUXttaNpQ" source="org.eclipse.papyrus">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SGs5cEmHEem4wpUXttaNpQ" key="nature" value="UML_Nature"/>
-      </eAnnotations>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_SGuHkkmHEem4wpUXttaNpQ" name="documentTemplate" type="_pmiT0B5MEemmq_cjeiIGww" association="_SGjvgEmHEem4wpUXttaNpQ"/>
-    </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_KOiGgEmLEem4wpUXttaNpQ" name="CoverPage">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_REkD0EmDEem4wpUXttaNpQ" name="path" visibility="public">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
@@ -239,6 +225,12 @@ The field eobject must reference an eobject of the user model, in other case the
     </packagedElement>
     <packagedElement xmi:type="uml:EnumerationLiteral" xmi:id="_NUQBYEonEem4wpUXttaNpQ" name="TYPE_OF"/>
     <packagedElement xmi:type="uml:EnumerationLiteral" xmi:id="_Ngg7wEonEem4wpUXttaNpQ" name="CopyOf_TYPE_OF_27"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_TBJToFCGEems8PYEpvQE1w" memberEnd="_TBR2gFCGEems8PYEpvQE1w _TBSdkVCGEems8PYEpvQE1w">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_TBQBUFCGEems8PYEpvQE1w" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_TBQoYFCGEems8PYEpvQE1w" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_TBSdkVCGEems8PYEpvQE1w" name="documentTemplate" type="_pmiT0B5MEemmq_cjeiIGww" association="_TBJToFCGEems8PYEpvQE1w"/>
+    </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Dwr3IB2KEemmq_cjeiIGww">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DwseMB2KEemmq_cjeiIGww" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>

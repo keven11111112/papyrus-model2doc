@@ -15,6 +15,8 @@ package org.eclipse.papyrus.model2doc.emf.documentstructure;
 
 import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Document</b></em>'.
@@ -25,7 +27,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.Document#getCoverPage <em>Cover Page</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.Document#getGenerationConfiguration <em>Generation Configuration</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.Document#getDocumentGeneratorConfiguration <em>Document Generator Configuration</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage#getDocument()
@@ -63,32 +65,32 @@ public interface Document extends EObject {
 	void setCoverPage(CoverPage value);
 
 	/**
-	 * Returns the value of the '<em><b>Generation Configuration</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Document Generator Configuration</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Generation Configuration</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Document Generator Configuration</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the value of the '<em>Generation Configuration</em>' containment reference.
-	 * @see #setGenerationConfiguration(GenerationConfiguration)
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage#getDocument_GenerationConfiguration()
+	 * @return the value of the '<em>Document Generator Configuration</em>' containment reference.
+	 * @see #setDocumentGeneratorConfiguration(IDocumentGeneratorConfiguration)
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage#getDocument_DocumentGeneratorConfiguration()
 	 * @model containment="true" required="true" ordered="false"
 	 * @generated
 	 */
-	GenerationConfiguration getGenerationConfiguration();
+	IDocumentGeneratorConfiguration getDocumentGeneratorConfiguration();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.Document#getGenerationConfiguration <em>Generation Configuration</em>}' containment reference.
+	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.Document#getDocumentGeneratorConfiguration <em>Document Generator Configuration</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *                  the new value of the '<em>Generation Configuration</em>' containment reference.
-	 * @see #getGenerationConfiguration()
+	 *                  the new value of the '<em>Document Generator Configuration</em>' containment reference.
+	 * @see #getDocumentGeneratorConfiguration()
 	 * @generated
 	 */
-	void setGenerationConfiguration(GenerationConfiguration value);
+	void setDocumentGeneratorConfiguration(IDocumentGeneratorConfiguration value);
 
 } // Document

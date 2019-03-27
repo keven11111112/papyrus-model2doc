@@ -74,8 +74,6 @@ public class DocumentStructureFactoryImpl extends EFactoryImpl implements Docume
 			return createTextDocument();
 		case DocumentStructurePackage.COVER_PAGE:
 			return createCoverPage();
-		case DocumentStructurePackage.GENERATION_CONFIGURATION:
-			return createGenerationConfiguration();
 		case DocumentStructurePackage.BODY:
 			return createBody();
 		case DocumentStructurePackage.LIST:
@@ -117,18 +115,6 @@ public class DocumentStructureFactoryImpl extends EFactoryImpl implements Docume
 	public CoverPage createCoverPage() {
 		CoverPageImpl coverPage = new CoverPageImpl();
 		return coverPage;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public GenerationConfiguration createGenerationConfiguration() {
-		GenerationConfigurationImpl generationConfiguration = new GenerationConfigurationImpl();
-		return generationConfiguration;
 	}
 
 	/**

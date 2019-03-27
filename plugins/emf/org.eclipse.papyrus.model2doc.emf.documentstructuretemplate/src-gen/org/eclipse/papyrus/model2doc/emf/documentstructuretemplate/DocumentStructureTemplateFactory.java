@@ -45,16 +45,6 @@ public interface DocumentStructureTemplateFactory extends EFactory {
 	DocumentTemplatePrototype createDocumentTemplatePrototype();
 
 	/**
-	 * Returns a new object of class '<em>Generation Configuration</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @return a new object of class '<em>Generation Configuration</em>'.
-	 * @generated
-	 */
-	GenerationConfiguration createGenerationConfiguration();
-
-	/**
 	 * Returns a new object of class '<em>Cover Page</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

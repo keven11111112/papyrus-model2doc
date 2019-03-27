@@ -19,6 +19,8 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.provider.GeneratorconfigurationEditPlugin;
+
 import org.osgi.framework.BundleActivator;
 
 /**
@@ -57,6 +59,7 @@ public final class DocumentstructuretemplateEditPlugin extends EMFPlugin {
 	public DocumentstructuretemplateEditPlugin() {
 		super(new ResourceLocator[] {
 				EcoreEditPlugin.INSTANCE,
+				GeneratorconfigurationEditPlugin.INSTANCE,
 		});
 	}
 

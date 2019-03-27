@@ -99,14 +99,6 @@ public class DocumentStructureTemplateSwitch<T> extends Switch<T> {
 			}
 			return result;
 		}
-		case DocumentStructureTemplatePackage.GENERATION_CONFIGURATION: {
-			GenerationConfiguration generationConfiguration = (GenerationConfiguration) theEObject;
-			T result = caseGenerationConfiguration(generationConfiguration);
-			if (result == null) {
-				result = defaultCase(theEObject);
-			}
-			return result;
-		}
 		case DocumentStructureTemplatePackage.COVER_PAGE: {
 			CoverPage coverPage = (CoverPage) theEObject;
 			T result = caseCoverPage(coverPage);
@@ -264,23 +256,6 @@ public class DocumentStructureTemplateSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDocumentTemplatePrototype(DocumentTemplatePrototype object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Generation Configuration</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 *
-	 * @param object
-	 *                   the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Generation Configuration</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseGenerationConfiguration(GenerationConfiguration object) {
 		return null;
 	}
 

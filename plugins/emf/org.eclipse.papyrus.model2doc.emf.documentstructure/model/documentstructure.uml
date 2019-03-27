@@ -96,7 +96,9 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wN0hMEmLEem4wpUXttaNpQ"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wN0hMUmLEem4wpUXttaNpQ" value="1"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_9gsFcEmLEem4wpUXttaNpQ" name="generationConfiguration" type="_kEWN8EmLEem4wpUXttaNpQ" aggregation="composite" association="_9gqQQEmLEem4wpUXttaNpQ"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_9gsFcEmLEem4wpUXttaNpQ" name="documentGeneratorConfiguration" aggregation="composite" association="_9gqQQEmLEem4wpUXttaNpQ">
+        <type xmi:type="uml:Interface" href="pathmap://GENERATOR_CONFIGURATION/generatorconfiguration.uml#_cN08EFB6EemNlsOH2YnpzQ"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_ZnvK4EUGEemuabBpL8rs_Q" name="TableOfContents">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_qq5tMEl1Eem4wpUXttaNpQ" name="tocTitle">
@@ -114,14 +116,6 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_hVsPUEmLEem4wpUXttaNpQ" name="CoverPage">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_Xq_d4EmGEem4wpUXttaNpQ" name="path">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-      </ownedAttribute>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_kEWN8EmLEem4wpUXttaNpQ" name="GenerationConfiguration">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_xz6kAEmFEem4wpUXttaNpQ" name="outputFile">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_GxGIkEmGEem4wpUXttaNpQ" name="outputFolder">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
       </ownedAttribute>
     </packagedElement>

@@ -29,9 +29,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration;
+
 import org.eclipse.papyrus.model2doc.emf.documentstructure.CoverPage;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage;
-import org.eclipse.papyrus.model2doc.emf.documentstructure.GenerationConfiguration;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocumentPart;
 
@@ -44,7 +45,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocumentPart;
  * </p>
  * <ul>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TextDocumentImpl#getCoverPage <em>Cover Page</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TextDocumentImpl#getGenerationConfiguration <em>Generation Configuration</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TextDocumentImpl#getDocumentGeneratorConfiguration <em>Document Generator Configuration</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TextDocumentImpl#getMainTitle <em>Main Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TextDocumentImpl#getTextDocumentPart <em>Text Document Part</em>}</li>
  * </ul>
@@ -64,15 +65,15 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 	protected CoverPage coverPage;
 
 	/**
-	 * The cached value of the '{@link #getGenerationConfiguration() <em>Generation Configuration</em>}' containment reference.
+	 * The cached value of the '{@link #getDocumentGeneratorConfiguration() <em>Document Generator Configuration</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see #getGenerationConfiguration()
+	 * @see #getDocumentGeneratorConfiguration()
 	 * @generated
 	 * @ordered
 	 */
-	protected GenerationConfiguration generationConfiguration;
+	protected IDocumentGeneratorConfiguration documentGeneratorConfiguration;
 
 	/**
 	 * The default value of the '{@link #getMainTitle() <em>Main Title</em>}' attribute.
@@ -191,8 +192,8 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 	 * @generated
 	 */
 	@Override
-	public GenerationConfiguration getGenerationConfiguration() {
-		return generationConfiguration;
+	public IDocumentGeneratorConfiguration getDocumentGeneratorConfiguration() {
+		return documentGeneratorConfiguration;
 	}
 
 	/**
@@ -201,11 +202,11 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 	 *
 	 * @generated
 	 */
-	public NotificationChain basicSetGenerationConfiguration(GenerationConfiguration newGenerationConfiguration, NotificationChain msgs) {
-		GenerationConfiguration oldGenerationConfiguration = generationConfiguration;
-		generationConfiguration = newGenerationConfiguration;
+	public NotificationChain basicSetDocumentGeneratorConfiguration(IDocumentGeneratorConfiguration newDocumentGeneratorConfiguration, NotificationChain msgs) {
+		IDocumentGeneratorConfiguration oldDocumentGeneratorConfiguration = documentGeneratorConfiguration;
+		documentGeneratorConfiguration = newDocumentGeneratorConfiguration;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DocumentStructurePackage.TEXT_DOCUMENT__GENERATION_CONFIGURATION, oldGenerationConfiguration, newGenerationConfiguration);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DocumentStructurePackage.TEXT_DOCUMENT__DOCUMENT_GENERATOR_CONFIGURATION, oldDocumentGeneratorConfiguration, newDocumentGeneratorConfiguration);
 			if (msgs == null) {
 				msgs = notification;
 			} else {
@@ -222,21 +223,21 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 	 * @generated
 	 */
 	@Override
-	public void setGenerationConfiguration(GenerationConfiguration newGenerationConfiguration) {
-		if (newGenerationConfiguration != generationConfiguration) {
+	public void setDocumentGeneratorConfiguration(IDocumentGeneratorConfiguration newDocumentGeneratorConfiguration) {
+		if (newDocumentGeneratorConfiguration != documentGeneratorConfiguration) {
 			NotificationChain msgs = null;
-			if (generationConfiguration != null) {
-				msgs = ((InternalEObject) generationConfiguration).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DocumentStructurePackage.TEXT_DOCUMENT__GENERATION_CONFIGURATION, null, msgs);
+			if (documentGeneratorConfiguration != null) {
+				msgs = ((InternalEObject) documentGeneratorConfiguration).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DocumentStructurePackage.TEXT_DOCUMENT__DOCUMENT_GENERATOR_CONFIGURATION, null, msgs);
 			}
-			if (newGenerationConfiguration != null) {
-				msgs = ((InternalEObject) newGenerationConfiguration).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DocumentStructurePackage.TEXT_DOCUMENT__GENERATION_CONFIGURATION, null, msgs);
+			if (newDocumentGeneratorConfiguration != null) {
+				msgs = ((InternalEObject) newDocumentGeneratorConfiguration).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DocumentStructurePackage.TEXT_DOCUMENT__DOCUMENT_GENERATOR_CONFIGURATION, null, msgs);
 			}
-			msgs = basicSetGenerationConfiguration(newGenerationConfiguration, msgs);
+			msgs = basicSetDocumentGeneratorConfiguration(newDocumentGeneratorConfiguration, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructurePackage.TEXT_DOCUMENT__GENERATION_CONFIGURATION, newGenerationConfiguration, newGenerationConfiguration));
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructurePackage.TEXT_DOCUMENT__DOCUMENT_GENERATOR_CONFIGURATION, newDocumentGeneratorConfiguration, newDocumentGeneratorConfiguration));
 		}
 	}
 
@@ -291,8 +292,8 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 		switch (featureID) {
 		case DocumentStructurePackage.TEXT_DOCUMENT__COVER_PAGE:
 			return basicSetCoverPage(null, msgs);
-		case DocumentStructurePackage.TEXT_DOCUMENT__GENERATION_CONFIGURATION:
-			return basicSetGenerationConfiguration(null, msgs);
+		case DocumentStructurePackage.TEXT_DOCUMENT__DOCUMENT_GENERATOR_CONFIGURATION:
+			return basicSetDocumentGeneratorConfiguration(null, msgs);
 		case DocumentStructurePackage.TEXT_DOCUMENT__TEXT_DOCUMENT_PART:
 			return ((InternalEList<?>) getTextDocumentPart()).basicRemove(otherEnd, msgs);
 		}
@@ -310,8 +311,8 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 		switch (featureID) {
 		case DocumentStructurePackage.TEXT_DOCUMENT__COVER_PAGE:
 			return getCoverPage();
-		case DocumentStructurePackage.TEXT_DOCUMENT__GENERATION_CONFIGURATION:
-			return getGenerationConfiguration();
+		case DocumentStructurePackage.TEXT_DOCUMENT__DOCUMENT_GENERATOR_CONFIGURATION:
+			return getDocumentGeneratorConfiguration();
 		case DocumentStructurePackage.TEXT_DOCUMENT__MAIN_TITLE:
 			return getMainTitle();
 		case DocumentStructurePackage.TEXT_DOCUMENT__TEXT_DOCUMENT_PART:
@@ -333,8 +334,8 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 		case DocumentStructurePackage.TEXT_DOCUMENT__COVER_PAGE:
 			setCoverPage((CoverPage) newValue);
 			return;
-		case DocumentStructurePackage.TEXT_DOCUMENT__GENERATION_CONFIGURATION:
-			setGenerationConfiguration((GenerationConfiguration) newValue);
+		case DocumentStructurePackage.TEXT_DOCUMENT__DOCUMENT_GENERATOR_CONFIGURATION:
+			setDocumentGeneratorConfiguration((IDocumentGeneratorConfiguration) newValue);
 			return;
 		case DocumentStructurePackage.TEXT_DOCUMENT__MAIN_TITLE:
 			setMainTitle((String) newValue);
@@ -359,8 +360,8 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 		case DocumentStructurePackage.TEXT_DOCUMENT__COVER_PAGE:
 			setCoverPage((CoverPage) null);
 			return;
-		case DocumentStructurePackage.TEXT_DOCUMENT__GENERATION_CONFIGURATION:
-			setGenerationConfiguration((GenerationConfiguration) null);
+		case DocumentStructurePackage.TEXT_DOCUMENT__DOCUMENT_GENERATOR_CONFIGURATION:
+			setDocumentGeneratorConfiguration((IDocumentGeneratorConfiguration) null);
 			return;
 		case DocumentStructurePackage.TEXT_DOCUMENT__MAIN_TITLE:
 			setMainTitle(MAIN_TITLE_EDEFAULT);
@@ -383,8 +384,8 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 		switch (featureID) {
 		case DocumentStructurePackage.TEXT_DOCUMENT__COVER_PAGE:
 			return coverPage != null;
-		case DocumentStructurePackage.TEXT_DOCUMENT__GENERATION_CONFIGURATION:
-			return generationConfiguration != null;
+		case DocumentStructurePackage.TEXT_DOCUMENT__DOCUMENT_GENERATOR_CONFIGURATION:
+			return documentGeneratorConfiguration != null;
 		case DocumentStructurePackage.TEXT_DOCUMENT__MAIN_TITLE:
 			return MAIN_TITLE_EDEFAULT == null ? mainTitle != null : !MAIN_TITLE_EDEFAULT.equals(mainTitle);
 		case DocumentStructurePackage.TEXT_DOCUMENT__TEXT_DOCUMENT_PART:

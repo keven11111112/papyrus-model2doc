@@ -44,10 +44,11 @@
         <details key="documentation" value="This field will allow a better integration with the Papyrus Architecture Framework.&#xD;&#xA;The value will be something like &quot;org.eclipse.papyrus.uml.genericdocumenttemplate&quot;.&#xD;&#xA;This field will be used to find the ViewPrototype of an instance of DocumentTemplate.&#xD;&#xA;This field is useless for usage outside of Papyrus, but we set its multiplicity to [1] to avoid possible mistake in Papyrus usages."/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="generationConfiguration"
-        ordered="false" lowerBound="1" eType="#//GenerationConfiguration" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="coverPage" ordered="false"
         eType="#//CoverPage" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="documentStructureGenerator"
+        ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.papyrus.model2doc.core.generatorconfiguration/model/generatorconfiguration.ecore#//IDocumentStructureGeneratorConfiguration"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DocumentTemplatePrototype">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" ordered="false" lowerBound="1"
@@ -58,12 +59,6 @@
         eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="documentTemplate" ordered="false"
         lowerBound="1" eType="#//DocumentTemplate" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GenerationConfiguration">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ouputFile" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ouputFolder" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CoverPage">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" ordered="false" lowerBound="1"

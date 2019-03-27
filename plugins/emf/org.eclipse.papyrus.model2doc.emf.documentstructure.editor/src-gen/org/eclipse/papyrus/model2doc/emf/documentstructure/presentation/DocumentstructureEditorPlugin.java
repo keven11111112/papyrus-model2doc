@@ -21,6 +21,8 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.provider.GeneratorconfigurationEditPlugin;
+
 /**
  * This is the central singleton for the Documentstructure editor plugin.
  * <!-- begin-user-doc -->
@@ -57,6 +59,7 @@ public final class DocumentstructureEditorPlugin extends EMFPlugin {
 	public DocumentstructureEditorPlugin() {
 		super(new ResourceLocator[] {
 				EcoreEditPlugin.INSTANCE,
+				GeneratorconfigurationEditPlugin.INSTANCE,
 		});
 	}
 

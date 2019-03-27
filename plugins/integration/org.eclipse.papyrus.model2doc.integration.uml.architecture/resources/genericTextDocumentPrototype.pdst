@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<documentstructuretemplate:DocumentTemplatePrototype xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:documentstructuretemplate="http://www.eclipse.org/papyrus/model2doc/emf/1.0.0/documentstructuretemplate" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmi:id="_N7ViMD6EEemyE7d-JqIr-A" type="GenericUMLDocumentStructureTemplate" iconPath="platform:/plugin/org.eclipse.papyrus.model2doc.integration.uml.architecture/icons/generic_document.png" description="Generic Template for UML documentation">
+<documentstructuretemplate:DocumentTemplatePrototype xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:documentstructuretemplate="http://www.eclipse.org/papyrus/model2doc/emf/1.0.0/documentstructuretemplate" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:generatorconfiguration="http://www.eclipse.org/papyrus/model2doc/1.0.0/generatorconfiguration" xmi:id="_N7ViMD6EEemyE7d-JqIr-A" type="GenericUMLDocumentStructureTemplate" iconPath="platform:/plugin/org.eclipse.papyrus.model2doc.integration.uml.architecture/icons/generic_document.png" description="Generic Template for UML documentation">
   <documentTemplate xmi:type="documentstructuretemplate:TextDocumentTemplate" xmi:id="_QsjsoD6EEemyE7d-JqIr-A" documentTemplatePrototype="_N7ViMD6EEemyE7d-JqIr-A" name="UML Document" kindId="org.eclipse.papyrus.model2doc.uml.architecture">
     <coverPage xmi:type="documentstructuretemplate:CoverPage" xmi:id="_PuH_wEsMEemz89VRlkPbLw" path="platform:/plugin/org.eclipse.papyrus.model2doc.integration.uml.architecture/template/PapyrusTemplate.ott"/>
+    <documentStructureGenerator xmi:type="generatorconfiguration:DefaultDocumentStructureGeneratorConfiguration" xmi:id="_9Q98AFIeEemOIbfVEaiEvg" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.odt" saveDocumentStructure="true" saveImages="true" structureGeneratorId="org.eclipse.papyrus.model2doc.documentstructure.generator" imageFolder="output/images" structureFolder="output"/>
     <documentPart xmi:type="documentstructuretemplate:TableOfContents" xmi:id="_74eOgEsMEemzsPCsrzvLCg" tocTitle="Table Of Contents"/>
     <documentPart xmi:type="documentstructuretemplate:Body" xmi:id="_9oFyAEsMEemzsPCsrzvLCg">
       <objectPartTemplate xmi:type="documentstructuretemplate:EClassDocumentPartTemplate" xmi:id="_-OWgwEsMEemzsPCsrzvLCg" generate="true" generateTitle="true" filterRule="TYPE_OF">
@@ -12,6 +13,21 @@
           <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//StructuredClassifier/ownedAttribute"/>
         </featurePartTemplates>
         <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+      </objectPartTemplate>
+      <objectPartTemplate xmi:type="documentstructuretemplate:EClassDocumentPartTemplate" xmi:id="_oYt0cFFSEem-LMNuhjwlFQ" filterRule="TYPE_OF">
+        <featurePartTemplates xmi:type="documentstructuretemplate:EReferenceDocumentPartTemplate" xmi:id="_q63BEFFSEem-LMNuhjwlFQ">
+          <objectPartTemplates xmi:type="documentstructuretemplate:EClassDocumentPartTemplate" xmi:id="_seTw0FFSEem-LMNuhjwlFQ" generate="true" generateTitle="true" filterRule="TYPE_OF">
+            <featurePartTemplates xmi:type="documentstructuretemplate:EReferenceDocumentPartTemplate" xmi:id="_seTw0VFSEem-LMNuhjwlFQ" generate="true" generateTitle="true">
+              <objectPartTemplates xmi:type="documentstructuretemplate:EClassDocumentPartTemplate" xmi:id="_seUX4FFSEem-LMNuhjwlFQ" generate="true" generateTitle="true" filterRule="TYPE_OF">
+                <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Property"/>
+              </objectPartTemplates>
+              <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//StructuredClassifier/ownedAttribute"/>
+            </featurePartTemplates>
+            <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+          </objectPartTemplates>
+          <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
+        </featurePartTemplates>
+        <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
       </objectPartTemplate>
     </documentPart>
   </documentTemplate>

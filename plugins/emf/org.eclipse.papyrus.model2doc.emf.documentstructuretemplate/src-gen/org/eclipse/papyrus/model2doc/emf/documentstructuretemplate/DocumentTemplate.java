@@ -15,6 +15,8 @@ package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate;
 
 import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Document Template</b></em>'.
@@ -30,8 +32,8 @@ import org.eclipse.emf.ecore.EObject;
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getName <em>Name</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getDescription <em>Description</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getKindId <em>Kind Id</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getGenerationConfiguration <em>Generation Configuration</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getCoverPage <em>Cover Page</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getDocumentStructureGenerator <em>Document Structure Generator</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getDocumentTemplate()
@@ -213,35 +215,6 @@ public interface DocumentTemplate extends EObject {
 	void setKindId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Generation Configuration</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Generation Configuration</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the value of the '<em>Generation Configuration</em>' containment reference.
-	 * @see #setGenerationConfiguration(GenerationConfiguration)
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getDocumentTemplate_GenerationConfiguration()
-	 * @model containment="true" required="true" ordered="false"
-	 * @generated
-	 */
-	GenerationConfiguration getGenerationConfiguration();
-
-	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getGenerationConfiguration <em>Generation Configuration</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *                  the new value of the '<em>Generation Configuration</em>' containment reference.
-	 * @see #getGenerationConfiguration()
-	 * @generated
-	 */
-	void setGenerationConfiguration(GenerationConfiguration value);
-
-	/**
 	 * Returns the value of the '<em><b>Cover Page</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -269,6 +242,35 @@ public interface DocumentTemplate extends EObject {
 	 * @generated
 	 */
 	void setCoverPage(CoverPage value);
+
+	/**
+	 * Returns the value of the '<em><b>Document Structure Generator</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Document Structure Generator</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the value of the '<em>Document Structure Generator</em>' containment reference.
+	 * @see #setDocumentStructureGenerator(IDocumentStructureGeneratorConfiguration)
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getDocumentTemplate_DocumentStructureGenerator()
+	 * @model containment="true" required="true" ordered="false"
+	 * @generated
+	 */
+	IDocumentStructureGeneratorConfiguration getDocumentStructureGenerator();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getDocumentStructureGenerator <em>Document Structure Generator</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *                  the new value of the '<em>Document Structure Generator</em>' containment reference.
+	 * @see #getDocumentStructureGenerator()
+	 * @generated
+	 */
+	void setDocumentStructureGenerator(IDocumentStructureGeneratorConfiguration value);
 
 	/**
 	 * <!-- begin-user-doc -->
