@@ -10,18 +10,18 @@
 	<name>Papyrus Model2Doc</name>
 
 	<properties>
-		<tycho-version>1.0.0</tycho-version>
-		<tychoExtrasVersion>1.0.0</tychoExtrasVersion>
-		<jarSignerVersion>1.1.2</jarSignerVersion>
-		<findbugs.version>3.0.1</findbugs.version>
-		<xtext.version>2.11.0</xtext.version>
-		<jboss.version>0.26.0</jboss.version>
-		<jacoco.version>0.7.9</jacoco.version>
+		<tycho-version>1.3.0</tycho-version>
+		<tychoExtrasVersion>1.3.0</tychoExtrasVersion>
+		<jarSignerVersion>1.1.5</jarSignerVersion>
+		<findbugs.version>3.0.5</findbugs.version>
+		<xtext.version>2.16.0</xtext.version>
+		<jboss.version>1.3.0</jboss.version>
+		<jacoco.version>0.8.2</jacoco.version>
 		<testConfig>CI_TESTS_CONFIG</testConfig>
 		<test.argLine>-Xms512m -Xmx2048m -XX:SoftRefLRUPolicyMSPerMB=100</test.argLine>
 		<java.source>1.8</java.source>
 		<java.target>1.8</java.target>
-		<mylyn.wikitext.version>2.4.0-SNAPSHOT</mylyn.wikitext.version>
+		<mylyn.wikitext.version>3.0.29</mylyn.wikitext.version>
 
 		<targetPlatform.groupID>org.eclipse.papyrus.model2doc.releng-main</targetPlatform.groupID>
 		<targetPlatform.artifactID>org.eclipse.papyrus.model2doc.targetplatform.photon</targetPlatform.artifactID>
