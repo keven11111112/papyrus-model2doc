@@ -31,7 +31,7 @@
 				<!-- https://github.com/jbosstools/jbosstools-maven-plugins/wiki -->
 				<groupId>org.jboss.tools.tycho-plugins</groupId>
 				<artifactId>repository-utils</artifactId>
-				<version>0.23.2</version>
+				<version>${jboss.version}</version>
 				<executions>
 					<execution>
 						<id>generate-facade</id>
