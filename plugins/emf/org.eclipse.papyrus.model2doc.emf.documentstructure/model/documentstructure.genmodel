@@ -40,7 +40,8 @@
   </genAnnotations>
   <foreignModel>documentstructure.uml</foreignModel>
   <genPackages xsi:type="genmodel:GenPackage" prefix="DocumentStructure" basePackage="org.eclipse.papyrus.model2doc.emf"
-      disposableProviderFactory="true" ecorePackage="documentstructure.ecore#/">
+      disposableProviderFactory="true" multipleEditorPages="false" fileExtensions="pds"
+      ecorePackage="documentstructure.ecore#/">
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructure.ecore#//TextDocument">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructure.ecore#//TextDocument/mainTitle"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"

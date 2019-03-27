@@ -39,7 +39,7 @@
             id="org.eclipse.papyrus.model2doc.emf.documentstructure.presentation.DocumentStructureEditorID"
             name="%_UI_DocumentStructureEditor_label"
             icon="icons/full/obj16/DocumentStructureModelFile.gif"
-            extensions="documentstructure"
+            extensions="pds"
             class="org.eclipse.papyrus.model2doc.emf.documentstructure.presentation.DocumentStructureEditor"
             contributorClass="org.eclipse.papyrus.model2doc.emf.documentstructure.presentation.DocumentStructureActionBarContributor">
       </editor>
