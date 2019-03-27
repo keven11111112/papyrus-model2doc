@@ -19,6 +19,8 @@
 
 	<modules>
 		<module>org.eclipse.papyrus.model2doc.core</module>
+		<module>org.eclipse.papyrus.model2doc.core.generatorconfiguration</module>
+		<module>org.eclipse.papyrus.model2doc.core.generatorconfiguration.edit</module>
 		<module>org.eclipse.papyrus.model2doc.core.onefile</module>
 		<module>org.eclipse.papyrus.model2doc.core.ui</module>
 	</modules>
