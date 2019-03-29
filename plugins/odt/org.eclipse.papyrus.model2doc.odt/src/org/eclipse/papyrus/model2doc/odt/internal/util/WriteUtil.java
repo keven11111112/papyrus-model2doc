@@ -78,7 +78,7 @@ public class WriteUtil {
 
 	/**
 	 * Add Paragraph.
-	 * 
+	 *
 	 * @param xTextCursor
 	 * @param text
 	 * @param processRichText
@@ -94,7 +94,7 @@ public class WriteUtil {
 
 	/**
 	 * Add control character to end of document.
-	 * 
+	 *
 	 * @param xTextCursor
 	 * @param controlCharacter
 	 */
@@ -106,7 +106,7 @@ public class WriteUtil {
 
 	/**
 	 * Add Text.
-	 * 
+	 *
 	 * @param xTextCursor
 	 * @param text
 	 */
@@ -117,7 +117,7 @@ public class WriteUtil {
 
 	/**
 	 * Add TextContent.
-	 * 
+	 *
 	 * @param xTextCursor
 	 * @param text
 	 */
@@ -238,7 +238,7 @@ public class WriteUtil {
 
 	/**
 	 * End line.
-	 * 
+	 *
 	 * @param xTextCursor
 	 */
 	public static void endLine(XTextCursor xTextCursor) {
@@ -248,7 +248,7 @@ public class WriteUtil {
 
 	/**
 	 * End paragraph.
-	 * 
+	 *
 	 * @param xTextCursor
 	 */
 	public static void endParagraph(XTextCursor xTextCursor) {
@@ -257,7 +257,7 @@ public class WriteUtil {
 
 	/**
 	 * Insert content from text file.
-	 * 
+	 *
 	 * @param xTextCursor
 	 * @param fileURL
 	 */
@@ -276,7 +276,7 @@ public class WriteUtil {
 
 	/**
 	 * Remove HTML/RichText tags from string.
-	 * 
+	 *
 	 * @param text
 	 * @return
 	 */
@@ -286,7 +286,7 @@ public class WriteUtil {
 
 	/**
 	 * Add Paragraph with Rich Text format.
-	 * 
+	 *
 	 * @param xTextCursor
 	 * @param text
 	 */
@@ -326,15 +326,20 @@ public class WriteUtil {
 
 	/**
 	 * Add Table.
-	 * 
+	 *
 	 * @param xTextCursor
 	 * @param table
-	 *                        the table contents
+	 *            the table contents
 	 * @param odtEditor
 	 * @param style
 	 */
 	public static void addTable(XTextCursor xTextCursor, Table table, ODTEditor odtEditor, Object style) {
-
+		// Set number of rows and columns
+		int numRows = table.getAllRows().size();
+		if (numRows <= 0) {
+			return;
+		}
+		int numCols = table.getAllRows().get(0).size();
 		try {
 			XMultiServiceFactory xMultiServiceFactory = odtEditor.getXMultiServiceFactory();
 			// create a text table
@@ -348,14 +353,10 @@ public class WriteUtil {
 				backColor = style;
 			}
 
-			// Set number of rows and columns
-			int numRows = 0;
-			int numCols = 0;
 
-			numRows = table.getAllRows().size();
-			numCols = table.getAllRows().get(0).size();
 
-			if (numRows > 0 && numCols > 0) {
+
+			if (numCols > 0) {
 
 				// Verify if there are row titles
 				if (table.getRowTitles() != null && !table.getRowTitles().isEmpty()) {

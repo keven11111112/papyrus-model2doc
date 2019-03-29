@@ -20,16 +20,12 @@ import org.eclipse.papyrus.model2doc.core.internal.util.FileIOUtil;
 
 /**
  * Implemented service class for FILE I/O management.
- * 
+ *
  * @since 2.0
  *
  */
 public class FileIOServiceImpl implements FileIOService {
 
-	@Override
-	public String folderInWorkspaceToURL(String folderPath) {
-		return FileIOUtil.folderInWorkspaceToURL(folderPath);
-	}
 
 	@Override
 	public File createFile(String pathName, String text) {
@@ -41,9 +37,5 @@ public class FileIOServiceImpl implements FileIOService {
 		FileIOUtil.removeFile(file);
 	}
 
-	@Override
-	public void createFoldersPath(String foldersPath) {
-		FileIOUtil.createFoldersPath(foldersPath);
-	}
 
 }

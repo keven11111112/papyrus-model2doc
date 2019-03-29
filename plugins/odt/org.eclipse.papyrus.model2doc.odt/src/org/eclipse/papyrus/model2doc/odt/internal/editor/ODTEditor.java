@@ -15,17 +15,16 @@
 package org.eclipse.papyrus.model2doc.odt.internal.editor;
 
 import org.eclipse.jface.dialogs.MessageDialog;
-import org.eclipse.swt.widgets.Display;
-
 import org.eclipse.papyrus.model2doc.core.config.GeneratorConfig;
-import org.eclipse.papyrus.model2doc.odt.internal.message.Messages;
 import org.eclipse.papyrus.model2doc.odt.Activator;
+import org.eclipse.papyrus.model2doc.odt.internal.message.Messages;
 import org.eclipse.papyrus.model2doc.odt.internal.util.ExtensionConstants;
-import org.eclipse.papyrus.model2doc.odt.service.LibreOfficeInstallationService;
-import org.eclipse.papyrus.model2doc.odt.service.LibreOfficeInstallationServiceImpl;
+import org.eclipse.papyrus.model2doc.odt.internal.util.LibreOfficeInstallationPathUtil;
 import org.eclipse.papyrus.model2doc.odt.service.ODTEditorService;
 import org.eclipse.papyrus.model2doc.odt.service.ODTFileIOService;
 import org.eclipse.papyrus.model2doc.odt.service.ODTFileIOServiceImpl;
+import org.eclipse.swt.widgets.Display;
+
 import com.sun.star.awt.XWindow;
 import com.sun.star.beans.PropertyValue;
 import com.sun.star.frame.XComponentLoader;
@@ -70,9 +69,9 @@ public class ODTEditor {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param projectFolder
-	 * 
+	 *
 	 * @param generatorConfig
 	 */
 	public ODTEditor(String projectFolder) {
@@ -84,7 +83,7 @@ public class ODTEditor {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param generatorConfig
 	 */
 	public ODTEditor(GeneratorConfig generatorConfig) {
@@ -102,7 +101,7 @@ public class ODTEditor {
 
 	/**
 	 * Get text document.
-	 * 
+	 *
 	 * @return
 	 */
 	public XTextDocument getXTextDocument() {
@@ -111,7 +110,7 @@ public class ODTEditor {
 
 	/**
 	 * Get XMultiComponentFactory.
-	 * 
+	 *
 	 * @return
 	 */
 	public XMultiComponentFactory getXMultiComponentFactory() {
@@ -120,7 +119,7 @@ public class ODTEditor {
 
 	/**
 	 * Get XMultiServiceFactory.
-	 * 
+	 *
 	 * @return
 	 */
 	public XMultiServiceFactory getXMultiServiceFactory() {
@@ -129,7 +128,7 @@ public class ODTEditor {
 
 	/**
 	 * Get XComponentContext.
-	 * 
+	 *
 	 * @return
 	 */
 	public XComponentContext getXComponentContext() {
@@ -138,7 +137,7 @@ public class ODTEditor {
 
 	/**
 	 * Get Page Cursor.
-	 * 
+	 *
 	 * @return
 	 */
 	public XPageCursor getPageCursor() {
@@ -150,9 +149,9 @@ public class ODTEditor {
 
 	/**
 	 * Open document.
-	 * 
+	 *
 	 * @param documentURL
-	 *                        the full URL of document (LibreOffice format, ex.: file:///C:/folder/projectName/document.odt)
+	 *            the full URL of document (LibreOffice format, ex.: file:///C:/folder/projectName/document.odt)
 	 */
 	public void openDocument(String documentURL) {
 		XComponent xComponent = getDocument(documentURL);
@@ -168,7 +167,7 @@ public class ODTEditor {
 
 	/**
 	 * Save document.
-	 * 
+	 *
 	 * @param fileName
 	 */
 	public void save(String fileName) {
@@ -178,10 +177,10 @@ public class ODTEditor {
 
 	/**
 	 * Save document as "extension".
-	 * 
+	 *
 	 * @param fileName
 	 * @param extension
-	 * 
+	 *
 	 * @return
 	 * 		the full URL of exported document (LibreOffice format, ex.: file:///C:/folder/projectName/document.pdf)
 	 */
@@ -198,12 +197,12 @@ public class ODTEditor {
 
 	/**
 	 * Export document.
-	 * 
+	 *
 	 * @param fileName
 	 * @param documentURL
-	 *                        the full URL of document (LibreOffice format, ex.: file:///C:/folder/projectName/document.odt)
+	 *            the full URL of document (LibreOffice format, ex.: file:///C:/folder/projectName/document.odt)
 	 * @param extension
-	 * 
+	 *
 	 * @return
 	 * 		the full URL of exported document (LibreOffice format, ex.: file:///C:/folder/projectName/document.pdf)
 	 */
@@ -218,7 +217,7 @@ public class ODTEditor {
 
 	/**
 	 * Get format by extension.
-	 * 
+	 *
 	 * @param extention
 	 * @return
 	 */
@@ -232,19 +231,19 @@ public class ODTEditor {
 			return "writer_pdf_Export"; //$NON-NLS-1$
 
 		default:
-			return "writer8";
+			return "writer8"; //$NON-NLS-1$
 		}
 	}
 
 	/**
 	 * Send mail with attached document.
-	 * 
+	 *
 	 * @param subject
 	 * @param documentToAttach
-	 *                             the full URL of document (LibreOffice format, ex.: file:///C:/folder/projectName/document.odt)
+	 *            the full URL of document (LibreOffice format, ex.: file:///C:/folder/projectName/document.odt)
 	 */
 	public void sendMail(String subject, String documentToAttach) {
-		System.out.println("Subject: " + subject + " DocomentURL: " + documentToAttach);
+		System.out.println("Subject: " + subject + " DocumentURL: " + documentToAttach); //$NON-NLS-1$ //$NON-NLS-2$
 
 		XSimpleMailClientSupplier xSimpleMailClientSupplier = createSimpleMailClientSupplier();
 		if (xSimpleMailClientSupplier != null) {
@@ -272,9 +271,9 @@ public class ODTEditor {
 
 	/**
 	 * Close document.
-	 * 
+	 *
 	 * @param documentURL
-	 *                        the full URL of document (LibreOffice format, ex.: file:///C:/folder/projectName/document.odt)
+	 *            the full URL of document (LibreOffice format, ex.: file:///C:/folder/projectName/document.odt)
 	 */
 	public void closeDocument(String documentURL) {
 		XComponent xComponent = getDocument(documentURL);
@@ -287,9 +286,9 @@ public class ODTEditor {
 
 	/**
 	 * Get document object.
-	 * 
+	 *
 	 * @param documentURL
-	 *                        the full URL of document (LibreOffice format, ex.: file:///C:/folder/projectName/document.odt)
+	 *            the full URL of document (LibreOffice format, ex.: file:///C:/folder/projectName/document.odt)
 	 * @return
 	 */
 	public XComponent getDocument(String documentURL) {
@@ -301,9 +300,9 @@ public class ODTEditor {
 			props[0].Value = true;
 
 			try {
-				xComponent = officeLoader.loadComponentFromURL(documentURL, "_blank", 0, props);
+				xComponent = officeLoader.loadComponentFromURL(documentURL, "_blank", 0, props); //$NON-NLS-1$
 			} catch (IllegalArgumentException | IOException e) {
-				Activator.log.error("Unable to get document object from" + documentURL + " : ", e); //$NON-NLS-1$
+				Activator.log.error("Unable to get document object from" + documentURL + " : ", e); //$NON-NLS-1$ //$NON-NLS-2$
 			}
 		}
 
@@ -313,45 +312,45 @@ public class ODTEditor {
 	/**
 	 * This method does the UNO bootstrapping, gets the remote service manager and
 	 * the loader object.
-	 * 
+	 *
 	 * @param projectFolder
 	 */
 	private void loadOffice(String projectFolder) {
-		LibreOfficeInstallationService libreOfficeInstallationService = new LibreOfficeInstallationServiceImpl();
-		String oooExeFolder = libreOfficeInstallationService.getLibreOfficeInstallation(projectFolder);
-		if (null != oooExeFolder && !oooExeFolder.isEmpty()) {
-			try {
-				// Get the remote LibreOffice component context
-				xComponentContext = BootstrapSocketConnector.bootstrap(oooExeFolder);
-
-				// Get the remote LibreOffice service manager
-				xMultiComponentFactory = xComponentContext.getServiceManager();
-				if (xMultiComponentFactory != null) {
-					Object oDesktop = xMultiComponentFactory.createInstanceWithContext("com.sun.star.frame.Desktop", xComponentContext); //$NON-NLS-1$
-					xDesktop = UnoRuntime.queryInterface(XDesktop.class, oDesktop);
-
-					officeLoader = UnoRuntime.queryInterface(XComponentLoader.class, xDesktop);
-				}
-			} catch (Exception e) {
-				Activator.log.error(e);
-			} finally {
-				// If it is not possible load LibreOffice.
-				if (officeLoader == null) {
-					MessageDialog msgDialog = new MessageDialog(Display.getDefault().getActiveShell(),
-							"Warning - The generator does not work", //$NON-NLS-1$
-							null, "Please verify that LibreOffice version 6 is installed.", //$NON-NLS-1$
-							MessageDialog.WARNING, new String[] { "OK" }, 0); //$NON-NLS-1$
-					msgDialog.open();
-				}
-			}
-		} else {
-			// TODO : do something
+		final String oooExeFolder = LibreOfficeInstallationPathUtil.getLibreOfficeInstallationPath();
+		if (null == oooExeFolder || oooExeFolder.isEmpty()) {
+			Activator.log.warn("The path for the LibreOffice installation is null or empty. We stop the documentation generation."); //$NON-NLS-1$
 		}
+		try {
+			// Get the remote LibreOffice component context
+			xComponentContext = BootstrapSocketConnector.bootstrap(oooExeFolder);
+
+			// Get the remote LibreOffice service manager
+			xMultiComponentFactory = xComponentContext.getServiceManager();
+			if (xMultiComponentFactory != null) {
+				Object oDesktop = xMultiComponentFactory.createInstanceWithContext("com.sun.star.frame.Desktop", xComponentContext); //$NON-NLS-1$
+				xDesktop = UnoRuntime.queryInterface(XDesktop.class, oDesktop);
+
+				officeLoader = UnoRuntime.queryInterface(XComponentLoader.class, xDesktop);
+			}
+		} catch (Exception e) {
+			Activator.log.error(e);
+		} finally {
+			// If it is not possible load LibreOffice.
+			if (officeLoader == null) {
+				MessageDialog.openError(Display.getCurrent().getActiveShell(), Messages.ODTEditor_LibreOfficeDocumentGenerator_ErrorTitle,
+						Messages.ODTEditor_LibreOfficeDocumentGenerator_ErrorMessage);
+
+				// in this case we erase the libreOffice path
+				LibreOfficeInstallationPathUtil.eraseLibreOfficeInstallationPath();
+			}
+
+		}
+
 	}
 
 	/**
 	 * Create text document.
-	 * 
+	 *
 	 * @param templateURL
 	 * @return
 	 */
@@ -381,7 +380,7 @@ public class ODTEditor {
 
 	/**
 	 * Create new document without template.
-	 * 
+	 *
 	 * @return
 	 */
 	private XComponent createNewDocument() {
@@ -402,7 +401,7 @@ public class ODTEditor {
 
 	/**
 	 * Create new document from template.
-	 * 
+	 *
 	 * @param templateURL
 	 * @return
 	 */
@@ -433,7 +432,7 @@ public class ODTEditor {
 
 	/**
 	 * Create Simple Mail Client Supplier.
-	 * 
+	 *
 	 * @return
 	 */
 	private XSimpleMailClientSupplier createSimpleMailClientSupplier() {
@@ -441,12 +440,12 @@ public class ODTEditor {
 
 		Object oSimpleMailClientSupplier = null;
 		try {
-			oSimpleMailClientSupplier = xMultiComponentFactory.createInstanceWithContext("com.sun.star.system.SimpleSystemMail", xComponentContext);
+			oSimpleMailClientSupplier = xMultiComponentFactory.createInstanceWithContext("com.sun.star.system.SimpleSystemMail", xComponentContext); //$NON-NLS-1$
 			// If user uses Windows, the result is not null
 			if (oSimpleMailClientSupplier != null) {
 				xSimpleMailClientSupplier = UnoRuntime.queryInterface(XSimpleMailClientSupplier.class, oSimpleMailClientSupplier);
 			} else {
-				oSimpleMailClientSupplier = xMultiComponentFactory.createInstanceWithContext("com.sun.star.system.SimpleCommandMail", xComponentContext);
+				oSimpleMailClientSupplier = xMultiComponentFactory.createInstanceWithContext("com.sun.star.system.SimpleCommandMail", xComponentContext); //$NON-NLS-1$
 				// If user uses Linux or Mac, the result is not null
 				if (oSimpleMailClientSupplier != null) {
 					xSimpleMailClientSupplier = UnoRuntime.queryInterface(XSimpleMailClientSupplier.class, oSimpleMailClientSupplier);
@@ -461,10 +460,10 @@ public class ODTEditor {
 
 	/**
 	 * Save document.
-	 * 
+	 *
 	 * @param fileName
 	 * @param extension
-	 * 
+	 *
 	 * @return
 	 * 		the full URL of exported document (LibreOffice format, ex.: file:///C:/folder/projectName/document.pdf)
 	 */
@@ -501,7 +500,7 @@ public class ODTEditor {
 
 	/**
 	 * Close document.
-	 * 
+	 *
 	 */
 	private void closeDocument() {
 		XCloseable closeable = UnoRuntime.queryInterface(XCloseable.class, xTextDocument);
@@ -520,7 +519,7 @@ public class ODTEditor {
 
 	/**
 	 * Close LibreOffice.
-	 * 
+	 *
 	 */
 	private void closeLibreOffice() {
 		if (xDesktop == null) {

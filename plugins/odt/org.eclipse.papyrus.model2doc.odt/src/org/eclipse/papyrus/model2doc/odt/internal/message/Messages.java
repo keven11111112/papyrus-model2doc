@@ -24,6 +24,10 @@ public class Messages extends NLS {
 	
 	private static final String BUNDLE_NAME = "org.eclipse.papyrus.model2doc.odt.internal.message.messages"; //$NON-NLS-1$
 
+	public static String ODTEditor_LibreOfficeDocumentGenerator_ErrorMessage;
+
+	public static String ODTEditor_LibreOfficeDocumentGenerator_ErrorTitle;
+
 	public static String ODTEditor_SendMail;
 
 	public static String ODTEditor_MailClientWasNotFound;

@@ -24,37 +24,20 @@ import java.io.File;
 public interface FileIOService {
 
 	/**
-	 * Convert folder in workspace to URL format.
-	 * 
-	 * @param folderPath
-	 *            the path of the folder
-	 * @return the string of URL of folder path.
-	 */
-	public String folderInWorkspaceToURL(String folderPath);
-
-	/**
 	 * Create file.
-	 * 
+	 *
 	 * @param pathName
 	 * @param text
-	 * 
+	 *
 	 * @return
 	 */
 	public File createFile(String pathName, String text);
 
 	/**
 	 * Remove file.
-	 * 
+	 *
 	 * @param file
 	 */
 	public void removeFile(File file);
-
-	/**
-	 * Create folders path.
-	 * 
-	 * @param foldersPath
-	 * @return
-	 */
-	public void createFoldersPath(String foldersPath);
 
 }
