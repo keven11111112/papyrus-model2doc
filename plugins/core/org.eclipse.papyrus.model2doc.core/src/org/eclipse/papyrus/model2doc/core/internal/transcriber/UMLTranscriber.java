@@ -14,17 +14,10 @@
  *****************************************************************************/
 package org.eclipse.papyrus.model2doc.core.internal.transcriber;
 
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import org.eclipse.papyrus.uml.internationalization.utils.utils.UMLLabelInternationalization;
-import org.eclipse.uml2.uml.Class;
-import org.eclipse.uml2.uml.Package;
-import org.eclipse.uml2.uml.Property;
-import org.eclipse.uml2.uml.Type;
 
 import org.eclipse.papyrus.model2doc.core.service.DiagramToImageService;
 import org.eclipse.papyrus.model2doc.core.service.DiagramToImageServiceImpl;
@@ -33,6 +26,11 @@ import org.eclipse.papyrus.model2doc.core.transcription.ImageDescription;
 import org.eclipse.papyrus.model2doc.core.transcription.Table;
 import org.eclipse.papyrus.model2doc.core.transcription.TableFactory;
 import org.eclipse.papyrus.model2doc.core.transcription.Transcription;
+import org.eclipse.papyrus.uml.internationalization.utils.utils.UMLLabelInternationalization;
+import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.Type;
 
 /**
  * Default Transcriber for UML model.
@@ -44,13 +42,13 @@ public class UMLTranscriber implements Transcriber {
 
 	private Transcription transcription = null;
 
-	private List<Class> classes = new ArrayList<Class>();
+	private List<Class> classes = new ArrayList<>();
 
-	private List<String> propertities = new ArrayList<String>();
+	private List<String> propertities = new ArrayList<>();
 
 	private UMLLabelInternationalization umlLabelInternationalization = null;
 
-	private String outputFolder = null;
+	private String imageOutputFolder = null;
 
 	private DiagramToImageService diagramToImageService = new DiagramToImageServiceImpl();
 
@@ -67,7 +65,9 @@ public class UMLTranscriber implements Transcriber {
 		root = rootPackage;
 		this.transcription = transcription;
 		umlLabelInternationalization = UMLLabelInternationalization.getInstance();
-		outputFolder = transcription.getGeneratorConfig().getOutputFolder();
+		// in this version, we don't have an intermediate model storing images in its dedicated folder, so
+		// we use the project folder
+		imageOutputFolder = transcription.getGeneratorConfig().getDocumentFolder();
 	}
 
 	/**
@@ -79,9 +79,9 @@ public class UMLTranscriber implements Transcriber {
 		transcription.writeDocumentMainTitle(umlLabelInternationalization.getLabel(root));
 
 		transcription.writeTableOfContents("Table Of Contents");
-		
+
 		// Get images generated of diagrams
-		List<ImageDescription> images = diagramToImageService.getImagesOfDiagrams(root, outputFolder);
+		List<ImageDescription> images = diagramToImageService.getImagesOfDiagrams(root, imageOutputFolder);
 
 		// Import images
 		for (ImageDescription image : images) {
@@ -97,12 +97,12 @@ public class UMLTranscriber implements Transcriber {
 		columnTitles.add("Packages"); //$NON-NLS-1$
 		columnTitles.add("Classes"); //$NON-NLS-1$
 		table.setColumnTitles(columnTitles);
-		
-		//these 3 line add the rows header
+
+		// these 3 line add the rows header
 		List<String> rowTitles = new ArrayList<>();
 		table.setRowTitles(rowTitles);
 		int nbRow = 1;
-		
+
 		for (Package nestedPackage : root.getNestedPackages()) {
 			rowTitles.add(Integer.toString(nbRow));
 			nbRow++;
@@ -121,14 +121,14 @@ public class UMLTranscriber implements Transcriber {
 
 			table.setRowContents(rowContents);
 		}
-		transcription.addTable(table, 0xE06666); //$NON-NLS-1$
-		
+		transcription.addTable(table, 0xE06666);
+
 		// Transcribe nested packages owned by root package
 		for (Package nestedPackage : root.getNestedPackages()) {
 			transcribeNestedPackages(nestedPackage, 1);
 
 		}
-		
+
 		transcription.refreshTableOfContents();
 
 		// Save transcription
@@ -137,7 +137,7 @@ public class UMLTranscriber implements Transcriber {
 
 	/**
 	 * Get nested packages and transcribe them.
-	 * 
+	 *
 	 * @param owner
 	 *            owner package
 	 * @param level
@@ -148,7 +148,7 @@ public class UMLTranscriber implements Transcriber {
 		transcription.writeSectionTitle(umlLabelInternationalization.getLabel(owner), level);
 
 		// Get images generated of diagrams
-		List<ImageDescription> images = diagramToImageService.getImagesOfDiagrams(owner, outputFolder);
+		List<ImageDescription> images = diagramToImageService.getImagesOfDiagrams(owner, imageOutputFolder);
 
 		// Import images
 		for (ImageDescription image : images) {
@@ -166,7 +166,7 @@ public class UMLTranscriber implements Transcriber {
 
 	/**
 	 * Get classes and transcribe them.
-	 * 
+	 *
 	 * @param owner
 	 *            owner package
 	 */
@@ -186,7 +186,7 @@ public class UMLTranscriber implements Transcriber {
 			transcribeProperties(clazz);
 
 			// Get images generated of diagrams
-			List<ImageDescription> images = diagramToImageService.getImagesOfDiagrams(clazz, outputFolder);
+			List<ImageDescription> images = diagramToImageService.getImagesOfDiagrams(clazz, imageOutputFolder);
 
 			// Import images
 			for (ImageDescription image : images) {
@@ -198,7 +198,7 @@ public class UMLTranscriber implements Transcriber {
 
 	/**
 	 * Get properties and transcribe them.
-	 * 
+	 *
 	 * @param owner
 	 *            owner class
 	 */

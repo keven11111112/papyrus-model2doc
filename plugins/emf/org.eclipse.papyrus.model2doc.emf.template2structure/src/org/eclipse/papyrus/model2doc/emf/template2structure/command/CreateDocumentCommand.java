@@ -27,12 +27,14 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentStructureGeneratorConfiguration;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.operations.GeneratorConfigurationOperations;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Document;
-import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructureFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.internal.resource.DocumentStructureResource;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.GenerationConfiguration;
 import org.eclipse.papyrus.model2doc.emf.template2structure.Activator;
 import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.service.TemplateToStructureMappingService;
 
@@ -61,7 +63,7 @@ public class CreateDocumentCommand extends RecordingCommand {
 	 *            the editing domain to use for this command
 	 */
 	public CreateDocumentCommand(final DocumentTemplate docTemplate, final TransactionalEditingDomain domain) {
-		super(domain, "Generate Document Structure Command", "Create the Document Structure Object and store it in a new file");
+		super(domain, "Generate Document Structure Command", "Create the Document Structure Object and store it in a new file"); //$NON-NLS-1$ //$NON-NLS-2$
 		this.documentTemplate = docTemplate;
 	}
 
@@ -75,33 +77,24 @@ public class CreateDocumentCommand extends RecordingCommand {
 		Assert.isTrue(result.size() == 1 && result.iterator().next() instanceof Document);
 		final Document document = (Document) result.iterator().next();
 
-		final GenerationConfiguration configuration = documentTemplate.getGenerationConfiguration();
+		final IDocumentStructureGeneratorConfiguration structureGeneratorConfig = this.documentTemplate.getDocumentStructureGenerator();
+		final IDocumentGeneratorConfiguration docGeneratorConfig = structureGeneratorConfig.createDocumentGeneratorConfiguration();
 
+		document.setDocumentGeneratorConfiguration(docGeneratorConfig);
 
-		// TODO : use a mapping for that or not ?
-		final org.eclipse.papyrus.model2doc.emf.documentstructure.GenerationConfiguration configuration2 = DocumentStructureFactory.eINSTANCE.createGenerationConfiguration();
-		configuration2.setOutputFile(configuration.getOuputFile());
-		configuration2.setOutputFolder(configuration.getOuputFolder());
-
-
-		final org.eclipse.papyrus.model2doc.emf.documentstructure.CoverPage coverPage = DocumentStructureFactory.eINSTANCE.createCoverPage();
-		coverPage.setPath(this.documentTemplate.getCoverPage().getPath());
-
-		document.setCoverPage(coverPage);
-		document.setGenerationConfiguration(configuration2);
-
-		if (null == document) {
-			Activator.log.info("The Document creations failed");
-			return;
-		}
 
 		// We create the new resource for this document
 		final Resource templateResource = this.documentTemplate.eResource();
 		ResourceSet resourceSet = templateResource.getResourceSet();
-		final URI templateURI = templateResource.getURI();
 
-		// TODO : change resource path each time?
-		final URI documentStructureURI = templateURI.trimFileExtension().appendFileExtension(DocumentStructureResource.FILE_EXTENSION);// TODO : result the output given in PathConfig ?
+		URI documentStructureURI = null;
+		final IDocumentStructureGeneratorConfiguration configuration = this.documentTemplate.getDocumentStructureGenerator();// TODO : rename me into configuration
+		if (configuration instanceof DefaultDocumentStructureGeneratorConfiguration) {
+			final String ecoreURI = GeneratorConfigurationOperations.getDocumentStructureFileEcoreURI((DefaultDocumentStructureGeneratorConfiguration) configuration, DocumentStructureResource.FILE_EXTENSION);
+			documentStructureURI = URI.createURI(ecoreURI);
+		} else {
+			// TODO : not supported
+		}
 
 		// 2. we create a new resource
 		ResourceSet rSet = new ResourceSetImpl();

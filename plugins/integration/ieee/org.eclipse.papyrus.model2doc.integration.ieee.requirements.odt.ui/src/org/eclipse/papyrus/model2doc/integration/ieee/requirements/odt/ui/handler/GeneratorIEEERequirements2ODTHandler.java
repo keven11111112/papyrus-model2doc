@@ -19,16 +19,15 @@ import java.io.File;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.Path;
-import org.eclipse.uml2.uml.Package;
-
-import org.eclipse.papyrus.model2doc.core.config.GeneratorConfig;
-import org.eclipse.papyrus.model2doc.core.config.GeneratorConfigFactory;
-import org.eclipse.papyrus.model2doc.core.service.TemplateResourceService;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentGeneratorConfiguration;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationFactory;
 import org.eclipse.papyrus.model2doc.documentview.ui.menu.handler.CreateDocumentViewEditorHandler;
-import org.eclipse.papyrus.model2doc.integration.ieee.requirements.odt.service.IEEERequirementsTemplateResourceService;
 import org.eclipse.papyrus.model2doc.integration.ieee.requirements.odt.transcriber.IEEERequirementsTranscriber;
 import org.eclipse.papyrus.model2doc.integration.ieee.requirements.odt.ui.Activator;
 import org.eclipse.papyrus.model2doc.odt.transcription.ODTTranscriptionFactory;
+import org.eclipse.uml2.uml.Package;
 
 /**
  * Handler class for generating ODT file from UML model with IEEE Requirements Document Profile.
@@ -36,7 +35,7 @@ import org.eclipse.papyrus.model2doc.odt.transcription.ODTTranscriptionFactory;
 public class GeneratorIEEERequirements2ODTHandler extends CreateDocumentViewEditorHandler {
 
 	private String generatedDocumentFileURI;
-	
+
 	/**
 	 * @see org.eclipse.core.commands.IHandler#execute(org.eclipse.core.commands.ExecutionEvent)
 	 *
@@ -52,30 +51,36 @@ public class GeneratorIEEERequirements2ODTHandler extends CreateDocumentViewEdit
 
 	@Override
 	public boolean generateDocument(String name) {
-		TemplateResourceService templateResourceService =  new IEEERequirementsTemplateResourceService();
-		String projectFolder = getWorkspaceResourceService().calculateProjectFolder(getSelection());
-		
-		GeneratorConfig generatorConfig = GeneratorConfigFactory.INSTANCE.getDefaultGeneratorConfig();
+		final EObject selectedElement = getSelection();
+		if (null == selectedElement || null == selectedElement.eResource()) {
+			return false;
+		}
+		URI uri = selectedElement.eResource().getURI();
+		uri = uri.trimFileExtension();
+		uri = uri.trimSegments(uri.segmentsList().size() - 2);
+
+		final String projectFolder = uri.toString();
+		DefaultDocumentGeneratorConfiguration generatorConfig = GeneratorConfigurationFactory.eINSTANCE.createDefaultDocumentGeneratorConfiguration();
+		generatorConfig.setDocumentFolder(projectFolder);
 		generatorConfig.setDocumentName(name);
-		generatorConfig.setOutputFolder(projectFolder);
-		generatorConfig.setProject(projectFolder);
-		generatorConfig.setTemplateStyleFileURI(templateResourceService.getTemplateURLFromPlugIn());
-		
+		final String templatePath = "platform:/plugin/" + org.eclipse.papyrus.model2doc.integration.ieee.requirements.odt.Activator.PLUGIN_ID + "/template/srs_template-ieee.ott";
+		generatorConfig.setTemplateFile(templatePath);
+
 		try {
 			// Execute generator
-			IEEERequirementsTranscriber ieeeRequirementsTranscriber =  new IEEERequirementsTranscriber((Package) getSelection(),
+			IEEERequirementsTranscriber ieeeRequirementsTranscriber = new IEEERequirementsTranscriber((Package) getSelection(),
 					ODTTranscriptionFactory.INSTANCE.getDefaultODTTranscription(null, generatorConfig));
 			ieeeRequirementsTranscriber.transcribe();
-			
+
 			StringBuilder uriBuilder = new StringBuilder();
-			uriBuilder.append(generatorConfig.getOutputFolder());
+			uriBuilder.append(projectFolder);
 			uriBuilder.append(File.separator);
 			uriBuilder.append(generatorConfig.getDocumentName());
 			uriBuilder.append(".odt"); //$NON-NLS-1$
-			
-			Path path = new Path (uriBuilder.toString());
-			generatedDocumentFileURI =  path.toString();
-			getWorkspaceResourceService().refreshWorkspace(generatorConfig.getProject());
+
+			Path path = new Path(uriBuilder.toString());
+			generatedDocumentFileURI = path.toString();
+			getWorkspaceResourceService().refreshWorkspace(generatorConfig.getDocumentFolder());
 			return true;
 		} catch (Exception e) {
 			Activator.log.error(e);
@@ -84,7 +89,7 @@ public class GeneratorIEEERequirements2ODTHandler extends CreateDocumentViewEdit
 	}
 
 	/**
-	 *  @since 2.0
+	 * @since 2.0
 	 */
 	@Override
 	public String getGeneratedDocumentFileURI() {

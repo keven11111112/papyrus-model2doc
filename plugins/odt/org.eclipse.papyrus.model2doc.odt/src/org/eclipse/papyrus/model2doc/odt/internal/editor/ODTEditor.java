@@ -15,7 +15,8 @@
 package org.eclipse.papyrus.model2doc.odt.internal.editor;
 
 import org.eclipse.jface.dialogs.MessageDialog;
-import org.eclipse.papyrus.model2doc.core.config.GeneratorConfig;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentGeneratorConfiguration;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.operations.GeneratorConfigurationOperations;
 import org.eclipse.papyrus.model2doc.odt.Activator;
 import org.eclipse.papyrus.model2doc.odt.internal.message.Messages;
 import org.eclipse.papyrus.model2doc.odt.internal.util.ExtensionConstants;
@@ -57,14 +58,20 @@ import ooo.connector.BootstrapSocketConnector;
  */
 public class ODTEditor {
 
+	private static final String LIBREOFFICE_FILE_PREFIX = "file:///"; //$NON-NLS-1$
+
+	private static final String STANDART_FILE_PREFIX = "file:/";//$NON-NLS-1$
+
+	private static final String ODT_FILE_EXTENSION = "odt"; //$NON-NLS-1$
+
 	private XComponentLoader officeLoader = null;
 	private XTextDocument xTextDocument = null;
 	private XDesktop xDesktop = null;
-	private GeneratorConfig configuration;
+	private DefaultDocumentGeneratorConfiguration configuration;
 	private XMultiComponentFactory xMultiComponentFactory = null;
 	private XMultiServiceFactory xMultiServiceFactory = null;
 	private XComponentContext xComponentContext = null;
-	private String projectFolder = null;
+	// private String projectFolder = null;
 	private ODTFileIOService fileIOService = null;
 
 	/**
@@ -77,8 +84,7 @@ public class ODTEditor {
 	public ODTEditor(String projectFolder) {
 		fileIOService = new ODTFileIOServiceImpl();
 		// Take LibreOffice Loader
-		this.projectFolder = projectFolder;
-		loadOffice(projectFolder);
+		loadOffice();
 	}
 
 	/**
@@ -86,15 +92,15 @@ public class ODTEditor {
 	 *
 	 * @param generatorConfig
 	 */
-	public ODTEditor(GeneratorConfig generatorConfig) {
+	public ODTEditor(DefaultDocumentGeneratorConfiguration generatorConfig) {
 		this.configuration = generatorConfig;
-		projectFolder = configuration.getProject();
 		// Take LibreOffice Loader
-		loadOffice(projectFolder);
+		loadOffice();
 		if (officeLoader != null) {
 			// Create text document
 			fileIOService = new ODTFileIOServiceImpl();
-			createTextDocument(fileIOService.convertTemplatePathForLibreOffice(generatorConfig));
+			final String templateURL = GeneratorConfigurationOperations.getTemplateFilePathInLocalPath(generatorConfig);
+			createTextDocument(templateURL);
 			xMultiServiceFactory = UnoRuntime.queryInterface(XMultiServiceFactory.class, xTextDocument);
 		}
 	}
@@ -312,10 +318,8 @@ public class ODTEditor {
 	/**
 	 * This method does the UNO bootstrapping, gets the remote service manager and
 	 * the loader object.
-	 *
-	 * @param projectFolder
 	 */
-	private void loadOffice(String projectFolder) {
+	private void loadOffice() {
 		final String oooExeFolder = LibreOfficeInstallationPathUtil.getLibreOfficeInstallationPath();
 		if (null == oooExeFolder || oooExeFolder.isEmpty()) {
 			Activator.log.warn("The path for the LibreOffice installation is null or empty. We stop the documentation generation."); //$NON-NLS-1$
@@ -359,7 +363,8 @@ public class ODTEditor {
 			XComponent xComponent = null;
 
 			if (templateURL != null && !templateURL.isEmpty()) {
-				xComponent = createNewDocumentFromTemplate(templateURL);
+
+				xComponent = createNewDocumentFromTemplate(convertToLibreOfficeFileURI(templateURL));
 			} else {
 				xComponent = createNewDocument();
 			}
@@ -403,6 +408,7 @@ public class ODTEditor {
 	 * Create new document from template.
 	 *
 	 * @param templateURL
+	 *            should be in the format : file:/OS_path or file:///OS_path
 	 * @return
 	 */
 	private XComponent createNewDocumentFromTemplate(String templateURL) {
@@ -419,7 +425,7 @@ public class ODTEditor {
 			props[1].Name = "AsTemplate"; //$NON-NLS-1$
 			props[1].Value = true;
 
-			xComponent = officeLoader.loadComponentFromURL(templateURL, "_blank", 0, props); //$NON-NLS-1$
+			xComponent = officeLoader.loadComponentFromURL(convertToLibreOfficeFileURI(templateURL), "_blank", 0, props); //$NON-NLS-1$
 		} catch (Exception e) {
 			Activator.log.error(e);
 		}
@@ -468,13 +474,9 @@ public class ODTEditor {
 	 * 		the full URL of exported document (LibreOffice format, ex.: file:///C:/folder/projectName/document.pdf)
 	 */
 	private String saveDocument(String fileName, String extension) {
-		StringBuilder fileNameWithExtension = new StringBuilder();
-		fileNameWithExtension.append(fileName);
-		fileNameWithExtension.append("."); //$NON-NLS-1$
-		fileNameWithExtension.append(extension);
-
 		XStorable store = UnoRuntime.queryInterface(XStorable.class, xTextDocument);
-		String saveFileURL = fileIOService.fileNameToURL(fileNameWithExtension.toString(), projectFolder);
+
+		final String saveFileURL = convertToLibreOfficeFileURI(GeneratorConfigurationOperations.getDocumentFileLocalPath(configuration, ODT_FILE_EXTENSION));
 
 		if (saveFileURL == null) {// not possible with the current implementation
 			return null;
@@ -539,7 +541,21 @@ public class ODTEditor {
 		} catch (java.lang.Exception e) {
 			Activator.log.error("Termination exception: ", e); //$NON-NLS-1$
 		}
+	}
 
+	/**
+	 *
+	 * @param fileURL
+	 *            a file url, starting with file:/ or file:///
+	 * @return
+	 * 		a file url starting with file:///
+	 */
+	private static final String convertToLibreOfficeFileURI(final String fileURL) {
+		String newFileURL = fileURL;
+		if (fileURL.startsWith(STANDART_FILE_PREFIX) && false == newFileURL.startsWith(LIBREOFFICE_FILE_PREFIX)) {
+			newFileURL = newFileURL.replaceFirst(STANDART_FILE_PREFIX, LIBREOFFICE_FILE_PREFIX);
+		}
+		return newFileURL;
 	}
 
 

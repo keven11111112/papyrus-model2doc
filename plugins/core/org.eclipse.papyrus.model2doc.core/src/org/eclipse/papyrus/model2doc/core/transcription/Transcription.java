@@ -17,6 +17,7 @@ package org.eclipse.papyrus.model2doc.core.transcription;
 import java.util.List;
 
 import org.eclipse.papyrus.model2doc.core.config.GeneratorConfig;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentGeneratorConfiguration;
 
 /**
  * Transcription Interface.
@@ -111,7 +112,7 @@ public interface Transcription {
 	 * 
 	 * @return
 	 */
-	public GeneratorConfig getGeneratorConfig();
+	public DefaultDocumentGeneratorConfiguration getGeneratorConfig();
 
 	/**
 	 * Verify if transcription can execute.

@@ -34,13 +34,10 @@ public class StructureToODTTranscriber implements Transcriber {
 
 	private TextDocument textDocument;
 
-	private String outputFolder = null;
-
 	private boolean refreshTableOfContents = false;
 
 	public StructureToODTTranscriber(final TextDocument document, Transcription transcription) {
 		this.textDocument = document;
-		outputFolder = transcription.getGeneratorConfig().getOutputFolder();
 		this.transcription = transcription;
 	}
 

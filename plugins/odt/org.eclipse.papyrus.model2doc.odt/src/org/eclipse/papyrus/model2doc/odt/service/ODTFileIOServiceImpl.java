@@ -16,26 +16,16 @@ package org.eclipse.papyrus.model2doc.odt.service;
 
 import java.io.File;
 
-import org.eclipse.papyrus.model2doc.core.config.GeneratorConfig;
 import org.eclipse.papyrus.model2doc.odt.internal.util.ODTFileIOUtil;
 
 /**
  * Implemented service class for FILE I/O management dedicated to LibreOffice concerns.
- * 
+ *
  * @since 2.0
  *
  */
 public class ODTFileIOServiceImpl implements ODTFileIOService {
 
-	@Override
-	public String fileNameToURL(String filePath, String outputFolder) {
-		return ODTFileIOUtil.fileNameToURL(filePath, outputFolder);
-	}
-
-	@Override
-	public String convertTemplatePathForLibreOffice(GeneratorConfig generatorConfig) {
-		return ODTFileIOUtil.convertTemplatePathForLibreOffice(generatorConfig);
-	}
 
 	@Override
 	public String getFileURL(File file) {
@@ -51,7 +41,7 @@ public class ODTFileIOServiceImpl implements ODTFileIOService {
 	public String updatePathOfFileInWorkspace(String path) {
 		return ODTFileIOUtil.updatePathOfFileInWorkspace(path);
 	}
-	
+
 
 	@Override
 	public String getODTFilePrefix() {

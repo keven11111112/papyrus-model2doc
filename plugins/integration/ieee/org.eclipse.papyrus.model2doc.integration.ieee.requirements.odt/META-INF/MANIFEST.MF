@@ -19,6 +19,6 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.0.0,4.0.0)",
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Automatic-Module-Name: org.eclipse.papyrus.model2doc.integration.ieee.requirements.odt
-Export-Package: org.eclipse.papyrus.model2doc.integration.ieee.requirements.odt.editor,
- org.eclipse.papyrus.model2doc.integration.ieee.requirements.odt.service,
+Export-Package: org.eclipse.papyrus.model2doc.integration.ieee.requirements.odt,
+ org.eclipse.papyrus.model2doc.integration.ieee.requirements.odt.editor,
  org.eclipse.papyrus.model2doc.integration.ieee.requirements.odt.transcriber

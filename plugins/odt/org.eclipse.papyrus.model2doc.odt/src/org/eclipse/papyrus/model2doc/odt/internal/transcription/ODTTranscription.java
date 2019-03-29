@@ -16,7 +16,7 @@ package org.eclipse.papyrus.model2doc.odt.internal.transcription;
 
 import java.util.List;
 
-import org.eclipse.papyrus.model2doc.core.config.GeneratorConfig;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.transcription.CoverPage;
 import org.eclipse.papyrus.model2doc.core.transcription.ImageDescription;
 import org.eclipse.papyrus.model2doc.core.transcription.Table;
@@ -30,9 +30,7 @@ import org.eclipse.papyrus.model2doc.odt.service.StyleServiceImpl;
 import org.eclipse.papyrus.model2doc.odt.service.WriteService;
 import org.eclipse.papyrus.model2doc.odt.service.WriteServiceImpl;
 
-import com.sun.star.beans.Property;
 import com.sun.star.beans.XPropertySet;
-import com.sun.star.beans.XPropertySetInfo;
 import com.sun.star.lang.XMultiServiceFactory;
 import com.sun.star.style.BreakType;
 import com.sun.star.text.ControlCharacter;
@@ -62,7 +60,7 @@ public class ODTTranscription implements Transcription {
 
 	private ODTEditor odtEditor = null;
 
-	private GeneratorConfig odtGeneratorConfig = null;
+	private DefaultDocumentGeneratorConfiguration odtGeneratorConfig = null;
 
 	private WriteService writeService = null;
 
@@ -76,7 +74,7 @@ public class ODTTranscription implements Transcription {
 	 * @param styleEditor
 	 * @param generatorConfig
 	 */
-	public ODTTranscription(StyleEditor styleEditor, GeneratorConfig odtGeneratorConfig) {
+	public ODTTranscription(StyleEditor styleEditor, DefaultDocumentGeneratorConfiguration odtGeneratorConfig) {
 		odtEditor = new ODTEditor(odtGeneratorConfig);
 		if (odtEditor.getXTextDocument() != null) {
 			text = odtEditor.getXTextDocument().getText();
@@ -148,6 +146,7 @@ public class ODTTranscription implements Transcription {
 	/**
 	 * Refresh the table of contents
 	 */
+	@Override
 	public void refreshTableOfContents() {
 		if (null != this.tableOfContents) {
 			this.tableOfContents.update();
@@ -223,7 +222,7 @@ public class ODTTranscription implements Transcription {
 
 			tableOfContents = xDocIndex;
 
-			
+
 			// xParaCursor.gotoNextParagraph(true);
 
 
@@ -234,7 +233,7 @@ public class ODTTranscription implements Transcription {
 
 			writeService.endParagraph(xParaCursor);
 
-			
+
 			XPropertySet cursorProperty = UnoRuntime.queryInterface(XPropertySet.class, xParaCursor);
 			try {
 				// TODO
@@ -253,7 +252,7 @@ public class ODTTranscription implements Transcription {
 
 	@Override
 	public void importImage(ImageDescription image, String caption) {
-		writeService.addImageLink(image, caption,cursor, odtEditor);
+		writeService.addImageLink(image, caption, cursor, odtEditor);
 		styleEditor.applyImageStyle(cursor);
 		// cursor.gotoEnd(false);
 	}
@@ -270,7 +269,7 @@ public class ODTTranscription implements Transcription {
 	}
 
 	@Override
-	public GeneratorConfig getGeneratorConfig() {
+	public DefaultDocumentGeneratorConfiguration getGeneratorConfig() {
 		return odtGeneratorConfig;
 	}
 

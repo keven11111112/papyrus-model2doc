@@ -19,25 +19,24 @@ import java.io.File;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.Path;
-import org.eclipse.uml2.uml.Package;
-
-import org.eclipse.papyrus.model2doc.core.config.GeneratorConfig;
-import org.eclipse.papyrus.model2doc.core.config.GeneratorConfigFactory;
-import org.eclipse.papyrus.model2doc.core.service.TemplateResourceService;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentGeneratorConfiguration;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationFactory;
 import org.eclipse.papyrus.model2doc.core.transcriber.Transcriber;
 import org.eclipse.papyrus.model2doc.core.transcriber.TranscriberFactory;
 import org.eclipse.papyrus.model2doc.documentview.ui.menu.handler.CreateDocumentViewEditorHandler;
-import org.eclipse.papyrus.model2doc.odt.service.ODTTemplateResourceService;
 import org.eclipse.papyrus.model2doc.odt.transcription.ODTTranscriptionFactory;
 import org.eclipse.papyrus.model2doc.odt.ui.Activator;
+import org.eclipse.uml2.uml.Package;
 
 /**
  * Handler class for generating ODT file from UML model.
  */
 public class GeneratorUML2ODTHandler extends CreateDocumentViewEditorHandler {
-	
+
 	private String generatedDocumentFileURI;
-	
+
 	/**
 	 * @see org.eclipse.papyrus.model2doc.core.ui.handler.UML2DocHandler#execute(org.eclipse.core.commands.ExecutionEvent)
 	 *
@@ -50,33 +49,38 @@ public class GeneratorUML2ODTHandler extends CreateDocumentViewEditorHandler {
 		// never used
 		return null;
 	}
-	
+
 	@Override
 	public boolean generateDocument(String name) {
-		TemplateResourceService templateResourceService =  new ODTTemplateResourceService();
-		String projectFolder = getWorkspaceResourceService().calculateProjectFolder(getSelection());
-		
-		GeneratorConfig generatorConfig = GeneratorConfigFactory.INSTANCE.getDefaultGeneratorConfig();
-		generatorConfig.setDocumentName(name);
-		generatorConfig.setOutputFolder(projectFolder);
-		generatorConfig.setProject(projectFolder);
-		generatorConfig.setTemplateStyleFileURI(templateResourceService.getTemplateURLFromPlugIn());
-		
+		final EObject selectedElement = getSelection();
+		if (null == selectedElement || null == selectedElement.eResource()) {
+			return false;
+		}
+		URI uri = selectedElement.eResource().getURI();
+		uri = uri.trimFileExtension();
+		uri = uri.trimSegments(uri.segmentsList().size() - 2);
+
+		final String projectFolder = uri.toString();
+		DefaultDocumentGeneratorConfiguration configuration = GeneratorConfigurationFactory.eINSTANCE.createDefaultDocumentGeneratorConfiguration();
+		configuration.setDocumentName(name);
+		configuration.setDocumentFolder(projectFolder);
+		final String templateFileURI = "platform:/plugin/" + "org.eclipse.papyrus.model2doc.odt" + "/template/PapyrusTemplate.ott";
+		configuration.setTemplateFile(templateFileURI);
 		try {
 			// Execute generator
 			Transcriber umlTranscriber = TranscriberFactory.INSTANCE.createUMLTranscriber((Package) getSelection(),
-					ODTTranscriptionFactory.INSTANCE.getDefaultODTTranscription(null, generatorConfig));
+					ODTTranscriptionFactory.INSTANCE.getDefaultODTTranscription(null, configuration));
 			umlTranscriber.transcribe();
-			
+
 			StringBuilder uriBuilder = new StringBuilder();
-			uriBuilder.append(generatorConfig.getOutputFolder());
+			uriBuilder.append(projectFolder);
 			uriBuilder.append(File.separator);
-			uriBuilder.append(generatorConfig.getDocumentName());
+			uriBuilder.append(name);
 			uriBuilder.append(".odt"); //$NON-NLS-1$
-			
-			Path path = new Path (uriBuilder.toString());
-			generatedDocumentFileURI =  path.toString();
-			getWorkspaceResourceService().refreshWorkspace(generatorConfig.getProject());
+
+			Path path = new Path(uriBuilder.toString());
+			generatedDocumentFileURI = path.toString();
+			getWorkspaceResourceService().refreshWorkspace(projectFolder);
 			return true;
 		} catch (Exception e) {
 			Activator.log.error(e);

@@ -16,57 +16,33 @@ package org.eclipse.papyrus.model2doc.odt.service;
 
 import java.io.File;
 
-import org.eclipse.papyrus.model2doc.core.config.GeneratorConfig;
-
 /**
  * Service interface for FILE I/O management dedicated to LibreOffice concerns.
- * 
+ *
  * @since 2.0
  *
  */
 public interface ODTFileIOService {
-	
-	/**
-	 * Convert file path to URL format.
-	 * 
-	 * @param filePath
-	 *            the name of the ODT file to write
-	 * @param outputFolder
-	 *            the output folder
-	 * @return the string formatted for LibreOffice to allow it to save the written
-	 *         file
-	 */
-	public String fileNameToURL(String filePath, String outputFolder);
-	
-	/**
-	 * Convert template path for LibreOffice.
-	 * 
-	 * @param generatorConfig
-	 *            the odt generator configuration
-	 * @return the string formatted for LibreOffice to allow it to find the template
-	 *         file
-	 */
-	public String convertTemplatePathForLibreOffice(final GeneratorConfig generatorConfig);
-	
+
 	/**
 	 * Get URL from file.
-	 * 
+	 *
 	 * @param file
 	 * @return
 	 */
 	public String getFileURL(File file);
-	
+
 	/**
 	 * Convert file path from workspace for LibreOffice.
-	 * 
+	 *
 	 * @param path
 	 * @return
 	 */
 	public String convertFileFromWorkspacePathForLibreOffice(String path);
-	
+
 	/**
 	 * Update path of file in Workspace.
-	 * 
+	 *
 	 * @param path
 	 * @return
 	 */
@@ -75,7 +51,7 @@ public interface ODTFileIOService {
 
 	/**
 	 * Get ODT file prefix
-	 * 
+	 *
 	 * @return
 	 * 		"file:///"
 	 */

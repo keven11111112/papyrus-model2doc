@@ -14,18 +14,19 @@
  *****************************************************************************/
 package org.eclipse.papyrus.model2doc.odt.transcription;
 
-import org.eclipse.papyrus.model2doc.core.config.GeneratorConfig;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.transcription.Transcription;
 import org.eclipse.papyrus.model2doc.odt.editor.StyleEditor;
 import org.eclipse.papyrus.model2doc.odt.internal.transcription.ODTTranscription;
 
 /**
  * ODT Transcription Factory.
- * 
+ *
  */
 public class ODTTranscriptionFactory {
 
 	public static final ODTTranscriptionFactory INSTANCE = new ODTTranscriptionFactory();
+
 	/**
 	 * Constructor.
 	 *
@@ -33,15 +34,15 @@ public class ODTTranscriptionFactory {
 	private ODTTranscriptionFactory() {
 		// to avoid instantiation
 	}
-	
+
 	/**
 	 * Get default ODT Transcription.
-	 * 
+	 *
 	 * @param styleEditor
 	 * @param generatorConfig
 	 * @return
 	 */
-	public Transcription getDefaultODTTranscription(StyleEditor styleEditor, GeneratorConfig generatorConfig) {
+	public Transcription getDefaultODTTranscription(StyleEditor styleEditor, DefaultDocumentGeneratorConfiguration generatorConfig) {
 		return new ODTTranscription(styleEditor, generatorConfig);
 	}
 }
