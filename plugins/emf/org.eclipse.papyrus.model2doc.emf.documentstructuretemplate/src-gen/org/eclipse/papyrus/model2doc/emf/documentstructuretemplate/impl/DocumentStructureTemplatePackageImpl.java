@@ -26,7 +26,6 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationPackage;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.Body;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.CoverPage;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplateFactory;
@@ -65,14 +64,6 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	private EClass documentTemplatePrototypeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	private EClass coverPageEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -319,19 +310,8 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
-	public EReference getDocumentTemplate_CoverPage() {
-		return (EReference) documentTemplateEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
 	public EReference getDocumentTemplate_DocumentStructureGenerator() {
-		return (EReference) documentTemplateEClass.getEStructuralFeatures().get(7);
+		return (EReference) documentTemplateEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -409,28 +389,6 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	@Override
 	public EReference getDocumentTemplatePrototype_DocumentTemplate() {
 		return (EReference) documentTemplatePrototypeEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EClass getCoverPage() {
-		return coverPageEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EAttribute getCoverPage_Path() {
-		return (EAttribute) coverPageEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -760,7 +718,6 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		createEAttribute(documentTemplateEClass, DOCUMENT_TEMPLATE__NAME);
 		createEAttribute(documentTemplateEClass, DOCUMENT_TEMPLATE__DESCRIPTION);
 		createEAttribute(documentTemplateEClass, DOCUMENT_TEMPLATE__KIND_ID);
-		createEReference(documentTemplateEClass, DOCUMENT_TEMPLATE__COVER_PAGE);
 		createEReference(documentTemplateEClass, DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR);
 		createEOperation(documentTemplateEClass, DOCUMENT_TEMPLATE___GET_TYPE);
 		createEOperation(documentTemplateEClass, DOCUMENT_TEMPLATE___GET_ICON_PATH);
@@ -770,9 +727,6 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		createEAttribute(documentTemplatePrototypeEClass, DOCUMENT_TEMPLATE_PROTOTYPE__ICON_PATH);
 		createEAttribute(documentTemplatePrototypeEClass, DOCUMENT_TEMPLATE_PROTOTYPE__DESCRIPTION);
 		createEReference(documentTemplatePrototypeEClass, DOCUMENT_TEMPLATE_PROTOTYPE__DOCUMENT_TEMPLATE);
-
-		coverPageEClass = createEClass(COVER_PAGE);
-		createEAttribute(coverPageEClass, COVER_PAGE__PATH);
 
 		textDocumentTemplateEClass = createEClass(TEXT_DOCUMENT_TEMPLATE);
 		createEAttribute(textDocumentTemplateEClass, TEXT_DOCUMENT_TEMPLATE__MAIN_TITLE);
@@ -869,8 +823,6 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		initEAttribute(getDocumentTemplate_Name(), theEcorePackage.getEString(), "name", null, 1, 1, DocumentTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 		initEAttribute(getDocumentTemplate_Description(), theEcorePackage.getEString(), "description", null, 0, 1, DocumentTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 		initEAttribute(getDocumentTemplate_KindId(), ecorePackage.getEString(), "kindId", null, 1, 1, DocumentTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
-		initEReference(getDocumentTemplate_CoverPage(), this.getCoverPage(), null, "coverPage", null, 0, 1, DocumentTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, //$NON-NLS-1$
-				!IS_ORDERED);
 		initEReference(getDocumentTemplate_DocumentStructureGenerator(), theGeneratorConfigurationPackage.getIDocumentStructureGeneratorConfiguration(), null, "documentStructureGenerator", null, 1, 1, DocumentTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, //$NON-NLS-1$
 				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
@@ -885,9 +837,6 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 				!IS_ORDERED);
 		initEReference(getDocumentTemplatePrototype_DocumentTemplate(), this.getDocumentTemplate(), null, "documentTemplate", null, 1, 1, DocumentTemplatePrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, //$NON-NLS-1$
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(coverPageEClass, CoverPage.class, "CoverPage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getCoverPage_Path(), ecorePackage.getEString(), "path", null, 1, 1, CoverPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(textDocumentTemplateEClass, TextDocumentTemplate.class, "TextDocumentTemplate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEAttribute(getTextDocumentTemplate_MainTitle(), ecorePackage.getEString(), "mainTitle", null, 0, 1, TextDocumentTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$

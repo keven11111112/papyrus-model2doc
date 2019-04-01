@@ -50,12 +50,7 @@
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructure.ecore#//TextDocumentPart"/>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructure.ecore#//Document">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EReference documentstructure.ecore#//Document/coverPage"/>
-      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference documentstructure.ecore#//Document/documentGeneratorConfiguration"/>
-    </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructure.ecore#//CoverPage">
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructure.ecore#//CoverPage/path"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructure.ecore#//Body">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"

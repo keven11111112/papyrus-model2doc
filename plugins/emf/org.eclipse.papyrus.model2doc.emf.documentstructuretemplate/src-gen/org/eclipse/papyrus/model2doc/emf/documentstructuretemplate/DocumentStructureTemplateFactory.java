@@ -45,16 +45,6 @@ public interface DocumentStructureTemplateFactory extends EFactory {
 	DocumentTemplatePrototype createDocumentTemplatePrototype();
 
 	/**
-	 * Returns a new object of class '<em>Cover Page</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @return a new object of class '<em>Cover Page</em>'.
-	 * @generated
-	 */
-	CoverPage createCoverPage();
-
-	/**
 	 * Returns a new object of class '<em>Text Document Template</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

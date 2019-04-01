@@ -73,8 +73,6 @@ public class DocumentStructureTemplateFactoryImpl extends EFactoryImpl implement
 		switch (eClass.getClassifierID()) {
 		case DocumentStructureTemplatePackage.DOCUMENT_TEMPLATE_PROTOTYPE:
 			return createDocumentTemplatePrototype();
-		case DocumentStructureTemplatePackage.COVER_PAGE:
-			return createCoverPage();
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE:
 			return createTextDocumentTemplate();
 		case DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE:
@@ -134,18 +132,6 @@ public class DocumentStructureTemplateFactoryImpl extends EFactoryImpl implement
 	public DocumentTemplatePrototype createDocumentTemplatePrototype() {
 		DocumentTemplatePrototypeImpl documentTemplatePrototype = new DocumentTemplatePrototypeImpl();
 		return documentTemplatePrototype;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public CoverPage createCoverPage() {
-		CoverPageImpl coverPage = new CoverPageImpl();
-		return coverPage;
 	}
 
 	/**

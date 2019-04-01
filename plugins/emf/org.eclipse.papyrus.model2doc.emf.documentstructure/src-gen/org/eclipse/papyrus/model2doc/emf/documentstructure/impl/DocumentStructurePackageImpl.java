@@ -26,7 +26,6 @@ import org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfig
 
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Body;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
-import org.eclipse.papyrus.model2doc.emf.documentstructure.CoverPage;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DataSource;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Document;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructureFactory;
@@ -72,14 +71,6 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	 * @generated
 	 */
 	private EClass documentEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	private EClass coverPageEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -295,41 +286,8 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	 * @generated
 	 */
 	@Override
-	public EReference getDocument_CoverPage() {
-		return (EReference) documentEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
 	public EReference getDocument_DocumentGeneratorConfiguration() {
-		return (EReference) documentEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EClass getCoverPage() {
-		return coverPageEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EAttribute getCoverPage_Path() {
-		return (EAttribute) coverPageEClass.getEStructuralFeatures().get(0);
+		return (EReference) documentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -582,11 +540,7 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 		textDocumentPartEClass = createEClass(TEXT_DOCUMENT_PART);
 
 		documentEClass = createEClass(DOCUMENT);
-		createEReference(documentEClass, DOCUMENT__COVER_PAGE);
 		createEReference(documentEClass, DOCUMENT__DOCUMENT_GENERATOR_CONFIGURATION);
-
-		coverPageEClass = createEClass(COVER_PAGE);
-		createEAttribute(coverPageEClass, COVER_PAGE__PATH);
 
 		bodyEClass = createEClass(BODY);
 		createEReference(bodyEClass, BODY__BODY_PART);
@@ -673,12 +627,8 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 		initEClass(textDocumentPartEClass, TextDocumentPart.class, "TextDocumentPart", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		initEClass(documentEClass, Document.class, "Document", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getDocument_CoverPage(), this.getCoverPage(), null, "coverPage", null, 0, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 		initEReference(getDocument_DocumentGeneratorConfiguration(), theGeneratorConfigurationPackage.getIDocumentGeneratorConfiguration(), null, "documentGeneratorConfiguration", null, 1, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, //$NON-NLS-1$
 				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(coverPageEClass, CoverPage.class, "CoverPage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getCoverPage_Path(), ecorePackage.getEString(), "path", null, 1, 1, CoverPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(bodyEClass, Body.class, "Body", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(getBody_BodyPart(), this.getBodyPart(), null, "bodyPart", null, 0, -1, Body.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$

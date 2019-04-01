@@ -147,16 +147,6 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int DOCUMENT_TEMPLATE__KIND_ID = 5;
 
 	/**
-	 * The feature id for the '<em><b>Cover Page</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int DOCUMENT_TEMPLATE__COVER_PAGE = 6;
-
-	/**
 	 * The feature id for the '<em><b>Document Structure Generator</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -164,7 +154,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR = 7;
+	int DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR = 6;
 
 	/**
 	 * The number of structural features of the '<em>Document Template</em>' class.
@@ -174,7 +164,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_TEMPLATE_FEATURE_COUNT = 8;
+	int DOCUMENT_TEMPLATE_FEATURE_COUNT = 7;
 
 	/**
 	 * The operation id for the '<em>Get Type</em>' operation.
@@ -278,47 +268,6 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int DOCUMENT_TEMPLATE_PROTOTYPE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.CoverPageImpl <em>Cover Page</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.CoverPageImpl
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getCoverPage()
-	 * @generated
-	 */
-	int COVER_PAGE = 2;
-
-	/**
-	 * The feature id for the '<em><b>Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int COVER_PAGE__PATH = 0;
-
-	/**
-	 * The number of structural features of the '<em>Cover Page</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int COVER_PAGE_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>Cover Page</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int COVER_PAGE_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl <em>Text Document Template</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -327,7 +276,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getTextDocumentTemplate()
 	 * @generated
 	 */
-	int TEXT_DOCUMENT_TEMPLATE = 3;
+	int TEXT_DOCUMENT_TEMPLATE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Semantic Context</b></em>' reference.
@@ -388,16 +337,6 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @ordered
 	 */
 	int TEXT_DOCUMENT_TEMPLATE__KIND_ID = DOCUMENT_TEMPLATE__KIND_ID;
-
-	/**
-	 * The feature id for the '<em><b>Cover Page</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int TEXT_DOCUMENT_TEMPLATE__COVER_PAGE = DOCUMENT_TEMPLATE__COVER_PAGE;
 
 	/**
 	 * The feature id for the '<em><b>Document Structure Generator</b></em>' containment reference.
@@ -478,7 +417,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getDocumentPart()
 	 * @generated
 	 */
-	int DOCUMENT_PART = 4;
+	int DOCUMENT_PART = 3;
 
 	/**
 	 * The number of structural features of the '<em>Document Part</em>' class.
@@ -509,7 +448,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getDocumentPartTemplate()
 	 * @generated
 	 */
-	int DOCUMENT_PART_TEMPLATE = 7;
+	int DOCUMENT_PART_TEMPLATE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Generate</b></em>' attribute.
@@ -580,7 +519,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getFeaturePartTemplate()
 	 * @generated
 	 */
-	int FEATURE_PART_TEMPLATE = 6;
+	int FEATURE_PART_TEMPLATE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Generate</b></em>' attribute.
@@ -661,7 +600,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEReferenceDocumentPartTemplate()
 	 * @generated
 	 */
-	int EREFERENCE_DOCUMENT_PART_TEMPLATE = 5;
+	int EREFERENCE_DOCUMENT_PART_TEMPLATE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Generate</b></em>' attribute.
@@ -752,7 +691,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getObjectPartTemplate()
 	 * @generated
 	 */
-	int OBJECT_PART_TEMPLATE = 8;
+	int OBJECT_PART_TEMPLATE = 7;
 
 	/**
 	 * The feature id for the '<em><b>Generate</b></em>' attribute.
@@ -843,7 +782,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEClassDocumentPartTemplate()
 	 * @generated
 	 */
-	int ECLASS_DOCUMENT_PART_TEMPLATE = 9;
+	int ECLASS_DOCUMENT_PART_TEMPLATE = 8;
 
 	/**
 	 * The feature id for the '<em><b>Generate</b></em>' attribute.
@@ -954,7 +893,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEObjectDocumentPartTemplate()
 	 * @generated
 	 */
-	int EOBJECT_DOCUMENT_PART_TEMPLATE = 10;
+	int EOBJECT_DOCUMENT_PART_TEMPLATE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Generate</b></em>' attribute.
@@ -1055,7 +994,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getTableOfContents()
 	 * @generated
 	 */
-	int TABLE_OF_CONTENTS = 11;
+	int TABLE_OF_CONTENTS = 10;
 
 	/**
 	 * The feature id for the '<em><b>Toc Title</b></em>' attribute.
@@ -1096,7 +1035,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getBody()
 	 * @generated
 	 */
-	int BODY = 12;
+	int BODY = 11;
 
 	/**
 	 * The feature id for the '<em><b>Object Part Template</b></em>' containment reference list.
@@ -1137,7 +1076,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEClassFilterBehavior()
 	 * @generated
 	 */
-	int ECLASS_FILTER_BEHAVIOR = 13;
+	int ECLASS_FILTER_BEHAVIOR = 12;
 
 
 	/**
@@ -1222,18 +1161,6 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDocumentTemplate_KindId();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getCoverPage <em>Cover Page</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the meta object for the containment reference '<em>Cover Page</em>'.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getCoverPage()
-	 * @see #getDocumentTemplate()
-	 * @generated
-	 */
-	EReference getDocumentTemplate_CoverPage();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getDocumentStructureGenerator <em>Document Structure Generator</em>}'.
@@ -1327,29 +1254,6 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDocumentTemplatePrototype_DocumentTemplate();
-
-	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.CoverPage <em>Cover Page</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the meta object for class '<em>Cover Page</em>'.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.CoverPage
-	 * @generated
-	 */
-	EClass getCoverPage();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.CoverPage#getPath <em>Path</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the meta object for the attribute '<em>Path</em>'.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.CoverPage#getPath()
-	 * @see #getCoverPage()
-	 * @generated
-	 */
-	EAttribute getCoverPage_Path();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentTemplate <em>Text Document Template</em>}'.
@@ -1742,15 +1646,6 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 		EAttribute DOCUMENT_TEMPLATE__KIND_ID = eINSTANCE.getDocumentTemplate_KindId();
 
 		/**
-		 * The meta object literal for the '<em><b>Cover Page</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 *
-		 * @generated
-		 */
-		EReference DOCUMENT_TEMPLATE__COVER_PAGE = eINSTANCE.getDocumentTemplate_CoverPage();
-
-		/**
 		 * The meta object literal for the '<em><b>Document Structure Generator</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1823,26 +1718,6 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 		 * @generated
 		 */
 		EReference DOCUMENT_TEMPLATE_PROTOTYPE__DOCUMENT_TEMPLATE = eINSTANCE.getDocumentTemplatePrototype_DocumentTemplate();
-
-		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.CoverPageImpl <em>Cover Page</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 *
-		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.CoverPageImpl
-		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getCoverPage()
-		 * @generated
-		 */
-		EClass COVER_PAGE = eINSTANCE.getCoverPage();
-
-		/**
-		 * The meta object literal for the '<em><b>Path</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 *
-		 * @generated
-		 */
-		EAttribute COVER_PAGE__PATH = eINSTANCE.getCoverPage_Path();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl <em>Text Document Template</em>}' class.

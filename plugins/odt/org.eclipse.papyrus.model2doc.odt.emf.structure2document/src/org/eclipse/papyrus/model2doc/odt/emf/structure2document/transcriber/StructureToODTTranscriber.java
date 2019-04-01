@@ -48,7 +48,6 @@ public class StructureToODTTranscriber implements Transcriber {
 	@Override
 	public void transcribe() {
 		// TODO Auto-generated method stub
-		textDocument.getCoverPage(); // TODO
 		final String mainTitle = textDocument.getMainTitle();
 		if (mainTitle != null && !mainTitle.isEmpty()) {
 			transcription.writeDocumentMainTitle(mainTitle);

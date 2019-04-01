@@ -31,7 +31,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration;
 
-import org.eclipse.papyrus.model2doc.emf.documentstructure.CoverPage;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocumentPart;
@@ -44,7 +43,6 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocumentPart;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TextDocumentImpl#getCoverPage <em>Cover Page</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TextDocumentImpl#getDocumentGeneratorConfiguration <em>Document Generator Configuration</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TextDocumentImpl#getMainTitle <em>Main Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TextDocumentImpl#getTextDocumentPart <em>Text Document Part</em>}</li>
@@ -53,17 +51,6 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocumentPart;
  * @generated
  */
 public class TextDocumentImpl extends MinimalEObjectImpl.Container implements TextDocument {
-	/**
-	 * The cached value of the '{@link #getCoverPage() <em>Cover Page</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see #getCoverPage()
-	 * @generated
-	 * @ordered
-	 */
-	protected CoverPage coverPage;
-
 	/**
 	 * The cached value of the '{@link #getDocumentGeneratorConfiguration() <em>Document Generator Configuration</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -127,62 +114,6 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 	@Override
 	protected EClass eStaticClass() {
 		return DocumentStructurePackage.Literals.TEXT_DOCUMENT;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public CoverPage getCoverPage() {
-		return coverPage;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	public NotificationChain basicSetCoverPage(CoverPage newCoverPage, NotificationChain msgs) {
-		CoverPage oldCoverPage = coverPage;
-		coverPage = newCoverPage;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DocumentStructurePackage.TEXT_DOCUMENT__COVER_PAGE, oldCoverPage, newCoverPage);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public void setCoverPage(CoverPage newCoverPage) {
-		if (newCoverPage != coverPage) {
-			NotificationChain msgs = null;
-			if (coverPage != null) {
-				msgs = ((InternalEObject) coverPage).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DocumentStructurePackage.TEXT_DOCUMENT__COVER_PAGE, null, msgs);
-			}
-			if (newCoverPage != null) {
-				msgs = ((InternalEObject) newCoverPage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DocumentStructurePackage.TEXT_DOCUMENT__COVER_PAGE, null, msgs);
-			}
-			msgs = basicSetCoverPage(newCoverPage, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructurePackage.TEXT_DOCUMENT__COVER_PAGE, newCoverPage, newCoverPage));
-		}
 	}
 
 	/**
@@ -290,8 +221,6 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case DocumentStructurePackage.TEXT_DOCUMENT__COVER_PAGE:
-			return basicSetCoverPage(null, msgs);
 		case DocumentStructurePackage.TEXT_DOCUMENT__DOCUMENT_GENERATOR_CONFIGURATION:
 			return basicSetDocumentGeneratorConfiguration(null, msgs);
 		case DocumentStructurePackage.TEXT_DOCUMENT__TEXT_DOCUMENT_PART:
@@ -309,8 +238,6 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case DocumentStructurePackage.TEXT_DOCUMENT__COVER_PAGE:
-			return getCoverPage();
 		case DocumentStructurePackage.TEXT_DOCUMENT__DOCUMENT_GENERATOR_CONFIGURATION:
 			return getDocumentGeneratorConfiguration();
 		case DocumentStructurePackage.TEXT_DOCUMENT__MAIN_TITLE:
@@ -331,9 +258,6 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DocumentStructurePackage.TEXT_DOCUMENT__COVER_PAGE:
-			setCoverPage((CoverPage) newValue);
-			return;
 		case DocumentStructurePackage.TEXT_DOCUMENT__DOCUMENT_GENERATOR_CONFIGURATION:
 			setDocumentGeneratorConfiguration((IDocumentGeneratorConfiguration) newValue);
 			return;
@@ -357,9 +281,6 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DocumentStructurePackage.TEXT_DOCUMENT__COVER_PAGE:
-			setCoverPage((CoverPage) null);
-			return;
 		case DocumentStructurePackage.TEXT_DOCUMENT__DOCUMENT_GENERATOR_CONFIGURATION:
 			setDocumentGeneratorConfiguration((IDocumentGeneratorConfiguration) null);
 			return;
@@ -382,8 +303,6 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case DocumentStructurePackage.TEXT_DOCUMENT__COVER_PAGE:
-			return coverPage != null;
 		case DocumentStructurePackage.TEXT_DOCUMENT__DOCUMENT_GENERATOR_CONFIGURATION:
 			return documentGeneratorConfiguration != null;
 		case DocumentStructurePackage.TEXT_DOCUMENT__MAIN_TITLE:

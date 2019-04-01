@@ -48,10 +48,6 @@ This field is useless for usage outside of Papyrus, but we set its multiplicity 
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_RtZr0kmLEem4wpUXttaNpQ" name="coverPage" type="_KOiGgEmLEem4wpUXttaNpQ" aggregation="composite" association="_RtZEwEmLEem4wpUXttaNpQ">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RtaS4EmLEem4wpUXttaNpQ"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RtaS4UmLEem4wpUXttaNpQ" value="1"/>
-      </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_TBR2gFCGEems8PYEpvQE1w" name="documentStructureGenerator" aggregation="composite" association="_TBJToFCGEems8PYEpvQE1w">
         <type xmi:type="uml:Interface" href="pathmap://GENERATOR_CONFIGURATION/generatorconfiguration.uml#_fUlRoFB6EemNlsOH2YnpzQ"/>
       </ownedAttribute>
@@ -207,17 +203,6 @@ The field eobject must reference an eobject of the user model, in other case the
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_2EqYcTnXEem5-oyJMXJtFA" key="nature" value="UML_Nature"/>
       </eAnnotations>
       <ownedEnd xmi:type="uml:Property" xmi:id="_2Eq_gznXEem5-oyJMXJtFA" name="documentTemplate" type="_pmiT0B5MEemmq_cjeiIGww" association="_2EojQDnXEem5-oyJMXJtFA"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_KOiGgEmLEem4wpUXttaNpQ" name="CoverPage">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_REkD0EmDEem4wpUXttaNpQ" name="path" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-      </ownedAttribute>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_RtZEwEmLEem4wpUXttaNpQ" memberEnd="_RtZr0kmLEem4wpUXttaNpQ _RtaS4kmLEem4wpUXttaNpQ">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_RtZr0EmLEem4wpUXttaNpQ" source="org.eclipse.papyrus">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_RtZr0UmLEem4wpUXttaNpQ" key="nature" value="UML_Nature"/>
-      </eAnnotations>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_RtaS4kmLEem4wpUXttaNpQ" name="documenttemplate" type="_pmiT0B5MEemmq_cjeiIGww" association="_RtZEwEmLEem4wpUXttaNpQ"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_SKJWIEojEem4wpUXttaNpQ" name="EClassFilterBehavior">
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_YPrJ8EojEem4wpUXttaNpQ" name="TYPE_OF"/>

@@ -54,8 +54,6 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//DocumentTemplate/description"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//DocumentTemplate/kindId"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//DocumentTemplate/coverPage"/>
-      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//DocumentTemplate/documentStructureGenerator"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="documentstructuretemplate.ecore#//DocumentTemplate/getType"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="documentstructuretemplate.ecore#//DocumentTemplate/getIconPath"/>
@@ -66,9 +64,6 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//DocumentTemplatePrototype/description"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//DocumentTemplatePrototype/documentTemplate"/>
-    </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructuretemplate.ecore#//CoverPage">
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//CoverPage/path"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructuretemplate.ecore#//TextDocumentTemplate">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//TextDocumentTemplate/mainTitle"/>

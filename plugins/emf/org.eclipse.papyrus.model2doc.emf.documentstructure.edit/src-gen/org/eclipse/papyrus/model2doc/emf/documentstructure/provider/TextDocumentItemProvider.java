@@ -118,7 +118,6 @@ public class TextDocumentItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(DocumentStructurePackage.Literals.DOCUMENT__COVER_PAGE);
 			childrenFeatures.add(DocumentStructurePackage.Literals.DOCUMENT__DOCUMENT_GENERATOR_CONFIGURATION);
 			childrenFeatures.add(DocumentStructurePackage.Literals.TEXT_DOCUMENT__TEXT_DOCUMENT_PART);
 		}
@@ -193,7 +192,6 @@ public class TextDocumentItemProvider
 		case DocumentStructurePackage.TEXT_DOCUMENT__MAIN_TITLE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case DocumentStructurePackage.TEXT_DOCUMENT__COVER_PAGE:
 		case DocumentStructurePackage.TEXT_DOCUMENT__DOCUMENT_GENERATOR_CONFIGURATION:
 		case DocumentStructurePackage.TEXT_DOCUMENT__TEXT_DOCUMENT_PART:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -213,9 +211,6 @@ public class TextDocumentItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.DOCUMENT__COVER_PAGE,
-				DocumentStructureFactory.eINSTANCE.createCoverPage()));
 
 		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.DOCUMENT__DOCUMENT_GENERATOR_CONFIGURATION,
 				GeneratorConfigurationFactory.eINSTANCE.createDefaultDocumentGeneratorConfiguration()));
