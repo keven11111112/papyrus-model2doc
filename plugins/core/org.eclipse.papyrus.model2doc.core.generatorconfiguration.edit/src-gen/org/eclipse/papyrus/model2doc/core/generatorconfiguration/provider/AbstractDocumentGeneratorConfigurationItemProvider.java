@@ -61,6 +61,7 @@ public class AbstractDocumentGeneratorConfigurationItemProvider extends Generato
 
 			addSaveDocumentStructurePropertyDescriptor(object);
 			addSaveImagesPropertyDescriptor(object);
+			addTemplateFilePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -108,6 +109,27 @@ public class AbstractDocumentGeneratorConfigurationItemProvider extends Generato
 	}
 
 	/**
+	 * This adds a property descriptor for the Template File feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected void addTemplateFilePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_AbstractDocumentGeneratorConfiguration_templateFile_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_AbstractDocumentGeneratorConfiguration_templateFile_feature", "_UI_AbstractDocumentGeneratorConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				GeneratorConfigurationPackage.Literals.ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__TEMPLATE_FILE,
+				true,
+				false,
+				false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				null,
+				null));
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -148,6 +170,7 @@ public class AbstractDocumentGeneratorConfigurationItemProvider extends Generato
 		switch (notification.getFeatureID(AbstractDocumentGeneratorConfiguration.class)) {
 		case GeneratorConfigurationPackage.ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__SAVE_DOCUMENT_STRUCTURE:
 		case GeneratorConfigurationPackage.ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__SAVE_IMAGES:
+		case GeneratorConfigurationPackage.ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__TEMPLATE_FILE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

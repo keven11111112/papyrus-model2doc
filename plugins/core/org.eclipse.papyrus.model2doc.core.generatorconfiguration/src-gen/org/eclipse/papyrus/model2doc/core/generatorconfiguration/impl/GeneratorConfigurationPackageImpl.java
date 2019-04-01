@@ -258,6 +258,17 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	 * @generated
 	 */
 	@Override
+	public EAttribute getAbstractDocumentGeneratorConfiguration_TemplateFile() {
+		return (EAttribute) abstractDocumentGeneratorConfigurationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EClass getGeneratorConfiguration() {
 		return generatorConfigurationEClass;
 	}
@@ -383,6 +394,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 		abstractDocumentGeneratorConfigurationEClass = createEClass(ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION);
 		createEAttribute(abstractDocumentGeneratorConfigurationEClass, ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__SAVE_DOCUMENT_STRUCTURE);
 		createEAttribute(abstractDocumentGeneratorConfigurationEClass, ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__SAVE_IMAGES);
+		createEAttribute(abstractDocumentGeneratorConfigurationEClass, ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__TEMPLATE_FILE);
 
 		generatorConfigurationEClass = createEClass(GENERATOR_CONFIGURATION);
 		createEAttribute(generatorConfigurationEClass, GENERATOR_CONFIGURATION__DOCUMENT_NAME);
@@ -451,6 +463,8 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 		initEAttribute(getAbstractDocumentGeneratorConfiguration_SaveDocumentStructure(), ecorePackage.getEBoolean(), "saveDocumentStructure", "true", 1, 1, AbstractDocumentGeneratorConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, //$NON-NLS-1$ //$NON-NLS-2$
 				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getAbstractDocumentGeneratorConfiguration_SaveImages(), ecorePackage.getEBoolean(), "saveImages", "true", 1, 1, AbstractDocumentGeneratorConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, //$NON-NLS-1$ //$NON-NLS-2$
+				!IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getAbstractDocumentGeneratorConfiguration_TemplateFile(), ecorePackage.getEString(), "templateFile", null, 0, 1, AbstractDocumentGeneratorConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, //$NON-NLS-1$
 				!IS_DERIVED, !IS_ORDERED);
 
 		initEClass(generatorConfigurationEClass, GeneratorConfiguration.class, "GeneratorConfiguration", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$

@@ -48,6 +48,7 @@
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="generatorconfiguration.ecore#//AbstractDocumentGeneratorConfiguration">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute generatorconfiguration.ecore#//AbstractDocumentGeneratorConfiguration/saveDocumentStructure"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute generatorconfiguration.ecore#//AbstractDocumentGeneratorConfiguration/saveImages"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute generatorconfiguration.ecore#//AbstractDocumentGeneratorConfiguration/templateFile"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="generatorconfiguration.ecore#//GeneratorConfiguration">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute generatorconfiguration.ecore#//GeneratorConfiguration/documentName"/>

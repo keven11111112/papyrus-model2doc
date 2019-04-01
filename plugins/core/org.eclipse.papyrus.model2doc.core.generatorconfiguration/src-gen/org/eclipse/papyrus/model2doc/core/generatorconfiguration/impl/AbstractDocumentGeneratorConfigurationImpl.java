@@ -32,6 +32,7 @@ import org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfig
  * <ul>
  * <li>{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.AbstractDocumentGeneratorConfigurationImpl#isSaveDocumentStructure <em>Save Document Structure</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.AbstractDocumentGeneratorConfigurationImpl#isSaveImages <em>Save Images</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.AbstractDocumentGeneratorConfigurationImpl#getTemplateFile <em>Template File</em>}</li>
  * </ul>
  *
  * @generated
@@ -80,6 +81,28 @@ public abstract class AbstractDocumentGeneratorConfigurationImpl extends Generat
 	 * @ordered
 	 */
 	protected boolean saveImages = SAVE_IMAGES_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTemplateFile() <em>Template File</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getTemplateFile()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TEMPLATE_FILE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTemplateFile() <em>Template File</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getTemplateFile()
+	 * @generated
+	 * @ordered
+	 */
+	protected String templateFile = TEMPLATE_FILE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -161,12 +184,40 @@ public abstract class AbstractDocumentGeneratorConfigurationImpl extends Generat
 	 * @generated
 	 */
 	@Override
+	public String getTemplateFile() {
+		return templateFile;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setTemplateFile(String newTemplateFile) {
+		String oldTemplateFile = templateFile;
+		templateFile = newTemplateFile;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, GeneratorConfigurationPackage.ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__TEMPLATE_FILE, oldTemplateFile, templateFile));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case GeneratorConfigurationPackage.ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__SAVE_DOCUMENT_STRUCTURE:
 			return isSaveDocumentStructure();
 		case GeneratorConfigurationPackage.ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__SAVE_IMAGES:
 			return isSaveImages();
+		case GeneratorConfigurationPackage.ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__TEMPLATE_FILE:
+			return getTemplateFile();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -185,6 +236,9 @@ public abstract class AbstractDocumentGeneratorConfigurationImpl extends Generat
 			return;
 		case GeneratorConfigurationPackage.ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__SAVE_IMAGES:
 			setSaveImages((Boolean) newValue);
+			return;
+		case GeneratorConfigurationPackage.ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__TEMPLATE_FILE:
+			setTemplateFile((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -205,6 +259,9 @@ public abstract class AbstractDocumentGeneratorConfigurationImpl extends Generat
 		case GeneratorConfigurationPackage.ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__SAVE_IMAGES:
 			setSaveImages(SAVE_IMAGES_EDEFAULT);
 			return;
+		case GeneratorConfigurationPackage.ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__TEMPLATE_FILE:
+			setTemplateFile(TEMPLATE_FILE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -222,6 +279,8 @@ public abstract class AbstractDocumentGeneratorConfigurationImpl extends Generat
 			return saveDocumentStructure != SAVE_DOCUMENT_STRUCTURE_EDEFAULT;
 		case GeneratorConfigurationPackage.ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__SAVE_IMAGES:
 			return saveImages != SAVE_IMAGES_EDEFAULT;
+		case GeneratorConfigurationPackage.ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__TEMPLATE_FILE:
+			return TEMPLATE_FILE_EDEFAULT == null ? templateFile != null : !TEMPLATE_FILE_EDEFAULT.equals(templateFile);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -243,6 +302,8 @@ public abstract class AbstractDocumentGeneratorConfigurationImpl extends Generat
 		result.append(saveDocumentStructure);
 		result.append(", saveImages: "); //$NON-NLS-1$
 		result.append(saveImages);
+		result.append(", templateFile: "); //$NON-NLS-1$
+		result.append(templateFile);
 		result.append(')');
 		return result.toString();
 	}

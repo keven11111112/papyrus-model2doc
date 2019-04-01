@@ -25,6 +25,7 @@ package org.eclipse.papyrus.model2doc.core.generatorconfiguration;
  * <ul>
  * <li>{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentGeneratorConfiguration#isSaveDocumentStructure <em>Save Document Structure</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentGeneratorConfiguration#isSaveImages <em>Save Images</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentGeneratorConfiguration#getTemplateFile <em>Template File</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationPackage#getAbstractDocumentGeneratorConfiguration()
@@ -89,5 +90,33 @@ public interface AbstractDocumentGeneratorConfiguration extends GeneratorConfigu
 	 * @generated
 	 */
 	void setSaveImages(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Template File</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The path to the file to use as template. This file contains de style description and maybe the cover page too.
+	 * <!-- end-model-doc -->
+	 *
+	 * @return the value of the '<em>Template File</em>' attribute.
+	 * @see #setTemplateFile(String)
+	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationPackage#getAbstractDocumentGeneratorConfiguration_TemplateFile()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	String getTemplateFile();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentGeneratorConfiguration#getTemplateFile <em>Template File</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *                  the new value of the '<em>Template File</em>' attribute.
+	 * @see #getTemplateFile()
+	 * @generated
+	 */
+	void setTemplateFile(String value);
 
 } // AbstractDocumentGeneratorConfiguration

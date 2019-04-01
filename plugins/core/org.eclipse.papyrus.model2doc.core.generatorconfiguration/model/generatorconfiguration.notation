@@ -197,6 +197,10 @@
         <element xmi:type="uml:Property" href="generatorconfiguration.uml#_BThvgE1eEemE05tA7eq89g"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_EJCTEVCKEemNlsOH2YnpzQ"/>
       </children>
+      <children xmi:type="notation:Shape" xmi:id="_147dcFRNEemNlsOH2YnpzQ" type="Property_ClassAttributeLabel">
+        <element xmi:type="uml:Property" href="generatorconfiguration.uml#_14YD0FRNEemNlsOH2YnpzQ"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_147dcVRNEemNlsOH2YnpzQ"/>
+      </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_5Tr6IVCJEemNlsOH2YnpzQ"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_5Tr6IlCJEemNlsOH2YnpzQ"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_5Tr6I1CJEemNlsOH2YnpzQ"/>

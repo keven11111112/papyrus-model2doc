@@ -196,6 +196,16 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	int ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__SAVE_IMAGES = GENERATOR_CONFIGURATION_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Template File</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__TEMPLATE_FILE = GENERATOR_CONFIGURATION_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Abstract Document Generator Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -203,7 +213,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION_FEATURE_COUNT = GENERATOR_CONFIGURATION_FEATURE_COUNT + 2;
+	int ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION_FEATURE_COUNT = GENERATOR_CONFIGURATION_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Abstract Document Generator Configuration</em>' class.
@@ -275,6 +285,16 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * @ordered
 	 */
 	int ABSTRACT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION__SAVE_IMAGES = ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__SAVE_IMAGES;
+
+	/**
+	 * The feature id for the '<em><b>Template File</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION__TEMPLATE_FILE = ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__TEMPLATE_FILE;
 
 	/**
 	 * The feature id for the '<em><b>Structure Generator Id</b></em>' attribute.
@@ -386,6 +406,16 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * @ordered
 	 */
 	int DEFAULT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION__SAVE_IMAGES = ABSTRACT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION__SAVE_IMAGES;
+
+	/**
+	 * The feature id for the '<em><b>Template File</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int DEFAULT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION__TEMPLATE_FILE = ABSTRACT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION__TEMPLATE_FILE;
 
 	/**
 	 * The feature id for the '<em><b>Structure Generator Id</b></em>' attribute.
@@ -581,6 +611,16 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	int DEFAULT_DOCUMENT_GENERATOR_CONFIGURATION__SAVE_IMAGES = ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__SAVE_IMAGES;
 
 	/**
+	 * The feature id for the '<em><b>Template File</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int DEFAULT_DOCUMENT_GENERATOR_CONFIGURATION__TEMPLATE_FILE = ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__TEMPLATE_FILE;
+
+	/**
 	 * The number of structural features of the '<em>Default Document Generator Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -693,6 +733,18 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAbstractDocumentGeneratorConfiguration_SaveImages();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentGeneratorConfiguration#getTemplateFile <em>Template File</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Template File</em>'.
+	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentGeneratorConfiguration#getTemplateFile()
+	 * @see #getAbstractDocumentGeneratorConfiguration()
+	 * @generated
+	 */
+	EAttribute getAbstractDocumentGeneratorConfiguration_TemplateFile();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfiguration <em>Generator Configuration</em>}'.
@@ -887,6 +939,15 @@ public interface GeneratorConfigurationPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__SAVE_IMAGES = eINSTANCE.getAbstractDocumentGeneratorConfiguration_SaveImages();
+
+		/**
+		 * The meta object literal for the '<em><b>Template File</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__TEMPLATE_FILE = eINSTANCE.getAbstractDocumentGeneratorConfiguration_TemplateFile();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.GeneratorConfigurationImpl <em>Generator Configuration</em>}' class.
