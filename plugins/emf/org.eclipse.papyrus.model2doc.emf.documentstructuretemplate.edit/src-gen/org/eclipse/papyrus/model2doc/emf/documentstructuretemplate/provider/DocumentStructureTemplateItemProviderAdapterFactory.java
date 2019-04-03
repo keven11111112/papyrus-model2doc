@@ -138,81 +138,6 @@ public class DocumentStructureTemplateItemProviderAdapterFactory extends Documen
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceDocumentPartTemplate} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected EReferenceDocumentPartTemplateItemProvider eReferenceDocumentPartTemplateItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceDocumentPartTemplate}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public Adapter createEReferenceDocumentPartTemplateAdapter() {
-		if (eReferenceDocumentPartTemplateItemProvider == null) {
-			eReferenceDocumentPartTemplateItemProvider = new EReferenceDocumentPartTemplateItemProvider(this);
-		}
-
-		return eReferenceDocumentPartTemplateItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassDocumentPartTemplate} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected EClassDocumentPartTemplateItemProvider eClassDocumentPartTemplateItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassDocumentPartTemplate}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public Adapter createEClassDocumentPartTemplateAdapter() {
-		if (eClassDocumentPartTemplateItemProvider == null) {
-			eClassDocumentPartTemplateItemProvider = new EClassDocumentPartTemplateItemProvider(this);
-		}
-
-		return eClassDocumentPartTemplateItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EObjectDocumentPartTemplate} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected EObjectDocumentPartTemplateItemProvider eObjectDocumentPartTemplateItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EObjectDocumentPartTemplate}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public Adapter createEObjectDocumentPartTemplateAdapter() {
-		if (eObjectDocumentPartTemplateItemProvider == null) {
-			eObjectDocumentPartTemplateItemProvider = new EObjectDocumentPartTemplateItemProvider(this);
-		}
-
-		return eObjectDocumentPartTemplateItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TableOfContents} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -260,6 +185,81 @@ public class DocumentStructureTemplateItemProviderAdapterFactory extends Documen
 		}
 
 		return bodyItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassPartTemplate} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected EClassPartTemplateItemProvider eClassPartTemplateItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassPartTemplate}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Adapter createEClassPartTemplateAdapter() {
+		if (eClassPartTemplateItemProvider == null) {
+			eClassPartTemplateItemProvider = new EClassPartTemplateItemProvider(this);
+		}
+
+		return eClassPartTemplateItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected EReferencePartTemplateItemProvider eReferencePartTemplateItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Adapter createEReferencePartTemplateAdapter() {
+		if (eReferencePartTemplateItemProvider == null) {
+			eReferencePartTemplateItemProvider = new EReferencePartTemplateItemProvider(this);
+		}
+
+		return eReferencePartTemplateItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceListView} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected EReferenceListViewItemProvider eReferenceListViewItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceListView}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Adapter createEReferenceListViewAdapter() {
+		if (eReferenceListViewItemProvider == null) {
+			eReferenceListViewItemProvider = new EReferenceListViewItemProvider(this);
+		}
+
+		return eReferenceListViewItemProvider;
 	}
 
 	/**
@@ -382,20 +382,20 @@ public class DocumentStructureTemplateItemProviderAdapterFactory extends Documen
 		if (textDocumentTemplateItemProvider != null) {
 			textDocumentTemplateItemProvider.dispose();
 		}
-		if (eReferenceDocumentPartTemplateItemProvider != null) {
-			eReferenceDocumentPartTemplateItemProvider.dispose();
-		}
-		if (eClassDocumentPartTemplateItemProvider != null) {
-			eClassDocumentPartTemplateItemProvider.dispose();
-		}
-		if (eObjectDocumentPartTemplateItemProvider != null) {
-			eObjectDocumentPartTemplateItemProvider.dispose();
-		}
 		if (tableOfContentsItemProvider != null) {
 			tableOfContentsItemProvider.dispose();
 		}
 		if (bodyItemProvider != null) {
 			bodyItemProvider.dispose();
+		}
+		if (eClassPartTemplateItemProvider != null) {
+			eClassPartTemplateItemProvider.dispose();
+		}
+		if (eReferencePartTemplateItemProvider != null) {
+			eReferencePartTemplateItemProvider.dispose();
+		}
+		if (eReferenceListViewItemProvider != null) {
+			eReferenceListViewItemProvider.dispose();
 		}
 	}
 

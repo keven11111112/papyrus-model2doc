@@ -73,92 +73,6 @@ This field is useless for usage outside of Papyrus, but we set its multiplicity 
       </ownedAttribute>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_nWOeEB5MEemmq_cjeiIGww" client="_tLqTYB17Eem3fboELVTtYQ" supplier="_pmiT0B5MEemmq_cjeiIGww" contract="_pmiT0B5MEemmq_cjeiIGww"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_jWFJ0B2FEemmq_cjeiIGww" name="EReferenceDocumentPartTemplate">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_pjBNMB2FEemmq_cjeiIGww" name="eReference">
-        <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWjvsX_EduPJbEsMYXjUQ"/>
-      </ownedAttribute>
-      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_mNzk4B2FEemmq_cjeiIGww" client="_jWFJ0B2FEemmq_cjeiIGww" supplier="_ZeO_IB1-Eem3fboELVTtYQ" contract="_ZeO_IB1-Eem3fboELVTtYQ"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Interface" xmi:id="_Fsn10B1-Eem3fboELVTtYQ" name="ObjectPartTemplate">
-      <generalization xmi:type="uml:Generalization" xmi:id="_klpWEB-7EempQZhnl_zCWg" general="_xVVWEB5NEemmq_cjeiIGww"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_njqvIB2GEemmq_cjeiIGww" name="featurePartTemplates" visibility="public" type="_ZeO_IB1-Eem3fboELVTtYQ" aggregation="composite" association="_njmdsB2GEemmq_cjeiIGww">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_trIcoB2GEemmq_cjeiIGww"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_trkhgB2GEemmq_cjeiIGww" value="*"/>
-      </ownedAttribute>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="__m2m4EvfEem4wpUXttaNpQ" name="isMatchingFilterRule">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_JaK7EEvgEem4wpUXttaNpQ" name="inputEObject">
-          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
-        </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_NpI14EvgEem4wpUXttaNpQ" name="return" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
-        </ownedParameter>
-      </ownedOperation>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Interface" xmi:id="_ZeO_IB1-Eem3fboELVTtYQ" name="FeaturePartTemplate">
-      <generalization xmi:type="uml:Generalization" xmi:id="_j5v5YB-7EempQZhnl_zCWg" general="_xVVWEB5NEemmq_cjeiIGww"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_xv888B2GEemmq_cjeiIGww" name="objectPartTemplates" visibility="public" type="_Fsn10B1-Eem3fboELVTtYQ" aggregation="composite" association="_xv4EcB2GEemmq_cjeiIGww">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xv888R2GEemmq_cjeiIGww"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xv9kAB2GEemmq_cjeiIGww" value="*"/>
-      </ownedAttribute>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_njmdsB2GEemmq_cjeiIGww" memberEnd="_njqvIB2GEemmq_cjeiIGww _njr9QB2GEemmq_cjeiIGww">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_njoS4B2GEemmq_cjeiIGww" source="org.eclipse.papyrus">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_njo58B2GEemmq_cjeiIGww" key="nature" value="UML_Nature"/>
-      </eAnnotations>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_njr9QB2GEemmq_cjeiIGww" name="objectPartTemplate" type="_Fsn10B1-Eem3fboELVTtYQ" association="_njmdsB2GEemmq_cjeiIGww"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_xv4EcB2GEemmq_cjeiIGww" memberEnd="_xv888B2GEemmq_cjeiIGww _xv9kAR2GEemmq_cjeiIGww">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xv8V4B2GEemmq_cjeiIGww" source="org.eclipse.papyrus">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xv8V4R2GEemmq_cjeiIGww" key="nature" value="UML_Nature"/>
-      </eAnnotations>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_xv9kAR2GEemmq_cjeiIGww" name="featurePartTemplate" type="_ZeO_IB1-Eem3fboELVTtYQ" association="_xv4EcB2GEemmq_cjeiIGww"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Interface" xmi:id="_xVVWEB5NEemmq_cjeiIGww" name="DocumentPartTemplate">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_UqsEoB5PEemmq_cjeiIGww" name="generate">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_WMIesB5OEemmq_cjeiIGww" name="generateTitle">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWkM8X_EduPJbEsMYXjUQ"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_obVaEB5OEemmq_cjeiIGww" name="defaultTitle" isReadOnly="true" isDerived="true">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWkisX_EduPJbEsMYXjUQ"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_yiEZgB5OEemmq_cjeiIGww" name="customTitle">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWkisX_EduPJbEsMYXjUQ"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1ZwYUB5OEemmq_cjeiIGww"/>
-      </ownedAttribute>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_PkrTIB-6EempQZhnl_zCWg" memberEnd="_Pkz2AB-6EempQZhnl_zCWg _Pk1EIB-6EempQZhnl_zCWg">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_PkyA0B-6EempQZhnl_zCWg" source="org.eclipse.papyrus">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_PkyA0R-6EempQZhnl_zCWg" key="nature" value="UML_Nature"/>
-      </eAnnotations>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_Pk1EIB-6EempQZhnl_zCWg" name="body" type="_xzVjoDnLEem5-oyJMXJtFA" association="_PkrTIB-6EempQZhnl_zCWg"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_65g2MB-6EempQZhnl_zCWg" name="EClassDocumentPartTemplate">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_TArosR2FEemmq_cjeiIGww" name="eClass">
-        <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWizcX_EduPJbEsMYXjUQ"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_hk9eUEojEem4wpUXttaNpQ" name="filterRule" type="_SKJWIEojEem4wpUXttaNpQ">
-        <defaultValue xmi:type="uml:LiteralString" xmi:id="_nFZoEEojEem4wpUXttaNpQ" name="TYPE_OF" value="TYPE_OF"/>
-      </ownedAttribute>
-      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_z99j4B-7EempQZhnl_zCWg" client="_65g2MB-6EempQZhnl_zCWg" supplier="_Fsn10B1-Eem3fboELVTtYQ" contract="_Fsn10B1-Eem3fboELVTtYQ"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_wHGnEB-7EempQZhnl_zCWg" name="EObjectDocumentPartTemplate">
-      <ownedComment xmi:type="uml:Comment" xmi:id="_Rc15QB73Eemmq_cjeiIGww" annotatedElement="_wHGnEB-7EempQZhnl_zCWg">
-        <body>This element allow to define from which specific element of a model, the documentation process must start&#xD;
-This element can only be owned by a DocumentTemplate. In other case, we will return a validation error.</body>
-      </ownedComment>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_616TIB-7EempQZhnl_zCWg" name="eObject">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_-zqq4B2GEemmq_cjeiIGww" annotatedElement="_616TIB-7EempQZhnl_zCWg">
-          <body>The field eobject is [0..1], in order to be get a valid model when we use this model as a registered template prototype and not as a final user template&#xD;
-The field eobject must reference an eobject of the user model, in other case the model validation will return an error.&#xD;
-&#xD;
-</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
-      </ownedAttribute>
-      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_0ZozQB-7EempQZhnl_zCWg" client="_wHGnEB-7EempQZhnl_zCWg" supplier="_Fsn10B1-Eem3fboELVTtYQ" contract="_Fsn10B1-Eem3fboELVTtYQ"/>
-    </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_f03L4DnLEem5-oyJMXJtFA" name="TableOfContents">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_ikXfEDnLEem5-oyJMXJtFA" name="tocTitle">
         <type xmi:type="uml:PrimitiveType" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWkisX_EduPJbEsMYXjUQ"/>
@@ -167,8 +81,12 @@ The field eobject must reference an eobject of the user model, in other case the
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_Omg0EDnMEem5-oyJMXJtFA" client="_f03L4DnLEem5-oyJMXJtFA" supplier="_zXDZIDnLEem5-oyJMXJtFA" contract="_zXDZIDnLEem5-oyJMXJtFA"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_xzVjoDnLEem5-oyJMXJtFA" name="Body">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_Pkz2AB-6EempQZhnl_zCWg" name="objectPartTemplate" type="_Fsn10B1-Eem3fboELVTtYQ" isOrdered="true" aggregation="composite" association="_PkrTIB-6EempQZhnl_zCWg">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Pk0dER-6EempQZhnl_zCWg" value="*"/>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_JFV1wFYAEemKJasCEBKPhQ" annotatedElement="_xzVjoDnLEem5-oyJMXJtFA">
+        <body>This element represents the body of the future document. Its children describe how to traverse the user model in order to build the final document. &#xD;
+Its children are an alternation of two kinds of objects: IBodyPartTemplate and ISubBodyPartTemplate. The IBodyPartTemplate children are ISubBodyPartTemplate, and in turn, the ISubBodyPartTemplate children are IBodyPartTemplate again. This occurs at each level. </body>
+      </ownedComment>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_omOJ81X9EemKJasCEBKPhQ" name="bodyPartTemplate" type="_lpLKAFX9EemKJasCEBKPhQ" aggregation="composite" association="_omOJ8FX9EemKJasCEBKPhQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_omOxAVX9EemKJasCEBKPhQ" value="*"/>
       </ownedAttribute>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_PHIN0DnMEem5-oyJMXJtFA" client="_xzVjoDnLEem5-oyJMXJtFA" supplier="_zXDZIDnLEem5-oyJMXJtFA" contract="_zXDZIDnLEem5-oyJMXJtFA"/>
     </packagedElement>
@@ -205,6 +123,9 @@ The field eobject must reference an eobject of the user model, in other case the
       <ownedEnd xmi:type="uml:Property" xmi:id="_2Eq_gznXEem5-oyJMXJtFA" name="documentTemplate" type="_pmiT0B5MEemmq_cjeiIGww" association="_2EojQDnXEem5-oyJMXJtFA"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_SKJWIEojEem4wpUXttaNpQ" name="EClassFilterBehavior">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_AT5cAFYFEemKJasCEBKPhQ" annotatedElement="_SKJWIEojEem4wpUXttaNpQ">
+        <body>This enumeration allows to describe how to implement the filter rule in EClassPartTemplate.</body>
+      </ownedComment>
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_YPrJ8EojEem4wpUXttaNpQ" name="TYPE_OF"/>
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_c0QIYEojEem4wpUXttaNpQ" name="KIND_OF"/>
     </packagedElement>
@@ -216,17 +137,145 @@ The field eobject must reference an eobject of the user model, in other case the
       </eAnnotations>
       <ownedEnd xmi:type="uml:Property" xmi:id="_TBSdkVCGEems8PYEpvQE1w" name="documentTemplate" type="_pmiT0B5MEemmq_cjeiIGww" association="_TBJToFCGEems8PYEpvQE1w"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_lpLKAFX9EemKJasCEBKPhQ" name="IBodyPartTemplate">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_6bjMwFX9EemKJasCEBKPhQ" annotatedElement="_lpLKAFX9EemKJasCEBKPhQ">
+        <body>Base element to build the body of the document.</body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_CSwiIFYVEemiOeXIb5muwQ" general="_XvipQFYUEemiOeXIb5muwQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_omOJ8FX9EemKJasCEBKPhQ" memberEnd="_omOJ81X9EemKJasCEBKPhQ _omOxAlX9EemKJasCEBKPhQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_omOJ8VX9EemKJasCEBKPhQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_omOJ8lX9EemKJasCEBKPhQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_omOxAlX9EemKJasCEBKPhQ" name="body" type="_xzVjoDnLEem5-oyJMXJtFA" association="_omOJ8FX9EemKJasCEBKPhQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_Pau8cFX-EemKJasCEBKPhQ" name="IComposedBodyPartTemplate">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_SK_oIFX_EemKJasCEBKPhQ" annotatedElement="_Pau8cFX-EemKJasCEBKPhQ">
+        <body>This body part template can have children of type ISubBodyPartTemplate.</body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_qb4OkFX-EemKJasCEBKPhQ" general="_lpLKAFX9EemKJasCEBKPhQ"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_xUByIlX-EemKJasCEBKPhQ" name="subBodyPartTemplate" type="_VnL3oFX-EemKJasCEBKPhQ" aggregation="composite" association="_xUBLEFX-EemKJasCEBKPhQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xUByI1X-EemKJasCEBKPhQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xUByJFX-EemKJasCEBKPhQ" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_R99HIFX-EemKJasCEBKPhQ" name="ILeafBodyPartTemplate">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_TcBLIFX_EemKJasCEBKPhQ" annotatedElement="_R99HIFX-EemKJasCEBKPhQ">
+        <body>This body part template can't have children.</body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_sVYt4FX-EemKJasCEBKPhQ" general="_lpLKAFX9EemKJasCEBKPhQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_VnL3oFX-EemKJasCEBKPhQ" name="ISubBodyPartTemplate">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_cnA7EFX_EemKJasCEBKPhQ" annotatedElement="_VnL3oFX-EemKJasCEBKPhQ">
+        <body>Common interface for the children of ICompositeBodyPartTemplate.</body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_Htiv0FYVEemiOeXIb5muwQ" general="_XvipQFYUEemiOeXIb5muwQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_cjbRAFX-EemKJasCEBKPhQ" name="IComposedSubBodyPartTemplate">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_gMcJoFX_EemKJasCEBKPhQ" annotatedElement="_cjbRAFX-EemKJasCEBKPhQ">
+        <body>This sub body part template can have children of type IBodyPartTemplate.</body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_CvcgIFX_EemKJasCEBKPhQ" general="_VnL3oFX-EemKJasCEBKPhQ"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_ElQLMlX_EemKJasCEBKPhQ" name="bodyPartTemplate" type="_lpLKAFX9EemKJasCEBKPhQ" aggregation="composite" association="_ElNH4FX_EemKJasCEBKPhQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ElQyQFX_EemKJasCEBKPhQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ElQyQVX_EemKJasCEBKPhQ" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_e0vMUFX-EemKJasCEBKPhQ" name="ILeafSubBodyPartTemplate">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_jKWFMFX_EemKJasCEBKPhQ" annotatedElement="_e0vMUFX-EemKJasCEBKPhQ">
+        <body>This sub body part template can't have children.</body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_CDgAIFX_EemKJasCEBKPhQ" general="_VnL3oFX-EemKJasCEBKPhQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_xUBLEFX-EemKJasCEBKPhQ" memberEnd="_xUByIlX-EemKJasCEBKPhQ _xUByJVX-EemKJasCEBKPhQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xUByIFX-EemKJasCEBKPhQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xUByIVX-EemKJasCEBKPhQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_xUByJVX-EemKJasCEBKPhQ" name="icomposedbodyparttemplate" type="_Pau8cFX-EemKJasCEBKPhQ" association="_xUBLEFX-EemKJasCEBKPhQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_ElNH4FX_EemKJasCEBKPhQ" memberEnd="_ElQLMlX_EemKJasCEBKPhQ _ElQyQlX_EemKJasCEBKPhQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ElQLMFX_EemKJasCEBKPhQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ElQLMVX_EemKJasCEBKPhQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_ElQyQlX_EemKJasCEBKPhQ" name="icomposedsubbodyparttemplate" type="_cjbRAFX-EemKJasCEBKPhQ" association="_ElNH4FX_EemKJasCEBKPhQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_QLb5QFYBEemKJasCEBKPhQ" name="EClassPartTemplate">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_U3f_wFYBEemKJasCEBKPhQ" name="eClass">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_2xzasFYEEemKJasCEBKPhQ" annotatedElement="_U3f_wFYBEemKJasCEBKPhQ">
+          <body>An EClass used to filter EObject.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWizcX_EduPJbEsMYXjUQ"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Yjo6UFYBEemKJasCEBKPhQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_dipK8FYBEemKJasCEBKPhQ" name="filterRule" type="_SKJWIEojEem4wpUXttaNpQ">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_s-0dsFYEEemKJasCEBKPhQ" annotatedElement="_dipK8FYBEemKJasCEBKPhQ">
+          <body>Description of the way to use to filter EObject in the method isMatchingFilterRule.</body>
+        </ownedComment>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_dipK8VYBEemKJasCEBKPhQ" name="TYPE_OF" value="TYPE_OF"/>
+      </ownedAttribute>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_fQX4EFYBEemKJasCEBKPhQ" client="_QLb5QFYBEemKJasCEBKPhQ" supplier="_cjbRAFX-EemKJasCEBKPhQ" contract="_cjbRAFX-EemKJasCEBKPhQ"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_n4VzcFYBEemKJasCEBKPhQ" name="isMatchingFilterRule">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_moP9MFYEEemKJasCEBKPhQ" annotatedElement="_n4VzcFYBEemKJasCEBKPhQ">
+          <body>This method will return true, when the eClass field is null or if the EObject in argument match the filter behavior and false otherwise.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_n4VzcVYBEemKJasCEBKPhQ" name="inputEObject">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_n4VzclYBEemKJasCEBKPhQ" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_4exaMFYBEemKJasCEBKPhQ" name="EReferencePartTemplate">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_fh6pIFYDEemKJasCEBKPhQ" annotatedElement="_4exaMFYBEemKJasCEBKPhQ">
+        <body>This part reference an EReference of the parent EClassPartTemplate.</body>
+      </ownedComment>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_A7ZBMFYCEemKJasCEBKPhQ" name="eReference">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_gL92QFYEEemKJasCEBKPhQ" annotatedElement="_A7ZBMFYCEemKJasCEBKPhQ">
+          <body>A EReference which should be provided by the EClass of the upper level.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWjvsX_EduPJbEsMYXjUQ"/>
+      </ownedAttribute>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_8zOR8FYBEemKJasCEBKPhQ" client="_4exaMFYBEemKJasCEBKPhQ" supplier="_Pau8cFX-EemKJasCEBKPhQ" contract="_Pau8cFX-EemKJasCEBKPhQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_DwGdIFYFEemKJasCEBKPhQ" name="ITemplatePartView">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_Tsx8QFYFEemKJasCEBKPhQ" annotatedElement="_DwGdIFYFEemKJasCEBKPhQ">
+        <body>This interface is used to describe BodyPartTemplate which contributes to fill the document's body.</body>
+      </ownedComment>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ZIXbMFYFEemKJasCEBKPhQ" name="EReferenceListView">
+      <generalization xmi:type="uml:Generalization" xmi:id="_cRJxEFYFEemKJasCEBKPhQ" general="_4exaMFYBEemKJasCEBKPhQ"/>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_eghysFYFEemKJasCEBKPhQ" client="_ZIXbMFYFEemKJasCEBKPhQ" supplier="_DwGdIFYFEemKJasCEBKPhQ" contract="_DwGdIFYFEemKJasCEBKPhQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_XvipQFYUEemiOeXIb5muwQ" name="IBodySectionPartTemplate">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_AEfyQFX-EemKJasCEBKPhQ" name="generate">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_ppgrkFYAEemKJasCEBKPhQ" annotatedElement="_AEfyQFX-EemKJasCEBKPhQ">
+          <body>If true, we will generate something for this body part. &#xD;
+If false, we will use the object to cross the user model, but we will generate nothing to this body part.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+        <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_iodb8FYGEemKJasCEBKPhQ" value="true"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_32k08FYFEemKJasCEBKPhQ" name="generateTitle">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_U8xIAFYGEemKJasCEBKPhQ" annotatedElement="_32k08FYFEemKJasCEBKPhQ">
+          <body>If true, we will generate a main title here, before to traverse the document model.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+        <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_jtyFQFYGEemKJasCEBKPhQ" value="true"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_a2X_sFYGEemKJasCEBKPhQ" name="customTitle">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_oA0AsFYGEemKJasCEBKPhQ" annotatedElement="_a2X_sFYGEemKJasCEBKPhQ">
+          <body>The title to use for this section instead using the calculated one.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eZ-pUFYGEemKJasCEBKPhQ"/>
+      </ownedAttribute>
+    </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Dwr3IB2KEemmq_cjeiIGww">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DwseMB2KEemmq_cjeiIGww" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Ecore.profile.uml#_0"/>
-    </profileApplication>
-    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_-yZ94B-7EempQZhnl_zCWg">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-ybzEB-7EempQZhnl_zCWg" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
-      </eAnnotations>
-      <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
     </profileApplication>
   </uml:Model>
   <Ecore:EPackage xmi:id="_Hbk0gB2KEemmq_cjeiIGww" base_Package="_qN46sB17Eem3fboELVTtYQ" packageName="documentstructuretemplate" nsPrefix="documentstructuretemplate" basePackage="org.eclipse.papyrus.model2doc.emf" prefix="DocumentStructureTemplate"/>

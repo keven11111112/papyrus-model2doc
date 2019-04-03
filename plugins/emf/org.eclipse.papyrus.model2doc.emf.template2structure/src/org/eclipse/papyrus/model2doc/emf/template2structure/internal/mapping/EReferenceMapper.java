@@ -19,21 +19,24 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Title;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceDocumentPartTemplate;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ObjectPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubBodyPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.template2structure.Activator;
 import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.service.TemplateToStructureMappingService;
 
 /**
  * @author VL222926
  *
  */
-public class EReferenceMapper extends AbstractEMFTemplateToStructureMapper<EReferenceDocumentPartTemplate, BodyPart> {
+public class EReferenceMapper extends AbstractEMFTemplateToStructureMapper<EReferencePartTemplate, BodyPart> {
 
 	/**
 	 * Constructor.
@@ -42,83 +45,91 @@ public class EReferenceMapper extends AbstractEMFTemplateToStructureMapper<ERefe
 	 * @param outputEClass
 	 */
 	public EReferenceMapper() {
-		super(TEMPLATE_EPACKAGE.getEReferenceDocumentPartTemplate(), STRUCTURE_EPACKAGE.getBodyPart());
+		super(TEMPLATE_EPACKAGE.getEReferencePartTemplate(), STRUCTURE_EPACKAGE.getBodyPart());
 	}
 
 	/**
 	 * @see org.eclipse.papyrus.model2doc.emf.template2structure.mapping.service.AbtractTemplateToStructureMapper#doMap(org.eclipse.emf.ecore.EObject, org.eclipse.emf.ecore.EObject)
 	 *
-	 * @param documentTemplateElement
+	 * @param referencePartTemplate
 	 * @param semanticModelElement
 	 * @return
 	 */
 	@Override
-	protected Collection<BodyPart> doMap(final EReferenceDocumentPartTemplate documentTemplateElement, final EObject semanticModelElement) {
+	protected Collection<BodyPart> doMap(final EReferencePartTemplate referencePartTemplate, final EObject semanticModelElement) {
 		Collection<BodyPart> returnedElements = new ArrayList<>();
 
-		final Collection<EObject> matchingElements = getMatchingElement(documentTemplateElement, semanticModelElement);
+		final Collection<EObject> matchingElements = getMatchingReferencedEObjects(referencePartTemplate, semanticModelElement);
 		if (matchingElements.isEmpty()) {
 			return null;
 		}
-		if (documentTemplateElement.isGenerate()) {
-			final Iterator<EObject> iter = matchingElements.iterator();
-			while (iter.hasNext()) {
-				final EObject current = iter.next();
-				final boolean generateTitle = documentTemplateElement.isGenerateTitle();
-				Title title = null;
-				if (generateTitle) {
-					title = STRUCTURE_EFACTORY.createTitle();
-					// TODO search emf label provider for that
-
-					// here, the title is the feature name
-					title.setTitle(documentTemplateElement.getEReference().getName());
-					returnedElements.add(title);
+		Title title = null;
+		if (referencePartTemplate.isGenerate()) {
+			if (referencePartTemplate.isGenerateTitle()) {
+				title = STRUCTURE_EFACTORY.createTitle();
+				title.setTitle(getSectionTitle(referencePartTemplate));
+				returnedElements.add(title);
+			}
+		}
+		final Iterator<EObject> iter = matchingElements.iterator();
+		while (iter.hasNext()) {
+			final Iterator<ISubBodyPartTemplate> subBodyPartTemplate = referencePartTemplate.getSubBodyPartTemplate().iterator();
+			while (subBodyPartTemplate.hasNext()) {
+				final ISubBodyPartTemplate currentObjectPartTemplate = subBodyPartTemplate.next();
+				final Collection<EObject> result = TemplateToStructureMappingService.INSTANCE.map(currentObjectPartTemplate, iter.next(), STRUCTURE_EPACKAGE.getBodyPart());
+				if (result == null) {
+					continue;
 				}
-
-				final Iterator<ObjectPartTemplate> objectPartTemplateIter = documentTemplateElement.getObjectPartTemplates().iterator();
-				while (objectPartTemplateIter.hasNext()) {
-					final ObjectPartTemplate currentObjectPartTemplate = objectPartTemplateIter.next();
-					final Collection<EObject> result = TemplateToStructureMappingService.INSTANCE.map(currentObjectPartTemplate, current, STRUCTURE_EPACKAGE.getBodyPart());
-					if (result == null) {
-						continue;
-					}
-					if (title != null) {
-						title.getSubBodyPart().addAll((Collection<? extends BodyPart>) result);
-					} else {
-						returnedElements.addAll((Collection<? extends BodyPart>) result);
-					}
+				if (title != null) {
+					title.getSubBodyPart().addAll((Collection<? extends BodyPart>) result);
+				} else {
+					returnedElements.addAll((Collection<? extends BodyPart>) result);
 				}
 			}
 		}
+
 		return returnedElements;
 	}
 
+	protected String getSectionTitle(final IBodySectionPartTemplate partTemplate) {// TODO in an upper class
+		final String customTitle = partTemplate.getCustomTitle();
+		return (null == customTitle || customTitle.isEmpty()) ? getPartTemplateTitle(partTemplate) : customTitle;
+	}
 
+	protected String getPartTemplateTitle(IBodySectionPartTemplate partTemplate) {// TODO factorize me somewhere?
+		if (partTemplate instanceof EReferencePartTemplate) {
+			return getLabel(((EReferencePartTemplate) partTemplate).getEReference());
+		}
+		return null;
+	}
 
+	protected String getLabel(final EObject eobject) {
+		if (eobject instanceof EReference) {
+			return ((EReference) eobject).getName();
+		}
+		return null;
+	}
 
-	protected Collection<EObject> getMatchingElement(final EReferenceDocumentPartTemplate documentTemplateElement, final EObject semanticModelElement) {
+	protected Collection<EObject> getMatchingReferencedEObjects(final EReferencePartTemplate documentTemplateElement, final EObject semanticModelElement) {
 		final List<EObject> elements = new ArrayList<>();
 		final EStructuralFeature feature = documentTemplateElement.getEReference();
 		if (feature.getEType() instanceof EObject) {
-			if (feature.isMany()) {
-				elements.addAll((Collection<EObject>) semanticModelElement.eGet(documentTemplateElement.getEReference()));
+			final EReference ref = documentTemplateElement.getEReference();
+			if (null != ref) {
+				if (semanticModelElement.eClass().getEAllReferences().contains(ref)) {
+					if (feature.isMany()) {
+						elements.addAll((Collection<EObject>) semanticModelElement.eGet(documentTemplateElement.getEReference()));
+					} else {
+						elements.add((EObject) semanticModelElement.eGet(documentTemplateElement.getEReference()));
+					}
+				} else {
+					Activator.log.warn(NLS.bind("The object {0} doesn't provide the EReference {1}", semanticModelElement, ref));
+				}
 			} else {
-				elements.add((EObject) semanticModelElement.eGet(documentTemplateElement.getEReference()));
+				Activator.log.warn("The EReference is null");
 			}
 		}
-		final ListIterator<EObject> iter = elements.listIterator();
 
-		while (iter.hasNext()) {
-			Iterator<ObjectPartTemplate> objectPartIter = documentTemplateElement.getObjectPartTemplates().iterator();
-			boolean matching = false;
-			while (objectPartIter.hasNext() && matching == false) {
-				final EObject current = iter.next();
-				matching = objectPartIter.next().isMatchingFilterRule(current);
-			}
-			if (false == matching) {
-				iter.remove();
-			}
-		}
 		return elements;
 	}
 

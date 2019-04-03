@@ -24,6 +24,5 @@ Export-Package: org.eclipse.papyrus.model2doc.core.internal.transcriber;x-intern
  org.eclipse.papyrus.model2doc.core.internal.util;x-internal:=true,
  org.eclipse.papyrus.model2doc.core.service,
  org.eclipse.papyrus.model2doc.core.transcriber,
- org.eclipse.papyrus.model2doc.core.transcription,
- org.eclipse.papyrus.model2doc.core.utils
+ org.eclipse.papyrus.model2doc.core.transcription
 Automatic-Module-Name: org.eclipse.papyrus.model2doc.core

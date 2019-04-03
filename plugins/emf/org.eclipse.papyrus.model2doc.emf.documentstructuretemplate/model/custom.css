@@ -17,3 +17,15 @@ Association > Label:targetRole {
 Association > Label:name {
 	visible:false;
 }
+
+Generalization {
+	routing:Rectilinear;
+}
+
+Association {
+	routing:Rectilinear;
+}
+
+InterfaceRealization {
+	routing:Rectilinear;
+}

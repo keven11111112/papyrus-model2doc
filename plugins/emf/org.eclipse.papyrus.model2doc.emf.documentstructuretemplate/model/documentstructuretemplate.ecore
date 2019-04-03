@@ -65,63 +65,123 @@
         upperBound="-1" eType="#//DocumentPart" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DocumentPart" abstract="true" interface="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="EReferenceDocumentPartTemplate" eSuperTypes="#//FeaturePartTemplate">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="eReference" ordered="false"
-        lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EReference"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FeaturePartTemplate" abstract="true"
-      interface="true" eSuperTypes="#//DocumentPartTemplate">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="objectPartTemplates" ordered="false"
-        upperBound="-1" eType="#//ObjectPartTemplate" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DocumentPartTemplate" abstract="true"
-      interface="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="generate" ordered="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="generateTitle" ordered="false"
-        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultTitle" ordered="false"
-        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
-        changeable="false" volatile="true" transient="true" derived="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="customTitle" ordered="false"
-        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ObjectPartTemplate" abstract="true"
-      interface="true" eSuperTypes="#//DocumentPartTemplate">
-    <eOperations name="isMatchingFilterRule" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="inputEObject" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
-    </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="featurePartTemplates" ordered="false"
-        upperBound="-1" eType="#//FeaturePartTemplate" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EClassDocumentPartTemplate" eSuperTypes="#//ObjectPartTemplate">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="eClass" ordered="false"
-        lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="filterRule" ordered="false"
-        lowerBound="1" eType="#//EClassFilterBehavior" defaultValueLiteral="TYPE_OF"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="EClassFilterBehavior">
-    <eLiterals name="TYPE_OF"/>
-    <eLiterals name="KIND_OF" value="1"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EObjectDocumentPartTemplate" eSuperTypes="#//ObjectPartTemplate">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This element allow to define from which specific element of a model, the documentation process must start&#xD;&#xA;This element can only be owned by a DocumentTemplate. In other case, we will return a validation error."/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="eObject" ordered="false"
-        lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The field eobject is [0..1], in order to be get a valid model when we use this model as a registered template prototype and not as a final user template&#xD;&#xA;The field eobject must reference an eobject of the user model, in other case the model validation will return an error.&#xD;&#xA;&#xD;&#xA;"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TableOfContents" eSuperTypes="#//DocumentPart">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tocTitle" ordered="false"
         lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
         defaultValueLiteral="Table Of Contents"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Body" eSuperTypes="#//DocumentPart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="objectPartTemplate" lowerBound="1"
-        upperBound="-1" eType="#//ObjectPartTemplate" containment="true"/>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This element represents the body of the future document. Its children describe how to traverse the user model in order to build the final document. &#xD;&#xA;Its children are an alternation of two kinds of objects: IBodyPartTemplate and ISubBodyPartTemplate. The IBodyPartTemplate children are ISubBodyPartTemplate, and in turn, the ISubBodyPartTemplate children are IBodyPartTemplate again. This occurs at each level. "/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bodyPartTemplate" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//IBodyPartTemplate" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IBodyPartTemplate" abstract="true" interface="true"
+      eSuperTypes="#//IBodySectionPartTemplate">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Base element to build the body of the document."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IBodySectionPartTemplate" abstract="true"
+      interface="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="generate" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="If true, we will generate something for this body part. &#xD;&#xA;If false, we will use the object to cross the user model, but we will generate nothing to this body part."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="generateTitle" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="If true, we will generate a main title here, before to traverse the document model."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="customTitle" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The title to use for this section instead using the calculated one."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EClassFilterBehavior">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This enumeration allows to describe how to implement the filter rule in EClassPartTemplate."/>
+    </eAnnotations>
+    <eLiterals name="TYPE_OF"/>
+    <eLiterals name="KIND_OF" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IComposedBodyPartTemplate" abstract="true"
+      interface="true" eSuperTypes="#//IBodyPartTemplate">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This body part template can have children of type ISubBodyPartTemplate."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subBodyPartTemplate" ordered="false"
+        upperBound="-1" eType="#//ISubBodyPartTemplate" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ISubBodyPartTemplate" abstract="true"
+      interface="true" eSuperTypes="#//IBodySectionPartTemplate">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Common interface for the children of ICompositeBodyPartTemplate."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ILeafBodyPartTemplate" abstract="true"
+      interface="true" eSuperTypes="#//IBodyPartTemplate">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This body part template can't have children."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IComposedSubBodyPartTemplate" abstract="true"
+      interface="true" eSuperTypes="#//ISubBodyPartTemplate">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This sub body part template can have children of type IBodyPartTemplate."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bodyPartTemplate" ordered="false"
+        upperBound="-1" eType="#//IBodyPartTemplate" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ILeafSubBodyPartTemplate" abstract="true"
+      interface="true" eSuperTypes="#//ISubBodyPartTemplate">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This sub body part template can't have children."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EClassPartTemplate" eSuperTypes="#//IComposedSubBodyPartTemplate">
+    <eOperations name="isMatchingFilterRule" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This method will return true, when the eClass field is null or if the EObject in argument match the filter behavior and false otherwise."/>
+      </eAnnotations>
+      <eParameters name="inputEObject" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eClass" ordered="false"
+        eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="An EClass used to filter EObject."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="filterRule" ordered="false"
+        lowerBound="1" eType="#//EClassFilterBehavior" defaultValueLiteral="TYPE_OF">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Description of the way to use to filter EObject in the method isMatchingFilterRule."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EReferencePartTemplate" eSuperTypes="#//IComposedBodyPartTemplate">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This part reference an EReference of the parent EClassPartTemplate."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eReference" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EReference">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A EReference which should be provided by the EClass of the upper level."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ITemplatePartView" abstract="true" interface="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This interface is used to describe BodyPartTemplate which contributes to fill the document's body."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EReferenceListView" eSuperTypes="#//EReferencePartTemplate #//ITemplatePartView"/>
 </ecore:EPackage>

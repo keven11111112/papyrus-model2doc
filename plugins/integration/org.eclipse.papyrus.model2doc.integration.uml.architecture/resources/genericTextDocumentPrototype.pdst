@@ -4,30 +4,24 @@
     <documentStructureGenerator xmi:type="generatorconfiguration:DefaultDocumentStructureGeneratorConfiguration" xmi:id="_9Q98AFIeEemOIbfVEaiEvg" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.odt" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.integration.uml.architecture/template/PapyrusTemplate.ott" structureGeneratorId="org.eclipse.papyrus.model2doc.documentstructure.generator" imageFolder="output/images" structureFolder="output"/>
     <documentPart xmi:type="documentstructuretemplate:TableOfContents" xmi:id="_74eOgEsMEemzsPCsrzvLCg" tocTitle="Table Of Contents"/>
     <documentPart xmi:type="documentstructuretemplate:Body" xmi:id="_9oFyAEsMEemzsPCsrzvLCg">
-      <objectPartTemplate xmi:type="documentstructuretemplate:EClassDocumentPartTemplate" xmi:id="_-OWgwEsMEemzsPCsrzvLCg" generate="true" generateTitle="true" filterRule="TYPE_OF">
-        <featurePartTemplates xmi:type="documentstructuretemplate:EReferenceDocumentPartTemplate" xmi:id="_atztsE2vEembQoQG_SIkHw" generate="true" generateTitle="true">
-          <objectPartTemplates xmi:type="documentstructuretemplate:EClassDocumentPartTemplate" xmi:id="_XirrwEsNEemzsPCsrzvLCg" generate="true" generateTitle="true" filterRule="TYPE_OF">
-            <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Property"/>
-          </objectPartTemplates>
-          <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//StructuredClassifier/ownedAttribute"/>
-        </featurePartTemplates>
-        <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
-      </objectPartTemplate>
-      <objectPartTemplate xmi:type="documentstructuretemplate:EClassDocumentPartTemplate" xmi:id="_oYt0cFFSEem-LMNuhjwlFQ" filterRule="TYPE_OF">
-        <featurePartTemplates xmi:type="documentstructuretemplate:EReferenceDocumentPartTemplate" xmi:id="_q63BEFFSEem-LMNuhjwlFQ">
-          <objectPartTemplates xmi:type="documentstructuretemplate:EClassDocumentPartTemplate" xmi:id="_seTw0FFSEem-LMNuhjwlFQ" generate="true" generateTitle="true" filterRule="TYPE_OF">
-            <featurePartTemplates xmi:type="documentstructuretemplate:EReferenceDocumentPartTemplate" xmi:id="_seTw0VFSEem-LMNuhjwlFQ" generate="true" generateTitle="true">
-              <objectPartTemplates xmi:type="documentstructuretemplate:EClassDocumentPartTemplate" xmi:id="_seUX4FFSEem-LMNuhjwlFQ" generate="true" generateTitle="true" filterRule="TYPE_OF">
-                <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Property"/>
-              </objectPartTemplates>
-              <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//StructuredClassifier/ownedAttribute"/>
-            </featurePartTemplates>
-            <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
-          </objectPartTemplates>
-          <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
-        </featurePartTemplates>
-        <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
-      </objectPartTemplate>
+      <bodyPartTemplate xmi:type="documentstructuretemplate:EReferencePartTemplate" xmi:id="_nu8k4FYXEemlbuO0By-TdQ" generate="true" generateTitle="true" customTitle="The Packages owned by the root root Package">
+        <subBodyPartTemplate xmi:type="documentstructuretemplate:EClassPartTemplate" xmi:id="_nu8k4VYXEemlbuO0By-TdQ" generate="true" generateTitle="true" filterRule="TYPE_OF">
+          <bodyPartTemplate xmi:type="documentstructuretemplate:EReferencePartTemplate" xmi:id="_sVhHYFYXEemlbuO0By-TdQ" generate="true" generateTitle="true" customTitle="Owned Classes">
+            <subBodyPartTemplate xmi:type="documentstructuretemplate:EClassPartTemplate" xmi:id="_sVhucFYXEemlbuO0By-TdQ" generate="true" generateTitle="true" filterRule="TYPE_OF">
+              <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+            </subBodyPartTemplate>
+            <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
+          </bodyPartTemplate>
+          <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+        </subBodyPartTemplate>
+        <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
+      </bodyPartTemplate>
+      <bodyPartTemplate xmi:type="documentstructuretemplate:EReferencePartTemplate" xmi:id="_WH4AgFYXEemlbuO0By-TdQ" generate="true" generateTitle="true" customTitle="The Class owned by the root root Package">
+        <subBodyPartTemplate xmi:type="documentstructuretemplate:EClassPartTemplate" xmi:id="_jV5hAFYXEemlbuO0By-TdQ" generate="true" generateTitle="true" filterRule="TYPE_OF">
+          <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+        </subBodyPartTemplate>
+        <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
+      </bodyPartTemplate>
     </documentPart>
   </documentTemplate>
 </documentstructuretemplate:DocumentTemplatePrototype>

@@ -17,40 +17,43 @@ import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>EReference Document Part Template</b></em>'.
+ * A representation of the model object '<em><b>EReference Part Template</b></em>'.
  * <!-- end-user-doc -->
+ *
+ * <!-- begin-model-doc -->
+ * This part reference an EReference of the parent EClassPartTemplate.
+ * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceDocumentPartTemplate#getEReference <em>EReference</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate#getEReference <em>EReference</em>}</li>
  * </ul>
  *
- * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getEReferenceDocumentPartTemplate()
+ * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getEReferencePartTemplate()
  * @model
  * @generated
  */
-public interface EReferenceDocumentPartTemplate extends FeaturePartTemplate {
+public interface EReferencePartTemplate extends IComposedBodyPartTemplate {
 	/**
 	 * Returns the value of the '<em><b>EReference</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>EReference</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A EReference which should be provided by the EClass of the upper level.
+	 * <!-- end-model-doc -->
 	 *
 	 * @return the value of the '<em>EReference</em>' reference.
 	 * @see #setEReference(EReference)
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getEReferenceDocumentPartTemplate_EReference()
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getEReferencePartTemplate_EReference()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	EReference getEReference();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceDocumentPartTemplate#getEReference <em>EReference</em>}' reference.
+	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate#getEReference <em>EReference</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -61,4 +64,4 @@ public interface EReferenceDocumentPartTemplate extends FeaturePartTemplate {
 	 */
 	void setEReference(EReference value);
 
-} // EReferenceDocumentPartTemplate
+} // EReferencePartTemplate

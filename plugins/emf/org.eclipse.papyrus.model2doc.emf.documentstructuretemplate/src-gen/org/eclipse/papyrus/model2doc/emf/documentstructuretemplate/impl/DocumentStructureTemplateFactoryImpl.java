@@ -75,16 +75,16 @@ public class DocumentStructureTemplateFactoryImpl extends EFactoryImpl implement
 			return createDocumentTemplatePrototype();
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE:
 			return createTextDocumentTemplate();
-		case DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE:
-			return createEReferenceDocumentPartTemplate();
-		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE:
-			return createEClassDocumentPartTemplate();
-		case DocumentStructureTemplatePackage.EOBJECT_DOCUMENT_PART_TEMPLATE:
-			return createEObjectDocumentPartTemplate();
 		case DocumentStructureTemplatePackage.TABLE_OF_CONTENTS:
 			return createTableOfContents();
 		case DocumentStructureTemplatePackage.BODY:
 			return createBody();
+		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE:
+			return createEClassPartTemplate();
+		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE:
+			return createEReferencePartTemplate();
+		case DocumentStructureTemplatePackage.EREFERENCE_LIST_VIEW:
+			return createEReferenceListView();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -153,42 +153,6 @@ public class DocumentStructureTemplateFactoryImpl extends EFactoryImpl implement
 	 * @generated
 	 */
 	@Override
-	public EReferenceDocumentPartTemplate createEReferenceDocumentPartTemplate() {
-		EReferenceDocumentPartTemplateImpl eReferenceDocumentPartTemplate = new EReferenceDocumentPartTemplateImpl();
-		return eReferenceDocumentPartTemplate;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EClassDocumentPartTemplate createEClassDocumentPartTemplate() {
-		EClassDocumentPartTemplateImpl eClassDocumentPartTemplate = new EClassDocumentPartTemplateImpl();
-		return eClassDocumentPartTemplate;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EObjectDocumentPartTemplate createEObjectDocumentPartTemplate() {
-		EObjectDocumentPartTemplateImpl eObjectDocumentPartTemplate = new EObjectDocumentPartTemplateImpl();
-		return eObjectDocumentPartTemplate;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
 	public TableOfContents createTableOfContents() {
 		TableOfContentsImpl tableOfContents = new TableOfContentsImpl();
 		return tableOfContents;
@@ -204,6 +168,42 @@ public class DocumentStructureTemplateFactoryImpl extends EFactoryImpl implement
 	public Body createBody() {
 		BodyImpl body = new BodyImpl();
 		return body;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClassPartTemplate createEClassPartTemplate() {
+		EClassPartTemplateImpl eClassPartTemplate = new EClassPartTemplateImpl();
+		return eClassPartTemplate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReferencePartTemplate createEReferencePartTemplate() {
+		EReferencePartTemplateImpl eReferencePartTemplate = new EReferencePartTemplateImpl();
+		return eReferencePartTemplate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReferenceListView createEReferenceListView() {
+		EReferenceListViewImpl eReferenceListView = new EReferenceListViewImpl();
+		return eReferenceListView;
 	}
 
 	/**

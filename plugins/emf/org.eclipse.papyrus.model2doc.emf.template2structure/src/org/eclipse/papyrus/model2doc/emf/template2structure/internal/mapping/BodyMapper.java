@@ -22,7 +22,7 @@ import java.util.Iterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.Body;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ObjectPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodyPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.service.TemplateToStructureMappingService;
 
 /**
@@ -46,17 +46,11 @@ public class BodyMapper extends AbstractEMFTemplateToStructureMapper<Body, org.e
 	@Override
 	protected Collection<org.eclipse.papyrus.model2doc.emf.documentstructure.Body> doMap(final Body documentStructureElement, final EObject modelElement) {
 		final org.eclipse.papyrus.model2doc.emf.documentstructure.Body body = STRUCTURE_EFACTORY.createBody();
-		for (final ObjectPartTemplate current : documentStructureElement.getObjectPartTemplate()) {
-			final Iterator<EObject> iter = modelElement.eContents().iterator();
-			while (iter.hasNext()) {
-				final EObject currentEObject = iter.next();
-				if (current.isMatchingFilterRule(currentEObject)) {
-					final Collection<EObject> result = TemplateToStructureMappingService.INSTANCE.map(current, currentEObject, STRUCTURE_EPACKAGE.getBodyPart());
-					if (null != result) {
-						body.getBodyPart().addAll((Collection<? extends BodyPart>) result);
-					}
-				}
-			}
+		final Iterator<IBodyPartTemplate> iter = documentStructureElement.getBodyPartTemplate().iterator();
+		while (iter.hasNext()) {
+			final IBodyPartTemplate currentBodyPartemplate = iter.next();
+			final Collection<EObject> result = TemplateToStructureMappingService.INSTANCE.map(currentBodyPartemplate, modelElement, STRUCTURE_EPACKAGE.getBodyPart());
+			body.getBodyPart().addAll((Collection<? extends BodyPart>) result);
 		}
 		return Collections.singleton(body);
 	}

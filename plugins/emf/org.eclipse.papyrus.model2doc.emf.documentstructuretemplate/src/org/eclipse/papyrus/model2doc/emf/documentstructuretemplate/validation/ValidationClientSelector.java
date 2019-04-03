@@ -14,14 +14,12 @@
 package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.validation;
 
 import org.eclipse.emf.validation.model.IClientSelector;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentPartTemplate;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate;
 
 public class ValidationClientSelector implements IClientSelector {
 
 	@Override
 	public boolean selects(Object object) {
-		return object instanceof DocumentPartTemplate || object instanceof DocumentTemplate;
+		return false;// TODO must be reimplemented later
 	}
 
 }

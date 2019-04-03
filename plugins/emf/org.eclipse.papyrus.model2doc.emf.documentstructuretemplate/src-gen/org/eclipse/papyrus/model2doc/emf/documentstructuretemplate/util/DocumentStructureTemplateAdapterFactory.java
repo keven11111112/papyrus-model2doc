@@ -103,36 +103,6 @@ public class DocumentStructureTemplateAdapterFactory extends AdapterFactoryImpl 
 		}
 
 		@Override
-		public Adapter caseEReferenceDocumentPartTemplate(EReferenceDocumentPartTemplate object) {
-			return createEReferenceDocumentPartTemplateAdapter();
-		}
-
-		@Override
-		public Adapter caseFeaturePartTemplate(FeaturePartTemplate object) {
-			return createFeaturePartTemplateAdapter();
-		}
-
-		@Override
-		public Adapter caseDocumentPartTemplate(DocumentPartTemplate object) {
-			return createDocumentPartTemplateAdapter();
-		}
-
-		@Override
-		public Adapter caseObjectPartTemplate(ObjectPartTemplate object) {
-			return createObjectPartTemplateAdapter();
-		}
-
-		@Override
-		public Adapter caseEClassDocumentPartTemplate(EClassDocumentPartTemplate object) {
-			return createEClassDocumentPartTemplateAdapter();
-		}
-
-		@Override
-		public Adapter caseEObjectDocumentPartTemplate(EObjectDocumentPartTemplate object) {
-			return createEObjectDocumentPartTemplateAdapter();
-		}
-
-		@Override
 		public Adapter caseTableOfContents(TableOfContents object) {
 			return createTableOfContentsAdapter();
 		}
@@ -140,6 +110,61 @@ public class DocumentStructureTemplateAdapterFactory extends AdapterFactoryImpl 
 		@Override
 		public Adapter caseBody(Body object) {
 			return createBodyAdapter();
+		}
+
+		@Override
+		public Adapter caseIBodyPartTemplate(IBodyPartTemplate object) {
+			return createIBodyPartTemplateAdapter();
+		}
+
+		@Override
+		public Adapter caseIBodySectionPartTemplate(IBodySectionPartTemplate object) {
+			return createIBodySectionPartTemplateAdapter();
+		}
+
+		@Override
+		public Adapter caseIComposedBodyPartTemplate(IComposedBodyPartTemplate object) {
+			return createIComposedBodyPartTemplateAdapter();
+		}
+
+		@Override
+		public Adapter caseISubBodyPartTemplate(ISubBodyPartTemplate object) {
+			return createISubBodyPartTemplateAdapter();
+		}
+
+		@Override
+		public Adapter caseILeafBodyPartTemplate(ILeafBodyPartTemplate object) {
+			return createILeafBodyPartTemplateAdapter();
+		}
+
+		@Override
+		public Adapter caseIComposedSubBodyPartTemplate(IComposedSubBodyPartTemplate object) {
+			return createIComposedSubBodyPartTemplateAdapter();
+		}
+
+		@Override
+		public Adapter caseILeafSubBodyPartTemplate(ILeafSubBodyPartTemplate object) {
+			return createILeafSubBodyPartTemplateAdapter();
+		}
+
+		@Override
+		public Adapter caseEClassPartTemplate(EClassPartTemplate object) {
+			return createEClassPartTemplateAdapter();
+		}
+
+		@Override
+		public Adapter caseEReferencePartTemplate(EReferencePartTemplate object) {
+			return createEReferencePartTemplateAdapter();
+		}
+
+		@Override
+		public Adapter caseITemplatePartView(ITemplatePartView object) {
+			return createITemplatePartViewAdapter();
+		}
+
+		@Override
+		public Adapter caseEReferenceListView(EReferenceListView object) {
+			return createEReferenceListViewAdapter();
 		}
 
 		@Override
@@ -225,96 +250,6 @@ public class DocumentStructureTemplateAdapterFactory extends AdapterFactoryImpl 
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceDocumentPartTemplate <em>EReference Document Part Template</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceDocumentPartTemplate
-	 * @generated
-	 */
-	public Adapter createEReferenceDocumentPartTemplateAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.FeaturePartTemplate <em>Feature Part Template</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.FeaturePartTemplate
-	 * @generated
-	 */
-	public Adapter createFeaturePartTemplateAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentPartTemplate <em>Document Part Template</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentPartTemplate
-	 * @generated
-	 */
-	public Adapter createDocumentPartTemplateAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ObjectPartTemplate <em>Object Part Template</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ObjectPartTemplate
-	 * @generated
-	 */
-	public Adapter createObjectPartTemplateAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassDocumentPartTemplate <em>EClass Document Part Template</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassDocumentPartTemplate
-	 * @generated
-	 */
-	public Adapter createEClassDocumentPartTemplateAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EObjectDocumentPartTemplate <em>EObject Document Part Template</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EObjectDocumentPartTemplate
-	 * @generated
-	 */
-	public Adapter createEObjectDocumentPartTemplateAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TableOfContents <em>Table Of Contents</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -341,6 +276,171 @@ public class DocumentStructureTemplateAdapterFactory extends AdapterFactoryImpl 
 	 * @generated
 	 */
 	public Adapter createBodyAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodyPartTemplate <em>IBody Part Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodyPartTemplate
+	 * @generated
+	 */
+	public Adapter createIBodyPartTemplateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate <em>IBody Section Part Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate
+	 * @generated
+	 */
+	public Adapter createIBodySectionPartTemplateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedBodyPartTemplate <em>IComposed Body Part Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedBodyPartTemplate
+	 * @generated
+	 */
+	public Adapter createIComposedBodyPartTemplateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubBodyPartTemplate <em>ISub Body Part Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubBodyPartTemplate
+	 * @generated
+	 */
+	public Adapter createISubBodyPartTemplateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafBodyPartTemplate <em>ILeaf Body Part Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafBodyPartTemplate
+	 * @generated
+	 */
+	public Adapter createILeafBodyPartTemplateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedSubBodyPartTemplate <em>IComposed Sub Body Part Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedSubBodyPartTemplate
+	 * @generated
+	 */
+	public Adapter createIComposedSubBodyPartTemplateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafSubBodyPartTemplate <em>ILeaf Sub Body Part Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafSubBodyPartTemplate
+	 * @generated
+	 */
+	public Adapter createILeafSubBodyPartTemplateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassPartTemplate <em>EClass Part Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassPartTemplate
+	 * @generated
+	 */
+	public Adapter createEClassPartTemplateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate <em>EReference Part Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate
+	 * @generated
+	 */
+	public Adapter createEReferencePartTemplateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITemplatePartView <em>ITemplate Part View</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITemplatePartView
+	 * @generated
+	 */
+	public Adapter createITemplatePartViewAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceListView <em>EReference List View</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceListView
+	 * @generated
+	 */
+	public Adapter createEReferenceListViewAdapter() {
 		return null;
 	}
 

@@ -55,36 +55,6 @@ public interface DocumentStructureTemplateFactory extends EFactory {
 	TextDocumentTemplate createTextDocumentTemplate();
 
 	/**
-	 * Returns a new object of class '<em>EReference Document Part Template</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @return a new object of class '<em>EReference Document Part Template</em>'.
-	 * @generated
-	 */
-	EReferenceDocumentPartTemplate createEReferenceDocumentPartTemplate();
-
-	/**
-	 * Returns a new object of class '<em>EClass Document Part Template</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @return a new object of class '<em>EClass Document Part Template</em>'.
-	 * @generated
-	 */
-	EClassDocumentPartTemplate createEClassDocumentPartTemplate();
-
-	/**
-	 * Returns a new object of class '<em>EObject Document Part Template</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @return a new object of class '<em>EObject Document Part Template</em>'.
-	 * @generated
-	 */
-	EObjectDocumentPartTemplate createEObjectDocumentPartTemplate();
-
-	/**
 	 * Returns a new object of class '<em>Table Of Contents</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -103,6 +73,36 @@ public interface DocumentStructureTemplateFactory extends EFactory {
 	 * @generated
 	 */
 	Body createBody();
+
+	/**
+	 * Returns a new object of class '<em>EClass Part Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EClass Part Template</em>'.
+	 * @generated
+	 */
+	EClassPartTemplate createEClassPartTemplate();
+
+	/**
+	 * Returns a new object of class '<em>EReference Part Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EReference Part Template</em>'.
+	 * @generated
+	 */
+	EReferencePartTemplate createEReferencePartTemplate();
+
+	/**
+	 * Returns a new object of class '<em>EReference List View</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EReference List View</em>'.
+	 * @generated
+	 */
+	EReferenceListView createEReferenceListView();
 
 	/**
 	 * Returns the package supported by this factory.

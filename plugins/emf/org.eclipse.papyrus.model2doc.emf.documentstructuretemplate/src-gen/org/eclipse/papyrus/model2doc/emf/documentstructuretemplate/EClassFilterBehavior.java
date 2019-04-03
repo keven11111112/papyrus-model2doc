@@ -24,6 +24,9 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>EClass Filter Behavior</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * This enumeration allows to describe how to implement the filter rule in EClassPartTemplate.
+ * <!-- end-model-doc -->
  *
  * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getEClassFilterBehavior()
  * @model

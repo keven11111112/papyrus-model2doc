@@ -118,78 +118,6 @@ public class DocumentStructureTemplateSwitch<T> extends Switch<T> {
 			}
 			return result;
 		}
-		case DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE: {
-			EReferenceDocumentPartTemplate eReferenceDocumentPartTemplate = (EReferenceDocumentPartTemplate) theEObject;
-			T result = caseEReferenceDocumentPartTemplate(eReferenceDocumentPartTemplate);
-			if (result == null) {
-				result = caseFeaturePartTemplate(eReferenceDocumentPartTemplate);
-			}
-			if (result == null) {
-				result = caseDocumentPartTemplate(eReferenceDocumentPartTemplate);
-			}
-			if (result == null) {
-				result = defaultCase(theEObject);
-			}
-			return result;
-		}
-		case DocumentStructureTemplatePackage.FEATURE_PART_TEMPLATE: {
-			FeaturePartTemplate featurePartTemplate = (FeaturePartTemplate) theEObject;
-			T result = caseFeaturePartTemplate(featurePartTemplate);
-			if (result == null) {
-				result = caseDocumentPartTemplate(featurePartTemplate);
-			}
-			if (result == null) {
-				result = defaultCase(theEObject);
-			}
-			return result;
-		}
-		case DocumentStructureTemplatePackage.DOCUMENT_PART_TEMPLATE: {
-			DocumentPartTemplate documentPartTemplate = (DocumentPartTemplate) theEObject;
-			T result = caseDocumentPartTemplate(documentPartTemplate);
-			if (result == null) {
-				result = defaultCase(theEObject);
-			}
-			return result;
-		}
-		case DocumentStructureTemplatePackage.OBJECT_PART_TEMPLATE: {
-			ObjectPartTemplate objectPartTemplate = (ObjectPartTemplate) theEObject;
-			T result = caseObjectPartTemplate(objectPartTemplate);
-			if (result == null) {
-				result = caseDocumentPartTemplate(objectPartTemplate);
-			}
-			if (result == null) {
-				result = defaultCase(theEObject);
-			}
-			return result;
-		}
-		case DocumentStructureTemplatePackage.ECLASS_DOCUMENT_PART_TEMPLATE: {
-			EClassDocumentPartTemplate eClassDocumentPartTemplate = (EClassDocumentPartTemplate) theEObject;
-			T result = caseEClassDocumentPartTemplate(eClassDocumentPartTemplate);
-			if (result == null) {
-				result = caseObjectPartTemplate(eClassDocumentPartTemplate);
-			}
-			if (result == null) {
-				result = caseDocumentPartTemplate(eClassDocumentPartTemplate);
-			}
-			if (result == null) {
-				result = defaultCase(theEObject);
-			}
-			return result;
-		}
-		case DocumentStructureTemplatePackage.EOBJECT_DOCUMENT_PART_TEMPLATE: {
-			EObjectDocumentPartTemplate eObjectDocumentPartTemplate = (EObjectDocumentPartTemplate) theEObject;
-			T result = caseEObjectDocumentPartTemplate(eObjectDocumentPartTemplate);
-			if (result == null) {
-				result = caseObjectPartTemplate(eObjectDocumentPartTemplate);
-			}
-			if (result == null) {
-				result = caseDocumentPartTemplate(eObjectDocumentPartTemplate);
-			}
-			if (result == null) {
-				result = defaultCase(theEObject);
-			}
-			return result;
-		}
 		case DocumentStructureTemplatePackage.TABLE_OF_CONTENTS: {
 			TableOfContents tableOfContents = (TableOfContents) theEObject;
 			T result = caseTableOfContents(tableOfContents);
@@ -206,6 +134,157 @@ public class DocumentStructureTemplateSwitch<T> extends Switch<T> {
 			T result = caseBody(body);
 			if (result == null) {
 				result = caseDocumentPart(body);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructureTemplatePackage.IBODY_PART_TEMPLATE: {
+			IBodyPartTemplate iBodyPartTemplate = (IBodyPartTemplate) theEObject;
+			T result = caseIBodyPartTemplate(iBodyPartTemplate);
+			if (result == null) {
+				result = caseIBodySectionPartTemplate(iBodyPartTemplate);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE: {
+			IBodySectionPartTemplate iBodySectionPartTemplate = (IBodySectionPartTemplate) theEObject;
+			T result = caseIBodySectionPartTemplate(iBodySectionPartTemplate);
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructureTemplatePackage.ICOMPOSED_BODY_PART_TEMPLATE: {
+			IComposedBodyPartTemplate iComposedBodyPartTemplate = (IComposedBodyPartTemplate) theEObject;
+			T result = caseIComposedBodyPartTemplate(iComposedBodyPartTemplate);
+			if (result == null) {
+				result = caseIBodyPartTemplate(iComposedBodyPartTemplate);
+			}
+			if (result == null) {
+				result = caseIBodySectionPartTemplate(iComposedBodyPartTemplate);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructureTemplatePackage.ISUB_BODY_PART_TEMPLATE: {
+			ISubBodyPartTemplate iSubBodyPartTemplate = (ISubBodyPartTemplate) theEObject;
+			T result = caseISubBodyPartTemplate(iSubBodyPartTemplate);
+			if (result == null) {
+				result = caseIBodySectionPartTemplate(iSubBodyPartTemplate);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE: {
+			ILeafBodyPartTemplate iLeafBodyPartTemplate = (ILeafBodyPartTemplate) theEObject;
+			T result = caseILeafBodyPartTemplate(iLeafBodyPartTemplate);
+			if (result == null) {
+				result = caseIBodyPartTemplate(iLeafBodyPartTemplate);
+			}
+			if (result == null) {
+				result = caseIBodySectionPartTemplate(iLeafBodyPartTemplate);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructureTemplatePackage.ICOMPOSED_SUB_BODY_PART_TEMPLATE: {
+			IComposedSubBodyPartTemplate iComposedSubBodyPartTemplate = (IComposedSubBodyPartTemplate) theEObject;
+			T result = caseIComposedSubBodyPartTemplate(iComposedSubBodyPartTemplate);
+			if (result == null) {
+				result = caseISubBodyPartTemplate(iComposedSubBodyPartTemplate);
+			}
+			if (result == null) {
+				result = caseIBodySectionPartTemplate(iComposedSubBodyPartTemplate);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructureTemplatePackage.ILEAF_SUB_BODY_PART_TEMPLATE: {
+			ILeafSubBodyPartTemplate iLeafSubBodyPartTemplate = (ILeafSubBodyPartTemplate) theEObject;
+			T result = caseILeafSubBodyPartTemplate(iLeafSubBodyPartTemplate);
+			if (result == null) {
+				result = caseISubBodyPartTemplate(iLeafSubBodyPartTemplate);
+			}
+			if (result == null) {
+				result = caseIBodySectionPartTemplate(iLeafSubBodyPartTemplate);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE: {
+			EClassPartTemplate eClassPartTemplate = (EClassPartTemplate) theEObject;
+			T result = caseEClassPartTemplate(eClassPartTemplate);
+			if (result == null) {
+				result = caseIComposedSubBodyPartTemplate(eClassPartTemplate);
+			}
+			if (result == null) {
+				result = caseISubBodyPartTemplate(eClassPartTemplate);
+			}
+			if (result == null) {
+				result = caseIBodySectionPartTemplate(eClassPartTemplate);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE: {
+			EReferencePartTemplate eReferencePartTemplate = (EReferencePartTemplate) theEObject;
+			T result = caseEReferencePartTemplate(eReferencePartTemplate);
+			if (result == null) {
+				result = caseIComposedBodyPartTemplate(eReferencePartTemplate);
+			}
+			if (result == null) {
+				result = caseIBodyPartTemplate(eReferencePartTemplate);
+			}
+			if (result == null) {
+				result = caseIBodySectionPartTemplate(eReferencePartTemplate);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW: {
+			ITemplatePartView iTemplatePartView = (ITemplatePartView) theEObject;
+			T result = caseITemplatePartView(iTemplatePartView);
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructureTemplatePackage.EREFERENCE_LIST_VIEW: {
+			EReferenceListView eReferenceListView = (EReferenceListView) theEObject;
+			T result = caseEReferenceListView(eReferenceListView);
+			if (result == null) {
+				result = caseEReferencePartTemplate(eReferenceListView);
+			}
+			if (result == null) {
+				result = caseITemplatePartView(eReferenceListView);
+			}
+			if (result == null) {
+				result = caseIComposedBodyPartTemplate(eReferenceListView);
+			}
+			if (result == null) {
+				result = caseIBodyPartTemplate(eReferenceListView);
+			}
+			if (result == null) {
+				result = caseIBodySectionPartTemplate(eReferenceListView);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
@@ -286,108 +365,6 @@ public class DocumentStructureTemplateSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>EReference Document Part Template</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 *
-	 * @param object
-	 *                   the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>EReference Document Part Template</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEReferenceDocumentPartTemplate(EReferenceDocumentPartTemplate object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Feature Part Template</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 *
-	 * @param object
-	 *                   the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Feature Part Template</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseFeaturePartTemplate(FeaturePartTemplate object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Document Part Template</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 *
-	 * @param object
-	 *                   the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Document Part Template</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDocumentPartTemplate(DocumentPartTemplate object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Object Part Template</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 *
-	 * @param object
-	 *                   the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Object Part Template</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseObjectPartTemplate(ObjectPartTemplate object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>EClass Document Part Template</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 *
-	 * @param object
-	 *                   the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>EClass Document Part Template</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEClassDocumentPartTemplate(EClassDocumentPartTemplate object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>EObject Document Part Template</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 *
-	 * @param object
-	 *                   the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>EObject Document Part Template</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEObjectDocumentPartTemplate(EObjectDocumentPartTemplate object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Table Of Contents</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -418,6 +395,193 @@ public class DocumentStructureTemplateSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBody(Body object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IBody Part Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IBody Part Template</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIBodyPartTemplate(IBodyPartTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IBody Section Part Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IBody Section Part Template</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIBodySectionPartTemplate(IBodySectionPartTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IComposed Body Part Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IComposed Body Part Template</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIComposedBodyPartTemplate(IComposedBodyPartTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>ISub Body Part Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>ISub Body Part Template</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseISubBodyPartTemplate(ISubBodyPartTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>ILeaf Body Part Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>ILeaf Body Part Template</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseILeafBodyPartTemplate(ILeafBodyPartTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IComposed Sub Body Part Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IComposed Sub Body Part Template</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIComposedSubBodyPartTemplate(IComposedSubBodyPartTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>ILeaf Sub Body Part Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>ILeaf Sub Body Part Template</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseILeafSubBodyPartTemplate(ILeafSubBodyPartTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EClass Part Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EClass Part Template</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEClassPartTemplate(EClassPartTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EReference Part Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EReference Part Template</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEReferencePartTemplate(EReferencePartTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>ITemplate Part View</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>ITemplate Part View</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseITemplatePartView(ITemplatePartView object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EReference List View</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EReference List View</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEReferenceListView(EReferenceListView object) {
 		return null;
 	}
 

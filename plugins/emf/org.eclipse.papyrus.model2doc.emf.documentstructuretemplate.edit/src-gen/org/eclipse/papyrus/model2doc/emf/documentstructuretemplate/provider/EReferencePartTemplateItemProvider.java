@@ -37,16 +37,16 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplateFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EObjectDocumentPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EObjectDocumentPartTemplate} object.
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class EObjectDocumentPartTemplateItemProvider
+public class EReferencePartTemplateItemProvider
 		extends ItemProviderAdapter
 		implements
 		IEditingDomainItemProvider,
@@ -61,7 +61,7 @@ public class EObjectDocumentPartTemplateItemProvider
 	 *
 	 * @generated
 	 */
-	public EObjectDocumentPartTemplateItemProvider(AdapterFactory adapterFactory) {
+	public EReferencePartTemplateItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -79,9 +79,8 @@ public class EObjectDocumentPartTemplateItemProvider
 
 			addGeneratePropertyDescriptor(object);
 			addGenerateTitlePropertyDescriptor(object);
-			addDefaultTitlePropertyDescriptor(object);
 			addCustomTitlePropertyDescriptor(object);
-			addEObjectPropertyDescriptor(object);
+			addEReferencePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -96,9 +95,9 @@ public class EObjectDocumentPartTemplateItemProvider
 	protected void addGeneratePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
-				getString("_UI_DocumentPartTemplate_generate_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_DocumentPartTemplate_generate_feature", "_UI_DocumentPartTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				DocumentStructureTemplatePackage.Literals.DOCUMENT_PART_TEMPLATE__GENERATE,
+				getString("_UI_IBodySectionPartTemplate_generate_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_IBodySectionPartTemplate_generate_feature", "_UI_IBodySectionPartTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE,
 				true,
 				false,
 				false,
@@ -117,34 +116,13 @@ public class EObjectDocumentPartTemplateItemProvider
 	protected void addGenerateTitlePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
-				getString("_UI_DocumentPartTemplate_generateTitle_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_DocumentPartTemplate_generateTitle_feature", "_UI_DocumentPartTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				DocumentStructureTemplatePackage.Literals.DOCUMENT_PART_TEMPLATE__GENERATE_TITLE,
+				getString("_UI_IBodySectionPartTemplate_generateTitle_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_IBodySectionPartTemplate_generateTitle_feature", "_UI_IBodySectionPartTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_TITLE,
 				true,
 				false,
 				false,
 				ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				null,
-				null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Default Title feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected void addDefaultTitlePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_DocumentPartTemplate_defaultTitle_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_DocumentPartTemplate_defaultTitle_feature", "_UI_DocumentPartTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				DocumentStructureTemplatePackage.Literals.DOCUMENT_PART_TEMPLATE__DEFAULT_TITLE,
-				false,
-				false,
-				false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				null,
 				null));
 	}
@@ -159,9 +137,9 @@ public class EObjectDocumentPartTemplateItemProvider
 	protected void addCustomTitlePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
-				getString("_UI_DocumentPartTemplate_customTitle_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_DocumentPartTemplate_customTitle_feature", "_UI_DocumentPartTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				DocumentStructureTemplatePackage.Literals.DOCUMENT_PART_TEMPLATE__CUSTOM_TITLE,
+				getString("_UI_IBodySectionPartTemplate_customTitle_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_IBodySectionPartTemplate_customTitle_feature", "_UI_IBodySectionPartTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__CUSTOM_TITLE,
 				true,
 				false,
 				false,
@@ -171,18 +149,18 @@ public class EObjectDocumentPartTemplateItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the EObject feature.
+	 * This adds a property descriptor for the EReference feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 */
-	protected void addEObjectPropertyDescriptor(Object object) {
+	protected void addEReferencePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
-				getString("_UI_EObjectDocumentPartTemplate_eObject_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_EObjectDocumentPartTemplate_eObject_feature", "_UI_EObjectDocumentPartTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				DocumentStructureTemplatePackage.Literals.EOBJECT_DOCUMENT_PART_TEMPLATE__EOBJECT,
+				getString("_UI_EReferencePartTemplate_eReference_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EReferencePartTemplate_eReference_feature", "_UI_EReferencePartTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				DocumentStructureTemplatePackage.Literals.EREFERENCE_PART_TEMPLATE__EREFERENCE,
 				true,
 				false,
 				true,
@@ -204,7 +182,7 @@ public class EObjectDocumentPartTemplateItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.OBJECT_PART_TEMPLATE__FEATURE_PART_TEMPLATES);
+			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.ICOMPOSED_BODY_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE);
 		}
 		return childrenFeatures;
 	}
@@ -235,7 +213,7 @@ public class EObjectDocumentPartTemplateItemProvider
 	}
 
 	/**
-	 * This returns EObjectDocumentPartTemplate.gif.
+	 * This returns EReferencePartTemplate.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -243,7 +221,7 @@ public class EObjectDocumentPartTemplateItemProvider
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/EObjectDocumentPartTemplate")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/EReferencePartTemplate")); //$NON-NLS-1$
 	}
 
 	/**
@@ -266,8 +244,8 @@ public class EObjectDocumentPartTemplateItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		EObjectDocumentPartTemplate eObjectDocumentPartTemplate = (EObjectDocumentPartTemplate) object;
-		return getString("_UI_EObjectDocumentPartTemplate_type") + " " + eObjectDocumentPartTemplate.isGenerate(); //$NON-NLS-1$ //$NON-NLS-2$
+		EReferencePartTemplate eReferencePartTemplate = (EReferencePartTemplate) object;
+		return getString("_UI_EReferencePartTemplate_type") + " " + eReferencePartTemplate.isGenerate(); //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 
@@ -283,14 +261,13 @@ public class EObjectDocumentPartTemplateItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(EObjectDocumentPartTemplate.class)) {
-		case DocumentStructureTemplatePackage.EOBJECT_DOCUMENT_PART_TEMPLATE__GENERATE:
-		case DocumentStructureTemplatePackage.EOBJECT_DOCUMENT_PART_TEMPLATE__GENERATE_TITLE:
-		case DocumentStructureTemplatePackage.EOBJECT_DOCUMENT_PART_TEMPLATE__DEFAULT_TITLE:
-		case DocumentStructureTemplatePackage.EOBJECT_DOCUMENT_PART_TEMPLATE__CUSTOM_TITLE:
+		switch (notification.getFeatureID(EReferencePartTemplate.class)) {
+		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__GENERATE:
+		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__GENERATE_TITLE:
+		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__CUSTOM_TITLE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case DocumentStructureTemplatePackage.EOBJECT_DOCUMENT_PART_TEMPLATE__FEATURE_PART_TEMPLATES:
+		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -309,8 +286,8 @@ public class EObjectDocumentPartTemplateItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.OBJECT_PART_TEMPLATE__FEATURE_PART_TEMPLATES,
-				DocumentStructureTemplateFactory.eINSTANCE.createEReferenceDocumentPartTemplate()));
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_BODY_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE,
+				DocumentStructureTemplateFactory.eINSTANCE.createEClassPartTemplate()));
 	}
 
 	/**

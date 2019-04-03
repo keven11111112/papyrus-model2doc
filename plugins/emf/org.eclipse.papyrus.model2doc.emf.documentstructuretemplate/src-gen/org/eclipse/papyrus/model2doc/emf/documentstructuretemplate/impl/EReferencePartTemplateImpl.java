@@ -31,28 +31,27 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceDocumentPartTemplate;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ObjectPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubBodyPartTemplate;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>EReference Document Part Template</b></em>'.
+ * An implementation of the model object '<em><b>EReference Part Template</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceDocumentPartTemplateImpl#isGenerate <em>Generate</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceDocumentPartTemplateImpl#isGenerateTitle <em>Generate Title</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceDocumentPartTemplateImpl#getDefaultTitle <em>Default Title</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceDocumentPartTemplateImpl#getCustomTitle <em>Custom Title</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceDocumentPartTemplateImpl#getObjectPartTemplates <em>Object Part Templates</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceDocumentPartTemplateImpl#getEReference <em>EReference</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferencePartTemplateImpl#isGenerate <em>Generate</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferencePartTemplateImpl#isGenerateTitle <em>Generate Title</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferencePartTemplateImpl#getCustomTitle <em>Custom Title</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferencePartTemplateImpl#getSubBodyPartTemplate <em>Sub Body Part Template</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferencePartTemplateImpl#getEReference <em>EReference</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class EReferenceDocumentPartTemplateImpl extends MinimalEObjectImpl.Container implements EReferenceDocumentPartTemplate {
+public class EReferencePartTemplateImpl extends MinimalEObjectImpl.Container implements EReferencePartTemplate {
 	/**
 	 * The default value of the '{@link #isGenerate() <em>Generate</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -62,7 +61,7 @@ public class EReferenceDocumentPartTemplateImpl extends MinimalEObjectImpl.Conta
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean GENERATE_EDEFAULT = false;
+	protected static final boolean GENERATE_EDEFAULT = true;
 
 	/**
 	 * The cached value of the '{@link #isGenerate() <em>Generate</em>}' attribute.
@@ -84,7 +83,7 @@ public class EReferenceDocumentPartTemplateImpl extends MinimalEObjectImpl.Conta
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean GENERATE_TITLE_EDEFAULT = false;
+	protected static final boolean GENERATE_TITLE_EDEFAULT = true;
 
 	/**
 	 * The cached value of the '{@link #isGenerateTitle() <em>Generate Title</em>}' attribute.
@@ -96,17 +95,6 @@ public class EReferenceDocumentPartTemplateImpl extends MinimalEObjectImpl.Conta
 	 * @ordered
 	 */
 	protected boolean generateTitle = GENERATE_TITLE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDefaultTitle() <em>Default Title</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see #getDefaultTitle()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DEFAULT_TITLE_EDEFAULT = null;
 
 	/**
 	 * The default value of the '{@link #getCustomTitle() <em>Custom Title</em>}' attribute.
@@ -131,15 +119,15 @@ public class EReferenceDocumentPartTemplateImpl extends MinimalEObjectImpl.Conta
 	protected String customTitle = CUSTOM_TITLE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getObjectPartTemplates() <em>Object Part Templates</em>}' containment reference list.
+	 * The cached value of the '{@link #getSubBodyPartTemplate() <em>Sub Body Part Template</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see #getObjectPartTemplates()
+	 * @see #getSubBodyPartTemplate()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ObjectPartTemplate> objectPartTemplates;
+	protected EList<ISubBodyPartTemplate> subBodyPartTemplate;
 
 	/**
 	 * The cached value of the '{@link #getEReference() <em>EReference</em>}' reference.
@@ -158,7 +146,7 @@ public class EReferenceDocumentPartTemplateImpl extends MinimalEObjectImpl.Conta
 	 *
 	 * @generated
 	 */
-	protected EReferenceDocumentPartTemplateImpl() {
+	protected EReferencePartTemplateImpl() {
 		super();
 	}
 
@@ -170,7 +158,7 @@ public class EReferenceDocumentPartTemplateImpl extends MinimalEObjectImpl.Conta
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return DocumentStructureTemplatePackage.Literals.EREFERENCE_DOCUMENT_PART_TEMPLATE;
+		return DocumentStructureTemplatePackage.Literals.EREFERENCE_PART_TEMPLATE;
 	}
 
 	/**
@@ -195,7 +183,7 @@ public class EReferenceDocumentPartTemplateImpl extends MinimalEObjectImpl.Conta
 		boolean oldGenerate = generate;
 		generate = newGenerate;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE__GENERATE, oldGenerate, generate));
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__GENERATE, oldGenerate, generate));
 		}
 	}
 
@@ -221,21 +209,8 @@ public class EReferenceDocumentPartTemplateImpl extends MinimalEObjectImpl.Conta
 		boolean oldGenerateTitle = generateTitle;
 		generateTitle = newGenerateTitle;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE__GENERATE_TITLE, oldGenerateTitle, generateTitle));
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__GENERATE_TITLE, oldGenerateTitle, generateTitle));
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public String getDefaultTitle() {
-		// TODO: implement this method to return the 'Default Title' attribute
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -260,7 +235,7 @@ public class EReferenceDocumentPartTemplateImpl extends MinimalEObjectImpl.Conta
 		String oldCustomTitle = customTitle;
 		customTitle = newCustomTitle;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE__CUSTOM_TITLE, oldCustomTitle, customTitle));
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__CUSTOM_TITLE, oldCustomTitle, customTitle));
 		}
 	}
 
@@ -271,11 +246,11 @@ public class EReferenceDocumentPartTemplateImpl extends MinimalEObjectImpl.Conta
 	 * @generated
 	 */
 	@Override
-	public EList<ObjectPartTemplate> getObjectPartTemplates() {
-		if (objectPartTemplates == null) {
-			objectPartTemplates = new EObjectContainmentEList<>(ObjectPartTemplate.class, this, DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE__OBJECT_PART_TEMPLATES);
+	public EList<ISubBodyPartTemplate> getSubBodyPartTemplate() {
+		if (subBodyPartTemplate == null) {
+			subBodyPartTemplate = new EObjectContainmentEList<>(ISubBodyPartTemplate.class, this, DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE);
 		}
-		return objectPartTemplates;
+		return subBodyPartTemplate;
 	}
 
 	/**
@@ -291,7 +266,7 @@ public class EReferenceDocumentPartTemplateImpl extends MinimalEObjectImpl.Conta
 			eReference = (EReference) eResolveProxy(oldEReference);
 			if (eReference != oldEReference) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE__EREFERENCE, oldEReference, eReference));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__EREFERENCE, oldEReference, eReference));
 				}
 			}
 		}
@@ -319,7 +294,7 @@ public class EReferenceDocumentPartTemplateImpl extends MinimalEObjectImpl.Conta
 		EReference oldEReference = eReference;
 		eReference = newEReference;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE__EREFERENCE, oldEReference, eReference));
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__EREFERENCE, oldEReference, eReference));
 		}
 	}
 
@@ -332,8 +307,8 @@ public class EReferenceDocumentPartTemplateImpl extends MinimalEObjectImpl.Conta
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE__OBJECT_PART_TEMPLATES:
-			return ((InternalEList<?>) getObjectPartTemplates()).basicRemove(otherEnd, msgs);
+		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
+			return ((InternalEList<?>) getSubBodyPartTemplate()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -347,17 +322,15 @@ public class EReferenceDocumentPartTemplateImpl extends MinimalEObjectImpl.Conta
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE__GENERATE:
+		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__GENERATE:
 			return isGenerate();
-		case DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE__GENERATE_TITLE:
+		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__GENERATE_TITLE:
 			return isGenerateTitle();
-		case DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE__DEFAULT_TITLE:
-			return getDefaultTitle();
-		case DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE__CUSTOM_TITLE:
+		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__CUSTOM_TITLE:
 			return getCustomTitle();
-		case DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE__OBJECT_PART_TEMPLATES:
-			return getObjectPartTemplates();
-		case DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE__EREFERENCE:
+		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
+			return getSubBodyPartTemplate();
+		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__EREFERENCE:
 			if (resolve) {
 				return getEReference();
 			}
@@ -376,20 +349,20 @@ public class EReferenceDocumentPartTemplateImpl extends MinimalEObjectImpl.Conta
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE__GENERATE:
+		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__GENERATE:
 			setGenerate((Boolean) newValue);
 			return;
-		case DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE__GENERATE_TITLE:
+		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__GENERATE_TITLE:
 			setGenerateTitle((Boolean) newValue);
 			return;
-		case DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE__CUSTOM_TITLE:
+		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__CUSTOM_TITLE:
 			setCustomTitle((String) newValue);
 			return;
-		case DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE__OBJECT_PART_TEMPLATES:
-			getObjectPartTemplates().clear();
-			getObjectPartTemplates().addAll((Collection<? extends ObjectPartTemplate>) newValue);
+		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
+			getSubBodyPartTemplate().clear();
+			getSubBodyPartTemplate().addAll((Collection<? extends ISubBodyPartTemplate>) newValue);
 			return;
-		case DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE__EREFERENCE:
+		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__EREFERENCE:
 			setEReference((EReference) newValue);
 			return;
 		}
@@ -405,19 +378,19 @@ public class EReferenceDocumentPartTemplateImpl extends MinimalEObjectImpl.Conta
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE__GENERATE:
+		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__GENERATE:
 			setGenerate(GENERATE_EDEFAULT);
 			return;
-		case DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE__GENERATE_TITLE:
+		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__GENERATE_TITLE:
 			setGenerateTitle(GENERATE_TITLE_EDEFAULT);
 			return;
-		case DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE__CUSTOM_TITLE:
+		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__CUSTOM_TITLE:
 			setCustomTitle(CUSTOM_TITLE_EDEFAULT);
 			return;
-		case DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE__OBJECT_PART_TEMPLATES:
-			getObjectPartTemplates().clear();
+		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
+			getSubBodyPartTemplate().clear();
 			return;
-		case DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE__EREFERENCE:
+		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__EREFERENCE:
 			setEReference((EReference) null);
 			return;
 		}
@@ -433,17 +406,15 @@ public class EReferenceDocumentPartTemplateImpl extends MinimalEObjectImpl.Conta
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE__GENERATE:
+		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__GENERATE:
 			return generate != GENERATE_EDEFAULT;
-		case DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE__GENERATE_TITLE:
+		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__GENERATE_TITLE:
 			return generateTitle != GENERATE_TITLE_EDEFAULT;
-		case DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE__DEFAULT_TITLE:
-			return DEFAULT_TITLE_EDEFAULT == null ? getDefaultTitle() != null : !DEFAULT_TITLE_EDEFAULT.equals(getDefaultTitle());
-		case DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE__CUSTOM_TITLE:
+		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__CUSTOM_TITLE:
 			return CUSTOM_TITLE_EDEFAULT == null ? customTitle != null : !CUSTOM_TITLE_EDEFAULT.equals(customTitle);
-		case DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE__OBJECT_PART_TEMPLATES:
-			return objectPartTemplates != null && !objectPartTemplates.isEmpty();
-		case DocumentStructureTemplatePackage.EREFERENCE_DOCUMENT_PART_TEMPLATE__EREFERENCE:
+		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
+			return subBodyPartTemplate != null && !subBodyPartTemplate.isEmpty();
+		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__EREFERENCE:
 			return eReference != null;
 		}
 		return super.eIsSet(featureID);
@@ -472,4 +443,4 @@ public class EReferenceDocumentPartTemplateImpl extends MinimalEObjectImpl.Conta
 		return result.toString();
 	}
 
-} // EReferenceDocumentPartTemplateImpl
+} // EReferencePartTemplateImpl
