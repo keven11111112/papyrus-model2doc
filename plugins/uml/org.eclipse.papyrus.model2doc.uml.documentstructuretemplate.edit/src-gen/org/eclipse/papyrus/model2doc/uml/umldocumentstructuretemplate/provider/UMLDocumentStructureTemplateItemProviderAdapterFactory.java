@@ -16,14 +16,21 @@ package org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.provider;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import java.util.List;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
 
+import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.edit.command.CommandParameter;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.ChangeNotifier;
+import org.eclipse.emf.edit.provider.ChildCreationExtenderManager;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IChangeNotifier;
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IDisposable;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -32,6 +39,13 @@ import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.Body;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedBodyPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedSubBodyPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.util.DocumentStructureTemplateSwitch;
+import org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.UMLDocumentStructureTemplateFactory;
+import org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.UMLDocumentStructureTemplatePackage;
 import org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.util.UMLDocumentStructureTemplateAdapterFactory;
 
 /**
@@ -44,7 +58,7 @@ import org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.util.UMLDo
  *
  * @generated
  */
-public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLDocumentStructureTemplateAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLDocumentStructureTemplateAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -62,6 +76,15 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
+
+	/**
+	 * This helps manage the child creation extenders.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(UmldocumentstructuretemplateEditPlugin.INSTANCE, UMLDocumentStructureTemplatePackage.eNS_URI);
 
 	/**
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
@@ -228,6 +251,38 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public List<IChildCreationExtender> getChildCreationExtenders() {
+		return childCreationExtenderManager.getChildCreationExtenders();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Collection<?> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
+		return childCreationExtenderManager.getNewChildDescriptors(object, editingDomain);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return childCreationExtenderManager;
+	}
+
+	/**
 	 * This adds a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -284,6 +339,137 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 		}
 		if (commentAsParagraphItemProvider != null) {
 			commentAsParagraphItemProvider.dispose();
+		}
+	}
+
+	/**
+	 * A child creation extender for the {@link DocumentStructureTemplatePackage}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public static class DocumentStructureTemplateChildCreationExtender implements IChildCreationExtender {
+		/**
+		 * The switch for creating child descriptors specific to each extended class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		protected static class CreationSwitch extends DocumentStructureTemplateSwitch<Object> {
+			/**
+			 * The child descriptors being populated.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 *
+			 * @generated
+			 */
+			protected List<Object> newChildDescriptors;
+
+			/**
+			 * The domain in which to create the children.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 *
+			 * @generated
+			 */
+			protected EditingDomain editingDomain;
+
+			/**
+			 * Creates the a switch for populating child descriptors in the given domain.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 *
+			 * @generated
+			 */
+			CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
+				this.newChildDescriptors = newChildDescriptors;
+				this.editingDomain = editingDomain;
+			}
+
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 *
+			 * @generated
+			 */
+			@Override
+			public Object caseBody(Body object) {
+				newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.BODY__BODY_PART_TEMPLATE,
+						UMLDocumentStructureTemplateFactory.eINSTANCE.createStereotypePropertyPartTemplate()));
+
+				newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.BODY__BODY_PART_TEMPLATE,
+						UMLDocumentStructureTemplateFactory.eINSTANCE.createCommentAsParagraph()));
+
+				return null;
+			}
+
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 *
+			 * @generated
+			 */
+			@Override
+			public Object caseIComposedBodyPartTemplate(IComposedBodyPartTemplate object) {
+				newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_BODY_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE,
+						UMLDocumentStructureTemplateFactory.eINSTANCE.createStereotypePartTemplate()));
+
+				return null;
+			}
+
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 *
+			 * @generated
+			 */
+			@Override
+			public Object caseIComposedSubBodyPartTemplate(IComposedSubBodyPartTemplate object) {
+				newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE,
+						UMLDocumentStructureTemplateFactory.eINSTANCE.createStereotypePropertyPartTemplate()));
+
+				newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE,
+						UMLDocumentStructureTemplateFactory.eINSTANCE.createCommentAsParagraph()));
+
+				return null;
+			}
+
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 *
+			 * @generated
+			 */
+			protected CommandParameter createChildParameter(Object feature, Object child) {
+				return new CommandParameter(null, feature, child);
+			}
+
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		@Override
+		public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
+			ArrayList<Object> result = new ArrayList<>();
+			new CreationSwitch(result, editingDomain).doSwitch((EObject) object);
+			return result;
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		@Override
+		public ResourceLocator getResourceLocator() {
+			return UmldocumentstructuretemplateEditPlugin.INSTANCE;
 		}
 	}
 

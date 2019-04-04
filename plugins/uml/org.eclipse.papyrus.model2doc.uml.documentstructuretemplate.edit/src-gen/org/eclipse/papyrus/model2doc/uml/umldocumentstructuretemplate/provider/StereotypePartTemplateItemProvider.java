@@ -19,9 +19,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -201,18 +198,6 @@ public class StereotypePartTemplateItemProvider extends EClassPartTemplateItemPr
 
 		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE,
 				UMLDocumentStructureTemplateFactory.eINSTANCE.createCommentAsParagraph()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return UmldocumentstructuretemplateEditPlugin.INSTANCE;
 	}
 
 }

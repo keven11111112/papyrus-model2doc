@@ -19,4 +19,11 @@
                org.eclipse.emf.edit.provider.IItemPropertySource"/>
    </extension>
 
+   <extension point="org.eclipse.emf.edit.childCreationExtenders">
+      <!-- @generated umldocumentstructuretemplate -->
+      <extender
+            uri="http://www.eclipse.org/papyrus/model2doc/emf/1.0.0/documentstructuretemplate"
+            class="org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.provider.UMLDocumentStructureTemplateItemProviderAdapterFactory$DocumentStructureTemplateChildCreationExtender"/>
+   </extension>
+
 </plugin>

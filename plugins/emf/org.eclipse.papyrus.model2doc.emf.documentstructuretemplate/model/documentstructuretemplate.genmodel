@@ -37,8 +37,8 @@
   </genAnnotations>
   <foreignModel>documentstructuretemplate.uml</foreignModel>
   <genPackages xsi:type="genmodel:GenPackage" prefix="DocumentStructureTemplate" basePackage="org.eclipse.papyrus.model2doc.emf"
-      disposableProviderFactory="true" multipleEditorPages="false" fileExtensions="pdst"
-      ecorePackage="documentstructuretemplate.ecore#/">
+      disposableProviderFactory="true" multipleEditorPages="false" extensibleProviderFactory="true"
+      childCreationExtenders="true" fileExtensions="pdst" ecorePackage="documentstructuretemplate.ecore#/">
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="documentstructuretemplate.ecore#//EClassFilterBehavior">
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="documentstructuretemplate.ecore#//EClassFilterBehavior/TYPE_OF"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="documentstructuretemplate.ecore#//EClassFilterBehavior/KIND_OF"/>

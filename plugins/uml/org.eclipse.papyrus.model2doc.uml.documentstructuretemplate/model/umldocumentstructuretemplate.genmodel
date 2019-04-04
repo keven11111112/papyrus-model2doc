@@ -39,7 +39,7 @@
   <foreignModel>umldocumentstructuretemplate.uml</foreignModel>
   <genPackages xsi:type="genmodel:GenPackage" prefix="UMLDocumentStructureTemplate"
       basePackage="org.eclipse.papyrus.model2doc.uml" disposableProviderFactory="true"
-      ecorePackage="umldocumentstructuretemplate.ecore#/">
+      extensibleProviderFactory="true" childCreationExtenders="true" ecorePackage="umldocumentstructuretemplate.ecore#/">
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="umldocumentstructuretemplate.ecore#//StereotypeFilterBehavior">
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="umldocumentstructuretemplate.ecore#//StereotypeFilterBehavior/STEREOTYPE_TYPE_OF"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="umldocumentstructuretemplate.ecore#//StereotypeFilterBehavior/STEREOTYPE_KIND_OF"/>
