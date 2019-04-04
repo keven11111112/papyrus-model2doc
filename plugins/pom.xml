@@ -21,8 +21,9 @@
 		<module>core</module>
 		<module>dev</module>
 		<module>documentview</module>
-		<module>odt</module>
 		<module>emf</module>
+		<module>uml</module>
 		<module>integration</module>
+		<module>odt</module>
 	</modules>
 </project>

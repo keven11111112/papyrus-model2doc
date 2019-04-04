@@ -16,7 +16,7 @@
 	<packaging>pom</packaging>
 
 	<name>Papyrus DocumentStructureTemplate plugins</name>
-	<description>Container of the Papyrus DocumentStructureTemplate plugins</description>
+	<description>Container of the Papyrus-Model2Doc plugins dedicated to EMF</description>
 
 	<modules>
 		<module>org.eclipse.papyrus.model2doc.emf.documentstructure</module>

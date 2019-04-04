@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
+  <uml:Model xmi:id="_sha7EB8REem9r6zmWAQv1w" name="UMLDocumentStructureTemplate" URI="http://www.eclipse.org/papyrus/model2doc/uml/1.0.0/documentstructuretemplate">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_ifj_IB8SEemcGrhwCFVIGw">
+      <importedPackage xmi:type="uml:Model" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_qN46sB17Eem3fboELVTtYQ"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_pau8kFasEemQ15mMY1nXxQ" name="StereotypePartTemplate">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_K_SxAFawEemQ15mMY1nXxQ" annotatedElement="_pau8kFasEemQ15mMY1nXxQ">
+        <body>PartTemplate used to navigate in the stereotype application.</body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_J_8UMFatEemQ15mMY1nXxQ">
+        <general xmi:type="uml:Class" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_QLb5QFYBEemKJasCEBKPhQ"/>
+      </generalization>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_uw8zUFasEemQ15mMY1nXxQ" name="stereotypeQualifiedName">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_TtHkIFatEemQ15mMY1nXxQ" annotatedElement="_uw8zUFasEemQ15mMY1nXxQ">
+          <body>The qualifiedName of the stereotype to find.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_EotJwFatEemQ15mMY1nXxQ" name="stereotypeFilterRule" visibility="public" type="_31YoQFasEemQ15mMY1nXxQ">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_cHtx4FatEemQ15mMY1nXxQ" annotatedElement="_EotJwFatEemQ15mMY1nXxQ">
+          <body>Description of the way to use to filter the applied stereotype in the inherited method isMatchingFilterRule.</body>
+        </ownedComment>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_31YoQFasEemQ15mMY1nXxQ" name="StereotypeFilterBehavior">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_lOKZAFatEemQ15mMY1nXxQ" annotatedElement="_31YoQFasEemQ15mMY1nXxQ">
+        <body>This enumeration allows to describe how to implement the filter rule in StereotypePartTemplate.</body>
+      </ownedComment>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_50lf4FasEemQ15mMY1nXxQ" name="STEREOTYPE_TYPE_OF"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_9lzHsFasEemQ15mMY1nXxQ" name="STEREOTYPE_KIND_OF"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_sbLZUFatEemQ15mMY1nXxQ" name="StereotypePropertyPartTemplate">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_fTMvEFawEemQ15mMY1nXxQ" annotatedElement="_sbLZUFatEemQ15mMY1nXxQ">
+        <body>PartTemplate used to navigate in the stereotype property.</body>
+      </ownedComment>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_zlQaYFatEemQ15mMY1nXxQ" name="propertyName">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_hs4jQFawEemQ15mMY1nXxQ" annotatedElement="_zlQaYFatEemQ15mMY1nXxQ">
+          <body>The name of the stereotype property.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedAttribute>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_2rWPUFayEemVf6VV9N5TUg" client="_sbLZUFatEemQ15mMY1nXxQ">
+        <supplier xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_Pau8cFX-EemKJasCEBKPhQ"/>
+        <contract xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_Pau8cFX-EemKJasCEBKPhQ"/>
+      </interfaceRealization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_4YK6UFauEemQ15mMY1nXxQ" name="CommentAsParagraph">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_PXzCUFawEemQ15mMY1nXxQ" annotatedElement="_4YK6UFauEemQ15mMY1nXxQ">
+        <body>PartTemplate used to create paragraphs from UML Comments.</body>
+      </ownedComment>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_2GYBYFavEemQ15mMY1nXxQ" name="commentChoice" type="_Xp7tEFavEemQ15mMY1nXxQ">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_b1R2sFawEemQ15mMY1nXxQ" annotatedElement="_2GYBYFavEemQ15mMY1nXxQ">
+          <body>Allow to define if we use only the first owned comments or all owned comment. </body>
+        </ownedComment>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="__jCwIFavEemQ15mMY1nXxQ" name="FIRST_OWNED_COMMENT" value="FIRST_OWNED_COMMENT"/>
+      </ownedAttribute>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_58MVAFayEemVf6VV9N5TUg" client="_4YK6UFauEemQ15mMY1nXxQ">
+        <supplier xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_R99HIFX-EemKJasCEBKPhQ"/>
+        <contract xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_R99HIFX-EemKJasCEBKPhQ"/>
+      </interfaceRealization>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_6mTB8FayEemVf6VV9N5TUg" client="_4YK6UFauEemQ15mMY1nXxQ">
+        <supplier xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_DwGdIFYFEemKJasCEBKPhQ"/>
+        <contract xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_DwGdIFYFEemKJasCEBKPhQ"/>
+      </interfaceRealization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_Xp7tEFavEemQ15mMY1nXxQ" name="CommentChoice">
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ZYtjEFavEemQ15mMY1nXxQ" name="FIRST_OWNED_COMMENT"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_bCC4YFavEemQ15mMY1nXxQ" name="ALL_OWNED_COMMENT"/>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_x6veQB8TEemcGrhwCFVIGw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_x6wsYB8TEemcGrhwCFVIGw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Ecore.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Model>
+  <Ecore:EPackage xmi:id="_yd7D0B8TEemcGrhwCFVIGw" base_Package="_sha7EB8REem9r6zmWAQv1w" packageName="umldocumentstructuretemplate" nsPrefix="umldocumentstructuretemplate" basePackage="org.eclipse.papyrus.model2doc.uml" prefix="UMLDocumentStructureTemplate"/>
+</xmi:XMI>
