@@ -45,6 +45,8 @@
 							<associateSites>
 								<!-- SysML Update site -->
 								<site>https://download.eclipse.org/modeling/mdt/papyrus/components/sysml14</site>
+								<!-- GMF Notation update site -->
+								<site>https://download.eclipse.org/modeling/gmp/gmf-runtime/updates/releases/</site>
 							</associateSites>
 						</configuration>
 					</execution>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
+  <uml:Model xmi:id="_NwKBMFbTEemQV827ZWTfig" name="gmfdocumentstructuretemplate" URI="http://www.eclipse.org/papyrus/model2doc/gmf/1.0.0/documentstructuretemplate">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_N-wd4FbTEemQV827ZWTfig">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_cqi84FbTEemQV827ZWTfig" name="GMFDiagramView">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_FSLS0FbUEemQV827ZWTfig" annotatedElement="_cqi84FbTEemQV827ZWTfig">
+        <body>This element allows to describe diagram in a documentstructuretemplate model.</body>
+      </ownedComment>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_m-bngFbTEemQV827ZWTfig" name="diagramType">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_KwNBwFbUEemQV827ZWTfig" annotatedElement="_m-bngFbTEemQV827ZWTfig">
+          <body>The type of diagram to manage. If no type is defined, we will take all diagrams.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_L5x48FbUEemQV827ZWTfig"/>
+      </ownedAttribute>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_zuWPsFbTEemQV827ZWTfig" client="_cqi84FbTEemQV827ZWTfig">
+        <supplier xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_DwGdIFYFEemKJasCEBKPhQ"/>
+        <contract xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_DwGdIFYFEemKJasCEBKPhQ"/>
+      </interfaceRealization>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_0OBOQFbTEemQV827ZWTfig" client="_cqi84FbTEemQV827ZWTfig">
+        <supplier xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_R99HIFX-EemKJasCEBKPhQ"/>
+        <contract xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_R99HIFX-EemKJasCEBKPhQ"/>
+      </interfaceRealization>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_MBUgYFwvEemF3-UZXrtb4g" name="getMatchingDiagrams">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_p0R9YFwwEemF3-UZXrtb4g" annotatedElement="_MBUgYFwvEemF3-UZXrtb4g">
+          <body>This method returns the diagram owned by the parameter expectedDiagramContext, according to the type of the diagram.&#xD;
+It type is not defined, the method will returns all diagrams.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_VCe-4FwvEemF3-UZXrtb4g" name="expectedDiagramContext">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_t7jxQFwvEemF3-UZXrtb4g" name="return" type="_qmWI8FwvEemF3-UZXrtb4g" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GtgnIFxgEemyeb6zzD570Q"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Gt8sAFxgEemyeb6zzD570Q" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_qmWI8FwvEemF3-UZXrtb4g" name="Diagram">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_hIWvEFwwEemF3-UZXrtb4g" annotatedElement="_qmWI8FwvEemF3-UZXrtb4g">
+        <body>This interface allows to represent the GMF Diagram element.</body>
+      </ownedComment>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_NRddkFbUEemQV827ZWTfig">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NRf50FbUEemQV827ZWTfig" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Ecore.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Model>
+  <Ecore:EPackage xmi:id="_N1ohoFbUEemQV827ZWTfig" base_Package="_NwKBMFbTEemQV827ZWTfig" packageName="gmfdocumentstructuretemplate" nsPrefix="gmfdocumentstructuretemplate" basePackage="org.eclipse.papyrus.model2doc.gmf" prefix="GmfDocumentStructureTemplate"/>
+  <Ecore:EClass xmi:id="_2EoKIFwvEemF3-UZXrtb4g" instanceClassName="org.eclipse.gmf.runtime.notation.Diagram" base_Interface="_qmWI8FwvEemF3-UZXrtb4g" className="Diagram"/>
+</xmi:XMI>

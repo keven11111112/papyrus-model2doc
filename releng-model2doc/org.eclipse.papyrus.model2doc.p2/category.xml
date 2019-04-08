@@ -6,6 +6,12 @@
    <feature url="features/org.eclipse.papyrus.model2doc.feature.source_0.7.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.feature.source" version="0.7.0.qualifier">
       <category name="org.eclipse.papyrus.model2doc.category"/>
    </feature>
+   <feature url="features/org.eclipse.papyrus.model2doc.gmf.feature_0.7.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.gmf.feature" version="0.7.0.qualifier">
+      <category name="org.eclipse.papyrus.model2doc.gmf.category"/>
+   </feature>
+   <feature url="features/org.eclipse.papyrus.model2doc.gmf.feature.source_0.7.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.gmf.feature.source" version="0.7.0.qualifier">
+      <category name="org.eclipse.papyrus.model2doc.gmf.category"/>
+   </feature>
    <feature url="features/org.eclipse.papyrus.model2doc.uml.feature_0.7.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.uml.feature" version="0.7.0.qualifier">
       <category name="org.eclipse.papyrus.model2doc.uml.category"/>
    </feature>
@@ -48,6 +54,11 @@
    <category-def name="org.eclipse.papyrus.model2doc.dev.category" label="Papyrus-Model2Doc Developer Tools">
       <description>
          Papyrus-Model2Doc : Developer Tools.
+      </description>
+   </category-def>
+   <category-def name="org.eclipse.papyrus.model2doc.gmf.category" label="Papyrus-Model2Doc GMF Support">
+      <description>
+         Papyrus-Model2Doc : GMF View to Documentation.
       </description>
    </category-def>
    <category-def name="org.eclipse.papyrus.model2doc.uml.category" label="Papyrus-Model2Doc UML Support">

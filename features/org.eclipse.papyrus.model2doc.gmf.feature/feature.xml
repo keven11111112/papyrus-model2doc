@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.papyrus.model2doc.gmf.feature"
+      label="%featureName"
+      version="0.7.0.qualifier"
+      provider-name="%providerName"
+      license-feature="org.eclipse.license"
+      license-feature-version="2.0.0">
+
+   <description url="https://eclipse.org/papyrus/">
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <includes
+         id="org.eclipse.papyrus.model2doc.feature"
+         version="0.0.0"/>
+
+   <requires>
+      <import plugin="org.eclipse.gmf.runtime.notation" version="1.9.0" match="compatible"/>
+   </requires>
+
+   <plugin
+         id="org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

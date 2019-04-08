@@ -22,8 +22,9 @@
 		<module>dev</module>
 		<module>documentview</module>
 		<module>emf</module>
-		<module>uml</module>
 		<module>integration</module>
+		<module>gmf</module>
+		<module>uml</module>
 		<module>odt</module>
 	</modules>
 </project>

@@ -38,3 +38,15 @@ location uml "http://download.eclipse.org/modeling/mdt/uml2/updates/5.5" {
 location emf "http://download.eclipse.org/modeling/emf/emf/builds/release/2.17" {
 	org.eclipse.emf.sdk.feature.group
 }
+
+//updateFrom("GMF Runtime",0)
+
+location gmfRuntime "http://download.eclipse.org/modeling/gmp/gmf-runtime/updates/releases/R201806010809" {
+	org.eclipse.gmf.runtime.sdk.feature.group
+}
+
+//updateFrom("GMF Runtime",1)
+
+location gmfNotation "http://download.eclipse.org/modeling/gmp/gmf-notation/updates/releases/R201805221301" {
+	org.eclipse.gmf.runtime.notation.sdk.feature.group
+}
