@@ -9,11 +9,11 @@
  * SPDX-License-Identifier: EPL-2.0
  *
  * Contributors:
- *   CEA LIST - Initial API and implementation
+ * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
 
-package org.eclipse.papyrus.model2doc.emf.template2structure.internal.handlers;
+package org.eclipse.papyrus.model2doc.emf.template2structure.internal.handler;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
@@ -26,7 +26,7 @@ import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate;
-import org.eclipse.papyrus.model2doc.emf.template2structure.command.CreateDocumentCommand;
+import org.eclipse.papyrus.model2doc.emf.template2structure.internal.command.GenerateDocumentStructureCommand;
 import org.eclipse.ui.ISelectionService;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchWindow;
@@ -38,6 +38,16 @@ import org.eclipse.ui.PlatformUI;
 public class GenerateDocumentStructureHandler extends AbstractHandler {
 
 	/**
+	 * the command to execute
+	 */
+	private Command command;
+
+	/**
+	 * the editing domain
+	 */
+	private TransactionalEditingDomain domain;
+
+	/**
 	 * @see org.eclipse.core.commands.IHandler#execute(org.eclipse.core.commands.ExecutionEvent)
 	 *
 	 * @param event
@@ -46,12 +56,10 @@ public class GenerateDocumentStructureHandler extends AbstractHandler {
 	 */
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		final DocumentTemplate docTemplate = getSelectedDocumentTemplate();
-		final TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(docTemplate);
-		final Command cmd = new CreateDocumentCommand(docTemplate, domain);
-		if (cmd.canExecute()) {
-			domain.getCommandStack().execute(cmd);
+		if (null != this.domain && null != this.command && this.command.canExecute()) {
+			domain.getCommandStack().execute(this.command);
 		}
+		resetFields();
 		return null;
 	}
 
@@ -64,10 +72,34 @@ public class GenerateDocumentStructureHandler extends AbstractHandler {
 	public void setEnabled(Object evaluationContext) {
 		super.setEnabled(evaluationContext);
 		if (isEnabled()) {
-			setBaseEnabled(null != getSelectedDocumentTemplate());
+			initFields();
+			setBaseEnabled(null != this.domain && null != this.command && this.command.canExecute());
 		}
 	}
 
+	/**
+	 * calculate the value of editing domain and command
+	 */
+	private void initFields() {
+		resetFields();// to be sure
+		final DocumentTemplate docTemplate = getSelectedDocumentTemplate();
+		if (null == docTemplate) {
+			return;
+		}
+		this.domain = TransactionUtil.getEditingDomain(docTemplate);
+		if (null == domain) {
+			return;
+		}
+		this.command = new GenerateDocumentStructureCommand(domain, docTemplate);
+	}
+
+	/**
+	 * resset the editing domain and the command to <code>null</code>
+	 */
+	private void resetFields() {
+		this.domain = null;
+		this.command = null;
+	}
 
 	/**
 	 *

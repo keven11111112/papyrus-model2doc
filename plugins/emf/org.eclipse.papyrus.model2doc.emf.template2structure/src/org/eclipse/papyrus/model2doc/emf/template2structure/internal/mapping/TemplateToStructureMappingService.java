@@ -9,49 +9,46 @@
  * SPDX-License-Identifier: EPL-2.0
  *
  * Contributors:
- *   CEA LIST - Initial API and implementation
+ * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
 
-package org.eclipse.papyrus.model2doc.emf.template2structure.mapping.service;
+package org.eclipse.papyrus.model2doc.emf.template2structure.internal.mapping;
 
 import java.util.Collection;
-import java.util.LinkedList;
+import java.util.Collections;
+import java.util.List;
 import java.util.ListIterator;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.model2doc.emf.template2structure.Activator;
-import org.eclipse.papyrus.model2doc.emf.template2structure.internal.mapping.BodyMapper;
-import org.eclipse.papyrus.model2doc.emf.template2structure.internal.mapping.EClassMapper;
-import org.eclipse.papyrus.model2doc.emf.template2structure.internal.mapping.EReferenceMapper;
-import org.eclipse.papyrus.model2doc.emf.template2structure.internal.mapping.TableOfContentsMapper;
-import org.eclipse.papyrus.model2doc.emf.template2structure.internal.mapping.TextDocumentTemplateTemplateToTextDocumentMapper;
+import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.AbstractTemplateToStructureMapper;
+import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.IMappingService;
 
 /**
  * This class is in charge of the creation of the document structure following the description of the document structure template model
+ * We must create a new service instance for each new mapping process, in order to be able to detect infinite loop
+ *
+ * TODO : implements infinite loop detection
  */
-public class TemplateToStructureMappingService {
-
-	private LinkedList<AbtractTemplateToStructureMapper<?, ?>> allContributors = new LinkedList<>();
+public final class TemplateToStructureMappingService implements IMappingService {
 
 	/**
-	 * the static instance of this mapping service
+	 * The registered mappers
 	 */
-	public static final TemplateToStructureMappingService INSTANCE = new TemplateToStructureMappingService();
+	private final List<AbstractTemplateToStructureMapper<?, ?>> mappers;
 
 	/**
 	 *
 	 * Constructor.
 	 *
+	 * @param mappers
+	 *            the mappers to use for this service instance
 	 */
-	private TemplateToStructureMappingService() {
-		allContributors.add(new TextDocumentTemplateTemplateToTextDocumentMapper());
-		allContributors.add(new BodyMapper());
-		allContributors.add(new TableOfContentsMapper());
-		allContributors.add(new EClassMapper());
-		allContributors.add(new EReferenceMapper());
+	public TemplateToStructureMappingService(final List<AbstractTemplateToStructureMapper<?, ?>> mappers) {
+		this.mappers = mappers;
 	}
 
 	/**
@@ -63,7 +60,7 @@ public class TemplateToStructureMappingService {
 	 * @return
 	 * 		the contributor answering to this mapping, or <code>null</code> when not found
 	 */
-	private AbtractTemplateToStructureMapper<?, ?> getContributorFor(final EObject documentTemplateElement, final EClass expectedReturnedEClass) {
+	private AbstractTemplateToStructureMapper<?, ?> getContributorFor(final EObject documentTemplateElement, final EClass expectedReturnedEClass) {
 		return getContributorFor(documentTemplateElement.eClass(), expectedReturnedEClass);
 	}
 
@@ -76,11 +73,11 @@ public class TemplateToStructureMappingService {
 	 * @return
 	 * 		the contributor answering to this mapping, or <code>null</code> when not found
 	 */
-	private AbtractTemplateToStructureMapper<?, ?> getContributorFor(final EClass eClassTemplateElement, final EClass expectedReturnedEClass) {
-		AbtractTemplateToStructureMapper<?, ?> contributor = null;
-		final ListIterator<AbtractTemplateToStructureMapper<?, ?>> iter = this.allContributors.listIterator();
+	private AbstractTemplateToStructureMapper<?, ?> getContributorFor(final EClass eClassTemplateElement, final EClass expectedReturnedEClass) {
+		AbstractTemplateToStructureMapper<?, ?> contributor = null;
+		final ListIterator<AbstractTemplateToStructureMapper<?, ?>> iter = this.mappers.listIterator();
 		while (iter.hasNext() && contributor == null) {
-			final AbtractTemplateToStructureMapper<?, ?> current = iter.next();
+			final AbstractTemplateToStructureMapper<?, ?> current = iter.next();
 			if (current.handlesInput(eClassTemplateElement) && current.handlesExpectedOuput(expectedReturnedEClass)) {
 				contributor = current;
 			}
@@ -104,15 +101,16 @@ public class TemplateToStructureMappingService {
 	 * @return
 	 * 		the collection of created object answering to the mapping request
 	 */
+	@Override
 	public Collection<EObject> map(final EObject documentTemplateElement, final EObject semanticModelElement, final EClass expectedReturnedEClass) {
-		AbtractTemplateToStructureMapper<?, ?> contributor = getContributorFor(documentTemplateElement, expectedReturnedEClass);
+		AbstractTemplateToStructureMapper<?, ?> contributor = getContributorFor(documentTemplateElement, expectedReturnedEClass);
 		Collection<EObject> result = null;
 		if (null != contributor) {
-			result = contributor.map(documentTemplateElement, semanticModelElement, expectedReturnedEClass);
+			result = contributor.map(this, documentTemplateElement, semanticModelElement, expectedReturnedEClass);
 		}
 		if (null == result) {
 			Activator.log.info(NLS.bind("Mapping failed for input {0} and output {1}.", documentTemplateElement, expectedReturnedEClass)); //$NON-NLS-1$
-
+			result = Collections.emptyList();
 		}
 		return result;
 

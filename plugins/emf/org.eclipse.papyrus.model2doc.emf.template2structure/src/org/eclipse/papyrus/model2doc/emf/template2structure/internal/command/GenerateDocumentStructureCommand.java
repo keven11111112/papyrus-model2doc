@@ -9,39 +9,36 @@
  * SPDX-License-Identifier: EPL-2.0
  *
  * Contributors:
- *   CEA LIST - Initial API and implementation
+ * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
 
-package org.eclipse.papyrus.model2doc.emf.template2structure.command;
+package org.eclipse.papyrus.model2doc.emf.template2structure.internal.command;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentStructureGeneratorConfiguration;
-import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.operations.GeneratorConfigurationOperations;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Document;
-import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.internal.resource.DocumentStructureResource;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate;
 import org.eclipse.papyrus.model2doc.emf.template2structure.Activator;
-import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.service.TemplateToStructureMappingService;
+import org.eclipse.papyrus.model2doc.emf.template2structure.generator.ITemplate2StructureGenerator;
+import org.eclipse.papyrus.model2doc.emf.template2structure.internal.registry.Template2StructureRegistry;
 
 /**
- * The command used to create the {@link Document} from a {@link DocumentTemplate}
+ * The command is used to create the {@link Document} from a {@link DocumentTemplate}.
  */
-public class CreateDocumentCommand extends RecordingCommand {
+public class GenerateDocumentStructureCommand extends RecordingCommand {
 
 	/**
 	 * the result of the command execution
@@ -54,15 +51,19 @@ public class CreateDocumentCommand extends RecordingCommand {
 	private DocumentTemplate documentTemplate;
 
 	/**
+	 * the generator
+	 */
+	private ITemplate2StructureGenerator generator;
+
+	/**
 	 *
 	 * Constructor.
-	 *
-	 * @param docTemplate
-	 *            the document template to map on a {@link Document}
 	 * @param domain
 	 *            the editing domain to use for this command
+	 * @param docTemplate
+	 *            the document template to map on a {@link Document}
 	 */
-	public CreateDocumentCommand(final DocumentTemplate docTemplate, final TransactionalEditingDomain domain) {
+	public GenerateDocumentStructureCommand(final TransactionalEditingDomain domain, final DocumentTemplate docTemplate) {
 		super(domain, "Generate Document Structure Command", "Create the Document Structure Object and store it in a new file"); //$NON-NLS-1$ //$NON-NLS-2$
 		this.documentTemplate = docTemplate;
 	}
@@ -73,14 +74,12 @@ public class CreateDocumentCommand extends RecordingCommand {
 	 */
 	@Override
 	protected void doExecute() {
-		final Collection<EObject> result = TemplateToStructureMappingService.INSTANCE.map(this.documentTemplate, null, DocumentStructurePackage.eINSTANCE.getDocument());
-		Assert.isTrue(result.size() == 1 && result.iterator().next() instanceof Document);
-		final Document document = (Document) result.iterator().next();
+		final Document document = this.generator.generate(this.documentTemplate);
+		if (document == null) {
+			return;
+		}
+		this.result.add(document);
 
-		final IDocumentStructureGeneratorConfiguration structureGeneratorConfig = this.documentTemplate.getDocumentStructureGenerator();
-		final IDocumentGeneratorConfiguration docGeneratorConfig = structureGeneratorConfig.createDocumentGeneratorConfiguration();
-
-		document.setDocumentGeneratorConfiguration(docGeneratorConfig);
 
 
 		// We create the new resource for this document
@@ -102,10 +101,9 @@ public class CreateDocumentCommand extends RecordingCommand {
 		resourceSet = rSet;
 		final Resource structureResource = resourceSet.createResource(documentStructureURI);
 
-		this.result.add(document);
 		structureResource.getContents().add(document);
 		try {
-			structureResource.save(null);
+			structureResource.save(null);// TODO : option for save ?
 		} catch (IOException e) {
 			Activator.log.error(e);
 		}
@@ -118,9 +116,23 @@ public class CreateDocumentCommand extends RecordingCommand {
 	 */
 	@Override
 	public boolean canExecute() {
-		return this.documentTemplate != null;
+		return super.canExecute();
 	}
 
+	/**
+	 * @see org.eclipse.emf.transaction.RecordingCommand#prepare()
+	 *
+	 * @return
+	 */
+	@Override
+	protected boolean prepare() {
+		boolean res = super.prepare();
+		if (res) {
+			this.generator = Template2StructureRegistry.INSTANCE.getGenerator(this.documentTemplate);
+			res = null != this.generator;
+		}
+		return res;
+	}
 
 	/**
 	 * @see org.eclipse.emf.common.command.AbstractCommand#getResult()

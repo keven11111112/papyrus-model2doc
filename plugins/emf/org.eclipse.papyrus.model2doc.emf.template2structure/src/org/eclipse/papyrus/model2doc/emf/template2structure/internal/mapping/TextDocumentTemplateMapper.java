@@ -9,7 +9,7 @@
  * SPDX-License-Identifier: EPL-2.0
  *
  * Contributors:
- *   CEA LIST - Initial API and implementation
+ * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
 
@@ -21,41 +21,53 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructureFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocumentPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentTemplate;
-import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.service.TemplateToStructureMappingService;
+import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.IMappingService;
 
-//TODO : change name
-public class TextDocumentTemplateTemplateToTextDocumentMapper extends AbstractEMFTemplateToStructureMapper<TextDocumentTemplate, TextDocument> {
+/**
+ * This class ensures the transformation of the {@link TextDocumentTemplate} into a {@link TextDocument} and delegate the mapping of the {@link TextDocumentTemplate} subelements.
+ */
+public class TextDocumentTemplateMapper extends AbstractEMFTemplateToStructureMapper<TextDocumentTemplate, TextDocument> {
 
-	public TextDocumentTemplateTemplateToTextDocumentMapper() {
+	/**
+	 *
+	 * Constructor.
+	 *
+	 */
+	public TextDocumentTemplateMapper() {
 		super(TEMPLATE_EPACKAGE.getTextDocumentTemplate(), STRUCTURE_EPACKAGE.getDocument());
 	}
 
 	/**
+	 * @param mappingService
+	 * @param modelElement
+	 * @param input
 	 * @see org.eclipse.papyrus.model2doc.emf.template2structure.mapping.service.AbtractTemplateToStructureMapper#map(org.eclipse.emf.ecore.EObject)
 	 *
-	 * @param input
 	 * @return
 	 */
 	@Override
-	protected Collection<TextDocument> doMap(final TextDocumentTemplate input, final EObject modelElement) {
-		// modelElement();
-
+	protected Collection<TextDocument> doMap(final IMappingService mappingService, final TextDocumentTemplate input, final EObject modelElement) {
 		final TextDocument txtDocument = DocumentStructureFactory.eINSTANCE.createTextDocument();
 		txtDocument.setMainTitle(input.getMainTitle());
-		// TODO:setName, setouput, setCoverPage
+		final IDocumentStructureGeneratorConfiguration structureGeneratorConfig = input.getDocumentStructureGenerator();
+		final IDocumentGeneratorConfiguration docGeneratorConfig = structureGeneratorConfig.createDocumentGeneratorConfiguration();
+		txtDocument.setDocumentGeneratorConfiguration(docGeneratorConfig);
+
 		final EObject semanticContext = input.getSemanticContext();
 		List<DocumentPart> parts = input.getDocumentPart(); // TODO : pluralize getter
 		final Iterator<DocumentPart> iter = parts.iterator();
 		while (iter.hasNext()) {
 			final DocumentPart current = iter.next();
-			final Collection<EObject> result = TemplateToStructureMappingService.INSTANCE.map(current, semanticContext, STRUCTURE_EPACKAGE.getTextDocumentPart()); // TODO expected return type should be mapped too or we should set the created
+			final Collection<EObject> result = mappingService.map(current, semanticContext, STRUCTURE_EPACKAGE.getTextDocumentPart());
 
-			if (null != result) { // parent as parameter
+			if (null != result) {
 				txtDocument.getTextDocumentPart().addAll((Collection<? extends TextDocumentPart>) result);
 			}
 		}

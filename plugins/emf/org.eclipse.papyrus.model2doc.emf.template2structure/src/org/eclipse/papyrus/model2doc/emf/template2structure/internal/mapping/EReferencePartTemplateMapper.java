@@ -9,7 +9,7 @@
  * SPDX-License-Identifier: EPL-2.0
  *
  * Contributors:
- *   CEA LIST - Initial API and implementation
+ * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
 
@@ -30,13 +30,12 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePar
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubBodyPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.template2structure.Activator;
-import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.service.TemplateToStructureMappingService;
+import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.IMappingService;
 
 /**
- * @author VL222926
- *
+ * This class ensures the transformation of the {@link EReferencePartTemplateMapper} into a {@link BodyPart} ({@link Title}) and delegate the mapping of the {@link EReferencePartTemplateMapper} subelements.
  */
-public class EReferenceMapper extends AbstractEMFTemplateToStructureMapper<EReferencePartTemplate, BodyPart> {
+public class EReferencePartTemplateMapper extends AbstractEMFTemplateToStructureMapper<EReferencePartTemplate, BodyPart> {
 
 	/**
 	 * Constructor.
@@ -44,19 +43,20 @@ public class EReferenceMapper extends AbstractEMFTemplateToStructureMapper<ERefe
 	 * @param inputEClass
 	 * @param outputEClass
 	 */
-	public EReferenceMapper() {
+	public EReferencePartTemplateMapper() {
 		super(TEMPLATE_EPACKAGE.getEReferencePartTemplate(), STRUCTURE_EPACKAGE.getBodyPart());
 	}
 
 	/**
-	 * @see org.eclipse.papyrus.model2doc.emf.template2structure.mapping.service.AbtractTemplateToStructureMapper#doMap(org.eclipse.emf.ecore.EObject, org.eclipse.emf.ecore.EObject)
-	 *
-	 * @param referencePartTemplate
+	 * @param mappingService
 	 * @param semanticModelElement
+	 * @param referencePartTemplate
+	 * @see org.eclipse.papyrus.model2doc.emf.template2structure.mapping.service.AbtractTemplateToStructureMapper#doMap(IMappingService, org.eclipse.emf.ecore.EObject, org.eclipse.emf.ecore.EObject)
+	 *
 	 * @return
 	 */
 	@Override
-	protected Collection<BodyPart> doMap(final EReferencePartTemplate referencePartTemplate, final EObject semanticModelElement) {
+	protected Collection<BodyPart> doMap(final IMappingService mappingService, final EReferencePartTemplate referencePartTemplate, final EObject semanticModelElement) {
 		Collection<BodyPart> returnedElements = new ArrayList<>();
 
 		final Collection<EObject> matchingElements = getMatchingReferencedEObjects(referencePartTemplate, semanticModelElement);
@@ -76,7 +76,7 @@ public class EReferenceMapper extends AbstractEMFTemplateToStructureMapper<ERefe
 			final Iterator<ISubBodyPartTemplate> subBodyPartTemplate = referencePartTemplate.getSubBodyPartTemplate().iterator();
 			while (subBodyPartTemplate.hasNext()) {
 				final ISubBodyPartTemplate currentObjectPartTemplate = subBodyPartTemplate.next();
-				final Collection<EObject> result = TemplateToStructureMappingService.INSTANCE.map(currentObjectPartTemplate, iter.next(), STRUCTURE_EPACKAGE.getBodyPart());
+				final Collection<EObject> result = mappingService.map(currentObjectPartTemplate, iter.next(), STRUCTURE_EPACKAGE.getBodyPart());
 				if (result == null) {
 					continue;
 				}
@@ -123,10 +123,10 @@ public class EReferenceMapper extends AbstractEMFTemplateToStructureMapper<ERefe
 						elements.add((EObject) semanticModelElement.eGet(documentTemplateElement.getEReference()));
 					}
 				} else {
-					Activator.log.warn(NLS.bind("The object {0} doesn't provide the EReference {1}", semanticModelElement, ref));
+					Activator.log.warn(NLS.bind("The object {0} doesn't provide the EReference {1}", semanticModelElement, ref)); //$NON-NLS-1$
 				}
 			} else {
-				Activator.log.warn("The EReference is null");
+				Activator.log.warn("The EReference is null"); //$NON-NLS-1$
 			}
 		}
 

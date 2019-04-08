@@ -9,11 +9,11 @@
  * SPDX-License-Identifier: EPL-2.0
  *
  * Contributors:
- *   CEA LIST - Initial API and implementation
+ * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
 
-package org.eclipse.papyrus.model2doc.emf.template2structure.mapping.service;
+package org.eclipse.papyrus.model2doc.emf.template2structure.mapping;
 
 import java.util.Collection;
 
@@ -26,7 +26,7 @@ import org.eclipse.osgi.util.NLS;
  * Abstract class for all mappers
  *
  */
-public abstract class AbtractTemplateToStructureMapper<INPUT extends EObject, OUTPUT extends EObject> {
+public abstract class AbstractTemplateToStructureMapper<INPUT extends EObject, OUTPUT extends EObject> {
 
 	/**
 	 * the handled input eClass
@@ -47,7 +47,7 @@ public abstract class AbtractTemplateToStructureMapper<INPUT extends EObject, OU
 	 * @param outputEClass
 	 *            the eClass representing the output type of the mapping. This EClass can be abstract
 	 */
-	public AbtractTemplateToStructureMapper(final EClass inputEClass, final EClass outputEClass) {
+	public AbstractTemplateToStructureMapper(final EClass inputEClass, final EClass outputEClass) {
 		Assert.isNotNull(inputEClass);
 		Assert.isTrue(false == inputEClass.isAbstract(), NLS.bind("The EClass {0} is abstract and it should not.", inputEClass)); //$NON-NLS-1$
 		Assert.isNotNull(outputEClass);
@@ -128,6 +128,8 @@ public abstract class AbtractTemplateToStructureMapper<INPUT extends EObject, OU
 
 	/**
 	 *
+	 * @param mappingService
+	 *            the mapping service to use to map sub element of the documentTemplateElement
 	 * @param documentTemplateElement
 	 *            a document template element
 	 * @param semanticModelElement
@@ -138,13 +140,13 @@ public abstract class AbtractTemplateToStructureMapper<INPUT extends EObject, OU
 	 * 		a collection of the created elements to answer to this mapping request
 	 */
 	@SuppressWarnings("unchecked")
-	public final Collection<EObject> map(final EObject documentTemplateElement, final EObject semanticModelElement, final EClass expectedReturnedEClass) {
+	public final Collection<EObject> map(final IMappingService mappingService, final EObject documentTemplateElement, final EObject semanticModelElement, final EClass expectedReturnedEClass) {
 		// 1. check types
 		Assert.isTrue(handlesInput(documentTemplateElement));
 		Assert.isTrue(handlesExpectedOuput(expectedReturnedEClass));
 
 		// 2. do mapping
-		final Collection<OUTPUT> result = doMap((INPUT) documentTemplateElement, semanticModelElement);
+		final Collection<OUTPUT> result = doMap(mappingService, (INPUT) documentTemplateElement, semanticModelElement);
 
 		// 3. check type result
 		// TODO adapt this test
@@ -154,6 +156,8 @@ public abstract class AbtractTemplateToStructureMapper<INPUT extends EObject, OU
 
 	/**
 	 *
+	 * @param mappingService
+	 *            the mapping service to use to map sub element of the documentTemplateElement
 	 * @param documentTemplateElement
 	 *            a document template element
 	 * @param semanticModelElement
@@ -161,5 +165,5 @@ public abstract class AbtractTemplateToStructureMapper<INPUT extends EObject, OU
 	 * @return
 	 * 		the created document structure element or <code>null</code>
 	 */
-	protected abstract Collection<OUTPUT> doMap(INPUT documentTemplateElement, final EObject semanticModelElement);
+	protected abstract Collection<OUTPUT> doMap(final IMappingService mappingService, final INPUT documentTemplateElement, final EObject semanticModelElement);
 }

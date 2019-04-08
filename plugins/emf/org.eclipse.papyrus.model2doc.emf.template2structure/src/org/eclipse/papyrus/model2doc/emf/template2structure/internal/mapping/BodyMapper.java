@@ -9,7 +9,7 @@
  * SPDX-License-Identifier: EPL-2.0
  *
  * Contributors:
- *   CEA LIST - Initial API and implementation
+ * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
 
@@ -23,33 +23,38 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.Body;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodyPartTemplate;
-import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.service.TemplateToStructureMappingService;
+import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.IMappingService;
 
 /**
- *
+ * This class create the DocumentStructure Body for the DocumentStructureTempate Body
  *
  */
 public class BodyMapper extends AbstractEMFTemplateToStructureMapper<Body, org.eclipse.papyrus.model2doc.emf.documentstructure.Body> {
 
-
+	/**
+	 *
+	 * Constructor.
+	 *
+	 */
 	public BodyMapper() {
 		super(TEMPLATE_EPACKAGE.getBody(), STRUCTURE_EPACKAGE.getBody());
 	}
 
 	/**
-	 * @see org.eclipse.papyrus.model2doc.emf.template2structure.mapping.service.AbtractTemplateToStructureMapper#doMap(org.eclipse.emf.ecore.EObject, org.eclipse.emf.ecore.EObject)
-	 *
+	 * @param mappingService
 	 * @param documentStructureElement
 	 * @param modelElement
+	 * @see org.eclipse.papyrus.model2doc.emf.template2structure.mapping.service.AbtractTemplateToStructureMapper#doMap(IMappingService, org.eclipse.emf.ecore.EObject, org.eclipse.emf.ecore.EObject)
+	 *
 	 * @return
 	 */
 	@Override
-	protected Collection<org.eclipse.papyrus.model2doc.emf.documentstructure.Body> doMap(final Body documentStructureElement, final EObject modelElement) {
+	protected Collection<org.eclipse.papyrus.model2doc.emf.documentstructure.Body> doMap(final IMappingService mappingService, final Body documentStructureElement, final EObject modelElement) {
 		final org.eclipse.papyrus.model2doc.emf.documentstructure.Body body = STRUCTURE_EFACTORY.createBody();
 		final Iterator<IBodyPartTemplate> iter = documentStructureElement.getBodyPartTemplate().iterator();
 		while (iter.hasNext()) {
 			final IBodyPartTemplate currentBodyPartemplate = iter.next();
-			final Collection<EObject> result = TemplateToStructureMappingService.INSTANCE.map(currentBodyPartemplate, modelElement, STRUCTURE_EPACKAGE.getBodyPart());
+			final Collection<EObject> result = mappingService.map(currentBodyPartemplate, modelElement, STRUCTURE_EPACKAGE.getBodyPart());
 			body.getBodyPart().addAll((Collection<? extends BodyPart>) result);
 		}
 		return Collections.singleton(body);

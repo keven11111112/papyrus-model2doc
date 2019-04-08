@@ -9,7 +9,7 @@
  * SPDX-License-Identifier: EPL-2.0
  *
  * Contributors:
- *   CEA LIST - Initial API and implementation
+ * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
 
@@ -20,17 +20,14 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructureFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplateFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
-import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.service.AbtractTemplateToStructureMapper;
+import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.AbstractTemplateToStructureMapper;
 
 /**
- *
+ * Abstract class for Mappers provided by this plugin
  *
  */
-public abstract class AbstractEMFTemplateToStructureMapper<INPUT extends EObject, OUTPUT extends EObject> extends AbtractTemplateToStructureMapper<INPUT, OUTPUT> {
-
-	protected static final DocumentStructureTemplateFactory TEMPLATE_EFACTORY = DocumentStructureTemplateFactory.eINSTANCE;
+public abstract class AbstractEMFTemplateToStructureMapper<INPUT extends EObject, OUTPUT extends EObject> extends AbstractTemplateToStructureMapper<INPUT, OUTPUT> {
 
 	protected static final DocumentStructureTemplatePackage TEMPLATE_EPACKAGE = DocumentStructureTemplatePackage.eINSTANCE;
 

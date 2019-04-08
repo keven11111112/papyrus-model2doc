@@ -17,4 +17,6 @@ Require-Bundle: org.eclipse.ui;bundle-version="[3.0.0,4.0.0)",
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Automatic-Module-Name: org.eclipse.papyrus.model2doc.emf.template2structure
 Bundle-ActivationPolicy: lazy
-Export-Package: org.eclipse.papyrus.model2doc.emf.template2structure.command
+Export-Package: org.eclipse.papyrus.model2doc.emf.template2structure.command,
+ org.eclipse.papyrus.model2doc.emf.template2structure.generator,
+ org.eclipse.papyrus.model2doc.emf.template2structure.mapping

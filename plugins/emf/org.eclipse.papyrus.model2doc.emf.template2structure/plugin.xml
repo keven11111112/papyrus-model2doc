@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
+   <extension-point id="structuregenerator" name="structuregenerator" schema="schema/structuregenerator.exsd"/>
    <extension
          point="org.eclipse.ui.menus">
       <menuContribution
@@ -16,7 +17,7 @@
    <extension
          point="org.eclipse.ui.handlers">
       <handler
-            class="org.eclipse.papyrus.model2doc.emf.template2structure.internal.handlers.GenerateDocumentStructureHandler"
+            class="org.eclipse.papyrus.model2doc.emf.template2structure.internal.handler.GenerateDocumentStructureHandler"
             commandId="org.eclipse.papyrus.model2doc.emf.template2structure.command">
          <activeWhen>
                <with
@@ -46,5 +47,31 @@
             name="Generate EMF Document Structure">
       </command>
    </extension>
-
+   <extension
+         point="org.eclipse.papyrus.model2doc.emf.template2structure.structuregenerator">
+      <generator
+            class="org.eclipse.papyrus.model2doc.emf.template2structure.internal.generator.DefaultTextDocumentStructureGenerator"
+            id="TextDocumentStructureGenerator.default">
+      </generator>
+      <mapper
+            class="org.eclipse.papyrus.model2doc.emf.template2structure.internal.mapping.EReferencePartTemplateMapper"
+            generatorId="TextDocumentStructureGenerator.default">
+      </mapper>
+      <mapper
+            class="org.eclipse.papyrus.model2doc.emf.template2structure.internal.mapping.BodyMapper"
+            generatorId="TextDocumentStructureGenerator.default">
+      </mapper>
+      <mapper
+            class="org.eclipse.papyrus.model2doc.emf.template2structure.internal.mapping.EClassPartTemplateMapper"
+            generatorId="TextDocumentStructureGenerator.default">
+      </mapper>
+      <mapper
+            class="org.eclipse.papyrus.model2doc.emf.template2structure.internal.mapping.TableOfContentsMapper"
+            generatorId="TextDocumentStructureGenerator.default">
+      </mapper>
+      <mapper
+            class="org.eclipse.papyrus.model2doc.emf.template2structure.internal.mapping.TextDocumentTemplateMapper"
+            generatorId="TextDocumentStructureGenerator.default">
+      </mapper>
+   </extension>
 </plugin>

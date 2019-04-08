@@ -9,7 +9,7 @@
  * SPDX-License-Identifier: EPL-2.0
  *
  * Contributors:
- *   CEA LIST - Initial API and implementation
+ * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
 
@@ -30,12 +30,13 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.Title;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodyPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.template2structure.Activator;
-import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.service.TemplateToStructureMappingService;
+import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.IMappingService;
 
 /**
  *
+ * This class ensures the transformation of the {@link EClassPartTemplate} into a {@link BodyPart} ({@link Title}) and delegate the mapping of the {@link EClassPartTemplate} subelements.
  */
-public class EClassMapper extends AbstractEMFTemplateToStructureMapper<EClassPartTemplate, BodyPart> {
+public class EClassPartTemplateMapper extends AbstractEMFTemplateToStructureMapper<EClassPartTemplate, BodyPart> {
 
 	/**
 	 * Constructor.
@@ -43,19 +44,19 @@ public class EClassMapper extends AbstractEMFTemplateToStructureMapper<EClassPar
 	 * @param inputEClass
 	 * @param outputEClass
 	 */
-	public EClassMapper() {
+	public EClassPartTemplateMapper() {
 		super(TEMPLATE_EPACKAGE.getEClassPartTemplate(), STRUCTURE_EPACKAGE.getBodyPart());
 	}
 
 	/**
-	 * @see org.eclipse.papyrus.model2doc.emf.template2structure.mapping.service.AbtractTemplateToStructureMapper#doMap(org.eclipse.emf.ecore.EObject, org.eclipse.emf.ecore.EObject)
-	 *
-	 * @param eClassPartTemplate
 	 * @param semanticModelElement
+	 * @param eClassPartTemplate
+	 * @see org.eclipse.papyrus.model2doc.emf.template2structure.mapping.service.AbtractTemplateToStructureMapper#doMap(IMappingService, org.eclipse.emf.ecore.EObject, org.eclipse.emf.ecore.EObject)
+	 *
 	 * @return
 	 */
 	@Override
-	protected Collection<BodyPart> doMap(final EClassPartTemplate eClassPartTemplate, final EObject semanticModelElement) {
+	protected Collection<BodyPart> doMap(final IMappingService mappingService, final EClassPartTemplate eClassPartTemplate, final EObject semanticModelElement) {
 		if (false == eClassPartTemplate.isMatchingFilterRule(semanticModelElement)) {
 			return Collections.emptyList();
 		}
@@ -65,17 +66,13 @@ public class EClassMapper extends AbstractEMFTemplateToStructureMapper<EClassPar
 			if (eClassPartTemplate.isGenerateTitle()) {
 				title = STRUCTURE_EFACTORY.createTitle();
 				title.setTitle(getSectionTitle(eClassPartTemplate, semanticModelElement));
-				if (title.getTitle().equals("owner")) {
-					int i = 0;
-					i++;
-				}
 				returnedElements.add(title);
 			}
 		}
 		final Iterator<IBodyPartTemplate> bodyPart = eClassPartTemplate.getBodyPartTemplate().iterator();
 		while (bodyPart.hasNext()) {
 			final IBodyPartTemplate currentFeature = bodyPart.next();
-			final Collection<EObject> result = TemplateToStructureMappingService.INSTANCE.map(currentFeature, semanticModelElement, STRUCTURE_EPACKAGE.getBodyPart());
+			final Collection<EObject> result = mappingService.map(currentFeature, semanticModelElement, STRUCTURE_EPACKAGE.getBodyPart());
 			if (result == null) {
 				continue;
 			}
@@ -103,15 +100,15 @@ public class EClassMapper extends AbstractEMFTemplateToStructureMapper<EClassPar
 	// TODO : the label provider must be a parameter of the mapping method, to allow Papyrus internationalization
 	protected String getLabel(final EObject eobject) { // TODO : factorize me
 		final EClass eclass = eobject.eClass();
-		final EStructuralFeature feature = eclass.getEStructuralFeature("name");
+		final EStructuralFeature feature = eclass.getEStructuralFeature("name"); //$NON-NLS-1$
 		if (feature instanceof EAttribute) {
 			final Object result = eobject.eGet(feature);
 			if (result instanceof String) {
 				return (String) result;
 			}
 		}
-		Activator.log.warn(NLS.bind("No label found for {0}", eobject));
-		return "No Label";
+		Activator.log.warn(NLS.bind("No label found for {0}", eobject)); //$NON-NLS-1$
+		return "No Label"; //$NON-NLS-1$
 
 	}
 }
