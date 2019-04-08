@@ -6,6 +6,12 @@
    <feature url="features/org.eclipse.papyrus.model2doc.feature.source_0.7.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.feature.source" version="0.7.0.qualifier">
       <category name="org.eclipse.papyrus.model2doc.category"/>
    </feature>
+   <feature url="features/org.eclipse.papyrus.model2doc.uml.feature_0.7.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.uml.feature" version="0.7.0.qualifier">
+      <category name="org.eclipse.papyrus.model2doc.uml.category"/>
+   </feature>
+   <feature url="features/org.eclipse.papyrus.model2doc.uml.feature.source_0.7.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.uml.feature.source" version="0.7.0.qualifier">
+      <category name="org.eclipse.papyrus.model2doc.uml.category"/>
+   </feature>
    <feature url="features/org.eclipse.papyrus.model2doc.integration.feature_0.7.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.integration.feature" version="0.7.0.qualifier">
       <category name="org.eclipse.papyrus.model2doc.integration.category"/>
    </feature>
@@ -42,6 +48,11 @@
    <category-def name="org.eclipse.papyrus.model2doc.dev.category" label="Papyrus-Model2Doc Developer Tools">
       <description>
          Papyrus-Model2Doc : Developer Tools.
+      </description>
+   </category-def>
+   <category-def name="org.eclipse.papyrus.model2doc.uml.category" label="Papyrus-Model2Doc UML Support">
+      <description>
+         Papyrus-Model2Doc : UML Model to Documentation.
       </description>
    </category-def>
    <repository-reference location="http://download.eclipse.org/modeling/mdt/papyrus/components/sysml14" enabled="true" />
