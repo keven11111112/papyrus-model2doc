@@ -18,6 +18,7 @@ package org.eclipse.papyrus.model2doc.emf.template2structure.internal.mapping;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
+import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
@@ -29,7 +30,7 @@ import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.IMappingServ
  * This class create the DocumentStructure Body for the DocumentStructureTempate Body
  *
  */
-public class BodyMapper extends AbstractEMFTemplateToStructureMapper<Body, org.eclipse.papyrus.model2doc.emf.documentstructure.Body> {
+public class BodyMapper extends AbstractEMFTemplateToStructureMapper<Body> {
 
 	/**
 	 *
@@ -37,27 +38,27 @@ public class BodyMapper extends AbstractEMFTemplateToStructureMapper<Body, org.e
 	 *
 	 */
 	public BodyMapper() {
-		super(TEMPLATE_EPACKAGE.getBody(), STRUCTURE_EPACKAGE.getBody());
+		super(TEMPLATE_EPACKAGE.getBody(), org.eclipse.papyrus.model2doc.emf.documentstructure.Body.class);
 	}
 
 	/**
 	 * @param mappingService
 	 * @param documentStructureElement
 	 * @param modelElement
-	 * @see org.eclipse.papyrus.model2doc.emf.template2structure.mapping.service.AbtractTemplateToStructureMapper#doMap(IMappingService, org.eclipse.emf.ecore.EObject, org.eclipse.emf.ecore.EObject)
+	 * @see org.eclipse.papyrus.model2doc.emf.template2structure.mapping.service.AbtractTemplateToStructureMapper#doMap(IMappingService, org.eclipse.emf.ecore.EObject, org.eclipse.emf.ecore.EObject, Class<T>)
 	 *
 	 * @return
 	 */
 	@Override
-	protected Collection<org.eclipse.papyrus.model2doc.emf.documentstructure.Body> doMap(final IMappingService mappingService, final Body documentStructureElement, final EObject modelElement) {
+	protected <T> List<T> doMap(final IMappingService mappingService, final Body documentStructureElement, final EObject modelElement, Class<T> expectedReturnedClass) {
 		final org.eclipse.papyrus.model2doc.emf.documentstructure.Body body = STRUCTURE_EFACTORY.createBody();
 		final Iterator<IBodyPartTemplate> iter = documentStructureElement.getBodyPartTemplate().iterator();
 		while (iter.hasNext()) {
-			final IBodyPartTemplate currentBodyPartemplate = iter.next();
-			final Collection<EObject> result = mappingService.map(currentBodyPartemplate, modelElement, STRUCTURE_EPACKAGE.getBodyPart());
-			body.getBodyPart().addAll((Collection<? extends BodyPart>) result);
+			final IBodyPartTemplate currentBodyPartTemplate = iter.next();
+			final Collection<BodyPart> result = mappingService.map(currentBodyPartTemplate, modelElement, BodyPart.class);
+			body.getBodyPart().addAll(result);
 		}
-		return Collections.singleton(body);
+		return Collections.singletonList(expectedReturnedClass.cast(body));
 	}
 
 }

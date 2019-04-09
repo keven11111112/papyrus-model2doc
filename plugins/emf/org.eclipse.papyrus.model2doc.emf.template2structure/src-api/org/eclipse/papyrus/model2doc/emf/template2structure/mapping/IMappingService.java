@@ -15,9 +15,8 @@
 
 package org.eclipse.papyrus.model2doc.emf.template2structure.mapping;
 
-import java.util.Collection;
+import java.util.List;
 
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -26,12 +25,16 @@ import org.eclipse.emf.ecore.EObject;
 public interface IMappingService {
 
 	/**
+	 * @param <T>
+	 *            the return type of the list
 	 * @param documentTemplateElement
+	 *            a documentTemplateElement for which we want make a mapping
 	 * @param semanticModelElement
-	 * @param expectedReturnedEClass
-	 * @param mappingServic
+	 *            an element of the user model
+	 * @param expectedReturnedClass
+	 *            the return type of the mapping method
 	 * @return
 	 * 		a collection of EObject created by this mapping
 	 */
-	public Collection<EObject> map(final EObject documentTemplateElement, final EObject semanticModelElement, final EClass expectedReturnedEClass);
+	public <T> List<T> map(final EObject documentTemplateElement, final EObject semanticModelElement, final Class<T> expectedReturnedClass);
 }

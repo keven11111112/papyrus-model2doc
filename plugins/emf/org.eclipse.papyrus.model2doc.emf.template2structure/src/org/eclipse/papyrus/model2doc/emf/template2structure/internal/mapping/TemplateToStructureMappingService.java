@@ -15,7 +15,6 @@
 
 package org.eclipse.papyrus.model2doc.emf.template2structure.internal.mapping;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.ListIterator;
@@ -38,7 +37,7 @@ public final class TemplateToStructureMappingService implements IMappingService 
 	/**
 	 * The registered mappers
 	 */
-	private final List<AbstractTemplateToStructureMapper<?, ?>> mappers;
+	private final List<AbstractTemplateToStructureMapper<?>> mappers;
 
 	/**
 	 *
@@ -47,7 +46,7 @@ public final class TemplateToStructureMappingService implements IMappingService 
 	 * @param mappers
 	 *            the mappers to use for this service instance
 	 */
-	public TemplateToStructureMappingService(final List<AbstractTemplateToStructureMapper<?, ?>> mappers) {
+	public TemplateToStructureMappingService(final List<AbstractTemplateToStructureMapper<?>> mappers) {
 		this.mappers = mappers;
 	}
 
@@ -60,7 +59,7 @@ public final class TemplateToStructureMappingService implements IMappingService 
 	 * @return
 	 * 		the contributor answering to this mapping, or <code>null</code> when not found
 	 */
-	private AbstractTemplateToStructureMapper<?, ?> getContributorFor(final EObject documentTemplateElement, final EClass expectedReturnedEClass) {
+	private AbstractTemplateToStructureMapper<?> getContributorFor(final EObject documentTemplateElement, final Class<?> expectedReturnedEClass) {
 		return getContributorFor(documentTemplateElement.eClass(), expectedReturnedEClass);
 	}
 
@@ -73,12 +72,12 @@ public final class TemplateToStructureMappingService implements IMappingService 
 	 * @return
 	 * 		the contributor answering to this mapping, or <code>null</code> when not found
 	 */
-	private AbstractTemplateToStructureMapper<?, ?> getContributorFor(final EClass eClassTemplateElement, final EClass expectedReturnedEClass) {
-		AbstractTemplateToStructureMapper<?, ?> contributor = null;
-		final ListIterator<AbstractTemplateToStructureMapper<?, ?>> iter = this.mappers.listIterator();
+	private AbstractTemplateToStructureMapper<?> getContributorFor(final EClass eClassTemplateElement, final Class<?> expectedReturnedEClass) {
+		AbstractTemplateToStructureMapper<?> contributor = null;
+		final ListIterator<AbstractTemplateToStructureMapper<?>> iter = this.mappers.listIterator();
 		while (iter.hasNext() && contributor == null) {
-			final AbstractTemplateToStructureMapper<?, ?> current = iter.next();
-			if (current.handlesInput(eClassTemplateElement) && current.handlesExpectedOuput(expectedReturnedEClass)) {
+			final AbstractTemplateToStructureMapper<?> current = iter.next();
+			if (current.handlesInput(eClassTemplateElement) && current.handlesExpectedOutput(expectedReturnedEClass)) {
 				contributor = current;
 			}
 		}
@@ -92,24 +91,22 @@ public final class TemplateToStructureMappingService implements IMappingService 
 	 *
 	 * @param documentTemplateElement
 	 *            the input element
-	 *
 	 * @param semanticModelElement
 	 *            an element of the user model
-	 * @param expectedReturnedEClass
+	 * @param expectedReturnedClass
 	 *            the expected EClass for the result of the mapping
-	 *
 	 * @return
 	 * 		the collection of created object answering to the mapping request
 	 */
 	@Override
-	public Collection<EObject> map(final EObject documentTemplateElement, final EObject semanticModelElement, final EClass expectedReturnedEClass) {
-		AbstractTemplateToStructureMapper<?, ?> contributor = getContributorFor(documentTemplateElement, expectedReturnedEClass);
-		Collection<EObject> result = null;
+	public <T> List<T> map(final EObject documentTemplateElement, final EObject semanticModelElement, final Class<T> expectedReturnedClass) {
+		AbstractTemplateToStructureMapper<?> contributor = getContributorFor(documentTemplateElement, expectedReturnedClass);
+		List<T> result = null;
 		if (null != contributor) {
-			result = contributor.map(this, documentTemplateElement, semanticModelElement, expectedReturnedEClass);
+			result = contributor.map(this, documentTemplateElement, semanticModelElement, expectedReturnedClass);
 		}
 		if (null == result) {
-			Activator.log.info(NLS.bind("Mapping failed for input {0} and output {1}.", documentTemplateElement, expectedReturnedEClass)); //$NON-NLS-1$
+			Activator.log.info(NLS.bind("Mapping failed for input {0} and output {1}.", documentTemplateElement, expectedReturnedClass)); //$NON-NLS-1$
 			result = Collections.emptyList();
 		}
 		return result;

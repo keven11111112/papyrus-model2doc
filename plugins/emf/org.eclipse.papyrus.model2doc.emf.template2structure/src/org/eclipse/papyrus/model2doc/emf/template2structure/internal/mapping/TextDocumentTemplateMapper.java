@@ -23,6 +23,7 @@ import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.Document;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructureFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocumentPart;
@@ -33,7 +34,7 @@ import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.IMappingServ
 /**
  * This class ensures the transformation of the {@link TextDocumentTemplate} into a {@link TextDocument} and delegate the mapping of the {@link TextDocumentTemplate} subelements.
  */
-public class TextDocumentTemplateMapper extends AbstractEMFTemplateToStructureMapper<TextDocumentTemplate, TextDocument> {
+public class TextDocumentTemplateMapper extends AbstractEMFTemplateToStructureMapper<TextDocumentTemplate> {
 
 	/**
 	 *
@@ -41,7 +42,7 @@ public class TextDocumentTemplateMapper extends AbstractEMFTemplateToStructureMa
 	 *
 	 */
 	public TextDocumentTemplateMapper() {
-		super(TEMPLATE_EPACKAGE.getTextDocumentTemplate(), STRUCTURE_EPACKAGE.getDocument());
+		super(TEMPLATE_EPACKAGE.getTextDocumentTemplate(), Document.class);
 	}
 
 	/**
@@ -53,7 +54,7 @@ public class TextDocumentTemplateMapper extends AbstractEMFTemplateToStructureMa
 	 * @return
 	 */
 	@Override
-	protected Collection<TextDocument> doMap(final IMappingService mappingService, final TextDocumentTemplate input, final EObject modelElement) {
+	protected <T> List<T> doMap(final IMappingService mappingService, final TextDocumentTemplate input, final EObject modelElement, Class<T> expectedReturnedClass) {
 		final TextDocument txtDocument = DocumentStructureFactory.eINSTANCE.createTextDocument();
 		txtDocument.setMainTitle(input.getMainTitle());
 		final IDocumentStructureGeneratorConfiguration structureGeneratorConfig = input.getDocumentStructureGenerator();
@@ -65,13 +66,13 @@ public class TextDocumentTemplateMapper extends AbstractEMFTemplateToStructureMa
 		final Iterator<DocumentPart> iter = parts.iterator();
 		while (iter.hasNext()) {
 			final DocumentPart current = iter.next();
-			final Collection<EObject> result = mappingService.map(current, semanticContext, STRUCTURE_EPACKAGE.getTextDocumentPart());
+			final Collection<TextDocumentPart> result = mappingService.map(current, semanticContext, TextDocumentPart.class);
 
 			if (null != result) {
-				txtDocument.getTextDocumentPart().addAll((Collection<? extends TextDocumentPart>) result);
+				txtDocument.getTextDocumentPart().addAll(result);
 			}
 		}
-		return Collections.singleton(txtDocument);
+		return Collections.singletonList(expectedReturnedClass.cast(txtDocument));
 	}
 
 }

@@ -15,8 +15,8 @@
 
 package org.eclipse.papyrus.model2doc.emf.template2structure.internal.mapping;
 
-import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
@@ -27,7 +27,7 @@ import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.IMappingServ
 /**
  * This class ensures the transformation of the {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TableOfContents} into a {@link BodyPart} ({@link TableOfContents})
  */
-public class TableOfContentsMapper extends AbstractEMFTemplateToStructureMapper<org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TableOfContents, TableOfContents> {
+public class TableOfContentsMapper extends AbstractEMFTemplateToStructureMapper<org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TableOfContents> {
 
 	/**
 	 *
@@ -35,22 +35,22 @@ public class TableOfContentsMapper extends AbstractEMFTemplateToStructureMapper<
 	 *
 	 */
 	public TableOfContentsMapper() {
-		super(TEMPLATE_EPACKAGE.getTableOfContents(), STRUCTURE_EPACKAGE.getTableOfContents());
+		super(TEMPLATE_EPACKAGE.getTableOfContents(), TableOfContents.class);
 	}
 
 	/**
 	 * @param mappingService
 	 * @param documentStructureElement
 	 * @param modelElement
-	 * @see org.eclipse.papyrus.model2doc.emf.template2structure.mapping.service.AbtractTemplateToStructureMapper#doMap(IMappingService, org.eclipse.emf.ecore.EObject, org.eclipse.emf.ecore.EObject)
+	 * @see org.eclipse.papyrus.model2doc.emf.template2structure.mapping.service.AbtractTemplateToStructureMapper#doMap(IMappingService, org.eclipse.emf.ecore.EObject, org.eclipse.emf.ecore.EObject, Class<T>)
 	 *
 	 * @return
 	 */
 	@Override
-	protected Collection<TableOfContents> doMap(final IMappingService mappingService, final org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TableOfContents documentStructureElement, final EObject modelElement) {
+	protected <T> List<T> doMap(final IMappingService mappingService, final org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TableOfContents documentStructureElement, final EObject modelElement, Class<T> expectedReturnedClass) {
 		final TableOfContents toc = DocumentStructureFactory.eINSTANCE.createTableOfContents();
 		toc.setTocTitle(documentStructureElement.getTocTitle());
-		return Collections.singleton(toc);
+		return Collections.singletonList(expectedReturnedClass.cast(toc));
 	}
 
 }

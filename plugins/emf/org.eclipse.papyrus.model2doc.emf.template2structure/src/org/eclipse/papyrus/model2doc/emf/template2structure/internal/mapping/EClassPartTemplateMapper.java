@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
+import java.util.List;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -36,7 +37,7 @@ import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.IMappingServ
  *
  * This class ensures the transformation of the {@link EClassPartTemplate} into a {@link BodyPart} ({@link Title}) and delegate the mapping of the {@link EClassPartTemplate} subelements.
  */
-public class EClassPartTemplateMapper extends AbstractEMFTemplateToStructureMapper<EClassPartTemplate, BodyPart> {
+public class EClassPartTemplateMapper extends AbstractEMFTemplateToStructureMapper<EClassPartTemplate> {
 
 	/**
 	 * Constructor.
@@ -45,46 +46,50 @@ public class EClassPartTemplateMapper extends AbstractEMFTemplateToStructureMapp
 	 * @param outputEClass
 	 */
 	public EClassPartTemplateMapper() {
-		super(TEMPLATE_EPACKAGE.getEClassPartTemplate(), STRUCTURE_EPACKAGE.getBodyPart());
+		super(TEMPLATE_EPACKAGE.getEClassPartTemplate(), BodyPart.class);
 	}
 
 	/**
 	 * @param semanticModelElement
 	 * @param eClassPartTemplate
-	 * @see org.eclipse.papyrus.model2doc.emf.template2structure.mapping.service.AbtractTemplateToStructureMapper#doMap(IMappingService, org.eclipse.emf.ecore.EObject, org.eclipse.emf.ecore.EObject)
+	 * @see org.eclipse.papyrus.model2doc.emf.template2structure.mapping.service.AbtractTemplateToStructureMapper#doMap(IMappingService, org.eclipse.emf.ecore.EObject, org.eclipse.emf.ecore.EObject, Class<T>)
 	 *
 	 * @return
 	 */
 	@Override
-	protected Collection<BodyPart> doMap(final IMappingService mappingService, final EClassPartTemplate eClassPartTemplate, final EObject semanticModelElement) {
+	protected <T> List<T> doMap(final IMappingService mappingService, final EClassPartTemplate eClassPartTemplate, final EObject semanticModelElement, Class<T> expectedReturnedClass) {
 		if (false == eClassPartTemplate.isMatchingFilterRule(semanticModelElement)) {
 			return Collections.emptyList();
 		}
 		Title title = null;
-		Collection<BodyPart> returnedElements = new ArrayList<>();
+		List<T> returnedElements = new ArrayList<>();
 		if (eClassPartTemplate.isGenerate()) {
 			if (eClassPartTemplate.isGenerateTitle()) {
 				title = STRUCTURE_EFACTORY.createTitle();
 				title.setTitle(getSectionTitle(eClassPartTemplate, semanticModelElement));
-				returnedElements.add(title);
+				returnedElements.add(expectedReturnedClass.cast(title));
 			}
 		}
 		final Iterator<IBodyPartTemplate> bodyPart = eClassPartTemplate.getBodyPartTemplate().iterator();
 		while (bodyPart.hasNext()) {
 			final IBodyPartTemplate currentFeature = bodyPart.next();
-			final Collection<EObject> result = mappingService.map(currentFeature, semanticModelElement, STRUCTURE_EPACKAGE.getBodyPart());
+			final Collection<BodyPart> result = mappingService.map(currentFeature, semanticModelElement, BodyPart.class);
 			if (result == null) {
 				continue;
 			}
 			if (title != null) {
-				title.getSubBodyPart().addAll((Collection<? extends BodyPart>) result);
+				title.getSubBodyPart().addAll(result);
 			} else {
-				returnedElements.addAll((Collection<? extends BodyPart>) result);
+				// ensure the cast
+				result.stream().forEach(a -> returnedElements.add(expectedReturnedClass.cast(a)));
 			}
 
 		}
 		return returnedElements;
 	}
+
+
+
 
 	protected String getSectionTitle(final EClassPartTemplate partTemplate, EObject context) {// TODO in an upper class
 		if (partTemplate.isGenerateTitle()) {

@@ -35,7 +35,7 @@ import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.IMappingServ
 /**
  * This class ensures the transformation of the {@link EReferencePartTemplateMapper} into a {@link BodyPart} ({@link Title}) and delegate the mapping of the {@link EReferencePartTemplateMapper} subelements.
  */
-public class EReferencePartTemplateMapper extends AbstractEMFTemplateToStructureMapper<EReferencePartTemplate, BodyPart> {
+public class EReferencePartTemplateMapper extends AbstractEMFTemplateToStructureMapper<EReferencePartTemplate> {
 
 	/**
 	 * Constructor.
@@ -44,20 +44,20 @@ public class EReferencePartTemplateMapper extends AbstractEMFTemplateToStructure
 	 * @param outputEClass
 	 */
 	public EReferencePartTemplateMapper() {
-		super(TEMPLATE_EPACKAGE.getEReferencePartTemplate(), STRUCTURE_EPACKAGE.getBodyPart());
+		super(TEMPLATE_EPACKAGE.getEReferencePartTemplate(), BodyPart.class);
 	}
 
 	/**
 	 * @param mappingService
 	 * @param semanticModelElement
 	 * @param referencePartTemplate
-	 * @see org.eclipse.papyrus.model2doc.emf.template2structure.mapping.service.AbtractTemplateToStructureMapper#doMap(IMappingService, org.eclipse.emf.ecore.EObject, org.eclipse.emf.ecore.EObject)
+	 * @see org.eclipse.papyrus.model2doc.emf.template2structure.mapping.service.AbtractTemplateToStructureMapper#doMap(IMappingService, org.eclipse.emf.ecore.EObject, org.eclipse.emf.ecore.EObject, Class<T>)
 	 *
 	 * @return
 	 */
 	@Override
-	protected Collection<BodyPart> doMap(final IMappingService mappingService, final EReferencePartTemplate referencePartTemplate, final EObject semanticModelElement) {
-		Collection<BodyPart> returnedElements = new ArrayList<>();
+	protected <T> List<T> doMap(final IMappingService mappingService, final EReferencePartTemplate referencePartTemplate, final EObject semanticModelElement, Class<T> expectedReturnedClass) {
+		List<T> returnedElements = new ArrayList<>();
 
 		final Collection<EObject> matchingElements = getMatchingReferencedEObjects(referencePartTemplate, semanticModelElement);
 		if (matchingElements.isEmpty()) {
@@ -68,7 +68,7 @@ public class EReferencePartTemplateMapper extends AbstractEMFTemplateToStructure
 			if (referencePartTemplate.isGenerateTitle()) {
 				title = STRUCTURE_EFACTORY.createTitle();
 				title.setTitle(getSectionTitle(referencePartTemplate));
-				returnedElements.add(title);
+				returnedElements.add(expectedReturnedClass.cast(title));
 			}
 		}
 		final Iterator<EObject> iter = matchingElements.iterator();
@@ -76,14 +76,14 @@ public class EReferencePartTemplateMapper extends AbstractEMFTemplateToStructure
 			final Iterator<ISubBodyPartTemplate> subBodyPartTemplate = referencePartTemplate.getSubBodyPartTemplate().iterator();
 			while (subBodyPartTemplate.hasNext()) {
 				final ISubBodyPartTemplate currentObjectPartTemplate = subBodyPartTemplate.next();
-				final Collection<EObject> result = mappingService.map(currentObjectPartTemplate, iter.next(), STRUCTURE_EPACKAGE.getBodyPart());
+				final Collection<BodyPart> result = mappingService.map(currentObjectPartTemplate, iter.next(), BodyPart.class);
 				if (result == null) {
 					continue;
 				}
 				if (title != null) {
-					title.getSubBodyPart().addAll((Collection<? extends BodyPart>) result);
+					title.getSubBodyPart().addAll(result);
 				} else {
-					returnedElements.addAll((Collection<? extends BodyPart>) result);
+					result.stream().forEach(a -> returnedElements.add(expectedReturnedClass.cast(a)));
 				}
 			}
 		}

@@ -71,7 +71,7 @@ public final class Template2StructureRegistry {
 	/**
 	 * a map with the registered generator, by id
 	 */
-	private Map<String, List<AbstractTemplateToStructureMapper<?, ?>>> mappers = new HashMap<>();
+	private Map<String, List<AbstractTemplateToStructureMapper<?>>> mappers = new HashMap<>();
 
 	/**
 	 * the singleton of this class
@@ -152,9 +152,9 @@ public final class Template2StructureRegistry {
 	 */
 	private void readMapperContribution(final IConfigurationElement iConfigurationElement) {
 		final String contributedGenerator = iConfigurationElement.getAttribute(GENERATOR_ID_ATTRIBUTE);
-		AbstractTemplateToStructureMapper<?, ?> mapper = null;
+		AbstractTemplateToStructureMapper<?> mapper = null;
 		try {
-			mapper = (AbstractTemplateToStructureMapper<?, ?>) iConfigurationElement.createExecutableExtension(CLASS_ATTRIBUTE);
+			mapper = (AbstractTemplateToStructureMapper<?>) iConfigurationElement.createExecutableExtension(CLASS_ATTRIBUTE);
 		} catch (CoreException e) {
 			Activator.log.error(NLS.bind("The mapper {0} can't be loaded.", iConfigurationElement.getAttribute(CLASS_ATTRIBUTE)), e); //$NON-NLS-1$
 		}
@@ -162,7 +162,7 @@ public final class Template2StructureRegistry {
 			if (null == contributedGenerator || contributedGenerator.isEmpty()) {
 				Activator.log.warn(NLS.bind("The contributed mapper {0} is ignored because you don't define id for it in your extension point contribution {1}", mapper.toString(), EXTENSION_ID + "/" + MAPPER)); //$NON-NLS-1$ //$NON-NLS-2$
 			}
-			List<AbstractTemplateToStructureMapper<?, ?>> list = this.mappers.get(contributedGenerator);
+			List<AbstractTemplateToStructureMapper<?>> list = this.mappers.get(contributedGenerator);
 			if (null == list) {
 				list = new ArrayList<>();
 				mappers.put(contributedGenerator, list);
@@ -214,13 +214,13 @@ public final class Template2StructureRegistry {
 	 * @return
 	 * 		the mappers registered for the generator declared in the document template
 	 */
-	public List<AbstractTemplateToStructureMapper<?, ?>> getMappers(final DocumentTemplate docTemplate) {
+	public List<AbstractTemplateToStructureMapper<?>> getMappers(final DocumentTemplate docTemplate) {
 		final String structureGeneratorId = ((DefaultDocumentStructureGeneratorConfiguration) docTemplate.getDocumentStructureGenerator()).getStructureGeneratorId();
 		if (null == structureGeneratorId || structureGeneratorId.isEmpty()) {
 			Activator.log.warn(NLS.bind("The document structure generator id is not defined for {0}", docTemplate.toString())); //$NON-NLS-1$
 			return Collections.emptyList();
 		}
-		final List<AbstractTemplateToStructureMapper<?, ?>> returnedMappers = this.mappers.get(structureGeneratorId);
+		final List<AbstractTemplateToStructureMapper<?>> returnedMappers = this.mappers.get(structureGeneratorId);
 		if (null == returnedMappers) {
 			Activator.log.warn(NLS.bind("No mapper defined for generator id {0}", structureGeneratorId)); //$NON-NLS-1$
 			return Collections.emptyList();

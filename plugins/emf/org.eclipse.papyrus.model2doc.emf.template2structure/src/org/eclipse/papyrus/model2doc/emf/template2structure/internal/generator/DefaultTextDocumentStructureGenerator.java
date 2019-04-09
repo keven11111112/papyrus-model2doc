@@ -15,7 +15,6 @@
 
 package org.eclipse.papyrus.model2doc.emf.template2structure.internal.generator;
 
-import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.core.runtime.Assert;
@@ -24,7 +23,6 @@ import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentStructureGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Document;
-import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentTemplate;
@@ -93,12 +91,12 @@ public class DefaultTextDocumentStructureGenerator implements ITemplate2Structur
 			return null;
 		}
 		// 2. Do the generation
-		final List<AbstractTemplateToStructureMapper<?, ?>> mappers = Template2StructureRegistry.INSTANCE.getMappers(docTemplate);
+		final List<AbstractTemplateToStructureMapper<?>> mappers = Template2StructureRegistry.INSTANCE.getMappers(docTemplate);
 		if (mappers.isEmpty()) {
 			return null;
 		}
 		final IMappingService service = new TemplateToStructureMappingService(mappers);
-		final Collection<EObject> result = service.map(docTemplate, null, DocumentStructurePackage.eINSTANCE.getDocument());
+		final List<Document> result = service.map(docTemplate, null, Document.class);
 		if (result.isEmpty()) {
 			return null;
 		}

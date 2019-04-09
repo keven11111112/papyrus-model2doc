@@ -15,7 +15,7 @@
 
 package org.eclipse.papyrus.model2doc.emf.template2structure.mapping;
 
-import java.util.Collection;
+import java.util.List;
 
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.ecore.EClass;
@@ -23,10 +23,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.osgi.util.NLS;
 
 /**
- * Abstract class for all mappers
+ * Abstract class for all mappers. The extension of this class must have a constructor without parameters and be registered with the extension point structuregenerator.generator
  *
  */
-public abstract class AbstractTemplateToStructureMapper<INPUT extends EObject, OUTPUT extends EObject> {
+public abstract class AbstractTemplateToStructureMapper<INPUT extends EObject> {
 
 	/**
 	 * the handled input eClass
@@ -34,25 +34,27 @@ public abstract class AbstractTemplateToStructureMapper<INPUT extends EObject, O
 	private final EClass inputEClass;
 
 	/**
-	 * the handled input eClass
+	 * the handled input Class
 	 */
-	private final EClass outputEClass;
+	private final Class<?> outputClass;
 
 	/**
 	 *
 	 * Constructor.
 	 *
+	 * @param <T>
+	 *
 	 * @param inputEClass
 	 *            the eClass we know convert in a DocumentStructure element. This EClass can't be abstract.
-	 * @param outputEClass
+	 * @param outputClass
 	 *            the eClass representing the output type of the mapping. This EClass can be abstract
 	 */
-	public AbstractTemplateToStructureMapper(final EClass inputEClass, final EClass outputEClass) {
+	public <T> AbstractTemplateToStructureMapper(final EClass inputEClass, final Class<T> outputClass) {
 		Assert.isNotNull(inputEClass);
 		Assert.isTrue(false == inputEClass.isAbstract(), NLS.bind("The EClass {0} is abstract and it should not.", inputEClass)); //$NON-NLS-1$
-		Assert.isNotNull(outputEClass);
+		Assert.isNotNull(outputClass);
 		this.inputEClass = inputEClass;
-		this.outputEClass = outputEClass;
+		this.outputClass = outputClass;
 	}
 
 	/**
@@ -62,15 +64,6 @@ public abstract class AbstractTemplateToStructureMapper<INPUT extends EObject, O
 	 */
 	public final EClass getInputEClass() {
 		return inputEClass;
-	}
-
-	/**
-	 *
-	 * @return
-	 * 		the EClass supported as output by the current mapper
-	 */
-	public final EClass getOutputEClass() {
-		return outputEClass;
 	}
 
 	/**
@@ -86,18 +79,6 @@ public abstract class AbstractTemplateToStructureMapper<INPUT extends EObject, O
 
 	/**
 	 *
-	 *
-	 * @param eobject
-	 *            an eobject or <code>null</code>F
-	 * @return
-	 * 		<code>true</code> for <code>null</code> and when the EClass of the EObject matches the expected return type of the mapper
-	 */
-	private final boolean handlesRealOuput(final EObject eobject) {
-		return eobject == null || handlesRealOuput(eobject.eClass());
-	}
-
-	/**
-	 *
 	 * @param eClass
 	 * @return
 	 * 		<code>true</code> if the EClass matches the supported EClass
@@ -108,50 +89,38 @@ public abstract class AbstractTemplateToStructureMapper<INPUT extends EObject, O
 
 	/**
 	 *
-	 * @param eClass
+	 * @param clazz
 	 * @return
-	 * 		<code>true</code> if the EClass is a super type of the output EClass supported by the mapper
+	 * 		<code>true</code> if the Class is a super type of the output EClass supported by the mapper
 	 */
-	public final boolean handlesExpectedOuput(final EClass eClass) {
-		return eClass.isSuperTypeOf(this.outputEClass);
+	public final boolean handlesExpectedOutput(final Class<?> clazz) {
+		return clazz.isAssignableFrom(this.outputClass);
 	}
 
 	/**
 	 *
-	 * @param eClass
-	 * @return
-	 * 		return <code>true</code> if the tested EClass is a subtype of the supported output EClass
-	 */
-	public final boolean handlesRealOuput(final EClass eClass) {
-		return this.outputEClass.isSuperTypeOf(eClass);
-	}
-
-	/**
-	 *
+	 * @param <T>
 	 * @param mappingService
 	 *            the mapping service to use to map sub element of the documentTemplateElement
 	 * @param documentTemplateElement
 	 *            a document template element
 	 * @param semanticModelElement
 	 *            an element of the user model
-	 * @param expectedReturnedEClass
+	 * @param expectedReturnedClass
 	 *            the returned elements must be instance of this EClass
 	 * @return
-	 * 		a collection of the created elements to answer to this mapping request
+	 * 		a collection of T containing the created elements to answer to this mapping request
 	 */
 	@SuppressWarnings("unchecked")
-	public final Collection<EObject> map(final IMappingService mappingService, final EObject documentTemplateElement, final EObject semanticModelElement, final EClass expectedReturnedEClass) {
+	public final <T> List<T> map(final IMappingService mappingService, final EObject documentTemplateElement, final EObject semanticModelElement, final Class<T> expectedReturnedClass) {
 		// 1. check types
 		Assert.isTrue(handlesInput(documentTemplateElement));
-		Assert.isTrue(handlesExpectedOuput(expectedReturnedEClass));
+		Assert.isTrue(handlesExpectedOutput(expectedReturnedClass));
 
 		// 2. do mapping
-		final Collection<OUTPUT> result = doMap(mappingService, (INPUT) documentTemplateElement, semanticModelElement);
+		final List<T> result = doMap(mappingService, (INPUT) documentTemplateElement, semanticModelElement, expectedReturnedClass);
 
-		// 3. check type result
-		// TODO adapt this test
-		// Assert.isTrue(handlesRealOuput(result), NLS.bind("The created element {0} doesn't match the expected EClass {1}.", result.getClass().getName(), expectedReturnedEClass));
-		return (Collection<EObject>) result;
+		return result;
 	}
 
 	/**
@@ -162,8 +131,10 @@ public abstract class AbstractTemplateToStructureMapper<INPUT extends EObject, O
 	 *            a document template element
 	 * @param semanticModelElement
 	 *            an element of the user model
+	 * @param expectedReturnedClass
+	 *            the wanted return type
 	 * @return
 	 * 		the created document structure element or <code>null</code>
 	 */
-	protected abstract Collection<OUTPUT> doMap(final IMappingService mappingService, final INPUT documentTemplateElement, final EObject semanticModelElement);
+	protected abstract <T> List<T> doMap(final IMappingService mappingService, final INPUT documentTemplateElement, final EObject semanticModelElement, final Class<T> expectedReturnedClass);
 }

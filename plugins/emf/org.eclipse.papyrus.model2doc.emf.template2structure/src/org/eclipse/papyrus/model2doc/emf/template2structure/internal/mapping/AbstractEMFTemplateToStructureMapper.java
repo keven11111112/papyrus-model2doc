@@ -27,7 +27,7 @@ import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.AbstractTemp
  * Abstract class for Mappers provided by this plugin
  *
  */
-public abstract class AbstractEMFTemplateToStructureMapper<INPUT extends EObject, OUTPUT extends EObject> extends AbstractTemplateToStructureMapper<INPUT, OUTPUT> {
+public abstract class AbstractEMFTemplateToStructureMapper<INPUT extends EObject> extends AbstractTemplateToStructureMapper<INPUT> {
 
 	protected static final DocumentStructureTemplatePackage TEMPLATE_EPACKAGE = DocumentStructureTemplatePackage.eINSTANCE;
 
@@ -40,8 +40,8 @@ public abstract class AbstractEMFTemplateToStructureMapper<INPUT extends EObject
 	 *
 	 * @param eClass
 	 */
-	public AbstractEMFTemplateToStructureMapper(final EClass inputEClass, final EClass outputEClass) {
-		super(inputEClass, outputEClass);
+	public AbstractEMFTemplateToStructureMapper(final EClass inputEClass, final Class<?> outputClass) {
+		super(inputEClass, outputClass);
 		Assert.isTrue(inputEClass.getEPackage() == TEMPLATE_EPACKAGE);
 	}
 
