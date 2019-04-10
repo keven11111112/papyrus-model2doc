@@ -21,5 +21,6 @@
 	<modules>
 		<module>org.eclipse.papyrus.model2doc.uml.documentstructuretemplate</module>
 		<module>org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.edit</module>
+		<module>org.eclipse.papyrus.model2doc.uml.template2structure</module>
 	</modules>
 </project>

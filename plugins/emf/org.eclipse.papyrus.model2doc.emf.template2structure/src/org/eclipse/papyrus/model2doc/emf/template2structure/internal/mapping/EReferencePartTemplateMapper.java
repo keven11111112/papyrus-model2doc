@@ -71,12 +71,13 @@ public class EReferencePartTemplateMapper extends AbstractEMFTemplateToStructure
 				returnedElements.add(expectedReturnedClass.cast(title));
 			}
 		}
-		final Iterator<EObject> iter = matchingElements.iterator();
-		while (iter.hasNext()) {
+		final Iterator<EObject> matchingSubElementIterator = matchingElements.iterator();
+		while (matchingSubElementIterator.hasNext()) {
 			final Iterator<ISubBodyPartTemplate> subBodyPartTemplate = referencePartTemplate.getSubBodyPartTemplate().iterator();
+			final EObject currentEObject = matchingSubElementIterator.next();
 			while (subBodyPartTemplate.hasNext()) {
 				final ISubBodyPartTemplate currentObjectPartTemplate = subBodyPartTemplate.next();
-				final Collection<BodyPart> result = mappingService.map(currentObjectPartTemplate, iter.next(), BodyPart.class);
+				final Collection<BodyPart> result = mappingService.map(currentObjectPartTemplate, currentEObject, BodyPart.class);
 				if (result == null) {
 					continue;
 				}

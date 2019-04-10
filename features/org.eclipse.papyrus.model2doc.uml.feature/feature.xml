@@ -22,7 +22,7 @@
    <includes
          id="org.eclipse.papyrus.model2doc.feature"
          version="0.0.0"/>
-         
+
    <requires>
       <import feature="org.eclipse.uml2.sdk" version="5.5.0.qualifier" match="compatible"/>
    </requires>
@@ -40,5 +40,11 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.model2doc.uml.template2structure"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
 
 </feature>
