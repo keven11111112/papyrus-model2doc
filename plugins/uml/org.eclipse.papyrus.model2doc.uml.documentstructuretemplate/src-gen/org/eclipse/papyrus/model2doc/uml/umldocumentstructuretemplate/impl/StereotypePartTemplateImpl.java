@@ -13,10 +13,11 @@
  */
 package org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
-
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassPartTemplateImpl;
@@ -164,6 +165,19 @@ public class StereotypePartTemplateImpl extends EClassPartTemplateImpl implement
 	 * @generated
 	 */
 	@Override
+	public EObject getFirstMatchingStereotypeApplication(EObject element) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__STEREOTYPE_QUALIFIED_NAME:
@@ -227,6 +241,21 @@ public class StereotypePartTemplateImpl extends EClassPartTemplateImpl implement
 			return stereotypeFilterRule != STEREOTYPE_FILTER_RULE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE___GET_FIRST_MATCHING_STEREOTYPE_APPLICATION__EOBJECT:
+			return getFirstMatchingStereotypeApplication((EObject) arguments.get(0));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

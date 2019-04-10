@@ -15,16 +15,20 @@ package org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.provider;
 
 import java.util.ArrayList;
 import java.util.Collection;
-
 import java.util.List;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EObject;
+
 import org.eclipse.emf.edit.command.CommandParameter;
+
 import org.eclipse.emf.edit.domain.EditingDomain;
+
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ChildCreationExtenderManager;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -43,9 +47,12 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.Body;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedBodyPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedSubBodyPartTemplate;
+
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.util.DocumentStructureTemplateSwitch;
+
 import org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.UMLDocumentStructureTemplateFactory;
 import org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.UMLDocumentStructureTemplatePackage;
+
 import org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.util.UMLDocumentStructureTemplateAdapterFactory;
 
 /**
@@ -136,28 +143,28 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.StereotypePropertyPartTemplate} instances.
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.StereotypePropertyReferencePartTemplate} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 */
-	protected StereotypePropertyPartTemplateItemProvider stereotypePropertyPartTemplateItemProvider;
+	protected StereotypePropertyReferencePartTemplateItemProvider stereotypePropertyReferencePartTemplateItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.StereotypePropertyPartTemplate}.
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.StereotypePropertyReferencePartTemplate}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 */
 	@Override
-	public Adapter createStereotypePropertyPartTemplateAdapter() {
-		if (stereotypePropertyPartTemplateItemProvider == null) {
-			stereotypePropertyPartTemplateItemProvider = new StereotypePropertyPartTemplateItemProvider(this);
+	public Adapter createStereotypePropertyReferencePartTemplateAdapter() {
+		if (stereotypePropertyReferencePartTemplateItemProvider == null) {
+			stereotypePropertyReferencePartTemplateItemProvider = new StereotypePropertyReferencePartTemplateItemProvider(this);
 		}
 
-		return stereotypePropertyPartTemplateItemProvider;
+		return stereotypePropertyReferencePartTemplateItemProvider;
 	}
 
 	/**
@@ -334,8 +341,8 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 		if (stereotypePartTemplateItemProvider != null) {
 			stereotypePartTemplateItemProvider.dispose();
 		}
-		if (stereotypePropertyPartTemplateItemProvider != null) {
-			stereotypePropertyPartTemplateItemProvider.dispose();
+		if (stereotypePropertyReferencePartTemplateItemProvider != null) {
+			stereotypePropertyReferencePartTemplateItemProvider.dispose();
 		}
 		if (commentAsParagraphItemProvider != null) {
 			commentAsParagraphItemProvider.dispose();
@@ -397,7 +404,7 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 			@Override
 			public Object caseBody(Body object) {
 				newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.BODY__BODY_PART_TEMPLATE,
-						UMLDocumentStructureTemplateFactory.eINSTANCE.createStereotypePropertyPartTemplate()));
+						UMLDocumentStructureTemplateFactory.eINSTANCE.createStereotypePropertyReferencePartTemplate()));
 
 				newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.BODY__BODY_PART_TEMPLATE,
 						UMLDocumentStructureTemplateFactory.eINSTANCE.createCommentAsParagraph()));
@@ -428,7 +435,7 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 			@Override
 			public Object caseIComposedSubBodyPartTemplate(IComposedSubBodyPartTemplate object) {
 				newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE,
-						UMLDocumentStructureTemplateFactory.eINSTANCE.createStereotypePropertyPartTemplate()));
+						UMLDocumentStructureTemplateFactory.eINSTANCE.createStereotypePropertyReferencePartTemplate()));
 
 				newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE,
 						UMLDocumentStructureTemplateFactory.eINSTANCE.createCommentAsParagraph()));

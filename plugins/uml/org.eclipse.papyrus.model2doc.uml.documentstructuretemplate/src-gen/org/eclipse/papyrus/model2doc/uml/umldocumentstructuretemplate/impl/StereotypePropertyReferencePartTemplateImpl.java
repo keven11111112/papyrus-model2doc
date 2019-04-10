@@ -13,6 +13,7 @@
  */
 package org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -21,6 +22,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -31,27 +33,27 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubBodyPartTemplate;
 
-import org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.StereotypePropertyPartTemplate;
+import org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.StereotypePropertyReferencePartTemplate;
 import org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.UMLDocumentStructureTemplatePackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Stereotype Property Part Template</b></em>'.
+ * An implementation of the model object '<em><b>Stereotype Property Reference Part Template</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.impl.StereotypePropertyPartTemplateImpl#isGenerate <em>Generate</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.impl.StereotypePropertyPartTemplateImpl#isGenerateTitle <em>Generate Title</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.impl.StereotypePropertyPartTemplateImpl#getCustomTitle <em>Custom Title</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.impl.StereotypePropertyPartTemplateImpl#getSubBodyPartTemplate <em>Sub Body Part Template</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.impl.StereotypePropertyPartTemplateImpl#getPropertyName <em>Property Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.impl.StereotypePropertyReferencePartTemplateImpl#isGenerate <em>Generate</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.impl.StereotypePropertyReferencePartTemplateImpl#isGenerateTitle <em>Generate Title</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.impl.StereotypePropertyReferencePartTemplateImpl#getCustomTitle <em>Custom Title</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.impl.StereotypePropertyReferencePartTemplateImpl#getSubBodyPartTemplate <em>Sub Body Part Template</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.impl.StereotypePropertyReferencePartTemplateImpl#getPropertyName <em>Property Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class StereotypePropertyPartTemplateImpl extends MinimalEObjectImpl.Container implements StereotypePropertyPartTemplate {
+public class StereotypePropertyReferencePartTemplateImpl extends MinimalEObjectImpl.Container implements StereotypePropertyReferencePartTemplate {
 	/**
 	 * The default value of the '{@link #isGenerate() <em>Generate</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -157,7 +159,7 @@ public class StereotypePropertyPartTemplateImpl extends MinimalEObjectImpl.Conta
 	 *
 	 * @generated
 	 */
-	protected StereotypePropertyPartTemplateImpl() {
+	protected StereotypePropertyReferencePartTemplateImpl() {
 		super();
 	}
 
@@ -169,7 +171,7 @@ public class StereotypePropertyPartTemplateImpl extends MinimalEObjectImpl.Conta
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return UMLDocumentStructureTemplatePackage.Literals.STEREOTYPE_PROPERTY_PART_TEMPLATE;
+		return UMLDocumentStructureTemplatePackage.Literals.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE;
 	}
 
 	/**
@@ -194,7 +196,7 @@ public class StereotypePropertyPartTemplateImpl extends MinimalEObjectImpl.Conta
 		boolean oldGenerate = generate;
 		generate = newGenerate;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_PART_TEMPLATE__GENERATE, oldGenerate, generate));
+			eNotify(new ENotificationImpl(this, Notification.SET, UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__GENERATE, oldGenerate, generate));
 		}
 	}
 
@@ -220,7 +222,7 @@ public class StereotypePropertyPartTemplateImpl extends MinimalEObjectImpl.Conta
 		boolean oldGenerateTitle = generateTitle;
 		generateTitle = newGenerateTitle;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_PART_TEMPLATE__GENERATE_TITLE, oldGenerateTitle, generateTitle));
+			eNotify(new ENotificationImpl(this, Notification.SET, UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__GENERATE_TITLE, oldGenerateTitle, generateTitle));
 		}
 	}
 
@@ -246,7 +248,7 @@ public class StereotypePropertyPartTemplateImpl extends MinimalEObjectImpl.Conta
 		String oldCustomTitle = customTitle;
 		customTitle = newCustomTitle;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_PART_TEMPLATE__CUSTOM_TITLE, oldCustomTitle, customTitle));
+			eNotify(new ENotificationImpl(this, Notification.SET, UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__CUSTOM_TITLE, oldCustomTitle, customTitle));
 		}
 	}
 
@@ -259,7 +261,7 @@ public class StereotypePropertyPartTemplateImpl extends MinimalEObjectImpl.Conta
 	@Override
 	public EList<ISubBodyPartTemplate> getSubBodyPartTemplate() {
 		if (subBodyPartTemplate == null) {
-			subBodyPartTemplate = new EObjectContainmentEList<>(ISubBodyPartTemplate.class, this, UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE);
+			subBodyPartTemplate = new EObjectContainmentEList<>(ISubBodyPartTemplate.class, this, UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE);
 		}
 		return subBodyPartTemplate;
 	}
@@ -286,8 +288,21 @@ public class StereotypePropertyPartTemplateImpl extends MinimalEObjectImpl.Conta
 		String oldPropertyName = propertyName;
 		propertyName = newPropertyName;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_PART_TEMPLATE__PROPERTY_NAME, oldPropertyName, propertyName));
+			eNotify(new ENotificationImpl(this, Notification.SET, UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__PROPERTY_NAME, oldPropertyName, propertyName));
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EList<EObject> getMatchingReferencedEObjects(EObject eobject) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -299,7 +314,7 @@ public class StereotypePropertyPartTemplateImpl extends MinimalEObjectImpl.Conta
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
 			return ((InternalEList<?>) getSubBodyPartTemplate()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -314,15 +329,15 @@ public class StereotypePropertyPartTemplateImpl extends MinimalEObjectImpl.Conta
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_PART_TEMPLATE__GENERATE:
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__GENERATE:
 			return isGenerate();
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_PART_TEMPLATE__GENERATE_TITLE:
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__GENERATE_TITLE:
 			return isGenerateTitle();
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_PART_TEMPLATE__CUSTOM_TITLE:
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__CUSTOM_TITLE:
 			return getCustomTitle();
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
 			return getSubBodyPartTemplate();
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_PART_TEMPLATE__PROPERTY_NAME:
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__PROPERTY_NAME:
 			return getPropertyName();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -338,20 +353,20 @@ public class StereotypePropertyPartTemplateImpl extends MinimalEObjectImpl.Conta
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_PART_TEMPLATE__GENERATE:
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__GENERATE:
 			setGenerate((Boolean) newValue);
 			return;
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_PART_TEMPLATE__GENERATE_TITLE:
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__GENERATE_TITLE:
 			setGenerateTitle((Boolean) newValue);
 			return;
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_PART_TEMPLATE__CUSTOM_TITLE:
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__CUSTOM_TITLE:
 			setCustomTitle((String) newValue);
 			return;
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
 			getSubBodyPartTemplate().clear();
 			getSubBodyPartTemplate().addAll((Collection<? extends ISubBodyPartTemplate>) newValue);
 			return;
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_PART_TEMPLATE__PROPERTY_NAME:
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__PROPERTY_NAME:
 			setPropertyName((String) newValue);
 			return;
 		}
@@ -367,19 +382,19 @@ public class StereotypePropertyPartTemplateImpl extends MinimalEObjectImpl.Conta
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_PART_TEMPLATE__GENERATE:
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__GENERATE:
 			setGenerate(GENERATE_EDEFAULT);
 			return;
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_PART_TEMPLATE__GENERATE_TITLE:
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__GENERATE_TITLE:
 			setGenerateTitle(GENERATE_TITLE_EDEFAULT);
 			return;
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_PART_TEMPLATE__CUSTOM_TITLE:
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__CUSTOM_TITLE:
 			setCustomTitle(CUSTOM_TITLE_EDEFAULT);
 			return;
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
 			getSubBodyPartTemplate().clear();
 			return;
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_PART_TEMPLATE__PROPERTY_NAME:
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__PROPERTY_NAME:
 			setPropertyName(PROPERTY_NAME_EDEFAULT);
 			return;
 		}
@@ -395,18 +410,33 @@ public class StereotypePropertyPartTemplateImpl extends MinimalEObjectImpl.Conta
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_PART_TEMPLATE__GENERATE:
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__GENERATE:
 			return generate != GENERATE_EDEFAULT;
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_PART_TEMPLATE__GENERATE_TITLE:
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__GENERATE_TITLE:
 			return generateTitle != GENERATE_TITLE_EDEFAULT;
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_PART_TEMPLATE__CUSTOM_TITLE:
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__CUSTOM_TITLE:
 			return CUSTOM_TITLE_EDEFAULT == null ? customTitle != null : !CUSTOM_TITLE_EDEFAULT.equals(customTitle);
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
 			return subBodyPartTemplate != null && !subBodyPartTemplate.isEmpty();
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_PART_TEMPLATE__PROPERTY_NAME:
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__PROPERTY_NAME:
 			return PROPERTY_NAME_EDEFAULT == null ? propertyName != null : !PROPERTY_NAME_EDEFAULT.equals(propertyName);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE___GET_MATCHING_REFERENCED_EOBJECTS__EOBJECT:
+			return getMatchingReferencedEObjects((EObject) arguments.get(0));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
@@ -434,4 +464,4 @@ public class StereotypePropertyPartTemplateImpl extends MinimalEObjectImpl.Conta
 		return result.toString();
 	}
 
-} // StereotypePropertyPartTemplateImpl
+} // StereotypePropertyReferencePartTemplateImpl

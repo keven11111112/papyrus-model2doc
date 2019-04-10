@@ -45,14 +45,14 @@ public interface UMLDocumentStructureTemplateFactory extends EFactory {
 	StereotypePartTemplate createStereotypePartTemplate();
 
 	/**
-	 * Returns a new object of class '<em>Stereotype Property Part Template</em>'.
+	 * Returns a new object of class '<em>Stereotype Property Reference Part Template</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @return a new object of class '<em>Stereotype Property Part Template</em>'.
+	 * @return a new object of class '<em>Stereotype Property Reference Part Template</em>'.
 	 * @generated
 	 */
-	StereotypePropertyPartTemplate createStereotypePropertyPartTemplate();
+	StereotypePropertyReferencePartTemplate createStereotypePropertyReferencePartTemplate();
 
 	/**
 	 * Returns a new object of class '<em>Comment As Paragraph</em>'.

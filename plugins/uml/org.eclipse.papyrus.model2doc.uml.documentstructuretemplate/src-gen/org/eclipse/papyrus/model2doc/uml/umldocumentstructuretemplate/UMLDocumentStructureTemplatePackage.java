@@ -16,6 +16,7 @@ package org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
@@ -187,6 +188,16 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	int STEREOTYPE_PART_TEMPLATE___IS_MATCHING_FILTER_RULE__EOBJECT = DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE___IS_MATCHING_FILTER_RULE__EOBJECT;
 
 	/**
+	 * The operation id for the '<em>Get First Matching Stereotype Application</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int STEREOTYPE_PART_TEMPLATE___GET_FIRST_MATCHING_STEREOTYPE_APPLICATION__EOBJECT = DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Stereotype Part Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -194,18 +205,18 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PART_TEMPLATE_OPERATION_COUNT = DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE_OPERATION_COUNT + 0;
+	int STEREOTYPE_PART_TEMPLATE_OPERATION_COUNT = DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE_OPERATION_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.impl.StereotypePropertyPartTemplateImpl <em>Stereotype Property Part Template</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.impl.StereotypePropertyReferencePartTemplateImpl <em>Stereotype Property Reference Part Template</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.impl.StereotypePropertyPartTemplateImpl
-	 * @see org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.impl.UMLDocumentStructureTemplatePackageImpl#getStereotypePropertyPartTemplate()
+	 * @see org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.impl.StereotypePropertyReferencePartTemplateImpl
+	 * @see org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.impl.UMLDocumentStructureTemplatePackageImpl#getStereotypePropertyReferencePartTemplate()
 	 * @generated
 	 */
-	int STEREOTYPE_PROPERTY_PART_TEMPLATE = 1;
+	int STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Generate</b></em>' attribute.
@@ -215,7 +226,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_PART_TEMPLATE__GENERATE = DocumentStructureTemplatePackage.ICOMPOSED_BODY_PART_TEMPLATE__GENERATE;
+	int STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__GENERATE = DocumentStructureTemplatePackage.ICOMPOSED_BODY_PART_TEMPLATE__GENERATE;
 
 	/**
 	 * The feature id for the '<em><b>Generate Title</b></em>' attribute.
@@ -225,7 +236,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_PART_TEMPLATE__GENERATE_TITLE = DocumentStructureTemplatePackage.ICOMPOSED_BODY_PART_TEMPLATE__GENERATE_TITLE;
+	int STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__GENERATE_TITLE = DocumentStructureTemplatePackage.ICOMPOSED_BODY_PART_TEMPLATE__GENERATE_TITLE;
 
 	/**
 	 * The feature id for the '<em><b>Custom Title</b></em>' attribute.
@@ -235,7 +246,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_PART_TEMPLATE__CUSTOM_TITLE = DocumentStructureTemplatePackage.ICOMPOSED_BODY_PART_TEMPLATE__CUSTOM_TITLE;
+	int STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__CUSTOM_TITLE = DocumentStructureTemplatePackage.ICOMPOSED_BODY_PART_TEMPLATE__CUSTOM_TITLE;
 
 	/**
 	 * The feature id for the '<em><b>Sub Body Part Template</b></em>' containment reference list.
@@ -245,7 +256,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE = DocumentStructureTemplatePackage.ICOMPOSED_BODY_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE;
+	int STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE = DocumentStructureTemplatePackage.ICOMPOSED_BODY_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE;
 
 	/**
 	 * The feature id for the '<em><b>Property Name</b></em>' attribute.
@@ -255,27 +266,37 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_PART_TEMPLATE__PROPERTY_NAME = DocumentStructureTemplatePackage.ICOMPOSED_BODY_PART_TEMPLATE_FEATURE_COUNT + 0;
+	int STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__PROPERTY_NAME = DocumentStructureTemplatePackage.ICOMPOSED_BODY_PART_TEMPLATE_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Stereotype Property Part Template</em>' class.
+	 * The number of structural features of the '<em>Stereotype Property Reference Part Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_PART_TEMPLATE_FEATURE_COUNT = DocumentStructureTemplatePackage.ICOMPOSED_BODY_PART_TEMPLATE_FEATURE_COUNT + 1;
+	int STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE_FEATURE_COUNT = DocumentStructureTemplatePackage.ICOMPOSED_BODY_PART_TEMPLATE_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of operations of the '<em>Stereotype Property Part Template</em>' class.
+	 * The operation id for the '<em>Get Matching Referenced EObjects</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_PART_TEMPLATE_OPERATION_COUNT = DocumentStructureTemplatePackage.ICOMPOSED_BODY_PART_TEMPLATE_OPERATION_COUNT + 0;
+	int STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE___GET_MATCHING_REFERENCED_EOBJECTS__EOBJECT = DocumentStructureTemplatePackage.ICOMPOSED_BODY_PART_TEMPLATE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Stereotype Property Reference Part Template</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE_OPERATION_COUNT = DocumentStructureTemplatePackage.ICOMPOSED_BODY_PART_TEMPLATE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.impl.CommentAsParagraphImpl <em>Comment As Paragraph</em>}' class.
@@ -339,6 +360,16 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	int COMMENT_AS_PARAGRAPH_FEATURE_COUNT = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get Matching Comments</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT_AS_PARAGRAPH___GET_MATCHING_COMMENTS__EOBJECT = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Comment As Paragraph</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -346,7 +377,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMENT_AS_PARAGRAPH_OPERATION_COUNT = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE_OPERATION_COUNT + 0;
+	int COMMENT_AS_PARAGRAPH_OPERATION_COUNT = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.StereotypeFilterBehavior <em>Stereotype Filter Behavior</em>}' enum.
@@ -407,27 +438,51 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	EAttribute getStereotypePartTemplate_StereotypeFilterRule();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.StereotypePropertyPartTemplate <em>Stereotype Property Part Template</em>}'.
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.StereotypePartTemplate#getFirstMatchingStereotypeApplication(org.eclipse.emf.ecore.EObject) <em>Get First Matching Stereotype Application</em>}'
+	 * operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the meta object for class '<em>Stereotype Property Part Template</em>'.
-	 * @see org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.StereotypePropertyPartTemplate
+	 * @return the meta object for the '<em>Get First Matching Stereotype Application</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.StereotypePartTemplate#getFirstMatchingStereotypeApplication(org.eclipse.emf.ecore.EObject)
 	 * @generated
 	 */
-	EClass getStereotypePropertyPartTemplate();
+	EOperation getStereotypePartTemplate__GetFirstMatchingStereotypeApplication__EObject();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.StereotypePropertyPartTemplate#getPropertyName <em>Property Name</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.StereotypePropertyReferencePartTemplate <em>Stereotype Property Reference Part Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>Stereotype Property Reference Part Template</em>'.
+	 * @see org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.StereotypePropertyReferencePartTemplate
+	 * @generated
+	 */
+	EClass getStereotypePropertyReferencePartTemplate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.StereotypePropertyReferencePartTemplate#getPropertyName <em>Property Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the attribute '<em>Property Name</em>'.
-	 * @see org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.StereotypePropertyPartTemplate#getPropertyName()
-	 * @see #getStereotypePropertyPartTemplate()
+	 * @see org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.StereotypePropertyReferencePartTemplate#getPropertyName()
+	 * @see #getStereotypePropertyReferencePartTemplate()
 	 * @generated
 	 */
-	EAttribute getStereotypePropertyPartTemplate_PropertyName();
+	EAttribute getStereotypePropertyReferencePartTemplate_PropertyName();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.StereotypePropertyReferencePartTemplate#getMatchingReferencedEObjects(org.eclipse.emf.ecore.EObject) <em>Get Matching Referenced EObjects</em>}'
+	 * operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the '<em>Get Matching Referenced EObjects</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.StereotypePropertyReferencePartTemplate#getMatchingReferencedEObjects(org.eclipse.emf.ecore.EObject)
+	 * @generated
+	 */
+	EOperation getStereotypePropertyReferencePartTemplate__GetMatchingReferencedEObjects__EObject();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.CommentAsParagraph <em>Comment As Paragraph</em>}'.
@@ -451,6 +506,17 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getCommentAsParagraph_CommentChoice();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.CommentAsParagraph#getMatchingComments(org.eclipse.emf.ecore.EObject) <em>Get Matching Comments</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the '<em>Get Matching Comments</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.CommentAsParagraph#getMatchingComments(org.eclipse.emf.ecore.EObject)
+	 * @generated
+	 */
+	EOperation getCommentAsParagraph__GetMatchingComments__EObject();
 
 	/**
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.StereotypeFilterBehavior <em>Stereotype Filter Behavior</em>}'.
@@ -529,15 +595,24 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 		EAttribute STEREOTYPE_PART_TEMPLATE__STEREOTYPE_FILTER_RULE = eINSTANCE.getStereotypePartTemplate_StereotypeFilterRule();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.impl.StereotypePropertyPartTemplateImpl <em>Stereotype Property Part Template</em>}' class.
+		 * The meta object literal for the '<em><b>Get First Matching Stereotype Application</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
-		 * @see org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.impl.StereotypePropertyPartTemplateImpl
-		 * @see org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.impl.UMLDocumentStructureTemplatePackageImpl#getStereotypePropertyPartTemplate()
 		 * @generated
 		 */
-		EClass STEREOTYPE_PROPERTY_PART_TEMPLATE = eINSTANCE.getStereotypePropertyPartTemplate();
+		EOperation STEREOTYPE_PART_TEMPLATE___GET_FIRST_MATCHING_STEREOTYPE_APPLICATION__EOBJECT = eINSTANCE.getStereotypePartTemplate__GetFirstMatchingStereotypeApplication__EObject();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.impl.StereotypePropertyReferencePartTemplateImpl <em>Stereotype Property Reference Part Template</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.impl.StereotypePropertyReferencePartTemplateImpl
+		 * @see org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.impl.UMLDocumentStructureTemplatePackageImpl#getStereotypePropertyReferencePartTemplate()
+		 * @generated
+		 */
+		EClass STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE = eINSTANCE.getStereotypePropertyReferencePartTemplate();
 
 		/**
 		 * The meta object literal for the '<em><b>Property Name</b></em>' attribute feature.
@@ -546,7 +621,16 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 		 *
 		 * @generated
 		 */
-		EAttribute STEREOTYPE_PROPERTY_PART_TEMPLATE__PROPERTY_NAME = eINSTANCE.getStereotypePropertyPartTemplate_PropertyName();
+		EAttribute STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__PROPERTY_NAME = eINSTANCE.getStereotypePropertyReferencePartTemplate_PropertyName();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Matching Referenced EObjects</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EOperation STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE___GET_MATCHING_REFERENCED_EOBJECTS__EOBJECT = eINSTANCE.getStereotypePropertyReferencePartTemplate__GetMatchingReferencedEObjects__EObject();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.impl.CommentAsParagraphImpl <em>Comment As Paragraph</em>}' class.
@@ -567,6 +651,15 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute COMMENT_AS_PARAGRAPH__COMMENT_CHOICE = eINSTANCE.getCommentAsParagraph_CommentChoice();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Matching Comments</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EOperation COMMENT_AS_PARAGRAPH___GET_MATCHING_COMMENTS__EOBJECT = eINSTANCE.getCommentAsParagraph__GetMatchingComments__EObject();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.StereotypeFilterBehavior <em>Stereotype Filter Behavior</em>}' enum.

@@ -13,11 +13,13 @@
  */
 package org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate;
 
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedBodyPartTemplate;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Stereotype Property Part Template</b></em>'.
+ * A representation of the model object '<em><b>Stereotype Property Reference Part Template</b></em>'.
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
@@ -28,14 +30,14 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedBody
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.StereotypePropertyPartTemplate#getPropertyName <em>Property Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.StereotypePropertyReferencePartTemplate#getPropertyName <em>Property Name</em>}</li>
  * </ul>
  *
- * @see org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.UMLDocumentStructureTemplatePackage#getStereotypePropertyPartTemplate()
+ * @see org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.UMLDocumentStructureTemplatePackage#getStereotypePropertyReferencePartTemplate()
  * @model
  * @generated
  */
-public interface StereotypePropertyPartTemplate extends IComposedBodyPartTemplate {
+public interface StereotypePropertyReferencePartTemplate extends IComposedBodyPartTemplate {
 	/**
 	 * Returns the value of the '<em><b>Property Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -46,14 +48,14 @@ public interface StereotypePropertyPartTemplate extends IComposedBodyPartTemplat
 	 *
 	 * @return the value of the '<em>Property Name</em>' attribute.
 	 * @see #setPropertyName(String)
-	 * @see org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.UMLDocumentStructureTemplatePackage#getStereotypePropertyPartTemplate_PropertyName()
+	 * @see org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.UMLDocumentStructureTemplatePackage#getStereotypePropertyReferencePartTemplate_PropertyName()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	String getPropertyName();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.StereotypePropertyPartTemplate#getPropertyName <em>Property Name</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.StereotypePropertyReferencePartTemplate#getPropertyName <em>Property Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -64,4 +66,16 @@ public interface StereotypePropertyPartTemplate extends IComposedBodyPartTemplat
 	 */
 	void setPropertyName(String value);
 
-} // StereotypePropertyPartTemplate
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This method returns the object referenced by the property for the given eobject in paramater.
+	 * <!-- end-model-doc -->
+	 *
+	 * @model ordered="false" eobjectRequired="true" eobjectOrdered="false"
+	 * @generated
+	 */
+	EList<EObject> getMatchingReferencedEObjects(EObject eobject);
+
+} // StereotypePropertyReferencePartTemplate

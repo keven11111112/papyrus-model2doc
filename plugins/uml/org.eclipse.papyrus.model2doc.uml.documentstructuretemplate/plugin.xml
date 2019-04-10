@@ -15,5 +15,12 @@
             class="org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.UMLDocumentStructureTemplatePackage"
             genModel="model/umldocumentstructuretemplate.genmodel"/>
    </extension>
+   <extension
+         point="org.eclipse.emf.ecore.factory_override">
+      <factory
+            class="org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.impl.CustomUMLDocumentStructureTemplateFactory"
+            uri="http://www.eclipse.org/papyrus/model2doc/uml/1.0.0/documentstructuretemplate">
+      </factory>
+   </extension>
 
 </plugin>

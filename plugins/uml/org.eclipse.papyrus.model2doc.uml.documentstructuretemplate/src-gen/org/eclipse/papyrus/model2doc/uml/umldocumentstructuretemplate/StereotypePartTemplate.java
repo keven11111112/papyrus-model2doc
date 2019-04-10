@@ -13,6 +13,7 @@
  */
 package org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassPartTemplate;
 
 /**
@@ -95,5 +96,18 @@ public interface StereotypePartTemplate extends EClassPartTemplate {
 	 * @generated
 	 */
 	void setStereotypeFilterRule(StereotypeFilterBehavior value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This method returns the first stereotype application for the element given in parameter.
+	 * Due to EMF limitation/bug, the parameter is EObject and not UML Element.
+	 * <!-- end-model-doc -->
+	 *
+	 * @model ordered="false" elementRequired="true" elementOrdered="false"
+	 * @generated
+	 */
+	EObject getFirstMatchingStereotypeApplication(EObject element);
 
 } // StereotypePartTemplate

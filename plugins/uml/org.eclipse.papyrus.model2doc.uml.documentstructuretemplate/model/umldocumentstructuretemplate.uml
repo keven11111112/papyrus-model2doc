@@ -22,6 +22,19 @@
           <body>Description of the way to use to filter the applied stereotype in the inherited method isMatchingFilterRule.</body>
         </ownedComment>
       </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_8q3fkFuFEemw5fgiiQpxng" name="getFirstMatchingStereotypeApplication">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_ZScVQFuMEemw5fgiiQpxng" annotatedElement="_8q3fkFuFEemw5fgiiQpxng">
+          <body>This method returns the first stereotype application for the element given in parameter. &#xD;
+Due to EMF limitation/bug, the parameter is EObject and not UML Element.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PlQeQFuMEemw5fgiiQpxng" name="element">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Cs0a8FuGEemw5fgiiQpxng" name="return" direction="return">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-ZG7UFuLEemw5fgiiQpxng"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_31YoQFasEemQ15mMY1nXxQ" name="StereotypeFilterBehavior">
       <ownedComment xmi:type="uml:Comment" xmi:id="_lOKZAFatEemQ15mMY1nXxQ" annotatedElement="_31YoQFasEemQ15mMY1nXxQ">
@@ -30,7 +43,7 @@
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_50lf4FasEemQ15mMY1nXxQ" name="STEREOTYPE_TYPE_OF"/>
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_9lzHsFasEemQ15mMY1nXxQ" name="STEREOTYPE_KIND_OF"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_sbLZUFatEemQ15mMY1nXxQ" name="StereotypePropertyPartTemplate">
+    <packagedElement xmi:type="uml:Class" xmi:id="_sbLZUFatEemQ15mMY1nXxQ" name="StereotypePropertyReferencePartTemplate">
       <ownedComment xmi:type="uml:Comment" xmi:id="_fTMvEFawEemQ15mMY1nXxQ" annotatedElement="_sbLZUFatEemQ15mMY1nXxQ">
         <body>PartTemplate used to navigate in the stereotype property.</body>
       </ownedComment>
@@ -44,6 +57,19 @@
         <supplier xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_Pau8cFX-EemKJasCEBKPhQ"/>
         <contract xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_Pau8cFX-EemKJasCEBKPhQ"/>
       </interfaceRealization>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_vNUtoFuLEemw5fgiiQpxng" name="getMatchingReferencedEObjects">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_hi9Z8FuMEemw5fgiiQpxng" annotatedElement="_vNUtoFuLEemw5fgiiQpxng">
+          <body>This method returns the object referenced by the property for the given eobject in paramater. </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_j5RxEFuMEemw5fgiiQpxng" name="eobject">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_7JI_YFuLEemw5fgiiQpxng" name="return" direction="return">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2atPcFuNEemw5fgiiQpxng"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2bBYgFuNEemw5fgiiQpxng" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_4YK6UFauEemQ15mMY1nXxQ" name="CommentAsParagraph">
       <ownedComment xmi:type="uml:Comment" xmi:id="_PXzCUFawEemQ15mMY1nXxQ" annotatedElement="_4YK6UFauEemQ15mMY1nXxQ">
@@ -63,6 +89,20 @@
         <supplier xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_DwGdIFYFEemKJasCEBKPhQ"/>
         <contract xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_DwGdIFYFEemKJasCEBKPhQ"/>
       </interfaceRealization>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_wyIkwFuKEemw5fgiiQpxng" name="getMatchingComments">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_aSR3EFuLEemw5fgiiQpxng" annotatedElement="_wyIkwFuKEemw5fgiiQpxng">
+          <body>This methods returns the matching Comments. &#xD;
+Due to EMF limitations and bugs, the returned List is typed by EObject and not by Comment and the argument is EObject and not UML Element.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_RkfnkFuLEemw5fgiiQpxng" name="return" direction="return">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8cbMMFuLEemw5fgiiQpxng"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8crq4FuLEemw5fgiiQpxng" value="*"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_0pzvAFuMEemw5fgiiQpxng" name="element">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_Xp7tEFavEemQ15mMY1nXxQ" name="CommentChoice">
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ZYtjEFavEemQ15mMY1nXxQ" name="FIRST_OWNED_COMMENT"/>

@@ -73,8 +73,8 @@ public class UMLDocumentStructureTemplateFactoryImpl extends EFactoryImpl implem
 		switch (eClass.getClassifierID()) {
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE:
 			return createStereotypePartTemplate();
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_PART_TEMPLATE:
-			return createStereotypePropertyPartTemplate();
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE:
+			return createStereotypePropertyReferencePartTemplate();
 		case UMLDocumentStructureTemplatePackage.COMMENT_AS_PARAGRAPH:
 			return createCommentAsParagraph();
 		default:
@@ -137,9 +137,9 @@ public class UMLDocumentStructureTemplateFactoryImpl extends EFactoryImpl implem
 	 * @generated
 	 */
 	@Override
-	public StereotypePropertyPartTemplate createStereotypePropertyPartTemplate() {
-		StereotypePropertyPartTemplateImpl stereotypePropertyPartTemplate = new StereotypePropertyPartTemplateImpl();
-		return stereotypePropertyPartTemplate;
+	public StereotypePropertyReferencePartTemplate createStereotypePropertyReferencePartTemplate() {
+		StereotypePropertyReferencePartTemplateImpl stereotypePropertyReferencePartTemplate = new StereotypePropertyReferencePartTemplateImpl();
+		return stereotypePropertyReferencePartTemplate;
 	}
 
 	/**

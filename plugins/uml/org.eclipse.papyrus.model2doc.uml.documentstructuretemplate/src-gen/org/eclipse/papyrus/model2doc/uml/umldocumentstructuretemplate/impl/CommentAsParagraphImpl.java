@@ -13,10 +13,12 @@
  */
 package org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
-
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -261,6 +263,19 @@ public class CommentAsParagraphImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	@Override
+	public EList<EObject> getMatchingComments(EObject element) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case UMLDocumentStructureTemplatePackage.COMMENT_AS_PARAGRAPH__GENERATE:
@@ -344,6 +359,21 @@ public class CommentAsParagraphImpl extends MinimalEObjectImpl.Container impleme
 			return commentChoice != COMMENT_CHOICE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case UMLDocumentStructureTemplatePackage.COMMENT_AS_PARAGRAPH___GET_MATCHING_COMMENTS__EOBJECT:
+			return getMatchingComments((EObject) arguments.get(0));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

@@ -13,6 +13,8 @@
  */
 package org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate;
 
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafBodyPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITemplatePartView;
 
@@ -68,5 +70,18 @@ public interface CommentAsParagraph extends ILeafBodyPartTemplate, ITemplatePart
 	 * @generated
 	 */
 	void setCommentChoice(CommentChoice value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This methods returns the matching Comments.
+	 * Due to EMF limitations and bugs, the returned List is typed by EObject and not by Comment and the argument is EObject and not UML Element.
+	 * <!-- end-model-doc -->
+	 *
+	 * @model ordered="false" elementRequired="true" elementOrdered="false"
+	 * @generated
+	 */
+	EList<EObject> getMatchingComments(EObject element);
 
 } // CommentAsParagraph

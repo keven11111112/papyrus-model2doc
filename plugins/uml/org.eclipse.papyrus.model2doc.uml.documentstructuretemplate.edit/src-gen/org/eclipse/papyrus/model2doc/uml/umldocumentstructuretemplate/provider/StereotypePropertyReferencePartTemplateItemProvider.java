@@ -39,18 +39,18 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplateFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 
-import org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.StereotypePropertyPartTemplate;
+import org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.StereotypePropertyReferencePartTemplate;
 import org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.UMLDocumentStructureTemplateFactory;
 import org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.UMLDocumentStructureTemplatePackage;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.StereotypePropertyPartTemplate} object.
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.StereotypePropertyReferencePartTemplate} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class StereotypePropertyPartTemplateItemProvider
+public class StereotypePropertyReferencePartTemplateItemProvider
 		extends ItemProviderAdapter
 		implements
 		IEditingDomainItemProvider,
@@ -65,7 +65,7 @@ public class StereotypePropertyPartTemplateItemProvider
 	 *
 	 * @generated
 	 */
-	public StereotypePropertyPartTemplateItemProvider(AdapterFactory adapterFactory) {
+	public StereotypePropertyReferencePartTemplateItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -162,9 +162,9 @@ public class StereotypePropertyPartTemplateItemProvider
 	protected void addPropertyNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
-				getString("_UI_StereotypePropertyPartTemplate_propertyName_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_StereotypePropertyPartTemplate_propertyName_feature", "_UI_StereotypePropertyPartTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				UMLDocumentStructureTemplatePackage.Literals.STEREOTYPE_PROPERTY_PART_TEMPLATE__PROPERTY_NAME,
+				getString("_UI_StereotypePropertyReferencePartTemplate_propertyName_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_StereotypePropertyReferencePartTemplate_propertyName_feature", "_UI_StereotypePropertyReferencePartTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				UMLDocumentStructureTemplatePackage.Literals.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__PROPERTY_NAME,
 				true,
 				false,
 				false,
@@ -206,7 +206,7 @@ public class StereotypePropertyPartTemplateItemProvider
 	}
 
 	/**
-	 * This returns StereotypePropertyPartTemplate.gif.
+	 * This returns StereotypePropertyReferencePartTemplate.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -214,7 +214,7 @@ public class StereotypePropertyPartTemplateItemProvider
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/StereotypePropertyPartTemplate")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/StereotypePropertyReferencePartTemplate")); //$NON-NLS-1$
 	}
 
 	/**
@@ -237,9 +237,9 @@ public class StereotypePropertyPartTemplateItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((StereotypePropertyPartTemplate) object).getPropertyName();
-		return label == null || label.length() == 0 ? getString("_UI_StereotypePropertyPartTemplate_type") : //$NON-NLS-1$
-				getString("_UI_StereotypePropertyPartTemplate_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		String label = ((StereotypePropertyReferencePartTemplate) object).getPropertyName();
+		return label == null || label.length() == 0 ? getString("_UI_StereotypePropertyReferencePartTemplate_type") : //$NON-NLS-1$
+				getString("_UI_StereotypePropertyReferencePartTemplate_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 
@@ -255,14 +255,14 @@ public class StereotypePropertyPartTemplateItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(StereotypePropertyPartTemplate.class)) {
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_PART_TEMPLATE__GENERATE:
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_PART_TEMPLATE__GENERATE_TITLE:
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_PART_TEMPLATE__CUSTOM_TITLE:
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_PART_TEMPLATE__PROPERTY_NAME:
+		switch (notification.getFeatureID(StereotypePropertyReferencePartTemplate.class)) {
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__GENERATE:
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__GENERATE_TITLE:
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__CUSTOM_TITLE:
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__PROPERTY_NAME:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}

@@ -51,12 +51,21 @@
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="umldocumentstructuretemplate.ecore#//StereotypePartTemplate">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umldocumentstructuretemplate.ecore#//StereotypePartTemplate/stereotypeQualifiedName"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umldocumentstructuretemplate.ecore#//StereotypePartTemplate/stereotypeFilterRule"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umldocumentstructuretemplate.ecore#//StereotypePartTemplate/getFirstMatchingStereotypeApplication">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umldocumentstructuretemplate.ecore#//StereotypePartTemplate/getFirstMatchingStereotypeApplication/element"/>
+      </genOperations>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="umldocumentstructuretemplate.ecore#//StereotypePropertyPartTemplate">
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umldocumentstructuretemplate.ecore#//StereotypePropertyPartTemplate/propertyName"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="umldocumentstructuretemplate.ecore#//StereotypePropertyReferencePartTemplate">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umldocumentstructuretemplate.ecore#//StereotypePropertyReferencePartTemplate/propertyName"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umldocumentstructuretemplate.ecore#//StereotypePropertyReferencePartTemplate/getMatchingReferencedEObjects">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umldocumentstructuretemplate.ecore#//StereotypePropertyReferencePartTemplate/getMatchingReferencedEObjects/eobject"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="umldocumentstructuretemplate.ecore#//CommentAsParagraph">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umldocumentstructuretemplate.ecore#//CommentAsParagraph/commentChoice"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umldocumentstructuretemplate.ecore#//CommentAsParagraph/getMatchingComments">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umldocumentstructuretemplate.ecore#//CommentAsParagraph/getMatchingComments/element"/>
+      </genOperations>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

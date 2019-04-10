@@ -112,17 +112,17 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 			}
 			return result;
 		}
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_PART_TEMPLATE: {
-			StereotypePropertyPartTemplate stereotypePropertyPartTemplate = (StereotypePropertyPartTemplate) theEObject;
-			T result = caseStereotypePropertyPartTemplate(stereotypePropertyPartTemplate);
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE: {
+			StereotypePropertyReferencePartTemplate stereotypePropertyReferencePartTemplate = (StereotypePropertyReferencePartTemplate) theEObject;
+			T result = caseStereotypePropertyReferencePartTemplate(stereotypePropertyReferencePartTemplate);
 			if (result == null) {
-				result = caseIComposedBodyPartTemplate(stereotypePropertyPartTemplate);
+				result = caseIComposedBodyPartTemplate(stereotypePropertyReferencePartTemplate);
 			}
 			if (result == null) {
-				result = caseIBodyPartTemplate(stereotypePropertyPartTemplate);
+				result = caseIBodyPartTemplate(stereotypePropertyReferencePartTemplate);
 			}
 			if (result == null) {
-				result = caseIBodySectionPartTemplate(stereotypePropertyPartTemplate);
+				result = caseIBodySectionPartTemplate(stereotypePropertyReferencePartTemplate);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
@@ -172,7 +172,7 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Stereotype Property Part Template</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Stereotype Property Reference Part Template</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
@@ -180,11 +180,11 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 	 *
 	 * @param object
 	 *                   the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Stereotype Property Part Template</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Stereotype Property Reference Part Template</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseStereotypePropertyPartTemplate(StereotypePropertyPartTemplate object) {
+	public T caseStereotypePropertyReferencePartTemplate(StereotypePropertyReferencePartTemplate object) {
 		return null;
 	}
 
