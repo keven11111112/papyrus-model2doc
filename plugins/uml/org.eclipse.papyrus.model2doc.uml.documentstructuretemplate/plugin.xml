@@ -22,5 +22,20 @@
             uri="http://www.eclipse.org/papyrus/model2doc/uml/1.0.0/documentstructuretemplate">
       </factory>
    </extension>
-
+   <extension
+         point="org.eclipse.emf.ecore.uri_mapping">
+      <mapping
+            source="pathmap://UML_DOCUMENT_STRUCTURE_TEMPLATE/"
+            target="platform:/plugin/org.eclipse.papyrus.model2doc.uml.documentstructuretemplate/model/">
+      </mapping>
+   </extension>
+   <extension
+        point="org.eclipse.papyrus.uml.extensionpoints.UMLLibrary">
+     <library
+           description="UML Extension for DocumentStructureTemplate"
+           name="Papyrus-Model2Doc - DocumentStructureTemplate UML Extension (Internal)"
+           path="pathmap://UML_DOCUMENT_STRUCTURE_TEMPLATE/umldocumentstructuretemplate.uml"
+           provider="Eclipse Modeling Project">
+     </library>
+   </extension>
 </plugin>

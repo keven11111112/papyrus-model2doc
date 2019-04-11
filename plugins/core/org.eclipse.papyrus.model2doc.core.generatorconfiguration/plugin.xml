@@ -37,7 +37,8 @@
             description="The UML model to use for Document Generator Configuration"
             iconpath="icons/DocumentStructureGeneratorConfiguration.gif"
             name="Papyrus-Model2Doc - GeneratorConfiguration (Internal)"
-            path="pathmap://GENERATOR_CONFIGURATION/generatorconfiguration.uml">
+            path="pathmap://GENERATOR_CONFIGURATION/generatorconfiguration.uml"
+            provider="Eclipse Modeling Project">
       </library>
    </extension>
    <extension

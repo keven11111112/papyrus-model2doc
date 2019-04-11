@@ -25,9 +25,10 @@
    <extension
          point="org.eclipse.papyrus.uml.extensionpoints.UMLLibrary">
       <library
-            description="The basic document structure template"
-            name="DocumentStructureTemplate"
-            path="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml">
+            description="The basic document structure template for EMF"
+            name="Papyrus-Model2Doc - DocumentStructureTemplate EMF (basis) (Internal)"
+            path="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml"
+            provider="Eclipse Modeling Project">
       </library>
    </extension>
    <extension

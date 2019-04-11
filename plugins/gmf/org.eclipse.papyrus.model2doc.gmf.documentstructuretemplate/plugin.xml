@@ -31,5 +31,21 @@
             uri="http://www.eclipse.org/papyrus/model2doc/gmf/1.0.0/documentstructuretemplate">
       </factory>
    </extension>
+   <extension
+         point="org.eclipse.emf.ecore.uri_mapping">
+      <mapping
+            source="pathmap://GMF_DOCUMENT_STRUCTURE_TEMPLATE/"
+            target="platform:/plugin/org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate/model/">
+      </mapping>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.uml.extensionpoints.UMLLibrary">
+      <library
+            description="GMF Extension for DocumentStructureTemplate"
+            name="Papyrus-Model2Doc - DocumentStructureTemplate GMF Extension (Internal)"
+            path="pathmap://GMF_DOCUMENT_STRUCTURE_TEMPLATE/gmfdocumentstructuretemplate.uml"
+            provider="Eclipse Modeling Project">
+      </library>
+   </extension>
 
 </plugin>
