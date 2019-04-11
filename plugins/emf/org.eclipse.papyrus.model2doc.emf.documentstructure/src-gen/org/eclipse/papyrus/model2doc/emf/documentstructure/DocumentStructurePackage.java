@@ -596,6 +596,26 @@ public interface DocumentStructurePackage extends EPackage {
 	int IMAGE__SUB_BODY_PART = TEXT_PART__SUB_BODY_PART;
 
 	/**
+	 * The feature id for the '<em><b>Image Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE__IMAGE_PATH = TEXT_PART_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Caption</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE__CAPTION = TEXT_PART_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Image</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -603,7 +623,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_FEATURE_COUNT = TEXT_PART_FEATURE_COUNT + 0;
+	int IMAGE_FEATURE_COUNT = TEXT_PART_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Image</em>' class.
@@ -937,6 +957,30 @@ public interface DocumentStructurePackage extends EPackage {
 	EClass getImage();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.Image#getImagePath <em>Image Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Image Path</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.Image#getImagePath()
+	 * @see #getImage()
+	 * @generated
+	 */
+	EAttribute getImage_ImagePath();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.Image#getCaption <em>Caption</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Caption</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.Image#getCaption()
+	 * @see #getImage()
+	 * @generated
+	 */
+	EAttribute getImage_Caption();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.EMFDataSource <em>EMF Data Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1220,6 +1264,24 @@ public interface DocumentStructurePackage extends EPackage {
 		 * @generated
 		 */
 		EClass IMAGE = eINSTANCE.getImage();
+
+		/**
+		 * The meta object literal for the '<em><b>Image Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute IMAGE__IMAGE_PATH = eINSTANCE.getImage_ImagePath();
+
+		/**
+		 * The meta object literal for the '<em><b>Caption</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute IMAGE__CAPTION = eINSTANCE.getImage_Caption();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.EMFDataSourceImpl <em>EMF Data Source</em>}' class.

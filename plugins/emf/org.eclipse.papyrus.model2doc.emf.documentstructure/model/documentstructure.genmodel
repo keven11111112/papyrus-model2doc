@@ -72,7 +72,10 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructure.ecore#//Title/title"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="documentstructure.ecore#//Title/getLevel"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructure.ecore#//Image"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructure.ecore#//Image">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructure.ecore#//Image/imagePath"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructure.ecore#//Image/caption"/>
+    </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructure.ecore#//EMFDataSource">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference documentstructure.ecore#//EMFDataSource/eobject"/>

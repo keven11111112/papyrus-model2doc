@@ -24,12 +24,14 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -75,8 +77,52 @@ public class ImageItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addImagePathPropertyDescriptor(object);
+			addCaptionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Image Path feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected void addImagePathPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_Image_imagePath_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_Image_imagePath_feature", "_UI_Image_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				DocumentStructurePackage.Literals.IMAGE__IMAGE_PATH,
+				true,
+				false,
+				false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				null,
+				null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Caption feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected void addCaptionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_Image_caption_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_Image_caption_feature", "_UI_Image_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				DocumentStructurePackage.Literals.IMAGE__CAPTION,
+				true,
+				false,
+				false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				null,
+				null));
 	}
 
 	/**
@@ -144,7 +190,9 @@ public class ImageItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Image_type"); //$NON-NLS-1$
+		String label = ((Image) object).getImagePath();
+		return label == null || label.length() == 0 ? getString("_UI_Image_type") : //$NON-NLS-1$
+				getString("_UI_Image_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 
@@ -161,6 +209,10 @@ public class ImageItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Image.class)) {
+		case DocumentStructurePackage.IMAGE__IMAGE_PATH:
+		case DocumentStructurePackage.IMAGE__CAPTION:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		case DocumentStructurePackage.IMAGE__DATA_SOURCE:
 		case DocumentStructurePackage.IMAGE__SUB_BODY_PART:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));

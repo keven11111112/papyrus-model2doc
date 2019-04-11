@@ -451,6 +451,28 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	 * @generated
 	 */
 	@Override
+	public EAttribute getImage_ImagePath() {
+		return (EAttribute) imageEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getImage_Caption() {
+		return (EAttribute) imageEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EClass getEMFDataSource() {
 		return emfDataSourceEClass;
 	}
@@ -563,6 +585,8 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 		createEOperation(titleEClass, TITLE___GET_LEVEL);
 
 		imageEClass = createEClass(IMAGE);
+		createEAttribute(imageEClass, IMAGE__IMAGE_PATH);
+		createEAttribute(imageEClass, IMAGE__CAPTION);
 
 		emfDataSourceEClass = createEClass(EMF_DATA_SOURCE);
 		createEReference(emfDataSourceEClass, EMF_DATA_SOURCE__EOBJECT);
@@ -652,6 +676,8 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 		initEOperation(getTitle__GetLevel(), theEcorePackage.getEInt(), "getLevel", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(imageEClass, Image.class, "Image", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(getImage_ImagePath(), ecorePackage.getEString(), "imagePath", null, 1, 1, Image.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getImage_Caption(), ecorePackage.getEString(), "caption", null, 0, 1, Image.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(emfDataSourceEClass, EMFDataSource.class, "EMFDataSource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(getEMFDataSource_Eobject(), theEcorePackage.getEObject(), null, "eobject", null, 1, 1, EMFDataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, //$NON-NLS-1$
