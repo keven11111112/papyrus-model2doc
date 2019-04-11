@@ -20,5 +20,6 @@
 	<modules>
 		<module>org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate</module>
 		<module>org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.edit</module>
+		<module>org.eclipse.papyrus.model2doc.gmf.template2structure</module>
 	</modules>
 </project>
