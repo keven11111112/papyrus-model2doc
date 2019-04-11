@@ -16,7 +16,6 @@ package org.eclipse.papyrus.model2doc.core.transcription;
 
 import java.util.List;
 
-import org.eclipse.papyrus.model2doc.core.config.GeneratorConfig;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentGeneratorConfiguration;
 
 /**
@@ -28,14 +27,16 @@ public interface Transcription {
 
 	/**
 	 * Write Cover Page.
-	 * 
+	 *
 	 * @param coverPage
 	 */
 	public void writeCoverPage(CoverPage coverPage);
 
 	/**
 	 * Write Table of Contents.
-	 * @param tocTitle TODO
+	 *
+	 * @param tocTitle
+	 *            the title to use for the Table Of Contents
 	 */
 	public void writeTableOfContents(String tocTitle);
 
@@ -69,7 +70,7 @@ public interface Transcription {
 
 	/**
 	 * Write list.
-	 * 
+	 *
 	 * @param items
 	 * @param processRichText
 	 */
@@ -77,24 +78,34 @@ public interface Transcription {
 
 	/**
 	 * Add table.
-	 * 
+	 *
 	 * @param table
 	 * @param style
-	 *                  define background color (HEX format, e.x. 0xE06666).
+	 *            define background color (HEX format, e.x. 0xE06666).
 	 */
 	public void addTable(Table table, Object style);
 
 	/**
 	 * Import image.
-	 * 
+	 *
 	 * @param image
-	 * @param caption TODO
+	 * @param caption
+	 *            TODO
 	 */
 	public void importImage(ImageDescription image, String caption);
 
 	/**
+	 *
+	 * @param imagePath
+	 *            the path of the image
+	 * @param caption
+	 *            the caption of the image
+	 */
+	public void writeImage(final String imagePath, final String caption);
+
+	/**
 	 * Import image.
-	 * 
+	 *
 	 * @param image
 	 */
 	public void writeImageSubtitle(ImageDescription image);
@@ -102,21 +113,21 @@ public interface Transcription {
 
 	/**
 	 * Save transcription.
-	 * 
+	 *
 	 * @param label
 	 */
 	public void save(String label);
 
 	/**
 	 * Get configuration of document generation.
-	 * 
+	 *
 	 * @return
 	 */
 	public DefaultDocumentGeneratorConfiguration getGeneratorConfig();
 
 	/**
 	 * Verify if transcription can execute.
-	 * 
+	 *
 	 * @return
 	 */
 	public boolean canExecute();

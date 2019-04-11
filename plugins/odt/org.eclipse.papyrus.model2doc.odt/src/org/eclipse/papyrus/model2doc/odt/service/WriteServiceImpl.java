@@ -18,6 +18,7 @@ import org.eclipse.papyrus.model2doc.core.transcription.ImageDescription;
 import org.eclipse.papyrus.model2doc.core.transcription.Table;
 import org.eclipse.papyrus.model2doc.odt.internal.editor.ODTEditor;
 import org.eclipse.papyrus.model2doc.odt.internal.util.WriteUtil;
+
 import com.sun.star.text.XTextContent;
 import com.sun.star.text.XTextCursor;
 
@@ -25,7 +26,7 @@ import com.sun.star.text.XTextCursor;
  * Implemented service class for writing odt documents.
  *
  * @since 2.0
- * 
+ *
  */
 public class WriteServiceImpl implements WriteService {
 
@@ -52,6 +53,11 @@ public class WriteServiceImpl implements WriteService {
 	@Override
 	public void addImageLink(ImageDescription image, String caption, XTextCursor xTextCursor, ODTEditor odtEditor) {
 		WriteUtil.addImageLink(image, caption, xTextCursor, odtEditor);
+	}
+
+	@Override
+	public void addImageLink(final String imagePath, String caption, XTextCursor xTextCursor, ODTEditor odtEditor) {
+		WriteUtil.addImageLink(imagePath, caption, xTextCursor, odtEditor);
 	}
 
 	@Override

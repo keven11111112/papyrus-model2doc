@@ -127,6 +127,94 @@ public class WriteUtil {
 		xTextCursor.gotoEnd(false);
 	}
 
+	public static void addImageLink(String imageFilePath, String caption, XTextCursor xTextCursor, ODTEditor odtEditor) {
+		if (false == imageFilePath.startsWith(odtFileIOService.getODTFilePrefix())) {
+			imageFilePath = odtFileIOService.getODTFilePrefix() + imageFilePath;
+		}
+		try {
+			XMultiServiceFactory xMultiServiceFactory = odtEditor.getXMultiServiceFactory();
+
+			Object tmp = xMultiServiceFactory.createInstance("com.sun.star.text.TextFrame");
+			XTextFrame textFrame = UnoRuntime.queryInterface(XTextFrame.class, tmp);
+			XPropertySet framePropertySet = createXPropertySet(textFrame);
+			framePropertySet.setPropertyValue("SizeType", SizeType.VARIABLE);
+			framePropertySet.setPropertyValue("AnchorType", TextContentAnchorType.AS_CHARACTER);
+			framePropertySet.setPropertyValue("ZOrder", 1);// not really sure
+			framePropertySet.setPropertyValue("TextWrap", WrapTextMode.THROUGH);
+
+			// Creating the service GraphicObject
+			Object graphicObject = xMultiServiceFactory.createInstance("com.sun.star.text.TextGraphicObject"); //$NON-NLS-1$
+
+			// Creating TextContent for GraphicObject
+			XTextContent graphicContent = UnoRuntime.queryInterface(XTextContent.class, graphicObject);
+
+			// Creating bitmap container service
+			XNameContainer bitmapContainer = UnoRuntime.queryInterface(XNameContainer.class, xMultiServiceFactory.createInstance("com.sun.star.drawing.BitmapTable")); //$NON-NLS-1$
+
+			// Inserting image to the container
+			bitmapContainer.insertByName(imageFilePath, imageFilePath);
+
+			PropertySetUtil.setProperty(graphicContent, "AnchorType", TextContentAnchorType.AT_CHARACTER); //$NON-NLS-1$
+			PropertySetUtil.setProperty(graphicContent, "GraphicURL", bitmapContainer.getByName(imageFilePath)); //$NON-NLS-1$
+
+			graphicContent = ImageUtil.resizeImage(graphicContent, imageFilePath, odtEditor.getXTextDocument(), odtEditor.getXMultiComponentFactory(), odtEditor.getXComponentContext());
+
+			XPropertySet graphicPropSet = createXPropertySet(graphicContent);
+			Object heightValue = graphicPropSet.getPropertyValue("Height");
+			Object widthValue = graphicPropSet.getPropertyValue("Width");
+			XPropertySet textFrameSet = createXPropertySet(textFrame);
+			textFrameSet.setPropertyValue("Height", heightValue);// TODO don't work, and should be on the next level...
+			textFrameSet.setPropertyValue("Width", widthValue);
+
+			xTextCursor.getText().insertTextContent(xTextCursor, textFrame, false);
+			XTextCursor localCursor = textFrame.getText().createTextCursor();
+
+			XParagraphCursor paragraphCursor = UnoRuntime.queryInterface(XParagraphCursor.class, localCursor);
+			XPropertySet paraSet = createXPropertySet(paragraphCursor);
+			paraSet.setPropertyValue("ParaStyleName", "Illustration");// it works!!! in fact we can't push style which have not been declared and which don't exist by default
+
+
+
+			localCursor.getText().insertTextContent(localCursor, graphicContent, false);
+			localCursor.gotoEnd(true);
+			localCursor.getText().insertString(localCursor, "Illustration", false);
+
+
+			// code to add the number of the illustration: doesn't work yet
+			// it is probably not a GetReference I should use...
+			// Object getReferenceObject = xMultiServiceFactory.createInstance("com.sun.star.text.textfield.GetReference");
+			//
+			//
+			// XTextContent xRef = UnoRuntime.queryInterface(XTextContent.class, getReferenceObject);
+			// XPropertySet xRefPropertySet = UnoRuntime.queryInterface(XPropertySet.class, getReferenceObject);
+			//
+			//
+			// xRefPropertySet.setPropertyValue("SourceName", "Illustration");// I get <text:sequence-ref
+			// xRefPropertySet.setPropertyValue("ReferenceFieldPart", ReferenceFieldPart.UP_DOWN);
+			// xRefPropertySet.setPropertyValue("ReferenceFieldSource", ReferenceFieldSource.SEQUENCE_FIELD);
+			// xRefPropertySet.setPropertyValue("SequenceNumber", (short) 2);
+
+			// localCursor.getText().insertControlCharacter(localCursor, ControlCharacter.LINE_BREAK, false);// add style around it
+
+			// localCursor.getText().insertTextContent(localCursor, xRef, false);
+
+
+			if (null != caption && false == caption.isEmpty()) {
+				StringBuilder builder = new StringBuilder();
+				builder.append(": ");
+				builder.append(caption);
+				localCursor.getText().insertString(localCursor, builder.toString(), false);
+			}
+
+
+			endParagraph(xTextCursor);
+			// fileIOService.removeFile(new File(image.getPath()));
+
+		} catch (Exception e) {
+			Activator.log.error(e);
+		}
+	}
+
 	public static void addImageLink(ImageDescription image, String caption, XTextCursor xTextCursor, ODTEditor odtEditor) {
 		String imageFilePath = odtFileIOService.getODTFilePrefix() + image.getPath();
 

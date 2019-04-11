@@ -20,13 +20,15 @@ import org.eclipse.papyrus.model2doc.core.transcriber.Transcriber;
 import org.eclipse.papyrus.model2doc.core.transcription.Transcription;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Body;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.Image;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.Paragraph;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TableOfContents;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocumentPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Title;
 
 /**
- *
+ * This class crosses a {@link TextDocument} to fill an odt file
  */
 public class StructureToODTTranscriber implements Transcriber {
 
@@ -36,7 +38,14 @@ public class StructureToODTTranscriber implements Transcriber {
 
 	private boolean refreshTableOfContents = false;
 
-	public StructureToODTTranscriber(final TextDocument document, Transcription transcription) {
+	/**
+	 *
+	 * Constructor.
+	 *
+	 * @param document
+	 * @param transcription
+	 */
+	public StructureToODTTranscriber(final TextDocument document, final Transcription transcription) {
 		this.textDocument = document;
 		this.transcription = transcription;
 	}
@@ -47,7 +56,6 @@ public class StructureToODTTranscriber implements Transcriber {
 	 */
 	@Override
 	public void transcribe() {
-		// TODO Auto-generated method stub
 		final String mainTitle = textDocument.getMainTitle();
 		if (mainTitle != null && !mainTitle.isEmpty()) {
 			transcription.writeDocumentMainTitle(mainTitle);
@@ -57,68 +65,106 @@ public class StructureToODTTranscriber implements Transcriber {
 		while (iter.hasNext()) {
 			transcribe(iter.next());
 		}
-		if (refreshTableOfContents) {
-			transcription.refreshTableOfContents();// TODO should be done directly by the transcriptor
+		if (this.refreshTableOfContents) {
+			this.transcription.refreshTableOfContents();// TODO should be done directly by the transcriptor
 		}
-		transcription.save(""); // TODO : remove this argument
+		this.transcription.save(""); // TODO : remove this argument //$NON-NLS-1$
 	}
 
-	private void transcribe(TextDocumentPart part) {
-		if (part instanceof BodyPart) {
-			transcribeBodyPart((BodyPart) part);
-		}
-		if (part instanceof Title) {
-			transcribeTitle((Title) part);
-		}
+	/**
+	 * This method is in charge to transcribe a TextDocumentPart in the output document
+	 *
+	 * @param part
+	 *            a TextDocumentPart
+	 */
+	private void transcribe(final TextDocumentPart part) {
 		if (part instanceof TableOfContents) {
-			transcribeTableOfCOntent((TableOfContents) part);
-		}
-		if (part instanceof BodyPart) {
-			Iterator<BodyPart> iter = ((BodyPart) part).getSubBodyPart().iterator();
-
-			while (iter.hasNext()) {
-				transcribeBodyPart(iter.next());
-			}
-		}
-		if (part instanceof Body) {
+			transcribeTableOfContent((TableOfContents) part);
+		} else if (part instanceof Body) {
 			transcribeBody((Body) part);
 		}
-		// at the end:
+		// do nothing in other case (but there is not others cases!
 	}
 
-	private void transcribeBody(final Body body) {// TODO : is body concept required???
-		Iterator<BodyPart> iter = body.getBodyPart().iterator();
+	/**
+	 * This method is in charge to transcribe the body of the document
+	 *
+	 * @param body
+	 *            the document body
+	 */
+	private void transcribeBody(final Body body) {
+		final Iterator<BodyPart> iter = body.getBodyPart().iterator();
 
 		while (iter.hasNext()) {
 			transcribeBodyPart(iter.next());
 		}
 	}
 
-	private void transcribeBodyPart(BodyPart part) {
-		if (part instanceof Title) {
-			transcribeTitle((Title) part);
+	/**
+	 * This methods is in charge to transcribe a body part and its sub-body part in the output document
+	 *
+	 * @param bodyPart
+	 *            a body part
+	 */
+	private void transcribeBodyPart(final BodyPart bodyPart) {
+		if (bodyPart instanceof Title) {
+			transcribeTitle((Title) bodyPart);
+		} else if (bodyPart instanceof TableOfContents) {
+			transcribeTableOfContent((TableOfContents) bodyPart);
+		} else if (bodyPart instanceof Paragraph) {
+			transcribteParagraph((Paragraph) bodyPart);
+		} else if (bodyPart instanceof Image) {
+			transcribeImage((Image) bodyPart);
 		}
-		if (part instanceof TableOfContents) {
-			transcribeTableOfCOntent((TableOfContents) part);
-		}
-		if (part instanceof BodyPart) {
-			Iterator<BodyPart> iter = part.getSubBodyPart().iterator();
 
-			while (iter.hasNext()) {
-				transcribeBodyPart(iter.next());
-			}
+		// then we iterate on the children of the bodyPart
+		final Iterator<BodyPart> iter = bodyPart.getSubBodyPart().iterator();
+		while (iter.hasNext()) {
+			transcribeBodyPart(iter.next());
 		}
+
 		// at the end:
 	}
 
-
+	/**
+	 * This method transcribes the {@link Title} into a title in the output document
+	 *
+	 * @param title
+	 *            a title
+	 */
 	private void transcribeTitle(final Title title) {
-		System.out.println("write title" + title.getTitle());
 		transcription.writeSectionTitle(title.getTitle(), title.getLevel());
 	}
 
-	private void transcribeTableOfCOntent(final TableOfContents toc) {
+
+	/**
+	 * This method creates a table of contents in the output document
+	 *
+	 * @param toc
+	 *            the table of contents
+	 */
+	private void transcribeTableOfContent(final TableOfContents toc) {
 		transcription.writeTableOfContents(toc.getTocTitle());
 		this.refreshTableOfContents = true;
+	}
+
+	/**
+	 * This method set the referenced image in the output document
+	 *
+	 * @param image
+	 *            an image
+	 */
+	private void transcribeImage(final Image image) {
+		transcription.writeImage(image.getImagePath(), image.getCaption());
+	}
+
+	/**
+	 * This method transcribe the paragraph in the output document
+	 *
+	 * @param paragraph
+	 *            a paragraph
+	 */
+	private void transcribteParagraph(final Paragraph paragraph) {
+		transcription.writeParagraph(paragraph.getText(), false);
 	}
 }

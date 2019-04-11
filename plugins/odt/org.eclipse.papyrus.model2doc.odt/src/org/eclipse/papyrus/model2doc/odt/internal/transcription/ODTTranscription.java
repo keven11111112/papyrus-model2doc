@@ -257,6 +257,13 @@ public class ODTTranscription implements Transcription {
 		// cursor.gotoEnd(false);
 	}
 
+
+	@Override
+	public void writeImage(final String imagePath, final String caption) {
+		writeService.addImageLink(imagePath, caption, cursor, odtEditor);
+		styleEditor.applyImageStyle(cursor);
+	}
+
 	@Override
 	public void save(String label) {
 
@@ -288,4 +295,5 @@ public class ODTTranscription implements Transcription {
 	public boolean canExecute() {
 		return (odtEditor.getXTextDocument() != null);
 	}
+
 }
