@@ -42,6 +42,7 @@
          point="org.eclipse.papyrus.uml.extensionpoints.UMLLibrary">
       <library
             description="GMF Extension for DocumentStructureTemplate"
+            iconpath="icons/GMF_DocumentStructureTemplate.gif"
             name="Papyrus-Model2Doc - DocumentStructureTemplate GMF Extension (Internal)"
             path="pathmap://GMF_DOCUMENT_STRUCTURE_TEMPLATE/gmfdocumentstructuretemplate.uml"
             provider="Eclipse Modeling Project">
