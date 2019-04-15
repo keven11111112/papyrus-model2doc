@@ -20,7 +20,6 @@ import java.util.List;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.osgi.util.NLS;
-import org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentStructureGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Document;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument;
@@ -55,9 +54,7 @@ public class DefaultTextDocumentStructureGenerator implements ITemplate2Structur
 	 */
 	@Override
 	public boolean handles(final DocumentTemplate docTemplate) {
-		final IDocumentStructureGeneratorConfiguration confTmp = docTemplate.getDocumentStructureGenerator();
-		Assert.isTrue(confTmp instanceof DefaultDocumentStructureGeneratorConfiguration);
-		final DefaultDocumentStructureGeneratorConfiguration conf = (DefaultDocumentStructureGeneratorConfiguration) confTmp;
+		final IDocumentStructureGeneratorConfiguration conf = docTemplate.getDocumentStructureGenerator();
 		if (false == GENERATOR_ID.equals(conf.getStructureGeneratorId())) {
 			return false;
 		}

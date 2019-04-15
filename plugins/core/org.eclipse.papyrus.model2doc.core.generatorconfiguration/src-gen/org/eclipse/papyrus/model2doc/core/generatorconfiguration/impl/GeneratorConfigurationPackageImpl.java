@@ -24,11 +24,11 @@ import org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumen
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentStructureGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentStructureGeneratorConfiguration;
-import org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationFactory;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationPackage;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IGeneratorConfiguration;
 
 /**
  * <!-- begin-user-doc -->
@@ -68,7 +68,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	 *
 	 * @generated
 	 */
-	private EClass generatorConfigurationEClass = null;
+	private EClass iGeneratorConfigurationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -269,8 +269,8 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	 * @generated
 	 */
 	@Override
-	public EClass getGeneratorConfiguration() {
-		return generatorConfigurationEClass;
+	public EAttribute getAbstractDocumentGeneratorConfiguration_DocumentName() {
+		return (EAttribute) abstractDocumentGeneratorConfigurationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -280,8 +280,8 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	 * @generated
 	 */
 	@Override
-	public EAttribute getGeneratorConfiguration_DocumentName() {
-		return (EAttribute) generatorConfigurationEClass.getEStructuralFeatures().get(0);
+	public EAttribute getAbstractDocumentGeneratorConfiguration_DocumentFolder() {
+		return (EAttribute) abstractDocumentGeneratorConfigurationEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -291,8 +291,8 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	 * @generated
 	 */
 	@Override
-	public EAttribute getGeneratorConfiguration_DocumentFolder() {
-		return (EAttribute) generatorConfigurationEClass.getEStructuralFeatures().get(1);
+	public EAttribute getAbstractDocumentGeneratorConfiguration_DocumentGeneratorId() {
+		return (EAttribute) abstractDocumentGeneratorConfigurationEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -302,8 +302,52 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	 * @generated
 	 */
 	@Override
-	public EAttribute getGeneratorConfiguration_DocumentGeneratorId() {
-		return (EAttribute) generatorConfigurationEClass.getEStructuralFeatures().get(2);
+	public EClass getIGeneratorConfiguration() {
+		return iGeneratorConfigurationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EOperation getIGeneratorConfiguration__GetDocumentName() {
+		return iGeneratorConfigurationEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EOperation getIGeneratorConfiguration__GetDocumentFolder() {
+		return iGeneratorConfigurationEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EOperation getIGeneratorConfiguration__GetDocumentGeneratorId() {
+		return iGeneratorConfigurationEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EOperation getIGeneratorConfiguration__SetDocumentName__String() {
+		return iGeneratorConfigurationEClass.getEOperations().get(3);
 	}
 
 	/**
@@ -335,8 +379,74 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	 * @generated
 	 */
 	@Override
+	public EOperation getIDocumentStructureGeneratorConfiguration__GetStructureGeneratorId() {
+		return iDocumentStructureGeneratorConfigurationEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EOperation getIDocumentStructureGeneratorConfiguration__GetImageFolder() {
+		return iDocumentStructureGeneratorConfigurationEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EOperation getIDocumentStructureGeneratorConfiguration__GetStructureFolder() {
+		return iDocumentStructureGeneratorConfigurationEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EClass getIDocumentGeneratorConfiguration() {
 		return iDocumentGeneratorConfigurationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EOperation getIDocumentGeneratorConfiguration__IsSaveDocumentStructure() {
+		return iDocumentGeneratorConfigurationEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EOperation getIDocumentGeneratorConfiguration__IsSaveImages() {
+		return iDocumentGeneratorConfigurationEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EOperation getIDocumentGeneratorConfiguration__GetTemplateFile() {
+		return iDocumentGeneratorConfigurationEClass.getEOperations().get(2);
 	}
 
 	/**
@@ -395,16 +505,26 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 		createEAttribute(abstractDocumentGeneratorConfigurationEClass, ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__SAVE_DOCUMENT_STRUCTURE);
 		createEAttribute(abstractDocumentGeneratorConfigurationEClass, ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__SAVE_IMAGES);
 		createEAttribute(abstractDocumentGeneratorConfigurationEClass, ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__TEMPLATE_FILE);
+		createEAttribute(abstractDocumentGeneratorConfigurationEClass, ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__DOCUMENT_NAME);
+		createEAttribute(abstractDocumentGeneratorConfigurationEClass, ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__DOCUMENT_FOLDER);
+		createEAttribute(abstractDocumentGeneratorConfigurationEClass, ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__DOCUMENT_GENERATOR_ID);
 
-		generatorConfigurationEClass = createEClass(GENERATOR_CONFIGURATION);
-		createEAttribute(generatorConfigurationEClass, GENERATOR_CONFIGURATION__DOCUMENT_NAME);
-		createEAttribute(generatorConfigurationEClass, GENERATOR_CONFIGURATION__DOCUMENT_FOLDER);
-		createEAttribute(generatorConfigurationEClass, GENERATOR_CONFIGURATION__DOCUMENT_GENERATOR_ID);
+		iGeneratorConfigurationEClass = createEClass(IGENERATOR_CONFIGURATION);
+		createEOperation(iGeneratorConfigurationEClass, IGENERATOR_CONFIGURATION___GET_DOCUMENT_NAME);
+		createEOperation(iGeneratorConfigurationEClass, IGENERATOR_CONFIGURATION___GET_DOCUMENT_FOLDER);
+		createEOperation(iGeneratorConfigurationEClass, IGENERATOR_CONFIGURATION___GET_DOCUMENT_GENERATOR_ID);
+		createEOperation(iGeneratorConfigurationEClass, IGENERATOR_CONFIGURATION___SET_DOCUMENT_NAME__STRING);
 
 		iDocumentStructureGeneratorConfigurationEClass = createEClass(IDOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION);
 		createEOperation(iDocumentStructureGeneratorConfigurationEClass, IDOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___CREATE_DOCUMENT_GENERATOR_CONFIGURATION);
+		createEOperation(iDocumentStructureGeneratorConfigurationEClass, IDOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___GET_STRUCTURE_GENERATOR_ID);
+		createEOperation(iDocumentStructureGeneratorConfigurationEClass, IDOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___GET_IMAGE_FOLDER);
+		createEOperation(iDocumentStructureGeneratorConfigurationEClass, IDOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___GET_STRUCTURE_FOLDER);
 
 		iDocumentGeneratorConfigurationEClass = createEClass(IDOCUMENT_GENERATOR_CONFIGURATION);
+		createEOperation(iDocumentGeneratorConfigurationEClass, IDOCUMENT_GENERATOR_CONFIGURATION___IS_SAVE_DOCUMENT_STRUCTURE);
+		createEOperation(iDocumentGeneratorConfigurationEClass, IDOCUMENT_GENERATOR_CONFIGURATION___IS_SAVE_IMAGES);
+		createEOperation(iDocumentGeneratorConfigurationEClass, IDOCUMENT_GENERATOR_CONFIGURATION___GET_TEMPLATE_FILE);
 
 		defaultDocumentGeneratorConfigurationEClass = createEClass(DEFAULT_DOCUMENT_GENERATOR_CONFIGURATION);
 	}
@@ -444,7 +564,9 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 		defaultDocumentStructureGeneratorConfigurationEClass.getESuperTypes().add(this.getAbstractDocumentStructureGeneratorConfiguration());
 		defaultDocumentStructureGeneratorConfigurationEClass.getESuperTypes().add(this.getIDocumentStructureGeneratorConfiguration());
 		abstractDocumentStructureGeneratorConfigurationEClass.getESuperTypes().add(this.getAbstractDocumentGeneratorConfiguration());
-		abstractDocumentGeneratorConfigurationEClass.getESuperTypes().add(this.getGeneratorConfiguration());
+		abstractDocumentGeneratorConfigurationEClass.getESuperTypes().add(this.getIGeneratorConfiguration());
+		iDocumentStructureGeneratorConfigurationEClass.getESuperTypes().add(this.getIGeneratorConfiguration());
+		iDocumentGeneratorConfigurationEClass.getESuperTypes().add(this.getIGeneratorConfiguration());
 		defaultDocumentGeneratorConfigurationEClass.getESuperTypes().add(this.getAbstractDocumentGeneratorConfiguration());
 		defaultDocumentGeneratorConfigurationEClass.getESuperTypes().add(this.getIDocumentGeneratorConfiguration());
 
@@ -466,18 +588,41 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 				!IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getAbstractDocumentGeneratorConfiguration_TemplateFile(), ecorePackage.getEString(), "templateFile", null, 0, 1, AbstractDocumentGeneratorConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, //$NON-NLS-1$
 				!IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getAbstractDocumentGeneratorConfiguration_DocumentName(), ecorePackage.getEString(), "documentName", null, 0, 1, AbstractDocumentGeneratorConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, //$NON-NLS-1$
+				!IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getAbstractDocumentGeneratorConfiguration_DocumentFolder(), ecorePackage.getEString(), "documentFolder", null, 0, 1, AbstractDocumentGeneratorConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, //$NON-NLS-1$
+				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getAbstractDocumentGeneratorConfiguration_DocumentGeneratorId(), ecorePackage.getEString(), "documentGeneratorId", null, 0, 1, AbstractDocumentGeneratorConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, //$NON-NLS-1$
+				!IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(generatorConfigurationEClass, GeneratorConfiguration.class, "GeneratorConfiguration", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getGeneratorConfiguration_DocumentName(), ecorePackage.getEString(), "documentName", null, 0, 1, GeneratorConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(getGeneratorConfiguration_DocumentFolder(), ecorePackage.getEString(), "documentFolder", null, 0, 1, GeneratorConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(getGeneratorConfiguration_DocumentGeneratorId(), ecorePackage.getEString(), "documentGeneratorId", null, 0, 1, GeneratorConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, //$NON-NLS-1$
-				!IS_ORDERED);
+		initEClass(iGeneratorConfigurationEClass, IGeneratorConfiguration.class, "IGeneratorConfiguration", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEOperation(getIGeneratorConfiguration__GetDocumentName(), ecorePackage.getEString(), "getDocumentName", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
+		initEOperation(getIGeneratorConfiguration__GetDocumentFolder(), ecorePackage.getEString(), "getDocumentFolder", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
+		initEOperation(getIGeneratorConfiguration__GetDocumentGeneratorId(), ecorePackage.getEString(), "getDocumentGeneratorId", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
+		EOperation op = initEOperation(getIGeneratorConfiguration__SetDocumentName__String(), null, "setDocumentName", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+		addEParameter(op, ecorePackage.getEString(), "documentName", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(iDocumentStructureGeneratorConfigurationEClass, IDocumentStructureGeneratorConfiguration.class, "IDocumentStructureGeneratorConfiguration", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		initEOperation(getIDocumentStructureGeneratorConfiguration__CreateDocumentGeneratorConfiguration(), this.getIDocumentGeneratorConfiguration(), "createDocumentGeneratorConfiguration", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
+		initEOperation(getIDocumentStructureGeneratorConfiguration__GetStructureGeneratorId(), ecorePackage.getEString(), "getStructureGeneratorId", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
+		initEOperation(getIDocumentStructureGeneratorConfiguration__GetImageFolder(), ecorePackage.getEString(), "getImageFolder", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
+		initEOperation(getIDocumentStructureGeneratorConfiguration__GetStructureFolder(), ecorePackage.getEString(), "getStructureFolder", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
 		initEClass(iDocumentGeneratorConfigurationEClass, IDocumentGeneratorConfiguration.class, "IDocumentGeneratorConfiguration", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEOperation(getIDocumentGeneratorConfiguration__IsSaveDocumentStructure(), ecorePackage.getEBoolean(), "isSaveDocumentStructure", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
+		initEOperation(getIDocumentGeneratorConfiguration__IsSaveImages(), ecorePackage.getEBoolean(), "isSaveImages", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
+		initEOperation(getIDocumentGeneratorConfiguration__GetTemplateFile(), ecorePackage.getEString(), "getTemplateFile", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(defaultDocumentGeneratorConfigurationEClass, DefaultDocumentGeneratorConfiguration.class, "DefaultDocumentGeneratorConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 

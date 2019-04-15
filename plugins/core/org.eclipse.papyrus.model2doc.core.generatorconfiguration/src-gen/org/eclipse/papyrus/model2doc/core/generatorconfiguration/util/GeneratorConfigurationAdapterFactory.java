@@ -98,8 +98,8 @@ public class GeneratorConfigurationAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseGeneratorConfiguration(GeneratorConfiguration object) {
-			return createGeneratorConfigurationAdapter();
+		public Adapter caseIGeneratorConfiguration(IGeneratorConfiguration object) {
+			return createIGeneratorConfigurationAdapter();
 		}
 
 		@Override
@@ -185,17 +185,17 @@ public class GeneratorConfigurationAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfiguration <em>Generator Configuration</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.IGeneratorConfiguration <em>IGenerator Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfiguration
+	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.IGeneratorConfiguration
 	 * @generated
 	 */
-	public Adapter createGeneratorConfigurationAdapter() {
+	public Adapter createIGeneratorConfigurationAdapter() {
 		return null;
 	}
 

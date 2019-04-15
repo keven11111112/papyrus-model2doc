@@ -27,8 +27,8 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.osgi.util.NLS;
-import org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentGeneratorConfiguration;
-import org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentStructureGeneratorConfiguration;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.internal.Activator;
 import org.osgi.framework.Bundle;
 
@@ -50,7 +50,7 @@ public class GeneratorConfigurationOperations {
 	 * @return
 	 * 		the path of the document structure. The returned path, will be a string starting with platform:/resource/
 	 */
-	public static final String getDocumentStructureFileEcoreURI(final DefaultDocumentStructureGeneratorConfiguration generatorConfiguration, final String fileExtension) {
+	public static final String getDocumentStructureFileEcoreURI(final IDocumentStructureGeneratorConfiguration generatorConfiguration, final String fileExtension) {
 		final String folderName = generatorConfiguration.getStructureFolder();
 		final String documentName = generatorConfiguration.getDocumentName();
 		URI uri = URI.createURI(folderName);
@@ -86,7 +86,7 @@ public class GeneratorConfigurationOperations {
 	 * @return
 	 * 		the file uri as local path (in C:/ for windows), prefixed with file:/
 	 */
-	public static final String getDocumentFileLocalPath(final DefaultDocumentGeneratorConfiguration configuration, final String fileExtension) {
+	public static final String getDocumentFileLocalPath(final IDocumentGeneratorConfiguration configuration, final String fileExtension) {
 		final String projectName;
 		if (null == configuration.eResource()) {
 			// TODO remove this test, when first version of generation will be deleted
@@ -109,7 +109,7 @@ public class GeneratorConfigurationOperations {
 	 * @return
 	 * 		the file uri as local path (in C:/ for windows), prefixed with file:/
 	 */
-	public static final String getImageFileLocalPath(final DefaultDocumentStructureGeneratorConfiguration configuration, final String imageName, final String imageExtension) {
+	public static final String getImageFileLocalPath(final IDocumentStructureGeneratorConfiguration configuration, final String imageName, final String imageExtension) {
 		final String projectName;
 		if (null == configuration.eResource() || null == configuration.eResource().getURI() || configuration.eResource().getURI().segmentCount() < 1) {
 			throw new UnsupportedOperationException("This method doesn't work with DefaultDocumentStructureGeneratorConfiguration which are not saved in a resource");
@@ -171,7 +171,7 @@ public class GeneratorConfigurationOperations {
 	 * @return
 	 * 		the file uri as local path (in C:/ for windows), prefixed with file:/
 	 */
-	public static final String getTemplateFilePathInLocalPath(final DefaultDocumentGeneratorConfiguration configuration) {
+	public static final String getTemplateFilePathInLocalPath(final IDocumentGeneratorConfiguration configuration) {
 		final String templateFile = configuration.getTemplateFile();
 		if (null == templateFile || templateFile.isEmpty()) {
 			return null;

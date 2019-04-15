@@ -96,7 +96,7 @@ public class GeneratorConfigurationSwitch<T> extends Switch<T> {
 				result = caseAbstractDocumentGeneratorConfiguration(defaultDocumentStructureGeneratorConfiguration);
 			}
 			if (result == null) {
-				result = caseGeneratorConfiguration(defaultDocumentStructureGeneratorConfiguration);
+				result = caseIGeneratorConfiguration(defaultDocumentStructureGeneratorConfiguration);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
@@ -110,7 +110,7 @@ public class GeneratorConfigurationSwitch<T> extends Switch<T> {
 				result = caseAbstractDocumentGeneratorConfiguration(abstractDocumentStructureGeneratorConfiguration);
 			}
 			if (result == null) {
-				result = caseGeneratorConfiguration(abstractDocumentStructureGeneratorConfiguration);
+				result = caseIGeneratorConfiguration(abstractDocumentStructureGeneratorConfiguration);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
@@ -121,16 +121,16 @@ public class GeneratorConfigurationSwitch<T> extends Switch<T> {
 			AbstractDocumentGeneratorConfiguration abstractDocumentGeneratorConfiguration = (AbstractDocumentGeneratorConfiguration) theEObject;
 			T result = caseAbstractDocumentGeneratorConfiguration(abstractDocumentGeneratorConfiguration);
 			if (result == null) {
-				result = caseGeneratorConfiguration(abstractDocumentGeneratorConfiguration);
+				result = caseIGeneratorConfiguration(abstractDocumentGeneratorConfiguration);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
 			}
 			return result;
 		}
-		case GeneratorConfigurationPackage.GENERATOR_CONFIGURATION: {
-			GeneratorConfiguration generatorConfiguration = (GeneratorConfiguration) theEObject;
-			T result = caseGeneratorConfiguration(generatorConfiguration);
+		case GeneratorConfigurationPackage.IGENERATOR_CONFIGURATION: {
+			IGeneratorConfiguration iGeneratorConfiguration = (IGeneratorConfiguration) theEObject;
+			T result = caseIGeneratorConfiguration(iGeneratorConfiguration);
 			if (result == null) {
 				result = defaultCase(theEObject);
 			}
@@ -140,6 +140,9 @@ public class GeneratorConfigurationSwitch<T> extends Switch<T> {
 			IDocumentStructureGeneratorConfiguration iDocumentStructureGeneratorConfiguration = (IDocumentStructureGeneratorConfiguration) theEObject;
 			T result = caseIDocumentStructureGeneratorConfiguration(iDocumentStructureGeneratorConfiguration);
 			if (result == null) {
+				result = caseIGeneratorConfiguration(iDocumentStructureGeneratorConfiguration);
+			}
+			if (result == null) {
 				result = defaultCase(theEObject);
 			}
 			return result;
@@ -147,6 +150,9 @@ public class GeneratorConfigurationSwitch<T> extends Switch<T> {
 		case GeneratorConfigurationPackage.IDOCUMENT_GENERATOR_CONFIGURATION: {
 			IDocumentGeneratorConfiguration iDocumentGeneratorConfiguration = (IDocumentGeneratorConfiguration) theEObject;
 			T result = caseIDocumentGeneratorConfiguration(iDocumentGeneratorConfiguration);
+			if (result == null) {
+				result = caseIGeneratorConfiguration(iDocumentGeneratorConfiguration);
+			}
 			if (result == null) {
 				result = defaultCase(theEObject);
 			}
@@ -162,7 +168,7 @@ public class GeneratorConfigurationSwitch<T> extends Switch<T> {
 				result = caseIDocumentGeneratorConfiguration(defaultDocumentGeneratorConfiguration);
 			}
 			if (result == null) {
-				result = caseGeneratorConfiguration(defaultDocumentGeneratorConfiguration);
+				result = caseIGeneratorConfiguration(defaultDocumentGeneratorConfiguration);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
@@ -226,7 +232,7 @@ public class GeneratorConfigurationSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Generator Configuration</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>IGenerator Configuration</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
@@ -234,11 +240,11 @@ public class GeneratorConfigurationSwitch<T> extends Switch<T> {
 	 *
 	 * @param object
 	 *                   the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Generator Configuration</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>IGenerator Configuration</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseGeneratorConfiguration(GeneratorConfiguration object) {
+	public T caseIGeneratorConfiguration(IGeneratorConfiguration object) {
 		return null;
 	}
 

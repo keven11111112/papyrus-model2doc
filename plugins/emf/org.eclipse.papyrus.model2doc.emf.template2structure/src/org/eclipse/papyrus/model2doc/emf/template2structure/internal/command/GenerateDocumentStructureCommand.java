@@ -25,7 +25,6 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentStructureGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.operations.GeneratorConfigurationOperations;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Document;
@@ -58,6 +57,7 @@ public class GenerateDocumentStructureCommand extends RecordingCommand {
 	/**
 	 *
 	 * Constructor.
+	 *
 	 * @param domain
 	 *            the editing domain to use for this command
 	 * @param docTemplate
@@ -88,11 +88,12 @@ public class GenerateDocumentStructureCommand extends RecordingCommand {
 
 		URI documentStructureURI = null;
 		final IDocumentStructureGeneratorConfiguration configuration = this.documentTemplate.getDocumentStructureGenerator();// TODO : rename me into configuration
-		if (configuration instanceof DefaultDocumentStructureGeneratorConfiguration) {
-			final String ecoreURI = GeneratorConfigurationOperations.getDocumentStructureFileEcoreURI((DefaultDocumentStructureGeneratorConfiguration) configuration, DocumentStructureResource.FILE_EXTENSION);
+		if (null != configuration) {
+			final String ecoreURI = GeneratorConfigurationOperations.getDocumentStructureFileEcoreURI(configuration, DocumentStructureResource.FILE_EXTENSION);
 			documentStructureURI = URI.createURI(ecoreURI);
 		} else {
-			// TODO : not supported
+			Activator.log.warn("The document structure can't be generated, the configuration is not defined in your model."); //$NON-NLS-1$
+			return;
 		}
 
 		// 2. we create a new resource

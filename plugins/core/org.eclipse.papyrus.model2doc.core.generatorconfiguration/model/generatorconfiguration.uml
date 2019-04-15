@@ -7,32 +7,6 @@
     <packageImport xmi:type="uml:PackageImport" xmi:id="_stdcsE1YEem_xbrXUzuwJg">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
     </packageImport>
-    <packagedElement xmi:type="uml:Class" xmi:id="_7KtegE1aEemE05tA7eq89g" name="GeneratorConfiguration" isAbstract="true">
-      <ownedComment xmi:type="uml:Comment" xmi:id="_yAG_EE15EemE05tA7eq89g" annotatedElement="_7KtegE1aEemE05tA7eq89g">
-        <body>Common abstract class for document generator configuration.</body>
-      </ownedComment>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_WxE9kE1bEemE05tA7eq89g" name="documentName">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_tcv-EE14EemE05tA7eq89g" annotatedElement="_WxE9kE1bEemE05tA7eq89g">
-          <body>The name of the document, without its extension.</body>
-        </ownedComment>
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4pd0UE1bEemE05tA7eq89g"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_DtxEsE1bEemE05tA7eq89g" name="documentFolder">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_zPxsoE14EemE05tA7eq89g" annotatedElement="_DtxEsE1bEemE05tA7eq89g">
-          <body>The output folder. It can be a full path (platform:/resource/projectName/...) or a path in the current plugin (generation/outputFolder, interpreted as platform:/resource/projectName/generation/outputFolder), or a system path (ex: c:\MyDocuments).</body>
-        </ownedComment>
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4p-xsE1bEemE05tA7eq89g"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_pKMC4E1bEemE05tA7eq89g" name="documentGeneratorId">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_6lv0oE14EemE05tA7eq89g" annotatedElement="_pKMC4E1bEemE05tA7eq89g">
-          <body>The identifier of the document generator to use.</body>
-        </ownedComment>
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4oOeME1bEemE05tA7eq89g"/>
-      </ownedAttribute>
-    </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_TQ7eUE1gEemE05tA7eq89g" name="DefaultDocumentGeneratorConfiguration">
       <ownedComment xmi:type="uml:Comment" xmi:id="__BM20E15EemE05tA7eq89g" annotatedElement="_TQ7eUE1gEemE05tA7eq89g">
         <body>Default implementation to define the DocumentGeneratorConfiguration.</body>
@@ -69,17 +43,48 @@ It can't be a system path (c:\myDocuments is not alloxed for example).</body>
       <ownedComment xmi:type="uml:Comment" xmi:id="_vcfwYFB6EemNlsOH2YnpzQ" annotatedElement="_cN08EFB6EemNlsOH2YnpzQ">
         <body>Common Interface to use to define the Document Generator Configuration.</body>
       </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_kOa_sF9zEemxcMQajU1fyA" general="_67KS0F9yEemxcMQajU1fyA"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_NS5KAF9xEemxcMQajU1fyA" name="isSaveDocumentStructure">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_VV8acF9xEemxcMQajU1fyA" name="return " direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_ZJHKEF9xEemxcMQajU1fyA" name="isSaveImages">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_d-mSUF9xEemxcMQajU1fyA" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_e8AVwF9xEemxcMQajU1fyA" name="getTemplateFile">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_iaU2wF9xEemxcMQajU1fyA" name="return " direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_fUlRoFB6EemNlsOH2YnpzQ" name="IDocumentStructureGeneratorConfiguration">
       <ownedComment xmi:type="uml:Comment" xmi:id="_0_5HgFB6EemNlsOH2YnpzQ" annotatedElement="_fUlRoFB6EemNlsOH2YnpzQ">
         <body>Common Interface to define the Document Structure generatorto in the model.</body>
       </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="__b06QF91EemxcMQajU1fyA" general="_67KS0F9yEemxcMQajU1fyA"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_Y7WrsE16EemE05tA7eq89g" name="createDocumentGeneratorConfiguration">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_d5vRQE16EemE05tA7eq89g" name="return" type="_cN08EFB6EemNlsOH2YnpzQ" direction="return"/>
       </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_3qUXsF9zEemxcMQajU1fyA" name="getStructureGeneratorId">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_BOrp4F90EemxcMQajU1fyA" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_71O48F9zEemxcMQajU1fyA" name="getImageFolder">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_E2MjIF90EemxcMQajU1fyA" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_9X8B0F9zEemxcMQajU1fyA" name="getStructureFolder">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_AwGbAF91EemxcMQajU1fyA" name="return " direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_5Tg7AFCJEemNlsOH2YnpzQ" name="AbstractDocumentGeneratorConfiguration" isAbstract="true">
-      <generalization xmi:type="uml:Generalization" xmi:id="_Gf1qEE1jEemE05tA7eq89g" general="_7KtegE1aEemE05tA7eq89g"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_zL-38E1bEemE05tA7eq89g" name="saveDocumentStructure">
         <ownedComment xmi:type="uml:Comment" xmi:id="_W3JMgE1fEemE05tA7eq89g" annotatedElement="_zL-38E1bEemE05tA7eq89g">
           <body>If true, the document structure model will be kept after the generation. If false, it will be destroyed.</body>
@@ -101,10 +106,57 @@ It can't be a system path (c:\myDocuments is not alloxed for example).</body>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_c1AQgFROEemNlsOH2YnpzQ"/>
       </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_b0oDMF9zEemxcMQajU1fyA" name="documentName">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_b0oDMV9zEemxcMQajU1fyA" annotatedElement="_b0oDMF9zEemxcMQajU1fyA">
+          <body>The name of the document, without its extension.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_b0oDMl9zEemxcMQajU1fyA"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_b0oqQF9zEemxcMQajU1fyA" name="documentFolder">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_b0oqQV9zEemxcMQajU1fyA" annotatedElement="_b0oqQF9zEemxcMQajU1fyA">
+          <body>The output folder. It can be a full path (platform:/resource/projectName/...) or a path in the current plugin (generation/outputFolder, interpreted as platform:/resource/projectName/generation/outputFolder), or a system path (ex: c:\MyDocuments).</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_b0oqQl9zEemxcMQajU1fyA"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_b0oqQ19zEemxcMQajU1fyA" name="documentGeneratorId">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_b0oqRF9zEemxcMQajU1fyA" annotatedElement="_b0oqQ19zEemxcMQajU1fyA">
+          <body>The identifier of the document generator to use.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_b0oqRV9zEemxcMQajU1fyA"/>
+      </ownedAttribute>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_jZzr4F9zEemxcMQajU1fyA" client="_5Tg7AFCJEemNlsOH2YnpzQ" supplier="_67KS0F9yEemxcMQajU1fyA" contract="_67KS0F9yEemxcMQajU1fyA"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_P3A9IFCKEemNlsOH2YnpzQ" name="DefaultDocumentStructureGeneratorConfiguration">
       <generalization xmi:type="uml:Generalization" xmi:id="_XHEqYFCKEemNlsOH2YnpzQ" general="_PyJqUE1gEemE05tA7eq89g"/>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_nZY58FCYEemNlsOH2YnpzQ" client="_P3A9IFCKEemNlsOH2YnpzQ" supplier="_fUlRoFB6EemNlsOH2YnpzQ" contract="_fUlRoFB6EemNlsOH2YnpzQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_67KS0F9yEemxcMQajU1fyA" name="IGeneratorConfiguration">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_yAG_EE15EemE05tA7eq89g" annotatedElement="_67KS0F9yEemxcMQajU1fyA">
+        <body>Common interface for document generator configuration.</body>
+      </ownedComment>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_koZ7EF91EemxcMQajU1fyA" name="getDocumentName">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_pBLSIF91EemxcMQajU1fyA" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_pggScF91EemxcMQajU1fyA" name="getDocumentFolder">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_tKJSoF91EemxcMQajU1fyA" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_t4uP4F91EemxcMQajU1fyA" name="getDocumentGeneratorId">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_xqJ6IF91EemxcMQajU1fyA" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_vnS1EF92EemxcMQajU1fyA" name="setDocumentName">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_zLG6EF92EemxcMQajU1fyA" name="documentName">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_ttYQgE13EemE05tA7eq89g">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ttiBgE13EemE05tA7eq89g" source="http://www.eclipse.org/uml2/2.0.0/UML">

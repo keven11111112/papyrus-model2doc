@@ -33,7 +33,6 @@ import org.eclipse.papyrus.infra.core.utils.EditorNameInitializer;
 import org.eclipse.papyrus.infra.core.utils.ServiceUtils;
 import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForEObject;
 import org.eclipse.papyrus.infra.viewpoints.policy.ViewPrototype;
-import org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentStructureGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate;
@@ -121,12 +120,10 @@ public class CreateDocumentEditorCommand implements ICreateDocumentTemplateEdito
 					newInstance.setName(documentName);
 
 					final IDocumentStructureGeneratorConfiguration generator = newInstance.getDocumentStructureGenerator();
-
-					if (generator instanceof DefaultDocumentStructureGeneratorConfiguration) {
-						((DefaultDocumentStructureGeneratorConfiguration) generator).setDocumentName(documentName);
-					} else {
-						// TODO
+					if (null == generator) {
+						// TODO : log warning when we will be in the good plugin
 					}
+					generator.setDocumentName(documentName);
 
 
 					ModelSet modelSet = null;

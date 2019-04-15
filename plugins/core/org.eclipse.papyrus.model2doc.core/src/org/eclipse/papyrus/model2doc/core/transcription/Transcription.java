@@ -10,13 +10,13 @@
  *
  * Contributors:
  *  Yupanqui Munoz (CEA LIST) yupanqui.munozjulho@cea.fr - Initial API and implementation
- *	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *****************************************************************************/
 package org.eclipse.papyrus.model2doc.core.transcription;
 
 import java.util.List;
 
-import org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentGeneratorConfiguration;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration;
 
 /**
  * Transcription Interface.
@@ -123,7 +123,7 @@ public interface Transcription {
 	 *
 	 * @return
 	 */
-	public DefaultDocumentGeneratorConfiguration getGeneratorConfig();
+	public IDocumentGeneratorConfiguration getGeneratorConfig();
 
 	/**
 	 * Verify if transcription can execute.

@@ -10,12 +10,12 @@
  *
  * Contributors:
  *  Yupanqui Munoz (CEA LIST) yupanqui.munozjulho@cea.fr - Initial API and implementation
- *	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *****************************************************************************/
 package org.eclipse.papyrus.model2doc.odt.internal.editor;
 
 import org.eclipse.jface.dialogs.MessageDialog;
-import org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentGeneratorConfiguration;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.operations.GeneratorConfigurationOperations;
 import org.eclipse.papyrus.model2doc.odt.Activator;
 import org.eclipse.papyrus.model2doc.odt.internal.message.Messages;
@@ -67,7 +67,7 @@ public class ODTEditor {
 	private XComponentLoader officeLoader = null;
 	private XTextDocument xTextDocument = null;
 	private XDesktop xDesktop = null;
-	private DefaultDocumentGeneratorConfiguration configuration;
+	private IDocumentGeneratorConfiguration configuration;
 	private XMultiComponentFactory xMultiComponentFactory = null;
 	private XMultiServiceFactory xMultiServiceFactory = null;
 	private XComponentContext xComponentContext = null;
@@ -92,7 +92,7 @@ public class ODTEditor {
 	 *
 	 * @param generatorConfig
 	 */
-	public ODTEditor(DefaultDocumentGeneratorConfiguration generatorConfig) {
+	public ODTEditor(final IDocumentGeneratorConfiguration generatorConfig) {
 		this.configuration = generatorConfig;
 		// Take LibreOffice Loader
 		loadOffice();

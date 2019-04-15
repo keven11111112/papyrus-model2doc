@@ -27,7 +27,6 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.osgi.util.NLS;
-import org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentStructureGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate;
 import org.eclipse.papyrus.model2doc.emf.template2structure.Activator;
@@ -197,12 +196,9 @@ public final class Template2StructureRegistry {
 	 */
 	public ITemplate2StructureGenerator getGenerator(final DocumentTemplate docTemplate) {
 		Assert.isNotNull(docTemplate);
-		IDocumentStructureGeneratorConfiguration tmp = docTemplate.getDocumentStructureGenerator();
-		if (null != tmp) {
-			if (tmp instanceof DefaultDocumentStructureGeneratorConfiguration) {
-				DefaultDocumentStructureGeneratorConfiguration conf = (DefaultDocumentStructureGeneratorConfiguration) tmp;
-				return getGenerator(conf.getStructureGeneratorId());
-			}
+		final IDocumentStructureGeneratorConfiguration conf = docTemplate.getDocumentStructureGenerator();
+		if (null != conf) {
+			return getGenerator(conf.getStructureGeneratorId());
 		}
 		return null;
 	}
@@ -215,7 +211,7 @@ public final class Template2StructureRegistry {
 	 * 		the mappers registered for the generator declared in the document template
 	 */
 	public List<AbstractTemplateToStructureMapper<?>> getMappers(final DocumentTemplate docTemplate) {
-		final String structureGeneratorId = ((DefaultDocumentStructureGeneratorConfiguration) docTemplate.getDocumentStructureGenerator()).getStructureGeneratorId();
+		final String structureGeneratorId = docTemplate.getDocumentStructureGenerator().getStructureGeneratorId();
 		if (null == structureGeneratorId || structureGeneratorId.isEmpty()) {
 			Activator.log.warn(NLS.bind("The document structure generator id is not defined for {0}", docTemplate.toString())); //$NON-NLS-1$
 			return Collections.emptyList();

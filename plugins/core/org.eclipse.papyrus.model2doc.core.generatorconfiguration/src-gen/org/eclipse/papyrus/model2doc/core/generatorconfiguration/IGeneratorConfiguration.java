@@ -13,30 +13,31 @@
  */
 package org.eclipse.papyrus.model2doc.core.generatorconfiguration;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>IDocument Structure Generator Configuration</b></em>'.
+ * A representation of the model object '<em><b>IGenerator Configuration</b></em>'.
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Common Interface to define the Document Structure generatorto in the model.
+ * Common interface for document generator configuration.
  * <!-- end-model-doc -->
  *
  *
- * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationPackage#getIDocumentStructureGeneratorConfiguration()
+ * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationPackage#getIGeneratorConfiguration()
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface IDocumentStructureGeneratorConfiguration extends IGeneratorConfiguration {
+public interface IGeneratorConfiguration extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @model required="true" ordered="false"
+	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
-	IDocumentGeneratorConfiguration createDocumentGeneratorConfiguration();
+	String getDocumentName();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,7 +46,7 @@ public interface IDocumentStructureGeneratorConfiguration extends IGeneratorConf
 	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
-	String getStructureGeneratorId();
+	String getDocumentFolder();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -54,15 +55,15 @@ public interface IDocumentStructureGeneratorConfiguration extends IGeneratorConf
 	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
-	String getImageFolder();
+	String getDocumentGeneratorId();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @model kind="operation" required="true" ordered="false"
+	 * @model documentNameRequired="true" documentNameOrdered="false"
 	 * @generated
 	 */
-	String getStructureFolder();
+	void setDocumentName(String documentName);
 
-} // IDocumentStructureGeneratorConfiguration
+} // IGeneratorConfiguration

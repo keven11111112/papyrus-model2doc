@@ -14,7 +14,7 @@
 
 package org.eclipse.papyrus.model2doc.odt.emf.structure2document.internal.handler;
 
-import org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentGeneratorConfiguration;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.transcriber.Transcriber;
 import org.eclipse.papyrus.model2doc.core.transcription.Transcription;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument;
@@ -44,7 +44,7 @@ public class CreateODTFileFromTextDocumentHelper {
 			Activator.log.warn("The TextDocument is null"); //$NON-NLS-1$
 			return;
 		}
-		final DefaultDocumentGeneratorConfiguration ddgc = (DefaultDocumentGeneratorConfiguration) textDocument.getDocumentGeneratorConfiguration();
+		final IDocumentGeneratorConfiguration ddgc = textDocument.getDocumentGeneratorConfiguration();
 
 		DefaultStyleEditor styleEditor = new DefaultStyleEditor();
 		Transcription transcription = new ODTTranscription(styleEditor, ddgc);

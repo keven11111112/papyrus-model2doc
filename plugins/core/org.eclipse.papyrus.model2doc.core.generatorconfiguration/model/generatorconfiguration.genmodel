@@ -49,16 +49,29 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute generatorconfiguration.ecore#//AbstractDocumentGeneratorConfiguration/saveDocumentStructure"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute generatorconfiguration.ecore#//AbstractDocumentGeneratorConfiguration/saveImages"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute generatorconfiguration.ecore#//AbstractDocumentGeneratorConfiguration/templateFile"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute generatorconfiguration.ecore#//AbstractDocumentGeneratorConfiguration/documentName"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute generatorconfiguration.ecore#//AbstractDocumentGeneratorConfiguration/documentFolder"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute generatorconfiguration.ecore#//AbstractDocumentGeneratorConfiguration/documentGeneratorId"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="generatorconfiguration.ecore#//GeneratorConfiguration">
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute generatorconfiguration.ecore#//GeneratorConfiguration/documentName"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute generatorconfiguration.ecore#//GeneratorConfiguration/documentFolder"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute generatorconfiguration.ecore#//GeneratorConfiguration/documentGeneratorId"/>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="generatorconfiguration.ecore#//IGeneratorConfiguration">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="generatorconfiguration.ecore#//IGeneratorConfiguration/getDocumentName"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="generatorconfiguration.ecore#//IGeneratorConfiguration/getDocumentFolder"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="generatorconfiguration.ecore#//IGeneratorConfiguration/getDocumentGeneratorId"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="generatorconfiguration.ecore#//IGeneratorConfiguration/setDocumentName">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="generatorconfiguration.ecore#//IGeneratorConfiguration/setDocumentName/documentName"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="generatorconfiguration.ecore#//IDocumentStructureGeneratorConfiguration">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="generatorconfiguration.ecore#//IDocumentStructureGeneratorConfiguration/createDocumentGeneratorConfiguration"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="generatorconfiguration.ecore#//IDocumentStructureGeneratorConfiguration/getStructureGeneratorId"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="generatorconfiguration.ecore#//IDocumentStructureGeneratorConfiguration/getImageFolder"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="generatorconfiguration.ecore#//IDocumentStructureGeneratorConfiguration/getStructureFolder"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="generatorconfiguration.ecore#//IDocumentGeneratorConfiguration"/>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="generatorconfiguration.ecore#//IDocumentGeneratorConfiguration">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="generatorconfiguration.ecore#//IDocumentGeneratorConfiguration/isSaveDocumentStructure"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="generatorconfiguration.ecore#//IDocumentGeneratorConfiguration/isSaveImages"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="generatorconfiguration.ecore#//IDocumentGeneratorConfiguration/getTemplateFile"/>
+    </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="generatorconfiguration.ecore#//DefaultDocumentGeneratorConfiguration"/>
   </genPackages>
 </genmodel:GenModel>

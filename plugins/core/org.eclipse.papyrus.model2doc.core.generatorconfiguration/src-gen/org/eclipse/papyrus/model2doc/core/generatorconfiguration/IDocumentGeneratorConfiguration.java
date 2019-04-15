@@ -13,7 +13,6 @@
  */
 package org.eclipse.papyrus.model2doc.core.generatorconfiguration;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,5 +28,32 @@ import org.eclipse.emf.ecore.EObject;
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface IDocumentGeneratorConfiguration extends EObject {
+public interface IDocumentGeneratorConfiguration extends IGeneratorConfiguration {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	boolean isSaveDocumentStructure();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	boolean isSaveImages();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	String getTemplateFile();
+
 } // IDocumentGeneratorConfiguration

@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
-import org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentStructureGeneratorConfiguration;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.operations.GeneratorConfigurationOperations;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructureFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Image;
@@ -94,7 +94,7 @@ public class PapyrusGMFDiagramViewMapper extends AbstractTemplateToStructureMapp
 					parent = parent.eContainer();
 				}
 			}
-			DefaultDocumentStructureGeneratorConfiguration conf = (DefaultDocumentStructureGeneratorConfiguration) t.getDocumentStructureGenerator();
+			final IDocumentStructureGeneratorConfiguration conf = t.getDocumentStructureGenerator();
 
 			String imagePath = GeneratorConfigurationOperations.getImageFileLocalPath(conf, current.getName(), GMFDiagramImageUtils.SVG_EXTENSION);
 			imagePath = imagePath.replaceAll("file:/", ""); //$NON-NLS-1$ //$NON-NLS-2$

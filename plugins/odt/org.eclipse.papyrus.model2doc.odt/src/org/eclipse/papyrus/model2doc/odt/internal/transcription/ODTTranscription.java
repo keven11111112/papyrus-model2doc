@@ -16,7 +16,7 @@ package org.eclipse.papyrus.model2doc.odt.internal.transcription;
 
 import java.util.List;
 
-import org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentGeneratorConfiguration;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.transcription.CoverPage;
 import org.eclipse.papyrus.model2doc.core.transcription.ImageDescription;
 import org.eclipse.papyrus.model2doc.core.transcription.Table;
@@ -60,7 +60,7 @@ public class ODTTranscription implements Transcription {
 
 	private ODTEditor odtEditor = null;
 
-	private DefaultDocumentGeneratorConfiguration odtGeneratorConfig = null;
+	private IDocumentGeneratorConfiguration odtGeneratorConfig = null;
 
 	private WriteService writeService = null;
 
@@ -74,7 +74,7 @@ public class ODTTranscription implements Transcription {
 	 * @param styleEditor
 	 * @param generatorConfig
 	 */
-	public ODTTranscription(StyleEditor styleEditor, DefaultDocumentGeneratorConfiguration odtGeneratorConfig) {
+	public ODTTranscription(StyleEditor styleEditor, IDocumentGeneratorConfiguration odtGeneratorConfig) {
 		odtEditor = new ODTEditor(odtGeneratorConfig);
 		if (odtEditor.getXTextDocument() != null) {
 			text = odtEditor.getXTextDocument().getText();
@@ -276,7 +276,7 @@ public class ODTTranscription implements Transcription {
 	}
 
 	@Override
-	public DefaultDocumentGeneratorConfiguration getGeneratorConfig() {
+	public IDocumentGeneratorConfiguration getGeneratorConfig() {
 		return odtGeneratorConfig;
 	}
 

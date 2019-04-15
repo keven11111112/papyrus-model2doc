@@ -20,9 +20,17 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentGeneratorConfiguration;
@@ -35,7 +43,14 @@ import org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfig
  *
  * @generated
  */
-public class AbstractDocumentGeneratorConfigurationItemProvider extends GeneratorConfigurationItemProvider {
+public class AbstractDocumentGeneratorConfigurationItemProvider
+		extends ItemProviderAdapter
+		implements
+		IEditingDomainItemProvider,
+		IStructuredItemContentProvider,
+		ITreeItemContentProvider,
+		IItemLabelProvider,
+		IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -62,8 +77,74 @@ public class AbstractDocumentGeneratorConfigurationItemProvider extends Generato
 			addSaveDocumentStructurePropertyDescriptor(object);
 			addSaveImagesPropertyDescriptor(object);
 			addTemplateFilePropertyDescriptor(object);
+			addDocumentNamePropertyDescriptor(object);
+			addDocumentFolderPropertyDescriptor(object);
+			addDocumentGeneratorIdPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Document Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected void addDocumentNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_AbstractDocumentGeneratorConfiguration_documentName_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_AbstractDocumentGeneratorConfiguration_documentName_feature", "_UI_AbstractDocumentGeneratorConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				GeneratorConfigurationPackage.Literals.ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__DOCUMENT_NAME,
+				true,
+				false,
+				false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				null,
+				null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Document Folder feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected void addDocumentFolderPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_AbstractDocumentGeneratorConfiguration_documentFolder_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_AbstractDocumentGeneratorConfiguration_documentFolder_feature", "_UI_AbstractDocumentGeneratorConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				GeneratorConfigurationPackage.Literals.ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__DOCUMENT_FOLDER,
+				true,
+				false,
+				false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				null,
+				null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Document Generator Id feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected void addDocumentGeneratorIdPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_AbstractDocumentGeneratorConfiguration_documentGeneratorId_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_AbstractDocumentGeneratorConfiguration_documentGeneratorId_feature", "_UI_AbstractDocumentGeneratorConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				GeneratorConfigurationPackage.Literals.ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__DOCUMENT_GENERATOR_ID,
+				true,
+				false,
+				false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				null,
+				null));
 	}
 
 	/**
@@ -171,6 +252,9 @@ public class AbstractDocumentGeneratorConfigurationItemProvider extends Generato
 		case GeneratorConfigurationPackage.ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__SAVE_DOCUMENT_STRUCTURE:
 		case GeneratorConfigurationPackage.ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__SAVE_IMAGES:
 		case GeneratorConfigurationPackage.ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__TEMPLATE_FILE:
+		case GeneratorConfigurationPackage.ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__DOCUMENT_NAME:
+		case GeneratorConfigurationPackage.ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__DOCUMENT_FOLDER:
+		case GeneratorConfigurationPackage.ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__DOCUMENT_GENERATOR_ID:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
@@ -188,6 +272,18 @@ public class AbstractDocumentGeneratorConfigurationItemProvider extends Generato
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return GeneratorconfigurationEditPlugin.INSTANCE;
 	}
 
 }
