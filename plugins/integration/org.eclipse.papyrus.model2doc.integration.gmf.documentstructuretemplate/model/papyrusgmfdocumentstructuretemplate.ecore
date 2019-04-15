@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="documentstructuretemplate" nsURI="http://www.eclipse.org/papyrus/model2doc/gmf/integration/1.0.0/documentstructuretemplate"
+    nsPrefix="documentstructuretemplate">
+  <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <details key="originalName" value="PapyrusGMFDocumentStructureTemplate"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="PapyrusGMFDiagramView" eSuperTypes="../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.ecore#//ITemplatePartView ../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.ecore#//ILeafBodyPartTemplate">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This element allows to represent Papyrus Diagram. These diagrams are an extension of GMF Notation Diagram, but they have a kind in addition of the type field provided by GMF.&#xD;&#xA;This View doesn't extend the GMFDiagramView provided by the model gmfdocumentstructuretemplate in order to allow to install the Papyrus GMF Diagram version without depending of the code managing the GMFDiagramView"/>
+    </eAnnotations>
+    <eOperations name="getMatchingDiagrams" ordered="false" upperBound="-1" eType="#//Diagram">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This method returns the diagram owned by the parameter expectedDiagramContext, according to the type and the kind of the diagram.&#xD;&#xA;If type and kind are not defined, the method will returns all diagrams owned by the argument.&#xD;&#xA;If the diagram doesn't have a PapryusDiagramStyle, this method returns false. "/>
+      </eAnnotations>
+      <eParameters name="expectedDiagramContext" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="diagramKindId" ordered="false"
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The kind of the diagram. This field can be empty. In this case, all diagrams will be integrated into the final document."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="diagramType" ordered="false"
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The type of diagram to manage. If no type is defined, we will take all diagrams."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Diagram" instanceClassName="org.eclipse.gmf.runtime.notation.Diagram"
+      abstract="true" interface="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This interface allows to represent the GMF Diagram element."/>
+    </eAnnotations>
+  </eClassifiers>
+</ecore:EPackage>

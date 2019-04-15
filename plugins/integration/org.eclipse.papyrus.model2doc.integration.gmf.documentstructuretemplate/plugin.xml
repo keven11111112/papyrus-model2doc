@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ Copyright (c) 2019 CEA LIST.
+ 
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License 2.0
+  which accompanies this distribution, and is available at
+  https://www.eclipse.org/legal/epl-2.0/
+ 
+  SPDX-License-Identifier: EPL-2.0
+ 
+  Contributors:
+  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated papyrusgmfdocumentstructuretemplate -->
+      <package
+            uri="http://www.eclipse.org/papyrus/model2doc/gmf/integration/1.0.0/documentstructuretemplate"
+            class="org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.PapyrusGMFDocumentStructureTemplatePackage"
+            genModel="model/papyrusgmfdocumentstructuretemplate.genmodel"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.factory_override">
+      <factory
+            class="org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.custom.impl.CustomPapyrusGMFDocumentStructureTemplateFactory"
+            uri="http://www.eclipse.org/papyrus/model2doc/gmf/integration/1.0.0/documentstructuretemplate">
+      </factory>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.uri_mapping">
+      <mapping
+            source="pathmap://Papyrus_GMF_DOCUMENT_STRUCTURE_TEMPLATE/"
+            target="platform:/plugin/org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate/model/">
+      </mapping>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.uml.extensionpoints.UMLLibrary">
+      <library
+            description="Papyrus GMF Extension for DocumentStructureTemplate"
+            iconpath="icons/Papyrus_GMF_DocumentStructureTemplate.gif"
+            name="Papyrus-Model2Doc - DocumentStructureTemplate Papyrus GMF Extension (Internal)"
+            path="pathmap://PAPYRUS_GMF_DOCUMENT_STRUCTURE_TEMPLATE/papyrusgmfdocumentstructuretemplate.uml"
+            provider="Eclipse Modeling Project">
+      </library>
+   </extension>
+
+</plugin>

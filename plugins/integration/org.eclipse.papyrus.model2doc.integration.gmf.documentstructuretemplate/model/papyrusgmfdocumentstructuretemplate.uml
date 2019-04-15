@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
+  <uml:Model xmi:id="_WLRF4FxxEemyeb6zzD570Q" name="PapyrusGMFDocumentStructureTemplate" URI="http://www.eclipse.org/papyrus/model2doc/gmf/integration/1.0.0/documentstructuretemplate">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_WQFUcFxxEemyeb6zzD570Q">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_A4xDEF9aEemxcMQajU1fyA">
+      <importedPackage xmi:type="uml:Model" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_qN46sB17Eem3fboELVTtYQ"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_QbIxsF0eEemxcMQajU1fyA" name="PapyrusGMFDiagramView">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_tSAPUF0eEemxcMQajU1fyA" annotatedElement="_QbIxsF0eEemxcMQajU1fyA">
+        <body>This element allows to represent Papyrus Diagram. These diagrams are an extension of GMF Notation Diagram, but they have a kind in addition of the type field provided by GMF.&#xD;
+This View doesn't extend the GMFDiagramView provided by the model gmfdocumentstructuretemplate in order to allow to install the Papyrus GMF Diagram version without depending of the code managing the GMFDiagramView</body>
+      </ownedComment>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_gqYAcF0eEemxcMQajU1fyA" name="diagramKindId">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_y50zcF0eEemxcMQajU1fyA" annotatedElement="_gqYAcF0eEemxcMQajU1fyA">
+          <body>The kind of the diagram. This field can be empty. In this case, all diagrams will be integrated into the final document.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWkisX_EduPJbEsMYXjUQ"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_k62-MF0eEemxcMQajU1fyA"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_PnGfwF9aEemxcMQajU1fyA" name="diagramType">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_1SjYcF9aEemxcMQajU1fyA" annotatedElement="_PnGfwF9aEemxcMQajU1fyA">
+          <body>The type of diagram to manage. If no type is defined, we will take all diagrams.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWkisX_EduPJbEsMYXjUQ"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Sr-mAF9aEemxcMQajU1fyA"/>
+      </ownedAttribute>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_OV4vgF9aEemxcMQajU1fyA" client="_QbIxsF0eEemxcMQajU1fyA">
+        <supplier xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_DwGdIFYFEemKJasCEBKPhQ"/>
+        <contract xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_DwGdIFYFEemKJasCEBKPhQ"/>
+      </interfaceRealization>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_O4OAgF9aEemxcMQajU1fyA" client="_QbIxsF0eEemxcMQajU1fyA">
+        <supplier xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_R99HIFX-EemKJasCEBKPhQ"/>
+        <contract xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_R99HIFX-EemKJasCEBKPhQ"/>
+      </interfaceRealization>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_UvNpEF9aEemxcMQajU1fyA" name="getMatchingDiagrams">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_zST_AF9aEemxcMQajU1fyA" annotatedElement="_UvNpEF9aEemxcMQajU1fyA">
+          <body>This method returns the diagram owned by the parameter expectedDiagramContext, according to the type and the kind of the diagram.&#xD;
+If type and kind are not defined, the method will returns all diagrams owned by the argument.&#xD;
+If the diagram doesn't have a PapryusDiagramStyle, this method returns false. </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_aAIwIF9aEemxcMQajU1fyA" name="expectedDiagramContext">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_bXrx4F9aEemxcMQajU1fyA" name="return " type="_ck2IkF9aEemxcMQajU1fyA" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_W9YroF9sEemxcMQajU1fyA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_W9xGIF9sEemxcMQajU1fyA" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_ck2IkF9aEemxcMQajU1fyA" name="Diagram">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_3NeNAF9aEemxcMQajU1fyA" annotatedElement="_ck2IkF9aEemxcMQajU1fyA">
+        <body>This interface allows to represent the GMF Diagram element.</body>
+      </ownedComment>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_7G9M8F0eEemxcMQajU1fyA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_7HBeYF0eEemxcMQajU1fyA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Ecore.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Model>
+  <Ecore:EPackage xmi:id="_78JIgF0eEemxcMQajU1fyA" base_Package="_WLRF4FxxEemyeb6zzD570Q" packageName="documentstructuretemplate" nsPrefix="documentstructuretemplate" basePackage="org.eclipse.papyrus.model2doc.integration.gmf" prefix="PapyrusGMFDocumentStructureTemplate"/>
+  <Ecore:EClass xmi:id="_fzwUkF9aEemxcMQajU1fyA" instanceClassName="org.eclipse.gmf.runtime.notation.Diagram" base_Interface="_ck2IkF9aEemxcMQajU1fyA" className="Diagram"/>
+</xmi:XMI>

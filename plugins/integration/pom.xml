@@ -18,11 +18,13 @@
 	<description>Container of the Papyrus DocumentStructureTemplate Integration plugins</description>
 
 	<modules>
-		<module>org.eclipse.papyrus.model2doc.integration.uml.architecture</module>
+		<module>ieee</module>
 		<module>org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.modelexplorer</module>
 		<module>org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation</module>
 		<module>org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation.edit</module>
 		<module>org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.ui</module>
-		<module>ieee</module>
+		<module>org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate</module>
+		<module>org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.edit</module>
+		<module>org.eclipse.papyrus.model2doc.integration.uml.architecture</module>
 	</modules>
 </project>
