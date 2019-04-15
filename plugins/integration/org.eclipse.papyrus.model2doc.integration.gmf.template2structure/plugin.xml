@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.papyrus.model2doc.emf.template2structure.structuregenerator">
+      <mapper
+            class="org.eclipse.papyrus.model2doc.integration.gmf.template2structure.internal.mapping.PapyrusGMFDiagramViewMapper"
+            generatorId="TextDocumentStructureGenerator.default">
+      </mapper>
+   </extension>
+
+</plugin>
