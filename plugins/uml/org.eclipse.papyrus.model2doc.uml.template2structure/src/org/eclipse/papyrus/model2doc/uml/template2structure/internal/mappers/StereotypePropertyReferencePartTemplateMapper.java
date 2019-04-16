@@ -29,7 +29,6 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionP
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubBodyPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.IMappingService;
 import org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.StereotypePropertyReferencePartTemplate;
-import org.eclipse.uml2.uml.util.UMLUtil;
 
 /**
  * This mapper converts the StereotypePropertyPartTemplate into BodyPart
@@ -79,7 +78,7 @@ public class StereotypePropertyReferencePartTemplateMapper extends AbstractUMLTe
 			while (subBodyPartTemplate.hasNext()) {
 				final ISubBodyPartTemplate currentObjectPartTemplate = subBodyPartTemplate.next();
 
-				final Collection<BodyPart> result = mappingService.map(currentObjectPartTemplate, UMLUtil.getBaseElement(currentEObject), BodyPart.class);
+				final Collection<BodyPart> result = mappingService.map(currentObjectPartTemplate, currentEObject, BodyPart.class);
 				if (result == null) {
 					continue;
 				}
