@@ -24,8 +24,7 @@
       </ownedAttribute>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_8q3fkFuFEemw5fgiiQpxng" name="getFirstMatchingStereotypeApplication">
         <ownedComment xmi:type="uml:Comment" xmi:id="_ZScVQFuMEemw5fgiiQpxng" annotatedElement="_8q3fkFuFEemw5fgiiQpxng">
-          <body>This method returns the first stereotype application for the element given in parameter. &#xD;
-Due to EMF limitation/bug, the parameter is EObject and not UML Element.</body>
+          <body>This method returns the first stereotype application for the element given in parameter. The parameter is EObject to avoid to have to check type before calling the method.</body>
         </ownedComment>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_PlQeQFuMEemw5fgiiQpxng" name="element">
           <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
@@ -70,6 +69,11 @@ Due to EMF limitation/bug, the parameter is EObject and not UML Element.</body>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2bBYgFuNEemw5fgiiQpxng" value="*"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_vDt5wGAtEemxcMQajU1fyA" name="buildTitle">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_ynY00GAtEemxcMQajU1fyA" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_4YK6UFauEemQ15mMY1nXxQ" name="CommentAsParagraph">
       <ownedComment xmi:type="uml:Comment" xmi:id="_PXzCUFawEemQ15mMY1nXxQ" annotatedElement="_4YK6UFauEemQ15mMY1nXxQ">
@@ -91,11 +95,10 @@ Due to EMF limitation/bug, the parameter is EObject and not UML Element.</body>
       </interfaceRealization>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_wyIkwFuKEemw5fgiiQpxng" name="getMatchingComments">
         <ownedComment xmi:type="uml:Comment" xmi:id="_aSR3EFuLEemw5fgiiQpxng" annotatedElement="_wyIkwFuKEemw5fgiiQpxng">
-          <body>This methods returns the matching Comments. &#xD;
-Due to EMF limitations and bugs, the returned List is typed by EObject and not by Comment and the argument is EObject and not UML Element.</body>
+          <body>This methods returns the matching Comments. The argument is EObject, to be compliant will EMF code, it avoid us to check type before calling methods.&#xD;
+</body>
         </ownedComment>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_RkfnkFuLEemw5fgiiQpxng" name="return" direction="return">
-          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_RkfnkFuLEemw5fgiiQpxng" name="return" type="_EYLIQGESEemrtYwu2mmoHg" direction="return">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8cbMMFuLEemw5fgiiQpxng"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8crq4FuLEemw5fgiiQpxng" value="*"/>
         </ownedParameter>
@@ -103,11 +106,17 @@ Due to EMF limitations and bugs, the returned List is typed by EObject and not b
           <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PK7jYGEWEem9RayHtmyhUw" name="buildTitle">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PK7jYWEWEem9RayHtmyhUw" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_Xp7tEFavEemQ15mMY1nXxQ" name="CommentChoice">
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ZYtjEFavEemQ15mMY1nXxQ" name="FIRST_OWNED_COMMENT"/>
-      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_bCC4YFavEemQ15mMY1nXxQ" name="ALL_OWNED_COMMENT"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_bCC4YFavEemQ15mMY1nXxQ" name="ALL_OWNED_COMMENTS"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_EYLIQGESEemrtYwu2mmoHg" name="Comment"/>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_x6veQB8TEemcGrhwCFVIGw">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_x6wsYB8TEemcGrhwCFVIGw" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>
@@ -115,5 +124,6 @@ Due to EMF limitations and bugs, the returned List is typed by EObject and not b
       <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Ecore.profile.uml#_0"/>
     </profileApplication>
   </uml:Model>
-  <Ecore:EPackage xmi:id="_yd7D0B8TEemcGrhwCFVIGw" base_Package="_sha7EB8REem9r6zmWAQv1w" packageName="umldocumentstructuretemplate" nsPrefix="umldocumentstructuretemplate" basePackage="org.eclipse.papyrus.model2doc.uml" prefix="UMLDocumentStructureTemplate"/>
+  <Ecore:EPackage xmi:id="_yd7D0B8TEemcGrhwCFVIGw" base_Package="_sha7EB8REem9r6zmWAQv1w" packageName="documentstructuretemplate" nsPrefix="umldocumentstructuretemplate" basePackage="org.eclipse.papyrus.model2doc.uml" prefix="UMLDocumentStructureTemplate"/>
+  <Ecore:EClass xmi:id="_Foe5kGESEemrtYwu2mmoHg" instanceClassName="org.eclipse.uml2.uml.Comment" base_Interface="_EYLIQGESEemrtYwu2mmoHg"/>
 </xmi:XMI>

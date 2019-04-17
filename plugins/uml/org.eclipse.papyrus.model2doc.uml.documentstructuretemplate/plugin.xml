@@ -19,21 +19,21 @@
 
 
 
+   <extension
+         point="org.eclipse.emf.ecore.factory_override">
+      <factory
+            class="org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.internal.impl.CustomUMLDocumentStructureTemplateFactoryImpl"
+            uri="http://www.eclipse.org/papyrus/model2doc/uml/1.0.0/documentstructuretemplate">
+      </factory>
+   </extension>
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated umldocumentstructuretemplate -->
       <package
             uri="http://www.eclipse.org/papyrus/model2doc/uml/1.0.0/documentstructuretemplate"
-            class="org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.UMLDocumentStructureTemplatePackage"
+            class="org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplatePackage"
             genModel="model/umldocumentstructuretemplate.genmodel"/>
    </extension>
-   <extension
-         point="org.eclipse.emf.ecore.factory_override">
-      <factory
-            class="org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.impl.CustomUMLDocumentStructureTemplateFactory"
-            uri="http://www.eclipse.org/papyrus/model2doc/uml/1.0.0/documentstructuretemplate">
-      </factory>
-   </extension>
-   <extension
+ <extension
          point="org.eclipse.emf.ecore.uri_mapping">
       <mapping
             source="pathmap://UML_DOCUMENT_STRUCTURE_TEMPLATE/"
@@ -50,4 +50,5 @@
            provider="Eclipse Modeling Project">
      </library>
    </extension>
+
 </plugin>

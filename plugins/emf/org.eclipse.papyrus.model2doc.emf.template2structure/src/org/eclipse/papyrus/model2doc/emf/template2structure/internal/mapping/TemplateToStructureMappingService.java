@@ -104,11 +104,14 @@ public final class TemplateToStructureMappingService implements IMappingService 
 		List<T> result = null;
 		if (null != contributor) {
 			result = contributor.map(this, documentTemplateElement, semanticModelElement, expectedReturnedClass);
+			if (null == result) {
+				Activator.log.info(NLS.bind("Mapping failed for input {0} and output {1}.", documentTemplateElement, expectedReturnedClass)); //$NON-NLS-1$
+				result = Collections.emptyList();
+			}
+		} else {
+			Activator.log.info(NLS.bind("No mapper found for input {0} with an output of kind {1}.", documentTemplateElement, expectedReturnedClass)); //$NON-NLS-1$
 		}
-		if (null == result) {
-			Activator.log.info(NLS.bind("Mapping failed for input {0} and output {1}.", documentTemplateElement, expectedReturnedClass)); //$NON-NLS-1$
-			result = Collections.emptyList();
-		}
+
 		return result;
 
 	}

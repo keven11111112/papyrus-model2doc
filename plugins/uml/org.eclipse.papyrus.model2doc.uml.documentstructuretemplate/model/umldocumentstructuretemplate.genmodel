@@ -6,6 +6,7 @@
     creationIcons="false" editDirectory="/org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.edit/src-gen"
     editorDirectory="/org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.editor/src-gen"
     modelPluginID="org.eclipse.papyrus.model2doc.uml.documentstructuretemplate" modelName="Umldocumentstructuretemplate"
+    editPluginClass="org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.provider.UMLDocumentStructureTemplateEditPlugin"
     nonNLSMarkers="true" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     codeFormatting="true" commentFormatting="true" testsDirectory="/org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.tests/src-gen"
     importerID="org.eclipse.uml2.uml.ecore.importer" complianceLevel="8.0" copyrightFields="false"
@@ -46,7 +47,7 @@
     </genEnums>
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="umldocumentstructuretemplate.ecore#//CommentChoice">
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="umldocumentstructuretemplate.ecore#//CommentChoice/FIRST_OWNED_COMMENT"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="umldocumentstructuretemplate.ecore#//CommentChoice/ALL_OWNED_COMMENT"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="umldocumentstructuretemplate.ecore#//CommentChoice/ALL_OWNED_COMMENTS"/>
     </genEnums>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="umldocumentstructuretemplate.ecore#//StereotypePartTemplate">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umldocumentstructuretemplate.ecore#//StereotypePartTemplate/stereotypeQualifiedName"/>
@@ -60,12 +61,15 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umldocumentstructuretemplate.ecore#//StereotypePropertyReferencePartTemplate/getMatchingReferencedEObjects">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umldocumentstructuretemplate.ecore#//StereotypePropertyReferencePartTemplate/getMatchingReferencedEObjects/eobject"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umldocumentstructuretemplate.ecore#//StereotypePropertyReferencePartTemplate/buildTitle"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="umldocumentstructuretemplate.ecore#//CommentAsParagraph">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umldocumentstructuretemplate.ecore#//CommentAsParagraph/commentChoice"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umldocumentstructuretemplate.ecore#//CommentAsParagraph/getMatchingComments">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umldocumentstructuretemplate.ecore#//CommentAsParagraph/getMatchingComments/element"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umldocumentstructuretemplate.ecore#//CommentAsParagraph/buildTitle"/>
     </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="umldocumentstructuretemplate.ecore#//Comment"/>
   </genPackages>
 </genmodel:GenModel>

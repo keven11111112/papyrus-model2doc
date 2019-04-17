@@ -10,7 +10,7 @@
       <!-- @generated umldocumentstructuretemplate -->
       <factory
             uri="http://www.eclipse.org/papyrus/model2doc/uml/1.0.0/documentstructuretemplate"
-            class="org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.provider.UMLDocumentStructureTemplateItemProviderAdapterFactory"
+            class="org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.provider.UMLDocumentStructureTemplateItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -23,7 +23,6 @@
       <!-- @generated umldocumentstructuretemplate -->
       <extender
             uri="http://www.eclipse.org/papyrus/model2doc/emf/1.0.0/documentstructuretemplate"
-            class="org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.provider.UMLDocumentStructureTemplateItemProviderAdapterFactory$DocumentStructureTemplateChildCreationExtender"/>
+            class="org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.provider.UMLDocumentStructureTemplateItemProviderAdapterFactory$DocumentStructureTemplateChildCreationExtender"/>
    </extension>
-
 </plugin>

@@ -21,14 +21,11 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Title;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubBodyPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.IMappingService;
-import org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.StereotypePropertyReferencePartTemplate;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferencePartTemplate;
 
 /**
  * This mapper converts the StereotypePropertyPartTemplate into BodyPart
@@ -67,7 +64,7 @@ public class StereotypePropertyReferencePartTemplateMapper extends AbstractUMLTe
 		if (stereotypePropertyPartTemplate.isGenerate()) {
 			if (stereotypePropertyPartTemplate.isGenerateTitle()) {
 				title = STRUCTURE_EFACTORY.createTitle();
-				title.setTitle(getSectionTitle(stereotypePropertyPartTemplate));
+				title.setTitle(stereotypePropertyPartTemplate.buildTitle());
 				returnedElements.add(expectedReturnedClass.cast(title));
 			}
 		}
@@ -91,32 +88,6 @@ public class StereotypePropertyReferencePartTemplateMapper extends AbstractUMLTe
 		}
 
 		return returnedElements;
-	}
-
-
-	// TODO : all the next method must be moved in another class
-	protected String getSectionTitle(final IBodySectionPartTemplate partTemplate) {// TODO in an upper class
-		final String customTitle = partTemplate.getCustomTitle();
-		return (null == customTitle || customTitle.isEmpty()) ? getPartTemplateTitle(partTemplate) : customTitle;
-	}
-
-	// TODO : all the next method must be moved in another class
-	protected String getPartTemplateTitle(IBodySectionPartTemplate partTemplate) {// TODO factorize me somewhere?
-		if (partTemplate instanceof StereotypePropertyReferencePartTemplate) {
-			return ((StereotypePropertyReferencePartTemplate) partTemplate).getPropertyName();
-		}
-		if (partTemplate instanceof EReferencePartTemplate) {
-			return getLabel(((EReferencePartTemplate) partTemplate).getEReference());
-		}
-		return null;
-	}
-
-	// TODO : all the next method must be moved in another class
-	protected String getLabel(final EObject eobject) {
-		if (eobject instanceof EReference) {
-			return ((EReference) eobject).getName();
-		}
-		return null;
 	}
 
 }

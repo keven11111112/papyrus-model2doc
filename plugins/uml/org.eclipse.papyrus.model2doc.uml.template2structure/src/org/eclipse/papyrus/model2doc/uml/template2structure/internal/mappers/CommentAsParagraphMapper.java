@@ -20,20 +20,14 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Paragraph;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Title;
 import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.IMappingService;
-import org.eclipse.papyrus.model2doc.uml.template2structure.Activator;
-import org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.CommentAsParagraph;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.CommentAsParagraph;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * This class does the mapping between {@link CommentAsParagraph} and {@link Paragraph}
@@ -68,17 +62,16 @@ public class CommentAsParagraphMapper extends AbstractUMLTemplateToStructureMapp
 		}
 		final List<T> returnedValue = new ArrayList<>();
 
-
-		final Iterator<EObject> commentIter = commentAsParagraph.getMatchingComments(semanticModelElement).iterator();
+		final Iterator<Comment> commentIter = commentAsParagraph.getMatchingComments(semanticModelElement).iterator();
 		Title title = null;
 		if (commentIter.hasNext() && commentAsParagraph.isGenerateTitle()) {
 			title = STRUCTURE_EFACTORY.createTitle();
-			title.setTitle(getSectionTitle(commentAsParagraph, UMLPackage.eINSTANCE.getElement_OwnedComment()));
+			title.setTitle(commentAsParagraph.buildTitle());
 			returnedValue.add(returnedClassType.cast(title));
 		}
 		while (commentIter.hasNext()) {
 			final Paragraph paragraph = STRUCTURE_EFACTORY.createParagraph();
-			paragraph.setText(((Comment) commentIter.next()).getBody());
+			paragraph.setText(commentIter.next().getBody());
 			if (null == title) {
 				returnedValue.add(returnedClassType.cast(paragraph));
 			} else {
@@ -88,31 +81,4 @@ public class CommentAsParagraphMapper extends AbstractUMLTemplateToStructureMapp
 		return returnedValue;
 	}
 
-
-	// TODO : shoud be added as method inside CommentAsParagraph
-	protected String getSectionTitle(final CommentAsParagraph partTemplate, EObject context) {// TODO in an upper class
-		if (partTemplate.isGenerateTitle()) {
-			final String customTitle = partTemplate.getCustomTitle();
-			return (null == customTitle || customTitle.isEmpty()) ? getLabel(context) : customTitle;
-
-		}
-
-		return null;
-	}
-
-	// TODO : the label provider must be foudn using EMF Adapter
-	// TODO : the label provider must be a parameter of the mapping method, to allow Papyrus internationalization
-	protected String getLabel(final EObject eobject) { // TODO : factorize me
-		final EClass eclass = eobject.eClass();
-		final EStructuralFeature feature = eclass.getEStructuralFeature("name"); //$NON-NLS-1$
-		if (feature instanceof EAttribute) {
-			final Object result = eobject.eGet(feature);
-			if (result instanceof String) {
-				return (String) result;
-			}
-		}
-		Activator.log.warn(NLS.bind("No label found for {0}", eobject)); //$NON-NLS-1$
-		return "No Label"; //$NON-NLS-1$
-
-	}
 }
