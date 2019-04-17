@@ -15,12 +15,26 @@ package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.*;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.Body;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentPart;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplatePrototype;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceListView;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodyPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedBodyPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedSubBodyPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafBodyPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafSubBodyPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubBodyPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITemplatePartView;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TableOfContents;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentTemplate;
 
 /**
  * <!-- begin-user-doc -->

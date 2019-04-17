@@ -87,7 +87,7 @@ public class GenerateDocumentStructureCommand extends RecordingCommand {
 		ResourceSet resourceSet = templateResource.getResourceSet();
 
 		URI documentStructureURI = null;
-		final IDocumentStructureGeneratorConfiguration configuration = this.documentTemplate.getDocumentStructureGenerator();// TODO : rename me into configuration
+		final IDocumentStructureGeneratorConfiguration configuration = this.documentTemplate.getDocumentStructureGeneratorConfiguration();
 		if (null != configuration) {
 			final String ecoreURI = GeneratorConfigurationOperations.getDocumentStructureFileEcoreURI(configuration, DocumentStructureResource.FILE_EXTENSION);
 			documentStructureURI = URI.createURI(ecoreURI);

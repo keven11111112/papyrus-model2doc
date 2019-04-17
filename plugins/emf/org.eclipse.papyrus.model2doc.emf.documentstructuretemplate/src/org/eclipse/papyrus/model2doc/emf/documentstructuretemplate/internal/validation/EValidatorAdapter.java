@@ -16,7 +16,7 @@
  */
 
 
-package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.validation;
+package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.validation;
 
 import java.util.Map;
 

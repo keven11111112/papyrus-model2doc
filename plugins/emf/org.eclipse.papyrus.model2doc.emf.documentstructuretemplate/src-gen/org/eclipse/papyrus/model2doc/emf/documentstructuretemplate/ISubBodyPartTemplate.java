@@ -13,6 +13,7 @@
  */
 package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate;
 
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>ISub Body Part Template</b></em>'.

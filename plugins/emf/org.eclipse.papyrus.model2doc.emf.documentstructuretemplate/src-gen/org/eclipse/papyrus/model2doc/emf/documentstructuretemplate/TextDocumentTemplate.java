@@ -25,7 +25,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentTemplate#getMainTitle <em>Main Title</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentTemplate#getDocumentPart <em>Document Part</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentTemplate#getDocumentParts <em>Document Part</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getTextDocumentTemplate()
@@ -67,7 +67,7 @@ public interface TextDocumentTemplate extends DocumentTemplate {
 	 * The list contents are of type {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentPart}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Document Part</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Document Parts</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -77,6 +77,6 @@ public interface TextDocumentTemplate extends DocumentTemplate {
 	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<DocumentPart> getDocumentPart();
+	EList<DocumentPart> getDocumentParts();
 
 } // TextDocumentTemplate

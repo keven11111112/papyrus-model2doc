@@ -106,4 +106,13 @@ public interface EClassPartTemplate extends IComposedSubBodyPartTemplate {
 	 */
 	boolean isMatchingFilterRule(EObject inputEObject);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @model required="true" ordered="false" titleContextRequired="true" titleContextOrdered="false"
+	 * @generated
+	 */
+	String buildTitle(EObject titleContext);
+
 } // EClassPartTemplate

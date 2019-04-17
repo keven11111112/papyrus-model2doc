@@ -12,9 +12,12 @@
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
-package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl;
+package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.impl;
 
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplateFactoryImpl;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassPartTemplateImpl;
 
 public class CustomDocumentStructureTemplateFactoryImpl extends DocumentStructureTemplateFactoryImpl {
 
@@ -45,4 +48,13 @@ public class CustomDocumentStructureTemplateFactoryImpl extends DocumentStructur
 		return new CustomEClassPartTemplateImpl();
 	}
 
+	/**
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplateFactoryImpl#createEReferencePartTemplate()
+	 *
+	 * @return
+	 */
+	@Override
+	public EReferencePartTemplate createEReferencePartTemplate() {
+		return new CustomEReferencePartTemplateImpl();
+	}
 }

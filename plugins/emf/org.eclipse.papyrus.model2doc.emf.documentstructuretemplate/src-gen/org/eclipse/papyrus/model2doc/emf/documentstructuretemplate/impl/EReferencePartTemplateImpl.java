@@ -13,6 +13,8 @@
  */
 package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl;
 
+import java.lang.reflect.InvocationTargetException;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -21,6 +23,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -45,7 +48,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubBodyPartT
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferencePartTemplateImpl#isGenerate <em>Generate</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferencePartTemplateImpl#isGenerateTitle <em>Generate Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferencePartTemplateImpl#getCustomTitle <em>Custom Title</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferencePartTemplateImpl#getSubBodyPartTemplate <em>Sub Body Part Template</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferencePartTemplateImpl#getSubBodyPartTemplates <em>Sub Body Part Template</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferencePartTemplateImpl#getEReference <em>EReference</em>}</li>
  * </ul>
  *
@@ -119,15 +122,15 @@ public class EReferencePartTemplateImpl extends MinimalEObjectImpl.Container imp
 	protected String customTitle = CUSTOM_TITLE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getSubBodyPartTemplate() <em>Sub Body Part Template</em>}' containment reference list.
+	 * The cached value of the '{@link #getSubBodyPartTemplates() <em>Sub Body Part Template</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see #getSubBodyPartTemplate()
+	 * @see #getSubBodyPartTemplates()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ISubBodyPartTemplate> subBodyPartTemplate;
+	protected EList<ISubBodyPartTemplate> subBodyPartTemplates;
 
 	/**
 	 * The cached value of the '{@link #getEReference() <em>EReference</em>}' reference.
@@ -246,11 +249,11 @@ public class EReferencePartTemplateImpl extends MinimalEObjectImpl.Container imp
 	 * @generated
 	 */
 	@Override
-	public EList<ISubBodyPartTemplate> getSubBodyPartTemplate() {
-		if (subBodyPartTemplate == null) {
-			subBodyPartTemplate = new EObjectContainmentEList<>(ISubBodyPartTemplate.class, this, DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE);
+	public EList<ISubBodyPartTemplate> getSubBodyPartTemplates() {
+		if (subBodyPartTemplates == null) {
+			subBodyPartTemplates = new EObjectContainmentEList<>(ISubBodyPartTemplate.class, this, DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE);
 		}
-		return subBodyPartTemplate;
+		return subBodyPartTemplates;
 	}
 
 	/**
@@ -305,10 +308,36 @@ public class EReferencePartTemplateImpl extends MinimalEObjectImpl.Container imp
 	 * @generated
 	 */
 	@Override
+	public String buildTitle() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EList<EObject> getMatchingReferencedEObjects(EObject context) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
-			return ((InternalEList<?>) getSubBodyPartTemplate()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getSubBodyPartTemplates()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -329,7 +358,7 @@ public class EReferencePartTemplateImpl extends MinimalEObjectImpl.Container imp
 		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__CUSTOM_TITLE:
 			return getCustomTitle();
 		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
-			return getSubBodyPartTemplate();
+			return getSubBodyPartTemplates();
 		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__EREFERENCE:
 			if (resolve) {
 				return getEReference();
@@ -359,8 +388,8 @@ public class EReferencePartTemplateImpl extends MinimalEObjectImpl.Container imp
 			setCustomTitle((String) newValue);
 			return;
 		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
-			getSubBodyPartTemplate().clear();
-			getSubBodyPartTemplate().addAll((Collection<? extends ISubBodyPartTemplate>) newValue);
+			getSubBodyPartTemplates().clear();
+			getSubBodyPartTemplates().addAll((Collection<? extends ISubBodyPartTemplate>) newValue);
 			return;
 		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__EREFERENCE:
 			setEReference((EReference) newValue);
@@ -388,7 +417,7 @@ public class EReferencePartTemplateImpl extends MinimalEObjectImpl.Container imp
 			setCustomTitle(CUSTOM_TITLE_EDEFAULT);
 			return;
 		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
-			getSubBodyPartTemplate().clear();
+			getSubBodyPartTemplates().clear();
 			return;
 		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__EREFERENCE:
 			setEReference((EReference) null);
@@ -413,11 +442,28 @@ public class EReferencePartTemplateImpl extends MinimalEObjectImpl.Container imp
 		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__CUSTOM_TITLE:
 			return CUSTOM_TITLE_EDEFAULT == null ? customTitle != null : !CUSTOM_TITLE_EDEFAULT.equals(customTitle);
 		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
-			return subBodyPartTemplate != null && !subBodyPartTemplate.isEmpty();
+			return subBodyPartTemplates != null && !subBodyPartTemplates.isEmpty();
 		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__EREFERENCE:
 			return eReference != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE___BUILD_TITLE:
+			return buildTitle();
+		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE___GET_MATCHING_REFERENCED_EOBJECTS__EOBJECT:
+			return getMatchingReferencedEObjects((EObject) arguments.get(0));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

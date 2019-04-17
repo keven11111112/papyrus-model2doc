@@ -13,6 +13,9 @@
  */
 package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate;
 
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 
 /**
@@ -63,5 +66,26 @@ public interface EReferencePartTemplate extends IComposedBodyPartTemplate {
 	 * @generated
 	 */
 	void setEReference(EReference value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	String buildTitle();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This method returns the matching elements referenced by the EReference for the EObject in argument.
+	 * <!-- end-model-doc -->
+	 *
+	 * @model ordered="false" contextRequired="true" contextOrdered="false"
+	 * @generated
+	 */
+	EList<EObject> getMatchingReferencedEObjects(EObject context);
 
 } // EReferencePartTemplate

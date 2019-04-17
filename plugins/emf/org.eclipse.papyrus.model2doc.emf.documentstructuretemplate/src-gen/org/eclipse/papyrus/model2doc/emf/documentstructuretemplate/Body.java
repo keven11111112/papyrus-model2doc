@@ -30,7 +30,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.Body#getBodyPartTemplate <em>Body Part Template</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.Body#getBodyPartTemplates <em>Body Part Template</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getBody()
@@ -53,6 +53,6 @@ public interface Body extends DocumentPart {
 	 * @model containment="true" required="true" ordered="false"
 	 * @generated
 	 */
-	EList<IBodyPartTemplate> getBodyPartTemplate();
+	EList<IBodyPartTemplate> getBodyPartTemplates();
 
 } // Body

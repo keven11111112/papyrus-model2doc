@@ -196,7 +196,7 @@ public final class Template2StructureRegistry {
 	 */
 	public ITemplate2StructureGenerator getGenerator(final DocumentTemplate docTemplate) {
 		Assert.isNotNull(docTemplate);
-		final IDocumentStructureGeneratorConfiguration conf = docTemplate.getDocumentStructureGenerator();
+		final IDocumentStructureGeneratorConfiguration conf = docTemplate.getDocumentStructureGeneratorConfiguration();
 		if (null != conf) {
 			return getGenerator(conf.getStructureGeneratorId());
 		}
@@ -211,7 +211,7 @@ public final class Template2StructureRegistry {
 	 * 		the mappers registered for the generator declared in the document template
 	 */
 	public List<AbstractTemplateToStructureMapper<?>> getMappers(final DocumentTemplate docTemplate) {
-		final String structureGeneratorId = docTemplate.getDocumentStructureGenerator().getStructureGeneratorId();
+		final String structureGeneratorId = docTemplate.getDocumentStructureGeneratorConfiguration().getStructureGeneratorId();
 		if (null == structureGeneratorId || structureGeneratorId.isEmpty()) {
 			Activator.log.warn(NLS.bind("The document structure generator id is not defined for {0}", docTemplate.toString())); //$NON-NLS-1$
 			return Collections.emptyList();

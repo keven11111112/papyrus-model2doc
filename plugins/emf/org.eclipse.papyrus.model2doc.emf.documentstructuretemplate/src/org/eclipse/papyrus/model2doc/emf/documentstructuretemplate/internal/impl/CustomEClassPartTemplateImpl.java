@@ -12,12 +12,22 @@
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
-package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl;
+package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.impl;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassPartTemplateImpl;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.operations.BodySectionPartTemplateTitleHelper;
 
-
+/**
+ * Custom implementation for {@link EClassPartTemplate}
+ */
 public class CustomEClassPartTemplateImpl extends EClassPartTemplateImpl {
+
+	/**
+	 * unique title helper for all instance of {@link EClassPartTemplate}
+	 */
+	private static final BodySectionPartTemplateTitleHelper TITLE_HELPER = new BodySectionPartTemplateTitleHelper();
 
 	/**
 	 *
@@ -39,5 +49,16 @@ public class CustomEClassPartTemplateImpl extends EClassPartTemplateImpl {
 		default:
 			return false;
 		}
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassPartTemplateImpl#buildPartTitle(org.eclipse.emf.ecore.EObject)
+	 *
+	 * @param titleContext
+	 * @return
+	 */
+	@Override
+	public String buildTitle(final EObject titleContext) {
+		return TITLE_HELPER.buildTitle(this, titleContext);
 	}
 }

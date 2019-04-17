@@ -44,7 +44,7 @@
         <details key="documentation" value="This field will allow a better integration with the Papyrus Architecture Framework.&#xD;&#xA;The value will be something like &quot;org.eclipse.papyrus.uml.genericdocumenttemplate&quot;.&#xD;&#xA;This field will be used to find the ViewPrototype of an instance of DocumentTemplate.&#xD;&#xA;This field is useless for usage outside of Papyrus, but we set its multiplicity to [1] to avoid possible mistake in Papyrus usages."/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="documentStructureGenerator"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="documentStructureGeneratorConfiguration"
         ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.papyrus.model2doc.core.generatorconfiguration/model/generatorconfiguration.ecore#//IDocumentStructureGeneratorConfiguration"
         containment="true"/>
   </eClassifiers>
@@ -154,6 +154,9 @@
       </eAnnotations>
       <eParameters name="inputEObject" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
     </eOperations>
+    <eOperations name="buildTitle" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eParameters name="titleContext" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eClass" ordered="false"
         eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -171,6 +174,14 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This part reference an EReference of the parent EClassPartTemplate."/>
     </eAnnotations>
+    <eOperations name="buildTitle" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations name="getMatchingReferencedEObjects" ordered="false" upperBound="-1"
+        eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This method returns the matching elements referenced by the EReference for the EObject in argument. "/>
+      </eAnnotations>
+      <eParameters name="context" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eReference" ordered="false"
         lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EReference">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

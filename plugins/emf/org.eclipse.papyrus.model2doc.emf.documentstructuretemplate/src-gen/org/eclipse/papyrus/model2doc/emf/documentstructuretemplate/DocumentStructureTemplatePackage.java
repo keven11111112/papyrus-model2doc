@@ -147,14 +147,14 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int DOCUMENT_TEMPLATE__KIND_ID = 5;
 
 	/**
-	 * The feature id for the '<em><b>Document Structure Generator</b></em>' containment reference.
+	 * The feature id for the '<em><b>Document Structure Generator Configuration</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR = 6;
+	int DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION = 6;
 
 	/**
 	 * The number of structural features of the '<em>Document Template</em>' class.
@@ -339,14 +339,14 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int TEXT_DOCUMENT_TEMPLATE__KIND_ID = DOCUMENT_TEMPLATE__KIND_ID;
 
 	/**
-	 * The feature id for the '<em><b>Document Structure Generator</b></em>' containment reference.
+	 * The feature id for the '<em><b>Document Structure Generator Configuration</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR = DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR;
+	int TEXT_DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION = DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION;
 
 	/**
 	 * The feature id for the '<em><b>Main Title</b></em>' attribute.
@@ -1060,6 +1060,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int ECLASS_PART_TEMPLATE___IS_MATCHING_FILTER_RULE__EOBJECT = ICOMPOSED_SUB_BODY_PART_TEMPLATE_OPERATION_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Build Title</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ECLASS_PART_TEMPLATE___BUILD_TITLE__EOBJECT = ICOMPOSED_SUB_BODY_PART_TEMPLATE_OPERATION_COUNT + 1;
+
+	/**
 	 * The number of operations of the '<em>EClass Part Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1067,7 +1077,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECLASS_PART_TEMPLATE_OPERATION_COUNT = ICOMPOSED_SUB_BODY_PART_TEMPLATE_OPERATION_COUNT + 1;
+	int ECLASS_PART_TEMPLATE_OPERATION_COUNT = ICOMPOSED_SUB_BODY_PART_TEMPLATE_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferencePartTemplateImpl <em>EReference Part Template</em>}' class.
@@ -1141,6 +1151,26 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int EREFERENCE_PART_TEMPLATE_FEATURE_COUNT = ICOMPOSED_BODY_PART_TEMPLATE_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Build Title</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_PART_TEMPLATE___BUILD_TITLE = ICOMPOSED_BODY_PART_TEMPLATE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Matching Referenced EObjects</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_PART_TEMPLATE___GET_MATCHING_REFERENCED_EOBJECTS__EOBJECT = ICOMPOSED_BODY_PART_TEMPLATE_OPERATION_COUNT + 1;
+
+	/**
 	 * The number of operations of the '<em>EReference Part Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1148,7 +1178,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_PART_TEMPLATE_OPERATION_COUNT = ICOMPOSED_BODY_PART_TEMPLATE_OPERATION_COUNT + 0;
+	int EREFERENCE_PART_TEMPLATE_OPERATION_COUNT = ICOMPOSED_BODY_PART_TEMPLATE_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITemplatePartView <em>ITemplate Part View</em>}' class.
@@ -1251,6 +1281,26 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @ordered
 	 */
 	int EREFERENCE_LIST_VIEW_FEATURE_COUNT = EREFERENCE_PART_TEMPLATE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Build Title</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_LIST_VIEW___BUILD_TITLE = EREFERENCE_PART_TEMPLATE___BUILD_TITLE;
+
+	/**
+	 * The operation id for the '<em>Get Matching Referenced EObjects</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_LIST_VIEW___GET_MATCHING_REFERENCED_EOBJECTS__EOBJECT = EREFERENCE_PART_TEMPLATE___GET_MATCHING_REFERENCED_EOBJECTS__EOBJECT;
 
 	/**
 	 * The number of operations of the '<em>EReference List View</em>' class.
@@ -1358,16 +1408,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	EAttribute getDocumentTemplate_KindId();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getDocumentStructureGenerator <em>Document Structure Generator</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getDocumentStructureGeneratorConfiguration <em>Document Structure Generator Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the meta object for the containment reference '<em>Document Structure Generator</em>'.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getDocumentStructureGenerator()
+	 * @return the meta object for the containment reference '<em>Document Structure Generator Configuration</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getDocumentStructureGeneratorConfiguration()
 	 * @see #getDocumentTemplate()
 	 * @generated
 	 */
-	EReference getDocumentTemplate_DocumentStructureGenerator();
+	EReference getDocumentTemplate_DocumentStructureGeneratorConfiguration();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getType() <em>Get Type</em>}' operation.
@@ -1474,12 +1524,12 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	EAttribute getTextDocumentTemplate_MainTitle();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentTemplate#getDocumentPart <em>Document Part</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentTemplate#getDocumentParts <em>Document Part</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the containment reference list '<em>Document Part</em>'.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentTemplate#getDocumentPart()
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentTemplate#getDocumentParts()
 	 * @see #getTextDocumentTemplate()
 	 * @generated
 	 */
@@ -1531,12 +1581,12 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	EClass getBody();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.Body#getBodyPartTemplate <em>Body Part Template</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.Body#getBodyPartTemplates <em>Body Part Template</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the containment reference list '<em>Body Part Template</em>'.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.Body#getBodyPartTemplate()
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.Body#getBodyPartTemplates()
 	 * @see #getBody()
 	 * @generated
 	 */
@@ -1612,12 +1662,12 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	EClass getIComposedBodyPartTemplate();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedBodyPartTemplate#getSubBodyPartTemplate <em>Sub Body Part Template</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedBodyPartTemplate#getSubBodyPartTemplates <em>Sub Body Part Template</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the containment reference list '<em>Sub Body Part Template</em>'.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedBodyPartTemplate#getSubBodyPartTemplate()
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedBodyPartTemplate#getSubBodyPartTemplates()
 	 * @see #getIComposedBodyPartTemplate()
 	 * @generated
 	 */
@@ -1657,12 +1707,12 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	EClass getIComposedSubBodyPartTemplate();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedSubBodyPartTemplate#getBodyPartTemplate <em>Body Part Template</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedSubBodyPartTemplate#getBodyPartTemplates <em>Body Part Template</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the containment reference list '<em>Body Part Template</em>'.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedSubBodyPartTemplate#getBodyPartTemplate()
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedSubBodyPartTemplate#getBodyPartTemplates()
 	 * @see #getIComposedSubBodyPartTemplate()
 	 * @generated
 	 */
@@ -1726,6 +1776,17 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	EOperation getEClassPartTemplate__IsMatchingFilterRule__EObject();
 
 	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassPartTemplate#buildTitle(org.eclipse.emf.ecore.EObject) <em>Build Title</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the '<em>Build Title</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassPartTemplate#buildTitle(org.eclipse.emf.ecore.EObject)
+	 * @generated
+	 */
+	EOperation getEClassPartTemplate__BuildTitle__EObject();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate <em>EReference Part Template</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1747,6 +1808,28 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEReferencePartTemplate_EReference();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate#buildTitle() <em>Build Title</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the '<em>Build Title</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate#buildTitle()
+	 * @generated
+	 */
+	EOperation getEReferencePartTemplate__BuildTitle();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate#getMatchingReferencedEObjects(org.eclipse.emf.ecore.EObject) <em>Get Matching Referenced EObjects</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the '<em>Get Matching Referenced EObjects</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate#getMatchingReferencedEObjects(org.eclipse.emf.ecore.EObject)
+	 * @generated
+	 */
+	EOperation getEReferencePartTemplate__GetMatchingReferencedEObjects__EObject();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITemplatePartView <em>ITemplate Part View</em>}'.
@@ -1872,13 +1955,13 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 		EAttribute DOCUMENT_TEMPLATE__KIND_ID = eINSTANCE.getDocumentTemplate_KindId();
 
 		/**
-		 * The meta object literal for the '<em><b>Document Structure Generator</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Document Structure Generator Configuration</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
 		 * @generated
 		 */
-		EReference DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR = eINSTANCE.getDocumentTemplate_DocumentStructureGenerator();
+		EReference DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION = eINSTANCE.getDocumentTemplate_DocumentStructureGeneratorConfiguration();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Type</b></em>' operation.
@@ -2186,6 +2269,15 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 		EOperation ECLASS_PART_TEMPLATE___IS_MATCHING_FILTER_RULE__EOBJECT = eINSTANCE.getEClassPartTemplate__IsMatchingFilterRule__EObject();
 
 		/**
+		 * The meta object literal for the '<em><b>Build Title</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EOperation ECLASS_PART_TEMPLATE___BUILD_TITLE__EOBJECT = eINSTANCE.getEClassPartTemplate__BuildTitle__EObject();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferencePartTemplateImpl <em>EReference Part Template</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2204,6 +2296,24 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 		 * @generated
 		 */
 		EReference EREFERENCE_PART_TEMPLATE__EREFERENCE = eINSTANCE.getEReferencePartTemplate_EReference();
+
+		/**
+		 * The meta object literal for the '<em><b>Build Title</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EOperation EREFERENCE_PART_TEMPLATE___BUILD_TITLE = eINSTANCE.getEReferencePartTemplate__BuildTitle();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Matching Referenced EObjects</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EOperation EREFERENCE_PART_TEMPLATE___GET_MATCHING_REFERENCED_EOBJECTS__EOBJECT = eINSTANCE.getEReferencePartTemplate__GetMatchingReferencedEObjects__EObject();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITemplatePartView <em>ITemplate Part View</em>}' class.

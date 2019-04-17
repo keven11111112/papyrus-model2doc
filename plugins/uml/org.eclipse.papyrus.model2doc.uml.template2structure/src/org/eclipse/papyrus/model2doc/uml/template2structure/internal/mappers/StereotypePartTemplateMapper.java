@@ -76,7 +76,7 @@ public class StereotypePartTemplateMapper extends AbstractUMLTemplateToStructure
 
 		final EObject stereotypeApplication = stereotypePartTemplate.getFirstMatchingStereotypeApplication(semanticModelElement);
 
-		final Iterator<IBodyPartTemplate> bodyPart = stereotypePartTemplate.getBodyPartTemplate().iterator();
+		final Iterator<IBodyPartTemplate> bodyPart = stereotypePartTemplate.getBodyPartTemplates().iterator();
 		while (bodyPart.hasNext()) {
 			final IBodyPartTemplate currentFeature = bodyPart.next();
 			final Collection<BodyPart> result;

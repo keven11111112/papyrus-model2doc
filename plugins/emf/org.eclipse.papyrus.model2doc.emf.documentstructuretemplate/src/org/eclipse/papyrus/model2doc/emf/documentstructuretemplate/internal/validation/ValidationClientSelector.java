@@ -11,7 +11,7 @@
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
-package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.validation;
+package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.validation;
 
 import org.eclipse.emf.validation.model.IClientSelector;
 

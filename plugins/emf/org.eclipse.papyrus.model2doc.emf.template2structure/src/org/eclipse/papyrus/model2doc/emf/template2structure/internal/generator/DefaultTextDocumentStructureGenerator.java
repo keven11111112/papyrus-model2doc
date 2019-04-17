@@ -54,7 +54,7 @@ public class DefaultTextDocumentStructureGenerator implements ITemplate2Structur
 	 */
 	@Override
 	public boolean handles(final DocumentTemplate docTemplate) {
-		final IDocumentStructureGeneratorConfiguration conf = docTemplate.getDocumentStructureGenerator();
+		final IDocumentStructureGeneratorConfiguration conf = docTemplate.getDocumentStructureGeneratorConfiguration();
 		if (false == GENERATOR_ID.equals(conf.getStructureGeneratorId())) {
 			return false;
 		}

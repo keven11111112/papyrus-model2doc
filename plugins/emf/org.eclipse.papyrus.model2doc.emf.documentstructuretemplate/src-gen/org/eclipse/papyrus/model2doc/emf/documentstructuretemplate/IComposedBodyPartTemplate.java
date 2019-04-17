@@ -28,7 +28,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedBodyPartTemplate#getSubBodyPartTemplate <em>Sub Body Part Template</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedBodyPartTemplate#getSubBodyPartTemplates <em>Sub Body Part Template</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getIComposedBodyPartTemplate()
@@ -51,6 +51,6 @@ public interface IComposedBodyPartTemplate extends IBodyPartTemplate {
 	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<ISubBodyPartTemplate> getSubBodyPartTemplate();
+	EList<ISubBodyPartTemplate> getSubBodyPartTemplates();
 
 } // IComposedBodyPartTemplate

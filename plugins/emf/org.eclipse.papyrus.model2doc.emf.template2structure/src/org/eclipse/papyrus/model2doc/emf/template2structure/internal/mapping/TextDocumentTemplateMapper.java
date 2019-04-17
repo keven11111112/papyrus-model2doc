@@ -57,12 +57,12 @@ public class TextDocumentTemplateMapper extends AbstractEMFTemplateToStructureMa
 	protected <T> List<T> doMap(final IMappingService mappingService, final TextDocumentTemplate input, final EObject modelElement, Class<T> expectedReturnedClass) {
 		final TextDocument txtDocument = DocumentStructureFactory.eINSTANCE.createTextDocument();
 		txtDocument.setMainTitle(input.getMainTitle());
-		final IDocumentStructureGeneratorConfiguration structureGeneratorConfig = input.getDocumentStructureGenerator();
+		final IDocumentStructureGeneratorConfiguration structureGeneratorConfig = input.getDocumentStructureGeneratorConfiguration();
 		final IDocumentGeneratorConfiguration docGeneratorConfig = structureGeneratorConfig.createDocumentGeneratorConfiguration();
 		txtDocument.setDocumentGeneratorConfiguration(docGeneratorConfig);
 
 		final EObject semanticContext = input.getSemanticContext();
-		List<DocumentPart> parts = input.getDocumentPart(); // TODO : pluralize getter
+		List<DocumentPart> parts = input.getDocumentParts();
 		final Iterator<DocumentPart> iter = parts.iterator();
 		while (iter.hasNext()) {
 			final DocumentPart current = iter.next();

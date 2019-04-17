@@ -39,22 +39,22 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodyPartTemp
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.BodyImpl#getBodyPartTemplate <em>Body Part Template</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.BodyImpl#getBodyPartTemplates <em>Body Part Template</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class BodyImpl extends MinimalEObjectImpl.Container implements Body {
 	/**
-	 * The cached value of the '{@link #getBodyPartTemplate() <em>Body Part Template</em>}' containment reference list.
+	 * The cached value of the '{@link #getBodyPartTemplates() <em>Body Part Template</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see #getBodyPartTemplate()
+	 * @see #getBodyPartTemplates()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<IBodyPartTemplate> bodyPartTemplate;
+	protected EList<IBodyPartTemplate> bodyPartTemplates;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -84,11 +84,11 @@ public class BodyImpl extends MinimalEObjectImpl.Container implements Body {
 	 * @generated
 	 */
 	@Override
-	public EList<IBodyPartTemplate> getBodyPartTemplate() {
-		if (bodyPartTemplate == null) {
-			bodyPartTemplate = new EObjectContainmentEList<>(IBodyPartTemplate.class, this, DocumentStructureTemplatePackage.BODY__BODY_PART_TEMPLATE);
+	public EList<IBodyPartTemplate> getBodyPartTemplates() {
+		if (bodyPartTemplates == null) {
+			bodyPartTemplates = new EObjectContainmentEList<>(IBodyPartTemplate.class, this, DocumentStructureTemplatePackage.BODY__BODY_PART_TEMPLATE);
 		}
-		return bodyPartTemplate;
+		return bodyPartTemplates;
 	}
 
 	/**
@@ -101,7 +101,7 @@ public class BodyImpl extends MinimalEObjectImpl.Container implements Body {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case DocumentStructureTemplatePackage.BODY__BODY_PART_TEMPLATE:
-			return ((InternalEList<?>) getBodyPartTemplate()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getBodyPartTemplates()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -116,7 +116,7 @@ public class BodyImpl extends MinimalEObjectImpl.Container implements Body {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case DocumentStructureTemplatePackage.BODY__BODY_PART_TEMPLATE:
-			return getBodyPartTemplate();
+			return getBodyPartTemplates();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -132,8 +132,8 @@ public class BodyImpl extends MinimalEObjectImpl.Container implements Body {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case DocumentStructureTemplatePackage.BODY__BODY_PART_TEMPLATE:
-			getBodyPartTemplate().clear();
-			getBodyPartTemplate().addAll((Collection<? extends IBodyPartTemplate>) newValue);
+			getBodyPartTemplates().clear();
+			getBodyPartTemplates().addAll((Collection<? extends IBodyPartTemplate>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -149,7 +149,7 @@ public class BodyImpl extends MinimalEObjectImpl.Container implements Body {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case DocumentStructureTemplatePackage.BODY__BODY_PART_TEMPLATE:
-			getBodyPartTemplate().clear();
+			getBodyPartTemplates().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -165,7 +165,7 @@ public class BodyImpl extends MinimalEObjectImpl.Container implements Body {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case DocumentStructureTemplatePackage.BODY__BODY_PART_TEMPLATE:
-			return bodyPartTemplate != null && !bodyPartTemplate.isEmpty();
+			return bodyPartTemplates != null && !bodyPartTemplates.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

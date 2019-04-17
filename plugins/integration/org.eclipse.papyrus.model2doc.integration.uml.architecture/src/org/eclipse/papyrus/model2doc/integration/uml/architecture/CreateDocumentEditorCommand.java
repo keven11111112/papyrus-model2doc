@@ -119,7 +119,7 @@ public class CreateDocumentEditorCommand implements ICreateDocumentTemplateEdito
 					newInstance.setSemanticContext(semanticContext);
 					newInstance.setName(documentName);
 
-					final IDocumentStructureGeneratorConfiguration generator = newInstance.getDocumentStructureGenerator();
+					final IDocumentStructureGeneratorConfiguration generator = newInstance.getDocumentStructureGeneratorConfiguration();
 					if (null == generator) {
 						// TODO : log warning when we will be in the good plugin
 					}

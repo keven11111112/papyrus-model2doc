@@ -74,7 +74,7 @@ public class StereotypePropertyReferencePartTemplateMapper extends AbstractUMLTe
 		final Iterator<EObject> matchingEObjectIter = matchingElements.iterator();
 		while (matchingEObjectIter.hasNext()) {
 			final EObject currentEObject = matchingEObjectIter.next();
-			final Iterator<ISubBodyPartTemplate> subBodyPartTemplate = stereotypePropertyPartTemplate.getSubBodyPartTemplate().iterator();
+			final Iterator<ISubBodyPartTemplate> subBodyPartTemplate = stereotypePropertyPartTemplate.getSubBodyPartTemplates().iterator();
 			while (subBodyPartTemplate.hasNext()) {
 				final ISubBodyPartTemplate currentObjectPartTemplate = subBodyPartTemplate.next();
 

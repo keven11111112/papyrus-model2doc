@@ -52,7 +52,7 @@ public class BodyMapper extends AbstractEMFTemplateToStructureMapper<Body> {
 	@Override
 	protected <T> List<T> doMap(final IMappingService mappingService, final Body documentStructureElement, final EObject modelElement, Class<T> expectedReturnedClass) {
 		final org.eclipse.papyrus.model2doc.emf.documentstructure.Body body = STRUCTURE_EFACTORY.createBody();
-		final Iterator<IBodyPartTemplate> iter = documentStructureElement.getBodyPartTemplate().iterator();
+		final Iterator<IBodyPartTemplate> iter = documentStructureElement.getBodyPartTemplates().iterator();
 		while (iter.hasNext()) {
 			final IBodyPartTemplate currentBodyPartTemplate = iter.next();
 			final Collection<BodyPart> result = mappingService.map(currentBodyPartTemplate, modelElement, BodyPart.class);

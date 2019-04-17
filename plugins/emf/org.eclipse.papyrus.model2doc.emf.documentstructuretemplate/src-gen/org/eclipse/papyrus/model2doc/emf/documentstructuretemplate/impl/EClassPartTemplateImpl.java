@@ -48,7 +48,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodyPartTemp
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassPartTemplateImpl#isGenerate <em>Generate</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassPartTemplateImpl#isGenerateTitle <em>Generate Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassPartTemplateImpl#getCustomTitle <em>Custom Title</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassPartTemplateImpl#getBodyPartTemplate <em>Body Part Template</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassPartTemplateImpl#getBodyPartTemplates <em>Body Part Template</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassPartTemplateImpl#getEClass <em>EClass</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassPartTemplateImpl#getFilterRule <em>Filter Rule</em>}</li>
  * </ul>
@@ -123,15 +123,15 @@ public class EClassPartTemplateImpl extends MinimalEObjectImpl.Container impleme
 	protected String customTitle = CUSTOM_TITLE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getBodyPartTemplate() <em>Body Part Template</em>}' containment reference list.
+	 * The cached value of the '{@link #getBodyPartTemplates() <em>Body Part Template</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see #getBodyPartTemplate()
+	 * @see #getBodyPartTemplates()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<IBodyPartTemplate> bodyPartTemplate;
+	protected EList<IBodyPartTemplate> bodyPartTemplates;
 
 	/**
 	 * The cached value of the '{@link #getEClass() <em>EClass</em>}' reference.
@@ -272,11 +272,11 @@ public class EClassPartTemplateImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	@Override
-	public EList<IBodyPartTemplate> getBodyPartTemplate() {
-		if (bodyPartTemplate == null) {
-			bodyPartTemplate = new EObjectContainmentEList<>(IBodyPartTemplate.class, this, DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__BODY_PART_TEMPLATE);
+	public EList<IBodyPartTemplate> getBodyPartTemplates() {
+		if (bodyPartTemplates == null) {
+			bodyPartTemplates = new EObjectContainmentEList<>(IBodyPartTemplate.class, this, DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__BODY_PART_TEMPLATE);
 		}
-		return bodyPartTemplate;
+		return bodyPartTemplates;
 	}
 
 	/**
@@ -370,10 +370,23 @@ public class EClassPartTemplateImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	@Override
+	public String buildTitle(EObject titleContext) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__BODY_PART_TEMPLATE:
-			return ((InternalEList<?>) getBodyPartTemplate()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getBodyPartTemplates()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -394,7 +407,7 @@ public class EClassPartTemplateImpl extends MinimalEObjectImpl.Container impleme
 		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__CUSTOM_TITLE:
 			return getCustomTitle();
 		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__BODY_PART_TEMPLATE:
-			return getBodyPartTemplate();
+			return getBodyPartTemplates();
 		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__ECLASS:
 			if (resolve) {
 				return getEClass();
@@ -426,8 +439,8 @@ public class EClassPartTemplateImpl extends MinimalEObjectImpl.Container impleme
 			setCustomTitle((String) newValue);
 			return;
 		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__BODY_PART_TEMPLATE:
-			getBodyPartTemplate().clear();
-			getBodyPartTemplate().addAll((Collection<? extends IBodyPartTemplate>) newValue);
+			getBodyPartTemplates().clear();
+			getBodyPartTemplates().addAll((Collection<? extends IBodyPartTemplate>) newValue);
 			return;
 		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__ECLASS:
 			setEClass((EClass) newValue);
@@ -458,7 +471,7 @@ public class EClassPartTemplateImpl extends MinimalEObjectImpl.Container impleme
 			setCustomTitle(CUSTOM_TITLE_EDEFAULT);
 			return;
 		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__BODY_PART_TEMPLATE:
-			getBodyPartTemplate().clear();
+			getBodyPartTemplates().clear();
 			return;
 		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__ECLASS:
 			setEClass((EClass) null);
@@ -486,7 +499,7 @@ public class EClassPartTemplateImpl extends MinimalEObjectImpl.Container impleme
 		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__CUSTOM_TITLE:
 			return CUSTOM_TITLE_EDEFAULT == null ? customTitle != null : !CUSTOM_TITLE_EDEFAULT.equals(customTitle);
 		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__BODY_PART_TEMPLATE:
-			return bodyPartTemplate != null && !bodyPartTemplate.isEmpty();
+			return bodyPartTemplates != null && !bodyPartTemplates.isEmpty();
 		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__ECLASS:
 			return eClass != null;
 		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__FILTER_RULE:
@@ -506,6 +519,8 @@ public class EClassPartTemplateImpl extends MinimalEObjectImpl.Container impleme
 		switch (operationID) {
 		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE___IS_MATCHING_FILTER_RULE__EOBJECT:
 			return isMatchingFilterRule((EObject) arguments.get(0));
+		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE___BUILD_TITLE__EOBJECT:
+			return buildTitle((EObject) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

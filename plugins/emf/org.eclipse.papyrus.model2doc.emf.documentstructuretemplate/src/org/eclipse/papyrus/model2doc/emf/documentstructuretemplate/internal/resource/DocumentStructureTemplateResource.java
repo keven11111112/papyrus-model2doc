@@ -13,7 +13,7 @@
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
 
-package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.resource;
+package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.resource;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.papyrus.emf.resources.AbstractEMFResourceWithUUID;

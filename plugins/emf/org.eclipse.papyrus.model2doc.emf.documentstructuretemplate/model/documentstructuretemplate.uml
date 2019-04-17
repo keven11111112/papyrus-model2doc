@@ -48,7 +48,7 @@ This field is useless for usage outside of Papyrus, but we set its multiplicity 
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_TBR2gFCGEems8PYEpvQE1w" name="documentStructureGenerator" aggregation="composite" association="_TBJToFCGEems8PYEpvQE1w">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_TBR2gFCGEems8PYEpvQE1w" name="documentStructureGeneratorConfiguration" aggregation="composite" association="_TBJToFCGEems8PYEpvQE1w">
         <type xmi:type="uml:Interface" href="pathmap://GENERATOR_CONFIGURATION/generatorconfiguration.uml#_fUlRoFB6EemNlsOH2YnpzQ"/>
       </ownedAttribute>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_MW0s4EmEEem4wpUXttaNpQ" name="getType">
@@ -225,6 +225,14 @@ Its children are an alternation of two kinds of objects: IBodyPartTemplate and I
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_J4XTIF-NEemxcMQajU1fyA" name="buildTitle">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_J4XTIV-NEemxcMQajU1fyA" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_NkN50F-NEemxcMQajU1fyA" name="titleContext">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_4exaMFYBEemKJasCEBKPhQ" name="EReferencePartTemplate">
       <ownedComment xmi:type="uml:Comment" xmi:id="_fh6pIFYDEemKJasCEBKPhQ" annotatedElement="_4exaMFYBEemKJasCEBKPhQ">
@@ -237,6 +245,24 @@ Its children are an alternation of two kinds of objects: IBodyPartTemplate and I
         <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWjvsX_EduPJbEsMYXjUQ"/>
       </ownedAttribute>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_8zOR8FYBEemKJasCEBKPhQ" client="_4exaMFYBEemKJasCEBKPhQ" supplier="_Pau8cFX-EemKJasCEBKPhQ" contract="_Pau8cFX-EemKJasCEBKPhQ"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_BeWUMF-NEemxcMQajU1fyA" name="buildTitle">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Fx2JsF-NEemxcMQajU1fyA" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_tSmF8GAjEemxcMQajU1fyA" name="getMatchingReferencedEObjects">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_FoyNsGAkEemxcMQajU1fyA" annotatedElement="_tSmF8GAjEemxcMQajU1fyA">
+          <body>This method returns the matching elements referenced by the EReference for the EObject in argument. </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_zkC14GAjEemxcMQajU1fyA" name="context">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_2huH8GAjEemxcMQajU1fyA" name="return" visibility="public" direction="return">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_R7risGAkEemxcMQajU1fyA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_R1R_wGAkEemxcMQajU1fyA" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_DwGdIFYFEemKJasCEBKPhQ" name="ITemplatePartView">
       <ownedComment xmi:type="uml:Comment" xmi:id="_Tsx8QFYFEemKJasCEBKPhQ" annotatedElement="_DwGdIFYFEemKJasCEBKPhQ">

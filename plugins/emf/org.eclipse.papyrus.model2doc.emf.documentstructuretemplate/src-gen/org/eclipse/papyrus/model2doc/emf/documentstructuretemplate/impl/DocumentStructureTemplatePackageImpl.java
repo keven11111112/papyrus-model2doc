@@ -355,7 +355,7 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
-	public EReference getDocumentTemplate_DocumentStructureGenerator() {
+	public EReference getDocumentTemplate_DocumentStructureGeneratorConfiguration() {
 		return (EReference) documentTemplateEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -707,6 +707,17 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
+	public EOperation getEClassPartTemplate__BuildTitle__EObject() {
+		return eClassPartTemplateEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EClass getEReferencePartTemplate() {
 		return eReferencePartTemplateEClass;
 	}
@@ -720,6 +731,28 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	@Override
 	public EReference getEReferencePartTemplate_EReference() {
 		return (EReference) eReferencePartTemplateEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EOperation getEReferencePartTemplate__BuildTitle() {
+		return eReferencePartTemplateEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EOperation getEReferencePartTemplate__GetMatchingReferencedEObjects__EObject() {
+		return eReferencePartTemplateEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -796,7 +829,7 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		createEAttribute(documentTemplateEClass, DOCUMENT_TEMPLATE__NAME);
 		createEAttribute(documentTemplateEClass, DOCUMENT_TEMPLATE__DESCRIPTION);
 		createEAttribute(documentTemplateEClass, DOCUMENT_TEMPLATE__KIND_ID);
-		createEReference(documentTemplateEClass, DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR);
+		createEReference(documentTemplateEClass, DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION);
 		createEOperation(documentTemplateEClass, DOCUMENT_TEMPLATE___GET_TYPE);
 		createEOperation(documentTemplateEClass, DOCUMENT_TEMPLATE___GET_ICON_PATH);
 
@@ -841,9 +874,12 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		createEReference(eClassPartTemplateEClass, ECLASS_PART_TEMPLATE__ECLASS);
 		createEAttribute(eClassPartTemplateEClass, ECLASS_PART_TEMPLATE__FILTER_RULE);
 		createEOperation(eClassPartTemplateEClass, ECLASS_PART_TEMPLATE___IS_MATCHING_FILTER_RULE__EOBJECT);
+		createEOperation(eClassPartTemplateEClass, ECLASS_PART_TEMPLATE___BUILD_TITLE__EOBJECT);
 
 		eReferencePartTemplateEClass = createEClass(EREFERENCE_PART_TEMPLATE);
 		createEReference(eReferencePartTemplateEClass, EREFERENCE_PART_TEMPLATE__EREFERENCE);
+		createEOperation(eReferencePartTemplateEClass, EREFERENCE_PART_TEMPLATE___BUILD_TITLE);
+		createEOperation(eReferencePartTemplateEClass, EREFERENCE_PART_TEMPLATE___GET_MATCHING_REFERENCED_EOBJECTS__EOBJECT);
 
 		iTemplatePartViewEClass = createEClass(ITEMPLATE_PART_VIEW);
 
@@ -914,8 +950,8 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		initEAttribute(getDocumentTemplate_Name(), theEcorePackage.getEString(), "name", null, 1, 1, DocumentTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 		initEAttribute(getDocumentTemplate_Description(), theEcorePackage.getEString(), "description", null, 0, 1, DocumentTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 		initEAttribute(getDocumentTemplate_KindId(), ecorePackage.getEString(), "kindId", null, 1, 1, DocumentTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
-		initEReference(getDocumentTemplate_DocumentStructureGenerator(), theGeneratorConfigurationPackage.getIDocumentStructureGeneratorConfiguration(), null, "documentStructureGenerator", null, 1, 1, DocumentTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, //$NON-NLS-1$
-				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getDocumentTemplate_DocumentStructureGeneratorConfiguration(), theGeneratorConfigurationPackage.getIDocumentStructureGeneratorConfiguration(), null, "documentStructureGeneratorConfiguration", null, 1, 1, DocumentTemplate.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEOperation(getDocumentTemplate__GetType(), ecorePackage.getEString(), "getType", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
@@ -973,9 +1009,17 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		EOperation op = initEOperation(getEClassPartTemplate__IsMatchingFilterRule__EObject(), ecorePackage.getEBoolean(), "isMatchingFilterRule", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 		addEParameter(op, theEcorePackage.getEObject(), "inputEObject", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
+		op = initEOperation(getEClassPartTemplate__BuildTitle__EObject(), ecorePackage.getEString(), "buildTitle", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+		addEParameter(op, theEcorePackage.getEObject(), "titleContext", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
 		initEClass(eReferencePartTemplateEClass, EReferencePartTemplate.class, "EReferencePartTemplate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(getEReferencePartTemplate_EReference(), theEcorePackage.getEReference(), null, "eReference", null, 1, 1, EReferencePartTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, //$NON-NLS-1$
 				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEOperation(getEReferencePartTemplate__BuildTitle(), ecorePackage.getEString(), "buildTitle", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
+		op = initEOperation(getEReferencePartTemplate__GetMatchingReferencedEObjects__EObject(), theEcorePackage.getEObject(), "getMatchingReferencedEObjects", 0, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+		addEParameter(op, theEcorePackage.getEObject(), "context", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(iTemplatePartViewEClass, ITemplatePartView.class, "ITemplatePartView", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 

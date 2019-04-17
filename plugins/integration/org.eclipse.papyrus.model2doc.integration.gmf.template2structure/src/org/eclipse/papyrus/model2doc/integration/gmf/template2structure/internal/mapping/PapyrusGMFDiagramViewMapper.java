@@ -94,7 +94,7 @@ public class PapyrusGMFDiagramViewMapper extends AbstractTemplateToStructureMapp
 					parent = parent.eContainer();
 				}
 			}
-			final IDocumentStructureGeneratorConfiguration conf = t.getDocumentStructureGenerator();
+			final IDocumentStructureGeneratorConfiguration conf = t.getDocumentStructureGeneratorConfiguration();
 
 			String imagePath = GeneratorConfigurationOperations.getImageFileLocalPath(conf, current.getName(), GMFDiagramImageUtils.SVG_EXTENSION);
 			imagePath = imagePath.replaceAll("file:/", ""); //$NON-NLS-1$ //$NON-NLS-2$

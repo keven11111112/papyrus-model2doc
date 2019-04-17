@@ -13,6 +13,7 @@
  */
 package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate;
 
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>IBody Part Template</b></em>'.
@@ -28,5 +29,4 @@ package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate;
  * @generated
  */
 public interface IBodyPartTemplate extends IBodySectionPartTemplate {
-
 } // IBodyPartTemplate

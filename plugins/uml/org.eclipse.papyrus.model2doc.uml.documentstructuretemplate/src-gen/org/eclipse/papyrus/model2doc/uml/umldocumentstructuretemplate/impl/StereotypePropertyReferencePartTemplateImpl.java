@@ -18,21 +18,15 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubBodyPartTemplate;
-
 import org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.StereotypePropertyReferencePartTemplate;
 import org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.UMLDocumentStructureTemplatePackage;
 
@@ -121,11 +115,11 @@ public class StereotypePropertyReferencePartTemplateImpl extends MinimalEObjectI
 	protected String customTitle = CUSTOM_TITLE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getSubBodyPartTemplate() <em>Sub Body Part Template</em>}' containment reference list.
+	 * The cached value of the '{@link #getSubBodyPartTemplates() <em>Sub Body Part Template</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see #getSubBodyPartTemplate()
+	 * @see #getSubBodyPartTemplates()
 	 * @generated
 	 * @ordered
 	 */
@@ -259,7 +253,7 @@ public class StereotypePropertyReferencePartTemplateImpl extends MinimalEObjectI
 	 * @generated
 	 */
 	@Override
-	public EList<ISubBodyPartTemplate> getSubBodyPartTemplate() {
+	public EList<ISubBodyPartTemplate> getSubBodyPartTemplates() {
 		if (subBodyPartTemplate == null) {
 			subBodyPartTemplate = new EObjectContainmentEList<>(ISubBodyPartTemplate.class, this, UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE);
 		}
@@ -315,7 +309,7 @@ public class StereotypePropertyReferencePartTemplateImpl extends MinimalEObjectI
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
-			return ((InternalEList<?>) getSubBodyPartTemplate()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getSubBodyPartTemplates()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -336,7 +330,7 @@ public class StereotypePropertyReferencePartTemplateImpl extends MinimalEObjectI
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__CUSTOM_TITLE:
 			return getCustomTitle();
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
-			return getSubBodyPartTemplate();
+			return getSubBodyPartTemplates();
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__PROPERTY_NAME:
 			return getPropertyName();
 		}
@@ -363,8 +357,8 @@ public class StereotypePropertyReferencePartTemplateImpl extends MinimalEObjectI
 			setCustomTitle((String) newValue);
 			return;
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
-			getSubBodyPartTemplate().clear();
-			getSubBodyPartTemplate().addAll((Collection<? extends ISubBodyPartTemplate>) newValue);
+			getSubBodyPartTemplates().clear();
+			getSubBodyPartTemplates().addAll((Collection<? extends ISubBodyPartTemplate>) newValue);
 			return;
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__PROPERTY_NAME:
 			setPropertyName((String) newValue);
@@ -392,7 +386,7 @@ public class StereotypePropertyReferencePartTemplateImpl extends MinimalEObjectI
 			setCustomTitle(CUSTOM_TITLE_EDEFAULT);
 			return;
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
-			getSubBodyPartTemplate().clear();
+			getSubBodyPartTemplates().clear();
 			return;
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__PROPERTY_NAME:
 			setPropertyName(PROPERTY_NAME_EDEFAULT);
