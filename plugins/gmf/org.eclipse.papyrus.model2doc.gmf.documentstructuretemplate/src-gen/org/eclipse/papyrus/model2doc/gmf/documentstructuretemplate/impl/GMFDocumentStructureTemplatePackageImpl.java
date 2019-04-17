@@ -11,7 +11,7 @@
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
-package org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.impl;
+package org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -27,9 +27,9 @@ import org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfig
 
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 
-import org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.GMFDiagramView;
-import org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.GmfDocumentStructureTemplateFactory;
-import org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.GmfDocumentStructureTemplatePackage;
+import org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDiagramView;
+import org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDocumentStructureTemplateFactory;
+import org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDocumentStructureTemplatePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,7 +38,7 @@ import org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.GmfDocumen
  *
  * @generated
  */
-public class GmfDocumentStructureTemplatePackageImpl extends EPackageImpl implements GmfDocumentStructureTemplatePackage {
+public class GMFDocumentStructureTemplatePackageImpl extends EPackageImpl implements GMFDocumentStructureTemplatePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -68,12 +68,12 @@ public class GmfDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.GmfDocumentStructureTemplatePackage#eNS_URI
+	 * @see org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDocumentStructureTemplatePackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
-	private GmfDocumentStructureTemplatePackageImpl() {
-		super(eNS_URI, GmfDocumentStructureTemplateFactory.eINSTANCE);
+	private GMFDocumentStructureTemplatePackageImpl() {
+		super(eNS_URI, GMFDocumentStructureTemplateFactory.eINSTANCE);
 	}
 
 	/**
@@ -88,7 +88,7 @@ public class GmfDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 *
 	 * <p>
-	 * This method is used to initialize {@link GmfDocumentStructureTemplatePackage#eINSTANCE} when that field is accessed.
+	 * This method is used to initialize {@link GMFDocumentStructureTemplatePackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -98,16 +98,16 @@ public class GmfDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
-	public static GmfDocumentStructureTemplatePackage init() {
+	public static GMFDocumentStructureTemplatePackage init() {
 		if (isInited) {
-			return (GmfDocumentStructureTemplatePackage) EPackage.Registry.INSTANCE.getEPackage(GmfDocumentStructureTemplatePackage.eNS_URI);
+			return (GMFDocumentStructureTemplatePackage) EPackage.Registry.INSTANCE.getEPackage(GMFDocumentStructureTemplatePackage.eNS_URI);
 		}
 
 		// Obtain or create and register package
-		Object registeredGmfDocumentStructureTemplatePackage = EPackage.Registry.INSTANCE.get(eNS_URI);
-		GmfDocumentStructureTemplatePackageImpl theGmfDocumentStructureTemplatePackage = registeredGmfDocumentStructureTemplatePackage instanceof GmfDocumentStructureTemplatePackageImpl
-				? (GmfDocumentStructureTemplatePackageImpl) registeredGmfDocumentStructureTemplatePackage
-				: new GmfDocumentStructureTemplatePackageImpl();
+		Object registeredGMFDocumentStructureTemplatePackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		GMFDocumentStructureTemplatePackageImpl theGMFDocumentStructureTemplatePackage = registeredGMFDocumentStructureTemplatePackage instanceof GMFDocumentStructureTemplatePackageImpl
+				? (GMFDocumentStructureTemplatePackageImpl) registeredGMFDocumentStructureTemplatePackage
+				: new GMFDocumentStructureTemplatePackageImpl();
 
 		isInited = true;
 
@@ -117,17 +117,17 @@ public class GmfDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 		GeneratorConfigurationPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
-		theGmfDocumentStructureTemplatePackage.createPackageContents();
+		theGMFDocumentStructureTemplatePackage.createPackageContents();
 
 		// Initialize created meta-data
-		theGmfDocumentStructureTemplatePackage.initializePackageContents();
+		theGMFDocumentStructureTemplatePackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
-		theGmfDocumentStructureTemplatePackage.freeze();
+		theGMFDocumentStructureTemplatePackage.freeze();
 
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(GmfDocumentStructureTemplatePackage.eNS_URI, theGmfDocumentStructureTemplatePackage);
-		return theGmfDocumentStructureTemplatePackage;
+		EPackage.Registry.INSTANCE.put(GMFDocumentStructureTemplatePackage.eNS_URI, theGMFDocumentStructureTemplatePackage);
+		return theGMFDocumentStructureTemplatePackage;
 	}
 
 	/**
@@ -170,6 +170,17 @@ public class GmfDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 	 * @generated
 	 */
 	@Override
+	public EOperation getGMFDiagramView__BuildTitle__EObject() {
+		return gmfDiagramViewEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EClass getDiagram() {
 		return diagramEClass;
 	}
@@ -181,8 +192,8 @@ public class GmfDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 	 * @generated
 	 */
 	@Override
-	public GmfDocumentStructureTemplateFactory getGmfDocumentStructureTemplateFactory() {
-		return (GmfDocumentStructureTemplateFactory) getEFactoryInstance();
+	public GMFDocumentStructureTemplateFactory getGMFDocumentStructureTemplateFactory() {
+		return (GMFDocumentStructureTemplateFactory) getEFactoryInstance();
 	}
 
 	/**
@@ -211,6 +222,7 @@ public class GmfDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 		gmfDiagramViewEClass = createEClass(GMF_DIAGRAM_VIEW);
 		createEAttribute(gmfDiagramViewEClass, GMF_DIAGRAM_VIEW__DIAGRAM_TYPE);
 		createEOperation(gmfDiagramViewEClass, GMF_DIAGRAM_VIEW___GET_MATCHING_DIAGRAMS__EOBJECT);
+		createEOperation(gmfDiagramViewEClass, GMF_DIAGRAM_VIEW___BUILD_TITLE__EOBJECT);
 
 		diagramEClass = createEClass(DIAGRAM);
 	}
@@ -261,10 +273,33 @@ public class GmfDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 		EOperation op = initEOperation(getGMFDiagramView__GetMatchingDiagrams__EObject(), this.getDiagram(), "getMatchingDiagrams", 0, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 		addEParameter(op, theEcorePackage.getEObject(), "expectedDiagramContext", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
+		op = initEOperation(getGMFDiagramView__BuildTitle__EObject(), ecorePackage.getEString(), "buildTitle", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+		addEParameter(op, theEcorePackage.getEObject(), "diagramContext", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
 		initEClass(diagramEClass, Diagram.class, "Diagram", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/uml2/2.0.0/UML
+		createUMLAnnotations();
 	}
 
-} // GmfDocumentStructureTemplatePackageImpl
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/uml2/2.0.0/UML</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected void createUMLAnnotations() {
+		String source = "http://www.eclipse.org/uml2/2.0.0/UML"; //$NON-NLS-1$
+		addAnnotation(this,
+				source,
+				new String[] {
+						"originalName", "GMFdocumentstructuretemplate" //$NON-NLS-1$ //$NON-NLS-2$
+				});
+	}
+
+} // GMFDocumentStructureTemplatePackageImpl

@@ -11,7 +11,7 @@
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
-package org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate;
+package org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate;
 
 import org.eclipse.emf.ecore.EFactory;
 
@@ -21,10 +21,10 @@ import org.eclipse.emf.ecore.EFactory;
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
  *
- * @see org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.GmfDocumentStructureTemplatePackage
+ * @see org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDocumentStructureTemplatePackage
  * @generated
  */
-public interface GmfDocumentStructureTemplateFactory extends EFactory {
+public interface GMFDocumentStructureTemplateFactory extends EFactory {
 	/**
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
@@ -32,7 +32,7 @@ public interface GmfDocumentStructureTemplateFactory extends EFactory {
 	 *
 	 * @generated
 	 */
-	GmfDocumentStructureTemplateFactory eINSTANCE = org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.impl.GmfDocumentStructureTemplateFactoryImpl.init();
+	GMFDocumentStructureTemplateFactory eINSTANCE = org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.impl.GMFDocumentStructureTemplateFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>GMF Diagram View</em>'.
@@ -52,6 +52,6 @@ public interface GmfDocumentStructureTemplateFactory extends EFactory {
 	 * @return the package supported by this factory.
 	 * @generated
 	 */
-	GmfDocumentStructureTemplatePackage getGmfDocumentStructureTemplatePackage();
+	GMFDocumentStructureTemplatePackage getGMFDocumentStructureTemplatePackage();
 
-} // GmfDocumentStructureTemplateFactory
+} // GMFDocumentStructureTemplateFactory

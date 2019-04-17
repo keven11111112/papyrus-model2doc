@@ -11,28 +11,23 @@
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
-package org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.provider;
+package org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.provider;
 
 import org.eclipse.emf.common.EMFPlugin;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
-
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.provider.GeneratorconfigurationEditPlugin;
-
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.provider.DocumentstructuretemplateEditPlugin;
-
 import org.osgi.framework.BundleActivator;
 
 /**
- * This is the central singleton for the Gmfdocumentstructuretemplate edit plugin.
+ * This is the central singleton for the GMFDocumentStructureTemplateEditPlugin edit plugin.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public final class GmfdocumentstructuretemplateEditPlugin extends EMFPlugin {
+public final class GMFDocumentStructureTemplateEditPlugin extends EMFPlugin {
 	/**
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
@@ -40,7 +35,7 @@ public final class GmfdocumentstructuretemplateEditPlugin extends EMFPlugin {
 	 *
 	 * @generated
 	 */
-	public static final GmfdocumentstructuretemplateEditPlugin INSTANCE = new GmfdocumentstructuretemplateEditPlugin();
+	public static final GMFDocumentStructureTemplateEditPlugin INSTANCE = new GMFDocumentStructureTemplateEditPlugin();
 
 	/**
 	 * Keep track of the singleton.
@@ -58,7 +53,7 @@ public final class GmfdocumentstructuretemplateEditPlugin extends EMFPlugin {
 	 *
 	 * @generated
 	 */
-	public GmfdocumentstructuretemplateEditPlugin() {
+	public GMFDocumentStructureTemplateEditPlugin() {
 		super(new ResourceLocator[] {
 				DocumentstructuretemplateEditPlugin.INSTANCE,
 				EcoreEditPlugin.INSTANCE,

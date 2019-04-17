@@ -11,7 +11,7 @@
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
-package org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.util;
+package org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -25,7 +25,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionP
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafBodyPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITemplatePartView;
 
-import org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.*;
+import org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,10 +38,10 @@ import org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.*;
  * which is the result of the switch.
  * <!-- end-user-doc -->
  *
- * @see org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.GmfDocumentStructureTemplatePackage
+ * @see org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDocumentStructureTemplatePackage
  * @generated
  */
-public class GmfDocumentStructureTemplateSwitch<T> extends Switch<T> {
+public class GMFDocumentStructureTemplateSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -49,7 +49,7 @@ public class GmfDocumentStructureTemplateSwitch<T> extends Switch<T> {
 	 *
 	 * @generated
 	 */
-	protected static GmfDocumentStructureTemplatePackage modelPackage;
+	protected static GMFDocumentStructureTemplatePackage modelPackage;
 
 	/**
 	 * Creates an instance of the switch.
@@ -58,9 +58,9 @@ public class GmfDocumentStructureTemplateSwitch<T> extends Switch<T> {
 	 *
 	 * @generated
 	 */
-	public GmfDocumentStructureTemplateSwitch() {
+	public GMFDocumentStructureTemplateSwitch() {
 		if (modelPackage == null) {
-			modelPackage = GmfDocumentStructureTemplatePackage.eINSTANCE;
+			modelPackage = GMFDocumentStructureTemplatePackage.eINSTANCE;
 		}
 	}
 
@@ -90,7 +90,7 @@ public class GmfDocumentStructureTemplateSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-		case GmfDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW: {
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW: {
 			GMFDiagramView gmfDiagramView = (GMFDiagramView) theEObject;
 			T result = caseGMFDiagramView(gmfDiagramView);
 			if (result == null) {
@@ -110,7 +110,7 @@ public class GmfDocumentStructureTemplateSwitch<T> extends Switch<T> {
 			}
 			return result;
 		}
-		case GmfDocumentStructureTemplatePackage.DIAGRAM: {
+		case GMFDocumentStructureTemplatePackage.DIAGRAM: {
 			Diagram diagram = (Diagram) theEObject;
 			T result = caseDiagram(diagram);
 			if (result == null) {
@@ -243,4 +243,4 @@ public class GmfDocumentStructureTemplateSwitch<T> extends Switch<T> {
 		return null;
 	}
 
-} // GmfDocumentStructureTemplateSwitch
+} // GMFDocumentStructureTemplateSwitch

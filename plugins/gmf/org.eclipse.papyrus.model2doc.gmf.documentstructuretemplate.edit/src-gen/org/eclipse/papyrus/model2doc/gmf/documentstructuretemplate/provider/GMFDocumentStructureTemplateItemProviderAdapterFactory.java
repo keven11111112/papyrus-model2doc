@@ -11,7 +11,7 @@
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
-package org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.provider;
+package org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.provider;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -49,10 +49,10 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedSubB
 
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.util.DocumentStructureTemplateSwitch;
 
-import org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.GmfDocumentStructureTemplateFactory;
-import org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.GmfDocumentStructureTemplatePackage;
+import org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDocumentStructureTemplateFactory;
+import org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDocumentStructureTemplatePackage;
 
-import org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.util.GmfDocumentStructureTemplateAdapterFactory;
+import org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.util.GMFDocumentStructureTemplateAdapterFactory;
 
 /**
  * This is the factory that is used to provide the interfaces needed to support Viewers.
@@ -64,7 +64,7 @@ import org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.util.GmfDo
  *
  * @generated
  */
-public class GmfDocumentStructureTemplateItemProviderAdapterFactory extends GmfDocumentStructureTemplateAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
+public class GMFDocumentStructureTemplateItemProviderAdapterFactory extends GMFDocumentStructureTemplateAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -90,7 +90,7 @@ public class GmfDocumentStructureTemplateItemProviderAdapterFactory extends GmfD
 	 *
 	 * @generated
 	 */
-	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(GmfdocumentstructuretemplateEditPlugin.INSTANCE, GmfDocumentStructureTemplatePackage.eNS_URI);
+	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(GMFDocumentStructureTemplateEditPlugin.INSTANCE, GMFDocumentStructureTemplatePackage.eNS_URI);
 
 	/**
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
@@ -108,7 +108,7 @@ public class GmfDocumentStructureTemplateItemProviderAdapterFactory extends GmfD
 	 *
 	 * @generated
 	 */
-	public GmfDocumentStructureTemplateItemProviderAdapterFactory() {
+	public GMFDocumentStructureTemplateItemProviderAdapterFactory() {
 		supportedTypes.add(IEditingDomainItemProvider.class);
 		supportedTypes.add(IStructuredItemContentProvider.class);
 		supportedTypes.add(ITreeItemContentProvider.class);
@@ -117,7 +117,7 @@ public class GmfDocumentStructureTemplateItemProviderAdapterFactory extends GmfD
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.GMFDiagramView} instances.
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDiagramView} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -126,7 +126,7 @@ public class GmfDocumentStructureTemplateItemProviderAdapterFactory extends GmfD
 	protected GMFDiagramViewItemProvider gmfDiagramViewItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.GMFDiagramView}.
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDiagramView}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -347,7 +347,7 @@ public class GmfDocumentStructureTemplateItemProviderAdapterFactory extends GmfD
 			@Override
 			public Object caseBody(Body object) {
 				newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.BODY__BODY_PART_TEMPLATE,
-						GmfDocumentStructureTemplateFactory.eINSTANCE.createGMFDiagramView()));
+						GMFDocumentStructureTemplateFactory.eINSTANCE.createGMFDiagramView()));
 
 				return null;
 			}
@@ -361,7 +361,7 @@ public class GmfDocumentStructureTemplateItemProviderAdapterFactory extends GmfD
 			@Override
 			public Object caseIComposedSubBodyPartTemplate(IComposedSubBodyPartTemplate object) {
 				newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE,
-						GmfDocumentStructureTemplateFactory.eINSTANCE.createGMFDiagramView()));
+						GMFDocumentStructureTemplateFactory.eINSTANCE.createGMFDiagramView()));
 
 				return null;
 			}
@@ -399,7 +399,7 @@ public class GmfDocumentStructureTemplateItemProviderAdapterFactory extends GmfD
 		 */
 		@Override
 		public ResourceLocator getResourceLocator() {
-			return GmfdocumentstructuretemplateEditPlugin.INSTANCE;
+			return GMFDocumentStructureTemplateEditPlugin.INSTANCE;
 		}
 	}
 

@@ -21,7 +21,7 @@
       <!-- @generated gmfdocumentstructuretemplate -->
       <factory
             uri="http://www.eclipse.org/papyrus/model2doc/gmf/1.0.0/documentstructuretemplate"
-            class="org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.provider.GmfDocumentStructureTemplateItemProviderAdapterFactory"
+            class="org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.provider.GMFDocumentStructureTemplateItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -34,7 +34,6 @@
       <!-- @generated gmfdocumentstructuretemplate -->
       <extender
             uri="http://www.eclipse.org/papyrus/model2doc/emf/1.0.0/documentstructuretemplate"
-            class="org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.provider.GmfDocumentStructureTemplateItemProviderAdapterFactory$DocumentStructureTemplateChildCreationExtender"/>
+            class="org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.provider.GMFDocumentStructureTemplateItemProviderAdapterFactory$DocumentStructureTemplateChildCreationExtender"/>
    </extension>
-
 </plugin>

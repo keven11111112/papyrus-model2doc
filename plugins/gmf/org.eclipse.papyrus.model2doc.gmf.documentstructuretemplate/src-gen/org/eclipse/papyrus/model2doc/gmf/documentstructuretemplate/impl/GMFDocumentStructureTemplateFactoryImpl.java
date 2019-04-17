@@ -11,7 +11,7 @@
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
-package org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.impl;
+package org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.impl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.*;
+import org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +30,7 @@ import org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.*;
  *
  * @generated
  */
-public class GmfDocumentStructureTemplateFactoryImpl extends EFactoryImpl implements GmfDocumentStructureTemplateFactory {
+public class GMFDocumentStructureTemplateFactoryImpl extends EFactoryImpl implements GMFDocumentStructureTemplateFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
@@ -38,16 +38,16 @@ public class GmfDocumentStructureTemplateFactoryImpl extends EFactoryImpl implem
 	 *
 	 * @generated
 	 */
-	public static GmfDocumentStructureTemplateFactory init() {
+	public static GMFDocumentStructureTemplateFactory init() {
 		try {
-			GmfDocumentStructureTemplateFactory theGmfDocumentStructureTemplateFactory = (GmfDocumentStructureTemplateFactory) EPackage.Registry.INSTANCE.getEFactory(GmfDocumentStructureTemplatePackage.eNS_URI);
-			if (theGmfDocumentStructureTemplateFactory != null) {
-				return theGmfDocumentStructureTemplateFactory;
+			GMFDocumentStructureTemplateFactory theGMFDocumentStructureTemplateFactory = (GMFDocumentStructureTemplateFactory) EPackage.Registry.INSTANCE.getEFactory(GMFDocumentStructureTemplatePackage.eNS_URI);
+			if (theGMFDocumentStructureTemplateFactory != null) {
+				return theGMFDocumentStructureTemplateFactory;
 			}
 		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
-		return new GmfDocumentStructureTemplateFactoryImpl();
+		return new GMFDocumentStructureTemplateFactoryImpl();
 	}
 
 	/**
@@ -57,7 +57,7 @@ public class GmfDocumentStructureTemplateFactoryImpl extends EFactoryImpl implem
 	 *
 	 * @generated
 	 */
-	public GmfDocumentStructureTemplateFactoryImpl() {
+	public GMFDocumentStructureTemplateFactoryImpl() {
 		super();
 	}
 
@@ -70,7 +70,7 @@ public class GmfDocumentStructureTemplateFactoryImpl extends EFactoryImpl implem
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case GmfDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW:
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW:
 			return createGMFDiagramView();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
@@ -96,8 +96,8 @@ public class GmfDocumentStructureTemplateFactoryImpl extends EFactoryImpl implem
 	 * @generated
 	 */
 	@Override
-	public GmfDocumentStructureTemplatePackage getGmfDocumentStructureTemplatePackage() {
-		return (GmfDocumentStructureTemplatePackage) getEPackage();
+	public GMFDocumentStructureTemplatePackage getGMFDocumentStructureTemplatePackage() {
+		return (GMFDocumentStructureTemplatePackage) getEPackage();
 	}
 
 	/**
@@ -108,8 +108,8 @@ public class GmfDocumentStructureTemplateFactoryImpl extends EFactoryImpl implem
 	 * @generated
 	 */
 	@Deprecated
-	public static GmfDocumentStructureTemplatePackage getPackage() {
-		return GmfDocumentStructureTemplatePackage.eINSTANCE;
+	public static GMFDocumentStructureTemplatePackage getPackage() {
+		return GMFDocumentStructureTemplatePackage.eINSTANCE;
 	}
 
-} // GmfDocumentStructureTemplateFactoryImpl
+} // GMFDocumentStructureTemplateFactoryImpl

@@ -17,19 +17,19 @@
 
 <plugin>
 
+   <extension
+         point="org.eclipse.emf.ecore.factory_override">
+      <factory
+            class="org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.internal.impl.CustomGMFDocumentStructureTemplateFactoryImpl"
+            uri="http://www.eclipse.org/papyrus/model2doc/gmf/1.0.0/documentstructuretemplate">
+      </factory>
+   </extension>
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated gmfdocumentstructuretemplate -->
       <package
             uri="http://www.eclipse.org/papyrus/model2doc/gmf/1.0.0/documentstructuretemplate"
-            class="org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.GmfDocumentStructureTemplatePackage"
+            class="org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDocumentStructureTemplatePackage"
             genModel="model/gmfdocumentstructuretemplate.genmodel"/>
-   </extension>
-   <extension
-         point="org.eclipse.emf.ecore.factory_override">
-      <factory
-            class="org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.custom.impl.CustomGmfDocumentStructureTemplateFactoryImpl"
-            uri="http://www.eclipse.org/papyrus/model2doc/gmf/1.0.0/documentstructuretemplate">
-      </factory>
    </extension>
    <extension
          point="org.eclipse.emf.ecore.uri_mapping">
@@ -42,11 +42,9 @@
          point="org.eclipse.papyrus.uml.extensionpoints.UMLLibrary">
       <library
             description="GMF Extension for DocumentStructureTemplate"
-            iconpath="icons/GMF_DocumentStructureTemplate.gif"
             name="Papyrus-Model2Doc - DocumentStructureTemplate GMF Extension (Internal)"
             path="pathmap://GMF_DOCUMENT_STRUCTURE_TEMPLATE/gmfdocumentstructuretemplate.uml"
             provider="Eclipse Modeling Project">
       </library>
    </extension>
-
 </plugin>

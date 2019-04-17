@@ -11,7 +11,7 @@
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
-package org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.provider;
+package org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.provider;
 
 
 import java.util.Collection;
@@ -36,11 +36,11 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 
-import org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.GMFDiagramView;
-import org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.GmfDocumentStructureTemplatePackage;
+import org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDiagramView;
+import org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDocumentStructureTemplatePackage;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.GMFDiagramView} object.
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDiagramView} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  *
@@ -160,7 +160,7 @@ public class GMFDiagramViewItemProvider
 				getResourceLocator(),
 				getString("_UI_GMFDiagramView_diagramType_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_GMFDiagramView_diagramType_feature", "_UI_GMFDiagramView_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				GmfDocumentStructureTemplatePackage.Literals.GMF_DIAGRAM_VIEW__DIAGRAM_TYPE,
+				GMFDocumentStructureTemplatePackage.Literals.GMF_DIAGRAM_VIEW__DIAGRAM_TYPE,
 				true,
 				false,
 				false,
@@ -219,10 +219,10 @@ public class GMFDiagramViewItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(GMFDiagramView.class)) {
-		case GmfDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE:
-		case GmfDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_TITLE:
-		case GmfDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__CUSTOM_TITLE:
-		case GmfDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DIAGRAM_TYPE:
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE:
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_TITLE:
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__CUSTOM_TITLE:
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DIAGRAM_TYPE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

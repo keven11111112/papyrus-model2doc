@@ -13,7 +13,7 @@
  *
  *****************************************************************************/
 
-package org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.custom.impl;
+package org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.internal.impl;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -25,8 +25,9 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.gmf.runtime.notation.Diagram;
-import org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.GMFDiagramView;
-import org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.impl.GMFDiagramViewImpl;
+import org.eclipse.osgi.util.NLS;
+import org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDiagramView;
+import org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.impl.GMFDiagramViewImpl;
 
 /**
  * Custom implementation for {@link GMFDiagramView}
@@ -61,5 +62,20 @@ public class CustomGMFDiagramViewImpl extends GMFDiagramViewImpl {
 			}
 		}
 		return ECollections.unmodifiableEList(diagrams);
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.impl.GMFDiagramViewImpl#buildTitle()
+	 *
+	 * @return
+	 */
+	@Override
+	public String buildTitle(final EObject diagramContext) {
+		if (this.diagramType == null || this.diagramType.isEmpty()) {
+			return "All Diagrams"; //$NON-NLS-1$
+		} else {
+			return NLS.bind("All owned {0} diagrams", this.diagramType); //$NON-NLS-1$
+		}
+
 	}
 }

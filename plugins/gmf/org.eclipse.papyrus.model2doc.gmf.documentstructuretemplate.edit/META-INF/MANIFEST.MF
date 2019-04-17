@@ -5,11 +5,11 @@ Bundle-SymbolicName: org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate
 Automatic-Module-Name: org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.edit
 Bundle-Version: 0.7.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.provider.GmfdocumentstructuretemplateEditPlugin$Implementation$Activator
+Bundle-Activator: org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.provider.GMFDocumentStructureTemplateEditPlugin$Implementation$Activator
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.provider
+Export-Package: org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.provider
 Require-Bundle: org.eclipse.osgi;bundle-version="[3.0.0,4.0.0)",
  org.eclipse.core.runtime;bundle-version="[3.15.0,4.0.0)";resolution:=optional;x-installation:=greedy,
  org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate;bundle-version="[0.7.0,1.0.0)",

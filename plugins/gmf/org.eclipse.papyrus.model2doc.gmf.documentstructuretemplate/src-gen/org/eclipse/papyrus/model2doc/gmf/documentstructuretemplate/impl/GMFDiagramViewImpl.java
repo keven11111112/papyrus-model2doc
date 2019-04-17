@@ -11,7 +11,7 @@
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
-package org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.impl;
+package org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.impl;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -32,8 +32,8 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodyPartTemp
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafBodyPartTemplate;
 
-import org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.GMFDiagramView;
-import org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.GmfDocumentStructureTemplatePackage;
+import org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDiagramView;
+import org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDocumentStructureTemplatePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,10 +43,10 @@ import org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.GmfDocumen
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.impl.GMFDiagramViewImpl#isGenerate <em>Generate</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.impl.GMFDiagramViewImpl#isGenerateTitle <em>Generate Title</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.impl.GMFDiagramViewImpl#getCustomTitle <em>Custom Title</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.impl.GMFDiagramViewImpl#getDiagramType <em>Diagram Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.impl.GMFDiagramViewImpl#isGenerate <em>Generate</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.impl.GMFDiagramViewImpl#isGenerateTitle <em>Generate Title</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.impl.GMFDiagramViewImpl#getCustomTitle <em>Custom Title</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.impl.GMFDiagramViewImpl#getDiagramType <em>Diagram Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -158,7 +158,7 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return GmfDocumentStructureTemplatePackage.Literals.GMF_DIAGRAM_VIEW;
+		return GMFDocumentStructureTemplatePackage.Literals.GMF_DIAGRAM_VIEW;
 	}
 
 	/**
@@ -183,7 +183,7 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 		boolean oldGenerate = generate;
 		generate = newGenerate;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, GmfDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE, oldGenerate, generate));
+			eNotify(new ENotificationImpl(this, Notification.SET, GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE, oldGenerate, generate));
 		}
 	}
 
@@ -209,7 +209,7 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 		boolean oldGenerateTitle = generateTitle;
 		generateTitle = newGenerateTitle;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, GmfDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_TITLE, oldGenerateTitle, generateTitle));
+			eNotify(new ENotificationImpl(this, Notification.SET, GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_TITLE, oldGenerateTitle, generateTitle));
 		}
 	}
 
@@ -235,7 +235,7 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 		String oldCustomTitle = customTitle;
 		customTitle = newCustomTitle;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, GmfDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__CUSTOM_TITLE, oldCustomTitle, customTitle));
+			eNotify(new ENotificationImpl(this, Notification.SET, GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__CUSTOM_TITLE, oldCustomTitle, customTitle));
 		}
 	}
 
@@ -261,7 +261,7 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 		String oldDiagramType = diagramType;
 		diagramType = newDiagramType;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, GmfDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DIAGRAM_TYPE, oldDiagramType, diagramType));
+			eNotify(new ENotificationImpl(this, Notification.SET, GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DIAGRAM_TYPE, oldDiagramType, diagramType));
 		}
 	}
 
@@ -285,15 +285,28 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	@Override
+	public String buildTitle(EObject diagramContext) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case GmfDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE:
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE:
 			return isGenerate();
-		case GmfDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_TITLE:
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_TITLE:
 			return isGenerateTitle();
-		case GmfDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__CUSTOM_TITLE:
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__CUSTOM_TITLE:
 			return getCustomTitle();
-		case GmfDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DIAGRAM_TYPE:
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DIAGRAM_TYPE:
 			return getDiagramType();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -308,16 +321,16 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case GmfDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE:
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE:
 			setGenerate((Boolean) newValue);
 			return;
-		case GmfDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_TITLE:
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_TITLE:
 			setGenerateTitle((Boolean) newValue);
 			return;
-		case GmfDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__CUSTOM_TITLE:
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__CUSTOM_TITLE:
 			setCustomTitle((String) newValue);
 			return;
-		case GmfDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DIAGRAM_TYPE:
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DIAGRAM_TYPE:
 			setDiagramType((String) newValue);
 			return;
 		}
@@ -333,16 +346,16 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case GmfDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE:
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE:
 			setGenerate(GENERATE_EDEFAULT);
 			return;
-		case GmfDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_TITLE:
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_TITLE:
 			setGenerateTitle(GENERATE_TITLE_EDEFAULT);
 			return;
-		case GmfDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__CUSTOM_TITLE:
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__CUSTOM_TITLE:
 			setCustomTitle(CUSTOM_TITLE_EDEFAULT);
 			return;
-		case GmfDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DIAGRAM_TYPE:
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DIAGRAM_TYPE:
 			setDiagramType(DIAGRAM_TYPE_EDEFAULT);
 			return;
 		}
@@ -358,13 +371,13 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case GmfDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE:
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE:
 			return generate != GENERATE_EDEFAULT;
-		case GmfDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_TITLE:
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_TITLE:
 			return generateTitle != GENERATE_TITLE_EDEFAULT;
-		case GmfDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__CUSTOM_TITLE:
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__CUSTOM_TITLE:
 			return CUSTOM_TITLE_EDEFAULT == null ? customTitle != null : !CUSTOM_TITLE_EDEFAULT.equals(customTitle);
-		case GmfDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DIAGRAM_TYPE:
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DIAGRAM_TYPE:
 			return DIAGRAM_TYPE_EDEFAULT == null ? diagramType != null : !DIAGRAM_TYPE_EDEFAULT.equals(diagramType);
 		}
 		return super.eIsSet(featureID);
@@ -380,11 +393,11 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == IBodySectionPartTemplate.class) {
 			switch (derivedFeatureID) {
-			case GmfDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE:
+			case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE:
 				return DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE;
-			case GmfDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_TITLE:
+			case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_TITLE:
 				return DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_TITLE;
-			case GmfDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__CUSTOM_TITLE:
+			case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__CUSTOM_TITLE:
 				return DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__CUSTOM_TITLE;
 			default:
 				return -1;
@@ -416,11 +429,11 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 		if (baseClass == IBodySectionPartTemplate.class) {
 			switch (baseFeatureID) {
 			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE:
-				return GmfDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE;
+				return GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE;
 			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_TITLE:
-				return GmfDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_TITLE;
+				return GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_TITLE;
 			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__CUSTOM_TITLE:
-				return GmfDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__CUSTOM_TITLE;
+				return GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__CUSTOM_TITLE;
 			default:
 				return -1;
 			}
@@ -449,8 +462,10 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case GmfDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW___GET_MATCHING_DIAGRAMS__EOBJECT:
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW___GET_MATCHING_DIAGRAMS__EOBJECT:
 			return getMatchingDiagrams((EObject) arguments.get(0));
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW___BUILD_TITLE__EOBJECT:
+			return buildTitle((EObject) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

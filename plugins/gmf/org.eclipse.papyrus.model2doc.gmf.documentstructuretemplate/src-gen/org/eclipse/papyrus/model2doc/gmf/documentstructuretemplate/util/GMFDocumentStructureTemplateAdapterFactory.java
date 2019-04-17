@@ -11,7 +11,7 @@
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
-package org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.util;
+package org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -27,7 +27,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionP
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafBodyPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITemplatePartView;
 
-import org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.*;
+import org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,10 +35,10 @@ import org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.*;
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
  *
- * @see org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.GmfDocumentStructureTemplatePackage
+ * @see org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDocumentStructureTemplatePackage
  * @generated
  */
-public class GmfDocumentStructureTemplateAdapterFactory extends AdapterFactoryImpl {
+public class GMFDocumentStructureTemplateAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
@@ -46,7 +46,7 @@ public class GmfDocumentStructureTemplateAdapterFactory extends AdapterFactoryIm
 	 *
 	 * @generated
 	 */
-	protected static GmfDocumentStructureTemplatePackage modelPackage;
+	protected static GMFDocumentStructureTemplatePackage modelPackage;
 
 	/**
 	 * Creates an instance of the adapter factory.
@@ -55,9 +55,9 @@ public class GmfDocumentStructureTemplateAdapterFactory extends AdapterFactoryIm
 	 *
 	 * @generated
 	 */
-	public GmfDocumentStructureTemplateAdapterFactory() {
+	public GMFDocumentStructureTemplateAdapterFactory() {
 		if (modelPackage == null) {
-			modelPackage = GmfDocumentStructureTemplatePackage.eINSTANCE;
+			modelPackage = GMFDocumentStructureTemplatePackage.eINSTANCE;
 		}
 	}
 
@@ -88,7 +88,7 @@ public class GmfDocumentStructureTemplateAdapterFactory extends AdapterFactoryIm
 	 *
 	 * @generated
 	 */
-	protected GmfDocumentStructureTemplateSwitch<Adapter> modelSwitch = new GmfDocumentStructureTemplateSwitch<Adapter>() {
+	protected GMFDocumentStructureTemplateSwitch<Adapter> modelSwitch = new GMFDocumentStructureTemplateSwitch<Adapter>() {
 		@Override
 		public Adapter caseGMFDiagramView(GMFDiagramView object) {
 			return createGMFDiagramViewAdapter();
@@ -142,14 +142,14 @@ public class GmfDocumentStructureTemplateAdapterFactory extends AdapterFactoryIm
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.GMFDiagramView <em>GMF Diagram View</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDiagramView <em>GMF Diagram View</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.GMFDiagramView
+	 * @see org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDiagramView
 	 * @generated
 	 */
 	public Adapter createGMFDiagramViewAdapter() {
@@ -244,4 +244,4 @@ public class GmfDocumentStructureTemplateAdapterFactory extends AdapterFactoryIm
 		return null;
 	}
 
-} // GmfDocumentStructureTemplateAdapterFactory
+} // GMFDocumentStructureTemplateAdapterFactory

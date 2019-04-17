@@ -11,7 +11,7 @@
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
-package org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate;
+package org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -33,11 +33,12 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStruc
  * </ul>
  * <!-- end-user-doc -->
  *
- * @see org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.GmfDocumentStructureTemplateFactory
+ * @see org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDocumentStructureTemplateFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='GMFdocumentstructuretemplate'"
  * @generated
  */
-public interface GmfDocumentStructureTemplatePackage extends EPackage {
+public interface GMFDocumentStructureTemplatePackage extends EPackage {
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc -->
@@ -45,7 +46,7 @@ public interface GmfDocumentStructureTemplatePackage extends EPackage {
 	 *
 	 * @generated
 	 */
-	String eNAME = "gmfdocumentstructuretemplate"; //$NON-NLS-1$
+	String eNAME = "documentstructuretemplate"; //$NON-NLS-1$
 
 	/**
 	 * The package namespace URI.
@@ -72,15 +73,15 @@ public interface GmfDocumentStructureTemplatePackage extends EPackage {
 	 *
 	 * @generated
 	 */
-	GmfDocumentStructureTemplatePackage eINSTANCE = org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.impl.GmfDocumentStructureTemplatePackageImpl.init();
+	GMFDocumentStructureTemplatePackage eINSTANCE = org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.impl.GMFDocumentStructureTemplatePackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.impl.GMFDiagramViewImpl <em>GMF Diagram View</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.impl.GMFDiagramViewImpl <em>GMF Diagram View</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.impl.GMFDiagramViewImpl
-	 * @see org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.impl.GmfDocumentStructureTemplatePackageImpl#getGMFDiagramView()
+	 * @see org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.impl.GMFDiagramViewImpl
+	 * @see org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.impl.GMFDocumentStructureTemplatePackageImpl#getGMFDiagramView()
 	 * @generated
 	 */
 	int GMF_DIAGRAM_VIEW = 0;
@@ -146,6 +147,16 @@ public interface GmfDocumentStructureTemplatePackage extends EPackage {
 	int GMF_DIAGRAM_VIEW___GET_MATCHING_DIAGRAMS__EOBJECT = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_OPERATION_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Build Title</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int GMF_DIAGRAM_VIEW___BUILD_TITLE__EOBJECT = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_OPERATION_COUNT + 1;
+
+	/**
 	 * The number of operations of the '<em>GMF Diagram View</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -153,7 +164,7 @@ public interface GmfDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GMF_DIAGRAM_VIEW_OPERATION_COUNT = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_OPERATION_COUNT + 1;
+	int GMF_DIAGRAM_VIEW_OPERATION_COUNT = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.gmf.runtime.notation.Diagram <em>Diagram</em>}' class.
@@ -161,7 +172,7 @@ public interface GmfDocumentStructureTemplatePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.gmf.runtime.notation.Diagram
-	 * @see org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.impl.GmfDocumentStructureTemplatePackageImpl#getDiagram()
+	 * @see org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.impl.GMFDocumentStructureTemplatePackageImpl#getDiagram()
 	 * @generated
 	 */
 	int DIAGRAM = 1;
@@ -188,38 +199,49 @@ public interface GmfDocumentStructureTemplatePackage extends EPackage {
 
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.GMFDiagramView <em>GMF Diagram View</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDiagramView <em>GMF Diagram View</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @return the meta object for class '<em>GMF Diagram View</em>'.
-	 * @see org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.GMFDiagramView
+	 * @see org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDiagramView
 	 * @generated
 	 */
 	EClass getGMFDiagramView();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.GMFDiagramView#getDiagramType <em>Diagram Type</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDiagramView#getDiagramType <em>Diagram Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the attribute '<em>Diagram Type</em>'.
-	 * @see org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.GMFDiagramView#getDiagramType()
+	 * @see org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDiagramView#getDiagramType()
 	 * @see #getGMFDiagramView()
 	 * @generated
 	 */
 	EAttribute getGMFDiagramView_DiagramType();
 
 	/**
-	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.GMFDiagramView#getMatchingDiagrams(org.eclipse.emf.ecore.EObject) <em>Get Matching Diagrams</em>}' operation.
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDiagramView#getMatchingDiagrams(org.eclipse.emf.ecore.EObject) <em>Get Matching Diagrams</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the '<em>Get Matching Diagrams</em>' operation.
-	 * @see org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.GMFDiagramView#getMatchingDiagrams(org.eclipse.emf.ecore.EObject)
+	 * @see org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDiagramView#getMatchingDiagrams(org.eclipse.emf.ecore.EObject)
 	 * @generated
 	 */
 	EOperation getGMFDiagramView__GetMatchingDiagrams__EObject();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDiagramView#buildTitle(org.eclipse.emf.ecore.EObject) <em>Build Title</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the '<em>Build Title</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDiagramView#buildTitle(org.eclipse.emf.ecore.EObject)
+	 * @generated
+	 */
+	EOperation getGMFDiagramView__BuildTitle__EObject();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.gmf.runtime.notation.Diagram <em>Diagram</em>}'.
@@ -241,7 +263,7 @@ public interface GmfDocumentStructureTemplatePackage extends EPackage {
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
-	GmfDocumentStructureTemplateFactory getGmfDocumentStructureTemplateFactory();
+	GMFDocumentStructureTemplateFactory getGMFDocumentStructureTemplateFactory();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -259,12 +281,12 @@ public interface GmfDocumentStructureTemplatePackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.impl.GMFDiagramViewImpl <em>GMF Diagram View</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.impl.GMFDiagramViewImpl <em>GMF Diagram View</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
-		 * @see org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.impl.GMFDiagramViewImpl
-		 * @see org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.impl.GmfDocumentStructureTemplatePackageImpl#getGMFDiagramView()
+		 * @see org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.impl.GMFDiagramViewImpl
+		 * @see org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.impl.GMFDocumentStructureTemplatePackageImpl#getGMFDiagramView()
 		 * @generated
 		 */
 		EClass GMF_DIAGRAM_VIEW = eINSTANCE.getGMFDiagramView();
@@ -288,16 +310,25 @@ public interface GmfDocumentStructureTemplatePackage extends EPackage {
 		EOperation GMF_DIAGRAM_VIEW___GET_MATCHING_DIAGRAMS__EOBJECT = eINSTANCE.getGMFDiagramView__GetMatchingDiagrams__EObject();
 
 		/**
+		 * The meta object literal for the '<em><b>Build Title</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EOperation GMF_DIAGRAM_VIEW___BUILD_TITLE__EOBJECT = eINSTANCE.getGMFDiagramView__BuildTitle__EObject();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.gmf.runtime.notation.Diagram <em>Diagram</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.gmf.runtime.notation.Diagram
-		 * @see org.eclipse.papyrus.model2doc.gmf.gmfdocumentstructuretemplate.impl.GmfDocumentStructureTemplatePackageImpl#getDiagram()
+		 * @see org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.impl.GMFDocumentStructureTemplatePackageImpl#getDiagram()
 		 * @generated
 		 */
 		EClass DIAGRAM = eINSTANCE.getDiagram();
 
 	}
 
-} // GmfDocumentStructureTemplatePackage
+} // GMFDocumentStructureTemplatePackage

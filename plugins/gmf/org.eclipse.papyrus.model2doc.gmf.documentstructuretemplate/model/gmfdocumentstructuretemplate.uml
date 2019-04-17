@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
-  <uml:Model xmi:id="_NwKBMFbTEemQV827ZWTfig" name="gmfdocumentstructuretemplate" URI="http://www.eclipse.org/papyrus/model2doc/gmf/1.0.0/documentstructuretemplate">
+  <uml:Model xmi:id="_NwKBMFbTEemQV827ZWTfig" name="GMFdocumentstructuretemplate" URI="http://www.eclipse.org/papyrus/model2doc/gmf/1.0.0/documentstructuretemplate">
     <packageImport xmi:type="uml:PackageImport" xmi:id="_N-wd4FbTEemQV827ZWTfig">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
     </packageImport>
@@ -36,6 +36,17 @@ It type is not defined, the method will returns all diagrams.</body>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Gt8sAFxgEemyeb6zzD570Q" value="*"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_eGvhwGEeEem9xPoBi6pikw" name="buildTitle">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_kH1hgGEeEem9xPoBi6pikw" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_kANFsGGxEemvLdNeGp-kQw" name="diagramContext">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_q08I4GGxEemvLdNeGp-kQw" annotatedElement="_kANFsGGxEemvLdNeGp-kQw">
+            <body>The context of the diagram. This parameter can be null.</body>
+          </ownedComment>
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_qmWI8FwvEemF3-UZXrtb4g" name="Diagram">
       <ownedComment xmi:type="uml:Comment" xmi:id="_hIWvEFwwEemF3-UZXrtb4g" annotatedElement="_qmWI8FwvEemF3-UZXrtb4g">
@@ -49,6 +60,6 @@ It type is not defined, the method will returns all diagrams.</body>
       <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Ecore.profile.uml#_0"/>
     </profileApplication>
   </uml:Model>
-  <Ecore:EPackage xmi:id="_N1ohoFbUEemQV827ZWTfig" base_Package="_NwKBMFbTEemQV827ZWTfig" packageName="gmfdocumentstructuretemplate" nsPrefix="gmfdocumentstructuretemplate" basePackage="org.eclipse.papyrus.model2doc.gmf" prefix="GmfDocumentStructureTemplate"/>
+  <Ecore:EPackage xmi:id="_N1ohoFbUEemQV827ZWTfig" base_Package="_NwKBMFbTEemQV827ZWTfig" packageName="documentstructuretemplate" nsPrefix="gmfdocumentstructuretemplate" basePackage="org.eclipse.papyrus.model2doc.gmf" prefix="GMFDocumentStructureTemplate"/>
   <Ecore:EClass xmi:id="_2EoKIFwvEemF3-UZXrtb4g" instanceClassName="org.eclipse.gmf.runtime.notation.Diagram" base_Interface="_qmWI8FwvEemF3-UZXrtb4g" className="Diagram"/>
 </xmi:XMI>
