@@ -5,7 +5,7 @@ Bundle-SymbolicName: org.eclipse.papyrus.model2doc.emf.documentstructuretemplate
 Automatic-Module-Name: org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.editor
 Bundle-Version: 0.7.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.presentation.DocumentstructuretemplateEditorPlugin$Implementation
+Bundle-Activator: org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.presentation.DocumentStructureTemplateEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

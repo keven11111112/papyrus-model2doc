@@ -27,7 +27,7 @@ import org.eclipse.papyrus.infra.core.architecture.provider.ArchitectureEditPlug
 
 import org.eclipse.papyrus.infra.types.provider.TypesConfigurationsEditPlugin;
 
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.provider.DocumentstructuretemplateEditPlugin;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.provider.DocumentStructureTemplateEditPlugin;
 
 import org.osgi.framework.BundleActivator;
 
@@ -68,7 +68,7 @@ public final class DocumentStructureTemplateRepresentationEditPlugin extends EMF
 		super(new ResourceLocator[] {
 				ArchitectureEditPlugin.INSTANCE,
 				ConstraintsEditPlugin.INSTANCE,
-				DocumentstructuretemplateEditPlugin.INSTANCE,
+				DocumentStructureTemplateEditPlugin.INSTANCE,
 				EcoreEditPlugin.INSTANCE,
 				TypesConfigurationsEditPlugin.INSTANCE,
 				RepresentationEditPlugin.INSTANCE,

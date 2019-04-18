@@ -30,7 +30,7 @@ import org.osgi.framework.BundleActivator;
  *
  * @generated
  */
-public final class DocumentstructuretemplateEditPlugin extends EMFPlugin {
+public final class DocumentStructureTemplateEditPlugin extends EMFPlugin {
 	/**
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
@@ -38,7 +38,7 @@ public final class DocumentstructuretemplateEditPlugin extends EMFPlugin {
 	 *
 	 * @generated
 	 */
-	public static final DocumentstructuretemplateEditPlugin INSTANCE = new DocumentstructuretemplateEditPlugin();
+	public static final DocumentStructureTemplateEditPlugin INSTANCE = new DocumentStructureTemplateEditPlugin();
 
 	/**
 	 * Keep track of the singleton.
@@ -56,7 +56,7 @@ public final class DocumentstructuretemplateEditPlugin extends EMFPlugin {
 	 *
 	 * @generated
 	 */
-	public DocumentstructuretemplateEditPlugin() {
+	public DocumentStructureTemplateEditPlugin() {
 		super(new ResourceLocator[] {
 				EcoreEditPlugin.INSTANCE,
 				GeneratorconfigurationEditPlugin.INSTANCE,

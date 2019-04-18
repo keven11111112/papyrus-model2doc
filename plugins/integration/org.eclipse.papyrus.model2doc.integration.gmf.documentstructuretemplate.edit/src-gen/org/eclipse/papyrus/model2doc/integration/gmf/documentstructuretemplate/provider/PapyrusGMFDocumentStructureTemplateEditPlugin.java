@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.provider.GeneratorconfigurationEditPlugin;
 
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.provider.DocumentstructuretemplateEditPlugin;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.provider.DocumentStructureTemplateEditPlugin;
 
 import org.osgi.framework.BundleActivator;
 
@@ -60,7 +60,7 @@ public final class PapyrusGMFDocumentStructureTemplateEditPlugin extends EMFPlug
 	 */
 	public PapyrusGMFDocumentStructureTemplateEditPlugin() {
 		super(new ResourceLocator[] {
-				DocumentstructuretemplateEditPlugin.INSTANCE,
+				DocumentStructureTemplateEditPlugin.INSTANCE,
 				EcoreEditPlugin.INSTANCE,
 				GeneratorconfigurationEditPlugin.INSTANCE,
 		});

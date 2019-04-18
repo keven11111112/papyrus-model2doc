@@ -85,14 +85,14 @@ public class DocumentStructureTemplateActionBarContributor
 	 *
 	 * @generated
 	 */
-	protected IAction showPropertiesViewAction = new Action(DocumentstructuretemplateEditorPlugin.INSTANCE.getString("_UI_ShowPropertiesView_menu_item")) //$NON-NLS-1$
+	protected IAction showPropertiesViewAction = new Action(DocumentStructureTemplateEditorPlugin.INSTANCE.getString("_UI_ShowPropertiesView_menu_item")) //$NON-NLS-1$
 	{
 		@Override
 		public void run() {
 			try {
 				getPage().showView("org.eclipse.ui.views.PropertySheet"); //$NON-NLS-1$
 			} catch (PartInitException exception) {
-				DocumentstructuretemplateEditorPlugin.INSTANCE.log(exception);
+				DocumentStructureTemplateEditorPlugin.INSTANCE.log(exception);
 			}
 		}
 	};
@@ -105,7 +105,7 @@ public class DocumentStructureTemplateActionBarContributor
 	 *
 	 * @generated
 	 */
-	protected IAction refreshViewerAction = new Action(DocumentstructuretemplateEditorPlugin.INSTANCE.getString("_UI_RefreshViewer_menu_item")) //$NON-NLS-1$
+	protected IAction refreshViewerAction = new Action(DocumentStructureTemplateEditorPlugin.INSTANCE.getString("_UI_RefreshViewer_menu_item")) //$NON-NLS-1$
 	{
 		@Override
 		public boolean isEnabled() {
@@ -201,7 +201,7 @@ public class DocumentStructureTemplateActionBarContributor
 	public void contributeToMenu(IMenuManager menuManager) {
 		super.contributeToMenu(menuManager);
 
-		IMenuManager submenuManager = new MenuManager(DocumentstructuretemplateEditorPlugin.INSTANCE.getString("_UI_DocumentStructureTemplateEditor_menu"), "org.eclipse.papyrus.model2doc.emf.documentstructuretemplateMenuID"); //$NON-NLS-1$ //$NON-NLS-2$
+		IMenuManager submenuManager = new MenuManager(DocumentStructureTemplateEditorPlugin.INSTANCE.getString("_UI_DocumentStructureTemplateEditor_menu"), "org.eclipse.papyrus.model2doc.emf.documentstructuretemplateMenuID"); //$NON-NLS-1$ //$NON-NLS-2$
 		menuManager.insertAfter("additions", submenuManager); //$NON-NLS-1$
 		submenuManager.add(new Separator("settings")); //$NON-NLS-1$
 		submenuManager.add(new Separator("actions")); //$NON-NLS-1$
@@ -210,12 +210,12 @@ public class DocumentStructureTemplateActionBarContributor
 
 		// Prepare for CreateChild item addition or removal.
 		//
-		createChildMenuManager = new MenuManager(DocumentstructuretemplateEditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item")); //$NON-NLS-1$
+		createChildMenuManager = new MenuManager(DocumentStructureTemplateEditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item")); //$NON-NLS-1$
 		submenuManager.insertBefore("additions", createChildMenuManager); //$NON-NLS-1$
 
 		// Prepare for CreateSibling item addition or removal.
 		//
-		createSiblingMenuManager = new MenuManager(DocumentstructuretemplateEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item")); //$NON-NLS-1$
+		createSiblingMenuManager = new MenuManager(DocumentStructureTemplateEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item")); //$NON-NLS-1$
 		submenuManager.insertBefore("additions", createSiblingMenuManager); //$NON-NLS-1$
 
 		// Force an update because Eclipse hides empty menus now.
@@ -412,11 +412,11 @@ public class DocumentStructureTemplateActionBarContributor
 		super.menuAboutToShow(menuManager);
 		MenuManager submenuManager = null;
 
-		submenuManager = new MenuManager(DocumentstructuretemplateEditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item")); //$NON-NLS-1$
+		submenuManager = new MenuManager(DocumentStructureTemplateEditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item")); //$NON-NLS-1$
 		populateManager(submenuManager, createChildActions, null);
 		menuManager.insertBefore("edit", submenuManager); //$NON-NLS-1$
 
-		submenuManager = new MenuManager(DocumentstructuretemplateEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item")); //$NON-NLS-1$
+		submenuManager = new MenuManager(DocumentStructureTemplateEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item")); //$NON-NLS-1$
 		populateManager(submenuManager, createSiblingActions, null);
 		menuManager.insertBefore("edit", submenuManager); //$NON-NLS-1$
 	}

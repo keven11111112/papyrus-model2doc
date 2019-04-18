@@ -14,23 +14,19 @@
 package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.presentation;
 
 import org.eclipse.emf.common.EMFPlugin;
-
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
-
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.provider.GeneratorconfigurationEditPlugin;
 
 /**
- * This is the central singleton for the Documentstructuretemplate editor plugin.
+ * This is the central singleton for the DocumentStructureTemplate editor plugin.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public final class DocumentstructuretemplateEditorPlugin extends EMFPlugin {
+public final class DocumentStructureTemplateEditorPlugin extends EMFPlugin {
 	/**
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
@@ -38,7 +34,7 @@ public final class DocumentstructuretemplateEditorPlugin extends EMFPlugin {
 	 *
 	 * @generated
 	 */
-	public static final DocumentstructuretemplateEditorPlugin INSTANCE = new DocumentstructuretemplateEditorPlugin();
+	public static final DocumentStructureTemplateEditorPlugin INSTANCE = new DocumentStructureTemplateEditorPlugin();
 
 	/**
 	 * Keep track of the singleton.
@@ -56,7 +52,7 @@ public final class DocumentstructuretemplateEditorPlugin extends EMFPlugin {
 	 *
 	 * @generated
 	 */
-	public DocumentstructuretemplateEditorPlugin() {
+	public DocumentStructureTemplateEditorPlugin() {
 		super(new ResourceLocator[] {
 				EcoreEditPlugin.INSTANCE,
 				GeneratorconfigurationEditPlugin.INSTANCE,

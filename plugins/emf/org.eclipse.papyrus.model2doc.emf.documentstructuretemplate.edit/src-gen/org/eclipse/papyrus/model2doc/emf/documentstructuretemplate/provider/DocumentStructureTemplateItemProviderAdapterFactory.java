@@ -79,7 +79,7 @@ public class DocumentStructureTemplateItemProviderAdapterFactory extends Documen
 	 *
 	 * @generated
 	 */
-	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(DocumentstructuretemplateEditPlugin.INSTANCE, DocumentStructureTemplatePackage.eNS_URI);
+	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(DocumentStructureTemplateEditPlugin.INSTANCE, DocumentStructureTemplatePackage.eNS_URI);
 
 	/**
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.

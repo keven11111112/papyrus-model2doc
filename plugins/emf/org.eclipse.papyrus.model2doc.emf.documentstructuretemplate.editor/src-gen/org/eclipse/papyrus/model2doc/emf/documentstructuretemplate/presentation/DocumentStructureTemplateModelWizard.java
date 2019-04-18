@@ -82,7 +82,7 @@ import org.eclipse.ui.part.ISetSelectionTarget;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplateFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.provider.DocumentstructuretemplateEditPlugin;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.provider.DocumentStructureTemplateEditPlugin;
 
 import org.eclipse.core.runtime.Path;
 
@@ -110,7 +110,7 @@ public class DocumentStructureTemplateModelWizard extends Wizard implements INew
 	 *
 	 * @generated
 	 */
-	public static final List<String> FILE_EXTENSIONS = Collections.unmodifiableList(Arrays.asList(DocumentstructuretemplateEditorPlugin.INSTANCE.getString("_UI_DocumentStructureTemplateEditorFilenameExtensions").split("\\s*,\\s*"))); //$NON-NLS-1$ //$NON-NLS-2$
+	public static final List<String> FILE_EXTENSIONS = Collections.unmodifiableList(Arrays.asList(DocumentStructureTemplateEditorPlugin.INSTANCE.getString("_UI_DocumentStructureTemplateEditorFilenameExtensions").split("\\s*,\\s*"))); //$NON-NLS-1$ //$NON-NLS-2$
 
 	/**
 	 * A formatted list of supported file extensions, suitable for display.
@@ -119,7 +119,7 @@ public class DocumentStructureTemplateModelWizard extends Wizard implements INew
 	 *
 	 * @generated
 	 */
-	public static final String FORMATTED_FILE_EXTENSIONS = DocumentstructuretemplateEditorPlugin.INSTANCE.getString("_UI_DocumentStructureTemplateEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", "); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+	public static final String FORMATTED_FILE_EXTENSIONS = DocumentStructureTemplateEditorPlugin.INSTANCE.getString("_UI_DocumentStructureTemplateEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", "); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 
 	/**
 	 * This caches an instance of the model package.
@@ -195,8 +195,8 @@ public class DocumentStructureTemplateModelWizard extends Wizard implements INew
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.workbench = workbench;
 		this.selection = selection;
-		setWindowTitle(DocumentstructuretemplateEditorPlugin.INSTANCE.getString("_UI_Wizard_label")); //$NON-NLS-1$
-		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(DocumentstructuretemplateEditorPlugin.INSTANCE.getImage("full/wizban/NewDocumentStructureTemplate"))); //$NON-NLS-1$
+		setWindowTitle(DocumentStructureTemplateEditorPlugin.INSTANCE.getString("_UI_Wizard_label")); //$NON-NLS-1$
+		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(DocumentStructureTemplateEditorPlugin.INSTANCE.getImage("full/wizban/NewDocumentStructureTemplate"))); //$NON-NLS-1$
 	}
 
 	/**
@@ -280,7 +280,7 @@ public class DocumentStructureTemplateModelWizard extends Wizard implements INew
 						options.put(XMLResource.OPTION_ENCODING, initialObjectCreationPage.getEncoding());
 						resource.save(options);
 					} catch (Exception exception) {
-						DocumentstructuretemplateEditorPlugin.INSTANCE.log(exception);
+						DocumentStructureTemplateEditorPlugin.INSTANCE.log(exception);
 					} finally {
 						progressMonitor.done();
 					}
@@ -310,13 +310,13 @@ public class DocumentStructureTemplateModelWizard extends Wizard implements INew
 				page.openEditor(new FileEditorInput(modelFile),
 						workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());
 			} catch (PartInitException exception) {
-				MessageDialog.openError(workbenchWindow.getShell(), DocumentstructuretemplateEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage()); //$NON-NLS-1$
+				MessageDialog.openError(workbenchWindow.getShell(), DocumentStructureTemplateEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage()); //$NON-NLS-1$
 				return false;
 			}
 
 			return true;
 		} catch (Exception exception) {
-			DocumentstructuretemplateEditorPlugin.INSTANCE.log(exception);
+			DocumentStructureTemplateEditorPlugin.INSTANCE.log(exception);
 			return false;
 		}
 	}
@@ -353,7 +353,7 @@ public class DocumentStructureTemplateModelWizard extends Wizard implements INew
 				String extension = new Path(getFileName()).getFileExtension();
 				if (extension == null || !FILE_EXTENSIONS.contains(extension)) {
 					String key = FILE_EXTENSIONS.size() > 1 ? "_WARN_FilenameExtensions" : "_WARN_FilenameExtension"; //$NON-NLS-1$ //$NON-NLS-2$
-					setErrorMessage(DocumentstructuretemplateEditorPlugin.INSTANCE.getString(key, new Object[] { FORMATTED_FILE_EXTENSIONS }));
+					setErrorMessage(DocumentStructureTemplateEditorPlugin.INSTANCE.getString(key, new Object[] { FORMATTED_FILE_EXTENSIONS }));
 					return false;
 				}
 				return true;
@@ -438,7 +438,7 @@ public class DocumentStructureTemplateModelWizard extends Wizard implements INew
 
 			Label containerLabel = new Label(composite, SWT.LEFT);
 			{
-				containerLabel.setText(DocumentstructuretemplateEditorPlugin.INSTANCE.getString("_UI_ModelObject")); //$NON-NLS-1$
+				containerLabel.setText(DocumentStructureTemplateEditorPlugin.INSTANCE.getString("_UI_ModelObject")); //$NON-NLS-1$
 
 				GridData data = new GridData();
 				data.horizontalAlignment = GridData.FILL;
@@ -464,7 +464,7 @@ public class DocumentStructureTemplateModelWizard extends Wizard implements INew
 
 			Label encodingLabel = new Label(composite, SWT.LEFT);
 			{
-				encodingLabel.setText(DocumentstructuretemplateEditorPlugin.INSTANCE.getString("_UI_XMLEncoding")); //$NON-NLS-1$
+				encodingLabel.setText(DocumentStructureTemplateEditorPlugin.INSTANCE.getString("_UI_XMLEncoding")); //$NON-NLS-1$
 
 				GridData data = new GridData();
 				data.horizontalAlignment = GridData.FILL;
@@ -568,9 +568,9 @@ public class DocumentStructureTemplateModelWizard extends Wizard implements INew
 		 */
 		protected String getLabel(String typeName) {
 			try {
-				return DocumentstructuretemplateEditPlugin.INSTANCE.getString("_UI_" + typeName + "_type"); //$NON-NLS-1$ //$NON-NLS-2$
+				return DocumentStructureTemplateEditPlugin.INSTANCE.getString("_UI_" + typeName + "_type"); //$NON-NLS-1$ //$NON-NLS-2$
 			} catch (MissingResourceException mre) {
-				DocumentstructuretemplateEditorPlugin.INSTANCE.log(mre);
+				DocumentStructureTemplateEditorPlugin.INSTANCE.log(mre);
 			}
 			return typeName;
 		}
@@ -584,7 +584,7 @@ public class DocumentStructureTemplateModelWizard extends Wizard implements INew
 		protected Collection<String> getEncodings() {
 			if (encodings == null) {
 				encodings = new ArrayList<>();
-				for (StringTokenizer stringTokenizer = new StringTokenizer(DocumentstructuretemplateEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens();) //$NON-NLS-1$
+				for (StringTokenizer stringTokenizer = new StringTokenizer(DocumentStructureTemplateEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens();) //$NON-NLS-1$
 				{
 					encodings.add(stringTokenizer.nextToken());
 				}
@@ -605,9 +605,9 @@ public class DocumentStructureTemplateModelWizard extends Wizard implements INew
 		// Create a page, set the title, and the initial model file name.
 		//
 		newFileCreationPage = new DocumentStructureTemplateModelWizardNewFileCreationPage("Whatever", selection); //$NON-NLS-1$
-		newFileCreationPage.setTitle(DocumentstructuretemplateEditorPlugin.INSTANCE.getString("_UI_DocumentStructureTemplateModelWizard_label")); //$NON-NLS-1$
-		newFileCreationPage.setDescription(DocumentstructuretemplateEditorPlugin.INSTANCE.getString("_UI_DocumentStructureTemplateModelWizard_description")); //$NON-NLS-1$
-		newFileCreationPage.setFileName(DocumentstructuretemplateEditorPlugin.INSTANCE.getString("_UI_DocumentStructureTemplateEditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0)); //$NON-NLS-1$ //$NON-NLS-2$
+		newFileCreationPage.setTitle(DocumentStructureTemplateEditorPlugin.INSTANCE.getString("_UI_DocumentStructureTemplateModelWizard_label")); //$NON-NLS-1$
+		newFileCreationPage.setDescription(DocumentStructureTemplateEditorPlugin.INSTANCE.getString("_UI_DocumentStructureTemplateModelWizard_description")); //$NON-NLS-1$
+		newFileCreationPage.setFileName(DocumentStructureTemplateEditorPlugin.INSTANCE.getString("_UI_DocumentStructureTemplateEditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0)); //$NON-NLS-1$ //$NON-NLS-2$
 		addPage(newFileCreationPage);
 
 		// Try and get the resource selection to determine a current directory for the file dialog.
@@ -633,7 +633,7 @@ public class DocumentStructureTemplateModelWizard extends Wizard implements INew
 
 					// Make up a unique new name here.
 					//
-					String defaultModelBaseFilename = DocumentstructuretemplateEditorPlugin.INSTANCE.getString("_UI_DocumentStructureTemplateEditorFilenameDefaultBase"); //$NON-NLS-1$
+					String defaultModelBaseFilename = DocumentStructureTemplateEditorPlugin.INSTANCE.getString("_UI_DocumentStructureTemplateEditorFilenameDefaultBase"); //$NON-NLS-1$
 					String defaultModelFilenameExtension = FILE_EXTENSIONS.get(0);
 					String modelFilename = defaultModelBaseFilename + "." + defaultModelFilenameExtension; //$NON-NLS-1$
 					for (int i = 1; ((IContainer) selectedResource).findMember(modelFilename) != null; ++i) {
@@ -644,8 +644,8 @@ public class DocumentStructureTemplateModelWizard extends Wizard implements INew
 			}
 		}
 		initialObjectCreationPage = new DocumentStructureTemplateModelWizardInitialObjectCreationPage("Whatever2"); //$NON-NLS-1$
-		initialObjectCreationPage.setTitle(DocumentstructuretemplateEditorPlugin.INSTANCE.getString("_UI_DocumentStructureTemplateModelWizard_label")); //$NON-NLS-1$
-		initialObjectCreationPage.setDescription(DocumentstructuretemplateEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description")); //$NON-NLS-1$
+		initialObjectCreationPage.setTitle(DocumentStructureTemplateEditorPlugin.INSTANCE.getString("_UI_DocumentStructureTemplateModelWizard_label")); //$NON-NLS-1$
+		initialObjectCreationPage.setDescription(DocumentStructureTemplateEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description")); //$NON-NLS-1$
 		addPage(initialObjectCreationPage);
 	}
 

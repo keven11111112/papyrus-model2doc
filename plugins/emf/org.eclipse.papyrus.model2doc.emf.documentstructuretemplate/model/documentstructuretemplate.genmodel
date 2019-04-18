@@ -6,6 +6,8 @@
     creationIcons="false" editDirectory="/org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit/src-gen"
     editorDirectory="/org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.editor/src-gen"
     modelPluginID="org.eclipse.papyrus.model2doc.emf.documentstructuretemplate" modelName="Documentstructuretemplate"
+    editPluginClass="org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.provider.DocumentStructureTemplateEditPlugin"
+    editorPluginClass="org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.presentation.DocumentStructureTemplateEditorPlugin"
     nonNLSMarkers="true" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     codeFormatting="true" commentFormatting="true" testsDirectory="/org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.tests/src-gen"
     importerID="org.eclipse.uml2.uml.ecore.importer" complianceLevel="8.0" copyrightFields="false"

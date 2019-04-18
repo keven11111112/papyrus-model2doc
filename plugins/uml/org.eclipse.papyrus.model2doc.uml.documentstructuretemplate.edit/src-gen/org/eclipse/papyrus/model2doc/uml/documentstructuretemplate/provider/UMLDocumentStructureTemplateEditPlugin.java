@@ -17,7 +17,7 @@ import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.provider.GeneratorconfigurationEditPlugin;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.provider.DocumentstructuretemplateEditPlugin;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.provider.DocumentStructureTemplateEditPlugin;
 import org.osgi.framework.BundleActivator;
 
 /**
@@ -55,7 +55,7 @@ public final class UMLDocumentStructureTemplateEditPlugin extends EMFPlugin {
 	 */
 	public UMLDocumentStructureTemplateEditPlugin() {
 		super(new ResourceLocator[] {
-				DocumentstructuretemplateEditPlugin.INSTANCE,
+				DocumentStructureTemplateEditPlugin.INSTANCE,
 				EcoreEditPlugin.INSTANCE,
 				GeneratorconfigurationEditPlugin.INSTANCE,
 		});
@@ -123,5 +123,4 @@ public final class UMLDocumentStructureTemplateEditPlugin extends EMFPlugin {
 			}
 		}
 	}
-
 }

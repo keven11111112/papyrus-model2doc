@@ -508,7 +508,7 @@ public class DocumentStructureTemplateEditor
 					});
 				}
 			} catch (CoreException exception) {
-				DocumentstructuretemplateEditorPlugin.INSTANCE.log(exception);
+				DocumentStructureTemplateEditorPlugin.INSTANCE.log(exception);
 			}
 		}
 	};
@@ -621,7 +621,7 @@ public class DocumentStructureTemplateEditor
 					setActivePage(lastEditorPage);
 					showTabs();
 				} catch (PartInitException exception) {
-					DocumentstructuretemplateEditorPlugin.INSTANCE.log(exception);
+					DocumentStructureTemplateEditorPlugin.INSTANCE.log(exception);
 				}
 			}
 
@@ -629,7 +629,7 @@ public class DocumentStructureTemplateEditor
 				try {
 					markerHelper.updateMarkers(diagnostic);
 				} catch (CoreException exception) {
-					DocumentstructuretemplateEditorPlugin.INSTANCE.log(exception);
+					DocumentStructureTemplateEditorPlugin.INSTANCE.log(exception);
 				}
 			}
 		}
@@ -1302,7 +1302,7 @@ public class DocumentStructureTemplateEditor
 		} catch (Exception exception) {
 			// Something went wrong that shouldn't.
 			//
-			DocumentstructuretemplateEditorPlugin.INSTANCE.log(exception);
+			DocumentStructureTemplateEditorPlugin.INSTANCE.log(exception);
 		}
 		updateProblemIndication = true;
 		updateProblemIndication();
@@ -1513,7 +1513,7 @@ public class DocumentStructureTemplateEditor
 	 * @generated
 	 */
 	private static String getString(String key) {
-		return DocumentstructuretemplateEditorPlugin.INSTANCE.getString(key);
+		return DocumentStructureTemplateEditorPlugin.INSTANCE.getString(key);
 	}
 
 	/**
@@ -1524,7 +1524,7 @@ public class DocumentStructureTemplateEditor
 	 * @generated
 	 */
 	private static String getString(String key, Object s1) {
-		return DocumentstructuretemplateEditorPlugin.INSTANCE.getString(key, new Object[] { s1 });
+		return DocumentStructureTemplateEditorPlugin.INSTANCE.getString(key, new Object[] { s1 });
 	}
 
 	/**
