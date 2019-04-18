@@ -56,7 +56,7 @@ public class CustomEReferencePartTemplateImpl extends EReferencePartTemplateImpl
 	@Override
 	public EList<EObject> getMatchingReferencedEObjects(final EObject semanticModelElement) {
 		final List<EObject> elements = new ArrayList<>();
-		if (this.eReference instanceof EObject) {
+		if (null != this.eReference) {
 			if (semanticModelElement.eClass().getEAllReferences().contains(this.eReference)) {
 				if (this.eReference.isMany()) {
 					elements.addAll((Collection<EObject>) semanticModelElement.eGet(this.eReference));

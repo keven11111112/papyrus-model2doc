@@ -38,6 +38,9 @@ public class CustomEClassPartTemplateImpl extends EClassPartTemplateImpl {
 	 */
 	@Override
 	public boolean isMatchingFilterRule(final EObject inputEObject) {
+		if (null == inputEObject) {
+			return false;
+		}
 		if (null == this.eClass) {
 			return true;
 		}

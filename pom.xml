@@ -33,6 +33,7 @@
 		<module>features</module>
 		<module>plugins</module>
 		<module>releng-model2doc</module>
+		<module>tests</module>
 	</modules>
 
 
