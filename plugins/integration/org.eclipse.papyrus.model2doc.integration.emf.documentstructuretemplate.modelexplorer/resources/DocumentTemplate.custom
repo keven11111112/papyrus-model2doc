@@ -10,6 +10,7 @@
     xmlns:query="http://www.eclipse.org/papyrus/emf/facet/efacet/0.2.incubation/efacet/query"
     name="DocumentTemplate"
     documentation="Display contained document template and their icons"
+    mustBeLoadedByDefault="true"
     rank="-1000">
   <eClassifiers
       xsi:type="custom:EClassCustomization"
