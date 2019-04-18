@@ -181,6 +181,17 @@ public class PapyrusGMFDocumentStructureTemplatePackageImpl extends EPackageImpl
 	 * @generated
 	 */
 	@Override
+	public EOperation getPapyrusGMFDiagramView__BuildTitle__EObject() {
+		return papyrusGMFDiagramViewEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EClass getDiagram() {
 		return diagramEClass;
 	}
@@ -223,6 +234,7 @@ public class PapyrusGMFDocumentStructureTemplatePackageImpl extends EPackageImpl
 		createEAttribute(papyrusGMFDiagramViewEClass, PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_KIND_ID);
 		createEAttribute(papyrusGMFDiagramViewEClass, PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_TYPE);
 		createEOperation(papyrusGMFDiagramViewEClass, PAPYRUS_GMF_DIAGRAM_VIEW___GET_MATCHING_DIAGRAMS__EOBJECT);
+		createEOperation(papyrusGMFDiagramViewEClass, PAPYRUS_GMF_DIAGRAM_VIEW___BUILD_TITLE__EOBJECT);
 
 		diagramEClass = createEClass(DIAGRAM);
 	}
@@ -273,6 +285,9 @@ public class PapyrusGMFDocumentStructureTemplatePackageImpl extends EPackageImpl
 
 		EOperation op = initEOperation(getPapyrusGMFDiagramView__GetMatchingDiagrams__EObject(), this.getDiagram(), "getMatchingDiagrams", 0, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 		addEParameter(op, theEcorePackage.getEObject(), "expectedDiagramContext", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
+		op = initEOperation(getPapyrusGMFDiagramView__BuildTitle__EObject(), ecorePackage.getEString(), "buildTitle", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+		addEParameter(op, theEcorePackage.getEObject(), "diagramContext", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(diagramEClass, Diagram.class, "Diagram", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 

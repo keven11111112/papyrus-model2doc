@@ -13,7 +13,7 @@
  *
  *****************************************************************************/
 
-package org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.custom.impl;
+package org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.internal.impl;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.gmf.runtime.notation.Diagram;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.infra.gmfdiag.style.PapyrusDiagramStyle;
 import org.eclipse.papyrus.infra.gmfdiag.style.StylePackage;
 import org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.PapyrusGMFDiagramView;
@@ -97,5 +98,40 @@ public class CustomPapyrusGMFDiagramViewImpl extends PapyrusGMFDiagramViewImpl {
 		return style != null && (this.diagramType == null || this.diagramType.isEmpty() || this.diagramKindId.equals(style.getDiagramKindId()));
 	}
 
+
+	/**
+	 * @see org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.impl.PapyrusGMFDiagramViewImpl#buildTitle()
+	 *
+	 * @return
+	 */
+	@Override
+	public String buildTitle(final EObject diagramContext) {
+		if (hasDiagramKindId() && false == hasDiagramType()) {
+			return NLS.bind("{0} diagrams", this.diagramKindId); //$NON-NLS-1$
+		} else if (hasDiagramType() && false == hasDiagramKindId()) {
+			return NLS.bind("{0} diagrams", this.diagramType); //$NON-NLS-1$
+		} else if (hasDiagramKindId() && hasDiagramType()) {
+			return NLS.bind("Diagrams of type {0} and kind {1}", this.diagramType, this.diagramKindId); //$NON-NLS-1$
+		}
+		return "All owned diagrams"; //$NON-NLS-1$
+	}
+
+	/**
+	 *
+	 * @return
+	 * 		<code>true</code> if a diagramKindId is defined
+	 */
+	private boolean hasDiagramKindId() {
+		return null != this.diagramKindId && false == this.diagramKindId.isEmpty();
+	}
+
+	/**
+	 *
+	 * @return
+	 * 		<code>true</code> if a diagramType is defined
+	 */
+	private boolean hasDiagramType() {
+		return null != this.diagramType && false == this.diagramType.isEmpty();
+	}
 
 }

@@ -48,6 +48,17 @@ If the diagram doesn't have a PapryusDiagramStyle, this method returns false. </
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_W9xGIF9sEemxcMQajU1fyA" value="*"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_I_dvIGGkEemQc6V5NjskDQ" name="buildTitle">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_LzpuAGGkEemQc6V5NjskDQ" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_VNVm8GG0EemvLdNeGp-kQw" name="diagramContext">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_dPZ_8GG0EemvLdNeGp-kQw" annotatedElement="_VNVm8GG0EemvLdNeGp-kQw">
+            <body>The context of the diagram. It is not mandatory to calculate a title.</body>
+          </ownedComment>
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_ck2IkF9aEemxcMQajU1fyA" name="Diagram">
       <ownedComment xmi:type="uml:Comment" xmi:id="_3NeNAF9aEemxcMQajU1fyA" annotatedElement="_ck2IkF9aEemxcMQajU1fyA">

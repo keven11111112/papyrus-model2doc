@@ -157,6 +157,16 @@ public interface PapyrusGMFDocumentStructureTemplatePackage extends EPackage {
 	int PAPYRUS_GMF_DIAGRAM_VIEW___GET_MATCHING_DIAGRAMS__EOBJECT = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_OPERATION_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Build Title</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int PAPYRUS_GMF_DIAGRAM_VIEW___BUILD_TITLE__EOBJECT = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_OPERATION_COUNT + 1;
+
+	/**
 	 * The number of operations of the '<em>Papyrus GMF Diagram View</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -164,7 +174,7 @@ public interface PapyrusGMFDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAPYRUS_GMF_DIAGRAM_VIEW_OPERATION_COUNT = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_OPERATION_COUNT + 1;
+	int PAPYRUS_GMF_DIAGRAM_VIEW_OPERATION_COUNT = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.gmf.runtime.notation.Diagram <em>Diagram</em>}' class.
@@ -245,6 +255,17 @@ public interface PapyrusGMFDocumentStructureTemplatePackage extends EPackage {
 	EOperation getPapyrusGMFDiagramView__GetMatchingDiagrams__EObject();
 
 	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.PapyrusGMFDiagramView#buildTitle(org.eclipse.emf.ecore.EObject) <em>Build Title</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the '<em>Build Title</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.PapyrusGMFDiagramView#buildTitle(org.eclipse.emf.ecore.EObject)
+	 * @generated
+	 */
+	EOperation getPapyrusGMFDiagramView__BuildTitle__EObject();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.gmf.runtime.notation.Diagram <em>Diagram</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -318,6 +339,15 @@ public interface PapyrusGMFDocumentStructureTemplatePackage extends EPackage {
 		 * @generated
 		 */
 		EOperation PAPYRUS_GMF_DIAGRAM_VIEW___GET_MATCHING_DIAGRAMS__EOBJECT = eINSTANCE.getPapyrusGMFDiagramView__GetMatchingDiagrams__EObject();
+
+		/**
+		 * The meta object literal for the '<em><b>Build Title</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EOperation PAPYRUS_GMF_DIAGRAM_VIEW___BUILD_TITLE__EOBJECT = eINSTANCE.getPapyrusGMFDiagramView__BuildTitle__EObject();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.gmf.runtime.notation.Diagram <em>Diagram</em>}' class.

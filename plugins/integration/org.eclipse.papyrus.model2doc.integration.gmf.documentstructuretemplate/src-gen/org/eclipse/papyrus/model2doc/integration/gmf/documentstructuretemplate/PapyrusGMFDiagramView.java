@@ -14,6 +14,7 @@
 package org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.gmf.runtime.notation.Diagram;
@@ -113,5 +114,18 @@ public interface PapyrusGMFDiagramView extends ITemplatePartView, ILeafBodyPartT
 	 * @generated
 	 */
 	EList<Diagram> getMatchingDiagrams(EObject expectedDiagramContext);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 *
+	 * @param diagramContext
+	 *                           The context of the diagram. It is not mandatory to calculate a title.
+	 *                           <!-- end-model-doc -->
+	 * @model required="true" ordered="false" diagramContextRequired="true" diagramContextOrdered="false"
+	 * @generated
+	 */
+	String buildTitle(EObject diagramContext);
 
 } // PapyrusGMFDiagramView

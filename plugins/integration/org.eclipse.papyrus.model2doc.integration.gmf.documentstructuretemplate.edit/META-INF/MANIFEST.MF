@@ -5,7 +5,7 @@ Bundle-SymbolicName: org.eclipse.papyrus.model2doc.integration.gmf.documentstruc
 Automatic-Module-Name: org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.edit
 Bundle-Version: 0.7.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.provider.PapyrusgmfdocumentstructuretemplateEditPlugin$Implementation$Activator
+Bundle-Activator: org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.provider.PapyrusGMFDocumentStructureTemplateEditPlugin$Implementation$Activator
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

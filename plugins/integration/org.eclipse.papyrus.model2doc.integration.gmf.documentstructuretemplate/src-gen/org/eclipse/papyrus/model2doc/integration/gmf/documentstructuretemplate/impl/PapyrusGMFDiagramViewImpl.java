@@ -334,6 +334,19 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 	 * @generated
 	 */
 	@Override
+	public String buildTitle(EObject diagramContext) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__GENERATE:
@@ -510,6 +523,8 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 		switch (operationID) {
 		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW___GET_MATCHING_DIAGRAMS__EOBJECT:
 			return getMatchingDiagrams((EObject) arguments.get(0));
+		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW___BUILD_TITLE__EOBJECT:
+			return buildTitle((EObject) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

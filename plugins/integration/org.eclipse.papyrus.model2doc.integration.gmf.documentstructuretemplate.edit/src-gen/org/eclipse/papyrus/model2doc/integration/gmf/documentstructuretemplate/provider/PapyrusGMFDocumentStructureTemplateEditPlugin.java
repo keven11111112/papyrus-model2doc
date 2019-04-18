@@ -32,7 +32,7 @@ import org.osgi.framework.BundleActivator;
  *
  * @generated
  */
-public final class PapyrusgmfdocumentstructuretemplateEditPlugin extends EMFPlugin {
+public final class PapyrusGMFDocumentStructureTemplateEditPlugin extends EMFPlugin {
 	/**
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
@@ -40,7 +40,7 @@ public final class PapyrusgmfdocumentstructuretemplateEditPlugin extends EMFPlug
 	 *
 	 * @generated
 	 */
-	public static final PapyrusgmfdocumentstructuretemplateEditPlugin INSTANCE = new PapyrusgmfdocumentstructuretemplateEditPlugin();
+	public static final PapyrusGMFDocumentStructureTemplateEditPlugin INSTANCE = new PapyrusGMFDocumentStructureTemplateEditPlugin();
 
 	/**
 	 * Keep track of the singleton.
@@ -58,7 +58,7 @@ public final class PapyrusgmfdocumentstructuretemplateEditPlugin extends EMFPlug
 	 *
 	 * @generated
 	 */
-	public PapyrusgmfdocumentstructuretemplateEditPlugin() {
+	public PapyrusGMFDocumentStructureTemplateEditPlugin() {
 		super(new ResourceLocator[] {
 				DocumentstructuretemplateEditPlugin.INSTANCE,
 				EcoreEditPlugin.INSTANCE,

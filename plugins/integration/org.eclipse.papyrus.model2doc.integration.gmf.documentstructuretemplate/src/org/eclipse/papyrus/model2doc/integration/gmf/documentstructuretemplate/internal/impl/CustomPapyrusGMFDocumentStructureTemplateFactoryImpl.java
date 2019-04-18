@@ -13,7 +13,7 @@
  *
  *****************************************************************************/
 
-package org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.custom.impl;
+package org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.internal.impl;
 
 import org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.PapyrusGMFDiagramView;
 import org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.impl.PapyrusGMFDocumentStructureTemplateFactoryImpl;
@@ -21,7 +21,7 @@ import org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.i
 /**
  * Custom factory for the metamodel PapyrusGMFDocumentStructureTemplate
  */
-public class CustomPapyrusGMFDocumentStructureTemplateFactory extends PapyrusGMFDocumentStructureTemplateFactoryImpl {
+public class CustomPapyrusGMFDocumentStructureTemplateFactoryImpl extends PapyrusGMFDocumentStructureTemplateFactoryImpl {
 
 	/**
 	 * @see org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.impl.PapyrusGMFDocumentStructureTemplateFactoryImpl#createPapyrusGMFDiagramView()

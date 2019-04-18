@@ -90,7 +90,7 @@ public class PapyrusGMFDocumentStructureTemplateItemProviderAdapterFactory exten
 	 *
 	 * @generated
 	 */
-	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(PapyrusgmfdocumentstructuretemplateEditPlugin.INSTANCE, PapyrusGMFDocumentStructureTemplatePackage.eNS_URI);
+	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(PapyrusGMFDocumentStructureTemplateEditPlugin.INSTANCE, PapyrusGMFDocumentStructureTemplatePackage.eNS_URI);
 
 	/**
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
@@ -399,7 +399,7 @@ public class PapyrusGMFDocumentStructureTemplateItemProviderAdapterFactory exten
 		 */
 		@Override
 		public ResourceLocator getResourceLocator() {
-			return PapyrusgmfdocumentstructuretemplateEditPlugin.INSTANCE;
+			return PapyrusGMFDocumentStructureTemplateEditPlugin.INSTANCE;
 		}
 	}
 

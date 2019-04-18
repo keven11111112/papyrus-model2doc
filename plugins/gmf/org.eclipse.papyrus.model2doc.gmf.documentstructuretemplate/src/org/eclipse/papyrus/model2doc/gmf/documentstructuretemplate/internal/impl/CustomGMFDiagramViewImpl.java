@@ -76,6 +76,5 @@ public class CustomGMFDiagramViewImpl extends GMFDiagramViewImpl {
 		} else {
 			return NLS.bind("All owned {0} diagrams", this.diagramType); //$NON-NLS-1$
 		}
-
 	}
 }
