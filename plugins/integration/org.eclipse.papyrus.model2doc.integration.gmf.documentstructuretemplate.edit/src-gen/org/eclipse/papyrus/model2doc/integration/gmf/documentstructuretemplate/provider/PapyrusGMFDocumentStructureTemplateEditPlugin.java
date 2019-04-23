@@ -1,13 +1,13 @@
 /**
  * Copyright (c) 2019 CEA LIST.
- *
+ * 
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-2.0/
- *
+ * 
  *  SPDX-License-Identifier: EPL-2.0
- *
+ * 
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -29,7 +29,7 @@ import org.osgi.framework.BundleActivator;
  * This is the central singleton for the Papyrusgmfdocumentstructuretemplate edit plugin.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public final class PapyrusGMFDocumentStructureTemplateEditPlugin extends EMFPlugin {
@@ -37,7 +37,7 @@ public final class PapyrusGMFDocumentStructureTemplateEditPlugin extends EMFPlug
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public static final PapyrusGMFDocumentStructureTemplateEditPlugin INSTANCE = new PapyrusGMFDocumentStructureTemplateEditPlugin();
@@ -46,7 +46,7 @@ public final class PapyrusGMFDocumentStructureTemplateEditPlugin extends EMFPlug
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private static Implementation plugin;
@@ -55,7 +55,7 @@ public final class PapyrusGMFDocumentStructureTemplateEditPlugin extends EMFPlug
 	 * Create the instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public PapyrusGMFDocumentStructureTemplateEditPlugin() {
@@ -70,7 +70,7 @@ public final class PapyrusGMFDocumentStructureTemplateEditPlugin extends EMFPlug
 	 * Returns the singleton instance of the Eclipse plugin.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the singleton instance.
 	 * @generated
 	 */
@@ -83,7 +83,7 @@ public final class PapyrusGMFDocumentStructureTemplateEditPlugin extends EMFPlug
 	 * Returns the singleton instance of the Eclipse plugin.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the singleton instance.
 	 * @generated
 	 */
@@ -95,7 +95,7 @@ public final class PapyrusGMFDocumentStructureTemplateEditPlugin extends EMFPlug
 	 * The actual implementation of the Eclipse <b>Plugin</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public static class Implementation extends EclipsePlugin {
@@ -103,7 +103,7 @@ public final class PapyrusGMFDocumentStructureTemplateEditPlugin extends EMFPlug
 		 * Creates an instance.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		public Implementation() {
@@ -118,7 +118,7 @@ public final class PapyrusGMFDocumentStructureTemplateEditPlugin extends EMFPlug
 		 * The actual implementation of the purely OSGi-compatible <b>Bundle Activator</b>.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		public static final class Activator extends EMFPlugin.OSGiDelegatingBundleActivator {

@@ -1,13 +1,13 @@
 /**
  * Copyright (c) 2019 CEA LIST.
- *
+ * 
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-2.0/
- *
+ * 
  *  SPDX-License-Identifier: EPL-2.0
- *
+ * 
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -15,6 +15,7 @@ package org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcorePackage;
@@ -27,6 +28,7 @@ import org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfig
 
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 
+import org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.ContextFilterBehavior;
 import org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.PapyrusGMFDiagramView;
 import org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.PapyrusGMFDocumentStructureTemplateFactory;
 import org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.PapyrusGMFDocumentStructureTemplatePackage;
@@ -35,14 +37,14 @@ import org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.P
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public class PapyrusGMFDocumentStructureTemplatePackageImpl extends EPackageImpl implements PapyrusGMFDocumentStructureTemplatePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass papyrusGMFDiagramViewEClass = null;
@@ -50,10 +52,18 @@ public class PapyrusGMFDocumentStructureTemplatePackageImpl extends EPackageImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass diagramEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EEnum contextFilterBehaviorEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -66,7 +76,7 @@ public class PapyrusGMFDocumentStructureTemplatePackageImpl extends EPackageImpl
 	 * if one already exists.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.PapyrusGMFDocumentStructureTemplatePackage#eNS_URI
 	 * @see #init()
@@ -79,7 +89,7 @@ public class PapyrusGMFDocumentStructureTemplatePackageImpl extends EPackageImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -92,16 +102,15 @@ public class PapyrusGMFDocumentStructureTemplatePackageImpl extends EPackageImpl
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static PapyrusGMFDocumentStructureTemplatePackage init() {
-		if (isInited) {
+		if (isInited)
 			return (PapyrusGMFDocumentStructureTemplatePackage) EPackage.Registry.INSTANCE.getEPackage(PapyrusGMFDocumentStructureTemplatePackage.eNS_URI);
-		}
 
 		// Obtain or create and register package
 		Object registeredPapyrusGMFDocumentStructureTemplatePackage = EPackage.Registry.INSTANCE.get(eNS_URI);
@@ -133,7 +142,7 @@ public class PapyrusGMFDocumentStructureTemplatePackageImpl extends EPackageImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -144,7 +153,7 @@ public class PapyrusGMFDocumentStructureTemplatePackageImpl extends EPackageImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -155,7 +164,7 @@ public class PapyrusGMFDocumentStructureTemplatePackageImpl extends EPackageImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -166,7 +175,18 @@ public class PapyrusGMFDocumentStructureTemplatePackageImpl extends EPackageImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
+	 * @generated
+	 */
+	@Override
+	public EAttribute getPapyrusGMFDiagramView_ContextFilterRule() {
+		return (EAttribute) papyrusGMFDiagramViewEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -177,7 +197,7 @@ public class PapyrusGMFDocumentStructureTemplatePackageImpl extends EPackageImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -188,7 +208,7 @@ public class PapyrusGMFDocumentStructureTemplatePackageImpl extends EPackageImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -199,7 +219,18 @@ public class PapyrusGMFDocumentStructureTemplatePackageImpl extends EPackageImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
+	 * @generated
+	 */
+	@Override
+	public EEnum getContextFilterBehavior() {
+		return contextFilterBehaviorEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -210,7 +241,7 @@ public class PapyrusGMFDocumentStructureTemplatePackageImpl extends EPackageImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -220,29 +251,32 @@ public class PapyrusGMFDocumentStructureTemplatePackageImpl extends EPackageImpl
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) {
+		if (isCreated)
 			return;
-		}
 		isCreated = true;
 
 		// Create classes and their features
 		papyrusGMFDiagramViewEClass = createEClass(PAPYRUS_GMF_DIAGRAM_VIEW);
 		createEAttribute(papyrusGMFDiagramViewEClass, PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_KIND_ID);
 		createEAttribute(papyrusGMFDiagramViewEClass, PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_TYPE);
+		createEAttribute(papyrusGMFDiagramViewEClass, PAPYRUS_GMF_DIAGRAM_VIEW__CONTEXT_FILTER_RULE);
 		createEOperation(papyrusGMFDiagramViewEClass, PAPYRUS_GMF_DIAGRAM_VIEW___GET_MATCHING_DIAGRAMS__EOBJECT);
 		createEOperation(papyrusGMFDiagramViewEClass, PAPYRUS_GMF_DIAGRAM_VIEW___BUILD_TITLE__EOBJECT);
 
 		diagramEClass = createEClass(DIAGRAM);
+
+		// Create enums
+		contextFilterBehaviorEEnum = createEEnum(CONTEXT_FILTER_BEHAVIOR);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -252,13 +286,12 @@ public class PapyrusGMFDocumentStructureTemplatePackageImpl extends EPackageImpl
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) {
+		if (isInitialized)
 			return;
-		}
 		isInitialized = true;
 
 		// Initialize package
@@ -282,6 +315,8 @@ public class PapyrusGMFDocumentStructureTemplatePackageImpl extends EPackageImpl
 		initEClass(papyrusGMFDiagramViewEClass, PapyrusGMFDiagramView.class, "PapyrusGMFDiagramView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEAttribute(getPapyrusGMFDiagramView_DiagramKindId(), theEcorePackage.getEString(), "diagramKindId", null, 0, 1, PapyrusGMFDiagramView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 		initEAttribute(getPapyrusGMFDiagramView_DiagramType(), theEcorePackage.getEString(), "diagramType", null, 0, 1, PapyrusGMFDiagramView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getPapyrusGMFDiagramView_ContextFilterRule(), this.getContextFilterBehavior(), "contextFilterRule", null, 1, 1, PapyrusGMFDiagramView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, //$NON-NLS-1$
+				!IS_ORDERED);
 
 		EOperation op = initEOperation(getPapyrusGMFDiagramView__GetMatchingDiagrams__EObject(), this.getDiagram(), "getMatchingDiagrams", 0, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 		addEParameter(op, theEcorePackage.getEObject(), "expectedDiagramContext", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
@@ -290,6 +325,12 @@ public class PapyrusGMFDocumentStructureTemplatePackageImpl extends EPackageImpl
 		addEParameter(op, theEcorePackage.getEObject(), "diagramContext", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(diagramEClass, Diagram.class, "Diagram", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		// Initialize enums and add enum literals
+		initEEnum(contextFilterBehaviorEEnum, ContextFilterBehavior.class, "ContextFilterBehavior"); //$NON-NLS-1$
+		addEEnumLiteral(contextFilterBehaviorEEnum, ContextFilterBehavior.SEMANTIC_CONTEXT);
+		addEEnumLiteral(contextFilterBehaviorEEnum, ContextFilterBehavior.GRAPHICAL_CONTEXT);
+		addEEnumLiteral(contextFilterBehaviorEEnum, ContextFilterBehavior.BOTH);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -303,7 +344,7 @@ public class PapyrusGMFDocumentStructureTemplatePackageImpl extends EPackageImpl
 	 * Initializes the annotations for <b>http://www.eclipse.org/uml2/2.0.0/UML</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void createUMLAnnotations() {

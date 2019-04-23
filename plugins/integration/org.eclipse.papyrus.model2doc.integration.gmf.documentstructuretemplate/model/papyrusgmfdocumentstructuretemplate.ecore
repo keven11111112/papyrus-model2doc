@@ -34,6 +34,32 @@
         <details key="documentation" value="The type of diagram to manage. If no type is defined, we will take all diagrams."/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contextFilterRule" ordered="false"
+        lowerBound="1" eType="#//ContextFilterBehavior">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This property allows to define how to use the parameter of the method getMatchingDiagram."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ContextFilterBehavior">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This enumeration allows to define wich context must be used to find diagrams."/>
+    </eAnnotations>
+    <eLiterals name="SEMANTIC_CONTEXT">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="(In Papyrus, this concept is called Diagram Root Element)"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="GRAPHICAL_CONTEXT" value="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="(In Papyrus, this concept is called Diagram Owner)"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="BOTH" value="2">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="We look matching diagrams using the element as semantic context and graphical context."/>
+      </eAnnotations>
+    </eLiterals>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Diagram" instanceClassName="org.eclipse.gmf.runtime.notation.Diagram"
       abstract="true" interface="true">

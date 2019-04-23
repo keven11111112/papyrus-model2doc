@@ -26,6 +26,11 @@ This View doesn't extend the GMFDiagramView provided by the model gmfdocumentstr
         <type xmi:type="uml:PrimitiveType" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWkisX_EduPJbEsMYXjUQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Sr-mAF9aEemxcMQajU1fyA"/>
       </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_OS1sUGXNEemOJZbgd4DmNg" name="contextFilterRule" type="_zDXDQGXMEemOJZbgd4DmNg">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_fYMDsGXNEemOJZbgd4DmNg" annotatedElement="_OS1sUGXNEemOJZbgd4DmNg">
+          <body>This property allows to define how to use the parameter of the method getMatchingDiagram.</body>
+        </ownedComment>
+      </ownedAttribute>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_OV4vgF9aEemxcMQajU1fyA" client="_QbIxsF0eEemxcMQajU1fyA">
         <supplier xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_DwGdIFYFEemKJasCEBKPhQ"/>
         <contract xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_DwGdIFYFEemKJasCEBKPhQ"/>
@@ -64,6 +69,26 @@ If the diagram doesn't have a PapryusDiagramStyle, this method returns false. </
       <ownedComment xmi:type="uml:Comment" xmi:id="_3NeNAF9aEemxcMQajU1fyA" annotatedElement="_ck2IkF9aEemxcMQajU1fyA">
         <body>This interface allows to represent the GMF Diagram element.</body>
       </ownedComment>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_zDXDQGXMEemOJZbgd4DmNg" name="ContextFilterBehavior">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_CPw8AGXNEemOJZbgd4DmNg" annotatedElement="_zDXDQGXMEemOJZbgd4DmNg">
+        <body>This enumeration allows to define wich context must be used to find diagrams.</body>
+      </ownedComment>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_1sFZAGXMEemOJZbgd4DmNg" name="SEMANTIC_CONTEXT">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_xtC7IGXNEemOJZbgd4DmNg" annotatedElement="_1sFZAGXMEemOJZbgd4DmNg">
+          <body>(In Papyrus, this concept is called Diagram Root Element)</body>
+        </ownedComment>
+      </ownedLiteral>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_5NJE8GXMEemOJZbgd4DmNg" name="GRAPHICAL_CONTEXT">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_vgsYUGXNEemOJZbgd4DmNg" annotatedElement="_5NJE8GXMEemOJZbgd4DmNg">
+          <body>(In Papyrus, this concept is called Diagram Owner)</body>
+        </ownedComment>
+      </ownedLiteral>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_7wWokGXMEemOJZbgd4DmNg" name="BOTH">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_JfaZkGXNEemOJZbgd4DmNg" annotatedElement="_7wWokGXMEemOJZbgd4DmNg">
+          <body>We look matching diagrams using the element as semantic context and graphical context.</body>
+        </ownedComment>
+      </ownedLiteral>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_7G9M8F0eEemxcMQajU1fyA">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_7HBeYF0eEemxcMQajU1fyA" source="http://www.eclipse.org/uml2/2.0.0/UML">

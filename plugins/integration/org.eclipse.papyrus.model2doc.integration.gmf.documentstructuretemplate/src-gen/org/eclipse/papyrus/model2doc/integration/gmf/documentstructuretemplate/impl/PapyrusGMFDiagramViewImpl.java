@@ -1,13 +1,13 @@
 /**
  * Copyright (c) 2019 CEA LIST.
- *
+ * 
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-2.0/
- *
+ * 
  *  SPDX-License-Identifier: EPL-2.0
- *
+ * 
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -32,6 +32,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodyPartTemp
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafBodyPartTemplate;
 
+import org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.ContextFilterBehavior;
 import org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.PapyrusGMFDiagramView;
 import org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.PapyrusGMFDocumentStructureTemplatePackage;
 
@@ -48,6 +49,7 @@ import org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.P
  * <li>{@link org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.impl.PapyrusGMFDiagramViewImpl#getCustomTitle <em>Custom Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.impl.PapyrusGMFDiagramViewImpl#getDiagramKindId <em>Diagram Kind Id</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.impl.PapyrusGMFDiagramViewImpl#getDiagramType <em>Diagram Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.impl.PapyrusGMFDiagramViewImpl#getContextFilterRule <em>Context Filter Rule</em>}</li>
  * </ul>
  *
  * @generated
@@ -57,7 +59,7 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 	 * The default value of the '{@link #isGenerate() <em>Generate</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #isGenerate()
 	 * @generated
 	 * @ordered
@@ -68,7 +70,7 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 	 * The cached value of the '{@link #isGenerate() <em>Generate</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #isGenerate()
 	 * @generated
 	 * @ordered
@@ -79,7 +81,7 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 	 * The default value of the '{@link #isGenerateTitle() <em>Generate Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #isGenerateTitle()
 	 * @generated
 	 * @ordered
@@ -90,7 +92,7 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 	 * The cached value of the '{@link #isGenerateTitle() <em>Generate Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #isGenerateTitle()
 	 * @generated
 	 * @ordered
@@ -101,7 +103,7 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 	 * The default value of the '{@link #getCustomTitle() <em>Custom Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getCustomTitle()
 	 * @generated
 	 * @ordered
@@ -112,7 +114,7 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 	 * The cached value of the '{@link #getCustomTitle() <em>Custom Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getCustomTitle()
 	 * @generated
 	 * @ordered
@@ -123,7 +125,7 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 	 * The default value of the '{@link #getDiagramKindId() <em>Diagram Kind Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getDiagramKindId()
 	 * @generated
 	 * @ordered
@@ -134,7 +136,7 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 	 * The cached value of the '{@link #getDiagramKindId() <em>Diagram Kind Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getDiagramKindId()
 	 * @generated
 	 * @ordered
@@ -145,7 +147,7 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 	 * The default value of the '{@link #getDiagramType() <em>Diagram Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getDiagramType()
 	 * @generated
 	 * @ordered
@@ -156,7 +158,7 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 	 * The cached value of the '{@link #getDiagramType() <em>Diagram Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getDiagramType()
 	 * @generated
 	 * @ordered
@@ -164,9 +166,31 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 	protected String diagramType = DIAGRAM_TYPE_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getContextFilterRule() <em>Context Filter Rule</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
+	 * @see #getContextFilterRule()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final ContextFilterBehavior CONTEXT_FILTER_RULE_EDEFAULT = ContextFilterBehavior.SEMANTIC_CONTEXT;
+
+	/**
+	 * The cached value of the '{@link #getContextFilterRule() <em>Context Filter Rule</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see #getContextFilterRule()
+	 * @generated
+	 * @ordered
+	 */
+	protected ContextFilterBehavior contextFilterRule = CONTEXT_FILTER_RULE_EDEFAULT;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected PapyrusGMFDiagramViewImpl() {
@@ -176,7 +200,7 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -187,7 +211,7 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -198,22 +222,21 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setGenerate(boolean newGenerate) {
 		boolean oldGenerate = generate;
 		generate = newGenerate;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__GENERATE, oldGenerate, generate));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -224,22 +247,21 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setGenerateTitle(boolean newGenerateTitle) {
 		boolean oldGenerateTitle = generateTitle;
 		generateTitle = newGenerateTitle;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__GENERATE_TITLE, oldGenerateTitle, generateTitle));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -250,22 +272,21 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setCustomTitle(String newCustomTitle) {
 		String oldCustomTitle = customTitle;
 		customTitle = newCustomTitle;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__CUSTOM_TITLE, oldCustomTitle, customTitle));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -276,22 +297,21 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setDiagramKindId(String newDiagramKindId) {
 		String oldDiagramKindId = diagramKindId;
 		diagramKindId = newDiagramKindId;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_KIND_ID, oldDiagramKindId, diagramKindId));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -302,25 +322,48 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setDiagramType(String newDiagramType) {
 		String oldDiagramType = diagramType;
 		diagramType = newDiagramType;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_TYPE, oldDiagramType, diagramType));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
+	public ContextFilterBehavior getContextFilterRule() {
+		return contextFilterRule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public void setContextFilterRule(ContextFilterBehavior newContextFilterRule) {
+		ContextFilterBehavior oldContextFilterRule = contextFilterRule;
+		contextFilterRule = newContextFilterRule == null ? CONTEXT_FILTER_RULE_EDEFAULT : newContextFilterRule;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__CONTEXT_FILTER_RULE, oldContextFilterRule, contextFilterRule));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public EList<Diagram> getMatchingDiagrams(EObject expectedDiagramContext) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -330,10 +373,9 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public String buildTitle(EObject diagramContext) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -343,7 +385,7 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -359,6 +401,8 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 			return getDiagramKindId();
 		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_TYPE:
 			return getDiagramType();
+		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__CONTEXT_FILTER_RULE:
+			return getContextFilterRule();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -366,7 +410,7 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -387,6 +431,9 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_TYPE:
 			setDiagramType((String) newValue);
 			return;
+		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__CONTEXT_FILTER_RULE:
+			setContextFilterRule((ContextFilterBehavior) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -394,7 +441,7 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -415,6 +462,9 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_TYPE:
 			setDiagramType(DIAGRAM_TYPE_EDEFAULT);
 			return;
+		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__CONTEXT_FILTER_RULE:
+			setContextFilterRule(CONTEXT_FILTER_RULE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -422,7 +472,7 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -438,6 +488,8 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 			return DIAGRAM_KIND_ID_EDEFAULT == null ? diagramKindId != null : !DIAGRAM_KIND_ID_EDEFAULT.equals(diagramKindId);
 		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_TYPE:
 			return DIAGRAM_TYPE_EDEFAULT == null ? diagramType != null : !DIAGRAM_TYPE_EDEFAULT.equals(diagramType);
+		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__CONTEXT_FILTER_RULE:
+			return contextFilterRule != CONTEXT_FILTER_RULE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -445,7 +497,7 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -480,7 +532,7 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -515,7 +567,7 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -532,14 +584,13 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (generate: "); //$NON-NLS-1$
@@ -552,6 +603,8 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 		result.append(diagramKindId);
 		result.append(", diagramType: "); //$NON-NLS-1$
 		result.append(diagramType);
+		result.append(", contextFilterRule: "); //$NON-NLS-1$
+		result.append(contextFilterRule);
 		result.append(')');
 		return result.toString();
 	}

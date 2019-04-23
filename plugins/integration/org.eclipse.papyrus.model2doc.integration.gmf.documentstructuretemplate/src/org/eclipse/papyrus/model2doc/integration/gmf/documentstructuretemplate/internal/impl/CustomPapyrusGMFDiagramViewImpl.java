@@ -49,22 +49,76 @@ public class CustomPapyrusGMFDiagramViewImpl extends PapyrusGMFDiagramViewImpl {
 		final Collection<Setting> crossReference = crossRef.getNonNavigableInverseReferences(expectedDiagramContext, true);
 		for (final Setting set : crossReference) {
 			final EObject eobject = set.getEObject();
-			if (eobject instanceof Diagram) {
-				final Diagram currentDiagram = (Diagram) eobject;
-				if (currentDiagram.getElement() != expectedDiagramContext) {
+			switch (this.contextFilterRule) {
+			case SEMANTIC_CONTEXT:
+				if (false == isSemanticContext(eobject, expectedDiagramContext)) {
 					continue;
 				}
-				// we take all diagrams when diagramType is not defined
-				// when diagram type is defined, we check
-				if (matchDiagramKind(currentDiagram) && matchDiagramType(currentDiagram)) {
+				break;
 
-					filteredDiagram.add(currentDiagram);
-
+			case GRAPHICAL_CONTEXT:
+				if (false == isGraphicalContext(eobject, expectedDiagramContext)) {
+					continue;
 				}
+			case BOTH:
+				if (false == (isSemanticContext(eobject, expectedDiagramContext) || isGraphicalContext(eobject, expectedDiagramContext))) {
+					continue;
+				}
+				break;
+			default:
+				// nothing to do
+			}
+
+			final Diagram diagram;
+			if (eobject instanceof Diagram) {
+				diagram = (Diagram) eobject;
+			} else if (eobject instanceof PapyrusDiagramStyle) {
+				diagram = (Diagram) ((PapyrusDiagramStyle) eobject).eContainer();
+			} else {
+				// not possible
+				continue;
+			}
+			// we take all diagrams when diagramType is not defined
+			// when diagram type is defined, we check
+			if (matchDiagramKind(diagram) && matchDiagramType(diagram)) {
+				filteredDiagram.add(diagram);
 			}
 		}
 
 		return ECollections.unmodifiableEList(filteredDiagram);
+
+	}
+
+	/**
+	 *
+	 * @param eobjec
+	 *            an eobject, probably a diagram
+	 * @param expectedDiagramContext
+	 *            the eobject for which we are looking a diagram
+	 * @return
+	 *         <code>true</code> if the eobject is used as semantic context for the diagram
+	 */
+	private boolean isSemanticContext(final EObject eobejct, final EObject expectedSemanticContext) {
+		if (eobejct instanceof Diagram) {
+			return expectedSemanticContext == ((Diagram) eobejct).getElement();
+		}
+		return false;
+	}
+
+	/**
+	 *
+	 * @param eobject
+	 *            an eobject, probably a {@link PapyrusDiagramStyle}
+	 * @param expectedDiagramContext
+	 *            the eobject for which we are looking a diagram
+	 * @return
+	 *         <code>true</code> if eobject is used as graphical owner for the diagram
+	 */
+	private boolean isGraphicalContext(final EObject eobject, final EObject expectedgraphicalContext) {
+		if (eobject instanceof PapyrusDiagramStyle) {
+			return expectedgraphicalContext == ((PapyrusDiagramStyle) eobject).getOwner();
+		}
+		return false;
 	}
 
 	/**
@@ -72,7 +126,7 @@ public class CustomPapyrusGMFDiagramViewImpl extends PapyrusGMFDiagramViewImpl {
 	 * @param diagram
 	 *            a diagram
 	 * @return
-	 * 		<code>true</code> when:
+	 *         <code>true</code> when:
 	 *         <ul>
 	 *         <li>the field diagramType is not defined (<code>null</code> or empty)</li>
 	 *         <li>the type of the diagram is equals to the expected one</li>
@@ -87,7 +141,7 @@ public class CustomPapyrusGMFDiagramViewImpl extends PapyrusGMFDiagramViewImpl {
 	 * @param diagram
 	 *            a diagram
 	 * @return
-	 * 		<code>true</code> when the diagram has a {@link PapyrusDiagramStyle} and when:
+	 *         <code>true</code> when the diagram has a {@link PapyrusDiagramStyle} and when:
 	 *         <ul>
 	 *         <li>the field diagramKindId is <code>null</code> or empty</li>
 	 *         <li>the kind of the diagram is equals to the expected one</li>
@@ -119,7 +173,7 @@ public class CustomPapyrusGMFDiagramViewImpl extends PapyrusGMFDiagramViewImpl {
 	/**
 	 *
 	 * @return
-	 * 		<code>true</code> if a diagramKindId is defined
+	 *         <code>true</code> if a diagramKindId is defined
 	 */
 	private boolean hasDiagramKindId() {
 		return null != this.diagramKindId && false == this.diagramKindId.isEmpty();
@@ -128,7 +182,7 @@ public class CustomPapyrusGMFDiagramViewImpl extends PapyrusGMFDiagramViewImpl {
 	/**
 	 *
 	 * @return
-	 * 		<code>true</code> if a diagramType is defined
+	 *         <code>true</code> if a diagramType is defined
 	 */
 	private boolean hasDiagramType() {
 		return null != this.diagramType && false == this.diagramType.isEmpty();

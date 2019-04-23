@@ -1,13 +1,13 @@
 /**
  * Copyright (c) 2019 CEA LIST.
- *
+ * 
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-2.0/
- *
+ * 
  *  SPDX-License-Identifier: EPL-2.0
- *
+ * 
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -43,7 +43,7 @@ import org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.P
  * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.PapyrusGMFDiagramView} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public class PapyrusGMFDiagramViewItemProvider
@@ -58,7 +58,7 @@ public class PapyrusGMFDiagramViewItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public PapyrusGMFDiagramViewItemProvider(AdapterFactory adapterFactory) {
@@ -69,7 +69,7 @@ public class PapyrusGMFDiagramViewItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -82,6 +82,7 @@ public class PapyrusGMFDiagramViewItemProvider
 			addCustomTitlePropertyDescriptor(object);
 			addDiagramKindIdPropertyDescriptor(object);
 			addDiagramTypePropertyDescriptor(object);
+			addContextFilterRulePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -90,7 +91,7 @@ public class PapyrusGMFDiagramViewItemProvider
 	 * This adds a property descriptor for the Generate feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addGeneratePropertyDescriptor(Object object) {
@@ -111,7 +112,7 @@ public class PapyrusGMFDiagramViewItemProvider
 	 * This adds a property descriptor for the Generate Title feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addGenerateTitlePropertyDescriptor(Object object) {
@@ -132,7 +133,7 @@ public class PapyrusGMFDiagramViewItemProvider
 	 * This adds a property descriptor for the Custom Title feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addCustomTitlePropertyDescriptor(Object object) {
@@ -153,7 +154,7 @@ public class PapyrusGMFDiagramViewItemProvider
 	 * This adds a property descriptor for the Diagram Kind Id feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addDiagramKindIdPropertyDescriptor(Object object) {
@@ -174,7 +175,7 @@ public class PapyrusGMFDiagramViewItemProvider
 	 * This adds a property descriptor for the Diagram Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addDiagramTypePropertyDescriptor(Object object) {
@@ -192,10 +193,31 @@ public class PapyrusGMFDiagramViewItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Context Filter Rule feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected void addContextFilterRulePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_PapyrusGMFDiagramView_contextFilterRule_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_PapyrusGMFDiagramView_contextFilterRule_feature", "_UI_PapyrusGMFDiagramView_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				PapyrusGMFDocumentStructureTemplatePackage.Literals.PAPYRUS_GMF_DIAGRAM_VIEW__CONTEXT_FILTER_RULE,
+				true,
+				false,
+				false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				null,
+				null));
+	}
+
+	/**
 	 * This returns PapyrusGMFDiagramView.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -206,7 +228,7 @@ public class PapyrusGMFDiagramViewItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -218,7 +240,7 @@ public class PapyrusGMFDiagramViewItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -233,7 +255,7 @@ public class PapyrusGMFDiagramViewItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -246,6 +268,7 @@ public class PapyrusGMFDiagramViewItemProvider
 		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__CUSTOM_TITLE:
 		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_KIND_ID:
 		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_TYPE:
+		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__CONTEXT_FILTER_RULE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
@@ -257,7 +280,7 @@ public class PapyrusGMFDiagramViewItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -269,7 +292,7 @@ public class PapyrusGMFDiagramViewItemProvider
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
