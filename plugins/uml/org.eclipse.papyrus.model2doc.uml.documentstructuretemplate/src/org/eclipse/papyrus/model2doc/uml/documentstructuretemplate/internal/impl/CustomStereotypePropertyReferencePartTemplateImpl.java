@@ -26,7 +26,9 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferencePartTemplate;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyReferencePartTemplateImpl;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.internal.operations.StereotypePartTemplateOperations;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.operations.UMLBodySectionPartTemplateTitleHelper;
+import org.eclipse.uml2.uml.Element;
 
 /**
  * Custom implementation for {@link StereotypePropertyReferencePartTemplate}
@@ -50,7 +52,18 @@ public class CustomStereotypePropertyReferencePartTemplateImpl extends Stereotyp
 			return ECollections.emptyEList();
 		}
 
-		final EStructuralFeature feature = eobject.eClass().getEStructuralFeature(this.propertyName);
+		EObject stereotypeApplication = null;
+		if (eobject instanceof Element) {
+			stereotypeApplication = getFirstMatchingStereotypeApplication(stereotypeApplication);
+		} else {
+			stereotypeApplication = eobject;
+		}
+
+		if (stereotypeApplication == null) {
+			return ECollections.emptyEList();
+		}
+
+		final EStructuralFeature feature = stereotypeApplication.eClass().getEStructuralFeature(this.propertyName);
 		if (null == feature) {
 			return ECollections.emptyEList();
 		}
@@ -61,12 +74,12 @@ public class CustomStereotypePropertyReferencePartTemplateImpl extends Stereotyp
 		final List<EObject> elements = new ArrayList<>();
 
 		if (feature.isMany()) {
-			final Collection<?> value = (Collection<?>) eobject.eGet(feature, true);
+			final Collection<?> value = (Collection<?>) stereotypeApplication.eGet(feature, true);
 			if (null != value && false == value.isEmpty()) {
 				value.stream().forEach(v -> elements.add((EObject) v));
 			}
 		} else {
-			elements.add((EObject) eobject.eGet(feature, true));
+			elements.add((EObject) stereotypeApplication.eGet(feature, true));
 		}
 		return ECollections.unmodifiableEList(elements);
 	}
@@ -80,4 +93,16 @@ public class CustomStereotypePropertyReferencePartTemplateImpl extends Stereotyp
 	public String buildTitle() {
 		return UML_TITLE_HELPER.buildTitle(this);
 	}
+
+	/**
+	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyReferencePartTemplateImpl#getFirstMatchingStereotypeApplication(org.eclipse.emf.ecore.EObject)
+	 *
+	 * @param element
+	 * @return
+	 */
+	@Override
+	public EObject getFirstMatchingStereotypeApplication(final EObject element) {
+		return StereotypePartTemplateOperations.getFirstMatchingStereotypeApplication(this, element);
+	}
+
 }

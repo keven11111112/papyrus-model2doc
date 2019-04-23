@@ -13,8 +13,6 @@
  */
 package org.eclipse.papyrus.model2doc.uml.documentstructuretemplate;
 
-import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassPartTemplate;
 
 /**
@@ -38,7 +36,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassPartTem
  * @model
  * @generated
  */
-public interface StereotypePartTemplate extends EClassPartTemplate {
+public interface StereotypePartTemplate extends EClassPartTemplate, IStereotypePartTemplate {
 	/**
 	 * Returns the value of the '<em><b>Stereotype Qualified Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -53,6 +51,7 @@ public interface StereotypePartTemplate extends EClassPartTemplate {
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
+	@Override
 	String getStereotypeQualifiedName();
 
 	/**
@@ -83,6 +82,7 @@ public interface StereotypePartTemplate extends EClassPartTemplate {
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
+	@Override
 	StereotypeFilterBehavior getStereotypeFilterRule();
 
 	/**
@@ -97,17 +97,5 @@ public interface StereotypePartTemplate extends EClassPartTemplate {
 	 * @generated
 	 */
 	void setStereotypeFilterRule(StereotypeFilterBehavior value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * This method returns the first stereotype application for the element given in parameter. The parameter is EObject to avoid to have to check type before calling the method.
-	 * <!-- end-model-doc -->
-	 *
-	 * @model ordered="false" elementRequired="true" elementOrdered="false"
-	 * @generated
-	 */
-	EObject getFirstMatchingStereotypeApplication(EObject element);
 
 } // StereotypePartTemplate

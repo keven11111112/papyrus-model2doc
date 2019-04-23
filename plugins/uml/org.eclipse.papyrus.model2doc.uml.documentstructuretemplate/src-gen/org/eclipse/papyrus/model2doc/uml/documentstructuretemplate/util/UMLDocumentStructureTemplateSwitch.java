@@ -101,6 +101,9 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 				result = caseEClassPartTemplate(stereotypePartTemplate);
 			}
 			if (result == null) {
+				result = caseIStereotypePartTemplate(stereotypePartTemplate);
+			}
+			if (result == null) {
 				result = caseIComposedSubBodyPartTemplate(stereotypePartTemplate);
 			}
 			if (result == null) {
@@ -114,11 +117,22 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 			}
 			return result;
 		}
+		case UMLDocumentStructureTemplatePackage.ISTEREOTYPE_PART_TEMPLATE: {
+			IStereotypePartTemplate iStereotypePartTemplate = (IStereotypePartTemplate) theEObject;
+			T result = caseIStereotypePartTemplate(iStereotypePartTemplate);
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE: {
 			StereotypePropertyReferencePartTemplate stereotypePropertyReferencePartTemplate = (StereotypePropertyReferencePartTemplate) theEObject;
 			T result = caseStereotypePropertyReferencePartTemplate(stereotypePropertyReferencePartTemplate);
 			if (result == null) {
 				result = caseIComposedBodyPartTemplate(stereotypePropertyReferencePartTemplate);
+			}
+			if (result == null) {
+				result = caseIStereotypePartTemplate(stereotypePropertyReferencePartTemplate);
 			}
 			if (result == null) {
 				result = caseIBodyPartTemplate(stereotypePropertyReferencePartTemplate);
@@ -178,6 +192,23 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseStereotypePartTemplate(StereotypePartTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IStereotype Part Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IStereotype Part Template</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIStereotypePartTemplate(IStereotypePartTemplate object) {
 		return null;
 	}
 

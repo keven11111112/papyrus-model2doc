@@ -28,6 +28,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStruc
 
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.CommentAsParagraph;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.CommentChoice;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.IStereotypePartTemplate;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypeFilterBehavior;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePartTemplate;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferencePartTemplate;
@@ -51,6 +52,14 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 	 * @generated
 	 */
 	private EClass stereotypePartTemplateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass iStereotypePartTemplateEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -207,8 +216,41 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 	 * @generated
 	 */
 	@Override
-	public EOperation getStereotypePartTemplate__GetFirstMatchingStereotypeApplication__EObject() {
-		return stereotypePartTemplateEClass.getEOperations().get(0);
+	public EClass getIStereotypePartTemplate() {
+		return iStereotypePartTemplateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EOperation getIStereotypePartTemplate__GetStereotypeQualifiedName() {
+		return iStereotypePartTemplateEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EOperation getIStereotypePartTemplate__GetFirstMatchingStereotypeApplication__EObject() {
+		return iStereotypePartTemplateEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EOperation getIStereotypePartTemplate__GetStereotypeFilterRule() {
+		return iStereotypePartTemplateEClass.getEOperations().get(2);
 	}
 
 	/**
@@ -231,6 +273,28 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 	@Override
 	public EAttribute getStereotypePropertyReferencePartTemplate_PropertyName() {
 		return (EAttribute) stereotypePropertyReferencePartTemplateEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getStereotypePropertyReferencePartTemplate_StereotypeQualifiedName() {
+		return (EAttribute) stereotypePropertyReferencePartTemplateEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getStereotypePropertyReferencePartTemplate_StereotypeFilterRule() {
+		return (EAttribute) stereotypePropertyReferencePartTemplateEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -369,10 +433,16 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 		stereotypePartTemplateEClass = createEClass(STEREOTYPE_PART_TEMPLATE);
 		createEAttribute(stereotypePartTemplateEClass, STEREOTYPE_PART_TEMPLATE__STEREOTYPE_QUALIFIED_NAME);
 		createEAttribute(stereotypePartTemplateEClass, STEREOTYPE_PART_TEMPLATE__STEREOTYPE_FILTER_RULE);
-		createEOperation(stereotypePartTemplateEClass, STEREOTYPE_PART_TEMPLATE___GET_FIRST_MATCHING_STEREOTYPE_APPLICATION__EOBJECT);
+
+		iStereotypePartTemplateEClass = createEClass(ISTEREOTYPE_PART_TEMPLATE);
+		createEOperation(iStereotypePartTemplateEClass, ISTEREOTYPE_PART_TEMPLATE___GET_STEREOTYPE_QUALIFIED_NAME);
+		createEOperation(iStereotypePartTemplateEClass, ISTEREOTYPE_PART_TEMPLATE___GET_FIRST_MATCHING_STEREOTYPE_APPLICATION__EOBJECT);
+		createEOperation(iStereotypePartTemplateEClass, ISTEREOTYPE_PART_TEMPLATE___GET_STEREOTYPE_FILTER_RULE);
 
 		stereotypePropertyReferencePartTemplateEClass = createEClass(STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE);
 		createEAttribute(stereotypePropertyReferencePartTemplateEClass, STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__PROPERTY_NAME);
+		createEAttribute(stereotypePropertyReferencePartTemplateEClass, STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__STEREOTYPE_QUALIFIED_NAME);
+		createEAttribute(stereotypePropertyReferencePartTemplateEClass, STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__STEREOTYPE_FILTER_RULE);
 		createEOperation(stereotypePropertyReferencePartTemplateEClass, STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE___GET_MATCHING_REFERENCED_EOBJECTS__EOBJECT);
 		createEOperation(stereotypePropertyReferencePartTemplateEClass, STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE___BUILD_TITLE);
 
@@ -425,7 +495,9 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 
 		// Add supertypes to classes
 		stereotypePartTemplateEClass.getESuperTypes().add(theDocumentStructureTemplatePackage.getEClassPartTemplate());
+		stereotypePartTemplateEClass.getESuperTypes().add(this.getIStereotypePartTemplate());
 		stereotypePropertyReferencePartTemplateEClass.getESuperTypes().add(theDocumentStructureTemplatePackage.getIComposedBodyPartTemplate());
+		stereotypePropertyReferencePartTemplateEClass.getESuperTypes().add(this.getIStereotypePartTemplate());
 		commentAsParagraphEClass.getESuperTypes().add(theDocumentStructureTemplatePackage.getILeafBodyPartTemplate());
 		commentAsParagraphEClass.getESuperTypes().add(theDocumentStructureTemplatePackage.getITemplatePartView());
 
@@ -436,12 +508,22 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 		initEAttribute(getStereotypePartTemplate_StereotypeFilterRule(), this.getStereotypeFilterBehavior(), "stereotypeFilterRule", null, 1, 1, StereotypePartTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, //$NON-NLS-1$
 				!IS_DERIVED, !IS_ORDERED);
 
-		EOperation op = initEOperation(getStereotypePartTemplate__GetFirstMatchingStereotypeApplication__EObject(), theEcorePackage.getEObject(), "getFirstMatchingStereotypeApplication", 0, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+		initEClass(iStereotypePartTemplateEClass, IStereotypePartTemplate.class, "IStereotypePartTemplate", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEOperation(getIStereotypePartTemplate__GetStereotypeQualifiedName(), ecorePackage.getEString(), "getStereotypeQualifiedName", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
+		EOperation op = initEOperation(getIStereotypePartTemplate__GetFirstMatchingStereotypeApplication__EObject(), theEcorePackage.getEObject(), "getFirstMatchingStereotypeApplication", 0, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 		addEParameter(op, theEcorePackage.getEObject(), "element", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
+		initEOperation(getIStereotypePartTemplate__GetStereotypeFilterRule(), this.getStereotypeFilterBehavior(), "getStereotypeFilterRule", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(stereotypePropertyReferencePartTemplateEClass, StereotypePropertyReferencePartTemplate.class, "StereotypePropertyReferencePartTemplate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEAttribute(getStereotypePropertyReferencePartTemplate_PropertyName(), ecorePackage.getEString(), "propertyName", null, 1, 1, StereotypePropertyReferencePartTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, //$NON-NLS-1$
 				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getStereotypePropertyReferencePartTemplate_StereotypeQualifiedName(), ecorePackage.getEString(), "stereotypeQualifiedName", null, 0, 1, StereotypePropertyReferencePartTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, //$NON-NLS-1$
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getStereotypePropertyReferencePartTemplate_StereotypeFilterRule(), this.getStereotypeFilterBehavior(), "stereotypeFilterRule", null, 0, 1, StereotypePropertyReferencePartTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, //$NON-NLS-1$
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		op = initEOperation(getStereotypePropertyReferencePartTemplate__GetMatchingReferencedEObjects__EObject(), theEcorePackage.getEObject(), "getMatchingReferencedEObjects", 0, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 		addEParameter(op, theEcorePackage.getEObject(), "eobject", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$

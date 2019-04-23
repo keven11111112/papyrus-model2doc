@@ -99,6 +99,11 @@ public class UMLDocumentStructureTemplateAdapterFactory extends AdapterFactoryIm
 		}
 
 		@Override
+		public Adapter caseIStereotypePartTemplate(IStereotypePartTemplate object) {
+			return createIStereotypePartTemplateAdapter();
+		}
+
+		@Override
 		public Adapter caseStereotypePropertyReferencePartTemplate(StereotypePropertyReferencePartTemplate object) {
 			return createStereotypePropertyReferencePartTemplateAdapter();
 		}
@@ -187,6 +192,21 @@ public class UMLDocumentStructureTemplateAdapterFactory extends AdapterFactoryIm
 	 * @generated
 	 */
 	public Adapter createStereotypePartTemplateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.IStereotypePartTemplate <em>IStereotype Part Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.IStereotypePartTemplate
+	 * @generated
+	 */
+	public Adapter createIStereotypePartTemplateAdapter() {
 		return null;
 	}
 

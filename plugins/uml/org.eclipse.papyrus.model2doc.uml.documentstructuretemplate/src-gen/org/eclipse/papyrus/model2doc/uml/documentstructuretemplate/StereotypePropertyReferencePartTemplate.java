@@ -33,13 +33,15 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedBody
  * </p>
  * <ul>
  * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferencePartTemplate#getPropertyName <em>Property Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferencePartTemplate#getStereotypeQualifiedName <em>Stereotype Qualified Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferencePartTemplate#getStereotypeFilterRule <em>Stereotype Filter Rule</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplatePackage#getStereotypePropertyReferencePartTemplate()
  * @model
  * @generated
  */
-public interface StereotypePropertyReferencePartTemplate extends IComposedBodyPartTemplate {
+public interface StereotypePropertyReferencePartTemplate extends IComposedBodyPartTemplate, IStereotypePartTemplate {
 	/**
 	 * Returns the value of the '<em><b>Property Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -67,6 +69,68 @@ public interface StereotypePropertyReferencePartTemplate extends IComposedBodyPa
 	 * @generated
 	 */
 	void setPropertyName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Stereotype Qualified Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The qualified name of the stereotype. This field is used, only when the parent of the object is an EClassPartTemplate and not a StereotypePartTemplate.
+	 * In other case, this field is ignored.
+	 * <!-- end-model-doc -->
+	 *
+	 * @return the value of the '<em>Stereotype Qualified Name</em>' attribute.
+	 * @see #setStereotypeQualifiedName(String)
+	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplatePackage#getStereotypePropertyReferencePartTemplate_StereotypeQualifiedName()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	@Override
+	String getStereotypeQualifiedName();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferencePartTemplate#getStereotypeQualifiedName <em>Stereotype Qualified Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *                  the new value of the '<em>Stereotype Qualified Name</em>' attribute.
+	 * @see #getStereotypeQualifiedName()
+	 * @generated
+	 */
+	void setStereotypeQualifiedName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Stereotype Filter Rule</b></em>' attribute.
+	 * The literals are from the enumeration {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypeFilterBehavior}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Description of the way to use to filter the applied stereotype. This field is used only when the parent of the element is an EClassPartTemplate, and not a StereotypePartTemplate.
+	 * <!-- end-model-doc -->
+	 *
+	 * @return the value of the '<em>Stereotype Filter Rule</em>' attribute.
+	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypeFilterBehavior
+	 * @see #setStereotypeFilterRule(StereotypeFilterBehavior)
+	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplatePackage#getStereotypePropertyReferencePartTemplate_StereotypeFilterRule()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	@Override
+	StereotypeFilterBehavior getStereotypeFilterRule();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferencePartTemplate#getStereotypeFilterRule <em>Stereotype Filter Rule</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *                  the new value of the '<em>Stereotype Filter Rule</em>' attribute.
+	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypeFilterBehavior
+	 * @see #getStereotypeFilterRule()
+	 * @generated
+	 */
+	void setStereotypeFilterRule(StereotypeFilterBehavior value);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -34,6 +34,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubBodyPartTemplate;
 
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.IStereotypePartTemplate;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypeFilterBehavior;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferencePartTemplate;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplatePackage;
 
@@ -50,6 +52,8 @@ import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentSt
  * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyReferencePartTemplateImpl#getCustomTitle <em>Custom Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyReferencePartTemplateImpl#getSubBodyPartTemplates <em>Sub Body Part Template</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyReferencePartTemplateImpl#getPropertyName <em>Property Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyReferencePartTemplateImpl#getStereotypeQualifiedName <em>Stereotype Qualified Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyReferencePartTemplateImpl#getStereotypeFilterRule <em>Stereotype Filter Rule</em>}</li>
  * </ul>
  *
  * @generated
@@ -153,6 +157,50 @@ public class StereotypePropertyReferencePartTemplateImpl extends MinimalEObjectI
 	 * @ordered
 	 */
 	protected String propertyName = PROPERTY_NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getStereotypeQualifiedName() <em>Stereotype Qualified Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getStereotypeQualifiedName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String STEREOTYPE_QUALIFIED_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getStereotypeQualifiedName() <em>Stereotype Qualified Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getStereotypeQualifiedName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String stereotypeQualifiedName = STEREOTYPE_QUALIFIED_NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getStereotypeFilterRule() <em>Stereotype Filter Rule</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getStereotypeFilterRule()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final StereotypeFilterBehavior STEREOTYPE_FILTER_RULE_EDEFAULT = StereotypeFilterBehavior.STEREOTYPE_TYPE_OF;
+
+	/**
+	 * The cached value of the '{@link #getStereotypeFilterRule() <em>Stereotype Filter Rule</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getStereotypeFilterRule()
+	 * @generated
+	 * @ordered
+	 */
+	protected StereotypeFilterBehavior stereotypeFilterRule = STEREOTYPE_FILTER_RULE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -300,6 +348,71 @@ public class StereotypePropertyReferencePartTemplateImpl extends MinimalEObjectI
 	 * @generated
 	 */
 	@Override
+	public String getStereotypeQualifiedName() {
+		return stereotypeQualifiedName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setStereotypeQualifiedName(String newStereotypeQualifiedName) {
+		String oldStereotypeQualifiedName = stereotypeQualifiedName;
+		stereotypeQualifiedName = newStereotypeQualifiedName;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__STEREOTYPE_QUALIFIED_NAME, oldStereotypeQualifiedName, stereotypeQualifiedName));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public StereotypeFilterBehavior getStereotypeFilterRule() {
+		return stereotypeFilterRule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setStereotypeFilterRule(StereotypeFilterBehavior newStereotypeFilterRule) {
+		StereotypeFilterBehavior oldStereotypeFilterRule = stereotypeFilterRule;
+		stereotypeFilterRule = newStereotypeFilterRule == null ? STEREOTYPE_FILTER_RULE_EDEFAULT : newStereotypeFilterRule;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__STEREOTYPE_FILTER_RULE, oldStereotypeFilterRule, stereotypeFilterRule));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EObject getFirstMatchingStereotypeApplication(EObject element) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EList<EObject> getMatchingReferencedEObjects(EObject eobject) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -353,6 +466,10 @@ public class StereotypePropertyReferencePartTemplateImpl extends MinimalEObjectI
 			return getSubBodyPartTemplates();
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__PROPERTY_NAME:
 			return getPropertyName();
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__STEREOTYPE_QUALIFIED_NAME:
+			return getStereotypeQualifiedName();
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__STEREOTYPE_FILTER_RULE:
+			return getStereotypeFilterRule();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -383,6 +500,12 @@ public class StereotypePropertyReferencePartTemplateImpl extends MinimalEObjectI
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__PROPERTY_NAME:
 			setPropertyName((String) newValue);
 			return;
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__STEREOTYPE_QUALIFIED_NAME:
+			setStereotypeQualifiedName((String) newValue);
+			return;
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__STEREOTYPE_FILTER_RULE:
+			setStereotypeFilterRule((StereotypeFilterBehavior) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -411,6 +534,12 @@ public class StereotypePropertyReferencePartTemplateImpl extends MinimalEObjectI
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__PROPERTY_NAME:
 			setPropertyName(PROPERTY_NAME_EDEFAULT);
 			return;
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__STEREOTYPE_QUALIFIED_NAME:
+			setStereotypeQualifiedName(STEREOTYPE_QUALIFIED_NAME_EDEFAULT);
+			return;
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__STEREOTYPE_FILTER_RULE:
+			setStereotypeFilterRule(STEREOTYPE_FILTER_RULE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -434,6 +563,10 @@ public class StereotypePropertyReferencePartTemplateImpl extends MinimalEObjectI
 			return subBodyPartTemplates != null && !subBodyPartTemplates.isEmpty();
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__PROPERTY_NAME:
 			return PROPERTY_NAME_EDEFAULT == null ? propertyName != null : !PROPERTY_NAME_EDEFAULT.equals(propertyName);
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__STEREOTYPE_QUALIFIED_NAME:
+			return STEREOTYPE_QUALIFIED_NAME_EDEFAULT == null ? stereotypeQualifiedName != null : !STEREOTYPE_QUALIFIED_NAME_EDEFAULT.equals(stereotypeQualifiedName);
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__STEREOTYPE_FILTER_RULE:
+			return stereotypeFilterRule != STEREOTYPE_FILTER_RULE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -445,8 +578,33 @@ public class StereotypePropertyReferencePartTemplateImpl extends MinimalEObjectI
 	 * @generated
 	 */
 	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == IStereotypePartTemplate.class) {
+			switch (baseOperationID) {
+			case UMLDocumentStructureTemplatePackage.ISTEREOTYPE_PART_TEMPLATE___GET_STEREOTYPE_QUALIFIED_NAME:
+				return UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE___GET_STEREOTYPE_QUALIFIED_NAME;
+			case UMLDocumentStructureTemplatePackage.ISTEREOTYPE_PART_TEMPLATE___GET_FIRST_MATCHING_STEREOTYPE_APPLICATION__EOBJECT:
+				return UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE___GET_FIRST_MATCHING_STEREOTYPE_APPLICATION__EOBJECT;
+			case UMLDocumentStructureTemplatePackage.ISTEREOTYPE_PART_TEMPLATE___GET_STEREOTYPE_FILTER_RULE:
+				return UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE___GET_STEREOTYPE_FILTER_RULE;
+			default:
+				return -1;
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE___GET_FIRST_MATCHING_STEREOTYPE_APPLICATION__EOBJECT:
+			return getFirstMatchingStereotypeApplication((EObject) arguments.get(0));
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE___GET_MATCHING_REFERENCED_EOBJECTS__EOBJECT:
 			return getMatchingReferencedEObjects((EObject) arguments.get(0));
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE___BUILD_TITLE:
@@ -476,6 +634,10 @@ public class StereotypePropertyReferencePartTemplateImpl extends MinimalEObjectI
 		result.append(customTitle);
 		result.append(", propertyName: "); //$NON-NLS-1$
 		result.append(propertyName);
+		result.append(", stereotypeQualifiedName: "); //$NON-NLS-1$
+		result.append(stereotypeQualifiedName);
+		result.append(", stereotypeFilterRule: "); //$NON-NLS-1$
+		result.append(stereotypeFilterRule);
 		result.append(')');
 		return result.toString();
 	}

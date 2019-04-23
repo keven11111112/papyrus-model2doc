@@ -21,7 +21,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.provider.Docu
 import org.osgi.framework.BundleActivator;
 
 /**
- * This is the central singleton for the UMLDocumentStructureTemplateEditPlugin edit plugin.
+ * This is the central singleton for the Umldocumentstructuretemplate edit plugin.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  *
