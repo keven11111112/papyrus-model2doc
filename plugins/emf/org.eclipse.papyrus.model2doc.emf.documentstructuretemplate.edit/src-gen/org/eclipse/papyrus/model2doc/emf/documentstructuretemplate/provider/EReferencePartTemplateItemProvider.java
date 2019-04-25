@@ -21,6 +21,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
@@ -167,7 +168,8 @@ public class EReferencePartTemplateItemProvider
 				true,
 				null,
 				null,
-				null));
+				null,
+				URI.createURI("editor://documentstructuretemplate/EReferencePartTemplate/EReference/")));
 	}
 
 	/**

@@ -20,6 +20,7 @@
 	<modules>
 		<module>ieee</module>
 		<module>org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.modelexplorer</module>
+		<module>org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.properties</module>
 		<module>org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation</module>
 		<module>org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation.edit</module>
 		<module>org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.ui</module>

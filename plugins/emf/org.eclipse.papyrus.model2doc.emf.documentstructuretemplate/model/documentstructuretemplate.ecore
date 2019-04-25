@@ -186,6 +186,7 @@
         lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EReference">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A EReference which should be provided by the EClass of the upper level."/>
+        <details key="propertyEditorFactory" value="editor://documentstructuretemplate/EReferencePartTemplate/EReference/"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>

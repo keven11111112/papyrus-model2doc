@@ -42,6 +42,10 @@ public interface EReferencePartTemplate extends IComposedBodyPartTemplate {
 	/**
 	 * Returns the value of the '<em><b>EReference</b></em>' reference.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>EReference</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * A EReference which should be provided by the EClass of the upper level.
@@ -51,6 +55,7 @@ public interface EReferencePartTemplate extends IComposedBodyPartTemplate {
 	 * @see #setEReference(EReference)
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getEReferencePartTemplate_EReference()
 	 * @model required="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel propertyEditorFactory='editor://documentstructuretemplate/EReferencePartTemplate/EReference/'"
 	 * @generated
 	 */
 	EReference getEReference();
