@@ -161,6 +161,7 @@
         eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="An EClass used to filter EObject."/>
+        <details key="propertyEditorFactory" value="editor://documentstructuretemplate/EClassPartTemplate/EClass/"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="filterRule" ordered="false"

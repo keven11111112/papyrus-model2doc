@@ -22,6 +22,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -168,7 +169,8 @@ public class EClassPartTemplateItemProvider
 				true,
 				null,
 				null,
-				null));
+				null,
+				URI.createURI("editor://documentstructuretemplate/EClassPartTemplate/EClass/"))); //$NON-NLS-1$
 	}
 
 	/**

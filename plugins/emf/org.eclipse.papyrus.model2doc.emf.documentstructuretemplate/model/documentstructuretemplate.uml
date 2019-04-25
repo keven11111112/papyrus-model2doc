@@ -201,6 +201,9 @@ Its children are an alternation of two kinds of objects: IBodyPartTemplate and I
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_QLb5QFYBEemKJasCEBKPhQ" name="EClassPartTemplate">
       <ownedAttribute xmi:id="_U3f_wFYBEemKJasCEBKPhQ" name="eClass">
+        <eAnnotations xmi:id="_Mey2gGdnEemA6PBJwf7UhA" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:id="_Mey2gWdnEemA6PBJwf7UhA" key="propertyEditorFactory" value="editor://documentstructuretemplate/EClassPartTemplate/EClass/"/>
+        </eAnnotations>
         <ownedComment xmi:id="_2xzasFYEEemKJasCEBKPhQ" annotatedElement="_U3f_wFYBEemKJasCEBKPhQ">
           <body>An EClass used to filter EObject.</body>
         </ownedComment>

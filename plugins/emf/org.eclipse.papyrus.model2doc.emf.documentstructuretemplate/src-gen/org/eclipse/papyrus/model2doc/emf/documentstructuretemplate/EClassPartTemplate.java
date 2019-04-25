@@ -46,6 +46,7 @@ public interface EClassPartTemplate extends IComposedSubBodyPartTemplate {
 	 * @see #setEClass(EClass)
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getEClassPartTemplate_EClass()
 	 * @model ordered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel propertyEditorFactory='editor://documentstructuretemplate/EClassPartTemplate/EClass/'"
 	 * @generated
 	 */
 	EClass getEClass();

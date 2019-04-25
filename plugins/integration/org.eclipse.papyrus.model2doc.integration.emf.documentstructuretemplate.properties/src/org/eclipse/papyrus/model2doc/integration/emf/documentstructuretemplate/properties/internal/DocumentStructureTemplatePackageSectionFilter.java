@@ -42,7 +42,7 @@ public class DocumentStructureTemplatePackageSectionFilter implements IFilter {
 	 * @return
 	 */
 	@Override
-	public boolean select(Object toTest) {
+	public boolean select(final Object toTest) {
 		if (false == toTest instanceof EObject) {
 			return false;
 		}
