@@ -49,6 +49,7 @@ public interface StereotypePartTemplate extends EClassPartTemplate, IStereotypeP
 	 * @see #setStereotypeQualifiedName(String)
 	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplatePackage#getStereotypePartTemplate_StereotypeQualifiedName()
 	 * @model required="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel propertyEditorFactory='editor://umldocumentstructuretemplate/StereotypePartTemplate/stereotypeQualifiedName/'"
 	 * @generated
 	 */
 	@Override

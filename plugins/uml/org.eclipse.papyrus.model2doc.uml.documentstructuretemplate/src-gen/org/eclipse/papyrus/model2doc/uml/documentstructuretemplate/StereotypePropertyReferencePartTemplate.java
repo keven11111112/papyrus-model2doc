@@ -54,6 +54,7 @@ public interface StereotypePropertyReferencePartTemplate extends IComposedBodyPa
 	 * @see #setPropertyName(String)
 	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplatePackage#getStereotypePropertyReferencePartTemplate_PropertyName()
 	 * @model required="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel propertyEditorFactory='editor://umldocumentstructuretemplate/StereotypePropertyReferencePartTemplate/propertyName/'"
 	 * @generated
 	 */
 	String getPropertyName();
@@ -83,6 +84,7 @@ public interface StereotypePropertyReferencePartTemplate extends IComposedBodyPa
 	 * @see #setStereotypeQualifiedName(String)
 	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplatePackage#getStereotypePropertyReferencePartTemplate_StereotypeQualifiedName()
 	 * @model ordered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel propertyEditorFactory='editor://umldocumentstructuretemplate/StereotypePropertyReferencePartTemplate/stereotypeQualifiedName/'"
 	 * @generated
 	 */
 	@Override

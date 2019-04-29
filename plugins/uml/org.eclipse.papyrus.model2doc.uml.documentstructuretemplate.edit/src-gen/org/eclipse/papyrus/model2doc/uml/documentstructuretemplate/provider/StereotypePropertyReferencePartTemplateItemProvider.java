@@ -22,6 +22,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -172,7 +173,8 @@ public class StereotypePropertyReferencePartTemplateItemProvider
 				false,
 				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				null,
-				null));
+				null,
+				URI.createURI("editor://umldocumentstructuretemplate/StereotypePropertyReferencePartTemplate/propertyName/"))); //$NON-NLS-1$
 	}
 
 	/**
@@ -193,7 +195,8 @@ public class StereotypePropertyReferencePartTemplateItemProvider
 				false,
 				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				null,
-				null));
+				null,
+				URI.createURI("editor://umldocumentstructuretemplate/StereotypePropertyReferencePartTemplate/stereotypeQualifiedName/"))); //$NON-NLS-1$
 	}
 
 	/**

@@ -28,5 +28,6 @@
 		<module>org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.edit</module>
 		<module>org.eclipse.papyrus.model2doc.integration.gmf.template2structure</module>
 		<module>org.eclipse.papyrus.model2doc.integration.uml.architecture</module>
+		<module>org.eclipse.papyrus.model2doc.integration.uml.documentstructuretemplate.properties</module>
 	</modules>
 </project>

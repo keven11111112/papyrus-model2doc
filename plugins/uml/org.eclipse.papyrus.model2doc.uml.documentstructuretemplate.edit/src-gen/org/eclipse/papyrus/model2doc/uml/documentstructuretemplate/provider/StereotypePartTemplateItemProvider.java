@@ -20,6 +20,7 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -88,7 +89,8 @@ public class StereotypePartTemplateItemProvider extends EClassPartTemplateItemPr
 				false,
 				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				null,
-				null));
+				null,
+				URI.createURI("editor://umldocumentstructuretemplate/StereotypePartTemplate/stereotypeQualifiedName/"))); //$NON-NLS-1$
 	}
 
 	/**

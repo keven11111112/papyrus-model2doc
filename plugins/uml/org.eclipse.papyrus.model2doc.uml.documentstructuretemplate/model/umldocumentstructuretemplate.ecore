@@ -13,6 +13,7 @@
         ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The qualifiedName of the stereotype to find."/>
+        <details key="propertyEditorFactory" value="editor://umldocumentstructuretemplate/StereotypePartTemplate/stereotypeQualifiedName/"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stereotypeFilterRule" ordered="false"
@@ -69,12 +70,14 @@
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The name of the stereotype property."/>
+        <details key="propertyEditorFactory" value="editor://umldocumentstructuretemplate/StereotypePropertyReferencePartTemplate/propertyName/"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stereotypeQualifiedName"
         ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The qualified name of the stereotype. This field is used, only when the parent of the object is an EClassPartTemplate and not a StereotypePartTemplate.&#xD;&#xA;In other case, this field is ignored."/>
+        <details key="propertyEditorFactory" value="editor://umldocumentstructuretemplate/StereotypePropertyReferencePartTemplate/stereotypeQualifiedName/"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stereotypeFilterRule" ordered="false"

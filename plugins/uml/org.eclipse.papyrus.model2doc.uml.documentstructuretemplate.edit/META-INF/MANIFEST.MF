@@ -9,7 +9,8 @@ Bundle-Activator: org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.pr
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.provider
+Export-Package: org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.edit.editors.factories,
+ org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.provider
 Require-Bundle: org.eclipse.osgi;bundle-version="[3.0.0,4.0.0)",
  org.eclipse.core.runtime;bundle-version="[3.15.0,4.0.0)";resolution:=optional;x-installation:=greedy,
  org.eclipse.papyrus.model2doc.uml.documentstructuretemplate;bundle-version="[0.7.0,1.0.0)",
@@ -20,5 +21,11 @@ Require-Bundle: org.eclipse.osgi;bundle-version="[3.0.0,4.0.0)",
  org.eclipse.emf.ecore.edit;bundle-version="[2.11.0,3.0.0)",
  org.eclipse.papyrus.model2doc.core.generatorconfiguration;bundle-version="[0.7.0,1.0.0)",
  org.eclipse.papyrus.model2doc.core.generatorconfiguration.edit;bundle-version="[0.7.0,1.0.0)",
- org.eclipse.uml2.common.edit;bundle-version="[2.5.0,3.0.0)"
+ org.eclipse.uml2.common.edit;bundle-version="[2.5.0,3.0.0)",
+ org.eclipse.jface;bundle-version="[3.0.0,4.0.0)",
+ org.eclipse.ui.workbench;bundle-version="[3.0.0,4.0.0)",
+ org.eclipse.emf.common.ui;bundle-version="[2.16.0,3.0.0)",
+ org.eclipse.emf.edit.ui;bundle-version="[2.16.0,3.0.0)",
+ org.eclipse.uml2.uml;bundle-version="[5.5.0,6.0.0)",
+ org.eclipse.core.resources;bundle-version="[3.13.0,4.0.0)"
 Bundle-ActivationPolicy: lazy
