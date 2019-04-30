@@ -29,7 +29,7 @@ import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.converters.IDisplayConverter;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.editors.CustomExtendedDialogCellEditor;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.internal.messages.Messages;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.internal.providers.EcoreLabelProvider;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.providers.DelegatingToEMFLabelProvider;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.dialogs.ISelectionStatusValidator;
 
@@ -120,7 +120,7 @@ public abstract class AbstractEStructuralFeatureDialogEditorFactory extends EMFE
 	 */
 	public ILabelProvider getOrCreateLabelProvider() {
 		if (this.labelProvider == null) {
-			this.labelProvider = new EcoreLabelProvider();
+			this.labelProvider = new DelegatingToEMFLabelProvider();
 		}
 		return this.labelProvider;
 	}

@@ -203,6 +203,7 @@ public class CustomExtendedDialogCellEditor extends ExtendedDialogCellEditor {
 		Object initialSelection = this.displayConverter.semanticToDisplayValue(editedObject.eGet(this.editedFeature), this.editedObject);
 		Object[] selectedValue = { initialSelection };
 
+		dialog.setSize(100, 50);
 		dialog.setInput(this.dialogInput);
 		if (null != this.validator) {
 			dialog.setValidator(this.validator);

@@ -37,4 +37,30 @@
             class="org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.provider.PapyrusGMFDocumentStructureTemplateItemProviderAdapterFactory$DocumentStructureTemplateChildCreationExtender"/>
    </extension>
 
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections
+            contributorId="TreeOutlinePage">
+         <propertySection
+               class="org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.edit.internal.PapyrusGMFDocumentStructureTemplatePropertySection"
+               filter="org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.edit.internal.PapyrusGMFDocumentStructureTemplatePackageSectionFilter"
+               id="org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.properties.propertySection"
+               tab="advanced">
+            <input
+                  type="java.lang.Object">
+            </input>
+         </propertySection>
+      </propertySections>
+   </extension>
+   <extension
+         point="org.eclipse.emf.edit.propertyEditorFactories">
+      <factory
+            class="org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.edit.internal.editors.factories.PapyrusGMFDiagramViewDiagramKindIdEditorFactory"
+            uri="editor://papyrusgmfdocumentstructuretemplate/PapyrusGMFDiagramView/diagramKindId/">
+      </factory>
+      <factory
+            class="org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.edit.internal.editors.factories.PapyrusGMFDiagramViewDiagramTypeEditorFactory"
+            uri="editor://papyrusgmfdocumentstructuretemplate/PapyrusGMFDiagramView/diagramType/">
+      </factory>
+   </extension>
 </plugin>

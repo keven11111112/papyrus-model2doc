@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.utils.DocumentStructureTemplateUtils;
 
 /**
  * An abstract class used to select EObject from Ecore model
@@ -52,24 +52,13 @@ public abstract class AbstractEcoreEReferenceDialogEditorFactory extends Abstrac
 	 */
 	@Override
 	protected Collection<?> getDialogInput(final EObject editedObject) {
+		final EObject semanticContext = DocumentStructureTemplateUtils.getSemanticContext(editedObject);
 		final Collection<EPackage> input = new HashSet<>();
-
-		EObject parent = editedObject;
-		DocumentTemplate template = null;
-		// we are looking for the document template
-		while (parent != null && template == null) {
-			if (parent instanceof DocumentTemplate) {
-				template = (DocumentTemplate) parent;
-			} else {
-				parent = parent.eContainer();
-			}
-		}
 
 		// we check if the document template has a context
 		// (there is no context editing a DocumentTemplatePrototype)
-		if (null != template && null != template.getSemanticContext()) {
-			EObject documentContext = template.getSemanticContext();
-			input.add(documentContext.eClass().getEPackage());
+		if (null != semanticContext) {
+			input.add(semanticContext.eClass().getEPackage());
 		} else {
 			// in this case we cross the loaded resource to find EPackage in others resource
 			final ResourceSet set = editedObject.eResource().getResourceSet();

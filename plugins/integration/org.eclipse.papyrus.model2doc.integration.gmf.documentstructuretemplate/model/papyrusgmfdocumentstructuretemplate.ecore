@@ -26,12 +26,14 @@
         eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The kind of the diagram. This field can be empty. In this case, all diagrams will be integrated into the final document."/>
+        <details key="propertyEditorFactory" value="editor://papyrusgmfdocumentstructuretemplate/PapyrusGMFDiagramView/diagramKindId/"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="diagramType" ordered="false"
         eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The type of diagram to manage. If no type is defined, we will take all diagrams."/>
+        <details key="propertyEditorFactory" value="editor://papyrusgmfdocumentstructuretemplate/PapyrusGMFDiagramView/diagramType/"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="contextFilterRule" ordered="false"

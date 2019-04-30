@@ -13,24 +13,32 @@
  *
  *****************************************************************************/
 
-package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.internal.providers;
+package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.providers;
 
-import org.eclipse.emf.ecore.ENamedElement;
+import java.util.ArrayList;
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Adapter;
+import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
+import org.eclipse.emf.edit.provider.ComposedAdapterFactory.Descriptor;
+import org.eclipse.emf.edit.provider.ComposedAdapterFactory.Descriptor.Registry;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
+import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ILabelProviderListener;
-import org.eclipse.osgi.util.NLS;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.internal.messages.Messages;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.providers.DelegatingToEMFLabelProvider;
 import org.eclipse.swt.graphics.Image;
 
 /**
- * A label provider used to display Ecore name
+ * This label provider delegated the text and the image calculus to the Ecore IItemLabelProvider of the EObject when we found it.
  */
-public class EcoreLabelProvider extends DelegatingToEMFLabelProvider {
+public class DelegatingToEMFLabelProvider implements ILabelProvider {
+
+	/**
+	 * the separator between field of the label
+	 */
+	protected static final String FIELD_LABEL_SEPARATOR = " - "; //$NON-NLS-1$
 
 	/**
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#addListener(org.eclipse.jface.viewers.ILabelProviderListener)
@@ -39,7 +47,7 @@ public class EcoreLabelProvider extends DelegatingToEMFLabelProvider {
 	 */
 	@Override
 	public void addListener(ILabelProviderListener listener) {
-		// nothing to do
+		// useless
 	}
 
 	/**
@@ -48,7 +56,7 @@ public class EcoreLabelProvider extends DelegatingToEMFLabelProvider {
 	 */
 	@Override
 	public void dispose() {
-		// nothing to do
+		// useless
 	}
 
 	/**
@@ -60,7 +68,7 @@ public class EcoreLabelProvider extends DelegatingToEMFLabelProvider {
 	 */
 	@Override
 	public boolean isLabelProperty(Object element, String property) {
-		// nothing to do
+		// useless
 		return false;
 	}
 
@@ -102,22 +110,40 @@ public class EcoreLabelProvider extends DelegatingToEMFLabelProvider {
 	 * @return
 	 */
 	@Override
-	public String getText(Object element) {
-		if (element instanceof EPackage) {
-			final EPackage pack = (EPackage) element;
-			final StringBuilder builder = new StringBuilder();
-			builder.append(pack.getName());
-			builder.append(FIELD_LABEL_SEPARATOR);
-			builder.append(pack.getNsURI());
-			return builder.toString();
+	public String getText(final Object element) {
+		if (element instanceof String) {
+			return (String) element;
 		}
-		if (element instanceof EStructuralFeature) {
-			return NLS.bind(Messages.EcoreLabelProvider_FeatureOrigin, ((EStructuralFeature) element).getName(), ((EStructuralFeature) element).getEContainingClass().getName());
+		if (element instanceof EObject) {
+			final EObject eobject = (EObject) element;
+			final IItemLabelProvider subProvider = getSubLabelProvider(eobject);
+			if (null != subProvider) {
+				return subProvider.getText(eobject);
+			}
 		}
-		if (element instanceof ENamedElement) {
-			return ((ENamedElement) element).getName();
-		}
+
 		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 *
+	 * @param eobject
+	 *            an eobejct
+	 * @return
+	 *         the IITemLabelProvider declared for this EObject
+	 */
+	protected final IItemLabelProvider getSubLabelProvider(final EObject eobject) {
+		final Registry registry = ComposedAdapterFactory.Descriptor.Registry.INSTANCE;
+		final Collection<Object> types = new ArrayList<>();
+		types.add(eobject.eClass().getEPackage());
+		types.add(IItemLabelProvider.class);
+		final Descriptor descriptor = registry.getDescriptor(types);
+		final AdapterFactory adapterFactory = descriptor.createAdapterFactory();
+		final Adapter adapt = adapterFactory.adapt(eobject, IItemLabelProvider.class);
+		if (adapt instanceof IItemLabelProvider) {
+			return (IItemLabelProvider) adapt;
+		}
+		return null;
 	}
 
 }
