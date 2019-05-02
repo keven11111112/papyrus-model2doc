@@ -9,7 +9,7 @@
  * SPDX-License-Identifier: EPL-2.0
  *
  * Contributors:
- *   CEA LIST - Initial API and implementation
+ *   Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
 
@@ -48,7 +48,15 @@ public class PapyrusDiagramUtils {
 		// to prevent instanciation
 	}
 
-	public static final Collection<PapyrusDiagram> getPapyrusDiagram(final EObject editedElement) {
+	/**
+	 *
+	 * @param editedElement
+	 *            the edited element (an element of the DocumentStructureTemplate metamodel or one of its extension)
+	 * @return
+	 *         the collection of accessible {@link PapyrusDiagram} according to the semantic context of the document template
+	 *         or all registered {@link PapyrusDiagram} if the context is <code>null</code>
+	 */
+	public static final Collection<PapyrusDiagram> getPapyrusDiagrams(final EObject editedElement) {
 		final DocumentTemplate docTemplate = DocumentStructureTemplateUtils.getDocumentTemplate(editedElement);
 
 		// 1. in this case we cross all registered contribution to AF

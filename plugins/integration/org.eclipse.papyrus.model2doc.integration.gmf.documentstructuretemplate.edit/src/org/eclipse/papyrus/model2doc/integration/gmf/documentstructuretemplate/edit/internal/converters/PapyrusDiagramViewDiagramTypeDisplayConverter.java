@@ -42,7 +42,7 @@ public class PapyrusDiagramViewDiagramTypeDisplayConverter implements IDisplayCo
 			return canonicalValue;
 		}
 
-		final Collection<PapyrusDiagram> diagrams = PapyrusDiagramUtils.getPapyrusDiagram(editedObject);
+		final Collection<PapyrusDiagram> diagrams = PapyrusDiagramUtils.getPapyrusDiagrams(editedObject);
 		final List<PapyrusDiagram> result = diagrams
 				.stream()
 				.filter(d -> canonicalValue.equals(d.getImplementationID()))

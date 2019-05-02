@@ -61,7 +61,7 @@ public abstract class AbstracPapyrusGMFDiagramViewEditorFactory extends Abstract
 	 */
 	@Override
 	protected Collection<?> getDialogInput(final EObject editedElement) {
-		return org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.edit.internal.utils.PapyrusDiagramUtils.getPapyrusDiagram(editedElement);
+		return org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.edit.internal.utils.PapyrusDiagramUtils.getPapyrusDiagrams(editedElement);
 	}
 
 }

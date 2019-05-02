@@ -9,7 +9,7 @@
  * SPDX-License-Identifier: EPL-2.0
  *
  * Contributors:
- *   CEA LIST - Initial API and implementation
+ *   Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
 
@@ -19,7 +19,7 @@ import org.eclipse.papyrus.infra.gmfdiag.representation.PapyrusDiagram;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.providers.DelegatingToEMFLabelProvider;
 
 /**
- *
+ * This label provider returns the name of the {@link PapyrusDiagram} and its kindId
  */
 public class PapyrusDiagramKindIdLabelProvider extends DelegatingToEMFLabelProvider {
 
@@ -35,8 +35,9 @@ public class PapyrusDiagramKindIdLabelProvider extends DelegatingToEMFLabelProvi
 			final StringBuilder builder = new StringBuilder();
 			builder.append(super.getText(element));
 			builder.append(FIELD_LABEL_SEPARATOR);
-			builder.append("kind id: "); //$NON-NLS-1$
+			builder.append("(kindId= "); //$NON-NLS-1$
 			builder.append(((PapyrusDiagram) element).getId());
+			builder.append(")");//$NON-NLS-1$
 			return builder.toString();
 		}
 		return super.getText(element);

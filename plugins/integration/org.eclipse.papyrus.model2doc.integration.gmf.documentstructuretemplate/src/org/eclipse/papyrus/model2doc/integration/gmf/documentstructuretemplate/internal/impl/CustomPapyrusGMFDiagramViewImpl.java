@@ -60,6 +60,8 @@ public class CustomPapyrusGMFDiagramViewImpl extends PapyrusGMFDiagramViewImpl {
 				if (false == isGraphicalContext(eobject, expectedDiagramContext)) {
 					continue;
 				}
+				break;
+
 			case BOTH:
 				if (false == (isSemanticContext(eobject, expectedDiagramContext) || isGraphicalContext(eobject, expectedDiagramContext))) {
 					continue;
@@ -98,9 +100,9 @@ public class CustomPapyrusGMFDiagramViewImpl extends PapyrusGMFDiagramViewImpl {
 	 * @return
 	 *         <code>true</code> if the eobject is used as semantic context for the diagram
 	 */
-	private boolean isSemanticContext(final EObject eobejct, final EObject expectedSemanticContext) {
-		if (eobejct instanceof Diagram) {
-			return expectedSemanticContext == ((Diagram) eobejct).getElement();
+	private boolean isSemanticContext(final EObject eobject, final EObject expectedSemanticContext) {
+		if (eobject instanceof Diagram) {
+			return expectedSemanticContext == ((Diagram) eobject).getElement();
 		}
 		return false;
 	}
@@ -149,7 +151,7 @@ public class CustomPapyrusGMFDiagramViewImpl extends PapyrusGMFDiagramViewImpl {
 	 */
 	private boolean matchDiagramKind(final Diagram diagram) {
 		final PapyrusDiagramStyle style = (PapyrusDiagramStyle) diagram.getStyle(StylePackage.eINSTANCE.getPapyrusDiagramStyle());
-		return style != null && (this.diagramType == null || this.diagramType.isEmpty() || this.diagramKindId.equals(style.getDiagramKindId()));
+		return style != null && (this.diagramKindId == null || this.diagramKindId.isEmpty() || this.diagramKindId.equals(style.getDiagramKindId()));
 	}
 
 
