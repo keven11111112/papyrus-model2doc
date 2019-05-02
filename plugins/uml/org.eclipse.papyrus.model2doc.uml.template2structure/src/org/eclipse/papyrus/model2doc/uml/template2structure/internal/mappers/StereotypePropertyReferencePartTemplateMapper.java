@@ -26,6 +26,8 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.Title;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubBodyPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.IMappingService;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferencePartTemplate;
+import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.util.UMLUtil;
 
 /**
  * This mapper converts the StereotypePropertyPartTemplate into BodyPart
@@ -75,7 +77,11 @@ public class StereotypePropertyReferencePartTemplateMapper extends AbstractUMLTe
 			while (subBodyPartTemplate.hasNext()) {
 				final ISubBodyPartTemplate currentObjectPartTemplate = subBodyPartTemplate.next();
 
-				final Collection<BodyPart> result = mappingService.map(currentObjectPartTemplate, currentEObject, BodyPart.class);
+				// it could be a stereotype application
+				final Element baseElement = UMLUtil.getBaseElement(currentEObject);
+				final EObject subElementToMap = baseElement != null ? baseElement : currentEObject;
+
+				final Collection<BodyPart> result = mappingService.map(currentObjectPartTemplate, subElementToMap, BodyPart.class);
 				if (result == null) {
 					continue;
 				}

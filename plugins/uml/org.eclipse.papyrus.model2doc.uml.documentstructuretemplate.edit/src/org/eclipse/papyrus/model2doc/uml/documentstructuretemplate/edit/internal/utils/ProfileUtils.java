@@ -29,8 +29,11 @@ import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.utils.DocumentStructureTemplateUtils;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Namespace;
+import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
@@ -45,11 +48,17 @@ public class ProfileUtils {
 	 * @param anEobject
 	 *            an eobject
 	 * @return
-	 *         a collection of UML Profile accessible from this EObject (so loaded in the same {@link ResourceSet}
+	 *         a collection of UML Profile accessible from this EObject (so applied Profile when the semanticContext!=null and loaded in the same {@link ResourceSet} otherwise)
 	 */
 	public static final Collection<Profile> findAttachedProfiles(final EObject anEobject) {
+		final Element semanticContext = (Element) DocumentStructureTemplateUtils.getSemanticContext(anEobject);
 		final Collection<Profile> input = new HashSet<>();
-		if (null != anEobject.eResource() && null != anEobject.eResource().getResourceSet()) {
+		if (semanticContext instanceof Element) {
+			final Package pack = semanticContext.getNearestPackage();
+			if (null != pack) {
+				input.addAll(pack.getAllAppliedProfiles());
+			}
+		} else if (null != anEobject.eResource() && null != anEobject.eResource().getResourceSet()) {
 			// we cross the loaded resource to find EPackage in others resource
 			final ResourceSet set = anEobject.eResource().getResourceSet();
 			final Iterator<Resource> iter = set.getResources().iterator();
@@ -65,6 +74,15 @@ public class ProfileUtils {
 		return input;
 	}
 
+	/**
+	 *
+	 * @param editedObject
+	 *            the edited object (an element of the DocumentStructureTemplate metamodel (or from one of these extension)
+	 * @param stereotypeQualifiedName
+	 *            a stereotype's qualified name
+	 * @return
+	 *         the stereotype itself if we found it or <code>null</code>
+	 */
 	public static final Stereotype findStereotype(final EObject editedObject, final String stereotypeQualifiedName) {
 		final List<String> namespaces = Arrays.asList(stereotypeQualifiedName.split("::")); //$NON-NLS-1$
 		final Collection<Profile> profiles = ProfileUtils.findAttachedProfiles(editedObject);
@@ -90,7 +108,15 @@ public class ProfileUtils {
 		return null;
 	}
 
-
+	/**
+	 *
+	 * @param editedObject
+	 *            the edited object (an element of the DocumentStructureTemplate metamodel (or from one of these extension)
+	 * @param propertyName
+	 *            a stereotype's property's name
+	 * @return
+	 *         all matching found propertes
+	 */
 	public static final Collection<Property> findStereotypeProperty(final EObject editedEObject, final String propertyName) {
 		if (null == propertyName || propertyName.isEmpty()) {
 			return Collections.emptyList();

@@ -54,7 +54,7 @@ public class CustomStereotypePropertyReferencePartTemplateImpl extends Stereotyp
 
 		EObject stereotypeApplication = null;
 		if (eobject instanceof Element) {
-			stereotypeApplication = getFirstMatchingStereotypeApplication(stereotypeApplication);
+			stereotypeApplication = getFirstMatchingStereotypeApplication(eobject);
 		} else {
 			stereotypeApplication = eobject;
 		}

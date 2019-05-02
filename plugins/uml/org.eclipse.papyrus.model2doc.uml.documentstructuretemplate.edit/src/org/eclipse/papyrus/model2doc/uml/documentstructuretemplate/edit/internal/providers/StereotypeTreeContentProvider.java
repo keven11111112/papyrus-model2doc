@@ -58,7 +58,7 @@ public class StereotypeTreeContentProvider implements ITreeContentProvider {
 	@Override
 	public Object[] getChildren(final Object parentElement) {
 		if (parentElement instanceof Namespace) {
-			final Iterator<NamedElement> namedElementIter = ((Namespace) parentElement).getMembers().iterator();
+			final Iterator<NamedElement> namedElementIter = ((Namespace) parentElement).getOwnedMembers().iterator();
 			final Collection<Element> children = new ArrayList<>();
 			while (namedElementIter.hasNext()) {
 				final NamedElement current = namedElementIter.next();
