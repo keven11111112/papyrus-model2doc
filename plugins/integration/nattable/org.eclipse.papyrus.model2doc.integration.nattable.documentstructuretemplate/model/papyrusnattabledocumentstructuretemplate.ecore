@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="documentstructuretemplate" nsURI="http://www.eclipse.org/papyrus/model2doc/nattable/integration/1.0.0/documentstructuretemplate"
+    nsPrefix="documentstructuretemplate">
+  <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <details key="originalName" value="PapyrusNattableDocumentStructureTemplate"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="PapyrusTableView" eSuperTypes="../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.ecore#//ISubBodyPartTemplate ../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.ecore#//ITemplatePartView">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This element allows to represent Papyrus Tables."/>
+    </eAnnotations>
+    <eOperations name="getMatchingTables" ordered="false" upperBound="-1" eType="#//Table">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This method returns the tables owned by the parameter expectedTableContext, according to the type and the kind of the table&#xD;&#xA;If type and kind are not defined, the method will returns all table owned by the argument."/>
+      </eAnnotations>
+      <eParameters name="expectedTableContext" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+    </eOperations>
+    <eOperations name="buildTitle" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Build the title to use for the Table, according to the given eobject in parameter."/>
+      </eAnnotations>
+      <eParameters name="tableContext" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tableKindId" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The kind of the table. This field can be empty. In this case, all tables will be integrated into the final document."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tableType" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The type of table to manage. If no type is defined, we will take all tables"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contextFilterRule" ordered="false"
+        lowerBound="1" eType="#//ContextFilterBehavior" defaultValueLiteral="SEMANTIC_CONTEXT">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This property allows to define how to use the parameter of the method getMatchingTables."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="importMethod" ordered="false"
+        lowerBound="1" eType="#//ImportMethod" defaultValueLiteral="TABLE">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This property allows to define how to import the Tables."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ContextFilterBehavior">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This enumeration allows to define wich context must be used to find tables."/>
+    </eAnnotations>
+    <eLiterals name="SEMANTIC_CONTEXT"/>
+    <eLiterals name="GRAPHICAL_CONTEXT" value="1"/>
+    <eLiterals name="BOTH" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ImportMethod">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This enumeration allows to define how the table must be imported in the final document."/>
+    </eAnnotations>
+    <eLiterals name="IMAGE"/>
+    <eLiterals name="TABLE" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Table" instanceClassName="org.eclipse.papyrus.infra.nattable.model.nattable.Table"
+      abstract="true" interface="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This element allow to represent the Papyrus Table element."/>
+    </eAnnotations>
+  </eClassifiers>
+</ecore:EPackage>

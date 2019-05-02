@@ -80,8 +80,9 @@ public class CustomPapyrusGMFDiagramViewImpl extends PapyrusGMFDiagramViewImpl {
 				// not possible
 				continue;
 			}
-			// we take all diagrams when diagramType is not defined
-			// when diagram type is defined, we check
+
+			// we take all tables when tableType and table kind are not defined
+			// otherwise, we check
 			if (matchDiagramKind(diagram) && matchDiagramType(diagram)) {
 				filteredDiagram.add(diagram);
 			}

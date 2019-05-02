@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
+  <uml:Model xmi:id="_DaQY0GzWEemv9PXZKzcfkA" name="PapyrusNattableDocumentStructureTemplate" URI="http://www.eclipse.org/papyrus/model2doc/nattable/integration/1.0.0/documentstructuretemplate">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_DenUYGzWEemv9PXZKzcfkA">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_UedgsGzWEemv9PXZKzcfkA">
+      <importedPackage xmi:type="uml:Model" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_qN46sB17Eem3fboELVTtYQ"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_a_b6YGzWEemv9PXZKzcfkA" name="PapyrusTableView">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_TD4HIGzYEemv9PXZKzcfkA" annotatedElement="_a_b6YGzWEemv9PXZKzcfkA">
+        <body>This element allows to represent Papyrus Tables.</body>
+      </ownedComment>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_gCVzkGzWEemv9PXZKzcfkA" name="tableKindId">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_X4KVgGzYEemv9PXZKzcfkA" annotatedElement="_gCVzkGzWEemv9PXZKzcfkA">
+          <body>The kind of the table. This field can be empty. In this case, all tables will be integrated into the final document.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qTZzsGzWEemv9PXZKzcfkA"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_i2BcIGzWEemv9PXZKzcfkA" name="tableType">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_eKVeMGzYEemv9PXZKzcfkA" annotatedElement="_i2BcIGzWEemv9PXZKzcfkA">
+          <body>The type of table to manage. If no type is defined, we will take all tables</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qSsCAGzWEemv9PXZKzcfkA"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_0ytEIGzWEemv9PXZKzcfkA" name="contextFilterRule" type="_5ZtEcGzWEemv9PXZKzcfkA">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_jEK68GzYEemv9PXZKzcfkA" annotatedElement="_0ytEIGzWEemv9PXZKzcfkA">
+          <body>This property allows to define how to use the parameter of the method getMatchingTables.</body>
+        </ownedComment>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_Mqc8YGzXEemv9PXZKzcfkA" name="defaultValue" value="SEMANTIC_CONTEXT"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Lwm4YGzZEemv9PXZKzcfkA" name="importMethod" type="_4N8xEGzYEemv9PXZKzcfkA">
+        <ownedComment xmi:type="uml:Comment" xmi:id="__f0bMGzjEemJ-foOn68QUw" annotatedElement="_Lwm4YGzZEemv9PXZKzcfkA">
+          <body>This property allows to define how to import the Tables.</body>
+        </ownedComment>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_Pg1BsGzZEemv9PXZKzcfkA" name="defaultValue" value="TABLE"/>
+      </ownedAttribute>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_0lhR0GzYEemv9PXZKzcfkA" client="_a_b6YGzWEemv9PXZKzcfkA">
+        <supplier xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_VnL3oFX-EemKJasCEBKPhQ"/>
+        <contract xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_VnL3oFX-EemKJasCEBKPhQ"/>
+      </interfaceRealization>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_09z2AGzYEemv9PXZKzcfkA" client="_a_b6YGzWEemv9PXZKzcfkA">
+        <supplier xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_DwGdIFYFEemKJasCEBKPhQ"/>
+        <contract xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_DwGdIFYFEemKJasCEBKPhQ"/>
+      </interfaceRealization>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_zJ9IMGzXEemv9PXZKzcfkA" name="getMatchingTables">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_tKKTgGzYEemv9PXZKzcfkA" annotatedElement="_zJ9IMGzXEemv9PXZKzcfkA">
+          <body>This method returns the tables owned by the parameter expectedTableContext, according to the type and the kind of the table&#xD;
+If type and kind are not defined, the method will returns all table owned by the argument.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_-Y-lYGzXEemv9PXZKzcfkA" name="expectedTableContext">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_5aZLgGzXEemv9PXZKzcfkA" name="return " type="_SeohgGzXEemv9PXZKzcfkA" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XV4SYGzZEemv9PXZKzcfkA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XXElMGzZEemv9PXZKzcfkA" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_AkjFEGzYEemv9PXZKzcfkA" name="buildTitle">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_yPywkGzYEemv9PXZKzcfkA" annotatedElement="_AkjFEGzYEemv9PXZKzcfkA">
+          <body>Build the title to use for the Table, according to the given eobject in parameter.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_D2QtcGzYEemv9PXZKzcfkA" name="tableContext">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_F0TugGzYEemv9PXZKzcfkA" name="return " direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_5ZtEcGzWEemv9PXZKzcfkA" name="ContextFilterBehavior">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_3pTK4GzjEemJ-foOn68QUw" annotatedElement="_5ZtEcGzWEemv9PXZKzcfkA">
+        <body>This enumeration allows to define wich context must be used to find tables.</body>
+      </ownedComment>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_7N_FgGzWEemv9PXZKzcfkA" name="SEMANTIC_CONTEXT"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_8YRuYGzWEemv9PXZKzcfkA" name="GRAPHICAL_CONTEXT"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_-MalgGzWEemv9PXZKzcfkA" name="BOTH"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_SeohgGzXEemv9PXZKzcfkA" name="Table">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_LB_7YGzYEemv9PXZKzcfkA" annotatedElement="_SeohgGzXEemv9PXZKzcfkA">
+        <body>This element allow to represent the Papyrus Table element.</body>
+      </ownedComment>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_4N8xEGzYEemv9PXZKzcfkA" name="ImportMethod">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_63SJ0GzjEemJ-foOn68QUw" annotatedElement="_4N8xEGzYEemv9PXZKzcfkA">
+        <body>This enumeration allows to define how the table must be imported in the final document.</body>
+      </ownedComment>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_7ByxsGzYEemv9PXZKzcfkA" name="IMAGE"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_8zIzgGzYEemv9PXZKzcfkA" name="TABLE"/>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Vl7poGzXEemv9PXZKzcfkA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Vl9e0GzXEemv9PXZKzcfkA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Ecore.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Model>
+  <Ecore:EClass xmi:id="_WgraoGzXEemv9PXZKzcfkA" instanceClassName="org.eclipse.papyrus.infra.nattable.model.nattable.Table" base_Interface="_SeohgGzXEemv9PXZKzcfkA" className="Table"/>
+  <Ecore:EPackage xmi:id="_m3XqUGzZEemv9PXZKzcfkA" base_Package="_DaQY0GzWEemv9PXZKzcfkA" packageName="documentstructuretemplate" nsPrefix="documentstructuretemplate" basePackage="org.eclipse.papyrus.model2doc.integration.nattable" prefix="PapyrusNattableDocumentStructureTemplate"/>
+</xmi:XMI>

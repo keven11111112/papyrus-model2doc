@@ -85,19 +85,31 @@
          download-size="0"
          install-size="0"
          version="0.0.0"/>
-		 
+
+   <plugin
+         id="org.eclipse.papyrus.model2doc.integration.nattable.documentstructuretemplate"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.papyrus.model2doc.integration.nattable.documentstructuretemplate.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
    <plugin
          id="org.eclipse.papyrus.model2doc.integration.uml.architecture"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-		 
+
    <plugin
          id="org.eclipse.papyrus.model2doc.integration.uml.documentstructuretemplate.properties"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-		 
+
 </feature>
