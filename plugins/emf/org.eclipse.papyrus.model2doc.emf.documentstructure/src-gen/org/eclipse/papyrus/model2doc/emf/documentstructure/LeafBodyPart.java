@@ -16,13 +16,13 @@ package org.eclipse.papyrus.model2doc.emf.documentstructure;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Text Part</b></em>'.
+ * A representation of the model object '<em><b>Leaf Body Part</b></em>'.
  * <!-- end-user-doc -->
  *
  *
- * @see org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage#getTextPart()
+ * @see org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage#getLeafBodyPart()
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface TextPart extends BodyPart {
-} // TextPart
+public interface LeafBodyPart extends BodyPart {
+} // LeafBodyPart

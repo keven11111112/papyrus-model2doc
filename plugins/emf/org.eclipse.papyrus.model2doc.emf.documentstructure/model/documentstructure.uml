@@ -4,6 +4,9 @@
     <packageImport xmi:type="uml:PackageImport" xmi:id="_6qbzIB4fEemmq_cjeiIGww">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
     </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_5wHn8HDJEemmSqLtBrVBMA">
+      <importedPackage xmi:type="uml:Model" href="pathmap://MODEL2DOC/BUILTIN_TYPES/BuiltInTypes.uml#_WW0l4HAKEemJ-foOn68QUw"/>
+    </packageImport>
     <packagedElement xmi:type="uml:Class" xmi:id="_A-JM4B4gEemmq_cjeiIGww" name="TextDocument">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_dNLh0EmLEem4wpUXttaNpQ" name="mainTitle">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
@@ -27,10 +30,6 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mkLdQB4kEemmq_cjeiIGww"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mkLdQR4kEemmq_cjeiIGww" value="1"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_qiKgUB4lEemmq_cjeiIGww" name="subBodyPart" type="_P0JX0B4gEemmq_cjeiIGww" aggregation="composite" association="_qiEZsB4lEemmq_cjeiIGww">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jKNJYB4nEemmq_cjeiIGww"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qiLHYR4lEemmq_cjeiIGww" value="*"/>
-      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_TVO48B4gEemmq_cjeiIGww" memberEnd="_TVQHER4gEemmq_cjeiIGww _TVQHFB4gEemmq_cjeiIGww">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_TVPgAB4gEemmq_cjeiIGww" source="org.eclipse.papyrus">
@@ -38,20 +37,17 @@
       </eAnnotations>
       <ownedEnd xmi:type="uml:Property" xmi:id="_TVQHFB4gEemmq_cjeiIGww" name="body" type="_CWI6kB4gEemmq_cjeiIGww" association="_TVO48B4gEemmq_cjeiIGww"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_XXaU8B4gEemmq_cjeiIGww" name="List">
-      <generalization xmi:type="uml:Generalization" xmi:id="_PsuH4B4lEemmq_cjeiIGww" general="_P0JX0B4gEemmq_cjeiIGww"/>
-    </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_YYTKMB4gEemmq_cjeiIGww" name="Paragraph">
-      <generalization xmi:type="uml:Generalization" xmi:id="_MwgOYB4lEemmq_cjeiIGww" general="_2KV50B4kEemmq_cjeiIGww"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_NSocwEwUEem4wpUXttaNpQ" name="text">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
       </ownedAttribute>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_VIw0EHDKEemmSqLtBrVBMA" client="_YYTKMB4gEemmq_cjeiIGww" supplier="_qySXkG_VEemJ-foOn68QUw" contract="_qySXkG_VEemJ-foOn68QUw"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Zd0n0B4gEemmq_cjeiIGww" name="Title">
-      <generalization xmi:type="uml:Generalization" xmi:id="_Nm7gEB4lEemmq_cjeiIGww" general="_2KV50B4kEemmq_cjeiIGww"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_EnJTUEwUEem4wpUXttaNpQ" name="title">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
       </ownedAttribute>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_UqoGkHDKEemmSqLtBrVBMA" client="_Zd0n0B4gEemmq_cjeiIGww" supplier="_qySXkG_VEemJ-foOn68QUw" contract="_qySXkG_VEemJ-foOn68QUw"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_TPxJkEwUEem4wpUXttaNpQ" name="getLevel">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_Z9gM4EwUEem4wpUXttaNpQ" name="getDepth" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWkZcX_EduPJbEsMYXjUQ"/>
@@ -63,7 +59,6 @@
       <ownedComment xmi:type="uml:Comment" xmi:id="_YhIsgFwuEemF3-UZXrtb4g" annotatedElement="_bYgy4B4gEemmq_cjeiIGww">
         <body>This object represents an image inserted in the document.</body>
       </ownedComment>
-      <generalization xmi:type="uml:Generalization" xmi:id="_PKXowB4lEemmq_cjeiIGww" general="_2KV50B4kEemmq_cjeiIGww"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_A6mgEFwuEemF3-UZXrtb4g" name="imagePath">
         <ownedComment xmi:type="uml:Comment" xmi:id="_TkU0QFwuEemF3-UZXrtb4g" annotatedElement="_A6mgEFwuEemF3-UZXrtb4g">
           <body>The path can be in the user workspace in platform:/resource or, somewhere on the user computer, so for windows, it will be in C:/ for example.</body>
@@ -77,6 +72,7 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IBx-IFwuEemF3-UZXrtb4g"/>
       </ownedAttribute>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_S5BmEHDKEemmSqLtBrVBMA" client="_bYgy4B4gEemmq_cjeiIGww" supplier="_vCXFoG_VEemJ-foOn68QUw" contract="_vCXFoG_VEemJ-foOn68QUw"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_TufmIB4jEemmq_cjeiIGww" name="EMFDataSource">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_pbjvgB4jEemmq_cjeiIGww" name="eobject">
@@ -97,15 +93,6 @@
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_mkK2MR4kEemmq_cjeiIGww" key="nature" value="UML_Nature"/>
       </eAnnotations>
       <ownedEnd xmi:type="uml:Property" xmi:id="_mkLdQh4kEemmq_cjeiIGww" name="bodyPart" type="_P0JX0B4gEemmq_cjeiIGww" association="_mkKPIB4kEemmq_cjeiIGww"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Interface" xmi:id="_2KV50B4kEemmq_cjeiIGww" name="TextPart">
-      <generalization xmi:type="uml:Generalization" xmi:id="_OnWbQB4lEemmq_cjeiIGww" general="_P0JX0B4gEemmq_cjeiIGww"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_qiEZsB4lEemmq_cjeiIGww" memberEnd="_qiKgUB4lEemmq_cjeiIGww _qiLucB4lEemmq_cjeiIGww">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_qiJ5QB4lEemmq_cjeiIGww" source="org.eclipse.papyrus">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_qiJ5QR4lEemmq_cjeiIGww" key="nature" value="UML_Nature"/>
-      </eAnnotations>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_qiLucB4lEemmq_cjeiIGww" name="bodyPart" type="_P0JX0B4gEemmq_cjeiIGww" association="_qiEZsB4lEemmq_cjeiIGww"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_zPfGsB4uEemmq_cjeiIGww" name="Document">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_9gsFcEmLEem4wpUXttaNpQ" name="documentGeneratorConfiguration" aggregation="composite" association="_9gqQQEmLEem4wpUXttaNpQ">
@@ -131,6 +118,51 @@
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9greYUmLEem4wpUXttaNpQ" key="nature" value="UML_Nature"/>
       </eAnnotations>
       <ownedEnd xmi:type="uml:Property" xmi:id="_9gsFc0mLEem4wpUXttaNpQ" name="document" type="_zPfGsB4uEemmq_cjeiIGww" association="_9gqQQEmLEem4wpUXttaNpQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_qySXkG_VEemJ-foOn68QUw" name="ComposedBodyPart">
+      <generalization xmi:type="uml:Generalization" xmi:id="_I-TDMG_WEemJ-foOn68QUw" general="_P0JX0B4gEemmq_cjeiIGww"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_ezlpkW_YEemJ-foOn68QUw" name="subBodyPart" type="_P0JX0B4gEemmq_cjeiIGww" aggregation="composite" association="_ezjNUG_YEemJ-foOn68QUw">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ezmQoG_YEemJ-foOn68QUw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ezmQoW_YEemJ-foOn68QUw" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_vCXFoG_VEemJ-foOn68QUw" name="LeafBodyPart">
+      <generalization xmi:type="uml:Generalization" xmi:id="_Id8IIG_WEemJ-foOn68QUw" general="_P0JX0B4gEemmq_cjeiIGww"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_ezjNUG_YEemJ-foOn68QUw" memberEnd="_ezlpkW_YEemJ-foOn68QUw _ezmQom_YEemJ-foOn68QUw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ezkbcG_YEemJ-foOn68QUw" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ezlpkG_YEemJ-foOn68QUw" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_ezmQom_YEemJ-foOn68QUw" name="composedbodypart" type="_qySXkG_VEemJ-foOn68QUw" association="_ezjNUG_YEemJ-foOn68QUw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_8hMBYHDJEemmSqLtBrVBMA" name="ExtendedBasicTable">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_IWHLgHDLEemmSqLtBrVBMA" annotatedElement="_8hMBYHDJEemmSqLtBrVBMA">
+        <body>This class extends the Table provided by the BuiltInTypes metamodel.&#xD;
+Its allows us to have a common Table definition between DocumentStructure and the generator interface.&#xD;
+</body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_CRMRIHDKEemmSqLtBrVBMA">
+        <general xmi:type="uml:Class" href="pathmap://MODEL2DOC/BUILTIN_TYPES/BuiltInTypes.uml#_54knIHAKEemJ-foOn68QUw"/>
+      </generalization>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_XBsroHDKEemmSqLtBrVBMA" client="_8hMBYHDJEemmSqLtBrVBMA" supplier="_vCXFoG_VEemJ-foOn68QUw" contract="_vCXFoG_VEemJ-foOn68QUw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_GGZoIHDKEemmSqLtBrVBMA" name="ExtendedTextCell">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_OuJroHDLEemmSqLtBrVBMA" annotatedElement="_GGZoIHDKEemmSqLtBrVBMA">
+        <body>We extends the TextCell provided by the BuiltInTypes metamodel, in order to be able to associate them a DataSource if required.</body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_JpPcwHDKEemmSqLtBrVBMA">
+        <general xmi:type="uml:Class" href="pathmap://MODEL2DOC/BUILTIN_TYPES/BuiltInTypes.uml#_XyQMoHALEemJ-foOn68QUw"/>
+      </generalization>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_3Uh50HDKEemmSqLtBrVBMA" name="dataSource" type="_VMCiMB4jEemmq_cjeiIGww" aggregation="composite" association="_3UcaQHDKEemmSqLtBrVBMA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3Uig4HDKEemmSqLtBrVBMA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3UjH8HDKEemmSqLtBrVBMA" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_3UcaQHDKEemmSqLtBrVBMA" memberEnd="_3Uh50HDKEemmSqLtBrVBMA _3UjH8XDKEemmSqLtBrVBMA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3UfdkHDKEemmSqLtBrVBMA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3UgEoHDKEemmSqLtBrVBMA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_3UjH8XDKEemmSqLtBrVBMA" name="extendedtextcell" type="_GGZoIHDKEemmSqLtBrVBMA" association="_3UcaQHDKEemmSqLtBrVBMA"/>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_llmqQB4mEemmq_cjeiIGww">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_lln4YB4mEemmq_cjeiIGww" source="http://www.eclipse.org/uml2/2.0.0/UML">

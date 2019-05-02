@@ -19,42 +19,27 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IChildCreationExtender;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import org.eclipse.papyrus.model2doc.core.builtintypes.CellLocation;
+
+import org.eclipse.papyrus.model2doc.core.builtintypes.provider.TextCellItemProvider;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructureFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage;
-import org.eclipse.papyrus.model2doc.emf.documentstructure.Title;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedTextCell;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructure.Title} object.
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedTextCell} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class TitleItemProvider
-		extends ItemProviderAdapter
-		implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class ExtendedTextCellItemProvider extends TextCellItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -62,7 +47,7 @@ public class TitleItemProvider
 	 *
 	 * @generated
 	 */
-	public TitleItemProvider(AdapterFactory adapterFactory) {
+	public ExtendedTextCellItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -78,52 +63,8 @@ public class TitleItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSubBodyPartPropertyDescriptor(object);
-			addTitlePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Sub Body Part feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected void addSubBodyPartPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_ComposedBodyPart_subBodyPart_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_ComposedBodyPart_subBodyPart_feature", "_UI_ComposedBodyPart_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				DocumentStructurePackage.Literals.COMPOSED_BODY_PART__SUB_BODY_PART,
-				true,
-				false,
-				true,
-				null,
-				null,
-				null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Title feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected void addTitlePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Title_title_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_Title_title_feature", "_UI_Title_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				DocumentStructurePackage.Literals.TITLE__TITLE,
-				true,
-				false,
-				false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				null,
-				null));
 	}
 
 	/**
@@ -139,7 +80,7 @@ public class TitleItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(DocumentStructurePackage.Literals.BODY_PART__DATA_SOURCE);
+			childrenFeatures.add(DocumentStructurePackage.Literals.EXTENDED_TEXT_CELL__DATA_SOURCE);
 		}
 		return childrenFeatures;
 	}
@@ -159,7 +100,7 @@ public class TitleItemProvider
 	}
 
 	/**
-	 * This returns Title.gif.
+	 * This returns ExtendedTextCell.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -167,7 +108,7 @@ public class TitleItemProvider
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Title")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ExtendedTextCell")); //$NON-NLS-1$
 	}
 
 	/**
@@ -190,9 +131,10 @@ public class TitleItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Title) object).getTitle();
-		return label == null || label.length() == 0 ? getString("_UI_Title_type") : //$NON-NLS-1$
-				getString("_UI_Title_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		CellLocation labelValue = ((ExtendedTextCell) object).getLocation();
+		String label = labelValue == null ? null : labelValue.toString();
+		return label == null || label.length() == 0 ? getString("_UI_ExtendedTextCell_type") : //$NON-NLS-1$
+				getString("_UI_ExtendedTextCell_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 
@@ -208,11 +150,8 @@ public class TitleItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Title.class)) {
-		case DocumentStructurePackage.TITLE__TITLE:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		case DocumentStructurePackage.TITLE__DATA_SOURCE:
+		switch (notification.getFeatureID(ExtendedTextCell.class)) {
+		case DocumentStructurePackage.EXTENDED_TEXT_CELL__DATA_SOURCE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -231,20 +170,8 @@ public class TitleItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY_PART__DATA_SOURCE,
+		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.EXTENDED_TEXT_CELL__DATA_SOURCE,
 				DocumentStructureFactory.eINSTANCE.createEMFDataSource()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
 	}
 
 }

@@ -25,6 +25,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -77,9 +78,31 @@ public class ParagraphItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addSubBodyPartPropertyDescriptor(object);
 			addTextPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Sub Body Part feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected void addSubBodyPartPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_ComposedBodyPart_subBodyPart_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_ComposedBodyPart_subBodyPart_feature", "_UI_ComposedBodyPart_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				DocumentStructurePackage.Literals.COMPOSED_BODY_PART__SUB_BODY_PART,
+				true,
+				false,
+				true,
+				null,
+				null,
+				null));
 	}
 
 	/**
@@ -117,7 +140,6 @@ public class ParagraphItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DocumentStructurePackage.Literals.BODY_PART__DATA_SOURCE);
-			childrenFeatures.add(DocumentStructurePackage.Literals.BODY_PART__SUB_BODY_PART);
 		}
 		return childrenFeatures;
 	}
@@ -191,7 +213,6 @@ public class ParagraphItemProvider
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case DocumentStructurePackage.PARAGRAPH__DATA_SOURCE:
-		case DocumentStructurePackage.PARAGRAPH__SUB_BODY_PART:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -212,18 +233,6 @@ public class ParagraphItemProvider
 
 		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY_PART__DATA_SOURCE,
 				DocumentStructureFactory.eINSTANCE.createEMFDataSource()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY_PART__SUB_BODY_PART,
-				DocumentStructureFactory.eINSTANCE.createList()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY_PART__SUB_BODY_PART,
-				DocumentStructureFactory.eINSTANCE.createParagraph()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY_PART__SUB_BODY_PART,
-				DocumentStructureFactory.eINSTANCE.createTitle()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY_PART__SUB_BODY_PART,
-				DocumentStructureFactory.eINSTANCE.createImage()));
 	}
 
 	/**
@@ -235,7 +244,7 @@ public class ParagraphItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return DocumentstructureEditPlugin.INSTANCE;
+		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
 	}
 
 }

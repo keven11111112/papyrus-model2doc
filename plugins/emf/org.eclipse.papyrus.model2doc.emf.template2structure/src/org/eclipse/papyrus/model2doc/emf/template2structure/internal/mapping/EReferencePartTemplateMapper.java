@@ -77,7 +77,7 @@ public class EReferencePartTemplateMapper extends AbstractEMFTemplateToStructure
 					continue;
 				}
 				if (title != null) {
-					title.getSubBodyPart().addAll(result);
+					title.getSubBodyParts().addAll(result);
 				} else {
 					result.stream().forEach(a -> returnedElements.add(expectedReturnedClass.cast(a)));
 				}

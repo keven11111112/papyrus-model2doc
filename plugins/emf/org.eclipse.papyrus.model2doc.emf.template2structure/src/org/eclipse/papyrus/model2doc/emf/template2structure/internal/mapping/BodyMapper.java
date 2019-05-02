@@ -56,7 +56,7 @@ public class BodyMapper extends AbstractEMFTemplateToStructureMapper<Body> {
 		while (iter.hasNext()) {
 			final IBodyPartTemplate currentBodyPartTemplate = iter.next();
 			final Collection<BodyPart> result = mappingService.map(currentBodyPartTemplate, modelElement, BodyPart.class);
-			body.getBodyPart().addAll(result);
+			body.getBodyParts().addAll(result);
 		}
 		return Collections.singletonList(expectedReturnedClass.cast(body));
 	}

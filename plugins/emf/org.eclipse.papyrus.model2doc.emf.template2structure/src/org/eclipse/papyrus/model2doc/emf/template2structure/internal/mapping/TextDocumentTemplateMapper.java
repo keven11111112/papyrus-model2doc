@@ -69,7 +69,7 @@ public class TextDocumentTemplateMapper extends AbstractEMFTemplateToStructureMa
 			final Collection<TextDocumentPart> result = mappingService.map(current, semanticContext, TextDocumentPart.class);
 
 			if (null != result) {
-				txtDocument.getTextDocumentPart().addAll(result);
+				txtDocument.getTextDocumentParts().addAll(result);
 			}
 		}
 		return Collections.singletonList(expectedReturnedClass.cast(txtDocument));

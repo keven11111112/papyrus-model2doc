@@ -45,7 +45,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocumentPart;
  * <ul>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TextDocumentImpl#getDocumentGeneratorConfiguration <em>Document Generator Configuration</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TextDocumentImpl#getMainTitle <em>Main Title</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TextDocumentImpl#getTextDocumentPart <em>Text Document Part</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TextDocumentImpl#getTextDocumentParts <em>Text Document Part</em>}</li>
  * </ul>
  *
  * @generated
@@ -85,15 +85,15 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 	protected String mainTitle = MAIN_TITLE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getTextDocumentPart() <em>Text Document Part</em>}' containment reference list.
+	 * The cached value of the '{@link #getTextDocumentParts() <em>Text Document Part</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see #getTextDocumentPart()
+	 * @see #getTextDocumentParts()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<TextDocumentPart> textDocumentPart;
+	protected EList<TextDocumentPart> textDocumentParts;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -205,11 +205,11 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 	 * @generated
 	 */
 	@Override
-	public EList<TextDocumentPart> getTextDocumentPart() {
-		if (textDocumentPart == null) {
-			textDocumentPart = new EObjectContainmentEList<>(TextDocumentPart.class, this, DocumentStructurePackage.TEXT_DOCUMENT__TEXT_DOCUMENT_PART);
+	public EList<TextDocumentPart> getTextDocumentParts() {
+		if (textDocumentParts == null) {
+			textDocumentParts = new EObjectContainmentEList<>(TextDocumentPart.class, this, DocumentStructurePackage.TEXT_DOCUMENT__TEXT_DOCUMENT_PART);
 		}
-		return textDocumentPart;
+		return textDocumentParts;
 	}
 
 	/**
@@ -224,7 +224,7 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 		case DocumentStructurePackage.TEXT_DOCUMENT__DOCUMENT_GENERATOR_CONFIGURATION:
 			return basicSetDocumentGeneratorConfiguration(null, msgs);
 		case DocumentStructurePackage.TEXT_DOCUMENT__TEXT_DOCUMENT_PART:
-			return ((InternalEList<?>) getTextDocumentPart()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getTextDocumentParts()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -243,7 +243,7 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 		case DocumentStructurePackage.TEXT_DOCUMENT__MAIN_TITLE:
 			return getMainTitle();
 		case DocumentStructurePackage.TEXT_DOCUMENT__TEXT_DOCUMENT_PART:
-			return getTextDocumentPart();
+			return getTextDocumentParts();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -265,8 +265,8 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 			setMainTitle((String) newValue);
 			return;
 		case DocumentStructurePackage.TEXT_DOCUMENT__TEXT_DOCUMENT_PART:
-			getTextDocumentPart().clear();
-			getTextDocumentPart().addAll((Collection<? extends TextDocumentPart>) newValue);
+			getTextDocumentParts().clear();
+			getTextDocumentParts().addAll((Collection<? extends TextDocumentPart>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -288,7 +288,7 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 			setMainTitle(MAIN_TITLE_EDEFAULT);
 			return;
 		case DocumentStructurePackage.TEXT_DOCUMENT__TEXT_DOCUMENT_PART:
-			getTextDocumentPart().clear();
+			getTextDocumentParts().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -308,7 +308,7 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 		case DocumentStructurePackage.TEXT_DOCUMENT__MAIN_TITLE:
 			return MAIN_TITLE_EDEFAULT == null ? mainTitle != null : !MAIN_TITLE_EDEFAULT.equals(mainTitle);
 		case DocumentStructurePackage.TEXT_DOCUMENT__TEXT_DOCUMENT_PART:
-			return textDocumentPart != null && !textDocumentPart.isEmpty();
+			return textDocumentParts != null && !textDocumentParts.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

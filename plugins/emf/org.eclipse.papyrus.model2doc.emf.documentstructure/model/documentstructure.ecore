@@ -24,27 +24,27 @@
   <eClassifiers xsi:type="ecore:EClass" name="BodyPart" abstract="true" interface="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="dataSource" ordered="false"
         eType="#//DataSource" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="subBodyPart" ordered="false"
-        upperBound="-1" eType="#//BodyPart" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataSource" abstract="true" interface="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This object is used to refer to the model object source providing the given part of the document."/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="List" eSuperTypes="#//BodyPart"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Paragraph" eSuperTypes="#//TextPart">
+  <eClassifiers xsi:type="ecore:EClass" name="Paragraph" eSuperTypes="#//ComposedBodyPart">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" ordered="false" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TextPart" abstract="true" interface="true"
-      eSuperTypes="#//BodyPart"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Title" eSuperTypes="#//TextPart">
+  <eClassifiers xsi:type="ecore:EClass" name="ComposedBodyPart" abstract="true" interface="true"
+      eSuperTypes="#//BodyPart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subBodyPart" ordered="false"
+        upperBound="-1" eType="#//BodyPart" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Title" eSuperTypes="#//ComposedBodyPart">
     <eOperations name="getLevel" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Image" eSuperTypes="#//TextPart">
+  <eClassifiers xsi:type="ecore:EClass" name="Image" eSuperTypes="#//LeafBodyPart">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This object represents an image inserted in the document."/>
     </eAnnotations>
@@ -61,6 +61,8 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LeafBodyPart" abstract="true" interface="true"
+      eSuperTypes="#//BodyPart"/>
   <eClassifiers xsi:type="ecore:EClass" name="EMFDataSource" eSuperTypes="#//DataSource">
     <eStructuralFeatures xsi:type="ecore:EReference" name="eobject" ordered="false"
         lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
@@ -71,5 +73,17 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tocTitle" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral="Table Of Contents"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExtendedBasicTable" eSuperTypes="../../org.eclipse.papyrus.model2doc.core.builtintypes/model/BuiltInTypes.ecore#//BasicTable #//LeafBodyPart">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This class extends the Table provided by the BuiltInTypes metamodel.&#xD;&#xA;Its allows us to have a common Table definition between DocumentStructure and the generator interface.&#xD;&#xA;"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExtendedTextCell" eSuperTypes="../../org.eclipse.papyrus.model2doc.core.builtintypes/model/BuiltInTypes.ecore#//TextCell">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="We extends the TextCell provided by the BuiltInTypes metamodel, in order to be able to associate them a DataSource if required."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataSource" ordered="false"
+        eType="#//DataSource" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

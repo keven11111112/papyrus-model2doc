@@ -75,7 +75,7 @@ public class CommentAsParagraphMapper extends AbstractUMLTemplateToStructureMapp
 			if (null == title) {
 				returnedValue.add(returnedClassType.cast(paragraph));
 			} else {
-				title.getSubBodyPart().add(paragraph);
+				title.getSubBodyParts().add(paragraph);
 			}
 		}
 		return returnedValue;

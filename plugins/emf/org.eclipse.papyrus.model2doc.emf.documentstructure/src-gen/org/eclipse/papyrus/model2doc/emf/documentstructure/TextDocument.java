@@ -25,7 +25,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument#getMainTitle <em>Main Title</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument#getTextDocumentPart <em>Text Document Part</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument#getTextDocumentParts <em>Text Document Part</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage#getTextDocument()
@@ -77,6 +77,6 @@ public interface TextDocument extends Document {
 	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<TextDocumentPart> getTextDocumentPart();
+	EList<TextDocumentPart> getTextDocumentParts();
 
 } // TextDocument

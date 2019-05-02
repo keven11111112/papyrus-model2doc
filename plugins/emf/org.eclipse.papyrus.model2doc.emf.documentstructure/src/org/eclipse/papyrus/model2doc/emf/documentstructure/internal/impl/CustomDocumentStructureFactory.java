@@ -9,7 +9,7 @@
  * SPDX-License-Identifier: EPL-2.0
  *
  * Contributors:
- *   CEA LIST - Initial API and implementation
+ *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
 
@@ -18,7 +18,9 @@ package org.eclipse.papyrus.model2doc.emf.documentstructure.internal.impl;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Title;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructureFactoryImpl;
 
-
+/**
+ * Custom Factory for {@link DocumentStructureFactoryImpl} metamodel
+ */
 public class CustomDocumentStructureFactory extends DocumentStructureFactoryImpl {
 
 	/**
@@ -30,4 +32,5 @@ public class CustomDocumentStructureFactory extends DocumentStructureFactoryImpl
 	public Title createTitle() {
 		return new CustomTitleImpl();
 	}
+
 }

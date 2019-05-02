@@ -22,22 +22,26 @@ import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesPackage;
+
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationPackage;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Body;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.ComposedBodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DataSource;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Document;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructureFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.EMFDataSource;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedBasicTable;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedTextCell;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Image;
-import org.eclipse.papyrus.model2doc.emf.documentstructure.List;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.LeafBodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Paragraph;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TableOfContents;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocumentPart;
-import org.eclipse.papyrus.model2doc.emf.documentstructure.TextPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Title;
 
 /**
@@ -102,14 +106,6 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	 *
 	 * @generated
 	 */
-	private EClass listEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
 	private EClass paragraphEClass = null;
 
 	/**
@@ -118,7 +114,7 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	 *
 	 * @generated
 	 */
-	private EClass textPartEClass = null;
+	private EClass composedBodyPartEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -142,6 +138,14 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	 *
 	 * @generated
 	 */
+	private EClass leafBodyPartEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
 	private EClass emfDataSourceEClass = null;
 
 	/**
@@ -151,6 +155,22 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	 * @generated
 	 */
 	private EClass tableOfContentsEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass extendedBasicTableEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass extendedTextCellEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -207,6 +227,7 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 		isInited = true;
 
 		// Initialize simple dependencies
+		BuiltInTypesPackage.eINSTANCE.eClass();
 		EcorePackage.eINSTANCE.eClass();
 		GeneratorConfigurationPackage.eINSTANCE.eClass();
 
@@ -341,30 +362,8 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	 * @generated
 	 */
 	@Override
-	public EReference getBodyPart_SubBodyPart() {
-		return (EReference) bodyPartEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
 	public EClass getDataSource() {
 		return dataSourceEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EClass getList() {
-		return listEClass;
 	}
 
 	/**
@@ -396,8 +395,19 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	 * @generated
 	 */
 	@Override
-	public EClass getTextPart() {
-		return textPartEClass;
+	public EClass getComposedBodyPart() {
+		return composedBodyPartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getComposedBodyPart_SubBodyPart() {
+		return (EReference) composedBodyPartEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -473,6 +483,17 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	 * @generated
 	 */
 	@Override
+	public EClass getLeafBodyPart() {
+		return leafBodyPartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EClass getEMFDataSource() {
 		return emfDataSourceEClass;
 	}
@@ -528,6 +549,39 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	 * @generated
 	 */
 	@Override
+	public EClass getExtendedBasicTable() {
+		return extendedBasicTableEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getExtendedTextCell() {
+		return extendedTextCellEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getExtendedTextCell_DataSource() {
+		return (EReference) extendedTextCellEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public DocumentStructureFactory getDocumentStructureFactory() {
 		return (DocumentStructureFactory) getEFactoryInstance();
 	}
@@ -569,16 +623,14 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 
 		bodyPartEClass = createEClass(BODY_PART);
 		createEReference(bodyPartEClass, BODY_PART__DATA_SOURCE);
-		createEReference(bodyPartEClass, BODY_PART__SUB_BODY_PART);
 
 		dataSourceEClass = createEClass(DATA_SOURCE);
-
-		listEClass = createEClass(LIST);
 
 		paragraphEClass = createEClass(PARAGRAPH);
 		createEAttribute(paragraphEClass, PARAGRAPH__TEXT);
 
-		textPartEClass = createEClass(TEXT_PART);
+		composedBodyPartEClass = createEClass(COMPOSED_BODY_PART);
+		createEReference(composedBodyPartEClass, COMPOSED_BODY_PART__SUB_BODY_PART);
 
 		titleEClass = createEClass(TITLE);
 		createEAttribute(titleEClass, TITLE__TITLE);
@@ -588,12 +640,19 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 		createEAttribute(imageEClass, IMAGE__IMAGE_PATH);
 		createEAttribute(imageEClass, IMAGE__CAPTION);
 
+		leafBodyPartEClass = createEClass(LEAF_BODY_PART);
+
 		emfDataSourceEClass = createEClass(EMF_DATA_SOURCE);
 		createEReference(emfDataSourceEClass, EMF_DATA_SOURCE__EOBJECT);
 		createEReference(emfDataSourceEClass, EMF_DATA_SOURCE__FEATURE);
 
 		tableOfContentsEClass = createEClass(TABLE_OF_CONTENTS);
 		createEAttribute(tableOfContentsEClass, TABLE_OF_CONTENTS__TOC_TITLE);
+
+		extendedBasicTableEClass = createEClass(EXTENDED_BASIC_TABLE);
+
+		extendedTextCellEClass = createEClass(EXTENDED_TEXT_CELL);
+		createEReference(extendedTextCellEClass, EXTENDED_TEXT_CELL__DATA_SOURCE);
 	}
 
 	/**
@@ -626,6 +685,7 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 		// Obtain other dependent packages
 		GeneratorConfigurationPackage theGeneratorConfigurationPackage = (GeneratorConfigurationPackage) EPackage.Registry.INSTANCE.getEPackage(GeneratorConfigurationPackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+		BuiltInTypesPackage theBuiltInTypesPackage = (BuiltInTypesPackage) EPackage.Registry.INSTANCE.getEPackage(BuiltInTypesPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -634,13 +694,16 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 		// Add supertypes to classes
 		textDocumentEClass.getESuperTypes().add(this.getDocument());
 		bodyEClass.getESuperTypes().add(this.getTextDocumentPart());
-		listEClass.getESuperTypes().add(this.getBodyPart());
-		paragraphEClass.getESuperTypes().add(this.getTextPart());
-		textPartEClass.getESuperTypes().add(this.getBodyPart());
-		titleEClass.getESuperTypes().add(this.getTextPart());
-		imageEClass.getESuperTypes().add(this.getTextPart());
+		paragraphEClass.getESuperTypes().add(this.getComposedBodyPart());
+		composedBodyPartEClass.getESuperTypes().add(this.getBodyPart());
+		titleEClass.getESuperTypes().add(this.getComposedBodyPart());
+		imageEClass.getESuperTypes().add(this.getLeafBodyPart());
+		leafBodyPartEClass.getESuperTypes().add(this.getBodyPart());
 		emfDataSourceEClass.getESuperTypes().add(this.getDataSource());
 		tableOfContentsEClass.getESuperTypes().add(this.getTextDocumentPart());
+		extendedBasicTableEClass.getESuperTypes().add(theBuiltInTypesPackage.getBasicTable());
+		extendedBasicTableEClass.getESuperTypes().add(this.getLeafBodyPart());
+		extendedTextCellEClass.getESuperTypes().add(theBuiltInTypesPackage.getTextCell());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(textDocumentEClass, TextDocument.class, "TextDocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
@@ -659,16 +722,15 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 
 		initEClass(bodyPartEClass, BodyPart.class, "BodyPart", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(getBodyPart_DataSource(), this.getDataSource(), null, "dataSource", null, 0, 1, BodyPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
-		initEReference(getBodyPart_SubBodyPart(), this.getBodyPart(), null, "subBodyPart", null, 0, -1, BodyPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(dataSourceEClass, DataSource.class, "DataSource", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-
-		initEClass(listEClass, List.class, "List", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		initEClass(paragraphEClass, Paragraph.class, "Paragraph", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEAttribute(getParagraph_Text(), ecorePackage.getEString(), "text", null, 1, 1, Paragraph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(textPartEClass, TextPart.class, "TextPart", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEClass(composedBodyPartEClass, ComposedBodyPart.class, "ComposedBodyPart", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getComposedBodyPart_SubBodyPart(), this.getBodyPart(), null, "subBodyPart", null, 0, -1, ComposedBodyPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, //$NON-NLS-1$
+				!IS_ORDERED);
 
 		initEClass(titleEClass, Title.class, "Title", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEAttribute(getTitle_Title(), ecorePackage.getEString(), "title", null, 1, 1, Title.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
@@ -679,6 +741,8 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 		initEAttribute(getImage_ImagePath(), ecorePackage.getEString(), "imagePath", null, 1, 1, Image.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 		initEAttribute(getImage_Caption(), ecorePackage.getEString(), "caption", null, 0, 1, Image.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
+		initEClass(leafBodyPartEClass, LeafBodyPart.class, "LeafBodyPart", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
 		initEClass(emfDataSourceEClass, EMFDataSource.class, "EMFDataSource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(getEMFDataSource_Eobject(), theEcorePackage.getEObject(), null, "eobject", null, 1, 1, EMFDataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, //$NON-NLS-1$
 				!IS_ORDERED);
@@ -687,6 +751,12 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 
 		initEClass(tableOfContentsEClass, TableOfContents.class, "TableOfContents", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEAttribute(getTableOfContents_TocTitle(), ecorePackage.getEString(), "tocTitle", "Table Of Contents", 1, 1, TableOfContents.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
+
+		initEClass(extendedBasicTableEClass, ExtendedBasicTable.class, "ExtendedBasicTable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEClass(extendedTextCellEClass, ExtendedTextCell.class, "ExtendedTextCell", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getExtendedTextCell_DataSource(), this.getDataSource(), null, "dataSource", null, 0, 1, ExtendedTextCell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, //$NON-NLS-1$
+				!IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

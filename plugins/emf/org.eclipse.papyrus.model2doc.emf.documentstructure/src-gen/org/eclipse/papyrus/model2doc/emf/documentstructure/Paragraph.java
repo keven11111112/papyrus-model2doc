@@ -30,7 +30,7 @@ package org.eclipse.papyrus.model2doc.emf.documentstructure;
  * @model
  * @generated
  */
-public interface Paragraph extends TextPart {
+public interface Paragraph extends ComposedBodyPart {
 	/**
 	 * Returns the value of the '<em><b>Text</b></em>' attribute.
 	 * <!-- begin-user-doc -->

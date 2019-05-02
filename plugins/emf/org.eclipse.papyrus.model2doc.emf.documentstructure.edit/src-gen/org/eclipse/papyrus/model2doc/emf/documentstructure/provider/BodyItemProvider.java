@@ -24,6 +24,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -180,9 +181,6 @@ public class BodyItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY__BODY_PART,
-				DocumentStructureFactory.eINSTANCE.createList()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY__BODY_PART,
 				DocumentStructureFactory.eINSTANCE.createParagraph()));
 
 		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY__BODY_PART,
@@ -190,6 +188,9 @@ public class BodyItemProvider
 
 		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY__BODY_PART,
 				DocumentStructureFactory.eINSTANCE.createImage()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY__BODY_PART,
+				DocumentStructureFactory.eINSTANCE.createExtendedBasicTable()));
 	}
 
 	/**
@@ -201,7 +202,7 @@ public class BodyItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return DocumentstructureEditPlugin.INSTANCE;
+		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
 	}
 
 }

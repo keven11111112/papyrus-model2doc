@@ -19,38 +19,25 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
 
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import org.eclipse.papyrus.model2doc.core.builtintypes.provider.BasicTableItemProvider;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructureFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedBasicTable;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructure.List} object.
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedBasicTable} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class ListItemProvider
-		extends ItemProviderAdapter
-		implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class ExtendedBasicTableItemProvider extends BasicTableItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -58,7 +45,7 @@ public class ListItemProvider
 	 *
 	 * @generated
 	 */
-	public ListItemProvider(AdapterFactory adapterFactory) {
+	public ExtendedBasicTableItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -92,7 +79,6 @@ public class ListItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DocumentStructurePackage.Literals.BODY_PART__DATA_SOURCE);
-			childrenFeatures.add(DocumentStructurePackage.Literals.BODY_PART__SUB_BODY_PART);
 		}
 		return childrenFeatures;
 	}
@@ -112,7 +98,7 @@ public class ListItemProvider
 	}
 
 	/**
-	 * This returns List.gif.
+	 * This returns ExtendedBasicTable.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -120,7 +106,7 @@ public class ListItemProvider
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/List")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ExtendedBasicTable")); //$NON-NLS-1$
 	}
 
 	/**
@@ -143,7 +129,9 @@ public class ListItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_List_type"); //$NON-NLS-1$
+		String label = ((ExtendedBasicTable) object).getCaption();
+		return label == null || label.length() == 0 ? getString("_UI_ExtendedBasicTable_type") : //$NON-NLS-1$
+				getString("_UI_ExtendedBasicTable_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 
@@ -159,9 +147,8 @@ public class ListItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(org.eclipse.papyrus.model2doc.emf.documentstructure.List.class)) {
-		case DocumentStructurePackage.LIST__DATA_SOURCE:
-		case DocumentStructurePackage.LIST__SUB_BODY_PART:
+		switch (notification.getFeatureID(ExtendedBasicTable.class)) {
+		case DocumentStructurePackage.EXTENDED_BASIC_TABLE__DATA_SOURCE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -182,30 +169,6 @@ public class ListItemProvider
 
 		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY_PART__DATA_SOURCE,
 				DocumentStructureFactory.eINSTANCE.createEMFDataSource()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY_PART__SUB_BODY_PART,
-				DocumentStructureFactory.eINSTANCE.createList()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY_PART__SUB_BODY_PART,
-				DocumentStructureFactory.eINSTANCE.createParagraph()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY_PART__SUB_BODY_PART,
-				DocumentStructureFactory.eINSTANCE.createTitle()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY_PART__SUB_BODY_PART,
-				DocumentStructureFactory.eINSTANCE.createImage()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return DocumentstructureEditPlugin.INSTANCE;
 	}
 
 }

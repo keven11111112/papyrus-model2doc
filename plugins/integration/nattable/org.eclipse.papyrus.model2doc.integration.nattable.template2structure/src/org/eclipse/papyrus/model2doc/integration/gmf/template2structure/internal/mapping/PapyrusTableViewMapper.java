@@ -114,7 +114,7 @@ public class PapyrusTableViewMapper extends AbstractTemplateToStructureMapper<Pa
 			if (null == title) {
 				returnedValue.add(returnedClassType.cast(mapResult));
 			} else {
-				title.getSubBodyPart().add(mapResult);
+				title.getSubBodyParts().add(mapResult);
 			}
 		}
 		return returnedValue;

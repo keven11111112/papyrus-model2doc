@@ -35,8 +35,7 @@ package org.eclipse.papyrus.model2doc.emf.documentstructure;
  * @model
  * @generated
  */
-public interface Image extends TextPart {
-
+public interface Image extends LeafBodyPart {
 	/**
 	 * Returns the value of the '<em><b>Image Path</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -92,4 +91,5 @@ public interface Image extends TextPart {
 	 * @generated
 	 */
 	void setCaption(String value);
+
 } // Image

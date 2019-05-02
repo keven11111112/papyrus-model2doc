@@ -18,6 +18,11 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
+import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractTable;
+import org.eclipse.papyrus.model2doc.core.builtintypes.BasicTable;
+import org.eclipse.papyrus.model2doc.core.builtintypes.Cell;
+import org.eclipse.papyrus.model2doc.core.builtintypes.TextCell;
+
 import org.eclipse.papyrus.model2doc.emf.documentstructure.*;
 
 /**
@@ -137,22 +142,11 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 			}
 			return result;
 		}
-		case DocumentStructurePackage.LIST: {
-			List list = (List) theEObject;
-			T result = caseList(list);
-			if (result == null) {
-				result = caseBodyPart(list);
-			}
-			if (result == null) {
-				result = defaultCase(theEObject);
-			}
-			return result;
-		}
 		case DocumentStructurePackage.PARAGRAPH: {
 			Paragraph paragraph = (Paragraph) theEObject;
 			T result = caseParagraph(paragraph);
 			if (result == null) {
-				result = caseTextPart(paragraph);
+				result = caseComposedBodyPart(paragraph);
 			}
 			if (result == null) {
 				result = caseBodyPart(paragraph);
@@ -162,11 +156,11 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 			}
 			return result;
 		}
-		case DocumentStructurePackage.TEXT_PART: {
-			TextPart textPart = (TextPart) theEObject;
-			T result = caseTextPart(textPart);
+		case DocumentStructurePackage.COMPOSED_BODY_PART: {
+			ComposedBodyPart composedBodyPart = (ComposedBodyPart) theEObject;
+			T result = caseComposedBodyPart(composedBodyPart);
 			if (result == null) {
-				result = caseBodyPart(textPart);
+				result = caseBodyPart(composedBodyPart);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
@@ -177,7 +171,7 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 			Title title = (Title) theEObject;
 			T result = caseTitle(title);
 			if (result == null) {
-				result = caseTextPart(title);
+				result = caseComposedBodyPart(title);
 			}
 			if (result == null) {
 				result = caseBodyPart(title);
@@ -191,10 +185,21 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 			Image image = (Image) theEObject;
 			T result = caseImage(image);
 			if (result == null) {
-				result = caseTextPart(image);
+				result = caseLeafBodyPart(image);
 			}
 			if (result == null) {
 				result = caseBodyPart(image);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructurePackage.LEAF_BODY_PART: {
+			LeafBodyPart leafBodyPart = (LeafBodyPart) theEObject;
+			T result = caseLeafBodyPart(leafBodyPart);
+			if (result == null) {
+				result = caseBodyPart(leafBodyPart);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
@@ -217,6 +222,40 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 			T result = caseTableOfContents(tableOfContents);
 			if (result == null) {
 				result = caseTextDocumentPart(tableOfContents);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructurePackage.EXTENDED_BASIC_TABLE: {
+			ExtendedBasicTable extendedBasicTable = (ExtendedBasicTable) theEObject;
+			T result = caseExtendedBasicTable(extendedBasicTable);
+			if (result == null) {
+				result = caseBasicTable(extendedBasicTable);
+			}
+			if (result == null) {
+				result = caseLeafBodyPart(extendedBasicTable);
+			}
+			if (result == null) {
+				result = caseAbstractTable(extendedBasicTable);
+			}
+			if (result == null) {
+				result = caseBodyPart(extendedBasicTable);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructurePackage.EXTENDED_TEXT_CELL: {
+			ExtendedTextCell extendedTextCell = (ExtendedTextCell) theEObject;
+			T result = caseExtendedTextCell(extendedTextCell);
+			if (result == null) {
+				result = caseTextCell(extendedTextCell);
+			}
+			if (result == null) {
+				result = caseCell(extendedTextCell);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
@@ -331,23 +370,6 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>List</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 *
-	 * @param object
-	 *                   the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>List</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseList(List object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Paragraph</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -365,7 +387,7 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Text Part</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Composed Body Part</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
@@ -373,11 +395,11 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 	 *
 	 * @param object
 	 *                   the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Text Part</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Composed Body Part</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseTextPart(TextPart object) {
+	public T caseComposedBodyPart(ComposedBodyPart object) {
 		return null;
 	}
 
@@ -416,6 +438,23 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Leaf Body Part</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Leaf Body Part</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLeafBodyPart(LeafBodyPart object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>EMF Data Source</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -446,6 +485,108 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTableOfContents(TableOfContents object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Extended Basic Table</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Extended Basic Table</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExtendedBasicTable(ExtendedBasicTable object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Extended Text Cell</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Extended Text Cell</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExtendedTextCell(ExtendedTextCell object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Table</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Table</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbstractTable(AbstractTable object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Basic Table</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Basic Table</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBasicTable(BasicTable object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Cell</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Cell</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCell(Cell object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Text Cell</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Text Cell</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTextCell(TextCell object) {
 		return null;
 	}
 

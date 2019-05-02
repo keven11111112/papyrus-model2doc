@@ -99,7 +99,7 @@ public class PapyrusGMFDiagramViewMapper extends AbstractTemplateToStructureMapp
 			if (null == title) {
 				returnedValue.add(returnedClassType.cast(image));
 			} else {
-				title.getSubBodyPart().add(image);
+				title.getSubBodyParts().add(image);
 			}
 		}
 		return returnedValue;

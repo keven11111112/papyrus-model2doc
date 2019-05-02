@@ -55,16 +55,6 @@ public interface DocumentStructureFactory extends EFactory {
 	Body createBody();
 
 	/**
-	 * Returns a new object of class '<em>List</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @return a new object of class '<em>List</em>'.
-	 * @generated
-	 */
-	List createList();
-
-	/**
 	 * Returns a new object of class '<em>Paragraph</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -113,6 +103,26 @@ public interface DocumentStructureFactory extends EFactory {
 	 * @generated
 	 */
 	TableOfContents createTableOfContents();
+
+	/**
+	 * Returns a new object of class '<em>Extended Basic Table</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>Extended Basic Table</em>'.
+	 * @generated
+	 */
+	ExtendedBasicTable createExtendedBasicTable();
+
+	/**
+	 * Returns a new object of class '<em>Extended Text Cell</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>Extended Text Cell</em>'.
+	 * @generated
+	 */
+	ExtendedTextCell createExtendedTextCell();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -13,16 +13,23 @@
  */
 package org.eclipse.papyrus.model2doc.emf.documentstructure;
 
+import org.eclipse.papyrus.model2doc.core.builtintypes.BasicTable;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>List</b></em>'.
+ * A representation of the model object '<em><b>Extended Basic Table</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * This class extends the Table provided by the BuiltInTypes metamodel.
+ * Its allows us to have a common Table definition between DocumentStructure and the generator interface.
  *
- * @see org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage#getList()
+ * <!-- end-model-doc -->
+ *
+ *
+ * @see org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage#getExtendedBasicTable()
  * @model
  * @generated
  */
-public interface List extends BodyPart {
-} // List
+public interface ExtendedBasicTable extends BasicTable, LeafBodyPart {
+} // ExtendedBasicTable

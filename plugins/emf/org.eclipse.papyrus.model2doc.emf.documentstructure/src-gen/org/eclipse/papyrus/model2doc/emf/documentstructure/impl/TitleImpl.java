@@ -45,7 +45,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.Title;
  * </p>
  * <ul>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TitleImpl#getDataSource <em>Data Source</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TitleImpl#getSubBodyPart <em>Sub Body Part</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TitleImpl#getSubBodyParts <em>Sub Body Part</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TitleImpl#getTitle <em>Title</em>}</li>
  * </ul>
  *
@@ -64,15 +64,15 @@ public class TitleImpl extends MinimalEObjectImpl.Container implements Title {
 	protected DataSource dataSource;
 
 	/**
-	 * The cached value of the '{@link #getSubBodyPart() <em>Sub Body Part</em>}' containment reference list.
+	 * The cached value of the '{@link #getSubBodyParts() <em>Sub Body Part</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see #getSubBodyPart()
+	 * @see #getSubBodyParts()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<BodyPart> subBodyPart;
+	protected EList<BodyPart> subBodyParts;
 
 	/**
 	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
@@ -180,11 +180,11 @@ public class TitleImpl extends MinimalEObjectImpl.Container implements Title {
 	 * @generated
 	 */
 	@Override
-	public EList<BodyPart> getSubBodyPart() {
-		if (subBodyPart == null) {
-			subBodyPart = new EObjectContainmentEList<>(BodyPart.class, this, DocumentStructurePackage.TITLE__SUB_BODY_PART);
+	public EList<BodyPart> getSubBodyParts() {
+		if (subBodyParts == null) {
+			subBodyParts = new EObjectContainmentEList<>(BodyPart.class, this, DocumentStructurePackage.TITLE__SUB_BODY_PART);
 		}
-		return subBodyPart;
+		return subBodyParts;
 	}
 
 	/**
@@ -238,7 +238,7 @@ public class TitleImpl extends MinimalEObjectImpl.Container implements Title {
 		case DocumentStructurePackage.TITLE__DATA_SOURCE:
 			return basicSetDataSource(null, msgs);
 		case DocumentStructurePackage.TITLE__SUB_BODY_PART:
-			return ((InternalEList<?>) getSubBodyPart()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getSubBodyParts()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -255,7 +255,7 @@ public class TitleImpl extends MinimalEObjectImpl.Container implements Title {
 		case DocumentStructurePackage.TITLE__DATA_SOURCE:
 			return getDataSource();
 		case DocumentStructurePackage.TITLE__SUB_BODY_PART:
-			return getSubBodyPart();
+			return getSubBodyParts();
 		case DocumentStructurePackage.TITLE__TITLE:
 			return getTitle();
 		}
@@ -276,8 +276,8 @@ public class TitleImpl extends MinimalEObjectImpl.Container implements Title {
 			setDataSource((DataSource) newValue);
 			return;
 		case DocumentStructurePackage.TITLE__SUB_BODY_PART:
-			getSubBodyPart().clear();
-			getSubBodyPart().addAll((Collection<? extends BodyPart>) newValue);
+			getSubBodyParts().clear();
+			getSubBodyParts().addAll((Collection<? extends BodyPart>) newValue);
 			return;
 		case DocumentStructurePackage.TITLE__TITLE:
 			setTitle((String) newValue);
@@ -299,7 +299,7 @@ public class TitleImpl extends MinimalEObjectImpl.Container implements Title {
 			setDataSource((DataSource) null);
 			return;
 		case DocumentStructurePackage.TITLE__SUB_BODY_PART:
-			getSubBodyPart().clear();
+			getSubBodyParts().clear();
 			return;
 		case DocumentStructurePackage.TITLE__TITLE:
 			setTitle(TITLE_EDEFAULT);
@@ -320,7 +320,7 @@ public class TitleImpl extends MinimalEObjectImpl.Container implements Title {
 		case DocumentStructurePackage.TITLE__DATA_SOURCE:
 			return dataSource != null;
 		case DocumentStructurePackage.TITLE__SUB_BODY_PART:
-			return subBodyPart != null && !subBodyPart.isEmpty();
+			return subBodyParts != null && !subBodyParts.isEmpty();
 		case DocumentStructurePackage.TITLE__TITLE:
 			return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 		}

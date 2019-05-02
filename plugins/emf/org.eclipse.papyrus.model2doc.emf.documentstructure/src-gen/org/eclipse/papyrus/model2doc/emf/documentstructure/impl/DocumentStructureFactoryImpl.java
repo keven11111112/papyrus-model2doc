@@ -74,8 +74,6 @@ public class DocumentStructureFactoryImpl extends EFactoryImpl implements Docume
 			return createTextDocument();
 		case DocumentStructurePackage.BODY:
 			return createBody();
-		case DocumentStructurePackage.LIST:
-			return createList();
 		case DocumentStructurePackage.PARAGRAPH:
 			return createParagraph();
 		case DocumentStructurePackage.TITLE:
@@ -86,6 +84,10 @@ public class DocumentStructureFactoryImpl extends EFactoryImpl implements Docume
 			return createEMFDataSource();
 		case DocumentStructurePackage.TABLE_OF_CONTENTS:
 			return createTableOfContents();
+		case DocumentStructurePackage.EXTENDED_BASIC_TABLE:
+			return createExtendedBasicTable();
+		case DocumentStructurePackage.EXTENDED_TEXT_CELL:
+			return createExtendedTextCell();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -113,18 +115,6 @@ public class DocumentStructureFactoryImpl extends EFactoryImpl implements Docume
 	public Body createBody() {
 		BodyImpl body = new BodyImpl();
 		return body;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public List createList() {
-		ListImpl list = new ListImpl();
-		return list;
 	}
 
 	/**
@@ -185,6 +175,30 @@ public class DocumentStructureFactoryImpl extends EFactoryImpl implements Docume
 	public TableOfContents createTableOfContents() {
 		TableOfContentsImpl tableOfContents = new TableOfContentsImpl();
 		return tableOfContents;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public ExtendedBasicTable createExtendedBasicTable() {
+		ExtendedBasicTableImpl extendedBasicTable = new ExtendedBasicTableImpl();
+		return extendedBasicTable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public ExtendedTextCell createExtendedTextCell() {
+		ExtendedTextCellImpl extendedTextCell = new ExtendedTextCellImpl();
+		return extendedTextCell;
 	}
 
 	/**

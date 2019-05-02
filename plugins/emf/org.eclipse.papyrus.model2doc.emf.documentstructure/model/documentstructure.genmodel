@@ -12,8 +12,9 @@
     codeFormatting="true" commentFormatting="true" testsDirectory="/org.eclipse.papyrus.model2doc.emf.documentstructure.tests/src-gen"
     testSuiteClass="org.eclipse.papyrus.model2doc.emf.documentstructure.tests.DocumentstructureAllTests"
     importerID="org.eclipse.uml2.uml.ecore.importer" complianceLevel="8.0" copyrightFields="false"
-    usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eclipse.papyrus.model2doc.core.generatorconfiguration/model/generatorconfiguration.genmodel#//generatorconfiguration"
-    operationReflection="true" importOrganizing="true" cleanup="true" oSGiCompatible="true">
+    usedGenPackages="../../org.eclipse.papyrus.model2doc.core.builtintypes/model/BuiltInTypes.genmodel#//builtintypes ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eclipse.papyrus.model2doc.core.generatorconfiguration/model/generatorconfiguration.genmodel#//generatorconfiguration"
+    operationReflection="true" importOrganizing="true" cleanup="true" oSGiCompatible="true"
+    pluralizedGetters="true">
   <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
     <details key="OPPOSITE_ROLE_NAMES" value="IGNORE"/>
     <details key="DUPLICATE_FEATURES" value="DISCARD"/>
@@ -40,8 +41,8 @@
   </genAnnotations>
   <foreignModel>documentstructure.uml</foreignModel>
   <genPackages xsi:type="genmodel:GenPackage" prefix="DocumentStructure" basePackage="org.eclipse.papyrus.model2doc.emf"
-      disposableProviderFactory="true" multipleEditorPages="false" fileExtensions="pds"
-      ecorePackage="documentstructure.ecore#/">
+      disposableProviderFactory="true" multipleEditorPages="false" extensibleProviderFactory="true"
+      childCreationExtenders="true" fileExtensions="pds" ecorePackage="documentstructure.ecore#/">
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructure.ecore#//TextDocument">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructure.ecore#//TextDocument/mainTitle"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -59,15 +60,15 @@
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructure.ecore#//BodyPart">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference documentstructure.ecore#//BodyPart/dataSource"/>
-      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EReference documentstructure.ecore#//BodyPart/subBodyPart"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructure.ecore#//DataSource"/>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructure.ecore#//List"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructure.ecore#//Paragraph">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructure.ecore#//Paragraph/text"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructure.ecore#//TextPart"/>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructure.ecore#//ComposedBodyPart">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference documentstructure.ecore#//ComposedBodyPart/subBodyPart"/>
+    </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructure.ecore#//Title">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructure.ecore#//Title/title"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="documentstructure.ecore#//Title/getLevel"/>
@@ -76,6 +77,7 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructure.ecore#//Image/imagePath"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructure.ecore#//Image/caption"/>
     </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructure.ecore#//LeafBodyPart"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructure.ecore#//EMFDataSource">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference documentstructure.ecore#//EMFDataSource/eobject"/>
@@ -84,6 +86,11 @@
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructure.ecore#//TableOfContents">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructure.ecore#//TableOfContents/tocTitle"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructure.ecore#//ExtendedBasicTable"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructure.ecore#//ExtendedTextCell">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference documentstructure.ecore#//ExtendedTextCell/dataSource"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

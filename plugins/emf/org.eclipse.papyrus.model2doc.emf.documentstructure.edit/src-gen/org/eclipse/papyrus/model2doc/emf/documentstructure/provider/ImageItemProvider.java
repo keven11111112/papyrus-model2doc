@@ -25,6 +25,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -139,7 +140,6 @@ public class ImageItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DocumentStructurePackage.Literals.BODY_PART__DATA_SOURCE);
-			childrenFeatures.add(DocumentStructurePackage.Literals.BODY_PART__SUB_BODY_PART);
 		}
 		return childrenFeatures;
 	}
@@ -214,7 +214,6 @@ public class ImageItemProvider
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case DocumentStructurePackage.IMAGE__DATA_SOURCE:
-		case DocumentStructurePackage.IMAGE__SUB_BODY_PART:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -235,18 +234,6 @@ public class ImageItemProvider
 
 		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY_PART__DATA_SOURCE,
 				DocumentStructureFactory.eINSTANCE.createEMFDataSource()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY_PART__SUB_BODY_PART,
-				DocumentStructureFactory.eINSTANCE.createList()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY_PART__SUB_BODY_PART,
-				DocumentStructureFactory.eINSTANCE.createParagraph()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY_PART__SUB_BODY_PART,
-				DocumentStructureFactory.eINSTANCE.createTitle()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY_PART__SUB_BODY_PART,
-				DocumentStructureFactory.eINSTANCE.createImage()));
 	}
 
 	/**
@@ -258,7 +245,7 @@ public class ImageItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return DocumentstructureEditPlugin.INSTANCE;
+		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
 	}
 
 }

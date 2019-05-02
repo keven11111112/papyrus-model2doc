@@ -30,7 +30,7 @@ package org.eclipse.papyrus.model2doc.emf.documentstructure;
  * @model
  * @generated
  */
-public interface Title extends TextPart {
+public interface Title extends ComposedBodyPart {
 	/**
 	 * Returns the value of the '<em><b>Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->

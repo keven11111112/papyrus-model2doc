@@ -20,6 +20,7 @@ import org.eclipse.papyrus.model2doc.core.transcriber.Transcriber;
 import org.eclipse.papyrus.model2doc.core.transcription.Transcription;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Body;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.ComposedBodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Image;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Paragraph;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TableOfContents;
@@ -61,7 +62,7 @@ public class StructureToODTTranscriber implements Transcriber {
 			transcription.writeDocumentMainTitle(mainTitle);
 		}
 
-		Iterator<TextDocumentPart> iter = textDocument.getTextDocumentPart().iterator(); // TODO : pluralize me
+		Iterator<TextDocumentPart> iter = textDocument.getTextDocumentParts().iterator();
 		while (iter.hasNext()) {
 			transcribe(iter.next());
 		}
@@ -93,7 +94,7 @@ public class StructureToODTTranscriber implements Transcriber {
 	 *            the document body
 	 */
 	private void transcribeBody(final Body body) {
-		final Iterator<BodyPart> iter = body.getBodyPart().iterator();
+		final Iterator<BodyPart> iter = body.getBodyParts().iterator();
 
 		while (iter.hasNext()) {
 			transcribeBodyPart(iter.next());
@@ -118,9 +119,11 @@ public class StructureToODTTranscriber implements Transcriber {
 		}
 
 		// then we iterate on the children of the bodyPart
-		final Iterator<BodyPart> iter = bodyPart.getSubBodyPart().iterator();
-		while (iter.hasNext()) {
-			transcribeBodyPart(iter.next());
+		if (bodyPart instanceof ComposedBodyPart) {
+			final Iterator<BodyPart> iter = ((ComposedBodyPart) bodyPart).getSubBodyParts().iterator();
+			while (iter.hasNext()) {
+				transcribeBodyPart(iter.next());
+			}
 		}
 
 		// at the end:
@@ -167,4 +170,5 @@ public class StructureToODTTranscriber implements Transcriber {
 	private void transcribteParagraph(final Paragraph paragraph) {
 		transcription.writeParagraph(paragraph.getText(), false);
 	}
+
 }

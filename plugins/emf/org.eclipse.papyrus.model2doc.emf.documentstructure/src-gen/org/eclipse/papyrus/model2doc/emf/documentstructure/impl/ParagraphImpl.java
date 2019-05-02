@@ -43,7 +43,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.Paragraph;
  * </p>
  * <ul>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ParagraphImpl#getDataSource <em>Data Source</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ParagraphImpl#getSubBodyPart <em>Sub Body Part</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ParagraphImpl#getSubBodyParts <em>Sub Body Part</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ParagraphImpl#getText <em>Text</em>}</li>
  * </ul>
  *
@@ -62,15 +62,15 @@ public class ParagraphImpl extends MinimalEObjectImpl.Container implements Parag
 	protected DataSource dataSource;
 
 	/**
-	 * The cached value of the '{@link #getSubBodyPart() <em>Sub Body Part</em>}' containment reference list.
+	 * The cached value of the '{@link #getSubBodyParts() <em>Sub Body Part</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see #getSubBodyPart()
+	 * @see #getSubBodyParts()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<BodyPart> subBodyPart;
+	protected EList<BodyPart> subBodyParts;
 
 	/**
 	 * The default value of the '{@link #getText() <em>Text</em>}' attribute.
@@ -178,11 +178,11 @@ public class ParagraphImpl extends MinimalEObjectImpl.Container implements Parag
 	 * @generated
 	 */
 	@Override
-	public EList<BodyPart> getSubBodyPart() {
-		if (subBodyPart == null) {
-			subBodyPart = new EObjectContainmentEList<>(BodyPart.class, this, DocumentStructurePackage.PARAGRAPH__SUB_BODY_PART);
+	public EList<BodyPart> getSubBodyParts() {
+		if (subBodyParts == null) {
+			subBodyParts = new EObjectContainmentEList<>(BodyPart.class, this, DocumentStructurePackage.PARAGRAPH__SUB_BODY_PART);
 		}
-		return subBodyPart;
+		return subBodyParts;
 	}
 
 	/**
@@ -223,7 +223,7 @@ public class ParagraphImpl extends MinimalEObjectImpl.Container implements Parag
 		case DocumentStructurePackage.PARAGRAPH__DATA_SOURCE:
 			return basicSetDataSource(null, msgs);
 		case DocumentStructurePackage.PARAGRAPH__SUB_BODY_PART:
-			return ((InternalEList<?>) getSubBodyPart()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getSubBodyParts()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -240,7 +240,7 @@ public class ParagraphImpl extends MinimalEObjectImpl.Container implements Parag
 		case DocumentStructurePackage.PARAGRAPH__DATA_SOURCE:
 			return getDataSource();
 		case DocumentStructurePackage.PARAGRAPH__SUB_BODY_PART:
-			return getSubBodyPart();
+			return getSubBodyParts();
 		case DocumentStructurePackage.PARAGRAPH__TEXT:
 			return getText();
 		}
@@ -261,8 +261,8 @@ public class ParagraphImpl extends MinimalEObjectImpl.Container implements Parag
 			setDataSource((DataSource) newValue);
 			return;
 		case DocumentStructurePackage.PARAGRAPH__SUB_BODY_PART:
-			getSubBodyPart().clear();
-			getSubBodyPart().addAll((Collection<? extends BodyPart>) newValue);
+			getSubBodyParts().clear();
+			getSubBodyParts().addAll((Collection<? extends BodyPart>) newValue);
 			return;
 		case DocumentStructurePackage.PARAGRAPH__TEXT:
 			setText((String) newValue);
@@ -284,7 +284,7 @@ public class ParagraphImpl extends MinimalEObjectImpl.Container implements Parag
 			setDataSource((DataSource) null);
 			return;
 		case DocumentStructurePackage.PARAGRAPH__SUB_BODY_PART:
-			getSubBodyPart().clear();
+			getSubBodyParts().clear();
 			return;
 		case DocumentStructurePackage.PARAGRAPH__TEXT:
 			setText(TEXT_EDEFAULT);
@@ -305,7 +305,7 @@ public class ParagraphImpl extends MinimalEObjectImpl.Container implements Parag
 		case DocumentStructurePackage.PARAGRAPH__DATA_SOURCE:
 			return dataSource != null;
 		case DocumentStructurePackage.PARAGRAPH__SUB_BODY_PART:
-			return subBodyPart != null && !subBodyPart.isEmpty();
+			return subBodyParts != null && !subBodyParts.isEmpty();
 		case DocumentStructurePackage.PARAGRAPH__TEXT:
 			return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
 		}

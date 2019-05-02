@@ -19,6 +19,8 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
+import org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesPackage;
+
 /**
  * <!-- begin-user-doc -->
  * The <b>Package</b> for the model.
@@ -270,16 +272,6 @@ public interface DocumentStructurePackage extends EPackage {
 	int BODY_PART__DATA_SOURCE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Sub Body Part</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int BODY_PART__SUB_BODY_PART = 1;
-
-	/**
 	 * The number of structural features of the '<em>Body Part</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -287,7 +279,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BODY_PART_FEATURE_COUNT = 2;
+	int BODY_PART_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Body Part</em>' class.
@@ -331,15 +323,15 @@ public interface DocumentStructurePackage extends EPackage {
 	int DATA_SOURCE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ListImpl <em>List</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.ComposedBodyPart <em>Composed Body Part</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ListImpl
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getList()
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.ComposedBodyPart
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getComposedBodyPart()
 	 * @generated
 	 */
-	int LIST = 6;
+	int COMPOSED_BODY_PART = 7;
 
 	/**
 	 * The feature id for the '<em><b>Data Source</b></em>' containment reference.
@@ -349,7 +341,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LIST__DATA_SOURCE = BODY_PART__DATA_SOURCE;
+	int COMPOSED_BODY_PART__DATA_SOURCE = BODY_PART__DATA_SOURCE;
 
 	/**
 	 * The feature id for the '<em><b>Sub Body Part</b></em>' containment reference list.
@@ -359,78 +351,27 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LIST__SUB_BODY_PART = BODY_PART__SUB_BODY_PART;
+	int COMPOSED_BODY_PART__SUB_BODY_PART = BODY_PART_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>List</em>' class.
+	 * The number of structural features of the '<em>Composed Body Part</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int LIST_FEATURE_COUNT = BODY_PART_FEATURE_COUNT + 0;
+	int COMPOSED_BODY_PART_FEATURE_COUNT = BODY_PART_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of operations of the '<em>List</em>' class.
+	 * The number of operations of the '<em>Composed Body Part</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int LIST_OPERATION_COUNT = BODY_PART_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.TextPart <em>Text Part</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.TextPart
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getTextPart()
-	 * @generated
-	 */
-	int TEXT_PART = 8;
-
-	/**
-	 * The feature id for the '<em><b>Data Source</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int TEXT_PART__DATA_SOURCE = BODY_PART__DATA_SOURCE;
-
-	/**
-	 * The feature id for the '<em><b>Sub Body Part</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int TEXT_PART__SUB_BODY_PART = BODY_PART__SUB_BODY_PART;
-
-	/**
-	 * The number of structural features of the '<em>Text Part</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int TEXT_PART_FEATURE_COUNT = BODY_PART_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Text Part</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int TEXT_PART_OPERATION_COUNT = BODY_PART_OPERATION_COUNT + 0;
+	int COMPOSED_BODY_PART_OPERATION_COUNT = BODY_PART_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ParagraphImpl <em>Paragraph</em>}' class.
@@ -441,7 +382,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getParagraph()
 	 * @generated
 	 */
-	int PARAGRAPH = 7;
+	int PARAGRAPH = 6;
 
 	/**
 	 * The feature id for the '<em><b>Data Source</b></em>' containment reference.
@@ -451,7 +392,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAGRAPH__DATA_SOURCE = TEXT_PART__DATA_SOURCE;
+	int PARAGRAPH__DATA_SOURCE = COMPOSED_BODY_PART__DATA_SOURCE;
 
 	/**
 	 * The feature id for the '<em><b>Sub Body Part</b></em>' containment reference list.
@@ -461,7 +402,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAGRAPH__SUB_BODY_PART = TEXT_PART__SUB_BODY_PART;
+	int PARAGRAPH__SUB_BODY_PART = COMPOSED_BODY_PART__SUB_BODY_PART;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -471,7 +412,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAGRAPH__TEXT = TEXT_PART_FEATURE_COUNT + 0;
+	int PARAGRAPH__TEXT = COMPOSED_BODY_PART_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Paragraph</em>' class.
@@ -481,7 +422,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAGRAPH_FEATURE_COUNT = TEXT_PART_FEATURE_COUNT + 1;
+	int PARAGRAPH_FEATURE_COUNT = COMPOSED_BODY_PART_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Paragraph</em>' class.
@@ -491,7 +432,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAGRAPH_OPERATION_COUNT = TEXT_PART_OPERATION_COUNT + 0;
+	int PARAGRAPH_OPERATION_COUNT = COMPOSED_BODY_PART_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TitleImpl <em>Title</em>}' class.
@@ -502,7 +443,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getTitle()
 	 * @generated
 	 */
-	int TITLE = 9;
+	int TITLE = 8;
 
 	/**
 	 * The feature id for the '<em><b>Data Source</b></em>' containment reference.
@@ -512,7 +453,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TITLE__DATA_SOURCE = TEXT_PART__DATA_SOURCE;
+	int TITLE__DATA_SOURCE = COMPOSED_BODY_PART__DATA_SOURCE;
 
 	/**
 	 * The feature id for the '<em><b>Sub Body Part</b></em>' containment reference list.
@@ -522,7 +463,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TITLE__SUB_BODY_PART = TEXT_PART__SUB_BODY_PART;
+	int TITLE__SUB_BODY_PART = COMPOSED_BODY_PART__SUB_BODY_PART;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -532,7 +473,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TITLE__TITLE = TEXT_PART_FEATURE_COUNT + 0;
+	int TITLE__TITLE = COMPOSED_BODY_PART_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Title</em>' class.
@@ -542,7 +483,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TITLE_FEATURE_COUNT = TEXT_PART_FEATURE_COUNT + 1;
+	int TITLE_FEATURE_COUNT = COMPOSED_BODY_PART_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Get Level</em>' operation.
@@ -552,7 +493,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TITLE___GET_LEVEL = TEXT_PART_OPERATION_COUNT + 0;
+	int TITLE___GET_LEVEL = COMPOSED_BODY_PART_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Title</em>' class.
@@ -562,7 +503,48 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TITLE_OPERATION_COUNT = TEXT_PART_OPERATION_COUNT + 1;
+	int TITLE_OPERATION_COUNT = COMPOSED_BODY_PART_OPERATION_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.LeafBodyPart <em>Leaf Body Part</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.LeafBodyPart
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getLeafBodyPart()
+	 * @generated
+	 */
+	int LEAF_BODY_PART = 10;
+
+	/**
+	 * The feature id for the '<em><b>Data Source</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int LEAF_BODY_PART__DATA_SOURCE = BODY_PART__DATA_SOURCE;
+
+	/**
+	 * The number of structural features of the '<em>Leaf Body Part</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int LEAF_BODY_PART_FEATURE_COUNT = BODY_PART_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Leaf Body Part</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int LEAF_BODY_PART_OPERATION_COUNT = BODY_PART_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ImageImpl <em>Image</em>}' class.
@@ -573,7 +555,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getImage()
 	 * @generated
 	 */
-	int IMAGE = 10;
+	int IMAGE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Data Source</b></em>' containment reference.
@@ -583,17 +565,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE__DATA_SOURCE = TEXT_PART__DATA_SOURCE;
-
-	/**
-	 * The feature id for the '<em><b>Sub Body Part</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE__SUB_BODY_PART = TEXT_PART__SUB_BODY_PART;
+	int IMAGE__DATA_SOURCE = LEAF_BODY_PART__DATA_SOURCE;
 
 	/**
 	 * The feature id for the '<em><b>Image Path</b></em>' attribute.
@@ -603,7 +575,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE__IMAGE_PATH = TEXT_PART_FEATURE_COUNT + 0;
+	int IMAGE__IMAGE_PATH = LEAF_BODY_PART_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Caption</b></em>' attribute.
@@ -613,7 +585,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE__CAPTION = TEXT_PART_FEATURE_COUNT + 1;
+	int IMAGE__CAPTION = LEAF_BODY_PART_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Image</em>' class.
@@ -623,7 +595,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_FEATURE_COUNT = TEXT_PART_FEATURE_COUNT + 2;
+	int IMAGE_FEATURE_COUNT = LEAF_BODY_PART_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Image</em>' class.
@@ -633,7 +605,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_OPERATION_COUNT = TEXT_PART_OPERATION_COUNT + 0;
+	int IMAGE_OPERATION_COUNT = LEAF_BODY_PART_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.EMFDataSourceImpl <em>EMF Data Source</em>}' class.
@@ -727,6 +699,158 @@ public interface DocumentStructurePackage extends EPackage {
 	 */
 	int TABLE_OF_CONTENTS_OPERATION_COUNT = TEXT_DOCUMENT_PART_OPERATION_COUNT + 0;
 
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ExtendedBasicTableImpl <em>Extended Basic Table</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ExtendedBasicTableImpl
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getExtendedBasicTable()
+	 * @generated
+	 */
+	int EXTENDED_BASIC_TABLE = 13;
+
+	/**
+	 * The feature id for the '<em><b>Caption</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_BASIC_TABLE__CAPTION = BuiltInTypesPackage.BASIC_TABLE__CAPTION;
+
+	/**
+	 * The feature id for the '<em><b>Rows</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_BASIC_TABLE__ROWS = BuiltInTypesPackage.BASIC_TABLE__ROWS;
+
+	/**
+	 * The feature id for the '<em><b>Data Source</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_BASIC_TABLE__DATA_SOURCE = BuiltInTypesPackage.BASIC_TABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Extended Basic Table</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_BASIC_TABLE_FEATURE_COUNT = BuiltInTypesPackage.BASIC_TABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Rows Number</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_BASIC_TABLE___GET_ROWS_NUMBER = BuiltInTypesPackage.BASIC_TABLE___GET_ROWS_NUMBER;
+
+	/**
+	 * The operation id for the '<em>Get Columns Number</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_BASIC_TABLE___GET_COLUMNS_NUMBER = BuiltInTypesPackage.BASIC_TABLE___GET_COLUMNS_NUMBER;
+
+	/**
+	 * The operation id for the '<em>Get All Cells</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_BASIC_TABLE___GET_ALL_CELLS = BuiltInTypesPackage.BASIC_TABLE___GET_ALL_CELLS;
+
+	/**
+	 * The number of operations of the '<em>Extended Basic Table</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_BASIC_TABLE_OPERATION_COUNT = BuiltInTypesPackage.BASIC_TABLE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ExtendedTextCellImpl <em>Extended Text Cell</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ExtendedTextCellImpl
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getExtendedTextCell()
+	 * @generated
+	 */
+	int EXTENDED_TEXT_CELL = 14;
+
+	/**
+	 * The feature id for the '<em><b>Location</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_TEXT_CELL__LOCATION = BuiltInTypesPackage.TEXT_CELL__LOCATION;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_TEXT_CELL__TEXT = BuiltInTypesPackage.TEXT_CELL__TEXT;
+
+	/**
+	 * The feature id for the '<em><b>Data Source</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_TEXT_CELL__DATA_SOURCE = BuiltInTypesPackage.TEXT_CELL_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Extended Text Cell</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_TEXT_CELL_FEATURE_COUNT = BuiltInTypesPackage.TEXT_CELL_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Extended Text Cell</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_TEXT_CELL_OPERATION_COUNT = BuiltInTypesPackage.TEXT_CELL_OPERATION_COUNT + 0;
+
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument <em>Text Document</em>}'.
@@ -752,12 +876,12 @@ public interface DocumentStructurePackage extends EPackage {
 	EAttribute getTextDocument_MainTitle();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument#getTextDocumentPart <em>Text Document Part</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument#getTextDocumentParts <em>Text Document Part</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the containment reference list '<em>Text Document Part</em>'.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument#getTextDocumentPart()
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument#getTextDocumentParts()
 	 * @see #getTextDocument()
 	 * @generated
 	 */
@@ -809,12 +933,12 @@ public interface DocumentStructurePackage extends EPackage {
 	EClass getBody();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.Body#getBodyPart <em>Body Part</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.Body#getBodyParts <em>Body Part</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the containment reference list '<em>Body Part</em>'.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.Body#getBodyPart()
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.Body#getBodyParts()
 	 * @see #getBody()
 	 * @generated
 	 */
@@ -844,18 +968,6 @@ public interface DocumentStructurePackage extends EPackage {
 	EReference getBodyPart_DataSource();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart#getSubBodyPart <em>Sub Body Part</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the meta object for the containment reference list '<em>Sub Body Part</em>'.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart#getSubBodyPart()
-	 * @see #getBodyPart()
-	 * @generated
-	 */
-	EReference getBodyPart_SubBodyPart();
-
-	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.DataSource <em>Data Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -865,17 +977,6 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getDataSource();
-
-	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.List <em>List</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the meta object for class '<em>List</em>'.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.List
-	 * @generated
-	 */
-	EClass getList();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.Paragraph <em>Paragraph</em>}'.
@@ -901,15 +1002,27 @@ public interface DocumentStructurePackage extends EPackage {
 	EAttribute getParagraph_Text();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.TextPart <em>Text Part</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.ComposedBodyPart <em>Composed Body Part</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the meta object for class '<em>Text Part</em>'.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.TextPart
+	 * @return the meta object for class '<em>Composed Body Part</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.ComposedBodyPart
 	 * @generated
 	 */
-	EClass getTextPart();
+	EClass getComposedBodyPart();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.ComposedBodyPart#getSubBodyParts <em>Sub Body Part</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference list '<em>Sub Body Part</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.ComposedBodyPart#getSubBodyParts()
+	 * @see #getComposedBodyPart()
+	 * @generated
+	 */
+	EReference getComposedBodyPart_SubBodyPart();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.Title <em>Title</em>}'.
@@ -981,6 +1094,17 @@ public interface DocumentStructurePackage extends EPackage {
 	EAttribute getImage_Caption();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.LeafBodyPart <em>Leaf Body Part</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>Leaf Body Part</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.LeafBodyPart
+	 * @generated
+	 */
+	EClass getLeafBodyPart();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.EMFDataSource <em>EMF Data Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1037,6 +1161,40 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getTableOfContents_TocTitle();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedBasicTable <em>Extended Basic Table</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>Extended Basic Table</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedBasicTable
+	 * @generated
+	 */
+	EClass getExtendedBasicTable();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedTextCell <em>Extended Text Cell</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>Extended Text Cell</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedTextCell
+	 * @generated
+	 */
+	EClass getExtendedTextCell();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedTextCell#getDataSource <em>Data Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference '<em>Data Source</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedTextCell#getDataSource()
+	 * @see #getExtendedTextCell()
+	 * @generated
+	 */
+	EReference getExtendedTextCell_DataSource();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1164,15 +1322,6 @@ public interface DocumentStructurePackage extends EPackage {
 		EReference BODY_PART__DATA_SOURCE = eINSTANCE.getBodyPart_DataSource();
 
 		/**
-		 * The meta object literal for the '<em><b>Sub Body Part</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 *
-		 * @generated
-		 */
-		EReference BODY_PART__SUB_BODY_PART = eINSTANCE.getBodyPart_SubBodyPart();
-
-		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.DataSource <em>Data Source</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1182,17 +1331,6 @@ public interface DocumentStructurePackage extends EPackage {
 		 * @generated
 		 */
 		EClass DATA_SOURCE = eINSTANCE.getDataSource();
-
-		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ListImpl <em>List</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 *
-		 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ListImpl
-		 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getList()
-		 * @generated
-		 */
-		EClass LIST = eINSTANCE.getList();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ParagraphImpl <em>Paragraph</em>}' class.
@@ -1215,15 +1353,24 @@ public interface DocumentStructurePackage extends EPackage {
 		EAttribute PARAGRAPH__TEXT = eINSTANCE.getParagraph_Text();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.TextPart <em>Text Part</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.ComposedBodyPart <em>Composed Body Part</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
-		 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.TextPart
-		 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getTextPart()
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.ComposedBodyPart
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getComposedBodyPart()
 		 * @generated
 		 */
-		EClass TEXT_PART = eINSTANCE.getTextPart();
+		EClass COMPOSED_BODY_PART = eINSTANCE.getComposedBodyPart();
+
+		/**
+		 * The meta object literal for the '<em><b>Sub Body Part</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference COMPOSED_BODY_PART__SUB_BODY_PART = eINSTANCE.getComposedBodyPart_SubBodyPart();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TitleImpl <em>Title</em>}' class.
@@ -1284,6 +1431,17 @@ public interface DocumentStructurePackage extends EPackage {
 		EAttribute IMAGE__CAPTION = eINSTANCE.getImage_Caption();
 
 		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.LeafBodyPart <em>Leaf Body Part</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.LeafBodyPart
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getLeafBodyPart()
+		 * @generated
+		 */
+		EClass LEAF_BODY_PART = eINSTANCE.getLeafBodyPart();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.EMFDataSourceImpl <em>EMF Data Source</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1331,6 +1489,37 @@ public interface DocumentStructurePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TABLE_OF_CONTENTS__TOC_TITLE = eINSTANCE.getTableOfContents_TocTitle();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ExtendedBasicTableImpl <em>Extended Basic Table</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ExtendedBasicTableImpl
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getExtendedBasicTable()
+		 * @generated
+		 */
+		EClass EXTENDED_BASIC_TABLE = eINSTANCE.getExtendedBasicTable();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ExtendedTextCellImpl <em>Extended Text Cell</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ExtendedTextCellImpl
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getExtendedTextCell()
+		 * @generated
+		 */
+		EClass EXTENDED_TEXT_CELL = eINSTANCE.getExtendedTextCell();
+
+		/**
+		 * The meta object literal for the '<em><b>Data Source</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EXTENDED_TEXT_CELL__DATA_SOURCE = eINSTANCE.getExtendedTextCell_DataSource();
 
 	}
 

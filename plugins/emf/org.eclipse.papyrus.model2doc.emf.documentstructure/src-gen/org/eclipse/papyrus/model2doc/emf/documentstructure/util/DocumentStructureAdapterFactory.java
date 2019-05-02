@@ -20,6 +20,11 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractTable;
+import org.eclipse.papyrus.model2doc.core.builtintypes.BasicTable;
+import org.eclipse.papyrus.model2doc.core.builtintypes.Cell;
+import org.eclipse.papyrus.model2doc.core.builtintypes.TextCell;
+
 import org.eclipse.papyrus.model2doc.emf.documentstructure.*;
 
 /**
@@ -113,18 +118,13 @@ public class DocumentStructureAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseList(List object) {
-			return createListAdapter();
-		}
-
-		@Override
 		public Adapter caseParagraph(Paragraph object) {
 			return createParagraphAdapter();
 		}
 
 		@Override
-		public Adapter caseTextPart(TextPart object) {
-			return createTextPartAdapter();
+		public Adapter caseComposedBodyPart(ComposedBodyPart object) {
+			return createComposedBodyPartAdapter();
 		}
 
 		@Override
@@ -138,6 +138,11 @@ public class DocumentStructureAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseLeafBodyPart(LeafBodyPart object) {
+			return createLeafBodyPartAdapter();
+		}
+
+		@Override
 		public Adapter caseEMFDataSource(EMFDataSource object) {
 			return createEMFDataSourceAdapter();
 		}
@@ -145,6 +150,36 @@ public class DocumentStructureAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseTableOfContents(TableOfContents object) {
 			return createTableOfContentsAdapter();
+		}
+
+		@Override
+		public Adapter caseExtendedBasicTable(ExtendedBasicTable object) {
+			return createExtendedBasicTableAdapter();
+		}
+
+		@Override
+		public Adapter caseExtendedTextCell(ExtendedTextCell object) {
+			return createExtendedTextCellAdapter();
+		}
+
+		@Override
+		public Adapter caseAbstractTable(AbstractTable object) {
+			return createAbstractTableAdapter();
+		}
+
+		@Override
+		public Adapter caseBasicTable(BasicTable object) {
+			return createBasicTableAdapter();
+		}
+
+		@Override
+		public Adapter caseCell(Cell object) {
+			return createCellAdapter();
+		}
+
+		@Override
+		public Adapter caseTextCell(TextCell object) {
+			return createTextCellAdapter();
 		}
 
 		@Override
@@ -260,21 +295,6 @@ public class DocumentStructureAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.List <em>List</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.List
-	 * @generated
-	 */
-	public Adapter createListAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.Paragraph <em>Paragraph</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -290,17 +310,17 @@ public class DocumentStructureAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.TextPart <em>Text Part</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.ComposedBodyPart <em>Composed Body Part</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.TextPart
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.ComposedBodyPart
 	 * @generated
 	 */
-	public Adapter createTextPartAdapter() {
+	public Adapter createComposedBodyPartAdapter() {
 		return null;
 	}
 
@@ -335,6 +355,21 @@ public class DocumentStructureAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.LeafBodyPart <em>Leaf Body Part</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.LeafBodyPart
+	 * @generated
+	 */
+	public Adapter createLeafBodyPartAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.EMFDataSource <em>EMF Data Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -361,6 +396,96 @@ public class DocumentStructureAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTableOfContentsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedBasicTable <em>Extended Basic Table</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedBasicTable
+	 * @generated
+	 */
+	public Adapter createExtendedBasicTableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedTextCell <em>Extended Text Cell</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedTextCell
+	 * @generated
+	 */
+	public Adapter createExtendedTextCellAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.core.builtintypes.AbstractTable <em>Abstract Table</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.AbstractTable
+	 * @generated
+	 */
+	public Adapter createAbstractTableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.core.builtintypes.BasicTable <em>Basic Table</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.BasicTable
+	 * @generated
+	 */
+	public Adapter createBasicTableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.core.builtintypes.Cell <em>Cell</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.Cell
+	 * @generated
+	 */
+	public Adapter createCellAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.core.builtintypes.TextCell <em>Text Cell</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.TextCell
+	 * @generated
+	 */
+	public Adapter createTextCellAdapter() {
 		return null;
 	}
 

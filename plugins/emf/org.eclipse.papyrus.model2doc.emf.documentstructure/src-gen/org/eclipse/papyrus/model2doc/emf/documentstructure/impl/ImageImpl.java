@@ -13,12 +13,8 @@
  */
 package org.eclipse.papyrus.model2doc.emf.documentstructure.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -26,10 +22,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
-import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DataSource;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Image;
@@ -43,7 +35,6 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.Image;
  * </p>
  * <ul>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ImageImpl#getDataSource <em>Data Source</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ImageImpl#getSubBodyPart <em>Sub Body Part</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ImageImpl#getImagePath <em>Image Path</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ImageImpl#getCaption <em>Caption</em>}</li>
  * </ul>
@@ -61,17 +52,6 @@ public class ImageImpl extends MinimalEObjectImpl.Container implements Image {
 	 * @ordered
 	 */
 	protected DataSource dataSource;
-
-	/**
-	 * The cached value of the '{@link #getSubBodyPart() <em>Sub Body Part</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see #getSubBodyPart()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<BodyPart> subBodyPart;
 
 	/**
 	 * The default value of the '{@link #getImagePath() <em>Image Path</em>}' attribute.
@@ -201,20 +181,6 @@ public class ImageImpl extends MinimalEObjectImpl.Container implements Image {
 	 * @generated
 	 */
 	@Override
-	public EList<BodyPart> getSubBodyPart() {
-		if (subBodyPart == null) {
-			subBodyPart = new EObjectContainmentEList<>(BodyPart.class, this, DocumentStructurePackage.IMAGE__SUB_BODY_PART);
-		}
-		return subBodyPart;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
 	public String getImagePath() {
 		return imagePath;
 	}
@@ -271,8 +237,6 @@ public class ImageImpl extends MinimalEObjectImpl.Container implements Image {
 		switch (featureID) {
 		case DocumentStructurePackage.IMAGE__DATA_SOURCE:
 			return basicSetDataSource(null, msgs);
-		case DocumentStructurePackage.IMAGE__SUB_BODY_PART:
-			return ((InternalEList<?>) getSubBodyPart()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -288,8 +252,6 @@ public class ImageImpl extends MinimalEObjectImpl.Container implements Image {
 		switch (featureID) {
 		case DocumentStructurePackage.IMAGE__DATA_SOURCE:
 			return getDataSource();
-		case DocumentStructurePackage.IMAGE__SUB_BODY_PART:
-			return getSubBodyPart();
 		case DocumentStructurePackage.IMAGE__IMAGE_PATH:
 			return getImagePath();
 		case DocumentStructurePackage.IMAGE__CAPTION:
@@ -304,16 +266,11 @@ public class ImageImpl extends MinimalEObjectImpl.Container implements Image {
 	 *
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case DocumentStructurePackage.IMAGE__DATA_SOURCE:
 			setDataSource((DataSource) newValue);
-			return;
-		case DocumentStructurePackage.IMAGE__SUB_BODY_PART:
-			getSubBodyPart().clear();
-			getSubBodyPart().addAll((Collection<? extends BodyPart>) newValue);
 			return;
 		case DocumentStructurePackage.IMAGE__IMAGE_PATH:
 			setImagePath((String) newValue);
@@ -337,9 +294,6 @@ public class ImageImpl extends MinimalEObjectImpl.Container implements Image {
 		case DocumentStructurePackage.IMAGE__DATA_SOURCE:
 			setDataSource((DataSource) null);
 			return;
-		case DocumentStructurePackage.IMAGE__SUB_BODY_PART:
-			getSubBodyPart().clear();
-			return;
 		case DocumentStructurePackage.IMAGE__IMAGE_PATH:
 			setImagePath(IMAGE_PATH_EDEFAULT);
 			return;
@@ -361,8 +315,6 @@ public class ImageImpl extends MinimalEObjectImpl.Container implements Image {
 		switch (featureID) {
 		case DocumentStructurePackage.IMAGE__DATA_SOURCE:
 			return dataSource != null;
-		case DocumentStructurePackage.IMAGE__SUB_BODY_PART:
-			return subBodyPart != null && !subBodyPart.isEmpty();
 		case DocumentStructurePackage.IMAGE__IMAGE_PATH:
 			return IMAGE_PATH_EDEFAULT == null ? imagePath != null : !IMAGE_PATH_EDEFAULT.equals(imagePath);
 		case DocumentStructurePackage.IMAGE__CAPTION:

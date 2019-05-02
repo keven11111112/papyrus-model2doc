@@ -9,7 +9,7 @@
  * SPDX-License-Identifier: EPL-2.0
  *
  * Contributors:
- *   CEA LIST - Initial API and implementation
+ *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
 
@@ -20,7 +20,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.Title;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TitleImpl;
 
 /**
- *
+ * Custom {@link Title} implementation
  */
 public class CustomTitleImpl extends TitleImpl {
 

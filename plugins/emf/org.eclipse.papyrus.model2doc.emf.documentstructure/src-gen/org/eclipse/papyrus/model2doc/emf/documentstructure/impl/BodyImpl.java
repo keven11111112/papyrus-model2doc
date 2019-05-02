@@ -39,22 +39,22 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePack
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.BodyImpl#getBodyPart <em>Body Part</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.BodyImpl#getBodyParts <em>Body Part</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class BodyImpl extends MinimalEObjectImpl.Container implements Body {
 	/**
-	 * The cached value of the '{@link #getBodyPart() <em>Body Part</em>}' containment reference list.
+	 * The cached value of the '{@link #getBodyParts() <em>Body Part</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see #getBodyPart()
+	 * @see #getBodyParts()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<BodyPart> bodyPart;
+	protected EList<BodyPart> bodyParts;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -84,11 +84,11 @@ public class BodyImpl extends MinimalEObjectImpl.Container implements Body {
 	 * @generated
 	 */
 	@Override
-	public EList<BodyPart> getBodyPart() {
-		if (bodyPart == null) {
-			bodyPart = new EObjectContainmentEList<>(BodyPart.class, this, DocumentStructurePackage.BODY__BODY_PART);
+	public EList<BodyPart> getBodyParts() {
+		if (bodyParts == null) {
+			bodyParts = new EObjectContainmentEList<>(BodyPart.class, this, DocumentStructurePackage.BODY__BODY_PART);
 		}
-		return bodyPart;
+		return bodyParts;
 	}
 
 	/**
@@ -101,7 +101,7 @@ public class BodyImpl extends MinimalEObjectImpl.Container implements Body {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case DocumentStructurePackage.BODY__BODY_PART:
-			return ((InternalEList<?>) getBodyPart()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getBodyParts()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -116,7 +116,7 @@ public class BodyImpl extends MinimalEObjectImpl.Container implements Body {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case DocumentStructurePackage.BODY__BODY_PART:
-			return getBodyPart();
+			return getBodyParts();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -132,8 +132,8 @@ public class BodyImpl extends MinimalEObjectImpl.Container implements Body {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case DocumentStructurePackage.BODY__BODY_PART:
-			getBodyPart().clear();
-			getBodyPart().addAll((Collection<? extends BodyPart>) newValue);
+			getBodyParts().clear();
+			getBodyParts().addAll((Collection<? extends BodyPart>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -149,7 +149,7 @@ public class BodyImpl extends MinimalEObjectImpl.Container implements Body {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case DocumentStructurePackage.BODY__BODY_PART:
-			getBodyPart().clear();
+			getBodyParts().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -165,7 +165,7 @@ public class BodyImpl extends MinimalEObjectImpl.Container implements Body {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case DocumentStructurePackage.BODY__BODY_PART:
-			return bodyPart != null && !bodyPart.isEmpty();
+			return bodyParts != null && !bodyParts.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

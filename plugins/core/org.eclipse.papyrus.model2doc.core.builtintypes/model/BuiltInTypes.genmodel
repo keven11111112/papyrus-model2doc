@@ -37,7 +37,8 @@
   </genAnnotations>
   <foreignModel>BuiltInTypes.uml</foreignModel>
   <genPackages xsi:type="genmodel:GenPackage" prefix="BuiltInTypes" basePackage="org.eclipse.papyrus.model2doc.core"
-      disposableProviderFactory="true" ecorePackage="BuiltInTypes.ecore#/">
+      disposableProviderFactory="true" extensibleProviderFactory="true" childCreationExtenders="true"
+      ecorePackage="BuiltInTypes.ecore#/">
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="BuiltInTypes.ecore#//CellLocation">
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="BuiltInTypes.ecore#//CellLocation/CORNER"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="BuiltInTypes.ecore#//CellLocation/COLUMN_HEADER"/>

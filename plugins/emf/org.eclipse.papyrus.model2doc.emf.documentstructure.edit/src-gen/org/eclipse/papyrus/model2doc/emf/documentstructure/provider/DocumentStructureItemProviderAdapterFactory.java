@@ -16,14 +16,21 @@ package org.eclipse.papyrus.model2doc.emf.documentstructure.provider;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import java.util.List;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
 
+import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.edit.command.CommandParameter;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.ChangeNotifier;
+import org.eclipse.emf.edit.provider.ChildCreationExtenderManager;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IChangeNotifier;
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IDisposable;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -32,6 +39,11 @@ import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
+import org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesPackage;
+import org.eclipse.papyrus.model2doc.core.builtintypes.Row;
+import org.eclipse.papyrus.model2doc.core.builtintypes.util.BuiltInTypesSwitch;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructureFactory;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.util.DocumentStructureAdapterFactory;
 
 /**
@@ -44,7 +56,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.util.DocumentStructur
  *
  * @generated
  */
-public class DocumentStructureItemProviderAdapterFactory extends DocumentStructureAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+public class DocumentStructureItemProviderAdapterFactory extends DocumentStructureAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -62,6 +74,15 @@ public class DocumentStructureItemProviderAdapterFactory extends DocumentStructu
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
+
+	/**
+	 * This helps manage the child creation extenders.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(DocumentstructureEditPlugin.INSTANCE, DocumentStructurePackage.eNS_URI);
 
 	/**
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
@@ -135,31 +156,6 @@ public class DocumentStructureItemProviderAdapterFactory extends DocumentStructu
 		}
 
 		return bodyItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructure.List} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected ListItemProvider listItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructure.List}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public Adapter createListAdapter() {
-		if (listItemProvider == null) {
-			listItemProvider = new ListItemProvider(this);
-		}
-
-		return listItemProvider;
 	}
 
 	/**
@@ -288,6 +284,56 @@ public class DocumentStructureItemProviderAdapterFactory extends DocumentStructu
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedBasicTable} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected ExtendedBasicTableItemProvider extendedBasicTableItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedBasicTable}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Adapter createExtendedBasicTableAdapter() {
+		if (extendedBasicTableItemProvider == null) {
+			extendedBasicTableItemProvider = new ExtendedBasicTableItemProvider(this);
+		}
+
+		return extendedBasicTableItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedTextCell} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected ExtendedTextCellItemProvider extendedTextCellItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedTextCell}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Adapter createExtendedTextCellAdapter() {
+		if (extendedTextCellItemProvider == null) {
+			extendedTextCellItemProvider = new ExtendedTextCellItemProvider(this);
+		}
+
+		return extendedTextCellItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -353,6 +399,38 @@ public class DocumentStructureItemProviderAdapterFactory extends DocumentStructu
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public List<IChildCreationExtender> getChildCreationExtenders() {
+		return childCreationExtenderManager.getChildCreationExtenders();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Collection<?> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
+		return childCreationExtenderManager.getNewChildDescriptors(object, editingDomain);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return childCreationExtenderManager;
+	}
+
+	/**
 	 * This adds a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -407,9 +485,6 @@ public class DocumentStructureItemProviderAdapterFactory extends DocumentStructu
 		if (bodyItemProvider != null) {
 			bodyItemProvider.dispose();
 		}
-		if (listItemProvider != null) {
-			listItemProvider.dispose();
-		}
 		if (paragraphItemProvider != null) {
 			paragraphItemProvider.dispose();
 		}
@@ -424,6 +499,109 @@ public class DocumentStructureItemProviderAdapterFactory extends DocumentStructu
 		}
 		if (tableOfContentsItemProvider != null) {
 			tableOfContentsItemProvider.dispose();
+		}
+		if (extendedBasicTableItemProvider != null) {
+			extendedBasicTableItemProvider.dispose();
+		}
+		if (extendedTextCellItemProvider != null) {
+			extendedTextCellItemProvider.dispose();
+		}
+	}
+
+	/**
+	 * A child creation extender for the {@link BuiltInTypesPackage}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public static class BuiltInTypesChildCreationExtender implements IChildCreationExtender {
+		/**
+		 * The switch for creating child descriptors specific to each extended class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		protected static class CreationSwitch extends BuiltInTypesSwitch<Object> {
+			/**
+			 * The child descriptors being populated.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 *
+			 * @generated
+			 */
+			protected List<Object> newChildDescriptors;
+
+			/**
+			 * The domain in which to create the children.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 *
+			 * @generated
+			 */
+			protected EditingDomain editingDomain;
+
+			/**
+			 * Creates the a switch for populating child descriptors in the given domain.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 *
+			 * @generated
+			 */
+			CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
+				this.newChildDescriptors = newChildDescriptors;
+				this.editingDomain = editingDomain;
+			}
+
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 *
+			 * @generated
+			 */
+			@Override
+			public Object caseRow(Row object) {
+				newChildDescriptors.add(createChildParameter(BuiltInTypesPackage.Literals.ROW__CELLS,
+						DocumentStructureFactory.eINSTANCE.createExtendedTextCell()));
+
+				return null;
+			}
+
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 *
+			 * @generated
+			 */
+			protected CommandParameter createChildParameter(Object feature, Object child) {
+				return new CommandParameter(null, feature, child);
+			}
+
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		@Override
+		public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
+			ArrayList<Object> result = new ArrayList<>();
+			new CreationSwitch(result, editingDomain).doSwitch((EObject) object);
+			return result;
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		@Override
+		public ResourceLocator getResourceLocator() {
+			return DocumentstructureEditPlugin.INSTANCE;
 		}
 	}
 

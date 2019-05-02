@@ -17,36 +17,36 @@ import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Body</b></em>'.
+ * A representation of the model object '<em><b>Composed Body Part</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.Body#getBodyParts <em>Body Part</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.ComposedBodyPart#getSubBodyParts <em>Sub Body Part</em>}</li>
  * </ul>
  *
- * @see org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage#getBody()
- * @model
+ * @see org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage#getComposedBodyPart()
+ * @model interface="true" abstract="true"
  * @generated
  */
-public interface Body extends TextDocumentPart {
+public interface ComposedBodyPart extends BodyPart {
 	/**
-	 * Returns the value of the '<em><b>Body Part</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Sub Body Part</b></em>' containment reference list.
 	 * The list contents are of type {@link org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Body Part</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Sub Body Part</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the value of the '<em>Body Part</em>' containment reference list.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage#getBody_BodyPart()
+	 * @return the value of the '<em>Sub Body Part</em>' containment reference list.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage#getComposedBodyPart_SubBodyPart()
 	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<BodyPart> getBodyParts();
+	EList<BodyPart> getSubBodyParts();
 
-} // Body
+} // ComposedBodyPart

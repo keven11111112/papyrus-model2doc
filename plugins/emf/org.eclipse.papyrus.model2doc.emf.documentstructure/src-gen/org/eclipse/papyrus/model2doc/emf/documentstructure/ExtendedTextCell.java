@@ -13,25 +13,29 @@
  */
 package org.eclipse.papyrus.model2doc.emf.documentstructure;
 
-import org.eclipse.emf.ecore.EObject;
+import org.eclipse.papyrus.model2doc.core.builtintypes.TextCell;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Body Part</b></em>'.
+ * A representation of the model object '<em><b>Extended Text Cell</b></em>'.
  * <!-- end-user-doc -->
+ *
+ * <!-- begin-model-doc -->
+ * We extends the TextCell provided by the BuiltInTypes metamodel, in order to be able to associate them a DataSource if required.
+ * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart#getDataSource <em>Data Source</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedTextCell#getDataSource <em>Data Source</em>}</li>
  * </ul>
  *
- * @see org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage#getBodyPart()
- * @model interface="true" abstract="true"
+ * @see org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage#getExtendedTextCell()
+ * @model
  * @generated
  */
-public interface BodyPart extends EObject {
+public interface ExtendedTextCell extends TextCell {
 	/**
 	 * Returns the value of the '<em><b>Data Source</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -43,14 +47,14 @@ public interface BodyPart extends EObject {
 	 *
 	 * @return the value of the '<em>Data Source</em>' containment reference.
 	 * @see #setDataSource(DataSource)
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage#getBodyPart_DataSource()
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage#getExtendedTextCell_DataSource()
 	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
 	DataSource getDataSource();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart#getDataSource <em>Data Source</em>}' containment reference.
+	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedTextCell#getDataSource <em>Data Source</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -61,4 +65,4 @@ public interface BodyPart extends EObject {
 	 */
 	void setDataSource(DataSource value);
 
-} // BodyPart
+} // ExtendedTextCell
