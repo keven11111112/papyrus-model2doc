@@ -319,7 +319,7 @@ public class PapyrusNattableDocumentStructureTemplatePackageImpl extends EPackag
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		papyrusTableViewEClass.getESuperTypes().add(theDocumentStructureTemplatePackage.getISubBodyPartTemplate());
+		papyrusTableViewEClass.getESuperTypes().add(theDocumentStructureTemplatePackage.getILeafBodyPartTemplate());
 		papyrusTableViewEClass.getESuperTypes().add(theDocumentStructureTemplatePackage.getITemplatePartView());
 
 		// Initialize classes, features, and operations; add parameters

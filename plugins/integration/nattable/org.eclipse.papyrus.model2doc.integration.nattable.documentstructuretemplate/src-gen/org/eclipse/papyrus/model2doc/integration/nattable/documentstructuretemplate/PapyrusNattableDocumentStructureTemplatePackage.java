@@ -88,7 +88,7 @@ public interface PapyrusNattableDocumentStructureTemplatePackage extends EPackag
 	 * @generated
 	 * @ordered
 	 */
-	int PAPYRUS_TABLE_VIEW__GENERATE = DocumentStructureTemplatePackage.ISUB_BODY_PART_TEMPLATE__GENERATE;
+	int PAPYRUS_TABLE_VIEW__GENERATE = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE__GENERATE;
 
 	/**
 	 * The feature id for the '<em><b>Generate Title</b></em>' attribute.
@@ -97,7 +97,7 @@ public interface PapyrusNattableDocumentStructureTemplatePackage extends EPackag
 	 * @generated
 	 * @ordered
 	 */
-	int PAPYRUS_TABLE_VIEW__GENERATE_TITLE = DocumentStructureTemplatePackage.ISUB_BODY_PART_TEMPLATE__GENERATE_TITLE;
+	int PAPYRUS_TABLE_VIEW__GENERATE_TITLE = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE__GENERATE_TITLE;
 
 	/**
 	 * The feature id for the '<em><b>Custom Title</b></em>' attribute.
@@ -106,7 +106,7 @@ public interface PapyrusNattableDocumentStructureTemplatePackage extends EPackag
 	 * @generated
 	 * @ordered
 	 */
-	int PAPYRUS_TABLE_VIEW__CUSTOM_TITLE = DocumentStructureTemplatePackage.ISUB_BODY_PART_TEMPLATE__CUSTOM_TITLE;
+	int PAPYRUS_TABLE_VIEW__CUSTOM_TITLE = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE__CUSTOM_TITLE;
 
 	/**
 	 * The feature id for the '<em><b>Table Kind Id</b></em>' attribute.
@@ -115,7 +115,7 @@ public interface PapyrusNattableDocumentStructureTemplatePackage extends EPackag
 	 * @generated
 	 * @ordered
 	 */
-	int PAPYRUS_TABLE_VIEW__TABLE_KIND_ID = DocumentStructureTemplatePackage.ISUB_BODY_PART_TEMPLATE_FEATURE_COUNT + 0;
+	int PAPYRUS_TABLE_VIEW__TABLE_KIND_ID = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Table Type</b></em>' attribute.
@@ -124,7 +124,7 @@ public interface PapyrusNattableDocumentStructureTemplatePackage extends EPackag
 	 * @generated
 	 * @ordered
 	 */
-	int PAPYRUS_TABLE_VIEW__TABLE_TYPE = DocumentStructureTemplatePackage.ISUB_BODY_PART_TEMPLATE_FEATURE_COUNT + 1;
+	int PAPYRUS_TABLE_VIEW__TABLE_TYPE = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Context Filter Rule</b></em>' attribute.
@@ -133,7 +133,7 @@ public interface PapyrusNattableDocumentStructureTemplatePackage extends EPackag
 	 * @generated
 	 * @ordered
 	 */
-	int PAPYRUS_TABLE_VIEW__CONTEXT_FILTER_RULE = DocumentStructureTemplatePackage.ISUB_BODY_PART_TEMPLATE_FEATURE_COUNT + 2;
+	int PAPYRUS_TABLE_VIEW__CONTEXT_FILTER_RULE = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Import Method</b></em>' attribute.
@@ -142,7 +142,7 @@ public interface PapyrusNattableDocumentStructureTemplatePackage extends EPackag
 	 * @generated
 	 * @ordered
 	 */
-	int PAPYRUS_TABLE_VIEW__IMPORT_METHOD = DocumentStructureTemplatePackage.ISUB_BODY_PART_TEMPLATE_FEATURE_COUNT + 3;
+	int PAPYRUS_TABLE_VIEW__IMPORT_METHOD = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Papyrus Table View</em>' class.
@@ -151,7 +151,7 @@ public interface PapyrusNattableDocumentStructureTemplatePackage extends EPackag
 	 * @generated
 	 * @ordered
 	 */
-	int PAPYRUS_TABLE_VIEW_FEATURE_COUNT = DocumentStructureTemplatePackage.ISUB_BODY_PART_TEMPLATE_FEATURE_COUNT + 4;
+	int PAPYRUS_TABLE_VIEW_FEATURE_COUNT = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Get Matching Tables</em>' operation.
@@ -160,7 +160,7 @@ public interface PapyrusNattableDocumentStructureTemplatePackage extends EPackag
 	 * @generated
 	 * @ordered
 	 */
-	int PAPYRUS_TABLE_VIEW___GET_MATCHING_TABLES__EOBJECT = DocumentStructureTemplatePackage.ISUB_BODY_PART_TEMPLATE_OPERATION_COUNT + 0;
+	int PAPYRUS_TABLE_VIEW___GET_MATCHING_TABLES__EOBJECT = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Build Title</em>' operation.
@@ -169,7 +169,7 @@ public interface PapyrusNattableDocumentStructureTemplatePackage extends EPackag
 	 * @generated
 	 * @ordered
 	 */
-	int PAPYRUS_TABLE_VIEW___BUILD_TITLE__EOBJECT = DocumentStructureTemplatePackage.ISUB_BODY_PART_TEMPLATE_OPERATION_COUNT + 1;
+	int PAPYRUS_TABLE_VIEW___BUILD_TITLE__EOBJECT = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE_OPERATION_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Papyrus Table View</em>' class.
@@ -178,7 +178,7 @@ public interface PapyrusNattableDocumentStructureTemplatePackage extends EPackag
 	 * @generated
 	 * @ordered
 	 */
-	int PAPYRUS_TABLE_VIEW_OPERATION_COUNT = DocumentStructureTemplatePackage.ISUB_BODY_PART_TEMPLATE_OPERATION_COUNT + 2;
+	int PAPYRUS_TABLE_VIEW_OPERATION_COUNT = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.Table <em>Table</em>}' class.

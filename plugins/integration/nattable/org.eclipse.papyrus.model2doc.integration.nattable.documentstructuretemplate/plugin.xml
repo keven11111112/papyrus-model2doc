@@ -16,7 +16,6 @@
 -->
 
 <plugin>
-
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated papyrusnattabledocumentstructuretemplate -->
       <package
@@ -31,22 +30,4 @@
             uri="http://www.eclipse.org/papyrus/model2doc/nattable/integration/1.0.0/documentstructuretemplate">
       </factory>
    </extension>
-   <extension
-         point="org.eclipse.emf.ecore.uri_mapping">
-      <mapping
-            source="pathmap://PAPYRUS_NATTABLE_DOCUMENT_STRUCTURE_TEMPLATE/"
-            target="platform:/plugin/org.eclipse.papyrus.model2doc.integration.nattable.documentstructuretemplate/model/">
-      </mapping>
-   </extension>
-   <extension
-         point="org.eclipse.papyrus.uml.extensionpoints.UMLLibrary">
-      <library
-            description="Papyrus NatTable Extension for DocumentStructureTemplate"
-            iconpath="icons/Papyrus_NatTable_DocumentStructureTemplate.gif"
-            name="Papyrus-Model2Doc - DocumentStructureTemplate Papyrus NatTable Extension (Internal)"
-            path="pathmap://PAPYRUS_NATTABLE_DOCUMENT_STRUCTURE_TEMPLATE/papyrusnattabledocumentstructuretemplate.uml"
-            provider="Eclipse Modeling Project">
-      </library>
-   </extension>
-
 </plugin>

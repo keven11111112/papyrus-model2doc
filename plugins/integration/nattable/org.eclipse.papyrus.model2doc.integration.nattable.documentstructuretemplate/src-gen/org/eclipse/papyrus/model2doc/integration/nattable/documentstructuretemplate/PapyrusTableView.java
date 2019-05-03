@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.papyrus.infra.nattable.model.nattable.Table;
 
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubBodyPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafBodyPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITemplatePartView;
 
 /**
@@ -45,7 +45,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITemplatePart
  * @model
  * @generated
  */
-public interface PapyrusTableView extends ISubBodyPartTemplate, ITemplatePartView {
+public interface PapyrusTableView extends ILeafBodyPartTemplate, ITemplatePartView {
 	/**
 	 * Returns the value of the '<em><b>Table Kind Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -57,6 +57,7 @@ public interface PapyrusTableView extends ISubBodyPartTemplate, ITemplatePartVie
 	 * @see #setTableKindId(String)
 	 * @see org.eclipse.papyrus.model2doc.integration.nattable.documentstructuretemplate.PapyrusNattableDocumentStructureTemplatePackage#getPapyrusTableView_TableKindId()
 	 * @model ordered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel propertyEditorFactory='editor://papyrusnattabledocumentstructuretemplate/PapyrusTableView/tableKindId/'"
 	 * @generated
 	 */
 	String getTableKindId();
@@ -82,6 +83,7 @@ public interface PapyrusTableView extends ISubBodyPartTemplate, ITemplatePartVie
 	 * @see #setTableType(String)
 	 * @see org.eclipse.papyrus.model2doc.integration.nattable.documentstructuretemplate.PapyrusNattableDocumentStructureTemplatePackage#getPapyrusTableView_TableType()
 	 * @model ordered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel propertyEditorFactory='editor://papyrusnattabledocumentstructuretemplate/PapyrusTableView/tableType/'"
 	 * @generated
 	 */
 	String getTableType();
@@ -130,10 +132,6 @@ public interface PapyrusTableView extends ISubBodyPartTemplate, ITemplatePartVie
 	 * The default value is <code>"TABLE"</code>.
 	 * The literals are from the enumeration {@link org.eclipse.papyrus.model2doc.integration.nattable.documentstructuretemplate.ImportMethod}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Import Method</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * This property allows to define how to import the Tables.

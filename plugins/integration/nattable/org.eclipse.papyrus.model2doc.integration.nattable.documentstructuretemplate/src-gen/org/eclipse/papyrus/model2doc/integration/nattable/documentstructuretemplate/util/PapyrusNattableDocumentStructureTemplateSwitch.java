@@ -20,8 +20,9 @@ import org.eclipse.emf.ecore.util.Switch;
 
 import org.eclipse.papyrus.infra.nattable.model.nattable.Table;
 
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodyPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubBodyPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafBodyPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITemplatePartView;
 
 import org.eclipse.papyrus.model2doc.integration.nattable.documentstructuretemplate.*;
@@ -87,10 +88,13 @@ public class PapyrusNattableDocumentStructureTemplateSwitch<T> extends Switch<T>
 			PapyrusTableView papyrusTableView = (PapyrusTableView) theEObject;
 			T result = casePapyrusTableView(papyrusTableView);
 			if (result == null) {
-				result = caseISubBodyPartTemplate(papyrusTableView);
+				result = caseILeafBodyPartTemplate(papyrusTableView);
 			}
 			if (result == null) {
 				result = caseITemplatePartView(papyrusTableView);
+			}
+			if (result == null) {
+				result = caseIBodyPartTemplate(papyrusTableView);
 			}
 			if (result == null) {
 				result = caseIBodySectionPartTemplate(papyrusTableView);
@@ -159,17 +163,32 @@ public class PapyrusNattableDocumentStructureTemplateSwitch<T> extends Switch<T>
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>ISub Body Part Template</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>IBody Part Template</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>ISub Body Part Template</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>IBody Part Template</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseISubBodyPartTemplate(ISubBodyPartTemplate object) {
+	public T caseIBodyPartTemplate(IBodyPartTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>ILeaf Body Part Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>ILeaf Body Part Template</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseILeafBodyPartTemplate(ILeafBodyPartTemplate object) {
 		return null;
 	}
 

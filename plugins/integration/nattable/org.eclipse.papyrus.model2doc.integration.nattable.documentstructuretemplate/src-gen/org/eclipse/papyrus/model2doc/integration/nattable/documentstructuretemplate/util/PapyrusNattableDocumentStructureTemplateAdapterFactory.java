@@ -22,8 +22,9 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.papyrus.infra.nattable.model.nattable.Table;
 
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodyPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubBodyPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafBodyPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITemplatePartView;
 
 import org.eclipse.papyrus.model2doc.integration.nattable.documentstructuretemplate.*;
@@ -99,8 +100,13 @@ public class PapyrusNattableDocumentStructureTemplateAdapterFactory extends Adap
 		}
 
 		@Override
-		public Adapter caseISubBodyPartTemplate(ISubBodyPartTemplate object) {
-			return createISubBodyPartTemplateAdapter();
+		public Adapter caseIBodyPartTemplate(IBodyPartTemplate object) {
+			return createIBodyPartTemplateAdapter();
+		}
+
+		@Override
+		public Adapter caseILeafBodyPartTemplate(ILeafBodyPartTemplate object) {
+			return createILeafBodyPartTemplateAdapter();
 		}
 
 		@Override
@@ -171,16 +177,30 @@ public class PapyrusNattableDocumentStructureTemplateAdapterFactory extends Adap
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubBodyPartTemplate <em>ISub Body Part Template</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodyPartTemplate <em>IBody Part Template</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubBodyPartTemplate
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodyPartTemplate
 	 * @generated
 	 */
-	public Adapter createISubBodyPartTemplateAdapter() {
+	public Adapter createIBodyPartTemplateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafBodyPartTemplate <em>ILeaf Body Part Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafBodyPartTemplate
+	 * @generated
+	 */
+	public Adapter createILeafBodyPartTemplateAdapter() {
 		return null;
 	}
 

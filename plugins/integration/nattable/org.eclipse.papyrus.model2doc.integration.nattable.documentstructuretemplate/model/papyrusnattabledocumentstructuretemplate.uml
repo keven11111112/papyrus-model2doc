@@ -12,6 +12,9 @@
         <body>This element allows to represent Papyrus Tables.</body>
       </ownedComment>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_gCVzkGzWEemv9PXZKzcfkA" name="tableKindId">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5SLAYGsmEemM1ofOaZkzvg" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AL4qMGsnEemM1ofOaZkzvg" key="propertyEditorFactory" value="editor://papyrusnattabledocumentstructuretemplate/PapyrusTableView/tableKindId/"/>
+        </eAnnotations>
         <ownedComment xmi:type="uml:Comment" xmi:id="_X4KVgGzYEemv9PXZKzcfkA" annotatedElement="_gCVzkGzWEemv9PXZKzcfkA">
           <body>The kind of the table. This field can be empty. In this case, all tables will be integrated into the final document.</body>
         </ownedComment>
@@ -19,6 +22,9 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qTZzsGzWEemv9PXZKzcfkA"/>
       </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_i2BcIGzWEemv9PXZKzcfkA" name="tableType">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5SLAYGsmEemM1ofOaZkzvg" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AL4qMGsnEemM1ofOaZkzvg" key="propertyEditorFactory" value="editor://papyrusnattabledocumentstructuretemplate/PapyrusTableView/tableType/"/>
+        </eAnnotations>
         <ownedComment xmi:type="uml:Comment" xmi:id="_eKVeMGzYEemv9PXZKzcfkA" annotatedElement="_i2BcIGzWEemv9PXZKzcfkA">
           <body>The type of table to manage. If no type is defined, we will take all tables</body>
         </ownedComment>
@@ -38,8 +44,8 @@
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_Pg1BsGzZEemv9PXZKzcfkA" name="defaultValue" value="TABLE"/>
       </ownedAttribute>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_0lhR0GzYEemv9PXZKzcfkA" client="_a_b6YGzWEemv9PXZKzcfkA">
-        <supplier xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_VnL3oFX-EemKJasCEBKPhQ"/>
-        <contract xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_VnL3oFX-EemKJasCEBKPhQ"/>
+        <supplier xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_R99HIFX-EemKJasCEBKPhQ"/>
+        <contract xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_R99HIFX-EemKJasCEBKPhQ"/>
       </interfaceRealization>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_09z2AGzYEemv9PXZKzcfkA" client="_a_b6YGzWEemv9PXZKzcfkA">
         <supplier xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_DwGdIFYFEemKJasCEBKPhQ"/>

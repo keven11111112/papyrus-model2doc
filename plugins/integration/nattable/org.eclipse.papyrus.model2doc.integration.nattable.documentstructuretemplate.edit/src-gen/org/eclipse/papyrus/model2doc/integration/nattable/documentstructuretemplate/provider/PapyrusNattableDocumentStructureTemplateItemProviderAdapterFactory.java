@@ -16,13 +16,19 @@ package org.eclipse.papyrus.model2doc.integration.nattable.documentstructuretemp
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EObject;
+
 import org.eclipse.emf.edit.command.CommandParameter;
+
 import org.eclipse.emf.edit.domain.EditingDomain;
+
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ChildCreationExtenderManager;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -36,11 +42,15 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.Body;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedBodyPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedSubBodyPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.util.DocumentStructureTemplateSwitch;
+
 import org.eclipse.papyrus.model2doc.integration.nattable.documentstructuretemplate.PapyrusNattableDocumentStructureTemplateFactory;
 import org.eclipse.papyrus.model2doc.integration.nattable.documentstructuretemplate.PapyrusNattableDocumentStructureTemplatePackage;
+
 import org.eclipse.papyrus.model2doc.integration.nattable.documentstructuretemplate.util.PapyrusNattableDocumentStructureTemplateAdapterFactory;
 
 /**
@@ -308,8 +318,21 @@ public class PapyrusNattableDocumentStructureTemplateItemProviderAdapterFactory 
 			 * @generated
 			 */
 			@Override
-			public Object caseIComposedBodyPartTemplate(IComposedBodyPartTemplate object) {
-				newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_BODY_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE,
+			public Object caseBody(Body object) {
+				newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.BODY__BODY_PART_TEMPLATE,
+						PapyrusNattableDocumentStructureTemplateFactory.eINSTANCE.createPapyrusTableView()));
+
+				return null;
+			}
+
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object caseIComposedSubBodyPartTemplate(IComposedSubBodyPartTemplate object) {
+				newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE,
 						PapyrusNattableDocumentStructureTemplateFactory.eINSTANCE.createPapyrusTableView()));
 
 				return null;

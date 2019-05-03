@@ -16,7 +16,6 @@
 -->
 
 <plugin>
-
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated papyrusnattabledocumentstructuretemplate -->
       <factory
@@ -36,5 +35,30 @@
             uri="http://www.eclipse.org/papyrus/model2doc/emf/1.0.0/documentstructuretemplate"
             class="org.eclipse.papyrus.model2doc.integration.nattable.documentstructuretemplate.provider.PapyrusNattableDocumentStructureTemplateItemProviderAdapterFactory$DocumentStructureTemplateChildCreationExtender"/>
    </extension>
-
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections
+            contributorId="TreeOutlinePage">
+         <propertySection
+               class="org.eclipse.papyrus.model2doc.integration.nattable.documentstructuretemplate.edit.internal.PapyrusNattableDocumentStructureTemplatePropertySection"
+               filter="org.eclipse.papyrus.model2doc.integration.nattable.documentstructuretemplate.edit.internal.PapyrusNattableDocumentStructureTemplatePackageSectionFilter"
+               id="org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.properties.propertySection"
+               tab="advanced">
+            <input
+                  type="java.lang.Object">
+            </input>
+         </propertySection>
+      </propertySections>
+   </extension>
+   <extension
+         point="org.eclipse.emf.edit.propertyEditorFactories">
+      <factory
+            class="org.eclipse.papyrus.model2doc.integration.nattable.documentstructuretemplate.edit.internal.editors.factories.PapyrusTableViewTableKindIdEditorFactory"
+            uri="editor://papyrusnattabledocumentstructuretemplate/PapyrusTableView/tableKindId/">
+      </factory>
+      <factory
+            class="org.eclipse.papyrus.model2doc.integration.nattable.documentstructuretemplate.edit.internal.editors.factories.PapyrusTableViewTableTypeEditorFactory"
+            uri="editor://papyrusnattabledocumentstructuretemplate/PapyrusTableView/tableType/">
+      </factory>
+   </extension>
 </plugin>
