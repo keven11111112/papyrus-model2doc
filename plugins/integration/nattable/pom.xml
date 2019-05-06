@@ -21,5 +21,6 @@
 	<modules>
 		<module>org.eclipse.papyrus.model2doc.integration.nattable.documentstructuretemplate</module>
 		<module>org.eclipse.papyrus.model2doc.integration.nattable.documentstructuretemplate.edit</module>
+		<module>org.eclipse.papyrus.model2doc.integration.nattable.template2structure</module>
 	</modules>
 </project>

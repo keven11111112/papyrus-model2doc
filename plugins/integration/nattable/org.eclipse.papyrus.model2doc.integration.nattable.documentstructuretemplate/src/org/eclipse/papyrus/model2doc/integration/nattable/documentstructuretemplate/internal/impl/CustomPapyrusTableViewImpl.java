@@ -79,7 +79,7 @@ public class CustomPapyrusTableViewImpl extends PapyrusTableViewImpl {
 
 			// we take all tables when tableType and table kind are not defined
 			// otherwise, we check
-			if (matchTableKind(table) && matchTableType(table)) {
+			if (false == filteredTables.contains(table) && matchTableKind(table) && matchTableType(table)) {
 				filteredTables.add(table);
 			}
 		}

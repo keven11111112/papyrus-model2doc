@@ -29,6 +29,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructureFact
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Image;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Title;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.utils.DocumentStructureTemplateUtils;
 import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.AbstractTemplateToStructureMapper;
 import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.IMappingService;
 import org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDiagramView;
@@ -78,15 +79,7 @@ public class GMFDiagramViewMapper extends AbstractTemplateToStructureMapper<GMFD
 			image.setCaption(current.getName());
 
 			// calculate the image path output //TODO : embed me in the model
-			DocumentTemplate t = null;
-			EObject parent = gmfDiagramView.eContainer();
-			while (t == null && parent != null) {
-				if (parent instanceof DocumentTemplate) {
-					t = (DocumentTemplate) parent;
-				} else {
-					parent = parent.eContainer();
-				}
-			}
+			final DocumentTemplate t = DocumentStructureTemplateUtils.getDocumentTemplate(gmfDiagramView);
 			final IDocumentStructureGeneratorConfiguration conf = t.getDocumentStructureGeneratorConfiguration();
 
 			String imagePath = GeneratorConfigurationOperations.getImageFileLocalPath(conf, current.getName(), GMFDiagramImageUtils.SVG_EXTENSION);

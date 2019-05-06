@@ -44,7 +44,7 @@ public class DocumentStructureTemplateEditorInput implements IEditorInput {
 	/**
 	 *
 	 * @return
-	 * 		the document template for which we are opening an editor
+	 *         the document template for which we are opening an editor
 	 */
 	public DocumentTemplate getDocumentTemplate() {
 		return this.documentInstance;
@@ -98,7 +98,7 @@ public class DocumentStructureTemplateEditorInput implements IEditorInput {
 	/**
 	 *
 	 * @return
-	 * 		the description
+	 *         the description
 	 */
 	private String getDescription() {
 		final String description = this.documentInstance.getDescription();
@@ -121,15 +121,19 @@ public class DocumentStructureTemplateEditorInput implements IEditorInput {
 	 * @see org.eclipse.core.runtime.IAdaptable#getAdapter(java.lang.Class)
 	 *
 	 * @param adapter
-	 *            the only supported type is {@link URI}
+	 *            the only supported type are {@link URI} and {@link DocumentTemplate}
 	 * @return
-	 * 		the uri of the file containing the {@link DocumentTemplate} to edit
+	 *         the uri of the file containing the {@link DocumentTemplate} to edit or the {@link DocumentTemplate} itself
 	 */
 	@Override
-	public Object getAdapter(@SuppressWarnings("rawtypes") final Class adapter) {
+	public <T> T getAdapter(Class<T> adapter) {
 		if (adapter == URI.class) {
-			return this.documentInstance.eResource().getURI();
+			return adapter.cast(this.documentInstance.eResource().getURI());
+		}
+		if (adapter == DocumentTemplate.class) {
+			return adapter.cast(this.documentInstance);
 		}
 		return null;
 	}
+
 }
