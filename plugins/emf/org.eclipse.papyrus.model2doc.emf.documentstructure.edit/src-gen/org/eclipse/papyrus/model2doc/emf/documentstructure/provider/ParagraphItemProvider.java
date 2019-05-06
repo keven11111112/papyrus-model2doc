@@ -140,6 +140,7 @@ public class ParagraphItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DocumentStructurePackage.Literals.BODY_PART__DATA_SOURCE);
+			childrenFeatures.add(DocumentStructurePackage.Literals.COMPOSED_BODY_PART__SUB_BODY_PART);
 		}
 		return childrenFeatures;
 	}
@@ -213,6 +214,7 @@ public class ParagraphItemProvider
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case DocumentStructurePackage.PARAGRAPH__DATA_SOURCE:
+		case DocumentStructurePackage.PARAGRAPH__SUB_BODY_PART:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -233,6 +235,18 @@ public class ParagraphItemProvider
 
 		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY_PART__DATA_SOURCE,
 				DocumentStructureFactory.eINSTANCE.createEMFDataSource()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.COMPOSED_BODY_PART__SUB_BODY_PART,
+				DocumentStructureFactory.eINSTANCE.createParagraph()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.COMPOSED_BODY_PART__SUB_BODY_PART,
+				DocumentStructureFactory.eINSTANCE.createTitle()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.COMPOSED_BODY_PART__SUB_BODY_PART,
+				DocumentStructureFactory.eINSTANCE.createImage()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.COMPOSED_BODY_PART__SUB_BODY_PART,
+				DocumentStructureFactory.eINSTANCE.createExtendedBasicTable()));
 	}
 
 	/**

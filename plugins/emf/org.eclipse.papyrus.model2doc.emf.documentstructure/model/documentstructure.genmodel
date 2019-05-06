@@ -66,7 +66,7 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructure.ecore#//Paragraph/text"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructure.ecore#//ComposedBodyPart">
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+      <genFeatures xsi:type="genmodel:GenFeature" children="true" createChild="true"
           propertySortChoices="true" ecoreFeature="ecore:EReference documentstructure.ecore#//ComposedBodyPart/subBodyPart"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructure.ecore#//Title">

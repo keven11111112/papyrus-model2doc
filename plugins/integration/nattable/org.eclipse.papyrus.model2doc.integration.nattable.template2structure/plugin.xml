@@ -19,7 +19,7 @@
    <extension
          point="org.eclipse.papyrus.model2doc.emf.template2structure.structuregenerator">
       <mapper
-            class="org.eclipse.papyrus.model2doc.integration.gmf.template2structure.internal.mapping.PapyrusTableViewMapper"
+            class="org.eclipse.papyrus.model2doc.integration.nattable.template2structure.internal.mapping.PapyrusTableViewMapper"
             generatorId="TextDocumentStructureGenerator.default">
       </mapper>
    </extension>

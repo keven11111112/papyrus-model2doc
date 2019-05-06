@@ -21,6 +21,7 @@ import org.eclipse.papyrus.model2doc.core.transcription.Transcription;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Body;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.ComposedBodyPart;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedBasicTable;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Image;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Paragraph;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TableOfContents;
@@ -116,6 +117,8 @@ public class StructureToODTTranscriber implements Transcriber {
 			transcribteParagraph((Paragraph) bodyPart);
 		} else if (bodyPart instanceof Image) {
 			transcribeImage((Image) bodyPart);
+		} else if (bodyPart instanceof ExtendedBasicTable) {
+			transcribeBasicTable((ExtendedBasicTable) bodyPart);
 		}
 
 		// then we iterate on the children of the bodyPart
@@ -171,4 +174,13 @@ public class StructureToODTTranscriber implements Transcriber {
 		transcription.writeParagraph(paragraph.getText(), false);
 	}
 
+	/**
+	 * This method transcribe a BasicTable into a Table in a text document
+	 *
+	 * @param table
+	 *            a table
+	 */
+	private void transcribeBasicTable(final ExtendedBasicTable table) {
+		transcription.writeTable(table);
+	}
 }

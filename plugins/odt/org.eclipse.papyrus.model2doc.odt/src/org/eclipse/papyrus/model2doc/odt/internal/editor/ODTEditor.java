@@ -188,12 +188,14 @@ public class ODTEditor {
 	 * @param extension
 	 *
 	 * @return
-	 * 		the full URL of exported document (LibreOffice format, ex.: file:///C:/folder/projectName/document.pdf)
+	 *         the full URL of exported document (LibreOffice format, ex.: file:///C:/folder/projectName/document.pdf)
 	 */
 	public String saveAs(String fileName, String extension) {
 		// Save document
 		String exportedDocumentURL = saveDocument(fileName, extension); // $NON-NLS-1$
 		// Close document
+
+		// TODO : the save and save as must be callable without closing the document
 		closeDocument();
 		// Close LibreOffice
 		closeLibreOffice();
@@ -210,7 +212,7 @@ public class ODTEditor {
 	 * @param extension
 	 *
 	 * @return
-	 * 		the full URL of exported document (LibreOffice format, ex.: file:///C:/folder/projectName/document.pdf)
+	 *         the full URL of exported document (LibreOffice format, ex.: file:///C:/folder/projectName/document.pdf)
 	 */
 	public String exportDocument(String fileName, String documentURL, String extension) {
 		XComponent xComponent = getDocument(documentURL);
@@ -471,7 +473,7 @@ public class ODTEditor {
 	 * @param extension
 	 *
 	 * @return
-	 * 		the full URL of exported document (LibreOffice format, ex.: file:///C:/folder/projectName/document.pdf)
+	 *         the full URL of exported document (LibreOffice format, ex.: file:///C:/folder/projectName/document.pdf)
 	 */
 	private String saveDocument(String fileName, String extension) {
 		XStorable store = UnoRuntime.queryInterface(XStorable.class, xTextDocument);
@@ -548,7 +550,7 @@ public class ODTEditor {
 	 * @param fileURL
 	 *            a file url, starting with file:/ or file:///
 	 * @return
-	 * 		a file url starting with file:///
+	 *         a file url starting with file:///
 	 */
 	private static final String convertToLibreOfficeFileURI(final String fileURL) {
 		String newFileURL = fileURL;

@@ -15,7 +15,9 @@
 package org.eclipse.papyrus.model2doc.odt.internal.util;
 
 import java.io.File;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -415,7 +417,7 @@ public class WriteUtil {
 	}
 
 	/**
-	 * Add Table.
+	 * Write Table.
 	 *
 	 * @param xTextCursor
 	 * @param table
@@ -424,19 +426,24 @@ public class WriteUtil {
 	 *
 	 */
 	public static void writeTable(XTextCursor xTextCursor, AbstractTable table, ODTEditor odtEditor) {
-		// Set number of rows and columns
-		int numRows = table.getRowsNumber();
-		int numCols = table.getColumnsNumber();
+		// get number of rows and columns
+		int rowsNumber = table.getRowsNumber();
+		int colNumbers = table.getColumnsNumber();
 
-		if (numRows <= 0 || numCols <= 0) {
+		if (rowsNumber <= 0 || colNumbers <= 0) {
 			return;
 		}
 
 		final List<Cell> allCells = table.getAllCells();
-		if (numRows * numCols != allCells.size()) {
+
+		final int totalCells = allCells.size();
+		if (rowsNumber * colNumbers != totalCells) {
 			Activator.log.warn(NLS.bind("The number of cells in the table is not as excepted. We won't manage the table {0}.", table.getCaption())); //$NON-NLS-1$
 			return;
 		}
+
+		Activator.log.info(NLS.bind("Start the creation of the table {0} in LibreOffice", table.getCaption())); //$NON-NLS-1$
+		Activator.log.info(NLS.bind("--This table have {0} columns and {1} rows", colNumbers, rowsNumber)); //$NON-NLS-1$
 
 		try {
 			XMultiServiceFactory xMultiServiceFactory = odtEditor.getXMultiServiceFactory();
@@ -445,27 +452,36 @@ public class WriteUtil {
 			XTextTable textTable = UnoRuntime.queryInterface(XTextTable.class, obj);
 
 			// Initialize and add table
-			textTable.initialize(numRows, numCols);
+			Activator.log.info("--Intializing LibreOffice Table."); //$NON-NLS-1$
+			textTable.initialize(rowsNumber, colNumbers);
+			Activator.log.info("--Add the new empty table to the the document"); //$NON-NLS-1$
 			addTextContent(xTextCursor, textTable);
 			endParagraph(xTextCursor);
 
-
 			// Set cell's contents
-			String[] cellNames = textTable.getCellNames();
+			Activator.log.info("--Request Libreoffice to get the cells."); //$NON-NLS-1$
+			final List<String> cellNames = Arrays.asList(textTable.getCellNames());
+
+			if (cellNames.size() != allCells.size()) {
+				Activator.log.warn(NLS.bind("--The number of LibreOffice cells is {0} instead of {1}, as required", cellNames.size(), allCells.size())); //$NON-NLS-1$
+			}
 
 			// TODO : we should add something like a TableStyleProvider in the metamodel builtInTypes.
 			// A such element will be referenced by the DocumentGeneratorConfiguration or something else
 			// and each table element would have a method to be able to read it and returns the style to apply for it when we write the final document
 			Object headerBackGroundColor = 0xD4D4D4; // grey
 
+			final Iterator<String> libreOfficeCellNamesIter = cellNames.iterator();
+			final Iterator<Cell> tableCellIterator = allCells.iterator();
 
-			for (int i = 0; i < cellNames.length; i++) {
-				XText cellText = UnoRuntime.queryInterface(XText.class, textTable.getCellByName(cellNames[i]));
-				final Cell cell = allCells.get(i);
+			int i = 0;
+			while (libreOfficeCellNamesIter.hasNext() && tableCellIterator.hasNext()) {
+				final XText cellText = UnoRuntime.queryInterface(XText.class, textTable.getCellByName(libreOfficeCellNamesIter.next()));
+				final Cell cell = tableCellIterator.next();
 				if (cell instanceof TextCell) {
 					cellText.setString(((TextCell) cell).getText());
 				} else {
-					Activator.log.warn(NLS.bind("The cell class {0} is not managed by the transcription", cell.eClass().getName())); //$NON-NLS-1$
+					Activator.log.warn(NLS.bind("--The cell eClass {0} is not managed by the transcription", cell.eClass().getName())); //$NON-NLS-1$
 				}
 
 				switch (cell.getLocation()) {
@@ -478,10 +494,17 @@ public class WriteUtil {
 				default:
 					// do nothing
 				}
+				if (i % 100 == 0) {
+					Activator.log.info(NLS.bind("----Fill {0}/{1} cells-----", i, totalCells)); //$NON-NLS-1$
+				}
+				i++;
 			}
 
 		} catch (com.sun.star.uno.Exception e) {
 			Activator.log.error(e);
 		}
+
+		Activator.log.info(NLS.bind("Finish the creation of the table {0}", table.getCaption())); //$NON-NLS-1$
+
 	}
 }

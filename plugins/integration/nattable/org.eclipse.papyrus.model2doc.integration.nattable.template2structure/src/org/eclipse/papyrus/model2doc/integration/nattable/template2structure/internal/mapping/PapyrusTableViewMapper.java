@@ -13,9 +13,10 @@
  *
  *****************************************************************************/
 
-package org.eclipse.papyrus.model2doc.integration.gmf.template2structure.internal.mapping;
+package org.eclipse.papyrus.model2doc.integration.nattable.template2structure.internal.mapping;
 
 import java.io.File;
+import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -34,15 +35,30 @@ import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForEObject;
 import org.eclipse.papyrus.infra.nattable.export.image.ImageFormat;
 import org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager;
-import org.eclipse.papyrus.infra.nattable.manager.table.TreeNattableModelManager;
+import org.eclipse.papyrus.infra.nattable.manager.table.ITreeNattableModelManager;
+import org.eclipse.papyrus.infra.nattable.manager.table.NattableModelManager;
 import org.eclipse.papyrus.infra.nattable.model.nattable.Table;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.ITreeItemAxis;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.TreeFillingConfiguration;
+import org.eclipse.papyrus.infra.nattable.parsers.CSVParser;
+import org.eclipse.papyrus.infra.nattable.parsers.CellIterator;
+import org.eclipse.papyrus.infra.nattable.parsers.RowIterator;
 import org.eclipse.papyrus.infra.nattable.style.configattribute.PapyrusExportConfigAttributes;
 import org.eclipse.papyrus.infra.nattable.tree.CollapseAndExpandActionsEnum;
+import org.eclipse.papyrus.infra.nattable.utils.AxisUtils;
+import org.eclipse.papyrus.infra.nattable.utils.CSVPasteHelper;
+import org.eclipse.papyrus.infra.nattable.utils.TableClipboardUtils;
 import org.eclipse.papyrus.infra.ui.editor.IMultiDiagramEditor;
+import org.eclipse.papyrus.model2doc.core.builtintypes.BasicRow;
+import org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesFactory;
+import org.eclipse.papyrus.model2doc.core.builtintypes.CellLocation;
+import org.eclipse.papyrus.model2doc.core.builtintypes.TextCell;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.operations.GeneratorConfigurationOperations;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructureFactory;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedBasicTable;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedTextCell;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Image;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Title;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate;
@@ -131,28 +147,6 @@ public class PapyrusTableViewMapper extends AbstractTemplateToStructureMapper<Pa
 	 *         a body part representing the table, or <code>null</code> in case of failure
 	 */
 	private BodyPart mapTable(final PapyrusTableView papyrusTableView, final Table table) {
-
-		switch (papyrusTableView.getImportMethod()) {
-		case IMAGE:
-			return mapTableAsImage(papyrusTableView, table);
-		case TABLE: // this is the default case
-		default:
-			// return mapTableAsTable(papyrusTableView, table);
-		}
-
-		return null;
-	}
-
-	/**
-	 *
-	 * @param papyrusTableView
-	 *            the {@link PapyrusTableView}
-	 * @param table
-	 *            a {@link Table} found for the {@link PapyrusTableView}
-	 * @return
-	 *         the table as Image
-	 */
-	private Image mapTableAsImage(final PapyrusTableView papyrusTableView, final Table table) {
 		// 1. get the page manager
 		final IPageManager pageManager = getIPageManager(table);
 		if (null == pageManager) {
@@ -168,28 +162,174 @@ public class PapyrusTableViewMapper extends AbstractTemplateToStructureMapper<Pa
 			closePage = true;
 		}
 
-
 		// 3. wait for the table opening
 		flushEventLoop();
-
 
 		// 4. get the table manager
 		final INattableModelManager manager = getINattableModelManager(table);
 
 		// 5. expand all the tables in case of TreeTable
-		if (manager instanceof TreeNattableModelManager) {
-			((TreeNattableModelManager) manager).doCollapseExpandAction(CollapseAndExpandActionsEnum.EXPAND_ALL, Collections.emptyList());
+		if (manager instanceof ITreeNattableModelManager) {
+			((ITreeNattableModelManager) manager).doCollapseExpandAction(CollapseAndExpandActionsEnum.EXPAND_ALL, Collections.emptyList());
 			flushEventLoop();
 		}
 
-		// 6. calculate the image path output
+		// 6. call method to create the ouput BodyPart
+		final BodyPart bodyPart;
+		switch (papyrusTableView.getImportMethod()) {
+		case IMAGE:
+			bodyPart = mapTableAsImage(manager, papyrusTableView, table);
+			break;
+		case TABLE: // this is the default case
+		default:
+			bodyPart = mapTableAsTable(manager, papyrusTableView, table);
+		}
+
+		// 7. close the table if required
+		if (closePage) {
+			// TODO : uncomment me when the class cast exception due to Papyrus eclipseCopy package element will be fixed
+			// pageManager.closePage(table);
+		}
+
+		// 8. we reset the current page (which was the documenttemplate!)
+		// TODO : uncomment me when the class cast exception due to Papyrus eclipseCopy package element will be fixed
+		// pageManager.selectPage(DocumentStructureTemplateUtils.getDocumentTemplate(papyrusTableView));
+		// flushEventLoop();
+
+		return bodyPart;
+	}
+
+	/**
+	 * This string is used to indicate we go down from 1 level in a tree table
+	 */
+	private static final String TREE_LEVEL_MARKER = "  ";
+
+	/**
+	 *
+	 * @param papyrusTableView
+	 *            the {@link PapyrusTableView}
+	 * @param pTable
+	 *            a {@link Table} found for the {@link PapyrusTableView}
+	 * @return
+	 *         the table as Image
+	 */
+	private ExtendedBasicTable mapTableAsTable(final INattableModelManager manager, final PapyrusTableView papyrusTableView, final Table pTable) {
+		final boolean isTreeTable = manager instanceof ITreeNattableModelManager;
+
+		// 1. select all the table content
+		manager.selectAll();
+
+		// 2. copy the table contents to the clipboard
+		((NattableModelManager) manager).copyToClipboard();
+
+		// 3. get the cliboard contents
+		final String clipboardContent = TableClipboardUtils.getClipboardContentsAsString();
+		final StringReader reader = new StringReader(clipboardContent);
+		final CSVPasteHelper helper = new CSVPasteHelper();
+		final CSVParser parser = helper.createParser(reader, true);
+
+		// 4. create the label provider used to get header label
+		final NatTable nat = manager.getAdapter(NatTable.class);
+		final CustomNattableLabelProvider labelProvider = new CustomNattableLabelProvider(nat.getConfigRegistry());
+
+		// 5. create a basic table
+		final ExtendedBasicTable basicTable = DocumentStructureFactory.eINSTANCE.createExtendedBasicTable();
+		basicTable.setCaption(pTable.getName());
+
+		// 6. create the row of column header
+		final Iterator<Object> columnIter = manager.getColumnElementsList().iterator();
+		final BasicRow columnRowHeader = BuiltInTypesFactory.eINSTANCE.createBasicRow();
+		basicTable.getRows().add(columnRowHeader);
+
+		// 7. we create the corner cell
+		final ExtendedTextCell cellCorner = DocumentStructureFactory.eINSTANCE.createExtendedTextCell();
+		columnRowHeader.getCells().add(cellCorner);
+		cellCorner.setLocation(CellLocation.CORNER);
+
+		// 8. we fill the column header
+		while (columnIter.hasNext()) {
+			final Object current = columnIter.next();
+			final String res = labelProvider.getColumnHeaderLabel(current);
+			final TextCell cell = DocumentStructureFactory.eINSTANCE.createExtendedTextCell();
+			cell.setLocation(CellLocation.COLUMN_HEADER);
+			cell.setText(res);
+			columnRowHeader.getCells().add(cell);
+		}
+
+		// 8. now we will iterate on the clipboard contents, adding row header for each new line
+		final RowIterator rowIterator = parser.parse();
+		final Iterator<Object> rowIter = manager.getRowElementsList().iterator();
+
+		while (rowIterator.hasNext()) {
+			// 8.1 create a new row
+			BasicRow row = BuiltInTypesFactory.eINSTANCE.createBasicRow();
+			basicTable.getRows().add(row);
+
+			// 8.2 create the row header cell
+			final Object element = rowIter.next();
+			final TextCell cell1 = DocumentStructureFactory.eINSTANCE.createExtendedTextCell();
+			cell1.setLocation(CellLocation.ROW_HEADER);
+			String cellContent = labelProvider.getRowHeaderLabel(element);
+			if (isTreeTable) {
+				int depth = 0;
+				if (element instanceof ITreeItemAxis) {// should always be true
+					Object representedElement = AxisUtils.getRepresentedElement(element);
+					if (representedElement instanceof TreeFillingConfiguration) {
+						depth = ((TreeFillingConfiguration) representedElement).getDepth() * 2;
+					} else {
+						final ITreeItemAxis parent = ((ITreeItemAxis) element).getParent();
+						if (null != parent) {
+							representedElement = AxisUtils.getRepresentedElement(parent);
+							// should always be true
+							if (representedElement instanceof TreeFillingConfiguration) {
+								depth = ((TreeFillingConfiguration) representedElement).getDepth() * 2 + 1;
+							}
+						}
+					}
+				}
+				// we add the marker of the tree level
+				final StringBuilder rowHeaderCellContent = new StringBuilder();
+				for (int i = 0; i < depth; i++) {
+					rowHeaderCellContent.append(TREE_LEVEL_MARKER);
+				}
+
+				cellContent = rowHeaderCellContent.append(cellContent).toString();
+			}
+			cell1.setText(cellContent);
+			row.getCells().add(cell1);
+
+			// 8.2 add the body cells for the row
+			final CellIterator cellIterator = rowIterator.next();
+			while (cellIterator.hasNext()) {
+				final TextCell cell = DocumentStructureFactory.eINSTANCE.createExtendedTextCell();
+				cell.setText(cellIterator.next());
+				row.getCells().add(cell);
+			}
+		}
+		return basicTable;
+	}
+
+
+	/**
+	 * @param manager
+	 *            the instance of the NatTable manager manaing the current Papyrus {@link Table}
+	 * @param papyrusTableView
+	 *            the {@link PapyrusTableView}
+	 * @param table
+	 *            a {@link Table} found for the {@link PapyrusTableView}
+	 * @return
+	 *         the table as Image
+	 */
+	private Image mapTableAsImage(final INattableModelManager manager, final PapyrusTableView papyrusTableView, final Table table) {
+
+		// 1. calculate the image path output
 		final DocumentTemplate t = DocumentStructureTemplateUtils.getDocumentTemplate(papyrusTableView);
 		final IDocumentStructureGeneratorConfiguration conf = t.getDocumentStructureGeneratorConfiguration();
 
 		String imagePath = GeneratorConfigurationOperations.getImageFileLocalPath(conf, table.getName(), ImageFormat.PNG.getImageExtension());
 		imagePath = imagePath.replaceAll("file:/", ""); //$NON-NLS-1$ //$NON-NLS-2$
 
-		// 7. configure the image generation, changing some values in the ConfigRegistry of the NatTable instance
+		// 2. configure the image generation, changing some values in the ConfigRegistry of the NatTable instance
 		generateAllIntermediateFolders(imagePath);
 		final NatTable natTable = manager.getAdapter(NatTable.class);
 		if (null == natTable) {
@@ -197,29 +337,19 @@ public class PapyrusTableViewMapper extends AbstractTemplateToStructureMapper<Pa
 		}
 		final Object[] previousValues = configureTableForExport(natTable, false, false, imagePath, org.eclipse.papyrus.infra.nattable.export.image.ImageFormat.PNG);
 
-		// 8. do the export itself
+		// 3. do the export itself
 		manager.exportToImage();
 
-		// 9. wait for the end of imag creation process
+		// 4. wait for the end of imag creation process
 		flushEventLoop();
 
-
-		// 10. we reset the previous values in the NatTable instance
-		configureTableForExport(natTable, (boolean) previousValues[0], (boolean) previousValues[1], (String) previousValues[2], (ImageFormat) previousValues[3]);
-
-		// 11. close the table if required and reset the current documenttemplate as focus editor
-		if (closePage) {
-			pageManager.closePage(table);
-		}
-
-		// 12. we reset the current page (which was the documenttemplate!
-		pageManager.selectPage(DocumentStructureTemplateUtils.getDocumentTemplate(papyrusTableView));
-		flushEventLoop();
-
-		// 13. we create and return the image
+		// 5. we create and return the image
 		final Image image = DocumentStructureFactory.eINSTANCE.createImage();
 		image.setCaption(table.getName());
 		image.setImagePath(imagePath);
+
+		// 6. we reset the previous values in the NatTable instance
+		configureTableForExport(natTable, (boolean) previousValues[0], (boolean) previousValues[1], (String) previousValues[2], (ImageFormat) previousValues[3]);
 
 		return image;
 	}
