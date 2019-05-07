@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
+  <uml:Model xmi:id="_WW0l4HAKEemJ-foOn68QUw" name="BuiltInTypes" URI="http://www.eclipse.org/papyrus/model2doc/core/1.0.0/BuiltInTypes">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_WaIYkHAKEemJ-foOn68QUw">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_lYIB4HAKEemJ-foOn68QUw" name="AbstractTable" isAbstract="true">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_8e9l4HCfEemJ-foOn68QUw" annotatedElement="_lYIB4HAKEemJ-foOn68QUw">
+        <body>Abstract class used to represent a Table in the Model2Doc API.</body>
+      </ownedComment>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_oRLSoHAKEemJ-foOn68QUw" name="caption" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_CDrLoHCgEemJ-foOn68QUw" annotatedElement="_oRLSoHAKEemJ-foOn68QUw">
+          <body>The caption of the table.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_eFJHAHALEemJ-foOn68QUw" name="rows" visibility="public" type="_-Rcr4HAKEemJ-foOn68QUw" aggregation="composite" association="_eFIf8HALEemJ-foOn68QUw">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_XTCFUHCgEemJ-foOn68QUw" annotatedElement="_eFJHAHALEemJ-foOn68QUw">
+          <body>The rows owned by the table.</body>
+        </ownedComment>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eFJHAXALEemJ-foOn68QUw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFJHAnALEemJ-foOn68QUw" value="*"/>
+      </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_wrfzkHAKEemJ-foOn68QUw" name="getRowsNumber">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_sSYlYHCmEemJ-foOn68QUw" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_sSYlYXCmEemJ-foOn68QUw" key="body" value="return getRows().size();"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_LbLGgHCgEemJ-foOn68QUw" annotatedElement="_wrfzkHAKEemJ-foOn68QUw">
+          <body>This method returns the numbers of rows of the table.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_3SMawHAKEemJ-foOn68QUw" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_GBxY4HCgEemJ-foOn68QUw" name="DEFAULT_VALUE"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_y91poHAKEemJ-foOn68QUw" name="getColumnsNumber">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_poKa0nCmEemJ-foOn68QUw" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_poKa03CmEemJ-foOn68QUw" key="body" value="if (getRowsNumber() > 0) {&#xA;&#x9;// we assume all rows have the same number of cells.&#xA;&#x9;final Row firstRow = getRows().get(0);&#xA;&#x9;if (null != firstRow) {&#xA;&#x9;&#x9;return firstRow.getCells().size();&#xA;&#x9;}&#xA;}&#xA;return 0;"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Na-bEHCgEemJ-foOn68QUw" annotatedElement="_y91poHAKEemJ-foOn68QUw">
+          <body>This method returns the number of columns of the table.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_49v9oHAKEemJ-foOn68QUw" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_Im6PIHCgEemJ-foOn68QUw" name="DEFAULT_VALUE"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_54knIHAKEemJ-foOn68QUw" name="BasicTable">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_AZzq0HCgEemJ-foOn68QUw" annotatedElement="_54knIHAKEemJ-foOn68QUw">
+        <body>Default implementation provided for a table.</body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_8p8ikHAKEemJ-foOn68QUw" general="_lYIB4HAKEemJ-foOn68QUw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_-Rcr4HAKEemJ-foOn68QUw" name="Row">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_FVvOAnALEemJ-foOn68QUw" name="cells" type="_EUUNQHALEemJ-foOn68QUw" aggregation="composite" association="_FVt_4HALEemJ-foOn68QUw">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Qu64EHCgEemJ-foOn68QUw" annotatedElement="_FVvOAnALEemJ-foOn68QUw">
+          <body>The cells owned by the row.</body>
+        </ownedComment>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FVv1EHALEemJ-foOn68QUw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FVv1EXALEemJ-foOn68QUw" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="__NYvsHAKEemJ-foOn68QUw" name="BasicRow">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_bgPsoHCgEemJ-foOn68QUw" annotatedElement="__NYvsHAKEemJ-foOn68QUw">
+        <body>Default Row implementation.</body>
+      </ownedComment>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_C7ojEHALEemJ-foOn68QUw" client="__NYvsHAKEemJ-foOn68QUw" supplier="_-Rcr4HAKEemJ-foOn68QUw" contract="_-Rcr4HAKEemJ-foOn68QUw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_EUUNQHALEemJ-foOn68QUw" name="Cell">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_RDZH8HALEemJ-foOn68QUw" name="location" type="_H_dCQHALEemJ-foOn68QUw">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_f1hq0HCgEemJ-foOn68QUw" annotatedElement="_RDZH8HALEemJ-foOn68QUw">
+          <body>The location of the cells.</body>
+        </ownedComment>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_WzxyMHALEemJ-foOn68QUw" name="DEFAULT_VALUE" value="BODY"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_FVt_4HALEemJ-foOn68QUw" memberEnd="_FVvOAnALEemJ-foOn68QUw _FVwcIHALEemJ-foOn68QUw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_FVvOAHALEemJ-foOn68QUw" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_FVvOAXALEemJ-foOn68QUw" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_FVwcIHALEemJ-foOn68QUw" name="row" type="_-Rcr4HAKEemJ-foOn68QUw" association="_FVt_4HALEemJ-foOn68QUw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_H_dCQHALEemJ-foOn68QUw" name="CellLocation">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_eB1foHCgEemJ-foOn68QUw" annotatedElement="_H_dCQHALEemJ-foOn68QUw">
+        <body>This enumeration allows to define the location of each cell.</body>
+      </ownedComment>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_I2oh4HALEemJ-foOn68QUw" name="CORNER"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_JsUzwHALEemJ-foOn68QUw" name="COLUMN_HEADER"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_LQhKYHALEemJ-foOn68QUw" name="ROW_HEADER"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_NdPgoHALEemJ-foOn68QUw" name="BODY"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_XyQMoHALEemJ-foOn68QUw" name="TextCell">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Y5VwgHALEemJ-foOn68QUw" name="text">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_imNCsHCgEemJ-foOn68QUw" annotatedElement="_Y5VwgHALEemJ-foOn68QUw">
+          <body>The text owned by the cells.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedAttribute>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_cvcfYHALEemJ-foOn68QUw" client="_XyQMoHALEemJ-foOn68QUw" supplier="_EUUNQHALEemJ-foOn68QUw" contract="_EUUNQHALEemJ-foOn68QUw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_eFIf8HALEemJ-foOn68QUw" memberEnd="_eFJHAHALEemJ-foOn68QUw _eFJHA3ALEemJ-foOn68QUw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_eFIf8XALEemJ-foOn68QUw" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_eFIf8nALEemJ-foOn68QUw" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_eFJHA3ALEemJ-foOn68QUw" name="abstracttable" type="_lYIB4HAKEemJ-foOn68QUw" association="_eFIf8HALEemJ-foOn68QUw"/>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_txSQgHCfEemJ-foOn68QUw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_txVT0HCfEemJ-foOn68QUw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Ecore.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Model>
+  <Ecore:EPackage xmi:id="_u3RBIHCfEemJ-foOn68QUw" base_Package="_WW0l4HAKEemJ-foOn68QUw" packageName="builtintypes" nsPrefix="builtintypes" basePackage="org.eclipse.papyrus.model2doc.core" prefix="BuiltInTypes"/>
+</xmi:XMI>

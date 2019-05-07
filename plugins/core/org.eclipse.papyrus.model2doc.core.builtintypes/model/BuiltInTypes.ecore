@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="builtintypes" nsURI="http://www.eclipse.org/papyrus/model2doc/core/1.0.0/BuiltInTypes"
+    nsPrefix="builtintypes">
+  <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <details key="originalName" value="BuiltInTypes"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractTable" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Abstract class used to represent a Table in the Model2Doc API."/>
+    </eAnnotations>
+    <eOperations name="getRowsNumber" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This method returns the numbers of rows of the table."/>
+        <details key="body" value="return getRows().size();"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="getColumnsNumber" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This method returns the number of columns of the table."/>
+        <details key="body" value="if (getRowsNumber() > 0) {&#xA;&#x9;// we assume all rows have the same number of cells.&#xA;&#x9;final Row firstRow = getRows().get(0);&#xA;&#x9;if (null != firstRow) {&#xA;&#x9;&#x9;return firstRow.getCells().size();&#xA;&#x9;}&#xA;}&#xA;return 0;"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="caption" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The caption of the table."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rows" ordered="false" upperBound="-1"
+        eType="#//Row" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The rows owned by the table."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Row" abstract="true" interface="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cells" ordered="false"
+        upperBound="-1" eType="#//Cell" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The cells owned by the row."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Cell" abstract="true" interface="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" ordered="false"
+        lowerBound="1" eType="#//CellLocation" defaultValueLiteral="BODY">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The location of the cells."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="CellLocation">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This enumeration allows to define the location of each cell."/>
+    </eAnnotations>
+    <eLiterals name="CORNER"/>
+    <eLiterals name="COLUMN_HEADER" value="1"/>
+    <eLiterals name="ROW_HEADER" value="2"/>
+    <eLiterals name="BODY" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BasicTable" eSuperTypes="#//AbstractTable">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Default implementation provided for a table."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BasicRow" eSuperTypes="#//Row">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Default Row implementation."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TextCell" eSuperTypes="#//Cell">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The text owned by the cells."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+</ecore:EPackage>
