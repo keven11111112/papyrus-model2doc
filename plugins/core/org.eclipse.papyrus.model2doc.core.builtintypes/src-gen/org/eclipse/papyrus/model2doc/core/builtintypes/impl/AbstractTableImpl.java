@@ -14,25 +14,20 @@
 package org.eclipse.papyrus.model2doc.core.builtintypes.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractTable;
 import org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesPackage;
+import org.eclipse.papyrus.model2doc.core.builtintypes.Cell;
 import org.eclipse.papyrus.model2doc.core.builtintypes.Row;
 
 /**
@@ -180,6 +175,22 @@ public abstract class AbstractTableImpl extends MinimalEObjectImpl.Container imp
 	 * @generated
 	 */
 	@Override
+	public EList<Cell> getAllCells() {
+		final java.util.List<Cell> cells = new java.util.ArrayList<>();
+		for (final Row row : getRows()) {
+			cells.addAll(row.getCells());
+		}
+		return org.eclipse.emf.common.util.ECollections.asEList(cells);
+
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case BuiltInTypesPackage.ABSTRACT_TABLE__ROWS:
@@ -275,6 +286,8 @@ public abstract class AbstractTableImpl extends MinimalEObjectImpl.Container imp
 			return getRowsNumber();
 		case BuiltInTypesPackage.ABSTRACT_TABLE___GET_COLUMNS_NUMBER:
 			return getColumnsNumber();
+		case BuiltInTypesPackage.ABSTRACT_TABLE___GET_ALL_CELLS:
+			return getAllCells();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

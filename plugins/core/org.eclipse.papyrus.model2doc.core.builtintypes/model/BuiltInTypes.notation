@@ -25,6 +25,10 @@
           <element xmi:type="uml:Operation" href="BuiltInTypes.uml#_y91poHAKEemJ-foOn68QUw"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_y96iIXAKEemJ-foOn68QUw"/>
         </children>
+        <children xmi:type="notation:Shape" xmi:id="_qry4sHC_EemO3N3fNOfMKQ" type="Operation_ClassOperationLabel">
+          <element xmi:type="uml:Operation" href="BuiltInTypes.uml#_qn5QIHC_EemO3N3fNOfMKQ"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_qry4sXC_EemO3N3fNOfMKQ"/>
+        </children>
         <styles xmi:type="notation:TitleStyle" xmi:id="_lYKeKHAKEemJ-foOn68QUw"/>
         <styles xmi:type="notation:SortingStyle" xmi:id="_lYKeKXAKEemJ-foOn68QUw"/>
         <styles xmi:type="notation:FilteringStyle" xmi:id="_lYKeKnAKEemJ-foOn68QUw"/>

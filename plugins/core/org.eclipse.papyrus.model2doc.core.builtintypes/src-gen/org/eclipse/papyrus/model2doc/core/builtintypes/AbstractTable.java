@@ -110,4 +110,19 @@ public interface AbstractTable extends EObject {
 	 */
 	int getColumnsNumber();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This method returns all Cells as a List. This list concatenates the Cells Row by Row. So for a table with 3 columns and 5 rows.
+	 * The 3 first cells will represents the first row, then the cell, 4, 5 and 6, will represents the 2 rows, and so on.
+	 * <!-- end-model-doc -->
+	 *
+	 * @model kind="operation" ordered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='final java.util.List&lt;Cell&gt; cells = new java.util.ArrayList&lt;Cell&gt;();\nfor (final Row row : getRows()) {\n\tcells.addAll(row.getCells());\n}\nreturn
+	 *        org.eclipse.emf.common.util.ECollections.asEList(cells);\n'"
+	 * @generated
+	 */
+	EList<Cell> getAllCells();
+
 } // AbstractTable

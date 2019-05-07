@@ -21,6 +21,12 @@
         <details key="body" value="if (getRowsNumber() > 0) {&#xA;&#x9;// we assume all rows have the same number of cells.&#xA;&#x9;final Row firstRow = getRows().get(0);&#xA;&#x9;if (null != firstRow) {&#xA;&#x9;&#x9;return firstRow.getCells().size();&#xA;&#x9;}&#xA;}&#xA;return 0;"/>
       </eAnnotations>
     </eOperations>
+    <eOperations name="getAllCells" ordered="false" upperBound="-1" eType="#//Cell">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This method returns all Cells as a List. This list concatenates the Cells Row by Row. So for a table with 3 columns and 5 rows.&#xD;&#xA;The 3 first cells will represents the first row, then the cell, 4, 5 and 6, will represents the 2 rows, and so on."/>
+        <details key="body" value="final java.util.List&lt;Cell> cells = new  java.util.ArrayList&lt;Cell>();&#xA;for (final Row row : getRows()) {&#xA;&#x9;cells.addAll(row.getCells());&#xA;}&#xA;return  org.eclipse.emf.common.util.ECollections.asEList(cells);&#xA;"/>
+      </eAnnotations>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="caption" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -71,7 +77,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TextCell" eSuperTypes="#//Cell">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" ordered="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The text owned by the cells."/>
       </eAnnotations>

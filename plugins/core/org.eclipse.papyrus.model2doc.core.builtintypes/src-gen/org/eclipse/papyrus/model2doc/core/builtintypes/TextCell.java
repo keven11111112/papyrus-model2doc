@@ -33,6 +33,7 @@ package org.eclipse.papyrus.model2doc.core.builtintypes;
 public interface TextCell extends Cell {
 	/**
 	 * Returns the value of the '<em><b>Text</b></em>' attribute.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -42,7 +43,7 @@ public interface TextCell extends Cell {
 	 * @return the value of the '<em>Text</em>' attribute.
 	 * @see #setText(String)
 	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesPackage#getTextCell_Text()
-	 * @model required="true" ordered="false"
+	 * @model default="" required="true" ordered="false"
 	 * @generated
 	 */
 	String getText();

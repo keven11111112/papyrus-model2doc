@@ -52,6 +52,8 @@
           body="return getRows().size();"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="BuiltInTypes.ecore#//AbstractTable/getColumnsNumber"
           body="if (getRowsNumber() > 0) {&#xA;&#x9;// we assume all rows have the same number of cells.&#xA;&#x9;final Row firstRow = getRows().get(0);&#xA;&#x9;if (null != firstRow) {&#xA;&#x9;&#x9;return firstRow.getCells().size();&#xA;&#x9;}&#xA;}&#xA;return 0;"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="BuiltInTypes.ecore#//AbstractTable/getAllCells"
+          body="final java.util.List&lt;Cell> cells = new  java.util.ArrayList&lt;Cell>();&#xA;for (final Row row : getRows()) {&#xA;&#x9;cells.addAll(row.getCells());&#xA;}&#xA;return  org.eclipse.emf.common.util.ECollections.asEList(cells);&#xA;"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="BuiltInTypes.ecore#//Row">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"

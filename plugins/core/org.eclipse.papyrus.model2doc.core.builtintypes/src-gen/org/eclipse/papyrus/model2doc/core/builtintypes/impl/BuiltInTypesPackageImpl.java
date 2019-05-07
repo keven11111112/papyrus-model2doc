@@ -226,6 +226,17 @@ public class BuiltInTypesPackageImpl extends EPackageImpl implements BuiltInType
 	 * @generated
 	 */
 	@Override
+	public EOperation getAbstractTable__GetAllCells() {
+		return abstractTableEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EClass getRow() {
 		return rowEClass;
 	}
@@ -357,6 +368,7 @@ public class BuiltInTypesPackageImpl extends EPackageImpl implements BuiltInType
 		createEReference(abstractTableEClass, ABSTRACT_TABLE__ROWS);
 		createEOperation(abstractTableEClass, ABSTRACT_TABLE___GET_ROWS_NUMBER);
 		createEOperation(abstractTableEClass, ABSTRACT_TABLE___GET_COLUMNS_NUMBER);
+		createEOperation(abstractTableEClass, ABSTRACT_TABLE___GET_ALL_CELLS);
 
 		rowEClass = createEClass(ROW);
 		createEReference(rowEClass, ROW__CELLS);
@@ -420,6 +432,8 @@ public class BuiltInTypesPackageImpl extends EPackageImpl implements BuiltInType
 
 		initEOperation(getAbstractTable__GetColumnsNumber(), ecorePackage.getEInt(), "getColumnsNumber", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
+		initEOperation(getAbstractTable__GetAllCells(), this.getCell(), "getAllCells", 0, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
 		initEClass(rowEClass, Row.class, "Row", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(getRow_Cells(), this.getCell(), null, "cells", null, 0, -1, Row.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
@@ -431,7 +445,7 @@ public class BuiltInTypesPackageImpl extends EPackageImpl implements BuiltInType
 		initEClass(basicRowEClass, BasicRow.class, "BasicRow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		initEClass(textCellEClass, TextCell.class, "TextCell", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getTextCell_Text(), ecorePackage.getEString(), "text", null, 1, 1, TextCell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getTextCell_Text(), ecorePackage.getEString(), "text", "", 1, 1, TextCell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
 
 		// Initialize enums and add enum literals
 		initEEnum(cellLocationEEnum, CellLocation.class, "CellLocation"); //$NON-NLS-1$

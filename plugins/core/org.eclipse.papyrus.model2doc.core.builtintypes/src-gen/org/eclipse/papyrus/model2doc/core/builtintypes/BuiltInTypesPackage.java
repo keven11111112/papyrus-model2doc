@@ -137,6 +137,16 @@ public interface BuiltInTypesPackage extends EPackage {
 	int ABSTRACT_TABLE___GET_COLUMNS_NUMBER = 1;
 
 	/**
+	 * The operation id for the '<em>Get All Cells</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_TABLE___GET_ALL_CELLS = 2;
+
+	/**
 	 * The number of operations of the '<em>Abstract Table</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -144,7 +154,7 @@ public interface BuiltInTypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_TABLE_OPERATION_COUNT = 2;
+	int ABSTRACT_TABLE_OPERATION_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.core.builtintypes.Row <em>Row</em>}' class.
@@ -288,6 +298,16 @@ public interface BuiltInTypesPackage extends EPackage {
 	 * @ordered
 	 */
 	int BASIC_TABLE___GET_COLUMNS_NUMBER = ABSTRACT_TABLE___GET_COLUMNS_NUMBER;
+
+	/**
+	 * The operation id for the '<em>Get All Cells</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int BASIC_TABLE___GET_ALL_CELLS = ABSTRACT_TABLE___GET_ALL_CELLS;
 
 	/**
 	 * The number of operations of the '<em>Basic Table</em>' class.
@@ -459,6 +479,17 @@ public interface BuiltInTypesPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getAbstractTable__GetColumnsNumber();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.core.builtintypes.AbstractTable#getAllCells() <em>Get All Cells</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the '<em>Get All Cells</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.AbstractTable#getAllCells()
+	 * @generated
+	 */
+	EOperation getAbstractTable__GetAllCells();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.core.builtintypes.Row <em>Row</em>}'.
@@ -633,6 +664,15 @@ public interface BuiltInTypesPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation ABSTRACT_TABLE___GET_COLUMNS_NUMBER = eINSTANCE.getAbstractTable__GetColumnsNumber();
+
+		/**
+		 * The meta object literal for the '<em><b>Get All Cells</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EOperation ABSTRACT_TABLE___GET_ALL_CELLS = eINSTANCE.getAbstractTable__GetAllCells();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.core.builtintypes.Row <em>Row</em>}' class.
