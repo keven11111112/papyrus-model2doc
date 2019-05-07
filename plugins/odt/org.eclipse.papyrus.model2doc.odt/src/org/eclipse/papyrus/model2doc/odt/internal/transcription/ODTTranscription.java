@@ -16,10 +16,10 @@ package org.eclipse.papyrus.model2doc.odt.internal.transcription;
 
 import java.util.List;
 
+import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractTable;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.transcription.CoverPage;
 import org.eclipse.papyrus.model2doc.core.transcription.ImageDescription;
-import org.eclipse.papyrus.model2doc.core.transcription.Table;
 import org.eclipse.papyrus.model2doc.core.transcription.Transcription;
 import org.eclipse.papyrus.model2doc.odt.editor.StyleEditor;
 import org.eclipse.papyrus.model2doc.odt.editor.StyleEditorFactory;
@@ -287,8 +287,8 @@ public class ODTTranscription implements Transcription {
 	}
 
 	@Override
-	public void addTable(Table table, Object style) {
-		WriteUtil.addTable(cursor, table, odtEditor, style);
+	public void writeTable(final AbstractTable table) {
+		WriteUtil.writeTable(cursor, table, odtEditor);
 	}
 
 	@Override

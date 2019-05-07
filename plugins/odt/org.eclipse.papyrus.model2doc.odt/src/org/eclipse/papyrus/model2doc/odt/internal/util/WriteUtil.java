@@ -16,14 +16,17 @@ package org.eclipse.papyrus.model2doc.odt.internal.util;
 
 import java.io.File;
 import java.util.Date;
+import java.util.List;
 
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.osgi.util.NLS;
+import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractTable;
+import org.eclipse.papyrus.model2doc.core.builtintypes.Cell;
+import org.eclipse.papyrus.model2doc.core.builtintypes.TextCell;
 import org.eclipse.papyrus.model2doc.core.service.FileIOService;
 import org.eclipse.papyrus.model2doc.core.service.FileIOServiceImpl;
 import org.eclipse.papyrus.model2doc.core.transcription.ImageDescription;
-import org.eclipse.papyrus.model2doc.core.transcription.Table;
 import org.eclipse.papyrus.model2doc.odt.Activator;
 import org.eclipse.papyrus.model2doc.odt.internal.editor.ODTEditor;
 import org.eclipse.papyrus.model2doc.odt.service.ODTFileIOService;
@@ -38,7 +41,6 @@ import com.sun.star.document.XDocumentInsertable;
 import com.sun.star.io.IOException;
 import com.sun.star.lang.IllegalArgumentException;
 import com.sun.star.lang.XMultiServiceFactory;
-import com.sun.star.table.XTableRows;
 import com.sun.star.text.ControlCharacter;
 import com.sun.star.text.SizeType;
 import com.sun.star.text.TextContentAnchorType;
@@ -134,13 +136,13 @@ public class WriteUtil {
 		try {
 			XMultiServiceFactory xMultiServiceFactory = odtEditor.getXMultiServiceFactory();
 
-			Object tmp = xMultiServiceFactory.createInstance("com.sun.star.text.TextFrame");
+			Object tmp = xMultiServiceFactory.createInstance("com.sun.star.text.TextFrame"); //$NON-NLS-1$
 			XTextFrame textFrame = UnoRuntime.queryInterface(XTextFrame.class, tmp);
 			XPropertySet framePropertySet = createXPropertySet(textFrame);
-			framePropertySet.setPropertyValue("SizeType", SizeType.VARIABLE);
-			framePropertySet.setPropertyValue("AnchorType", TextContentAnchorType.AS_CHARACTER);
-			framePropertySet.setPropertyValue("ZOrder", 1);// not really sure
-			framePropertySet.setPropertyValue("TextWrap", WrapTextMode.THROUGH);
+			framePropertySet.setPropertyValue("SizeType", SizeType.VARIABLE); //$NON-NLS-1$
+			framePropertySet.setPropertyValue("AnchorType", TextContentAnchorType.AS_CHARACTER); //$NON-NLS-1$
+			framePropertySet.setPropertyValue("ZOrder", 1);// not really sure //$NON-NLS-1$
+			framePropertySet.setPropertyValue("TextWrap", WrapTextMode.THROUGH); //$NON-NLS-1$
 
 			// Creating the service GraphicObject
 			Object graphicObject = xMultiServiceFactory.createInstance("com.sun.star.text.TextGraphicObject"); //$NON-NLS-1$
@@ -160,24 +162,24 @@ public class WriteUtil {
 			graphicContent = ImageUtil.resizeImage(graphicContent, imageFilePath, odtEditor.getXTextDocument(), odtEditor.getXMultiComponentFactory(), odtEditor.getXComponentContext());
 
 			XPropertySet graphicPropSet = createXPropertySet(graphicContent);
-			Object heightValue = graphicPropSet.getPropertyValue("Height");
-			Object widthValue = graphicPropSet.getPropertyValue("Width");
+			Object heightValue = graphicPropSet.getPropertyValue("Height"); //$NON-NLS-1$
+			Object widthValue = graphicPropSet.getPropertyValue("Width"); //$NON-NLS-1$
 			XPropertySet textFrameSet = createXPropertySet(textFrame);
-			textFrameSet.setPropertyValue("Height", heightValue);// TODO don't work, and should be on the next level...
-			textFrameSet.setPropertyValue("Width", widthValue);
+			textFrameSet.setPropertyValue("Height", heightValue);// TODO don't work, and should be on the next level... //$NON-NLS-1$
+			textFrameSet.setPropertyValue("Width", widthValue); //$NON-NLS-1$
 
 			xTextCursor.getText().insertTextContent(xTextCursor, textFrame, false);
 			XTextCursor localCursor = textFrame.getText().createTextCursor();
 
 			XParagraphCursor paragraphCursor = UnoRuntime.queryInterface(XParagraphCursor.class, localCursor);
 			XPropertySet paraSet = createXPropertySet(paragraphCursor);
-			paraSet.setPropertyValue("ParaStyleName", "Illustration");// it works!!! in fact we can't push style which have not been declared and which don't exist by default
+			paraSet.setPropertyValue("ParaStyleName", "Illustration");// it works!!! in fact we can't push style which have not been declared and which don't exist by default //$NON-NLS-1$ //$NON-NLS-2$
 
 
 
 			localCursor.getText().insertTextContent(localCursor, graphicContent, false);
 			localCursor.gotoEnd(true);
-			localCursor.getText().insertString(localCursor, "Illustration", false);
+			localCursor.getText().insertString(localCursor, "Illustration", false); //$NON-NLS-1$
 
 
 			// code to add the number of the illustration: doesn't work yet
@@ -201,7 +203,7 @@ public class WriteUtil {
 
 			if (null != caption && false == caption.isEmpty()) {
 				StringBuilder builder = new StringBuilder();
-				builder.append(": ");
+				builder.append(": "); //$NON-NLS-1$
 				builder.append(caption);
 				localCursor.getText().insertString(localCursor, builder.toString(), false);
 			}
@@ -221,13 +223,13 @@ public class WriteUtil {
 		try {
 			XMultiServiceFactory xMultiServiceFactory = odtEditor.getXMultiServiceFactory();
 
-			Object tmp = xMultiServiceFactory.createInstance("com.sun.star.text.TextFrame");
+			Object tmp = xMultiServiceFactory.createInstance("com.sun.star.text.TextFrame"); //$NON-NLS-1$
 			XTextFrame textFrame = UnoRuntime.queryInterface(XTextFrame.class, tmp);
 			XPropertySet framePropertySet = createXPropertySet(textFrame);
-			framePropertySet.setPropertyValue("SizeType", SizeType.VARIABLE);
-			framePropertySet.setPropertyValue("AnchorType", TextContentAnchorType.AS_CHARACTER);
-			framePropertySet.setPropertyValue("ZOrder", 1);// not really sure
-			framePropertySet.setPropertyValue("TextWrap", WrapTextMode.THROUGH);
+			framePropertySet.setPropertyValue("SizeType", SizeType.VARIABLE); //$NON-NLS-1$
+			framePropertySet.setPropertyValue("AnchorType", TextContentAnchorType.AS_CHARACTER); //$NON-NLS-1$
+			framePropertySet.setPropertyValue("ZOrder", 1);// not really sure //$NON-NLS-1$
+			framePropertySet.setPropertyValue("TextWrap", WrapTextMode.THROUGH); //$NON-NLS-1$
 
 			// Creating the service GraphicObject
 			Object graphicObject = xMultiServiceFactory.createInstance("com.sun.star.text.TextGraphicObject"); //$NON-NLS-1$
@@ -247,24 +249,24 @@ public class WriteUtil {
 			graphicContent = ImageUtil.resizeImage(graphicContent, imageFilePath, odtEditor.getXTextDocument(), odtEditor.getXMultiComponentFactory(), odtEditor.getXComponentContext());
 
 			XPropertySet graphicPropSet = createXPropertySet(graphicContent);
-			Object heightValue = graphicPropSet.getPropertyValue("Height");
-			Object widthValue = graphicPropSet.getPropertyValue("Width");
+			Object heightValue = graphicPropSet.getPropertyValue("Height"); //$NON-NLS-1$
+			Object widthValue = graphicPropSet.getPropertyValue("Width"); //$NON-NLS-1$
 			XPropertySet textFrameSet = createXPropertySet(textFrame);
-			textFrameSet.setPropertyValue("Height", heightValue);// TODO don't work, and should be on the next level...
-			textFrameSet.setPropertyValue("Width", widthValue);
+			textFrameSet.setPropertyValue("Height", heightValue);// TODO don't work, and should be on the next level... //$NON-NLS-1$
+			textFrameSet.setPropertyValue("Width", widthValue); //$NON-NLS-1$
 
 			xTextCursor.getText().insertTextContent(xTextCursor, textFrame, false);
 			XTextCursor localCursor = textFrame.getText().createTextCursor();
 
 			XParagraphCursor paragraphCursor = UnoRuntime.queryInterface(XParagraphCursor.class, localCursor);
 			XPropertySet paraSet = createXPropertySet(paragraphCursor);
-			paraSet.setPropertyValue("ParaStyleName", "Illustration");// it works!!! in fact we can't push style which have not been declared and which don't exist by default
+			paraSet.setPropertyValue("ParaStyleName", "Illustration");// it works!!! in fact we can't push style which have not been declared and which don't exist by default //$NON-NLS-1$ //$NON-NLS-2$
 
 
 
 			localCursor.getText().insertTextContent(localCursor, graphicContent, false);
 			localCursor.gotoEnd(true);
-			localCursor.getText().insertString(localCursor, "Illustration", false);
+			localCursor.getText().insertString(localCursor, "Illustration", false); //$NON-NLS-1$
 
 
 			// code to add the number of the illustration: doesn't work yet
@@ -288,7 +290,7 @@ public class WriteUtil {
 
 			if (null != caption && false == caption.isEmpty()) {
 				StringBuilder builder = new StringBuilder();
-				builder.append(": ");
+				builder.append(": "); //$NON-NLS-1$
 				builder.append(caption);
 				localCursor.getText().insertString(localCursor, builder.toString(), false);
 			}
@@ -309,13 +311,13 @@ public class WriteUtil {
 	private static final void displayPropertySet(final XPropertySet propertySet, final String relativeObjectName) {
 		Assert.isNotNull(propertySet);
 		Assert.isNotNull(relativeObjectName);
-		System.out.println(NLS.bind("-----------------------properties of {0}--------------------", relativeObjectName));
+		System.out.println(NLS.bind("-----------------------properties of {0}--------------------", relativeObjectName)); //$NON-NLS-1$
 		XPropertySetInfo set12 = propertySet.getPropertySetInfo();
 		for (Property tmp : set12.getProperties()) {
-			System.out.println("prop Name " + tmp.Name);
-			System.out.println("prop attr " + tmp.Attributes);
-			System.out.println("prop type " + tmp.Type);
-			System.out.println("\n");
+			System.out.println("prop Name " + tmp.Name); //$NON-NLS-1$
+			System.out.println("prop attr " + tmp.Attributes); //$NON-NLS-1$
+			System.out.println("prop type " + tmp.Type); //$NON-NLS-1$
+			System.out.println("\n"); //$NON-NLS-1$
 		}
 	}
 
@@ -390,15 +392,15 @@ public class WriteUtil {
 			// Retrieve the part of text with rich text
 			richText = text.replaceFirst(noRichText[0], ""); //$NON-NLS-1$
 		}
-		richText = richText.replaceAll("&nbsp;", " ");
+		richText = richText.replaceAll("&nbsp;", " "); //$NON-NLS-1$ //$NON-NLS-2$
 		// Create file with the part of text with rich text
 		String location = ResourcesPlugin.getWorkspace().getRoot().getLocation().toString();
 		StringBuilder pathName = new StringBuilder();
 		pathName.append(location);
 		pathName.append(File.separator);
-		pathName.append("tmp_ParagraphWithRichText_"); // $NON-NLS-1$
+		pathName.append("tmp_ParagraphWithRichText_"); //$NON-NLS-1$
 		pathName.append(new Date().getTime());
-		pathName.append("."); // $NON-NLS-1$
+		pathName.append("."); //$NON-NLS-1$
 		pathName.append(HTML_EXTENSION);
 		File file = fileIOService.createFile(pathName.toString(), richText);
 		String fileURL = odtFileIOService.getFileURL(file);
@@ -419,118 +421,67 @@ public class WriteUtil {
 	 * @param table
 	 *            the table contents
 	 * @param odtEditor
-	 * @param style
+	 *
 	 */
-	public static void addTable(XTextCursor xTextCursor, Table table, ODTEditor odtEditor, Object style) {
+	public static void writeTable(XTextCursor xTextCursor, AbstractTable table, ODTEditor odtEditor) {
 		// Set number of rows and columns
-		int numRows = table.getAllRows().size();
-		if (numRows <= 0) {
+		int numRows = table.getRowsNumber();
+		int numCols = table.getColumnsNumber();
+
+		if (numRows <= 0 || numCols <= 0) {
 			return;
 		}
-		int numCols = table.getAllRows().get(0).size();
+
+		final List<Cell> allCells = table.getAllCells();
+		if (numRows * numCols != allCells.size()) {
+			Activator.log.warn(NLS.bind("The number of cells in the table is not as excepted. We won't manage the table {0}.", table.getCaption())); //$NON-NLS-1$
+			return;
+		}
+
 		try {
 			XMultiServiceFactory xMultiServiceFactory = odtEditor.getXMultiServiceFactory();
 			// create a text table
-			Object obj = xMultiServiceFactory.createInstance("com.sun.star.text.TextTable"); // $NON-NLS-1$
+			Object obj = xMultiServiceFactory.createInstance("com.sun.star.text.TextTable"); //$NON-NLS-1$
 			XTextTable textTable = UnoRuntime.queryInterface(XTextTable.class, obj);
 
-			// Default background color
-			Object backColor = 0x6AA84F;
-			// // If defined style then update backColor
-			if (style != null) {
-				backColor = style;
-			}
+			// Initialize and add table
+			textTable.initialize(numRows, numCols);
+			addTextContent(xTextCursor, textTable);
+			endParagraph(xTextCursor);
 
 
+			// Set cell's contents
+			String[] cellNames = textTable.getCellNames();
+
+			// TODO : we should add something like a TableStyleProvider in the metamodel builtInTypes.
+			// A such element will be referenced by the DocumentGeneratorConfiguration or something else
+			// and each table element would have a method to be able to read it and returns the style to apply for it when we write the final document
+			Object headerBackGroundColor = 0xD4D4D4; // grey
 
 
-			if (numCols > 0) {
-
-				// Verify if there are row titles
-				if (table.getRowTitles() != null && !table.getRowTitles().isEmpty()) {
-					// update column counters
-					numCols++;
+			for (int i = 0; i < cellNames.length; i++) {
+				XText cellText = UnoRuntime.queryInterface(XText.class, textTable.getCellByName(cellNames[i]));
+				final Cell cell = allCells.get(i);
+				if (cell instanceof TextCell) {
+					cellText.setString(((TextCell) cell).getText());
+				} else {
+					Activator.log.warn(NLS.bind("The cell class {0} is not managed by the transcription", cell.eClass().getName())); //$NON-NLS-1$
 				}
 
-				// Verify if there are column titles
-				if (table.getColumnTitles() != null && !table.getColumnTitles().isEmpty()) {
-					// update row counter
-					numRows++;
-				}
-
-				// Initialize and add table
-				textTable.initialize(numRows, numCols);
-				addTextContent(xTextCursor, textTable);
-				endParagraph(xTextCursor);
-
-				// Set Style if there are column titles
-				if (table.getColumnTitles() != null && !table.getColumnTitles().isEmpty()) {
-					// Set color of first row to be light blue
-					XTableRows rows = textTable.getRows();
-					PropertySetUtil.setProperty(rows.getByIndex(0), "BackColor", backColor); // $NON-NLS-1$
-				}
-
-
-
-				// Set cell's contents
-				String[] cellNames = textTable.getCellNames();
-				int indexRow = 0;
-				int indexCol = 0;
-				for (int i = 0; i < cellNames.length; i++) {
-					XText cellText = UnoRuntime.queryInterface(XText.class, textTable.getCellByName(cellNames[i]));
-
-					// Verify if first row and there are column titles
-					if ((i < numCols) && (table.getColumnTitles() != null && !table.getColumnTitles().isEmpty())) {
-						// There are row titles
-						if (table.getRowTitles() != null && !table.getRowTitles().isEmpty()) {
-							// If cell is the first cell then this cell must be empty
-							if (i == 0) {
-								indexCol++;
-								continue;
-							} else {
-								// Set cell with column title
-								cellText.setString(table.getColumnTitles().get(indexCol - 1));
-							}
-						} else {
-							// Set cell with column title
-							cellText.setString(table.getColumnTitles().get(indexCol));
-						}
-						indexCol++;
-						// If index column over the last column (cell) of a row
-						if (indexCol == numCols) {
-							indexCol = 0;
-						}
-					} else {
-						// Verify if there are row titles
-						if (table.getRowTitles() != null && !table.getRowTitles().isEmpty()) {
-							// If first column the set cell with row title
-							if (indexCol == 0) {
-								// Set style
-								PropertySetUtil.setProperty(cellText, "BackColor", backColor); // $NON-NLS-1$
-								// Set content
-								cellText.setString(table.getRowTitles().get(indexRow));
-							} else {
-								// If not first column the set cell
-								cellText.setString(table.getAllRows().get(indexRow).get(indexCol - 1));
-							}
-						} else {
-							// Set cell
-							cellText.setString(table.getAllRows().get(indexRow).get(indexCol));
-						}
-
-						indexCol++;
-						// If index column over the last column of a row
-						if (indexCol == numCols) {
-							indexCol = 0;
-							indexRow++;
-						}
-					}
+				switch (cell.getLocation()) {
+				case CORNER:
+				case COLUMN_HEADER:
+				case ROW_HEADER:
+					PropertySetUtil.setProperty(cellText, "BackColor", headerBackGroundColor); //$NON-NLS-1$
+					break;
+				case BODY:
+				default:
+					// do nothing
 				}
 			}
 
 		} catch (com.sun.star.uno.Exception e) {
 			Activator.log.error(e);
 		}
-
 	}
 }

@@ -19,12 +19,15 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.eclipse.papyrus.model2doc.core.builtintypes.BasicRow;
+import org.eclipse.papyrus.model2doc.core.builtintypes.BasicTable;
+import org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesFactory;
+import org.eclipse.papyrus.model2doc.core.builtintypes.CellLocation;
+import org.eclipse.papyrus.model2doc.core.builtintypes.TextCell;
 import org.eclipse.papyrus.model2doc.core.service.DiagramToImageService;
 import org.eclipse.papyrus.model2doc.core.service.DiagramToImageServiceImpl;
 import org.eclipse.papyrus.model2doc.core.transcriber.Transcriber;
 import org.eclipse.papyrus.model2doc.core.transcription.ImageDescription;
-import org.eclipse.papyrus.model2doc.core.transcription.Table;
-import org.eclipse.papyrus.model2doc.core.transcription.TableFactory;
 import org.eclipse.papyrus.model2doc.core.transcription.Transcription;
 import org.eclipse.papyrus.uml.internationalization.utils.utils.UMLLabelInternationalization;
 import org.eclipse.uml2.uml.Class;
@@ -92,36 +95,65 @@ public class UMLTranscriber implements Transcriber {
 		transcribeClasses(root);
 
 		// Add table of list of packages and their owned classes
-		Table table = TableFactory.INSTANCE.getDefaultTable();
-		List<String> columnTitles = new ArrayList<>();
-		columnTitles.add("Packages"); //$NON-NLS-1$
-		columnTitles.add("Classes"); //$NON-NLS-1$
-		table.setColumnTitles(columnTitles);
 
-		// these 3 line add the rows header
-		List<String> rowTitles = new ArrayList<>();
-		table.setRowTitles(rowTitles);
-		int nbRow = 1;
+		// 1. create a new table
+		final BasicTable table = BuiltInTypesFactory.eINSTANCE.createBasicTable();
 
-		for (Package nestedPackage : root.getNestedPackages()) {
-			rowTitles.add(Integer.toString(nbRow));
+		// 2. create the column headers
+		final BasicRow columnHeaderRow = BuiltInTypesFactory.eINSTANCE.createBasicRow();
+		table.getRows().add(columnHeaderRow);
+		final TextCell cornerCell = BuiltInTypesFactory.eINSTANCE.createTextCell();
+		cornerCell.setText("");// TODO add a default text value to empty string
+		cornerCell.setLocation(CellLocation.CORNER);
+		columnHeaderRow.getCells().add(cornerCell);
+
+		final TextCell columnHeaderPackageCell = BuiltInTypesFactory.eINSTANCE.createTextCell();
+		columnHeaderRow.getCells().add(columnHeaderPackageCell);
+		columnHeaderPackageCell.setText("Packages");// TODO add a default text value to empty string
+		columnHeaderPackageCell.setLocation(CellLocation.COLUMN_HEADER);
+
+		final TextCell columnHeaderClassedCell = BuiltInTypesFactory.eINSTANCE.createTextCell();
+		columnHeaderRow.getCells().add(columnHeaderClassedCell);
+		columnHeaderClassedCell.setText("Classes");
+		columnHeaderClassedCell.setLocation(CellLocation.COLUMN_HEADER);
+
+
+		// 3. create row header and the body
+		final Iterator<Package> packIter = root.getNestedPackages().iterator();
+		int nbRow = 0;
+		while (packIter.hasNext()) {
 			nbRow++;
-			StringBuilder classNames = new StringBuilder();
-			List<String> rowContents = new ArrayList<>();
-			rowContents.add(umlLabelInternationalization.getLabel(nestedPackage));
+			final Package nestedPackage = packIter.next();
+			final BasicRow row = BuiltInTypesFactory.eINSTANCE.createBasicRow();
+			table.getRows().add(row);
 
+
+			final TextCell rowHeaderCell = BuiltInTypesFactory.eINSTANCE.createTextCell();
+			row.getCells().add(rowHeaderCell);
+			rowHeaderCell.setText(Integer.toString(nbRow));
+			rowHeaderCell.setLocation(CellLocation.ROW_HEADER);
+
+			final TextCell packageCellBody = BuiltInTypesFactory.eINSTANCE.createTextCell();
+			row.getCells().add(packageCellBody);
+			packageCellBody.setText(this.umlLabelInternationalization.getLabel(nestedPackage));
+			packageCellBody.setLocation(CellLocation.BODY);
+
+			final TextCell classesCellBody = BuiltInTypesFactory.eINSTANCE.createTextCell();
+			row.getCells().add(classesCellBody);
+			final StringBuilder builder = new StringBuilder();
 			final Iterator<Class> classIterator = nestedPackage.getOwnedTypes().stream().filter(Class.class::isInstance).map(Class.class::cast).collect(Collectors.toList()).iterator();
 			while (classIterator.hasNext()) {
 				final Class current = classIterator.next();
-				classNames.append(umlLabelInternationalization.getLabel(current));
+				builder.append(umlLabelInternationalization.getLabel(current));
 				if (classIterator.hasNext()) {
-					classNames.append(", "); //$NON-NLS-1$
+					builder.append(", "); //$NON-NLS-1$
 				}
 			}
-
-			table.setRowContents(rowContents);
+			classesCellBody.setText(builder.toString());
+			classesCellBody.setLocation(CellLocation.BODY);
 		}
-		transcription.addTable(table, 0xE06666);
+
+		transcription.writeTable(table);
 
 		// Transcribe nested packages owned by root package
 		for (Package nestedPackage : root.getNestedPackages()) {

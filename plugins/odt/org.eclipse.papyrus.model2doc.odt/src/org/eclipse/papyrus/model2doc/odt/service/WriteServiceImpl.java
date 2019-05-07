@@ -14,8 +14,8 @@
  *****************************************************************************/
 package org.eclipse.papyrus.model2doc.odt.service;
 
+import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractTable;
 import org.eclipse.papyrus.model2doc.core.transcription.ImageDescription;
-import org.eclipse.papyrus.model2doc.core.transcription.Table;
 import org.eclipse.papyrus.model2doc.odt.internal.editor.ODTEditor;
 import org.eclipse.papyrus.model2doc.odt.internal.util.WriteUtil;
 
@@ -86,8 +86,8 @@ public class WriteServiceImpl implements WriteService {
 	}
 
 	@Override
-	public void addTable(XTextCursor xTextCursor, Table table, ODTEditor odtEditor, Object style) {
-		WriteUtil.addTable(xTextCursor, table, odtEditor, style);
+	public void writeTable(XTextCursor xTextCursor, AbstractTable table, ODTEditor odtEditor) {
+		WriteUtil.writeTable(xTextCursor, table, odtEditor);
 	}
 
 }

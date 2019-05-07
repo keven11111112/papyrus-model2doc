@@ -10,12 +10,12 @@
  *
  * Contributors:
  *  Yupanqui Munoz (CEA LIST) yupanqui.munozjulho@cea.fr - Initial API and implementation
- *	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *****************************************************************************/
 package org.eclipse.papyrus.model2doc.odt.service;
 
+import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractTable;
 import org.eclipse.papyrus.model2doc.core.transcription.ImageDescription;
-import org.eclipse.papyrus.model2doc.core.transcription.Table;
 import org.eclipse.papyrus.model2doc.odt.internal.editor.ODTEditor;
 
 import com.sun.star.text.XTextContent;
@@ -116,10 +116,8 @@ public interface WriteService {
 	 * @param xTextCursor
 	 * @param table
 	 * @param odtEditor
-	 * @param style
-	 *            define background color (HEX format, e.x. 0xE06666).
 	 */
-	public void addTable(XTextCursor xTextCursor, Table table, ODTEditor odtEditor, Object style);
+	public void writeTable(XTextCursor xTextCursor, AbstractTable table, ODTEditor odtEditor);
 
 
 	/**

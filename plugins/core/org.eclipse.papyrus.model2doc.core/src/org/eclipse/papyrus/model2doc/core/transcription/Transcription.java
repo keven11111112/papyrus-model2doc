@@ -16,7 +16,9 @@ package org.eclipse.papyrus.model2doc.core.transcription;
 
 import java.util.List;
 
+import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractTable;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration;
+
 
 /**
  * Transcription Interface.
@@ -80,10 +82,8 @@ public interface Transcription {
 	 * Add table.
 	 *
 	 * @param table
-	 * @param style
-	 *            define background color (HEX format, e.x. 0xE06666).
 	 */
-	public void addTable(Table table, Object style);
+	public void writeTable(AbstractTable table);
 
 	/**
 	 * Import image.
