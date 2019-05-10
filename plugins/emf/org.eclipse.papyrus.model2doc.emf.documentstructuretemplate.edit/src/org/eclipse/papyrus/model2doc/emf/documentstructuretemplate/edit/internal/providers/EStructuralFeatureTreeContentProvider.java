@@ -20,13 +20,13 @@ import java.util.Iterator;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EStructuralFeature;
 
 /**
- * This contents provider allows to navigate until to find EReference (and inherited EReferencee) owned by EClass
+ * This contents provider allows to navigate until to find {@link EStructuralFeature} (and inherited ones) owned by EClass
  * Others kind of elements are not displayed
  */
-public class EReferenceTreeContentProvider extends EClassTreeContentProvider {
+public class EStructuralFeatureTreeContentProvider extends EClassTreeContentProvider {
 
 	/**
 	 * @see org.eclipse.jface.viewers.ITreeContentProvider#getChildren(java.lang.Object)
@@ -37,7 +37,7 @@ public class EReferenceTreeContentProvider extends EClassTreeContentProvider {
 	@Override
 	public Object[] getChildren(final Object parentElement) {
 		if (parentElement instanceof EClass) {
-			return ((EClass) parentElement).getEAllReferences().toArray();
+			return ((EClass) parentElement).getEAllStructuralFeatures().toArray();
 		}
 		return super.getChildren(parentElement);
 	}
@@ -52,10 +52,10 @@ public class EReferenceTreeContentProvider extends EClassTreeContentProvider {
 	@Override
 	public boolean hasChildren(final Object element) {
 		if (element instanceof EPackage) {
-			return hasEReferenceInHierarchy((EPackage) element);
+			return hasEStructuralFeatureInHierarchy((EPackage) element);
 		}
 		if (element instanceof EClass) {
-			return hasEReferenceInHierarchy((EClass) element);
+			return hasEStructuralFeatureInHierarchy((EClass) element);
 		}
 		return super.hasChildren(element);
 	}
@@ -64,10 +64,10 @@ public class EReferenceTreeContentProvider extends EClassTreeContentProvider {
 	 *
 	 * @param eClass
 	 * @return
-	 *         <code>true</code> if the EClass contains EReference
+	 *         <code>true</code> if the EClass contains {@link EStructuralFeature}
 	 */
-	protected final boolean hasEReferenceInHierarchy(final EClass eClass) {
-		return eClass.getEAllReferences().size() > 0;
+	protected final boolean hasEStructuralFeatureInHierarchy(final EClass eClass) {
+		return eClass.getEAllStructuralFeatures().size() > 0;
 	}
 
 	/**
@@ -76,7 +76,7 @@ public class EReferenceTreeContentProvider extends EClassTreeContentProvider {
 	 * @return
 	 *         <code>true</code> if the EPackage contains EClass containing EReference
 	 */
-	protected final boolean hasEReferenceInHierarchy(final EPackage ePackage) {
+	protected final boolean hasEStructuralFeatureInHierarchy(final EPackage ePackage) {
 		final Iterator<EClassifier> eClassIter = ePackage.getEClassifiers().iterator();
 		boolean isValidValue = false;
 		while (eClassIter.hasNext() && false == isValidValue) {
@@ -100,14 +100,14 @@ public class EReferenceTreeContentProvider extends EClassTreeContentProvider {
 	 */
 	@Override
 	public boolean isValidValue(final Object object) {
-		if (object instanceof EReference) {
+		if (object instanceof EStructuralFeature) {
 			return true;
 		}
 		if (object instanceof EClass) {
-			return hasEReferenceInHierarchy((EClass) object);
+			return hasEStructuralFeatureInHierarchy((EClass) object);
 		}
 		if (object instanceof EPackage) {
-			return hasEReferenceInHierarchy((EPackage) object);
+			return hasEStructuralFeatureInHierarchy((EPackage) object);
 		}
 		return super.isValidValue(object);
 

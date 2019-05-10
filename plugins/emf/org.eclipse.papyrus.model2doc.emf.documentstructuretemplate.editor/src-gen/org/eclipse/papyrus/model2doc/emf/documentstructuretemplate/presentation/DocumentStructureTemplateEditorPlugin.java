@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.provider.GeneratorconfigurationEditPlugin;
 
 /**
- * This is the central singleton for the DocumentStructureTemplate editor plugin.
+ * This is the central singleton for the Documentstructuretemplate editor plugin.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  *

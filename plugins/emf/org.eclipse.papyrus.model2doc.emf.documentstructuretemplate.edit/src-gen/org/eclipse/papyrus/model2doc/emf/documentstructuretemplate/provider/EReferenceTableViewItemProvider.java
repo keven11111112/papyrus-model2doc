@@ -39,16 +39,16 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplateFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTableView;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate} object.
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTableView} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class EReferencePartTemplateItemProvider
+public class EReferenceTableViewItemProvider
 		extends ItemProviderAdapter
 		implements
 		IEditingDomainItemProvider,
@@ -63,7 +63,7 @@ public class EReferencePartTemplateItemProvider
 	 *
 	 * @generated
 	 */
-	public EReferencePartTemplateItemProvider(AdapterFactory adapterFactory) {
+	public EReferenceTableViewItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -82,6 +82,8 @@ public class EReferencePartTemplateItemProvider
 			addGeneratePropertyDescriptor(object);
 			addGenerateTitlePropertyDescriptor(object);
 			addCustomTitlePropertyDescriptor(object);
+			addGenerateRowHeaderPropertyDescriptor(object);
+			addGenerateColumnHeaderPropertyDescriptor(object);
 			addEReferencePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -151,6 +153,48 @@ public class EReferencePartTemplateItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Generate Row Header feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected void addGenerateRowHeaderPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_ITableView_generateRowHeader_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_ITableView_generateRowHeader_feature", "_UI_ITableView_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				DocumentStructureTemplatePackage.Literals.ITABLE_VIEW__GENERATE_ROW_HEADER,
+				true,
+				false,
+				false,
+				ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				null,
+				null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Generate Column Header feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected void addGenerateColumnHeaderPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_ITableView_generateColumnHeader_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_ITableView_generateColumnHeader_feature", "_UI_ITableView_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				DocumentStructureTemplatePackage.Literals.ITABLE_VIEW__GENERATE_COLUMN_HEADER,
+				true,
+				false,
+				false,
+				ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				null,
+				null));
+	}
+
+	/**
 	 * This adds a property descriptor for the EReference feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -160,16 +204,16 @@ public class EReferencePartTemplateItemProvider
 	protected void addEReferencePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
-				getString("_UI_EReferencePartTemplate_eReference_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_EReferencePartTemplate_eReference_feature", "_UI_EReferencePartTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				DocumentStructureTemplatePackage.Literals.EREFERENCE_PART_TEMPLATE__EREFERENCE,
+				getString("_UI_EReferenceTableView_eReference_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EReferenceTableView_eReference_feature", "_UI_EReferenceTableView_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				DocumentStructureTemplatePackage.Literals.EREFERENCE_TABLE_VIEW__EREFERENCE,
 				true,
 				false,
 				true,
 				null,
 				null,
 				null,
-				URI.createURI("editor://documentstructuretemplate/EReferencePartTemplate/EReference/"))); //$NON-NLS-1$
+				URI.createURI("editor://documentstructuretemplate/EReferenceTableView/EReference/"))); //$NON-NLS-1$
 	}
 
 	/**
@@ -185,7 +229,7 @@ public class EReferencePartTemplateItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.ICOMPOSED_BODY_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE);
+			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.ITABLE_VIEW__COLUMNS);
 		}
 		return childrenFeatures;
 	}
@@ -216,7 +260,7 @@ public class EReferencePartTemplateItemProvider
 	}
 
 	/**
-	 * This returns EReferencePartTemplate.gif.
+	 * This returns EReferenceTableView.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -224,7 +268,7 @@ public class EReferencePartTemplateItemProvider
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/EReferencePartTemplate")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/EReferenceTableView")); //$NON-NLS-1$
 	}
 
 	/**
@@ -247,8 +291,8 @@ public class EReferencePartTemplateItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		EReferencePartTemplate eReferencePartTemplate = (EReferencePartTemplate) object;
-		return getString("_UI_EReferencePartTemplate_type") + " " + eReferencePartTemplate.isGenerate(); //$NON-NLS-1$ //$NON-NLS-2$
+		EReferenceTableView eReferenceTableView = (EReferenceTableView) object;
+		return getString("_UI_EReferenceTableView_type") + " " + eReferenceTableView.isGenerate(); //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 
@@ -264,13 +308,15 @@ public class EReferencePartTemplateItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(EReferencePartTemplate.class)) {
-		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__GENERATE:
-		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__GENERATE_TITLE:
-		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__CUSTOM_TITLE:
+		switch (notification.getFeatureID(EReferenceTableView.class)) {
+		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE:
+		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_TITLE:
+		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__CUSTOM_TITLE:
+		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_ROW_HEADER:
+		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_COLUMN_HEADER:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
+		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__COLUMNS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -289,8 +335,8 @@ public class EReferencePartTemplateItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_BODY_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE,
-				DocumentStructureTemplateFactory.eINSTANCE.createEClassPartTemplate()));
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ITABLE_VIEW__COLUMNS,
+				DocumentStructureTemplateFactory.eINSTANCE.createEStructuralFeatureColumn()));
 	}
 
 	/**

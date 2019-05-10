@@ -20,9 +20,16 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceListView;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
 /**
  * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceListView} object.
@@ -31,7 +38,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceLis
  *
  * @generated
  */
-public class EReferenceListViewItemProvider extends EReferencePartTemplateItemProvider {
+public class EReferenceListViewItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -57,6 +64,17 @@ public class EReferenceListViewItemProvider extends EReferencePartTemplateItemPr
 
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public boolean hasChildren(Object object) {
+		return hasChildren(object, true);
 	}
 
 	/**
@@ -91,8 +109,7 @@ public class EReferenceListViewItemProvider extends EReferencePartTemplateItemPr
 	 */
 	@Override
 	public String getText(Object object) {
-		EReferenceListView eReferenceListView = (EReferenceListView) object;
-		return getString("_UI_EReferenceListView_type") + " " + eReferenceListView.isGenerate(); //$NON-NLS-1$ //$NON-NLS-2$
+		return getString("_UI_EReferenceListView_type"); //$NON-NLS-1$
 	}
 
 
@@ -121,6 +138,18 @@ public class EReferenceListViewItemProvider extends EReferencePartTemplateItemPr
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
 	}
 
 }

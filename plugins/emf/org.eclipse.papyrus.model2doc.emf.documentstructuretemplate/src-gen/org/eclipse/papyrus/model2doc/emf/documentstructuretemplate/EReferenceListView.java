@@ -24,5 +24,5 @@ package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate;
  * @model
  * @generated
  */
-public interface EReferenceListView extends EReferencePartTemplate, ITemplatePartView {
+public interface EReferenceListView extends ITemplatePartView {
 } // EReferenceListView

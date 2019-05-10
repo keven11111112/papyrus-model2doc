@@ -35,13 +35,17 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassFilterB
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceListView;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTableView;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFeatureColumn;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodyPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IColumn;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedBodyPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedSubBodyPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafBodyPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafSubBodyPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubBodyPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITemplatePartView;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TableOfContents;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentTemplate;
@@ -189,6 +193,38 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	private EClass eReferenceListViewEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass iTableViewEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass iColumnEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eReferenceTableViewEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eStructuralFeatureColumnEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -784,6 +820,171 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
+	public EClass getITableView() {
+		return iTableViewEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getITableView_Columns() {
+		return (EReference) iTableViewEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getITableView_GenerateRowHeader() {
+		return (EAttribute) iTableViewEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getITableView_GenerateColumnHeader() {
+		return (EAttribute) iTableViewEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EOperation getITableView__BuildTitle() {
+		return iTableViewEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EOperation getITableView__GetRows__EObject() {
+		return iTableViewEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EOperation getITableView__BuildRowHeaderLabel__EObject() {
+		return iTableViewEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getIColumn() {
+		return iColumnEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EOperation getIColumn__BuildColumnHeaderLabel() {
+		return iColumnEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EOperation getIColumn__GetCellValue__EObject() {
+		return iColumnEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EOperation getIColumn__BuildCellLabel__Object() {
+		return iColumnEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getEReferenceTableView() {
+		return eReferenceTableViewEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEReferenceTableView_EReference() {
+		return (EReference) eReferenceTableViewEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getEStructuralFeatureColumn() {
+		return eStructuralFeatureColumnEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEStructuralFeatureColumn_Feature() {
+		return (EReference) eStructuralFeatureColumnEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EEnum getEClassFilterBehavior() {
 		return eClassFilterBehaviorEEnum;
 	}
@@ -885,6 +1086,25 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 
 		eReferenceListViewEClass = createEClass(EREFERENCE_LIST_VIEW);
 
+		iTableViewEClass = createEClass(ITABLE_VIEW);
+		createEReference(iTableViewEClass, ITABLE_VIEW__COLUMNS);
+		createEAttribute(iTableViewEClass, ITABLE_VIEW__GENERATE_ROW_HEADER);
+		createEAttribute(iTableViewEClass, ITABLE_VIEW__GENERATE_COLUMN_HEADER);
+		createEOperation(iTableViewEClass, ITABLE_VIEW___BUILD_TITLE);
+		createEOperation(iTableViewEClass, ITABLE_VIEW___GET_ROWS__EOBJECT);
+		createEOperation(iTableViewEClass, ITABLE_VIEW___BUILD_ROW_HEADER_LABEL__EOBJECT);
+
+		iColumnEClass = createEClass(ICOLUMN);
+		createEOperation(iColumnEClass, ICOLUMN___BUILD_COLUMN_HEADER_LABEL);
+		createEOperation(iColumnEClass, ICOLUMN___GET_CELL_VALUE__EOBJECT);
+		createEOperation(iColumnEClass, ICOLUMN___BUILD_CELL_LABEL__OBJECT);
+
+		eReferenceTableViewEClass = createEClass(EREFERENCE_TABLE_VIEW);
+		createEReference(eReferenceTableViewEClass, EREFERENCE_TABLE_VIEW__EREFERENCE);
+
+		eStructuralFeatureColumnEClass = createEClass(ESTRUCTURAL_FEATURE_COLUMN);
+		createEReference(eStructuralFeatureColumnEClass, ESTRUCTURAL_FEATURE_COLUMN__FEATURE);
+
 		// Create enums
 		eClassFilterBehaviorEEnum = createEEnum(ECLASS_FILTER_BEHAVIOR);
 	}
@@ -936,8 +1156,11 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		iLeafSubBodyPartTemplateEClass.getESuperTypes().add(this.getISubBodyPartTemplate());
 		eClassPartTemplateEClass.getESuperTypes().add(this.getIComposedSubBodyPartTemplate());
 		eReferencePartTemplateEClass.getESuperTypes().add(this.getIComposedBodyPartTemplate());
-		eReferenceListViewEClass.getESuperTypes().add(this.getEReferencePartTemplate());
 		eReferenceListViewEClass.getESuperTypes().add(this.getITemplatePartView());
+		iTableViewEClass.getESuperTypes().add(this.getILeafBodyPartTemplate());
+		iTableViewEClass.getESuperTypes().add(this.getITemplatePartView());
+		eReferenceTableViewEClass.getESuperTypes().add(this.getITableView());
+		eStructuralFeatureColumnEClass.getESuperTypes().add(this.getIColumn());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(documentTemplateEClass, DocumentTemplate.class, "DocumentTemplate", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
@@ -1024,6 +1247,37 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		initEClass(iTemplatePartViewEClass, ITemplatePartView.class, "ITemplatePartView", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		initEClass(eReferenceListViewEClass, EReferenceListView.class, "EReferenceListView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEClass(iTableViewEClass, ITableView.class, "ITableView", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getITableView_Columns(), this.getIColumn(), null, "columns", null, 0, -1, ITableView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getITableView_GenerateRowHeader(), ecorePackage.getEBoolean(), "generateRowHeader", "true", 1, 1, ITableView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
+		initEAttribute(getITableView_GenerateColumnHeader(), ecorePackage.getEBoolean(), "generateColumnHeader", "true", 1, 1, ITableView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
+
+		initEOperation(getITableView__BuildTitle(), ecorePackage.getEString(), "buildTitle", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
+		op = initEOperation(getITableView__GetRows__EObject(), theEcorePackage.getEObject(), "getRows", 0, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+		addEParameter(op, theEcorePackage.getEObject(), "context", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
+		op = initEOperation(getITableView__BuildRowHeaderLabel__EObject(), ecorePackage.getEString(), "buildRowHeaderLabel", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+		addEParameter(op, theEcorePackage.getEObject(), "rowElement", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
+		initEClass(iColumnEClass, IColumn.class, "IColumn", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEOperation(getIColumn__BuildColumnHeaderLabel(), ecorePackage.getEString(), "buildColumnHeaderLabel", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
+		op = initEOperation(getIColumn__GetCellValue__EObject(), theEcorePackage.getEJavaObject(), "getCellValue", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+		addEParameter(op, theEcorePackage.getEObject(), "row", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
+		op = initEOperation(getIColumn__BuildCellLabel__Object(), ecorePackage.getEString(), "buildCellLabel", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+		addEParameter(op, ecorePackage.getEJavaObject(), "cellElement", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
+		initEClass(eReferenceTableViewEClass, EReferenceTableView.class, "EReferenceTableView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getEReferenceTableView_EReference(), theEcorePackage.getEReference(), null, "eReference", null, 1, 1, EReferenceTableView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, //$NON-NLS-1$
+				!IS_DERIVED, !IS_ORDERED);
+
+		initEClass(eStructuralFeatureColumnEClass, EStructuralFeatureColumn.class, "EStructuralFeatureColumn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getEStructuralFeatureColumn_Feature(), theEcorePackage.getEStructuralFeature(), null, "feature", null, 1, 1, EStructuralFeatureColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, //$NON-NLS-1$
+				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(eClassFilterBehaviorEEnum, EClassFilterBehavior.class, "EClassFilterBehavior"); //$NON-NLS-1$

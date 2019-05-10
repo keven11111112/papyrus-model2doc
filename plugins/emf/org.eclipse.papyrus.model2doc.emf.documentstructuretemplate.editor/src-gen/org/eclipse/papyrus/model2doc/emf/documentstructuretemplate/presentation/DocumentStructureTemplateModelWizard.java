@@ -390,7 +390,7 @@ public class DocumentStructureTemplateModelWizard extends Wizard implements INew
 
 		/**
 		 * @generated
-		 * 			<!-- begin-user-doc -->
+		 *            <!-- begin-user-doc -->
 		 *            <!-- end-user-doc -->
 		 */
 		protected List<String> encodings;

@@ -13,10 +13,11 @@
  *
  *****************************************************************************/
 
-package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.providers;
+package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.providers;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -39,6 +40,11 @@ public class DelegatingToEMFLabelProvider implements ILabelProvider {
 	 * the separator between field of the label
 	 */
 	protected static final String FIELD_LABEL_SEPARATOR = " - "; //$NON-NLS-1$
+
+	/**
+	 * The separator used to calculate the label for collection
+	 */
+	protected static final String MULTI_VALUE_SEPARATOR = ",";//$NON-NLS-1$
 
 	/**
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#addListener(org.eclipse.jface.viewers.ILabelProviderListener)
@@ -114,6 +120,19 @@ public class DelegatingToEMFLabelProvider implements ILabelProvider {
 		if (element instanceof String) {
 			return (String) element;
 		}
+		if (element instanceof Collection<?>) {
+			final StringBuilder builder = new StringBuilder();
+			final Iterator<?> iter = ((Collection<?>) element).iterator();
+			while (iter.hasNext()) {
+				builder.append(getText(iter.next()));
+				if (iter.hasNext()) {
+					builder.append(MULTI_VALUE_SEPARATOR);
+					builder.append(" "); //$NON-NLS-1$
+				}
+			}
+			return builder.toString();
+		}
+
 		if (element instanceof EObject) {
 			final EObject eobject = (EObject) element;
 			final IItemLabelProvider subProvider = getSubLabelProvider(eobject);

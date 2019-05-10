@@ -73,5 +73,9 @@
             class="org.eclipse.papyrus.model2doc.emf.template2structure.internal.mapping.TextDocumentTemplateMapper"
             generatorId="TextDocumentStructureGenerator.default">
       </mapper>
+      <mapper
+            class="org.eclipse.papyrus.model2doc.emf.template2structure.internal.mapping.EReferenceTableViewMapper"
+            generatorId="TextDocumentStructureGenerator.default">
+      </mapper>
    </extension>
 </plugin>

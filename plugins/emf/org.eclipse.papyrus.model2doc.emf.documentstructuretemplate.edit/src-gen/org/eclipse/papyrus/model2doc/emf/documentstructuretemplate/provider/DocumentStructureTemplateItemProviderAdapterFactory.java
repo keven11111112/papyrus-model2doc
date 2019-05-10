@@ -281,6 +281,56 @@ public class DocumentStructureTemplateItemProviderAdapterFactory extends Documen
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTableView} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected EReferenceTableViewItemProvider eReferenceTableViewItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTableView}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Adapter createEReferenceTableViewAdapter() {
+		if (eReferenceTableViewItemProvider == null) {
+			eReferenceTableViewItemProvider = new EReferenceTableViewItemProvider(this);
+		}
+
+		return eReferenceTableViewItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFeatureColumn} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected EStructuralFeatureColumnItemProvider eStructuralFeatureColumnItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFeatureColumn}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Adapter createEStructuralFeatureColumnAdapter() {
+		if (eStructuralFeatureColumnItemProvider == null) {
+			eStructuralFeatureColumnItemProvider = new EStructuralFeatureColumnItemProvider(this);
+		}
+
+		return eStructuralFeatureColumnItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -446,6 +496,12 @@ public class DocumentStructureTemplateItemProviderAdapterFactory extends Documen
 		}
 		if (eReferenceListViewItemProvider != null) {
 			eReferenceListViewItemProvider.dispose();
+		}
+		if (eReferenceTableViewItemProvider != null) {
+			eReferenceTableViewItemProvider.dispose();
+		}
+		if (eStructuralFeatureColumnItemProvider != null) {
+			eStructuralFeatureColumnItemProvider.dispose();
 		}
 	}
 

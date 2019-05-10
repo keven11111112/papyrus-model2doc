@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTableView;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate;
 
 /**
@@ -44,7 +45,7 @@ public class BodySectionPartTemplateTitleHelper {
 	 * @param partTemplate
 	 *            a part template
 	 * @return
-	 * 		the built title, if the method {@link IBodySectionPartTemplate#isGenerateTitle()} returns <code>true</code>
+	 *         the built title, if the method {@link IBodySectionPartTemplate#isGenerateTitle()} returns <code>true</code>
 	 */
 	public String buildTitle(final IBodySectionPartTemplate partTemplate) {
 		return buildTitle(partTemplate, null);
@@ -57,7 +58,7 @@ public class BodySectionPartTemplateTitleHelper {
 	 * @param parameter
 	 *            a parameter to use to build the title. This parameter can be <code>null</code>
 	 * @return
-	 * 		the built title, if the method {@link IBodySectionPartTemplate#isGenerateTitle()} returns <code>true</code>
+	 *         the built title, if the method {@link IBodySectionPartTemplate#isGenerateTitle()} returns <code>true</code>
 	 */
 	public final String buildTitle(final IBodySectionPartTemplate partTemplate, final EObject parameter) {
 		if (false == partTemplate.isGenerateTitle()) {
@@ -78,7 +79,7 @@ public class BodySectionPartTemplateTitleHelper {
 	 *            a parameter to use to build the title. This parameter can be <code>null</code>
 	 *
 	 * @return
-	 * 		the built title for the part template or an empty string if the {@link IBodySectionPartTemplate} is not managed
+	 *         the built title for the part template or an empty string if the {@link IBodySectionPartTemplate} is not managed
 	 */
 	protected String internalBuildTitle(final IBodySectionPartTemplate partTemplate, final EObject parameter) {
 		if (partTemplate instanceof EReferencePartTemplate) {
@@ -86,6 +87,9 @@ public class BodySectionPartTemplateTitleHelper {
 		}
 		if (partTemplate instanceof EClassPartTemplate) {
 			return buildEClassPartTemplateTitle((EClassPartTemplate) partTemplate, parameter);
+		}
+		if (partTemplate instanceof EReferenceTableView) {
+			return buildEReferenceTableViewTitle((EReferenceTableView) partTemplate);
 		}
 		return ""; //$NON-NLS-1$
 	}
@@ -96,7 +100,7 @@ public class BodySectionPartTemplateTitleHelper {
 	 * @param partTemplate
 	 *            an {@link EReferencePartTemplate}
 	 * @return
-	 * 		the built title for the EReferencePartTemplate or a default value if the EReference is <code>null</code>
+	 *         the built title for the EReferencePartTemplate or a default value if the EReference is <code>null</code>
 	 *
 	 *
 	 */
@@ -110,9 +114,25 @@ public class BodySectionPartTemplateTitleHelper {
 	/**
 	 *
 	 * @param partTemplate
+	 *            an {@link EReferenceTableView}
+	 * @return
+	 *         the built title for the EReferenceTableView or a default value if the EReference is <code>null</code>
+	 *
+	 *
+	 */
+	protected final String buildEReferenceTableViewTitle(final EReferenceTableView partTemplate) {
+		if (null != partTemplate.getEReference()) {
+			return partTemplate.getEReference().getName();
+		}
+		return "No EReference"; //$NON-NLS-1$
+	}
+
+	/**
+	 *
+	 * @param partTemplate
 	 *            an {@link EClassPartTemplate}
 	 * @return
-	 * 		the built title for the EReferencePartTemplate or a default value if the {@link EClass} is <code>null</code>
+	 *         the built title for the EReferencePartTemplate or a default value if the {@link EClass} is <code>null</code>
 	 *
 	 */
 	protected final String buildEClassPartTemplateTitle(final EClassPartTemplate eClassPartTemplate, final EObject parameter) {
@@ -133,7 +153,7 @@ public class BodySectionPartTemplateTitleHelper {
 	 * @param eobject
 	 *            an EObject
 	 * @return
-	 * 		the label to use for this EObject
+	 *         the label to use for this EObject
 	 */
 	protected String getLabel(final EObject eobject) {
 		final EClass eobjectEClass = eobject.eClass();

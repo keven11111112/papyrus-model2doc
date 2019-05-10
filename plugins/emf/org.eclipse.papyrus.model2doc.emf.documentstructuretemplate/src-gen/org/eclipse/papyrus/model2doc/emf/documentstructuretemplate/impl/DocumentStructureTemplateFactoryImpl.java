@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.*;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.Body;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplateFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
@@ -91,6 +92,10 @@ public class DocumentStructureTemplateFactoryImpl extends EFactoryImpl implement
 			return createEReferencePartTemplate();
 		case DocumentStructureTemplatePackage.EREFERENCE_LIST_VIEW:
 			return createEReferenceListView();
+		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW:
+			return createEReferenceTableView();
+		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_COLUMN:
+			return createEStructuralFeatureColumn();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -210,6 +215,30 @@ public class DocumentStructureTemplateFactoryImpl extends EFactoryImpl implement
 	public EReferenceListView createEReferenceListView() {
 		EReferenceListViewImpl eReferenceListView = new EReferenceListViewImpl();
 		return eReferenceListView;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReferenceTableView createEReferenceTableView() {
+		EReferenceTableViewImpl eReferenceTableView = new EReferenceTableViewImpl();
+		return eReferenceTableView;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EStructuralFeatureColumn createEStructuralFeatureColumn() {
+		EStructuralFeatureColumnImpl eStructuralFeatureColumn = new EStructuralFeatureColumnImpl();
+		return eStructuralFeatureColumn;
 	}
 
 	/**

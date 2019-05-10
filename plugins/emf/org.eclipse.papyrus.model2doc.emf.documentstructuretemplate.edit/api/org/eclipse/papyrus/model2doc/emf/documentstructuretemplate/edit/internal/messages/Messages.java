@@ -29,6 +29,7 @@ public class Messages extends NLS {
 	public static String EcoreLabelProvider_FeatureOrigin;
 	public static String SingleEClassValidator_YouMustSelectOneEClass;
 	public static String SingleEReferenceValidator_YouMustSelectOneREference;
+	public static String SingleEStructuralFeatureValidator_YouMustSelectOneEStructuralFeature;
 
 	static {
 		// initialize resource bundle

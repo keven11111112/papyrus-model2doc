@@ -15,6 +15,7 @@ package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceListView;
 
@@ -25,7 +26,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceLis
  *
  * @generated
  */
-public class EReferenceListViewImpl extends EReferencePartTemplateImpl implements EReferenceListView {
+public class EReferenceListViewImpl extends MinimalEObjectImpl.Container implements EReferenceListView {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

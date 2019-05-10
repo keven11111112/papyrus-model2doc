@@ -1223,56 +1223,6 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int EREFERENCE_LIST_VIEW = 16;
 
 	/**
-	 * The feature id for the '<em><b>Generate</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EREFERENCE_LIST_VIEW__GENERATE = EREFERENCE_PART_TEMPLATE__GENERATE;
-
-	/**
-	 * The feature id for the '<em><b>Generate Title</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EREFERENCE_LIST_VIEW__GENERATE_TITLE = EREFERENCE_PART_TEMPLATE__GENERATE_TITLE;
-
-	/**
-	 * The feature id for the '<em><b>Custom Title</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EREFERENCE_LIST_VIEW__CUSTOM_TITLE = EREFERENCE_PART_TEMPLATE__CUSTOM_TITLE;
-
-	/**
-	 * The feature id for the '<em><b>Sub Body Part Template</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EREFERENCE_LIST_VIEW__SUB_BODY_PART_TEMPLATE = EREFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE;
-
-	/**
-	 * The feature id for the '<em><b>EReference</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EREFERENCE_LIST_VIEW__EREFERENCE = EREFERENCE_PART_TEMPLATE__EREFERENCE;
-
-	/**
 	 * The number of structural features of the '<em>EReference List View</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1280,27 +1230,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_LIST_VIEW_FEATURE_COUNT = EREFERENCE_PART_TEMPLATE_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Build Title</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EREFERENCE_LIST_VIEW___BUILD_TITLE = EREFERENCE_PART_TEMPLATE___BUILD_TITLE;
-
-	/**
-	 * The operation id for the '<em>Get Matching Referenced EObjects</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EREFERENCE_LIST_VIEW___GET_MATCHING_REFERENCED_EOBJECTS__EOBJECT = EREFERENCE_PART_TEMPLATE___GET_MATCHING_REFERENCED_EOBJECTS__EOBJECT;
+	int EREFERENCE_LIST_VIEW_FEATURE_COUNT = ITEMPLATE_PART_VIEW_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>EReference List View</em>' class.
@@ -1310,7 +1240,391 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_LIST_VIEW_OPERATION_COUNT = EREFERENCE_PART_TEMPLATE_OPERATION_COUNT + 0;
+	int EREFERENCE_LIST_VIEW_OPERATION_COUNT = ITEMPLATE_PART_VIEW_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView <em>ITable View</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getITableView()
+	 * @generated
+	 */
+	int ITABLE_VIEW = 17;
+
+	/**
+	 * The feature id for the '<em><b>Generate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ITABLE_VIEW__GENERATE = ILEAF_BODY_PART_TEMPLATE__GENERATE;
+
+	/**
+	 * The feature id for the '<em><b>Generate Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ITABLE_VIEW__GENERATE_TITLE = ILEAF_BODY_PART_TEMPLATE__GENERATE_TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Custom Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ITABLE_VIEW__CUSTOM_TITLE = ILEAF_BODY_PART_TEMPLATE__CUSTOM_TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Columns</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ITABLE_VIEW__COLUMNS = ILEAF_BODY_PART_TEMPLATE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Generate Row Header</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ITABLE_VIEW__GENERATE_ROW_HEADER = ILEAF_BODY_PART_TEMPLATE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Generate Column Header</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ITABLE_VIEW__GENERATE_COLUMN_HEADER = ILEAF_BODY_PART_TEMPLATE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>ITable View</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ITABLE_VIEW_FEATURE_COUNT = ILEAF_BODY_PART_TEMPLATE_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Build Title</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ITABLE_VIEW___BUILD_TITLE = ILEAF_BODY_PART_TEMPLATE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Rows</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ITABLE_VIEW___GET_ROWS__EOBJECT = ILEAF_BODY_PART_TEMPLATE_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Build Row Header Label</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ITABLE_VIEW___BUILD_ROW_HEADER_LABEL__EOBJECT = ILEAF_BODY_PART_TEMPLATE_OPERATION_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>ITable View</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ITABLE_VIEW_OPERATION_COUNT = ILEAF_BODY_PART_TEMPLATE_OPERATION_COUNT + 3;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IColumn <em>IColumn</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IColumn
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getIColumn()
+	 * @generated
+	 */
+	int ICOLUMN = 18;
+
+	/**
+	 * The number of structural features of the '<em>IColumn</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ICOLUMN_FEATURE_COUNT = 0;
+
+	/**
+	 * The operation id for the '<em>Build Column Header Label</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ICOLUMN___BUILD_COLUMN_HEADER_LABEL = 0;
+
+	/**
+	 * The operation id for the '<em>Get Cell Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ICOLUMN___GET_CELL_VALUE__EOBJECT = 1;
+
+	/**
+	 * The operation id for the '<em>Build Cell Label</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ICOLUMN___BUILD_CELL_LABEL__OBJECT = 2;
+
+	/**
+	 * The number of operations of the '<em>IColumn</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ICOLUMN_OPERATION_COUNT = 3;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceTableViewImpl <em>EReference Table View</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceTableViewImpl
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEReferenceTableView()
+	 * @generated
+	 */
+	int EREFERENCE_TABLE_VIEW = 19;
+
+	/**
+	 * The feature id for the '<em><b>Generate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_TABLE_VIEW__GENERATE = ITABLE_VIEW__GENERATE;
+
+	/**
+	 * The feature id for the '<em><b>Generate Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_TABLE_VIEW__GENERATE_TITLE = ITABLE_VIEW__GENERATE_TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Custom Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_TABLE_VIEW__CUSTOM_TITLE = ITABLE_VIEW__CUSTOM_TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Columns</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_TABLE_VIEW__COLUMNS = ITABLE_VIEW__COLUMNS;
+
+	/**
+	 * The feature id for the '<em><b>Generate Row Header</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_TABLE_VIEW__GENERATE_ROW_HEADER = ITABLE_VIEW__GENERATE_ROW_HEADER;
+
+	/**
+	 * The feature id for the '<em><b>Generate Column Header</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_TABLE_VIEW__GENERATE_COLUMN_HEADER = ITABLE_VIEW__GENERATE_COLUMN_HEADER;
+
+	/**
+	 * The feature id for the '<em><b>EReference</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_TABLE_VIEW__EREFERENCE = ITABLE_VIEW_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>EReference Table View</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_TABLE_VIEW_FEATURE_COUNT = ITABLE_VIEW_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Build Title</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_TABLE_VIEW___BUILD_TITLE = ITABLE_VIEW___BUILD_TITLE;
+
+	/**
+	 * The operation id for the '<em>Get Rows</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_TABLE_VIEW___GET_ROWS__EOBJECT = ITABLE_VIEW___GET_ROWS__EOBJECT;
+
+	/**
+	 * The operation id for the '<em>Build Row Header Label</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_TABLE_VIEW___BUILD_ROW_HEADER_LABEL__EOBJECT = ITABLE_VIEW___BUILD_ROW_HEADER_LABEL__EOBJECT;
+
+	/**
+	 * The number of operations of the '<em>EReference Table View</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_TABLE_VIEW_OPERATION_COUNT = ITABLE_VIEW_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EStructuralFeatureColumnImpl <em>EStructural Feature Column</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EStructuralFeatureColumnImpl
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEStructuralFeatureColumn()
+	 * @generated
+	 */
+	int ESTRUCTURAL_FEATURE_COLUMN = 20;
+
+	/**
+	 * The feature id for the '<em><b>Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ESTRUCTURAL_FEATURE_COLUMN__FEATURE = ICOLUMN_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>EStructural Feature Column</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ESTRUCTURAL_FEATURE_COLUMN_FEATURE_COUNT = ICOLUMN_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Build Column Header Label</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ESTRUCTURAL_FEATURE_COLUMN___BUILD_COLUMN_HEADER_LABEL = ICOLUMN___BUILD_COLUMN_HEADER_LABEL;
+
+	/**
+	 * The operation id for the '<em>Get Cell Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ESTRUCTURAL_FEATURE_COLUMN___GET_CELL_VALUE__EOBJECT = ICOLUMN___GET_CELL_VALUE__EOBJECT;
+
+	/**
+	 * The operation id for the '<em>Build Cell Label</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ESTRUCTURAL_FEATURE_COLUMN___BUILD_CELL_LABEL__OBJECT = ICOLUMN___BUILD_CELL_LABEL__OBJECT;
+
+	/**
+	 * The number of operations of the '<em>EStructural Feature Column</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ESTRUCTURAL_FEATURE_COLUMN_OPERATION_COUNT = ICOLUMN_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassFilterBehavior <em>EClass Filter Behavior</em>}' enum.
@@ -1321,7 +1635,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEClassFilterBehavior()
 	 * @generated
 	 */
-	int ECLASS_FILTER_BEHAVIOR = 17;
+	int ECLASS_FILTER_BEHAVIOR = 21;
 
 
 	/**
@@ -1854,6 +2168,176 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	EClass getEReferenceListView();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView <em>ITable View</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>ITable View</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView
+	 * @generated
+	 */
+	EClass getITableView();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView#getColumns <em>Columns</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference list '<em>Columns</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView#getColumns()
+	 * @see #getITableView()
+	 * @generated
+	 */
+	EReference getITableView_Columns();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView#isGenerateRowHeader <em>Generate Row Header</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Generate Row Header</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView#isGenerateRowHeader()
+	 * @see #getITableView()
+	 * @generated
+	 */
+	EAttribute getITableView_GenerateRowHeader();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView#isGenerateColumnHeader <em>Generate Column Header</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Generate Column Header</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView#isGenerateColumnHeader()
+	 * @see #getITableView()
+	 * @generated
+	 */
+	EAttribute getITableView_GenerateColumnHeader();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView#buildTitle() <em>Build Title</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the '<em>Build Title</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView#buildTitle()
+	 * @generated
+	 */
+	EOperation getITableView__BuildTitle();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView#getRows(org.eclipse.emf.ecore.EObject) <em>Get Rows</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the '<em>Get Rows</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView#getRows(org.eclipse.emf.ecore.EObject)
+	 * @generated
+	 */
+	EOperation getITableView__GetRows__EObject();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView#buildRowHeaderLabel(org.eclipse.emf.ecore.EObject) <em>Build Row Header Label</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the '<em>Build Row Header Label</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView#buildRowHeaderLabel(org.eclipse.emf.ecore.EObject)
+	 * @generated
+	 */
+	EOperation getITableView__BuildRowHeaderLabel__EObject();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IColumn <em>IColumn</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>IColumn</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IColumn
+	 * @generated
+	 */
+	EClass getIColumn();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IColumn#buildColumnHeaderLabel() <em>Build Column Header Label</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the '<em>Build Column Header Label</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IColumn#buildColumnHeaderLabel()
+	 * @generated
+	 */
+	EOperation getIColumn__BuildColumnHeaderLabel();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IColumn#getCellValue(org.eclipse.emf.ecore.EObject) <em>Get Cell Value</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the '<em>Get Cell Value</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IColumn#getCellValue(org.eclipse.emf.ecore.EObject)
+	 * @generated
+	 */
+	EOperation getIColumn__GetCellValue__EObject();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IColumn#buildCellLabel(java.lang.Object) <em>Build Cell Label</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the '<em>Build Cell Label</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IColumn#buildCellLabel(java.lang.Object)
+	 * @generated
+	 */
+	EOperation getIColumn__BuildCellLabel__Object();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTableView <em>EReference Table View</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EReference Table View</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTableView
+	 * @generated
+	 */
+	EClass getEReferenceTableView();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTableView#getEReference <em>EReference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the reference '<em>EReference</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTableView#getEReference()
+	 * @see #getEReferenceTableView()
+	 * @generated
+	 */
+	EReference getEReferenceTableView_EReference();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFeatureColumn <em>EStructural Feature Column</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EStructural Feature Column</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFeatureColumn
+	 * @generated
+	 */
+	EClass getEStructuralFeatureColumn();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFeatureColumn#getFeature <em>Feature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the reference '<em>Feature</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFeatureColumn#getFeature()
+	 * @see #getEStructuralFeatureColumn()
+	 * @generated
+	 */
+	EReference getEStructuralFeatureColumn_Feature();
+
+	/**
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassFilterBehavior <em>EClass Filter Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2336,6 +2820,149 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 		 * @generated
 		 */
 		EClass EREFERENCE_LIST_VIEW = eINSTANCE.getEReferenceListView();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView <em>ITable View</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getITableView()
+		 * @generated
+		 */
+		EClass ITABLE_VIEW = eINSTANCE.getITableView();
+
+		/**
+		 * The meta object literal for the '<em><b>Columns</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference ITABLE_VIEW__COLUMNS = eINSTANCE.getITableView_Columns();
+
+		/**
+		 * The meta object literal for the '<em><b>Generate Row Header</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute ITABLE_VIEW__GENERATE_ROW_HEADER = eINSTANCE.getITableView_GenerateRowHeader();
+
+		/**
+		 * The meta object literal for the '<em><b>Generate Column Header</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute ITABLE_VIEW__GENERATE_COLUMN_HEADER = eINSTANCE.getITableView_GenerateColumnHeader();
+
+		/**
+		 * The meta object literal for the '<em><b>Build Title</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EOperation ITABLE_VIEW___BUILD_TITLE = eINSTANCE.getITableView__BuildTitle();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Rows</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EOperation ITABLE_VIEW___GET_ROWS__EOBJECT = eINSTANCE.getITableView__GetRows__EObject();
+
+		/**
+		 * The meta object literal for the '<em><b>Build Row Header Label</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EOperation ITABLE_VIEW___BUILD_ROW_HEADER_LABEL__EOBJECT = eINSTANCE.getITableView__BuildRowHeaderLabel__EObject();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IColumn <em>IColumn</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IColumn
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getIColumn()
+		 * @generated
+		 */
+		EClass ICOLUMN = eINSTANCE.getIColumn();
+
+		/**
+		 * The meta object literal for the '<em><b>Build Column Header Label</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EOperation ICOLUMN___BUILD_COLUMN_HEADER_LABEL = eINSTANCE.getIColumn__BuildColumnHeaderLabel();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Cell Value</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EOperation ICOLUMN___GET_CELL_VALUE__EOBJECT = eINSTANCE.getIColumn__GetCellValue__EObject();
+
+		/**
+		 * The meta object literal for the '<em><b>Build Cell Label</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EOperation ICOLUMN___BUILD_CELL_LABEL__OBJECT = eINSTANCE.getIColumn__BuildCellLabel__Object();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceTableViewImpl <em>EReference Table View</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceTableViewImpl
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEReferenceTableView()
+		 * @generated
+		 */
+		EClass EREFERENCE_TABLE_VIEW = eINSTANCE.getEReferenceTableView();
+
+		/**
+		 * The meta object literal for the '<em><b>EReference</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EREFERENCE_TABLE_VIEW__EREFERENCE = eINSTANCE.getEReferenceTableView_EReference();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EStructuralFeatureColumnImpl <em>EStructural Feature Column</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EStructuralFeatureColumnImpl
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEStructuralFeatureColumn()
+		 * @generated
+		 */
+		EClass ESTRUCTURAL_FEATURE_COLUMN = eINSTANCE.getEStructuralFeatureColumn();
+
+		/**
+		 * The meta object literal for the '<em><b>Feature</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference ESTRUCTURAL_FEATURE_COLUMN__FEATURE = eINSTANCE.getEStructuralFeatureColumn_Feature();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassFilterBehavior <em>EClass Filter Behavior</em>}' enum.

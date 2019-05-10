@@ -15,6 +15,8 @@
 package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.impl;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTableView;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFeatureColumn;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplateFactoryImpl;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassPartTemplateImpl;
@@ -36,7 +38,6 @@ public class CustomDocumentStructureTemplateFactoryImpl extends DocumentStructur
 		return new CustomTextDocumentTemplateImpl();
 	}
 
-
 	/**
 	 *
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplateFactoryImpl#createEClassDocumentPartTemplate()
@@ -56,5 +57,25 @@ public class CustomDocumentStructureTemplateFactoryImpl extends DocumentStructur
 	@Override
 	public EReferencePartTemplate createEReferencePartTemplate() {
 		return new CustomEReferencePartTemplateImpl();
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplateFactoryImpl#createEReferenceTableView()
+	 *
+	 * @return
+	 */
+	@Override
+	public EReferenceTableView createEReferenceTableView() {
+		return new CustomEReferenceTableViewImpl();
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplateFactoryImpl#createEStructuralFeatureColumn()
+	 *
+	 * @return
+	 */
+	@Override
+	public EStructuralFeatureColumn createEStructuralFeatureColumn() {
+		return new CustomEStructuralFeatureColumnImpl();
 	}
 }

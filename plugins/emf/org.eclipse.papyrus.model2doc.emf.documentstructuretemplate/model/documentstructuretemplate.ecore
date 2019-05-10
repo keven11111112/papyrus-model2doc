@@ -196,5 +196,81 @@
       <details key="documentation" value="This interface is used to describe BodyPartTemplate which contributes to fill the document's body."/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EReferenceListView" eSuperTypes="#//EReferencePartTemplate #//ITemplatePartView"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EReferenceListView" eSuperTypes="#//ITemplatePartView"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ITableView" abstract="true" interface="true"
+      eSuperTypes="#//ILeafBodyPartTemplate #//ITemplatePartView">
+    <eOperations name="buildTitle" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This method build the title to use for this table view."/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="getRows" ordered="false" upperBound="-1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This method returns the elements to use as row from the context element given in parameter."/>
+      </eAnnotations>
+      <eParameters name="context" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+    </eOperations>
+    <eOperations name="buildRowHeaderLabel" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This method creates the label for the row header, from the rowElement given as parameter."/>
+      </eAnnotations>
+      <eParameters name="rowElement" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="columns" ordered="false"
+        upperBound="-1" eType="#//IColumn" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="generateRowHeader" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Boolean indicating if a Row Header must be generated or not."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="generateColumnHeader" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Boolean indicating if a Column Header must be generated or not."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IColumn" abstract="true" interface="true">
+    <eOperations name="buildColumnHeaderLabel" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This method returns the title to use for this column."/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="getCellValue" ordered="false" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EJavaObject">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This method returns the value of the cell. This value is deduced from the element represented by the column and from the row element given as parameter)."/>
+      </eAnnotations>
+      <eParameters name="row" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+    </eOperations>
+    <eOperations name="buildCellLabel" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This method creates the label from the cell value given as parameter."/>
+      </eAnnotations>
+      <eParameters name="cellElement" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EReferenceTableView" eSuperTypes="#//ITableView">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eReference" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EReference">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A EReference which should be provided by the EClass of the upper level.&#xD;&#xA;This reference will be used to fill the table with its value for the context element."/>
+        <details key="propertyEditorFactory" value="editor://documentstructuretemplate/EReferenceTableView/EReference/"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EStructuralFeatureColumn" eSuperTypes="#//IColumn">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This element allows to define a column representing an EStructuralFeature."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EStructuralFeature">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The feature represented by this column."/>
+        <details key="propertyEditorFactory" value="editor://documentstructuretemplate/EStructuralFeatureColumn/EStructuralFeature/"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
 </ecore:EPackage>

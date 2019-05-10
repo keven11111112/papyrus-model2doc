@@ -16,7 +16,7 @@
 package org.eclipse.papyrus.model2doc.integration.nattable.documentstructuretemplate.edit.internal.providers;
 
 import org.eclipse.papyrus.infra.nattable.representation.PapyrusTable;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.providers.DelegatingToEMFLabelProvider;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.providers.DelegatingToEMFLabelProvider;
 
 /**
  * Label provider displaying Table name and its type

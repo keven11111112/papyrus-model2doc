@@ -16,7 +16,7 @@
 package org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.edit.internal.providers;
 
 import org.eclipse.papyrus.infra.gmfdiag.representation.PapyrusDiagram;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.providers.DelegatingToEMFLabelProvider;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.providers.DelegatingToEMFLabelProvider;
 
 /**
  * This label provider returns the type of the {@link PapyrusDiagram} and its kindId

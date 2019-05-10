@@ -276,7 +276,6 @@ Its children are an alternation of two kinds of objects: IBodyPartTemplate and I
       </ownedComment>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_ZIXbMFYFEemKJasCEBKPhQ" name="EReferenceListView">
-      <generalization xmi:id="_cRJxEFYFEemKJasCEBKPhQ" general="_4exaMFYBEemKJasCEBKPhQ"/>
       <interfaceRealization xmi:id="_eghysFYFEemKJasCEBKPhQ" client="_ZIXbMFYFEemKJasCEBKPhQ" supplier="_DwGdIFYFEemKJasCEBKPhQ" contract="_DwGdIFYFEemKJasCEBKPhQ"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_XvipQFYUEemiOeXIb5muwQ" name="IBodySectionPartTemplate">
@@ -302,6 +301,126 @@ If false, we will use the object to cross the user model, but we will generate n
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eZ-pUFYGEemKJasCEBKPhQ"/>
       </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_hB8RkHHHEempmPy7tz2aIQ" name="ITableView">
+      <generalization xmi:id="_SYuI8HHIEempmPy7tz2aIQ" general="_DwGdIFYFEemKJasCEBKPhQ"/>
+      <generalization xmi:id="_X0_u8HHJEempmPy7tz2aIQ" general="_R99HIFX-EemKJasCEBKPhQ"/>
+      <ownedAttribute xmi:id="_FEw_kHHIEempmPy7tz2aIQ" name="columns" type="_A326QHHIEempmPy7tz2aIQ" aggregation="composite" association="_FEq48HHIEempmPy7tz2aIQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FE3GMHHIEempmPy7tz2aIQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FFGWwHHIEempmPy7tz2aIQ" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_Jq_QYHMTEemN45XGCLZszg" name="generateRowHeader">
+        <ownedComment xmi:id="_sQxYoHMTEemdXe53Ei-eJw" annotatedElement="_Jq_QYHMTEemN45XGCLZszg">
+          <body>Boolean indicating if a Row Header must be generated or not.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+        <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_UPdUsHMTEemN45XGCLZszg" name="defaultValue" value="true"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_lfbAoHMTEemdXe53Ei-eJw" name="generateColumnHeader">
+        <ownedComment xmi:id="_tB0bEHMTEemdXe53Ei-eJw" annotatedElement="_lfbAoHMTEemdXe53Ei-eJw">
+          <body>Boolean indicating if a Column Header must be generated or not.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+        <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_lfbAoXMTEemdXe53Ei-eJw" name="defaultValue" value="true"/>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_vqxjMHHHEempmPy7tz2aIQ" name="buildTitle">
+        <ownedComment xmi:id="_txB_YHLwEemN45XGCLZszg" annotatedElement="_vqxjMHHHEempmPy7tz2aIQ">
+          <body>This method build the title to use for this table view.</body>
+        </ownedComment>
+        <ownedParameter xmi:id="_vqxjMXHHEempmPy7tz2aIQ" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_vq0mgHHHEempmPy7tz2aIQ" name="getRows">
+        <ownedComment xmi:id="_vq0mgXHHEempmPy7tz2aIQ" annotatedElement="_vq0mgHHHEempmPy7tz2aIQ">
+          <body>This method returns the elements to use as row from the context element given in parameter.</body>
+        </ownedComment>
+        <ownedParameter xmi:id="_vq0mgnHHEempmPy7tz2aIQ" name="context">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_vq0mg3HHEempmPy7tz2aIQ" name="return" visibility="public" direction="return">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vq0mhHHHEempmPy7tz2aIQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vq0mhXHHEempmPy7tz2aIQ" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_ZZa8MHIjEempmPy7tz2aIQ" name="buildRowHeaderLabel">
+        <ownedComment xmi:id="_ICKw4HLxEemN45XGCLZszg" annotatedElement="_ZZa8MHIjEempmPy7tz2aIQ">
+          <body>This method creates the label for the row header, from the rowElement given as parameter.</body>
+        </ownedComment>
+        <ownedParameter xmi:id="_df30MHIjEempmPy7tz2aIQ" name="rowElement">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_gF1w4HIjEempmPy7tz2aIQ" name="returnValue" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_A326QHHIEempmPy7tz2aIQ" name="IColumn">
+      <ownedOperation xmi:id="_rcVXYHHIEempmPy7tz2aIQ" name="buildColumnHeaderLabel">
+        <ownedComment xmi:id="_QDjp4HLwEemN45XGCLZszg" annotatedElement="_rcVXYHHIEempmPy7tz2aIQ">
+          <body>This method returns the title to use for this column.</body>
+        </ownedComment>
+        <ownedParameter xmi:id="_zNjQ8HHIEempmPy7tz2aIQ" name="returnValue" visibility="public" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_5KJyQHHIEempmPy7tz2aIQ" name="getCellValue">
+        <ownedComment xmi:id="_gbTUYHLwEemN45XGCLZszg" annotatedElement="_5KJyQHHIEempmPy7tz2aIQ">
+          <body>This method returns the value of the cell. This value is deduced from the element represented by the column and from the row element given as parameter).</body>
+        </ownedComment>
+        <ownedParameter xmi:id="_9qETIHHIEempmPy7tz2aIQ" name="row">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_CKGv0HHJEempmPy7tz2aIQ" name="returnValue" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWkccX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_l9aoQHIjEempmPy7tz2aIQ" name="buildCellLabel">
+        <ownedComment xmi:id="_nOiiwHLwEemN45XGCLZszg" annotatedElement="_l9aoQHIjEempmPy7tz2aIQ">
+          <body>This method creates the label from the cell value given as parameter.</body>
+        </ownedComment>
+        <ownedParameter xmi:id="_vQJ-8HIjEempmPy7tz2aIQ" name="cellElement">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EJavaObject"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_yDgQUHIjEempmPy7tz2aIQ" name="returnedValue" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_FEq48HHIEempmPy7tz2aIQ" memberEnd="_FEw_kHHIEempmPy7tz2aIQ _FFSkAHHIEempmPy7tz2aIQ">
+      <eAnnotations xmi:id="_FEt8QHHIEempmPy7tz2aIQ" source="org.eclipse.papyrus">
+        <details xmi:id="_FEt8QXHIEempmPy7tz2aIQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:id="_FFSkAHHIEempmPy7tz2aIQ" name="tableview" type="_hB8RkHHHEempmPy7tz2aIQ" association="_FEq48HHIEempmPy7tz2aIQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_O_zsYHHIEempmPy7tz2aIQ" name="EReferenceTableView">
+      <ownedAttribute xmi:id="_noVhUHHIEempmPy7tz2aIQ" name="eReference">
+        <eAnnotations xmi:id="_noVhUXHIEempmPy7tz2aIQ" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:id="_noVhUnHIEempmPy7tz2aIQ" key="propertyEditorFactory" value="editor://documentstructuretemplate/EReferenceTableView/EReference/"/>
+        </eAnnotations>
+        <ownedComment xmi:id="_noVhU3HIEempmPy7tz2aIQ" annotatedElement="_noVhUHHIEempmPy7tz2aIQ">
+          <body>A EReference which should be provided by the EClass of the upper level.&#xD;
+This reference will be used to fill the table with its value for the context element.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWjvsX_EduPJbEsMYXjUQ"/>
+      </ownedAttribute>
+      <interfaceRealization xmi:id="_ioLaIHHIEempmPy7tz2aIQ" client="_O_zsYHHIEempmPy7tz2aIQ" supplier="_hB8RkHHHEempmPy7tz2aIQ" contract="_hB8RkHHHEempmPy7tz2aIQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Xmw7IHHIEempmPy7tz2aIQ" name="EStructuralFeatureColumn">
+      <ownedComment xmi:id="_J4RMUHLwEemN45XGCLZszg" annotatedElement="_Xmw7IHHIEempmPy7tz2aIQ">
+        <body>This element allows to define a column representing an EStructuralFeature.</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_bhiHkHHIEempmPy7tz2aIQ" name="feature">
+        <eAnnotations xmi:id="_fhapkHLxEemN45XGCLZszg" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:id="_fhapkXLxEemN45XGCLZszg" key="propertyEditorFactory" value="editor://documentstructuretemplate/EStructuralFeatureColumn/EStructuralFeature/"/>
+        </eAnnotations>
+        <ownedComment xmi:id="_M6ws8HLwEemN45XGCLZszg" annotatedElement="_bhiHkHHIEempmPy7tz2aIQ">
+          <body>The feature represented by this column.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWiSMX_EduPJbEsMYXjUQ"/>
+      </ownedAttribute>
+      <interfaceRealization xmi:id="_gssk4HHIEempmPy7tz2aIQ" client="_Xmw7IHHIEempmPy7tz2aIQ" supplier="_A326QHHIEempmPy7tz2aIQ" contract="_A326QHHIEempmPy7tz2aIQ"/>
     </packagedElement>
     <profileApplication xmi:id="_Dwr3IB2KEemmq_cjeiIGww">
       <eAnnotations xmi:id="_DwseMB2KEemmq_cjeiIGww" source="http://www.eclipse.org/uml2/2.0.0/UML">

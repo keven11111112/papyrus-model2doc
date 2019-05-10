@@ -16,6 +16,7 @@ package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.*;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.Body;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
@@ -287,19 +288,69 @@ public class DocumentStructureTemplateSwitch<T> extends Switch<T> {
 			EReferenceListView eReferenceListView = (EReferenceListView) theEObject;
 			T result = caseEReferenceListView(eReferenceListView);
 			if (result == null) {
-				result = caseEReferencePartTemplate(eReferenceListView);
-			}
-			if (result == null) {
 				result = caseITemplatePartView(eReferenceListView);
 			}
 			if (result == null) {
-				result = caseIComposedBodyPartTemplate(eReferenceListView);
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructureTemplatePackage.ITABLE_VIEW: {
+			ITableView iTableView = (ITableView) theEObject;
+			T result = caseITableView(iTableView);
+			if (result == null) {
+				result = caseILeafBodyPartTemplate(iTableView);
 			}
 			if (result == null) {
-				result = caseIBodyPartTemplate(eReferenceListView);
+				result = caseITemplatePartView(iTableView);
 			}
 			if (result == null) {
-				result = caseIBodySectionPartTemplate(eReferenceListView);
+				result = caseIBodyPartTemplate(iTableView);
+			}
+			if (result == null) {
+				result = caseIBodySectionPartTemplate(iTableView);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructureTemplatePackage.ICOLUMN: {
+			IColumn iColumn = (IColumn) theEObject;
+			T result = caseIColumn(iColumn);
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW: {
+			EReferenceTableView eReferenceTableView = (EReferenceTableView) theEObject;
+			T result = caseEReferenceTableView(eReferenceTableView);
+			if (result == null) {
+				result = caseITableView(eReferenceTableView);
+			}
+			if (result == null) {
+				result = caseILeafBodyPartTemplate(eReferenceTableView);
+			}
+			if (result == null) {
+				result = caseITemplatePartView(eReferenceTableView);
+			}
+			if (result == null) {
+				result = caseIBodyPartTemplate(eReferenceTableView);
+			}
+			if (result == null) {
+				result = caseIBodySectionPartTemplate(eReferenceTableView);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_COLUMN: {
+			EStructuralFeatureColumn eStructuralFeatureColumn = (EStructuralFeatureColumn) theEObject;
+			T result = caseEStructuralFeatureColumn(eStructuralFeatureColumn);
+			if (result == null) {
+				result = caseIColumn(eStructuralFeatureColumn);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
@@ -597,6 +648,74 @@ public class DocumentStructureTemplateSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEReferenceListView(EReferenceListView object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>ITable View</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>ITable View</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseITableView(ITableView object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IColumn</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IColumn</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIColumn(IColumn object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EReference Table View</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EReference Table View</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEReferenceTableView(EReferenceTableView object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EStructural Feature Column</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EStructural Feature Column</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEStructuralFeatureColumn(EStructuralFeatureColumn object) {
 		return null;
 	}
 

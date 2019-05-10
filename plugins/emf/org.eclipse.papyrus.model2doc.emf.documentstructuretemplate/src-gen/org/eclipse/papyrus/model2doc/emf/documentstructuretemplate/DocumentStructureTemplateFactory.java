@@ -105,6 +105,26 @@ public interface DocumentStructureTemplateFactory extends EFactory {
 	EReferenceListView createEReferenceListView();
 
 	/**
+	 * Returns a new object of class '<em>EReference Table View</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EReference Table View</em>'.
+	 * @generated
+	 */
+	EReferenceTableView createEReferenceTableView();
+
+	/**
+	 * Returns a new object of class '<em>EStructural Feature Column</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EStructural Feature Column</em>'.
+	 * @generated
+	 */
+	EStructuralFeatureColumn createEStructuralFeatureColumn();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
