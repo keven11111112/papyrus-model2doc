@@ -64,7 +64,7 @@ public class StereotypePartTemplateMapper extends AbstractUMLTemplateToStructure
 		if (stereotypePartTemplate.isGenerate()) {
 			if (stereotypePartTemplate.isGenerateTitle()) {
 				title = STRUCTURE_EFACTORY.createTitle();
-				title.setTitle(stereotypePartTemplate.buildTitle(semanticModelElement));
+				title.setTitle(stereotypePartTemplate.buildPartTemplateTitle(semanticModelElement));
 				returnedElements.add(expectedReturnedClass.cast(title));
 			}
 		}

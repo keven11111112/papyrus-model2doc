@@ -88,13 +88,4 @@ public interface CommentAsParagraph extends ILeafBodyPartTemplate, ITemplatePart
 	 */
 	EList<Comment> getMatchingComments(EObject element);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @model required="true" ordered="false"
-	 * @generated
-	 */
-	String buildTitle();
-
 } // CommentAsParagraph

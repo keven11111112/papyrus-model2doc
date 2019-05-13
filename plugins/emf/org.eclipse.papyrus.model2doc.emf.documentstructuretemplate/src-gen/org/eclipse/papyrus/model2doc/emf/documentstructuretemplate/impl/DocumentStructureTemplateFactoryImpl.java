@@ -17,19 +17,12 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.*;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.Body;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplateFactory;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplatePrototype;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassFilterBehavior;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassPartTemplate;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceListView;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TableOfContents;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentTemplate;
 
 /**
  * <!-- begin-user-doc -->

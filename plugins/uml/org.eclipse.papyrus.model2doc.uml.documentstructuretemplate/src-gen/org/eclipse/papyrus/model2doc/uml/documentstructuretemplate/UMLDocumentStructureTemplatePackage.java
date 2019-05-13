@@ -178,6 +178,16 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	int STEREOTYPE_PART_TEMPLATE_FEATURE_COUNT = DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Build Part Template Title</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int STEREOTYPE_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT = DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT;
+
+	/**
 	 * The operation id for the '<em>Is Matching Filter Rule</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -186,16 +196,6 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @ordered
 	 */
 	int STEREOTYPE_PART_TEMPLATE___IS_MATCHING_FILTER_RULE__EOBJECT = DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE___IS_MATCHING_FILTER_RULE__EOBJECT;
-
-	/**
-	 * The operation id for the '<em>Build Title</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int STEREOTYPE_PART_TEMPLATE___BUILD_TITLE__EOBJECT = DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE___BUILD_TITLE__EOBJECT;
 
 	/**
 	 * The operation id for the '<em>Get Stereotype Qualified Name</em>' operation.
@@ -390,6 +390,16 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	int STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE_FEATURE_COUNT = DocumentStructureTemplatePackage.ICOMPOSED_BODY_PART_TEMPLATE_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Build Part Template Title</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT = DocumentStructureTemplatePackage.ICOMPOSED_BODY_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT;
+
+	/**
 	 * The operation id for the '<em>Get Stereotype Qualified Name</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -430,16 +440,6 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	int STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE___GET_MATCHING_REFERENCED_EOBJECTS__EOBJECT = DocumentStructureTemplatePackage.ICOMPOSED_BODY_PART_TEMPLATE_OPERATION_COUNT + 3;
 
 	/**
-	 * The operation id for the '<em>Build Title</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE___BUILD_TITLE = DocumentStructureTemplatePackage.ICOMPOSED_BODY_PART_TEMPLATE_OPERATION_COUNT + 4;
-
-	/**
 	 * The number of operations of the '<em>Stereotype Property Reference Part Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -447,7 +447,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE_OPERATION_COUNT = DocumentStructureTemplatePackage.ICOMPOSED_BODY_PART_TEMPLATE_OPERATION_COUNT + 5;
+	int STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE_OPERATION_COUNT = DocumentStructureTemplatePackage.ICOMPOSED_BODY_PART_TEMPLATE_OPERATION_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.CommentAsParagraphImpl <em>Comment As Paragraph</em>}' class.
@@ -511,6 +511,16 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	int COMMENT_AS_PARAGRAPH_FEATURE_COUNT = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Build Part Template Title</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT_AS_PARAGRAPH___BUILD_PART_TEMPLATE_TITLE__EOBJECT = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT;
+
+	/**
 	 * The operation id for the '<em>Get Matching Comments</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -521,16 +531,6 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	int COMMENT_AS_PARAGRAPH___GET_MATCHING_COMMENTS__EOBJECT = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE_OPERATION_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Build Title</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int COMMENT_AS_PARAGRAPH___BUILD_TITLE = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE_OPERATION_COUNT + 1;
-
-	/**
 	 * The number of operations of the '<em>Comment As Paragraph</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -538,7 +538,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMENT_AS_PARAGRAPH_OPERATION_COUNT = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE_OPERATION_COUNT + 2;
+	int COMMENT_AS_PARAGRAPH_OPERATION_COUNT = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.uml2.uml.Comment <em>Comment</em>}' class.
@@ -734,17 +734,6 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	EOperation getStereotypePropertyReferencePartTemplate__GetMatchingReferencedEObjects__EObject();
 
 	/**
-	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferencePartTemplate#buildTitle() <em>Build Title</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the meta object for the '<em>Build Title</em>' operation.
-	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferencePartTemplate#buildTitle()
-	 * @generated
-	 */
-	EOperation getStereotypePropertyReferencePartTemplate__BuildTitle();
-
-	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.CommentAsParagraph <em>Comment As Paragraph</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -777,17 +766,6 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getCommentAsParagraph__GetMatchingComments__EObject();
-
-	/**
-	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.CommentAsParagraph#buildTitle() <em>Build Title</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the meta object for the '<em>Build Title</em>' operation.
-	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.CommentAsParagraph#buildTitle()
-	 * @generated
-	 */
-	EOperation getCommentAsParagraph__BuildTitle();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.uml2.uml.Comment <em>Comment</em>}'.
@@ -963,15 +941,6 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 		EOperation STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE___GET_MATCHING_REFERENCED_EOBJECTS__EOBJECT = eINSTANCE.getStereotypePropertyReferencePartTemplate__GetMatchingReferencedEObjects__EObject();
 
 		/**
-		 * The meta object literal for the '<em><b>Build Title</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 *
-		 * @generated
-		 */
-		EOperation STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE___BUILD_TITLE = eINSTANCE.getStereotypePropertyReferencePartTemplate__BuildTitle();
-
-		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.CommentAsParagraphImpl <em>Comment As Paragraph</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -999,15 +968,6 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 		 * @generated
 		 */
 		EOperation COMMENT_AS_PARAGRAPH___GET_MATCHING_COMMENTS__EOBJECT = eINSTANCE.getCommentAsParagraph__GetMatchingComments__EObject();
-
-		/**
-		 * The meta object literal for the '<em><b>Build Title</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 *
-		 * @generated
-		 */
-		EOperation COMMENT_AS_PARAGRAPH___BUILD_TITLE = eINSTANCE.getCommentAsParagraph__BuildTitle();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.uml2.uml.Comment <em>Comment</em>}' class.

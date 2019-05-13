@@ -65,6 +65,10 @@ public enum ContextFilterBehavior implements Enumerator {
 	/**
 	 * The '<em><b>SEMANTIC CONTEXT</b></em>' literal value.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>SEMANTIC CONTEXT</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #SEMANTIC_CONTEXT
 	 * @model
@@ -76,6 +80,10 @@ public enum ContextFilterBehavior implements Enumerator {
 	/**
 	 * The '<em><b>GRAPHICAL CONTEXT</b></em>' literal value.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>GRAPHICAL CONTEXT</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #GRAPHICAL_CONTEXT
 	 * @model
@@ -87,6 +95,10 @@ public enum ContextFilterBehavior implements Enumerator {
 	/**
 	 * The '<em><b>BOTH</b></em>' literal value.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>BOTH</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #BOTH
 	 * @model

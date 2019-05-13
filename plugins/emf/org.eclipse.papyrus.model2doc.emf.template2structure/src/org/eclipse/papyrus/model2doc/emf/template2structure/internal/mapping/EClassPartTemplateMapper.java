@@ -61,7 +61,7 @@ public class EClassPartTemplateMapper extends AbstractEMFTemplateToStructureMapp
 		if (eClassPartTemplate.isGenerate()) {
 			if (eClassPartTemplate.isGenerateTitle()) {
 				title = STRUCTURE_EFACTORY.createTitle();
-				title.setTitle(eClassPartTemplate.buildTitle(semanticModelElement));
+				title.setTitle(eClassPartTemplate.buildPartTemplateTitle(semanticModelElement));
 				returnedElements.add(expectedReturnedClass.cast(title));
 			}
 		}

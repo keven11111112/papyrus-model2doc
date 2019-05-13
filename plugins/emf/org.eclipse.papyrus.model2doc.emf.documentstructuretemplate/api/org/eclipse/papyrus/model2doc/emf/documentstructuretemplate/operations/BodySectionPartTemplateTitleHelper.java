@@ -44,23 +44,12 @@ public class BodySectionPartTemplateTitleHelper {
 	 *
 	 * @param partTemplate
 	 *            a part template
-	 * @return
-	 *         the built title, if the method {@link IBodySectionPartTemplate#isGenerateTitle()} returns <code>true</code>
-	 */
-	public String buildTitle(final IBodySectionPartTemplate partTemplate) {
-		return buildTitle(partTemplate, null);
-	}
-
-	/**
-	 *
-	 * @param partTemplate
-	 *            a part template
 	 * @param parameter
 	 *            a parameter to use to build the title. This parameter can be <code>null</code>
 	 * @return
 	 *         the built title, if the method {@link IBodySectionPartTemplate#isGenerateTitle()} returns <code>true</code>
 	 */
-	public final String buildTitle(final IBodySectionPartTemplate partTemplate, final EObject parameter) {
+	public final String buildPartTemplateTitle(final IBodySectionPartTemplate partTemplate, final EObject parameter) {
 		if (false == partTemplate.isGenerateTitle()) {
 			return null;
 		}
@@ -68,7 +57,7 @@ public class BodySectionPartTemplateTitleHelper {
 		if (null != customTitle && false == customTitle.isEmpty()) {
 			return customTitle;
 		}
-		return internalBuildTitle(partTemplate, parameter);
+		return internalBuildPartTemplateTitle(partTemplate, parameter);
 	}
 
 	/**
@@ -81,7 +70,7 @@ public class BodySectionPartTemplateTitleHelper {
 	 * @return
 	 *         the built title for the part template or an empty string if the {@link IBodySectionPartTemplate} is not managed
 	 */
-	protected String internalBuildTitle(final IBodySectionPartTemplate partTemplate, final EObject parameter) {
+	protected String internalBuildPartTemplateTitle(final IBodySectionPartTemplate partTemplate, final EObject parameter) {
 		if (partTemplate instanceof EReferencePartTemplate) {
 			return buildEReferencePartTemplateTitle((EReferencePartTemplate) partTemplate);
 		}

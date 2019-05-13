@@ -86,6 +86,9 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//IBodySectionPartTemplate/generate"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//IBodySectionPartTemplate/generateTitle"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//IBodySectionPartTemplate/customTitle"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="documentstructuretemplate.ecore#//IBodySectionPartTemplate/buildPartTemplateTitle">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="documentstructuretemplate.ecore#//IBodySectionPartTemplate/buildPartTemplateTitle/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructuretemplate.ecore#//IComposedBodyPartTemplate">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -105,14 +108,10 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="documentstructuretemplate.ecore#//EClassPartTemplate/isMatchingFilterRule">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="documentstructuretemplate.ecore#//EClassPartTemplate/isMatchingFilterRule/inputEObject"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="documentstructuretemplate.ecore#//EClassPartTemplate/buildTitle">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="documentstructuretemplate.ecore#//EClassPartTemplate/buildTitle/titleContext"/>
-      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructuretemplate.ecore#//EReferencePartTemplate">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//EReferencePartTemplate/eReference"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="documentstructuretemplate.ecore#//EReferencePartTemplate/buildTitle"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="documentstructuretemplate.ecore#//EReferencePartTemplate/getMatchingReferencedEObjects">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="documentstructuretemplate.ecore#//EReferencePartTemplate/getMatchingReferencedEObjects/context"/>
       </genOperations>
@@ -124,7 +123,6 @@
           createChild="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//ITableView/columns"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//ITableView/generateRowHeader"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//ITableView/generateColumnHeader"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="documentstructuretemplate.ecore#//ITableView/buildTitle"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="documentstructuretemplate.ecore#//ITableView/getRows">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="documentstructuretemplate.ecore#//ITableView/getRows/context"/>
       </genOperations>

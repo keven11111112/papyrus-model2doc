@@ -66,7 +66,7 @@ public class StereotypePropertyReferencePartTemplateMapper extends AbstractUMLTe
 		if (stereotypePropertyPartTemplate.isGenerate()) {
 			if (stereotypePropertyPartTemplate.isGenerateTitle()) {
 				title = STRUCTURE_EFACTORY.createTitle();
-				title.setTitle(stereotypePropertyPartTemplate.buildTitle());
+				title.setTitle(stereotypePropertyPartTemplate.buildPartTemplateTitle(null));
 				returnedElements.add(expectedReturnedClass.cast(title));
 			}
 		}

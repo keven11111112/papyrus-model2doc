@@ -115,18 +115,6 @@ public interface ITableView extends ILeafBodyPartTemplate, ITemplatePartView {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This method build the title to use for this table view.
-	 * <!-- end-model-doc -->
-	 *
-	 * @model required="true" ordered="false"
-	 * @generated
-	 */
-	String buildTitle();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
 	 * This method returns the elements to use as row from the context element given in parameter.
 	 * <!-- end-model-doc -->
 	 *

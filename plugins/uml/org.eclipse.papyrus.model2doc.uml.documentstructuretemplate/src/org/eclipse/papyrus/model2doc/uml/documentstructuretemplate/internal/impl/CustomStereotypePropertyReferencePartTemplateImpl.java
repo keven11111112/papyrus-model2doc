@@ -85,13 +85,15 @@ public class CustomStereotypePropertyReferencePartTemplateImpl extends Stereotyp
 	}
 
 	/**
-	 * @see org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.impl.StereotypePropertyReferencePartTemplateImpl#buildTitle()
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassPartTemplateImpl#buildPartTemplateTitle(org.eclipse.emf.ecore.EObject)
 	 *
+	 * @param context
 	 * @return
 	 */
 	@Override
-	public String buildTitle() {
-		return UML_TITLE_HELPER.buildTitle(this);
+	public String buildPartTemplateTitle(final EObject context) {
+		return UML_TITLE_HELPER.buildPartTemplateTitle(this, context);
+
 	}
 
 	/**

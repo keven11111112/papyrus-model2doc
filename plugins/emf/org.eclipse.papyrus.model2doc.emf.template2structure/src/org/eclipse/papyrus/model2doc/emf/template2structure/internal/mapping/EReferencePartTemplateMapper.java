@@ -62,7 +62,7 @@ public class EReferencePartTemplateMapper extends AbstractEMFTemplateToStructure
 		if (referencePartTemplate.isGenerate()) {
 			if (referencePartTemplate.isGenerateTitle()) {
 				title = STRUCTURE_EFACTORY.createTitle();
-				title.setTitle(referencePartTemplate.buildTitle());
+				title.setTitle(referencePartTemplate.buildPartTemplateTitle(null));
 				returnedElements.add(expectedReturnedClass.cast(title));
 			}
 		}

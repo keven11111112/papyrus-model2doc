@@ -64,17 +64,6 @@ If type and kind are not defined, the method will returns all table owned by the
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XXElMGzZEemv9PXZKzcfkA" value="*"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_AkjFEGzYEemv9PXZKzcfkA" name="buildTitle">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_yPywkGzYEemv9PXZKzcfkA" annotatedElement="_AkjFEGzYEemv9PXZKzcfkA">
-          <body>Build the title to use for the Table, according to the given eobject in parameter.</body>
-        </ownedComment>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_D2QtcGzYEemv9PXZKzcfkA" name="tableContext">
-          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
-        </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_F0TugGzYEemv9PXZKzcfkA" name="return " direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-        </ownedParameter>
-      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_5ZtEcGzWEemv9PXZKzcfkA" name="ContextFilterBehavior">
       <ownedComment xmi:type="uml:Comment" xmi:id="_3pTK4GzjEemJ-foOn68QUw" annotatedElement="_5ZtEcGzWEemv9PXZKzcfkA">

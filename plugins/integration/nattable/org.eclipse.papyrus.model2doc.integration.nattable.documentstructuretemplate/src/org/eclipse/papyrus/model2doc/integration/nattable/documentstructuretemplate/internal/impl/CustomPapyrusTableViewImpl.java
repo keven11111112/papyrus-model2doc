@@ -152,12 +152,12 @@ public class CustomPapyrusTableViewImpl extends PapyrusTableViewImpl {
 
 
 	/**
-	 * @see org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.impl.PapyrusGMFDiagramViewImpl#buildTitle()
+	 * @see org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.impl.PapyrusGMFDiagramViewImpl#buildPartTemplateTitle()
 	 *
 	 * @return
 	 */
 	@Override
-	public String buildTitle(final EObject tableContext) {
+	public String buildPartTemplateTitle(final EObject tableContext) {
 		if (hasTableKindId() && false == hasTableType()) {
 			return NLS.bind("{0} tables", this.tableKindId); //$NON-NLS-1$
 		} else if (hasTableType() && false == hasTableKindId()) {

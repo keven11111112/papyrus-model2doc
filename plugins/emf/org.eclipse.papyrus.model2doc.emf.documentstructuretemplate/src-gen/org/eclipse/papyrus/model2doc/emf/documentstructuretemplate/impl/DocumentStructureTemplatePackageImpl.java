@@ -622,6 +622,17 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
+	public EOperation getIBodySectionPartTemplate__BuildPartTemplateTitle__EObject() {
+		return iBodySectionPartTemplateEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EClass getIComposedBodyPartTemplate() {
 		return iComposedBodyPartTemplateEClass;
 	}
@@ -743,17 +754,6 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
-	public EOperation getEClassPartTemplate__BuildTitle__EObject() {
-		return eClassPartTemplateEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
 	public EClass getEReferencePartTemplate() {
 		return eReferencePartTemplateEClass;
 	}
@@ -776,19 +776,8 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
-	public EOperation getEReferencePartTemplate__BuildTitle() {
-		return eReferencePartTemplateEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
 	public EOperation getEReferencePartTemplate__GetMatchingReferencedEObjects__EObject() {
-		return eReferencePartTemplateEClass.getEOperations().get(1);
+		return eReferencePartTemplateEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -864,7 +853,7 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
-	public EOperation getITableView__BuildTitle() {
+	public EOperation getITableView__GetRows__EObject() {
 		return iTableViewEClass.getEOperations().get(0);
 	}
 
@@ -875,19 +864,8 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
-	public EOperation getITableView__GetRows__EObject() {
-		return iTableViewEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
 	public EOperation getITableView__BuildRowHeaderLabel__EObject() {
-		return iTableViewEClass.getEOperations().get(2);
+		return iTableViewEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -1058,6 +1036,7 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		createEAttribute(iBodySectionPartTemplateEClass, IBODY_SECTION_PART_TEMPLATE__GENERATE);
 		createEAttribute(iBodySectionPartTemplateEClass, IBODY_SECTION_PART_TEMPLATE__GENERATE_TITLE);
 		createEAttribute(iBodySectionPartTemplateEClass, IBODY_SECTION_PART_TEMPLATE__CUSTOM_TITLE);
+		createEOperation(iBodySectionPartTemplateEClass, IBODY_SECTION_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT);
 
 		iComposedBodyPartTemplateEClass = createEClass(ICOMPOSED_BODY_PART_TEMPLATE);
 		createEReference(iComposedBodyPartTemplateEClass, ICOMPOSED_BODY_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE);
@@ -1075,11 +1054,9 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		createEReference(eClassPartTemplateEClass, ECLASS_PART_TEMPLATE__ECLASS);
 		createEAttribute(eClassPartTemplateEClass, ECLASS_PART_TEMPLATE__FILTER_RULE);
 		createEOperation(eClassPartTemplateEClass, ECLASS_PART_TEMPLATE___IS_MATCHING_FILTER_RULE__EOBJECT);
-		createEOperation(eClassPartTemplateEClass, ECLASS_PART_TEMPLATE___BUILD_TITLE__EOBJECT);
 
 		eReferencePartTemplateEClass = createEClass(EREFERENCE_PART_TEMPLATE);
 		createEReference(eReferencePartTemplateEClass, EREFERENCE_PART_TEMPLATE__EREFERENCE);
-		createEOperation(eReferencePartTemplateEClass, EREFERENCE_PART_TEMPLATE___BUILD_TITLE);
 		createEOperation(eReferencePartTemplateEClass, EREFERENCE_PART_TEMPLATE___GET_MATCHING_REFERENCED_EOBJECTS__EOBJECT);
 
 		iTemplatePartViewEClass = createEClass(ITEMPLATE_PART_VIEW);
@@ -1090,7 +1067,6 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		createEReference(iTableViewEClass, ITABLE_VIEW__COLUMNS);
 		createEAttribute(iTableViewEClass, ITABLE_VIEW__GENERATE_ROW_HEADER);
 		createEAttribute(iTableViewEClass, ITABLE_VIEW__GENERATE_COLUMN_HEADER);
-		createEOperation(iTableViewEClass, ITABLE_VIEW___BUILD_TITLE);
 		createEOperation(iTableViewEClass, ITABLE_VIEW___GET_ROWS__EOBJECT);
 		createEOperation(iTableViewEClass, ITABLE_VIEW___BUILD_ROW_HEADER_LABEL__EOBJECT);
 
@@ -1210,6 +1186,9 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 				!IS_ORDERED);
 		initEAttribute(getIBodySectionPartTemplate_CustomTitle(), ecorePackage.getEString(), "customTitle", null, 0, 1, IBodySectionPartTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
+		EOperation op = initEOperation(getIBodySectionPartTemplate__BuildPartTemplateTitle__EObject(), ecorePackage.getEString(), "buildPartTemplateTitle", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+		addEParameter(op, theEcorePackage.getEObject(), "context", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
 		initEClass(iComposedBodyPartTemplateEClass, IComposedBodyPartTemplate.class, "IComposedBodyPartTemplate", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(getIComposedBodyPartTemplate_SubBodyPartTemplate(), this.getISubBodyPartTemplate(), null, "subBodyPartTemplate", null, 0, -1, IComposedBodyPartTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, //$NON-NLS-1$
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1229,17 +1208,12 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 				!IS_ORDERED);
 		initEAttribute(getEClassPartTemplate_FilterRule(), this.getEClassFilterBehavior(), "filterRule", "TYPE_OF", 1, 1, EClassPartTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
 
-		EOperation op = initEOperation(getEClassPartTemplate__IsMatchingFilterRule__EObject(), ecorePackage.getEBoolean(), "isMatchingFilterRule", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+		op = initEOperation(getEClassPartTemplate__IsMatchingFilterRule__EObject(), ecorePackage.getEBoolean(), "isMatchingFilterRule", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 		addEParameter(op, theEcorePackage.getEObject(), "inputEObject", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
-
-		op = initEOperation(getEClassPartTemplate__BuildTitle__EObject(), ecorePackage.getEString(), "buildTitle", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
-		addEParameter(op, theEcorePackage.getEObject(), "titleContext", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(eReferencePartTemplateEClass, EReferencePartTemplate.class, "EReferencePartTemplate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(getEReferencePartTemplate_EReference(), theEcorePackage.getEReference(), null, "eReference", null, 1, 1, EReferencePartTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, //$NON-NLS-1$
 				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEOperation(getEReferencePartTemplate__BuildTitle(), ecorePackage.getEString(), "buildTitle", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
 		op = initEOperation(getEReferencePartTemplate__GetMatchingReferencedEObjects__EObject(), theEcorePackage.getEObject(), "getMatchingReferencedEObjects", 0, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 		addEParameter(op, theEcorePackage.getEObject(), "context", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
@@ -1252,8 +1226,6 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		initEReference(getITableView_Columns(), this.getIColumn(), null, "columns", null, 0, -1, ITableView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 		initEAttribute(getITableView_GenerateRowHeader(), ecorePackage.getEBoolean(), "generateRowHeader", "true", 1, 1, ITableView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
 		initEAttribute(getITableView_GenerateColumnHeader(), ecorePackage.getEBoolean(), "generateColumnHeader", "true", 1, 1, ITableView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
-
-		initEOperation(getITableView__BuildTitle(), ecorePackage.getEString(), "buildTitle", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
 		op = initEOperation(getITableView__GetRows__EObject(), theEcorePackage.getEObject(), "getRows", 0, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 		addEParameter(op, theEcorePackage.getEObject(), "context", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$

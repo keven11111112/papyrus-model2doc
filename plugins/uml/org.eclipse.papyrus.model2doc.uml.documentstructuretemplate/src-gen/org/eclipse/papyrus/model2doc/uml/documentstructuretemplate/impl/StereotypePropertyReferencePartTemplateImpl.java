@@ -400,6 +400,19 @@ public class StereotypePropertyReferencePartTemplateImpl extends MinimalEObjectI
 	 * @generated
 	 */
 	@Override
+	public String buildPartTemplateTitle(EObject context) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EObject getFirstMatchingStereotypeApplication(EObject element) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -414,19 +427,6 @@ public class StereotypePropertyReferencePartTemplateImpl extends MinimalEObjectI
 	 */
 	@Override
 	public EList<EObject> getMatchingReferencedEObjects(EObject eobject) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public String buildTitle() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -603,12 +603,12 @@ public class StereotypePropertyReferencePartTemplateImpl extends MinimalEObjectI
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT:
+			return buildPartTemplateTitle((EObject) arguments.get(0));
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE___GET_FIRST_MATCHING_STEREOTYPE_APPLICATION__EOBJECT:
 			return getFirstMatchingStereotypeApplication((EObject) arguments.get(0));
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE___GET_MATCHING_REFERENCED_EOBJECTS__EOBJECT:
 			return getMatchingReferencedEObjects((EObject) arguments.get(0));
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE___BUILD_TITLE:
-			return buildTitle();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

@@ -157,12 +157,12 @@ public class CustomPapyrusGMFDiagramViewImpl extends PapyrusGMFDiagramViewImpl {
 
 
 	/**
-	 * @see org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.impl.PapyrusGMFDiagramViewImpl#buildTitle()
+	 * @see org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.impl.PapyrusGMFDiagramViewImpl#buildPartTemplateTitle()
 	 *
 	 * @return
 	 */
 	@Override
-	public String buildTitle(final EObject diagramContext) {
+	public String buildPartTemplateTitle(final EObject diagramContext) {
 		if (hasDiagramKindId() && false == hasDiagramType()) {
 			return NLS.bind("{0} diagrams", this.diagramKindId); //$NON-NLS-1$
 		} else if (hasDiagramType() && false == hasDiagramKindId()) {

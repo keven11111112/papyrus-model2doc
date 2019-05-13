@@ -55,9 +55,6 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="papyrusgmfdocumentstructuretemplate.ecore#//PapyrusGMFDiagramView/getMatchingDiagrams">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="papyrusgmfdocumentstructuretemplate.ecore#//PapyrusGMFDiagramView/getMatchingDiagrams/expectedDiagramContext"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="papyrusgmfdocumentstructuretemplate.ecore#//PapyrusGMFDiagramView/buildTitle">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="papyrusgmfdocumentstructuretemplate.ecore#//PapyrusGMFDiagramView/buildTitle/diagramContext"/>
-      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="papyrusgmfdocumentstructuretemplate.ecore#//Diagram"/>
   </genPackages>

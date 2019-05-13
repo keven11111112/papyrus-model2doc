@@ -15,12 +15,6 @@
       </eAnnotations>
       <eParameters name="expectedTableContext" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
     </eOperations>
-    <eOperations name="buildTitle" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Build the title to use for the Table, according to the given eobject in parameter."/>
-      </eAnnotations>
-      <eParameters name="tableContext" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
-    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tableKindId" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

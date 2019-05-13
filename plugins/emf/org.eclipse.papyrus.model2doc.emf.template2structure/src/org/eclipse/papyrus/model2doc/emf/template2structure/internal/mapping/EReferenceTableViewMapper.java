@@ -72,7 +72,7 @@ public class EReferenceTableViewMapper extends AbstractEMFTemplateToStructureMap
 		if (eReferenceTableView.isGenerate()) {
 			if (eReferenceTableView.isGenerateTitle()) {
 				title = STRUCTURE_EFACTORY.createTitle();
-				title.setTitle(eReferenceTableView.buildTitle());
+				title.setTitle(eReferenceTableView.buildPartTemplateTitle(null));
 				returnedElements.add(expectedReturnedClass.cast(title));
 			}
 		}

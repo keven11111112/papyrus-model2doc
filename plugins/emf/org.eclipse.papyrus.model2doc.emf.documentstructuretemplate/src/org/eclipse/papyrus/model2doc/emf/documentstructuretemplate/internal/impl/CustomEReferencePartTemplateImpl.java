@@ -42,8 +42,8 @@ public class CustomEReferencePartTemplateImpl extends EReferencePartTemplateImpl
 	 * @return
 	 */
 	@Override
-	public String buildTitle() {
-		return TITLE_HELPER.buildTitle(this);
+	public String buildPartTemplateTitle(final EObject eobject) {
+		return TITLE_HELPER.buildPartTemplateTitle(this, eobject);
 	}
 
 	/**

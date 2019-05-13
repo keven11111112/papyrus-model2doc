@@ -308,7 +308,7 @@ public class EReferencePartTemplateImpl extends MinimalEObjectImpl.Container imp
 	 * @generated
 	 */
 	@Override
-	public String buildTitle() {
+	public String buildPartTemplateTitle(EObject context) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -458,8 +458,8 @@ public class EReferencePartTemplateImpl extends MinimalEObjectImpl.Container imp
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE___BUILD_TITLE:
-			return buildTitle();
+		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT:
+			return buildPartTemplateTitle((EObject) arguments.get(0));
 		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE___GET_MATCHING_REFERENCED_EOBJECTS__EOBJECT:
 			return getMatchingReferencedEObjects((EObject) arguments.get(0));
 		}

@@ -205,16 +205,6 @@ public class PapyrusNattableDocumentStructureTemplatePackageImpl extends EPackag
 	 * @generated
 	 */
 	@Override
-	public EOperation getPapyrusTableView__BuildTitle__EObject() {
-		return papyrusTableViewEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getTable() {
 		return tableEClass;
 	}
@@ -276,7 +266,6 @@ public class PapyrusNattableDocumentStructureTemplatePackageImpl extends EPackag
 		createEAttribute(papyrusTableViewEClass, PAPYRUS_TABLE_VIEW__CONTEXT_FILTER_RULE);
 		createEAttribute(papyrusTableViewEClass, PAPYRUS_TABLE_VIEW__IMPORT_METHOD);
 		createEOperation(papyrusTableViewEClass, PAPYRUS_TABLE_VIEW___GET_MATCHING_TABLES__EOBJECT);
-		createEOperation(papyrusTableViewEClass, PAPYRUS_TABLE_VIEW___BUILD_TITLE__EOBJECT);
 
 		tableEClass = createEClass(TABLE);
 
@@ -332,9 +321,6 @@ public class PapyrusNattableDocumentStructureTemplatePackageImpl extends EPackag
 
 		EOperation op = initEOperation(getPapyrusTableView__GetMatchingTables__EObject(), this.getTable(), "getMatchingTables", 0, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 		addEParameter(op, theEcorePackage.getEObject(), "expectedTableContext", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
-
-		op = initEOperation(getPapyrusTableView__BuildTitle__EObject(), ecorePackage.getEString(), "buildTitle", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
-		addEParameter(op, theEcorePackage.getEObject(), "tableContext", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(tableEClass, Table.class, "Table", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 

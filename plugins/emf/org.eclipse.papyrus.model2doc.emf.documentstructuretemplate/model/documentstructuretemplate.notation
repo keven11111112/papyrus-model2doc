@@ -415,6 +415,10 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Xv3ZZlYUEemiOeXIb5muwQ"/>
       </children>
       <children xmi:type="notation:BasicCompartment" xmi:id="_Xv4AcFYUEemiOeXIb5muwQ" type="Interface_OperationCompartment">
+        <children xmi:type="notation:Shape" xmi:id="__ijwMHV1EemQUasExi-pKA" type="Operation_InterfaceOperationLabel">
+          <element xmi:type="uml:Operation" href="documentstructuretemplate.uml#__h3MoHV1EemQUasExi-pKA"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="__ijwMXV1EemQUasExi-pKA"/>
+        </children>
         <styles xmi:type="notation:TitleStyle" xmi:id="_Xv4AcVYUEemiOeXIb5muwQ"/>
         <styles xmi:type="notation:SortingStyle" xmi:id="_Xv4AclYUEemiOeXIb5muwQ"/>
         <styles xmi:type="notation:FilteringStyle" xmi:id="_Xv4Ac1YUEemiOeXIb5muwQ"/>
@@ -864,10 +868,6 @@
           <element xmi:type="uml:Operation" href="documentstructuretemplate.uml#_n4VzcFYBEemKJasCEBKPhQ"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_oVbYEVYBEemKJasCEBKPhQ"/>
         </children>
-        <children xmi:type="notation:Shape" xmi:id="_OJwP0F-NEemxcMQajU1fyA" type="Operation_ClassOperationLabel">
-          <element xmi:type="uml:Operation" href="documentstructuretemplate.uml#_J4XTIF-NEemxcMQajU1fyA"/>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_OJwP0V-NEemxcMQajU1fyA"/>
-        </children>
         <styles xmi:type="notation:TitleStyle" xmi:id="_QLdue1YBEemKJasCEBKPhQ"/>
         <styles xmi:type="notation:SortingStyle" xmi:id="_QLdufFYBEemKJasCEBKPhQ"/>
         <styles xmi:type="notation:FilteringStyle" xmi:id="_QLdufVYBEemKJasCEBKPhQ"/>
@@ -920,10 +920,6 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4ezPZ1YBEemKJasCEBKPhQ"/>
       </children>
       <children xmi:type="notation:BasicCompartment" xmi:id="_4ezPaFYBEemKJasCEBKPhQ" type="Class_OperationCompartment">
-        <children xmi:type="notation:Shape" xmi:id="_BexyAF-NEemxcMQajU1fyA" type="Operation_ClassOperationLabel">
-          <element xmi:type="uml:Operation" href="documentstructuretemplate.uml#_BeWUMF-NEemxcMQajU1fyA"/>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_BexyAV-NEemxcMQajU1fyA"/>
-        </children>
         <children xmi:type="notation:Shape" xmi:id="_tTHDUGAjEemxcMQajU1fyA" type="Operation_ClassOperationLabel">
           <element xmi:type="uml:Operation" href="documentstructuretemplate.uml#_tSmF8GAjEemxcMQajU1fyA"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_tTHDUWAjEemxcMQajU1fyA"/>
@@ -1019,10 +1015,6 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hB_U53HHEempmPy7tz2aIQ"/>
       </children>
       <children xmi:type="notation:BasicCompartment" xmi:id="_hB_U6HHHEempmPy7tz2aIQ" type="Interface_OperationCompartment">
-        <children xmi:type="notation:Shape" xmi:id="_1RWxMHHHEempmPy7tz2aIQ" type="Operation_InterfaceOperationLabel">
-          <element xmi:type="uml:Operation" href="documentstructuretemplate.uml#_vqxjMHHHEempmPy7tz2aIQ"/>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_1RWxMXHHEempmPy7tz2aIQ"/>
-        </children>
         <children xmi:type="notation:Shape" xmi:id="_1UXB4HHHEempmPy7tz2aIQ" type="Operation_InterfaceOperationLabel">
           <element xmi:type="uml:Operation" href="documentstructuretemplate.uml#_vq0mgHHHEempmPy7tz2aIQ"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_1UXB4XHHEempmPy7tz2aIQ"/>

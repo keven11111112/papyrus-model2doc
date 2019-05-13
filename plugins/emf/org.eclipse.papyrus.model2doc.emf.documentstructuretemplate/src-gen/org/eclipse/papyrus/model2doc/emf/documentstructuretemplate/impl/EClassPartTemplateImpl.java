@@ -357,7 +357,7 @@ public class EClassPartTemplateImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	@Override
-	public boolean isMatchingFilterRule(EObject inputEObject) {
+	public String buildPartTemplateTitle(EObject context) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -370,7 +370,7 @@ public class EClassPartTemplateImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	@Override
-	public String buildTitle(EObject titleContext) {
+	public boolean isMatchingFilterRule(EObject inputEObject) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -517,10 +517,10 @@ public class EClassPartTemplateImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
+		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT:
+			return buildPartTemplateTitle((EObject) arguments.get(0));
 		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE___IS_MATCHING_FILTER_RULE__EOBJECT:
 			return isMatchingFilterRule((EObject) arguments.get(0));
-		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE___BUILD_TITLE__EOBJECT:
-			return buildTitle((EObject) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

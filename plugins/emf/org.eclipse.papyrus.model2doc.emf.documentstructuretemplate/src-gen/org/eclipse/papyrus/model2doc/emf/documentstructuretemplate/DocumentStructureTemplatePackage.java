@@ -573,6 +573,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int IBODY_SECTION_PART_TEMPLATE_FEATURE_COUNT = 3;
 
 	/**
+	 * The operation id for the '<em>Build Part Template Title</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IBODY_SECTION_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT = 0;
+
+	/**
 	 * The number of operations of the '<em>IBody Section Part Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -580,7 +590,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBODY_SECTION_PART_TEMPLATE_OPERATION_COUNT = 0;
+	int IBODY_SECTION_PART_TEMPLATE_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodyPartTemplate <em>IBody Part Template</em>}' class.
@@ -632,6 +642,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @ordered
 	 */
 	int IBODY_PART_TEMPLATE_FEATURE_COUNT = IBODY_SECTION_PART_TEMPLATE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Build Part Template Title</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IBODY_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT = IBODY_SECTION_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT;
 
 	/**
 	 * The number of operations of the '<em>IBody Part Template</em>' class.
@@ -705,6 +725,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int ICOMPOSED_BODY_PART_TEMPLATE_FEATURE_COUNT = IBODY_PART_TEMPLATE_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Build Part Template Title</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ICOMPOSED_BODY_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT = IBODY_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT;
+
+	/**
 	 * The number of operations of the '<em>IComposed Body Part Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -766,6 +796,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int ISUB_BODY_PART_TEMPLATE_FEATURE_COUNT = IBODY_SECTION_PART_TEMPLATE_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Build Part Template Title</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ISUB_BODY_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT = IBODY_SECTION_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT;
+
+	/**
 	 * The number of operations of the '<em>ISub Body Part Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -825,6 +865,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @ordered
 	 */
 	int ILEAF_BODY_PART_TEMPLATE_FEATURE_COUNT = IBODY_PART_TEMPLATE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Build Part Template Title</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ILEAF_BODY_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT = IBODY_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT;
 
 	/**
 	 * The number of operations of the '<em>ILeaf Body Part Template</em>' class.
@@ -898,6 +948,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int ICOMPOSED_SUB_BODY_PART_TEMPLATE_FEATURE_COUNT = ISUB_BODY_PART_TEMPLATE_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Build Part Template Title</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ICOMPOSED_SUB_BODY_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT = ISUB_BODY_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT;
+
+	/**
 	 * The number of operations of the '<em>IComposed Sub Body Part Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -957,6 +1017,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @ordered
 	 */
 	int ILEAF_SUB_BODY_PART_TEMPLATE_FEATURE_COUNT = ISUB_BODY_PART_TEMPLATE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Build Part Template Title</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ILEAF_SUB_BODY_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT = ISUB_BODY_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT;
 
 	/**
 	 * The number of operations of the '<em>ILeaf Sub Body Part Template</em>' class.
@@ -1050,6 +1120,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int ECLASS_PART_TEMPLATE_FEATURE_COUNT = ICOMPOSED_SUB_BODY_PART_TEMPLATE_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Build Part Template Title</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ECLASS_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT = ICOMPOSED_SUB_BODY_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT;
+
+	/**
 	 * The operation id for the '<em>Is Matching Filter Rule</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1060,16 +1140,6 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int ECLASS_PART_TEMPLATE___IS_MATCHING_FILTER_RULE__EOBJECT = ICOMPOSED_SUB_BODY_PART_TEMPLATE_OPERATION_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Build Title</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int ECLASS_PART_TEMPLATE___BUILD_TITLE__EOBJECT = ICOMPOSED_SUB_BODY_PART_TEMPLATE_OPERATION_COUNT + 1;
-
-	/**
 	 * The number of operations of the '<em>EClass Part Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1077,7 +1147,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECLASS_PART_TEMPLATE_OPERATION_COUNT = ICOMPOSED_SUB_BODY_PART_TEMPLATE_OPERATION_COUNT + 2;
+	int ECLASS_PART_TEMPLATE_OPERATION_COUNT = ICOMPOSED_SUB_BODY_PART_TEMPLATE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferencePartTemplateImpl <em>EReference Part Template</em>}' class.
@@ -1151,14 +1221,14 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int EREFERENCE_PART_TEMPLATE_FEATURE_COUNT = ICOMPOSED_BODY_PART_TEMPLATE_FEATURE_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>Build Title</em>' operation.
+	 * The operation id for the '<em>Build Part Template Title</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_PART_TEMPLATE___BUILD_TITLE = ICOMPOSED_BODY_PART_TEMPLATE_OPERATION_COUNT + 0;
+	int EREFERENCE_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT = ICOMPOSED_BODY_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT;
 
 	/**
 	 * The operation id for the '<em>Get Matching Referenced EObjects</em>' operation.
@@ -1168,7 +1238,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_PART_TEMPLATE___GET_MATCHING_REFERENCED_EOBJECTS__EOBJECT = ICOMPOSED_BODY_PART_TEMPLATE_OPERATION_COUNT + 1;
+	int EREFERENCE_PART_TEMPLATE___GET_MATCHING_REFERENCED_EOBJECTS__EOBJECT = ICOMPOSED_BODY_PART_TEMPLATE_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>EReference Part Template</em>' class.
@@ -1178,7 +1248,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_PART_TEMPLATE_OPERATION_COUNT = ICOMPOSED_BODY_PART_TEMPLATE_OPERATION_COUNT + 2;
+	int EREFERENCE_PART_TEMPLATE_OPERATION_COUNT = ICOMPOSED_BODY_PART_TEMPLATE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITemplatePartView <em>ITemplate Part View</em>}' class.
@@ -1324,14 +1394,14 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int ITABLE_VIEW_FEATURE_COUNT = ILEAF_BODY_PART_TEMPLATE_FEATURE_COUNT + 3;
 
 	/**
-	 * The operation id for the '<em>Build Title</em>' operation.
+	 * The operation id for the '<em>Build Part Template Title</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int ITABLE_VIEW___BUILD_TITLE = ILEAF_BODY_PART_TEMPLATE_OPERATION_COUNT + 0;
+	int ITABLE_VIEW___BUILD_PART_TEMPLATE_TITLE__EOBJECT = ILEAF_BODY_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT;
 
 	/**
 	 * The operation id for the '<em>Get Rows</em>' operation.
@@ -1341,7 +1411,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ITABLE_VIEW___GET_ROWS__EOBJECT = ILEAF_BODY_PART_TEMPLATE_OPERATION_COUNT + 1;
+	int ITABLE_VIEW___GET_ROWS__EOBJECT = ILEAF_BODY_PART_TEMPLATE_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Build Row Header Label</em>' operation.
@@ -1351,7 +1421,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ITABLE_VIEW___BUILD_ROW_HEADER_LABEL__EOBJECT = ILEAF_BODY_PART_TEMPLATE_OPERATION_COUNT + 2;
+	int ITABLE_VIEW___BUILD_ROW_HEADER_LABEL__EOBJECT = ILEAF_BODY_PART_TEMPLATE_OPERATION_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>ITable View</em>' class.
@@ -1361,7 +1431,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ITABLE_VIEW_OPERATION_COUNT = ILEAF_BODY_PART_TEMPLATE_OPERATION_COUNT + 3;
+	int ITABLE_VIEW_OPERATION_COUNT = ILEAF_BODY_PART_TEMPLATE_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IColumn <em>IColumn</em>}' class.
@@ -1516,14 +1586,14 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int EREFERENCE_TABLE_VIEW_FEATURE_COUNT = ITABLE_VIEW_FEATURE_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>Build Title</em>' operation.
+	 * The operation id for the '<em>Build Part Template Title</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_TABLE_VIEW___BUILD_TITLE = ITABLE_VIEW___BUILD_TITLE;
+	int EREFERENCE_TABLE_VIEW___BUILD_PART_TEMPLATE_TITLE__EOBJECT = ITABLE_VIEW___BUILD_PART_TEMPLATE_TITLE__EOBJECT;
 
 	/**
 	 * The operation id for the '<em>Get Rows</em>' operation.
@@ -1965,6 +2035,17 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	EAttribute getIBodySectionPartTemplate_CustomTitle();
 
 	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate#buildPartTemplateTitle(org.eclipse.emf.ecore.EObject) <em>Build Part Template Title</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the '<em>Build Part Template Title</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate#buildPartTemplateTitle(org.eclipse.emf.ecore.EObject)
+	 * @generated
+	 */
+	EOperation getIBodySectionPartTemplate__BuildPartTemplateTitle__EObject();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedBodyPartTemplate <em>IComposed Body Part Template</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2090,17 +2171,6 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	EOperation getEClassPartTemplate__IsMatchingFilterRule__EObject();
 
 	/**
-	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassPartTemplate#buildTitle(org.eclipse.emf.ecore.EObject) <em>Build Title</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the meta object for the '<em>Build Title</em>' operation.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassPartTemplate#buildTitle(org.eclipse.emf.ecore.EObject)
-	 * @generated
-	 */
-	EOperation getEClassPartTemplate__BuildTitle__EObject();
-
-	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate <em>EReference Part Template</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2122,17 +2192,6 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEReferencePartTemplate_EReference();
-
-	/**
-	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate#buildTitle() <em>Build Title</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the meta object for the '<em>Build Title</em>' operation.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate#buildTitle()
-	 * @generated
-	 */
-	EOperation getEReferencePartTemplate__BuildTitle();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate#getMatchingReferencedEObjects(org.eclipse.emf.ecore.EObject) <em>Get Matching Referenced EObjects</em>}' operation.
@@ -2213,17 +2272,6 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getITableView_GenerateColumnHeader();
-
-	/**
-	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView#buildTitle() <em>Build Title</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the meta object for the '<em>Build Title</em>' operation.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView#buildTitle()
-	 * @generated
-	 */
-	EOperation getITableView__BuildTitle();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView#getRows(org.eclipse.emf.ecore.EObject) <em>Get Rows</em>}' operation.
@@ -2642,6 +2690,15 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 		EAttribute IBODY_SECTION_PART_TEMPLATE__CUSTOM_TITLE = eINSTANCE.getIBodySectionPartTemplate_CustomTitle();
 
 		/**
+		 * The meta object literal for the '<em><b>Build Part Template Title</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EOperation IBODY_SECTION_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT = eINSTANCE.getIBodySectionPartTemplate__BuildPartTemplateTitle__EObject();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedBodyPartTemplate <em>IComposed Body Part Template</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2753,15 +2810,6 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 		EOperation ECLASS_PART_TEMPLATE___IS_MATCHING_FILTER_RULE__EOBJECT = eINSTANCE.getEClassPartTemplate__IsMatchingFilterRule__EObject();
 
 		/**
-		 * The meta object literal for the '<em><b>Build Title</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 *
-		 * @generated
-		 */
-		EOperation ECLASS_PART_TEMPLATE___BUILD_TITLE__EOBJECT = eINSTANCE.getEClassPartTemplate__BuildTitle__EObject();
-
-		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferencePartTemplateImpl <em>EReference Part Template</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2780,15 +2828,6 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 		 * @generated
 		 */
 		EReference EREFERENCE_PART_TEMPLATE__EREFERENCE = eINSTANCE.getEReferencePartTemplate_EReference();
-
-		/**
-		 * The meta object literal for the '<em><b>Build Title</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 *
-		 * @generated
-		 */
-		EOperation EREFERENCE_PART_TEMPLATE___BUILD_TITLE = eINSTANCE.getEReferencePartTemplate__BuildTitle();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Matching Referenced EObjects</b></em>' operation.
@@ -2858,15 +2897,6 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ITABLE_VIEW__GENERATE_COLUMN_HEADER = eINSTANCE.getITableView_GenerateColumnHeader();
-
-		/**
-		 * The meta object literal for the '<em><b>Build Title</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 *
-		 * @generated
-		 */
-		EOperation ITABLE_VIEW___BUILD_TITLE = eINSTANCE.getITableView__BuildTitle();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Rows</b></em>' operation.

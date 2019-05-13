@@ -65,12 +65,13 @@ public class CustomCommentAsParagraphImpl extends CommentAsParagraphImpl {
 	}
 
 	/**
-	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.CommentAsParagraphImpl#buildTitle()
+	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.CommentAsParagraphImpl#buildPartTemplateTitle(org.eclipse.emf.ecore.EObject)
 	 *
+	 * @param context
 	 * @return
 	 */
 	@Override
-	public String buildTitle() {
-		return UML_TITLE_HELPER.buildTitle(this);
+	public String buildPartTemplateTitle(final EObject context) {
+		return UML_TITLE_HELPER.buildPartTemplateTitle(this, context);
 	}
 }

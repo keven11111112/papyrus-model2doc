@@ -137,6 +137,16 @@ public interface GMFDocumentStructureTemplatePackage extends EPackage {
 	int GMF_DIAGRAM_VIEW_FEATURE_COUNT = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Build Part Template Title</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int GMF_DIAGRAM_VIEW___BUILD_PART_TEMPLATE_TITLE__EOBJECT = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_OPERATION_COUNT + 0;
+
+	/**
 	 * The operation id for the '<em>Get Matching Diagrams</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -144,17 +154,7 @@ public interface GMFDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GMF_DIAGRAM_VIEW___GET_MATCHING_DIAGRAMS__EOBJECT = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Build Title</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int GMF_DIAGRAM_VIEW___BUILD_TITLE__EOBJECT = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_OPERATION_COUNT + 1;
+	int GMF_DIAGRAM_VIEW___GET_MATCHING_DIAGRAMS__EOBJECT = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_OPERATION_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>GMF Diagram View</em>' class.
@@ -233,17 +233,6 @@ public interface GMFDocumentStructureTemplatePackage extends EPackage {
 	EOperation getGMFDiagramView__GetMatchingDiagrams__EObject();
 
 	/**
-	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDiagramView#buildTitle(org.eclipse.emf.ecore.EObject) <em>Build Title</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the meta object for the '<em>Build Title</em>' operation.
-	 * @see org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDiagramView#buildTitle(org.eclipse.emf.ecore.EObject)
-	 * @generated
-	 */
-	EOperation getGMFDiagramView__BuildTitle__EObject();
-
-	/**
 	 * Returns the meta object for class '{@link org.eclipse.gmf.runtime.notation.Diagram <em>Diagram</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -308,15 +297,6 @@ public interface GMFDocumentStructureTemplatePackage extends EPackage {
 		 * @generated
 		 */
 		EOperation GMF_DIAGRAM_VIEW___GET_MATCHING_DIAGRAMS__EOBJECT = eINSTANCE.getGMFDiagramView__GetMatchingDiagrams__EObject();
-
-		/**
-		 * The meta object literal for the '<em><b>Build Title</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 *
-		 * @generated
-		 */
-		EOperation GMF_DIAGRAM_VIEW___BUILD_TITLE__EOBJECT = eINSTANCE.getGMFDiagramView__BuildTitle__EObject();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.gmf.runtime.notation.Diagram <em>Diagram</em>}' class.

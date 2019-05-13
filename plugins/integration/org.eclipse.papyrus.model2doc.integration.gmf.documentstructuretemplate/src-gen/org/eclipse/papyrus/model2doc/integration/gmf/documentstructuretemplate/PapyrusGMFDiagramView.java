@@ -149,17 +149,4 @@ public interface PapyrusGMFDiagramView extends ITemplatePartView, ILeafBodyPartT
 	 */
 	EList<Diagram> getMatchingDiagrams(EObject expectedDiagramContext);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 *
-	 * @param diagramContext
-	 *                           The context of the diagram. It is not mandatory to calculate a title.
-	 *                           <!-- end-model-doc -->
-	 * @model required="true" ordered="false" diagramContextRequired="true" diagramContextOrdered="false"
-	 * @generated
-	 */
-	String buildTitle(EObject diagramContext);
-
 } // PapyrusGMFDiagramView

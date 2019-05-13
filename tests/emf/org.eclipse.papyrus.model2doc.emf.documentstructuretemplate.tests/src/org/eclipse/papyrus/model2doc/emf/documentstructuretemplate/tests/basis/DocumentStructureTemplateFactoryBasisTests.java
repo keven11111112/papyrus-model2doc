@@ -40,7 +40,7 @@ public class DocumentStructureTemplateFactoryBasisTests {
 	@Test
 	public void checkEClassPartTemplate() {
 		final EClassPartTemplate template = DocumentStructureTemplateFactory.eINSTANCE.createEClassPartTemplate();
-		Assert.assertEquals("No EClass", template.buildTitle(null));
+		Assert.assertEquals("No EClass", template.buildPartTemplateTitle(null));
 		Assert.assertEquals(true, template.isMatchingFilterRule(EcoreFactory.eINSTANCE.createEObject()));
 		Assert.assertEquals(false, template.isMatchingFilterRule(null));
 	}
@@ -51,7 +51,7 @@ public class DocumentStructureTemplateFactoryBasisTests {
 	@Test
 	public void checkEReferencePartTemplate() {
 		final EReferencePartTemplate template = DocumentStructureTemplateFactory.eINSTANCE.createEReferencePartTemplate();
-		Assert.assertEquals("No EReference", template.buildTitle());
+		Assert.assertEquals("No EReference", template.buildPartTemplateTitle(null));
 		template.getMatchingReferencedEObjects(EcoreFactory.eINSTANCE.createEObject());
 		Assert.assertEquals(true, template.getMatchingReferencedEObjects(null).isEmpty());
 	}

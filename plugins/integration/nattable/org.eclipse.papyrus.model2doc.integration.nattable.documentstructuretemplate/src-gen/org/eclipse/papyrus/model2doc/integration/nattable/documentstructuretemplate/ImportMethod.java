@@ -55,6 +55,10 @@ public enum ImportMethod implements Enumerator {
 	/**
 	 * The '<em><b>IMAGE</b></em>' literal value.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>IMAGE</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #IMAGE
 	 * @model
@@ -66,6 +70,10 @@ public enum ImportMethod implements Enumerator {
 	/**
 	 * The '<em><b>TABLE</b></em>' literal value.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>TABLE</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #TABLE
 	 * @model

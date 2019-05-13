@@ -385,7 +385,7 @@ public class PapyrusTableViewImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	@Override
-	public EList<Table> getMatchingTables(EObject expectedTableContext) {
+	public String buildPartTemplateTitle(EObject context) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -397,7 +397,7 @@ public class PapyrusTableViewImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	@Override
-	public String buildTitle(EObject tableContext) {
+	public EList<Table> getMatchingTables(EObject expectedTableContext) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -529,10 +529,10 @@ public class PapyrusTableViewImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
+		case PapyrusNattableDocumentStructureTemplatePackage.PAPYRUS_TABLE_VIEW___BUILD_PART_TEMPLATE_TITLE__EOBJECT:
+			return buildPartTemplateTitle((EObject) arguments.get(0));
 		case PapyrusNattableDocumentStructureTemplatePackage.PAPYRUS_TABLE_VIEW___GET_MATCHING_TABLES__EOBJECT:
 			return getMatchingTables((EObject) arguments.get(0));
-		case PapyrusNattableDocumentStructureTemplatePackage.PAPYRUS_TABLE_VIEW___BUILD_TITLE__EOBJECT:
-			return buildTitle((EObject) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

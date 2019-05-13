@@ -169,7 +169,7 @@ public class EReferencePartTemplateItemProvider
 				null,
 				null,
 				null,
-				URI.createURI("editor://documentstructuretemplate/EReferencePartTemplate/EReference/"))); //$NON-NLS-1$
+				URI.createURI("editor://documentstructuretemplate/EReferencePartTemplate/EReference/")));
 	}
 
 	/**

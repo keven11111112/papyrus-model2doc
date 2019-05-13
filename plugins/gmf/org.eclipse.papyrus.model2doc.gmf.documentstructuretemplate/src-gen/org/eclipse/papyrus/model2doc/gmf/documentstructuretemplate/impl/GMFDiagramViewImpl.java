@@ -272,7 +272,7 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	@Override
-	public EList<Diagram> getMatchingDiagrams(EObject expectedDiagramContext) {
+	public String buildPartTemplateTitle(EObject context) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -285,7 +285,7 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	@Override
-	public String buildTitle(EObject diagramContext) {
+	public EList<Diagram> getMatchingDiagrams(EObject expectedDiagramContext) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -460,12 +460,43 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == IBodySectionPartTemplate.class) {
+			switch (baseOperationID) {
+			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT:
+				return GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW___BUILD_PART_TEMPLATE_TITLE__EOBJECT;
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == IBodyPartTemplate.class) {
+			switch (baseOperationID) {
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == ILeafBodyPartTemplate.class) {
+			switch (baseOperationID) {
+			default:
+				return -1;
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW___BUILD_PART_TEMPLATE_TITLE__EOBJECT:
+			return buildPartTemplateTitle((EObject) arguments.get(0));
 		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW___GET_MATCHING_DIAGRAMS__EOBJECT:
 			return getMatchingDiagrams((EObject) arguments.get(0));
-		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW___BUILD_TITLE__EOBJECT:
-			return buildTitle((EObject) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

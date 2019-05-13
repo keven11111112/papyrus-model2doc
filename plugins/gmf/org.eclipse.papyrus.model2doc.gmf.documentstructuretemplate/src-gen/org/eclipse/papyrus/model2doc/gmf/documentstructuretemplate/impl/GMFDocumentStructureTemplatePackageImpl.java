@@ -170,17 +170,6 @@ public class GMFDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 	 * @generated
 	 */
 	@Override
-	public EOperation getGMFDiagramView__BuildTitle__EObject() {
-		return gmfDiagramViewEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
 	public EClass getDiagram() {
 		return diagramEClass;
 	}
@@ -222,7 +211,6 @@ public class GMFDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 		gmfDiagramViewEClass = createEClass(GMF_DIAGRAM_VIEW);
 		createEAttribute(gmfDiagramViewEClass, GMF_DIAGRAM_VIEW__DIAGRAM_TYPE);
 		createEOperation(gmfDiagramViewEClass, GMF_DIAGRAM_VIEW___GET_MATCHING_DIAGRAMS__EOBJECT);
-		createEOperation(gmfDiagramViewEClass, GMF_DIAGRAM_VIEW___BUILD_TITLE__EOBJECT);
 
 		diagramEClass = createEClass(DIAGRAM);
 	}
@@ -272,9 +260,6 @@ public class GMFDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 
 		EOperation op = initEOperation(getGMFDiagramView__GetMatchingDiagrams__EObject(), this.getDiagram(), "getMatchingDiagrams", 0, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 		addEParameter(op, theEcorePackage.getEObject(), "expectedDiagramContext", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
-
-		op = initEOperation(getGMFDiagramView__BuildTitle__EObject(), ecorePackage.getEString(), "buildTitle", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
-		addEParameter(op, theEcorePackage.getEObject(), "diagramContext", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(diagramEClass, Diagram.class, "Diagram", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 

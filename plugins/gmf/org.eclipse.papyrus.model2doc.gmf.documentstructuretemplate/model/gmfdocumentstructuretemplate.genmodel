@@ -47,9 +47,6 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="gmfdocumentstructuretemplate.ecore#//GMFDiagramView/getMatchingDiagrams">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="gmfdocumentstructuretemplate.ecore#//GMFDiagramView/getMatchingDiagrams/expectedDiagramContext"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="gmfdocumentstructuretemplate.ecore#//GMFDiagramView/buildTitle">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="gmfdocumentstructuretemplate.ecore#//GMFDiagramView/buildTitle/diagramContext"/>
-      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="gmfdocumentstructuretemplate.ecore#//Diagram"/>
   </genPackages>

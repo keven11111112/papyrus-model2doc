@@ -42,10 +42,6 @@ public interface EReferencePartTemplate extends IComposedBodyPartTemplate {
 	/**
 	 * Returns the value of the '<em><b>EReference</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>EReference</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * A EReference which should be provided by the EClass of the upper level.
@@ -71,15 +67,6 @@ public interface EReferencePartTemplate extends IComposedBodyPartTemplate {
 	 * @generated
 	 */
 	void setEReference(EReference value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @model required="true" ordered="false"
-	 * @generated
-	 */
-	String buildTitle();
 
 	/**
 	 * <!-- begin-user-doc -->

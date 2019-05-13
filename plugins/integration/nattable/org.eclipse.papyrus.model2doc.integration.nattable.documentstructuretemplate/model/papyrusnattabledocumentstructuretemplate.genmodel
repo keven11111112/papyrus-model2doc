@@ -59,9 +59,6 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="papyrusnattabledocumentstructuretemplate.ecore#//PapyrusTableView/getMatchingTables">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="papyrusnattabledocumentstructuretemplate.ecore#//PapyrusTableView/getMatchingTables/expectedTableContext"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="papyrusnattabledocumentstructuretemplate.ecore#//PapyrusTableView/buildTitle">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="papyrusnattabledocumentstructuretemplate.ecore#//PapyrusTableView/buildTitle/tableContext"/>
-      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="papyrusnattabledocumentstructuretemplate.ecore#//Table"/>
   </genPackages>

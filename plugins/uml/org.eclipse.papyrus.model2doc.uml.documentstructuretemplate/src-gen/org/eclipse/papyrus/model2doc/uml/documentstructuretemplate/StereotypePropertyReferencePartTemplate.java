@@ -146,13 +146,4 @@ public interface StereotypePropertyReferencePartTemplate extends IComposedBodyPa
 	 */
 	EList<EObject> getMatchingReferencedEObjects(EObject eobject);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @model required="true" ordered="false"
-	 * @generated
-	 */
-	String buildTitle();
-
 } // StereotypePropertyReferencePartTemplate

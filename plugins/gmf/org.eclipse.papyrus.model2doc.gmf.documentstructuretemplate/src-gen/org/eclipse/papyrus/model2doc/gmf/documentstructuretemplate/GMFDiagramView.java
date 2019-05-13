@@ -84,17 +84,4 @@ public interface GMFDiagramView extends ITemplatePartView, ILeafBodyPartTemplate
 	 */
 	EList<Diagram> getMatchingDiagrams(EObject expectedDiagramContext);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 *
-	 * @param diagramContext
-	 *                           The context of the diagram. This parameter can be null.
-	 *                           <!-- end-model-doc -->
-	 * @model required="true" ordered="false" diagramContextRequired="true" diagramContextOrdered="false"
-	 * @generated
-	 */
-	String buildTitle(EObject diagramContext);
-
 } // GMFDiagramView

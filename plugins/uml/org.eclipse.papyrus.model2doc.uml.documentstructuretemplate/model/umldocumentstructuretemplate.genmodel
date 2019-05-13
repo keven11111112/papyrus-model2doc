@@ -67,14 +67,12 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umldocumentstructuretemplate.ecore#//StereotypePropertyReferencePartTemplate/getMatchingReferencedEObjects">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umldocumentstructuretemplate.ecore#//StereotypePropertyReferencePartTemplate/getMatchingReferencedEObjects/eobject"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umldocumentstructuretemplate.ecore#//StereotypePropertyReferencePartTemplate/buildTitle"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="umldocumentstructuretemplate.ecore#//CommentAsParagraph">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umldocumentstructuretemplate.ecore#//CommentAsParagraph/commentChoice"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umldocumentstructuretemplate.ecore#//CommentAsParagraph/getMatchingComments">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umldocumentstructuretemplate.ecore#//CommentAsParagraph/getMatchingComments/element"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umldocumentstructuretemplate.ecore#//CommentAsParagraph/buildTitle"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="umldocumentstructuretemplate.ecore#//Comment"/>
   </genPackages>

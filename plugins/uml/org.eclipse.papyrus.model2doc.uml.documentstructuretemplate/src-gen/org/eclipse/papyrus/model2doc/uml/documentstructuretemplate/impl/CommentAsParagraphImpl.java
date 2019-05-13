@@ -268,7 +268,7 @@ public class CommentAsParagraphImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	@Override
-	public EList<Comment> getMatchingComments(EObject element) {
+	public String buildPartTemplateTitle(EObject context) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -281,7 +281,7 @@ public class CommentAsParagraphImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	@Override
-	public String buildTitle() {
+	public EList<Comment> getMatchingComments(EObject element) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -388,10 +388,10 @@ public class CommentAsParagraphImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
+		case UMLDocumentStructureTemplatePackage.COMMENT_AS_PARAGRAPH___BUILD_PART_TEMPLATE_TITLE__EOBJECT:
+			return buildPartTemplateTitle((EObject) arguments.get(0));
 		case UMLDocumentStructureTemplatePackage.COMMENT_AS_PARAGRAPH___GET_MATCHING_COMMENTS__EOBJECT:
 			return getMatchingComments((EObject) arguments.get(0));
-		case UMLDocumentStructureTemplatePackage.COMMENT_AS_PARAGRAPH___BUILD_TITLE:
-			return buildTitle();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

@@ -121,4 +121,17 @@ public interface IBodySectionPartTemplate extends EObject {
 	 */
 	void setCustomTitle(String value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This method creates the title.
+	 * In the general case, the ISubBodyPartTemplate uses the context element to build the title, wheareas the IBodyPartTemplate don't use it.
+	 * <!-- end-model-doc -->
+	 *
+	 * @model required="true" ordered="false" contextRequired="true" contextOrdered="false"
+	 * @generated
+	 */
+	String buildPartTemplateTitle(EObject context);
+
 } // IBodySectionPartTemplate

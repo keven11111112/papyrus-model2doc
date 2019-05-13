@@ -64,13 +64,15 @@ public class CustomGMFDiagramViewImpl extends GMFDiagramViewImpl {
 		return ECollections.unmodifiableEList(diagrams);
 	}
 
+
 	/**
-	 * @see org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.impl.GMFDiagramViewImpl#buildTitle()
+	 * @see org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.impl.GMFDiagramViewImpl#buildPartTemplateTitle(org.eclipse.emf.ecore.EObject)
 	 *
+	 * @param context
 	 * @return
 	 */
 	@Override
-	public String buildTitle(final EObject diagramContext) {
+	public String buildPartTemplateTitle(EObject context) {
 		if (this.diagramType == null || this.diagramType.isEmpty()) {
 			return "All Diagrams"; //$NON-NLS-1$
 		} else {

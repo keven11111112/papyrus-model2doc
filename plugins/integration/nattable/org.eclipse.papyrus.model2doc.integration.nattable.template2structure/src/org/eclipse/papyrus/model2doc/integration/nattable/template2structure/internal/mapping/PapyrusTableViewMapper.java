@@ -111,7 +111,7 @@ public class PapyrusTableViewMapper extends AbstractTemplateToStructureMapper<Pa
 		Title title = null;
 		if (tableIter.hasNext() && papyrusTableView.isGenerateTitle()) {
 			title = DocumentStructureFactory.eINSTANCE.createTitle();
-			title.setTitle(papyrusTableView.buildTitle(semanticModelElement));
+			title.setTitle(papyrusTableView.buildPartTemplateTitle(semanticModelElement));
 			returnedValue.add(returnedClassType.cast(title));
 		}
 		while (tableIter.hasNext()) {

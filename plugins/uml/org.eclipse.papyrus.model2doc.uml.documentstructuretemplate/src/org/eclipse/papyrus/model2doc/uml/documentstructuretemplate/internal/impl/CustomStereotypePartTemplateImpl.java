@@ -79,14 +79,15 @@ public class CustomStereotypePartTemplateImpl extends StereotypePartTemplateImpl
 	}
 
 	/**
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassPartTemplateImpl#buildTitle(org.eclipse.emf.ecore.EObject)
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassPartTemplateImpl#buildPartTemplateTitle(org.eclipse.emf.ecore.EObject)
 	 *
-	 * @param titleContext
+	 * @param context
 	 * @return
 	 */
 	@Override
-	public String buildTitle(final EObject titleContext) {
-		return UML_TITLE_HELPER.buildTitle(this, titleContext);
+	public String buildPartTemplateTitle(final EObject context) {
+		return UML_TITLE_HELPER.buildPartTemplateTitle(this, context);
+
 	}
 
 	/**

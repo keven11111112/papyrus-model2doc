@@ -65,7 +65,6 @@
       </eAnnotations>
       <eParameters name="eobject" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
     </eOperations>
-    <eOperations name="buildTitle" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="propertyName" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -97,7 +96,6 @@
       </eAnnotations>
       <eParameters name="element" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
     </eOperations>
-    <eOperations name="buildTitle" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="commentChoice" ordered="false"
         lowerBound="1" eType="#//CommentChoice" defaultValueLiteral="FIRST_OWNED_COMMENT">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

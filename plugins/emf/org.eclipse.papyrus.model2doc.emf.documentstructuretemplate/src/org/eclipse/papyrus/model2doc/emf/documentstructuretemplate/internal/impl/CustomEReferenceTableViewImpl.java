@@ -44,13 +44,13 @@ public class CustomEReferenceTableViewImpl extends EReferenceTableViewImpl {
 	private static final ILabelProvider LABEL_PROVIDER = new DelegatingToEMFLabelProvider();
 
 	/**
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceTableViewImpl#buildTitle()
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceTableViewImpl#buildPartTemplateTitle(EObject)
 	 *
 	 * @return
 	 */
 	@Override
-	public String buildTitle() {
-		return TITLE_HELPER.buildTitle(this);
+	public String buildPartTemplateTitle(final EObject context) {
+		return TITLE_HELPER.buildPartTemplateTitle(this, context);
 	}
 
 	/**

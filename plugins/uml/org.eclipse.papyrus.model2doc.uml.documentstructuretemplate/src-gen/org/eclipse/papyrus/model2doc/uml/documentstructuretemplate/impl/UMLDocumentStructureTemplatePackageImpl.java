@@ -315,17 +315,6 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 	 * @generated
 	 */
 	@Override
-	public EOperation getStereotypePropertyReferencePartTemplate__BuildTitle() {
-		return stereotypePropertyReferencePartTemplateEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
 	public EClass getCommentAsParagraph() {
 		return commentAsParagraphEClass;
 	}
@@ -350,17 +339,6 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 	@Override
 	public EOperation getCommentAsParagraph__GetMatchingComments__EObject() {
 		return commentAsParagraphEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EOperation getCommentAsParagraph__BuildTitle() {
-		return commentAsParagraphEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -444,12 +422,10 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 		createEAttribute(stereotypePropertyReferencePartTemplateEClass, STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__STEREOTYPE_QUALIFIED_NAME);
 		createEAttribute(stereotypePropertyReferencePartTemplateEClass, STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__STEREOTYPE_FILTER_RULE);
 		createEOperation(stereotypePropertyReferencePartTemplateEClass, STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE___GET_MATCHING_REFERENCED_EOBJECTS__EOBJECT);
-		createEOperation(stereotypePropertyReferencePartTemplateEClass, STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE___BUILD_TITLE);
 
 		commentAsParagraphEClass = createEClass(COMMENT_AS_PARAGRAPH);
 		createEAttribute(commentAsParagraphEClass, COMMENT_AS_PARAGRAPH__COMMENT_CHOICE);
 		createEOperation(commentAsParagraphEClass, COMMENT_AS_PARAGRAPH___GET_MATCHING_COMMENTS__EOBJECT);
-		createEOperation(commentAsParagraphEClass, COMMENT_AS_PARAGRAPH___BUILD_TITLE);
 
 		commentEClass = createEClass(COMMENT);
 
@@ -528,16 +504,12 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 		op = initEOperation(getStereotypePropertyReferencePartTemplate__GetMatchingReferencedEObjects__EObject(), theEcorePackage.getEObject(), "getMatchingReferencedEObjects", 0, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 		addEParameter(op, theEcorePackage.getEObject(), "eobject", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
-		initEOperation(getStereotypePropertyReferencePartTemplate__BuildTitle(), ecorePackage.getEString(), "buildTitle", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
-
 		initEClass(commentAsParagraphEClass, CommentAsParagraph.class, "CommentAsParagraph", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEAttribute(getCommentAsParagraph_CommentChoice(), this.getCommentChoice(), "commentChoice", "FIRST_OWNED_COMMENT", 1, 1, CommentAsParagraph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, //$NON-NLS-1$ //$NON-NLS-2$
 				!IS_ORDERED);
 
 		op = initEOperation(getCommentAsParagraph__GetMatchingComments__EObject(), this.getComment(), "getMatchingComments", 0, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 		addEParameter(op, theEcorePackage.getEObject(), "element", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
-
-		initEOperation(getCommentAsParagraph__BuildTitle(), ecorePackage.getEString(), "buildTitle", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(commentEClass, Comment.class, "Comment", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 

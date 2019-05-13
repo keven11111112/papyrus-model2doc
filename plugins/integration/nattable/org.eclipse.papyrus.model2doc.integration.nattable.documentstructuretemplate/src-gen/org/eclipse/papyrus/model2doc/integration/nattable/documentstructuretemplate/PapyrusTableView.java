@@ -168,15 +168,4 @@ public interface PapyrusTableView extends ILeafBodyPartTemplate, ITemplatePartVi
 	 */
 	EList<Table> getMatchingTables(EObject expectedTableContext);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Build the title to use for the Table, according to the given eobject in parameter.
-	 * <!-- end-model-doc -->
-	 * @model required="true" ordered="false" tableContextRequired="true" tableContextOrdered="false"
-	 * @generated
-	 */
-	String buildTitle(EObject tableContext);
-
 } // PapyrusTableView

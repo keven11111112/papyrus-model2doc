@@ -61,7 +61,7 @@ public class CustomEClassPartTemplateImpl extends EClassPartTemplateImpl {
 	 * @return
 	 */
 	@Override
-	public String buildTitle(final EObject titleContext) {
-		return TITLE_HELPER.buildTitle(this, titleContext);
+	public String buildPartTemplateTitle(final EObject titleContext) {
+		return TITLE_HELPER.buildPartTemplateTitle(this, titleContext);
 	}
 }

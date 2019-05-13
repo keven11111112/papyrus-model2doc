@@ -58,10 +58,6 @@ public enum EClassFilterBehavior implements Enumerator {
 	/**
 	 * The '<em><b>TYPE OF</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>TYPE OF</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 *
 	 * @see #TYPE_OF
@@ -74,10 +70,6 @@ public enum EClassFilterBehavior implements Enumerator {
 	/**
 	 * The '<em><b>KIND OF</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>KIND OF</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 *
 	 * @see #KIND_OF

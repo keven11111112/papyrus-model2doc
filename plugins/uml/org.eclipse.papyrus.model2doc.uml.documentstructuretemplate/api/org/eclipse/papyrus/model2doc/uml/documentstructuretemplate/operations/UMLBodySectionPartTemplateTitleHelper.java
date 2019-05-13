@@ -55,7 +55,7 @@ public class UMLBodySectionPartTemplateTitleHelper extends BodySectionPartTempla
 	 * @return
 	 */
 	@Override
-	protected String internalBuildTitle(final IBodySectionPartTemplate partTemplate, final EObject parameter) {
+	protected String internalBuildPartTemplateTitle(final IBodySectionPartTemplate partTemplate, final EObject parameter) {
 		if (partTemplate instanceof StereotypePartTemplate) {
 			return buildStereotypePartTemplateTitle((StereotypePartTemplate) partTemplate, parameter);
 		}
@@ -65,7 +65,7 @@ public class UMLBodySectionPartTemplateTitleHelper extends BodySectionPartTempla
 		if (partTemplate instanceof CommentAsParagraph) {
 			return buildCommentAsParagraphTitle((CommentAsParagraph) partTemplate);
 		}
-		return super.internalBuildTitle(partTemplate, parameter);
+		return super.internalBuildPartTemplateTitle(partTemplate, parameter);
 	}
 
 	/**
@@ -75,7 +75,7 @@ public class UMLBodySectionPartTemplateTitleHelper extends BodySectionPartTempla
 	 * @param parameter
 	 *            the eobject for which we want to build the title
 	 * @return
-	 * 		the string to use for the tile of the element
+	 *         the string to use for the tile of the element
 	 */
 	private String buildStereotypePartTemplateTitle(final StereotypePartTemplate stereotypePartTemplate, final EObject parameter) {
 		final StringBuilder builder = new StringBuilder();
@@ -84,7 +84,7 @@ public class UMLBodySectionPartTemplateTitleHelper extends BodySectionPartTempla
 		builder.append(getLabel(steAppl));
 		builder.append(ST_RIGHT);
 		builder.append(" "); //$NON-NLS-1$
-		builder.append(super.internalBuildTitle(stereotypePartTemplate, parameter));
+		builder.append(super.internalBuildPartTemplateTitle(stereotypePartTemplate, parameter));
 		return builder.toString();
 	}
 
@@ -95,7 +95,7 @@ public class UMLBodySectionPartTemplateTitleHelper extends BodySectionPartTempla
 	 * @param parameter
 	 *            the eobject for which we want to build the title
 	 * @return
-	 * 		the string to use for the tile of the element
+	 *         the string to use for the tile of the element
 	 */
 	private String buildStereotypePropertyReferencePartTemplateTitle(final StereotypePropertyReferencePartTemplate stereotypePropertyPartTemplate) {
 		if (null != stereotypePropertyPartTemplate.getPropertyName() && false == stereotypePropertyPartTemplate.getPropertyName().isEmpty()) {
@@ -109,7 +109,7 @@ public class UMLBodySectionPartTemplateTitleHelper extends BodySectionPartTempla
 	 * @param commentAsParagraph
 	 *            a {@link CommentAsParagraph} object
 	 * @return
-	 * 		the title to use for this element
+	 *         the title to use for this element
 	 */
 	private String buildCommentAsParagraphTitle(final CommentAsParagraph commentAsParagraph) {
 		switch (commentAsParagraph.getCommentChoice()) {

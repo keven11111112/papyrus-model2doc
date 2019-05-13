@@ -213,7 +213,7 @@ public class EReferenceTableViewItemProvider
 				null,
 				null,
 				null,
-				URI.createURI("editor://documentstructuretemplate/EReferenceTableView/EReference/"))); //$NON-NLS-1$
+				URI.createURI("editor://documentstructuretemplate/EReferenceTableView/EReference/")));
 	}
 
 	/**

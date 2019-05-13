@@ -72,7 +72,7 @@ public class PapyrusGMFDiagramViewMapper extends AbstractTemplateToStructureMapp
 		Title title = null;
 		if (diagramIter.hasNext() && gmfDiagramView.isGenerateTitle()) {
 			title = DocumentStructureFactory.eINSTANCE.createTitle();
-			title.setTitle(gmfDiagramView.buildTitle(semanticModelElement));
+			title.setTitle(gmfDiagramView.buildPartTemplateTitle(semanticModelElement));
 			returnedValue.add(returnedClassType.cast(title));
 		}
 		while (diagramIter.hasNext()) {

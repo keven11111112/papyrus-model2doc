@@ -36,17 +36,6 @@ It type is not defined, the method will returns all diagrams.</body>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Gt8sAFxgEemyeb6zzD570Q" value="*"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_eGvhwGEeEem9xPoBi6pikw" name="buildTitle">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_kH1hgGEeEem9xPoBi6pikw" name="return" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-        </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_kANFsGGxEemvLdNeGp-kQw" name="diagramContext">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_q08I4GGxEemvLdNeGp-kQw" annotatedElement="_kANFsGGxEemvLdNeGp-kQw">
-            <body>The context of the diagram. This parameter can be null.</body>
-          </ownedComment>
-          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
-        </ownedParameter>
-      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_qmWI8FwvEemF3-UZXrtb4g" name="Diagram">
       <ownedComment xmi:type="uml:Comment" xmi:id="_hIWvEFwwEemF3-UZXrtb4g" annotatedElement="_qmWI8FwvEemF3-UZXrtb4g">

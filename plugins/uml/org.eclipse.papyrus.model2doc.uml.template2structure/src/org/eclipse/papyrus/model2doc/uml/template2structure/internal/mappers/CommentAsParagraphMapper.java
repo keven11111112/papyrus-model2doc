@@ -66,7 +66,7 @@ public class CommentAsParagraphMapper extends AbstractUMLTemplateToStructureMapp
 		Title title = null;
 		if (commentIter.hasNext() && commentAsParagraph.isGenerateTitle()) {
 			title = STRUCTURE_EFACTORY.createTitle();
-			title.setTitle(commentAsParagraph.buildTitle());
+			title.setTitle(commentAsParagraph.buildPartTemplateTitle(null));
 			returnedValue.add(returnedClassType.cast(title));
 		}
 		while (commentIter.hasNext()) {
