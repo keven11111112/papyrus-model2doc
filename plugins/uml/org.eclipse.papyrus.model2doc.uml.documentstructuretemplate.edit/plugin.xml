@@ -40,4 +40,11 @@
             uri="editor://umldocumentstructuretemplate/StereotypePropertyReferencePartTemplate/stereotypeQualifiedName/">
       </factory>
    </extension>
+   <extension
+         point="org.eclipse.emf.edit.childCreationExtenders">
+      <extender
+            class="org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.edit.internal.providers.CustomChildExtender"
+            uri="http://www.eclipse.org/papyrus/model2doc/uml/1.0.0/documentstructuretemplate">
+      </extender>
+   </extension>
 </plugin>
