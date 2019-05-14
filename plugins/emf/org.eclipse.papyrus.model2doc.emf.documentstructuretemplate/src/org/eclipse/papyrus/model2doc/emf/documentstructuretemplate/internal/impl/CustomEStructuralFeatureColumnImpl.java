@@ -16,7 +16,6 @@
 package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.impl;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EStructuralFeatureColumnImpl;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.providers.DelegatingToEMFLabelProvider;
 
@@ -25,12 +24,6 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.providers.Del
  */
 public class CustomEStructuralFeatureColumnImpl extends EStructuralFeatureColumnImpl {
 
-
-	/**
-	 * The label provider used to build the label
-	 */
-	private static final ILabelProvider LABEL_PROVIDER = new DelegatingToEMFLabelProvider();
-
 	/**
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EStructuralFeatureColumnImpl#buildColumnHeaderLabel()
 	 *
@@ -38,7 +31,7 @@ public class CustomEStructuralFeatureColumnImpl extends EStructuralFeatureColumn
 	 */
 	@Override
 	public String buildColumnHeaderLabel() {
-		return LABEL_PROVIDER.getText(this.feature);
+		return DelegatingToEMFLabelProvider.INSTANCE.getText(this.feature);
 	}
 
 	/**
@@ -63,7 +56,7 @@ public class CustomEStructuralFeatureColumnImpl extends EStructuralFeatureColumn
 	 */
 	@Override
 	public String buildCellLabel(Object cellElement) {
-		return LABEL_PROVIDER.getText(cellElement);
+		return DelegatingToEMFLabelProvider.INSTANCE.getText(cellElement);
 	}
 
 }

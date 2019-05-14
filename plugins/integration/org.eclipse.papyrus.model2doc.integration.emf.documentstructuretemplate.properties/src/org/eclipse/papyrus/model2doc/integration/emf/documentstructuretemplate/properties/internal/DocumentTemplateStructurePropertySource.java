@@ -21,8 +21,7 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.ui.provider.PropertySource;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.editors.factories.EClassPartTemplateEClassEditorFactory;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.editors.factories.EReferencePartTemplateEReferenceEditorFactory;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.editors.factories.EReferenceTableViewEReferenceEditorFactory;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.editors.factories.EReferenceBodySectionPartTemplateEReferenceEditorFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.editors.factories.EStructuralFeatureColumnEStructuralFeatureEditorFactory;
 import org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.properties.descriptors.CustomPropertyDescriptor;
 import org.eclipse.ui.views.properties.IPropertyDescriptor;
@@ -51,14 +50,11 @@ public class DocumentTemplateStructurePropertySource extends PropertySource {
 	@Override
 	protected IPropertyDescriptor createPropertyDescriptor(final IItemPropertyDescriptor itemPropertyDescriptor) {
 		final EStructuralFeature f = (EStructuralFeature) itemPropertyDescriptor.getFeature(this.object);
-		if (f == DocumentStructureTemplatePackage.eINSTANCE.getEReferencePartTemplate_EReference()) {
-			return new CustomPropertyDescriptor(this.object, itemPropertyDescriptor, new EReferencePartTemplateEReferenceEditorFactory());
+		if (f == DocumentStructureTemplatePackage.eINSTANCE.getEReferenceBodySectionPartTemplate_EReference()) {
+			return new CustomPropertyDescriptor(this.object, itemPropertyDescriptor, new EReferenceBodySectionPartTemplateEReferenceEditorFactory());
 		}
 		if (f == DocumentStructureTemplatePackage.eINSTANCE.getEClassPartTemplate_EClass()) {
 			return new CustomPropertyDescriptor(this.object, itemPropertyDescriptor, new EClassPartTemplateEClassEditorFactory());
-		}
-		if (f == DocumentStructureTemplatePackage.eINSTANCE.getEReferenceTableView_EReference()) {
-			return new CustomPropertyDescriptor(this.object, itemPropertyDescriptor, new EReferenceTableViewEReferenceEditorFactory());
 		}
 		if (f == DocumentStructureTemplatePackage.eINSTANCE.getEStructuralFeatureColumn_Feature()) {
 			return new CustomPropertyDescriptor(this.object, itemPropertyDescriptor, new EStructuralFeatureColumnEStructuralFeatureEditorFactory());

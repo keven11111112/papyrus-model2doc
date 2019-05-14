@@ -120,7 +120,7 @@ public abstract class AbstractEStructuralFeatureDialogEditorFactory extends EMFE
 	 */
 	public ILabelProvider getOrCreateLabelProvider() {
 		if (this.labelProvider == null) {
-			this.labelProvider = new DelegatingToEMFLabelProvider();
+			this.labelProvider = DelegatingToEMFLabelProvider.INSTANCE;
 		}
 		return this.labelProvider;
 	}

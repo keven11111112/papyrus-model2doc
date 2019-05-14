@@ -233,29 +233,8 @@ Its children are an alternation of two kinds of objects: IBodyPartTemplate and I
       <ownedComment xmi:type="uml:Comment" xmi:id="_fh6pIFYDEemKJasCEBKPhQ" annotatedElement="_4exaMFYBEemKJasCEBKPhQ">
         <body>This part reference an EReference of the parent EClassPartTemplate.</body>
       </ownedComment>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_A7ZBMFYCEemKJasCEBKPhQ" name="eReference">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_lwbo8GdeEemA6PBJwf7UhA" source="http://www.eclipse.org/emf/2002/GenModel">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_mZi3YGdeEemA6PBJwf7UhA" key="propertyEditorFactory" value="editor://documentstructuretemplate/EReferencePartTemplate/EReference/"/>
-        </eAnnotations>
-        <ownedComment xmi:type="uml:Comment" xmi:id="_gL92QFYEEemKJasCEBKPhQ" annotatedElement="_A7ZBMFYCEemKJasCEBKPhQ">
-          <body>A EReference which should be provided by the EClass of the upper level.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWjvsX_EduPJbEsMYXjUQ"/>
-      </ownedAttribute>
+      <generalization xmi:type="uml:Generalization" xmi:id="_iw5gsHWLEemQUasExi-pKA" general="_jMKV0HWKEemQUasExi-pKA"/>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_8zOR8FYBEemKJasCEBKPhQ" client="_4exaMFYBEemKJasCEBKPhQ" supplier="_Pau8cFX-EemKJasCEBKPhQ" contract="_Pau8cFX-EemKJasCEBKPhQ"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_tSmF8GAjEemxcMQajU1fyA" name="getMatchingReferencedEObjects">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_FoyNsGAkEemxcMQajU1fyA" annotatedElement="_tSmF8GAjEemxcMQajU1fyA">
-          <body>This method returns the matching elements referenced by the EReference for the EObject in argument. </body>
-        </ownedComment>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_zkC14GAjEemxcMQajU1fyA" name="context">
-          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
-        </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_2huH8GAjEemxcMQajU1fyA" name="return" visibility="public" direction="return">
-          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_R7risGAkEemxcMQajU1fyA"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_R1R_wGAkEemxcMQajU1fyA" value="*"/>
-        </ownedParameter>
-      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_DwGdIFYFEemKJasCEBKPhQ" name="ITemplatePartView">
       <ownedComment xmi:type="uml:Comment" xmi:id="_Tsx8QFYFEemKJasCEBKPhQ" annotatedElement="_DwGdIFYFEemKJasCEBKPhQ">
@@ -289,6 +268,9 @@ If false, we will use the object to cross the user model, but we will generate n
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eZ-pUFYGEemKJasCEBKPhQ"/>
       </ownedAttribute>
       <ownedOperation xmi:type="uml:Operation" xmi:id="__h3MoHV1EemQUasExi-pKA" name="buildPartTemplateTitle">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ekdWMHYfEemXTvAEXt5Ttw" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ekdWMXYfEemXTvAEXt5Ttw" key="body" value="return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.operations.BodySectionPartTemplateTitleOperations.INSTANCE.buildPartTemplateTitle(this,context);"/>
+        </eAnnotations>
         <ownedComment xmi:type="uml:Comment" xmi:id="_hdxRcHV2EemQUasExi-pKA" annotatedElement="__h3MoHV1EemQUasExi-pKA">
           <body>This method creates the title. &#xD;
 In the general case, the ISubBodyPartTemplate uses the context element to build the title, wheareas the IBodyPartTemplate don't use it.</body>
@@ -322,7 +304,7 @@ In the general case, the ISubBodyPartTemplate uses the context element to build 
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
         <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_lfbAoXMTEemdXe53Ei-eJw" name="defaultValue" value="true"/>
       </ownedAttribute>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_vq0mgHHHEempmPy7tz2aIQ" name="getRows">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_vq0mgHHHEempmPy7tz2aIQ" name="getRows" isAbstract="true">
         <ownedComment xmi:type="uml:Comment" xmi:id="_vq0mgXHHEempmPy7tz2aIQ" annotatedElement="_vq0mgHHHEempmPy7tz2aIQ">
           <body>This method returns the elements to use as row from the context element given in parameter.</body>
         </ownedComment>
@@ -335,7 +317,7 @@ In the general case, the ISubBodyPartTemplate uses the context element to build 
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vq0mhXHHEempmPy7tz2aIQ" value="*"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_ZZa8MHIjEempmPy7tz2aIQ" name="buildRowHeaderLabel">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_ZZa8MHIjEempmPy7tz2aIQ" name="buildRowHeaderLabel" isAbstract="true">
         <ownedComment xmi:type="uml:Comment" xmi:id="_ICKw4HLxEemN45XGCLZszg" annotatedElement="_ZZa8MHIjEempmPy7tz2aIQ">
           <body>This method creates the label for the row header, from the rowElement given as parameter.</body>
         </ownedComment>
@@ -386,17 +368,38 @@ In the general case, the ISubBodyPartTemplate uses the context element to build 
       <ownedEnd xmi:type="uml:Property" xmi:id="_FFSkAHHIEempmPy7tz2aIQ" name="tableview" type="_hB8RkHHHEempmPy7tz2aIQ" association="_FEq48HHIEempmPy7tz2aIQ"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_O_zsYHHIEempmPy7tz2aIQ" name="EReferenceTableView">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_noVhUHHIEempmPy7tz2aIQ" name="eReference">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_noVhUXHIEempmPy7tz2aIQ" source="http://www.eclipse.org/emf/2002/GenModel">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_noVhUnHIEempmPy7tz2aIQ" key="propertyEditorFactory" value="editor://documentstructuretemplate/EReferenceTableView/EReference/"/>
-        </eAnnotations>
-        <ownedComment xmi:type="uml:Comment" xmi:id="_noVhU3HIEempmPy7tz2aIQ" annotatedElement="_noVhUHHIEempmPy7tz2aIQ">
-          <body>A EReference which should be provided by the EClass of the upper level.&#xD;
-This reference will be used to fill the table with its value for the context element.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWjvsX_EduPJbEsMYXjUQ"/>
-      </ownedAttribute>
+      <generalization xmi:type="uml:Generalization" xmi:id="_omFLYHWLEemQUasExi-pKA" general="_jMKV0HWKEemQUasExi-pKA"/>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_ioLaIHHIEempmPy7tz2aIQ" client="_O_zsYHHIEempmPy7tz2aIQ" supplier="_hB8RkHHHEempmPy7tz2aIQ" contract="_hB8RkHHHEempmPy7tz2aIQ"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_WfSwcHYgEemXTvAEXt5Ttw" name="getRows" redefinedOperation="_vq0mgHHHEempmPy7tz2aIQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_j30QwHYgEemXTvAEXt5Ttw" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_j30QwXYgEemXTvAEXt5Ttw" key="body" value="return getEReferenceValues(context);"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_WfSwcXYgEemXTvAEXt5Ttw" annotatedElement="_WfSwcHYgEemXTvAEXt5Ttw">
+          <body>This method returns the elements to use as row from the context element given in parameter.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_WfSwcnYgEemXTvAEXt5Ttw" name="context">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_WfSwc3YgEemXTvAEXt5Ttw" name="return" visibility="public" direction="return">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WfSwdHYgEemXTvAEXt5Ttw"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WfSwdXYgEemXTvAEXt5Ttw" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_WfaFMHYgEemXTvAEXt5Ttw" name="buildRowHeaderLabel" redefinedOperation="_ZZa8MHIjEempmPy7tz2aIQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_m8gJwHYgEemXTvAEXt5Ttw" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_m8gJwXYgEemXTvAEXt5Ttw" key="body" value="return buildEReferenceValueLabel(rowElement);"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_WfaFMXYgEemXTvAEXt5Ttw" annotatedElement="_WfaFMHYgEemXTvAEXt5Ttw">
+          <body>This method creates the label for the row header, from the rowElement given as parameter.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_WfaFMnYgEemXTvAEXt5Ttw" name="rowElement">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_WfaFM3YgEemXTvAEXt5Ttw" name="returnValue" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Xmw7IHHIEempmPy7tz2aIQ" name="EStructuralFeatureColumn">
       <ownedComment xmi:type="uml:Comment" xmi:id="_J4RMUHLwEemN45XGCLZszg" annotatedElement="_Xmw7IHHIEempmPy7tz2aIQ">
@@ -412,6 +415,52 @@ This reference will be used to fill the table with its value for the context ele
         <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWiSMX_EduPJbEsMYXjUQ"/>
       </ownedAttribute>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_gssk4HHIEempmPy7tz2aIQ" client="_Xmw7IHHIEempmPy7tz2aIQ" supplier="_A326QHHIEempmPy7tz2aIQ" contract="_A326QHHIEempmPy7tz2aIQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_jMKV0HWKEemQUasExi-pKA" name="EReferenceBodySectionPartTemplate" isAbstract="true">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_fOnFsHWLEemQUasExi-pKA" annotatedElement="_jMKV0HWKEemQUasExi-pKA">
+        <body>AbstractPartTemplate with a EReference field and a method to get the value of a EReference for a given EObject.</body>
+      </ownedComment>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_N6B_gHWLEemQUasExi-pKA" name="eReference">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_N6B_gXWLEemQUasExi-pKA" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_N6B_gnWLEemQUasExi-pKA" key="propertyEditorFactory" value="editor://documentstructuretemplate/EReferenceBodySectionPartTemplate/EReference/"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_N6B_g3WLEemQUasExi-pKA" annotatedElement="_N6B_gHWLEemQUasExi-pKA">
+          <body>A EReference which should be provided by the EClass of the upper level.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWjvsX_EduPJbEsMYXjUQ"/>
+      </ownedAttribute>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_5l27sHWKEemQUasExi-pKA" client="_jMKV0HWKEemQUasExi-pKA" supplier="_XvipQFYUEemiOeXIb5muwQ" contract="_XvipQFYUEemiOeXIb5muwQ"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_N6G4AHWLEemQUasExi-pKA" name="getEReferenceValues">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6x0EIHYcEemXTvAEXt5Ttw" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9m2XkHYcEemXTvAEXt5Ttw" key="body" value="final java.util.List&lt;EObject> elements = new java.util.ArrayList&lt;>();&#xA;final EReference eReference = getEReference();&#xA;if (null != eReference) {&#xA;&#x9;if (context.eClass().getEAllReferences().contains(eReference)) {&#xA;&#x9;&#x9;if (eReference.isMany()) {&#xA;&#x9;&#x9;&#x9;elements.addAll(((java.util.Collection&lt;?>) context.eGet(eReference)).stream().filter(EObject.class::isInstance).map(EObject.class::cast).collect(java.util.stream.Collectors.toList()));&#xA;&#x9;&#x9;} else {&#xA;&#x9;&#x9;&#x9;elements.add((EObject) context.eGet(eReference));&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;return org.eclipse.emf.common.util.ECollections.unmodifiableEList(elements);"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_N6HfEHWLEemQUasExi-pKA" annotatedElement="_N6G4AHWLEemQUasExi-pKA">
+          <body>This method returns the matching elements referenced by the EReference for the EObject in argument. </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_N6HfEXWLEemQUasExi-pKA" name="context">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_N6HfEnWLEemQUasExi-pKA" name="return" visibility="public" direction="return">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N6HfE3WLEemQUasExi-pKA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N6HfFHWLEemQUasExi-pKA" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_t7DsAHWLEemQUasExi-pKA" name="buildEReferenceValueLabel">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_mSywUHYeEemXTvAEXt5Ttw" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_mSywUXYeEemXTvAEXt5Ttw" key="body" value="return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.providers.DelegatingToEMFLabelProvider.INSTANCE.getText(context);"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_GA_xQHWMEemQUasExi-pKA" annotatedElement="_t7DsAHWLEemQUasExi-pKA">
+          <body>This method returns the label of the element given as parameter.&#xD;
+The goal of this method is to return a label for each element returned by the method getEReferenceValues()</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_48q_UHWLEemQUasExi-pKA" name="context">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_7J3PoHWLEemQUasExi-pKA" name="returnValue" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Dwr3IB2KEemmq_cjeiIGww">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DwseMB2KEemmq_cjeiIGww" source="http://www.eclipse.org/uml2/2.0.0/UML">

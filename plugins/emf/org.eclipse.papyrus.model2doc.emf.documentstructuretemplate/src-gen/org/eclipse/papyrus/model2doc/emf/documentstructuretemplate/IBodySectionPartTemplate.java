@@ -130,6 +130,7 @@ public interface IBodySectionPartTemplate extends EObject {
 	 * <!-- end-model-doc -->
 	 *
 	 * @model required="true" ordered="false" contextRequired="true" contextOrdered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.operations.BodySectionPartTemplateTitleOperations.INSTANCE.buildPartTemplateTitle(this,context);'"
 	 * @generated
 	 */
 	String buildPartTemplateTitle(EObject context);

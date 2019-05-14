@@ -52,8 +52,8 @@ public class DocumentStructureTemplateFactoryBasisTests {
 	public void checkEReferencePartTemplate() {
 		final EReferencePartTemplate template = DocumentStructureTemplateFactory.eINSTANCE.createEReferencePartTemplate();
 		Assert.assertEquals("No EReference", template.buildPartTemplateTitle(null));
-		template.getMatchingReferencedEObjects(EcoreFactory.eINSTANCE.createEObject());
-		Assert.assertEquals(true, template.getMatchingReferencedEObjects(null).isEmpty());
+		template.getEReferenceValues(EcoreFactory.eINSTANCE.createEObject());
+		Assert.assertEquals(true, template.getEReferenceValues(null).isEmpty());
 	}
 
 	/**

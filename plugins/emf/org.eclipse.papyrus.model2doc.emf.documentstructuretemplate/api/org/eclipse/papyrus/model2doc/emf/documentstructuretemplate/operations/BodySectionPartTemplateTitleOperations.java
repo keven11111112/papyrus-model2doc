@@ -29,14 +29,19 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionP
  * This class provides the method to build the title for {@link IBodySectionPartTemplate}
  * This class must be extended to manage new PartTemplate element, or override the provided title
  */
-public class BodySectionPartTemplateTitleHelper {
+public class BodySectionPartTemplateTitleOperations {
+
+	/**
+	 * Singleton of this class
+	 */
+	public static final BodySectionPartTemplateTitleOperations INSTANCE = new BodySectionPartTemplateTitleOperations();
 
 	/**
 	 *
 	 * Constructor.
-	 *
+	 * protected to allow to extend this class if required
 	 */
-	public BodySectionPartTemplateTitleHelper() {
+	protected BodySectionPartTemplateTitleOperations() {
 		// nothing to do
 	}
 
@@ -72,13 +77,13 @@ public class BodySectionPartTemplateTitleHelper {
 	 */
 	protected String internalBuildPartTemplateTitle(final IBodySectionPartTemplate partTemplate, final EObject parameter) {
 		if (partTemplate instanceof EReferencePartTemplate) {
-			return buildEReferencePartTemplateTitle((EReferencePartTemplate) partTemplate);
+			return buildEReferencePartTemplateTitle((EReferencePartTemplate) partTemplate, null);
 		}
 		if (partTemplate instanceof EClassPartTemplate) {
 			return buildEClassPartTemplateTitle((EClassPartTemplate) partTemplate, parameter);
 		}
 		if (partTemplate instanceof EReferenceTableView) {
-			return buildEReferenceTableViewTitle((EReferenceTableView) partTemplate);
+			return buildEReferenceTableViewTitle((EReferenceTableView) partTemplate, null);
 		}
 		return ""; //$NON-NLS-1$
 	}
@@ -88,12 +93,14 @@ public class BodySectionPartTemplateTitleHelper {
 	 *
 	 * @param partTemplate
 	 *            an {@link EReferencePartTemplate}
+	 * @param parameter
+	 *            a parameter to use to build the title. This parameter can be <code>null</code>
 	 * @return
 	 *         the built title for the EReferencePartTemplate or a default value if the EReference is <code>null</code>
 	 *
 	 *
 	 */
-	protected final String buildEReferencePartTemplateTitle(final EReferencePartTemplate partTemplate) {
+	protected final String buildEReferencePartTemplateTitle(final EReferencePartTemplate partTemplate, final EObject parameter) {
 		if (null != partTemplate.getEReference()) {
 			return partTemplate.getEReference().getName();
 		}
@@ -104,12 +111,15 @@ public class BodySectionPartTemplateTitleHelper {
 	 *
 	 * @param partTemplate
 	 *            an {@link EReferenceTableView}
+	 * @param parameter
+	 *            a parameter to use to build the title. This parameter can be <code>null</code>
+	 *
 	 * @return
 	 *         the built title for the EReferenceTableView or a default value if the EReference is <code>null</code>
 	 *
 	 *
 	 */
-	protected final String buildEReferenceTableViewTitle(final EReferenceTableView partTemplate) {
+	protected final String buildEReferenceTableViewTitle(final EReferenceTableView partTemplate, final EObject parameter) {
 		if (null != partTemplate.getEReference()) {
 			return partTemplate.getEReference().getName();
 		}
@@ -120,6 +130,9 @@ public class BodySectionPartTemplateTitleHelper {
 	 *
 	 * @param partTemplate
 	 *            an {@link EClassPartTemplate}
+	 * @param parameter
+	 *            a parameter to use to build the title. This parameter can be <code>null</code>
+	 *
 	 * @return
 	 *         the built title for the EReferencePartTemplate or a default value if the {@link EClass} is <code>null</code>
 	 *

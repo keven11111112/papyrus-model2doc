@@ -17,7 +17,7 @@ package org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.operations;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.operations.BodySectionPartTemplateTitleHelper;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.operations.BodySectionPartTemplateTitleOperations;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.CommentAsParagraph;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePartTemplate;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferencePartTemplate;
@@ -25,7 +25,7 @@ import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePro
 /**
  * Title builder helper for UML PartTemplate
  */
-public class UMLBodySectionPartTemplateTitleHelper extends BodySectionPartTemplateTitleHelper {
+public class UMLBodySectionPartTemplateTitleHelper extends BodySectionPartTemplateTitleOperations {
 
 	/**
 	 * Stereotype marker <<

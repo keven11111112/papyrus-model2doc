@@ -158,6 +158,11 @@ public class DocumentStructureTemplateAdapterFactory extends AdapterFactoryImpl 
 		}
 
 		@Override
+		public Adapter caseEReferenceBodySectionPartTemplate(EReferenceBodySectionPartTemplate object) {
+			return createEReferenceBodySectionPartTemplateAdapter();
+		}
+
+		@Override
 		public Adapter caseITemplatePartView(ITemplatePartView object) {
 			return createITemplatePartViewAdapter();
 		}
@@ -431,6 +436,21 @@ public class DocumentStructureTemplateAdapterFactory extends AdapterFactoryImpl 
 	 * @generated
 	 */
 	public Adapter createEReferencePartTemplateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceBodySectionPartTemplate <em>EReference Body Section Part Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceBodySectionPartTemplate
+	 * @generated
+	 */
+	public Adapter createEReferenceBodySectionPartTemplateAdapter() {
 		return null;
 	}
 

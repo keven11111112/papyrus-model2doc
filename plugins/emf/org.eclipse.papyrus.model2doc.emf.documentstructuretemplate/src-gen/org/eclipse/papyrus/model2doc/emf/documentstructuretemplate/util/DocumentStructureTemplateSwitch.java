@@ -247,6 +247,9 @@ public class DocumentStructureTemplateSwitch<T> extends Switch<T> {
 			EReferencePartTemplate eReferencePartTemplate = (EReferencePartTemplate) theEObject;
 			T result = caseEReferencePartTemplate(eReferencePartTemplate);
 			if (result == null) {
+				result = caseEReferenceBodySectionPartTemplate(eReferencePartTemplate);
+			}
+			if (result == null) {
 				result = caseIComposedBodyPartTemplate(eReferencePartTemplate);
 			}
 			if (result == null) {
@@ -254,6 +257,17 @@ public class DocumentStructureTemplateSwitch<T> extends Switch<T> {
 			}
 			if (result == null) {
 				result = caseIBodySectionPartTemplate(eReferencePartTemplate);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructureTemplatePackage.EREFERENCE_BODY_SECTION_PART_TEMPLATE: {
+			EReferenceBodySectionPartTemplate eReferenceBodySectionPartTemplate = (EReferenceBodySectionPartTemplate) theEObject;
+			T result = caseEReferenceBodySectionPartTemplate(eReferenceBodySectionPartTemplate);
+			if (result == null) {
+				result = caseIBodySectionPartTemplate(eReferenceBodySectionPartTemplate);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
@@ -310,6 +324,9 @@ public class DocumentStructureTemplateSwitch<T> extends Switch<T> {
 		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW: {
 			EReferenceTableView eReferenceTableView = (EReferenceTableView) theEObject;
 			T result = caseEReferenceTableView(eReferenceTableView);
+			if (result == null) {
+				result = caseEReferenceBodySectionPartTemplate(eReferenceTableView);
+			}
 			if (result == null) {
 				result = caseITableView(eReferenceTableView);
 			}
@@ -598,6 +615,23 @@ public class DocumentStructureTemplateSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEReferencePartTemplate(EReferencePartTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EReference Body Section Part Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EReference Body Section Part Template</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEReferenceBodySectionPartTemplate(EReferenceBodySectionPartTemplate object) {
 		return null;
 	}
 

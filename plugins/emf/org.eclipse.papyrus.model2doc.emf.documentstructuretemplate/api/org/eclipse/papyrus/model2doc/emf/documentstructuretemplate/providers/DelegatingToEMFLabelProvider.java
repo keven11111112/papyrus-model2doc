@@ -47,6 +47,20 @@ public class DelegatingToEMFLabelProvider implements ILabelProvider {
 	protected static final String MULTI_VALUE_SEPARATOR = ",";//$NON-NLS-1$
 
 	/**
+	 * Singleton of this label provider class
+	 */
+	public static final DelegatingToEMFLabelProvider INSTANCE = new DelegatingToEMFLabelProvider();
+
+	/**
+	 *
+	 * Constructor.
+	 * This constructor is protected to allow to extend this class
+	 */
+	protected DelegatingToEMFLabelProvider() {
+		// nothing to do
+	}
+
+	/**
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#addListener(org.eclipse.jface.viewers.ILabelProviderListener)
 	 *
 	 * @param listener

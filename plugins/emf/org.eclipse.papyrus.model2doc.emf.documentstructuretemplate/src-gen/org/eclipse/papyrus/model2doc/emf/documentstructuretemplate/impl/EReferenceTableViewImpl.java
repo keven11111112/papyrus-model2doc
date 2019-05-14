@@ -24,18 +24,20 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTableView;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodyPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IColumn;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafBodyPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITemplatePartView;
 
 /**
  * <!-- begin-user-doc -->
@@ -45,84 +47,14 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IColumn;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceTableViewImpl#isGenerate <em>Generate</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceTableViewImpl#isGenerateTitle <em>Generate Title</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceTableViewImpl#getCustomTitle <em>Custom Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceTableViewImpl#getColumns <em>Columns</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceTableViewImpl#isGenerateRowHeader <em>Generate Row Header</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceTableViewImpl#isGenerateColumnHeader <em>Generate Column Header</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceTableViewImpl#getEReference <em>EReference</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class EReferenceTableViewImpl extends MinimalEObjectImpl.Container implements EReferenceTableView {
-	/**
-	 * The default value of the '{@link #isGenerate() <em>Generate</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see #isGenerate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean GENERATE_EDEFAULT = true;
-
-	/**
-	 * The cached value of the '{@link #isGenerate() <em>Generate</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see #isGenerate()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean generate = GENERATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isGenerateTitle() <em>Generate Title</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see #isGenerateTitle()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean GENERATE_TITLE_EDEFAULT = true;
-
-	/**
-	 * The cached value of the '{@link #isGenerateTitle() <em>Generate Title</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see #isGenerateTitle()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean generateTitle = GENERATE_TITLE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCustomTitle() <em>Custom Title</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see #getCustomTitle()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CUSTOM_TITLE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCustomTitle() <em>Custom Title</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see #getCustomTitle()
-	 * @generated
-	 * @ordered
-	 */
-	protected String customTitle = CUSTOM_TITLE_EDEFAULT;
-
+public class EReferenceTableViewImpl extends EReferenceBodySectionPartTemplateImpl implements EReferenceTableView {
 	/**
 	 * The cached value of the '{@link #getColumns() <em>Columns</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -179,17 +111,6 @@ public class EReferenceTableViewImpl extends MinimalEObjectImpl.Container implem
 	protected boolean generateColumnHeader = GENERATE_COLUMN_HEADER_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getEReference() <em>EReference</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see #getEReference()
-	 * @generated
-	 * @ordered
-	 */
-	protected EReference eReference;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -208,84 +129,6 @@ public class EReferenceTableViewImpl extends MinimalEObjectImpl.Container implem
 	@Override
 	protected EClass eStaticClass() {
 		return DocumentStructureTemplatePackage.Literals.EREFERENCE_TABLE_VIEW;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public boolean isGenerate() {
-		return generate;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public void setGenerate(boolean newGenerate) {
-		boolean oldGenerate = generate;
-		generate = newGenerate;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE, oldGenerate, generate));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public boolean isGenerateTitle() {
-		return generateTitle;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public void setGenerateTitle(boolean newGenerateTitle) {
-		boolean oldGenerateTitle = generateTitle;
-		generateTitle = newGenerateTitle;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_TITLE, oldGenerateTitle, generateTitle));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public String getCustomTitle() {
-		return customTitle;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public void setCustomTitle(String newCustomTitle) {
-		String oldCustomTitle = customTitle;
-		customTitle = newCustomTitle;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__CUSTOM_TITLE, oldCustomTitle, customTitle));
-		}
 	}
 
 	/**
@@ -361,27 +204,8 @@ public class EReferenceTableViewImpl extends MinimalEObjectImpl.Container implem
 	 * @generated
 	 */
 	@Override
-	public EReference getEReference() {
-		if (eReference != null && eReference.eIsProxy()) {
-			InternalEObject oldEReference = (InternalEObject) eReference;
-			eReference = (EReference) eResolveProxy(oldEReference);
-			if (eReference != oldEReference) {
-				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__EREFERENCE, oldEReference, eReference));
-				}
-			}
-		}
-		return eReference;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	public EReference basicGetEReference() {
-		return eReference;
+	public EList<EObject> getRows(final EObject context) {
+		return getEReferenceValues(context);
 	}
 
 	/**
@@ -391,51 +215,8 @@ public class EReferenceTableViewImpl extends MinimalEObjectImpl.Container implem
 	 * @generated
 	 */
 	@Override
-	public void setEReference(EReference newEReference) {
-		EReference oldEReference = eReference;
-		eReference = newEReference;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__EREFERENCE, oldEReference, eReference));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public String buildPartTemplateTitle(EObject context) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EList<EObject> getRows(EObject context) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public String buildRowHeaderLabel(EObject rowElement) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public String buildRowHeaderLabel(final EObject rowElement) {
+		return buildEReferenceValueLabel(rowElement);
 	}
 
 	/**
@@ -462,23 +243,12 @@ public class EReferenceTableViewImpl extends MinimalEObjectImpl.Container implem
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE:
-			return isGenerate();
-		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_TITLE:
-			return isGenerateTitle();
-		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__CUSTOM_TITLE:
-			return getCustomTitle();
 		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__COLUMNS:
 			return getColumns();
 		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_ROW_HEADER:
 			return isGenerateRowHeader();
 		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_COLUMN_HEADER:
 			return isGenerateColumnHeader();
-		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__EREFERENCE:
-			if (resolve) {
-				return getEReference();
-			}
-			return basicGetEReference();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -493,15 +263,6 @@ public class EReferenceTableViewImpl extends MinimalEObjectImpl.Container implem
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE:
-			setGenerate((Boolean) newValue);
-			return;
-		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_TITLE:
-			setGenerateTitle((Boolean) newValue);
-			return;
-		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__CUSTOM_TITLE:
-			setCustomTitle((String) newValue);
-			return;
 		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__COLUMNS:
 			getColumns().clear();
 			getColumns().addAll((Collection<? extends IColumn>) newValue);
@@ -511,9 +272,6 @@ public class EReferenceTableViewImpl extends MinimalEObjectImpl.Container implem
 			return;
 		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_COLUMN_HEADER:
 			setGenerateColumnHeader((Boolean) newValue);
-			return;
-		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__EREFERENCE:
-			setEReference((EReference) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -528,15 +286,6 @@ public class EReferenceTableViewImpl extends MinimalEObjectImpl.Container implem
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE:
-			setGenerate(GENERATE_EDEFAULT);
-			return;
-		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_TITLE:
-			setGenerateTitle(GENERATE_TITLE_EDEFAULT);
-			return;
-		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__CUSTOM_TITLE:
-			setCustomTitle(CUSTOM_TITLE_EDEFAULT);
-			return;
 		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__COLUMNS:
 			getColumns().clear();
 			return;
@@ -545,9 +294,6 @@ public class EReferenceTableViewImpl extends MinimalEObjectImpl.Container implem
 			return;
 		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_COLUMN_HEADER:
 			setGenerateColumnHeader(GENERATE_COLUMN_HEADER_EDEFAULT);
-			return;
-		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__EREFERENCE:
-			setEReference((EReference) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -562,20 +308,12 @@ public class EReferenceTableViewImpl extends MinimalEObjectImpl.Container implem
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE:
-			return generate != GENERATE_EDEFAULT;
-		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_TITLE:
-			return generateTitle != GENERATE_TITLE_EDEFAULT;
-		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__CUSTOM_TITLE:
-			return CUSTOM_TITLE_EDEFAULT == null ? customTitle != null : !CUSTOM_TITLE_EDEFAULT.equals(customTitle);
 		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__COLUMNS:
 			return columns != null && !columns.isEmpty();
 		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_ROW_HEADER:
 			return generateRowHeader != GENERATE_ROW_HEADER_EDEFAULT;
 		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_COLUMN_HEADER:
 			return generateColumnHeader != GENERATE_COLUMN_HEADER_EDEFAULT;
-		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__EREFERENCE:
-			return eReference != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -587,10 +325,129 @@ public class EReferenceTableViewImpl extends MinimalEObjectImpl.Container implem
 	 * @generated
 	 */
 	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == IBodyPartTemplate.class) {
+			switch (derivedFeatureID) {
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == ILeafBodyPartTemplate.class) {
+			switch (derivedFeatureID) {
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == ITemplatePartView.class) {
+			switch (derivedFeatureID) {
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == ITableView.class) {
+			switch (derivedFeatureID) {
+			case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__COLUMNS:
+				return DocumentStructureTemplatePackage.ITABLE_VIEW__COLUMNS;
+			case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_ROW_HEADER:
+				return DocumentStructureTemplatePackage.ITABLE_VIEW__GENERATE_ROW_HEADER;
+			case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_COLUMN_HEADER:
+				return DocumentStructureTemplatePackage.ITABLE_VIEW__GENERATE_COLUMN_HEADER;
+			default:
+				return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == IBodyPartTemplate.class) {
+			switch (baseFeatureID) {
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == ILeafBodyPartTemplate.class) {
+			switch (baseFeatureID) {
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == ITemplatePartView.class) {
+			switch (baseFeatureID) {
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == ITableView.class) {
+			switch (baseFeatureID) {
+			case DocumentStructureTemplatePackage.ITABLE_VIEW__COLUMNS:
+				return DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__COLUMNS;
+			case DocumentStructureTemplatePackage.ITABLE_VIEW__GENERATE_ROW_HEADER:
+				return DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_ROW_HEADER;
+			case DocumentStructureTemplatePackage.ITABLE_VIEW__GENERATE_COLUMN_HEADER:
+				return DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_COLUMN_HEADER;
+			default:
+				return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == IBodyPartTemplate.class) {
+			switch (baseOperationID) {
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == ILeafBodyPartTemplate.class) {
+			switch (baseOperationID) {
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == ITemplatePartView.class) {
+			switch (baseOperationID) {
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == ITableView.class) {
+			switch (baseOperationID) {
+			case DocumentStructureTemplatePackage.ITABLE_VIEW___GET_ROWS__EOBJECT:
+				return DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW___GET_ROWS__EOBJECT;
+			case DocumentStructureTemplatePackage.ITABLE_VIEW___BUILD_ROW_HEADER_LABEL__EOBJECT:
+				return DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW___BUILD_ROW_HEADER_LABEL__EOBJECT;
+			default:
+				return -1;
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW___BUILD_PART_TEMPLATE_TITLE__EOBJECT:
-			return buildPartTemplateTitle((EObject) arguments.get(0));
 		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW___GET_ROWS__EOBJECT:
 			return getRows((EObject) arguments.get(0));
 		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW___BUILD_ROW_HEADER_LABEL__EOBJECT:
@@ -612,13 +469,7 @@ public class EReferenceTableViewImpl extends MinimalEObjectImpl.Container implem
 		}
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (generate: "); //$NON-NLS-1$
-		result.append(generate);
-		result.append(", generateTitle: "); //$NON-NLS-1$
-		result.append(generateTitle);
-		result.append(", customTitle: "); //$NON-NLS-1$
-		result.append(customTitle);
-		result.append(", generateRowHeader: "); //$NON-NLS-1$
+		result.append(" (generateRowHeader: "); //$NON-NLS-1$
 		result.append(generateRowHeader);
 		result.append(", generateColumnHeader: "); //$NON-NLS-1$
 		result.append(generateColumnHeader);

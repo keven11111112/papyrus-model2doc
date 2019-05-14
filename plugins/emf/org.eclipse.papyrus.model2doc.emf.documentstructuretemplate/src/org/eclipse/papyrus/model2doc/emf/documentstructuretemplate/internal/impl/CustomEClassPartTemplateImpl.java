@@ -17,17 +17,11 @@ package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.imp
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassPartTemplateImpl;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.operations.BodySectionPartTemplateTitleHelper;
 
 /**
  * Custom implementation for {@link EClassPartTemplate}
  */
 public class CustomEClassPartTemplateImpl extends EClassPartTemplateImpl {
-
-	/**
-	 * unique title helper for all instance of {@link EClassPartTemplate}
-	 */
-	private static final BodySectionPartTemplateTitleHelper TITLE_HELPER = new BodySectionPartTemplateTitleHelper();
 
 	/**
 	 *
@@ -54,14 +48,4 @@ public class CustomEClassPartTemplateImpl extends EClassPartTemplateImpl {
 		}
 	}
 
-	/**
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassPartTemplateImpl#buildPartTitle(org.eclipse.emf.ecore.EObject)
-	 *
-	 * @param titleContext
-	 * @return
-	 */
-	@Override
-	public String buildPartTemplateTitle(final EObject titleContext) {
-		return TITLE_HELPER.buildPartTemplateTitle(this, titleContext);
-	}
 }

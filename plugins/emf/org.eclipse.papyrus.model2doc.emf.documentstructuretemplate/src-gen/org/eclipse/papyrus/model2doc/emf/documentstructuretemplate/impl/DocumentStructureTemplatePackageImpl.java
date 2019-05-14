@@ -33,6 +33,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTempl
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplatePrototype;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassFilterBehavior;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceBodySectionPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceListView;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTableView;
@@ -177,6 +178,14 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	private EClass eReferencePartTemplateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eReferenceBodySectionPartTemplateEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -765,8 +774,8 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
-	public EReference getEReferencePartTemplate_EReference() {
-		return (EReference) eReferencePartTemplateEClass.getEStructuralFeatures().get(0);
+	public EClass getEReferenceBodySectionPartTemplate() {
+		return eReferenceBodySectionPartTemplateEClass;
 	}
 
 	/**
@@ -776,8 +785,30 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
-	public EOperation getEReferencePartTemplate__GetMatchingReferencedEObjects__EObject() {
-		return eReferencePartTemplateEClass.getEOperations().get(0);
+	public EReference getEReferenceBodySectionPartTemplate_EReference() {
+		return (EReference) eReferenceBodySectionPartTemplateEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EOperation getEReferenceBodySectionPartTemplate__GetEReferenceValues__EObject() {
+		return eReferenceBodySectionPartTemplateEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EOperation getEReferenceBodySectionPartTemplate__BuildEReferenceValueLabel__EObject() {
+		return eReferenceBodySectionPartTemplateEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -930,17 +961,6 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
-	public EReference getEReferenceTableView_EReference() {
-		return (EReference) eReferenceTableViewEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
 	public EClass getEStructuralFeatureColumn() {
 		return eStructuralFeatureColumnEClass;
 	}
@@ -1056,8 +1076,11 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		createEOperation(eClassPartTemplateEClass, ECLASS_PART_TEMPLATE___IS_MATCHING_FILTER_RULE__EOBJECT);
 
 		eReferencePartTemplateEClass = createEClass(EREFERENCE_PART_TEMPLATE);
-		createEReference(eReferencePartTemplateEClass, EREFERENCE_PART_TEMPLATE__EREFERENCE);
-		createEOperation(eReferencePartTemplateEClass, EREFERENCE_PART_TEMPLATE___GET_MATCHING_REFERENCED_EOBJECTS__EOBJECT);
+
+		eReferenceBodySectionPartTemplateEClass = createEClass(EREFERENCE_BODY_SECTION_PART_TEMPLATE);
+		createEReference(eReferenceBodySectionPartTemplateEClass, EREFERENCE_BODY_SECTION_PART_TEMPLATE__EREFERENCE);
+		createEOperation(eReferenceBodySectionPartTemplateEClass, EREFERENCE_BODY_SECTION_PART_TEMPLATE___GET_EREFERENCE_VALUES__EOBJECT);
+		createEOperation(eReferenceBodySectionPartTemplateEClass, EREFERENCE_BODY_SECTION_PART_TEMPLATE___BUILD_EREFERENCE_VALUE_LABEL__EOBJECT);
 
 		iTemplatePartViewEClass = createEClass(ITEMPLATE_PART_VIEW);
 
@@ -1076,7 +1099,6 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		createEOperation(iColumnEClass, ICOLUMN___BUILD_CELL_LABEL__OBJECT);
 
 		eReferenceTableViewEClass = createEClass(EREFERENCE_TABLE_VIEW);
-		createEReference(eReferenceTableViewEClass, EREFERENCE_TABLE_VIEW__EREFERENCE);
 
 		eStructuralFeatureColumnEClass = createEClass(ESTRUCTURAL_FEATURE_COLUMN);
 		createEReference(eStructuralFeatureColumnEClass, ESTRUCTURAL_FEATURE_COLUMN__FEATURE);
@@ -1131,10 +1153,13 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		iComposedSubBodyPartTemplateEClass.getESuperTypes().add(this.getISubBodyPartTemplate());
 		iLeafSubBodyPartTemplateEClass.getESuperTypes().add(this.getISubBodyPartTemplate());
 		eClassPartTemplateEClass.getESuperTypes().add(this.getIComposedSubBodyPartTemplate());
+		eReferencePartTemplateEClass.getESuperTypes().add(this.getEReferenceBodySectionPartTemplate());
 		eReferencePartTemplateEClass.getESuperTypes().add(this.getIComposedBodyPartTemplate());
+		eReferenceBodySectionPartTemplateEClass.getESuperTypes().add(this.getIBodySectionPartTemplate());
 		eReferenceListViewEClass.getESuperTypes().add(this.getITemplatePartView());
 		iTableViewEClass.getESuperTypes().add(this.getILeafBodyPartTemplate());
 		iTableViewEClass.getESuperTypes().add(this.getITemplatePartView());
+		eReferenceTableViewEClass.getESuperTypes().add(this.getEReferenceBodySectionPartTemplate());
 		eReferenceTableViewEClass.getESuperTypes().add(this.getITableView());
 		eStructuralFeatureColumnEClass.getESuperTypes().add(this.getIColumn());
 
@@ -1212,10 +1237,15 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		addEParameter(op, theEcorePackage.getEObject(), "inputEObject", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(eReferencePartTemplateEClass, EReferencePartTemplate.class, "EReferencePartTemplate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getEReferencePartTemplate_EReference(), theEcorePackage.getEReference(), null, "eReference", null, 1, 1, EReferencePartTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, //$NON-NLS-1$
-				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		op = initEOperation(getEReferencePartTemplate__GetMatchingReferencedEObjects__EObject(), theEcorePackage.getEObject(), "getMatchingReferencedEObjects", 0, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+		initEClass(eReferenceBodySectionPartTemplateEClass, EReferenceBodySectionPartTemplate.class, "EReferenceBodySectionPartTemplate", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getEReferenceBodySectionPartTemplate_EReference(), theEcorePackage.getEReference(), null, "eReference", null, 1, 1, EReferenceBodySectionPartTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, //$NON-NLS-1$
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		op = initEOperation(getEReferenceBodySectionPartTemplate__GetEReferenceValues__EObject(), theEcorePackage.getEObject(), "getEReferenceValues", 0, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+		addEParameter(op, theEcorePackage.getEObject(), "context", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
+		op = initEOperation(getEReferenceBodySectionPartTemplate__BuildEReferenceValueLabel__EObject(), ecorePackage.getEString(), "buildEReferenceValueLabel", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 		addEParameter(op, theEcorePackage.getEObject(), "context", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(iTemplatePartViewEClass, ITemplatePartView.class, "ITemplatePartView", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
@@ -1244,8 +1274,6 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		addEParameter(op, ecorePackage.getEJavaObject(), "cellElement", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(eReferenceTableViewEClass, EReferenceTableView.class, "EReferenceTableView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getEReferenceTableView_EReference(), theEcorePackage.getEReference(), null, "eReference", null, 1, 1, EReferenceTableView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, //$NON-NLS-1$
-				!IS_DERIVED, !IS_ORDERED);
 
 		initEClass(eStructuralFeatureColumnEClass, EStructuralFeatureColumn.class, "EStructuralFeatureColumn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(getEStructuralFeatureColumn_Feature(), theEcorePackage.getEStructuralFeature(), null, "feature", null, 1, 1, EStructuralFeatureColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, //$NON-NLS-1$
@@ -1262,6 +1290,8 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		// Create annotations
 		// http://www.eclipse.org/uml2/2.0.0/UML
 		createUMLAnnotations();
+		// duplicates
+		createDuplicatesAnnotations();
 	}
 
 	/**
@@ -1277,6 +1307,21 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 				source,
 				new String[] {
 						"originalName", "DocumentStructureTemplate" //$NON-NLS-1$ //$NON-NLS-2$
+				});
+	}
+
+	/**
+	 * Initializes the annotations for <b>duplicates</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected void createDuplicatesAnnotations() {
+		String source = "duplicates"; //$NON-NLS-1$
+		addAnnotation(eReferenceTableViewEClass,
+				source,
+				new String[] {
 				});
 	}
 

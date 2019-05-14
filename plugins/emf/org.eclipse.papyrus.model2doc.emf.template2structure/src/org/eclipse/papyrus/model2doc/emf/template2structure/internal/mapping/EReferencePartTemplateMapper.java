@@ -54,7 +54,7 @@ public class EReferencePartTemplateMapper extends AbstractEMFTemplateToStructure
 	protected <T> List<T> doMap(final IMappingService mappingService, final EReferencePartTemplate referencePartTemplate, final EObject semanticModelElement, Class<T> expectedReturnedClass) {
 		List<T> returnedElements = new ArrayList<>();
 
-		final Collection<EObject> matchingElements = referencePartTemplate.getMatchingReferencedEObjects(semanticModelElement);
+		final Collection<EObject> matchingElements = referencePartTemplate.getEReferenceValues(semanticModelElement);
 		if (matchingElements.isEmpty()) {
 			return null;
 		}

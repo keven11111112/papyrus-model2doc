@@ -25,21 +25,21 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.internal
 /**
  * Factory used to edit {@link EReferencePartTemplate#setEReference(EReference)}
  */
-public class EReferencePartTemplateEReferenceEditorFactory extends AbstractEcoreEReferenceDialogEditorFactory {
+public class EReferenceBodySectionPartTemplateEReferenceEditorFactory extends AbstractEcoreEReferenceDialogEditorFactory {
 
 	/**
 	 * This editor is registered with this URI with the extension point org.eclipse.emf.edit.propertyEditorFactories.
 	 * This editor is also registered with this URI in an EAnnotation in the ecore model
 	 */
-	private static final URI SELF_URI = URI.createURI("editor://documentstructuretemplate/EReferencePartTemplate/EReference/"); //$NON-NLS-1$
+	private static final URI SELF_URI = URI.createURI("editor://documentstructuretemplate/EReferenceBodySectionPartTemplate/EReference/"); //$NON-NLS-1$
 
 	/**
 	 *
 	 * Constructor.
 	 *
 	 */
-	public EReferencePartTemplateEReferenceEditorFactory() {
-		super(SELF_URI, DocumentStructureTemplatePackage.eINSTANCE.getEReferencePartTemplate_EReference());
+	public EReferenceBodySectionPartTemplateEReferenceEditorFactory() {
+		super(SELF_URI, DocumentStructureTemplatePackage.eINSTANCE.getEReferenceBodySectionPartTemplate_EReference());
 	}
 
 
