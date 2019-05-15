@@ -15,18 +15,31 @@
 
 package org.eclipse.papyrus.model2doc.emf.template2structure.internal.handler;
 
+import java.util.Collection;
+
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.osgi.util.NLS;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.operations.GeneratorConfigurationOperations;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate;
+import org.eclipse.papyrus.model2doc.emf.template2structure.Activator;
 import org.eclipse.papyrus.model2doc.emf.template2structure.internal.command.GenerateDocumentStructureCommand;
+import org.eclipse.papyrus.model2doc.emf.template2structure.internal.messages.Messages;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.ISelectionService;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchWindow;
@@ -48,6 +61,11 @@ public class GenerateDocumentStructureHandler extends AbstractHandler {
 	private TransactionalEditingDomain domain;
 
 	/**
+	 * The selected document template used for the generation
+	 */
+	private DocumentTemplate selectedDocumentTemplate;
+
+	/**
 	 * @see org.eclipse.core.commands.IHandler#execute(org.eclipse.core.commands.ExecutionEvent)
 	 *
 	 * @param event
@@ -59,8 +77,34 @@ public class GenerateDocumentStructureHandler extends AbstractHandler {
 		if (null != this.domain && null != this.command && this.command.canExecute()) {
 			domain.getCommandStack().execute(this.command);
 		}
+
+		// we refresg the workspace
+		refreshProjects();
+
+		// we open a dialog at the end of the generation
+		MessageDialog.openInformation(Display.getDefault().getActiveShell(), "Papyrus-Model2Doc", Messages.GenerateDocumentStructureHandler_GenerationIsFinished); //$NON-NLS-1$
+
 		resetFields();
+
 		return null;
+	}
+
+	/**
+	 * This method refresh the project concerned by the DocumentStructure generation
+	 *
+	 */
+	private void refreshProjects() {
+		final Collection<String> projectsToRefresh = GeneratorConfigurationOperations.getWorkspaceProjectToRefresh(this.selectedDocumentTemplate.getDocumentStructureGeneratorConfiguration());
+		for (final String current : projectsToRefresh) {
+			final IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(current);
+			if (null != project) {
+				try {
+					project.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
+				} catch (CoreException e) {
+					Activator.log.error(NLS.bind("An exception occurred refresh the project {0}", current), e); //$NON-NLS-1$
+				}
+			}
+		}
 	}
 
 	/**
@@ -82,15 +126,15 @@ public class GenerateDocumentStructureHandler extends AbstractHandler {
 	 */
 	private void initFields() {
 		resetFields();// to be sure
-		final DocumentTemplate docTemplate = getSelectedDocumentTemplate();
-		if (null == docTemplate) {
+		this.selectedDocumentTemplate = getSelectedDocumentTemplate();
+		if (null == this.selectedDocumentTemplate) {
 			return;
 		}
-		this.domain = TransactionUtil.getEditingDomain(docTemplate);
+		this.domain = TransactionUtil.getEditingDomain(this.selectedDocumentTemplate);
 		if (null == domain) {
 			return;
 		}
-		this.command = new GenerateDocumentStructureCommand(domain, docTemplate);
+		this.command = new GenerateDocumentStructureCommand(domain, this.selectedDocumentTemplate);
 	}
 
 	/**
@@ -99,12 +143,13 @@ public class GenerateDocumentStructureHandler extends AbstractHandler {
 	private void resetFields() {
 		this.domain = null;
 		this.command = null;
+		this.selectedDocumentTemplate = null;
 	}
 
 	/**
 	 *
 	 * @return
-	 * 		the first selected document template
+	 *         the first selected document template
 	 */
 	private DocumentTemplate getSelectedDocumentTemplate() {
 		Object firstSelectedElement = null;

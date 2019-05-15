@@ -89,8 +89,7 @@ public class GenerateDocumentStructureCommand extends RecordingCommand {
 		URI documentStructureURI = null;
 		final IDocumentStructureGeneratorConfiguration configuration = this.documentTemplate.getDocumentStructureGeneratorConfiguration();
 		if (null != configuration) {
-			final String ecoreURI = GeneratorConfigurationOperations.getDocumentStructureFileEcoreURI(configuration, DocumentStructureResource.FILE_EXTENSION);
-			documentStructureURI = URI.createURI(ecoreURI);
+			documentStructureURI = GeneratorConfigurationOperations.getDocumentStructureFileEcoreURI(configuration, DocumentStructureResource.FILE_EXTENSION);
 		} else {
 			Activator.log.warn("The document structure can't be generated, the configuration is not defined in your model."); //$NON-NLS-1$
 			return;

@@ -16,6 +16,8 @@ package org.eclipse.papyrus.model2doc.core.generatorconfiguration.operations;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
 
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -48,9 +50,9 @@ public class GeneratorConfigurationOperations {
 	 * @param fileExtension
 	 *            the extension file
 	 * @return
-	 * 		the path of the document structure. The returned path, will be a string starting with platform:/resource/
+	 *         the path of the document structure. The returned path, will be a string starting with platform:/resource/
 	 */
-	public static final String getDocumentStructureFileEcoreURI(final IDocumentStructureGeneratorConfiguration generatorConfiguration, final String fileExtension) {
+	public static final URI getDocumentStructureFileEcoreURI(final IDocumentStructureGeneratorConfiguration generatorConfiguration, final String fileExtension) {
 		final String folderName = generatorConfiguration.getStructureFolder();
 		final String documentName = generatorConfiguration.getDocumentName();
 		URI uri = URI.createURI(folderName);
@@ -72,7 +74,7 @@ public class GeneratorConfigurationOperations {
 				Activator.log.warn(NLS.bind("The path {0} must not be a platform path", uri.toString())); //$NON-NLS-1$
 				return null;
 			}
-			return uri.appendSegment(documentName).appendFileExtension(fileExtension).toString();
+			return uri.appendSegment(documentName).appendFileExtension(fileExtension);
 		}
 		return null;
 	}
@@ -84,7 +86,7 @@ public class GeneratorConfigurationOperations {
 	 * @param fileExtension
 	 *            the file extension used to create the file
 	 * @return
-	 * 		the file uri as local path (in C:/ for windows), prefixed with file:/
+	 *         the file uri as local path (in C:/ for windows), prefixed with file:/
 	 */
 	public static final String getDocumentFileLocalPath(final IDocumentGeneratorConfiguration configuration, final String fileExtension) {
 		final String projectName;
@@ -92,7 +94,7 @@ public class GeneratorConfigurationOperations {
 			// TODO remove this test, when first version of generation will be deleted
 			projectName = null;
 		} else if (null == configuration.eResource().getURI() || configuration.eResource().getURI().segmentCount() < 1) {
-			throw new UnsupportedOperationException("This method doesn't work with DefaultDocumentGeneratorConfiguration which are not saved in a resource");
+			throw new UnsupportedOperationException("This method doesn't work with DefaultDocumentGeneratorConfiguration which are not saved in a resource"); //$NON-NLS-1$
 		} else {
 			// the first segment is the Eclipse project name
 			projectName = configuration.eResource().getURI().segment(1);
@@ -107,12 +109,12 @@ public class GeneratorConfigurationOperations {
 	 * @param imageExtension
 	 *            the image extension used to create the file
 	 * @return
-	 * 		the file uri as local path (in C:/ for windows), prefixed with file:/
+	 *         the file uri as local path (in C:/ for windows), prefixed with file:/
 	 */
 	public static final String getImageFileLocalPath(final IDocumentStructureGeneratorConfiguration configuration, final String imageName, final String imageExtension) {
 		final String projectName;
 		if (null == configuration.eResource() || null == configuration.eResource().getURI() || configuration.eResource().getURI().segmentCount() < 1) {
-			throw new UnsupportedOperationException("This method doesn't work with DefaultDocumentStructureGeneratorConfiguration which are not saved in a resource");
+			throw new UnsupportedOperationException("This method doesn't work with DefaultDocumentStructureGeneratorConfiguration which are not saved in a resource"); //$NON-NLS-1$
 		} else {
 			// the first segment is the Eclipse project name
 			projectName = configuration.eResource().getURI().segment(1);
@@ -131,7 +133,7 @@ public class GeneratorConfigurationOperations {
 	 * @param fileExtension
 	 *            the extension of the file
 	 * @return
-	 * 		the file uri as local path (in C:/ for windows), prefixed with file:/
+	 *         the file uri as local path (in C:/ for windows), prefixed with file:/
 	 *
 	 */
 	private static final String buildLocalPath(final String projectName, final String folderPath, final String fileName, final String fileExtension) {
@@ -167,9 +169,94 @@ public class GeneratorConfigurationOperations {
 	/**
 	 *
 	 * @param configuration
+	 *            the document structure generator configuration
+	 * @return
+	 *         the image folder URI or <code>null</code>
+	 */
+	private static final URI getImageFolderURI(final IDocumentStructureGeneratorConfiguration configuration) {
+		final String projectName;
+		if (null == configuration.eResource() || null == configuration.eResource().getURI() || configuration.eResource().getURI().segmentCount() < 1) {
+			throw new UnsupportedOperationException("This method doesn't work with DefaultDocumentStructureGeneratorConfiguration which are not saved in a resource"); //$NON-NLS-1$
+		} else {
+			// the first segment is the Eclipse project name
+			projectName = configuration.eResource().getURI().segment(1);
+		}
+		return getImageFolderURI(projectName, configuration.getImageFolder());
+	}
+
+
+	/**
+	 *
+	 * @param projectName
+	 *            the project name
+	 * @param folderPath
+	 *            the folder path
+	 * @return
+	 *         the image folder URI or <code>null</code>
+	 */
+	private static final URI getImageFolderURI(final String projectName, final String folderPath) {
+		URI uri = URI.createURI(folderPath);
+		final String scheme = uri.scheme(); // Windows C: or platform for example
+
+		if (false == uri.isPlatform() && null != scheme && false == scheme.isEmpty()) {
+			return URI.createFileURI(folderPath);
+		}
+
+		if (false == uri.isPlatform()) {
+			// we convert a local URI as platform resource URI
+			if (folderPath.contains(SLASH)) {// appendSegment doesn't work, when the string contains "/"
+				uri = URI.createPlatformResourceURI(projectName, true).appendSegments(folderPath.split(SLASH));
+			} else {
+				uri = URI.createPlatformResourceURI(projectName, true).appendSegment(folderPath);
+			}
+		}
+		if (uri.isPlatform()) {
+			if (uri.isPlatformPlugin()) {
+				Activator.log.warn(NLS.bind("The path {0} must not be a platform path", uri.toString())); //$NON-NLS-1$
+				return null;
+			}
+		}
+		return uri;
+	}
+
+	/**
+	 *
+	 * @param configuration
+	 *            the configuration used to generate the document structure
+	 * @return
+	 *         a collection of project name to refresh after the generation
+	 */
+	public static final Collection<String> getWorkspaceProjectToRefresh(final IDocumentStructureGeneratorConfiguration configuration) {
+		final Collection<String> projectsToRefresh = new HashSet<>();
+
+		// 1. get the project name for the pds file
+		URI uri = getDocumentStructureFileEcoreURI(configuration, "dummyExtension"); //$NON-NLS-1$
+		if (null != uri) {
+			// get the project output for pds
+			if (uri.isPlatformResource() && uri.segmentCount() > 2) {
+				projectsToRefresh.add(uri.segment(1));// 1 is the project name
+			}
+		}
+
+		// 2. get the project name for the image folder
+		uri = getImageFolderURI(configuration);
+		if (null != uri) {
+			// get the project output for pds
+			if (uri.isPlatformResource() && uri.segmentCount() > 2) {
+				projectsToRefresh.add(uri.segment(1));// 1 is the project name
+			}
+		}
+
+		return projectsToRefresh;
+	}
+
+
+	/**
+	 *
+	 * @param configuration
 	 *            the generator configuration
 	 * @return
-	 * 		the file uri as local path (in C:/ for windows), prefixed with file:/
+	 *         the file uri as local path (in C:/ for windows), prefixed with file:/
 	 */
 	public static final String getTemplateFilePathInLocalPath(final IDocumentGeneratorConfiguration configuration) {
 		final String templateFile = configuration.getTemplateFile();
@@ -192,7 +279,7 @@ public class GeneratorConfigurationOperations {
 	 * @param path
 	 *            a path to convert , the path can be a platform:/plugin, and platform:/resource a just a string. In this case we build a path from the location of the EObject given in parameter
 	 * @return
-	 * 		<code>null</code> string if we can't resolved it, or the expected path (in C:/ for example, for windows System)
+	 *         <code>null</code> string if we can't resolved it, or the expected path (in C:/ for example, for windows System)
 	 */
 	private static final String convertToLocalPath(final EObject anEobject, final String path) {
 		URI uri = URI.createURI(path, true);
@@ -232,7 +319,7 @@ public class GeneratorConfigurationOperations {
 	 * @param filePathInBundle
 	 *            the path in the bundle
 	 * @return
-	 * 		the full path of the file, conformed to the OS, or <code>null</code> if not found
+	 *         the full path of the file, conformed to the OS, or <code>null</code> if not found
 	 */
 	private static final String getFileBundlePathToLocalPath(final String bundleId, final String filePathInBundle) {
 		final Bundle bundle = Platform.getBundle(bundleId); // $NON-NLS-1$
