@@ -262,6 +262,12 @@
       </eAnnotations>
       <eParameters name="cellElement" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
     </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="customColumnTitle" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A custom title to use for the column."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EReferenceTableView" eSuperTypes="#//EReferenceBodySectionPartTemplate #//ITableView">
     <eAnnotations source="duplicates">

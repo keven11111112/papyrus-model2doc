@@ -174,8 +174,9 @@ public class EReferenceTableViewItemProvider extends EReferenceBodySectionPartTe
 	 */
 	@Override
 	public String getText(Object object) {
-		EReferenceTableView eReferenceTableView = (EReferenceTableView) object;
-		return getString("_UI_EReferenceTableView_type") + " " + eReferenceTableView.isGenerate(); //$NON-NLS-1$ //$NON-NLS-2$
+		String label = ((EReferenceTableView) object).getCustomTitle();
+		return label == null || label.length() == 0 ? getString("_UI_EReferenceTableView_type") : //$NON-NLS-1$
+				getString("_UI_EReferenceTableView_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 

@@ -128,8 +128,9 @@ public class EReferencePartTemplateItemProvider extends EReferenceBodySectionPar
 	 */
 	@Override
 	public String getText(Object object) {
-		EReferencePartTemplate eReferencePartTemplate = (EReferencePartTemplate) object;
-		return getString("_UI_EReferencePartTemplate_type") + " " + eReferencePartTemplate.isGenerate(); //$NON-NLS-1$ //$NON-NLS-2$
+		String label = ((EReferencePartTemplate) object).getCustomTitle();
+		return label == null || label.length() == 0 ? getString("_UI_EReferencePartTemplate_type") : //$NON-NLS-1$
+				getString("_UI_EReferencePartTemplate_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 

@@ -269,8 +269,9 @@ public class EClassPartTemplateItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		EClassPartTemplate eClassPartTemplate = (EClassPartTemplate) object;
-		return getString("_UI_EClassPartTemplate_type") + " " + eClassPartTemplate.isGenerate(); //$NON-NLS-1$ //$NON-NLS-2$
+		String label = ((EClassPartTemplate) object).getCustomTitle();
+		return label == null || label.length() == 0 ? getString("_UI_EClassPartTemplate_type") : //$NON-NLS-1$
+				getString("_UI_EClassPartTemplate_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 

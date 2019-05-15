@@ -81,8 +81,10 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//Body/bodyPartTemplate"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructuretemplate.ecore#//IBodyPartTemplate"/>
-    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructuretemplate.ecore#//IBodySectionPartTemplate">
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructuretemplate.ecore#//IBodyPartTemplate"
+        labelFeature="#//documentstructuretemplate/IBodySectionPartTemplate/customTitle"/>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructuretemplate.ecore#//IBodySectionPartTemplate"
+        labelFeature="#//documentstructuretemplate/IBodySectionPartTemplate/customTitle">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//IBodySectionPartTemplate/generate"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//IBodySectionPartTemplate/generateTitle"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//IBodySectionPartTemplate/customTitle"/>
@@ -91,18 +93,24 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="documentstructuretemplate.ecore#//IBodySectionPartTemplate/buildPartTemplateTitle/context"/>
       </genOperations>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructuretemplate.ecore#//IComposedBodyPartTemplate">
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructuretemplate.ecore#//IComposedBodyPartTemplate"
+        labelFeature="#//documentstructuretemplate/IBodySectionPartTemplate/customTitle">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//IComposedBodyPartTemplate/subBodyPartTemplate"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructuretemplate.ecore#//ISubBodyPartTemplate"/>
-    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructuretemplate.ecore#//ILeafBodyPartTemplate"/>
-    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructuretemplate.ecore#//IComposedSubBodyPartTemplate">
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructuretemplate.ecore#//ISubBodyPartTemplate"
+        labelFeature="#//documentstructuretemplate/IBodySectionPartTemplate/customTitle"/>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructuretemplate.ecore#//ILeafBodyPartTemplate"
+        labelFeature="#//documentstructuretemplate/IBodySectionPartTemplate/customTitle"/>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructuretemplate.ecore#//IComposedSubBodyPartTemplate"
+        labelFeature="#//documentstructuretemplate/IBodySectionPartTemplate/customTitle">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//IComposedSubBodyPartTemplate/bodyPartTemplate"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructuretemplate.ecore#//ILeafSubBodyPartTemplate"/>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructuretemplate.ecore#//EClassPartTemplate">
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructuretemplate.ecore#//ILeafSubBodyPartTemplate"
+        labelFeature="#//documentstructuretemplate/IBodySectionPartTemplate/customTitle"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructuretemplate.ecore#//EClassPartTemplate"
+        labelFeature="#//documentstructuretemplate/IBodySectionPartTemplate/customTitle">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//EClassPartTemplate/eClass"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//EClassPartTemplate/filterRule"/>
@@ -110,8 +118,10 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="documentstructuretemplate.ecore#//EClassPartTemplate/isMatchingFilterRule/inputEObject"/>
       </genOperations>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructuretemplate.ecore#//EReferencePartTemplate"/>
-    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructuretemplate.ecore#//EReferenceBodySectionPartTemplate">
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructuretemplate.ecore#//EReferencePartTemplate"
+        labelFeature="#//documentstructuretemplate/IBodySectionPartTemplate/customTitle"/>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructuretemplate.ecore#//EReferenceBodySectionPartTemplate"
+        labelFeature="#//documentstructuretemplate/IBodySectionPartTemplate/customTitle">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//EReferenceBodySectionPartTemplate/eReference"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="documentstructuretemplate.ecore#//EReferenceBodySectionPartTemplate/getEReferenceValues"
@@ -138,6 +148,7 @@
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructuretemplate.ecore#//IColumn">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//IColumn/customColumnTitle"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="documentstructuretemplate.ecore#//IColumn/buildColumnHeaderLabel"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="documentstructuretemplate.ecore#//IColumn/getCellValue">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="documentstructuretemplate.ecore#//IColumn/getCellValue/row"/>
@@ -146,7 +157,8 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="documentstructuretemplate.ecore#//IColumn/buildCellLabel/cellElement"/>
       </genOperations>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructuretemplate.ecore#//EReferenceTableView"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructuretemplate.ecore#//EReferenceTableView"
+        labelFeature="#//documentstructuretemplate/IBodySectionPartTemplate/customTitle"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructuretemplate.ecore#//EStructuralFeatureColumn">
       <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="propertyEditorFactory" value="editor://documentstructuretemplate/EStructuralFeatureColumn/EStructuralFeature/"/>

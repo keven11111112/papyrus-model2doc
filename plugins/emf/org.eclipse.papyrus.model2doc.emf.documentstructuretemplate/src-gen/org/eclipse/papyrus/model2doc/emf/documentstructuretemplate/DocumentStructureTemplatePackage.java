@@ -1556,6 +1556,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int ICOLUMN = 19;
 
 	/**
+	 * The feature id for the '<em><b>Custom Column Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ICOLUMN__CUSTOM_COLUMN_TITLE = 0;
+
+	/**
 	 * The number of structural features of the '<em>IColumn</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1563,7 +1573,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICOLUMN_FEATURE_COUNT = 0;
+	int ICOLUMN_FEATURE_COUNT = 1;
 
 	/**
 	 * The operation id for the '<em>Build Column Header Label</em>' operation.
@@ -1766,6 +1776,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 */
 	int ESTRUCTURAL_FEATURE_COLUMN = 21;
+
+	/**
+	 * The feature id for the '<em><b>Custom Column Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ESTRUCTURAL_FEATURE_COLUMN__CUSTOM_COLUMN_TITLE = ICOLUMN__CUSTOM_COLUMN_TITLE;
 
 	/**
 	 * The feature id for the '<em><b>Feature</b></em>' reference.
@@ -2460,6 +2480,18 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	EClass getIColumn();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IColumn#getCustomColumnTitle <em>Custom Column Title</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Custom Column Title</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IColumn#getCustomColumnTitle()
+	 * @see #getIColumn()
+	 * @generated
+	 */
+	EAttribute getIColumn_CustomColumnTitle();
+
+	/**
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IColumn#buildColumnHeaderLabel() <em>Build Column Header Label</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3087,6 +3119,15 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 		 * @generated
 		 */
 		EClass ICOLUMN = eINSTANCE.getIColumn();
+
+		/**
+		 * The meta object literal for the '<em><b>Custom Column Title</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute ICOLUMN__CUSTOM_COLUMN_TITLE = eINSTANCE.getIColumn_CustomColumnTitle();
 
 		/**
 		 * The meta object literal for the '<em><b>Build Column Header Label</b></em>' operation.

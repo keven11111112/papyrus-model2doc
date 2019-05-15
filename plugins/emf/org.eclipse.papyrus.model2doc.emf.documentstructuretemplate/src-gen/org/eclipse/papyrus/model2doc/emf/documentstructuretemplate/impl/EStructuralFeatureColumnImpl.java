@@ -38,12 +38,33 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFe
  * The following features are implemented:
  * </p>
  * <ul>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EStructuralFeatureColumnImpl#getCustomColumnTitle <em>Custom Column Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EStructuralFeatureColumnImpl#getFeature <em>Feature</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class EStructuralFeatureColumnImpl extends MinimalEObjectImpl.Container implements EStructuralFeatureColumn {
+	/**
+	 * The default value of the '{@link #getCustomColumnTitle() <em>Custom Column Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getCustomColumnTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CUSTOM_COLUMN_TITLE_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getCustomColumnTitle() <em>Custom Column Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getCustomColumnTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected String customColumnTitle = CUSTOM_COLUMN_TITLE_EDEFAULT;
 	/**
 	 * The cached value of the '{@link #getFeature() <em>Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -74,6 +95,32 @@ public class EStructuralFeatureColumnImpl extends MinimalEObjectImpl.Container i
 	@Override
 	protected EClass eStaticClass() {
 		return DocumentStructureTemplatePackage.Literals.ESTRUCTURAL_FEATURE_COLUMN;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public String getCustomColumnTitle() {
+		return customColumnTitle;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setCustomColumnTitle(String newCustomColumnTitle) {
+		String oldCustomColumnTitle = customColumnTitle;
+		customColumnTitle = newCustomColumnTitle;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_COLUMN__CUSTOM_COLUMN_TITLE, oldCustomColumnTitle, customColumnTitle));
+		}
 	}
 
 	/**
@@ -169,6 +216,8 @@ public class EStructuralFeatureColumnImpl extends MinimalEObjectImpl.Container i
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_COLUMN__CUSTOM_COLUMN_TITLE:
+			return getCustomColumnTitle();
 		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_COLUMN__FEATURE:
 			if (resolve) {
 				return getFeature();
@@ -187,6 +236,9 @@ public class EStructuralFeatureColumnImpl extends MinimalEObjectImpl.Container i
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_COLUMN__CUSTOM_COLUMN_TITLE:
+			setCustomColumnTitle((String) newValue);
+			return;
 		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_COLUMN__FEATURE:
 			setFeature((EStructuralFeature) newValue);
 			return;
@@ -203,6 +255,9 @@ public class EStructuralFeatureColumnImpl extends MinimalEObjectImpl.Container i
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_COLUMN__CUSTOM_COLUMN_TITLE:
+			setCustomColumnTitle(CUSTOM_COLUMN_TITLE_EDEFAULT);
+			return;
 		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_COLUMN__FEATURE:
 			setFeature((EStructuralFeature) null);
 			return;
@@ -219,6 +274,8 @@ public class EStructuralFeatureColumnImpl extends MinimalEObjectImpl.Container i
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_COLUMN__CUSTOM_COLUMN_TITLE:
+			return CUSTOM_COLUMN_TITLE_EDEFAULT == null ? customColumnTitle != null : !CUSTOM_COLUMN_TITLE_EDEFAULT.equals(customColumnTitle);
 		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_COLUMN__FEATURE:
 			return feature != null;
 		}
@@ -242,6 +299,25 @@ public class EStructuralFeatureColumnImpl extends MinimalEObjectImpl.Container i
 			return buildCellLabel(arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) {
+			return super.toString();
+		}
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (customColumnTitle: "); //$NON-NLS-1$
+		result.append(customColumnTitle);
+		result.append(')');
+		return result.toString();
 	}
 
 } // EStructuralFeatureColumnImpl

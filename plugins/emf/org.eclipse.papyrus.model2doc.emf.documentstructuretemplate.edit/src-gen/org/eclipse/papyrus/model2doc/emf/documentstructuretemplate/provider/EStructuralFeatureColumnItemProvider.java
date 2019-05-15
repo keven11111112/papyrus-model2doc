@@ -31,9 +31,12 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFeatureColumn;
 
 /**
  * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFeatureColumn} object.
@@ -73,9 +76,31 @@ public class EStructuralFeatureColumnItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addCustomColumnTitlePropertyDescriptor(object);
 			addFeaturePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Custom Column Title feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected void addCustomColumnTitlePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_IColumn_customColumnTitle_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_IColumn_customColumnTitle_feature", "_UI_IColumn_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				DocumentStructureTemplatePackage.Literals.ICOLUMN__CUSTOM_COLUMN_TITLE,
+				true,
+				false,
+				false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				null,
+				null));
 	}
 
 	/**
@@ -143,7 +168,9 @@ public class EStructuralFeatureColumnItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_EStructuralFeatureColumn_type"); //$NON-NLS-1$
+		String label = ((EStructuralFeatureColumn) object).getCustomColumnTitle();
+		return label == null || label.length() == 0 ? getString("_UI_EStructuralFeatureColumn_type") : //$NON-NLS-1$
+				getString("_UI_EStructuralFeatureColumn_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 
@@ -158,6 +185,12 @@ public class EStructuralFeatureColumnItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(EStructuralFeatureColumn.class)) {
+		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_COLUMN__CUSTOM_COLUMN_TITLE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		}
 		super.notifyChanged(notification);
 	}
 

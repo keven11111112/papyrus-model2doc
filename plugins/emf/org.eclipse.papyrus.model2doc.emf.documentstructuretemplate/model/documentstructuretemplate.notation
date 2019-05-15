@@ -1035,6 +1035,10 @@
         <layoutConstraint xmi:type="notation:Location" xmi:id="_A34vdHHIEempmPy7tz2aIQ" y="15"/>
       </children>
       <children xmi:type="notation:BasicCompartment" xmi:id="_A34vdXHIEempmPy7tz2aIQ" type="Interface_AttributeCompartment">
+        <children xmi:type="notation:Shape" xmi:id="_Ft5voHcMEemvX5OEKyKoZg" type="Property_InterfaceAttributeLabel">
+          <element xmi:type="uml:Property" href="documentstructuretemplate.uml#_Fpd7kHcMEemvX5OEKyKoZg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_Ft5voXcMEemvX5OEKyKoZg"/>
+        </children>
         <styles xmi:type="notation:TitleStyle" xmi:id="_A34vdnHIEempmPy7tz2aIQ"/>
         <styles xmi:type="notation:SortingStyle" xmi:id="_A34vd3HIEempmPy7tz2aIQ"/>
         <styles xmi:type="notation:FilteringStyle" xmi:id="_A34veHHIEempmPy7tz2aIQ"/>

@@ -56,6 +56,9 @@ public class CustomEStructuralFeatureColumnImpl extends EStructuralFeatureColumn
 	 */
 	@Override
 	public String buildCellLabel(Object cellElement) {
+		if (null != this.customColumnTitle && false == this.customColumnTitle.isEmpty()) {
+			return this.customColumnTitle;
+		}
 		return DelegatingToEMFLabelProvider.INSTANCE.getText(cellElement);
 	}
 

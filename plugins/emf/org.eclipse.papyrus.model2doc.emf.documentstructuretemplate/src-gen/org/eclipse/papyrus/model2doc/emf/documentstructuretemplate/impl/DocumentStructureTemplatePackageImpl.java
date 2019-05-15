@@ -917,6 +917,17 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
+	public EAttribute getIColumn_CustomColumnTitle() {
+		return (EAttribute) iColumnEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EOperation getIColumn__BuildColumnHeaderLabel() {
 		return iColumnEClass.getEOperations().get(0);
 	}
@@ -1094,6 +1105,7 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		createEOperation(iTableViewEClass, ITABLE_VIEW___BUILD_ROW_HEADER_LABEL__EOBJECT);
 
 		iColumnEClass = createEClass(ICOLUMN);
+		createEAttribute(iColumnEClass, ICOLUMN__CUSTOM_COLUMN_TITLE);
 		createEOperation(iColumnEClass, ICOLUMN___BUILD_COLUMN_HEADER_LABEL);
 		createEOperation(iColumnEClass, ICOLUMN___GET_CELL_VALUE__EOBJECT);
 		createEOperation(iColumnEClass, ICOLUMN___BUILD_CELL_LABEL__OBJECT);
@@ -1264,6 +1276,7 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		addEParameter(op, theEcorePackage.getEObject(), "rowElement", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(iColumnEClass, IColumn.class, "IColumn", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(getIColumn_CustomColumnTitle(), ecorePackage.getEString(), "customColumnTitle", null, 0, 1, IColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
 		initEOperation(getIColumn__BuildColumnHeaderLabel(), ecorePackage.getEString(), "buildColumnHeaderLabel", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
