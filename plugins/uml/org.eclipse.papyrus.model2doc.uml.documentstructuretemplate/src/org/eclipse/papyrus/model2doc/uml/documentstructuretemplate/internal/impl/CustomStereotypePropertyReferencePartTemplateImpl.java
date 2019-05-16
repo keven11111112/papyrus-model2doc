@@ -27,18 +27,12 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferencePartTemplate;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyReferencePartTemplateImpl;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.internal.operations.StereotypePartTemplateOperations;
-import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.operations.UMLBodySectionPartTemplateTitleHelper;
 import org.eclipse.uml2.uml.Element;
 
 /**
  * Custom implementation for {@link StereotypePropertyReferencePartTemplate}
  */
 public class CustomStereotypePropertyReferencePartTemplateImpl extends StereotypePropertyReferencePartTemplateImpl {
-
-	/**
-	 * unique title helper for all instance of {@link StereotypePropertyReferencePartTemplate}
-	 */
-	private static final UMLBodySectionPartTemplateTitleHelper UML_TITLE_HELPER = new UMLBodySectionPartTemplateTitleHelper();
 
 	/**
 	 * @see org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.impl.StereotypePropertyReferencePartTemplateImpl#getMatchingReferencedEObjects(org.eclipse.emf.ecore.EObject)
@@ -82,18 +76,6 @@ public class CustomStereotypePropertyReferencePartTemplateImpl extends Stereotyp
 			elements.add((EObject) stereotypeApplication.eGet(feature, true));
 		}
 		return ECollections.unmodifiableEList(elements);
-	}
-
-	/**
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassPartTemplateImpl#buildPartTemplateTitle(org.eclipse.emf.ecore.EObject)
-	 *
-	 * @param context
-	 * @return
-	 */
-	@Override
-	public String buildPartTemplateTitle(final EObject context) {
-		return UML_TITLE_HELPER.buildPartTemplateTitle(this, context);
-
 	}
 
 	/**

@@ -284,7 +284,7 @@ public class StereotypePropertyReferencePartTemplateItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((StereotypePropertyReferencePartTemplate) object).getPropertyName();
+		String label = ((StereotypePropertyReferencePartTemplate) object).getCustomTitle();
 		return label == null || label.length() == 0 ? getString("_UI_StereotypePropertyReferencePartTemplate_type") : //$NON-NLS-1$
 				getString("_UI_StereotypePropertyReferencePartTemplate_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}

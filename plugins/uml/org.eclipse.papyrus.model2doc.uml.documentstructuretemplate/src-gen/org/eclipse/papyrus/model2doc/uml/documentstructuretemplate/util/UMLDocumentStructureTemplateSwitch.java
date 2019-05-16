@@ -104,6 +104,9 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 				result = caseIStereotypePartTemplate(stereotypePartTemplate);
 			}
 			if (result == null) {
+				result = caseIUMLBodyPartTemplateTitle(stereotypePartTemplate);
+			}
+			if (result == null) {
 				result = caseIComposedSubBodyPartTemplate(stereotypePartTemplate);
 			}
 			if (result == null) {
@@ -125,6 +128,17 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 			}
 			return result;
 		}
+		case UMLDocumentStructureTemplatePackage.IUML_BODY_PART_TEMPLATE_TITLE: {
+			IUMLBodyPartTemplateTitle iumlBodyPartTemplateTitle = (IUMLBodyPartTemplateTitle) theEObject;
+			T result = caseIUMLBodyPartTemplateTitle(iumlBodyPartTemplateTitle);
+			if (result == null) {
+				result = caseIBodySectionPartTemplate(iumlBodyPartTemplateTitle);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE: {
 			StereotypePropertyReferencePartTemplate stereotypePropertyReferencePartTemplate = (StereotypePropertyReferencePartTemplate) theEObject;
 			T result = caseStereotypePropertyReferencePartTemplate(stereotypePropertyReferencePartTemplate);
@@ -133,6 +147,9 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 			}
 			if (result == null) {
 				result = caseIStereotypePartTemplate(stereotypePropertyReferencePartTemplate);
+			}
+			if (result == null) {
+				result = caseIUMLBodyPartTemplateTitle(stereotypePropertyReferencePartTemplate);
 			}
 			if (result == null) {
 				result = caseIBodyPartTemplate(stereotypePropertyReferencePartTemplate);
@@ -153,6 +170,9 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 			}
 			if (result == null) {
 				result = caseITemplatePartView(commentAsParagraph);
+			}
+			if (result == null) {
+				result = caseIUMLBodyPartTemplateTitle(commentAsParagraph);
 			}
 			if (result == null) {
 				result = caseIBodyPartTemplate(commentAsParagraph);
@@ -209,6 +229,23 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseIStereotypePartTemplate(IStereotypePartTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IUML Body Part Template Title</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IUML Body Part Template Title</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIUMLBodyPartTemplateTitle(IUMLBodyPartTemplateTitle object) {
 		return null;
 	}
 

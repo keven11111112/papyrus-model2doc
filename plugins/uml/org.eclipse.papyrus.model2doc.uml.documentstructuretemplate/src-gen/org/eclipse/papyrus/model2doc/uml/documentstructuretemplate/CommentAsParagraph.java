@@ -42,7 +42,7 @@ import org.eclipse.uml2.uml.Comment;
  * @model
  * @generated
  */
-public interface CommentAsParagraph extends ILeafBodyPartTemplate, ITemplatePartView {
+public interface CommentAsParagraph extends ILeafBodyPartTemplate, ITemplatePartView, IUMLBodyPartTemplateTitle {
 	/**
 	 * Returns the value of the '<em><b>Comment Choice</b></em>' attribute.
 	 * The default value is <code>"FIRST_OWNED_COMMENT"</code>.

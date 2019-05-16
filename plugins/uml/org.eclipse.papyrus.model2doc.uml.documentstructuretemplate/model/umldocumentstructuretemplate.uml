@@ -26,6 +26,7 @@
         </ownedComment>
       </ownedAttribute>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_XtMCsGXUEemOJZbgd4DmNg" client="_pau8kFasEemQ15mMY1nXxQ" supplier="_QEZFUGXUEemOJZbgd4DmNg" contract="_QEZFUGXUEemOJZbgd4DmNg"/>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_UsyN4HfJEemZAtnyL46QZg" client="_pau8kFasEemQ15mMY1nXxQ" supplier="_u5PwMHfIEemZAtnyL46QZg" contract="_u5PwMHfIEemZAtnyL46QZg"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_31YoQFasEemQ15mMY1nXxQ" name="StereotypeFilterBehavior">
       <ownedComment xmi:type="uml:Comment" xmi:id="_lOKZAFatEemQ15mMY1nXxQ" annotatedElement="_31YoQFasEemQ15mMY1nXxQ">
@@ -70,6 +71,7 @@ In other case, this field is ignored.</body>
         <contract xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_Pau8cFX-EemKJasCEBKPhQ"/>
       </interfaceRealization>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_YO2lUGXUEemOJZbgd4DmNg" client="_sbLZUFatEemQ15mMY1nXxQ" supplier="_QEZFUGXUEemOJZbgd4DmNg" contract="_QEZFUGXUEemOJZbgd4DmNg"/>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_UDqYYHfJEemZAtnyL46QZg" client="_sbLZUFatEemQ15mMY1nXxQ" supplier="_u5PwMHfIEemZAtnyL46QZg" contract="_u5PwMHfIEemZAtnyL46QZg"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_vNUtoFuLEemw5fgiiQpxng" name="getMatchingReferencedEObjects">
         <ownedComment xmi:type="uml:Comment" xmi:id="_hi9Z8FuMEemw5fgiiQpxng" annotatedElement="_vNUtoFuLEemw5fgiiQpxng">
           <body>This method returns the object referenced by the property for the given eobject in paramater. </body>
@@ -102,6 +104,7 @@ In other case, this field is ignored.</body>
         <supplier xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_DwGdIFYFEemKJasCEBKPhQ"/>
         <contract xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_DwGdIFYFEemKJasCEBKPhQ"/>
       </interfaceRealization>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_X4zogHfKEemZAtnyL46QZg" client="_4YK6UFauEemQ15mMY1nXxQ" supplier="_u5PwMHfIEemZAtnyL46QZg" contract="_u5PwMHfIEemZAtnyL46QZg"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_wyIkwFuKEemw5fgiiQpxng" name="getMatchingComments">
         <ownedComment xmi:type="uml:Comment" xmi:id="_aSR3EFuLEemw5fgiiQpxng" annotatedElement="_wyIkwFuKEemw5fgiiQpxng">
           <body>This methods returns the matching Comments. The argument is EObject, to be compliant will EMF code, it avoid us to check type before calling methods.&#xD;
@@ -150,6 +153,27 @@ In other case, this field is ignored.</body>
           <body>This method returns the filter rule to apply to find the stereotype.</body>
         </ownedComment>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_91daQGXUEemOJZbgd4DmNg" type="_31YoQFasEemQ15mMY1nXxQ" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_u5PwMHfIEemZAtnyL46QZg" name="IUMLBodyPartTemplateTitle">
+      <generalization xmi:type="uml:Generalization" xmi:id="_zXdA4HfIEemZAtnyL46QZg">
+        <general xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_XvipQFYUEemiOeXIb5muwQ"/>
+      </generalization>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_1L8dUHfIEemZAtnyL46QZg" name="buildPartTemplateTitle">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_1L8dUXfIEemZAtnyL46QZg" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_1L8dUnfIEemZAtnyL46QZg" key="body" value="return org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.operations.UMLBodySectionPartTemplateTitleHelper.UML_INSTANCE.buildPartTemplateTitle(this,context);"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_1L8dU3fIEemZAtnyL46QZg" annotatedElement="_1L8dUHfIEemZAtnyL46QZg">
+          <body>This method creates the title (dédicated to element of this metamodel. &#xD;
+In the general case, the ISubBodyPartTemplate uses the context element to build the title, wheareas the IBodyPartTemplate don't use it.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_1L8dVHfIEemZAtnyL46QZg" name="context">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_1L8dVXfIEemZAtnyL46QZg" name="returnValue" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+        <redefinedOperation xmi:type="uml:Operation" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#__h3MoHV1EemQUasExi-pKA"/>
       </ownedOperation>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_x6veQB8TEemcGrhwCFVIGw">

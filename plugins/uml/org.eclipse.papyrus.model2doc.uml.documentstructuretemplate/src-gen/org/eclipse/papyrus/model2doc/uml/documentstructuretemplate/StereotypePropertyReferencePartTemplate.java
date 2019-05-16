@@ -41,7 +41,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedBody
  * @model
  * @generated
  */
-public interface StereotypePropertyReferencePartTemplate extends IComposedBodyPartTemplate, IStereotypePartTemplate {
+public interface StereotypePropertyReferencePartTemplate extends IComposedBodyPartTemplate, IStereotypePartTemplate, IUMLBodyPartTemplateTitle {
 	/**
 	 * Returns the value of the '<em><b>Property Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

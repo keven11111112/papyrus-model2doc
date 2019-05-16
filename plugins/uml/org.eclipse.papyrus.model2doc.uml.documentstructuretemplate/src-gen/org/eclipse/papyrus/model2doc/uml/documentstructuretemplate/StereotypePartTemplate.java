@@ -36,7 +36,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassPartTem
  * @model
  * @generated
  */
-public interface StereotypePartTemplate extends EClassPartTemplate, IStereotypePartTemplate {
+public interface StereotypePartTemplate extends EClassPartTemplate, IStereotypePartTemplate, IUMLBodyPartTemplateTitle {
 	/**
 	 * Returns the value of the '<em><b>Stereotype Qualified Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

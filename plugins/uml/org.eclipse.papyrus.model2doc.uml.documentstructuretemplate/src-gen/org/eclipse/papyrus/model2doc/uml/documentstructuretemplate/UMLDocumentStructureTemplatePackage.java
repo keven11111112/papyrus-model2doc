@@ -299,6 +299,77 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	int ISTEREOTYPE_PART_TEMPLATE_OPERATION_COUNT = 3;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.IUMLBodyPartTemplateTitle <em>IUML Body Part Template Title</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.IUMLBodyPartTemplateTitle
+	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.UMLDocumentStructureTemplatePackageImpl#getIUMLBodyPartTemplateTitle()
+	 * @generated
+	 */
+	int IUML_BODY_PART_TEMPLATE_TITLE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Generate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IUML_BODY_PART_TEMPLATE_TITLE__GENERATE = DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE;
+
+	/**
+	 * The feature id for the '<em><b>Generate Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IUML_BODY_PART_TEMPLATE_TITLE__GENERATE_TITLE = DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Custom Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IUML_BODY_PART_TEMPLATE_TITLE__CUSTOM_TITLE = DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__CUSTOM_TITLE;
+
+	/**
+	 * The number of structural features of the '<em>IUML Body Part Template Title</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IUML_BODY_PART_TEMPLATE_TITLE_FEATURE_COUNT = DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Build Part Template Title</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IUML_BODY_PART_TEMPLATE_TITLE___BUILD_PART_TEMPLATE_TITLE__EOBJECT = DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT;
+
+	/**
+	 * The number of operations of the '<em>IUML Body Part Template Title</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IUML_BODY_PART_TEMPLATE_TITLE_OPERATION_COUNT = DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyReferencePartTemplateImpl <em>Stereotype Property Reference Part Template</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -307,7 +378,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.UMLDocumentStructureTemplatePackageImpl#getStereotypePropertyReferencePartTemplate()
 	 * @generated
 	 */
-	int STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE = 2;
+	int STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Generate</b></em>' attribute.
@@ -458,7 +529,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.UMLDocumentStructureTemplatePackageImpl#getCommentAsParagraph()
 	 * @generated
 	 */
-	int COMMENT_AS_PARAGRAPH = 3;
+	int COMMENT_AS_PARAGRAPH = 4;
 
 	/**
 	 * The feature id for the '<em><b>Generate</b></em>' attribute.
@@ -549,7 +620,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.UMLDocumentStructureTemplatePackageImpl#getComment()
 	 * @generated
 	 */
-	int COMMENT = 4;
+	int COMMENT = 5;
 
 	/**
 	 * The number of structural features of the '<em>Comment</em>' class.
@@ -580,7 +651,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.UMLDocumentStructureTemplatePackageImpl#getStereotypeFilterBehavior()
 	 * @generated
 	 */
-	int STEREOTYPE_FILTER_BEHAVIOR = 5;
+	int STEREOTYPE_FILTER_BEHAVIOR = 6;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.CommentChoice <em>Comment Choice</em>}' enum.
@@ -591,7 +662,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.UMLDocumentStructureTemplatePackageImpl#getCommentChoice()
 	 * @generated
 	 */
-	int COMMENT_CHOICE = 6;
+	int COMMENT_CHOICE = 7;
 
 
 	/**
@@ -673,6 +744,17 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getIStereotypePartTemplate__GetStereotypeFilterRule();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.IUMLBodyPartTemplateTitle <em>IUML Body Part Template Title</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>IUML Body Part Template Title</em>'.
+	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.IUMLBodyPartTemplateTitle
+	 * @generated
+	 */
+	EClass getIUMLBodyPartTemplateTitle();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferencePartTemplate <em>Stereotype Property Reference Part Template</em>}'.
@@ -892,6 +974,17 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 		 * @generated
 		 */
 		EOperation ISTEREOTYPE_PART_TEMPLATE___GET_STEREOTYPE_FILTER_RULE = eINSTANCE.getIStereotypePartTemplate__GetStereotypeFilterRule();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.IUMLBodyPartTemplateTitle <em>IUML Body Part Template Title</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.IUMLBodyPartTemplateTitle
+		 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.UMLDocumentStructureTemplatePackageImpl#getIUMLBodyPartTemplateTitle()
+		 * @generated
+		 */
+		EClass IUML_BODY_PART_TEMPLATE_TITLE = eINSTANCE.getIUMLBodyPartTemplateTitle();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyReferencePartTemplateImpl <em>Stereotype Property Reference Part Template</em>}' class.

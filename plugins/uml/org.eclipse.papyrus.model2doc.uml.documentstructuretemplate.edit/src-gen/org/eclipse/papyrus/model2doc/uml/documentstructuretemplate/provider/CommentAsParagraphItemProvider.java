@@ -201,8 +201,9 @@ public class CommentAsParagraphItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		CommentAsParagraph commentAsParagraph = (CommentAsParagraph) object;
-		return getString("_UI_CommentAsParagraph_type") + " " + commentAsParagraph.isGenerate(); //$NON-NLS-1$ //$NON-NLS-2$
+		String label = ((CommentAsParagraph) object).getCustomTitle();
+		return label == null || label.length() == 0 ? getString("_UI_CommentAsParagraph_type") : //$NON-NLS-1$
+				getString("_UI_CommentAsParagraph_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 

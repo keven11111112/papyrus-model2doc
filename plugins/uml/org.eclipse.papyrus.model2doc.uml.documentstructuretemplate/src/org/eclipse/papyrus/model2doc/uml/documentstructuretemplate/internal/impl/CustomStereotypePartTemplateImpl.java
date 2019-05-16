@@ -20,18 +20,12 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassPa
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePartTemplate;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePartTemplateImpl;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.internal.operations.StereotypePartTemplateOperations;
-import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.operations.UMLBodySectionPartTemplateTitleHelper;
 import org.eclipse.uml2.uml.Element;
 
 /**
  * Custom implementation for {@link StereotypePartTemplate}
  */
 public class CustomStereotypePartTemplateImpl extends StereotypePartTemplateImpl {
-
-	/**
-	 * unique title helper for all instance of {@link StereotypePartTemplate}
-	 */
-	private static final UMLBodySectionPartTemplateTitleHelper UML_TITLE_HELPER = new UMLBodySectionPartTemplateTitleHelper();
 
 	/**
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassPartTemplateImpl#isMatchingFilterRule(org.eclipse.emf.ecore.EObject)
@@ -76,18 +70,6 @@ public class CustomStereotypePartTemplateImpl extends StereotypePartTemplateImpl
 		default:
 			return false;
 		}
-	}
-
-	/**
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassPartTemplateImpl#buildPartTemplateTitle(org.eclipse.emf.ecore.EObject)
-	 *
-	 * @param context
-	 * @return
-	 */
-	@Override
-	public String buildPartTemplateTitle(final EObject context) {
-		return UML_TITLE_HELPER.buildPartTemplateTitle(this, context);
-
 	}
 
 	/**

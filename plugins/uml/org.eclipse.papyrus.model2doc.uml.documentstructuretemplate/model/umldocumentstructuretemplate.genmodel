@@ -22,11 +22,11 @@
     <details key="COMMENTS" value="PROCESS"/>
     <details key="DERIVED_FEATURES" value="PROCESS"/>
     <details key="SUPER_CLASS_ORDER" value="PROCESS"/>
-    <details key="DUPLICATE_OPERATION_INHERITANCE" value="DISCARD"/>
-    <details key="REDEFINING_OPERATIONS" value="REPORT"/>
+    <details key="DUPLICATE_OPERATION_INHERITANCE" value="PROCESS"/>
+    <details key="REDEFINING_OPERATIONS" value="PROCESS"/>
     <details key="INVARIANT_CONSTRAINTS" value="PROCESS"/>
     <details key="UNION_PROPERTIES" value="REPORT"/>
-    <details key="DUPLICATE_OPERATIONS" value="DISCARD"/>
+    <details key="DUPLICATE_OPERATIONS" value="PROCESS"/>
     <details key="NON_API_INVARIANTS" value="IGNORE"/>
     <details key="CAMEL_CASE_NAMES" value="IGNORE"/>
     <details key="SUBSETTING_PROPERTIES" value="REPORT"/>
@@ -49,7 +49,8 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="umldocumentstructuretemplate.ecore#//CommentChoice/FIRST_OWNED_COMMENT"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="umldocumentstructuretemplate.ecore#//CommentChoice/ALL_OWNED_COMMENTS"/>
     </genEnums>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="umldocumentstructuretemplate.ecore#//StereotypePartTemplate">
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="umldocumentstructuretemplate.ecore#//StereotypePartTemplate"
+        labelFeature="../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.genmodel#//documentstructuretemplate/IBodySectionPartTemplate/customTitle">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umldocumentstructuretemplate.ecore#//StereotypePartTemplate/stereotypeQualifiedName"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umldocumentstructuretemplate.ecore#//StereotypePartTemplate/stereotypeFilterRule"/>
     </genClasses>
@@ -60,7 +61,9 @@
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umldocumentstructuretemplate.ecore#//IStereotypePartTemplate/getStereotypeFilterRule"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="umldocumentstructuretemplate.ecore#//StereotypePropertyReferencePartTemplate">
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="umldocumentstructuretemplate.ecore#//IUMLBodyPartTemplateTitle"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="umldocumentstructuretemplate.ecore#//StereotypePropertyReferencePartTemplate"
+        labelFeature="../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.genmodel#//documentstructuretemplate/IBodySectionPartTemplate/customTitle">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umldocumentstructuretemplate.ecore#//StereotypePropertyReferencePartTemplate/propertyName"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umldocumentstructuretemplate.ecore#//StereotypePropertyReferencePartTemplate/stereotypeQualifiedName"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umldocumentstructuretemplate.ecore#//StereotypePropertyReferencePartTemplate/stereotypeFilterRule"/>
@@ -68,7 +71,8 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umldocumentstructuretemplate.ecore#//StereotypePropertyReferencePartTemplate/getMatchingReferencedEObjects/eobject"/>
       </genOperations>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="umldocumentstructuretemplate.ecore#//CommentAsParagraph">
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="umldocumentstructuretemplate.ecore#//CommentAsParagraph"
+        labelFeature="../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.genmodel#//documentstructuretemplate/IBodySectionPartTemplate/customTitle">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umldocumentstructuretemplate.ecore#//CommentAsParagraph/commentChoice"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umldocumentstructuretemplate.ecore#//CommentAsParagraph/getMatchingComments">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umldocumentstructuretemplate.ecore#//CommentAsParagraph/getMatchingComments/element"/>

@@ -35,6 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubBodyPartTemplate;
 
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.IStereotypePartTemplate;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.IUMLBodyPartTemplateTitle;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypeFilterBehavior;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferencePartTemplate;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplatePackage;
@@ -400,10 +401,8 @@ public class StereotypePropertyReferencePartTemplateImpl extends MinimalEObjectI
 	 * @generated
 	 */
 	@Override
-	public String buildPartTemplateTitle(EObject context) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public String buildPartTemplateTitle(final EObject context) {
+		return org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.operations.UMLBodySectionPartTemplateTitleHelper.UML_INSTANCE.buildPartTemplateTitle(this, context);
 	}
 
 	/**
@@ -587,6 +586,12 @@ public class StereotypePropertyReferencePartTemplateImpl extends MinimalEObjectI
 				return UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE___GET_FIRST_MATCHING_STEREOTYPE_APPLICATION__EOBJECT;
 			case UMLDocumentStructureTemplatePackage.ISTEREOTYPE_PART_TEMPLATE___GET_STEREOTYPE_FILTER_RULE:
 				return UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE___GET_STEREOTYPE_FILTER_RULE;
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == IUMLBodyPartTemplateTitle.class) {
+			switch (baseOperationID) {
 			default:
 				return -1;
 			}

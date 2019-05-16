@@ -37,12 +37,18 @@ public class UMLBodySectionPartTemplateTitleHelper extends BodySectionPartTempla
 	 */
 	private static final String ST_RIGHT = String.valueOf("\u00BB"); //$NON-NLS-1$
 
+
 	/**
-	 * S
+	 * Shared instance of {@link UMLBodySectionPartTemplateTitleHelper}
+	 */
+	public static final UMLBodySectionPartTemplateTitleHelper UML_INSTANCE = new UMLBodySectionPartTemplateTitleHelper();
+
+	/**
+	 *
 	 * Constructor.
 	 *
 	 */
-	public UMLBodySectionPartTemplateTitleHelper() {
+	protected UMLBodySectionPartTemplateTitleHelper() {
 		super();
 	}
 

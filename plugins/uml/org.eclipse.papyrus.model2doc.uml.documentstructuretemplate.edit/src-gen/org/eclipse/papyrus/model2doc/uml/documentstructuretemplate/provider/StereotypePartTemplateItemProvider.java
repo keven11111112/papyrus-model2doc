@@ -158,7 +158,7 @@ public class StereotypePartTemplateItemProvider extends EClassPartTemplateItemPr
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((StereotypePartTemplate) object).getStereotypeQualifiedName();
+		String label = ((StereotypePartTemplate) object).getCustomTitle();
 		return label == null || label.length() == 0 ? getString("_UI_StereotypePartTemplate_type") : //$NON-NLS-1$
 				getString("_UI_StereotypePartTemplate_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}

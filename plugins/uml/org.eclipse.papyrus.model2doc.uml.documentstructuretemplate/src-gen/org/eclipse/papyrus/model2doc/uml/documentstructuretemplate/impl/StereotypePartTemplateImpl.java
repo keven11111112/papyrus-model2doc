@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassPartTemplateImpl;
 
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.IStereotypePartTemplate;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.IUMLBodyPartTemplateTitle;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypeFilterBehavior;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePartTemplate;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplatePackage;
@@ -183,6 +184,17 @@ public class StereotypePartTemplateImpl extends EClassPartTemplateImpl implement
 	 * @generated
 	 */
 	@Override
+	public String buildPartTemplateTitle(final EObject context) {
+		return org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.operations.UMLBodySectionPartTemplateTitleHelper.UML_INSTANCE.buildPartTemplateTitle(this, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__STEREOTYPE_QUALIFIED_NAME:
@@ -268,6 +280,12 @@ public class StereotypePartTemplateImpl extends EClassPartTemplateImpl implement
 				return -1;
 			}
 		}
+		if (baseClass == IUMLBodyPartTemplateTitle.class) {
+			switch (baseOperationID) {
+			default:
+				return -1;
+			}
+		}
 		return super.eDerivedOperationID(baseOperationID, baseClass);
 	}
 
@@ -282,6 +300,8 @@ public class StereotypePartTemplateImpl extends EClassPartTemplateImpl implement
 		switch (operationID) {
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE___GET_FIRST_MATCHING_STEREOTYPE_APPLICATION__EOBJECT:
 			return getFirstMatchingStereotypeApplication((EObject) arguments.get(0));
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT:
+			return buildPartTemplateTitle((EObject) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

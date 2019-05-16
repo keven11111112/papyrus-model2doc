@@ -5,7 +5,7 @@
   <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
     <details key="originalName" value="UMLDocumentStructureTemplate"/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="StereotypePartTemplate" eSuperTypes="../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.ecore#//EClassPartTemplate #//IStereotypePartTemplate">
+  <eClassifiers xsi:type="ecore:EClass" name="StereotypePartTemplate" eSuperTypes="../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.ecore#//EClassPartTemplate #//IStereotypePartTemplate #//IUMLBodyPartTemplateTitle">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="PartTemplate used to navigate in the stereotype application."/>
     </eAnnotations>
@@ -53,8 +53,22 @@
       </eAnnotations>
     </eOperations>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IUMLBodyPartTemplateTitle" abstract="true"
+      interface="true" eSuperTypes="../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.ecore#//IBodySectionPartTemplate">
+    <eAnnotations source="duplicates">
+      <contents xsi:type="ecore:EOperation" name="buildPartTemplateTitle" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This method creates the title (dédicated to element of this metamodel. &#xD;&#xA;In the general case, the ISubBodyPartTemplate uses the context element to build the title, wheareas the IBodyPartTemplate don't use it."/>
+          <details key="body" value="return org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.operations.UMLBodySectionPartTemplateTitleHelper.UML_INSTANCE.buildPartTemplateTitle(this,context);"/>
+        </eAnnotations>
+        <eAnnotations source="redefines" references="../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.ecore#//IBodySectionPartTemplate/buildPartTemplateTitle"/>
+        <eParameters name="context" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+      </contents>
+    </eAnnotations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StereotypePropertyReferencePartTemplate"
-      eSuperTypes="../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.ecore#//IComposedBodyPartTemplate #//IStereotypePartTemplate">
+      eSuperTypes="../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.ecore#//IComposedBodyPartTemplate #//IStereotypePartTemplate #//IUMLBodyPartTemplateTitle">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="PartTemplate used to navigate in the stereotype property."/>
     </eAnnotations>
@@ -86,7 +100,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CommentAsParagraph" eSuperTypes="../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.ecore#//ILeafBodyPartTemplate ../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.ecore#//ITemplatePartView">
+  <eClassifiers xsi:type="ecore:EClass" name="CommentAsParagraph" eSuperTypes="../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.ecore#//ILeafBodyPartTemplate ../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.ecore#//ITemplatePartView #//IUMLBodyPartTemplateTitle">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="PartTemplate used to create paragraphs from UML Comments."/>
     </eAnnotations>

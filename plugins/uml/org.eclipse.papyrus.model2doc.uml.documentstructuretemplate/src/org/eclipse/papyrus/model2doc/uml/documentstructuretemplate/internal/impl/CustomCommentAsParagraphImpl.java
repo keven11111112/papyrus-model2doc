@@ -23,7 +23,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.CommentAsParagraph;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.CommentAsParagraphImpl;
-import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.operations.UMLBodySectionPartTemplateTitleHelper;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Element;
 
@@ -31,11 +30,6 @@ import org.eclipse.uml2.uml.Element;
  * Custom implementation for {@link CommentAsParagraph}
  */
 public class CustomCommentAsParagraphImpl extends CommentAsParagraphImpl {
-
-	/**
-	 * unique title helper for all instance of {@link CommentAsParagraph}
-	 */
-	private static final UMLBodySectionPartTemplateTitleHelper UML_TITLE_HELPER = new UMLBodySectionPartTemplateTitleHelper();
 
 	/**
 	 * @see org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.impl.CommentAsParagraphImpl#getMatchingComments()
@@ -64,14 +58,4 @@ public class CustomCommentAsParagraphImpl extends CommentAsParagraphImpl {
 		}
 	}
 
-	/**
-	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.CommentAsParagraphImpl#buildPartTemplateTitle(org.eclipse.emf.ecore.EObject)
-	 *
-	 * @param context
-	 * @return
-	 */
-	@Override
-	public String buildPartTemplateTitle(final EObject context) {
-		return UML_TITLE_HELPER.buildPartTemplateTitle(this, context);
-	}
 }
