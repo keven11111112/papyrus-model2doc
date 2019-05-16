@@ -47,7 +47,7 @@
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_qn5QIHC_EemO3N3fNOfMKQ" name="getAllCells">
         <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Vu06EHDAEemO3N3fNOfMKQ" source="http://www.eclipse.org/emf/2002/GenModel">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Vu06EXDAEemO3N3fNOfMKQ" key="body" value="final java.util.List&lt;Cell> cells = new  java.util.ArrayList&lt;Cell>();&#xA;for (final Row row : getRows()) {&#xA;&#x9;cells.addAll(row.getCells());&#xA;}&#xA;return  org.eclipse.emf.common.util.ECollections.asEList(cells);&#xA;"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Vu06EXDAEemO3N3fNOfMKQ" key="body" value="final java.util.List&lt;Cell> cells = new  java.util.ArrayList&lt;Cell>();&#xA;for (final Row row : getRows()) {&#xA;&#x9;cells.addAll(row.getCells());&#xA;}&#xA;return  org.eclipse.emf.common.util.ECollections.toEList(cells);&#xA;"/>
         </eAnnotations>
         <ownedComment xmi:type="uml:Comment" xmi:id="_SoBhMHDAEemO3N3fNOfMKQ" annotatedElement="_qn5QIHC_EemO3N3fNOfMKQ">
           <body>This method returns all Cells as a List. This list concatenates the Cells Row by Row. So for a table with 3 columns and 5 rows.&#xD;

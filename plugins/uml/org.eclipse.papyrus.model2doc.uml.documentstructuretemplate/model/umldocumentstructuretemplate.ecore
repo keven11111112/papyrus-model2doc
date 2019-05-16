@@ -5,21 +5,53 @@
   <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
     <details key="originalName" value="UMLDocumentStructureTemplate"/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="StereotypePartTemplate" eSuperTypes="../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.ecore#//EClassPartTemplate #//IStereotypePartTemplate #//IUMLBodyPartTemplateTitle">
+  <eClassifiers xsi:type="ecore:EClass" name="StereotypePartTemplate" eSuperTypes="../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.ecore#//EClassPartTemplate #//MandatoryStereotypePart #//IUMLBodyPartTemplateTitle">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="PartTemplate used to navigate in the stereotype application."/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stereotypeQualifiedName"
-        ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MandatoryStereotypePart" abstract="true"
+      eSuperTypes="#//StereotypePart">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Abstract element used to represent a mandatory stereotype."/>
+    </eAnnotations>
+    <eAnnotations source="duplicates">
+      <eAnnotations source="stereotypeQualifiedName">
+        <details key="lowerBound" value="1"/>
+      </eAnnotations>
+      <contents xsi:type="ecore:EAttribute" name="stereotypeQualifiedName" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The qualifiedName of the stereotype to find. Here this property redefines the parent's property, to change the lower value."/>
+          <details key="suppressedGetVisibility" value="true"/>
+          <details key="suppressedSetVisibility" value="true"/>
+        </eAnnotations>
+        <eAnnotations source="redefines" references="#//StereotypePart/stereotypeQualifiedName"/>
+      </contents>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StereotypePart" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Abstract element used to represent an Optional Stereotype."/>
+    </eAnnotations>
+    <eOperations name="getFirstMatchingStereotypeApplication" ordered="false" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The qualifiedName of the stereotype to find."/>
-        <details key="propertyEditorFactory" value="editor://umldocumentstructuretemplate/StereotypePartTemplate/stereotypeQualifiedName/"/>
+        <details key="documentation" value="This method returns the first stereotype application for the element given in parameter. The parameter is EObject to avoid to have to check type before calling the method."/>
+        <details key="body" value="return org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.internal.operations.StereotypePartOperations.getFirstMatchingStereotypeApplication(this,element);"/>
+      </eAnnotations>
+      <eParameters name="element" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stereotypeFilterRule" ordered="false"
+        lowerBound="1" eType="#//StereotypeFilterBehavior" defaultValueLiteral="STEREOTYPE_KIND_OF">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Description of the way to use to filter the applied stereotype. This field is used only when the parent of the element is an EClassPartTemplate, and not a StereotypePartTemplate."/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stereotypeFilterRule" ordered="false"
-        lowerBound="1" eType="#//StereotypeFilterBehavior">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stereotypeQualifiedName"
+        ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Description of the way to use to filter the applied stereotype in the inherited method isMatchingFilterRule."/>
+        <details key="documentation" value="The qualified name of the stereotype. This field is used, only when the parent of the object is an EClassPartTemplate and not a StereotypePartTemplate.&#xD;&#xA;In other case, this field is ignored."/>
+        <details key="propertyEditorFactory" value="editor://umldocumentstructuretemplate/AbstractStereotypePart/stereotypeQualifiedName/"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -30,37 +62,14 @@
     <eLiterals name="STEREOTYPE_TYPE_OF"/>
     <eLiterals name="STEREOTYPE_KIND_OF" value="1"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IStereotypePartTemplate" abstract="true"
-      interface="true">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This interface has been created to manipulate easily StereotypePartTemplate and StereotypePropertyPartTemplate with a common front end"/>
-    </eAnnotations>
-    <eOperations name="getStereotypeQualifiedName" ordered="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This method returns the qualified name of the wanted stereotype applicaton."/>
-      </eAnnotations>
-    </eOperations>
-    <eOperations name="getFirstMatchingStereotypeApplication" ordered="false" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This method returns the first stereotype application for the element given in parameter. The parameter is EObject to avoid to have to check type before calling the method."/>
-      </eAnnotations>
-      <eParameters name="element" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
-    </eOperations>
-    <eOperations name="getStereotypeFilterRule" ordered="false" lowerBound="1" eType="#//StereotypeFilterBehavior">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This method returns the filter rule to apply to find the stereotype."/>
-      </eAnnotations>
-    </eOperations>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IUMLBodyPartTemplateTitle" abstract="true"
       interface="true" eSuperTypes="../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.ecore#//IBodySectionPartTemplate">
     <eAnnotations source="duplicates">
       <contents xsi:type="ecore:EOperation" name="buildPartTemplateTitle" ordered="false"
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This method creates the title (dédicated to element of this metamodel. &#xD;&#xA;In the general case, the ISubBodyPartTemplate uses the context element to build the title, wheareas the IBodyPartTemplate don't use it."/>
-          <details key="body" value="return org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.operations.UMLBodySectionPartTemplateTitleHelper.UML_INSTANCE.buildPartTemplateTitle(this,context);"/>
+          <details key="documentation" value="This method creates the title (dedicated to element of this metamodel. &#xD;&#xA;In the general case, the ISubBodyPartTemplate uses the context element to build the title, wheareas the IBodyPartTemplate don't use it."/>
+          <details key="body" value="return org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.internal.operations.UMLBodySectionPartTemplateTitleHelper.UML_INSTANCE.buildPartTemplateTitle(this,context);"/>
         </eAnnotations>
         <eAnnotations source="redefines" references="../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.ecore#//IBodySectionPartTemplate/buildPartTemplateTitle"/>
         <eParameters name="context" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
@@ -68,35 +77,37 @@
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StereotypePropertyReferencePartTemplate"
-      eSuperTypes="../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.ecore#//IComposedBodyPartTemplate #//IStereotypePartTemplate #//IUMLBodyPartTemplateTitle">
+      eSuperTypes="#//StereotypePropertyPart ../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.ecore#//IComposedBodyPartTemplate #//IUMLBodyPartTemplateTitle">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="PartTemplate used to navigate in the stereotype property."/>
+      <details key="documentation" value="This element is used to represent a stereotype property typed with a reference (EReference in Ecore). So primitives types are not supported here."/>
     </eAnnotations>
-    <eOperations name="getMatchingReferencedEObjects" ordered="false" upperBound="-1"
+    <eOperations name="getStereotypePropertyReferenceValues" ordered="false" upperBound="-1"
         eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This method returns the object referenced by the property for the given eobject in paramater. "/>
+        <details key="documentation" value="This method returns a collection of EObject, referenced by the property of stereotype represented by this element, for the given context."/>
+        <details key="body" value="final java.util.List&lt;Object> values = getStereotypePropertyValues(context);&#xA;final java.util.List&lt;org.eclipse.emf.ecore.EObject> eobjects = values.stream()&#xA;&#x9;&#x9;.filter(org.eclipse.emf.ecore.EObject.class::isInstance)&#xA;&#x9;&#x9;.map(org.eclipse.emf.ecore.EObject.class::cast)&#xA;&#x9;&#x9;.collect(java.util.stream.Collectors.toList());&#xA;return org.eclipse.emf.common.util.ECollections.toEList(eobjects);"/>
+      </eAnnotations>
+      <eParameters name="context" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StereotypePropertyPart" abstract="true"
+      eSuperTypes="#//StereotypePart">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Abstract element used to represent a stereotype property"/>
+    </eAnnotations>
+    <eOperations name="getStereotypePropertyValues" ordered="false" upperBound="-1"
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EJavaObject">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This method returns the value of the stereotype property."/>
+        <details key="body" value="if (null == this.propertyName || this.propertyName.isEmpty()) {&#xA;&#x9;return org.eclipse.emf.common.util.ECollections.emptyEList();&#xA;}&#xA;&#x9;EObject stereotypeApplication = null;&#xA;if (eobject instanceof org.eclipse.uml2.uml.Element) {&#xA;&#x9;stereotypeApplication = getFirstMatchingStereotypeApplication(eobject);&#xA;} else {&#xA;&#x9;stereotypeApplication = eobject;&#xA;}&#xA;if (stereotypeApplication == null) {&#xA;&#x9;return org.eclipse.emf.common.util.ECollections.emptyEList();&#xA;}&#xA;final org.eclipse.emf.ecore.EStructuralFeature feature = stereotypeApplication.eClass().getEStructuralFeature(this.propertyName);&#xA;if (null == feature) {&#xA;&#x9;return org.eclipse.emf.common.util.ECollections.emptyEList();&#xA;}&#xA;&#xA;final Object featureValue = stereotypeApplication.eGet(feature, true);&#xA;if (null == featureValue) {&#xA;&#x9;return org.eclipse.emf.common.util.ECollections.emptyEList();&#xA;}&#xA;if (feature.isMany()) {&#xA;&#x9;return org.eclipse.emf.common.util.ECollections.toEList((java.util.Collection&lt;?>) featureValue);&#xA;}&#xA;return org.eclipse.emf.common.util.ECollections.singletonEList(featureValue);"/>
       </eAnnotations>
       <eParameters name="eobject" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="propertyName" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The name of the stereotype property."/>
-        <details key="propertyEditorFactory" value="editor://umldocumentstructuretemplate/StereotypePropertyReferencePartTemplate/propertyName/"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stereotypeQualifiedName"
-        ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The qualified name of the stereotype. This field is used, only when the parent of the object is an EClassPartTemplate and not a StereotypePartTemplate.&#xD;&#xA;In other case, this field is ignored."/>
-        <details key="propertyEditorFactory" value="editor://umldocumentstructuretemplate/StereotypePropertyReferencePartTemplate/stereotypeQualifiedName/"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stereotypeFilterRule" ordered="false"
-        eType="#//StereotypeFilterBehavior">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Description of the way to use to filter the applied stereotype. This field is used only when the parent of the element is an EClassPartTemplate, and not a StereotypePartTemplate."/>
+        <details key="documentation" value="The name of the stereotype's property."/>
+        <details key="propertyEditorFactory" value="editor://umldocumentstructuretemplate/StereotypePropertyPart/propertyName/"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -107,6 +118,7 @@
     <eOperations name="getMatchingComments" ordered="false" upperBound="-1" eType="#//Comment">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This methods returns the matching Comments. The argument is EObject, to be compliant will EMF code, it avoid us to check type before calling methods.&#xD;&#xA;"/>
+        <details key="body" value="if (false == element instanceof org.eclipse.uml2.uml.Element) {&#xA;&#x9;return org.eclipse.emf.common.util.ECollections.emptyEList();&#xA;}&#xA;final java.util.List&lt;Comment> comments = ((org.eclipse.uml2.uml.Element) element).getOwnedComments().stream().filter(cmt -> cmt.getAnnotatedElements().contains(element)).collect(java.util.stream.Collectors.toList());&#xA;if (comments.isEmpty()) {&#xA;&#x9;return org.eclipse.emf.common.util.ECollections.emptyEList();&#xA;}&#xA;switch (this.commentChoice) {&#xA;case ALL_OWNED_COMMENTS:&#xA;&#x9;return org.eclipse.emf.common.util.ECollections.unmodifiableEList(comments);&#xA;case FIRST_OWNED_COMMENT:&#xA;&#x9;if (comments.size() > 0) {&#xA;&#x9;&#x9;return org.eclipse.emf.common.util.ECollections.singletonEList(comments.get(0));&#xA;&#x9;}&#xA;default:&#xA;&#x9;// not possible&#xA;&#x9;return org.eclipse.emf.common.util.ECollections.emptyEList();&#xA;}"/>
       </eAnnotations>
       <eParameters name="element" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
     </eOperations>
@@ -123,4 +135,83 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Comment" instanceClassName="org.eclipse.uml2.uml.Comment"
       abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StereotypePropertyColumn" eSuperTypes="#//MandatoryStereotypePropertyPart ../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.ecore#//IColumn">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This element allows to represent a stereotype's property in a table's column."/>
+    </eAnnotations>
+    <eAnnotations source="duplicates">
+      <contents xsi:type="ecore:EOperation" name="buildColumnHeaderLabel" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This method returns the title to use for this column."/>
+          <details key="body" value="return org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.internal.operations.StereotypePropertyColumnOperations.buildColumnHeaderLabel(this);"/>
+        </eAnnotations>
+        <eAnnotations source="redefines" references="../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.ecore#//IColumn/buildColumnHeaderLabel"/>
+      </contents>
+      <contents xsi:type="ecore:EOperation" name="getCellValue" ordered="false" lowerBound="1"
+          eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EJavaObject">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This method returns the value of the cell. This value is deduced from the element represented by the column and from the row element given as parameter).&#xD;&#xA;If the stereotype is not applied, the propertyName is not defined or or if the EStructuralFeature representing this property can't be found, we return the &quot;N/A&quot; string."/>
+          <details key="body" value="final org.eclipse.emf.ecore.EObject stereotypeApplication = getFirstMatchingStereotypeApplication(row);&#xA;if (null == stereotypeApplication) {&#xA;&#x9;return &quot;N/A&quot;; //$NON-NLS-1$&#xA;}&#xA;if (this.propertyName == null || this.propertyName.isEmpty()) {&#xA;&#x9;return &quot;N/A&quot;; //$NON-NLS-1$&#xA;}&#xA;final org.eclipse.emf.ecore.EStructuralFeature feature = stereotypeApplication.eClass().getEStructuralFeature(getPropertyName());&#xA;if (null == feature) {&#xA;&#x9;return &quot;N/A&quot;; //$NON-NLS-1$&#xA;}&#xA;final java.util.List&lt;Object> res = getStereotypePropertyValues(row);&#xA;if (feature.isMany()) {&#xA;&#x9;return res;&#xA;}&#xA;if (res.size() == 1) {&#xA;&#x9;return res.get(0);&#xA;}&#xA;return null;"/>
+        </eAnnotations>
+        <eAnnotations source="redefines" references="../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.ecore#//IColumn/getCellValue"/>
+        <eParameters name="row" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+      </contents>
+      <contents xsi:type="ecore:EOperation" name="buildCellLabel" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This method creates the label from the cell value given as parameter."/>
+          <details key="body" value="return org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.internal.operations.StereotypePropertyColumnOperations.buildCellLabel(this, cellElement);"/>
+        </eAnnotations>
+        <eAnnotations source="redefines" references="../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.ecore#//IColumn/buildCellLabel"/>
+        <eParameters name="cellElement" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+      </contents>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MandatoryStereotypePropertyPart" abstract="true"
+      eSuperTypes="#//StereotypePropertyPart">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Abstract element used to represent a mandatory stereotype's property."/>
+    </eAnnotations>
+    <eAnnotations source="duplicates">
+      <eAnnotations source="stereotypeQualifiedName">
+        <details key="lowerBound" value="1"/>
+      </eAnnotations>
+      <contents xsi:type="ecore:EAttribute" name="stereotypeQualifiedName" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The qualifiedName of the stereotype to find. Here this property redefines the parent's property, to change the lower value."/>
+          <details key="suppressedGetVisibility" value="true"/>
+          <details key="suppressedSetVisibility" value="true"/>
+        </eAnnotations>
+        <eAnnotations source="redefines" references="#//StereotypePart/stereotypeQualifiedName"/>
+      </contents>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StereotypePropertyReferenceTableView"
+      eSuperTypes="#//StereotypePropertyPart ../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.ecore#//ITableView #//IUMLBodyPartTemplateTitle">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This element allows to creae a table from a stereotype value properties types by an EObject. it doesn't work for PrimitivesTypes."/>
+    </eAnnotations>
+    <eAnnotations source="duplicates">
+      <contents xsi:type="ecore:EOperation" name="buildRowHeaderLabel" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This method creates the label for the row header, from the rowElement given as parameter."/>
+          <details key="body" value="return org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.internal.operations.StereotypePropertyReferenceTableViewOperations.buildRowHeaderLabel(this, rowElement);&#xA;"/>
+        </eAnnotations>
+        <eAnnotations source="redefines" references="../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.ecore#//ITableView/buildRowHeaderLabel"/>
+        <eParameters name="rowElement" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+      </contents>
+      <contents xsi:type="ecore:EOperation" name="getRows" ordered="false" upperBound="-1"
+          eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This method returns the elements to use as row from the context element given in parameter."/>
+          <details key="body" value="final java.util.List&lt;Object> values = getStereotypePropertyValues(context);&#xA;final java.util.List&lt;org.eclipse.emf.ecore.EObject> eobjects = values.stream()&#xA;&#x9;&#x9;.filter(org.eclipse.emf.ecore.EObject.class::isInstance)&#xA;&#x9;&#x9;.map(org.eclipse.emf.ecore.EObject.class::cast)&#xA;&#x9;&#x9;.collect(java.util.stream.Collectors.toList());&#xA;return org.eclipse.emf.common.util.ECollections.toEList(eobjects);"/>
+        </eAnnotations>
+        <eAnnotations source="redefines" references="../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.ecore#//ITableView/getRows"/>
+        <eParameters name="context" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+      </contents>
+    </eAnnotations>
+  </eClassifiers>
 </ecore:EPackage>

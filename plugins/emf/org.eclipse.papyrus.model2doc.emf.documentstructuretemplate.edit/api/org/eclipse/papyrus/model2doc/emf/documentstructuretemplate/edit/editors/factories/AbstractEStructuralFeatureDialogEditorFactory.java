@@ -76,7 +76,7 @@ public abstract class AbstractEStructuralFeatureDialogEditorFactory extends EMFE
 		final EObject editedEObject = (EObject) object;
 		final CustomExtendedDialogCellEditor cellEditor = new CustomExtendedDialogCellEditor(composite, getOrCreateLabelProvider(), itemPropertyDescriptor, editedEObject, this.editedFeature);
 		cellEditor.setDialogInput(getDialogInput(editedEObject));
-		configureCellEditor(cellEditor);
+		configureCellEditor(object, cellEditor);
 		return cellEditor;
 	}
 
@@ -91,10 +91,12 @@ public abstract class AbstractEStructuralFeatureDialogEditorFactory extends EMFE
 	 * <li></li>
 	 * <ul>
 	 *
+	 * @param editedObject
+	 *            the edited object
 	 * @param cellEditor
 	 *            the cell editor to configure
 	 */
-	protected void configureCellEditor(final CustomExtendedDialogCellEditor cellEditor) {
+	protected void configureCellEditor(final Object editedObject, final CustomExtendedDialogCellEditor cellEditor) {
 		cellEditor.setDialogTitle(NLS.bind(Messages.AbstractEObjectReferenceDialogEditorFactory_DialogTitle, this.editedFeature.getEContainingClass().getName(), this.editedFeature.getName()));
 		if (this.editedFeature.isMany()) {
 			cellEditor.setDialogMessage(NLS.bind(Messages.AbstractEObjectReferenceDialogEditorFactory_DialogMessageMultiSelection, this.editedFeature.getEType().getName()));

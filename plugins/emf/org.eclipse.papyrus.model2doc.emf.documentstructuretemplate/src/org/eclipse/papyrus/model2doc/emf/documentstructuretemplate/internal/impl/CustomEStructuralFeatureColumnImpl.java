@@ -31,7 +31,10 @@ public class CustomEStructuralFeatureColumnImpl extends EStructuralFeatureColumn
 	 */
 	@Override
 	public String buildColumnHeaderLabel() {
-		return DelegatingToEMFLabelProvider.INSTANCE.getText(this.feature);
+		if (null != this.customColumnTitle && false == this.customColumnTitle.isEmpty()) {
+			return this.customColumnTitle;
+		}
+		return this.feature.getName();
 	}
 
 	/**
@@ -56,9 +59,6 @@ public class CustomEStructuralFeatureColumnImpl extends EStructuralFeatureColumn
 	 */
 	@Override
 	public String buildCellLabel(Object cellElement) {
-		if (null != this.customColumnTitle && false == this.customColumnTitle.isEmpty()) {
-			return this.customColumnTitle;
-		}
 		return DelegatingToEMFLabelProvider.INSTANCE.getText(cellElement);
 	}
 

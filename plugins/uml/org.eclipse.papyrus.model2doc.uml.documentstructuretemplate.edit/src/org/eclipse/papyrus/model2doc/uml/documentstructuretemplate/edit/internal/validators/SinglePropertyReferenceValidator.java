@@ -22,7 +22,7 @@ import org.eclipse.uml2.uml.PrimitiveType;
 import org.eclipse.uml2.uml.Property;
 
 /**
- * Validator for Single Selection of Stereotype
+ * Validator for Single Selection of Property Reference
  */
 public class SinglePropertyReferenceValidator extends AbstractSelectionStatusValidator {
 
@@ -41,7 +41,7 @@ public class SinglePropertyReferenceValidator extends AbstractSelectionStatusVal
 		} else {
 			final Object firstSelection = selection[0];
 			if (selection.length != 1 || false == firstSelection instanceof Property || (firstSelection instanceof Property && ((Property) firstSelection).getType() instanceof PrimitiveType)) {
-				errorMessage = Messages.SinglePropertyReferenceValidator_YouMustSelectAProperty;
+				errorMessage = Messages.SinglePropertyReferenceValidator_YouMustSelectAPropertyNoTypedWithAnEReference;
 			}
 		}
 		return buildIStatus(errorMessage);

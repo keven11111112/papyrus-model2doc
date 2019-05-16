@@ -26,9 +26,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassPartTemplateImpl;
 
-import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.IStereotypePartTemplate;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.IUMLBodyPartTemplateTitle;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.MandatoryStereotypePart;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypeFilterBehavior;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePart;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePartTemplate;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplatePackage;
 
@@ -40,13 +41,35 @@ import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentSt
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePartTemplateImpl#getStereotypeQualifiedName <em>Stereotype Qualified Name</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePartTemplateImpl#getStereotypeFilterRule <em>Stereotype Filter Rule</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePartTemplateImpl#getStereotypeQualifiedName <em>Stereotype Qualified Name</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class StereotypePartTemplateImpl extends EClassPartTemplateImpl implements StereotypePartTemplate {
+	/**
+	 * The default value of the '{@link #getStereotypeFilterRule() <em>Stereotype Filter Rule</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getStereotypeFilterRule()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final StereotypeFilterBehavior STEREOTYPE_FILTER_RULE_EDEFAULT = StereotypeFilterBehavior.STEREOTYPE_KIND_OF;
+
+	/**
+	 * The cached value of the '{@link #getStereotypeFilterRule() <em>Stereotype Filter Rule</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getStereotypeFilterRule()
+	 * @generated
+	 * @ordered
+	 */
+	protected StereotypeFilterBehavior stereotypeFilterRule = STEREOTYPE_FILTER_RULE_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getStereotypeQualifiedName() <em>Stereotype Qualified Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -70,28 +93,6 @@ public class StereotypePartTemplateImpl extends EClassPartTemplateImpl implement
 	protected String stereotypeQualifiedName = STEREOTYPE_QUALIFIED_NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getStereotypeFilterRule() <em>Stereotype Filter Rule</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see #getStereotypeFilterRule()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final StereotypeFilterBehavior STEREOTYPE_FILTER_RULE_EDEFAULT = StereotypeFilterBehavior.STEREOTYPE_TYPE_OF;
-
-	/**
-	 * The cached value of the '{@link #getStereotypeFilterRule() <em>Stereotype Filter Rule</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see #getStereotypeFilterRule()
-	 * @generated
-	 * @ordered
-	 */
-	protected StereotypeFilterBehavior stereotypeFilterRule = STEREOTYPE_FILTER_RULE_EDEFAULT;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -110,32 +111,6 @@ public class StereotypePartTemplateImpl extends EClassPartTemplateImpl implement
 	@Override
 	protected EClass eStaticClass() {
 		return UMLDocumentStructureTemplatePackage.Literals.STEREOTYPE_PART_TEMPLATE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public String getStereotypeQualifiedName() {
-		return stereotypeQualifiedName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public void setStereotypeQualifiedName(String newStereotypeQualifiedName) {
-		String oldStereotypeQualifiedName = stereotypeQualifiedName;
-		stereotypeQualifiedName = newStereotypeQualifiedName;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__STEREOTYPE_QUALIFIED_NAME, oldStereotypeQualifiedName, stereotypeQualifiedName));
-		}
 	}
 
 	/**
@@ -171,10 +146,44 @@ public class StereotypePartTemplateImpl extends EClassPartTemplateImpl implement
 	 * @generated
 	 */
 	@Override
-	public EObject getFirstMatchingStereotypeApplication(EObject element) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public String getStereotypeQualifiedName() {
+		return stereotypeQualifiedName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setStereotypeQualifiedName(String newStereotypeQualifiedName) {
+		String oldStereotypeQualifiedName = stereotypeQualifiedName;
+		stereotypeQualifiedName = newStereotypeQualifiedName;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__STEREOTYPE_QUALIFIED_NAME, oldStereotypeQualifiedName, stereotypeQualifiedName));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public boolean isSetStereotypeQualifiedName() {
+		return STEREOTYPE_QUALIFIED_NAME_EDEFAULT == null ? stereotypeQualifiedName != null : !STEREOTYPE_QUALIFIED_NAME_EDEFAULT.equals(stereotypeQualifiedName);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EObject getFirstMatchingStereotypeApplication(final EObject element) {
+		return org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.internal.operations.StereotypePartOperations.getFirstMatchingStereotypeApplication(this, element);
 	}
 
 	/**
@@ -185,7 +194,7 @@ public class StereotypePartTemplateImpl extends EClassPartTemplateImpl implement
 	 */
 	@Override
 	public String buildPartTemplateTitle(final EObject context) {
-		return org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.operations.UMLBodySectionPartTemplateTitleHelper.UML_INSTANCE.buildPartTemplateTitle(this, context);
+		return org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.internal.operations.UMLBodySectionPartTemplateTitleHelper.UML_INSTANCE.buildPartTemplateTitle(this, context);
 	}
 
 	/**
@@ -197,10 +206,10 @@ public class StereotypePartTemplateImpl extends EClassPartTemplateImpl implement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__STEREOTYPE_QUALIFIED_NAME:
-			return getStereotypeQualifiedName();
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__STEREOTYPE_FILTER_RULE:
 			return getStereotypeFilterRule();
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__STEREOTYPE_QUALIFIED_NAME:
+			return getStereotypeQualifiedName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -214,11 +223,11 @@ public class StereotypePartTemplateImpl extends EClassPartTemplateImpl implement
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__STEREOTYPE_QUALIFIED_NAME:
-			setStereotypeQualifiedName((String) newValue);
-			return;
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__STEREOTYPE_FILTER_RULE:
 			setStereotypeFilterRule((StereotypeFilterBehavior) newValue);
+			return;
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__STEREOTYPE_QUALIFIED_NAME:
+			setStereotypeQualifiedName((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -233,11 +242,11 @@ public class StereotypePartTemplateImpl extends EClassPartTemplateImpl implement
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__STEREOTYPE_QUALIFIED_NAME:
-			setStereotypeQualifiedName(STEREOTYPE_QUALIFIED_NAME_EDEFAULT);
-			return;
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__STEREOTYPE_FILTER_RULE:
 			setStereotypeFilterRule(STEREOTYPE_FILTER_RULE_EDEFAULT);
+			return;
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__STEREOTYPE_QUALIFIED_NAME:
+			setStereotypeQualifiedName(STEREOTYPE_QUALIFIED_NAME_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -252,10 +261,10 @@ public class StereotypePartTemplateImpl extends EClassPartTemplateImpl implement
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__STEREOTYPE_QUALIFIED_NAME:
-			return STEREOTYPE_QUALIFIED_NAME_EDEFAULT == null ? stereotypeQualifiedName != null : !STEREOTYPE_QUALIFIED_NAME_EDEFAULT.equals(stereotypeQualifiedName);
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__STEREOTYPE_FILTER_RULE:
 			return stereotypeFilterRule != STEREOTYPE_FILTER_RULE_EDEFAULT;
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__STEREOTYPE_QUALIFIED_NAME:
+			return isSetStereotypeQualifiedName();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -267,15 +276,83 @@ public class StereotypePartTemplateImpl extends EClassPartTemplateImpl implement
 	 * @generated
 	 */
 	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == StereotypePart.class) {
+			switch (derivedFeatureID) {
+			case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__STEREOTYPE_FILTER_RULE:
+				return UMLDocumentStructureTemplatePackage.STEREOTYPE_PART__STEREOTYPE_FILTER_RULE;
+			case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__STEREOTYPE_QUALIFIED_NAME:
+				return UMLDocumentStructureTemplatePackage.STEREOTYPE_PART__STEREOTYPE_QUALIFIED_NAME;
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == MandatoryStereotypePart.class) {
+			switch (derivedFeatureID) {
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == IUMLBodyPartTemplateTitle.class) {
+			switch (derivedFeatureID) {
+			default:
+				return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == StereotypePart.class) {
+			switch (baseFeatureID) {
+			case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART__STEREOTYPE_FILTER_RULE:
+				return UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__STEREOTYPE_FILTER_RULE;
+			case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART__STEREOTYPE_QUALIFIED_NAME:
+				return UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__STEREOTYPE_QUALIFIED_NAME;
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == MandatoryStereotypePart.class) {
+			switch (baseFeatureID) {
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == IUMLBodyPartTemplateTitle.class) {
+			switch (baseFeatureID) {
+			default:
+				return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
-		if (baseClass == IStereotypePartTemplate.class) {
+		if (baseClass == StereotypePart.class) {
 			switch (baseOperationID) {
-			case UMLDocumentStructureTemplatePackage.ISTEREOTYPE_PART_TEMPLATE___GET_STEREOTYPE_QUALIFIED_NAME:
-				return UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE___GET_STEREOTYPE_QUALIFIED_NAME;
-			case UMLDocumentStructureTemplatePackage.ISTEREOTYPE_PART_TEMPLATE___GET_FIRST_MATCHING_STEREOTYPE_APPLICATION__EOBJECT:
+			case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART___GET_FIRST_MATCHING_STEREOTYPE_APPLICATION__EOBJECT:
 				return UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE___GET_FIRST_MATCHING_STEREOTYPE_APPLICATION__EOBJECT;
-			case UMLDocumentStructureTemplatePackage.ISTEREOTYPE_PART_TEMPLATE___GET_STEREOTYPE_FILTER_RULE:
-				return UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE___GET_STEREOTYPE_FILTER_RULE;
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == MandatoryStereotypePart.class) {
+			switch (baseOperationID) {
 			default:
 				return -1;
 			}
@@ -319,9 +396,7 @@ public class StereotypePartTemplateImpl extends EClassPartTemplateImpl implement
 		}
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (stereotypeQualifiedName: "); //$NON-NLS-1$
-		result.append(stereotypeQualifiedName);
-		result.append(", stereotypeFilterRule: "); //$NON-NLS-1$
+		result.append(" (stereotypeFilterRule: "); //$NON-NLS-1$
 		result.append(stereotypeFilterRule);
 		result.append(')');
 		return result.toString();

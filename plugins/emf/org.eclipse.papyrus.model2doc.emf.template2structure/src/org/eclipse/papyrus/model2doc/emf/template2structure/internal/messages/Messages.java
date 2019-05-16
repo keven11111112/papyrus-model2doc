@@ -9,7 +9,7 @@
  * SPDX-License-Identifier: EPL-2.0
  *
  * Contributors:
- * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
 
@@ -18,11 +18,11 @@ package org.eclipse.papyrus.model2doc.emf.template2structure.internal.messages;
 import org.eclipse.osgi.util.NLS;
 
 /**
- * The messages for the current plugin
+ *
  */
 public class Messages extends NLS {
-	private static final String BUNDLE_NAME = "org.eclipse.papyrus.model2doc.emf.template2structure.internal.messages"; //$NON-NLS-1$
-	public static String GenerateDocumentStructureHandler_GenerationIsFinished;
+	private static final String BUNDLE_NAME = "org.eclipse.papyrus.model2doc.emf.template2structure.internal.messages.messages"; //$NON-NLS-1$
+	public static String GenerateDocumentStructureHandler_TheGenerationOfDocumentStructureIsFinished;
 	static {
 		// initialize resource bundle
 		NLS.initializeMessages(BUNDLE_NAME, Messages.class);

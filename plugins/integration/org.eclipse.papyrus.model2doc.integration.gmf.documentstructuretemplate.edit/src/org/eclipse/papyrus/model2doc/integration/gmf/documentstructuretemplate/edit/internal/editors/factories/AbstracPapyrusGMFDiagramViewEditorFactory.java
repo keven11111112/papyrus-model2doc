@@ -42,13 +42,14 @@ public abstract class AbstracPapyrusGMFDiagramViewEditorFactory extends Abstract
 	}
 
 	/**
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.editors.factories.AbstractEStructuralFeatureDialogEditorFactory#configureCellEditor(org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.editors.CustomExtendedDialogCellEditor)
-	 *
+	 * @param editedObject
 	 * @param cellEditor
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.editors.factories.AbstractEStructuralFeatureDialogEditorFactory#configureCellEditor(Object,
+	 *      org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.editors.CustomExtendedDialogCellEditor)
 	 */
 	@Override
-	protected void configureCellEditor(CustomExtendedDialogCellEditor cellEditor) {
-		super.configureCellEditor(cellEditor);
+	protected void configureCellEditor(final Object editedObject, CustomExtendedDialogCellEditor cellEditor) {
+		super.configureCellEditor(editedObject, cellEditor);
 		cellEditor.setContentProvider(new PapyrusDiagramContentProvider());
 		cellEditor.setSelectionStatusValidator(new OKSelectionStatusValidator());
 	}

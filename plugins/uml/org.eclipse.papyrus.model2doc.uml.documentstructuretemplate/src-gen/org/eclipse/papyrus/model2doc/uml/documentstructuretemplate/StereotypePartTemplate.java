@@ -24,79 +24,10 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassPartTem
  * PartTemplate used to navigate in the stereotype application.
  * <!-- end-model-doc -->
  *
- * <p>
- * The following features are supported:
- * </p>
- * <ul>
- * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePartTemplate#getStereotypeQualifiedName <em>Stereotype Qualified Name</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePartTemplate#getStereotypeFilterRule <em>Stereotype Filter Rule</em>}</li>
- * </ul>
  *
  * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplatePackage#getStereotypePartTemplate()
  * @model
  * @generated
  */
-public interface StereotypePartTemplate extends EClassPartTemplate, IStereotypePartTemplate, IUMLBodyPartTemplateTitle {
-	/**
-	 * Returns the value of the '<em><b>Stereotype Qualified Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The qualifiedName of the stereotype to find.
-	 * <!-- end-model-doc -->
-	 *
-	 * @return the value of the '<em>Stereotype Qualified Name</em>' attribute.
-	 * @see #setStereotypeQualifiedName(String)
-	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplatePackage#getStereotypePartTemplate_StereotypeQualifiedName()
-	 * @model required="true" ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel propertyEditorFactory='editor://umldocumentstructuretemplate/StereotypePartTemplate/stereotypeQualifiedName/'"
-	 * @generated
-	 */
-	@Override
-	String getStereotypeQualifiedName();
-
-	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePartTemplate#getStereotypeQualifiedName <em>Stereotype Qualified Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *                  the new value of the '<em>Stereotype Qualified Name</em>' attribute.
-	 * @see #getStereotypeQualifiedName()
-	 * @generated
-	 */
-	void setStereotypeQualifiedName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Stereotype Filter Rule</b></em>' attribute.
-	 * The literals are from the enumeration {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypeFilterBehavior}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Description of the way to use to filter the applied stereotype in the inherited method isMatchingFilterRule.
-	 * <!-- end-model-doc -->
-	 *
-	 * @return the value of the '<em>Stereotype Filter Rule</em>' attribute.
-	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypeFilterBehavior
-	 * @see #setStereotypeFilterRule(StereotypeFilterBehavior)
-	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplatePackage#getStereotypePartTemplate_StereotypeFilterRule()
-	 * @model required="true" ordered="false"
-	 * @generated
-	 */
-	@Override
-	StereotypeFilterBehavior getStereotypeFilterRule();
-
-	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePartTemplate#getStereotypeFilterRule <em>Stereotype Filter Rule</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *                  the new value of the '<em>Stereotype Filter Rule</em>' attribute.
-	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypeFilterBehavior
-	 * @see #getStereotypeFilterRule()
-	 * @generated
-	 */
-	void setStereotypeFilterRule(StereotypeFilterBehavior value);
-
+public interface StereotypePartTemplate extends EClassPartTemplate, MandatoryStereotypePart, IUMLBodyPartTemplateTitle {
 } // StereotypePartTemplate

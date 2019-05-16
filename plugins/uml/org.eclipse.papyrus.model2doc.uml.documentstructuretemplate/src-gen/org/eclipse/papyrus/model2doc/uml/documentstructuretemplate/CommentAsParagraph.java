@@ -84,6 +84,10 @@ public interface CommentAsParagraph extends ILeafBodyPartTemplate, ITemplatePart
 	 * <!-- end-model-doc -->
 	 *
 	 * @model type="org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.Comment" ordered="false" elementRequired="true" elementOrdered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='if (false == element instanceof org.eclipse.uml2.uml.Element) {\n\treturn org.eclipse.emf.common.util.ECollections.emptyEList();\n}\nfinal java.util.List&lt;Comment&gt; comments =
+	 *        ((org.eclipse.uml2.uml.Element) element).getOwnedComments().stream().filter(cmt -&gt; cmt.getAnnotatedElements().contains(element)).collect(java.util.stream.Collectors.toList());\nif (comments.isEmpty()) {\n\treturn
+	 *        org.eclipse.emf.common.util.ECollections.emptyEList();\n}\nswitch (this.commentChoice) {\ncase ALL_OWNED_COMMENTS:\n\treturn org.eclipse.emf.common.util.ECollections.unmodifiableEList(comments);\ncase FIRST_OWNED_COMMENT:\n\tif (comments.size()
+	 *        &gt; 0) {\n\t\treturn org.eclipse.emf.common.util.ECollections.singletonEList(comments.get(0));\n\t}\ndefault:\n\t// not possible\n\treturn org.eclipse.emf.common.util.ECollections.emptyEList();\n}'"
 	 * @generated
 	 */
 	EList<Comment> getMatchingComments(EObject element);

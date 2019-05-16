@@ -58,7 +58,7 @@ public class StereotypePropertyReferencePartTemplateMapper extends AbstractUMLTe
 	protected <T> List<T> doMap(final IMappingService mappingService, final StereotypePropertyReferencePartTemplate stereotypePropertyPartTemplate, final EObject semanticModelElement, final Class<T> expectedReturnedClass) {
 		List<T> returnedElements = new ArrayList<>();
 
-		final Collection<EObject> matchingElements = stereotypePropertyPartTemplate.getMatchingReferencedEObjects(semanticModelElement);
+		final Collection<EObject> matchingElements = stereotypePropertyPartTemplate.getStereotypePropertyReferenceValues(semanticModelElement);
 		if (matchingElements.isEmpty()) {
 			return null;
 		}

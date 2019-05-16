@@ -15,10 +15,10 @@
     pluralizedGetters="true">
   <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
     <details key="OPPOSITE_ROLE_NAMES" value="IGNORE"/>
-    <details key="DUPLICATE_FEATURES" value="DISCARD"/>
+    <details key="DUPLICATE_FEATURES" value="PROCESS"/>
     <details key="ANNOTATION_DETAILS" value="PROCESS"/>
     <details key="PROPERTY_DEFAULT_EXPRESSIONS" value="IGNORE"/>
-    <details key="DUPLICATE_FEATURE_INHERITANCE" value="DISCARD"/>
+    <details key="DUPLICATE_FEATURE_INHERITANCE" value="PROCESS"/>
     <details key="COMMENTS" value="PROCESS"/>
     <details key="DERIVED_FEATURES" value="PROCESS"/>
     <details key="SUPER_CLASS_ORDER" value="PROCESS"/>
@@ -33,7 +33,7 @@
     <details key="OPERATION_BODIES" value="IGNORE"/>
     <details key="ECORE_TAGGED_VALUES" value="PROCESS"/>
     <details key="UNTYPED_PROPERTIES" value="REPORT"/>
-    <details key="REDEFINING_PROPERTIES" value="REPORT"/>
+    <details key="REDEFINING_PROPERTIES" value="PROCESS"/>
     <details key="INVOCATION_DELEGATES" value="IGNORE"/>
     <details key="VALIDATION_DELEGATES" value="IGNORE"/>
   </genAnnotations>
@@ -50,34 +50,45 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="umldocumentstructuretemplate.ecore#//CommentChoice/ALL_OWNED_COMMENTS"/>
     </genEnums>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="umldocumentstructuretemplate.ecore#//StereotypePartTemplate"
-        labelFeature="../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.genmodel#//documentstructuretemplate/IBodySectionPartTemplate/customTitle">
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umldocumentstructuretemplate.ecore#//StereotypePartTemplate/stereotypeQualifiedName"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umldocumentstructuretemplate.ecore#//StereotypePartTemplate/stereotypeFilterRule"/>
-    </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="umldocumentstructuretemplate.ecore#//IStereotypePartTemplate">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umldocumentstructuretemplate.ecore#//IStereotypePartTemplate/getStereotypeQualifiedName"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umldocumentstructuretemplate.ecore#//IStereotypePartTemplate/getFirstMatchingStereotypeApplication">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umldocumentstructuretemplate.ecore#//IStereotypePartTemplate/getFirstMatchingStereotypeApplication/element"/>
+        labelFeature="../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.genmodel#//documentstructuretemplate/IBodySectionPartTemplate/customTitle"/>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="umldocumentstructuretemplate.ecore#//MandatoryStereotypePart"/>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="umldocumentstructuretemplate.ecore#//StereotypePart">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umldocumentstructuretemplate.ecore#//StereotypePart/stereotypeFilterRule"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umldocumentstructuretemplate.ecore#//StereotypePart/stereotypeQualifiedName"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umldocumentstructuretemplate.ecore#//StereotypePart/getFirstMatchingStereotypeApplication"
+          body="return org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.internal.operations.StereotypePartOperations.getFirstMatchingStereotypeApplication(this,element);">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umldocumentstructuretemplate.ecore#//StereotypePart/getFirstMatchingStereotypeApplication/element"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umldocumentstructuretemplate.ecore#//IStereotypePartTemplate/getStereotypeFilterRule"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="umldocumentstructuretemplate.ecore#//IUMLBodyPartTemplateTitle"/>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="umldocumentstructuretemplate.ecore#//IUMLBodyPartTemplateTitle"
+        labelFeature="../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.genmodel#//documentstructuretemplate/IBodySectionPartTemplate/generateTitle"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="umldocumentstructuretemplate.ecore#//StereotypePropertyReferencePartTemplate"
         labelFeature="../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.genmodel#//documentstructuretemplate/IBodySectionPartTemplate/customTitle">
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umldocumentstructuretemplate.ecore#//StereotypePropertyReferencePartTemplate/propertyName"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umldocumentstructuretemplate.ecore#//StereotypePropertyReferencePartTemplate/stereotypeQualifiedName"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umldocumentstructuretemplate.ecore#//StereotypePropertyReferencePartTemplate/stereotypeFilterRule"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umldocumentstructuretemplate.ecore#//StereotypePropertyReferencePartTemplate/getMatchingReferencedEObjects">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umldocumentstructuretemplate.ecore#//StereotypePropertyReferencePartTemplate/getMatchingReferencedEObjects/eobject"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umldocumentstructuretemplate.ecore#//StereotypePropertyReferencePartTemplate/getStereotypePropertyReferenceValues"
+          body="final java.util.List&lt;Object> values = getStereotypePropertyValues(context);&#xA;final java.util.List&lt;org.eclipse.emf.ecore.EObject> eobjects = values.stream()&#xA;&#x9;&#x9;.filter(org.eclipse.emf.ecore.EObject.class::isInstance)&#xA;&#x9;&#x9;.map(org.eclipse.emf.ecore.EObject.class::cast)&#xA;&#x9;&#x9;.collect(java.util.stream.Collectors.toList());&#xA;return org.eclipse.emf.common.util.ECollections.toEList(eobjects);">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umldocumentstructuretemplate.ecore#//StereotypePropertyReferencePartTemplate/getStereotypePropertyReferenceValues/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="umldocumentstructuretemplate.ecore#//StereotypePropertyPart">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umldocumentstructuretemplate.ecore#//StereotypePropertyPart/propertyName"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umldocumentstructuretemplate.ecore#//StereotypePropertyPart/getStereotypePropertyValues"
+          body="if (null == this.propertyName || this.propertyName.isEmpty()) {&#xA;&#x9;return org.eclipse.emf.common.util.ECollections.emptyEList();&#xA;}&#xA;&#x9;EObject stereotypeApplication = null;&#xA;if (eobject instanceof org.eclipse.uml2.uml.Element) {&#xA;&#x9;stereotypeApplication = getFirstMatchingStereotypeApplication(eobject);&#xA;} else {&#xA;&#x9;stereotypeApplication = eobject;&#xA;}&#xA;if (stereotypeApplication == null) {&#xA;&#x9;return org.eclipse.emf.common.util.ECollections.emptyEList();&#xA;}&#xA;final org.eclipse.emf.ecore.EStructuralFeature feature = stereotypeApplication.eClass().getEStructuralFeature(this.propertyName);&#xA;if (null == feature) {&#xA;&#x9;return org.eclipse.emf.common.util.ECollections.emptyEList();&#xA;}&#xA;&#xA;final Object featureValue = stereotypeApplication.eGet(feature, true);&#xA;if (null == featureValue) {&#xA;&#x9;return org.eclipse.emf.common.util.ECollections.emptyEList();&#xA;}&#xA;if (feature.isMany()) {&#xA;&#x9;return org.eclipse.emf.common.util.ECollections.toEList((java.util.Collection&lt;?>) featureValue);&#xA;}&#xA;return org.eclipse.emf.common.util.ECollections.singletonEList(featureValue);">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umldocumentstructuretemplate.ecore#//StereotypePropertyPart/getStereotypePropertyValues/eobject"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="umldocumentstructuretemplate.ecore#//CommentAsParagraph"
         labelFeature="../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.genmodel#//documentstructuretemplate/IBodySectionPartTemplate/customTitle">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute umldocumentstructuretemplate.ecore#//CommentAsParagraph/commentChoice"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umldocumentstructuretemplate.ecore#//CommentAsParagraph/getMatchingComments">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="umldocumentstructuretemplate.ecore#//CommentAsParagraph/getMatchingComments"
+          body="if (false == element instanceof org.eclipse.uml2.uml.Element) {&#xA;&#x9;return org.eclipse.emf.common.util.ECollections.emptyEList();&#xA;}&#xA;final java.util.List&lt;Comment> comments = ((org.eclipse.uml2.uml.Element) element).getOwnedComments().stream().filter(cmt -> cmt.getAnnotatedElements().contains(element)).collect(java.util.stream.Collectors.toList());&#xA;if (comments.isEmpty()) {&#xA;&#x9;return org.eclipse.emf.common.util.ECollections.emptyEList();&#xA;}&#xA;switch (this.commentChoice) {&#xA;case ALL_OWNED_COMMENTS:&#xA;&#x9;return org.eclipse.emf.common.util.ECollections.unmodifiableEList(comments);&#xA;case FIRST_OWNED_COMMENT:&#xA;&#x9;if (comments.size() > 0) {&#xA;&#x9;&#x9;return org.eclipse.emf.common.util.ECollections.singletonEList(comments.get(0));&#xA;&#x9;}&#xA;default:&#xA;&#x9;// not possible&#xA;&#x9;return org.eclipse.emf.common.util.ECollections.emptyEList();&#xA;}">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="umldocumentstructuretemplate.ecore#//CommentAsParagraph/getMatchingComments/element"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="umldocumentstructuretemplate.ecore#//Comment"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="umldocumentstructuretemplate.ecore#//StereotypePropertyColumn"
+        labelFeature="../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.genmodel#//documentstructuretemplate/IColumn/customColumnTitle"/>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="umldocumentstructuretemplate.ecore#//MandatoryStereotypePropertyPart"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="umldocumentstructuretemplate.ecore#//StereotypePropertyReferenceTableView"
+        labelFeature="../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.genmodel#//documentstructuretemplate/IBodySectionPartTemplate/customTitle"/>
   </genPackages>
 </genmodel:GenModel>

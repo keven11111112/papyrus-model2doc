@@ -77,6 +77,10 @@ public class UMLDocumentStructureTemplateFactoryImpl extends EFactoryImpl implem
 			return createStereotypePropertyReferencePartTemplate();
 		case UMLDocumentStructureTemplatePackage.COMMENT_AS_PARAGRAPH:
 			return createCommentAsParagraph();
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_COLUMN:
+			return createStereotypePropertyColumn();
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW:
+			return createStereotypePropertyReferenceTableView();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -152,6 +156,30 @@ public class UMLDocumentStructureTemplateFactoryImpl extends EFactoryImpl implem
 	public CommentAsParagraph createCommentAsParagraph() {
 		CommentAsParagraphImpl commentAsParagraph = new CommentAsParagraphImpl();
 		return commentAsParagraph;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public StereotypePropertyColumn createStereotypePropertyColumn() {
+		StereotypePropertyColumnImpl stereotypePropertyColumn = new StereotypePropertyColumnImpl();
+		return stereotypePropertyColumn;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public StereotypePropertyReferenceTableView createStereotypePropertyReferenceTableView() {
+		StereotypePropertyReferenceTableViewImpl stereotypePropertyReferenceTableView = new StereotypePropertyReferenceTableViewImpl();
+		return stereotypePropertyReferenceTableView;
 	}
 
 	/**

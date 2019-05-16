@@ -19,8 +19,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassPartTemplateImpl;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePartTemplate;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePartTemplateImpl;
-import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.internal.operations.StereotypePartTemplateOperations;
-import org.eclipse.uml2.uml.Element;
 
 /**
  * Custom implementation for {@link StereotypePartTemplate}
@@ -41,7 +39,7 @@ public class CustomStereotypePartTemplateImpl extends StereotypePartTemplateImpl
 		if (null == this.stereotypeQualifiedName || this.stereotypeQualifiedName.isEmpty()) {
 			return false;
 		}
-		if (false == inputEObject instanceof Element) {
+		if (false == inputEObject instanceof org.eclipse.uml2.uml.Element) {
 			return false;
 		}
 
@@ -70,18 +68,6 @@ public class CustomStereotypePartTemplateImpl extends StereotypePartTemplateImpl
 		default:
 			return false;
 		}
-	}
-
-	/**
-	 *
-	 * @see org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.impl.StereotypePartTemplateImpl#getFirstMatchingStereotypeApplication(org.eclipse.uml2.uml.Element)
-	 *
-	 * @param element
-	 * @return
-	 */
-	@Override
-	public EObject getFirstMatchingStereotypeApplication(final EObject element) {
-		return StereotypePartTemplateOperations.getFirstMatchingStereotypeApplication(this, element);
 	}
 
 }

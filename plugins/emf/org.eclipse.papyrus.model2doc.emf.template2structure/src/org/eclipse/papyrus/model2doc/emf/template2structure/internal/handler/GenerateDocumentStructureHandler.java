@@ -82,7 +82,7 @@ public class GenerateDocumentStructureHandler extends AbstractHandler {
 		refreshProjects();
 
 		// we open a dialog at the end of the generation
-		MessageDialog.openInformation(Display.getDefault().getActiveShell(), "Papyrus-Model2Doc", Messages.GenerateDocumentStructureHandler_GenerationIsFinished); //$NON-NLS-1$
+		MessageDialog.openInformation(Display.getDefault().getActiveShell(), "Papyrus-Model2Doc", Messages.GenerateDocumentStructureHandler_TheGenerationOfDocumentStructureIsFinished); //$NON-NLS-1$
 
 		resetFields();
 

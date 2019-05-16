@@ -47,6 +47,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.Body;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedBodyPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedSubBodyPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.util.DocumentStructureTemplateSwitch;
 
@@ -190,6 +191,56 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 		}
 
 		return commentAsParagraphItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyColumn} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected StereotypePropertyColumnItemProvider stereotypePropertyColumnItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyColumn}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Adapter createStereotypePropertyColumnAdapter() {
+		if (stereotypePropertyColumnItemProvider == null) {
+			stereotypePropertyColumnItemProvider = new StereotypePropertyColumnItemProvider(this);
+		}
+
+		return stereotypePropertyColumnItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferenceTableView} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected StereotypePropertyReferenceTableViewItemProvider stereotypePropertyReferenceTableViewItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferenceTableView}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Adapter createStereotypePropertyReferenceTableViewAdapter() {
+		if (stereotypePropertyReferenceTableViewItemProvider == null) {
+			stereotypePropertyReferenceTableViewItemProvider = new StereotypePropertyReferenceTableViewItemProvider(this);
+		}
+
+		return stereotypePropertyReferenceTableViewItemProvider;
 	}
 
 	/**
@@ -347,6 +398,12 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 		if (commentAsParagraphItemProvider != null) {
 			commentAsParagraphItemProvider.dispose();
 		}
+		if (stereotypePropertyColumnItemProvider != null) {
+			stereotypePropertyColumnItemProvider.dispose();
+		}
+		if (stereotypePropertyReferenceTableViewItemProvider != null) {
+			stereotypePropertyReferenceTableViewItemProvider.dispose();
+		}
 	}
 
 	/**
@@ -409,6 +466,9 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 				newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.BODY__BODY_PART_TEMPLATE,
 						UMLDocumentStructureTemplateFactory.eINSTANCE.createCommentAsParagraph()));
 
+				newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.BODY__BODY_PART_TEMPLATE,
+						UMLDocumentStructureTemplateFactory.eINSTANCE.createStereotypePropertyReferenceTableView()));
+
 				return null;
 			}
 
@@ -439,6 +499,23 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 
 				newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE,
 						UMLDocumentStructureTemplateFactory.eINSTANCE.createCommentAsParagraph()));
+
+				newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE,
+						UMLDocumentStructureTemplateFactory.eINSTANCE.createStereotypePropertyReferenceTableView()));
+
+				return null;
+			}
+
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 *
+			 * @generated
+			 */
+			@Override
+			public Object caseITableView(ITableView object) {
+				newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ITABLE_VIEW__COLUMNS,
+						UMLDocumentStructureTemplateFactory.eINSTANCE.createStereotypePropertyColumn()));
 
 				return null;
 			}

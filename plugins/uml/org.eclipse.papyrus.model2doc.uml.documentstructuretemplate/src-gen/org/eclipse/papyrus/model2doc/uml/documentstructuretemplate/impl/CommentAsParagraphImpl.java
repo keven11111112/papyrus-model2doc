@@ -269,7 +269,7 @@ public class CommentAsParagraphImpl extends MinimalEObjectImpl.Container impleme
 	 */
 	@Override
 	public String buildPartTemplateTitle(final EObject context) {
-		return org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.operations.UMLBodySectionPartTemplateTitleHelper.UML_INSTANCE.buildPartTemplateTitle(this, context);
+		return org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.internal.operations.UMLBodySectionPartTemplateTitleHelper.UML_INSTANCE.buildPartTemplateTitle(this, context);
 	}
 
 	/**
@@ -279,10 +279,25 @@ public class CommentAsParagraphImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	@Override
-	public EList<Comment> getMatchingComments(EObject element) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public EList<Comment> getMatchingComments(final EObject element) {
+		if (false == element instanceof org.eclipse.uml2.uml.Element) {
+			return org.eclipse.emf.common.util.ECollections.emptyEList();
+		}
+		final java.util.List<Comment> comments = ((org.eclipse.uml2.uml.Element) element).getOwnedComments().stream().filter(cmt -> cmt.getAnnotatedElements().contains(element)).collect(java.util.stream.Collectors.toList());
+		if (comments.isEmpty()) {
+			return org.eclipse.emf.common.util.ECollections.emptyEList();
+		}
+		switch (this.commentChoice) {
+		case ALL_OWNED_COMMENTS:
+			return org.eclipse.emf.common.util.ECollections.unmodifiableEList(comments);
+		case FIRST_OWNED_COMMENT:
+			if (comments.size() > 0) {
+				return org.eclipse.emf.common.util.ECollections.singletonEList(comments.get(0));
+			}
+		default:
+			// not possible
+			return org.eclipse.emf.common.util.ECollections.emptyEList();
+		}
 	}
 
 	/**

@@ -58,10 +58,6 @@ public enum StereotypeFilterBehavior implements Enumerator {
 	/**
 	 * The '<em><b>STEREOTYPE TYPE OF</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>STEREOTYPE TYPE OF</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 *
 	 * @see #STEREOTYPE_TYPE_OF
@@ -74,10 +70,6 @@ public enum StereotypeFilterBehavior implements Enumerator {
 	/**
 	 * The '<em><b>STEREOTYPE KIND OF</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>STEREOTYPE KIND OF</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 *
 	 * @see #STEREOTYPE_KIND_OF

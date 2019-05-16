@@ -11,21 +11,7 @@
       <generalization xmi:type="uml:Generalization" xmi:id="_J_8UMFatEemQ15mMY1nXxQ">
         <general xmi:type="uml:Class" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_QLb5QFYBEemKJasCEBKPhQ"/>
       </generalization>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_uw8zUFasEemQ15mMY1nXxQ" name="stereotypeQualifiedName">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_8PIa4GdvEemEpZVLao3Nkg" source="http://www.eclipse.org/emf/2002/GenModel">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_88RNsGdvEemEpZVLao3Nkg" key="propertyEditorFactory" value="editor://umldocumentstructuretemplate/StereotypePartTemplate/stereotypeQualifiedName/"/>
-        </eAnnotations>
-        <ownedComment xmi:type="uml:Comment" xmi:id="_TtHkIFatEemQ15mMY1nXxQ" annotatedElement="_uw8zUFasEemQ15mMY1nXxQ">
-          <body>The qualifiedName of the stereotype to find.</body>
-        </ownedComment>
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_EotJwFatEemQ15mMY1nXxQ" name="stereotypeFilterRule" visibility="public" type="_31YoQFasEemQ15mMY1nXxQ">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_cHtx4FatEemQ15mMY1nXxQ" annotatedElement="_EotJwFatEemQ15mMY1nXxQ">
-          <body>Description of the way to use to filter the applied stereotype in the inherited method isMatchingFilterRule.</body>
-        </ownedComment>
-      </ownedAttribute>
-      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_XtMCsGXUEemOJZbgd4DmNg" client="_pau8kFasEemQ15mMY1nXxQ" supplier="_QEZFUGXUEemOJZbgd4DmNg" contract="_QEZFUGXUEemOJZbgd4DmNg"/>
+      <generalization xmi:type="uml:Generalization" xmi:id="_N8mSQHhzEemgVsD3DibuHQ" general="_QAxYMHhtEem9G7r-_dimjw"/>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_UsyN4HfJEemZAtnyL46QZg" client="_pau8kFasEemQ15mMY1nXxQ" supplier="_u5PwMHfIEemZAtnyL46QZg" contract="_u5PwMHfIEemZAtnyL46QZg"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_31YoQFasEemQ15mMY1nXxQ" name="StereotypeFilterBehavior">
@@ -37,52 +23,28 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_sbLZUFatEemQ15mMY1nXxQ" name="StereotypePropertyReferencePartTemplate">
       <ownedComment xmi:type="uml:Comment" xmi:id="_fTMvEFawEemQ15mMY1nXxQ" annotatedElement="_sbLZUFatEemQ15mMY1nXxQ">
-        <body>PartTemplate used to navigate in the stereotype property.</body>
+        <body>This element is used to represent a stereotype property typed with a reference (EReference in Ecore). So primitives types are not supported here.</body>
       </ownedComment>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_zlQaYFatEemQ15mMY1nXxQ" name="propertyName">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_j73vcGgsEemCUMKSZgtaEQ" source="http://www.eclipse.org/emf/2002/GenModel">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_OKiQcGg0EemCUMKSZgtaEQ" key="propertyEditorFactory" value="editor://umldocumentstructuretemplate/StereotypePropertyReferencePartTemplate/propertyName/"/>
-        </eAnnotations>
-        <ownedComment xmi:type="uml:Comment" xmi:id="_hs4jQFawEemQ15mMY1nXxQ" annotatedElement="_zlQaYFatEemQ15mMY1nXxQ">
-          <body>The name of the stereotype property.</body>
-        </ownedComment>
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_XdymsGXSEemOJZbgd4DmNg" name="stereotypeQualifiedName" visibility="public">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_jIi1EGgsEemCUMKSZgtaEQ" source="http://www.eclipse.org/emf/2002/GenModel">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jIi1EWgsEemCUMKSZgtaEQ" key="propertyEditorFactory" value="editor://umldocumentstructuretemplate/StereotypePropertyReferencePartTemplate/stereotypeQualifiedName/"/>
-        </eAnnotations>
-        <ownedComment xmi:type="uml:Comment" xmi:id="_lPQLcGXSEemOJZbgd4DmNg" annotatedElement="_XdymsGXSEemOJZbgd4DmNg">
-          <body>The qualified name of the stereotype. This field is used, only when the parent of the object is an EClassPartTemplate and not a StereotypePartTemplate.&#xD;
-In other case, this field is ignored.</body>
-        </ownedComment>
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cmWb8GXSEemOJZbgd4DmNg"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cmwEkGXSEemOJZbgd4DmNg" value="1"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_y3ssMGXUEemOJZbgd4DmNg" name="stereotypeFilterRule" visibility="public" type="_31YoQFasEemQ15mMY1nXxQ">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_y3ssMWXUEemOJZbgd4DmNg" annotatedElement="_y3ssMGXUEemOJZbgd4DmNg">
-          <body>Description of the way to use to filter the applied stereotype. This field is used only when the parent of the element is an EClassPartTemplate, and not a StereotypePartTemplate.</body>
-        </ownedComment>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5JCHYGXUEemOJZbgd4DmNg"/>
-      </ownedAttribute>
+      <generalization xmi:type="uml:Generalization" xmi:id="_QNU6kHh6EemgVsD3DibuHQ" general="_awbcAHhxEemgVsD3DibuHQ"/>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_2rWPUFayEemVf6VV9N5TUg" client="_sbLZUFatEemQ15mMY1nXxQ">
         <supplier xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_Pau8cFX-EemKJasCEBKPhQ"/>
         <contract xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_Pau8cFX-EemKJasCEBKPhQ"/>
       </interfaceRealization>
-      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_YO2lUGXUEemOJZbgd4DmNg" client="_sbLZUFatEemQ15mMY1nXxQ" supplier="_QEZFUGXUEemOJZbgd4DmNg" contract="_QEZFUGXUEemOJZbgd4DmNg"/>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_UDqYYHfJEemZAtnyL46QZg" client="_sbLZUFatEemQ15mMY1nXxQ" supplier="_u5PwMHfIEemZAtnyL46QZg" contract="_u5PwMHfIEemZAtnyL46QZg"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_vNUtoFuLEemw5fgiiQpxng" name="getMatchingReferencedEObjects">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_hi9Z8FuMEemw5fgiiQpxng" annotatedElement="_vNUtoFuLEemw5fgiiQpxng">
-          <body>This method returns the object referenced by the property for the given eobject in paramater. </body>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_0H8eEHiWEemgVsD3DibuHQ" name="getStereotypePropertyReferenceValues">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_RRmU0HiXEemgVsD3DibuHQ" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_S5e4oHiXEemgVsD3DibuHQ" key="body" value="final java.util.List&lt;Object> values = getStereotypePropertyValues(context);&#xA;final java.util.List&lt;org.eclipse.emf.ecore.EObject> eobjects = values.stream()&#xA;&#x9;&#x9;.filter(org.eclipse.emf.ecore.EObject.class::isInstance)&#xA;&#x9;&#x9;.map(org.eclipse.emf.ecore.EObject.class::cast)&#xA;&#x9;&#x9;.collect(java.util.stream.Collectors.toList());&#xA;return org.eclipse.emf.common.util.ECollections.toEList(eobjects);"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_nRs0UHiqEemFBs1cFQYujg" annotatedElement="_0H8eEHiWEemgVsD3DibuHQ">
+          <body>This method returns a collection of EObject, referenced by the property of stereotype represented by this element, for the given context.</body>
         </ownedComment>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_j5RxEFuMEemw5fgiiQpxng" name="eobject">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_6u8AMHiWEemgVsD3DibuHQ" name="context">
           <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
         </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_7JI_YFuLEemw5fgiiQpxng" name="return" direction="return">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_-KN0QHiWEemgVsD3DibuHQ" name="returnValue" direction="return">
           <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2atPcFuNEemw5fgiiQpxng"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2bBYgFuNEemw5fgiiQpxng" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XxVi8HiYEemTGaLmyD8LFQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XyYEwHiYEemTGaLmyD8LFQ" value="*"/>
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
@@ -106,6 +68,9 @@ In other case, this field is ignored.</body>
       </interfaceRealization>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_X4zogHfKEemZAtnyL46QZg" client="_4YK6UFauEemQ15mMY1nXxQ" supplier="_u5PwMHfIEemZAtnyL46QZg" contract="_u5PwMHfIEemZAtnyL46QZg"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_wyIkwFuKEemw5fgiiQpxng" name="getMatchingComments">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Za800HiHEemgVsD3DibuHQ" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Z1dmkHiHEemgVsD3DibuHQ" key="body" value="if (false == element instanceof org.eclipse.uml2.uml.Element) {&#xA;&#x9;return org.eclipse.emf.common.util.ECollections.emptyEList();&#xA;}&#xA;final java.util.List&lt;Comment> comments = ((org.eclipse.uml2.uml.Element) element).getOwnedComments().stream().filter(cmt -> cmt.getAnnotatedElements().contains(element)).collect(java.util.stream.Collectors.toList());&#xA;if (comments.isEmpty()) {&#xA;&#x9;return org.eclipse.emf.common.util.ECollections.emptyEList();&#xA;}&#xA;switch (this.commentChoice) {&#xA;case ALL_OWNED_COMMENTS:&#xA;&#x9;return org.eclipse.emf.common.util.ECollections.unmodifiableEList(comments);&#xA;case FIRST_OWNED_COMMENT:&#xA;&#x9;if (comments.size() > 0) {&#xA;&#x9;&#x9;return org.eclipse.emf.common.util.ECollections.singletonEList(comments.get(0));&#xA;&#x9;}&#xA;default:&#xA;&#x9;// not possible&#xA;&#x9;return org.eclipse.emf.common.util.ECollections.emptyEList();&#xA;}"/>
+        </eAnnotations>
         <ownedComment xmi:type="uml:Comment" xmi:id="_aSR3EFuLEemw5fgiiQpxng" annotatedElement="_wyIkwFuKEemw5fgiiQpxng">
           <body>This methods returns the matching Comments. The argument is EObject, to be compliant will EMF code, it avoid us to check type before calling methods.&#xD;
 </body>
@@ -124,47 +89,16 @@ In other case, this field is ignored.</body>
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_bCC4YFavEemQ15mMY1nXxQ" name="ALL_OWNED_COMMENTS"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_EYLIQGESEemrtYwu2mmoHg" name="Comment"/>
-    <packagedElement xmi:type="uml:Interface" xmi:id="_QEZFUGXUEemOJZbgd4DmNg" name="IStereotypePartTemplate">
-      <ownedComment xmi:type="uml:Comment" xmi:id="_WyvMoGXUEemOJZbgd4DmNg" annotatedElement="_QEZFUGXUEemOJZbgd4DmNg">
-        <body>This interface has been created to manipulate easily StereotypePartTemplate and StereotypePropertyPartTemplate with a common front end</body>
-      </ownedComment>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_hm5SwGXUEemOJZbgd4DmNg" name="getStereotypeQualifiedName">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_RwflUGXVEemOJZbgd4DmNg" annotatedElement="_hm5SwGXUEemOJZbgd4DmNg">
-          <body>This method returns the qualified name of the wanted stereotype applicaton.</body>
-        </ownedComment>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_oBkQIGXUEemOJZbgd4DmNg" name="return" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-        </ownedParameter>
-      </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_8q3fkFuFEemw5fgiiQpxng" name="getFirstMatchingStereotypeApplication">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_ZScVQFuMEemw5fgiiQpxng" annotatedElement="_8q3fkFuFEemw5fgiiQpxng">
-          <body>This method returns the first stereotype application for the element given in parameter. The parameter is EObject to avoid to have to check type before calling the method.</body>
-        </ownedComment>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PlQeQFuMEemw5fgiiQpxng" name="element">
-          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
-        </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Cs0a8FuGEemw5fgiiQpxng" name="return" direction="return">
-          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-ZG7UFuLEemw5fgiiQpxng"/>
-        </ownedParameter>
-      </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_t2PkgGXUEemOJZbgd4DmNg" name="getStereotypeFilterRule">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_OS9HcGXVEemOJZbgd4DmNg" annotatedElement="_t2PkgGXUEemOJZbgd4DmNg">
-          <body>This method returns the filter rule to apply to find the stereotype.</body>
-        </ownedComment>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_91daQGXUEemOJZbgd4DmNg" type="_31YoQFasEemQ15mMY1nXxQ" direction="return"/>
-      </ownedOperation>
-    </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_u5PwMHfIEemZAtnyL46QZg" name="IUMLBodyPartTemplateTitle">
       <generalization xmi:type="uml:Generalization" xmi:id="_zXdA4HfIEemZAtnyL46QZg">
         <general xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_XvipQFYUEemiOeXIb5muwQ"/>
       </generalization>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_1L8dUHfIEemZAtnyL46QZg" name="buildPartTemplateTitle">
         <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_1L8dUXfIEemZAtnyL46QZg" source="http://www.eclipse.org/emf/2002/GenModel">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_1L8dUnfIEemZAtnyL46QZg" key="body" value="return org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.operations.UMLBodySectionPartTemplateTitleHelper.UML_INSTANCE.buildPartTemplateTitle(this,context);"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_1L8dUnfIEemZAtnyL46QZg" key="body" value="return org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.internal.operations.UMLBodySectionPartTemplateTitleHelper.UML_INSTANCE.buildPartTemplateTitle(this,context);"/>
         </eAnnotations>
         <ownedComment xmi:type="uml:Comment" xmi:id="_1L8dU3fIEemZAtnyL46QZg" annotatedElement="_1L8dUHfIEemZAtnyL46QZg">
-          <body>This method creates the title (dédicated to element of this metamodel. &#xD;
+          <body>This method creates the title (dedicated to element of this metamodel. &#xD;
 In the general case, the ISubBodyPartTemplate uses the context element to build the title, wheareas the IBodyPartTemplate don't use it.</body>
         </ownedComment>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_1L8dVHfIEemZAtnyL46QZg" name="context">
@@ -174,6 +108,204 @@ In the general case, the ISubBodyPartTemplate uses the context element to build 
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         </ownedParameter>
         <redefinedOperation xmi:type="uml:Operation" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#__h3MoHV1EemQUasExi-pKA"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_zAX3cHflEemfxLCdKomHJw" name="StereotypePropertyColumn">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_cZt-IHiqEemFBs1cFQYujg" annotatedElement="_zAX3cHflEemfxLCdKomHJw">
+        <body>This element allows to represent a stereotype's property in a table's column.</body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_2r0kUHh7EemgVsD3DibuHQ" general="_kn0wMHh3EemgVsD3DibuHQ"/>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_1B2nAHflEemfxLCdKomHJw" client="_zAX3cHflEemfxLCdKomHJw">
+        <supplier xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_A326QHHIEempmPy7tz2aIQ"/>
+        <contract xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_A326QHHIEempmPy7tz2aIQ"/>
+      </interfaceRealization>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_M7oDEHfnEemYtMA-n3zeLQ" name="buildColumnHeaderLabel">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_YZV2wHibEem7jeUVQKIHuw" source="http://www.eclipse.org/emf/2002/GenModel">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ZLDAgHibEem7jeUVQKIHuw"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ZtaGsHibEem7jeUVQKIHuw" key="body" value="return org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.internal.operations.StereotypePropertyColumnOperations.buildColumnHeaderLabel(this);"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_M7oDEXfnEemYtMA-n3zeLQ" annotatedElement="_M7oDEHfnEemYtMA-n3zeLQ">
+          <body>This method returns the title to use for this column.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_M7oDEnfnEemYtMA-n3zeLQ" name="returnValue" visibility="public" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+        <redefinedOperation xmi:type="uml:Operation" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_rcVXYHHIEempmPy7tz2aIQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_M7tioHfnEemYtMA-n3zeLQ" name="getCellValue">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_54vQoHiZEem7jeUVQKIHuw" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6csSQHiZEem7jeUVQKIHuw" key="body" value="final org.eclipse.emf.ecore.EObject stereotypeApplication = getFirstMatchingStereotypeApplication(row);&#xA;if (null == stereotypeApplication) {&#xA;&#x9;return &quot;N/A&quot;; //$NON-NLS-1$&#xA;}&#xA;if (this.propertyName == null || this.propertyName.isEmpty()) {&#xA;&#x9;return &quot;N/A&quot;; //$NON-NLS-1$&#xA;}&#xA;final org.eclipse.emf.ecore.EStructuralFeature feature = stereotypeApplication.eClass().getEStructuralFeature(getPropertyName());&#xA;if (null == feature) {&#xA;&#x9;return &quot;N/A&quot;; //$NON-NLS-1$&#xA;}&#xA;final java.util.List&lt;Object> res = getStereotypePropertyValues(row);&#xA;if (feature.isMany()) {&#xA;&#x9;return res;&#xA;}&#xA;if (res.size() == 1) {&#xA;&#x9;return res.get(0);&#xA;}&#xA;return null;"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_M7tioXfnEemYtMA-n3zeLQ" annotatedElement="_M7tioHfnEemYtMA-n3zeLQ">
+          <body>This method returns the value of the cell. This value is deduced from the element represented by the column and from the row element given as parameter).&#xD;
+If the stereotype is not applied, the propertyName is not defined or or if the EStructuralFeature representing this property can't be found, we return the &quot;N/A&quot; string.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_M7tionfnEemYtMA-n3zeLQ" name="row">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_M7tio3fnEemYtMA-n3zeLQ" name="returnValue" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWkccX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+        <redefinedOperation xmi:type="uml:Operation" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_5KJyQHHIEempmPy7tz2aIQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_M7xNAHfnEemYtMA-n3zeLQ" name="buildCellLabel">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hUkFUHibEem7jeUVQKIHuw" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iaBRgHibEem7jeUVQKIHuw" key="body" value="return org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.internal.operations.StereotypePropertyColumnOperations.buildCellLabel(this, cellElement);"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_M7xNAXfnEemYtMA-n3zeLQ" annotatedElement="_M7xNAHfnEemYtMA-n3zeLQ">
+          <body>This method creates the label from the cell value given as parameter.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_M7xNAnfnEemYtMA-n3zeLQ" name="cellElement">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EJavaObject"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_M7xNA3fnEemYtMA-n3zeLQ" name="returnedValue" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+        <redefinedOperation xmi:type="uml:Operation" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_l9aoQHIjEempmPy7tz2aIQ"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_QAxYMHhtEem9G7r-_dimjw" name="MandatoryStereotypePart" isAbstract="true">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_VLYfEHhxEemgVsD3DibuHQ" annotatedElement="_QAxYMHhtEem9G7r-_dimjw">
+        <body>Abstract element used to represent a mandatory stereotype.</body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_2EaR8HhuEem9G7r-_dimjw" general="_eTn9UHhuEem9G7r-_dimjw"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_cEr2AHhtEem9G7r-_dimjw" name="stereotypeQualifiedName" redefinedProperty="_iVkIwHhuEem9G7r-_dimjw">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_cEr2AXhtEem9G7r-_dimjw" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_waMG0Hh-EemgVsD3DibuHQ" key="suppressedGetVisibility" value="true"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_15ircHh-EemgVsD3DibuHQ" key="suppressedSetVisibility" value="true"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_cEr2A3htEem9G7r-_dimjw" annotatedElement="_cEr2AHhtEem9G7r-_dimjw">
+          <body>The qualifiedName of the stereotype to find. Here this property redefines the parent's property, to change the lower value.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_eTn9UHhuEem9G7r-_dimjw" name="StereotypePart" isAbstract="true">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_SQgpYHhxEemgVsD3DibuHQ" annotatedElement="_eTn9UHhuEem9G7r-_dimjw">
+        <body>Abstract element used to represent an Optional Stereotype.</body>
+      </ownedComment>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_iVeCIHhuEem9G7r-_dimjw" name="stereotypeFilterRule" visibility="public" type="_31YoQFasEemQ15mMY1nXxQ">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_iVeCIXhuEem9G7r-_dimjw" annotatedElement="_iVeCIHhuEem9G7r-_dimjw">
+          <body>Description of the way to use to filter the applied stereotype. This field is used only when the parent of the element is an EClassPartTemplate, and not a StereotypePartTemplate.</body>
+        </ownedComment>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_H4EO4HhxEemgVsD3DibuHQ" name="DEFAULT_VALUE" value="STEREOTYPE_KIND_OF"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_iVkIwHhuEem9G7r-_dimjw" name="stereotypeQualifiedName" visibility="public">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iVkIwXhuEem9G7r-_dimjw" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iVkIwnhuEem9G7r-_dimjw" key="propertyEditorFactory" value="editor://umldocumentstructuretemplate/AbstractStereotypePart/stereotypeQualifiedName/"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_iVkIw3huEem9G7r-_dimjw" annotatedElement="_iVkIwHhuEem9G7r-_dimjw">
+          <body>The qualified name of the stereotype. This field is used, only when the parent of the object is an EClassPartTemplate and not a StereotypePartTemplate.&#xD;
+In other case, this field is ignored.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_iVkIxHhuEem9G7r-_dimjw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_iVkIxXhuEem9G7r-_dimjw" value="1"/>
+      </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_lHPmMHhuEem9G7r-_dimjw" name="getFirstMatchingStereotypeApplication">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_WMEyIHiUEemgVsD3DibuHQ" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Wj74gHiUEemgVsD3DibuHQ" key="body" value="return org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.internal.operations.StereotypePartOperations.getFirstMatchingStereotypeApplication(this,element);"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_lHPmMXhuEem9G7r-_dimjw" annotatedElement="_lHPmMHhuEem9G7r-_dimjw">
+          <body>This method returns the first stereotype application for the element given in parameter. The parameter is EObject to avoid to have to check type before calling the method.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_lHPmMnhuEem9G7r-_dimjw" name="element">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_lHPmM3huEem9G7r-_dimjw" name="return" direction="return">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lHPmNHhuEem9G7r-_dimjw"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_awbcAHhxEemgVsD3DibuHQ" name="StereotypePropertyPart" isAbstract="true">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_ic5_gHhxEemgVsD3DibuHQ" annotatedElement="_awbcAHhxEemgVsD3DibuHQ">
+        <body>Abstract element used to represent a stereotype property</body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_yLcU8HhxEemgVsD3DibuHQ" general="_eTn9UHhuEem9G7r-_dimjw"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_t7lpUHhxEemgVsD3DibuHQ" name="propertyName">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_t7mQYHhxEemgVsD3DibuHQ" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_t7mQYXhxEemgVsD3DibuHQ" key="propertyEditorFactory" value="editor://umldocumentstructuretemplate/StereotypePropertyPart/propertyName/"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_t7mQYnhxEemgVsD3DibuHQ" annotatedElement="_t7lpUHhxEemgVsD3DibuHQ">
+          <body>The name of the stereotype's property.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_2_vKYHhxEemgVsD3DibuHQ" name="getStereotypePropertyValues">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_8FuCYHiVEemgVsD3DibuHQ" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_8hq-kHiVEemgVsD3DibuHQ" key="body" value="if (null == this.propertyName || this.propertyName.isEmpty()) {&#xA;&#x9;return org.eclipse.emf.common.util.ECollections.emptyEList();&#xA;}&#xA;&#x9;EObject stereotypeApplication = null;&#xA;if (eobject instanceof org.eclipse.uml2.uml.Element) {&#xA;&#x9;stereotypeApplication = getFirstMatchingStereotypeApplication(eobject);&#xA;} else {&#xA;&#x9;stereotypeApplication = eobject;&#xA;}&#xA;if (stereotypeApplication == null) {&#xA;&#x9;return org.eclipse.emf.common.util.ECollections.emptyEList();&#xA;}&#xA;final org.eclipse.emf.ecore.EStructuralFeature feature = stereotypeApplication.eClass().getEStructuralFeature(this.propertyName);&#xA;if (null == feature) {&#xA;&#x9;return org.eclipse.emf.common.util.ECollections.emptyEList();&#xA;}&#xA;&#xA;final Object featureValue = stereotypeApplication.eGet(feature, true);&#xA;if (null == featureValue) {&#xA;&#x9;return org.eclipse.emf.common.util.ECollections.emptyEList();&#xA;}&#xA;if (feature.isMany()) {&#xA;&#x9;return org.eclipse.emf.common.util.ECollections.toEList((java.util.Collection&lt;?>) featureValue);&#xA;}&#xA;return org.eclipse.emf.common.util.ECollections.singletonEList(featureValue);"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_2_vKYXhxEemgVsD3DibuHQ" annotatedElement="_2_vKYHhxEemgVsD3DibuHQ">
+          <body>This method returns the value of the stereotype property.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_2_vKYnhxEemgVsD3DibuHQ" name="eobject">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_2_vKY3hxEemgVsD3DibuHQ" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWkccX_EduPJbEsMYXjUQ"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2_vKZHhxEemgVsD3DibuHQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2_vKZXhxEemgVsD3DibuHQ" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_kn0wMHh3EemgVsD3DibuHQ" name="MandatoryStereotypePropertyPart" isAbstract="true">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_kn0wMXh3EemgVsD3DibuHQ" annotatedElement="_kn0wMHh3EemgVsD3DibuHQ">
+        <body>Abstract element used to represent a mandatory stereotype's property.</body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_qffuMHh3EemgVsD3DibuHQ" general="_awbcAHhxEemgVsD3DibuHQ"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_yKxPcHiFEemgVsD3DibuHQ" name="stereotypeQualifiedName" redefinedProperty="_iVkIwHhuEem9G7r-_dimjw">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_yKxPcXiFEemgVsD3DibuHQ" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_yKxPcniFEemgVsD3DibuHQ" key="suppressedGetVisibility" value="true"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_yKxPc3iFEemgVsD3DibuHQ" key="suppressedSetVisibility" value="true"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_yKxPdHiFEemgVsD3DibuHQ" annotatedElement="_yKxPcHiFEemgVsD3DibuHQ">
+          <body>The qualifiedName of the stereotype to find. Here this property redefines the parent's property, to change the lower value.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_K5nx0HrWEem3D-pOKUcUKA" name="StereotypePropertyReferenceTableView">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_Sfqj4HrbEemo4rKYxRobdQ" annotatedElement="_K5nx0HrWEem3D-pOKUcUKA">
+        <body>This element allows to creae a table from a stereotype value properties types by an EObject. it doesn't work for PrimitivesTypes.</body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_7Anm4HrXEem3D-pOKUcUKA" general="_awbcAHhxEemgVsD3DibuHQ"/>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_TcOFAHrWEem3D-pOKUcUKA" client="_K5nx0HrWEem3D-pOKUcUKA">
+        <supplier xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_hB8RkHHHEempmPy7tz2aIQ"/>
+        <contract xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_hB8RkHHHEempmPy7tz2aIQ"/>
+      </interfaceRealization>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_5MFjoHrWEem3D-pOKUcUKA" client="_K5nx0HrWEem3D-pOKUcUKA" supplier="_u5PwMHfIEemZAtnyL46QZg" contract="_u5PwMHfIEemZAtnyL46QZg"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_zcyegHrWEem3D-pOKUcUKA" name="buildRowHeaderLabel">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_eweyEHrXEem3D-pOKUcUKA" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fQlOcHrXEem3D-pOKUcUKA" key="body" value="return org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.internal.operations.StereotypePropertyReferenceTableViewOperations.buildRowHeaderLabel(this, rowElement);&#xA;"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_zcyegXrWEem3D-pOKUcUKA" annotatedElement="_zcyegHrWEem3D-pOKUcUKA">
+          <body>This method creates the label for the row header, from the rowElement given as parameter.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_zcyegnrWEem3D-pOKUcUKA" name="rowElement">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_zcyeg3rWEem3D-pOKUcUKA" name="returnValue" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+        <redefinedOperation xmi:type="uml:Operation" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_ZZa8MHIjEempmPy7tz2aIQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_zc9doHrWEem3D-pOKUcUKA" name="getRows">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_CL1a8HrZEemYwcoYiknfQA" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_CL1a8XrZEemYwcoYiknfQA" key="body" value="final java.util.List&lt;Object> values = getStereotypePropertyValues(context);&#xA;final java.util.List&lt;org.eclipse.emf.ecore.EObject> eobjects = values.stream()&#xA;&#x9;&#x9;.filter(org.eclipse.emf.ecore.EObject.class::isInstance)&#xA;&#x9;&#x9;.map(org.eclipse.emf.ecore.EObject.class::cast)&#xA;&#x9;&#x9;.collect(java.util.stream.Collectors.toList());&#xA;return org.eclipse.emf.common.util.ECollections.toEList(eobjects);"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_zc9doXrWEem3D-pOKUcUKA" annotatedElement="_zc9doHrWEem3D-pOKUcUKA">
+          <body>This method returns the elements to use as row from the context element given in parameter.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_zc9donrWEem3D-pOKUcUKA" name="context">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_zc9do3rWEem3D-pOKUcUKA" name="return" visibility="public" direction="return">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zc9dpHrWEem3D-pOKUcUKA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zc9dpXrWEem3D-pOKUcUKA" value="*"/>
+        </ownedParameter>
+        <redefinedOperation xmi:type="uml:Operation" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_vq0mgHHHEempmPy7tz2aIQ"/>
       </ownedOperation>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_x6veQB8TEemcGrhwCFVIGw">

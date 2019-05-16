@@ -23,10 +23,12 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodyPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IColumn;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedBodyPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedSubBodyPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafBodyPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubBodyPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITemplatePartView;
 
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.*;
@@ -99,8 +101,13 @@ public class UMLDocumentStructureTemplateAdapterFactory extends AdapterFactoryIm
 		}
 
 		@Override
-		public Adapter caseIStereotypePartTemplate(IStereotypePartTemplate object) {
-			return createIStereotypePartTemplateAdapter();
+		public Adapter caseMandatoryStereotypePart(MandatoryStereotypePart object) {
+			return createMandatoryStereotypePartAdapter();
+		}
+
+		@Override
+		public Adapter caseStereotypePart(StereotypePart object) {
+			return createStereotypePartAdapter();
 		}
 
 		@Override
@@ -114,6 +121,11 @@ public class UMLDocumentStructureTemplateAdapterFactory extends AdapterFactoryIm
 		}
 
 		@Override
+		public Adapter caseStereotypePropertyPart(StereotypePropertyPart object) {
+			return createStereotypePropertyPartAdapter();
+		}
+
+		@Override
 		public Adapter caseCommentAsParagraph(CommentAsParagraph object) {
 			return createCommentAsParagraphAdapter();
 		}
@@ -121,6 +133,21 @@ public class UMLDocumentStructureTemplateAdapterFactory extends AdapterFactoryIm
 		@Override
 		public Adapter caseComment(Comment object) {
 			return createCommentAdapter();
+		}
+
+		@Override
+		public Adapter caseStereotypePropertyColumn(StereotypePropertyColumn object) {
+			return createStereotypePropertyColumnAdapter();
+		}
+
+		@Override
+		public Adapter caseMandatoryStereotypePropertyPart(MandatoryStereotypePropertyPart object) {
+			return createMandatoryStereotypePropertyPartAdapter();
+		}
+
+		@Override
+		public Adapter caseStereotypePropertyReferenceTableView(StereotypePropertyReferenceTableView object) {
+			return createStereotypePropertyReferenceTableViewAdapter();
 		}
 
 		@Override
@@ -164,6 +191,16 @@ public class UMLDocumentStructureTemplateAdapterFactory extends AdapterFactoryIm
 		}
 
 		@Override
+		public Adapter caseIColumn(IColumn object) {
+			return createIColumnAdapter();
+		}
+
+		@Override
+		public Adapter caseITableView(ITableView object) {
+			return createITableViewAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -201,17 +238,32 @@ public class UMLDocumentStructureTemplateAdapterFactory extends AdapterFactoryIm
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.IStereotypePartTemplate <em>IStereotype Part Template</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.MandatoryStereotypePart <em>Mandatory Stereotype Part</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.IStereotypePartTemplate
+	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.MandatoryStereotypePart
 	 * @generated
 	 */
-	public Adapter createIStereotypePartTemplateAdapter() {
+	public Adapter createMandatoryStereotypePartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePart <em>Stereotype Part</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePart
+	 * @generated
+	 */
+	public Adapter createStereotypePartAdapter() {
 		return null;
 	}
 
@@ -246,6 +298,21 @@ public class UMLDocumentStructureTemplateAdapterFactory extends AdapterFactoryIm
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyPart <em>Stereotype Property Part</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyPart
+	 * @generated
+	 */
+	public Adapter createStereotypePropertyPartAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.CommentAsParagraph <em>Comment As Paragraph</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -272,6 +339,51 @@ public class UMLDocumentStructureTemplateAdapterFactory extends AdapterFactoryIm
 	 * @generated
 	 */
 	public Adapter createCommentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyColumn <em>Stereotype Property Column</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyColumn
+	 * @generated
+	 */
+	public Adapter createStereotypePropertyColumnAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.MandatoryStereotypePropertyPart <em>Mandatory Stereotype Property Part</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.MandatoryStereotypePropertyPart
+	 * @generated
+	 */
+	public Adapter createMandatoryStereotypePropertyPartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferenceTableView <em>Stereotype Property Reference Table View</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferenceTableView
+	 * @generated
+	 */
+	public Adapter createStereotypePropertyReferenceTableViewAdapter() {
 		return null;
 	}
 
@@ -392,6 +504,36 @@ public class UMLDocumentStructureTemplateAdapterFactory extends AdapterFactoryIm
 	 * @generated
 	 */
 	public Adapter createITemplatePartViewAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IColumn <em>IColumn</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IColumn
+	 * @generated
+	 */
+	public Adapter createIColumnAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView <em>ITable View</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView
+	 * @generated
+	 */
+	public Adapter createITableViewAdapter() {
 		return null;
 	}
 

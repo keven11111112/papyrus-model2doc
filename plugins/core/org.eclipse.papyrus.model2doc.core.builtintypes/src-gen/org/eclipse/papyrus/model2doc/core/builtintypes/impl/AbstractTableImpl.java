@@ -180,7 +180,7 @@ public abstract class AbstractTableImpl extends MinimalEObjectImpl.Container imp
 		for (final Row row : getRows()) {
 			cells.addAll(row.getCells());
 		}
-		return org.eclipse.emf.common.util.ECollections.asEList(cells);
+		return org.eclipse.emf.common.util.ECollections.toEList(cells);
 
 	}
 

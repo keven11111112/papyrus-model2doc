@@ -120,7 +120,7 @@ public interface AbstractTable extends EObject {
 	 *
 	 * @model kind="operation" ordered="false"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='final java.util.List&lt;Cell&gt; cells = new java.util.ArrayList&lt;Cell&gt;();\nfor (final Row row : getRows()) {\n\tcells.addAll(row.getCells());\n}\nreturn
-	 *        org.eclipse.emf.common.util.ECollections.asEList(cells);\n'"
+	 *        org.eclipse.emf.common.util.ECollections.toEList(cells);\n'"
 	 * @generated
 	 */
 	EList<Cell> getAllCells();

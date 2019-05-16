@@ -15,9 +15,7 @@
 
 package org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.internal.impl;
 
-import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.CommentAsParagraph;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePartTemplate;
-import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferencePartTemplate;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.UMLDocumentStructureTemplateFactoryImpl;
 
 /**
@@ -35,23 +33,4 @@ public class CustomUMLDocumentStructureTemplateFactoryImpl extends UMLDocumentSt
 		return new CustomStereotypePartTemplateImpl();
 	}
 
-	/**
-	 * @see org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.impl.UMLDocumentStructureTemplateFactoryImpl#createCommentAsParagraph()
-	 *
-	 * @return
-	 */
-	@Override
-	public CommentAsParagraph createCommentAsParagraph() {
-		return new CustomCommentAsParagraphImpl();
-	}
-
-	/**
-	 * @see org.eclipse.papyrus.model2doc.uml.umldocumentstructuretemplate.impl.UMLDocumentStructureTemplateFactoryImpl#createStereotypePropertyReferencePartTemplate()
-	 *
-	 * @return
-	 */
-	@Override
-	public StereotypePropertyReferencePartTemplate createStereotypePropertyReferencePartTemplate() {
-		return new CustomStereotypePropertyReferencePartTemplateImpl();
-	}
 }

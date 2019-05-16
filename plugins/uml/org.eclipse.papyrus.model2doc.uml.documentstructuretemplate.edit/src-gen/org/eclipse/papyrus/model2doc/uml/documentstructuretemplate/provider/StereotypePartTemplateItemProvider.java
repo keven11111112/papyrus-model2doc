@@ -66,32 +66,10 @@ public class StereotypePartTemplateItemProvider extends EClassPartTemplateItemPr
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addStereotypeQualifiedNamePropertyDescriptor(object);
 			addStereotypeFilterRulePropertyDescriptor(object);
+			addStereotypeQualifiedNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Stereotype Qualified Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected void addStereotypeQualifiedNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_StereotypePartTemplate_stereotypeQualifiedName_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_StereotypePartTemplate_stereotypeQualifiedName_feature", "_UI_StereotypePartTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				UMLDocumentStructureTemplatePackage.Literals.STEREOTYPE_PART_TEMPLATE__STEREOTYPE_QUALIFIED_NAME,
-				true,
-				false,
-				false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				null,
-				null,
-				URI.createURI("editor://umldocumentstructuretemplate/StereotypePartTemplate/stereotypeQualifiedName/")));
 	}
 
 	/**
@@ -104,15 +82,37 @@ public class StereotypePartTemplateItemProvider extends EClassPartTemplateItemPr
 	protected void addStereotypeFilterRulePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
-				getString("_UI_StereotypePartTemplate_stereotypeFilterRule_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_StereotypePartTemplate_stereotypeFilterRule_feature", "_UI_StereotypePartTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				UMLDocumentStructureTemplatePackage.Literals.STEREOTYPE_PART_TEMPLATE__STEREOTYPE_FILTER_RULE,
+				getString("_UI_StereotypePart_stereotypeFilterRule_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_StereotypePart_stereotypeFilterRule_feature", "_UI_StereotypePart_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				UMLDocumentStructureTemplatePackage.Literals.STEREOTYPE_PART__STEREOTYPE_FILTER_RULE,
 				true,
 				false,
 				false,
 				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				null,
 				null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Stereotype Qualified Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected void addStereotypeQualifiedNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_StereotypePart_stereotypeQualifiedName_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_StereotypePart_stereotypeQualifiedName_feature", "_UI_StereotypePart_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				UMLDocumentStructureTemplatePackage.Literals.STEREOTYPE_PART__STEREOTYPE_QUALIFIED_NAME,
+				true,
+				false,
+				false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				null,
+				null,
+				URI.createURI("editor://umldocumentstructuretemplate/AbstractStereotypePart/stereotypeQualifiedName/")));
 	}
 
 	/**
@@ -177,8 +177,8 @@ public class StereotypePartTemplateItemProvider extends EClassPartTemplateItemPr
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(StereotypePartTemplate.class)) {
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__STEREOTYPE_QUALIFIED_NAME:
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__STEREOTYPE_FILTER_RULE:
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__STEREOTYPE_QUALIFIED_NAME:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
@@ -202,6 +202,9 @@ public class StereotypePartTemplateItemProvider extends EClassPartTemplateItemPr
 
 		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE,
 				UMLDocumentStructureTemplateFactory.eINSTANCE.createCommentAsParagraph()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE,
+				UMLDocumentStructureTemplateFactory.eINSTANCE.createStereotypePropertyReferenceTableView()));
 	}
 
 }

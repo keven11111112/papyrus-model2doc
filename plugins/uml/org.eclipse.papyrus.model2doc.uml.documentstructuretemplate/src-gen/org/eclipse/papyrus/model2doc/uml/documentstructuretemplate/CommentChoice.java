@@ -55,10 +55,6 @@ public enum CommentChoice implements Enumerator {
 	/**
 	 * The '<em><b>FIRST OWNED COMMENT</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>FIRST OWNED COMMENT</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 *
 	 * @see #FIRST_OWNED_COMMENT
@@ -71,10 +67,6 @@ public enum CommentChoice implements Enumerator {
 	/**
 	 * The '<em><b>ALL OWNED COMMENTS</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>ALL OWNED COMMENTS</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 *
 	 * @see #ALL_OWNED_COMMENTS

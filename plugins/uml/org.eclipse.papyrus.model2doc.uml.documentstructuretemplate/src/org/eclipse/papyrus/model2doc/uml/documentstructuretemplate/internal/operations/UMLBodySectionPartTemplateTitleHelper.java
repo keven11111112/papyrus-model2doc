@@ -13,7 +13,7 @@
  *
  *****************************************************************************/
 
-package org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.operations;
+package org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.internal.operations;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate;
@@ -21,6 +21,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.operations.Bo
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.CommentAsParagraph;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePartTemplate;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferencePartTemplate;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferenceTableView;
 
 /**
  * Title builder helper for UML PartTemplate
@@ -71,7 +72,26 @@ public class UMLBodySectionPartTemplateTitleHelper extends BodySectionPartTempla
 		if (partTemplate instanceof CommentAsParagraph) {
 			return buildCommentAsParagraphTitle((CommentAsParagraph) partTemplate);
 		}
+		if (partTemplate instanceof StereotypePropertyReferenceTableView) {
+			return buildStereotypePropertyReferenceTableViewTitle((StereotypePropertyReferenceTableView) partTemplate);
+		}
 		return super.internalBuildPartTemplateTitle(partTemplate, parameter);
+	}
+
+	/**
+	 *
+	 * @param StereotypePropertyReferenceTableView
+	 *            a {@link StereotypePropertyReferenceTableView} element
+	 * @param parameter
+	 *            the eobject for which we want to build the title
+	 * @return
+	 *         the string to use for the tile of the element
+	 */
+	private String buildStereotypePropertyReferenceTableViewTitle(final StereotypePropertyReferenceTableView partTemplate) {
+		if (null != partTemplate.getPropertyName() && false == partTemplate.getPropertyName().isEmpty()) {
+			return partTemplate.getPropertyName();
+		}
+		return "No Property Name";//$NON-NLS-1$
 	}
 
 	/**
@@ -107,7 +127,7 @@ public class UMLBodySectionPartTemplateTitleHelper extends BodySectionPartTempla
 		if (null != stereotypePropertyPartTemplate.getPropertyName() && false == stereotypePropertyPartTemplate.getPropertyName().isEmpty()) {
 			return stereotypePropertyPartTemplate.getPropertyName();
 		}
-		return "No property"; //$NON-NLS-1$
+		return "No Property Name"; //$NON-NLS-1$
 	}
 
 	/**

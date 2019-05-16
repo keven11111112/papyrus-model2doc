@@ -131,6 +131,9 @@ public class DelegatingToEMFLabelProvider implements ILabelProvider {
 	 */
 	@Override
 	public String getText(final Object element) {
+		if (null == element) {
+			return ""; //$NON-NLS-1$
+		}
 		if (element instanceof String) {
 			return (String) element;
 		}
@@ -155,7 +158,7 @@ public class DelegatingToEMFLabelProvider implements ILabelProvider {
 			}
 		}
 
-		return ""; //$NON-NLS-1$
+		return element.toString();
 	}
 
 	/**
