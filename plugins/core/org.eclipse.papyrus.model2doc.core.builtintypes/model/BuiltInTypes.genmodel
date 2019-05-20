@@ -65,8 +65,23 @@
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="BuiltInTypes.ecore#//BasicTable"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="BuiltInTypes.ecore#//BasicRow"/>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="BuiltInTypes.ecore#//TextCell">
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="BuiltInTypes.ecore#//TextCell"
+        labelFeature="#//builtintypes/TextCell/text">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute BuiltInTypes.ecore#//TextCell/text"/>
     </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="BuiltInTypes.ecore#//AbstractList">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference BuiltInTypes.ecore#//AbstractList/items"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="BuiltInTypes.ecore#//ListItem">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference BuiltInTypes.ecore#//ListItem/subItems"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="BuiltInTypes.ecore#//ListItem/getLevel"
+          body="int level = 1;&#xA;org.eclipse.emf.ecore.EObject eContainer = eContainer();&#xA;while (eContainer != null &amp;&amp; eContainer instanceof org.eclipse.papyrus.model2doc.core.builtintypes.ListItem) {&#xA;&#x9;level++;&#xA;&#x9;eContainer = eContainer.eContainer();&#xA;}&#xA;return level;"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="BuiltInTypes.ecore#//TextListItem">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute BuiltInTypes.ecore#//TextListItem/text"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="BuiltInTypes.ecore#//BasicList"/>
   </genPackages>
 </genmodel:GenModel>

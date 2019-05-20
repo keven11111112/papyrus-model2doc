@@ -65,6 +65,26 @@ public interface BuiltInTypesFactory extends EFactory {
 	TextCell createTextCell();
 
 	/**
+	 * Returns a new object of class '<em>Text List Item</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>Text List Item</em>'.
+	 * @generated
+	 */
+	TextListItem createTextListItem();
+
+	/**
+	 * Returns a new object of class '<em>Basic List</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>Basic List</em>'.
+	 * @generated
+	 */
+	BasicList createBasicList();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

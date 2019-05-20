@@ -119,6 +119,67 @@ The 3 first cells will represents the first row, then the cell, 4, 5 and 6, will
       </eAnnotations>
       <ownedEnd xmi:type="uml:Property" xmi:id="_eFJHA3ALEemJ-foOn68QUw" name="abstracttable" type="_lYIB4HAKEemJ-foOn68QUw" association="_eFIf8HALEemJ-foOn68QUw"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_L9zAQHsFEemo4rKYxRobdQ" name="AbstractList" isAbstract="true">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_597E4HsFEemo4rKYxRobdQ" annotatedElement="_L9zAQHsFEemo4rKYxRobdQ">
+        <body>The abstract element to use to create a new List type</body>
+      </ownedComment>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_R3n6YHsFEemo4rKYxRobdQ" name="items" type="_PugRwHsFEemo4rKYxRobdQ" isOrdered="true" aggregation="composite" association="_R3k3EHsFEemo4rKYxRobdQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_TSVk4HsFEemo4rKYxRobdQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TMYG0HsFEemo4rKYxRobdQ" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_PugRwHsFEemo4rKYxRobdQ" name="ListItem">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_986qAHsFEemo4rKYxRobdQ" annotatedElement="_PugRwHsFEemo4rKYxRobdQ">
+        <body>Interface to use to create new kind of ListItem</body>
+      </ownedComment>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_5GSEcXvEEemmnMs_VyNz8A" name="subItems" type="_PugRwHsFEemo4rKYxRobdQ" isOrdered="true" aggregation="composite" association="_5GOaEHvEEemmnMs_VyNz8A">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_R0fjQHvIEemmnMs_VyNz8A" annotatedElement="_5GSEcXvEEemmnMs_VyNz8A">
+          <body>This property allows us to make items with children called subItems.</body>
+        </ownedComment>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8NDBEHvEEemmnMs_VyNz8A"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5GSrgHvEEemmnMs_VyNz8A" value="*"/>
+      </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_VueQIHsFEemo4rKYxRobdQ" name="getLevel">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_FfywIHsHEemo4rKYxRobdQ" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_FfywIXsHEemo4rKYxRobdQ" key="body" value="int level = 1;&#xA;org.eclipse.emf.ecore.EObject eContainer = eContainer();&#xA;while (eContainer != null &amp;&amp; eContainer instanceof org.eclipse.papyrus.model2doc.core.builtintypes.ListItem) {&#xA;&#x9;level++;&#xA;&#x9;eContainer = eContainer.eContainer();&#xA;}&#xA;return level;"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_zObRkHsGEemo4rKYxRobdQ" annotatedElement="_VueQIHsFEemo4rKYxRobdQ">
+          <body>This operation returns the level of the ListItem. Default value is 1;</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_a_EAAHsFEemo4rKYxRobdQ" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_21I5kHsGEemo4rKYxRobdQ" name="DEFAULT_LEVEL_VALUE" value="1"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_R3k3EHsFEemo4rKYxRobdQ" memberEnd="_R3n6YHsFEemo4rKYxRobdQ _R3ohcXsFEemo4rKYxRobdQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_R3msQHsFEemo4rKYxRobdQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_R3msQXsFEemo4rKYxRobdQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_R3ohcXsFEemo4rKYxRobdQ" name="abstractlist" type="_L9zAQHsFEemo4rKYxRobdQ" association="_R3k3EHsFEemo4rKYxRobdQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_d6G00HsFEemo4rKYxRobdQ" name="TextListItem">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_Cub4QHsGEemo4rKYxRobdQ" annotatedElement="_d6G00HsFEemo4rKYxRobdQ">
+        <body>Default implementation for ListItem. This one allows to defines Text for the Item</body>
+      </ownedComment>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_rUG70HsFEemo4rKYxRobdQ" name="text">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_zIyZEHsFEemo4rKYxRobdQ" name="emptyString" value=""/>
+      </ownedAttribute>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_opH8QHsFEemo4rKYxRobdQ" client="_d6G00HsFEemo4rKYxRobdQ" supplier="_PugRwHsFEemo4rKYxRobdQ" contract="_PugRwHsFEemo4rKYxRobdQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_iB5woHsFEemo4rKYxRobdQ" name="BasicList">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_7z9ZcHsFEemo4rKYxRobdQ" annotatedElement="_iB5woHsFEemo4rKYxRobdQ">
+        <body>The default implementation for List</body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_l4mVYHsFEemo4rKYxRobdQ" general="_L9zAQHsFEemo4rKYxRobdQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_5GOaEHvEEemmnMs_VyNz8A" memberEnd="_5GSEcXvEEemmnMs_VyNz8A _5GSrgXvEEemmnMs_VyNz8A">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5GRdYHvEEemmnMs_VyNz8A" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5GSEcHvEEemmnMs_VyNz8A" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_5GSrgXvEEemmnMs_VyNz8A" name="listitem" type="_PugRwHsFEemo4rKYxRobdQ" association="_5GOaEHvEEemmnMs_VyNz8A"/>
+    </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_txSQgHCfEemJ-foOn68QUw">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_txVT0HCfEemJ-foOn68QUw" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>

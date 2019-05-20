@@ -113,6 +113,26 @@ public class BuiltInTypesAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseAbstractList(AbstractList object) {
+			return createAbstractListAdapter();
+		}
+
+		@Override
+		public Adapter caseListItem(ListItem object) {
+			return createListItemAdapter();
+		}
+
+		@Override
+		public Adapter caseTextListItem(TextListItem object) {
+			return createTextListItemAdapter();
+		}
+
+		@Override
+		public Adapter caseBasicList(BasicList object) {
+			return createBasicListAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -221,6 +241,66 @@ public class BuiltInTypesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTextCellAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.core.builtintypes.AbstractList <em>Abstract List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.AbstractList
+	 * @generated
+	 */
+	public Adapter createAbstractListAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.core.builtintypes.ListItem <em>List Item</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.ListItem
+	 * @generated
+	 */
+	public Adapter createListItemAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.core.builtintypes.TextListItem <em>Text List Item</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.TextListItem
+	 * @generated
+	 */
+	public Adapter createTextListItemAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.core.builtintypes.BasicList <em>Basic List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.BasicList
+	 * @generated
+	 */
+	public Adapter createBasicListAdapter() {
 		return null;
 	}
 

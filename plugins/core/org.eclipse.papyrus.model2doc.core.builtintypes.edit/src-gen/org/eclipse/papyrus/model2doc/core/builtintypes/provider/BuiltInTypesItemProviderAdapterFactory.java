@@ -15,14 +15,16 @@ package org.eclipse.papyrus.model2doc.core.builtintypes.provider;
 
 import java.util.ArrayList;
 import java.util.Collection;
-
 import java.util.List;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.domain.EditingDomain;
+
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ChildCreationExtenderManager;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -38,6 +40,7 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
 import org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesPackage;
+
 import org.eclipse.papyrus.model2doc.core.builtintypes.util.BuiltInTypesAdapterFactory;
 
 /**
@@ -175,6 +178,56 @@ public class BuiltInTypesItemProviderAdapterFactory extends BuiltInTypesAdapterF
 		}
 
 		return textCellItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.core.builtintypes.TextListItem} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected TextListItemItemProvider textListItemItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.core.builtintypes.TextListItem}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Adapter createTextListItemAdapter() {
+		if (textListItemItemProvider == null) {
+			textListItemItemProvider = new TextListItemItemProvider(this);
+		}
+
+		return textListItemItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.core.builtintypes.BasicList} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected BasicListItemProvider basicListItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.core.builtintypes.BasicList}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Adapter createBasicListAdapter() {
+		if (basicListItemProvider == null) {
+			basicListItemProvider = new BasicListItemProvider(this);
+		}
+
+		return basicListItemProvider;
 	}
 
 	/**
@@ -331,6 +384,12 @@ public class BuiltInTypesItemProviderAdapterFactory extends BuiltInTypesAdapterF
 		}
 		if (textCellItemProvider != null) {
 			textCellItemProvider.dispose();
+		}
+		if (textListItemItemProvider != null) {
+			textListItemItemProvider.dispose();
+		}
+		if (basicListItemProvider != null) {
+			basicListItemProvider.dispose();
 		}
 	}
 

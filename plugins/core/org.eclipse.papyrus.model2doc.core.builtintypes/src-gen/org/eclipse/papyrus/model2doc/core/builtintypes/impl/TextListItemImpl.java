@@ -13,53 +13,53 @@
  */
 package org.eclipse.papyrus.model2doc.core.builtintypes.impl;
 
+import java.lang.reflect.InvocationTargetException;
+
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesPackage;
-import org.eclipse.papyrus.model2doc.core.builtintypes.CellLocation;
-import org.eclipse.papyrus.model2doc.core.builtintypes.TextCell;
+import org.eclipse.papyrus.model2doc.core.builtintypes.ListItem;
+import org.eclipse.papyrus.model2doc.core.builtintypes.TextListItem;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Text Cell</b></em>'.
+ * An implementation of the model object '<em><b>Text List Item</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.papyrus.model2doc.core.builtintypes.impl.TextCellImpl#getLocation <em>Location</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.core.builtintypes.impl.TextCellImpl#getText <em>Text</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.core.builtintypes.impl.TextListItemImpl#getSubItems <em>Sub Items</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.core.builtintypes.impl.TextListItemImpl#getText <em>Text</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class TextCellImpl extends MinimalEObjectImpl.Container implements TextCell {
+public class TextListItemImpl extends MinimalEObjectImpl.Container implements TextListItem {
 	/**
-	 * The default value of the '{@link #getLocation() <em>Location</em>}' attribute.
+	 * The cached value of the '{@link #getSubItems() <em>Sub Items</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see #getLocation()
+	 * @see #getSubItems()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final CellLocation LOCATION_EDEFAULT = CellLocation.BODY;
-
-	/**
-	 * The cached value of the '{@link #getLocation() <em>Location</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see #getLocation()
-	 * @generated
-	 * @ordered
-	 */
-	protected CellLocation location = LOCATION_EDEFAULT;
+	protected EList<ListItem> subItems;
 
 	/**
 	 * The default value of the '{@link #getText() <em>Text</em>}' attribute.
@@ -89,7 +89,7 @@ public class TextCellImpl extends MinimalEObjectImpl.Container implements TextCe
 	 *
 	 * @generated
 	 */
-	protected TextCellImpl() {
+	protected TextListItemImpl() {
 		super();
 	}
 
@@ -101,7 +101,7 @@ public class TextCellImpl extends MinimalEObjectImpl.Container implements TextCe
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return BuiltInTypesPackage.Literals.TEXT_CELL;
+		return BuiltInTypesPackage.Literals.TEXT_LIST_ITEM;
 	}
 
 	/**
@@ -111,23 +111,11 @@ public class TextCellImpl extends MinimalEObjectImpl.Container implements TextCe
 	 * @generated
 	 */
 	@Override
-	public CellLocation getLocation() {
-		return location;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public void setLocation(CellLocation newLocation) {
-		CellLocation oldLocation = location;
-		location = newLocation == null ? LOCATION_EDEFAULT : newLocation;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, BuiltInTypesPackage.TEXT_CELL__LOCATION, oldLocation, location));
+	public EList<ListItem> getSubItems() {
+		if (subItems == null) {
+			subItems = new EObjectContainmentEList<>(ListItem.class, this, BuiltInTypesPackage.TEXT_LIST_ITEM__SUB_ITEMS);
 		}
+		return subItems;
 	}
 
 	/**
@@ -152,8 +140,40 @@ public class TextCellImpl extends MinimalEObjectImpl.Container implements TextCe
 		String oldText = text;
 		text = newText;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, BuiltInTypesPackage.TEXT_CELL__TEXT, oldText, text));
+			eNotify(new ENotificationImpl(this, Notification.SET, BuiltInTypesPackage.TEXT_LIST_ITEM__TEXT, oldText, text));
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public int getLevel() {
+		int level = 1;
+		org.eclipse.emf.ecore.EObject eContainer = eContainer();
+		while (eContainer != null && eContainer instanceof org.eclipse.papyrus.model2doc.core.builtintypes.ListItem) {
+			level++;
+			eContainer = eContainer.eContainer();
+		}
+		return level;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case BuiltInTypesPackage.TEXT_LIST_ITEM__SUB_ITEMS:
+			return ((InternalEList<?>) getSubItems()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -165,9 +185,9 @@ public class TextCellImpl extends MinimalEObjectImpl.Container implements TextCe
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case BuiltInTypesPackage.TEXT_CELL__LOCATION:
-			return getLocation();
-		case BuiltInTypesPackage.TEXT_CELL__TEXT:
+		case BuiltInTypesPackage.TEXT_LIST_ITEM__SUB_ITEMS:
+			return getSubItems();
+		case BuiltInTypesPackage.TEXT_LIST_ITEM__TEXT:
 			return getText();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -179,13 +199,15 @@ public class TextCellImpl extends MinimalEObjectImpl.Container implements TextCe
 	 *
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case BuiltInTypesPackage.TEXT_CELL__LOCATION:
-			setLocation((CellLocation) newValue);
+		case BuiltInTypesPackage.TEXT_LIST_ITEM__SUB_ITEMS:
+			getSubItems().clear();
+			getSubItems().addAll((Collection<? extends ListItem>) newValue);
 			return;
-		case BuiltInTypesPackage.TEXT_CELL__TEXT:
+		case BuiltInTypesPackage.TEXT_LIST_ITEM__TEXT:
 			setText((String) newValue);
 			return;
 		}
@@ -201,10 +223,10 @@ public class TextCellImpl extends MinimalEObjectImpl.Container implements TextCe
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case BuiltInTypesPackage.TEXT_CELL__LOCATION:
-			setLocation(LOCATION_EDEFAULT);
+		case BuiltInTypesPackage.TEXT_LIST_ITEM__SUB_ITEMS:
+			getSubItems().clear();
 			return;
-		case BuiltInTypesPackage.TEXT_CELL__TEXT:
+		case BuiltInTypesPackage.TEXT_LIST_ITEM__TEXT:
 			setText(TEXT_EDEFAULT);
 			return;
 		}
@@ -220,12 +242,27 @@ public class TextCellImpl extends MinimalEObjectImpl.Container implements TextCe
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case BuiltInTypesPackage.TEXT_CELL__LOCATION:
-			return location != LOCATION_EDEFAULT;
-		case BuiltInTypesPackage.TEXT_CELL__TEXT:
+		case BuiltInTypesPackage.TEXT_LIST_ITEM__SUB_ITEMS:
+			return subItems != null && !subItems.isEmpty();
+		case BuiltInTypesPackage.TEXT_LIST_ITEM__TEXT:
 			return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case BuiltInTypesPackage.TEXT_LIST_ITEM___GET_LEVEL:
+			return getLevel();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
@@ -241,12 +278,10 @@ public class TextCellImpl extends MinimalEObjectImpl.Container implements TextCe
 		}
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (location: "); //$NON-NLS-1$
-		result.append(location);
-		result.append(", text: "); //$NON-NLS-1$
+		result.append(" (text: "); //$NON-NLS-1$
 		result.append(text);
 		result.append(')');
 		return result.toString();
 	}
 
-} // TextCellImpl
+} // TextListItemImpl

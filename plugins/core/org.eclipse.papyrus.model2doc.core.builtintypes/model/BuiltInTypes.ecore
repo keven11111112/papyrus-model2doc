@@ -83,4 +83,40 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractList" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The abstract element to use to create a new List type"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
+        eType="#//ListItem" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ListItem" abstract="true" interface="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Interface to use to create new kind of ListItem"/>
+    </eAnnotations>
+    <eOperations name="getLevel" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This operation returns the level of the ListItem. Default value is 1;"/>
+        <details key="body" value="int level = 1;&#xA;org.eclipse.emf.ecore.EObject eContainer = eContainer();&#xA;while (eContainer != null &amp;&amp; eContainer instanceof org.eclipse.papyrus.model2doc.core.builtintypes.ListItem) {&#xA;&#x9;level++;&#xA;&#x9;eContainer = eContainer.eContainer();&#xA;}&#xA;return level;"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subItems" upperBound="-1"
+        eType="#//ListItem" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This property allows us to make items with children called subItems."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TextListItem" eSuperTypes="#//ListItem">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Default implementation for ListItem. This one allows to defines Text for the Item"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BasicList" eSuperTypes="#//AbstractList">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The default implementation for List"/>
+    </eAnnotations>
+  </eClassifiers>
 </ecore:EPackage>

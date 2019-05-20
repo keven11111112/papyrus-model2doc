@@ -140,6 +140,44 @@ public class BuiltInTypesSwitch<T> extends Switch<T> {
 			}
 			return result;
 		}
+		case BuiltInTypesPackage.ABSTRACT_LIST: {
+			AbstractList abstractList = (AbstractList) theEObject;
+			T result = caseAbstractList(abstractList);
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case BuiltInTypesPackage.LIST_ITEM: {
+			ListItem listItem = (ListItem) theEObject;
+			T result = caseListItem(listItem);
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case BuiltInTypesPackage.TEXT_LIST_ITEM: {
+			TextListItem textListItem = (TextListItem) theEObject;
+			T result = caseTextListItem(textListItem);
+			if (result == null) {
+				result = caseListItem(textListItem);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case BuiltInTypesPackage.BASIC_LIST: {
+			BasicList basicList = (BasicList) theEObject;
+			T result = caseBasicList(basicList);
+			if (result == null) {
+				result = caseAbstractList(basicList);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -244,6 +282,74 @@ public class BuiltInTypesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTextCell(TextCell object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract List</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract List</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbstractList(AbstractList object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>List Item</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>List Item</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseListItem(ListItem object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Text List Item</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Text List Item</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTextListItem(TextListItem object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Basic List</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Basic List</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBasicList(BasicList object) {
 		return null;
 	}
 

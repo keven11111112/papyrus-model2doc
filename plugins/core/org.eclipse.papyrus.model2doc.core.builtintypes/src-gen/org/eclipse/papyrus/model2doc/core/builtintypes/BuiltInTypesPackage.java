@@ -412,6 +412,200 @@ public interface BuiltInTypesPackage extends EPackage {
 	int TEXT_CELL_OPERATION_COUNT = CELL_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.core.builtintypes.impl.AbstractListImpl <em>Abstract List</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.impl.AbstractListImpl
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.impl.BuiltInTypesPackageImpl#getAbstractList()
+	 * @generated
+	 */
+	int ABSTRACT_LIST = 6;
+
+	/**
+	 * The feature id for the '<em><b>Items</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_LIST__ITEMS = 0;
+
+	/**
+	 * The number of structural features of the '<em>Abstract List</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_LIST_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Abstract List</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_LIST_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.core.builtintypes.ListItem <em>List Item</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.ListItem
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.impl.BuiltInTypesPackageImpl#getListItem()
+	 * @generated
+	 */
+	int LIST_ITEM = 7;
+
+	/**
+	 * The feature id for the '<em><b>Sub Items</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int LIST_ITEM__SUB_ITEMS = 0;
+
+	/**
+	 * The number of structural features of the '<em>List Item</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int LIST_ITEM_FEATURE_COUNT = 1;
+
+	/**
+	 * The operation id for the '<em>Get Level</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int LIST_ITEM___GET_LEVEL = 0;
+
+	/**
+	 * The number of operations of the '<em>List Item</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int LIST_ITEM_OPERATION_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.core.builtintypes.impl.TextListItemImpl <em>Text List Item</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.impl.TextListItemImpl
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.impl.BuiltInTypesPackageImpl#getTextListItem()
+	 * @generated
+	 */
+	int TEXT_LIST_ITEM = 8;
+
+	/**
+	 * The feature id for the '<em><b>Sub Items</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_LIST_ITEM__SUB_ITEMS = LIST_ITEM__SUB_ITEMS;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_LIST_ITEM__TEXT = LIST_ITEM_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Text List Item</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_LIST_ITEM_FEATURE_COUNT = LIST_ITEM_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Level</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_LIST_ITEM___GET_LEVEL = LIST_ITEM___GET_LEVEL;
+
+	/**
+	 * The number of operations of the '<em>Text List Item</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_LIST_ITEM_OPERATION_COUNT = LIST_ITEM_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.core.builtintypes.impl.BasicListImpl <em>Basic List</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.impl.BasicListImpl
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.impl.BuiltInTypesPackageImpl#getBasicList()
+	 * @generated
+	 */
+	int BASIC_LIST = 9;
+
+	/**
+	 * The feature id for the '<em><b>Items</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int BASIC_LIST__ITEMS = ABSTRACT_LIST__ITEMS;
+
+	/**
+	 * The number of structural features of the '<em>Basic List</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int BASIC_LIST_FEATURE_COUNT = ABSTRACT_LIST_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Basic List</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int BASIC_LIST_OPERATION_COUNT = ABSTRACT_LIST_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.core.builtintypes.CellLocation <em>Cell Location</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -420,7 +614,7 @@ public interface BuiltInTypesPackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.impl.BuiltInTypesPackageImpl#getCellLocation()
 	 * @generated
 	 */
-	int CELL_LOCATION = 6;
+	int CELL_LOCATION = 10;
 
 
 	/**
@@ -581,6 +775,97 @@ public interface BuiltInTypesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getTextCell_Text();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.core.builtintypes.AbstractList <em>Abstract List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>Abstract List</em>'.
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.AbstractList
+	 * @generated
+	 */
+	EClass getAbstractList();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.model2doc.core.builtintypes.AbstractList#getItems <em>Items</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference list '<em>Items</em>'.
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.AbstractList#getItems()
+	 * @see #getAbstractList()
+	 * @generated
+	 */
+	EReference getAbstractList_Items();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.core.builtintypes.ListItem <em>List Item</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>List Item</em>'.
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.ListItem
+	 * @generated
+	 */
+	EClass getListItem();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.model2doc.core.builtintypes.ListItem#getSubItems <em>Sub Items</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference list '<em>Sub Items</em>'.
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.ListItem#getSubItems()
+	 * @see #getListItem()
+	 * @generated
+	 */
+	EReference getListItem_SubItems();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.core.builtintypes.ListItem#getLevel() <em>Get Level</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the '<em>Get Level</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.ListItem#getLevel()
+	 * @generated
+	 */
+	EOperation getListItem__GetLevel();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.core.builtintypes.TextListItem <em>Text List Item</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>Text List Item</em>'.
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.TextListItem
+	 * @generated
+	 */
+	EClass getTextListItem();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.core.builtintypes.TextListItem#getText <em>Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Text</em>'.
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.TextListItem#getText()
+	 * @see #getTextListItem()
+	 * @generated
+	 */
+	EAttribute getTextListItem_Text();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.core.builtintypes.BasicList <em>Basic List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>Basic List</em>'.
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.BasicList
+	 * @generated
+	 */
+	EClass getBasicList();
 
 	/**
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.model2doc.core.builtintypes.CellLocation <em>Cell Location</em>}'.
@@ -755,6 +1040,86 @@ public interface BuiltInTypesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TEXT_CELL__TEXT = eINSTANCE.getTextCell_Text();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.core.builtintypes.impl.AbstractListImpl <em>Abstract List</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.core.builtintypes.impl.AbstractListImpl
+		 * @see org.eclipse.papyrus.model2doc.core.builtintypes.impl.BuiltInTypesPackageImpl#getAbstractList()
+		 * @generated
+		 */
+		EClass ABSTRACT_LIST = eINSTANCE.getAbstractList();
+
+		/**
+		 * The meta object literal for the '<em><b>Items</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference ABSTRACT_LIST__ITEMS = eINSTANCE.getAbstractList_Items();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.core.builtintypes.ListItem <em>List Item</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.core.builtintypes.ListItem
+		 * @see org.eclipse.papyrus.model2doc.core.builtintypes.impl.BuiltInTypesPackageImpl#getListItem()
+		 * @generated
+		 */
+		EClass LIST_ITEM = eINSTANCE.getListItem();
+
+		/**
+		 * The meta object literal for the '<em><b>Sub Items</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference LIST_ITEM__SUB_ITEMS = eINSTANCE.getListItem_SubItems();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Level</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EOperation LIST_ITEM___GET_LEVEL = eINSTANCE.getListItem__GetLevel();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.core.builtintypes.impl.TextListItemImpl <em>Text List Item</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.core.builtintypes.impl.TextListItemImpl
+		 * @see org.eclipse.papyrus.model2doc.core.builtintypes.impl.BuiltInTypesPackageImpl#getTextListItem()
+		 * @generated
+		 */
+		EClass TEXT_LIST_ITEM = eINSTANCE.getTextListItem();
+
+		/**
+		 * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute TEXT_LIST_ITEM__TEXT = eINSTANCE.getTextListItem_Text();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.core.builtintypes.impl.BasicListImpl <em>Basic List</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.core.builtintypes.impl.BasicListImpl
+		 * @see org.eclipse.papyrus.model2doc.core.builtintypes.impl.BuiltInTypesPackageImpl#getBasicList()
+		 * @generated
+		 */
+		EClass BASIC_LIST = eINSTANCE.getBasicList();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.core.builtintypes.CellLocation <em>Cell Location</em>}' enum.

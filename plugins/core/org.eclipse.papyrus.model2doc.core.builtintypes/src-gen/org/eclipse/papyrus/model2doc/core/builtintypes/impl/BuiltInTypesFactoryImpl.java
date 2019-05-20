@@ -77,6 +77,10 @@ public class BuiltInTypesFactoryImpl extends EFactoryImpl implements BuiltInType
 			return createBasicRow();
 		case BuiltInTypesPackage.TEXT_CELL:
 			return createTextCell();
+		case BuiltInTypesPackage.TEXT_LIST_ITEM:
+			return createTextListItem();
+		case BuiltInTypesPackage.BASIC_LIST:
+			return createBasicList();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -148,6 +152,30 @@ public class BuiltInTypesFactoryImpl extends EFactoryImpl implements BuiltInType
 	public TextCell createTextCell() {
 		TextCellImpl textCell = new TextCellImpl();
 		return textCell;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public TextListItem createTextListItem() {
+		TextListItemImpl textListItem = new TextListItemImpl();
+		return textListItem;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public BasicList createBasicList() {
+		BasicListImpl basicList = new BasicListImpl();
+		return basicList;
 	}
 
 	/**

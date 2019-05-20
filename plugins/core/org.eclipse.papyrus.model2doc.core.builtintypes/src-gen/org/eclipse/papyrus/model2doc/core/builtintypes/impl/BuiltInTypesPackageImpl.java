@@ -22,15 +22,19 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractList;
 import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractTable;
+import org.eclipse.papyrus.model2doc.core.builtintypes.BasicList;
 import org.eclipse.papyrus.model2doc.core.builtintypes.BasicRow;
 import org.eclipse.papyrus.model2doc.core.builtintypes.BasicTable;
 import org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesFactory;
 import org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesPackage;
 import org.eclipse.papyrus.model2doc.core.builtintypes.Cell;
 import org.eclipse.papyrus.model2doc.core.builtintypes.CellLocation;
+import org.eclipse.papyrus.model2doc.core.builtintypes.ListItem;
 import org.eclipse.papyrus.model2doc.core.builtintypes.Row;
 import org.eclipse.papyrus.model2doc.core.builtintypes.TextCell;
+import org.eclipse.papyrus.model2doc.core.builtintypes.TextListItem;
 
 /**
  * <!-- begin-user-doc -->
@@ -87,6 +91,38 @@ public class BuiltInTypesPackageImpl extends EPackageImpl implements BuiltInType
 	 * @generated
 	 */
 	private EClass textCellEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass abstractListEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass listItemEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass textListItemEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass basicListEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -325,6 +361,94 @@ public class BuiltInTypesPackageImpl extends EPackageImpl implements BuiltInType
 	 * @generated
 	 */
 	@Override
+	public EClass getAbstractList() {
+		return abstractListEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getAbstractList_Items() {
+		return (EReference) abstractListEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getListItem() {
+		return listItemEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getListItem_SubItems() {
+		return (EReference) listItemEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EOperation getListItem__GetLevel() {
+		return listItemEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getTextListItem() {
+		return textListItemEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTextListItem_Text() {
+		return (EAttribute) textListItemEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getBasicList() {
+		return basicListEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EEnum getCellLocation() {
 		return cellLocationEEnum;
 	}
@@ -383,6 +507,18 @@ public class BuiltInTypesPackageImpl extends EPackageImpl implements BuiltInType
 		textCellEClass = createEClass(TEXT_CELL);
 		createEAttribute(textCellEClass, TEXT_CELL__TEXT);
 
+		abstractListEClass = createEClass(ABSTRACT_LIST);
+		createEReference(abstractListEClass, ABSTRACT_LIST__ITEMS);
+
+		listItemEClass = createEClass(LIST_ITEM);
+		createEReference(listItemEClass, LIST_ITEM__SUB_ITEMS);
+		createEOperation(listItemEClass, LIST_ITEM___GET_LEVEL);
+
+		textListItemEClass = createEClass(TEXT_LIST_ITEM);
+		createEAttribute(textListItemEClass, TEXT_LIST_ITEM__TEXT);
+
+		basicListEClass = createEClass(BASIC_LIST);
+
 		// Create enums
 		cellLocationEEnum = createEEnum(CELL_LOCATION);
 	}
@@ -422,6 +558,8 @@ public class BuiltInTypesPackageImpl extends EPackageImpl implements BuiltInType
 		basicTableEClass.getESuperTypes().add(this.getAbstractTable());
 		basicRowEClass.getESuperTypes().add(this.getRow());
 		textCellEClass.getESuperTypes().add(this.getCell());
+		textListItemEClass.getESuperTypes().add(this.getListItem());
+		basicListEClass.getESuperTypes().add(this.getAbstractList());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(abstractTableEClass, AbstractTable.class, "AbstractTable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
@@ -446,6 +584,19 @@ public class BuiltInTypesPackageImpl extends EPackageImpl implements BuiltInType
 
 		initEClass(textCellEClass, TextCell.class, "TextCell", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEAttribute(getTextCell_Text(), ecorePackage.getEString(), "text", "", 1, 1, TextCell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
+
+		initEClass(abstractListEClass, AbstractList.class, "AbstractList", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getAbstractList_Items(), this.getListItem(), null, "items", null, 0, -1, AbstractList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+
+		initEClass(listItemEClass, ListItem.class, "ListItem", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getListItem_SubItems(), this.getListItem(), null, "subItems", null, 0, -1, ListItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+
+		initEOperation(getListItem__GetLevel(), ecorePackage.getEInt(), "getLevel", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
+		initEClass(textListItemEClass, TextListItem.class, "TextListItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(getTextListItem_Text(), ecorePackage.getEString(), "text", "", 1, 1, TextListItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
+
+		initEClass(basicListEClass, BasicList.class, "BasicList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		// Initialize enums and add enum literals
 		initEEnum(cellLocationEEnum, CellLocation.class, "CellLocation"); //$NON-NLS-1$
