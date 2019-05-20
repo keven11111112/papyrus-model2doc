@@ -66,12 +66,15 @@ public class EReferencePartTemplateMapper extends AbstractEMFTemplateToStructure
 				returnedElements.add(expectedReturnedClass.cast(title));
 			}
 		}
-		final Iterator<EObject> matchingSubElementIterator = matchingElements.iterator();
-		while (matchingSubElementIterator.hasNext()) {
-			final Iterator<ISubBodyPartTemplate> subBodyPartTemplate = referencePartTemplate.getSubBodyPartTemplates().iterator();
-			final EObject currentEObject = matchingSubElementIterator.next();
-			while (subBodyPartTemplate.hasNext()) {
-				final ISubBodyPartTemplate currentObjectPartTemplate = subBodyPartTemplate.next();
+
+		// we iterate firstly on the elements of the document structure
+		final Iterator<ISubBodyPartTemplate> subBodyPartTemplate = referencePartTemplate.getSubBodyPartTemplates().iterator();
+		while (subBodyPartTemplate.hasNext()) {
+			final ISubBodyPartTemplate currentObjectPartTemplate = subBodyPartTemplate.next();
+			final Iterator<EObject> matchingEObjectIter = matchingElements.iterator();
+			// then we iterate on the matching model elements
+			while (matchingEObjectIter.hasNext()) {
+				final EObject currentEObject = matchingEObjectIter.next();
 				final Collection<BodyPart> result = mappingService.map(currentObjectPartTemplate, currentEObject, BodyPart.class);
 				if (result == null) {
 					continue;

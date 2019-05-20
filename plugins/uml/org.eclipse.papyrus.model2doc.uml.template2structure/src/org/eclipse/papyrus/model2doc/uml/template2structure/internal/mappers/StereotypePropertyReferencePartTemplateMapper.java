@@ -70,12 +70,16 @@ public class StereotypePropertyReferencePartTemplateMapper extends AbstractUMLTe
 				returnedElements.add(expectedReturnedClass.cast(title));
 			}
 		}
-		final Iterator<EObject> matchingEObjectIter = matchingElements.iterator();
-		while (matchingEObjectIter.hasNext()) {
-			final EObject currentEObject = matchingEObjectIter.next();
-			final Iterator<ISubBodyPartTemplate> subBodyPartTemplate = stereotypePropertyPartTemplate.getSubBodyPartTemplates().iterator();
-			while (subBodyPartTemplate.hasNext()) {
-				final ISubBodyPartTemplate currentObjectPartTemplate = subBodyPartTemplate.next();
+
+		// we iterate firstly on the elements of the document structure
+		final Iterator<ISubBodyPartTemplate> subBodyPartTemplate = stereotypePropertyPartTemplate.getSubBodyPartTemplates().iterator();
+		while (subBodyPartTemplate.hasNext()) {
+			final ISubBodyPartTemplate currentObjectPartTemplate = subBodyPartTemplate.next();
+			final Iterator<EObject> matchingEObjectIter = matchingElements.iterator();
+
+			// then we iterate on the matching model elements
+			while (matchingEObjectIter.hasNext()) {
+				final EObject currentEObject = matchingEObjectIter.next();
 
 				// it could be a stereotype application
 				final Element baseElement = UMLUtil.getBaseElement(currentEObject);
