@@ -15,16 +15,20 @@ package org.eclipse.papyrus.model2doc.emf.documentstructure.provider;
 
 import java.util.ArrayList;
 import java.util.Collection;
-
 import java.util.List;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EObject;
+
 import org.eclipse.emf.edit.command.CommandParameter;
+
 import org.eclipse.emf.edit.domain.EditingDomain;
+
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ChildCreationExtenderManager;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -38,11 +42,17 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+
+import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractList;
 import org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesPackage;
+import org.eclipse.papyrus.model2doc.core.builtintypes.ListItem;
 import org.eclipse.papyrus.model2doc.core.builtintypes.Row;
+
 import org.eclipse.papyrus.model2doc.core.builtintypes.util.BuiltInTypesSwitch;
+
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructureFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage;
+
 import org.eclipse.papyrus.model2doc.emf.documentstructure.util.DocumentStructureAdapterFactory;
 
 /**
@@ -333,6 +343,56 @@ public class DocumentStructureItemProviderAdapterFactory extends DocumentStructu
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedBasicList} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected ExtendedBasicListItemProvider extendedBasicListItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedBasicList}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Adapter createExtendedBasicListAdapter() {
+		if (extendedBasicListItemProvider == null) {
+			extendedBasicListItemProvider = new ExtendedBasicListItemProvider(this);
+		}
+
+		return extendedBasicListItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedTextListItem} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected ExtendedTextListItemItemProvider extendedTextListItemItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedTextListItem}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Adapter createExtendedTextListItemAdapter() {
+		if (extendedTextListItemItemProvider == null) {
+			extendedTextListItemItemProvider = new ExtendedTextListItemItemProvider(this);
+		}
+
+		return extendedTextListItemItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -505,6 +565,12 @@ public class DocumentStructureItemProviderAdapterFactory extends DocumentStructu
 		if (extendedTextCellItemProvider != null) {
 			extendedTextCellItemProvider.dispose();
 		}
+		if (extendedBasicListItemProvider != null) {
+			extendedBasicListItemProvider.dispose();
+		}
+		if (extendedTextListItemItemProvider != null) {
+			extendedTextListItemItemProvider.dispose();
+		}
 	}
 
 	/**
@@ -563,6 +629,34 @@ public class DocumentStructureItemProviderAdapterFactory extends DocumentStructu
 			public Object caseRow(Row object) {
 				newChildDescriptors.add(createChildParameter(BuiltInTypesPackage.Literals.ROW__CELLS,
 						DocumentStructureFactory.eINSTANCE.createExtendedTextCell()));
+
+				return null;
+			}
+
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 *
+			 * @generated
+			 */
+			@Override
+			public Object caseAbstractList(AbstractList object) {
+				newChildDescriptors.add(createChildParameter(BuiltInTypesPackage.Literals.ABSTRACT_LIST__ITEMS,
+						DocumentStructureFactory.eINSTANCE.createExtendedTextListItem()));
+
+				return null;
+			}
+
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 *
+			 * @generated
+			 */
+			@Override
+			public Object caseListItem(ListItem object) {
+				newChildDescriptors.add(createChildParameter(BuiltInTypesPackage.Literals.LIST_ITEM__SUB_ITEMS,
+						DocumentStructureFactory.eINSTANCE.createExtendedTextListItem()));
 
 				return null;
 			}

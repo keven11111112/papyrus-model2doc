@@ -86,4 +86,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="dataSource" ordered="false"
         eType="#//DataSource" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExtendedBasicList" eSuperTypes="../../org.eclipse.papyrus.model2doc.core.builtintypes/model/BuiltInTypes.ecore#//BasicList #//LeafBodyPart"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExtendedTextListItem" eSuperTypes="../../org.eclipse.papyrus.model2doc.core.builtintypes/model/BuiltInTypes.ecore#//TextListItem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="datasource" ordered="false"
+        eType="#//DataSource" containment="true"/>
+  </eClassifiers>
 </ecore:EPackage>

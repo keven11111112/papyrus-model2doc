@@ -56,7 +56,7 @@ public interface TextDocument extends Document {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *                  the new value of the '<em>Main Title</em>' attribute.
+	 *            the new value of the '<em>Main Title</em>' attribute.
 	 * @see #getMainTitle()
 	 * @generated
 	 */

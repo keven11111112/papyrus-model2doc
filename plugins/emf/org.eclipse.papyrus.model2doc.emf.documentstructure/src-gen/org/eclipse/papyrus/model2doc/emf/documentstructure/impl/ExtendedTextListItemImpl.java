@@ -21,36 +21,36 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.papyrus.model2doc.core.builtintypes.impl.TextCellImpl;
+import org.eclipse.papyrus.model2doc.core.builtintypes.impl.TextListItemImpl;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DataSource;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage;
-import org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedTextCell;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedTextListItem;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Extended Text Cell</b></em>'.
+ * An implementation of the model object '<em><b>Extended Text List Item</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ExtendedTextCellImpl#getDataSource <em>Data Source</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ExtendedTextListItemImpl#getDatasource <em>Datasource</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ExtendedTextCellImpl extends TextCellImpl implements ExtendedTextCell {
+public class ExtendedTextListItemImpl extends TextListItemImpl implements ExtendedTextListItem {
 	/**
-	 * The cached value of the '{@link #getDataSource() <em>Data Source</em>}' containment reference.
+	 * The cached value of the '{@link #getDatasource() <em>Datasource</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see #getDataSource()
+	 * @see #getDatasource()
 	 * @generated
 	 * @ordered
 	 */
-	protected DataSource dataSource;
+	protected DataSource datasource;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -58,7 +58,7 @@ public class ExtendedTextCellImpl extends TextCellImpl implements ExtendedTextCe
 	 *
 	 * @generated
 	 */
-	protected ExtendedTextCellImpl() {
+	protected ExtendedTextListItemImpl() {
 		super();
 	}
 
@@ -70,7 +70,7 @@ public class ExtendedTextCellImpl extends TextCellImpl implements ExtendedTextCe
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return DocumentStructurePackage.Literals.EXTENDED_TEXT_CELL;
+		return DocumentStructurePackage.Literals.EXTENDED_TEXT_LIST_ITEM;
 	}
 
 	/**
@@ -80,8 +80,8 @@ public class ExtendedTextCellImpl extends TextCellImpl implements ExtendedTextCe
 	 * @generated
 	 */
 	@Override
-	public DataSource getDataSource() {
-		return dataSource;
+	public DataSource getDatasource() {
+		return datasource;
 	}
 
 	/**
@@ -90,11 +90,11 @@ public class ExtendedTextCellImpl extends TextCellImpl implements ExtendedTextCe
 	 *
 	 * @generated
 	 */
-	public NotificationChain basicSetDataSource(DataSource newDataSource, NotificationChain msgs) {
-		DataSource oldDataSource = dataSource;
-		dataSource = newDataSource;
+	public NotificationChain basicSetDatasource(DataSource newDatasource, NotificationChain msgs) {
+		DataSource oldDatasource = datasource;
+		datasource = newDatasource;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DocumentStructurePackage.EXTENDED_TEXT_CELL__DATA_SOURCE, oldDataSource, newDataSource);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DocumentStructurePackage.EXTENDED_TEXT_LIST_ITEM__DATASOURCE, oldDatasource, newDatasource);
 			if (msgs == null) {
 				msgs = notification;
 			} else {
@@ -111,21 +111,21 @@ public class ExtendedTextCellImpl extends TextCellImpl implements ExtendedTextCe
 	 * @generated
 	 */
 	@Override
-	public void setDataSource(DataSource newDataSource) {
-		if (newDataSource != dataSource) {
+	public void setDatasource(DataSource newDatasource) {
+		if (newDatasource != datasource) {
 			NotificationChain msgs = null;
-			if (dataSource != null) {
-				msgs = ((InternalEObject) dataSource).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DocumentStructurePackage.EXTENDED_TEXT_CELL__DATA_SOURCE, null, msgs);
+			if (datasource != null) {
+				msgs = ((InternalEObject) datasource).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DocumentStructurePackage.EXTENDED_TEXT_LIST_ITEM__DATASOURCE, null, msgs);
 			}
-			if (newDataSource != null) {
-				msgs = ((InternalEObject) newDataSource).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DocumentStructurePackage.EXTENDED_TEXT_CELL__DATA_SOURCE, null, msgs);
+			if (newDatasource != null) {
+				msgs = ((InternalEObject) newDatasource).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DocumentStructurePackage.EXTENDED_TEXT_LIST_ITEM__DATASOURCE, null, msgs);
 			}
-			msgs = basicSetDataSource(newDataSource, msgs);
+			msgs = basicSetDatasource(newDatasource, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructurePackage.EXTENDED_TEXT_CELL__DATA_SOURCE, newDataSource, newDataSource));
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructurePackage.EXTENDED_TEXT_LIST_ITEM__DATASOURCE, newDatasource, newDatasource));
 		}
 	}
 
@@ -138,8 +138,8 @@ public class ExtendedTextCellImpl extends TextCellImpl implements ExtendedTextCe
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case DocumentStructurePackage.EXTENDED_TEXT_CELL__DATA_SOURCE:
-			return basicSetDataSource(null, msgs);
+		case DocumentStructurePackage.EXTENDED_TEXT_LIST_ITEM__DATASOURCE:
+			return basicSetDatasource(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -153,8 +153,8 @@ public class ExtendedTextCellImpl extends TextCellImpl implements ExtendedTextCe
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case DocumentStructurePackage.EXTENDED_TEXT_CELL__DATA_SOURCE:
-			return getDataSource();
+		case DocumentStructurePackage.EXTENDED_TEXT_LIST_ITEM__DATASOURCE:
+			return getDatasource();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -168,8 +168,8 @@ public class ExtendedTextCellImpl extends TextCellImpl implements ExtendedTextCe
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DocumentStructurePackage.EXTENDED_TEXT_CELL__DATA_SOURCE:
-			setDataSource((DataSource) newValue);
+		case DocumentStructurePackage.EXTENDED_TEXT_LIST_ITEM__DATASOURCE:
+			setDatasource((DataSource) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -184,8 +184,8 @@ public class ExtendedTextCellImpl extends TextCellImpl implements ExtendedTextCe
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DocumentStructurePackage.EXTENDED_TEXT_CELL__DATA_SOURCE:
-			setDataSource((DataSource) null);
+		case DocumentStructurePackage.EXTENDED_TEXT_LIST_ITEM__DATASOURCE:
+			setDatasource((DataSource) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -200,10 +200,10 @@ public class ExtendedTextCellImpl extends TextCellImpl implements ExtendedTextCe
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case DocumentStructurePackage.EXTENDED_TEXT_CELL__DATA_SOURCE:
-			return dataSource != null;
+		case DocumentStructurePackage.EXTENDED_TEXT_LIST_ITEM__DATASOURCE:
+			return datasource != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} // ExtendedTextCellImpl
+} // ExtendedTextListItemImpl

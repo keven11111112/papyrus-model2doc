@@ -125,6 +125,26 @@ public interface DocumentStructureFactory extends EFactory {
 	ExtendedTextCell createExtendedTextCell();
 
 	/**
+	 * Returns a new object of class '<em>Extended Basic List</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>Extended Basic List</em>'.
+	 * @generated
+	 */
+	ExtendedBasicList createExtendedBasicList();
+
+	/**
+	 * Returns a new object of class '<em>Extended Text List Item</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>Extended Text List Item</em>'.
+	 * @generated
+	 */
+	ExtendedTextListItem createExtendedTextListItem();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

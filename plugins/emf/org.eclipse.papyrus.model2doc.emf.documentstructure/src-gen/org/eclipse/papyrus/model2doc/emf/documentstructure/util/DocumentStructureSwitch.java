@@ -17,10 +17,16 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
+
+import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractList;
 import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractTable;
+import org.eclipse.papyrus.model2doc.core.builtintypes.BasicList;
 import org.eclipse.papyrus.model2doc.core.builtintypes.BasicTable;
 import org.eclipse.papyrus.model2doc.core.builtintypes.Cell;
+import org.eclipse.papyrus.model2doc.core.builtintypes.ListItem;
 import org.eclipse.papyrus.model2doc.core.builtintypes.TextCell;
+import org.eclipse.papyrus.model2doc.core.builtintypes.TextListItem;
+
 import org.eclipse.papyrus.model2doc.emf.documentstructure.*;
 
 /**
@@ -66,7 +72,7 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param ePackage
-	 *                     the package in question.
+	 *            the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
@@ -260,6 +266,40 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 			}
 			return result;
 		}
+		case DocumentStructurePackage.EXTENDED_BASIC_LIST: {
+			ExtendedBasicList extendedBasicList = (ExtendedBasicList) theEObject;
+			T result = caseExtendedBasicList(extendedBasicList);
+			if (result == null) {
+				result = caseBasicList(extendedBasicList);
+			}
+			if (result == null) {
+				result = caseLeafBodyPart(extendedBasicList);
+			}
+			if (result == null) {
+				result = caseAbstractList(extendedBasicList);
+			}
+			if (result == null) {
+				result = caseBodyPart(extendedBasicList);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructurePackage.EXTENDED_TEXT_LIST_ITEM: {
+			ExtendedTextListItem extendedTextListItem = (ExtendedTextListItem) theEObject;
+			T result = caseExtendedTextListItem(extendedTextListItem);
+			if (result == null) {
+				result = caseTextListItem(extendedTextListItem);
+			}
+			if (result == null) {
+				result = caseListItem(extendedTextListItem);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -273,7 +313,7 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *                   the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Text Document</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -290,7 +330,7 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *                   the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Text Document Part</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -307,7 +347,7 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *                   the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Document</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -324,7 +364,7 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *                   the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Body</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -341,7 +381,7 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *                   the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Body Part</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -358,7 +398,7 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *                   the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Data Source</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -375,7 +415,7 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *                   the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Paragraph</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -392,7 +432,7 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *                   the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Composed Body Part</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -409,7 +449,7 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *                   the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Title</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -426,7 +466,7 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *                   the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Image</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -443,7 +483,7 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *                   the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Leaf Body Part</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -460,7 +500,7 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *                   the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EMF Data Source</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -477,7 +517,7 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *                   the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Table Of Contents</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -494,7 +534,7 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *                   the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Extended Basic Table</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -511,12 +551,46 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *                   the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Extended Text Cell</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
 	public T caseExtendedTextCell(ExtendedTextCell object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Extended Basic List</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Extended Basic List</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExtendedBasicList(ExtendedBasicList object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Extended Text List Item</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Extended Text List Item</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExtendedTextListItem(ExtendedTextListItem object) {
 		return null;
 	}
 
@@ -528,7 +602,7 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *                   the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Abstract Table</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -545,7 +619,7 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *                   the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Basic Table</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -562,7 +636,7 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *                   the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Cell</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -579,12 +653,80 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *                   the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Text Cell</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
 	public T caseTextCell(TextCell object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract List</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract List</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbstractList(AbstractList object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Basic List</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Basic List</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBasicList(BasicList object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>List Item</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>List Item</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseListItem(ListItem object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Text List Item</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Text List Item</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTextListItem(TextListItem object) {
 		return null;
 	}
 
@@ -596,7 +738,7 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *                   the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated

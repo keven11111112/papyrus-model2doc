@@ -21,28 +21,28 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.papyrus.model2doc.core.builtintypes.impl.BasicTableImpl;
+import org.eclipse.papyrus.model2doc.core.builtintypes.impl.BasicListImpl;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DataSource;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage;
-import org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedBasicTable;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedBasicList;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.LeafBodyPart;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Extended Basic Table</b></em>'.
+ * An implementation of the model object '<em><b>Extended Basic List</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ExtendedBasicTableImpl#getDataSource <em>Data Source</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ExtendedBasicListImpl#getDataSource <em>Data Source</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ExtendedBasicTableImpl extends BasicTableImpl implements ExtendedBasicTable {
+public class ExtendedBasicListImpl extends BasicListImpl implements ExtendedBasicList {
 	/**
 	 * The cached value of the '{@link #getDataSource() <em>Data Source</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -60,7 +60,7 @@ public class ExtendedBasicTableImpl extends BasicTableImpl implements ExtendedBa
 	 *
 	 * @generated
 	 */
-	protected ExtendedBasicTableImpl() {
+	protected ExtendedBasicListImpl() {
 		super();
 	}
 
@@ -72,7 +72,7 @@ public class ExtendedBasicTableImpl extends BasicTableImpl implements ExtendedBa
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return DocumentStructurePackage.Literals.EXTENDED_BASIC_TABLE;
+		return DocumentStructurePackage.Literals.EXTENDED_BASIC_LIST;
 	}
 
 	/**
@@ -96,7 +96,7 @@ public class ExtendedBasicTableImpl extends BasicTableImpl implements ExtendedBa
 		DataSource oldDataSource = dataSource;
 		dataSource = newDataSource;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DocumentStructurePackage.EXTENDED_BASIC_TABLE__DATA_SOURCE, oldDataSource, newDataSource);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DocumentStructurePackage.EXTENDED_BASIC_LIST__DATA_SOURCE, oldDataSource, newDataSource);
 			if (msgs == null) {
 				msgs = notification;
 			} else {
@@ -117,17 +117,17 @@ public class ExtendedBasicTableImpl extends BasicTableImpl implements ExtendedBa
 		if (newDataSource != dataSource) {
 			NotificationChain msgs = null;
 			if (dataSource != null) {
-				msgs = ((InternalEObject) dataSource).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DocumentStructurePackage.EXTENDED_BASIC_TABLE__DATA_SOURCE, null, msgs);
+				msgs = ((InternalEObject) dataSource).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DocumentStructurePackage.EXTENDED_BASIC_LIST__DATA_SOURCE, null, msgs);
 			}
 			if (newDataSource != null) {
-				msgs = ((InternalEObject) newDataSource).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DocumentStructurePackage.EXTENDED_BASIC_TABLE__DATA_SOURCE, null, msgs);
+				msgs = ((InternalEObject) newDataSource).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DocumentStructurePackage.EXTENDED_BASIC_LIST__DATA_SOURCE, null, msgs);
 			}
 			msgs = basicSetDataSource(newDataSource, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructurePackage.EXTENDED_BASIC_TABLE__DATA_SOURCE, newDataSource, newDataSource));
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructurePackage.EXTENDED_BASIC_LIST__DATA_SOURCE, newDataSource, newDataSource));
 		}
 	}
 
@@ -140,7 +140,7 @@ public class ExtendedBasicTableImpl extends BasicTableImpl implements ExtendedBa
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case DocumentStructurePackage.EXTENDED_BASIC_TABLE__DATA_SOURCE:
+		case DocumentStructurePackage.EXTENDED_BASIC_LIST__DATA_SOURCE:
 			return basicSetDataSource(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -155,7 +155,7 @@ public class ExtendedBasicTableImpl extends BasicTableImpl implements ExtendedBa
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case DocumentStructurePackage.EXTENDED_BASIC_TABLE__DATA_SOURCE:
+		case DocumentStructurePackage.EXTENDED_BASIC_LIST__DATA_SOURCE:
 			return getDataSource();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -170,7 +170,7 @@ public class ExtendedBasicTableImpl extends BasicTableImpl implements ExtendedBa
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DocumentStructurePackage.EXTENDED_BASIC_TABLE__DATA_SOURCE:
+		case DocumentStructurePackage.EXTENDED_BASIC_LIST__DATA_SOURCE:
 			setDataSource((DataSource) newValue);
 			return;
 		}
@@ -186,7 +186,7 @@ public class ExtendedBasicTableImpl extends BasicTableImpl implements ExtendedBa
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DocumentStructurePackage.EXTENDED_BASIC_TABLE__DATA_SOURCE:
+		case DocumentStructurePackage.EXTENDED_BASIC_LIST__DATA_SOURCE:
 			setDataSource((DataSource) null);
 			return;
 		}
@@ -202,7 +202,7 @@ public class ExtendedBasicTableImpl extends BasicTableImpl implements ExtendedBa
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case DocumentStructurePackage.EXTENDED_BASIC_TABLE__DATA_SOURCE:
+		case DocumentStructurePackage.EXTENDED_BASIC_LIST__DATA_SOURCE:
 			return dataSource != null;
 		}
 		return super.eIsSet(featureID);
@@ -218,7 +218,7 @@ public class ExtendedBasicTableImpl extends BasicTableImpl implements ExtendedBa
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == BodyPart.class) {
 			switch (derivedFeatureID) {
-			case DocumentStructurePackage.EXTENDED_BASIC_TABLE__DATA_SOURCE:
+			case DocumentStructurePackage.EXTENDED_BASIC_LIST__DATA_SOURCE:
 				return DocumentStructurePackage.BODY_PART__DATA_SOURCE;
 			default:
 				return -1;
@@ -244,7 +244,7 @@ public class ExtendedBasicTableImpl extends BasicTableImpl implements ExtendedBa
 		if (baseClass == BodyPart.class) {
 			switch (baseFeatureID) {
 			case DocumentStructurePackage.BODY_PART__DATA_SOURCE:
-				return DocumentStructurePackage.EXTENDED_BASIC_TABLE__DATA_SOURCE;
+				return DocumentStructurePackage.EXTENDED_BASIC_LIST__DATA_SOURCE;
 			default:
 				return -1;
 			}
@@ -258,4 +258,4 @@ public class ExtendedBasicTableImpl extends BasicTableImpl implements ExtendedBa
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
-} // ExtendedBasicTableImpl
+} // ExtendedBasicListImpl

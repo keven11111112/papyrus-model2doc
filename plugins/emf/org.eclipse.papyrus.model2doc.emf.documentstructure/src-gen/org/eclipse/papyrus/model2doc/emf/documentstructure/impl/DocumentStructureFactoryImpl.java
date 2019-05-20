@@ -88,6 +88,10 @@ public class DocumentStructureFactoryImpl extends EFactoryImpl implements Docume
 			return createExtendedBasicTable();
 		case DocumentStructurePackage.EXTENDED_TEXT_CELL:
 			return createExtendedTextCell();
+		case DocumentStructurePackage.EXTENDED_BASIC_LIST:
+			return createExtendedBasicList();
+		case DocumentStructurePackage.EXTENDED_TEXT_LIST_ITEM:
+			return createExtendedTextListItem();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -199,6 +203,30 @@ public class DocumentStructureFactoryImpl extends EFactoryImpl implements Docume
 	public ExtendedTextCell createExtendedTextCell() {
 		ExtendedTextCellImpl extendedTextCell = new ExtendedTextCellImpl();
 		return extendedTextCell;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public ExtendedBasicList createExtendedBasicList() {
+		ExtendedBasicListImpl extendedBasicList = new ExtendedBasicListImpl();
+		return extendedBasicList;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public ExtendedTextListItem createExtendedTextListItem() {
+		ExtendedTextListItemImpl extendedTextListItem = new ExtendedTextListItemImpl();
+		return extendedTextListItem;
 	}
 
 	/**

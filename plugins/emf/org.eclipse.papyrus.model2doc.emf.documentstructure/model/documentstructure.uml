@@ -164,6 +164,27 @@ Its allows us to have a common Table definition between DocumentStructure and th
       </eAnnotations>
       <ownedEnd xmi:type="uml:Property" xmi:id="_3UjH8XDKEemmSqLtBrVBMA" name="extendedtextcell" type="_GGZoIHDKEemmSqLtBrVBMA" association="_3UcaQHDKEemmSqLtBrVBMA"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="__WYTIHsMEemUDJPY7edDLg" name="ExtendedBasicList">
+      <generalization xmi:type="uml:Generalization" xmi:id="_CSdpwHsNEemUDJPY7edDLg">
+        <general xmi:type="uml:Class" href="pathmap://MODEL2DOC/BUILTIN_TYPES/BuiltInTypes.uml#_iB5woHsFEemo4rKYxRobdQ"/>
+      </generalization>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_GgmeIHsNEemUDJPY7edDLg" client="__WYTIHsMEemUDJPY7edDLg" supplier="_vCXFoG_VEemJ-foOn68QUw" contract="_vCXFoG_VEemJ-foOn68QUw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_DBbBgHsNEemUDJPY7edDLg" name="ExtendedTextListItem">
+      <generalization xmi:type="uml:Generalization" xmi:id="_FuzNwHsNEemUDJPY7edDLg">
+        <general xmi:type="uml:Class" href="pathmap://MODEL2DOC/BUILTIN_TYPES/BuiltInTypes.uml#_d6G00HsFEemo4rKYxRobdQ"/>
+      </generalization>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_J-h9kHsNEemUDJPY7edDLg" name="datasource" type="_VMCiMB4jEemmq_cjeiIGww" aggregation="composite" association="_J98uwHsNEemUDJPY7edDLg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_J-h9kXsNEemUDJPY7edDLg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_J-ikoHsNEemUDJPY7edDLg" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_J98uwHsNEemUDJPY7edDLg" memberEnd="_J-h9kHsNEemUDJPY7edDLg _J-ikoXsNEemUDJPY7edDLg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_J-gvcHsNEemUDJPY7edDLg" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_J-gvcXsNEemUDJPY7edDLg" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_J-ikoXsNEemUDJPY7edDLg" name="extendedlistitem" type="_DBbBgHsNEemUDJPY7edDLg" association="_J98uwHsNEemUDJPY7edDLg"/>
+    </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_llmqQB4mEemmq_cjeiIGww">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_lln4YB4mEemmq_cjeiIGww" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>

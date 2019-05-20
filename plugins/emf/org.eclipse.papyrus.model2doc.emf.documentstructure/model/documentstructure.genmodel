@@ -92,5 +92,10 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference documentstructure.ecore#//ExtendedTextCell/dataSource"/>
     </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructure.ecore#//ExtendedBasicList"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructure.ecore#//ExtendedTextListItem">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference documentstructure.ecore#//ExtendedTextListItem/datasource"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
 import org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesPackage;
 
 /**
@@ -850,6 +851,128 @@ public interface DocumentStructurePackage extends EPackage {
 	 */
 	int EXTENDED_TEXT_CELL_OPERATION_COUNT = BuiltInTypesPackage.TEXT_CELL_OPERATION_COUNT + 0;
 
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ExtendedBasicListImpl <em>Extended Basic List</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ExtendedBasicListImpl
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getExtendedBasicList()
+	 * @generated
+	 */
+	int EXTENDED_BASIC_LIST = 15;
+
+	/**
+	 * The feature id for the '<em><b>Items</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_BASIC_LIST__ITEMS = BuiltInTypesPackage.BASIC_LIST__ITEMS;
+
+	/**
+	 * The feature id for the '<em><b>Data Source</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_BASIC_LIST__DATA_SOURCE = BuiltInTypesPackage.BASIC_LIST_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Extended Basic List</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_BASIC_LIST_FEATURE_COUNT = BuiltInTypesPackage.BASIC_LIST_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Extended Basic List</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_BASIC_LIST_OPERATION_COUNT = BuiltInTypesPackage.BASIC_LIST_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ExtendedTextListItemImpl <em>Extended Text List Item</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ExtendedTextListItemImpl
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getExtendedTextListItem()
+	 * @generated
+	 */
+	int EXTENDED_TEXT_LIST_ITEM = 16;
+
+	/**
+	 * The feature id for the '<em><b>Sub Items</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_TEXT_LIST_ITEM__SUB_ITEMS = BuiltInTypesPackage.TEXT_LIST_ITEM__SUB_ITEMS;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_TEXT_LIST_ITEM__TEXT = BuiltInTypesPackage.TEXT_LIST_ITEM__TEXT;
+
+	/**
+	 * The feature id for the '<em><b>Datasource</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_TEXT_LIST_ITEM__DATASOURCE = BuiltInTypesPackage.TEXT_LIST_ITEM_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Extended Text List Item</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_TEXT_LIST_ITEM_FEATURE_COUNT = BuiltInTypesPackage.TEXT_LIST_ITEM_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Level</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_TEXT_LIST_ITEM___GET_LEVEL = BuiltInTypesPackage.TEXT_LIST_ITEM___GET_LEVEL;
+
+	/**
+	 * The number of operations of the '<em>Extended Text List Item</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_TEXT_LIST_ITEM_OPERATION_COUNT = BuiltInTypesPackage.TEXT_LIST_ITEM_OPERATION_COUNT + 0;
+
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument <em>Text Document</em>}'.
@@ -1196,6 +1319,40 @@ public interface DocumentStructurePackage extends EPackage {
 	EReference getExtendedTextCell_DataSource();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedBasicList <em>Extended Basic List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>Extended Basic List</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedBasicList
+	 * @generated
+	 */
+	EClass getExtendedBasicList();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedTextListItem <em>Extended Text List Item</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>Extended Text List Item</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedTextListItem
+	 * @generated
+	 */
+	EClass getExtendedTextListItem();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedTextListItem#getDatasource <em>Datasource</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference '<em>Datasource</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedTextListItem#getDatasource()
+	 * @see #getExtendedTextListItem()
+	 * @generated
+	 */
+	EReference getExtendedTextListItem_Datasource();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1519,6 +1676,37 @@ public interface DocumentStructurePackage extends EPackage {
 		 * @generated
 		 */
 		EReference EXTENDED_TEXT_CELL__DATA_SOURCE = eINSTANCE.getExtendedTextCell_DataSource();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ExtendedBasicListImpl <em>Extended Basic List</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ExtendedBasicListImpl
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getExtendedBasicList()
+		 * @generated
+		 */
+		EClass EXTENDED_BASIC_LIST = eINSTANCE.getExtendedBasicList();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ExtendedTextListItemImpl <em>Extended Text List Item</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ExtendedTextListItemImpl
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getExtendedTextListItem()
+		 * @generated
+		 */
+		EClass EXTENDED_TEXT_LIST_ITEM = eINSTANCE.getExtendedTextListItem();
+
+		/**
+		 * The meta object literal for the '<em><b>Datasource</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EXTENDED_TEXT_LIST_ITEM__DATASOURCE = eINSTANCE.getExtendedTextListItem_Datasource();
 
 	}
 

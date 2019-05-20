@@ -21,7 +21,9 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesPackage;
+
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationPackage;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Body;
@@ -32,8 +34,10 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.Document;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructureFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.EMFDataSource;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedBasicList;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedBasicTable;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedTextCell;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedTextListItem;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Image;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.LeafBodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Paragraph;
@@ -169,6 +173,22 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	 * @generated
 	 */
 	private EClass extendedTextCellEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass extendedBasicListEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass extendedTextListItemEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -580,6 +600,39 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	 * @generated
 	 */
 	@Override
+	public EClass getExtendedBasicList() {
+		return extendedBasicListEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getExtendedTextListItem() {
+		return extendedTextListItemEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getExtendedTextListItem_Datasource() {
+		return (EReference) extendedTextListItemEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public DocumentStructureFactory getDocumentStructureFactory() {
 		return (DocumentStructureFactory) getEFactoryInstance();
 	}
@@ -651,6 +704,11 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 
 		extendedTextCellEClass = createEClass(EXTENDED_TEXT_CELL);
 		createEReference(extendedTextCellEClass, EXTENDED_TEXT_CELL__DATA_SOURCE);
+
+		extendedBasicListEClass = createEClass(EXTENDED_BASIC_LIST);
+
+		extendedTextListItemEClass = createEClass(EXTENDED_TEXT_LIST_ITEM);
+		createEReference(extendedTextListItemEClass, EXTENDED_TEXT_LIST_ITEM__DATASOURCE);
 	}
 
 	/**
@@ -702,6 +760,9 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 		extendedBasicTableEClass.getESuperTypes().add(theBuiltInTypesPackage.getBasicTable());
 		extendedBasicTableEClass.getESuperTypes().add(this.getLeafBodyPart());
 		extendedTextCellEClass.getESuperTypes().add(theBuiltInTypesPackage.getTextCell());
+		extendedBasicListEClass.getESuperTypes().add(theBuiltInTypesPackage.getBasicList());
+		extendedBasicListEClass.getESuperTypes().add(this.getLeafBodyPart());
+		extendedTextListItemEClass.getESuperTypes().add(theBuiltInTypesPackage.getTextListItem());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(textDocumentEClass, TextDocument.class, "TextDocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
@@ -755,6 +816,12 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 		initEClass(extendedTextCellEClass, ExtendedTextCell.class, "ExtendedTextCell", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(getExtendedTextCell_DataSource(), this.getDataSource(), null, "dataSource", null, 0, 1, ExtendedTextCell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, //$NON-NLS-1$
 				!IS_ORDERED);
+
+		initEClass(extendedBasicListEClass, ExtendedBasicList.class, "ExtendedBasicList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEClass(extendedTextListItemEClass, ExtendedTextListItem.class, "ExtendedTextListItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getExtendedTextListItem_Datasource(), this.getDataSource(), null, "datasource", null, 0, 1, ExtendedTextListItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, //$NON-NLS-1$
+				!IS_DERIVED, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

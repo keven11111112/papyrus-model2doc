@@ -18,7 +18,9 @@ import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
+
 import org.eclipse.papyrus.model2doc.core.builtintypes.provider.BuiltInTypesEditPlugin;
+
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.provider.GeneratorconfigurationEditPlugin;
 
 import org.osgi.framework.BundleActivator;

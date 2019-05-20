@@ -54,7 +54,7 @@ public interface Paragraph extends ComposedBodyPart {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *                  the new value of the '<em>Text</em>' attribute.
+	 *            the new value of the '<em>Text</em>' attribute.
 	 * @see #getText()
 	 * @generated
 	 */

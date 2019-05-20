@@ -158,7 +158,9 @@ import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.provider.DocumentStructureItemProviderAdapterFactory;
 
 import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
+
 import org.eclipse.papyrus.model2doc.core.builtintypes.provider.BuiltInTypesItemProviderAdapterFactory;
+
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.provider.GeneratorConfigurationItemProviderAdapterFactory;
 
 import org.eclipse.ui.actions.WorkspaceModifyOperation;

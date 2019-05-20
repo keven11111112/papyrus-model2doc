@@ -247,6 +247,9 @@ public class TitleItemProvider
 
 		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.COMPOSED_BODY_PART__SUB_BODY_PART,
 				DocumentStructureFactory.eINSTANCE.createExtendedBasicTable()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.COMPOSED_BODY_PART__SUB_BODY_PART,
+				DocumentStructureFactory.eINSTANCE.createExtendedBasicList()));
 	}
 
 	/**

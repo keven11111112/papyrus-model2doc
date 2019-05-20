@@ -19,10 +19,16 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
+
+import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractList;
 import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractTable;
+import org.eclipse.papyrus.model2doc.core.builtintypes.BasicList;
 import org.eclipse.papyrus.model2doc.core.builtintypes.BasicTable;
 import org.eclipse.papyrus.model2doc.core.builtintypes.Cell;
+import org.eclipse.papyrus.model2doc.core.builtintypes.ListItem;
 import org.eclipse.papyrus.model2doc.core.builtintypes.TextCell;
+import org.eclipse.papyrus.model2doc.core.builtintypes.TextListItem;
+
 import org.eclipse.papyrus.model2doc.emf.documentstructure.*;
 
 /**
@@ -161,6 +167,16 @@ public class DocumentStructureAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseExtendedBasicList(ExtendedBasicList object) {
+			return createExtendedBasicListAdapter();
+		}
+
+		@Override
+		public Adapter caseExtendedTextListItem(ExtendedTextListItem object) {
+			return createExtendedTextListItemAdapter();
+		}
+
+		@Override
 		public Adapter caseAbstractTable(AbstractTable object) {
 			return createAbstractTableAdapter();
 		}
@@ -181,6 +197,26 @@ public class DocumentStructureAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseAbstractList(AbstractList object) {
+			return createAbstractListAdapter();
+		}
+
+		@Override
+		public Adapter caseBasicList(BasicList object) {
+			return createBasicListAdapter();
+		}
+
+		@Override
+		public Adapter caseListItem(ListItem object) {
+			return createListItemAdapter();
+		}
+
+		@Override
+		public Adapter caseTextListItem(TextListItem object) {
+			return createTextListItemAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -192,7 +228,7 @@ public class DocumentStructureAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param target
-	 *                   the object to adapt.
+	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
@@ -428,6 +464,36 @@ public class DocumentStructureAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedBasicList <em>Extended Basic List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedBasicList
+	 * @generated
+	 */
+	public Adapter createExtendedBasicListAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedTextListItem <em>Extended Text List Item</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedTextListItem
+	 * @generated
+	 */
+	public Adapter createExtendedTextListItemAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.core.builtintypes.AbstractTable <em>Abstract Table</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -484,6 +550,66 @@ public class DocumentStructureAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTextCellAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.core.builtintypes.AbstractList <em>Abstract List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.AbstractList
+	 * @generated
+	 */
+	public Adapter createAbstractListAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.core.builtintypes.BasicList <em>Basic List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.BasicList
+	 * @generated
+	 */
+	public Adapter createBasicListAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.core.builtintypes.ListItem <em>List Item</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.ListItem
+	 * @generated
+	 */
+	public Adapter createListItemAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.core.builtintypes.TextListItem <em>Text List Item</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.TextListItem
+	 * @generated
+	 */
+	public Adapter createTextListItemAdapter() {
 		return null;
 	}
 
