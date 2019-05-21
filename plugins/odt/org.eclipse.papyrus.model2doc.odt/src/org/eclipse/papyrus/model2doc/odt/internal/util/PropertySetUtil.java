@@ -14,10 +14,15 @@
  *****************************************************************************/
 package org.eclipse.papyrus.model2doc.odt.internal.util;
 
+import org.eclipse.core.runtime.Assert;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.model2doc.odt.Activator;
+
+import com.sun.star.beans.Property;
 import com.sun.star.beans.PropertyVetoException;
 import com.sun.star.beans.UnknownPropertyException;
 import com.sun.star.beans.XPropertySet;
+import com.sun.star.beans.XPropertySetInfo;
 import com.sun.star.lang.IllegalArgumentException;
 import com.sun.star.lang.WrappedTargetException;
 import com.sun.star.uno.UnoRuntime;
@@ -27,7 +32,7 @@ import com.sun.star.uno.UnoRuntime;
  *
  */
 public class PropertySetUtil {
-	
+
 	/**
 	 * Constructor.
 	 *
@@ -38,7 +43,7 @@ public class PropertySetUtil {
 
 	/**
 	 * Get Property value.
-	 * 
+	 *
 	 * @param object
 	 * @param propertyName
 	 * @return
@@ -48,18 +53,17 @@ public class PropertySetUtil {
 		XPropertySet propertySet = UnoRuntime.queryInterface(XPropertySet.class, object);
 		if (propertySet != null) {
 			try {
-		    	propertyValue = propertySet.getPropertyValue(propertyName);
-		    }
-		    catch (Exception e) {
-		      Activator.log.error("Could not get property " + propertyName, e); //$NON-NLS-1$
-		    }
+				propertyValue = propertySet.getPropertyValue(propertyName);
+			} catch (Exception e) {
+				Activator.log.error("Could not get property " + propertyName, e); //$NON-NLS-1$
+			}
 		}
-	    return propertyValue;
+		return propertyValue;
 	}
-	
+
 	/**
 	 * Set Property.
-	 * 
+	 *
 	 * @param object
 	 * @param propertyName
 	 * @param propertyValue
@@ -67,14 +71,37 @@ public class PropertySetUtil {
 	public static void setProperty(Object object, String propertyName, Object propertyValue) {
 		XPropertySet propertySet = UnoRuntime.queryInterface(XPropertySet.class, object);
 		if (propertySet != null) {
-				try {
-					propertySet.setPropertyValue(propertyName, propertyValue);
-				} catch (IllegalArgumentException e) {
-					 Activator.log.error("Property " + propertyName + " argument is illegal", e); //$NON-NLS-1$
-				} catch (UnknownPropertyException | PropertyVetoException | WrappedTargetException e) {
-					Activator.log.error("Could not set property " + propertyName, e); //$NON-NLS-1$
-				}
+			try {
+				propertySet.setPropertyValue(propertyName, propertyValue);
+			} catch (IllegalArgumentException e) {
+				Activator.log.error("Property " + propertyName + " argument is illegal", e); //$NON-NLS-1$
+			} catch (UnknownPropertyException | PropertyVetoException | WrappedTargetException e) {
+				Activator.log.error("Could not set property " + propertyName, e); //$NON-NLS-1$
+			}
 		}
-		
 	}
+
+	/**
+	 *
+	 * A method for debug purpose
+	 *
+	 * @param propertySet
+	 *            a property set
+	 * @param relativeObjectName
+	 *            the name of the object for which we want explore the property set
+	 */
+	public static final void displayPropertySet(final XPropertySet propertySet, final String relativeObjectName) {
+		Assert.isNotNull(propertySet);
+		Assert.isNotNull(relativeObjectName);
+		System.out.println(NLS.bind("-----------------------properties of {0}--------------------", relativeObjectName)); //$NON-NLS-1$
+		XPropertySetInfo set12 = propertySet.getPropertySetInfo();
+		for (Property tmp : set12.getProperties()) {
+			System.out.println("prop Name " + tmp.Name); //$NON-NLS-1$
+			System.out.println("prop attr " + tmp.Attributes); //$NON-NLS-1$
+			System.out.println("prop type " + tmp.Type); //$NON-NLS-1$
+			System.out.println("\n"); //$NON-NLS-1$
+		}
+	}
+
+
 }

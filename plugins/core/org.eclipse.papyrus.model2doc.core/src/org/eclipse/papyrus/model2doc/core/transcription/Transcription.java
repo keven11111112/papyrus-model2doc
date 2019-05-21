@@ -14,8 +14,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.model2doc.core.transcription;
 
-import java.util.List;
-
+import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractList;
 import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractTable;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration;
 
@@ -73,10 +72,10 @@ public interface Transcription {
 	/**
 	 * Write list.
 	 *
-	 * @param items
+	 * @param list
 	 * @param processRichText
 	 */
-	public void writeList(List<String> items, boolean processRichText);
+	public void writeList(AbstractList list, boolean processRichText);
 
 	/**
 	 * Add table.

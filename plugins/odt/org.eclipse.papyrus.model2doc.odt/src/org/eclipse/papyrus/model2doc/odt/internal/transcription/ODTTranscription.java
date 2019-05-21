@@ -10,19 +10,27 @@
  *
  * Contributors:
  *  Yupanqui Munoz (CEA LIST) yupanqui.munozjulho@cea.fr - Initial API and implementation
- *	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *****************************************************************************/
 package org.eclipse.papyrus.model2doc.odt.internal.transcription;
 
-import java.util.List;
+import java.util.Iterator;
 
+import org.eclipse.osgi.util.NLS;
+import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractList;
 import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractTable;
+import org.eclipse.papyrus.model2doc.core.builtintypes.BasicList;
+import org.eclipse.papyrus.model2doc.core.builtintypes.ListItem;
+import org.eclipse.papyrus.model2doc.core.builtintypes.TextListItem;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.transcription.CoverPage;
 import org.eclipse.papyrus.model2doc.core.transcription.ImageDescription;
 import org.eclipse.papyrus.model2doc.core.transcription.Transcription;
+import org.eclipse.papyrus.model2doc.odt.Activator;
 import org.eclipse.papyrus.model2doc.odt.editor.StyleEditor;
 import org.eclipse.papyrus.model2doc.odt.editor.StyleEditorFactory;
+import org.eclipse.papyrus.model2doc.odt.internal.constants.ParagraphPropertiesConstants;
+import org.eclipse.papyrus.model2doc.odt.internal.constants.ParagraphPropertiesValues;
 import org.eclipse.papyrus.model2doc.odt.internal.editor.ODTEditor;
 import org.eclipse.papyrus.model2doc.odt.internal.util.WriteUtil;
 import org.eclipse.papyrus.model2doc.odt.service.StyleService;
@@ -113,22 +121,37 @@ public class ODTTranscription implements Transcription {
 	}
 
 	@Override
-	public void writeList(List<String> items, boolean processRichText) {
-		int cursorStartPosition = (cursor.getText().getString()).length();
-		int index = 0;
+	public void writeList(AbstractList abstractList, boolean processRichText) {
+		if (false == abstractList instanceof BasicList) {
+			Activator.log.warn(NLS.bind("The list of type {0} is not supported by {1}.", abstractList.eClass().getName(), getClass().getName())); //$NON-NLS-1$
+			return;
+		}
+		final BasicList basicList = (BasicList) abstractList;
+		final Iterator<ListItem> iter = basicList.getItems().iterator();
+		while (iter.hasNext()) {
+			writeListItem(iter.next());
+		}
+	}
 
-		if (items.size() == 1) {
-			writeService.addParagraph(cursor, items.get(0), true);
-			styleService.applyStylePreviousParagraph(cursor, styleService.getNumberStyleNamePropertyName(), styleService.getList1StyleValue());
-		} else {
-			for (String item : items) {
-				writeService.addParagraph(cursor, item, true);
-				if (index == 0) {
-					cursorStartPosition = (cursor.getText().getString()).length();
-					index++;
-				}
-			}
-			styleEditor.applyListStyle(cursor, cursorStartPosition);
+	/**
+	 * This method add a list item and its sub items if they exist
+	 *
+	 * @param listItem
+	 *            a list item
+	 */
+	private void writeListItem(final ListItem listItem) {
+		final int itemLevel = listItem.getLevel();
+		if (false == listItem instanceof TextListItem) {
+			Activator.log.warn(NLS.bind("The list item  of type {0} is not supported by {1}.", listItem.eClass().getName(), getClass().getName())); //$NON-NLS-1$
+			return;
+		}
+		final TextListItem textItem = (TextListItem) listItem;
+		writeService.addParagraph(cursor, textItem.getText(), true);
+		styleService.applyStylePreviousParagraph(cursor, ParagraphPropertiesConstants.NUMBERING_STYLE, ParagraphPropertiesValues.NUMBERING_STYLE_DASH);
+		styleService.applyStylePreviousParagraph(cursor, ParagraphPropertiesConstants.NUMBERING_LEVEL, (short) itemLevel);
+		final Iterator<ListItem> subItemIterator = listItem.getSubItems().iterator();
+		while (subItemIterator.hasNext()) {
+			writeListItem(subItemIterator.next());
 		}
 	}
 
@@ -189,13 +212,13 @@ public class ODTTranscription implements Transcription {
 			// xEntry.setPropertyValue("Outline", true);
 
 			// Create a ContentIndex and access its XPropertySet interface
-			XPropertySet xIndex = UnoRuntime.queryInterface(XPropertySet.class, mxDocFactory.createInstance("com.sun.star.text.ContentIndex"));
+			XPropertySet xIndex = UnoRuntime.queryInterface(XPropertySet.class, mxDocFactory.createInstance("com.sun.star.text.ContentIndex")); //$NON-NLS-1$
 
 			// Again, the Level property _must_ be set
 			// xIndex.setPropertyValue("Level", Short.valueOf((short) 10));
 
 			// to fill the table of contents according to the existing title
-			xIndex.setPropertyValue("CreateFromOutline", true);
+			xIndex.setPropertyValue("CreateFromOutline", true); //$NON-NLS-1$
 			// XPropertySetInfo set = xIndex.getPropertySetInfo();
 			// for (Property tmp : set.getProperties()) {
 			// System.out.println("prop Name " + tmp.Name);
@@ -203,7 +226,7 @@ public class ODTTranscription implements Transcription {
 			// System.out.println("prop type " + tmp.Type);
 			// }
 
-			xIndex.setPropertyValue("Title", tocTitle);
+			xIndex.setPropertyValue("Title", tocTitle); //$NON-NLS-1$
 
 			// Access the XTextContent interfaces of both the Index and the
 			// IndexMark

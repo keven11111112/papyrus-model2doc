@@ -10,7 +10,7 @@
  *
  * Contributors:
  *  Yupanqui Munoz (CEA LIST) yupanqui.munozjulho@cea.fr - Initial API and implementation
- *	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *****************************************************************************/
 package org.eclipse.papyrus.model2doc.core.internal.transcriber;
 
@@ -19,11 +19,14 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.eclipse.papyrus.model2doc.core.builtintypes.BasicList;
 import org.eclipse.papyrus.model2doc.core.builtintypes.BasicRow;
 import org.eclipse.papyrus.model2doc.core.builtintypes.BasicTable;
 import org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesFactory;
 import org.eclipse.papyrus.model2doc.core.builtintypes.CellLocation;
+import org.eclipse.papyrus.model2doc.core.builtintypes.ListItem;
 import org.eclipse.papyrus.model2doc.core.builtintypes.TextCell;
+import org.eclipse.papyrus.model2doc.core.builtintypes.TextListItem;
 import org.eclipse.papyrus.model2doc.core.service.DiagramToImageService;
 import org.eclipse.papyrus.model2doc.core.service.DiagramToImageServiceImpl;
 import org.eclipse.papyrus.model2doc.core.transcriber.Transcriber;
@@ -46,8 +49,6 @@ public class UMLTranscriber implements Transcriber {
 	private Transcription transcription = null;
 
 	private List<Class> classes = new ArrayList<>();
-
-	private List<String> propertities = new ArrayList<>();
 
 	private UMLLabelInternationalization umlLabelInternationalization = null;
 
@@ -235,15 +236,18 @@ public class UMLTranscriber implements Transcriber {
 	 *            owner class
 	 */
 	private void transcribeProperties(Class owner) {
+		final List<ListItem> items = new ArrayList<>();
 		// Get properties owned by owner class
 		for (Property property : owner.getOwnedAttributes()) {
-			propertities.add(umlLabelInternationalization.getLabel(property));
+			final TextListItem item = BuiltInTypesFactory.eINSTANCE.createTextListItem();
+			item.setText(umlLabelInternationalization.getLabel(property));
+			items.add(item);
 		}
 
-		// Transcribe properties how list
-		if (!propertities.isEmpty()) {
-			transcription.writeList(propertities, false);
-			propertities.clear();
+		if (items.size() > 0) {
+			final BasicList list = BuiltInTypesFactory.eINSTANCE.createBasicList();
+			list.getItems().addAll(items);
+			transcription.writeList(list, false);
 		}
 	}
 }
