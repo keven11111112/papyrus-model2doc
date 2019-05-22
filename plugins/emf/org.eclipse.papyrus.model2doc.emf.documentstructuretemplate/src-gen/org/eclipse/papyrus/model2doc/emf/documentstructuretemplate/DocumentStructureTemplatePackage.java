@@ -1788,6 +1788,67 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int EREFERENCE_TABLE_VIEW_OPERATION_COUNT = EREFERENCE_TEMPLATE_OPERATION_COUNT + 3;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EStructuralFeatureTemplateImpl <em>EStructural Feature Template</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EStructuralFeatureTemplateImpl
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEStructuralFeatureTemplate()
+	 * @generated
+	 */
+	int ESTRUCTURAL_FEATURE_TEMPLATE = 23;
+
+	/**
+	 * The feature id for the '<em><b>Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ESTRUCTURAL_FEATURE_TEMPLATE__FEATURE = 0;
+
+	/**
+	 * The number of structural features of the '<em>EStructural Feature Template</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ESTRUCTURAL_FEATURE_TEMPLATE_FEATURE_COUNT = 1;
+
+	/**
+	 * The operation id for the '<em>Get EStructural Feature Values</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ESTRUCTURAL_FEATURE_TEMPLATE___GET_ESTRUCTURAL_FEATURE_VALUES__EOBJECT = 0;
+
+	/**
+	 * The operation id for the '<em>Build EAttribute Value Label</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ESTRUCTURAL_FEATURE_TEMPLATE___BUILD_EATTRIBUTE_VALUE_LABEL__OBJECT = 1;
+
+	/**
+	 * The number of operations of the '<em>EStructural Feature Template</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ESTRUCTURAL_FEATURE_TEMPLATE_OPERATION_COUNT = 2;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EStructuralFeatureColumnImpl <em>EStructural Feature Column</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1799,16 +1860,6 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int ESTRUCTURAL_FEATURE_COLUMN = 22;
 
 	/**
-	 * The feature id for the '<em><b>Custom Column Title</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int ESTRUCTURAL_FEATURE_COLUMN__CUSTOM_COLUMN_TITLE = ICOLUMN__CUSTOM_COLUMN_TITLE;
-
-	/**
 	 * The feature id for the '<em><b>Feature</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1816,7 +1867,17 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ESTRUCTURAL_FEATURE_COLUMN__FEATURE = ICOLUMN_FEATURE_COUNT + 0;
+	int ESTRUCTURAL_FEATURE_COLUMN__FEATURE = ESTRUCTURAL_FEATURE_TEMPLATE__FEATURE;
+
+	/**
+	 * The feature id for the '<em><b>Custom Column Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ESTRUCTURAL_FEATURE_COLUMN__CUSTOM_COLUMN_TITLE = ESTRUCTURAL_FEATURE_TEMPLATE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>EStructural Feature Column</em>' class.
@@ -1826,7 +1887,27 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ESTRUCTURAL_FEATURE_COLUMN_FEATURE_COUNT = ICOLUMN_FEATURE_COUNT + 1;
+	int ESTRUCTURAL_FEATURE_COLUMN_FEATURE_COUNT = ESTRUCTURAL_FEATURE_TEMPLATE_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get EStructural Feature Values</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ESTRUCTURAL_FEATURE_COLUMN___GET_ESTRUCTURAL_FEATURE_VALUES__EOBJECT = ESTRUCTURAL_FEATURE_TEMPLATE___GET_ESTRUCTURAL_FEATURE_VALUES__EOBJECT;
+
+	/**
+	 * The operation id for the '<em>Build EAttribute Value Label</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ESTRUCTURAL_FEATURE_COLUMN___BUILD_EATTRIBUTE_VALUE_LABEL__OBJECT = ESTRUCTURAL_FEATURE_TEMPLATE___BUILD_EATTRIBUTE_VALUE_LABEL__OBJECT;
 
 	/**
 	 * The operation id for the '<em>Build Column Header Label</em>' operation.
@@ -1836,7 +1917,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ESTRUCTURAL_FEATURE_COLUMN___BUILD_COLUMN_HEADER_LABEL = ICOLUMN___BUILD_COLUMN_HEADER_LABEL;
+	int ESTRUCTURAL_FEATURE_COLUMN___BUILD_COLUMN_HEADER_LABEL = ESTRUCTURAL_FEATURE_TEMPLATE_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Get Cell Value</em>' operation.
@@ -1846,7 +1927,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ESTRUCTURAL_FEATURE_COLUMN___GET_CELL_VALUE__EOBJECT = ICOLUMN___GET_CELL_VALUE__EOBJECT;
+	int ESTRUCTURAL_FEATURE_COLUMN___GET_CELL_VALUE__EOBJECT = ESTRUCTURAL_FEATURE_TEMPLATE_OPERATION_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Build Cell Label</em>' operation.
@@ -1856,7 +1937,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ESTRUCTURAL_FEATURE_COLUMN___BUILD_CELL_LABEL__OBJECT = ICOLUMN___BUILD_CELL_LABEL__OBJECT;
+	int ESTRUCTURAL_FEATURE_COLUMN___BUILD_CELL_LABEL__OBJECT = ESTRUCTURAL_FEATURE_TEMPLATE_OPERATION_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>EStructural Feature Column</em>' class.
@@ -1866,7 +1947,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ESTRUCTURAL_FEATURE_COLUMN_OPERATION_COUNT = ICOLUMN_OPERATION_COUNT + 0;
+	int ESTRUCTURAL_FEATURE_COLUMN_OPERATION_COUNT = ESTRUCTURAL_FEATURE_TEMPLATE_OPERATION_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassFilterBehavior <em>EClass Filter Behavior</em>}' enum.
@@ -1877,7 +1958,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEClassFilterBehavior()
 	 * @generated
 	 */
-	int ECLASS_FILTER_BEHAVIOR = 23;
+	int ECLASS_FILTER_BEHAVIOR = 24;
 
 
 	/**
@@ -2579,16 +2660,49 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	EClass getEStructuralFeatureColumn();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFeatureColumn#getFeature <em>Feature</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFeatureTemplate <em>EStructural Feature Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EStructural Feature Template</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFeatureTemplate
+	 * @generated
+	 */
+	EClass getEStructuralFeatureTemplate();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFeatureTemplate#getFeature <em>Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the reference '<em>Feature</em>'.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFeatureColumn#getFeature()
-	 * @see #getEStructuralFeatureColumn()
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFeatureTemplate#getFeature()
+	 * @see #getEStructuralFeatureTemplate()
 	 * @generated
 	 */
-	EReference getEStructuralFeatureColumn_Feature();
+	EReference getEStructuralFeatureTemplate_Feature();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFeatureTemplate#getEStructuralFeatureValues(org.eclipse.emf.ecore.EObject) <em>Get EStructural Feature Values</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the '<em>Get EStructural Feature Values</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFeatureTemplate#getEStructuralFeatureValues(org.eclipse.emf.ecore.EObject)
+	 * @generated
+	 */
+	EOperation getEStructuralFeatureTemplate__GetEStructuralFeatureValues__EObject();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFeatureTemplate#buildEAttributeValueLabel(java.lang.Object) <em>Build EAttribute Value Label</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the '<em>Build EAttribute Value Label</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFeatureTemplate#buildEAttributeValueLabel(java.lang.Object)
+	 * @generated
+	 */
+	EOperation getEStructuralFeatureTemplate__BuildEAttributeValueLabel__Object();
 
 	/**
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassFilterBehavior <em>EClass Filter Behavior</em>}'.
@@ -3222,13 +3336,42 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 		EClass ESTRUCTURAL_FEATURE_COLUMN = eINSTANCE.getEStructuralFeatureColumn();
 
 		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EStructuralFeatureTemplateImpl <em>EStructural Feature Template</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EStructuralFeatureTemplateImpl
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEStructuralFeatureTemplate()
+		 * @generated
+		 */
+		EClass ESTRUCTURAL_FEATURE_TEMPLATE = eINSTANCE.getEStructuralFeatureTemplate();
+
+		/**
 		 * The meta object literal for the '<em><b>Feature</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
 		 * @generated
 		 */
-		EReference ESTRUCTURAL_FEATURE_COLUMN__FEATURE = eINSTANCE.getEStructuralFeatureColumn_Feature();
+		EReference ESTRUCTURAL_FEATURE_TEMPLATE__FEATURE = eINSTANCE.getEStructuralFeatureTemplate_Feature();
+
+		/**
+		 * The meta object literal for the '<em><b>Get EStructural Feature Values</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EOperation ESTRUCTURAL_FEATURE_TEMPLATE___GET_ESTRUCTURAL_FEATURE_VALUES__EOBJECT = eINSTANCE.getEStructuralFeatureTemplate__GetEStructuralFeatureValues__EObject();
+
+		/**
+		 * The meta object literal for the '<em><b>Build EAttribute Value Label</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EOperation ESTRUCTURAL_FEATURE_TEMPLATE___BUILD_EATTRIBUTE_VALUE_LABEL__OBJECT = eINSTANCE.getEStructuralFeatureTemplate__BuildEAttributeValueLabel__Object();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassFilterBehavior <em>EClass Filter Behavior</em>}' enum.

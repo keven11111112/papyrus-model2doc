@@ -20,22 +20,36 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.common.util.URI;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFeatureColumn;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFeatureColumn} object.
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFeatureTemplate} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class EStructuralFeatureColumnItemProvider extends EStructuralFeatureTemplateItemProvider {
+public class EStructuralFeatureTemplateItemProvider
+		extends ItemProviderAdapter
+		implements
+		IEditingDomainItemProvider,
+		IStructuredItemContentProvider,
+		ITreeItemContentProvider,
+		IItemLabelProvider,
+		IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -43,7 +57,7 @@ public class EStructuralFeatureColumnItemProvider extends EStructuralFeatureTemp
 	 *
 	 * @generated
 	 */
-	public EStructuralFeatureColumnItemProvider(AdapterFactory adapterFactory) {
+	public EStructuralFeatureTemplateItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -59,42 +73,42 @@ public class EStructuralFeatureColumnItemProvider extends EStructuralFeatureTemp
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCustomColumnTitlePropertyDescriptor(object);
+			addFeaturePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Custom Column Title feature.
+	 * This adds a property descriptor for the Feature feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 */
-	protected void addCustomColumnTitlePropertyDescriptor(Object object) {
+	protected void addFeaturePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
-				getString("_UI_IColumn_customColumnTitle_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_IColumn_customColumnTitle_feature", "_UI_IColumn_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				DocumentStructureTemplatePackage.Literals.ICOLUMN__CUSTOM_COLUMN_TITLE,
+				getString("_UI_EStructuralFeatureTemplate_feature_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EStructuralFeatureTemplate_feature_feature", "_UI_EStructuralFeatureTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				DocumentStructureTemplatePackage.Literals.ESTRUCTURAL_FEATURE_TEMPLATE__FEATURE,
 				true,
 				false,
-				false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				true,
 				null,
-				null));
+				null,
+				null,
+				URI.createURI("editor://documentstructuretemplate/EStructuralFeatureTemplate/EStructuralFeature/")));
 	}
 
 	/**
-	 * This returns EStructuralFeatureColumn.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/EStructuralFeatureColumn")); //$NON-NLS-1$
+	public boolean hasChildren(Object object) {
+		return hasChildren(object, true);
 	}
 
 	/**
@@ -117,9 +131,7 @@ public class EStructuralFeatureColumnItemProvider extends EStructuralFeatureTemp
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((EStructuralFeatureColumn) object).getCustomColumnTitle();
-		return label == null || label.length() == 0 ? getString("_UI_EStructuralFeatureColumn_type") : //$NON-NLS-1$
-				getString("_UI_EStructuralFeatureColumn_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		return getString("_UI_EStructuralFeatureTemplate_type"); //$NON-NLS-1$
 	}
 
 
@@ -134,12 +146,6 @@ public class EStructuralFeatureColumnItemProvider extends EStructuralFeatureTemp
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(EStructuralFeatureColumn.class)) {
-		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_COLUMN__CUSTOM_COLUMN_TITLE:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		}
 		super.notifyChanged(notification);
 	}
 
@@ -154,6 +160,18 @@ public class EStructuralFeatureColumnItemProvider extends EStructuralFeatureTemp
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
 	}
 
 }

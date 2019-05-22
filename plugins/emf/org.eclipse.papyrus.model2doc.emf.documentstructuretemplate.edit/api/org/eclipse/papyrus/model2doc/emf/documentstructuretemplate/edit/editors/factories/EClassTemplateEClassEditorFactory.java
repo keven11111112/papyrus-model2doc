@@ -18,12 +18,13 @@ package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.editors
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.editors.CustomExtendedDialogCellEditor;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.internal.providers.EClassTreeContentProvider;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.internal.validators.SingleEClassValidator;
 
 /**
- * Factory used to edit {@link ECLassTemplate#setEClass(EClass)}
+ * Factory used to edit {@link EClassTemplate#setEClass(EClass)}
  */
 public class EClassTemplateEClassEditorFactory extends AbstractEcoreEReferenceDialogEditorFactory {
 

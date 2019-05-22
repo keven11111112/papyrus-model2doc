@@ -311,7 +311,7 @@ In the general case, the ISubBodyPartTemplate uses the context element to build 
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LE4bYHcMEemvX5OEKyKoZg"/>
       </ownedAttribute>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_rcVXYHHIEempmPy7tz2aIQ" name="buildColumnHeaderLabel">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_rcVXYHHIEempmPy7tz2aIQ" name="buildColumnHeaderLabel" isAbstract="true">
         <ownedComment xmi:type="uml:Comment" xmi:id="_QDjp4HLwEemN45XGCLZszg" annotatedElement="_rcVXYHHIEempmPy7tz2aIQ">
           <body>This method returns the title to use for this column.</body>
         </ownedComment>
@@ -319,7 +319,7 @@ In the general case, the ISubBodyPartTemplate uses the context element to build 
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_5KJyQHHIEempmPy7tz2aIQ" name="getCellValue">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_5KJyQHHIEempmPy7tz2aIQ" name="getCellValue" isAbstract="true">
         <ownedComment xmi:type="uml:Comment" xmi:id="_gbTUYHLwEemN45XGCLZszg" annotatedElement="_5KJyQHHIEempmPy7tz2aIQ">
           <body>This method returns the value of the cell. This value is deduced from the element represented by the column and from the row element given as parameter).</body>
         </ownedComment>
@@ -330,11 +330,11 @@ In the general case, the ISubBodyPartTemplate uses the context element to build 
           <type xmi:type="uml:PrimitiveType" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWkccX_EduPJbEsMYXjUQ"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_l9aoQHIjEempmPy7tz2aIQ" name="buildCellLabel">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_l9aoQHIjEempmPy7tz2aIQ" name="buildCellLabel" isAbstract="true">
         <ownedComment xmi:type="uml:Comment" xmi:id="_nOiiwHLwEemN45XGCLZszg" annotatedElement="_l9aoQHIjEempmPy7tz2aIQ">
           <body>This method creates the label from the cell value given as parameter.</body>
         </ownedComment>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_vQJ-8HIjEempmPy7tz2aIQ" name="cellElement">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_vQJ-8HIjEempmPy7tz2aIQ" name="cellValue">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EJavaObject"/>
         </ownedParameter>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_yDgQUHIjEempmPy7tz2aIQ" name="returnedValue" direction="return">
@@ -386,16 +386,47 @@ In the general case, the ISubBodyPartTemplate uses the context element to build 
       <ownedComment xmi:type="uml:Comment" xmi:id="_J4RMUHLwEemN45XGCLZszg" annotatedElement="_Xmw7IHHIEempmPy7tz2aIQ">
         <body>This element allows to define a column representing an EStructuralFeature.</body>
       </ownedComment>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_bhiHkHHIEempmPy7tz2aIQ" name="feature">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_fhapkHLxEemN45XGCLZszg" source="http://www.eclipse.org/emf/2002/GenModel">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fhapkXLxEemN45XGCLZszg" key="propertyEditorFactory" value="editor://documentstructuretemplate/EStructuralFeatureColumn/EStructuralFeature/"/>
-        </eAnnotations>
-        <ownedComment xmi:type="uml:Comment" xmi:id="_M6ws8HLwEemN45XGCLZszg" annotatedElement="_bhiHkHHIEempmPy7tz2aIQ">
-          <body>The feature represented by this column.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWiSMX_EduPJbEsMYXjUQ"/>
-      </ownedAttribute>
+      <generalization xmi:type="uml:Generalization" xmi:id="_tWSdkHyHEemXM4G5UevpIQ" general="_YssgMHyDEemXM4G5UevpIQ"/>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_gssk4HHIEempmPy7tz2aIQ" client="_Xmw7IHHIEempmPy7tz2aIQ" supplier="_A326QHHIEempmPy7tz2aIQ" contract="_A326QHHIEempmPy7tz2aIQ"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="__vaxAHyHEemXM4G5UevpIQ" name="buildCellLabel">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_B7PvYHyIEemXM4G5UevpIQ" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_B7PvYXyIEemXM4G5UevpIQ" key="body" value="return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EStructuralFeatureColumnOperations.buildCellLabel(this,cellValue);"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="__vaxAXyHEemXM4G5UevpIQ" annotatedElement="__vaxAHyHEemXM4G5UevpIQ">
+          <body>This method creates the label from the cell value given as parameter.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="__vaxAnyHEemXM4G5UevpIQ" name="cellValue">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EJavaObject"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="__vaxA3yHEemXM4G5UevpIQ" name="returnedValue" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="__vlwIHyHEemXM4G5UevpIQ" name="buildColumnHeaderLabel">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_IgHxoHyIEemXM4G5UevpIQ" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_IgHxoXyIEemXM4G5UevpIQ" key="body" value="return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EStructuralFeatureColumnOperations.buildColumnHeaderLabel(this);"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="__vlwIXyHEemXM4G5UevpIQ" annotatedElement="__vlwIHyHEemXM4G5UevpIQ">
+          <body>This method returns the title to use for this column.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="__vlwInyHEemXM4G5UevpIQ" name="returnValue" visibility="public" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="__vwIMHyHEemXM4G5UevpIQ" name="getCellValue">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_O4_YMHyIEemXM4G5UevpIQ" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_O4_YMXyIEemXM4G5UevpIQ" key="body" value="return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EStructuralFeatureColumnOperations.getCellValue(this,row);"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="__vwIMXyHEemXM4G5UevpIQ" annotatedElement="__vwIMHyHEemXM4G5UevpIQ">
+          <body>This method returns the value of the cell. This value is deduced from the element represented by the column and from the row element given as parameter).</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="__vwIMnyHEemXM4G5UevpIQ" name="row">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="__vwIM3yHEemXM4G5UevpIQ" name="returnValue" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWkccX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_jMKV0HWKEemQUasExi-pKA" name="EReferenceTemplate" isAbstract="true">
       <ownedComment xmi:type="uml:Comment" xmi:id="_fOnFsHWLEemQUasExi-pKA" annotatedElement="_jMKV0HWKEemQUasExi-pKA">
@@ -474,6 +505,48 @@ The goal of this method is to return a label for each element returned by the me
         </ownedParameter>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_j4q7U3yBEemXM4G5UevpIQ" name="return" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_YssgMHyDEemXM4G5UevpIQ" name="EStructuralFeatureTemplate" isAbstract="true">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_hmo8YHyDEemXM4G5UevpIQ" name="feature">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hmo8YXyDEemXM4G5UevpIQ" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hmo8YnyDEemXM4G5UevpIQ" key="propertyEditorFactory" value="editor://documentstructuretemplate/EStructuralFeatureTemplate/EStructuralFeature/"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_hmo8Y3yDEemXM4G5UevpIQ" annotatedElement="_hmo8YHyDEemXM4G5UevpIQ">
+          <body>The feature represented by this template</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWiSMX_EduPJbEsMYXjUQ"/>
+      </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_nrNG4HyDEemXM4G5UevpIQ" name="getEStructuralFeatureValues">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_nrNG4XyDEemXM4G5UevpIQ" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_nrNG4nyDEemXM4G5UevpIQ" key="body" value="return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EStructuralFeatureTemplateOperations.getEStructuralFeatureValues(this,context);"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_nrNG43yDEemXM4G5UevpIQ" annotatedElement="_nrNG4HyDEemXM4G5UevpIQ">
+          <body>This method returns the matching elements referenced by the EReference for the EObject in argument. </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_nrNG5HyDEemXM4G5UevpIQ" name="context">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_nrNG5XyDEemXM4G5UevpIQ" name="return" visibility="public" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWkccX_EduPJbEsMYXjUQ"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nrNG5nyDEemXM4G5UevpIQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nrNG53yDEemXM4G5UevpIQ" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_nrR_YHyDEemXM4G5UevpIQ" name="buildEAttributeValueLabel">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_nrR_YXyDEemXM4G5UevpIQ" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_nrR_YnyDEemXM4G5UevpIQ" key="body" value="return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EStructuralFeatureTemplateOperations.buildEAttributeValueLabel(this,value);"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_nrR_Y3yDEemXM4G5UevpIQ" annotatedElement="_nrR_YHyDEemXM4G5UevpIQ">
+          <body>This method returns the label of the element given as parameter.&#xD;
+The goal of this method is to return a label for each element returned by the method getEReferenceValues()</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_nrR_ZHyDEemXM4G5UevpIQ" name="value">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWkccX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_nrR_ZXyDEemXM4G5UevpIQ" name="returnValue" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         </ownedParameter>
       </ownedOperation>
     </packagedElement>

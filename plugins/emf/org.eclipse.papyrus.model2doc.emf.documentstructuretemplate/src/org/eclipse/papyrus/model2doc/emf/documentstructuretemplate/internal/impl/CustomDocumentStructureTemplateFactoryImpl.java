@@ -15,7 +15,6 @@
 package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.impl;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFeatureColumn;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplateFactoryImpl;
 
@@ -39,13 +38,4 @@ public class CustomDocumentStructureTemplateFactoryImpl extends DocumentStructur
 		return new CustomTextDocumentTemplateImpl();
 	}
 
-	/**
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplateFactoryImpl#createEStructuralFeatureColumn()
-	 *
-	 * @return
-	 */
-	@Override
-	public EStructuralFeatureColumn createEStructuralFeatureColumn() {
-		return new CustomEStructuralFeatureColumnImpl();
-	}
 }

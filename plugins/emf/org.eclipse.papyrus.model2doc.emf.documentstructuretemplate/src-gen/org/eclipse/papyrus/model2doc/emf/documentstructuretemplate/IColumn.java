@@ -91,9 +91,9 @@ public interface IColumn extends EObject {
 	 * This method creates the label from the cell value given as parameter.
 	 * <!-- end-model-doc -->
 	 *
-	 * @model required="true" ordered="false" cellElementRequired="true" cellElementOrdered="false"
+	 * @model required="true" ordered="false" cellValueRequired="true" cellValueOrdered="false"
 	 * @generated
 	 */
-	String buildCellLabel(Object cellElement);
+	String buildCellLabel(Object cellValue);
 
 } // IColumn

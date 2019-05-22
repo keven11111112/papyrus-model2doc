@@ -39,6 +39,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePar
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTableView;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFeatureColumn;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFeatureTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodyPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IColumn;
@@ -243,6 +244,14 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	private EClass eStructuralFeatureColumnEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eStructuralFeatureTemplateEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1003,8 +1012,41 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
-	public EReference getEStructuralFeatureColumn_Feature() {
-		return (EReference) eStructuralFeatureColumnEClass.getEStructuralFeatures().get(0);
+	public EClass getEStructuralFeatureTemplate() {
+		return eStructuralFeatureTemplateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEStructuralFeatureTemplate_Feature() {
+		return (EReference) eStructuralFeatureTemplateEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EOperation getEStructuralFeatureTemplate__GetEStructuralFeatureValues__EObject() {
+		return eStructuralFeatureTemplateEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EOperation getEStructuralFeatureTemplate__BuildEAttributeValueLabel__Object() {
+		return eStructuralFeatureTemplateEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -1135,7 +1177,11 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		eReferenceTableViewEClass = createEClass(EREFERENCE_TABLE_VIEW);
 
 		eStructuralFeatureColumnEClass = createEClass(ESTRUCTURAL_FEATURE_COLUMN);
-		createEReference(eStructuralFeatureColumnEClass, ESTRUCTURAL_FEATURE_COLUMN__FEATURE);
+
+		eStructuralFeatureTemplateEClass = createEClass(ESTRUCTURAL_FEATURE_TEMPLATE);
+		createEReference(eStructuralFeatureTemplateEClass, ESTRUCTURAL_FEATURE_TEMPLATE__FEATURE);
+		createEOperation(eStructuralFeatureTemplateEClass, ESTRUCTURAL_FEATURE_TEMPLATE___GET_ESTRUCTURAL_FEATURE_VALUES__EOBJECT);
+		createEOperation(eStructuralFeatureTemplateEClass, ESTRUCTURAL_FEATURE_TEMPLATE___BUILD_EATTRIBUTE_VALUE_LABEL__OBJECT);
 
 		// Create enums
 		eClassFilterBehaviorEEnum = createEEnum(ECLASS_FILTER_BEHAVIOR);
@@ -1195,6 +1241,7 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		iTableViewEClass.getESuperTypes().add(this.getITemplatePartView());
 		eReferenceTableViewEClass.getESuperTypes().add(this.getEReferenceTemplate());
 		eReferenceTableViewEClass.getESuperTypes().add(this.getITableView());
+		eStructuralFeatureColumnEClass.getESuperTypes().add(this.getEStructuralFeatureTemplate());
 		eStructuralFeatureColumnEClass.getESuperTypes().add(this.getIColumn());
 
 		// Initialize classes, features, and operations; add parameters
@@ -1308,13 +1355,21 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		addEParameter(op, theEcorePackage.getEObject(), "row", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
 		op = initEOperation(getIColumn__BuildCellLabel__Object(), ecorePackage.getEString(), "buildCellLabel", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
-		addEParameter(op, ecorePackage.getEJavaObject(), "cellElement", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+		addEParameter(op, ecorePackage.getEJavaObject(), "cellValue", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(eReferenceTableViewEClass, EReferenceTableView.class, "EReferenceTableView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		initEClass(eStructuralFeatureColumnEClass, EStructuralFeatureColumn.class, "EStructuralFeatureColumn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getEStructuralFeatureColumn_Feature(), theEcorePackage.getEStructuralFeature(), null, "feature", null, 1, 1, EStructuralFeatureColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, //$NON-NLS-1$
-				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(eStructuralFeatureTemplateEClass, EStructuralFeatureTemplate.class, "EStructuralFeatureTemplate", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getEStructuralFeatureTemplate_Feature(), theEcorePackage.getEStructuralFeature(), null, "feature", null, 1, 1, EStructuralFeatureTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, //$NON-NLS-1$
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		op = initEOperation(getEStructuralFeatureTemplate__GetEStructuralFeatureValues__EObject(), theEcorePackage.getEJavaObject(), "getEStructuralFeatureValues", 0, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+		addEParameter(op, theEcorePackage.getEObject(), "context", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
+		op = initEOperation(getEStructuralFeatureTemplate__BuildEAttributeValueLabel__Object(), ecorePackage.getEString(), "buildEAttributeValueLabel", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+		addEParameter(op, theEcorePackage.getEJavaObject(), "value", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
 		// Initialize enums and add enum literals
 		initEEnum(eClassFilterBehaviorEEnum, EClassFilterBehavior.class, "EClassFilterBehavior"); //$NON-NLS-1$
@@ -1357,6 +1412,10 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	protected void createDuplicatesAnnotations() {
 		String source = "duplicates"; //$NON-NLS-1$
 		addAnnotation(eReferenceTableViewEClass,
+				source,
+				new String[] {
+				});
+		addAnnotation(eStructuralFeatureColumnEClass,
 				source,
 				new String[] {
 				});

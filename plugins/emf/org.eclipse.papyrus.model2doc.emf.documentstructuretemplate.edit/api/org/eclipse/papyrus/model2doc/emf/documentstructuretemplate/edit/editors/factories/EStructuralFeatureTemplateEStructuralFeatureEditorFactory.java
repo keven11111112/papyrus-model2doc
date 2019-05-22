@@ -25,21 +25,21 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.internal
 /**
  * Factory used to edit {@link EStructuralFeatureColumn#setFeature(org.eclipse.emf.ecore.EStructuralFeature)}
  */
-public class EStructuralFeatureColumnEStructuralFeatureEditorFactory extends AbstractEcoreEReferenceDialogEditorFactory {
+public class EStructuralFeatureTemplateEStructuralFeatureEditorFactory extends AbstractEcoreEReferenceDialogEditorFactory {
 
 	/**
 	 * This editor is registered with this URI with the extension point org.eclipse.emf.edit.propertyEditorFactories.
 	 * This editor is also registered with this URI in an EAnnotation in the ecore model
 	 */
-	private static final URI SELF_URI = URI.createURI("editor://documentstructuretemplate/EStructuralFeatureColumn/EStructuralFeature/"); //$NON-NLS-1$
+	private static final URI SELF_URI = URI.createURI("editor://documentstructuretemplate/EStructuralFeatureTemplate/EStructuralFeature/"); //$NON-NLS-1$
 
 	/**
 	 *
 	 * Constructor.
 	 *
 	 */
-	public EStructuralFeatureColumnEStructuralFeatureEditorFactory() {
-		super(SELF_URI, DocumentStructureTemplatePackage.eINSTANCE.getEStructuralFeatureColumn_Feature());
+	public EStructuralFeatureTemplateEStructuralFeatureEditorFactory() {
+		super(SELF_URI, DocumentStructureTemplatePackage.eINSTANCE.getEStructuralFeatureTemplate_Feature());
 	}
 
 

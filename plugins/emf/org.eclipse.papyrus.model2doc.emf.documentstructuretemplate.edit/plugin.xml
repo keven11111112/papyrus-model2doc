@@ -40,8 +40,8 @@
             uri="editor://documentstructuretemplate/EClassTemplate/EClass/">
       </factory>
       <factory
-            class="org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.editors.factories.EStructuralFeatureColumnEStructuralFeatureEditorFactory"
-            uri="editor://documentstructuretemplate/EStructuralFeatureColumn/EStructuralFeature/">
+            class="org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.editors.factories.EStructuralFeatureTemplateEStructuralFeatureEditorFactory"
+            uri="editor://documentstructuretemplate/EStructuralFeatureTemplate/EStructuralFeature/">
       </factory>
    </extension>
 </plugin>
