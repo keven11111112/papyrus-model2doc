@@ -1171,7 +1171,7 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jMMyHnWKEemQUasExi-pKA"/>
       </children>
       <element xmi:type="uml:Class" href="documentstructuretemplate.uml#_jMKV0HWKEemQUasExi-pKA"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jMMLAXWKEemQUasExi-pKA" x="-1260" y="240" width="361"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jMMLAXWKEemQUasExi-pKA" x="-1252" y="240" width="345"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_2XwA8HWKEemQUasExi-pKA" type="Interface_Shape">
       <children xmi:type="notation:DecorationNode" xmi:id="_2XwA8nWKEemQUasExi-pKA" type="Interface_NameLabel"/>
@@ -1340,21 +1340,6 @@
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_X4RFYnHJEempmPy7tz2aIQ" points="[0, 440, -643984, -643984]$[0, 344, -643984, -643984]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_YBzb4HHJEempmPy7tz2aIQ" id="(0.49875311720698257,0.0)"/>
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_YBzb4XHJEempmPy7tz2aIQ" id="(0.49875311720698257,1.0)"/>
-    </edges>
-    <edges xmi:type="notation:Connector" xmi:id="_5pqdoHWKEemQUasExi-pKA" type="InterfaceRealization_Edge" source="_jMMLAHWKEemQUasExi-pKA" target="_2XwA8HWKEemQUasExi-pKA">
-      <children xmi:type="notation:DecorationNode" xmi:id="_5prEsHWKEemQUasExi-pKA" type="InterfaceRealization_StereotypeLabel">
-        <styles xmi:type="notation:BooleanValueStyle" xmi:id="_ThMcUHWLEemQUasExi-pKA" name="IS_UPDATED_POSITION" booleanValue="true"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_5prEsXWKEemQUasExi-pKA" y="40"/>
-      </children>
-      <children xmi:type="notation:DecorationNode" xmi:id="_5prEsnWKEemQUasExi-pKA" type="InterfaceRealization_NameLabel">
-        <styles xmi:type="notation:BooleanValueStyle" xmi:id="_TlOnwHWLEemQUasExi-pKA" name="IS_UPDATED_POSITION" booleanValue="true"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_5prEs3WKEemQUasExi-pKA" y="60"/>
-      </children>
-      <styles xmi:type="notation:FontStyle" xmi:id="_5pqdoXWKEemQUasExi-pKA"/>
-      <element xmi:type="uml:InterfaceRealization" href="documentstructuretemplate.uml#_5l27sHWKEemQUasExi-pKA"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_5pqdonWKEemQUasExi-pKA" points="[-1080, 240, -643984, -643984]$[-1080, 200, -643984, -643984]$[-1080, 164, -643984, -643984]"/>
-      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6En7UHWKEemQUasExi-pKA" id="(0.4986149584487535,0.0)"/>
-      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6En7UXWKEemQUasExi-pKA" id="(0.4986149584487535,1.0)"/>
     </edges>
     <edges xmi:type="notation:Connector" xmi:id="_i09hUHWLEemQUasExi-pKA" type="Generalization_Edge" source="_4eyoUFYBEemKJasCEBKPhQ" target="_jMMLAHWKEemQUasExi-pKA">
       <children xmi:type="notation:DecorationNode" xmi:id="_i0-IYHWLEemQUasExi-pKA" type="Generalization_StereotypeLabel">

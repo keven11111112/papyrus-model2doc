@@ -55,6 +55,7 @@ public class EStructuralFeatureColumnImpl extends MinimalEObjectImpl.Container i
 	 * @ordered
 	 */
 	protected static final String CUSTOM_COLUMN_TITLE_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getCustomColumnTitle() <em>Custom Column Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -65,6 +66,7 @@ public class EStructuralFeatureColumnImpl extends MinimalEObjectImpl.Container i
 	 * @ordered
 	 */
 	protected String customColumnTitle = CUSTOM_COLUMN_TITLE_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getFeature() <em>Feature</em>}' reference.
 	 * <!-- begin-user-doc -->

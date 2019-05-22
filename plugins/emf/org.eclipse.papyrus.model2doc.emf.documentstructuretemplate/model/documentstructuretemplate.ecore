@@ -175,35 +175,34 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EReferencePartTemplate" eSuperTypes="#//EReferenceBodySectionPartTemplate #//IComposedBodyPartTemplate">
+  <eClassifiers xsi:type="ecore:EClass" name="EReferencePartTemplate" eSuperTypes="#//EReferenceTemplate #//IComposedBodyPartTemplate">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This part reference an EReference of the parent EClassPartTemplate."/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EReferenceBodySectionPartTemplate" abstract="true"
-      eSuperTypes="#//IBodySectionPartTemplate">
+  <eClassifiers xsi:type="ecore:EClass" name="EReferenceTemplate" abstract="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="AbstractPartTemplate with a EReference field and a method to get the value of a EReference for a given EObject."/>
+      <details key="documentation" value="Abstract Template with a EReference field and a method to get the value of a EReference for a given EObject."/>
     </eAnnotations>
     <eOperations name="getEReferenceValues" ordered="false" upperBound="-1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This method returns the matching elements referenced by the EReference for the EObject in argument. "/>
-        <details key="body" value="final java.util.List&lt;EObject> elements = new java.util.ArrayList&lt;>();&#xA;final EReference eReference = getEReference();&#xA;if (null != eReference) {&#xA;&#x9;if (context.eClass().getEAllReferences().contains(eReference)) {&#xA;&#x9;&#x9;if (eReference.isMany()) {&#xA;&#x9;&#x9;&#x9;elements.addAll(((java.util.Collection&lt;?>) context.eGet(eReference)).stream().filter(EObject.class::isInstance).map(EObject.class::cast).collect(java.util.stream.Collectors.toList()));&#xA;&#x9;&#x9;} else {&#xA;&#x9;&#x9;&#x9;elements.add((EObject) context.eGet(eReference));&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;return org.eclipse.emf.common.util.ECollections.unmodifiableEList(elements);"/>
+        <details key="body" value="return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EReferenceTemplateOperations.getEReferenceValues(this,context);"/>
       </eAnnotations>
       <eParameters name="context" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
     </eOperations>
     <eOperations name="buildEReferenceValueLabel" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This method returns the label of the element given as parameter.&#xD;&#xA;The goal of this method is to return a label for each element returned by the method getEReferenceValues()"/>
-        <details key="body" value="return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.providers.DelegatingToEMFLabelProvider.INSTANCE.getText(context);"/>
+        <details key="body" value="return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EReferenceTemplateOperations.buildEReferenceValueLabel(this,value);"/>
       </eAnnotations>
-      <eParameters name="context" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+      <eParameters name="value" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eReference" ordered="false"
         lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EReference">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A EReference which should be provided by the EClass of the upper level."/>
-        <details key="propertyEditorFactory" value="editor://documentstructuretemplate/EReferenceBodySectionPartTemplate/EReference/"/>
+        <details key="propertyEditorFactory" value="editor://documentstructuretemplate/EReferenceTemplate/EReference/"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -269,7 +268,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EReferenceTableView" eSuperTypes="#//EReferenceBodySectionPartTemplate #//ITableView">
+  <eClassifiers xsi:type="ecore:EClass" name="EReferenceTableView" eSuperTypes="#//EReferenceTemplate #//ITableView">
     <eAnnotations source="duplicates">
       <contents xsi:type="ecore:EOperation" name="getRows" ordered="false" upperBound="-1"
           eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">

@@ -20,25 +20,25 @@ import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>EReference Body Section Part Template</b></em>'.
+ * A representation of the model object '<em><b>EReference Template</b></em>'.
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * AbstractPartTemplate with a EReference field and a method to get the value of a EReference for a given EObject.
+ * Abstract Template with a EReference field and a method to get the value of a EReference for a given EObject.
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceBodySectionPartTemplate#getEReference <em>EReference</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTemplate#getEReference <em>EReference</em>}</li>
  * </ul>
  *
- * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getEReferenceBodySectionPartTemplate()
+ * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getEReferenceTemplate()
  * @model abstract="true"
  * @generated
  */
-public interface EReferenceBodySectionPartTemplate extends IBodySectionPartTemplate {
+public interface EReferenceTemplate extends EObject {
 	/**
 	 * Returns the value of the '<em><b>EReference</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -49,15 +49,15 @@ public interface EReferenceBodySectionPartTemplate extends IBodySectionPartTempl
 	 *
 	 * @return the value of the '<em>EReference</em>' reference.
 	 * @see #setEReference(EReference)
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getEReferenceBodySectionPartTemplate_EReference()
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getEReferenceTemplate_EReference()
 	 * @model required="true" ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel propertyEditorFactory='editor://documentstructuretemplate/EReferenceBodySectionPartTemplate/EReference/'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel propertyEditorFactory='editor://documentstructuretemplate/EReferenceTemplate/EReference/'"
 	 * @generated
 	 */
 	EReference getEReference();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceBodySectionPartTemplate#getEReference <em>EReference</em>}' reference.
+	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTemplate#getEReference <em>EReference</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -76,10 +76,7 @@ public interface EReferenceBodySectionPartTemplate extends IBodySectionPartTempl
 	 * <!-- end-model-doc -->
 	 *
 	 * @model ordered="false" contextRequired="true" contextOrdered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='final java.util.List&lt;EObject&gt; elements = new java.util.ArrayList&lt;&gt;();\nfinal EReference eReference = getEReference();\nif (null != eReference) {\n\tif
-	 *        (context.eClass().getEAllReferences().contains(eReference)) {\n\t\tif (eReference.isMany()) {\n\t\t\telements.addAll(((java.util.Collection&lt;?&gt;)
-	 *        context.eGet(eReference)).stream().filter(EObject.class::isInstance).map(EObject.class::cast).collect(java.util.stream.Collectors.toList()));\n\t\t} else {\n\t\t\telements.add((EObject) context.eGet(eReference));\n\t\t}\n\t}\n}\nreturn
-	 *        org.eclipse.emf.common.util.ECollections.unmodifiableEList(elements);'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EReferenceTemplateOperations.getEReferenceValues(this,context);'"
 	 * @generated
 	 */
 	EList<EObject> getEReferenceValues(EObject context);
@@ -92,10 +89,10 @@ public interface EReferenceBodySectionPartTemplate extends IBodySectionPartTempl
 	 * The goal of this method is to return a label for each element returned by the method getEReferenceValues()
 	 * <!-- end-model-doc -->
 	 *
-	 * @model required="true" ordered="false" contextRequired="true" contextOrdered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.providers.DelegatingToEMFLabelProvider.INSTANCE.getText(context);'"
+	 * @model required="true" ordered="false" valueRequired="true" valueOrdered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EReferenceTemplateOperations.buildEReferenceValueLabel(this,value);'"
 	 * @generated
 	 */
-	String buildEReferenceValueLabel(EObject context);
+	String buildEReferenceValueLabel(EObject value);
 
-} // EReferenceBodySectionPartTemplate
+} // EReferenceTemplate

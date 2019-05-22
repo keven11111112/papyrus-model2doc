@@ -28,5 +28,5 @@ package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate;
  * @model
  * @generated
  */
-public interface EReferencePartTemplate extends EReferenceBodySectionPartTemplate, IComposedBodyPartTemplate {
+public interface EReferencePartTemplate extends EReferenceTemplate, IComposedBodyPartTemplate {
 } // EReferencePartTemplate

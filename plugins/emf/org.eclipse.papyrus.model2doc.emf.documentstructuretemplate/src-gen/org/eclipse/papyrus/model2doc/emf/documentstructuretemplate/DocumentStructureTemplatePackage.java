@@ -1150,45 +1150,15 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int ECLASS_PART_TEMPLATE_OPERATION_COUNT = ICOMPOSED_SUB_BODY_PART_TEMPLATE_OPERATION_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceBodySectionPartTemplateImpl <em>EReference Body Section Part Template</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceTemplateImpl <em>EReference Template</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceBodySectionPartTemplateImpl
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEReferenceBodySectionPartTemplate()
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceTemplateImpl
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEReferenceTemplate()
 	 * @generated
 	 */
-	int EREFERENCE_BODY_SECTION_PART_TEMPLATE = 15;
-
-	/**
-	 * The feature id for the '<em><b>Generate</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EREFERENCE_BODY_SECTION_PART_TEMPLATE__GENERATE = IBODY_SECTION_PART_TEMPLATE__GENERATE;
-
-	/**
-	 * The feature id for the '<em><b>Generate Title</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EREFERENCE_BODY_SECTION_PART_TEMPLATE__GENERATE_TITLE = IBODY_SECTION_PART_TEMPLATE__GENERATE_TITLE;
-
-	/**
-	 * The feature id for the '<em><b>Custom Title</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EREFERENCE_BODY_SECTION_PART_TEMPLATE__CUSTOM_TITLE = IBODY_SECTION_PART_TEMPLATE__CUSTOM_TITLE;
+	int EREFERENCE_TEMPLATE = 15;
 
 	/**
 	 * The feature id for the '<em><b>EReference</b></em>' reference.
@@ -1198,27 +1168,17 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_BODY_SECTION_PART_TEMPLATE__EREFERENCE = IBODY_SECTION_PART_TEMPLATE_FEATURE_COUNT + 0;
+	int EREFERENCE_TEMPLATE__EREFERENCE = 0;
 
 	/**
-	 * The number of structural features of the '<em>EReference Body Section Part Template</em>' class.
+	 * The number of structural features of the '<em>EReference Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_BODY_SECTION_PART_TEMPLATE_FEATURE_COUNT = IBODY_SECTION_PART_TEMPLATE_FEATURE_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Build Part Template Title</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EREFERENCE_BODY_SECTION_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT = IBODY_SECTION_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT;
+	int EREFERENCE_TEMPLATE_FEATURE_COUNT = 1;
 
 	/**
 	 * The operation id for the '<em>Get EReference Values</em>' operation.
@@ -1228,7 +1188,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_BODY_SECTION_PART_TEMPLATE___GET_EREFERENCE_VALUES__EOBJECT = IBODY_SECTION_PART_TEMPLATE_OPERATION_COUNT + 0;
+	int EREFERENCE_TEMPLATE___GET_EREFERENCE_VALUES__EOBJECT = 0;
 
 	/**
 	 * The operation id for the '<em>Build EReference Value Label</em>' operation.
@@ -1238,17 +1198,17 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_BODY_SECTION_PART_TEMPLATE___BUILD_EREFERENCE_VALUE_LABEL__EOBJECT = IBODY_SECTION_PART_TEMPLATE_OPERATION_COUNT + 1;
+	int EREFERENCE_TEMPLATE___BUILD_EREFERENCE_VALUE_LABEL__EOBJECT = 1;
 
 	/**
-	 * The number of operations of the '<em>EReference Body Section Part Template</em>' class.
+	 * The number of operations of the '<em>EReference Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_BODY_SECTION_PART_TEMPLATE_OPERATION_COUNT = IBODY_SECTION_PART_TEMPLATE_OPERATION_COUNT + 2;
+	int EREFERENCE_TEMPLATE_OPERATION_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferencePartTemplateImpl <em>EReference Part Template</em>}' class.
@@ -1262,6 +1222,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int EREFERENCE_PART_TEMPLATE = 14;
 
 	/**
+	 * The feature id for the '<em><b>EReference</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_PART_TEMPLATE__EREFERENCE = EREFERENCE_TEMPLATE__EREFERENCE;
+
+	/**
 	 * The feature id for the '<em><b>Generate</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1269,7 +1239,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_PART_TEMPLATE__GENERATE = EREFERENCE_BODY_SECTION_PART_TEMPLATE__GENERATE;
+	int EREFERENCE_PART_TEMPLATE__GENERATE = EREFERENCE_TEMPLATE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Generate Title</b></em>' attribute.
@@ -1279,7 +1249,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_PART_TEMPLATE__GENERATE_TITLE = EREFERENCE_BODY_SECTION_PART_TEMPLATE__GENERATE_TITLE;
+	int EREFERENCE_PART_TEMPLATE__GENERATE_TITLE = EREFERENCE_TEMPLATE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Custom Title</b></em>' attribute.
@@ -1289,17 +1259,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_PART_TEMPLATE__CUSTOM_TITLE = EREFERENCE_BODY_SECTION_PART_TEMPLATE__CUSTOM_TITLE;
-
-	/**
-	 * The feature id for the '<em><b>EReference</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EREFERENCE_PART_TEMPLATE__EREFERENCE = EREFERENCE_BODY_SECTION_PART_TEMPLATE__EREFERENCE;
+	int EREFERENCE_PART_TEMPLATE__CUSTOM_TITLE = EREFERENCE_TEMPLATE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Sub Body Part Template</b></em>' containment reference list.
@@ -1309,7 +1269,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE = EREFERENCE_BODY_SECTION_PART_TEMPLATE_FEATURE_COUNT + 0;
+	int EREFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE = EREFERENCE_TEMPLATE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>EReference Part Template</em>' class.
@@ -1319,17 +1279,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_PART_TEMPLATE_FEATURE_COUNT = EREFERENCE_BODY_SECTION_PART_TEMPLATE_FEATURE_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Build Part Template Title</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EREFERENCE_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT = EREFERENCE_BODY_SECTION_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT;
+	int EREFERENCE_PART_TEMPLATE_FEATURE_COUNT = EREFERENCE_TEMPLATE_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Get EReference Values</em>' operation.
@@ -1339,7 +1289,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_PART_TEMPLATE___GET_EREFERENCE_VALUES__EOBJECT = EREFERENCE_BODY_SECTION_PART_TEMPLATE___GET_EREFERENCE_VALUES__EOBJECT;
+	int EREFERENCE_PART_TEMPLATE___GET_EREFERENCE_VALUES__EOBJECT = EREFERENCE_TEMPLATE___GET_EREFERENCE_VALUES__EOBJECT;
 
 	/**
 	 * The operation id for the '<em>Build EReference Value Label</em>' operation.
@@ -1349,7 +1299,17 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_PART_TEMPLATE___BUILD_EREFERENCE_VALUE_LABEL__EOBJECT = EREFERENCE_BODY_SECTION_PART_TEMPLATE___BUILD_EREFERENCE_VALUE_LABEL__EOBJECT;
+	int EREFERENCE_PART_TEMPLATE___BUILD_EREFERENCE_VALUE_LABEL__EOBJECT = EREFERENCE_TEMPLATE___BUILD_EREFERENCE_VALUE_LABEL__EOBJECT;
+
+	/**
+	 * The operation id for the '<em>Build Part Template Title</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT = EREFERENCE_TEMPLATE_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>EReference Part Template</em>' class.
@@ -1359,7 +1319,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_PART_TEMPLATE_OPERATION_COUNT = EREFERENCE_BODY_SECTION_PART_TEMPLATE_OPERATION_COUNT + 0;
+	int EREFERENCE_PART_TEMPLATE_OPERATION_COUNT = EREFERENCE_TEMPLATE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITemplatePartView <em>ITemplate Part View</em>}' class.
@@ -1627,6 +1587,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int EREFERENCE_TABLE_VIEW = 20;
 
 	/**
+	 * The feature id for the '<em><b>EReference</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_TABLE_VIEW__EREFERENCE = EREFERENCE_TEMPLATE__EREFERENCE;
+
+	/**
 	 * The feature id for the '<em><b>Generate</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1634,7 +1604,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_TABLE_VIEW__GENERATE = EREFERENCE_BODY_SECTION_PART_TEMPLATE__GENERATE;
+	int EREFERENCE_TABLE_VIEW__GENERATE = EREFERENCE_TEMPLATE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Generate Title</b></em>' attribute.
@@ -1644,7 +1614,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_TABLE_VIEW__GENERATE_TITLE = EREFERENCE_BODY_SECTION_PART_TEMPLATE__GENERATE_TITLE;
+	int EREFERENCE_TABLE_VIEW__GENERATE_TITLE = EREFERENCE_TEMPLATE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Custom Title</b></em>' attribute.
@@ -1654,17 +1624,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_TABLE_VIEW__CUSTOM_TITLE = EREFERENCE_BODY_SECTION_PART_TEMPLATE__CUSTOM_TITLE;
-
-	/**
-	 * The feature id for the '<em><b>EReference</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EREFERENCE_TABLE_VIEW__EREFERENCE = EREFERENCE_BODY_SECTION_PART_TEMPLATE__EREFERENCE;
+	int EREFERENCE_TABLE_VIEW__CUSTOM_TITLE = EREFERENCE_TEMPLATE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Columns</b></em>' containment reference list.
@@ -1674,7 +1634,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_TABLE_VIEW__COLUMNS = EREFERENCE_BODY_SECTION_PART_TEMPLATE_FEATURE_COUNT + 0;
+	int EREFERENCE_TABLE_VIEW__COLUMNS = EREFERENCE_TEMPLATE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Generate Row Header</b></em>' attribute.
@@ -1684,7 +1644,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_TABLE_VIEW__GENERATE_ROW_HEADER = EREFERENCE_BODY_SECTION_PART_TEMPLATE_FEATURE_COUNT + 1;
+	int EREFERENCE_TABLE_VIEW__GENERATE_ROW_HEADER = EREFERENCE_TEMPLATE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Generate Column Header</b></em>' attribute.
@@ -1694,7 +1654,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_TABLE_VIEW__GENERATE_COLUMN_HEADER = EREFERENCE_BODY_SECTION_PART_TEMPLATE_FEATURE_COUNT + 2;
+	int EREFERENCE_TABLE_VIEW__GENERATE_COLUMN_HEADER = EREFERENCE_TEMPLATE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>EReference Table View</em>' class.
@@ -1704,17 +1664,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_TABLE_VIEW_FEATURE_COUNT = EREFERENCE_BODY_SECTION_PART_TEMPLATE_FEATURE_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Build Part Template Title</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EREFERENCE_TABLE_VIEW___BUILD_PART_TEMPLATE_TITLE__EOBJECT = EREFERENCE_BODY_SECTION_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT;
+	int EREFERENCE_TABLE_VIEW_FEATURE_COUNT = EREFERENCE_TEMPLATE_FEATURE_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>Get EReference Values</em>' operation.
@@ -1724,7 +1674,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_TABLE_VIEW___GET_EREFERENCE_VALUES__EOBJECT = EREFERENCE_BODY_SECTION_PART_TEMPLATE___GET_EREFERENCE_VALUES__EOBJECT;
+	int EREFERENCE_TABLE_VIEW___GET_EREFERENCE_VALUES__EOBJECT = EREFERENCE_TEMPLATE___GET_EREFERENCE_VALUES__EOBJECT;
 
 	/**
 	 * The operation id for the '<em>Build EReference Value Label</em>' operation.
@@ -1734,7 +1684,17 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_TABLE_VIEW___BUILD_EREFERENCE_VALUE_LABEL__EOBJECT = EREFERENCE_BODY_SECTION_PART_TEMPLATE___BUILD_EREFERENCE_VALUE_LABEL__EOBJECT;
+	int EREFERENCE_TABLE_VIEW___BUILD_EREFERENCE_VALUE_LABEL__EOBJECT = EREFERENCE_TEMPLATE___BUILD_EREFERENCE_VALUE_LABEL__EOBJECT;
+
+	/**
+	 * The operation id for the '<em>Build Part Template Title</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_TABLE_VIEW___BUILD_PART_TEMPLATE_TITLE__EOBJECT = EREFERENCE_TEMPLATE_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Get Rows</em>' operation.
@@ -1744,7 +1704,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_TABLE_VIEW___GET_ROWS__EOBJECT = EREFERENCE_BODY_SECTION_PART_TEMPLATE_OPERATION_COUNT + 0;
+	int EREFERENCE_TABLE_VIEW___GET_ROWS__EOBJECT = EREFERENCE_TEMPLATE_OPERATION_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Build Row Header Label</em>' operation.
@@ -1754,7 +1714,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_TABLE_VIEW___BUILD_ROW_HEADER_LABEL__EOBJECT = EREFERENCE_BODY_SECTION_PART_TEMPLATE_OPERATION_COUNT + 1;
+	int EREFERENCE_TABLE_VIEW___BUILD_ROW_HEADER_LABEL__EOBJECT = EREFERENCE_TEMPLATE_OPERATION_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>EReference Table View</em>' class.
@@ -1764,7 +1724,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_TABLE_VIEW_OPERATION_COUNT = EREFERENCE_BODY_SECTION_PART_TEMPLATE_OPERATION_COUNT + 2;
+	int EREFERENCE_TABLE_VIEW_OPERATION_COUNT = EREFERENCE_TEMPLATE_OPERATION_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EStructuralFeatureColumnImpl <em>EStructural Feature Column</em>}' class.
@@ -2333,49 +2293,49 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	EClass getEReferencePartTemplate();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceBodySectionPartTemplate <em>EReference Body Section Part Template</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTemplate <em>EReference Template</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the meta object for class '<em>EReference Body Section Part Template</em>'.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceBodySectionPartTemplate
+	 * @return the meta object for class '<em>EReference Template</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTemplate
 	 * @generated
 	 */
-	EClass getEReferenceBodySectionPartTemplate();
+	EClass getEReferenceTemplate();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceBodySectionPartTemplate#getEReference <em>EReference</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTemplate#getEReference <em>EReference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the reference '<em>EReference</em>'.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceBodySectionPartTemplate#getEReference()
-	 * @see #getEReferenceBodySectionPartTemplate()
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTemplate#getEReference()
+	 * @see #getEReferenceTemplate()
 	 * @generated
 	 */
-	EReference getEReferenceBodySectionPartTemplate_EReference();
+	EReference getEReferenceTemplate_EReference();
 
 	/**
-	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceBodySectionPartTemplate#getEReferenceValues(org.eclipse.emf.ecore.EObject) <em>Get EReference Values</em>}' operation.
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTemplate#getEReferenceValues(org.eclipse.emf.ecore.EObject) <em>Get EReference Values</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the '<em>Get EReference Values</em>' operation.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceBodySectionPartTemplate#getEReferenceValues(org.eclipse.emf.ecore.EObject)
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTemplate#getEReferenceValues(org.eclipse.emf.ecore.EObject)
 	 * @generated
 	 */
-	EOperation getEReferenceBodySectionPartTemplate__GetEReferenceValues__EObject();
+	EOperation getEReferenceTemplate__GetEReferenceValues__EObject();
 
 	/**
-	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceBodySectionPartTemplate#buildEReferenceValueLabel(org.eclipse.emf.ecore.EObject) <em>Build EReference Value Label</em>}' operation.
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTemplate#buildEReferenceValueLabel(org.eclipse.emf.ecore.EObject) <em>Build EReference Value Label</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the '<em>Build EReference Value Label</em>' operation.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceBodySectionPartTemplate#buildEReferenceValueLabel(org.eclipse.emf.ecore.EObject)
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTemplate#buildEReferenceValueLabel(org.eclipse.emf.ecore.EObject)
 	 * @generated
 	 */
-	EOperation getEReferenceBodySectionPartTemplate__BuildEReferenceValueLabel__EObject();
+	EOperation getEReferenceTemplate__BuildEReferenceValueLabel__EObject();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITemplatePartView <em>ITemplate Part View</em>}'.
@@ -2994,15 +2954,15 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 		EClass EREFERENCE_PART_TEMPLATE = eINSTANCE.getEReferencePartTemplate();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceBodySectionPartTemplateImpl <em>EReference Body Section Part Template</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceTemplateImpl <em>EReference Template</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
-		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceBodySectionPartTemplateImpl
-		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEReferenceBodySectionPartTemplate()
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceTemplateImpl
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEReferenceTemplate()
 		 * @generated
 		 */
-		EClass EREFERENCE_BODY_SECTION_PART_TEMPLATE = eINSTANCE.getEReferenceBodySectionPartTemplate();
+		EClass EREFERENCE_TEMPLATE = eINSTANCE.getEReferenceTemplate();
 
 		/**
 		 * The meta object literal for the '<em><b>EReference</b></em>' reference feature.
@@ -3011,7 +2971,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 		 *
 		 * @generated
 		 */
-		EReference EREFERENCE_BODY_SECTION_PART_TEMPLATE__EREFERENCE = eINSTANCE.getEReferenceBodySectionPartTemplate_EReference();
+		EReference EREFERENCE_TEMPLATE__EREFERENCE = eINSTANCE.getEReferenceTemplate_EReference();
 
 		/**
 		 * The meta object literal for the '<em><b>Get EReference Values</b></em>' operation.
@@ -3020,7 +2980,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 		 *
 		 * @generated
 		 */
-		EOperation EREFERENCE_BODY_SECTION_PART_TEMPLATE___GET_EREFERENCE_VALUES__EOBJECT = eINSTANCE.getEReferenceBodySectionPartTemplate__GetEReferenceValues__EObject();
+		EOperation EREFERENCE_TEMPLATE___GET_EREFERENCE_VALUES__EOBJECT = eINSTANCE.getEReferenceTemplate__GetEReferenceValues__EObject();
 
 		/**
 		 * The meta object literal for the '<em><b>Build EReference Value Label</b></em>' operation.
@@ -3029,7 +2989,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 		 *
 		 * @generated
 		 */
-		EOperation EREFERENCE_BODY_SECTION_PART_TEMPLATE___BUILD_EREFERENCE_VALUE_LABEL__EOBJECT = eINSTANCE.getEReferenceBodySectionPartTemplate__BuildEReferenceValueLabel__EObject();
+		EOperation EREFERENCE_TEMPLATE___BUILD_EREFERENCE_VALUE_LABEL__EOBJECT = eINSTANCE.getEReferenceTemplate__BuildEReferenceValueLabel__EObject();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITemplatePartView <em>ITemplate Part View</em>}' class.

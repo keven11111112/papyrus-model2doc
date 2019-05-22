@@ -13,7 +13,7 @@
  *
  *****************************************************************************/
 
-package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.operations;
+package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -24,35 +24,48 @@ import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceBodySectionPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTemplate;
 
 /**
- * This class provides operations for the elements {@link AbstractEReferencePartTemplate}
+ * This class provides operations for the elements {@link EReferencetTemplate}
  */
-public class EReferenceBodySectionPartTemplateOperations {
+public class EReferenceTemplateOperations {
 
 
 	/**
 	 *
-	 * @param partTemplate
-	 *            an {@link AbstractEReferencePartTemplate}
+	 * @param eReferenceTemplate
+	 *            an {@link EReferenceTemplate}
 	 * @param context
 	 *            the context used to evaluate the value of the {@link EReference}
 	 * @return
 	 *         a list owning the EObject referenced by this EReference
 	 */
-	public static final EList<EObject> getEReferenceValues(final EReferenceBodySectionPartTemplate partTemplate, final EObject context) {
+	public static final EList<EObject> getEReferenceValues(final EReferenceTemplate eReferenceTemplate, final EObject context) {
 		final List<EObject> elements = new ArrayList<>();
-		final EReference eReference = partTemplate.getEReference();
+		final EReference eReference = eReferenceTemplate.getEReference();
 		if (null != eReference) {
 			if (context.eClass().getEAllReferences().contains(eReference)) {
 				if (eReference.isMany()) {
-					elements.addAll(((Collection<?>) context).stream().filter(EObject.class::isInstance).map(EObject.class::cast).collect(Collectors.toList()));
+					elements.addAll(((Collection<?>) context.eGet(eReference)).stream().filter(EObject.class::isInstance).map(EObject.class::cast).collect(Collectors.toList()));
 				} else {
 					elements.add((EObject) context.eGet(eReference));
 				}
 			}
 		}
 		return ECollections.unmodifiableEList(elements);
+	}
+
+	/**
+	 *
+	 * @param eReferenceTemplate
+	 *            an {@link EReferenceTemplate}
+	 * @param value
+	 *            a value referenced by the {@link EReferenceTemplate#getEReferenceValues(EObject)}
+	 * @return
+	 *         the label for this value
+	 */
+	public static final String buildEReferenceValueLabel(final EReferenceTemplate eReferenceTemplate, final EObject value) {
+		return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.providers.DelegatingToEMFLabelProvider.INSTANCE.getText(value);
 	}
 }

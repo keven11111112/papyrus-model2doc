@@ -17,29 +17,29 @@ package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.editors
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.editors.CustomExtendedDialogCellEditor;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.internal.providers.EReferenceTreeContentProvider;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.internal.validators.SingleEReferenceValidator;
 
 /**
- * Factory used to edit {@link EReferencePartTemplate#setEReference(EReference)}
+ * Factory used to edit {@link EReferenceTemplate#setEReference(EReference)}
  */
-public class EReferenceBodySectionPartTemplateEReferenceEditorFactory extends AbstractEcoreEReferenceDialogEditorFactory {
+public class EReferenceTemplateEReferenceEditorFactory extends AbstractEcoreEReferenceDialogEditorFactory {
 
 	/**
 	 * This editor is registered with this URI with the extension point org.eclipse.emf.edit.propertyEditorFactories.
 	 * This editor is also registered with this URI in an EAnnotation in the ecore model
 	 */
-	private static final URI SELF_URI = URI.createURI("editor://documentstructuretemplate/EReferenceBodySectionPartTemplate/EReference/"); //$NON-NLS-1$
+	private static final URI SELF_URI = URI.createURI("editor://documentstructuretemplate/EReferenceTemplate/EReference/"); //$NON-NLS-1$
 
 	/**
 	 *
 	 * Constructor.
 	 *
 	 */
-	public EReferenceBodySectionPartTemplateEReferenceEditorFactory() {
-		super(SELF_URI, DocumentStructureTemplatePackage.eINSTANCE.getEReferenceBodySectionPartTemplate_EReference());
+	public EReferenceTemplateEReferenceEditorFactory() {
+		super(SELF_URI, DocumentStructureTemplatePackage.eINSTANCE.getEReferenceTemplate_EReference());
 	}
 
 

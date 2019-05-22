@@ -24,5 +24,5 @@ package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate;
  * @model annotation="duplicates"
  * @generated
  */
-public interface EReferenceTableView extends EReferenceBodySectionPartTemplate, ITableView {
+public interface EReferenceTableView extends EReferenceTemplate, ITableView {
 } // EReferenceTableView

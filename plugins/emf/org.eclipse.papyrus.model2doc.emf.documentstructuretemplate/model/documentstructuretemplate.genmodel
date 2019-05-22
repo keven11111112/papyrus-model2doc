@@ -120,17 +120,16 @@
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructuretemplate.ecore#//EReferencePartTemplate"
         labelFeature="#//documentstructuretemplate/IBodySectionPartTemplate/customTitle"/>
-    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructuretemplate.ecore#//EReferenceBodySectionPartTemplate"
-        labelFeature="#//documentstructuretemplate/IBodySectionPartTemplate/customTitle">
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructuretemplate.ecore#//EReferenceTemplate">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//EReferenceBodySectionPartTemplate/eReference"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="documentstructuretemplate.ecore#//EReferenceBodySectionPartTemplate/getEReferenceValues"
-          body="final java.util.List&lt;EObject> elements = new java.util.ArrayList&lt;>();&#xA;final EReference eReference = getEReference();&#xA;if (null != eReference) {&#xA;&#x9;if (context.eClass().getEAllReferences().contains(eReference)) {&#xA;&#x9;&#x9;if (eReference.isMany()) {&#xA;&#x9;&#x9;&#x9;elements.addAll(((java.util.Collection&lt;?>) context.eGet(eReference)).stream().filter(EObject.class::isInstance).map(EObject.class::cast).collect(java.util.stream.Collectors.toList()));&#xA;&#x9;&#x9;} else {&#xA;&#x9;&#x9;&#x9;elements.add((EObject) context.eGet(eReference));&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;return org.eclipse.emf.common.util.ECollections.unmodifiableEList(elements);">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="documentstructuretemplate.ecore#//EReferenceBodySectionPartTemplate/getEReferenceValues/context"/>
+          propertySortChoices="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//EReferenceTemplate/eReference"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="documentstructuretemplate.ecore#//EReferenceTemplate/getEReferenceValues"
+          body="return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EReferenceTemplateOperations.getEReferenceValues(this,context);">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="documentstructuretemplate.ecore#//EReferenceTemplate/getEReferenceValues/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="documentstructuretemplate.ecore#//EReferenceBodySectionPartTemplate/buildEReferenceValueLabel"
-          body="return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.providers.DelegatingToEMFLabelProvider.INSTANCE.getText(context);">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="documentstructuretemplate.ecore#//EReferenceBodySectionPartTemplate/buildEReferenceValueLabel/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="documentstructuretemplate.ecore#//EReferenceTemplate/buildEReferenceValueLabel"
+          body="return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EReferenceTemplateOperations.buildEReferenceValueLabel(this,context);">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="documentstructuretemplate.ecore#//EReferenceTemplate/buildEReferenceValueLabel/value"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructuretemplate.ecore#//ITemplatePartView"/>
