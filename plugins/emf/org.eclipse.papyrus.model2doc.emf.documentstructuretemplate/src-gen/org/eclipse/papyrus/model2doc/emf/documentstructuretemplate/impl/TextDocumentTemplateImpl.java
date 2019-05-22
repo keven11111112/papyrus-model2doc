@@ -543,9 +543,10 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 	 */
 	@Override
 	public String getType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if (null != getDocumentTemplatePrototype()) {
+			return getDocumentTemplatePrototype().getType();
+		}
+		return null;
 	}
 
 	/**
@@ -556,9 +557,10 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 	 */
 	@Override
 	public String getIconPath() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if (null != getDocumentTemplatePrototype()) {
+			return getDocumentTemplatePrototype().getIconPath();
+		}
+		return null;
 	}
 
 	/**

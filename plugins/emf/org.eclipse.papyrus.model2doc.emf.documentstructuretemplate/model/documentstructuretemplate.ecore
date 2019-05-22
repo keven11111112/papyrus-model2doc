@@ -6,8 +6,16 @@
     <details key="originalName" value="DocumentStructureTemplate"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="DocumentTemplate" abstract="true" interface="true">
-    <eOperations name="getType" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eOperations name="getIconPath" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations name="getType" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="if (null != getDocumentTemplatePrototype()) {&#xA;&#x9;return getDocumentTemplatePrototype().getType();&#xA;}&#xA;return null;"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="getIconPath" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="if (null != getDocumentTemplatePrototype()) {&#xA;&#x9;return getDocumentTemplatePrototype().getIconPath();&#xA;}&#xA;return null;"/>
+      </eAnnotations>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="semanticContext" ordered="false"
         eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

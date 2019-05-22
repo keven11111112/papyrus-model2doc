@@ -52,11 +52,17 @@ This field is useless for usage outside of Papyrus, but we set its multiplicity 
         <type xmi:type="uml:Interface" href="pathmap://GENERATOR_CONFIGURATION/generatorconfiguration.uml#_fUlRoFB6EemNlsOH2YnpzQ"/>
       </ownedAttribute>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_MW0s4EmEEem4wpUXttaNpQ" name="getType">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_pH_JwHyKEem_s8OKqzIaBA" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_pH_JwXyKEem_s8OKqzIaBA" key="body" value="if (null != getDocumentTemplatePrototype()) {&#xA;&#x9;return getDocumentTemplatePrototype().getType();&#xA;}&#xA;return null;"/>
+        </eAnnotations>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_UHiQIEmEEem4wpUXttaNpQ" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_WUMU8EmEEem4wpUXttaNpQ" name="getIconPath">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hxXhgHyKEem_s8OKqzIaBA" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hxXhgXyKEem_s8OKqzIaBA" key="body" value="if (null != getDocumentTemplatePrototype()) {&#xA;&#x9;return getDocumentTemplatePrototype().getIconPath();&#xA;}&#xA;return null;"/>
+        </eAnnotations>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_WUMU8UmEEem4wpUXttaNpQ" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         </ownedParameter>
@@ -129,8 +135,6 @@ Its children are an alternation of two kinds of objects: IBodyPartTemplate and I
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_YPrJ8EojEem4wpUXttaNpQ" name="TYPE_OF"/>
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_c0QIYEojEem4wpUXttaNpQ" name="KIND_OF"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:EnumerationLiteral" xmi:id="_NUQBYEonEem4wpUXttaNpQ" name="TYPE_OF"/>
-    <packagedElement xmi:type="uml:EnumerationLiteral" xmi:id="_Ngg7wEonEem4wpUXttaNpQ" name="CopyOf_TYPE_OF_27"/>
     <packagedElement xmi:type="uml:Association" xmi:id="_TBJToFCGEems8PYEpvQE1w" memberEnd="_TBR2gFCGEems8PYEpvQE1w _TBSdkVCGEems8PYEpvQE1w">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_TBQBUFCGEems8PYEpvQE1w" source="org.eclipse.papyrus">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_TBQoYFCGEems8PYEpvQE1w" key="nature" value="UML_Nature"/>

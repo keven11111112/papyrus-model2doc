@@ -53,11 +53,4 @@
  
    
 
-   <extension
-         point="org.eclipse.emf.ecore.factory_override">
-      <factory
-            class="org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.impl.CustomDocumentStructureTemplateFactoryImpl"
-            uri="http://www.eclipse.org/papyrus/model2doc/emf/1.0.0/documentstructuretemplate">
-      </factory>
-   </extension>
 </plugin>

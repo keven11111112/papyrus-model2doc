@@ -58,8 +58,10 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//DocumentTemplate/kindId"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//DocumentTemplate/documentStructureGeneratorConfiguration"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="documentstructuretemplate.ecore#//DocumentTemplate/getType"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="documentstructuretemplate.ecore#//DocumentTemplate/getIconPath"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="documentstructuretemplate.ecore#//DocumentTemplate/getType"
+          body="if (null != getDocumentTemplatePrototype()) {&#xA;&#x9;return getDocumentTemplatePrototype().getType();&#xA;}&#xA;return null;"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="documentstructuretemplate.ecore#//DocumentTemplate/getIconPath"
+          body="if (null != getDocumentTemplatePrototype()) {&#xA;&#x9;return getDocumentTemplatePrototype().getIconPath();&#xA;}&#xA;return null;"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructuretemplate.ecore#//DocumentTemplatePrototype">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//DocumentTemplatePrototype/type"/>
