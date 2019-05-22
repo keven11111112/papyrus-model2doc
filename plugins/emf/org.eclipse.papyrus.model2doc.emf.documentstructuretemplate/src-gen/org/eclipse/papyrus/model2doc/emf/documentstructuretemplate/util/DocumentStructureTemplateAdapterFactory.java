@@ -153,6 +153,11 @@ public class DocumentStructureTemplateAdapterFactory extends AdapterFactoryImpl 
 		}
 
 		@Override
+		public Adapter caseEClassTemplate(EClassTemplate object) {
+			return createEClassTemplateAdapter();
+		}
+
+		@Override
 		public Adapter caseEReferencePartTemplate(EReferencePartTemplate object) {
 			return createEReferencePartTemplateAdapter();
 		}
@@ -421,6 +426,21 @@ public class DocumentStructureTemplateAdapterFactory extends AdapterFactoryImpl 
 	 * @generated
 	 */
 	public Adapter createEClassPartTemplateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassTemplate <em>EClass Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassTemplate
+	 * @generated
+	 */
+	public Adapter createEClassTemplateAdapter() {
 		return null;
 	}
 

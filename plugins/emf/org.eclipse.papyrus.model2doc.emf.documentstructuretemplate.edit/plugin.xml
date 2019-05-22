@@ -36,8 +36,8 @@
             uri="editor://documentstructuretemplate/EReferenceTemplate/EReference/">
       </factory>
       <factory
-            class="org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.editors.factories.EClassPartTemplateEClassEditorFactory"
-            uri="editor://documentstructuretemplate/EClassPartTemplate/EClass/">
+            class="org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.editors.factories.EClassTemplateEClassEditorFactory"
+            uri="editor://documentstructuretemplate/EClassTemplate/EClass/">
       </factory>
       <factory
             class="org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.editors.factories.EStructuralFeatureColumnEStructuralFeatureEditorFactory"

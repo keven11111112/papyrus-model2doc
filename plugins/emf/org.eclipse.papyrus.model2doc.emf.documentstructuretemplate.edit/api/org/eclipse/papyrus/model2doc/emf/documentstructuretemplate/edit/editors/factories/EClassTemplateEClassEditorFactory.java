@@ -23,23 +23,23 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.internal
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.internal.validators.SingleEClassValidator;
 
 /**
- * Factory used to edit {@link ECLassPartTemplate#setEClass(EClass)}
+ * Factory used to edit {@link ECLassTemplate#setEClass(EClass)}
  */
-public class EClassPartTemplateEClassEditorFactory extends AbstractEcoreEReferenceDialogEditorFactory {
+public class EClassTemplateEClassEditorFactory extends AbstractEcoreEReferenceDialogEditorFactory {
 
 	/**
 	 * This editor is registered with this URI with the extension point org.eclipse.emf.edit.propertyEditorFactories.
 	 * This editor is also registered with this URI in an EAnnotation in the ecore model
 	 */
-	private static final URI SELF_URI = URI.createURI("editor://documentstructuretemplate/EClassPartTemplate/EClass/"); //$NON-NLS-1$
+	private static final URI SELF_URI = URI.createURI("editor://documentstructuretemplate/EClassTemplate/EClass/"); //$NON-NLS-1$
 
 	/**
 	 * Constructor.
 	 *
 	 * @param propertyEditorFactoryURI
 	 */
-	public EClassPartTemplateEClassEditorFactory() {
-		super(SELF_URI, DocumentStructureTemplatePackage.eINSTANCE.getEClassPartTemplate_EClass());
+	public EClassTemplateEClassEditorFactory() {
+		super(SELF_URI, DocumentStructureTemplatePackage.eINSTANCE.getEClassTemplate_EClass());
 	}
 
 

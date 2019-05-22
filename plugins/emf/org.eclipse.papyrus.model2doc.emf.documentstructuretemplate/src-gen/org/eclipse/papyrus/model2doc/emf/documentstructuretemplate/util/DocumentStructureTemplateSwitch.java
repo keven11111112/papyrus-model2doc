@@ -230,6 +230,9 @@ public class DocumentStructureTemplateSwitch<T> extends Switch<T> {
 			EClassPartTemplate eClassPartTemplate = (EClassPartTemplate) theEObject;
 			T result = caseEClassPartTemplate(eClassPartTemplate);
 			if (result == null) {
+				result = caseEClassTemplate(eClassPartTemplate);
+			}
+			if (result == null) {
 				result = caseIComposedSubBodyPartTemplate(eClassPartTemplate);
 			}
 			if (result == null) {
@@ -238,6 +241,14 @@ public class DocumentStructureTemplateSwitch<T> extends Switch<T> {
 			if (result == null) {
 				result = caseIBodySectionPartTemplate(eClassPartTemplate);
 			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructureTemplatePackage.ECLASS_TEMPLATE: {
+			EClassTemplate eClassTemplate = (EClassTemplate) theEObject;
+			T result = caseEClassTemplate(eClassTemplate);
 			if (result == null) {
 				result = defaultCase(theEObject);
 			}
@@ -595,6 +606,23 @@ public class DocumentStructureTemplateSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEClassPartTemplate(EClassPartTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EClass Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EClass Template</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEClassTemplate(EClassTemplate object) {
 		return null;
 	}
 

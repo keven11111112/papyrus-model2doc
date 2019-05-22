@@ -200,34 +200,8 @@ Its children are an alternation of two kinds of objects: IBodyPartTemplate and I
       <ownedEnd xmi:type="uml:Property" xmi:id="_ElQyQlX_EemKJasCEBKPhQ" name="icomposedsubbodyparttemplate" type="_cjbRAFX-EemKJasCEBKPhQ" association="_ElNH4FX_EemKJasCEBKPhQ"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_QLb5QFYBEemKJasCEBKPhQ" name="EClassPartTemplate">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_U3f_wFYBEemKJasCEBKPhQ" name="eClass">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Mey2gGdnEemA6PBJwf7UhA" source="http://www.eclipse.org/emf/2002/GenModel">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Mey2gWdnEemA6PBJwf7UhA" key="propertyEditorFactory" value="editor://documentstructuretemplate/EClassPartTemplate/EClass/"/>
-        </eAnnotations>
-        <ownedComment xmi:type="uml:Comment" xmi:id="_2xzasFYEEemKJasCEBKPhQ" annotatedElement="_U3f_wFYBEemKJasCEBKPhQ">
-          <body>An EClass used to filter EObject.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWizcX_EduPJbEsMYXjUQ"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Yjo6UFYBEemKJasCEBKPhQ"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_dipK8FYBEemKJasCEBKPhQ" name="filterRule" type="_SKJWIEojEem4wpUXttaNpQ">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_s-0dsFYEEemKJasCEBKPhQ" annotatedElement="_dipK8FYBEemKJasCEBKPhQ">
-          <body>Description of the way to use to filter EObject in the method isMatchingFilterRule.</body>
-        </ownedComment>
-        <defaultValue xmi:type="uml:LiteralString" xmi:id="_dipK8VYBEemKJasCEBKPhQ" name="TYPE_OF" value="TYPE_OF"/>
-      </ownedAttribute>
+      <generalization xmi:type="uml:Generalization" xmi:id="_Qm2P4HyCEemXM4G5UevpIQ" general="_eEKmEHyBEemXM4G5UevpIQ"/>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_fQX4EFYBEemKJasCEBKPhQ" client="_QLb5QFYBEemKJasCEBKPhQ" supplier="_cjbRAFX-EemKJasCEBKPhQ" contract="_cjbRAFX-EemKJasCEBKPhQ"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_n4VzcFYBEemKJasCEBKPhQ" name="isMatchingFilterRule">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_moP9MFYEEemKJasCEBKPhQ" annotatedElement="_n4VzcFYBEemKJasCEBKPhQ">
-          <body>This method will return true, when the eClass field is null or if the EObject in argument match the filter behavior and false otherwise.</body>
-        </ownedComment>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_n4VzcVYBEemKJasCEBKPhQ" name="inputEObject">
-          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
-        </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_n4VzclYBEemKJasCEBKPhQ" name="return" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
-        </ownedParameter>
-      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_4exaMFYBEemKJasCEBKPhQ" name="EReferencePartTemplate">
       <ownedComment xmi:type="uml:Comment" xmi:id="_fh6pIFYDEemKJasCEBKPhQ" annotatedElement="_4exaMFYBEemKJasCEBKPhQ">
@@ -465,6 +439,41 @@ The goal of this method is to return a label for each element returned by the me
         </ownedParameter>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_7J3PoHWLEemQUasExi-pKA" name="returnValue" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_eEKmEHyBEemXM4G5UevpIQ" name="EClassTemplate" isAbstract="true">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_iJ5FUHyBEemXM4G5UevpIQ" annotatedElement="_eEKmEHyBEemXM4G5UevpIQ">
+        <body>Abstract Template to represent EClasses.</body>
+      </ownedComment>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_j4k0sHyBEemXM4G5UevpIQ" name="eClass">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_j4k0sXyBEemXM4G5UevpIQ" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_j4k0snyBEemXM4G5UevpIQ" key="propertyEditorFactory" value="editor://documentstructuretemplate/EClassTemplate/EClass/"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_j4k0s3yBEemXM4G5UevpIQ" annotatedElement="_j4k0sHyBEemXM4G5UevpIQ">
+          <body>An EClass used to filter EObject.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWizcX_EduPJbEsMYXjUQ"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_j4k0tHyBEemXM4G5UevpIQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_j4n4AHyBEemXM4G5UevpIQ" name="filterRule" type="_SKJWIEojEem4wpUXttaNpQ">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_j4n4AXyBEemXM4G5UevpIQ" annotatedElement="_j4n4AHyBEemXM4G5UevpIQ">
+          <body>Description of the way to use to filter EObject in the method isMatchingFilterRule.</body>
+        </ownedComment>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_j4n4AnyBEemXM4G5UevpIQ" name="TYPE_OF" value="TYPE_OF"/>
+      </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_j4q7UHyBEemXM4G5UevpIQ" name="isMatchingFilterRule">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="__nAqoHyBEemXM4G5UevpIQ" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AVhWcHyCEemXM4G5UevpIQ" key="body" value="return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EClassTemplateOperations.isMatchingFilterRule(this, inputEObject);"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_j4q7UXyBEemXM4G5UevpIQ" annotatedElement="_j4q7UHyBEemXM4G5UevpIQ">
+          <body>This method will return true, when the eClass field is null or if the EObject in argument match the filter behavior and false otherwise.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_j4q7UnyBEemXM4G5UevpIQ" name="inputEObject">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_j4q7U3yBEemXM4G5UevpIQ" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
         </ownedParameter>
       </ownedOperation>
     </packagedElement>

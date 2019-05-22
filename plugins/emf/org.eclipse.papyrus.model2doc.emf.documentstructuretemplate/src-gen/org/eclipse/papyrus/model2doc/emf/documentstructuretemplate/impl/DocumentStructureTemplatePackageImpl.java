@@ -33,6 +33,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTempl
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplatePrototype;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassFilterBehavior;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceListView;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTableView;
@@ -170,6 +171,14 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	private EClass eClassPartTemplateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eClassTemplateEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -730,8 +739,8 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
-	public EReference getEClassPartTemplate_EClass() {
-		return (EReference) eClassPartTemplateEClass.getEStructuralFeatures().get(0);
+	public EClass getEClassTemplate() {
+		return eClassTemplateEClass;
 	}
 
 	/**
@@ -741,8 +750,8 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEClassPartTemplate_FilterRule() {
-		return (EAttribute) eClassPartTemplateEClass.getEStructuralFeatures().get(1);
+	public EReference getEClassTemplate_EClass() {
+		return (EReference) eClassTemplateEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -752,8 +761,19 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
-	public EOperation getEClassPartTemplate__IsMatchingFilterRule__EObject() {
-		return eClassPartTemplateEClass.getEOperations().get(0);
+	public EAttribute getEClassTemplate_FilterRule() {
+		return (EAttribute) eClassTemplateEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EOperation getEClassTemplate__IsMatchingFilterRule__EObject() {
+		return eClassTemplateEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -1082,9 +1102,11 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		iLeafSubBodyPartTemplateEClass = createEClass(ILEAF_SUB_BODY_PART_TEMPLATE);
 
 		eClassPartTemplateEClass = createEClass(ECLASS_PART_TEMPLATE);
-		createEReference(eClassPartTemplateEClass, ECLASS_PART_TEMPLATE__ECLASS);
-		createEAttribute(eClassPartTemplateEClass, ECLASS_PART_TEMPLATE__FILTER_RULE);
-		createEOperation(eClassPartTemplateEClass, ECLASS_PART_TEMPLATE___IS_MATCHING_FILTER_RULE__EOBJECT);
+
+		eClassTemplateEClass = createEClass(ECLASS_TEMPLATE);
+		createEReference(eClassTemplateEClass, ECLASS_TEMPLATE__ECLASS);
+		createEAttribute(eClassTemplateEClass, ECLASS_TEMPLATE__FILTER_RULE);
+		createEOperation(eClassTemplateEClass, ECLASS_TEMPLATE___IS_MATCHING_FILTER_RULE__EOBJECT);
 
 		eReferencePartTemplateEClass = createEClass(EREFERENCE_PART_TEMPLATE);
 
@@ -1164,6 +1186,7 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		iLeafBodyPartTemplateEClass.getESuperTypes().add(this.getIBodyPartTemplate());
 		iComposedSubBodyPartTemplateEClass.getESuperTypes().add(this.getISubBodyPartTemplate());
 		iLeafSubBodyPartTemplateEClass.getESuperTypes().add(this.getISubBodyPartTemplate());
+		eClassPartTemplateEClass.getESuperTypes().add(this.getEClassTemplate());
 		eClassPartTemplateEClass.getESuperTypes().add(this.getIComposedSubBodyPartTemplate());
 		eReferencePartTemplateEClass.getESuperTypes().add(this.getEReferenceTemplate());
 		eReferencePartTemplateEClass.getESuperTypes().add(this.getIComposedBodyPartTemplate());
@@ -1240,11 +1263,13 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		initEClass(iLeafSubBodyPartTemplateEClass, ILeafSubBodyPartTemplate.class, "ILeafSubBodyPartTemplate", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		initEClass(eClassPartTemplateEClass, EClassPartTemplate.class, "EClassPartTemplate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getEClassPartTemplate_EClass(), theEcorePackage.getEClass(), null, "eClass", null, 0, 1, EClassPartTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, //$NON-NLS-1$
-				!IS_ORDERED);
-		initEAttribute(getEClassPartTemplate_FilterRule(), this.getEClassFilterBehavior(), "filterRule", "TYPE_OF", 1, 1, EClassPartTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
 
-		op = initEOperation(getEClassPartTemplate__IsMatchingFilterRule__EObject(), ecorePackage.getEBoolean(), "isMatchingFilterRule", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+		initEClass(eClassTemplateEClass, EClassTemplate.class, "EClassTemplate", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getEClassTemplate_EClass(), theEcorePackage.getEClass(), null, "eClass", null, 0, 1, EClassTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, //$NON-NLS-1$
+				!IS_ORDERED);
+		initEAttribute(getEClassTemplate_FilterRule(), this.getEClassFilterBehavior(), "filterRule", "TYPE_OF", 1, 1, EClassTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
+
+		op = initEOperation(getEClassTemplate__IsMatchingFilterRule__EObject(), ecorePackage.getEBoolean(), "isMatchingFilterRule", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 		addEParameter(op, theEcorePackage.getEObject(), "inputEObject", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(eReferencePartTemplateEClass, EReferencePartTemplate.class, "EReferencePartTemplate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$

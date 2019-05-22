@@ -20,7 +20,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.ui.provider.PropertySource;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.editors.factories.EClassPartTemplateEClassEditorFactory;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.editors.factories.EClassTemplateEClassEditorFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.editors.factories.EReferenceTemplateEReferenceEditorFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.editors.factories.EStructuralFeatureColumnEStructuralFeatureEditorFactory;
 import org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.properties.descriptors.CustomPropertyDescriptor;
@@ -53,8 +53,8 @@ public class DocumentTemplateStructurePropertySource extends PropertySource {
 		if (f == DocumentStructureTemplatePackage.eINSTANCE.getEReferenceTemplate_EReference()) {
 			return new CustomPropertyDescriptor(this.object, itemPropertyDescriptor, new EReferenceTemplateEReferenceEditorFactory());
 		}
-		if (f == DocumentStructureTemplatePackage.eINSTANCE.getEClassPartTemplate_EClass()) {
-			return new CustomPropertyDescriptor(this.object, itemPropertyDescriptor, new EClassPartTemplateEClassEditorFactory());
+		if (f == DocumentStructureTemplatePackage.eINSTANCE.getEClassTemplate_EClass()) {
+			return new CustomPropertyDescriptor(this.object, itemPropertyDescriptor, new EClassTemplateEClassEditorFactory());
 		}
 		if (f == DocumentStructureTemplatePackage.eINSTANCE.getEStructuralFeatureColumn_Feature()) {
 			return new CustomPropertyDescriptor(this.object, itemPropertyDescriptor, new EStructuralFeatureColumnEStructuralFeatureEditorFactory());

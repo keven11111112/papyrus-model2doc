@@ -110,12 +110,14 @@
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructuretemplate.ecore#//ILeafSubBodyPartTemplate"
         labelFeature="#//documentstructuretemplate/IBodySectionPartTemplate/customTitle"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructuretemplate.ecore#//EClassPartTemplate"
-        labelFeature="#//documentstructuretemplate/IBodySectionPartTemplate/customTitle">
+        labelFeature="#//documentstructuretemplate/IBodySectionPartTemplate/customTitle"/>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructuretemplate.ecore#//EClassTemplate">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//EClassPartTemplate/eClass"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//EClassPartTemplate/filterRule"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="documentstructuretemplate.ecore#//EClassPartTemplate/isMatchingFilterRule">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="documentstructuretemplate.ecore#//EClassPartTemplate/isMatchingFilterRule/inputEObject"/>
+          propertySortChoices="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//EClassTemplate/eClass"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//EClassTemplate/filterRule"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="documentstructuretemplate.ecore#//EClassTemplate/isMatchingFilterRule"
+          body="return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EClassTemplateOperations.isMatchingFilterRule(this, inputEObject);">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="documentstructuretemplate.ecore#//EClassTemplate/isMatchingFilterRule/inputEObject"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructuretemplate.ecore#//EReferencePartTemplate"

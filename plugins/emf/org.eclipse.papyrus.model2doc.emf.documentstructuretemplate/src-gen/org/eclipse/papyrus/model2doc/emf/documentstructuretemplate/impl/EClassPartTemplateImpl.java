@@ -27,15 +27,16 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassFilterBehavior;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodyPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedSubBodyPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubBodyPartTemplate;
 
 /**
  * <!-- begin-user-doc -->
@@ -49,13 +50,11 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodyPartTemp
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassPartTemplateImpl#isGenerateTitle <em>Generate Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassPartTemplateImpl#getCustomTitle <em>Custom Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassPartTemplateImpl#getBodyPartTemplates <em>Body Part Template</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassPartTemplateImpl#getEClass <em>EClass</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassPartTemplateImpl#getFilterRule <em>Filter Rule</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class EClassPartTemplateImpl extends MinimalEObjectImpl.Container implements EClassPartTemplate {
+public class EClassPartTemplateImpl extends EClassTemplateImpl implements EClassPartTemplate {
 	/**
 	 * The default value of the '{@link #isGenerate() <em>Generate</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -132,39 +131,6 @@ public class EClassPartTemplateImpl extends MinimalEObjectImpl.Container impleme
 	 * @ordered
 	 */
 	protected EList<IBodyPartTemplate> bodyPartTemplates;
-
-	/**
-	 * The cached value of the '{@link #getEClass() <em>EClass</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see #getEClass()
-	 * @generated
-	 * @ordered
-	 */
-	protected EClass eClass;
-
-	/**
-	 * The default value of the '{@link #getFilterRule() <em>Filter Rule</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see #getFilterRule()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final EClassFilterBehavior FILTER_RULE_EDEFAULT = EClassFilterBehavior.TYPE_OF;
-
-	/**
-	 * The cached value of the '{@link #getFilterRule() <em>Filter Rule</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see #getFilterRule()
-	 * @generated
-	 * @ordered
-	 */
-	protected EClassFilterBehavior filterRule = FILTER_RULE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -286,92 +252,8 @@ public class EClassPartTemplateImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	@Override
-	public EClass getEClass() {
-		if (eClass != null && eClass.eIsProxy()) {
-			InternalEObject oldEClass = (InternalEObject) eClass;
-			eClass = (EClass) eResolveProxy(oldEClass);
-			if (eClass != oldEClass) {
-				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__ECLASS, oldEClass, eClass));
-				}
-			}
-		}
-		return eClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	public EClass basicGetEClass() {
-		return eClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public void setEClass(EClass newEClass) {
-		EClass oldEClass = eClass;
-		eClass = newEClass;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__ECLASS, oldEClass, eClass));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EClassFilterBehavior getFilterRule() {
-		return filterRule;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public void setFilterRule(EClassFilterBehavior newFilterRule) {
-		EClassFilterBehavior oldFilterRule = filterRule;
-		filterRule = newFilterRule == null ? FILTER_RULE_EDEFAULT : newFilterRule;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__FILTER_RULE, oldFilterRule, filterRule));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
 	public String buildPartTemplateTitle(final EObject context) {
 		return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.operations.BodySectionPartTemplateTitleOperations.INSTANCE.buildPartTemplateTitle(this, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public boolean isMatchingFilterRule(EObject inputEObject) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -406,13 +288,6 @@ public class EClassPartTemplateImpl extends MinimalEObjectImpl.Container impleme
 			return getCustomTitle();
 		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__BODY_PART_TEMPLATE:
 			return getBodyPartTemplates();
-		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__ECLASS:
-			if (resolve) {
-				return getEClass();
-			}
-			return basicGetEClass();
-		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__FILTER_RULE:
-			return getFilterRule();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -440,12 +315,6 @@ public class EClassPartTemplateImpl extends MinimalEObjectImpl.Container impleme
 			getBodyPartTemplates().clear();
 			getBodyPartTemplates().addAll((Collection<? extends IBodyPartTemplate>) newValue);
 			return;
-		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__ECLASS:
-			setEClass((EClass) newValue);
-			return;
-		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__FILTER_RULE:
-			setFilterRule((EClassFilterBehavior) newValue);
-			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -471,12 +340,6 @@ public class EClassPartTemplateImpl extends MinimalEObjectImpl.Container impleme
 		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__BODY_PART_TEMPLATE:
 			getBodyPartTemplates().clear();
 			return;
-		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__ECLASS:
-			setEClass((EClass) null);
-			return;
-		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__FILTER_RULE:
-			setFilterRule(FILTER_RULE_EDEFAULT);
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -498,12 +361,113 @@ public class EClassPartTemplateImpl extends MinimalEObjectImpl.Container impleme
 			return CUSTOM_TITLE_EDEFAULT == null ? customTitle != null : !CUSTOM_TITLE_EDEFAULT.equals(customTitle);
 		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__BODY_PART_TEMPLATE:
 			return bodyPartTemplates != null && !bodyPartTemplates.isEmpty();
-		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__ECLASS:
-			return eClass != null;
-		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__FILTER_RULE:
-			return filterRule != FILTER_RULE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == IBodySectionPartTemplate.class) {
+			switch (derivedFeatureID) {
+			case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__GENERATE:
+				return DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE;
+			case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__GENERATE_TITLE:
+				return DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_TITLE;
+			case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__CUSTOM_TITLE:
+				return DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__CUSTOM_TITLE;
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == ISubBodyPartTemplate.class) {
+			switch (derivedFeatureID) {
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == IComposedSubBodyPartTemplate.class) {
+			switch (derivedFeatureID) {
+			case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__BODY_PART_TEMPLATE:
+				return DocumentStructureTemplatePackage.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE;
+			default:
+				return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == IBodySectionPartTemplate.class) {
+			switch (baseFeatureID) {
+			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE:
+				return DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__GENERATE;
+			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_TITLE:
+				return DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__GENERATE_TITLE;
+			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__CUSTOM_TITLE:
+				return DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__CUSTOM_TITLE;
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == ISubBodyPartTemplate.class) {
+			switch (baseFeatureID) {
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == IComposedSubBodyPartTemplate.class) {
+			switch (baseFeatureID) {
+			case DocumentStructureTemplatePackage.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE:
+				return DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__BODY_PART_TEMPLATE;
+			default:
+				return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == IBodySectionPartTemplate.class) {
+			switch (baseOperationID) {
+			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT:
+				return DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT;
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == ISubBodyPartTemplate.class) {
+			switch (baseOperationID) {
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == IComposedSubBodyPartTemplate.class) {
+			switch (baseOperationID) {
+			default:
+				return -1;
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
 	}
 
 	/**
@@ -517,8 +481,6 @@ public class EClassPartTemplateImpl extends MinimalEObjectImpl.Container impleme
 		switch (operationID) {
 		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT:
 			return buildPartTemplateTitle((EObject) arguments.get(0));
-		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE___IS_MATCHING_FILTER_RULE__EOBJECT:
-			return isMatchingFilterRule((EObject) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -542,8 +504,6 @@ public class EClassPartTemplateImpl extends MinimalEObjectImpl.Container impleme
 		result.append(generateTitle);
 		result.append(", customTitle: "); //$NON-NLS-1$
 		result.append(customTitle);
-		result.append(", filterRule: "); //$NON-NLS-1$
-		result.append(filterRule);
 		result.append(')');
 		return result.toString();
 	}
