@@ -24,7 +24,7 @@
 		<mylyn.wikitext.version>3.0.29</mylyn.wikitext.version>
 
 		<targetPlatform.groupID>org.eclipse.papyrus.model2doc.releng-main</targetPlatform.groupID>
-		<targetPlatform.artifactID>org.eclipse.papyrus.model2doc.targetplatform.photon</targetPlatform.artifactID>
+		<targetPlatform.artifactID>org.eclipse.papyrus.model2doc.targetplatform</targetPlatform.artifactID>
 		<targetPlatform.version>0.7.0-SNAPSHOT</targetPlatform.version>
 	</properties>
 
@@ -229,11 +229,6 @@
 						<environment>
 							<os>win32</os>
 							<ws>win32</ws>
-							<arch>x86</arch>
-						</environment>
-						<environment>
-							<os>win64</os>
-							<ws>win64</ws>
 							<arch>x86_64</arch>
 						</environment>
 						<environment>
