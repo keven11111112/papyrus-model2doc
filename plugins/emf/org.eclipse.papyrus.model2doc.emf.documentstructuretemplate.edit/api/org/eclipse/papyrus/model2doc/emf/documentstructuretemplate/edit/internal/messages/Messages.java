@@ -27,6 +27,7 @@ public class Messages extends NLS {
 	public static String AbstractEObjectReferenceDialogEditorFactory_DialogTitle;
 	public static String AbstractSelectionStatusValidator_NoSelection;
 	public static String EcoreLabelProvider_FeatureOrigin;
+	public static String SingleEAttributeValidator_YouMustSelectOneEAttribute;
 	public static String SingleEClassValidator_YouMustSelectOneEClass;
 	public static String SingleEReferenceValidator_YouMustSelectOneREference;
 	public static String SingleEStructuralFeatureValidator_YouMustSelectOneEStructuralFeature;

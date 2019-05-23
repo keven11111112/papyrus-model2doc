@@ -20,6 +20,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.ui.provider.PropertySource;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.editors.factories.EAttributeTemplateEAttributeEditorFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.editors.factories.EClassTemplateEClassEditorFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.editors.factories.EReferenceTemplateEReferenceEditorFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.editors.factories.EStructuralFeatureTemplateEStructuralFeatureEditorFactory;
@@ -58,6 +59,9 @@ public class DocumentTemplateStructurePropertySource extends PropertySource {
 		}
 		if (f == DocumentStructureTemplatePackage.eINSTANCE.getEStructuralFeatureTemplate_Feature()) {
 			return new CustomPropertyDescriptor(this.object, itemPropertyDescriptor, new EStructuralFeatureTemplateEStructuralFeatureEditorFactory());
+		}
+		if (f == DocumentStructureTemplatePackage.eINSTANCE.getEAttributeTemplate_EAttribute()) {
+			return new CustomPropertyDescriptor(this.object, itemPropertyDescriptor, new EAttributeTemplateEAttributeEditorFactory());
 		}
 		return super.createPropertyDescriptor(itemPropertyDescriptor);
 	}

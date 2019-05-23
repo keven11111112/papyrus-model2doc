@@ -1414,37 +1414,6 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int ITEMPLATE_PART_VIEW_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceListViewImpl <em>EReference List View</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceListViewImpl
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEReferenceListView()
-	 * @generated
-	 */
-	int EREFERENCE_LIST_VIEW = 18;
-
-	/**
-	 * The number of structural features of the '<em>EReference List View</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EREFERENCE_LIST_VIEW_FEATURE_COUNT = ITEMPLATE_PART_VIEW_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>EReference List View</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EREFERENCE_LIST_VIEW_OPERATION_COUNT = ITEMPLATE_PART_VIEW_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView <em>ITable View</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1453,7 +1422,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getITableView()
 	 * @generated
 	 */
-	int ITABLE_VIEW = 19;
+	int ITABLE_VIEW = 18;
 
 	/**
 	 * The feature id for the '<em><b>Generate</b></em>' attribute.
@@ -1574,7 +1543,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getIColumn()
 	 * @generated
 	 */
-	int ICOLUMN = 20;
+	int ICOLUMN = 19;
 
 	/**
 	 * The feature id for the '<em><b>Custom Column Title</b></em>' attribute.
@@ -1645,7 +1614,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEReferenceTableView()
 	 * @generated
 	 */
-	int EREFERENCE_TABLE_VIEW = 21;
+	int EREFERENCE_TABLE_VIEW = 20;
 
 	/**
 	 * The feature id for the '<em><b>EReference</b></em>' reference.
@@ -1796,7 +1765,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEStructuralFeatureTemplate()
 	 * @generated
 	 */
-	int ESTRUCTURAL_FEATURE_TEMPLATE = 23;
+	int ESTRUCTURAL_FEATURE_TEMPLATE = 22;
 
 	/**
 	 * The feature id for the '<em><b>Feature</b></em>' reference.
@@ -1857,7 +1826,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEStructuralFeatureColumn()
 	 * @generated
 	 */
-	int ESTRUCTURAL_FEATURE_COLUMN = 22;
+	int ESTRUCTURAL_FEATURE_COLUMN = 21;
 
 	/**
 	 * The feature id for the '<em><b>Feature</b></em>' reference.
@@ -1950,6 +1919,988 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int ESTRUCTURAL_FEATURE_COLUMN_OPERATION_COUNT = ESTRUCTURAL_FEATURE_TEMPLATE_OPERATION_COUNT + 3;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IListItemTemplate <em>IList Item Template</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IListItemTemplate
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getIListItemTemplate()
+	 * @generated
+	 */
+	int ILIST_ITEM_TEMPLATE = 23;
+
+	/**
+	 * The feature id for the '<em><b>Generate Item</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ILIST_ITEM_TEMPLATE__GENERATE_ITEM = 0;
+
+	/**
+	 * The feature id for the '<em><b>Custom Item Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ILIST_ITEM_TEMPLATE__CUSTOM_ITEM_LABEL = 1;
+
+	/**
+	 * The number of structural features of the '<em>IList Item Template</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ILIST_ITEM_TEMPLATE_FEATURE_COUNT = 2;
+
+	/**
+	 * The operation id for the '<em>Build Item Label</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ILIST_ITEM_TEMPLATE___BUILD_ITEM_LABEL__OBJECT = 0;
+
+	/**
+	 * The operation id for the '<em>Get Items</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ILIST_ITEM_TEMPLATE___GET_ITEMS__EOBJECT = 1;
+
+	/**
+	 * The number of operations of the '<em>IList Item Template</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ILIST_ITEM_TEMPLATE_OPERATION_COUNT = 2;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IRootListItemTemplate <em>IRoot List Item Template</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IRootListItemTemplate
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getIRootListItemTemplate()
+	 * @generated
+	 */
+	int IROOT_LIST_ITEM_TEMPLATE = 25;
+
+	/**
+	 * The feature id for the '<em><b>Generate Item</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IROOT_LIST_ITEM_TEMPLATE__GENERATE_ITEM = ILIST_ITEM_TEMPLATE__GENERATE_ITEM;
+
+	/**
+	 * The feature id for the '<em><b>Custom Item Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IROOT_LIST_ITEM_TEMPLATE__CUSTOM_ITEM_LABEL = ILIST_ITEM_TEMPLATE__CUSTOM_ITEM_LABEL;
+
+	/**
+	 * The number of structural features of the '<em>IRoot List Item Template</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IROOT_LIST_ITEM_TEMPLATE_FEATURE_COUNT = ILIST_ITEM_TEMPLATE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Build Item Label</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IROOT_LIST_ITEM_TEMPLATE___BUILD_ITEM_LABEL__OBJECT = ILIST_ITEM_TEMPLATE___BUILD_ITEM_LABEL__OBJECT;
+
+	/**
+	 * The operation id for the '<em>Get Items</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IROOT_LIST_ITEM_TEMPLATE___GET_ITEMS__EOBJECT = ILIST_ITEM_TEMPLATE___GET_ITEMS__EOBJECT;
+
+	/**
+	 * The number of operations of the '<em>IRoot List Item Template</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IROOT_LIST_ITEM_TEMPLATE_OPERATION_COUNT = ILIST_ITEM_TEMPLATE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafListItemTemplate <em>ILeaf List Item Template</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafListItemTemplate
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getILeafListItemTemplate()
+	 * @generated
+	 */
+	int ILEAF_LIST_ITEM_TEMPLATE = 24;
+
+	/**
+	 * The feature id for the '<em><b>Generate Item</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ILEAF_LIST_ITEM_TEMPLATE__GENERATE_ITEM = IROOT_LIST_ITEM_TEMPLATE__GENERATE_ITEM;
+
+	/**
+	 * The feature id for the '<em><b>Custom Item Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ILEAF_LIST_ITEM_TEMPLATE__CUSTOM_ITEM_LABEL = IROOT_LIST_ITEM_TEMPLATE__CUSTOM_ITEM_LABEL;
+
+	/**
+	 * The number of structural features of the '<em>ILeaf List Item Template</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ILEAF_LIST_ITEM_TEMPLATE_FEATURE_COUNT = IROOT_LIST_ITEM_TEMPLATE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Build Item Label</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ILEAF_LIST_ITEM_TEMPLATE___BUILD_ITEM_LABEL__OBJECT = IROOT_LIST_ITEM_TEMPLATE___BUILD_ITEM_LABEL__OBJECT;
+
+	/**
+	 * The operation id for the '<em>Get Items</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ILEAF_LIST_ITEM_TEMPLATE___GET_ITEMS__EOBJECT = IROOT_LIST_ITEM_TEMPLATE___GET_ITEMS__EOBJECT;
+
+	/**
+	 * The number of operations of the '<em>ILeaf List Item Template</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ILEAF_LIST_ITEM_TEMPLATE_OPERATION_COUNT = IROOT_LIST_ITEM_TEMPLATE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedListItemTemplate <em>IComposed List Item Template</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedListItemTemplate
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getIComposedListItemTemplate()
+	 * @generated
+	 */
+	int ICOMPOSED_LIST_ITEM_TEMPLATE = 26;
+
+	/**
+	 * The feature id for the '<em><b>Generate Item</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ICOMPOSED_LIST_ITEM_TEMPLATE__GENERATE_ITEM = IROOT_LIST_ITEM_TEMPLATE__GENERATE_ITEM;
+
+	/**
+	 * The feature id for the '<em><b>Custom Item Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ICOMPOSED_LIST_ITEM_TEMPLATE__CUSTOM_ITEM_LABEL = IROOT_LIST_ITEM_TEMPLATE__CUSTOM_ITEM_LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Sub List Item Template</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ICOMPOSED_LIST_ITEM_TEMPLATE__SUB_LIST_ITEM_TEMPLATE = IROOT_LIST_ITEM_TEMPLATE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>IComposed List Item Template</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ICOMPOSED_LIST_ITEM_TEMPLATE_FEATURE_COUNT = IROOT_LIST_ITEM_TEMPLATE_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Build Item Label</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ICOMPOSED_LIST_ITEM_TEMPLATE___BUILD_ITEM_LABEL__OBJECT = IROOT_LIST_ITEM_TEMPLATE___BUILD_ITEM_LABEL__OBJECT;
+
+	/**
+	 * The operation id for the '<em>Get Items</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ICOMPOSED_LIST_ITEM_TEMPLATE___GET_ITEMS__EOBJECT = IROOT_LIST_ITEM_TEMPLATE___GET_ITEMS__EOBJECT;
+
+	/**
+	 * The number of operations of the '<em>IComposed List Item Template</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ICOMPOSED_LIST_ITEM_TEMPLATE_OPERATION_COUNT = IROOT_LIST_ITEM_TEMPLATE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubListItemTemplate <em>ISub List Item Template</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubListItemTemplate
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getISubListItemTemplate()
+	 * @generated
+	 */
+	int ISUB_LIST_ITEM_TEMPLATE = 27;
+
+	/**
+	 * The feature id for the '<em><b>Generate Item</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ISUB_LIST_ITEM_TEMPLATE__GENERATE_ITEM = ILIST_ITEM_TEMPLATE__GENERATE_ITEM;
+
+	/**
+	 * The feature id for the '<em><b>Custom Item Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ISUB_LIST_ITEM_TEMPLATE__CUSTOM_ITEM_LABEL = ILIST_ITEM_TEMPLATE__CUSTOM_ITEM_LABEL;
+
+	/**
+	 * The number of structural features of the '<em>ISub List Item Template</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ISUB_LIST_ITEM_TEMPLATE_FEATURE_COUNT = ILIST_ITEM_TEMPLATE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Build Item Label</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ISUB_LIST_ITEM_TEMPLATE___BUILD_ITEM_LABEL__OBJECT = ILIST_ITEM_TEMPLATE___BUILD_ITEM_LABEL__OBJECT;
+
+	/**
+	 * The operation id for the '<em>Get Items</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ISUB_LIST_ITEM_TEMPLATE___GET_ITEMS__EOBJECT = ILIST_ITEM_TEMPLATE___GET_ITEMS__EOBJECT;
+
+	/**
+	 * The number of operations of the '<em>ISub List Item Template</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ISUB_LIST_ITEM_TEMPLATE_OPERATION_COUNT = ILIST_ITEM_TEMPLATE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedSubListItemTemplate <em>IComposed Sub List Item Template</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedSubListItemTemplate
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getIComposedSubListItemTemplate()
+	 * @generated
+	 */
+	int ICOMPOSED_SUB_LIST_ITEM_TEMPLATE = 28;
+
+	/**
+	 * The feature id for the '<em><b>Generate Item</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ICOMPOSED_SUB_LIST_ITEM_TEMPLATE__GENERATE_ITEM = ISUB_LIST_ITEM_TEMPLATE__GENERATE_ITEM;
+
+	/**
+	 * The feature id for the '<em><b>Custom Item Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ICOMPOSED_SUB_LIST_ITEM_TEMPLATE__CUSTOM_ITEM_LABEL = ISUB_LIST_ITEM_TEMPLATE__CUSTOM_ITEM_LABEL;
+
+	/**
+	 * The feature id for the '<em><b>List Item Template</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ICOMPOSED_SUB_LIST_ITEM_TEMPLATE__LIST_ITEM_TEMPLATE = ISUB_LIST_ITEM_TEMPLATE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>IComposed Sub List Item Template</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ICOMPOSED_SUB_LIST_ITEM_TEMPLATE_FEATURE_COUNT = ISUB_LIST_ITEM_TEMPLATE_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Build Item Label</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ICOMPOSED_SUB_LIST_ITEM_TEMPLATE___BUILD_ITEM_LABEL__OBJECT = ISUB_LIST_ITEM_TEMPLATE___BUILD_ITEM_LABEL__OBJECT;
+
+	/**
+	 * The operation id for the '<em>Get Items</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ICOMPOSED_SUB_LIST_ITEM_TEMPLATE___GET_ITEMS__EOBJECT = ISUB_LIST_ITEM_TEMPLATE___GET_ITEMS__EOBJECT;
+
+	/**
+	 * The number of operations of the '<em>IComposed Sub List Item Template</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ICOMPOSED_SUB_LIST_ITEM_TEMPLATE_OPERATION_COUNT = ISUB_LIST_ITEM_TEMPLATE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafSubListItemTemplate <em>ILeaf Sub List Item Template</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafSubListItemTemplate
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getILeafSubListItemTemplate()
+	 * @generated
+	 */
+	int ILEAF_SUB_LIST_ITEM_TEMPLATE = 29;
+
+	/**
+	 * The feature id for the '<em><b>Generate Item</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ILEAF_SUB_LIST_ITEM_TEMPLATE__GENERATE_ITEM = ISUB_LIST_ITEM_TEMPLATE__GENERATE_ITEM;
+
+	/**
+	 * The feature id for the '<em><b>Custom Item Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ILEAF_SUB_LIST_ITEM_TEMPLATE__CUSTOM_ITEM_LABEL = ISUB_LIST_ITEM_TEMPLATE__CUSTOM_ITEM_LABEL;
+
+	/**
+	 * The number of structural features of the '<em>ILeaf Sub List Item Template</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ILEAF_SUB_LIST_ITEM_TEMPLATE_FEATURE_COUNT = ISUB_LIST_ITEM_TEMPLATE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Build Item Label</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ILEAF_SUB_LIST_ITEM_TEMPLATE___BUILD_ITEM_LABEL__OBJECT = ISUB_LIST_ITEM_TEMPLATE___BUILD_ITEM_LABEL__OBJECT;
+
+	/**
+	 * The operation id for the '<em>Get Items</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ILEAF_SUB_LIST_ITEM_TEMPLATE___GET_ITEMS__EOBJECT = ISUB_LIST_ITEM_TEMPLATE___GET_ITEMS__EOBJECT;
+
+	/**
+	 * The number of operations of the '<em>ILeaf Sub List Item Template</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ILEAF_SUB_LIST_ITEM_TEMPLATE_OPERATION_COUNT = ISUB_LIST_ITEM_TEMPLATE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceListItemTemplateImpl <em>EReference List Item Template</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceListItemTemplateImpl
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEReferenceListItemTemplate()
+	 * @generated
+	 */
+	int EREFERENCE_LIST_ITEM_TEMPLATE = 30;
+
+	/**
+	 * The feature id for the '<em><b>EReference</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_LIST_ITEM_TEMPLATE__EREFERENCE = EREFERENCE_TEMPLATE__EREFERENCE;
+
+	/**
+	 * The feature id for the '<em><b>Generate Item</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_LIST_ITEM_TEMPLATE__GENERATE_ITEM = EREFERENCE_TEMPLATE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Custom Item Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_LIST_ITEM_TEMPLATE__CUSTOM_ITEM_LABEL = EREFERENCE_TEMPLATE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Sub List Item Template</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_LIST_ITEM_TEMPLATE__SUB_LIST_ITEM_TEMPLATE = EREFERENCE_TEMPLATE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>EReference List Item Template</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_LIST_ITEM_TEMPLATE_FEATURE_COUNT = EREFERENCE_TEMPLATE_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Get EReference Values</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_LIST_ITEM_TEMPLATE___GET_EREFERENCE_VALUES__EOBJECT = EREFERENCE_TEMPLATE___GET_EREFERENCE_VALUES__EOBJECT;
+
+	/**
+	 * The operation id for the '<em>Build EReference Value Label</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_LIST_ITEM_TEMPLATE___BUILD_EREFERENCE_VALUE_LABEL__EOBJECT = EREFERENCE_TEMPLATE___BUILD_EREFERENCE_VALUE_LABEL__EOBJECT;
+
+	/**
+	 * The operation id for the '<em>Build Item Label</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_LIST_ITEM_TEMPLATE___BUILD_ITEM_LABEL__OBJECT = EREFERENCE_TEMPLATE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Items</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_LIST_ITEM_TEMPLATE___GET_ITEMS__EOBJECT = EREFERENCE_TEMPLATE_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>EReference List Item Template</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_LIST_ITEM_TEMPLATE_OPERATION_COUNT = EREFERENCE_TEMPLATE_OPERATION_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EAttributeTemplateImpl <em>EAttribute Template</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EAttributeTemplateImpl
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEAttributeTemplate()
+	 * @generated
+	 */
+	int EATTRIBUTE_TEMPLATE = 32;
+
+	/**
+	 * The feature id for the '<em><b>EAttribute</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EATTRIBUTE_TEMPLATE__EATTRIBUTE = 0;
+
+	/**
+	 * The number of structural features of the '<em>EAttribute Template</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EATTRIBUTE_TEMPLATE_FEATURE_COUNT = 1;
+
+	/**
+	 * The operation id for the '<em>Build EAttribute Value Label</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EATTRIBUTE_TEMPLATE___BUILD_EATTRIBUTE_VALUE_LABEL__OBJECT = 0;
+
+	/**
+	 * The operation id for the '<em>Get EAttribute Values</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EATTRIBUTE_TEMPLATE___GET_EATTRIBUTE_VALUES__EOBJECT = 1;
+
+	/**
+	 * The number of operations of the '<em>EAttribute Template</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EATTRIBUTE_TEMPLATE_OPERATION_COUNT = 2;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EAttributeListItemTemplateImpl <em>EAttribute List Item Template</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EAttributeListItemTemplateImpl
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEAttributeListItemTemplate()
+	 * @generated
+	 */
+	int EATTRIBUTE_LIST_ITEM_TEMPLATE = 31;
+
+	/**
+	 * The feature id for the '<em><b>EAttribute</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EATTRIBUTE_LIST_ITEM_TEMPLATE__EATTRIBUTE = EATTRIBUTE_TEMPLATE__EATTRIBUTE;
+
+	/**
+	 * The feature id for the '<em><b>Generate Item</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EATTRIBUTE_LIST_ITEM_TEMPLATE__GENERATE_ITEM = EATTRIBUTE_TEMPLATE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Custom Item Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EATTRIBUTE_LIST_ITEM_TEMPLATE__CUSTOM_ITEM_LABEL = EATTRIBUTE_TEMPLATE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>EAttribute List Item Template</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EATTRIBUTE_LIST_ITEM_TEMPLATE_FEATURE_COUNT = EATTRIBUTE_TEMPLATE_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Build EAttribute Value Label</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EATTRIBUTE_LIST_ITEM_TEMPLATE___BUILD_EATTRIBUTE_VALUE_LABEL__OBJECT = EATTRIBUTE_TEMPLATE___BUILD_EATTRIBUTE_VALUE_LABEL__OBJECT;
+
+	/**
+	 * The operation id for the '<em>Get EAttribute Values</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EATTRIBUTE_LIST_ITEM_TEMPLATE___GET_EATTRIBUTE_VALUES__EOBJECT = EATTRIBUTE_TEMPLATE___GET_EATTRIBUTE_VALUES__EOBJECT;
+
+	/**
+	 * The operation id for the '<em>Build Item Label</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EATTRIBUTE_LIST_ITEM_TEMPLATE___BUILD_ITEM_LABEL__OBJECT = EATTRIBUTE_TEMPLATE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Items</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EATTRIBUTE_LIST_ITEM_TEMPLATE___GET_ITEMS__EOBJECT = EATTRIBUTE_TEMPLATE_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>EAttribute List Item Template</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EATTRIBUTE_LIST_ITEM_TEMPLATE_OPERATION_COUNT = EATTRIBUTE_TEMPLATE_OPERATION_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassListItemTemplateImpl <em>EClass List Item Template</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassListItemTemplateImpl
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEClassListItemTemplate()
+	 * @generated
+	 */
+	int ECLASS_LIST_ITEM_TEMPLATE = 33;
+
+	/**
+	 * The feature id for the '<em><b>EClass</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ECLASS_LIST_ITEM_TEMPLATE__ECLASS = ECLASS_TEMPLATE__ECLASS;
+
+	/**
+	 * The feature id for the '<em><b>Filter Rule</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ECLASS_LIST_ITEM_TEMPLATE__FILTER_RULE = ECLASS_TEMPLATE__FILTER_RULE;
+
+	/**
+	 * The feature id for the '<em><b>Generate Item</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ECLASS_LIST_ITEM_TEMPLATE__GENERATE_ITEM = ECLASS_TEMPLATE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Custom Item Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ECLASS_LIST_ITEM_TEMPLATE__CUSTOM_ITEM_LABEL = ECLASS_TEMPLATE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>List Item Template</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ECLASS_LIST_ITEM_TEMPLATE__LIST_ITEM_TEMPLATE = ECLASS_TEMPLATE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>EClass List Item Template</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ECLASS_LIST_ITEM_TEMPLATE_FEATURE_COUNT = ECLASS_TEMPLATE_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Is Matching Filter Rule</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ECLASS_LIST_ITEM_TEMPLATE___IS_MATCHING_FILTER_RULE__EOBJECT = ECLASS_TEMPLATE___IS_MATCHING_FILTER_RULE__EOBJECT;
+
+	/**
+	 * The operation id for the '<em>Build Item Label</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ECLASS_LIST_ITEM_TEMPLATE___BUILD_ITEM_LABEL__OBJECT = ECLASS_TEMPLATE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Items</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ECLASS_LIST_ITEM_TEMPLATE___GET_ITEMS__EOBJECT = ECLASS_TEMPLATE_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>EClass List Item Template</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ECLASS_LIST_ITEM_TEMPLATE_OPERATION_COUNT = ECLASS_TEMPLATE_OPERATION_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TreeListViewImpl <em>Tree List View</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TreeListViewImpl
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getTreeListView()
+	 * @generated
+	 */
+	int TREE_LIST_VIEW = 34;
+
+	/**
+	 * The feature id for the '<em><b>Generate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TREE_LIST_VIEW__GENERATE = ILEAF_BODY_PART_TEMPLATE__GENERATE;
+
+	/**
+	 * The feature id for the '<em><b>Generate Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TREE_LIST_VIEW__GENERATE_TITLE = ILEAF_BODY_PART_TEMPLATE__GENERATE_TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Custom Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TREE_LIST_VIEW__CUSTOM_TITLE = ILEAF_BODY_PART_TEMPLATE__CUSTOM_TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Root List Item Template</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TREE_LIST_VIEW__ROOT_LIST_ITEM_TEMPLATE = ILEAF_BODY_PART_TEMPLATE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Tree List View</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TREE_LIST_VIEW_FEATURE_COUNT = ILEAF_BODY_PART_TEMPLATE_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Build Part Template Title</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TREE_LIST_VIEW___BUILD_PART_TEMPLATE_TITLE__EOBJECT = ILEAF_BODY_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT;
+
+	/**
+	 * The number of operations of the '<em>Tree List View</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TREE_LIST_VIEW_OPERATION_COUNT = ILEAF_BODY_PART_TEMPLATE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassFilterBehavior <em>EClass Filter Behavior</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1958,7 +2909,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEClassFilterBehavior()
 	 * @generated
 	 */
-	int ECLASS_FILTER_BEHAVIOR = 24;
+	int ECLASS_FILTER_BEHAVIOR = 35;
 
 
 	/**
@@ -2502,17 +3453,6 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	EClass getITemplatePartView();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceListView <em>EReference List View</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the meta object for class '<em>EReference List View</em>'.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceListView
-	 * @generated
-	 */
-	EClass getEReferenceListView();
-
-	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView <em>ITable View</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2703,6 +3643,254 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getEStructuralFeatureTemplate__BuildEAttributeValueLabel__Object();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IListItemTemplate <em>IList Item Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>IList Item Template</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IListItemTemplate
+	 * @generated
+	 */
+	EClass getIListItemTemplate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IListItemTemplate#isGenerateItem <em>Generate Item</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Generate Item</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IListItemTemplate#isGenerateItem()
+	 * @see #getIListItemTemplate()
+	 * @generated
+	 */
+	EAttribute getIListItemTemplate_GenerateItem();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IListItemTemplate#getCustomItemLabel <em>Custom Item Label</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Custom Item Label</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IListItemTemplate#getCustomItemLabel()
+	 * @see #getIListItemTemplate()
+	 * @generated
+	 */
+	EAttribute getIListItemTemplate_CustomItemLabel();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IListItemTemplate#buildItemLabel(java.lang.Object) <em>Build Item Label</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the '<em>Build Item Label</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IListItemTemplate#buildItemLabel(java.lang.Object)
+	 * @generated
+	 */
+	EOperation getIListItemTemplate__BuildItemLabel__Object();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IListItemTemplate#getItems(org.eclipse.emf.ecore.EObject) <em>Get Items</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the '<em>Get Items</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IListItemTemplate#getItems(org.eclipse.emf.ecore.EObject)
+	 * @generated
+	 */
+	EOperation getIListItemTemplate__GetItems__EObject();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafListItemTemplate <em>ILeaf List Item Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>ILeaf List Item Template</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafListItemTemplate
+	 * @generated
+	 */
+	EClass getILeafListItemTemplate();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IRootListItemTemplate <em>IRoot List Item Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>IRoot List Item Template</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IRootListItemTemplate
+	 * @generated
+	 */
+	EClass getIRootListItemTemplate();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedListItemTemplate <em>IComposed List Item Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>IComposed List Item Template</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedListItemTemplate
+	 * @generated
+	 */
+	EClass getIComposedListItemTemplate();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedListItemTemplate#getSubListItemTemplates <em>Sub List Item Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference list '<em>Sub List Item Template</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedListItemTemplate#getSubListItemTemplates()
+	 * @see #getIComposedListItemTemplate()
+	 * @generated
+	 */
+	EReference getIComposedListItemTemplate_SubListItemTemplate();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubListItemTemplate <em>ISub List Item Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>ISub List Item Template</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubListItemTemplate
+	 * @generated
+	 */
+	EClass getISubListItemTemplate();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedSubListItemTemplate <em>IComposed Sub List Item Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>IComposed Sub List Item Template</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedSubListItemTemplate
+	 * @generated
+	 */
+	EClass getIComposedSubListItemTemplate();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedSubListItemTemplate#getListItemTemplates <em>List Item Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference list '<em>List Item Template</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedSubListItemTemplate#getListItemTemplates()
+	 * @see #getIComposedSubListItemTemplate()
+	 * @generated
+	 */
+	EReference getIComposedSubListItemTemplate_ListItemTemplate();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafSubListItemTemplate <em>ILeaf Sub List Item Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>ILeaf Sub List Item Template</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafSubListItemTemplate
+	 * @generated
+	 */
+	EClass getILeafSubListItemTemplate();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceListItemTemplate <em>EReference List Item Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EReference List Item Template</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceListItemTemplate
+	 * @generated
+	 */
+	EClass getEReferenceListItemTemplate();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EAttributeListItemTemplate <em>EAttribute List Item Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EAttribute List Item Template</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EAttributeListItemTemplate
+	 * @generated
+	 */
+	EClass getEAttributeListItemTemplate();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EAttributeTemplate <em>EAttribute Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EAttribute Template</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EAttributeTemplate
+	 * @generated
+	 */
+	EClass getEAttributeTemplate();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EAttributeTemplate#getEAttribute <em>EAttribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the reference '<em>EAttribute</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EAttributeTemplate#getEAttribute()
+	 * @see #getEAttributeTemplate()
+	 * @generated
+	 */
+	EReference getEAttributeTemplate_EAttribute();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EAttributeTemplate#buildEAttributeValueLabel(java.lang.Object) <em>Build EAttribute Value Label</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the '<em>Build EAttribute Value Label</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EAttributeTemplate#buildEAttributeValueLabel(java.lang.Object)
+	 * @generated
+	 */
+	EOperation getEAttributeTemplate__BuildEAttributeValueLabel__Object();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EAttributeTemplate#getEAttributeValues(org.eclipse.emf.ecore.EObject) <em>Get EAttribute Values</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the '<em>Get EAttribute Values</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EAttributeTemplate#getEAttributeValues(org.eclipse.emf.ecore.EObject)
+	 * @generated
+	 */
+	EOperation getEAttributeTemplate__GetEAttributeValues__EObject();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassListItemTemplate <em>EClass List Item Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EClass List Item Template</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassListItemTemplate
+	 * @generated
+	 */
+	EClass getEClassListItemTemplate();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TreeListView <em>Tree List View</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>Tree List View</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TreeListView
+	 * @generated
+	 */
+	EClass getTreeListView();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TreeListView#getRootListItemTemplates <em>Root List Item Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference list '<em>Root List Item Template</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TreeListView#getRootListItemTemplates()
+	 * @see #getTreeListView()
+	 * @generated
+	 */
+	EReference getTreeListView_RootListItemTemplate();
 
 	/**
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassFilterBehavior <em>EClass Filter Behavior</em>}'.
@@ -3200,17 +4388,6 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 		EClass ITEMPLATE_PART_VIEW = eINSTANCE.getITemplatePartView();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceListViewImpl <em>EReference List View</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 *
-		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceListViewImpl
-		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEReferenceListView()
-		 * @generated
-		 */
-		EClass EREFERENCE_LIST_VIEW = eINSTANCE.getEReferenceListView();
-
-		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView <em>ITable View</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3372,6 +4549,228 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 		 * @generated
 		 */
 		EOperation ESTRUCTURAL_FEATURE_TEMPLATE___BUILD_EATTRIBUTE_VALUE_LABEL__OBJECT = eINSTANCE.getEStructuralFeatureTemplate__BuildEAttributeValueLabel__Object();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IListItemTemplate <em>IList Item Template</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IListItemTemplate
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getIListItemTemplate()
+		 * @generated
+		 */
+		EClass ILIST_ITEM_TEMPLATE = eINSTANCE.getIListItemTemplate();
+
+		/**
+		 * The meta object literal for the '<em><b>Generate Item</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute ILIST_ITEM_TEMPLATE__GENERATE_ITEM = eINSTANCE.getIListItemTemplate_GenerateItem();
+
+		/**
+		 * The meta object literal for the '<em><b>Custom Item Label</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute ILIST_ITEM_TEMPLATE__CUSTOM_ITEM_LABEL = eINSTANCE.getIListItemTemplate_CustomItemLabel();
+
+		/**
+		 * The meta object literal for the '<em><b>Build Item Label</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EOperation ILIST_ITEM_TEMPLATE___BUILD_ITEM_LABEL__OBJECT = eINSTANCE.getIListItemTemplate__BuildItemLabel__Object();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Items</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EOperation ILIST_ITEM_TEMPLATE___GET_ITEMS__EOBJECT = eINSTANCE.getIListItemTemplate__GetItems__EObject();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafListItemTemplate <em>ILeaf List Item Template</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafListItemTemplate
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getILeafListItemTemplate()
+		 * @generated
+		 */
+		EClass ILEAF_LIST_ITEM_TEMPLATE = eINSTANCE.getILeafListItemTemplate();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IRootListItemTemplate <em>IRoot List Item Template</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IRootListItemTemplate
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getIRootListItemTemplate()
+		 * @generated
+		 */
+		EClass IROOT_LIST_ITEM_TEMPLATE = eINSTANCE.getIRootListItemTemplate();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedListItemTemplate <em>IComposed List Item Template</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedListItemTemplate
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getIComposedListItemTemplate()
+		 * @generated
+		 */
+		EClass ICOMPOSED_LIST_ITEM_TEMPLATE = eINSTANCE.getIComposedListItemTemplate();
+
+		/**
+		 * The meta object literal for the '<em><b>Sub List Item Template</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference ICOMPOSED_LIST_ITEM_TEMPLATE__SUB_LIST_ITEM_TEMPLATE = eINSTANCE.getIComposedListItemTemplate_SubListItemTemplate();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubListItemTemplate <em>ISub List Item Template</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubListItemTemplate
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getISubListItemTemplate()
+		 * @generated
+		 */
+		EClass ISUB_LIST_ITEM_TEMPLATE = eINSTANCE.getISubListItemTemplate();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedSubListItemTemplate <em>IComposed Sub List Item Template</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedSubListItemTemplate
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getIComposedSubListItemTemplate()
+		 * @generated
+		 */
+		EClass ICOMPOSED_SUB_LIST_ITEM_TEMPLATE = eINSTANCE.getIComposedSubListItemTemplate();
+
+		/**
+		 * The meta object literal for the '<em><b>List Item Template</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference ICOMPOSED_SUB_LIST_ITEM_TEMPLATE__LIST_ITEM_TEMPLATE = eINSTANCE.getIComposedSubListItemTemplate_ListItemTemplate();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafSubListItemTemplate <em>ILeaf Sub List Item Template</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafSubListItemTemplate
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getILeafSubListItemTemplate()
+		 * @generated
+		 */
+		EClass ILEAF_SUB_LIST_ITEM_TEMPLATE = eINSTANCE.getILeafSubListItemTemplate();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceListItemTemplateImpl <em>EReference List Item Template</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceListItemTemplateImpl
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEReferenceListItemTemplate()
+		 * @generated
+		 */
+		EClass EREFERENCE_LIST_ITEM_TEMPLATE = eINSTANCE.getEReferenceListItemTemplate();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EAttributeListItemTemplateImpl <em>EAttribute List Item Template</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EAttributeListItemTemplateImpl
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEAttributeListItemTemplate()
+		 * @generated
+		 */
+		EClass EATTRIBUTE_LIST_ITEM_TEMPLATE = eINSTANCE.getEAttributeListItemTemplate();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EAttributeTemplateImpl <em>EAttribute Template</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EAttributeTemplateImpl
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEAttributeTemplate()
+		 * @generated
+		 */
+		EClass EATTRIBUTE_TEMPLATE = eINSTANCE.getEAttributeTemplate();
+
+		/**
+		 * The meta object literal for the '<em><b>EAttribute</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EATTRIBUTE_TEMPLATE__EATTRIBUTE = eINSTANCE.getEAttributeTemplate_EAttribute();
+
+		/**
+		 * The meta object literal for the '<em><b>Build EAttribute Value Label</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EOperation EATTRIBUTE_TEMPLATE___BUILD_EATTRIBUTE_VALUE_LABEL__OBJECT = eINSTANCE.getEAttributeTemplate__BuildEAttributeValueLabel__Object();
+
+		/**
+		 * The meta object literal for the '<em><b>Get EAttribute Values</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EOperation EATTRIBUTE_TEMPLATE___GET_EATTRIBUTE_VALUES__EOBJECT = eINSTANCE.getEAttributeTemplate__GetEAttributeValues__EObject();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassListItemTemplateImpl <em>EClass List Item Template</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassListItemTemplateImpl
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEClassListItemTemplate()
+		 * @generated
+		 */
+		EClass ECLASS_LIST_ITEM_TEMPLATE = eINSTANCE.getEClassListItemTemplate();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TreeListViewImpl <em>Tree List View</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TreeListViewImpl
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getTreeListView()
+		 * @generated
+		 */
+		EClass TREE_LIST_VIEW = eINSTANCE.getTreeListView();
+
+		/**
+		 * The meta object literal for the '<em><b>Root List Item Template</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference TREE_LIST_VIEW__ROOT_LIST_ITEM_TEMPLATE = eINSTANCE.getTreeListView_RootListItemTemplate();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassFilterBehavior <em>EClass Filter Behavior</em>}' enum.

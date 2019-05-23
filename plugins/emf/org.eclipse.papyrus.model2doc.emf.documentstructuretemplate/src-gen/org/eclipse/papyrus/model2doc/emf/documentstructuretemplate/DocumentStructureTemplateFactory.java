@@ -95,16 +95,6 @@ public interface DocumentStructureTemplateFactory extends EFactory {
 	EReferencePartTemplate createEReferencePartTemplate();
 
 	/**
-	 * Returns a new object of class '<em>EReference List View</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @return a new object of class '<em>EReference List View</em>'.
-	 * @generated
-	 */
-	EReferenceListView createEReferenceListView();
-
-	/**
 	 * Returns a new object of class '<em>EReference Table View</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -123,6 +113,46 @@ public interface DocumentStructureTemplateFactory extends EFactory {
 	 * @generated
 	 */
 	EStructuralFeatureColumn createEStructuralFeatureColumn();
+
+	/**
+	 * Returns a new object of class '<em>EReference List Item Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EReference List Item Template</em>'.
+	 * @generated
+	 */
+	EReferenceListItemTemplate createEReferenceListItemTemplate();
+
+	/**
+	 * Returns a new object of class '<em>EAttribute List Item Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EAttribute List Item Template</em>'.
+	 * @generated
+	 */
+	EAttributeListItemTemplate createEAttributeListItemTemplate();
+
+	/**
+	 * Returns a new object of class '<em>EClass List Item Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EClass List Item Template</em>'.
+	 * @generated
+	 */
+	EClassListItemTemplate createEClassListItemTemplate();
+
+	/**
+	 * Returns a new object of class '<em>Tree List View</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>Tree List View</em>'.
+	 * @generated
+	 */
+	TreeListView createTreeListView();
 
 	/**
 	 * Returns the package supported by this factory.

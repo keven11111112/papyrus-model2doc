@@ -224,7 +224,6 @@
       <details key="documentation" value="This interface is used to describe BodyPartTemplate which contributes to fill the document's body."/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EReferenceListView" eSuperTypes="#//ITemplatePartView"/>
   <eClassifiers xsi:type="ecore:EClass" name="ITableView" abstract="true" interface="true"
       eSuperTypes="#//ILeafBodyPartTemplate #//ITemplatePartView">
     <eOperations name="getRows" ordered="false" upperBound="-1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
@@ -359,5 +358,134 @@
         <details key="propertyEditorFactory" value="editor://documentstructuretemplate/EStructuralFeatureTemplate/EStructuralFeature/"/>
       </eAnnotations>
     </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IListItemTemplate" abstract="true" interface="true">
+    <eOperations name="buildItemLabel" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This method returns a label for the item."/>
+      </eAnnotations>
+      <eParameters name="item" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+    </eOperations>
+    <eOperations name="getItems" ordered="false" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This method returns the items for the list, according to the given context."/>
+      </eAnnotations>
+      <eParameters name="context" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="generateItem" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="customItemLabel" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ILeafListItemTemplate" abstract="true"
+      interface="true" eSuperTypes="#//IRootListItemTemplate"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IRootListItemTemplate" abstract="true"
+      interface="true" eSuperTypes="#//IListItemTemplate"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IComposedListItemTemplate" abstract="true"
+      interface="true" eSuperTypes="#//IRootListItemTemplate">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subListItemTemplate" ordered="false"
+        upperBound="-1" eType="#//ISubListItemTemplate" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ISubListItemTemplate" abstract="true"
+      interface="true" eSuperTypes="#//IListItemTemplate"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IComposedSubListItemTemplate" abstract="true"
+      interface="true" eSuperTypes="#//ISubListItemTemplate">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="listItemTemplate" ordered="false"
+        upperBound="-1" eType="#//IRootListItemTemplate" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ILeafSubListItemTemplate" abstract="true"
+      interface="true" eSuperTypes="#//ISubListItemTemplate"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EReferenceListItemTemplate" eSuperTypes="#//EReferenceTemplate #//IComposedListItemTemplate">
+    <eAnnotations source="duplicates">
+      <contents xsi:type="ecore:EOperation" name="buildItemLabel" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This method returns a label for the item."/>
+          <details key="body" value="return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EReferenceListItemTemplateOperations.buildLabelItem(this,item);"/>
+        </eAnnotations>
+        <eAnnotations source="redefines" references="#//IListItemTemplate/buildItemLabel"/>
+        <eParameters name="item" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+      </contents>
+      <contents xsi:type="ecore:EOperation" name="getItems" ordered="false" upperBound="-1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This method returns the items for the list, according to the given context."/>
+          <details key="body" value="return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EReferenceListItemTemplateOperations.getItems(this,context);"/>
+        </eAnnotations>
+        <eAnnotations source="redefines" references="#//IListItemTemplate/getItems"/>
+        <eParameters name="context" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+      </contents>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EAttributeListItemTemplate" eSuperTypes="#//EAttributeTemplate #//ILeafListItemTemplate">
+    <eAnnotations source="duplicates">
+      <contents xsi:type="ecore:EOperation" name="buildItemLabel" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This method returns a label for the item."/>
+          <details key="body" value="return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EAttributeListItemTemplateOperations.buildLabelItem(this,item);"/>
+        </eAnnotations>
+        <eAnnotations source="redefines" references="#//IListItemTemplate/buildItemLabel"/>
+        <eParameters name="item" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+      </contents>
+      <contents xsi:type="ecore:EOperation" name="getItems" ordered="false" upperBound="-1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This method returns the items for the list, according to the given context."/>
+          <details key="body" value="return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EAttributeListItemTemplateOperations.getItems(this,context);"/>
+        </eAnnotations>
+        <eAnnotations source="redefines" references="#//IListItemTemplate/getItems"/>
+        <eParameters name="context" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+      </contents>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EAttributeTemplate" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This element allows to represents an EAttribute."/>
+    </eAnnotations>
+    <eOperations name="buildEAttributeValueLabel" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EAttributeTemplateOperations.buildEAttributeValueLabel(this, value);"/>
+      </eAnnotations>
+      <eParameters name="value" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+    </eOperations>
+    <eOperations name="getEAttributeValues" ordered="false" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EAttributeTemplateOperations.getEAttributeValues(this, context);"/>
+      </eAnnotations>
+      <eParameters name="context" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eAttribute" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EAttribute"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EClassListItemTemplate" eSuperTypes="#//EClassTemplate #//IComposedSubListItemTemplate">
+    <eAnnotations source="duplicates">
+      <contents xsi:type="ecore:EOperation" name="getItems" ordered="false" upperBound="-1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This method returns the items for the list, according to the given context."/>
+          <details key="body" value="return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EClassListItemTemplateOperations.getItems(this,context);"/>
+        </eAnnotations>
+        <eAnnotations source="redefines" references="#//IListItemTemplate/getItems"/>
+        <eParameters name="context" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+      </contents>
+      <contents xsi:type="ecore:EOperation" name="buildItemLabel" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This method returns a label for the item."/>
+          <details key="body" value="return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EClassListItemTemplateOperations.buildLabelItem(this,item);"/>
+        </eAnnotations>
+        <eAnnotations source="redefines" references="#//IListItemTemplate/buildItemLabel"/>
+        <eParameters name="item" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+      </contents>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TreeListView" eSuperTypes="#//ILeafBodyPartTemplate #//ITemplatePartView">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This element allows to represent a list with several level."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rootListItemTemplate" ordered="false"
+        upperBound="-1" eType="#//IRootListItemTemplate" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

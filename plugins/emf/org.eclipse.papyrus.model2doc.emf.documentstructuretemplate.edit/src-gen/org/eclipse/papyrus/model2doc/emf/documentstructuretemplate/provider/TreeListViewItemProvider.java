@@ -20,25 +20,41 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplateFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TreeListView;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassPartTemplate} object.
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TreeListView} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class EClassPartTemplateItemProvider extends EClassTemplateItemProvider {
+public class TreeListViewItemProvider
+		extends ItemProviderAdapter
+		implements
+		IEditingDomainItemProvider,
+		IStructuredItemContentProvider,
+		ITreeItemContentProvider,
+		IItemLabelProvider,
+		IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -46,7 +62,7 @@ public class EClassPartTemplateItemProvider extends EClassTemplateItemProvider {
 	 *
 	 * @generated
 	 */
-	public EClassPartTemplateItemProvider(AdapterFactory adapterFactory) {
+	public TreeListViewItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -145,7 +161,7 @@ public class EClassPartTemplateItemProvider extends EClassTemplateItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE);
+			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.TREE_LIST_VIEW__ROOT_LIST_ITEM_TEMPLATE);
 		}
 		return childrenFeatures;
 	}
@@ -165,7 +181,18 @@ public class EClassPartTemplateItemProvider extends EClassTemplateItemProvider {
 	}
 
 	/**
-	 * This returns EClassPartTemplate.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public boolean hasChildren(Object object) {
+		return hasChildren(object, true);
+	}
+
+	/**
+	 * This returns TreeListView.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -173,7 +200,7 @@ public class EClassPartTemplateItemProvider extends EClassTemplateItemProvider {
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/EClassPartTemplate")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/TreeListView")); //$NON-NLS-1$
 	}
 
 	/**
@@ -196,9 +223,9 @@ public class EClassPartTemplateItemProvider extends EClassTemplateItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((EClassPartTemplate) object).getCustomTitle();
-		return label == null || label.length() == 0 ? getString("_UI_EClassPartTemplate_type") : //$NON-NLS-1$
-				getString("_UI_EClassPartTemplate_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		String label = ((TreeListView) object).getCustomTitle();
+		return label == null || label.length() == 0 ? getString("_UI_TreeListView_type") : //$NON-NLS-1$
+				getString("_UI_TreeListView_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 
@@ -214,13 +241,13 @@ public class EClassPartTemplateItemProvider extends EClassTemplateItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(EClassPartTemplate.class)) {
-		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__GENERATE:
-		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__GENERATE_TITLE:
-		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__CUSTOM_TITLE:
+		switch (notification.getFeatureID(TreeListView.class)) {
+		case DocumentStructureTemplatePackage.TREE_LIST_VIEW__GENERATE:
+		case DocumentStructureTemplatePackage.TREE_LIST_VIEW__GENERATE_TITLE:
+		case DocumentStructureTemplatePackage.TREE_LIST_VIEW__CUSTOM_TITLE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__BODY_PART_TEMPLATE:
+		case DocumentStructureTemplatePackage.TREE_LIST_VIEW__ROOT_LIST_ITEM_TEMPLATE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -239,14 +266,23 @@ public class EClassPartTemplateItemProvider extends EClassTemplateItemProvider {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE,
-				DocumentStructureTemplateFactory.eINSTANCE.createEReferencePartTemplate()));
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.TREE_LIST_VIEW__ROOT_LIST_ITEM_TEMPLATE,
+				DocumentStructureTemplateFactory.eINSTANCE.createEReferenceListItemTemplate()));
 
-		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE,
-				DocumentStructureTemplateFactory.eINSTANCE.createEReferenceTableView()));
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.TREE_LIST_VIEW__ROOT_LIST_ITEM_TEMPLATE,
+				DocumentStructureTemplateFactory.eINSTANCE.createEAttributeListItemTemplate()));
+	}
 
-		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE,
-				DocumentStructureTemplateFactory.eINSTANCE.createTreeListView()));
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
 	}
 
 }

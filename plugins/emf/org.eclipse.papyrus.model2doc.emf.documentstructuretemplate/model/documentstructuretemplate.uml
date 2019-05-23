@@ -219,9 +219,6 @@ Its children are an alternation of two kinds of objects: IBodyPartTemplate and I
         <body>This interface is used to describe BodyPartTemplate which contributes to fill the document's body.</body>
       </ownedComment>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_ZIXbMFYFEemKJasCEBKPhQ" name="EReferenceListView">
-      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_eghysFYFEemKJasCEBKPhQ" client="_ZIXbMFYFEemKJasCEBKPhQ" supplier="_DwGdIFYFEemKJasCEBKPhQ" contract="_DwGdIFYFEemKJasCEBKPhQ"/>
-    </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_XvipQFYUEemiOeXIb5muwQ" name="IBodySectionPartTemplate">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_AEfyQFX-EemKJasCEBKPhQ" name="generate">
         <ownedComment xmi:type="uml:Comment" xmi:id="_ppgrkFYAEemKJasCEBKPhQ" annotatedElement="_AEfyQFX-EemKJasCEBKPhQ">
@@ -553,6 +550,229 @@ The goal of this method is to return a label for each element returned by the me
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         </ownedParameter>
       </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_w6AUYHxlEem8DZ1bmLpXuQ" name="IListItemTemplate">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_WF4VIHxmEem8DZ1bmLpXuQ" name="generateItem">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+        <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_a2BqYHxmEem8DZ1bmLpXuQ" name="defaultValue" value="true"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_3JCCYH0pEemhFY7gIV8PXA" name="customItemLabel">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VW_10H0qEemhFY7gIV8PXA"/>
+      </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_jwo08HxmEem8DZ1bmLpXuQ" name="buildItemLabel" isAbstract="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_jwo08XxmEem8DZ1bmLpXuQ" annotatedElement="_jwo08HxmEem8DZ1bmLpXuQ">
+          <body>This method returns a label for the item.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_jwo08nxmEem8DZ1bmLpXuQ" name="item">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EJavaObject"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_jwo083xmEem8DZ1bmLpXuQ" name="label" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_jwuUgHxmEem8DZ1bmLpXuQ" name="getItems" isAbstract="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_jwuUgXxmEem8DZ1bmLpXuQ" annotatedElement="_jwuUgHxmEem8DZ1bmLpXuQ">
+          <body>This method returns the items for the list, according to the given context.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_jwuUgnxmEem8DZ1bmLpXuQ" name="context">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_jwuUg3xmEem8DZ1bmLpXuQ" name="returnValue" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EJavaObject"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jwuUhHxmEem8DZ1bmLpXuQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jwuUhXxmEem8DZ1bmLpXuQ" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_B9IeMHxmEem8DZ1bmLpXuQ" name="ILeafListItemTemplate">
+      <generalization xmi:type="uml:Generalization" xmi:id="_7QxecHxmEem8DZ1bmLpXuQ" general="_f2inAHyfEemAGJlsH38HbQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_D4L1oHxmEem8DZ1bmLpXuQ" name="IComposedListItemTemplate">
+      <generalization xmi:type="uml:Generalization" xmi:id="_7vEkAHxmEem8DZ1bmLpXuQ" general="_f2inAHyfEemAGJlsH38HbQ"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_9ff_0HxmEem8DZ1bmLpXuQ" name="subListItemTemplate" type="_HfWwoHxmEem8DZ1bmLpXuQ" aggregation="composite" association="_9fdjkHxmEem8DZ1bmLpXuQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9fgm4HxmEem8DZ1bmLpXuQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9fgm4XxmEem8DZ1bmLpXuQ" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_HfWwoHxmEem8DZ1bmLpXuQ" name="ISubListItemTemplate">
+      <generalization xmi:type="uml:Generalization" xmi:id="__XMcQHydEemAGJlsH38HbQ" general="_w6AUYHxlEem8DZ1bmLpXuQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_KilREHxmEem8DZ1bmLpXuQ" name="IComposedSubListItemTemplate">
+      <generalization xmi:type="uml:Generalization" xmi:id="_2ZxTQHxmEem8DZ1bmLpXuQ" general="_HfWwoHxmEem8DZ1bmLpXuQ"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="__XJd8XxmEem8DZ1bmLpXuQ" name="listItemTemplate" type="_f2inAHyfEemAGJlsH38HbQ" aggregation="composite" association="__XIP0HxmEem8DZ1bmLpXuQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8Ll2AHxoEem8DZ1bmLpXuQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__XJd83xmEem8DZ1bmLpXuQ" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_NH5tgHxmEem8DZ1bmLpXuQ" name="ILeafSubListItemTemplate">
+      <generalization xmi:type="uml:Generalization" xmi:id="_3Zm_oHxmEem8DZ1bmLpXuQ" general="_HfWwoHxmEem8DZ1bmLpXuQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_9fdjkHxmEem8DZ1bmLpXuQ" memberEnd="_9ff_0HxmEem8DZ1bmLpXuQ _9fgm4nxmEem8DZ1bmLpXuQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9ffYwHxmEem8DZ1bmLpXuQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9ffYwXxmEem8DZ1bmLpXuQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_9fgm4nxmEem8DZ1bmLpXuQ" name="composedListItemTemplate" type="_D4L1oHxmEem8DZ1bmLpXuQ" association="_9fdjkHxmEem8DZ1bmLpXuQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="__XIP0HxmEem8DZ1bmLpXuQ" memberEnd="__XJd8XxmEem8DZ1bmLpXuQ __XKFAHxmEem8DZ1bmLpXuQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="__XI24HxmEem8DZ1bmLpXuQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__XJd8HxmEem8DZ1bmLpXuQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="__XKFAHxmEem8DZ1bmLpXuQ" name="composedSubListItemTemplate" type="_KilREHxmEem8DZ1bmLpXuQ" association="__XIP0HxmEem8DZ1bmLpXuQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_1JFSAHxnEem8DZ1bmLpXuQ" name="EReferenceListItemTemplate">
+      <generalization xmi:type="uml:Generalization" xmi:id="_P362sHxpEem8DZ1bmLpXuQ" general="_jMKV0HWKEemQUasExi-pKA"/>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_u3I9YHxoEem8DZ1bmLpXuQ" client="_1JFSAHxnEem8DZ1bmLpXuQ" supplier="_D4L1oHxmEem8DZ1bmLpXuQ" contract="_D4L1oHxmEem8DZ1bmLpXuQ"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Or0L8HyVEemAGJlsH38HbQ" name="buildItemLabel" redefinedOperation="_jwo08HxmEem8DZ1bmLpXuQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Or0L8XyVEemAGJlsH38HbQ" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Or0L8nyVEemAGJlsH38HbQ" key="body" value="return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EReferenceListItemTemplateOperations.buildLabelItem(this,item);"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Or0L83yVEemAGJlsH38HbQ" annotatedElement="_Or0L8HyVEemAGJlsH38HbQ">
+          <body>This method returns a label for the item.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Or0L9HyVEemAGJlsH38HbQ" name="item">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EJavaObject"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Or0L9XyVEemAGJlsH38HbQ" name="label" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_OsL_YHyVEemAGJlsH38HbQ" name="getItems" redefinedOperation="_jwuUgHxmEem8DZ1bmLpXuQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_OsL_YXyVEemAGJlsH38HbQ" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_OsL_YnyVEemAGJlsH38HbQ" key="body" value="return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EReferenceListItemTemplateOperations.getItems(this,context);"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_OsL_Y3yVEemAGJlsH38HbQ" annotatedElement="_OsL_YHyVEemAGJlsH38HbQ">
+          <body>This method returns the items for the list, according to the given context.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_OsL_ZHyVEemAGJlsH38HbQ" name="context">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_OsL_ZXyVEemAGJlsH38HbQ" name="returnValue" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EJavaObject"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OsL_ZnyVEemAGJlsH38HbQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OsL_Z3yVEemAGJlsH38HbQ" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_8RJg4HxnEem8DZ1bmLpXuQ" name="EAttributeListItemTemplate">
+      <generalization xmi:type="uml:Generalization" xmi:id="_OEFFEHxqEem8DZ1bmLpXuQ" general="_ezvVwHxpEem8DZ1bmLpXuQ"/>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_vWnHoHxoEem8DZ1bmLpXuQ" client="_8RJg4HxnEem8DZ1bmLpXuQ" supplier="_B9IeMHxmEem8DZ1bmLpXuQ" contract="_B9IeMHxmEem8DZ1bmLpXuQ"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_leiLQHyUEemAGJlsH38HbQ" name="buildItemLabel" redefinedOperation="_jwo08HxmEem8DZ1bmLpXuQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9ami0HyUEemAGJlsH38HbQ" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9ami0XyUEemAGJlsH38HbQ" key="body" value="return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EAttributeListItemTemplateOperations.buildLabelItem(this,item);"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_leiLQXyUEemAGJlsH38HbQ" annotatedElement="_leiLQHyUEemAGJlsH38HbQ">
+          <body>This method returns a label for the item.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_leiLQnyUEemAGJlsH38HbQ" name="item">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EJavaObject"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_leiLQ3yUEemAGJlsH38HbQ" name="label" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_leo48HyUEemAGJlsH38HbQ" name="getItems" redefinedOperation="_jwuUgHxmEem8DZ1bmLpXuQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_JJUMsHyVEemAGJlsH38HbQ" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_JJUMsXyVEemAGJlsH38HbQ" key="body" value="return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EAttributeListItemTemplateOperations.getItems(this,context);"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_leo48XyUEemAGJlsH38HbQ" annotatedElement="_leo48HyUEemAGJlsH38HbQ">
+          <body>This method returns the items for the list, according to the given context.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_leo48nyUEemAGJlsH38HbQ" name="context">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_leo483yUEemAGJlsH38HbQ" name="returnValue" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EJavaObject"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_leo49HyUEemAGJlsH38HbQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_leo49XyUEemAGJlsH38HbQ" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ANYF4HxoEem8DZ1bmLpXuQ" name="EClassListItemTemplate">
+      <generalization xmi:type="uml:Generalization" xmi:id="_utW9MHySEemAGJlsH38HbQ" general="_eEKmEHyBEemXM4G5UevpIQ"/>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_vzIrkHxoEem8DZ1bmLpXuQ" client="_ANYF4HxoEem8DZ1bmLpXuQ" supplier="_KilREHxmEem8DZ1bmLpXuQ" contract="_KilREHxmEem8DZ1bmLpXuQ"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_jG0QgHyVEemAGJlsH38HbQ" name="getItems" redefinedOperation="_jwuUgHxmEem8DZ1bmLpXuQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_jG0QgXyVEemAGJlsH38HbQ" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jG0QgnyVEemAGJlsH38HbQ" key="body" value="return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EClassListItemTemplateOperations.getItems(this,context);"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_jG0Qg3yVEemAGJlsH38HbQ" annotatedElement="_jG0QgHyVEemAGJlsH38HbQ">
+          <body>This method returns the items for the list, according to the given context.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_jG0QhHyVEemAGJlsH38HbQ" name="context">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_jG0QhXyVEemAGJlsH38HbQ" name="returnValue" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EJavaObject"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jG0QhnyVEemAGJlsH38HbQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jG0Qh3yVEemAGJlsH38HbQ" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_jx5N0HyVEemAGJlsH38HbQ" name="buildItemLabel" redefinedOperation="_jwo08HxmEem8DZ1bmLpXuQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_jx5N0XyVEemAGJlsH38HbQ" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jx5N0nyVEemAGJlsH38HbQ" key="body" value="return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EClassListItemTemplateOperations.buildLabelItem(this,item);"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_jx5N03yVEemAGJlsH38HbQ" annotatedElement="_jx5N0HyVEemAGJlsH38HbQ">
+          <body>This method returns a label for the item.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_jx5N1HyVEemAGJlsH38HbQ" name="item">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EJavaObject"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_jx5N1XyVEemAGJlsH38HbQ" name="label" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ezvVwHxpEem8DZ1bmLpXuQ" name="EAttributeTemplate" isAbstract="true">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_6jp1wHySEemAGJlsH38HbQ" annotatedElement="_ezvVwHxpEem8DZ1bmLpXuQ">
+        <body>This element allows to represents an EAttribute.</body>
+      </ownedComment>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_t-dzgHxpEem8DZ1bmLpXuQ" name="eAttribute">
+        <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWiQcX_EduPJbEsMYXjUQ"/>
+      </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_vdiZkHxpEem8DZ1bmLpXuQ" name="buildEAttributeValueLabel">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_O2eZQHyUEemAGJlsH38HbQ" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_PSkfYHyUEemAGJlsH38HbQ" key="body" value="return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EAttributeTemplateOperations.buildEAttributeValueLabel(this, value);"/>
+        </eAnnotations>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_6Un34HxpEem8DZ1bmLpXuQ" name="value">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EJavaObject"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="__WE_kHxpEem8DZ1bmLpXuQ" name="returnValue" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_AskRYHxqEem8DZ1bmLpXuQ" name="getEAttributeValues">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bfUwIHyUEemAGJlsH38HbQ" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bfUwIXyUEemAGJlsH38HbQ" key="body" value="return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EAttributeTemplateOperations.getEAttributeValues(this, context);"/>
+        </eAnnotations>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_GqfoYHxqEem8DZ1bmLpXuQ" name="context">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Mc6S8HxqEem8DZ1bmLpXuQ" name="values" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EJavaObject"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FDCo8HyXEemAGJlsH38HbQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FDiYMHyXEemAGJlsH38HbQ" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_LPVI4HyTEemAGJlsH38HbQ" name="TreeListView">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_Pk-TcHyTEemAGJlsH38HbQ" annotatedElement="_LPVI4HyTEemAGJlsH38HbQ">
+        <body>This element allows to represent a list with several level.</body>
+      </ownedComment>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_a3g-sHyTEemAGJlsH38HbQ" name="rootListItemTemplate" type="_f2inAHyfEemAGJlsH38HbQ" aggregation="composite" association="_a3d7YHyTEemAGJlsH38HbQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cCGigHyTEemAGJlsH38HbQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a3hlwHyTEemAGJlsH38HbQ" value="*"/>
+      </ownedAttribute>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_Ya2H8HyTEemAGJlsH38HbQ" client="_LPVI4HyTEemAGJlsH38HbQ" supplier="_R99HIFX-EemKJasCEBKPhQ" contract="_R99HIFX-EemKJasCEBKPhQ"/>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_ZZKKUHyTEemAGJlsH38HbQ" client="_LPVI4HyTEemAGJlsH38HbQ" supplier="_DwGdIFYFEemKJasCEBKPhQ" contract="_DwGdIFYFEemKJasCEBKPhQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_a3d7YHyTEemAGJlsH38HbQ" memberEnd="_a3g-sHyTEemAGJlsH38HbQ _a3hlwXyTEemAGJlsH38HbQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_a3fwkHyTEemAGJlsH38HbQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_a3fwkXyTEemAGJlsH38HbQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_a3hlwXyTEemAGJlsH38HbQ" name="treeListView" type="_LPVI4HyTEemAGJlsH38HbQ" association="_a3d7YHyTEemAGJlsH38HbQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_f2inAHyfEemAGJlsH38HbQ" name="IRootListItemTemplate">
+      <generalization xmi:type="uml:Generalization" xmi:id="_q0p6YHyfEemAGJlsH38HbQ" general="_w6AUYHxlEem8DZ1bmLpXuQ"/>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Dwr3IB2KEemmq_cjeiIGww">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DwseMB2KEemmq_cjeiIGww" source="http://www.eclipse.org/uml2/2.0.0/UML">

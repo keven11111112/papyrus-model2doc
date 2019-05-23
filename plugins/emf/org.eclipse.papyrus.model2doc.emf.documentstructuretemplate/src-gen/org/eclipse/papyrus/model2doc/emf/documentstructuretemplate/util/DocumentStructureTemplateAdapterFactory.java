@@ -173,11 +173,6 @@ public class DocumentStructureTemplateAdapterFactory extends AdapterFactoryImpl 
 		}
 
 		@Override
-		public Adapter caseEReferenceListView(EReferenceListView object) {
-			return createEReferenceListViewAdapter();
-		}
-
-		@Override
 		public Adapter caseITableView(ITableView object) {
 			return createITableViewAdapter();
 		}
@@ -200,6 +195,66 @@ public class DocumentStructureTemplateAdapterFactory extends AdapterFactoryImpl 
 		@Override
 		public Adapter caseEStructuralFeatureTemplate(EStructuralFeatureTemplate object) {
 			return createEStructuralFeatureTemplateAdapter();
+		}
+
+		@Override
+		public Adapter caseIListItemTemplate(IListItemTemplate object) {
+			return createIListItemTemplateAdapter();
+		}
+
+		@Override
+		public Adapter caseILeafListItemTemplate(ILeafListItemTemplate object) {
+			return createILeafListItemTemplateAdapter();
+		}
+
+		@Override
+		public Adapter caseIRootListItemTemplate(IRootListItemTemplate object) {
+			return createIRootListItemTemplateAdapter();
+		}
+
+		@Override
+		public Adapter caseIComposedListItemTemplate(IComposedListItemTemplate object) {
+			return createIComposedListItemTemplateAdapter();
+		}
+
+		@Override
+		public Adapter caseISubListItemTemplate(ISubListItemTemplate object) {
+			return createISubListItemTemplateAdapter();
+		}
+
+		@Override
+		public Adapter caseIComposedSubListItemTemplate(IComposedSubListItemTemplate object) {
+			return createIComposedSubListItemTemplateAdapter();
+		}
+
+		@Override
+		public Adapter caseILeafSubListItemTemplate(ILeafSubListItemTemplate object) {
+			return createILeafSubListItemTemplateAdapter();
+		}
+
+		@Override
+		public Adapter caseEReferenceListItemTemplate(EReferenceListItemTemplate object) {
+			return createEReferenceListItemTemplateAdapter();
+		}
+
+		@Override
+		public Adapter caseEAttributeListItemTemplate(EAttributeListItemTemplate object) {
+			return createEAttributeListItemTemplateAdapter();
+		}
+
+		@Override
+		public Adapter caseEAttributeTemplate(EAttributeTemplate object) {
+			return createEAttributeTemplateAdapter();
+		}
+
+		@Override
+		public Adapter caseEClassListItemTemplate(EClassListItemTemplate object) {
+			return createEClassListItemTemplateAdapter();
+		}
+
+		@Override
+		public Adapter caseTreeListView(TreeListView object) {
+			return createTreeListViewAdapter();
 		}
 
 		@Override
@@ -495,21 +550,6 @@ public class DocumentStructureTemplateAdapterFactory extends AdapterFactoryImpl 
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceListView <em>EReference List View</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceListView
-	 * @generated
-	 */
-	public Adapter createEReferenceListViewAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView <em>ITable View</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -581,6 +621,186 @@ public class DocumentStructureTemplateAdapterFactory extends AdapterFactoryImpl 
 	 * @generated
 	 */
 	public Adapter createEStructuralFeatureTemplateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IListItemTemplate <em>IList Item Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IListItemTemplate
+	 * @generated
+	 */
+	public Adapter createIListItemTemplateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafListItemTemplate <em>ILeaf List Item Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafListItemTemplate
+	 * @generated
+	 */
+	public Adapter createILeafListItemTemplateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IRootListItemTemplate <em>IRoot List Item Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IRootListItemTemplate
+	 * @generated
+	 */
+	public Adapter createIRootListItemTemplateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedListItemTemplate <em>IComposed List Item Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedListItemTemplate
+	 * @generated
+	 */
+	public Adapter createIComposedListItemTemplateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubListItemTemplate <em>ISub List Item Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubListItemTemplate
+	 * @generated
+	 */
+	public Adapter createISubListItemTemplateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedSubListItemTemplate <em>IComposed Sub List Item Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedSubListItemTemplate
+	 * @generated
+	 */
+	public Adapter createIComposedSubListItemTemplateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafSubListItemTemplate <em>ILeaf Sub List Item Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafSubListItemTemplate
+	 * @generated
+	 */
+	public Adapter createILeafSubListItemTemplateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceListItemTemplate <em>EReference List Item Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceListItemTemplate
+	 * @generated
+	 */
+	public Adapter createEReferenceListItemTemplateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EAttributeListItemTemplate <em>EAttribute List Item Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EAttributeListItemTemplate
+	 * @generated
+	 */
+	public Adapter createEAttributeListItemTemplateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EAttributeTemplate <em>EAttribute Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EAttributeTemplate
+	 * @generated
+	 */
+	public Adapter createEAttributeTemplateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassListItemTemplate <em>EClass List Item Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassListItemTemplate
+	 * @generated
+	 */
+	public Adapter createEClassListItemTemplateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TreeListView <em>Tree List View</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TreeListView
+	 * @generated
+	 */
+	public Adapter createTreeListViewAdapter() {
 		return null;
 	}
 

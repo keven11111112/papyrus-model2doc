@@ -29,16 +29,16 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplateFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceListItemTemplate;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassPartTemplate} object.
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceListItemTemplate} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class EClassPartTemplateItemProvider extends EClassTemplateItemProvider {
+public class EReferenceListItemTemplateItemProvider extends EReferenceTemplateItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -46,7 +46,7 @@ public class EClassPartTemplateItemProvider extends EClassTemplateItemProvider {
 	 *
 	 * @generated
 	 */
-	public EClassPartTemplateItemProvider(AdapterFactory adapterFactory) {
+	public EReferenceListItemTemplateItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -62,26 +62,25 @@ public class EClassPartTemplateItemProvider extends EClassTemplateItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addGeneratePropertyDescriptor(object);
-			addGenerateTitlePropertyDescriptor(object);
-			addCustomTitlePropertyDescriptor(object);
+			addGenerateItemPropertyDescriptor(object);
+			addCustomItemLabelPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Generate feature.
+	 * This adds a property descriptor for the Generate Item feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 */
-	protected void addGeneratePropertyDescriptor(Object object) {
+	protected void addGenerateItemPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
-				getString("_UI_IBodySectionPartTemplate_generate_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_IBodySectionPartTemplate_generate_feature", "_UI_IBodySectionPartTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE,
+				getString("_UI_IListItemTemplate_generateItem_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_IListItemTemplate_generateItem_feature", "_UI_IListItemTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				DocumentStructureTemplatePackage.Literals.ILIST_ITEM_TEMPLATE__GENERATE_ITEM,
 				true,
 				false,
 				false,
@@ -91,39 +90,18 @@ public class EClassPartTemplateItemProvider extends EClassTemplateItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Generate Title feature.
+	 * This adds a property descriptor for the Custom Item Label feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 */
-	protected void addGenerateTitlePropertyDescriptor(Object object) {
+	protected void addCustomItemLabelPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
-				getString("_UI_IBodySectionPartTemplate_generateTitle_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_IBodySectionPartTemplate_generateTitle_feature", "_UI_IBodySectionPartTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_TITLE,
-				true,
-				false,
-				false,
-				ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				null,
-				null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Custom Title feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected void addCustomTitlePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_IBodySectionPartTemplate_customTitle_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_IBodySectionPartTemplate_customTitle_feature", "_UI_IBodySectionPartTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__CUSTOM_TITLE,
+				getString("_UI_IListItemTemplate_customItemLabel_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_IListItemTemplate_customItemLabel_feature", "_UI_IListItemTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				DocumentStructureTemplatePackage.Literals.ILIST_ITEM_TEMPLATE__CUSTOM_ITEM_LABEL,
 				true,
 				false,
 				false,
@@ -145,7 +123,7 @@ public class EClassPartTemplateItemProvider extends EClassTemplateItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE);
+			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.ICOMPOSED_LIST_ITEM_TEMPLATE__SUB_LIST_ITEM_TEMPLATE);
 		}
 		return childrenFeatures;
 	}
@@ -165,7 +143,7 @@ public class EClassPartTemplateItemProvider extends EClassTemplateItemProvider {
 	}
 
 	/**
-	 * This returns EClassPartTemplate.gif.
+	 * This returns EReferenceListItemTemplate.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -173,7 +151,7 @@ public class EClassPartTemplateItemProvider extends EClassTemplateItemProvider {
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/EClassPartTemplate")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/EReferenceListItemTemplate")); //$NON-NLS-1$
 	}
 
 	/**
@@ -196,9 +174,9 @@ public class EClassPartTemplateItemProvider extends EClassTemplateItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((EClassPartTemplate) object).getCustomTitle();
-		return label == null || label.length() == 0 ? getString("_UI_EClassPartTemplate_type") : //$NON-NLS-1$
-				getString("_UI_EClassPartTemplate_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		String label = ((EReferenceListItemTemplate) object).getCustomItemLabel();
+		return label == null || label.length() == 0 ? getString("_UI_EReferenceListItemTemplate_type") : //$NON-NLS-1$
+				getString("_UI_EReferenceListItemTemplate_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 
@@ -214,13 +192,12 @@ public class EClassPartTemplateItemProvider extends EClassTemplateItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(EClassPartTemplate.class)) {
-		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__GENERATE:
-		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__GENERATE_TITLE:
-		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__CUSTOM_TITLE:
+		switch (notification.getFeatureID(EReferenceListItemTemplate.class)) {
+		case DocumentStructureTemplatePackage.EREFERENCE_LIST_ITEM_TEMPLATE__GENERATE_ITEM:
+		case DocumentStructureTemplatePackage.EREFERENCE_LIST_ITEM_TEMPLATE__CUSTOM_ITEM_LABEL:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__BODY_PART_TEMPLATE:
+		case DocumentStructureTemplatePackage.EREFERENCE_LIST_ITEM_TEMPLATE__SUB_LIST_ITEM_TEMPLATE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -239,14 +216,8 @@ public class EClassPartTemplateItemProvider extends EClassTemplateItemProvider {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE,
-				DocumentStructureTemplateFactory.eINSTANCE.createEReferencePartTemplate()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE,
-				DocumentStructureTemplateFactory.eINSTANCE.createEReferenceTableView()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE,
-				DocumentStructureTemplateFactory.eINSTANCE.createTreeListView()));
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_LIST_ITEM_TEMPLATE__SUB_LIST_ITEM_TEMPLATE,
+				DocumentStructureTemplateFactory.eINSTANCE.createEClassListItemTemplate()));
 	}
 
 }

@@ -20,10 +20,13 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTableView;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TreeListView;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.providers.DelegatingToEMFLabelProvider;
 
 /**
  * This class provides the method to build the title for {@link IBodySectionPartTemplate}
@@ -85,9 +88,22 @@ public class BodySectionPartTemplateTitleOperations {
 		if (partTemplate instanceof EReferenceTableView) {
 			return buildEReferenceTableViewTitle((EReferenceTableView) partTemplate, null);
 		}
+		if (partTemplate instanceof TreeListView) {
+			return buildTreeListViewTitle((TreeListView) partTemplate, null);
+		}
 		return ""; //$NON-NLS-1$
 	}
 
+
+	/**
+	 * @param partTemplate
+	 * @param object
+	 * @return
+	 */
+	private String buildTreeListViewTitle(final TreeListView partTemplate, final EObject object) {
+		final String contextLabel = DelegatingToEMFLabelProvider.INSTANCE.getText(object);
+		return NLS.bind("A List of sub elements for {0}", contextLabel); //$NON-NLS-1$
+	}
 
 	/**
 	 *

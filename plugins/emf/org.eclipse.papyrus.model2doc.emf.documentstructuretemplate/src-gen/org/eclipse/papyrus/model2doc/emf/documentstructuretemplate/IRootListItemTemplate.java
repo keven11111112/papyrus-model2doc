@@ -16,13 +16,13 @@ package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>EReference List View</b></em>'.
+ * A representation of the model object '<em><b>IRoot List Item Template</b></em>'.
  * <!-- end-user-doc -->
  *
  *
- * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getEReferenceListView()
- * @model
+ * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getIRootListItemTemplate()
+ * @model interface="true" abstract="true"
  * @generated
  */
-public interface EReferenceListView extends ITemplatePartView {
-} // EReferenceListView
+public interface IRootListItemTemplate extends IListItemTemplate {
+} // IRootListItemTemplate

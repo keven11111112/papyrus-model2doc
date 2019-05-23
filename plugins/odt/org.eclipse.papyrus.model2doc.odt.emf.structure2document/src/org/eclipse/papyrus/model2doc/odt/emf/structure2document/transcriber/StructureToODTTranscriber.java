@@ -16,12 +16,13 @@ package org.eclipse.papyrus.model2doc.odt.emf.structure2document.transcriber;
 
 import java.util.Iterator;
 
+import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractList;
+import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractTable;
 import org.eclipse.papyrus.model2doc.core.transcriber.Transcriber;
 import org.eclipse.papyrus.model2doc.core.transcription.Transcription;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Body;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.ComposedBodyPart;
-import org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedBasicTable;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Image;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Paragraph;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TableOfContents;
@@ -117,8 +118,10 @@ public class StructureToODTTranscriber implements Transcriber {
 			transcribteParagraph((Paragraph) bodyPart);
 		} else if (bodyPart instanceof Image) {
 			transcribeImage((Image) bodyPart);
-		} else if (bodyPart instanceof ExtendedBasicTable) {
-			transcribeBasicTable((ExtendedBasicTable) bodyPart);
+		} else if (bodyPart instanceof AbstractTable) {
+			transcribeTable((AbstractTable) bodyPart);
+		} else if (bodyPart instanceof AbstractList) {
+			transcribeList((AbstractList) bodyPart);
 		}
 
 		// then we iterate on the children of the bodyPart
@@ -175,12 +178,22 @@ public class StructureToODTTranscriber implements Transcriber {
 	}
 
 	/**
-	 * This method transcribe a BasicTable into a Table in a text document
+	 * This method transcribe an {@link AbstractTable} into a Table in a text document
 	 *
 	 * @param table
 	 *            a table
 	 */
-	private void transcribeBasicTable(final ExtendedBasicTable table) {
+	private void transcribeTable(final AbstractTable table) {
 		transcription.writeTable(table);
+	}
+
+	/**
+	 * This method transcribes an {@link AbstractList} into a list in the text document
+	 *
+	 * @param list
+	 *            a list
+	 */
+	private void transcribeList(final AbstractList list) {
+		transcription.writeList(list, false);
 	}
 }

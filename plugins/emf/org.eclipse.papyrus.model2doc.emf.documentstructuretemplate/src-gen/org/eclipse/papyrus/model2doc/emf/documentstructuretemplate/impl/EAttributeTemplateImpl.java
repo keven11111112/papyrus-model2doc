@@ -19,41 +19,41 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EAttributeTemplate;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>EReference Template</b></em>'.
+ * An implementation of the model object '<em><b>EAttribute Template</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceTemplateImpl#getEReference <em>EReference</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EAttributeTemplateImpl#getEAttribute <em>EAttribute</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class EReferenceTemplateImpl extends MinimalEObjectImpl.Container implements EReferenceTemplate {
+public abstract class EAttributeTemplateImpl extends MinimalEObjectImpl.Container implements EAttributeTemplate {
 	/**
-	 * The cached value of the '{@link #getEReference() <em>EReference</em>}' reference.
+	 * The cached value of the '{@link #getEAttribute() <em>EAttribute</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see #getEReference()
+	 * @see #getEAttribute()
 	 * @generated
 	 * @ordered
 	 */
-	protected EReference eReference;
+	protected EAttribute eAttribute;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -61,7 +61,7 @@ public abstract class EReferenceTemplateImpl extends MinimalEObjectImpl.Containe
 	 *
 	 * @generated
 	 */
-	protected EReferenceTemplateImpl() {
+	protected EAttributeTemplateImpl() {
 		super();
 	}
 
@@ -73,7 +73,7 @@ public abstract class EReferenceTemplateImpl extends MinimalEObjectImpl.Containe
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return DocumentStructureTemplatePackage.Literals.EREFERENCE_TEMPLATE;
+		return DocumentStructureTemplatePackage.Literals.EATTRIBUTE_TEMPLATE;
 	}
 
 	/**
@@ -83,17 +83,17 @@ public abstract class EReferenceTemplateImpl extends MinimalEObjectImpl.Containe
 	 * @generated
 	 */
 	@Override
-	public EReference getEReference() {
-		if (eReference != null && eReference.eIsProxy()) {
-			InternalEObject oldEReference = (InternalEObject) eReference;
-			eReference = (EReference) eResolveProxy(oldEReference);
-			if (eReference != oldEReference) {
+	public EAttribute getEAttribute() {
+		if (eAttribute != null && eAttribute.eIsProxy()) {
+			InternalEObject oldEAttribute = (InternalEObject) eAttribute;
+			eAttribute = (EAttribute) eResolveProxy(oldEAttribute);
+			if (eAttribute != oldEAttribute) {
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DocumentStructureTemplatePackage.EREFERENCE_TEMPLATE__EREFERENCE, oldEReference, eReference));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DocumentStructureTemplatePackage.EATTRIBUTE_TEMPLATE__EATTRIBUTE, oldEAttribute, eAttribute));
 				}
 			}
 		}
-		return eReference;
+		return eAttribute;
 	}
 
 	/**
@@ -102,8 +102,8 @@ public abstract class EReferenceTemplateImpl extends MinimalEObjectImpl.Containe
 	 *
 	 * @generated
 	 */
-	public EReference basicGetEReference() {
-		return eReference;
+	public EAttribute basicGetEAttribute() {
+		return eAttribute;
 	}
 
 	/**
@@ -113,11 +113,11 @@ public abstract class EReferenceTemplateImpl extends MinimalEObjectImpl.Containe
 	 * @generated
 	 */
 	@Override
-	public void setEReference(EReference newEReference) {
-		EReference oldEReference = eReference;
-		eReference = newEReference;
+	public void setEAttribute(EAttribute newEAttribute) {
+		EAttribute oldEAttribute = eAttribute;
+		eAttribute = newEAttribute;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.EREFERENCE_TEMPLATE__EREFERENCE, oldEReference, eReference));
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.EATTRIBUTE_TEMPLATE__EATTRIBUTE, oldEAttribute, eAttribute));
 		}
 	}
 
@@ -128,8 +128,8 @@ public abstract class EReferenceTemplateImpl extends MinimalEObjectImpl.Containe
 	 * @generated
 	 */
 	@Override
-	public EList<EObject> getEReferenceValues(final EObject context) {
-		return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EReferenceTemplateOperations.getEReferenceValues(this, context);
+	public String buildEAttributeValueLabel(final Object value) {
+		return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EAttributeTemplateOperations.buildEAttributeValueLabel(this, value);
 	}
 
 	/**
@@ -139,8 +139,8 @@ public abstract class EReferenceTemplateImpl extends MinimalEObjectImpl.Containe
 	 * @generated
 	 */
 	@Override
-	public String buildEReferenceValueLabel(final EObject value) {
-		return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EReferenceTemplateOperations.buildEReferenceValueLabel(this, value);
+	public EList<Object> getEAttributeValues(final EObject context) {
+		return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EAttributeTemplateOperations.getEAttributeValues(this, context);
 	}
 
 	/**
@@ -152,11 +152,11 @@ public abstract class EReferenceTemplateImpl extends MinimalEObjectImpl.Containe
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case DocumentStructureTemplatePackage.EREFERENCE_TEMPLATE__EREFERENCE:
+		case DocumentStructureTemplatePackage.EATTRIBUTE_TEMPLATE__EATTRIBUTE:
 			if (resolve) {
-				return getEReference();
+				return getEAttribute();
 			}
-			return basicGetEReference();
+			return basicGetEAttribute();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -170,8 +170,8 @@ public abstract class EReferenceTemplateImpl extends MinimalEObjectImpl.Containe
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DocumentStructureTemplatePackage.EREFERENCE_TEMPLATE__EREFERENCE:
-			setEReference((EReference) newValue);
+		case DocumentStructureTemplatePackage.EATTRIBUTE_TEMPLATE__EATTRIBUTE:
+			setEAttribute((EAttribute) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -186,8 +186,8 @@ public abstract class EReferenceTemplateImpl extends MinimalEObjectImpl.Containe
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DocumentStructureTemplatePackage.EREFERENCE_TEMPLATE__EREFERENCE:
-			setEReference((EReference) null);
+		case DocumentStructureTemplatePackage.EATTRIBUTE_TEMPLATE__EATTRIBUTE:
+			setEAttribute((EAttribute) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -202,8 +202,8 @@ public abstract class EReferenceTemplateImpl extends MinimalEObjectImpl.Containe
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case DocumentStructureTemplatePackage.EREFERENCE_TEMPLATE__EREFERENCE:
-			return eReference != null;
+		case DocumentStructureTemplatePackage.EATTRIBUTE_TEMPLATE__EATTRIBUTE:
+			return eAttribute != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -217,12 +217,12 @@ public abstract class EReferenceTemplateImpl extends MinimalEObjectImpl.Containe
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case DocumentStructureTemplatePackage.EREFERENCE_TEMPLATE___GET_EREFERENCE_VALUES__EOBJECT:
-			return getEReferenceValues((EObject) arguments.get(0));
-		case DocumentStructureTemplatePackage.EREFERENCE_TEMPLATE___BUILD_EREFERENCE_VALUE_LABEL__EOBJECT:
-			return buildEReferenceValueLabel((EObject) arguments.get(0));
+		case DocumentStructureTemplatePackage.EATTRIBUTE_TEMPLATE___BUILD_EATTRIBUTE_VALUE_LABEL__OBJECT:
+			return buildEAttributeValueLabel(arguments.get(0));
+		case DocumentStructureTemplatePackage.EATTRIBUTE_TEMPLATE___GET_EATTRIBUTE_VALUES__EOBJECT:
+			return getEAttributeValues((EObject) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
-} // EReferenceTemplateImpl
+} // EAttributeTemplateImpl

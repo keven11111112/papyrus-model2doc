@@ -31,10 +31,13 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStruc
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplatePrototype;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EAttributeListItemTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EAttributeTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassFilterBehavior;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassListItemTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassTemplate;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceListView;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceListItemTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTableView;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTemplate;
@@ -44,14 +47,22 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodyPartTemp
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IColumn;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedBodyPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedListItemTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedSubBodyPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedSubListItemTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafBodyPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafListItemTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafSubBodyPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafSubListItemTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IListItemTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IRootListItemTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubBodyPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubListItemTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITemplatePartView;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TableOfContents;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TreeListView;
 
 /**
  * <!-- begin-user-doc -->
@@ -211,14 +222,6 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 *
 	 * @generated
 	 */
-	private EClass eReferenceListViewEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
 	private EClass iTableViewEClass = null;
 
 	/**
@@ -252,6 +255,102 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	private EClass eStructuralFeatureTemplateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass iListItemTemplateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass iLeafListItemTemplateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass iRootListItemTemplateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass iComposedListItemTemplateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass iSubListItemTemplateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass iComposedSubListItemTemplateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass iLeafSubListItemTemplateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eReferenceListItemTemplateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eAttributeListItemTemplateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eAttributeTemplateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eClassListItemTemplateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass treeListViewEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -858,17 +957,6 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
-	public EClass getEReferenceListView() {
-		return eReferenceListViewEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
 	public EClass getITableView() {
 		return iTableViewEClass;
 	}
@@ -1056,6 +1144,248 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
+	public EClass getIListItemTemplate() {
+		return iListItemTemplateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getIListItemTemplate_GenerateItem() {
+		return (EAttribute) iListItemTemplateEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getIListItemTemplate_CustomItemLabel() {
+		return (EAttribute) iListItemTemplateEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EOperation getIListItemTemplate__BuildItemLabel__Object() {
+		return iListItemTemplateEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EOperation getIListItemTemplate__GetItems__EObject() {
+		return iListItemTemplateEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getILeafListItemTemplate() {
+		return iLeafListItemTemplateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getIRootListItemTemplate() {
+		return iRootListItemTemplateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getIComposedListItemTemplate() {
+		return iComposedListItemTemplateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getIComposedListItemTemplate_SubListItemTemplate() {
+		return (EReference) iComposedListItemTemplateEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getISubListItemTemplate() {
+		return iSubListItemTemplateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getIComposedSubListItemTemplate() {
+		return iComposedSubListItemTemplateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getIComposedSubListItemTemplate_ListItemTemplate() {
+		return (EReference) iComposedSubListItemTemplateEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getILeafSubListItemTemplate() {
+		return iLeafSubListItemTemplateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getEReferenceListItemTemplate() {
+		return eReferenceListItemTemplateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getEAttributeListItemTemplate() {
+		return eAttributeListItemTemplateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getEAttributeTemplate() {
+		return eAttributeTemplateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEAttributeTemplate_EAttribute() {
+		return (EReference) eAttributeTemplateEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EOperation getEAttributeTemplate__BuildEAttributeValueLabel__Object() {
+		return eAttributeTemplateEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EOperation getEAttributeTemplate__GetEAttributeValues__EObject() {
+		return eAttributeTemplateEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getEClassListItemTemplate() {
+		return eClassListItemTemplateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getTreeListView() {
+		return treeListViewEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getTreeListView_RootListItemTemplate() {
+		return (EReference) treeListViewEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EEnum getEClassFilterBehavior() {
 		return eClassFilterBehaviorEEnum;
 	}
@@ -1159,8 +1489,6 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 
 		iTemplatePartViewEClass = createEClass(ITEMPLATE_PART_VIEW);
 
-		eReferenceListViewEClass = createEClass(EREFERENCE_LIST_VIEW);
-
 		iTableViewEClass = createEClass(ITABLE_VIEW);
 		createEReference(iTableViewEClass, ITABLE_VIEW__COLUMNS);
 		createEAttribute(iTableViewEClass, ITABLE_VIEW__GENERATE_ROW_HEADER);
@@ -1182,6 +1510,40 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		createEReference(eStructuralFeatureTemplateEClass, ESTRUCTURAL_FEATURE_TEMPLATE__FEATURE);
 		createEOperation(eStructuralFeatureTemplateEClass, ESTRUCTURAL_FEATURE_TEMPLATE___GET_ESTRUCTURAL_FEATURE_VALUES__EOBJECT);
 		createEOperation(eStructuralFeatureTemplateEClass, ESTRUCTURAL_FEATURE_TEMPLATE___BUILD_EATTRIBUTE_VALUE_LABEL__OBJECT);
+
+		iListItemTemplateEClass = createEClass(ILIST_ITEM_TEMPLATE);
+		createEAttribute(iListItemTemplateEClass, ILIST_ITEM_TEMPLATE__GENERATE_ITEM);
+		createEAttribute(iListItemTemplateEClass, ILIST_ITEM_TEMPLATE__CUSTOM_ITEM_LABEL);
+		createEOperation(iListItemTemplateEClass, ILIST_ITEM_TEMPLATE___BUILD_ITEM_LABEL__OBJECT);
+		createEOperation(iListItemTemplateEClass, ILIST_ITEM_TEMPLATE___GET_ITEMS__EOBJECT);
+
+		iLeafListItemTemplateEClass = createEClass(ILEAF_LIST_ITEM_TEMPLATE);
+
+		iRootListItemTemplateEClass = createEClass(IROOT_LIST_ITEM_TEMPLATE);
+
+		iComposedListItemTemplateEClass = createEClass(ICOMPOSED_LIST_ITEM_TEMPLATE);
+		createEReference(iComposedListItemTemplateEClass, ICOMPOSED_LIST_ITEM_TEMPLATE__SUB_LIST_ITEM_TEMPLATE);
+
+		iSubListItemTemplateEClass = createEClass(ISUB_LIST_ITEM_TEMPLATE);
+
+		iComposedSubListItemTemplateEClass = createEClass(ICOMPOSED_SUB_LIST_ITEM_TEMPLATE);
+		createEReference(iComposedSubListItemTemplateEClass, ICOMPOSED_SUB_LIST_ITEM_TEMPLATE__LIST_ITEM_TEMPLATE);
+
+		iLeafSubListItemTemplateEClass = createEClass(ILEAF_SUB_LIST_ITEM_TEMPLATE);
+
+		eReferenceListItemTemplateEClass = createEClass(EREFERENCE_LIST_ITEM_TEMPLATE);
+
+		eAttributeListItemTemplateEClass = createEClass(EATTRIBUTE_LIST_ITEM_TEMPLATE);
+
+		eAttributeTemplateEClass = createEClass(EATTRIBUTE_TEMPLATE);
+		createEReference(eAttributeTemplateEClass, EATTRIBUTE_TEMPLATE__EATTRIBUTE);
+		createEOperation(eAttributeTemplateEClass, EATTRIBUTE_TEMPLATE___BUILD_EATTRIBUTE_VALUE_LABEL__OBJECT);
+		createEOperation(eAttributeTemplateEClass, EATTRIBUTE_TEMPLATE___GET_EATTRIBUTE_VALUES__EOBJECT);
+
+		eClassListItemTemplateEClass = createEClass(ECLASS_LIST_ITEM_TEMPLATE);
+
+		treeListViewEClass = createEClass(TREE_LIST_VIEW);
+		createEReference(treeListViewEClass, TREE_LIST_VIEW__ROOT_LIST_ITEM_TEMPLATE);
 
 		// Create enums
 		eClassFilterBehaviorEEnum = createEEnum(ECLASS_FILTER_BEHAVIOR);
@@ -1236,13 +1598,26 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		eClassPartTemplateEClass.getESuperTypes().add(this.getIComposedSubBodyPartTemplate());
 		eReferencePartTemplateEClass.getESuperTypes().add(this.getEReferenceTemplate());
 		eReferencePartTemplateEClass.getESuperTypes().add(this.getIComposedBodyPartTemplate());
-		eReferenceListViewEClass.getESuperTypes().add(this.getITemplatePartView());
 		iTableViewEClass.getESuperTypes().add(this.getILeafBodyPartTemplate());
 		iTableViewEClass.getESuperTypes().add(this.getITemplatePartView());
 		eReferenceTableViewEClass.getESuperTypes().add(this.getEReferenceTemplate());
 		eReferenceTableViewEClass.getESuperTypes().add(this.getITableView());
 		eStructuralFeatureColumnEClass.getESuperTypes().add(this.getEStructuralFeatureTemplate());
 		eStructuralFeatureColumnEClass.getESuperTypes().add(this.getIColumn());
+		iLeafListItemTemplateEClass.getESuperTypes().add(this.getIRootListItemTemplate());
+		iRootListItemTemplateEClass.getESuperTypes().add(this.getIListItemTemplate());
+		iComposedListItemTemplateEClass.getESuperTypes().add(this.getIRootListItemTemplate());
+		iSubListItemTemplateEClass.getESuperTypes().add(this.getIListItemTemplate());
+		iComposedSubListItemTemplateEClass.getESuperTypes().add(this.getISubListItemTemplate());
+		iLeafSubListItemTemplateEClass.getESuperTypes().add(this.getISubListItemTemplate());
+		eReferenceListItemTemplateEClass.getESuperTypes().add(this.getEReferenceTemplate());
+		eReferenceListItemTemplateEClass.getESuperTypes().add(this.getIComposedListItemTemplate());
+		eAttributeListItemTemplateEClass.getESuperTypes().add(this.getEAttributeTemplate());
+		eAttributeListItemTemplateEClass.getESuperTypes().add(this.getILeafListItemTemplate());
+		eClassListItemTemplateEClass.getESuperTypes().add(this.getEClassTemplate());
+		eClassListItemTemplateEClass.getESuperTypes().add(this.getIComposedSubListItemTemplate());
+		treeListViewEClass.getESuperTypes().add(this.getILeafBodyPartTemplate());
+		treeListViewEClass.getESuperTypes().add(this.getITemplatePartView());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(documentTemplateEClass, DocumentTemplate.class, "DocumentTemplate", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
@@ -1333,8 +1708,6 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 
 		initEClass(iTemplatePartViewEClass, ITemplatePartView.class, "ITemplatePartView", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
-		initEClass(eReferenceListViewEClass, EReferenceListView.class, "EReferenceListView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-
 		initEClass(iTableViewEClass, ITableView.class, "ITableView", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(getITableView_Columns(), this.getIColumn(), null, "columns", null, 0, -1, ITableView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 		initEAttribute(getITableView_GenerateRowHeader(), ecorePackage.getEBoolean(), "generateRowHeader", "true", 1, 1, ITableView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
@@ -1370,6 +1743,52 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 
 		op = initEOperation(getEStructuralFeatureTemplate__BuildEAttributeValueLabel__Object(), ecorePackage.getEString(), "buildEAttributeValueLabel", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 		addEParameter(op, theEcorePackage.getEJavaObject(), "value", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
+		initEClass(iListItemTemplateEClass, IListItemTemplate.class, "IListItemTemplate", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(getIListItemTemplate_GenerateItem(), ecorePackage.getEBoolean(), "generateItem", "true", 1, 1, IListItemTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
+		initEAttribute(getIListItemTemplate_CustomItemLabel(), ecorePackage.getEString(), "customItemLabel", null, 0, 1, IListItemTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+
+		op = initEOperation(getIListItemTemplate__BuildItemLabel__Object(), ecorePackage.getEString(), "buildItemLabel", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+		addEParameter(op, ecorePackage.getEJavaObject(), "item", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
+		op = initEOperation(getIListItemTemplate__GetItems__EObject(), ecorePackage.getEJavaObject(), "getItems", 0, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+		addEParameter(op, theEcorePackage.getEObject(), "context", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
+		initEClass(iLeafListItemTemplateEClass, ILeafListItemTemplate.class, "ILeafListItemTemplate", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEClass(iRootListItemTemplateEClass, IRootListItemTemplate.class, "IRootListItemTemplate", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEClass(iComposedListItemTemplateEClass, IComposedListItemTemplate.class, "IComposedListItemTemplate", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getIComposedListItemTemplate_SubListItemTemplate(), this.getISubListItemTemplate(), null, "subListItemTemplate", null, 0, -1, IComposedListItemTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, //$NON-NLS-1$
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(iSubListItemTemplateEClass, ISubListItemTemplate.class, "ISubListItemTemplate", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEClass(iComposedSubListItemTemplateEClass, IComposedSubListItemTemplate.class, "IComposedSubListItemTemplate", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getIComposedSubListItemTemplate_ListItemTemplate(), this.getIRootListItemTemplate(), null, "listItemTemplate", null, 0, -1, IComposedSubListItemTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, //$NON-NLS-1$
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(iLeafSubListItemTemplateEClass, ILeafSubListItemTemplate.class, "ILeafSubListItemTemplate", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEClass(eReferenceListItemTemplateEClass, EReferenceListItemTemplate.class, "EReferenceListItemTemplate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEClass(eAttributeListItemTemplateEClass, EAttributeListItemTemplate.class, "EAttributeListItemTemplate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEClass(eAttributeTemplateEClass, EAttributeTemplate.class, "EAttributeTemplate", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getEAttributeTemplate_EAttribute(), theEcorePackage.getEAttribute(), null, "eAttribute", null, 1, 1, EAttributeTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, //$NON-NLS-1$
+				!IS_DERIVED, !IS_ORDERED);
+
+		op = initEOperation(getEAttributeTemplate__BuildEAttributeValueLabel__Object(), ecorePackage.getEString(), "buildEAttributeValueLabel", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+		addEParameter(op, ecorePackage.getEJavaObject(), "value", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
+		op = initEOperation(getEAttributeTemplate__GetEAttributeValues__EObject(), ecorePackage.getEJavaObject(), "getEAttributeValues", 0, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+		addEParameter(op, theEcorePackage.getEObject(), "context", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
+		initEClass(eClassListItemTemplateEClass, EClassListItemTemplate.class, "EClassListItemTemplate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEClass(treeListViewEClass, TreeListView.class, "TreeListView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getTreeListView_RootListItemTemplate(), this.getIRootListItemTemplate(), null, "rootListItemTemplate", null, 0, -1, TreeListView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, //$NON-NLS-1$
+				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(eClassFilterBehaviorEEnum, EClassFilterBehavior.class, "EClassFilterBehavior"); //$NON-NLS-1$
@@ -1416,6 +1835,18 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 				new String[] {
 				});
 		addAnnotation(eStructuralFeatureColumnEClass,
+				source,
+				new String[] {
+				});
+		addAnnotation(eReferenceListItemTemplateEClass,
+				source,
+				new String[] {
+				});
+		addAnnotation(eAttributeListItemTemplateEClass,
+				source,
+				new String[] {
+				});
+		addAnnotation(eClassListItemTemplateEClass,
 				source,
 				new String[] {
 				});

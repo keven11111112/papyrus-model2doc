@@ -83,12 +83,18 @@ public class DocumentStructureTemplateFactoryImpl extends EFactoryImpl implement
 			return createEClassPartTemplate();
 		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE:
 			return createEReferencePartTemplate();
-		case DocumentStructureTemplatePackage.EREFERENCE_LIST_VIEW:
-			return createEReferenceListView();
 		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW:
 			return createEReferenceTableView();
 		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_COLUMN:
 			return createEStructuralFeatureColumn();
+		case DocumentStructureTemplatePackage.EREFERENCE_LIST_ITEM_TEMPLATE:
+			return createEReferenceListItemTemplate();
+		case DocumentStructureTemplatePackage.EATTRIBUTE_LIST_ITEM_TEMPLATE:
+			return createEAttributeListItemTemplate();
+		case DocumentStructureTemplatePackage.ECLASS_LIST_ITEM_TEMPLATE:
+			return createEClassListItemTemplate();
+		case DocumentStructureTemplatePackage.TREE_LIST_VIEW:
+			return createTreeListView();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -205,18 +211,6 @@ public class DocumentStructureTemplateFactoryImpl extends EFactoryImpl implement
 	 * @generated
 	 */
 	@Override
-	public EReferenceListView createEReferenceListView() {
-		EReferenceListViewImpl eReferenceListView = new EReferenceListViewImpl();
-		return eReferenceListView;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
 	public EReferenceTableView createEReferenceTableView() {
 		EReferenceTableViewImpl eReferenceTableView = new EReferenceTableViewImpl();
 		return eReferenceTableView;
@@ -232,6 +226,54 @@ public class DocumentStructureTemplateFactoryImpl extends EFactoryImpl implement
 	public EStructuralFeatureColumn createEStructuralFeatureColumn() {
 		EStructuralFeatureColumnImpl eStructuralFeatureColumn = new EStructuralFeatureColumnImpl();
 		return eStructuralFeatureColumn;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReferenceListItemTemplate createEReferenceListItemTemplate() {
+		EReferenceListItemTemplateImpl eReferenceListItemTemplate = new EReferenceListItemTemplateImpl();
+		return eReferenceListItemTemplate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttributeListItemTemplate createEAttributeListItemTemplate() {
+		EAttributeListItemTemplateImpl eAttributeListItemTemplate = new EAttributeListItemTemplateImpl();
+		return eAttributeListItemTemplate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClassListItemTemplate createEClassListItemTemplate() {
+		EClassListItemTemplateImpl eClassListItemTemplate = new EClassListItemTemplateImpl();
+		return eClassListItemTemplate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public TreeListView createTreeListView() {
+		TreeListViewImpl treeListView = new TreeListViewImpl();
+		return treeListView;
 	}
 
 	/**

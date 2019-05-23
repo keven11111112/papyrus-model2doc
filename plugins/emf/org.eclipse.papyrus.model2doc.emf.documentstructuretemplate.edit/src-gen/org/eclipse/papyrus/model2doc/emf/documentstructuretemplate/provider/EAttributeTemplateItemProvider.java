@@ -22,6 +22,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -31,14 +32,16 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
+
 /**
- * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceListView} object.
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EAttributeTemplate} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class EReferenceListViewItemProvider
+public class EAttributeTemplateItemProvider
 		extends ItemProviderAdapter
 		implements
 		IEditingDomainItemProvider,
@@ -53,7 +56,7 @@ public class EReferenceListViewItemProvider
 	 *
 	 * @generated
 	 */
-	public EReferenceListViewItemProvider(AdapterFactory adapterFactory) {
+	public EAttributeTemplateItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -69,8 +72,30 @@ public class EReferenceListViewItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addEAttributePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the EAttribute feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected void addEAttributePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_EAttributeTemplate_eAttribute_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EAttributeTemplate_eAttribute_feature", "_UI_EAttributeTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				DocumentStructureTemplatePackage.Literals.EATTRIBUTE_TEMPLATE__EATTRIBUTE,
+				true,
+				false,
+				true,
+				null,
+				null,
+				null));
 	}
 
 	/**
@@ -82,18 +107,6 @@ public class EReferenceListViewItemProvider
 	@Override
 	public boolean hasChildren(Object object) {
 		return hasChildren(object, true);
-	}
-
-	/**
-	 * This returns EReferenceListView.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/EReferenceListView")); //$NON-NLS-1$
 	}
 
 	/**
@@ -116,7 +129,7 @@ public class EReferenceListViewItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_EReferenceListView_type"); //$NON-NLS-1$
+		return getString("_UI_EAttributeTemplate_type"); //$NON-NLS-1$
 	}
 
 

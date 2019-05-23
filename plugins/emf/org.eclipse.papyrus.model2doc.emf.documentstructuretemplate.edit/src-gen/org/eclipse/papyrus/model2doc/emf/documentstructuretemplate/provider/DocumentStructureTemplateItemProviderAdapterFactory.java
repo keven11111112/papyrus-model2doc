@@ -256,31 +256,6 @@ public class DocumentStructureTemplateItemProviderAdapterFactory extends Documen
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceListView} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected EReferenceListViewItemProvider eReferenceListViewItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceListView}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public Adapter createEReferenceListViewAdapter() {
-		if (eReferenceListViewItemProvider == null) {
-			eReferenceListViewItemProvider = new EReferenceListViewItemProvider(this);
-		}
-
-		return eReferenceListViewItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTableView} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -328,6 +303,106 @@ public class DocumentStructureTemplateItemProviderAdapterFactory extends Documen
 		}
 
 		return eStructuralFeatureColumnItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceListItemTemplate} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected EReferenceListItemTemplateItemProvider eReferenceListItemTemplateItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceListItemTemplate}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Adapter createEReferenceListItemTemplateAdapter() {
+		if (eReferenceListItemTemplateItemProvider == null) {
+			eReferenceListItemTemplateItemProvider = new EReferenceListItemTemplateItemProvider(this);
+		}
+
+		return eReferenceListItemTemplateItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EAttributeListItemTemplate} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected EAttributeListItemTemplateItemProvider eAttributeListItemTemplateItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EAttributeListItemTemplate}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Adapter createEAttributeListItemTemplateAdapter() {
+		if (eAttributeListItemTemplateItemProvider == null) {
+			eAttributeListItemTemplateItemProvider = new EAttributeListItemTemplateItemProvider(this);
+		}
+
+		return eAttributeListItemTemplateItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassListItemTemplate} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected EClassListItemTemplateItemProvider eClassListItemTemplateItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassListItemTemplate}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Adapter createEClassListItemTemplateAdapter() {
+		if (eClassListItemTemplateItemProvider == null) {
+			eClassListItemTemplateItemProvider = new EClassListItemTemplateItemProvider(this);
+		}
+
+		return eClassListItemTemplateItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TreeListView} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected TreeListViewItemProvider treeListViewItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TreeListView}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Adapter createTreeListViewAdapter() {
+		if (treeListViewItemProvider == null) {
+			treeListViewItemProvider = new TreeListViewItemProvider(this);
+		}
+
+		return treeListViewItemProvider;
 	}
 
 	/**
@@ -494,14 +569,23 @@ public class DocumentStructureTemplateItemProviderAdapterFactory extends Documen
 		if (eReferencePartTemplateItemProvider != null) {
 			eReferencePartTemplateItemProvider.dispose();
 		}
-		if (eReferenceListViewItemProvider != null) {
-			eReferenceListViewItemProvider.dispose();
-		}
 		if (eReferenceTableViewItemProvider != null) {
 			eReferenceTableViewItemProvider.dispose();
 		}
 		if (eStructuralFeatureColumnItemProvider != null) {
 			eStructuralFeatureColumnItemProvider.dispose();
+		}
+		if (eReferenceListItemTemplateItemProvider != null) {
+			eReferenceListItemTemplateItemProvider.dispose();
+		}
+		if (eAttributeListItemTemplateItemProvider != null) {
+			eAttributeListItemTemplateItemProvider.dispose();
+		}
+		if (eClassListItemTemplateItemProvider != null) {
+			eClassListItemTemplateItemProvider.dispose();
+		}
+		if (treeListViewItemProvider != null) {
+			treeListViewItemProvider.dispose();
 		}
 	}
 

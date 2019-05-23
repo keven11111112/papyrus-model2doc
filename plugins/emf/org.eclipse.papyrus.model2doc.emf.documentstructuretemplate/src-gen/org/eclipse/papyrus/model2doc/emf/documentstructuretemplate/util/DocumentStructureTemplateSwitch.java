@@ -290,17 +290,6 @@ public class DocumentStructureTemplateSwitch<T> extends Switch<T> {
 			}
 			return result;
 		}
-		case DocumentStructureTemplatePackage.EREFERENCE_LIST_VIEW: {
-			EReferenceListView eReferenceListView = (EReferenceListView) theEObject;
-			T result = caseEReferenceListView(eReferenceListView);
-			if (result == null) {
-				result = caseITemplatePartView(eReferenceListView);
-			}
-			if (result == null) {
-				result = defaultCase(theEObject);
-			}
-			return result;
-		}
 		case DocumentStructureTemplatePackage.ITABLE_VIEW: {
 			ITableView iTableView = (ITableView) theEObject;
 			T result = caseITableView(iTableView);
@@ -372,6 +361,180 @@ public class DocumentStructureTemplateSwitch<T> extends Switch<T> {
 		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_TEMPLATE: {
 			EStructuralFeatureTemplate eStructuralFeatureTemplate = (EStructuralFeatureTemplate) theEObject;
 			T result = caseEStructuralFeatureTemplate(eStructuralFeatureTemplate);
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructureTemplatePackage.ILIST_ITEM_TEMPLATE: {
+			IListItemTemplate iListItemTemplate = (IListItemTemplate) theEObject;
+			T result = caseIListItemTemplate(iListItemTemplate);
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructureTemplatePackage.ILEAF_LIST_ITEM_TEMPLATE: {
+			ILeafListItemTemplate iLeafListItemTemplate = (ILeafListItemTemplate) theEObject;
+			T result = caseILeafListItemTemplate(iLeafListItemTemplate);
+			if (result == null) {
+				result = caseIRootListItemTemplate(iLeafListItemTemplate);
+			}
+			if (result == null) {
+				result = caseIListItemTemplate(iLeafListItemTemplate);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructureTemplatePackage.IROOT_LIST_ITEM_TEMPLATE: {
+			IRootListItemTemplate iRootListItemTemplate = (IRootListItemTemplate) theEObject;
+			T result = caseIRootListItemTemplate(iRootListItemTemplate);
+			if (result == null) {
+				result = caseIListItemTemplate(iRootListItemTemplate);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructureTemplatePackage.ICOMPOSED_LIST_ITEM_TEMPLATE: {
+			IComposedListItemTemplate iComposedListItemTemplate = (IComposedListItemTemplate) theEObject;
+			T result = caseIComposedListItemTemplate(iComposedListItemTemplate);
+			if (result == null) {
+				result = caseIRootListItemTemplate(iComposedListItemTemplate);
+			}
+			if (result == null) {
+				result = caseIListItemTemplate(iComposedListItemTemplate);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructureTemplatePackage.ISUB_LIST_ITEM_TEMPLATE: {
+			ISubListItemTemplate iSubListItemTemplate = (ISubListItemTemplate) theEObject;
+			T result = caseISubListItemTemplate(iSubListItemTemplate);
+			if (result == null) {
+				result = caseIListItemTemplate(iSubListItemTemplate);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructureTemplatePackage.ICOMPOSED_SUB_LIST_ITEM_TEMPLATE: {
+			IComposedSubListItemTemplate iComposedSubListItemTemplate = (IComposedSubListItemTemplate) theEObject;
+			T result = caseIComposedSubListItemTemplate(iComposedSubListItemTemplate);
+			if (result == null) {
+				result = caseISubListItemTemplate(iComposedSubListItemTemplate);
+			}
+			if (result == null) {
+				result = caseIListItemTemplate(iComposedSubListItemTemplate);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructureTemplatePackage.ILEAF_SUB_LIST_ITEM_TEMPLATE: {
+			ILeafSubListItemTemplate iLeafSubListItemTemplate = (ILeafSubListItemTemplate) theEObject;
+			T result = caseILeafSubListItemTemplate(iLeafSubListItemTemplate);
+			if (result == null) {
+				result = caseISubListItemTemplate(iLeafSubListItemTemplate);
+			}
+			if (result == null) {
+				result = caseIListItemTemplate(iLeafSubListItemTemplate);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructureTemplatePackage.EREFERENCE_LIST_ITEM_TEMPLATE: {
+			EReferenceListItemTemplate eReferenceListItemTemplate = (EReferenceListItemTemplate) theEObject;
+			T result = caseEReferenceListItemTemplate(eReferenceListItemTemplate);
+			if (result == null) {
+				result = caseEReferenceTemplate(eReferenceListItemTemplate);
+			}
+			if (result == null) {
+				result = caseIComposedListItemTemplate(eReferenceListItemTemplate);
+			}
+			if (result == null) {
+				result = caseIRootListItemTemplate(eReferenceListItemTemplate);
+			}
+			if (result == null) {
+				result = caseIListItemTemplate(eReferenceListItemTemplate);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructureTemplatePackage.EATTRIBUTE_LIST_ITEM_TEMPLATE: {
+			EAttributeListItemTemplate eAttributeListItemTemplate = (EAttributeListItemTemplate) theEObject;
+			T result = caseEAttributeListItemTemplate(eAttributeListItemTemplate);
+			if (result == null) {
+				result = caseEAttributeTemplate(eAttributeListItemTemplate);
+			}
+			if (result == null) {
+				result = caseILeafListItemTemplate(eAttributeListItemTemplate);
+			}
+			if (result == null) {
+				result = caseIRootListItemTemplate(eAttributeListItemTemplate);
+			}
+			if (result == null) {
+				result = caseIListItemTemplate(eAttributeListItemTemplate);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructureTemplatePackage.EATTRIBUTE_TEMPLATE: {
+			EAttributeTemplate eAttributeTemplate = (EAttributeTemplate) theEObject;
+			T result = caseEAttributeTemplate(eAttributeTemplate);
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructureTemplatePackage.ECLASS_LIST_ITEM_TEMPLATE: {
+			EClassListItemTemplate eClassListItemTemplate = (EClassListItemTemplate) theEObject;
+			T result = caseEClassListItemTemplate(eClassListItemTemplate);
+			if (result == null) {
+				result = caseEClassTemplate(eClassListItemTemplate);
+			}
+			if (result == null) {
+				result = caseIComposedSubListItemTemplate(eClassListItemTemplate);
+			}
+			if (result == null) {
+				result = caseISubListItemTemplate(eClassListItemTemplate);
+			}
+			if (result == null) {
+				result = caseIListItemTemplate(eClassListItemTemplate);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructureTemplatePackage.TREE_LIST_VIEW: {
+			TreeListView treeListView = (TreeListView) theEObject;
+			T result = caseTreeListView(treeListView);
+			if (result == null) {
+				result = caseILeafBodyPartTemplate(treeListView);
+			}
+			if (result == null) {
+				result = caseITemplatePartView(treeListView);
+			}
+			if (result == null) {
+				result = caseIBodyPartTemplate(treeListView);
+			}
+			if (result == null) {
+				result = caseIBodySectionPartTemplate(treeListView);
+			}
 			if (result == null) {
 				result = defaultCase(theEObject);
 			}
@@ -689,23 +852,6 @@ public class DocumentStructureTemplateSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>EReference List View</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 *
-	 * @param object
-	 *                   the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>EReference List View</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEReferenceListView(EReferenceListView object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>ITable View</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -787,6 +933,210 @@ public class DocumentStructureTemplateSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEStructuralFeatureTemplate(EStructuralFeatureTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IList Item Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IList Item Template</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIListItemTemplate(IListItemTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>ILeaf List Item Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>ILeaf List Item Template</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseILeafListItemTemplate(ILeafListItemTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IRoot List Item Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IRoot List Item Template</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIRootListItemTemplate(IRootListItemTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IComposed List Item Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IComposed List Item Template</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIComposedListItemTemplate(IComposedListItemTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>ISub List Item Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>ISub List Item Template</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseISubListItemTemplate(ISubListItemTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IComposed Sub List Item Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IComposed Sub List Item Template</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIComposedSubListItemTemplate(IComposedSubListItemTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>ILeaf Sub List Item Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>ILeaf Sub List Item Template</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseILeafSubListItemTemplate(ILeafSubListItemTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EReference List Item Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EReference List Item Template</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEReferenceListItemTemplate(EReferenceListItemTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EAttribute List Item Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EAttribute List Item Template</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEAttributeListItemTemplate(EAttributeListItemTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EAttribute Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EAttribute Template</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEAttributeTemplate(EAttributeTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EClass List Item Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EClass List Item Template</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEClassListItemTemplate(EClassListItemTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Tree List View</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Tree List View</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTreeListView(TreeListView object) {
 		return null;
 	}
 
