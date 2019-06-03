@@ -59,6 +59,18 @@ If the diagram doesn't have a PapryusDiagramStyle, this method returns false. </
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_W9xGIF9sEemxcMQajU1fyA" value="*"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_JRxRoIX3EemhaembVcoeKQ" name="buildPartTemplateTitle">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_RY7mAIX3EemhaembVcoeKQ" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_R9nAYIX3EemhaembVcoeKQ" key="body" value="return org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.internal.operations.PapyrusGMFBodySectionPartTemplateTitleOperations.PAPYRUS_GMF_INSTANCE.buildPartTemplateTitle(this,context);"/>
+        </eAnnotations>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_McrucIX3EemhaembVcoeKQ" name="context">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_OQJQIIX3EemhaembVcoeKQ" name="returnValue" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+        <redefinedOperation xmi:type="uml:Operation" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#__h3MoHV1EemQUasExi-pKA"/>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_ck2IkF9aEemxcMQajU1fyA" name="Diagram">
       <ownedComment xmi:type="uml:Comment" xmi:id="_3NeNAF9aEemxcMQajU1fyA" annotatedElement="_ck2IkF9aEemxcMQajU1fyA">

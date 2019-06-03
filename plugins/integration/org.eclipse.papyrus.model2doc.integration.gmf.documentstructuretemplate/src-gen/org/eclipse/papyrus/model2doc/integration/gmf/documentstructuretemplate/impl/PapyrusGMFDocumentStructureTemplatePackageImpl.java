@@ -326,6 +326,8 @@ public class PapyrusGMFDocumentStructureTemplatePackageImpl extends EPackageImpl
 		// Create annotations
 		// http://www.eclipse.org/uml2/2.0.0/UML
 		createUMLAnnotations();
+		// duplicates
+		createDuplicatesAnnotations();
 	}
 
 	/**
@@ -341,6 +343,21 @@ public class PapyrusGMFDocumentStructureTemplatePackageImpl extends EPackageImpl
 				source,
 				new String[] {
 						"originalName", "PapyrusGMFDocumentStructureTemplate" //$NON-NLS-1$ //$NON-NLS-2$
+				});
+	}
+
+	/**
+	 * Initializes the annotations for <b>duplicates</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected void createDuplicatesAnnotations() {
+		String source = "duplicates"; //$NON-NLS-1$
+		addAnnotation(papyrusGMFDiagramViewEClass,
+				source,
+				new String[] {
 				});
 	}
 

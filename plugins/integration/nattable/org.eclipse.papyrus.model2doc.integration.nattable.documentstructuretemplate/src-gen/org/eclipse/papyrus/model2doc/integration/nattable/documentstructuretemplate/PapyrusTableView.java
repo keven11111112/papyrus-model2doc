@@ -168,4 +168,14 @@ public interface PapyrusTableView extends ILeafBodyPartTemplate, ITemplatePartVi
 	 */
 	EList<Table> getMatchingTables(EObject expectedTableContext);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" tableContextRequired="true" tableContextOrdered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body=' return org.eclipse.papyrus.model2doc.integration.nattable.documentstructuretemplate.internal.operations.PapyrusNattableBodySectionPartTemplateTitleOperations.PAPYRUS_NATTABLE_INSTANCE.buildPartTemplateTitle(this, tableContext);'"
+	 * @generated
+	 */
+	@Override
+	String buildPartTemplateTitle(EObject tableContext);
+
 } // PapyrusTableView

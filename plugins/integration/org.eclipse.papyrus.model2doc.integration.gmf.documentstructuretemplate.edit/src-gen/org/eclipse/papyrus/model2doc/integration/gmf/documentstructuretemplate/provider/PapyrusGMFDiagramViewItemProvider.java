@@ -248,8 +248,9 @@ public class PapyrusGMFDiagramViewItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		PapyrusGMFDiagramView papyrusGMFDiagramView = (PapyrusGMFDiagramView) object;
-		return getString("_UI_PapyrusGMFDiagramView_type") + " " + papyrusGMFDiagramView.isGenerate(); //$NON-NLS-1$ //$NON-NLS-2$
+		String label = ((PapyrusGMFDiagramView) object).getCustomTitle();
+		return label == null || label.length() == 0 ? getString("_UI_PapyrusGMFDiagramView_type") : //$NON-NLS-1$
+				getString("_UI_PapyrusGMFDiagramView_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 

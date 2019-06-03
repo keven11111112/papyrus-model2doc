@@ -36,6 +36,18 @@ It type is not defined, the method will returns all diagrams.</body>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Gt8sAFxgEemyeb6zzD570Q" value="*"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_zWGWcIX0EemhaembVcoeKQ" name="buildPartTemplateTitle">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9mg2UIX0EemhaembVcoeKQ" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-Kj-kIX0EemhaembVcoeKQ" key="body" value="return org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.internal.operations.GMFBodySectionPartTemplateTitleOperations.GMF_INSTANCE.buildPartTemplateTitle(this, context);"/>
+        </eAnnotations>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_3fMSwIX0EemhaembVcoeKQ" name="context">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_5W6pYIX0EemhaembVcoeKQ" name="returnValue" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+        <redefinedOperation xmi:type="uml:Operation" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#__h3MoHV1EemQUasExi-pKA"/>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_qmWI8FwvEemF3-UZXrtb4g" name="Diagram">
       <ownedComment xmi:type="uml:Comment" xmi:id="_hIWvEFwwEemF3-UZXrtb4g" annotatedElement="_qmWI8FwvEemF3-UZXrtb4g">

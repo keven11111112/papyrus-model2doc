@@ -201,8 +201,9 @@ public class GMFDiagramViewItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		GMFDiagramView gmfDiagramView = (GMFDiagramView) object;
-		return getString("_UI_GMFDiagramView_type") + " " + gmfDiagramView.isGenerate(); //$NON-NLS-1$ //$NON-NLS-2$
+		String label = ((GMFDiagramView) object).getCustomTitle();
+		return label == null || label.length() == 0 ? getString("_UI_GMFDiagramView_type") : //$NON-NLS-1$
+				getString("_UI_GMFDiagramView_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 

@@ -272,10 +272,8 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	@Override
-	public String buildPartTemplateTitle(EObject context) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public String buildPartTemplateTitle(final EObject context) {
+		return org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.internal.operations.GMFBodySectionPartTemplateTitleOperations.GMF_INSTANCE.buildPartTemplateTitle(this, context);
 	}
 
 	/**

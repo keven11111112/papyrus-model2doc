@@ -269,6 +269,8 @@ public class GMFDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 		// Create annotations
 		// http://www.eclipse.org/uml2/2.0.0/UML
 		createUMLAnnotations();
+		// duplicates
+		createDuplicatesAnnotations();
 	}
 
 	/**
@@ -284,6 +286,21 @@ public class GMFDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 				source,
 				new String[] {
 						"originalName", "GMFdocumentstructuretemplate" //$NON-NLS-1$ //$NON-NLS-2$
+				});
+	}
+
+	/**
+	 * Initializes the annotations for <b>duplicates</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected void createDuplicatesAnnotations() {
+		String source = "duplicates"; //$NON-NLS-1$
+		addAnnotation(gmfDiagramViewEClass,
+				source,
+				new String[] {
 				});
 	}
 

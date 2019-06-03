@@ -39,7 +39,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITemplatePart
  * </ul>
  *
  * @see org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDocumentStructureTemplatePackage#getGMFDiagramView()
- * @model
+ * @model annotation="duplicates"
  * @generated
  */
 public interface GMFDiagramView extends ITemplatePartView, ILeafBodyPartTemplate {

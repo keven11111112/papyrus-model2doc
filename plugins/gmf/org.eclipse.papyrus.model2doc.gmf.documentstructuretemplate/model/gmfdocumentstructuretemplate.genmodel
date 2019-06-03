@@ -22,18 +22,18 @@
     <details key="COMMENTS" value="PROCESS"/>
     <details key="DERIVED_FEATURES" value="PROCESS"/>
     <details key="SUPER_CLASS_ORDER" value="PROCESS"/>
-    <details key="DUPLICATE_OPERATION_INHERITANCE" value="DISCARD"/>
-    <details key="REDEFINING_OPERATIONS" value="REPORT"/>
+    <details key="DUPLICATE_OPERATION_INHERITANCE" value="PROCESS"/>
+    <details key="REDEFINING_OPERATIONS" value="PROCESS"/>
     <details key="INVARIANT_CONSTRAINTS" value="PROCESS"/>
     <details key="UNION_PROPERTIES" value="REPORT"/>
-    <details key="DUPLICATE_OPERATIONS" value="DISCARD"/>
+    <details key="DUPLICATE_OPERATIONS" value="PROCESS"/>
     <details key="NON_API_INVARIANTS" value="IGNORE"/>
     <details key="CAMEL_CASE_NAMES" value="IGNORE"/>
     <details key="SUBSETTING_PROPERTIES" value="REPORT"/>
     <details key="OPERATION_BODIES" value="IGNORE"/>
     <details key="ECORE_TAGGED_VALUES" value="PROCESS"/>
     <details key="UNTYPED_PROPERTIES" value="REPORT"/>
-    <details key="REDEFINING_PROPERTIES" value="REPORT"/>
+    <details key="REDEFINING_PROPERTIES" value="PROCESS"/>
     <details key="INVOCATION_DELEGATES" value="IGNORE"/>
     <details key="VALIDATION_DELEGATES" value="IGNORE"/>
   </genAnnotations>
@@ -42,7 +42,8 @@
       basePackage="org.eclipse.papyrus.model2doc.gmf" disposableProviderFactory="true"
       multipleEditorPages="false" generateModelWizard="false" extensibleProviderFactory="true"
       childCreationExtenders="true" ecorePackage="gmfdocumentstructuretemplate.ecore#/">
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="gmfdocumentstructuretemplate.ecore#//GMFDiagramView">
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="gmfdocumentstructuretemplate.ecore#//GMFDiagramView"
+        labelFeature="../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.genmodel#//documentstructuretemplate/IBodySectionPartTemplate/customTitle">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute gmfdocumentstructuretemplate.ecore#//GMFDiagramView/diagramType"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="gmfdocumentstructuretemplate.ecore#//GMFDiagramView/getMatchingDiagrams">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="gmfdocumentstructuretemplate.ecore#//GMFDiagramView/getMatchingDiagrams/expectedDiagramContext"/>

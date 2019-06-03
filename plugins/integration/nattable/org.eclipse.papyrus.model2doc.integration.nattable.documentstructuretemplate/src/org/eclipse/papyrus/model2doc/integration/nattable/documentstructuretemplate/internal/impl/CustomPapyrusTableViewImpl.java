@@ -23,7 +23,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
-import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.infra.nattable.model.nattable.Table;
 import org.eclipse.papyrus.model2doc.integration.nattable.documentstructuretemplate.PapyrusTableView;
 import org.eclipse.papyrus.model2doc.integration.nattable.documentstructuretemplate.impl.PapyrusTableViewImpl;
@@ -148,42 +147,6 @@ public class CustomPapyrusTableViewImpl extends PapyrusTableViewImpl {
 	 */
 	private boolean matchTableKind(final Table table) {
 		return this.tableKindId == null || this.tableKindId.isEmpty() || this.tableKindId.equals(table.getTableKindId());
-	}
-
-
-	/**
-	 * @see org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.impl.PapyrusGMFDiagramViewImpl#buildPartTemplateTitle()
-	 *
-	 * @return
-	 */
-	@Override
-	public String buildPartTemplateTitle(final EObject tableContext) {
-		if (hasTableKindId() && false == hasTableType()) {
-			return NLS.bind("{0} tables", this.tableKindId); //$NON-NLS-1$
-		} else if (hasTableType() && false == hasTableKindId()) {
-			return NLS.bind("{0} tables", this.hasTableType()); //$NON-NLS-1$
-		} else if (hasTableKindId() && hasTableType()) {
-			return NLS.bind("Tables of type {0} and kind {1}", this.tableType, this.tableKindId); //$NON-NLS-1$
-		}
-		return "All owned tables"; //$NON-NLS-1$
-	}
-
-	/**
-	 *
-	 * @return
-	 *         <code>true</code> if a tableKindId is defined
-	 */
-	private boolean hasTableKindId() {
-		return null != this.tableKindId && false == this.tableKindId.isEmpty();
-	}
-
-	/**
-	 *
-	 * @return
-	 *         <code>true</code> if a tableType is defined
-	 */
-	private boolean hasTableType() {
-		return null != this.tableType && false == this.tableType.isEmpty();
 	}
 
 }

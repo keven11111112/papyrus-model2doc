@@ -175,7 +175,7 @@ public class PapyrusTableViewMapper extends AbstractTemplateToStructureMapper<Pa
 			flushEventLoop();
 		}
 
-		// 6. call method to create the ouput BodyPart
+		// 6. call method to create the output BodyPart
 		final BodyPart bodyPart;
 		switch (papyrusTableView.getImportMethod()) {
 		case IMAGE:
@@ -261,7 +261,7 @@ public class PapyrusTableViewMapper extends AbstractTemplateToStructureMapper<Pa
 		final RowIterator rowIterator = parser.parse();
 		final Iterator<Object> rowIter = manager.getRowElementsList().iterator();
 
-		while (rowIterator.hasNext()) {
+		while (rowIterator.hasNext() && rowIter.hasNext()) {
 			// 8.1 create a new row
 			BasicRow row = BuiltInTypesFactory.eINSTANCE.createBasicRow();
 			basicTable.getRows().add(row);

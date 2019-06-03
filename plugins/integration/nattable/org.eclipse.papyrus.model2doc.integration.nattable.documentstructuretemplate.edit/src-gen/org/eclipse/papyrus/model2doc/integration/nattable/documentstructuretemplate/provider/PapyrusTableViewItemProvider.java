@@ -257,8 +257,9 @@ public class PapyrusTableViewItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		PapyrusTableView papyrusTableView = (PapyrusTableView) object;
-		return getString("_UI_PapyrusTableView_type") + " " + papyrusTableView.isGenerate(); //$NON-NLS-1$ //$NON-NLS-2$
+		String label = ((PapyrusTableView) object).getCustomTitle();
+		return label == null || label.length() == 0 ? getString("_UI_PapyrusTableView_type") : //$NON-NLS-1$
+				getString("_UI_PapyrusTableView_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 

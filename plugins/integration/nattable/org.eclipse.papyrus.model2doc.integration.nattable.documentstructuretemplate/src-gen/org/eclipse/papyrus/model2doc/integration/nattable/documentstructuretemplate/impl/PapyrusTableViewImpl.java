@@ -385,10 +385,8 @@ public class PapyrusTableViewImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	@Override
-	public String buildPartTemplateTitle(EObject context) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public String buildPartTemplateTitle(final EObject tableContext) {
+		return org.eclipse.papyrus.model2doc.integration.nattable.documentstructuretemplate.internal.operations.PapyrusNattableBodySectionPartTemplateTitleOperations.PAPYRUS_NATTABLE_INSTANCE.buildPartTemplateTitle(this, tableContext);
 	}
 
 	/**
@@ -529,7 +527,7 @@ public class PapyrusTableViewImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case PapyrusNattableDocumentStructureTemplatePackage.PAPYRUS_TABLE_VIEW___BUILD_PART_TEMPLATE_TITLE__EOBJECT:
+		case PapyrusNattableDocumentStructureTemplatePackage.PAPYRUS_TABLE_VIEW___BUILD_PART_TEMPLATE_TITLE__EOBJECT_1:
 			return buildPartTemplateTitle((EObject) arguments.get(0));
 		case PapyrusNattableDocumentStructureTemplatePackage.PAPYRUS_TABLE_VIEW___GET_MATCHING_TABLES__EOBJECT:
 			return getMatchingTables((EObject) arguments.get(0));

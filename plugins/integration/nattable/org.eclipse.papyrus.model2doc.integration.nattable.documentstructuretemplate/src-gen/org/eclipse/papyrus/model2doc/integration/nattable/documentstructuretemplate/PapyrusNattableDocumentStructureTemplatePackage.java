@@ -172,13 +172,22 @@ public interface PapyrusNattableDocumentStructureTemplatePackage extends EPackag
 	int PAPYRUS_TABLE_VIEW___GET_MATCHING_TABLES__EOBJECT = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE_OPERATION_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Build Part Template Title</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAPYRUS_TABLE_VIEW___BUILD_PART_TEMPLATE_TITLE__EOBJECT_1 = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE_OPERATION_COUNT + 1;
+
+	/**
 	 * The number of operations of the '<em>Papyrus Table View</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAPYRUS_TABLE_VIEW_OPERATION_COUNT = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE_OPERATION_COUNT + 1;
+	int PAPYRUS_TABLE_VIEW_OPERATION_COUNT = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.Table <em>Table</em>}' class.
@@ -294,6 +303,16 @@ public interface PapyrusNattableDocumentStructureTemplatePackage extends EPackag
 	EOperation getPapyrusTableView__GetMatchingTables__EObject();
 
 	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.integration.nattable.documentstructuretemplate.PapyrusTableView#buildPartTemplateTitle(org.eclipse.emf.ecore.EObject) <em>Build Part Template Title</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Build Part Template Title</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.integration.nattable.documentstructuretemplate.PapyrusTableView#buildPartTemplateTitle(org.eclipse.emf.ecore.EObject)
+	 * @generated
+	 */
+	EOperation getPapyrusTableView__BuildPartTemplateTitle__EObject_1();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.nattable.model.nattable.Table <em>Table</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -396,6 +415,14 @@ public interface PapyrusNattableDocumentStructureTemplatePackage extends EPackag
 		 * @generated
 		 */
 		EOperation PAPYRUS_TABLE_VIEW___GET_MATCHING_TABLES__EOBJECT = eINSTANCE.getPapyrusTableView__GetMatchingTables__EObject();
+
+		/**
+		 * The meta object literal for the '<em><b>Build Part Template Title</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PAPYRUS_TABLE_VIEW___BUILD_PART_TEMPLATE_TITLE__EOBJECT_1 = eINSTANCE.getPapyrusTableView__BuildPartTemplateTitle__EObject_1();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.Table <em>Table</em>}' class.

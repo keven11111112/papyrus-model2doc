@@ -64,6 +64,17 @@ If type and kind are not defined, the method will returns all table owned by the
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XXElMGzZEemv9PXZKzcfkA" value="*"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_VivCEIX5EemhaembVcoeKQ" name="buildPartTemplateTitle">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_cAE48IX5EemhaembVcoeKQ" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fTnGQIX5EemhaembVcoeKQ" key="body" value=" return org.eclipse.papyrus.model2doc.integration.nattable.documentstructuretemplate.internal.operations.PapyrusNattableBodySectionPartTemplateTitleOperations.PAPYRUS_NATTABLE_INSTANCE.buildPartTemplateTitle(this, tableContext);"/>
+        </eAnnotations>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Zpp0IIX5EemhaembVcoeKQ" name="tableContext">
+          <type xmi:type="uml:Class" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWijsX_EduPJbEsMYXjUQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_bNpWcIX5EemhaembVcoeKQ" name="returnValue" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_5ZtEcGzWEemv9PXZKzcfkA" name="ContextFilterBehavior">
       <ownedComment xmi:type="uml:Comment" xmi:id="_3pTK4GzjEemJ-foOn68QUw" annotatedElement="_5ZtEcGzWEemv9PXZKzcfkA">
