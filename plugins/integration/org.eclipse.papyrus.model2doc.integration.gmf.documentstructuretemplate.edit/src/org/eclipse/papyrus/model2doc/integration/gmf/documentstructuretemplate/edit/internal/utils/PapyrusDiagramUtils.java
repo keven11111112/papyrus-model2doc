@@ -40,6 +40,11 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.utils.Documen
 public class PapyrusDiagramUtils {
 
 	/**
+	 * This string is used to reset the selection to the empty string
+	 */
+	public static final String UNDEFINED = "<Undefined>"; //$NON-NLS-1$
+
+	/**
 	 *
 	 * Constructor.
 	 *

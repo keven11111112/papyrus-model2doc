@@ -63,7 +63,7 @@ public class PapyrusDiagramViewDiagramKindIdDisplayConverter implements IDisplay
 	 */
 	@Override
 	public Object displayToSemanticValue(final Object displayValue, final EObject editedObject) {
-		if (null == displayValue) {
+		if (null == displayValue || PapyrusDiagramUtils.UNDEFINED.equals(displayValue)) {
 			return ""; //$NON-NLS-1$
 		}
 		if (displayValue instanceof PapyrusDiagram) {

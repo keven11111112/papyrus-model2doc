@@ -63,7 +63,7 @@ public class PapyrusTableViewTableKindIdDisplayConverter implements IDisplayConv
 	 */
 	@Override
 	public Object displayToSemanticValue(final Object displayValue, final EObject editedObject) {
-		if (null == displayValue) {
+		if (null == displayValue || PapyrusTableUtils.UNDEFINED.equals(displayValue)) {
 			return ""; //$NON-NLS-1$
 		}
 		if (displayValue instanceof PapyrusTable) {

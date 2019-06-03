@@ -36,6 +36,10 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.utils.Documen
  * Utility class to find {@link PapyrusTable}
  */
 public class PapyrusTableUtils {
+	/**
+	 * This string is used to reset the table type of table kind to the empty string
+	 */
+	public static final String UNDEFINED = "<Undefined>"; //$NON-NLS-1$
 
 	/**
 	 *

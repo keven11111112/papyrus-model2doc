@@ -15,9 +15,12 @@
 
 package org.eclipse.papyrus.model2doc.integration.nattable.documentstructuretemplate.edit.internal.providers;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import org.eclipse.jface.viewers.ITreeContentProvider;
+import org.eclipse.papyrus.model2doc.integration.nattable.documentstructuretemplate.edit.internal.utils.PapyrusTableUtils;
 
 /**
  * Content Provider for Papyrus Diagram
@@ -33,7 +36,10 @@ public class PapyrusTableContentProvider implements ITreeContentProvider {
 	@Override
 	public Object[] getElements(Object inputElement) {
 		if (inputElement instanceof Collection<?>) {
-			return ((Collection<?>) inputElement).toArray();
+			final List<Object> values = new ArrayList<>();
+			values.add(PapyrusTableUtils.UNDEFINED);
+			values.addAll((Collection<?>) inputElement);
+			return values.toArray();
 		}
 		return new Object[0];
 	}
