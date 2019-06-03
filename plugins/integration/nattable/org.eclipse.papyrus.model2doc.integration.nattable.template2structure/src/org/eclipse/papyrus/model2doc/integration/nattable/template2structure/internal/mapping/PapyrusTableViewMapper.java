@@ -25,6 +25,7 @@ import java.util.List;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.nebula.widgets.nattable.NatTable;
 import org.eclipse.nebula.widgets.nattable.config.IConfigRegistry;
 import org.eclipse.nebula.widgets.nattable.style.DisplayMode;
@@ -326,7 +327,18 @@ public class PapyrusTableViewMapper extends AbstractTemplateToStructureMapper<Pa
 		final DocumentTemplate t = DocumentStructureTemplateUtils.getDocumentTemplate(papyrusTableView);
 		final IDocumentStructureGeneratorConfiguration conf = t.getDocumentStructureGeneratorConfiguration();
 
-		String imagePath = GeneratorConfigurationOperations.getImageFileLocalPath(conf, table.getName(), ImageFormat.PNG.getImageExtension());
+
+		// we remove the whitespace in the name of the diagram
+		final StringBuilder imageNameBuilder = new StringBuilder(table.getName().replaceAll("\\s+", "")); //$NON-NLS-1$ //$NON-NLS-2$
+		if (table.eResource() instanceof XMIResource) {
+			final String XMI_ID = ((XMIResource) table.eResource()).getID(table);
+			if (null != XMI_ID && false == XMI_ID.isEmpty()) {
+				imageNameBuilder.append("_"); //$NON-NLS-1$
+				imageNameBuilder.append(XMI_ID);
+			}
+		}
+
+		String imagePath = GeneratorConfigurationOperations.getImageFileLocalPath(conf, imageNameBuilder.toString(), ImageFormat.PNG.getImageExtension());
 		imagePath = imagePath.replaceAll("file:/", ""); //$NON-NLS-1$ //$NON-NLS-2$
 
 		// 2. configure the image generation, changing some values in the ConfigRegistry of the NatTable instance

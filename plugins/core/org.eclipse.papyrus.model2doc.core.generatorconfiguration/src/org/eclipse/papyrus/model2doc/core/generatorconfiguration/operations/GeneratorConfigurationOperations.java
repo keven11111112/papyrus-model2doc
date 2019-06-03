@@ -110,16 +110,19 @@ public class GeneratorConfigurationOperations {
 	 *            the image extension used to create the file
 	 * @return
 	 *         the file uri as local path (in C:/ for windows), prefixed with file:/
+	 *         if the imageName contains whitespace, these whitespace will be removed
 	 */
 	public static final String getImageFileLocalPath(final IDocumentStructureGeneratorConfiguration configuration, final String imageName, final String imageExtension) {
 		final String projectName;
+		// remove whitespace
+		final String imageNameToUse = imageName.replaceAll("\\s+", ""); //$NON-NLS-1$ //$NON-NLS-2$
 		if (null == configuration.eResource() || null == configuration.eResource().getURI() || configuration.eResource().getURI().segmentCount() < 1) {
 			throw new UnsupportedOperationException("This method doesn't work with DefaultDocumentStructureGeneratorConfiguration which are not saved in a resource"); //$NON-NLS-1$
 		} else {
 			// the first segment is the Eclipse project name
 			projectName = configuration.eResource().getURI().segment(1);
 		}
-		return buildLocalPath(projectName, configuration.getImageFolder(), imageName, imageExtension);
+		return buildLocalPath(projectName, configuration.getImageFolder(), imageNameToUse, imageExtension);
 	}
 
 	/**

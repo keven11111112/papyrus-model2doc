@@ -21,6 +21,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.operations.GeneratorConfigurationOperations;
@@ -92,7 +93,16 @@ public class PapyrusGMFDiagramViewMapper extends AbstractTemplateToStructureMapp
 			}
 			final IDocumentStructureGeneratorConfiguration conf = t.getDocumentStructureGeneratorConfiguration();
 
-			String imagePath = GeneratorConfigurationOperations.getImageFileLocalPath(conf, current.getName(), GMFDiagramImageUtils.SVG_EXTENSION);
+			// we remove the whitespace in the name of the diagram
+			final StringBuilder imageNameBuilder = new StringBuilder(current.getName().replaceAll("\\s+", "")); //$NON-NLS-1$ //$NON-NLS-2$
+			if (current.eResource() instanceof XMIResource) {
+				final String XMI_ID = ((XMIResource) current.eResource()).getID(current);
+				if (null != XMI_ID && false == XMI_ID.isEmpty()) {
+					imageNameBuilder.append("_"); //$NON-NLS-1$
+					imageNameBuilder.append(XMI_ID);
+				}
+			}
+			String imagePath = GeneratorConfigurationOperations.getImageFileLocalPath(conf, imageNameBuilder.toString(), GMFDiagramImageUtils.SVG_EXTENSION);
 			imagePath = imagePath.replaceAll("file:/", ""); //$NON-NLS-1$ //$NON-NLS-2$
 			GMFDiagramImageUtils.generateImageOfDiagram(current, imagePath);
 			image.setImagePath(imagePath);

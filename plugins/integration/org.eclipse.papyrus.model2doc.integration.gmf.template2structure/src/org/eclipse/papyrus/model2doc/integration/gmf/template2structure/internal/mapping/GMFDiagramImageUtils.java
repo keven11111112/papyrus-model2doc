@@ -30,7 +30,7 @@ import org.eclipse.papyrus.model2doc.integration.gmf.template2structure.Activato
 
 
 /**
- * Utils class to manipulate Image of GMF DIagrams (Duplicated code from org.eclipse.papyrus.model2doc.gmf.template2structure to avoid code dependency)
+ * Utils class to manipulate Image of GMF Diagrams (Duplicated code from org.eclipse.papyrus.model2doc.gmf.template2structure to avoid code dependency)
  */
 public class GMFDiagramImageUtils {
 
