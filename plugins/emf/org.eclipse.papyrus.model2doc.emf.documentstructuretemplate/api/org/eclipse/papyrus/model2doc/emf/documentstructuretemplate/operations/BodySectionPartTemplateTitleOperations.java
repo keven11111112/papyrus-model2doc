@@ -89,7 +89,7 @@ public class BodySectionPartTemplateTitleOperations {
 			return buildEReferenceTableViewTitle((EReferenceTableView) partTemplate, null);
 		}
 		if (partTemplate instanceof TreeListView) {
-			return buildTreeListViewTitle((TreeListView) partTemplate, null);
+			return buildTreeListViewTitle((TreeListView) partTemplate, parameter);
 		}
 		return ""; //$NON-NLS-1$
 	}

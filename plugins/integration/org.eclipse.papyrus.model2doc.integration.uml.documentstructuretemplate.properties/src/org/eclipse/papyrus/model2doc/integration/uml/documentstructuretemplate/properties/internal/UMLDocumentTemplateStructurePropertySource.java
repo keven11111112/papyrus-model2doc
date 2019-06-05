@@ -21,8 +21,8 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.ui.provider.PropertySource;
 import org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.properties.descriptors.CustomPropertyDescriptor;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplatePackage;
-import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.edit.editors.factories.StereotypePartStereotypeQualifiedNameEditorFactory;
-import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.edit.editors.factories.StereotypePropertyPartPropertyNameEditorFactory;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.edit.editors.factories.StereotypePropertyTemplatePropertyNameEditorFactory;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.edit.editors.factories.StereotypeTemplateStereotypeQualifiedNameEditorFactory;
 import org.eclipse.ui.views.properties.IPropertyDescriptor;
 
 /**
@@ -49,11 +49,11 @@ public class UMLDocumentTemplateStructurePropertySource extends PropertySource {
 	@Override
 	protected IPropertyDescriptor createPropertyDescriptor(final IItemPropertyDescriptor itemPropertyDescriptor) {
 		final EStructuralFeature f = (EStructuralFeature) itemPropertyDescriptor.getFeature(this.object);
-		if (f == UMLDocumentStructureTemplatePackage.eINSTANCE.getStereotypePart_StereotypeQualifiedName()) {
-			return new CustomPropertyDescriptor(this.object, itemPropertyDescriptor, new StereotypePartStereotypeQualifiedNameEditorFactory());
+		if (f == UMLDocumentStructureTemplatePackage.eINSTANCE.getStereotypeTemplate_StereotypeQualifiedName()) {
+			return new CustomPropertyDescriptor(this.object, itemPropertyDescriptor, new StereotypeTemplateStereotypeQualifiedNameEditorFactory());
 		}
-		if (f == UMLDocumentStructureTemplatePackage.eINSTANCE.getStereotypePropertyPart_PropertyName()) {
-			return new CustomPropertyDescriptor(this.object, itemPropertyDescriptor, new StereotypePropertyPartPropertyNameEditorFactory());
+		if (f == UMLDocumentStructureTemplatePackage.eINSTANCE.getStereotypePropertyTemplate_PropertyName()) {
+			return new CustomPropertyDescriptor(this.object, itemPropertyDescriptor, new StereotypePropertyTemplatePropertyNameEditorFactory());
 		}
 		return super.createPropertyDescriptor(itemPropertyDescriptor);
 	}

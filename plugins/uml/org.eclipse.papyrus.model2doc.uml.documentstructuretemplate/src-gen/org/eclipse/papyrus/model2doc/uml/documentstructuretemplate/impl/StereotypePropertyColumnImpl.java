@@ -1,13 +1,13 @@
 /**
  * Copyright (c) 2019 CEA LIST.
- *
+ * 
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-2.0/
- *
+ * 
  *  SPDX-License-Identifier: EPL-2.0
- *
+ * 
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -43,12 +43,12 @@ import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentSt
  *
  * @generated
  */
-public class StereotypePropertyColumnImpl extends MandatoryStereotypePropertyPartImpl implements StereotypePropertyColumn {
+public class StereotypePropertyColumnImpl extends MandatoryStereotypePropertyTemplateImpl implements StereotypePropertyColumn {
 	/**
 	 * The default value of the '{@link #getCustomColumnTitle() <em>Custom Column Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getCustomColumnTitle()
 	 * @generated
 	 * @ordered
@@ -59,7 +59,7 @@ public class StereotypePropertyColumnImpl extends MandatoryStereotypePropertyPar
 	 * The cached value of the '{@link #getCustomColumnTitle() <em>Custom Column Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getCustomColumnTitle()
 	 * @generated
 	 * @ordered
@@ -69,7 +69,7 @@ public class StereotypePropertyColumnImpl extends MandatoryStereotypePropertyPar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected StereotypePropertyColumnImpl() {
@@ -79,7 +79,7 @@ public class StereotypePropertyColumnImpl extends MandatoryStereotypePropertyPar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -90,7 +90,7 @@ public class StereotypePropertyColumnImpl extends MandatoryStereotypePropertyPar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -101,25 +101,23 @@ public class StereotypePropertyColumnImpl extends MandatoryStereotypePropertyPar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setCustomColumnTitle(String newCustomColumnTitle) {
 		String oldCustomColumnTitle = customColumnTitle;
 		customColumnTitle = newCustomColumnTitle;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_COLUMN__CUSTOM_COLUMN_TITLE, oldCustomColumnTitle, customColumnTitle));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public String buildColumnHeaderLabel() {
 		return org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.internal.operations.StereotypePropertyColumnOperations.buildColumnHeaderLabel(this);
 	}
@@ -127,10 +125,9 @@ public class StereotypePropertyColumnImpl extends MandatoryStereotypePropertyPar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Object getCellValue(final EObject row) {
 		final org.eclipse.emf.ecore.EObject stereotypeApplication = getFirstMatchingStereotypeApplication(row);
 		if (null == stereotypeApplication) {
@@ -156,10 +153,9 @@ public class StereotypePropertyColumnImpl extends MandatoryStereotypePropertyPar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public String buildCellLabel(final Object cellElement) {
 		return org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.internal.operations.StereotypePropertyColumnOperations.buildCellLabel(this, cellElement);
 	}
@@ -167,7 +163,7 @@ public class StereotypePropertyColumnImpl extends MandatoryStereotypePropertyPar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -182,7 +178,7 @@ public class StereotypePropertyColumnImpl extends MandatoryStereotypePropertyPar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -198,7 +194,7 @@ public class StereotypePropertyColumnImpl extends MandatoryStereotypePropertyPar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -214,7 +210,7 @@ public class StereotypePropertyColumnImpl extends MandatoryStereotypePropertyPar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -229,7 +225,7 @@ public class StereotypePropertyColumnImpl extends MandatoryStereotypePropertyPar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -248,7 +244,7 @@ public class StereotypePropertyColumnImpl extends MandatoryStereotypePropertyPar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -267,7 +263,7 @@ public class StereotypePropertyColumnImpl extends MandatoryStereotypePropertyPar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -290,7 +286,7 @@ public class StereotypePropertyColumnImpl extends MandatoryStereotypePropertyPar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -300,7 +296,7 @@ public class StereotypePropertyColumnImpl extends MandatoryStereotypePropertyPar
 			return buildColumnHeaderLabel();
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_COLUMN___GET_CELL_VALUE__EOBJECT:
 			return getCellValue((EObject) arguments.get(0));
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_COLUMN___BUILD_CELL_LABEL__OBJECT:
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_COLUMN___BUILD_CELL_LABEL__OBJECT_1:
 			return buildCellLabel(arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
@@ -309,14 +305,13 @@ public class StereotypePropertyColumnImpl extends MandatoryStereotypePropertyPar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (customColumnTitle: "); //$NON-NLS-1$

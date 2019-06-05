@@ -118,26 +118,40 @@ public class UMLDocumentStructureTemplateValidator extends EObjectValidator {
 		switch (classifierID) {
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE:
 			return validateStereotypePartTemplate((StereotypePartTemplate) value, diagnostics, context);
-		case UMLDocumentStructureTemplatePackage.MANDATORY_STEREOTYPE_PART:
-			return validateMandatoryStereotypePart((MandatoryStereotypePart) value, diagnostics, context);
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART:
-			return validateStereotypePart((StereotypePart) value, diagnostics, context);
+		case UMLDocumentStructureTemplatePackage.MANDATORY_STEREOTYPE_WITH_ECLASS_TEMPLATE:
+			return validateMandatoryStereotypeWithEClassTemplate((MandatoryStereotypeWithEClassTemplate) value, diagnostics, context);
+		case UMLDocumentStructureTemplatePackage.MANDATORY_STEREOTYPE_TEMPLATE:
+			return validateMandatoryStereotypeTemplate((MandatoryStereotypeTemplate) value, diagnostics, context);
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_TEMPLATE:
+			return validateStereotypeTemplate((StereotypeTemplate) value, diagnostics, context);
 		case UMLDocumentStructureTemplatePackage.IUML_BODY_PART_TEMPLATE_TITLE:
 			return validateIUMLBodyPartTemplateTitle((IUMLBodyPartTemplateTitle) value, diagnostics, context);
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE:
 			return validateStereotypePropertyReferencePartTemplate((StereotypePropertyReferencePartTemplate) value, diagnostics, context);
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_PART:
-			return validateStereotypePropertyPart((StereotypePropertyPart) value, diagnostics, context);
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_TEMPLATE:
+			return validateStereotypePropertyTemplate((StereotypePropertyTemplate) value, diagnostics, context);
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE:
+			return validateStereotypePropertyReference((StereotypePropertyReference) value, diagnostics, context);
 		case UMLDocumentStructureTemplatePackage.COMMENT_AS_PARAGRAPH:
 			return validateCommentAsParagraph((CommentAsParagraph) value, diagnostics, context);
 		case UMLDocumentStructureTemplatePackage.COMMENT:
 			return validateComment((Comment) value, diagnostics, context);
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_COLUMN:
 			return validateStereotypePropertyColumn((StereotypePropertyColumn) value, diagnostics, context);
-		case UMLDocumentStructureTemplatePackage.MANDATORY_STEREOTYPE_PROPERTY_PART:
-			return validateMandatoryStereotypePropertyPart((MandatoryStereotypePropertyPart) value, diagnostics, context);
+		case UMLDocumentStructureTemplatePackage.MANDATORY_STEREOTYPE_PROPERTY_TEMPLATE:
+			return validateMandatoryStereotypePropertyTemplate((MandatoryStereotypePropertyTemplate) value, diagnostics, context);
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW:
 			return validateStereotypePropertyReferenceTableView((StereotypePropertyReferenceTableView) value, diagnostics, context);
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_LIST_ITEM_TEMPLATE:
+			return validateStereotypeListItemTemplate((StereotypeListItemTemplate) value, diagnostics, context);
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM:
+			return validateStereotypePropertyReferenceListItem((StereotypePropertyReferenceListItem) value, diagnostics, context);
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE:
+			return validateStereotypePropertyListItemTemplate((StereotypePropertyListItemTemplate) value, diagnostics, context);
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_ATTRIBUTE_LIST_ITEM:
+			return validateStereotypePropertyAttributeListItem((StereotypePropertyAttributeListItem) value, diagnostics, context);
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_ATTRIBUTE:
+			return validateStereotypePropertyAttribute((StereotypePropertyAttribute) value, diagnostics, context);
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_FILTER_BEHAVIOR:
 			return validateStereotypeFilterBehavior((StereotypeFilterBehavior) value, diagnostics, context);
 		case UMLDocumentStructureTemplatePackage.COMMENT_CHOICE:
@@ -163,8 +177,8 @@ public class UMLDocumentStructureTemplateValidator extends EObjectValidator {
 	 *
 	 * @generated
 	 */
-	public boolean validateMandatoryStereotypePart(MandatoryStereotypePart mandatoryStereotypePart, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(mandatoryStereotypePart, diagnostics, context);
+	public boolean validateMandatoryStereotypeWithEClassTemplate(MandatoryStereotypeWithEClassTemplate mandatoryStereotypeWithEClassTemplate, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(mandatoryStereotypeWithEClassTemplate, diagnostics, context);
 	}
 
 	/**
@@ -173,8 +187,18 @@ public class UMLDocumentStructureTemplateValidator extends EObjectValidator {
 	 *
 	 * @generated
 	 */
-	public boolean validateStereotypePart(StereotypePart stereotypePart, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(stereotypePart, diagnostics, context);
+	public boolean validateMandatoryStereotypeTemplate(MandatoryStereotypeTemplate mandatoryStereotypeTemplate, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(mandatoryStereotypeTemplate, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public boolean validateStereotypeTemplate(StereotypeTemplate stereotypeTemplate, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(stereotypeTemplate, diagnostics, context);
 	}
 
 	/**
@@ -203,8 +227,8 @@ public class UMLDocumentStructureTemplateValidator extends EObjectValidator {
 	 *
 	 * @generated
 	 */
-	public boolean validateStereotypePropertyPart(StereotypePropertyPart stereotypePropertyPart, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(stereotypePropertyPart, diagnostics, context);
+	public boolean validateStereotypePropertyTemplate(StereotypePropertyTemplate stereotypePropertyTemplate, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(stereotypePropertyTemplate, diagnostics, context);
 	}
 
 	/**
@@ -243,8 +267,8 @@ public class UMLDocumentStructureTemplateValidator extends EObjectValidator {
 	 *
 	 * @generated
 	 */
-	public boolean validateMandatoryStereotypePropertyPart(MandatoryStereotypePropertyPart mandatoryStereotypePropertyPart, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(mandatoryStereotypePropertyPart, diagnostics, context);
+	public boolean validateMandatoryStereotypePropertyTemplate(MandatoryStereotypePropertyTemplate mandatoryStereotypePropertyTemplate, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(mandatoryStereotypePropertyTemplate, diagnostics, context);
 	}
 
 	/**
@@ -255,6 +279,66 @@ public class UMLDocumentStructureTemplateValidator extends EObjectValidator {
 	 */
 	public boolean validateStereotypePropertyReferenceTableView(StereotypePropertyReferenceTableView stereotypePropertyReferenceTableView, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(stereotypePropertyReferenceTableView, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public boolean validateStereotypePropertyReference(StereotypePropertyReference stereotypePropertyReference, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(stereotypePropertyReference, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public boolean validateStereotypeListItemTemplate(StereotypeListItemTemplate stereotypeListItemTemplate, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(stereotypeListItemTemplate, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public boolean validateStereotypePropertyReferenceListItem(StereotypePropertyReferenceListItem stereotypePropertyReferenceListItem, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(stereotypePropertyReferenceListItem, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public boolean validateStereotypePropertyListItemTemplate(StereotypePropertyListItemTemplate stereotypePropertyListItemTemplate, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(stereotypePropertyListItemTemplate, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public boolean validateStereotypePropertyAttributeListItem(StereotypePropertyAttributeListItem stereotypePropertyAttributeListItem, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(stereotypePropertyAttributeListItem, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public boolean validateStereotypePropertyAttribute(StereotypePropertyAttribute stereotypePropertyAttribute, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(stereotypePropertyAttribute, diagnostics, context);
 	}
 
 	/**

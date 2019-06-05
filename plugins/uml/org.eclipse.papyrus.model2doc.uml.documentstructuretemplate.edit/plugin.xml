@@ -28,12 +28,12 @@
    <extension
          point="org.eclipse.emf.edit.propertyEditorFactories">
       <factory
-            class="org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.edit.editors.factories.StereotypePartStereotypeQualifiedNameEditorFactory"
+            class="org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.edit.editors.factories.StereotypeTemplateStereotypeQualifiedNameEditorFactory"
             uri="editor://umldocumentstructuretemplate/AbstractStereotypePart/stereotypeQualifiedName/">
       </factory>
       <factory
-            class="org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.edit.editors.factories.StereotypePropertyPartPropertyNameEditorFactory"
-            uri="editor://umldocumentstructuretemplate/StereotypePropertyPart/propertyName/">
+            class="org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.edit.editors.factories.StereotypePropertyTemplatePropertyNameEditorFactory"
+            uri="editor://umldocumentstructuretemplate/StereotypePropertyTemplate/propertyName/">
       </factory>
    </extension>
    <extension

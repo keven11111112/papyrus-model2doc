@@ -19,14 +19,14 @@ import java.util.Iterator;
 import java.util.Optional;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePart;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypeTemplate;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Stereotype;
 
 /**
- * Operations class for the interface {@link IStereotypePartTemplate}
+ * Operations class for the interface {@link IStereotypeTemplate}
  */
-public class StereotypePartOperations {
+public class StereotypeTemplateOperations {
 
 	/**
 	 *
@@ -35,7 +35,7 @@ public class StereotypePartOperations {
 	 * @param element
 	 * @return
 	 */
-	public static final EObject getFirstMatchingStereotypeApplication(final StereotypePart stereotypePartTemplate, final EObject element) {
+	public static final EObject getFirstMatchingStereotypeApplication(final StereotypeTemplate stereotypePartTemplate, final EObject element) {
 		if (false == element instanceof Element) {
 			return null;
 		}
@@ -54,7 +54,7 @@ public class StereotypePartOperations {
 	 * @return
 	 *         the first applied stereotype matching the condition
 	 */
-	private static final Stereotype getFirstMatchingAppliedStereotype(final StereotypePart stereotypePartTemplate, final Element element) {
+	private static final Stereotype getFirstMatchingAppliedStereotype(final StereotypeTemplate stereotypePartTemplate, final Element element) {
 		Stereotype matchingStereotype = null;
 		final Iterator<Stereotype> steIter = element.getAppliedStereotypes().iterator();
 		while (steIter.hasNext() && matchingStereotype == null) {

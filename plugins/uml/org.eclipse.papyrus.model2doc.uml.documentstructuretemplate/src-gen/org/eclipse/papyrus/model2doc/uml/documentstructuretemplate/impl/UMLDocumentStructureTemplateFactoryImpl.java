@@ -1,13 +1,13 @@
 /**
  * Copyright (c) 2019 CEA LIST.
- *
+ * 
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-2.0/
- *
+ * 
  *  SPDX-License-Identifier: EPL-2.0
- *
+ * 
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -28,7 +28,7 @@ import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.*;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public class UMLDocumentStructureTemplateFactoryImpl extends EFactoryImpl implements UMLDocumentStructureTemplateFactory {
@@ -36,7 +36,7 @@ public class UMLDocumentStructureTemplateFactoryImpl extends EFactoryImpl implem
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public static UMLDocumentStructureTemplateFactory init() {
@@ -55,7 +55,7 @@ public class UMLDocumentStructureTemplateFactoryImpl extends EFactoryImpl implem
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public UMLDocumentStructureTemplateFactoryImpl() {
@@ -65,7 +65,7 @@ public class UMLDocumentStructureTemplateFactoryImpl extends EFactoryImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -81,6 +81,12 @@ public class UMLDocumentStructureTemplateFactoryImpl extends EFactoryImpl implem
 			return createStereotypePropertyColumn();
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW:
 			return createStereotypePropertyReferenceTableView();
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_LIST_ITEM_TEMPLATE:
+			return createStereotypeListItemTemplate();
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM:
+			return createStereotypePropertyReferenceListItem();
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_ATTRIBUTE_LIST_ITEM:
+			return createStereotypePropertyAttributeListItem();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -89,7 +95,7 @@ public class UMLDocumentStructureTemplateFactoryImpl extends EFactoryImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -107,7 +113,7 @@ public class UMLDocumentStructureTemplateFactoryImpl extends EFactoryImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -125,7 +131,7 @@ public class UMLDocumentStructureTemplateFactoryImpl extends EFactoryImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -137,7 +143,7 @@ public class UMLDocumentStructureTemplateFactoryImpl extends EFactoryImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -149,7 +155,7 @@ public class UMLDocumentStructureTemplateFactoryImpl extends EFactoryImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -161,7 +167,7 @@ public class UMLDocumentStructureTemplateFactoryImpl extends EFactoryImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -173,7 +179,7 @@ public class UMLDocumentStructureTemplateFactoryImpl extends EFactoryImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -185,22 +191,56 @@ public class UMLDocumentStructureTemplateFactoryImpl extends EFactoryImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
+	 * @generated
+	 */
+	@Override
+	public StereotypeListItemTemplate createStereotypeListItemTemplate() {
+		StereotypeListItemTemplateImpl stereotypeListItemTemplate = new StereotypeListItemTemplateImpl();
+		return stereotypeListItemTemplate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public StereotypePropertyReferenceListItem createStereotypePropertyReferenceListItem() {
+		StereotypePropertyReferenceListItemImpl stereotypePropertyReferenceListItem = new StereotypePropertyReferenceListItemImpl();
+		return stereotypePropertyReferenceListItem;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public StereotypePropertyAttributeListItem createStereotypePropertyAttributeListItem() {
+		StereotypePropertyAttributeListItemImpl stereotypePropertyAttributeListItem = new StereotypePropertyAttributeListItemImpl();
+		return stereotypePropertyAttributeListItem;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public StereotypeFilterBehavior createStereotypeFilterBehaviorFromString(EDataType eDataType, String initialValue) {
 		StereotypeFilterBehavior result = StereotypeFilterBehavior.get(initialValue);
 		if (result == null)
-		 {
 			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public String convertStereotypeFilterBehaviorToString(EDataType eDataType, Object instanceValue) {
@@ -210,22 +250,20 @@ public class UMLDocumentStructureTemplateFactoryImpl extends EFactoryImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public CommentChoice createCommentChoiceFromString(EDataType eDataType, String initialValue) {
 		CommentChoice result = CommentChoice.get(initialValue);
 		if (result == null)
-		 {
 			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public String convertCommentChoiceToString(EDataType eDataType, Object instanceValue) {
@@ -235,7 +273,7 @@ public class UMLDocumentStructureTemplateFactoryImpl extends EFactoryImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -246,7 +284,7 @@ public class UMLDocumentStructureTemplateFactoryImpl extends EFactoryImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @deprecated
 	 * @generated
 	 */

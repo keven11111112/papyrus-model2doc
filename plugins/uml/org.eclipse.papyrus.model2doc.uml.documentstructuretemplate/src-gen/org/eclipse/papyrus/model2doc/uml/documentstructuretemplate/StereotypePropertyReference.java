@@ -13,21 +13,21 @@
  */
 package org.eclipse.papyrus.model2doc.uml.documentstructuretemplate;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Mandatory Stereotype Property Part</b></em>'.
+ * A representation of the model object '<em><b>Stereotype Property Reference</b></em>'.
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Abstract element used to represent a mandatory stereotype's property.
+ * This interface is used to indicate that the represented property must be an Reference.
  * <!-- end-model-doc -->
  *
  *
- * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplatePackage#getMandatoryStereotypePropertyPart()
- * @model abstract="true"
- *        annotation="duplicates"
+ * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplatePackage#getStereotypePropertyReference()
+ * @model interface="true" abstract="true"
  * @generated
  */
-public interface MandatoryStereotypePropertyPart extends StereotypePropertyPart {
-} // MandatoryStereotypePropertyPart
+public interface StereotypePropertyReference extends EObject {
+} // StereotypePropertyReference

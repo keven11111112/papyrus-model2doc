@@ -1,30 +1,36 @@
 /**
  * Copyright (c) 2019 CEA LIST.
- *
+ * 
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-2.0/
- *
+ * 
  *  SPDX-License-Identifier: EPL-2.0
- *
+ * 
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
 package org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl;
 
 import java.lang.reflect.InvocationTargetException;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodyPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate;
@@ -32,7 +38,9 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IColumn;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafBodyPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITemplatePartView;
+
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.IUMLBodyPartTemplateTitle;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReference;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferenceTableView;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplatePackage;
 
@@ -54,12 +62,12 @@ import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentSt
  *
  * @generated
  */
-public class StereotypePropertyReferenceTableViewImpl extends StereotypePropertyPartImpl implements StereotypePropertyReferenceTableView {
+public class StereotypePropertyReferenceTableViewImpl extends StereotypePropertyTemplateImpl implements StereotypePropertyReferenceTableView {
 	/**
 	 * The default value of the '{@link #isGenerate() <em>Generate</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #isGenerate()
 	 * @generated
 	 * @ordered
@@ -70,7 +78,7 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 	 * The cached value of the '{@link #isGenerate() <em>Generate</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #isGenerate()
 	 * @generated
 	 * @ordered
@@ -81,7 +89,7 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 	 * The default value of the '{@link #isGenerateTitle() <em>Generate Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #isGenerateTitle()
 	 * @generated
 	 * @ordered
@@ -92,7 +100,7 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 	 * The cached value of the '{@link #isGenerateTitle() <em>Generate Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #isGenerateTitle()
 	 * @generated
 	 * @ordered
@@ -103,7 +111,7 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 	 * The default value of the '{@link #getCustomTitle() <em>Custom Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getCustomTitle()
 	 * @generated
 	 * @ordered
@@ -114,7 +122,7 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 	 * The cached value of the '{@link #getCustomTitle() <em>Custom Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getCustomTitle()
 	 * @generated
 	 * @ordered
@@ -125,7 +133,7 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 	 * The cached value of the '{@link #getColumns() <em>Columns</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getColumns()
 	 * @generated
 	 * @ordered
@@ -136,7 +144,7 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 	 * The default value of the '{@link #isGenerateRowHeader() <em>Generate Row Header</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #isGenerateRowHeader()
 	 * @generated
 	 * @ordered
@@ -147,7 +155,7 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 	 * The cached value of the '{@link #isGenerateRowHeader() <em>Generate Row Header</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #isGenerateRowHeader()
 	 * @generated
 	 * @ordered
@@ -158,7 +166,7 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 	 * The default value of the '{@link #isGenerateColumnHeader() <em>Generate Column Header</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #isGenerateColumnHeader()
 	 * @generated
 	 * @ordered
@@ -169,7 +177,7 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 	 * The cached value of the '{@link #isGenerateColumnHeader() <em>Generate Column Header</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #isGenerateColumnHeader()
 	 * @generated
 	 * @ordered
@@ -179,7 +187,7 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected StereotypePropertyReferenceTableViewImpl() {
@@ -189,7 +197,7 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -200,7 +208,7 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -211,22 +219,21 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setGenerate(boolean newGenerate) {
 		boolean oldGenerate = generate;
 		generate = newGenerate;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__GENERATE, oldGenerate, generate));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -237,22 +244,21 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setGenerateTitle(boolean newGenerateTitle) {
 		boolean oldGenerateTitle = generateTitle;
 		generateTitle = newGenerateTitle;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__GENERATE_TITLE, oldGenerateTitle, generateTitle));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -263,28 +269,27 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setCustomTitle(String newCustomTitle) {
 		String oldCustomTitle = customTitle;
 		customTitle = newCustomTitle;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__CUSTOM_TITLE, oldCustomTitle, customTitle));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EList<IColumn> getColumns() {
 		if (columns == null) {
-			columns = new EObjectContainmentEList<>(IColumn.class, this, UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__COLUMNS);
+			columns = new EObjectContainmentEList<IColumn>(IColumn.class, this, UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__COLUMNS);
 		}
 		return columns;
 	}
@@ -292,7 +297,7 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -303,22 +308,21 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setGenerateRowHeader(boolean newGenerateRowHeader) {
 		boolean oldGenerateRowHeader = generateRowHeader;
 		generateRowHeader = newGenerateRowHeader;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__GENERATE_ROW_HEADER, oldGenerateRowHeader, generateRowHeader));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -329,25 +333,23 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setGenerateColumnHeader(boolean newGenerateColumnHeader) {
 		boolean oldGenerateColumnHeader = generateColumnHeader;
 		generateColumnHeader = newGenerateColumnHeader;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__GENERATE_COLUMN_HEADER, oldGenerateColumnHeader, generateColumnHeader));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public String buildPartTemplateTitle(final EObject context) {
 		return org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.internal.operations.UMLBodySectionPartTemplateTitleHelper.UML_INSTANCE.buildPartTemplateTitle(this, context);
 	}
@@ -355,10 +357,9 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public EList<EObject> getRows(final EObject context) {
 		final java.util.List<Object> values = getStereotypePropertyValues(context);
 		final java.util.List<org.eclipse.emf.ecore.EObject> eobjects = values.stream()
@@ -371,10 +372,9 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public String buildRowHeaderLabel(final EObject rowElement) {
 		return org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.internal.operations.StereotypePropertyReferenceTableViewOperations.buildRowHeaderLabel(this, rowElement);
 
@@ -383,7 +383,7 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -398,7 +398,7 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -423,7 +423,7 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -456,7 +456,7 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -487,7 +487,7 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -512,7 +512,7 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -565,13 +565,19 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 				return -1;
 			}
 		}
+		if (baseClass == StereotypePropertyReference.class) {
+			switch (derivedFeatureID) {
+			default:
+				return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -624,13 +630,19 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 				return -1;
 			}
 		}
+		if (baseClass == StereotypePropertyReference.class) {
+			switch (baseFeatureID) {
+			default:
+				return -1;
+			}
+		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -677,13 +689,19 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 				return -1;
 			}
 		}
+		if (baseClass == StereotypePropertyReference.class) {
+			switch (baseOperationID) {
+			default:
+				return -1;
+			}
+		}
 		return super.eDerivedOperationID(baseOperationID, baseClass);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -702,14 +720,13 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (generate: "); //$NON-NLS-1$

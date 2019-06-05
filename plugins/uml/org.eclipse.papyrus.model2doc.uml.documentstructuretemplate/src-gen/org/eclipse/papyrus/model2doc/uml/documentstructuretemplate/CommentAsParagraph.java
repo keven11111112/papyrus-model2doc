@@ -1,13 +1,13 @@
 /**
  * Copyright (c) 2019 CEA LIST.
- *
+ * 
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-2.0/
- *
+ * 
  *  SPDX-License-Identifier: EPL-2.0
- *
+ * 
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -52,7 +52,7 @@ public interface CommentAsParagraph extends ILeafBodyPartTemplate, ITemplatePart
 	 * <!-- begin-model-doc -->
 	 * Allow to define if we use only the first owned comments or all owned comment.
 	 * <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Comment Choice</em>' attribute.
 	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.CommentChoice
 	 * @see #setCommentChoice(CommentChoice)
@@ -66,7 +66,7 @@ public interface CommentAsParagraph extends ILeafBodyPartTemplate, ITemplatePart
 	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.CommentAsParagraph#getCommentChoice <em>Comment Choice</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *                  the new value of the '<em>Comment Choice</em>' attribute.
 	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.CommentChoice
@@ -80,9 +80,9 @@ public interface CommentAsParagraph extends ILeafBodyPartTemplate, ITemplatePart
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * This methods returns the matching Comments. The argument is EObject, to be compliant will EMF code, it avoid us to check type before calling methods.
-	 *
+	 * 
 	 * <!-- end-model-doc -->
-	 *
+	 * 
 	 * @model type="org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.Comment" ordered="false" elementRequired="true" elementOrdered="false"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='if (false == element instanceof org.eclipse.uml2.uml.Element) {\n\treturn org.eclipse.emf.common.util.ECollections.emptyEList();\n}\nfinal java.util.List&lt;Comment&gt; comments =
 	 *        ((org.eclipse.uml2.uml.Element) element).getOwnedComments().stream().filter(cmt -&gt; cmt.getAnnotatedElements().contains(element)).collect(java.util.stream.Collectors.toList());\nif (comments.isEmpty()) {\n\treturn

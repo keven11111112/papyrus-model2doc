@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Stereotype Property Part</b></em>'.
+ * A representation of the model object '<em><b>Stereotype Property Template</b></em>'.
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
@@ -30,14 +30,14 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyPart#getPropertyName <em>Property Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyTemplate#getPropertyName <em>Property Name</em>}</li>
  * </ul>
  *
- * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplatePackage#getStereotypePropertyPart()
+ * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplatePackage#getStereotypePropertyTemplate()
  * @model abstract="true"
  * @generated
  */
-public interface StereotypePropertyPart extends StereotypePart {
+public interface StereotypePropertyTemplate extends StereotypeTemplate {
 	/**
 	 * Returns the value of the '<em><b>Property Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -48,15 +48,15 @@ public interface StereotypePropertyPart extends StereotypePart {
 	 *
 	 * @return the value of the '<em>Property Name</em>' attribute.
 	 * @see #setPropertyName(String)
-	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplatePackage#getStereotypePropertyPart_PropertyName()
+	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplatePackage#getStereotypePropertyTemplate_PropertyName()
 	 * @model required="true" ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel propertyEditorFactory='editor://umldocumentstructuretemplate/StereotypePropertyPart/propertyName/'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel propertyEditorFactory='editor://umldocumentstructuretemplate/StereotypePropertyTemplate/propertyName/'"
 	 * @generated
 	 */
 	String getPropertyName();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyPart#getPropertyName <em>Property Name</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyTemplate#getPropertyName <em>Property Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -84,4 +84,4 @@ public interface StereotypePropertyPart extends StereotypePart {
 	 */
 	EList<Object> getStereotypePropertyValues(EObject eobject);
 
-} // StereotypePropertyPart
+} // StereotypePropertyTemplate

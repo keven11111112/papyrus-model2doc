@@ -35,7 +35,7 @@ public class SingleStereotypeValidator extends AbstractSelectionStatusValidator 
 	@Override
 	public IStatus validate(Object[] selection) {
 		String errorMessage = ""; //$NON-NLS-1$
-		if (selection.length == 0) {
+		if (selection.length <= 0) {
 			errorMessage = NO_SELECTION;
 		} else {
 			final Object firstSelection = selection[0];

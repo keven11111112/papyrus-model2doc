@@ -27,8 +27,12 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedBasicList;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedTextListItem;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Title;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EAttributeListItemTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceListItemTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedListItemTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedSubListItemTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafListItemTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafSubListItemTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IListItemTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IRootListItemTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TreeListView;
@@ -106,15 +110,17 @@ public class TreeListViewMapper extends AbstractEMFTemplateToStructureMapper<Tre
 		final List<ExtendedTextListItem> createdItems = new ArrayList<>();
 		final List<Object> semanticItems = itemTemplate.getItems(semanticModelElement);
 		final Iterator<Object> semanticItemsIterator = semanticItems.iterator();
-		while (semanticItemsIterator.hasNext()) {
-			final Object currentSemanticItem = semanticItemsIterator.next();
-			ExtendedTextListItem textItem = null;
+		ExtendedTextListItem textItem = null;
+		if (semanticItemsIterator.hasNext()) {
 			if (itemTemplate.isGenerateItem()) {
 				textItem = STRUCTURE_EFACTORY.createExtendedTextListItem();
 				createdItems.add(textItem);
-				textItem.setText(itemTemplate.buildItemLabel(currentSemanticItem));
+				textItem.setText(itemTemplate.buildItemLabel(semanticModelElement));
 			}
+		}
 
+		while (semanticItemsIterator.hasNext()) {
+			final Object currentSemanticItem = semanticItemsIterator.next();
 			if (currentSemanticItem instanceof EObject) {
 				final Collection<? extends IListItemTemplate> subTemplates;
 				if (itemTemplate instanceof IComposedListItemTemplate) {
@@ -129,7 +135,12 @@ public class TreeListViewMapper extends AbstractEMFTemplateToStructureMapper<Tre
 				final Iterator<? extends IListItemTemplate> subTemplateIter = subTemplates.iterator();
 				while (subTemplateIter.hasNext()) {
 					final IListItemTemplate subListItem = subTemplateIter.next();
-					final List<ExtendedTextListItem> createdSubItem = createListItems(subListItem, (EObject) currentSemanticItem);
+					final List<ExtendedTextListItem> createdSubItem;
+					if (subListItem instanceof ILeafListItemTemplate || subListItem instanceof ILeafSubListItemTemplate) {
+						createdSubItem = createLeafListItems(subListItem, (EObject) currentSemanticItem);
+					} else {
+						createdSubItem = createListItems(subListItem, (EObject) currentSemanticItem);
+					}
 					if (null != textItem) {
 						textItem.getSubItems().addAll(createdSubItem);
 					} else {
@@ -143,5 +154,52 @@ public class TreeListViewMapper extends AbstractEMFTemplateToStructureMapper<Tre
 
 		return createdItems;
 	}
+
+	/**
+	 *
+	 * Warning: This method manages Leaf, so for an {@link EAttributeListItemTemplate} for example, 2 elements will be created :
+	 * - the level represented the feature itself (as usual)
+	 * - the value of the feature too (for {@link EReferenceListItemTemplate}, this step is delegated to the next level)
+	 *
+	 * @param leafTemplate
+	 *            a leaf itemTemplate
+	 * @param semanticModelElement
+	 *            a semantic model element
+	 * @return
+	 *         the list item to represent the element
+	 */
+	private List<ExtendedTextListItem> createLeafListItems(final IListItemTemplate leafTemplate, final EObject semanticModelElement) {
+		final List<ExtendedTextListItem> createdItems = new ArrayList<>();
+		final List<Object> semanticItems = leafTemplate.getItems(semanticModelElement);
+		final Iterator<Object> semanticItemsIterator = semanticItems.iterator();
+		ExtendedTextListItem featureNameItem = null;
+
+		if (semanticItemsIterator.hasNext()) {
+			if (leafTemplate.isGenerateItem()) {
+				featureNameItem = STRUCTURE_EFACTORY.createExtendedTextListItem();
+				createdItems.add(featureNameItem);
+				featureNameItem.setText(leafTemplate.buildItemLabel(leafTemplate));
+			}
+		}
+
+		while (semanticItemsIterator.hasNext()) {
+			final Object currentSemanticItem = semanticItemsIterator.next();
+			final ExtendedTextListItem featureValueItem = STRUCTURE_EFACTORY.createExtendedTextListItem();
+			final String itemLabel = leafTemplate.buildItemLabel(currentSemanticItem);
+			featureValueItem.setText(itemLabel);
+			if (null != featureNameItem) {
+				featureNameItem.getSubItems().add(featureValueItem);
+			} else {
+				createdItems.add(featureValueItem);
+			}
+		}
+
+
+
+		return createdItems;
+	}
+
+
+
 
 }

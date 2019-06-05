@@ -1,13 +1,13 @@
 /**
  * Copyright (c) 2019 CEA LIST.
- *
+ * 
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-2.0/
- *
+ * 
  *  SPDX-License-Identifier: EPL-2.0
- *
+ * 
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -22,24 +22,24 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.MandatoryStereotypePropertyPart;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.MandatoryStereotypePropertyTemplate;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.MandatoryStereotypePropertyPart} object.
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.MandatoryStereotypePropertyTemplate} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
-public class MandatoryStereotypePropertyPartItemProvider extends StereotypePropertyPartItemProvider {
+public class MandatoryStereotypePropertyTemplateItemProvider extends StereotypePropertyTemplateItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	public MandatoryStereotypePropertyPartItemProvider(AdapterFactory adapterFactory) {
+	public MandatoryStereotypePropertyTemplateItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -47,7 +47,7 @@ public class MandatoryStereotypePropertyPartItemProvider extends StereotypePrope
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -62,7 +62,7 @@ public class MandatoryStereotypePropertyPartItemProvider extends StereotypePrope
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -74,14 +74,14 @@ public class MandatoryStereotypePropertyPartItemProvider extends StereotypePrope
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((MandatoryStereotypePropertyPart) object).getStereotypeQualifiedName();
-		return label == null || label.length() == 0 ? getString("_UI_MandatoryStereotypePropertyPart_type") : //$NON-NLS-1$
-				getString("_UI_MandatoryStereotypePropertyPart_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		String label = ((MandatoryStereotypePropertyTemplate) object).getStereotypeQualifiedName();
+		return label == null || label.length() == 0 ? getString("_UI_MandatoryStereotypePropertyTemplate_type") : //$NON-NLS-1$
+				getString("_UI_MandatoryStereotypePropertyTemplate_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 
@@ -90,7 +90,7 @@ public class MandatoryStereotypePropertyPartItemProvider extends StereotypePrope
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -104,7 +104,7 @@ public class MandatoryStereotypePropertyPartItemProvider extends StereotypePrope
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

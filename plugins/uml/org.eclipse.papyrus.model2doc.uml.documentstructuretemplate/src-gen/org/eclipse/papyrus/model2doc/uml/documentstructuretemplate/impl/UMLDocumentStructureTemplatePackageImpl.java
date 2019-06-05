@@ -13,6 +13,8 @@
  */
 package org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl;
 
+import org.eclipse.emf.common.util.URI;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -30,15 +32,22 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStruc
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.CommentAsParagraph;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.CommentChoice;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.IUMLBodyPartTemplateTitle;
-import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.MandatoryStereotypePart;
-import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.MandatoryStereotypePropertyPart;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.MandatoryStereotypePropertyTemplate;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.MandatoryStereotypeTemplate;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.MandatoryStereotypeWithEClassTemplate;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypeFilterBehavior;
-import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePart;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypeListItemTemplate;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePartTemplate;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyAttribute;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyAttributeListItem;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyColumn;
-import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyPart;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyListItemTemplate;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReference;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferenceListItem;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferencePartTemplate;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferenceTableView;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyTemplate;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypeTemplate;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplateFactory;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplatePackage;
 
@@ -68,7 +77,7 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 	 *
 	 * @generated
 	 */
-	private EClass mandatoryStereotypePartEClass = null;
+	private EClass mandatoryStereotypeWithEClassTemplateEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -76,7 +85,15 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 	 *
 	 * @generated
 	 */
-	private EClass stereotypePartEClass = null;
+	private EClass mandatoryStereotypeTemplateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass stereotypeTemplateEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -100,7 +117,7 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 	 *
 	 * @generated
 	 */
-	private EClass stereotypePropertyPartEClass = null;
+	private EClass stereotypePropertyTemplateEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -132,7 +149,7 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 	 *
 	 * @generated
 	 */
-	private EClass mandatoryStereotypePropertyPartEClass = null;
+	private EClass mandatoryStereotypePropertyTemplateEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -141,6 +158,54 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 	 * @generated
 	 */
 	private EClass stereotypePropertyReferenceTableViewEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass stereotypePropertyReferenceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass stereotypeListItemTemplateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass stereotypePropertyReferenceListItemEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass stereotypePropertyListItemTemplateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass stereotypePropertyAttributeListItemEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass stereotypePropertyAttributeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -260,8 +325,8 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 	 * @generated
 	 */
 	@Override
-	public EClass getMandatoryStereotypePart() {
-		return mandatoryStereotypePartEClass;
+	public EClass getMandatoryStereotypeWithEClassTemplate() {
+		return mandatoryStereotypeWithEClassTemplateEClass;
 	}
 
 	/**
@@ -271,8 +336,8 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 	 * @generated
 	 */
 	@Override
-	public EClass getStereotypePart() {
-		return stereotypePartEClass;
+	public EClass getMandatoryStereotypeTemplate() {
+		return mandatoryStereotypeTemplateEClass;
 	}
 
 	/**
@@ -282,8 +347,8 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 	 * @generated
 	 */
 	@Override
-	public EAttribute getStereotypePart_StereotypeFilterRule() {
-		return (EAttribute) stereotypePartEClass.getEStructuralFeatures().get(0);
+	public EClass getStereotypeTemplate() {
+		return stereotypeTemplateEClass;
 	}
 
 	/**
@@ -293,8 +358,8 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 	 * @generated
 	 */
 	@Override
-	public EAttribute getStereotypePart_StereotypeQualifiedName() {
-		return (EAttribute) stereotypePartEClass.getEStructuralFeatures().get(1);
+	public EAttribute getStereotypeTemplate_StereotypeFilterRule() {
+		return (EAttribute) stereotypeTemplateEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -304,8 +369,19 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 	 * @generated
 	 */
 	@Override
-	public EOperation getStereotypePart__GetFirstMatchingStereotypeApplication__EObject() {
-		return stereotypePartEClass.getEOperations().get(0);
+	public EAttribute getStereotypeTemplate_StereotypeQualifiedName() {
+		return (EAttribute) stereotypeTemplateEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EOperation getStereotypeTemplate__GetFirstMatchingStereotypeApplication__EObject() {
+		return stereotypeTemplateEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -348,8 +424,8 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 	 * @generated
 	 */
 	@Override
-	public EClass getStereotypePropertyPart() {
-		return stereotypePropertyPartEClass;
+	public EClass getStereotypePropertyTemplate() {
+		return stereotypePropertyTemplateEClass;
 	}
 
 	/**
@@ -359,8 +435,8 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 	 * @generated
 	 */
 	@Override
-	public EAttribute getStereotypePropertyPart_PropertyName() {
-		return (EAttribute) stereotypePropertyPartEClass.getEStructuralFeatures().get(0);
+	public EAttribute getStereotypePropertyTemplate_PropertyName() {
+		return (EAttribute) stereotypePropertyTemplateEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -370,8 +446,8 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 	 * @generated
 	 */
 	@Override
-	public EOperation getStereotypePropertyPart__GetStereotypePropertyValues__EObject() {
-		return stereotypePropertyPartEClass.getEOperations().get(0);
+	public EOperation getStereotypePropertyTemplate__GetStereotypePropertyValues__EObject() {
+		return stereotypePropertyTemplateEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -436,8 +512,19 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 	 * @generated
 	 */
 	@Override
-	public EClass getMandatoryStereotypePropertyPart() {
-		return mandatoryStereotypePropertyPartEClass;
+	public EOperation getStereotypePropertyColumn__BuildCellLabel__Object_1() {
+		return stereotypePropertyColumnEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getMandatoryStereotypePropertyTemplate() {
+		return mandatoryStereotypePropertyTemplateEClass;
 	}
 
 	/**
@@ -449,6 +536,72 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 	@Override
 	public EClass getStereotypePropertyReferenceTableView() {
 		return stereotypePropertyReferenceTableViewEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getStereotypePropertyReference() {
+		return stereotypePropertyReferenceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getStereotypeListItemTemplate() {
+		return stereotypeListItemTemplateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getStereotypePropertyReferenceListItem() {
+		return stereotypePropertyReferenceListItemEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getStereotypePropertyListItemTemplate() {
+		return stereotypePropertyListItemTemplateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getStereotypePropertyAttributeListItem() {
+		return stereotypePropertyAttributeListItemEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getStereotypePropertyAttribute() {
+		return stereotypePropertyAttributeEClass;
 	}
 
 	/**
@@ -509,21 +662,25 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 		// Create classes and their features
 		stereotypePartTemplateEClass = createEClass(STEREOTYPE_PART_TEMPLATE);
 
-		mandatoryStereotypePartEClass = createEClass(MANDATORY_STEREOTYPE_PART);
+		mandatoryStereotypeWithEClassTemplateEClass = createEClass(MANDATORY_STEREOTYPE_WITH_ECLASS_TEMPLATE);
 
-		stereotypePartEClass = createEClass(STEREOTYPE_PART);
-		createEAttribute(stereotypePartEClass, STEREOTYPE_PART__STEREOTYPE_FILTER_RULE);
-		createEAttribute(stereotypePartEClass, STEREOTYPE_PART__STEREOTYPE_QUALIFIED_NAME);
-		createEOperation(stereotypePartEClass, STEREOTYPE_PART___GET_FIRST_MATCHING_STEREOTYPE_APPLICATION__EOBJECT);
+		mandatoryStereotypeTemplateEClass = createEClass(MANDATORY_STEREOTYPE_TEMPLATE);
+
+		stereotypeTemplateEClass = createEClass(STEREOTYPE_TEMPLATE);
+		createEAttribute(stereotypeTemplateEClass, STEREOTYPE_TEMPLATE__STEREOTYPE_FILTER_RULE);
+		createEAttribute(stereotypeTemplateEClass, STEREOTYPE_TEMPLATE__STEREOTYPE_QUALIFIED_NAME);
+		createEOperation(stereotypeTemplateEClass, STEREOTYPE_TEMPLATE___GET_FIRST_MATCHING_STEREOTYPE_APPLICATION__EOBJECT);
 
 		iumlBodyPartTemplateTitleEClass = createEClass(IUML_BODY_PART_TEMPLATE_TITLE);
 
 		stereotypePropertyReferencePartTemplateEClass = createEClass(STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE);
 		createEOperation(stereotypePropertyReferencePartTemplateEClass, STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE___GET_STEREOTYPE_PROPERTY_REFERENCE_VALUES__EOBJECT);
 
-		stereotypePropertyPartEClass = createEClass(STEREOTYPE_PROPERTY_PART);
-		createEAttribute(stereotypePropertyPartEClass, STEREOTYPE_PROPERTY_PART__PROPERTY_NAME);
-		createEOperation(stereotypePropertyPartEClass, STEREOTYPE_PROPERTY_PART___GET_STEREOTYPE_PROPERTY_VALUES__EOBJECT);
+		stereotypePropertyTemplateEClass = createEClass(STEREOTYPE_PROPERTY_TEMPLATE);
+		createEAttribute(stereotypePropertyTemplateEClass, STEREOTYPE_PROPERTY_TEMPLATE__PROPERTY_NAME);
+		createEOperation(stereotypePropertyTemplateEClass, STEREOTYPE_PROPERTY_TEMPLATE___GET_STEREOTYPE_PROPERTY_VALUES__EOBJECT);
+
+		stereotypePropertyReferenceEClass = createEClass(STEREOTYPE_PROPERTY_REFERENCE);
 
 		commentAsParagraphEClass = createEClass(COMMENT_AS_PARAGRAPH);
 		createEAttribute(commentAsParagraphEClass, COMMENT_AS_PARAGRAPH__COMMENT_CHOICE);
@@ -532,10 +689,21 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 		commentEClass = createEClass(COMMENT);
 
 		stereotypePropertyColumnEClass = createEClass(STEREOTYPE_PROPERTY_COLUMN);
+		createEOperation(stereotypePropertyColumnEClass, STEREOTYPE_PROPERTY_COLUMN___BUILD_CELL_LABEL__OBJECT_1);
 
-		mandatoryStereotypePropertyPartEClass = createEClass(MANDATORY_STEREOTYPE_PROPERTY_PART);
+		mandatoryStereotypePropertyTemplateEClass = createEClass(MANDATORY_STEREOTYPE_PROPERTY_TEMPLATE);
 
 		stereotypePropertyReferenceTableViewEClass = createEClass(STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW);
+
+		stereotypeListItemTemplateEClass = createEClass(STEREOTYPE_LIST_ITEM_TEMPLATE);
+
+		stereotypePropertyReferenceListItemEClass = createEClass(STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM);
+
+		stereotypePropertyListItemTemplateEClass = createEClass(STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE);
+
+		stereotypePropertyAttributeListItemEClass = createEClass(STEREOTYPE_PROPERTY_ATTRIBUTE_LIST_ITEM);
+
+		stereotypePropertyAttributeEClass = createEClass(STEREOTYPE_PROPERTY_ATTRIBUTE);
 
 		// Create enums
 		stereotypeFilterBehaviorEEnum = createEEnum(STEREOTYPE_FILTER_BEHAVIOR);
@@ -578,37 +746,53 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		stereotypePartTemplateEClass.getESuperTypes().add(theDocumentStructureTemplatePackage.getEClassPartTemplate());
-		stereotypePartTemplateEClass.getESuperTypes().add(this.getMandatoryStereotypePart());
+		stereotypePartTemplateEClass.getESuperTypes().add(this.getMandatoryStereotypeWithEClassTemplate());
 		stereotypePartTemplateEClass.getESuperTypes().add(this.getIUMLBodyPartTemplateTitle());
-		mandatoryStereotypePartEClass.getESuperTypes().add(this.getStereotypePart());
+		stereotypePartTemplateEClass.getESuperTypes().add(theDocumentStructureTemplatePackage.getIComposedSubBodyPartTemplate());
+		mandatoryStereotypeWithEClassTemplateEClass.getESuperTypes().add(theDocumentStructureTemplatePackage.getEClassTemplate());
+		mandatoryStereotypeWithEClassTemplateEClass.getESuperTypes().add(this.getMandatoryStereotypeTemplate());
+		mandatoryStereotypeTemplateEClass.getESuperTypes().add(this.getStereotypeTemplate());
 		iumlBodyPartTemplateTitleEClass.getESuperTypes().add(theDocumentStructureTemplatePackage.getIBodySectionPartTemplate());
-		stereotypePropertyReferencePartTemplateEClass.getESuperTypes().add(this.getStereotypePropertyPart());
+		stereotypePropertyReferencePartTemplateEClass.getESuperTypes().add(this.getStereotypePropertyTemplate());
 		stereotypePropertyReferencePartTemplateEClass.getESuperTypes().add(theDocumentStructureTemplatePackage.getIComposedBodyPartTemplate());
 		stereotypePropertyReferencePartTemplateEClass.getESuperTypes().add(this.getIUMLBodyPartTemplateTitle());
-		stereotypePropertyPartEClass.getESuperTypes().add(this.getStereotypePart());
+		stereotypePropertyReferencePartTemplateEClass.getESuperTypes().add(this.getStereotypePropertyReference());
+		stereotypePropertyTemplateEClass.getESuperTypes().add(this.getStereotypeTemplate());
 		commentAsParagraphEClass.getESuperTypes().add(theDocumentStructureTemplatePackage.getILeafBodyPartTemplate());
 		commentAsParagraphEClass.getESuperTypes().add(theDocumentStructureTemplatePackage.getITemplatePartView());
 		commentAsParagraphEClass.getESuperTypes().add(this.getIUMLBodyPartTemplateTitle());
-		stereotypePropertyColumnEClass.getESuperTypes().add(this.getMandatoryStereotypePropertyPart());
+		stereotypePropertyColumnEClass.getESuperTypes().add(this.getMandatoryStereotypePropertyTemplate());
 		stereotypePropertyColumnEClass.getESuperTypes().add(theDocumentStructureTemplatePackage.getIColumn());
-		mandatoryStereotypePropertyPartEClass.getESuperTypes().add(this.getStereotypePropertyPart());
-		stereotypePropertyReferenceTableViewEClass.getESuperTypes().add(this.getStereotypePropertyPart());
+		mandatoryStereotypePropertyTemplateEClass.getESuperTypes().add(this.getStereotypePropertyTemplate());
+		stereotypePropertyReferenceTableViewEClass.getESuperTypes().add(this.getStereotypePropertyTemplate());
 		stereotypePropertyReferenceTableViewEClass.getESuperTypes().add(theDocumentStructureTemplatePackage.getITableView());
 		stereotypePropertyReferenceTableViewEClass.getESuperTypes().add(this.getIUMLBodyPartTemplateTitle());
+		stereotypePropertyReferenceTableViewEClass.getESuperTypes().add(this.getStereotypePropertyReference());
+		stereotypeListItemTemplateEClass.getESuperTypes().add(this.getMandatoryStereotypeWithEClassTemplate());
+		stereotypeListItemTemplateEClass.getESuperTypes().add(theDocumentStructureTemplatePackage.getIComposedSubListItemTemplate());
+		stereotypePropertyReferenceListItemEClass.getESuperTypes().add(this.getStereotypePropertyListItemTemplate());
+		stereotypePropertyReferenceListItemEClass.getESuperTypes().add(theDocumentStructureTemplatePackage.getIComposedListItemTemplate());
+		stereotypePropertyReferenceListItemEClass.getESuperTypes().add(this.getStereotypePropertyReference());
+		stereotypePropertyListItemTemplateEClass.getESuperTypes().add(this.getMandatoryStereotypePropertyTemplate());
+		stereotypePropertyListItemTemplateEClass.getESuperTypes().add(theDocumentStructureTemplatePackage.getIListItemTemplate());
+		stereotypePropertyAttributeListItemEClass.getESuperTypes().add(this.getStereotypePropertyListItemTemplate());
+		stereotypePropertyAttributeListItemEClass.getESuperTypes().add(theDocumentStructureTemplatePackage.getILeafListItemTemplate());
+		stereotypePropertyAttributeListItemEClass.getESuperTypes().add(this.getStereotypePropertyAttribute());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(stereotypePartTemplateEClass, StereotypePartTemplate.class, "StereotypePartTemplate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
-		initEClass(mandatoryStereotypePartEClass, MandatoryStereotypePart.class, "MandatoryStereotypePart", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEClass(mandatoryStereotypeWithEClassTemplateEClass, MandatoryStereotypeWithEClassTemplate.class, "MandatoryStereotypeWithEClassTemplate", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
-		initEClass(stereotypePartEClass, StereotypePart.class, "StereotypePart", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getStereotypePart_StereotypeFilterRule(), this.getStereotypeFilterBehavior(), "stereotypeFilterRule", "STEREOTYPE_KIND_OF", 1, 1, StereotypePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, //$NON-NLS-1$ //$NON-NLS-2$
-				!IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getStereotypePart_StereotypeQualifiedName(), ecorePackage.getEString(), "stereotypeQualifiedName", null, 0, 1, StereotypePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, //$NON-NLS-1$
+		initEClass(mandatoryStereotypeTemplateEClass, MandatoryStereotypeTemplate.class, "MandatoryStereotypeTemplate", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEClass(stereotypeTemplateEClass, StereotypeTemplate.class, "StereotypeTemplate", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(getStereotypeTemplate_StereotypeFilterRule(), this.getStereotypeFilterBehavior(), "stereotypeFilterRule", "STEREOTYPE_KIND_OF", 1, 1, StereotypeTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, //$NON-NLS-1$ //$NON-NLS-2$
+				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getStereotypeTemplate_StereotypeQualifiedName(), ecorePackage.getEString(), "stereotypeQualifiedName", null, 0, 1, StereotypeTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, //$NON-NLS-1$
 				!IS_ORDERED);
 
-		EOperation op = initEOperation(getStereotypePart__GetFirstMatchingStereotypeApplication__EObject(), theEcorePackage.getEObject(), "getFirstMatchingStereotypeApplication", 0, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+		EOperation op = initEOperation(getStereotypeTemplate__GetFirstMatchingStereotypeApplication__EObject(), theEcorePackage.getEObject(), "getFirstMatchingStereotypeApplication", 0, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 		addEParameter(op, theEcorePackage.getEObject(), "element", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(iumlBodyPartTemplateTitleEClass, IUMLBodyPartTemplateTitle.class, "IUMLBodyPartTemplateTitle", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
@@ -618,11 +802,14 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 		op = initEOperation(getStereotypePropertyReferencePartTemplate__GetStereotypePropertyReferenceValues__EObject(), theEcorePackage.getEObject(), "getStereotypePropertyReferenceValues", 0, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 		addEParameter(op, theEcorePackage.getEObject(), "context", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(stereotypePropertyPartEClass, StereotypePropertyPart.class, "StereotypePropertyPart", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getStereotypePropertyPart_PropertyName(), ecorePackage.getEString(), "propertyName", null, 1, 1, StereotypePropertyPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEClass(stereotypePropertyTemplateEClass, StereotypePropertyTemplate.class, "StereotypePropertyTemplate", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(getStereotypePropertyTemplate_PropertyName(), ecorePackage.getEString(), "propertyName", null, 1, 1, StereotypePropertyTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, //$NON-NLS-1$
+				!IS_ORDERED);
 
-		op = initEOperation(getStereotypePropertyPart__GetStereotypePropertyValues__EObject(), theEcorePackage.getEJavaObject(), "getStereotypePropertyValues", 0, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+		op = initEOperation(getStereotypePropertyTemplate__GetStereotypePropertyValues__EObject(), theEcorePackage.getEJavaObject(), "getStereotypePropertyValues", 0, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 		addEParameter(op, theEcorePackage.getEObject(), "eobject", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
+		initEClass(stereotypePropertyReferenceEClass, StereotypePropertyReference.class, "StereotypePropertyReference", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		initEClass(commentAsParagraphEClass, CommentAsParagraph.class, "CommentAsParagraph", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEAttribute(getCommentAsParagraph_CommentChoice(), this.getCommentChoice(), "commentChoice", "FIRST_OWNED_COMMENT", 1, 1, CommentAsParagraph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, //$NON-NLS-1$ //$NON-NLS-2$
@@ -635,9 +822,22 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 
 		initEClass(stereotypePropertyColumnEClass, StereotypePropertyColumn.class, "StereotypePropertyColumn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
-		initEClass(mandatoryStereotypePropertyPartEClass, MandatoryStereotypePropertyPart.class, "MandatoryStereotypePropertyPart", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		op = initEOperation(getStereotypePropertyColumn__BuildCellLabel__Object_1(), ecorePackage.getEString(), "buildCellLabel", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+		addEParameter(op, ecorePackage.getEJavaObject(), "cellElement", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
+		initEClass(mandatoryStereotypePropertyTemplateEClass, MandatoryStereotypePropertyTemplate.class, "MandatoryStereotypePropertyTemplate", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		initEClass(stereotypePropertyReferenceTableViewEClass, StereotypePropertyReferenceTableView.class, "StereotypePropertyReferenceTableView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEClass(stereotypeListItemTemplateEClass, StereotypeListItemTemplate.class, "StereotypeListItemTemplate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEClass(stereotypePropertyReferenceListItemEClass, StereotypePropertyReferenceListItem.class, "StereotypePropertyReferenceListItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEClass(stereotypePropertyListItemTemplateEClass, StereotypePropertyListItemTemplate.class, "StereotypePropertyListItemTemplate", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEClass(stereotypePropertyAttributeListItemEClass, StereotypePropertyAttributeListItem.class, "StereotypePropertyAttributeListItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEClass(stereotypePropertyAttributeEClass, StereotypePropertyAttribute.class, "StereotypePropertyAttribute", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		// Initialize enums and add enum literals
 		initEEnum(stereotypeFilterBehaviorEEnum, StereotypeFilterBehavior.class, "StereotypeFilterBehavior"); //$NON-NLS-1$
@@ -656,6 +856,8 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 		createUMLAnnotations();
 		// duplicates
 		createDuplicatesAnnotations();
+		// redefines
+		createRedefinesAnnotations();
 	}
 
 	/**
@@ -683,11 +885,15 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 	 */
 	protected void createDuplicatesAnnotations() {
 		String source = "duplicates"; //$NON-NLS-1$
-		addAnnotation(mandatoryStereotypePartEClass,
+		addAnnotation(mandatoryStereotypeWithEClassTemplateEClass,
 				source,
 				new String[] {
 				});
-		addAnnotation(mandatoryStereotypePartEClass,
+		addAnnotation(mandatoryStereotypeTemplateEClass,
+				source,
+				new String[] {
+				});
+		addAnnotation(mandatoryStereotypeTemplateEClass,
 				new boolean[] { true },
 				"stereotypeQualifiedName", //$NON-NLS-1$
 				new String[] {
@@ -701,11 +907,11 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 				source,
 				new String[] {
 				});
-		addAnnotation(mandatoryStereotypePropertyPartEClass,
+		addAnnotation(mandatoryStereotypePropertyTemplateEClass,
 				source,
 				new String[] {
 				});
-		addAnnotation(mandatoryStereotypePropertyPartEClass,
+		addAnnotation(mandatoryStereotypePropertyTemplateEClass,
 				new boolean[] { true },
 				"stereotypeQualifiedName", //$NON-NLS-1$
 				new String[] {
@@ -714,6 +920,32 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 		addAnnotation(stereotypePropertyReferenceTableViewEClass,
 				source,
 				new String[] {
+				});
+		addAnnotation(stereotypeListItemTemplateEClass,
+				source,
+				new String[] {
+				});
+		addAnnotation(stereotypePropertyListItemTemplateEClass,
+				source,
+				new String[] {
+				});
+	}
+
+	/**
+	 * Initializes the annotations for <b>redefines</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected void createRedefinesAnnotations() {
+		String source = "redefines"; //$NON-NLS-1$
+		addAnnotation(getStereotypePropertyColumn__BuildCellLabel__Object_1(),
+				source,
+				new String[] {
+				},
+				new URI[] {
+						URI.createURI(DocumentStructureTemplatePackage.eNS_URI).appendFragment("//IColumn/buildCellLabel") //$NON-NLS-1$
 				});
 	}
 

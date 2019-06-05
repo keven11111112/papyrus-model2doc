@@ -27,7 +27,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodyPartTemp
 import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.IMappingService;
 
 /**
- * This class create the DocumentStructure Body for the DocumentStructureTempate Body
+ * This class create the DocumentStructure Body for the DocumentStructureTemplate Body
  *
  */
 public class BodyMapper extends AbstractEMFTemplateToStructureMapper<Body> {

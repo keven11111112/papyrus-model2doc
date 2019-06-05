@@ -1,13 +1,13 @@
 /**
  * Copyright (c) 2019 CEA LIST.
- *
+ * 
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-2.0/
- *
+ * 
  *  SPDX-License-Identifier: EPL-2.0
- *
+ * 
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -38,15 +38,15 @@ import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentSt
  * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferencePartTemplate} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
-public class StereotypePropertyReferencePartTemplateItemProvider extends StereotypePropertyPartItemProvider {
+public class StereotypePropertyReferencePartTemplateItemProvider extends StereotypePropertyTemplateItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public StereotypePropertyReferencePartTemplateItemProvider(AdapterFactory adapterFactory) {
@@ -57,7 +57,7 @@ public class StereotypePropertyReferencePartTemplateItemProvider extends Stereot
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -76,7 +76,7 @@ public class StereotypePropertyReferencePartTemplateItemProvider extends Stereot
 	 * This adds a property descriptor for the Generate feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addGeneratePropertyDescriptor(Object object) {
@@ -97,7 +97,7 @@ public class StereotypePropertyReferencePartTemplateItemProvider extends Stereot
 	 * This adds a property descriptor for the Generate Title feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addGenerateTitlePropertyDescriptor(Object object) {
@@ -118,7 +118,7 @@ public class StereotypePropertyReferencePartTemplateItemProvider extends Stereot
 	 * This adds a property descriptor for the Custom Title feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addCustomTitlePropertyDescriptor(Object object) {
@@ -141,7 +141,7 @@ public class StereotypePropertyReferencePartTemplateItemProvider extends Stereot
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -156,7 +156,7 @@ public class StereotypePropertyReferencePartTemplateItemProvider extends Stereot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -171,7 +171,7 @@ public class StereotypePropertyReferencePartTemplateItemProvider extends Stereot
 	 * This returns StereotypePropertyReferencePartTemplate.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -182,7 +182,7 @@ public class StereotypePropertyReferencePartTemplateItemProvider extends Stereot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -194,7 +194,7 @@ public class StereotypePropertyReferencePartTemplateItemProvider extends Stereot
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -210,7 +210,7 @@ public class StereotypePropertyReferencePartTemplateItemProvider extends Stereot
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -235,7 +235,7 @@ public class StereotypePropertyReferencePartTemplateItemProvider extends Stereot
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

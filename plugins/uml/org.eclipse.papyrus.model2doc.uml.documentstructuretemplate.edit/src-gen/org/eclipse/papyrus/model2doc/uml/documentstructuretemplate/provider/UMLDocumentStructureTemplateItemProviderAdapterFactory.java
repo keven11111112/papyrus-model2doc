@@ -1,13 +1,13 @@
 /**
  * Copyright (c) 2019 CEA LIST.
- *
+ * 
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-2.0/
- *
+ * 
  *  SPDX-License-Identifier: EPL-2.0
- *
+ * 
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -46,8 +46,11 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.Body;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedBodyPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedListItemTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedSubBodyPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedSubListItemTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TreeListView;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.util.DocumentStructureTemplateSwitch;
 
@@ -63,7 +66,7 @@ import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.util.UMLDocum
  * Note that most of the adapters are shared among multiple instances.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLDocumentStructureTemplateAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
@@ -71,7 +74,7 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected ComposedAdapterFactory parentAdapterFactory;
@@ -80,7 +83,7 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
@@ -89,7 +92,7 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 	 * This helps manage the child creation extenders.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(UMLDocumentStructureTemplateEditPlugin.INSTANCE, UMLDocumentStructureTemplatePackage.eNS_URI);
@@ -98,16 +101,16 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	protected Collection<Object> supportedTypes = new ArrayList<>();
+	protected Collection<Object> supportedTypes = new ArrayList<Object>();
 
 	/**
 	 * This constructs an instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public UMLDocumentStructureTemplateItemProviderAdapterFactory() {
@@ -122,7 +125,7 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePartTemplate} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected StereotypePartTemplateItemProvider stereotypePartTemplateItemProvider;
@@ -131,7 +134,7 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePartTemplate}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -147,7 +150,7 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferencePartTemplate} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected StereotypePropertyReferencePartTemplateItemProvider stereotypePropertyReferencePartTemplateItemProvider;
@@ -156,7 +159,7 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferencePartTemplate}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -172,7 +175,7 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.CommentAsParagraph} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected CommentAsParagraphItemProvider commentAsParagraphItemProvider;
@@ -181,7 +184,7 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.CommentAsParagraph}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -197,7 +200,7 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyColumn} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected StereotypePropertyColumnItemProvider stereotypePropertyColumnItemProvider;
@@ -206,7 +209,7 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyColumn}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -222,7 +225,7 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferenceTableView} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected StereotypePropertyReferenceTableViewItemProvider stereotypePropertyReferenceTableViewItemProvider;
@@ -231,7 +234,7 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferenceTableView}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -244,10 +247,85 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypeListItemTemplate} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected StereotypeListItemTemplateItemProvider stereotypeListItemTemplateItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypeListItemTemplate}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createStereotypeListItemTemplateAdapter() {
+		if (stereotypeListItemTemplateItemProvider == null) {
+			stereotypeListItemTemplateItemProvider = new StereotypeListItemTemplateItemProvider(this);
+		}
+
+		return stereotypeListItemTemplateItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferenceListItem} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected StereotypePropertyReferenceListItemItemProvider stereotypePropertyReferenceListItemItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferenceListItem}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createStereotypePropertyReferenceListItemAdapter() {
+		if (stereotypePropertyReferenceListItemItemProvider == null) {
+			stereotypePropertyReferenceListItemItemProvider = new StereotypePropertyReferenceListItemItemProvider(this);
+		}
+
+		return stereotypePropertyReferenceListItemItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyAttributeListItem} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected StereotypePropertyAttributeListItemItemProvider stereotypePropertyAttributeListItemItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyAttributeListItem}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createStereotypePropertyAttributeListItemAdapter() {
+		if (stereotypePropertyAttributeListItemItemProvider == null) {
+			stereotypePropertyAttributeListItemItemProvider = new StereotypePropertyAttributeListItemItemProvider(this);
+		}
+
+		return stereotypePropertyAttributeListItemItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -259,7 +337,7 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 	 * This sets the composed adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -270,7 +348,7 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -282,7 +360,7 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -293,7 +371,7 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -311,7 +389,7 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public List<IChildCreationExtender> getChildCreationExtenders() {
@@ -321,10 +399,9 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public Collection<?> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
 		return childCreationExtenderManager.getNewChildDescriptors(object, editingDomain);
 	}
@@ -332,10 +409,9 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	@Override
 	public ResourceLocator getResourceLocator() {
 		return childCreationExtenderManager;
 	}
@@ -344,7 +420,7 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 	 * This adds a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -356,7 +432,7 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 	 * This removes a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -368,7 +444,7 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -384,33 +460,34 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 	 * This disposes all of the item providers created by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void dispose() {
-		if (stereotypePartTemplateItemProvider != null) {
+		if (stereotypePartTemplateItemProvider != null)
 			stereotypePartTemplateItemProvider.dispose();
-		}
-		if (stereotypePropertyReferencePartTemplateItemProvider != null) {
+		if (stereotypePropertyReferencePartTemplateItemProvider != null)
 			stereotypePropertyReferencePartTemplateItemProvider.dispose();
-		}
-		if (commentAsParagraphItemProvider != null) {
+		if (commentAsParagraphItemProvider != null)
 			commentAsParagraphItemProvider.dispose();
-		}
-		if (stereotypePropertyColumnItemProvider != null) {
+		if (stereotypePropertyColumnItemProvider != null)
 			stereotypePropertyColumnItemProvider.dispose();
-		}
-		if (stereotypePropertyReferenceTableViewItemProvider != null) {
+		if (stereotypePropertyReferenceTableViewItemProvider != null)
 			stereotypePropertyReferenceTableViewItemProvider.dispose();
-		}
+		if (stereotypeListItemTemplateItemProvider != null)
+			stereotypeListItemTemplateItemProvider.dispose();
+		if (stereotypePropertyReferenceListItemItemProvider != null)
+			stereotypePropertyReferenceListItemItemProvider.dispose();
+		if (stereotypePropertyAttributeListItemItemProvider != null)
+			stereotypePropertyAttributeListItemItemProvider.dispose();
 	}
 
 	/**
 	 * A child creation extender for the {@link DocumentStructureTemplatePackage}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public static class DocumentStructureTemplateChildCreationExtender implements IChildCreationExtender {
@@ -418,7 +495,7 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 		 * The switch for creating child descriptors specific to each extended class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		protected static class CreationSwitch extends DocumentStructureTemplateSwitch<Object> {
@@ -426,7 +503,7 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 			 * The child descriptors being populated.
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
-			 *
+			 * 
 			 * @generated
 			 */
 			protected List<Object> newChildDescriptors;
@@ -435,7 +512,7 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 			 * The domain in which to create the children.
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
-			 *
+			 * 
 			 * @generated
 			 */
 			protected EditingDomain editingDomain;
@@ -444,7 +521,7 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 			 * Creates the a switch for populating child descriptors in the given domain.
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
-			 *
+			 * 
 			 * @generated
 			 */
 			CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
@@ -455,7 +532,7 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
-			 *
+			 * 
 			 * @generated
 			 */
 			@Override
@@ -475,7 +552,7 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
-			 *
+			 * 
 			 * @generated
 			 */
 			@Override
@@ -489,7 +566,7 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
-			 *
+			 * 
 			 * @generated
 			 */
 			@Override
@@ -509,7 +586,7 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
-			 *
+			 * 
 			 * @generated
 			 */
 			@Override
@@ -523,7 +600,55 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
-			 *
+			 * 
+			 * @generated
+			 */
+			@Override
+			public Object caseIComposedListItemTemplate(IComposedListItemTemplate object) {
+				newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_LIST_ITEM_TEMPLATE__SUB_LIST_ITEM_TEMPLATE,
+						UMLDocumentStructureTemplateFactory.eINSTANCE.createStereotypeListItemTemplate()));
+
+				return null;
+			}
+
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * 
+			 * @generated
+			 */
+			@Override
+			public Object caseIComposedSubListItemTemplate(IComposedSubListItemTemplate object) {
+				newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_LIST_ITEM_TEMPLATE__LIST_ITEM_TEMPLATE,
+						UMLDocumentStructureTemplateFactory.eINSTANCE.createStereotypePropertyReferenceListItem()));
+
+				newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_LIST_ITEM_TEMPLATE__LIST_ITEM_TEMPLATE,
+						UMLDocumentStructureTemplateFactory.eINSTANCE.createStereotypePropertyAttributeListItem()));
+
+				return null;
+			}
+
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * 
+			 * @generated
+			 */
+			@Override
+			public Object caseTreeListView(TreeListView object) {
+				newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.TREE_LIST_VIEW__ROOT_LIST_ITEM_TEMPLATE,
+						UMLDocumentStructureTemplateFactory.eINSTANCE.createStereotypePropertyReferenceListItem()));
+
+				newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.TREE_LIST_VIEW__ROOT_LIST_ITEM_TEMPLATE,
+						UMLDocumentStructureTemplateFactory.eINSTANCE.createStereotypePropertyAttributeListItem()));
+
+				return null;
+			}
+
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * 
 			 * @generated
 			 */
 			protected CommandParameter createChildParameter(Object feature, Object child) {
@@ -535,12 +660,11 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
-		@Override
 		public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
-			ArrayList<Object> result = new ArrayList<>();
+			ArrayList<Object> result = new ArrayList<Object>();
 			new CreationSwitch(result, editingDomain).doSwitch((EObject) object);
 			return result;
 		}
@@ -548,10 +672,9 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
-		@Override
 		public ResourceLocator getResourceLocator() {
 			return UMLDocumentStructureTemplateEditPlugin.INSTANCE;
 		}

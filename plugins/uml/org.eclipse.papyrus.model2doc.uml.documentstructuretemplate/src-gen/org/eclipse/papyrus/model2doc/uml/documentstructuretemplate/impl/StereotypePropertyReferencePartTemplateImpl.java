@@ -38,6 +38,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedBody
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubBodyPartTemplate;
 
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.IUMLBodyPartTemplateTitle;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReference;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferencePartTemplate;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplatePackage;
 
@@ -57,7 +58,7 @@ import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentSt
  *
  * @generated
  */
-public class StereotypePropertyReferencePartTemplateImpl extends StereotypePropertyPartImpl implements StereotypePropertyReferencePartTemplate {
+public class StereotypePropertyReferencePartTemplateImpl extends StereotypePropertyTemplateImpl implements StereotypePropertyReferencePartTemplate {
 	/**
 	 * The default value of the '{@link #isGenerate() <em>Generate</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -424,6 +425,12 @@ public class StereotypePropertyReferencePartTemplateImpl extends StereotypePrope
 				return -1;
 			}
 		}
+		if (baseClass == StereotypePropertyReference.class) {
+			switch (derivedFeatureID) {
+			default:
+				return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -467,6 +474,12 @@ public class StereotypePropertyReferencePartTemplateImpl extends StereotypePrope
 				return -1;
 			}
 		}
+		if (baseClass == StereotypePropertyReference.class) {
+			switch (baseFeatureID) {
+			default:
+				return -1;
+			}
+		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
@@ -499,6 +512,12 @@ public class StereotypePropertyReferencePartTemplateImpl extends StereotypePrope
 			}
 		}
 		if (baseClass == IUMLBodyPartTemplateTitle.class) {
+			switch (baseOperationID) {
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == StereotypePropertyReference.class) {
 			switch (baseOperationID) {
 			default:
 				return -1;

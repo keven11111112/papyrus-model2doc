@@ -1,13 +1,13 @@
 /**
  * Copyright (c) 2019 CEA LIST.
- *
+ * 
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-2.0/
- *
+ * 
  *  SPDX-License-Identifier: EPL-2.0
- *
+ * 
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -27,25 +27,27 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyPart;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.provider.EClassTemplateItemProvider;
+
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.MandatoryStereotypeWithEClassTemplate;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplatePackage;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyPart} object.
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.MandatoryStereotypeWithEClassTemplate} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
-public class StereotypePropertyPartItemProvider extends StereotypePartItemProvider {
+public class MandatoryStereotypeWithEClassTemplateItemProvider extends EClassTemplateItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	public StereotypePropertyPartItemProvider(AdapterFactory adapterFactory) {
+	public MandatoryStereotypeWithEClassTemplateItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -53,7 +55,7 @@ public class StereotypePropertyPartItemProvider extends StereotypePartItemProvid
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -61,37 +63,70 @@ public class StereotypePropertyPartItemProvider extends StereotypePartItemProvid
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addPropertyNamePropertyDescriptor(object);
+			addStereotypeFilterRulePropertyDescriptor(object);
+			addStereotypeQualifiedNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Property Name feature.
+	 * This adds a property descriptor for the Stereotype Filter Rule feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	protected void addPropertyNamePropertyDescriptor(Object object) {
+	protected void addStereotypeFilterRulePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
-				getString("_UI_StereotypePropertyPart_propertyName_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_StereotypePropertyPart_propertyName_feature", "_UI_StereotypePropertyPart_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				UMLDocumentStructureTemplatePackage.Literals.STEREOTYPE_PROPERTY_PART__PROPERTY_NAME,
+				getString("_UI_StereotypeTemplate_stereotypeFilterRule_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_StereotypeTemplate_stereotypeFilterRule_feature", "_UI_StereotypeTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				UMLDocumentStructureTemplatePackage.Literals.STEREOTYPE_TEMPLATE__STEREOTYPE_FILTER_RULE,
+				true,
+				false,
+				false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				null,
+				null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Stereotype Qualified Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected void addStereotypeQualifiedNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_StereotypeTemplate_stereotypeQualifiedName_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_StereotypeTemplate_stereotypeQualifiedName_feature", "_UI_StereotypeTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				UMLDocumentStructureTemplatePackage.Literals.STEREOTYPE_TEMPLATE__STEREOTYPE_QUALIFIED_NAME,
 				true,
 				false,
 				false,
 				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				null,
 				null,
-				URI.createURI("editor://umldocumentstructuretemplate/StereotypePropertyPart/propertyName/")));
+				URI.createURI("editor://umldocumentstructuretemplate/AbstractStereotypePart/stereotypeQualifiedName/")));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
+	 * @generated
+	 */
+	@Override
+	public boolean hasChildren(Object object) {
+		return hasChildren(object, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -103,14 +138,14 @@ public class StereotypePropertyPartItemProvider extends StereotypePartItemProvid
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((StereotypePropertyPart) object).getStereotypeQualifiedName();
-		return label == null || label.length() == 0 ? getString("_UI_StereotypePropertyPart_type") : //$NON-NLS-1$
-				getString("_UI_StereotypePropertyPart_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		String label = ((MandatoryStereotypeWithEClassTemplate) object).getStereotypeQualifiedName();
+		return label == null || label.length() == 0 ? getString("_UI_MandatoryStereotypeWithEClassTemplate_type") : //$NON-NLS-1$
+				getString("_UI_MandatoryStereotypeWithEClassTemplate_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 
@@ -119,15 +154,16 @@ public class StereotypePropertyPartItemProvider extends StereotypePartItemProvid
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(StereotypePropertyPart.class)) {
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_PART__PROPERTY_NAME:
+		switch (notification.getFeatureID(MandatoryStereotypeWithEClassTemplate.class)) {
+		case UMLDocumentStructureTemplatePackage.MANDATORY_STEREOTYPE_WITH_ECLASS_TEMPLATE__STEREOTYPE_FILTER_RULE:
+		case UMLDocumentStructureTemplatePackage.MANDATORY_STEREOTYPE_WITH_ECLASS_TEMPLATE__STEREOTYPE_QUALIFIED_NAME:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
@@ -139,7 +175,7 @@ public class StereotypePropertyPartItemProvider extends StereotypePartItemProvid
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

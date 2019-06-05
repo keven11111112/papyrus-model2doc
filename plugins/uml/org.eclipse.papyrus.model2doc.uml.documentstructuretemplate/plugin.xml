@@ -16,16 +16,6 @@
 -->
 
 <plugin>
-
-
-
-   <extension
-         point="org.eclipse.emf.ecore.factory_override">
-      <factory
-            class="org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.internal.impl.CustomUMLDocumentStructureTemplateFactoryImpl"
-            uri="http://www.eclipse.org/papyrus/model2doc/uml/1.0.0/documentstructuretemplate">
-      </factory>
-   </extension>
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated umldocumentstructuretemplate -->
       <package

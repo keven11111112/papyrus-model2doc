@@ -12,33 +12,38 @@
  *   Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
-
 package org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.edit.editors.factories;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit.editors.CustomExtendedDialogCellEditor;
-import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferencePartTemplate;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypeTemplate;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplatePackage;
-import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.edit.internal.converters.StereotypePropertyDisplayConverter;
-import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.edit.internal.providers.StereotypePropertyTreeContentProvider;
-import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.edit.internal.validators.SinglePropertyReferenceValidator;
-import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.edit.internal.validators.SinglePropertyValidator;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.edit.internal.converters.StereotypeDisplayConverter;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.edit.internal.providers.StereotypeTreeContentProvider;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.edit.internal.validators.SingleStereotypeValidator;
 
 /**
- * Editor Factory used to edit the feature UMLDocumentStructureTemplatePackage.eINSTANCE.getStereotypePropertyPart_PropertyName()
+ * Editor Factory used to edit {@link StereotypeTemplate#setStereotypeQualifiedName(String)}
  */
-public class StereotypePropertyPartPropertyNameEditorFactory extends AbstractUMLElementDialogEditorFactory {
+public class StereotypeTemplateStereotypeQualifiedNameEditorFactory extends AbstractUMLElementDialogEditorFactory {
+
 	/**
 	 * This editor is registered with this URI with the extension point org.eclipse.emf.edit.propertyEditorFactories.
 	 * This editor is also registered with this URI in an EAnnotation in the ecore model
 	 */
-	private static final URI SELF_URI = URI.createURI("editor://umldocumentstructuretemplate/StereotypePropertyPart/propertyName/"); //$NON-NLS-1$
+	private static final URI SELF_URI = URI.createURI("editor://umldocumentstructuretemplate/StereotypeTemplate/stereotypeQualifiedName/"); //$NON-NLS-1$
 
 	/**
+	 *
 	 * Constructor.
+	 *
+	 * @param propertyEditorFactoryURI
+	 *            the declared uri for this editor
+	 * @param editedFeature
+	 *            the edited feature
 	 */
-	public StereotypePropertyPartPropertyNameEditorFactory() {
-		super(SELF_URI, UMLDocumentStructureTemplatePackage.eINSTANCE.getStereotypePropertyPart_PropertyName());
+	public StereotypeTemplateStereotypeQualifiedNameEditorFactory() {
+		super(SELF_URI, UMLDocumentStructureTemplatePackage.eINSTANCE.getStereotypeTemplate_StereotypeQualifiedName());
 	}
 
 	/**
@@ -51,14 +56,9 @@ public class StereotypePropertyPartPropertyNameEditorFactory extends AbstractUML
 	@Override
 	protected void configureCellEditor(final Object editedObject, final CustomExtendedDialogCellEditor cellEditor) {
 		super.configureCellEditor(editedObject, cellEditor);
-		cellEditor.setContentProvider(new StereotypePropertyTreeContentProvider());
-		cellEditor.setDisplayConverter(new StereotypePropertyDisplayConverter());
-
-		if (editedObject instanceof StereotypePropertyReferencePartTemplate) {
-			cellEditor.setSelectionStatusValidator(new SinglePropertyReferenceValidator());
-		} else {
-			cellEditor.setSelectionStatusValidator(new SinglePropertyValidator());
-		}
+		cellEditor.setContentProvider(new StereotypeTreeContentProvider());
+		cellEditor.setDisplayConverter(new StereotypeDisplayConverter());
+		cellEditor.setSelectionStatusValidator(new SingleStereotypeValidator());
 	}
 
 }

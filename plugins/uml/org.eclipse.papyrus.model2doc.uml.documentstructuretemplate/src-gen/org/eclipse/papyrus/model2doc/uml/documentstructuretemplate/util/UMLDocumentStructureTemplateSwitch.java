@@ -18,14 +18,20 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodyPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IColumn;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedBodyPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedListItemTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedSubBodyPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedSubListItemTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafBodyPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafListItemTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IListItemTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IRootListItemTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubBodyPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubListItemTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITemplatePartView;
 
@@ -100,10 +106,7 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 			StereotypePartTemplate stereotypePartTemplate = (StereotypePartTemplate) theEObject;
 			T result = caseStereotypePartTemplate(stereotypePartTemplate);
 			if (result == null) {
-				result = caseEClassPartTemplate(stereotypePartTemplate);
-			}
-			if (result == null) {
-				result = caseMandatoryStereotypePart(stereotypePartTemplate);
+				result = caseMandatoryStereotypeWithEClassTemplate(stereotypePartTemplate);
 			}
 			if (result == null) {
 				result = caseIUMLBodyPartTemplateTitle(stereotypePartTemplate);
@@ -112,10 +115,16 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 				result = caseIComposedSubBodyPartTemplate(stereotypePartTemplate);
 			}
 			if (result == null) {
-				result = caseStereotypePart(stereotypePartTemplate);
+				result = caseEClassTemplate(stereotypePartTemplate);
+			}
+			if (result == null) {
+				result = caseMandatoryStereotypeTemplate(stereotypePartTemplate);
 			}
 			if (result == null) {
 				result = caseISubBodyPartTemplate(stereotypePartTemplate);
+			}
+			if (result == null) {
+				result = caseStereotypeTemplate(stereotypePartTemplate);
 			}
 			if (result == null) {
 				result = caseIBodySectionPartTemplate(stereotypePartTemplate);
@@ -125,20 +134,37 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 			}
 			return result;
 		}
-		case UMLDocumentStructureTemplatePackage.MANDATORY_STEREOTYPE_PART: {
-			MandatoryStereotypePart mandatoryStereotypePart = (MandatoryStereotypePart) theEObject;
-			T result = caseMandatoryStereotypePart(mandatoryStereotypePart);
+		case UMLDocumentStructureTemplatePackage.MANDATORY_STEREOTYPE_WITH_ECLASS_TEMPLATE: {
+			MandatoryStereotypeWithEClassTemplate mandatoryStereotypeWithEClassTemplate = (MandatoryStereotypeWithEClassTemplate) theEObject;
+			T result = caseMandatoryStereotypeWithEClassTemplate(mandatoryStereotypeWithEClassTemplate);
 			if (result == null) {
-				result = caseStereotypePart(mandatoryStereotypePart);
+				result = caseEClassTemplate(mandatoryStereotypeWithEClassTemplate);
+			}
+			if (result == null) {
+				result = caseMandatoryStereotypeTemplate(mandatoryStereotypeWithEClassTemplate);
+			}
+			if (result == null) {
+				result = caseStereotypeTemplate(mandatoryStereotypeWithEClassTemplate);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
 			}
 			return result;
 		}
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART: {
-			StereotypePart stereotypePart = (StereotypePart) theEObject;
-			T result = caseStereotypePart(stereotypePart);
+		case UMLDocumentStructureTemplatePackage.MANDATORY_STEREOTYPE_TEMPLATE: {
+			MandatoryStereotypeTemplate mandatoryStereotypeTemplate = (MandatoryStereotypeTemplate) theEObject;
+			T result = caseMandatoryStereotypeTemplate(mandatoryStereotypeTemplate);
+			if (result == null) {
+				result = caseStereotypeTemplate(mandatoryStereotypeTemplate);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_TEMPLATE: {
+			StereotypeTemplate stereotypeTemplate = (StereotypeTemplate) theEObject;
+			T result = caseStereotypeTemplate(stereotypeTemplate);
 			if (result == null) {
 				result = defaultCase(theEObject);
 			}
@@ -159,7 +185,7 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 			StereotypePropertyReferencePartTemplate stereotypePropertyReferencePartTemplate = (StereotypePropertyReferencePartTemplate) theEObject;
 			T result = caseStereotypePropertyReferencePartTemplate(stereotypePropertyReferencePartTemplate);
 			if (result == null) {
-				result = caseStereotypePropertyPart(stereotypePropertyReferencePartTemplate);
+				result = caseStereotypePropertyTemplate(stereotypePropertyReferencePartTemplate);
 			}
 			if (result == null) {
 				result = caseIComposedBodyPartTemplate(stereotypePropertyReferencePartTemplate);
@@ -168,7 +194,10 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 				result = caseIUMLBodyPartTemplateTitle(stereotypePropertyReferencePartTemplate);
 			}
 			if (result == null) {
-				result = caseStereotypePart(stereotypePropertyReferencePartTemplate);
+				result = caseStereotypePropertyReference(stereotypePropertyReferencePartTemplate);
+			}
+			if (result == null) {
+				result = caseStereotypeTemplate(stereotypePropertyReferencePartTemplate);
 			}
 			if (result == null) {
 				result = caseIBodyPartTemplate(stereotypePropertyReferencePartTemplate);
@@ -181,12 +210,20 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 			}
 			return result;
 		}
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_PART: {
-			StereotypePropertyPart stereotypePropertyPart = (StereotypePropertyPart) theEObject;
-			T result = caseStereotypePropertyPart(stereotypePropertyPart);
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_TEMPLATE: {
+			StereotypePropertyTemplate stereotypePropertyTemplate = (StereotypePropertyTemplate) theEObject;
+			T result = caseStereotypePropertyTemplate(stereotypePropertyTemplate);
 			if (result == null) {
-				result = caseStereotypePart(stereotypePropertyPart);
+				result = caseStereotypeTemplate(stereotypePropertyTemplate);
 			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE: {
+			StereotypePropertyReference stereotypePropertyReference = (StereotypePropertyReference) theEObject;
+			T result = caseStereotypePropertyReference(stereotypePropertyReference);
 			if (result == null) {
 				result = defaultCase(theEObject);
 			}
@@ -227,30 +264,30 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 			StereotypePropertyColumn stereotypePropertyColumn = (StereotypePropertyColumn) theEObject;
 			T result = caseStereotypePropertyColumn(stereotypePropertyColumn);
 			if (result == null) {
-				result = caseMandatoryStereotypePropertyPart(stereotypePropertyColumn);
+				result = caseMandatoryStereotypePropertyTemplate(stereotypePropertyColumn);
 			}
 			if (result == null) {
 				result = caseIColumn(stereotypePropertyColumn);
 			}
 			if (result == null) {
-				result = caseStereotypePropertyPart(stereotypePropertyColumn);
+				result = caseStereotypePropertyTemplate(stereotypePropertyColumn);
 			}
 			if (result == null) {
-				result = caseStereotypePart(stereotypePropertyColumn);
+				result = caseStereotypeTemplate(stereotypePropertyColumn);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
 			}
 			return result;
 		}
-		case UMLDocumentStructureTemplatePackage.MANDATORY_STEREOTYPE_PROPERTY_PART: {
-			MandatoryStereotypePropertyPart mandatoryStereotypePropertyPart = (MandatoryStereotypePropertyPart) theEObject;
-			T result = caseMandatoryStereotypePropertyPart(mandatoryStereotypePropertyPart);
+		case UMLDocumentStructureTemplatePackage.MANDATORY_STEREOTYPE_PROPERTY_TEMPLATE: {
+			MandatoryStereotypePropertyTemplate mandatoryStereotypePropertyTemplate = (MandatoryStereotypePropertyTemplate) theEObject;
+			T result = caseMandatoryStereotypePropertyTemplate(mandatoryStereotypePropertyTemplate);
 			if (result == null) {
-				result = caseStereotypePropertyPart(mandatoryStereotypePropertyPart);
+				result = caseStereotypePropertyTemplate(mandatoryStereotypePropertyTemplate);
 			}
 			if (result == null) {
-				result = caseStereotypePart(mandatoryStereotypePropertyPart);
+				result = caseStereotypeTemplate(mandatoryStereotypePropertyTemplate);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
@@ -261,7 +298,7 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 			StereotypePropertyReferenceTableView stereotypePropertyReferenceTableView = (StereotypePropertyReferenceTableView) theEObject;
 			T result = caseStereotypePropertyReferenceTableView(stereotypePropertyReferenceTableView);
 			if (result == null) {
-				result = caseStereotypePropertyPart(stereotypePropertyReferenceTableView);
+				result = caseStereotypePropertyTemplate(stereotypePropertyReferenceTableView);
 			}
 			if (result == null) {
 				result = caseITableView(stereotypePropertyReferenceTableView);
@@ -270,7 +307,10 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 				result = caseIUMLBodyPartTemplateTitle(stereotypePropertyReferenceTableView);
 			}
 			if (result == null) {
-				result = caseStereotypePart(stereotypePropertyReferenceTableView);
+				result = caseStereotypePropertyReference(stereotypePropertyReferenceTableView);
+			}
+			if (result == null) {
+				result = caseStereotypeTemplate(stereotypePropertyReferenceTableView);
 			}
 			if (result == null) {
 				result = caseILeafBodyPartTemplate(stereotypePropertyReferenceTableView);
@@ -284,6 +324,127 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 			if (result == null) {
 				result = caseIBodySectionPartTemplate(stereotypePropertyReferenceTableView);
 			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_LIST_ITEM_TEMPLATE: {
+			StereotypeListItemTemplate stereotypeListItemTemplate = (StereotypeListItemTemplate) theEObject;
+			T result = caseStereotypeListItemTemplate(stereotypeListItemTemplate);
+			if (result == null) {
+				result = caseMandatoryStereotypeWithEClassTemplate(stereotypeListItemTemplate);
+			}
+			if (result == null) {
+				result = caseIComposedSubListItemTemplate(stereotypeListItemTemplate);
+			}
+			if (result == null) {
+				result = caseEClassTemplate(stereotypeListItemTemplate);
+			}
+			if (result == null) {
+				result = caseMandatoryStereotypeTemplate(stereotypeListItemTemplate);
+			}
+			if (result == null) {
+				result = caseISubListItemTemplate(stereotypeListItemTemplate);
+			}
+			if (result == null) {
+				result = caseStereotypeTemplate(stereotypeListItemTemplate);
+			}
+			if (result == null) {
+				result = caseIListItemTemplate(stereotypeListItemTemplate);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM: {
+			StereotypePropertyReferenceListItem stereotypePropertyReferenceListItem = (StereotypePropertyReferenceListItem) theEObject;
+			T result = caseStereotypePropertyReferenceListItem(stereotypePropertyReferenceListItem);
+			if (result == null) {
+				result = caseStereotypePropertyListItemTemplate(stereotypePropertyReferenceListItem);
+			}
+			if (result == null) {
+				result = caseIComposedListItemTemplate(stereotypePropertyReferenceListItem);
+			}
+			if (result == null) {
+				result = caseStereotypePropertyReference(stereotypePropertyReferenceListItem);
+			}
+			if (result == null) {
+				result = caseMandatoryStereotypePropertyTemplate(stereotypePropertyReferenceListItem);
+			}
+			if (result == null) {
+				result = caseIRootListItemTemplate(stereotypePropertyReferenceListItem);
+			}
+			if (result == null) {
+				result = caseStereotypePropertyTemplate(stereotypePropertyReferenceListItem);
+			}
+			if (result == null) {
+				result = caseIListItemTemplate(stereotypePropertyReferenceListItem);
+			}
+			if (result == null) {
+				result = caseStereotypeTemplate(stereotypePropertyReferenceListItem);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE: {
+			StereotypePropertyListItemTemplate stereotypePropertyListItemTemplate = (StereotypePropertyListItemTemplate) theEObject;
+			T result = caseStereotypePropertyListItemTemplate(stereotypePropertyListItemTemplate);
+			if (result == null) {
+				result = caseMandatoryStereotypePropertyTemplate(stereotypePropertyListItemTemplate);
+			}
+			if (result == null) {
+				result = caseIListItemTemplate(stereotypePropertyListItemTemplate);
+			}
+			if (result == null) {
+				result = caseStereotypePropertyTemplate(stereotypePropertyListItemTemplate);
+			}
+			if (result == null) {
+				result = caseStereotypeTemplate(stereotypePropertyListItemTemplate);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_ATTRIBUTE_LIST_ITEM: {
+			StereotypePropertyAttributeListItem stereotypePropertyAttributeListItem = (StereotypePropertyAttributeListItem) theEObject;
+			T result = caseStereotypePropertyAttributeListItem(stereotypePropertyAttributeListItem);
+			if (result == null) {
+				result = caseStereotypePropertyListItemTemplate(stereotypePropertyAttributeListItem);
+			}
+			if (result == null) {
+				result = caseILeafListItemTemplate(stereotypePropertyAttributeListItem);
+			}
+			if (result == null) {
+				result = caseStereotypePropertyAttribute(stereotypePropertyAttributeListItem);
+			}
+			if (result == null) {
+				result = caseMandatoryStereotypePropertyTemplate(stereotypePropertyAttributeListItem);
+			}
+			if (result == null) {
+				result = caseIRootListItemTemplate(stereotypePropertyAttributeListItem);
+			}
+			if (result == null) {
+				result = caseStereotypePropertyTemplate(stereotypePropertyAttributeListItem);
+			}
+			if (result == null) {
+				result = caseIListItemTemplate(stereotypePropertyAttributeListItem);
+			}
+			if (result == null) {
+				result = caseStereotypeTemplate(stereotypePropertyAttributeListItem);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_ATTRIBUTE: {
+			StereotypePropertyAttribute stereotypePropertyAttribute = (StereotypePropertyAttribute) theEObject;
+			T result = caseStereotypePropertyAttribute(stereotypePropertyAttribute);
 			if (result == null) {
 				result = defaultCase(theEObject);
 			}
@@ -312,7 +473,7 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Mandatory Stereotype Part</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Mandatory Stereotype With EClass Template</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
@@ -320,16 +481,16 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 	 *
 	 * @param object
 	 *                   the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Mandatory Stereotype Part</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Mandatory Stereotype With EClass Template</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMandatoryStereotypePart(MandatoryStereotypePart object) {
+	public T caseMandatoryStereotypeWithEClassTemplate(MandatoryStereotypeWithEClassTemplate object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Stereotype Part</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Mandatory Stereotype Template</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
@@ -337,11 +498,28 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 	 *
 	 * @param object
 	 *                   the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Stereotype Part</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Mandatory Stereotype Template</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseStereotypePart(StereotypePart object) {
+	public T caseMandatoryStereotypeTemplate(MandatoryStereotypeTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Stereotype Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Stereotype Template</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStereotypeTemplate(StereotypeTemplate object) {
 		return null;
 	}
 
@@ -380,7 +558,7 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Stereotype Property Part</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Stereotype Property Template</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
@@ -388,11 +566,11 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 	 *
 	 * @param object
 	 *                   the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Stereotype Property Part</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Stereotype Property Template</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseStereotypePropertyPart(StereotypePropertyPart object) {
+	public T caseStereotypePropertyTemplate(StereotypePropertyTemplate object) {
 		return null;
 	}
 
@@ -448,7 +626,7 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Mandatory Stereotype Property Part</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Mandatory Stereotype Property Template</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
@@ -456,11 +634,11 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 	 *
 	 * @param object
 	 *                   the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Mandatory Stereotype Property Part</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Mandatory Stereotype Property Template</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMandatoryStereotypePropertyPart(MandatoryStereotypePropertyPart object) {
+	public T caseMandatoryStereotypePropertyTemplate(MandatoryStereotypePropertyTemplate object) {
 		return null;
 	}
 
@@ -478,6 +656,125 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseStereotypePropertyReferenceTableView(StereotypePropertyReferenceTableView object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Stereotype Property Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Stereotype Property Reference</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStereotypePropertyReference(StereotypePropertyReference object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Stereotype List Item Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Stereotype List Item Template</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStereotypeListItemTemplate(StereotypeListItemTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Stereotype Property Reference List Item</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Stereotype Property Reference List Item</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStereotypePropertyReferenceListItem(StereotypePropertyReferenceListItem object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Stereotype Property List Item Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Stereotype Property List Item Template</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStereotypePropertyListItemTemplate(StereotypePropertyListItemTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Stereotype Property Attribute List Item</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Stereotype Property Attribute List Item</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStereotypePropertyAttributeListItem(StereotypePropertyAttributeListItem object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Stereotype Property Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Stereotype Property Attribute</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStereotypePropertyAttribute(StereotypePropertyAttribute object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EClass Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EClass Template</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEClassTemplate(EClassTemplate object) {
 		return null;
 	}
 
@@ -529,23 +826,6 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseIComposedSubBodyPartTemplate(IComposedSubBodyPartTemplate object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>EClass Part Template</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 *
-	 * @param object
-	 *                   the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>EClass Part Template</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEClassPartTemplate(EClassPartTemplate object) {
 		return null;
 	}
 
@@ -648,6 +928,108 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseITableView(ITableView object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IList Item Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IList Item Template</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIListItemTemplate(IListItemTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>ISub List Item Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>ISub List Item Template</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseISubListItemTemplate(ISubListItemTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IComposed Sub List Item Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IComposed Sub List Item Template</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIComposedSubListItemTemplate(IComposedSubListItemTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IRoot List Item Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IRoot List Item Template</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIRootListItemTemplate(IRootListItemTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IComposed List Item Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IComposed List Item Template</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIComposedListItemTemplate(IComposedListItemTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>ILeaf List Item Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>ILeaf List Item Template</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseILeafListItemTemplate(ILeafListItemTemplate object) {
 		return null;
 	}
 

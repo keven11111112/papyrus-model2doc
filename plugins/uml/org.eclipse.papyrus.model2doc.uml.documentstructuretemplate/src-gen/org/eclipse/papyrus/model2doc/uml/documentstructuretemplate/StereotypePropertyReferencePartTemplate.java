@@ -33,7 +33,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedBody
  * @model
  * @generated
  */
-public interface StereotypePropertyReferencePartTemplate extends StereotypePropertyPart, IComposedBodyPartTemplate, IUMLBodyPartTemplateTitle {
+public interface StereotypePropertyReferencePartTemplate extends StereotypePropertyTemplate, IComposedBodyPartTemplate, IUMLBodyPartTemplateTitle, StereotypePropertyReference {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

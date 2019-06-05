@@ -1,13 +1,13 @@
 /**
  * Copyright (c) 2019 CEA LIST.
- *
+ * 
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-2.0/
- *
+ * 
  *  SPDX-License-Identifier: EPL-2.0
- *
+ * 
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -34,15 +34,15 @@ import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentSt
  * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyColumn} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
-public class StereotypePropertyColumnItemProvider extends MandatoryStereotypePropertyPartItemProvider {
+public class StereotypePropertyColumnItemProvider extends MandatoryStereotypePropertyTemplateItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public StereotypePropertyColumnItemProvider(AdapterFactory adapterFactory) {
@@ -53,7 +53,7 @@ public class StereotypePropertyColumnItemProvider extends MandatoryStereotypePro
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -70,7 +70,7 @@ public class StereotypePropertyColumnItemProvider extends MandatoryStereotypePro
 	 * This adds a property descriptor for the Custom Column Title feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addCustomColumnTitlePropertyDescriptor(Object object) {
@@ -91,7 +91,7 @@ public class StereotypePropertyColumnItemProvider extends MandatoryStereotypePro
 	 * This returns StereotypePropertyColumn.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -102,7 +102,7 @@ public class StereotypePropertyColumnItemProvider extends MandatoryStereotypePro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -114,7 +114,7 @@ public class StereotypePropertyColumnItemProvider extends MandatoryStereotypePro
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -130,7 +130,7 @@ public class StereotypePropertyColumnItemProvider extends MandatoryStereotypePro
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -150,7 +150,7 @@ public class StereotypePropertyColumnItemProvider extends MandatoryStereotypePro
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
