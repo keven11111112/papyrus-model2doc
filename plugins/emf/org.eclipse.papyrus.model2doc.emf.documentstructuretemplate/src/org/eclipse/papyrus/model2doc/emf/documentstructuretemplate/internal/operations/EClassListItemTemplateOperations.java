@@ -43,7 +43,7 @@ public class EClassListItemTemplateOperations {
 	 * @param item
 	 * @return
 	 */
-	public static String buildLabelItem(final EClassListItemTemplate eClassListItemTemplate, final Object item) {
+	public static String buildItemLabel(final EClassListItemTemplate eClassListItemTemplate, final Object item) {
 		final String customLabel = eClassListItemTemplate.getCustomItemLabel();
 		if (null != customLabel && false == customLabel.isEmpty()) {
 			return customLabel;

@@ -204,7 +204,7 @@ public class EClassListItemTemplateImpl extends EClassTemplateImpl implements EC
 	 */
 	@Override
 	public String buildItemLabel(final Object item) {
-		return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EClassListItemTemplateOperations.buildLabelItem(this, item);
+		return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EClassListItemTemplateOperations.buildItemLabel(this, item);
 	}
 
 	/**

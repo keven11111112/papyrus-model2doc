@@ -31,7 +31,7 @@ public class EReferenceListItemTemplateOperations {
 	 * @param item
 	 * @return
 	 */
-	public static String buildLabelItem(final EReferenceListItemTemplate eReferenceListItemTemplate, final Object item) {
+	public static String buildItemLabel(final EReferenceListItemTemplate eReferenceListItemTemplate, final Object item) {
 		final String customLabel = eReferenceListItemTemplate.getCustomItemLabel();
 		if (null != customLabel && false == customLabel.isEmpty()) {
 			return customLabel;

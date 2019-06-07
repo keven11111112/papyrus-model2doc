@@ -40,7 +40,7 @@ public class EAttributeListItemTemplateOperations {
 	 * @param item
 	 * @return
 	 */
-	public static String buildLabelItem(final EAttributeListItemTemplate eAttributeListItem, final Object item) {
+	public static String buildItemLabel(final EAttributeListItemTemplate eAttributeListItem, final Object item) {
 		if (null == item || item == eAttributeListItem) {
 			final String customLabel = eAttributeListItem.getCustomItemLabel();
 			if (null != customLabel && false == customLabel.isEmpty()) {

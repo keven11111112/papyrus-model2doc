@@ -204,7 +204,7 @@ public class EReferenceListItemTemplateImpl extends EReferenceTemplateImpl imple
 	 */
 	@Override
 	public String buildItemLabel(final Object item) {
-		return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EReferenceListItemTemplateOperations.buildLabelItem(this, item);
+		return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EReferenceListItemTemplateOperations.buildItemLabel(this, item);
 	}
 
 	/**
