@@ -1454,8 +1454,8 @@
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_1R30EXyHEemXM4G5UevpIQ"/>
       <element xmi:type="uml:InterfaceRealization" href="documentstructuretemplate.uml#_gssk4HHIEempmPy7tz2aIQ"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_1R30EnyHEemXM4G5UevpIQ" points="[-1680, 660, -643984, -643984]$[-1750, 660, -643984, -643984]$[-1750, 550, -643984, -643984]"/>
-      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1t8FAHyHEemXM4G5UevpIQ" id="(0.0,0.42)"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_1R30EnyHEemXM4G5UevpIQ" points="[-1680, 680, -643984, -643984]$[-1760, 680, -643984, -643984]$[-1760, 550, -643984, -643984]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1t8FAHyHEemXM4G5UevpIQ" id="(0.0,0.484375)"/>
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1t8sEHyHEemXM4G5UevpIQ" id="(0.45977011494252873,1.0)"/>
     </edges>
   </notation:Diagram>

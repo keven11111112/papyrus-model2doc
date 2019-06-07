@@ -26,13 +26,13 @@ import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.internal.prov
 public class CustomEStructuralFeatureColumnImpl extends EStructuralFeatureColumnImpl {
 
 	/**
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EStructuralFeatureTemplateImpl#buildEAttributeValueLabel(java.lang.Object)
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EStructuralFeatureTemplateImpl#buildEStructuralFeatureValueLabel(java.lang.Object)
 	 *
 	 * @param value
 	 * @return
 	 */
 	@Override
-	public String buildEAttributeValueLabel(Object value) { // what is this method???? TODO TODO TODO
+	public String buildEStructuralFeatureValueLabel(Object value) { // what is this method???? TODO TODO TODO
 		return UMLDelegatingToEMFLabelProvider.UML_INSTANCE.getText(value);
 	}
 

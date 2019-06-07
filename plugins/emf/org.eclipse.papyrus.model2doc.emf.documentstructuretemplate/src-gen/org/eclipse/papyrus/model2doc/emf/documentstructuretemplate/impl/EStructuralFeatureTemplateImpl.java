@@ -139,8 +139,8 @@ public abstract class EStructuralFeatureTemplateImpl extends MinimalEObjectImpl.
 	 * @generated
 	 */
 	@Override
-	public String buildEAttributeValueLabel(final Object value) {
-		return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EStructuralFeatureTemplateOperations.buildEAttributeValueLabel(this, value);
+	public String buildEStructuralFeatureValueLabel(final Object value) {
+		return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EStructuralFeatureTemplateOperations.buildEStructuralFeatureValueLabel(this, value);
 	}
 
 	/**
@@ -219,8 +219,8 @@ public abstract class EStructuralFeatureTemplateImpl extends MinimalEObjectImpl.
 		switch (operationID) {
 		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_TEMPLATE___GET_ESTRUCTURAL_FEATURE_VALUES__EOBJECT:
 			return getEStructuralFeatureValues((EObject) arguments.get(0));
-		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_TEMPLATE___BUILD_EATTRIBUTE_VALUE_LABEL__OBJECT:
-			return buildEAttributeValueLabel(arguments.get(0));
+		case DocumentStructureTemplatePackage.ESTRUCTURAL_FEATURE_TEMPLATE___BUILD_ESTRUCTURAL_FEATURE_VALUE_LABEL__OBJECT:
+			return buildEStructuralFeatureValueLabel(arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

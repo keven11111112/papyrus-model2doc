@@ -24,6 +24,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EAttributeTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.providers.DelegatingToEMFLabelProvider;
 
 /**
  * This class provides operations for the elements {@link EAttributeTemplate}
@@ -65,10 +66,14 @@ public class EAttributeTemplateOperations {
 	 *         the string to use to represent this value
 	 */
 	public static final String buildEAttributeValueLabel(final EAttributeTemplate eAttributeTemplate, final Object value) {
-		final EAttribute eAttribute = eAttributeTemplate.getEAttribute();
-		if (null != eAttribute) {
-			return eAttribute.getName();
+		if (value == null || value == eAttributeTemplate) {
+			final EAttribute eAttribute = eAttributeTemplate.getEAttribute();
+			if (null != eAttribute) {
+				return eAttribute.getName();
+			}
+			return "No EAttribute"; //$NON-NLS-1$
+		} else {
+			return DelegatingToEMFLabelProvider.INSTANCE.getText(value);
 		}
-		return "No EAttribute"; //$NON-NLS-1$
 	}
 }

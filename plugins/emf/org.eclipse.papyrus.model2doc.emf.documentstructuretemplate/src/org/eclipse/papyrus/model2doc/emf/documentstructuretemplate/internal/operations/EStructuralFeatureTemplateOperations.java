@@ -40,7 +40,7 @@ public class EStructuralFeatureTemplateOperations {
 	 * @return
 	 *         the label to use for this value
 	 */
-	public static final String buildEAttributeValueLabel(final EStructuralFeatureTemplate featureTemplate, final Object value) {
+	public static final String buildEStructuralFeatureValueLabel(final EStructuralFeatureTemplate featureTemplate, final Object value) {
 		return DelegatingToEMFLabelProvider.INSTANCE.getText(value);
 	}
 

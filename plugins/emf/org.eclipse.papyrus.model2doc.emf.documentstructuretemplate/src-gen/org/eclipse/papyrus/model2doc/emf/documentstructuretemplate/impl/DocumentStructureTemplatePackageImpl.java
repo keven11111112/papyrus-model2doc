@@ -1133,7 +1133,7 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
-	public EOperation getEStructuralFeatureTemplate__BuildEAttributeValueLabel__Object() {
+	public EOperation getEStructuralFeatureTemplate__BuildEStructuralFeatureValueLabel__Object() {
 		return eStructuralFeatureTemplateEClass.getEOperations().get(1);
 	}
 
@@ -1509,7 +1509,7 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		eStructuralFeatureTemplateEClass = createEClass(ESTRUCTURAL_FEATURE_TEMPLATE);
 		createEReference(eStructuralFeatureTemplateEClass, ESTRUCTURAL_FEATURE_TEMPLATE__FEATURE);
 		createEOperation(eStructuralFeatureTemplateEClass, ESTRUCTURAL_FEATURE_TEMPLATE___GET_ESTRUCTURAL_FEATURE_VALUES__EOBJECT);
-		createEOperation(eStructuralFeatureTemplateEClass, ESTRUCTURAL_FEATURE_TEMPLATE___BUILD_EATTRIBUTE_VALUE_LABEL__OBJECT);
+		createEOperation(eStructuralFeatureTemplateEClass, ESTRUCTURAL_FEATURE_TEMPLATE___BUILD_ESTRUCTURAL_FEATURE_VALUE_LABEL__OBJECT);
 
 		iListItemTemplateEClass = createEClass(ILIST_ITEM_TEMPLATE);
 		createEAttribute(iListItemTemplateEClass, ILIST_ITEM_TEMPLATE__GENERATE_ITEM);
@@ -1741,7 +1741,7 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		op = initEOperation(getEStructuralFeatureTemplate__GetEStructuralFeatureValues__EObject(), theEcorePackage.getEJavaObject(), "getEStructuralFeatureValues", 0, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 		addEParameter(op, theEcorePackage.getEObject(), "context", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
-		op = initEOperation(getEStructuralFeatureTemplate__BuildEAttributeValueLabel__Object(), ecorePackage.getEString(), "buildEAttributeValueLabel", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+		op = initEOperation(getEStructuralFeatureTemplate__BuildEStructuralFeatureValueLabel__Object(), ecorePackage.getEString(), "buildEStructuralFeatureValueLabel", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 		addEParameter(op, theEcorePackage.getEJavaObject(), "value", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(iListItemTemplateEClass, IListItemTemplate.class, "IListItemTemplate", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$

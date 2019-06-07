@@ -173,9 +173,9 @@
           body="return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EStructuralFeatureTemplateOperations.getEStructuralFeatureValues(this,context);">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="documentstructuretemplate.ecore#//EStructuralFeatureTemplate/getEStructuralFeatureValues/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="documentstructuretemplate.ecore#//EStructuralFeatureTemplate/buildEAttributeValueLabel"
-          body="return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EStructuralFeatureTemplateOperations.buildEAttributeValueLabel(this,value);">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="documentstructuretemplate.ecore#//EStructuralFeatureTemplate/buildEAttributeValueLabel/value"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="documentstructuretemplate.ecore#//EStructuralFeatureTemplate/buildEStructuralFeatureValueLabel"
+          body="return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EStructuralFeatureTemplateOperations.buildEStructuralFeatureValueLabel(this,value);">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="documentstructuretemplate.ecore#//EStructuralFeatureTemplate/buildEStructuralFeatureValueLabel/value"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructuretemplate.ecore#//IListItemTemplate"
@@ -209,8 +209,7 @@
         labelFeature="#//documentstructuretemplate/IListItemTemplate/customItemLabel"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructuretemplate.ecore#//EReferenceListItemTemplate"
         labelFeature="#//documentstructuretemplate/IListItemTemplate/customItemLabel"/>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructuretemplate.ecore#//EAttributeListItemTemplate"
-        labelFeature="#//documentstructuretemplate/IListItemTemplate/customItemLabel"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructuretemplate.ecore#//EAttributeListItemTemplate"/>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructuretemplate.ecore#//EAttributeTemplate">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//EAttributeTemplate/eAttribute"/>

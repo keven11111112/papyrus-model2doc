@@ -1798,14 +1798,14 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int ESTRUCTURAL_FEATURE_TEMPLATE___GET_ESTRUCTURAL_FEATURE_VALUES__EOBJECT = 0;
 
 	/**
-	 * The operation id for the '<em>Build EAttribute Value Label</em>' operation.
+	 * The operation id for the '<em>Build EStructural Feature Value Label</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int ESTRUCTURAL_FEATURE_TEMPLATE___BUILD_EATTRIBUTE_VALUE_LABEL__OBJECT = 1;
+	int ESTRUCTURAL_FEATURE_TEMPLATE___BUILD_ESTRUCTURAL_FEATURE_VALUE_LABEL__OBJECT = 1;
 
 	/**
 	 * The number of operations of the '<em>EStructural Feature Template</em>' class.
@@ -1869,14 +1869,14 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int ESTRUCTURAL_FEATURE_COLUMN___GET_ESTRUCTURAL_FEATURE_VALUES__EOBJECT = ESTRUCTURAL_FEATURE_TEMPLATE___GET_ESTRUCTURAL_FEATURE_VALUES__EOBJECT;
 
 	/**
-	 * The operation id for the '<em>Build EAttribute Value Label</em>' operation.
+	 * The operation id for the '<em>Build EStructural Feature Value Label</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int ESTRUCTURAL_FEATURE_COLUMN___BUILD_EATTRIBUTE_VALUE_LABEL__OBJECT = ESTRUCTURAL_FEATURE_TEMPLATE___BUILD_EATTRIBUTE_VALUE_LABEL__OBJECT;
+	int ESTRUCTURAL_FEATURE_COLUMN___BUILD_ESTRUCTURAL_FEATURE_VALUE_LABEL__OBJECT = ESTRUCTURAL_FEATURE_TEMPLATE___BUILD_ESTRUCTURAL_FEATURE_VALUE_LABEL__OBJECT;
 
 	/**
 	 * The operation id for the '<em>Build Column Header Label</em>' operation.
@@ -3634,15 +3634,15 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	EOperation getEStructuralFeatureTemplate__GetEStructuralFeatureValues__EObject();
 
 	/**
-	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFeatureTemplate#buildEAttributeValueLabel(java.lang.Object) <em>Build EAttribute Value Label</em>}' operation.
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFeatureTemplate#buildEStructuralFeatureValueLabel(java.lang.Object) <em>Build EStructural Feature Value Label</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the meta object for the '<em>Build EAttribute Value Label</em>' operation.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFeatureTemplate#buildEAttributeValueLabel(java.lang.Object)
+	 * @return the meta object for the '<em>Build EStructural Feature Value Label</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EStructuralFeatureTemplate#buildEStructuralFeatureValueLabel(java.lang.Object)
 	 * @generated
 	 */
-	EOperation getEStructuralFeatureTemplate__BuildEAttributeValueLabel__Object();
+	EOperation getEStructuralFeatureTemplate__BuildEStructuralFeatureValueLabel__Object();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IListItemTemplate <em>IList Item Template</em>}'.
@@ -4542,13 +4542,13 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 		EOperation ESTRUCTURAL_FEATURE_TEMPLATE___GET_ESTRUCTURAL_FEATURE_VALUES__EOBJECT = eINSTANCE.getEStructuralFeatureTemplate__GetEStructuralFeatureValues__EObject();
 
 		/**
-		 * The meta object literal for the '<em><b>Build EAttribute Value Label</b></em>' operation.
+		 * The meta object literal for the '<em><b>Build EStructural Feature Value Label</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
 		 * @generated
 		 */
-		EOperation ESTRUCTURAL_FEATURE_TEMPLATE___BUILD_EATTRIBUTE_VALUE_LABEL__OBJECT = eINSTANCE.getEStructuralFeatureTemplate__BuildEAttributeValueLabel__Object();
+		EOperation ESTRUCTURAL_FEATURE_TEMPLATE___BUILD_ESTRUCTURAL_FEATURE_VALUE_LABEL__OBJECT = eINSTANCE.getEStructuralFeatureTemplate__BuildEStructuralFeatureValueLabel__Object();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IListItemTemplate <em>IList Item Template</em>}' class.

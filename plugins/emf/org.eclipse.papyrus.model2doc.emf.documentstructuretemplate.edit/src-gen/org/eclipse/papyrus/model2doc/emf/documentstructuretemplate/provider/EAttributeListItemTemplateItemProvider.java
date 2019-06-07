@@ -139,9 +139,8 @@ public class EAttributeListItemTemplateItemProvider extends EAttributeTemplateIt
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((EAttributeListItemTemplate) object).getCustomItemLabel();
-		return label == null || label.length() == 0 ? getString("_UI_EAttributeListItemTemplate_type") : //$NON-NLS-1$
-				getString("_UI_EAttributeListItemTemplate_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		EAttributeListItemTemplate eAttributeListItemTemplate = (EAttributeListItemTemplate) object;
+		return getString("_UI_EAttributeListItemTemplate_type") + " " + eAttributeListItemTemplate.isGenerateItem(); //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 

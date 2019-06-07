@@ -86,9 +86,9 @@ public interface EStructuralFeatureTemplate extends EObject {
 	 * <!-- end-model-doc -->
 	 *
 	 * @model required="true" ordered="false" valueRequired="true" valueOrdered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EStructuralFeatureTemplateOperations.buildEAttributeValueLabel(this,value);'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EStructuralFeatureTemplateOperations.buildEStructuralFeatureValueLabel(this,value);'"
 	 * @generated
 	 */
-	String buildEAttributeValueLabel(Object value);
+	String buildEStructuralFeatureValueLabel(Object value);
 
 } // EStructuralFeatureTemplate
