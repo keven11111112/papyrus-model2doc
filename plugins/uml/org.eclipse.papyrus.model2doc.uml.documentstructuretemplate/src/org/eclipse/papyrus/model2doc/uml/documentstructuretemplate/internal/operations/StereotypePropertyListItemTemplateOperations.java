@@ -19,12 +19,12 @@ import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.osgi.util.NLS;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.providers.DelegatingToEMFLabelProvider;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypeListItemTemplate;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyAttribute;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyAttributeListItem;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferenceListItem;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyListItemTemplateImpl;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.internal.providers.UMLDelegatingToEMFLabelProvider;
 
 /**
  * This class provides the operations for {@link StereotypeListItemTemplate}
@@ -82,7 +82,7 @@ public class StereotypePropertyListItemTemplateOperations {
 			}
 			return "No Property"; //$NON-NLS-1$
 		}
-		return DelegatingToEMFLabelProvider.INSTANCE.getText(item);
+		return UMLDelegatingToEMFLabelProvider.UML_INSTANCE.getText(item);
 	}
 
 	/**

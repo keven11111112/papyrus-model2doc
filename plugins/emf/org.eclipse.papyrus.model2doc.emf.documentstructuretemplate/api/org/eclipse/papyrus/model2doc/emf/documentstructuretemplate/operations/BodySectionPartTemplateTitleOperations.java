@@ -17,9 +17,6 @@ package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.operations;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
-import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate;
@@ -166,7 +163,7 @@ public class BodySectionPartTemplateTitleOperations {
 
 
 	/**
-	 * This method can be overrided to change the label to return
+	 * This method can be overridden to change the label to return
 	 *
 	 * @param eobject
 	 *            an EObject
@@ -174,17 +171,7 @@ public class BodySectionPartTemplateTitleOperations {
 	 *         the label to use for this EObject
 	 */
 	protected String getLabel(final EObject eobject) {
-		final EClass eobjectEClass = eobject.eClass();
-		final EStructuralFeature nameFeature = eobjectEClass.getEStructuralFeature("name"); //$NON-NLS-1$
-
-		if (null != nameFeature) {
-			final Object value = eobject.eGet(nameFeature);
-			if (value instanceof String) {
-				return (String) value;
-			}
-		}
-		final AdapterFactoryLabelProvider provider = new AdapterFactoryLabelProvider(new EcoreItemProviderAdapterFactory());
-		return provider.getText(eobject);
+		return DelegatingToEMFLabelProvider.INSTANCE.getText(eobject);
 	}
 
 

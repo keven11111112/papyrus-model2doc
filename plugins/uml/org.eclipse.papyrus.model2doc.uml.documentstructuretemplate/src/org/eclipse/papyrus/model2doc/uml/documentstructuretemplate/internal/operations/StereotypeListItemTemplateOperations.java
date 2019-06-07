@@ -18,8 +18,8 @@ package org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.internal.ope
 import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.providers.DelegatingToEMFLabelProvider;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypeListItemTemplate;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.internal.providers.UMLDelegatingToEMFLabelProvider;
 
 /**
  * This class provides the operations for {@link StereotypeListItemTemplate}
@@ -37,7 +37,7 @@ public class StereotypeListItemTemplateOperations {
 		if (null != customLabel && false == customLabel.isEmpty()) {
 			return customLabel;
 		}
-		return DelegatingToEMFLabelProvider.INSTANCE.getText(item);
+		return UMLDelegatingToEMFLabelProvider.UML_INSTANCE.getText(item);
 	}
 
 	/**

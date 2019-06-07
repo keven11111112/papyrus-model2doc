@@ -137,6 +137,7 @@ public class DelegatingToEMFLabelProvider implements ILabelProvider {
 		if (element instanceof String) {
 			return (String) element;
 		}
+
 		if (element instanceof Collection<?>) {
 			final StringBuilder builder = new StringBuilder();
 			final Iterator<?> iter = ((Collection<?>) element).iterator();
@@ -154,11 +155,31 @@ public class DelegatingToEMFLabelProvider implements ILabelProvider {
 			final EObject eobject = (EObject) element;
 			final IItemLabelProvider subProvider = getSubLabelProvider(eobject);
 			if (null != subProvider) {
-				return subProvider.getText(eobject);
+				String label = subProvider.getText(eobject);
+
+				if (hideEClassNameInTextCalculus()) {
+					// the default emf label provider add the Metaclass name in the label, we will remove it
+					final String eClassName = eobject.eClass().getName();
+					final StringBuilder eClassBuilderName = new StringBuilder();
+					eClassBuilderName.append("<"); //$NON-NLS-1$
+					eClassBuilderName.append(eClassName);
+					eClassBuilderName.append("> "); //$NON-NLS-1$
+					label = label.replaceAll(eClassBuilderName.toString(), ""); //$NON-NLS-1$
+				}
+				return label;
 			}
 		}
 
 		return element.toString();
+	}
+
+	/**
+	 *
+	 * @return
+	 *         <code>true</code> if the EClass name must be removed from the TextCalculus
+	 */
+	protected boolean hideEClassNameInTextCalculus() {
+		return true;
 	}
 
 	/**
@@ -174,10 +195,12 @@ public class DelegatingToEMFLabelProvider implements ILabelProvider {
 		types.add(eobject.eClass().getEPackage());
 		types.add(IItemLabelProvider.class);
 		final Descriptor descriptor = registry.getDescriptor(types);
-		final AdapterFactory adapterFactory = descriptor.createAdapterFactory();
-		final Adapter adapt = adapterFactory.adapt(eobject, IItemLabelProvider.class);
-		if (adapt instanceof IItemLabelProvider) {
-			return (IItemLabelProvider) adapt;
+		if (null != descriptor) {// can be null asking for the label of a stereotype instance (DynamicEObjectImpl)
+			final AdapterFactory adapterFactory = descriptor.createAdapterFactory();
+			final Adapter adapt = adapterFactory.adapt(eobject, IItemLabelProvider.class);
+			if (adapt instanceof IItemLabelProvider) {
+				return (IItemLabelProvider) adapt;
+			}
 		}
 		return null;
 	}

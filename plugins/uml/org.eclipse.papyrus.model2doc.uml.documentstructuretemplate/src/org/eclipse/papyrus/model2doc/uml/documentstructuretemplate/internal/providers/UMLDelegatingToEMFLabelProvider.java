@@ -23,6 +23,16 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.providers.Del
 public class UMLDelegatingToEMFLabelProvider extends DelegatingToEMFLabelProvider {
 
 	/**
+	 * Stereotype marker <<
+	 */
+	private static final String ST_LEFT = String.valueOf("\u00AB");//$NON-NLS-1$
+
+	/**
+	 * Stereotype marker >>
+	 */
+	private static final String ST_RIGHT = String.valueOf("\u00BB"); //$NON-NLS-1$
+
+	/**
 	 * Singleton of this label provider class
 	 */
 	public static final UMLDelegatingToEMFLabelProvider UML_INSTANCE = new UMLDelegatingToEMFLabelProvider();
@@ -34,5 +44,43 @@ public class UMLDelegatingToEMFLabelProvider extends DelegatingToEMFLabelProvide
 	 */
 	protected UMLDelegatingToEMFLabelProvider() {
 		super();
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.providers.DelegatingToEMFLabelProvider#getText(java.lang.Object)
+	 *
+	 * @param element
+	 * @return
+	 */
+	@Override
+	public String getText(final Object element) {
+		String label = super.getText(element);
+		label = removeStereotypeFromLabel(label);
+		return label;
+	}
+
+	/**
+	 *
+	 * @param label
+	 *            a label
+	 * @return
+	 *         the label without the stereotypes
+	 */
+	private String removeStereotypeFromLabel(final String label) {
+		String newLabel = label;
+		if (null != label && removeStereotypeFromLabel()) {
+			// the uml label provider doesn't use ST_LEFT and ST_RIGHT ("\u00AB" and "\u00BB");
+			newLabel = label.replaceAll("<<.*>> ", ""); //$NON-NLS-1$
+		}
+		return newLabel;
+	}
+
+	/**
+	 *
+	 * @return
+	 *         <code>true</code> if the stereotype name must be remove from the label
+	 */
+	protected boolean removeStereotypeFromLabel() {
+		return true;
 	}
 }

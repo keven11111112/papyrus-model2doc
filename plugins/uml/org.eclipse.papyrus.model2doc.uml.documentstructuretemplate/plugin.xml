@@ -40,5 +40,12 @@
            provider="Eclipse Modeling Project">
      </library>
    </extension>
+   <extension
+         point="org.eclipse.emf.ecore.factory_override">
+      <factory
+            class="org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.internal.emf.impl.CustomEMFDocumentStructureTemplateFactoryImpl"
+            uri="http://www.eclipse.org/papyrus/model2doc/emf/1.0.0/documentstructuretemplate">
+      </factory>
+   </extension>
 
 </plugin>

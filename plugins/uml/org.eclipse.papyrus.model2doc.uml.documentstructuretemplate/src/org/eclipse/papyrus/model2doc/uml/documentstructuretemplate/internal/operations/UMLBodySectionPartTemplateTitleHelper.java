@@ -22,6 +22,7 @@ import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.CommentAsPara
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePartTemplate;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferencePartTemplate;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferenceTableView;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.internal.providers.UMLDelegatingToEMFLabelProvider;
 
 /**
  * Title builder helper for UML PartTemplate
@@ -104,14 +105,7 @@ public class UMLBodySectionPartTemplateTitleHelper extends BodySectionPartTempla
 	 *         the string to use for the tile of the element
 	 */
 	private String buildStereotypePartTemplateTitle(final StereotypePartTemplate stereotypePartTemplate, final EObject parameter) {
-		final StringBuilder builder = new StringBuilder();
-		final EObject steAppl = stereotypePartTemplate.getFirstMatchingStereotypeApplication(parameter);
-		builder.append(ST_LEFT);
-		builder.append(getLabel(steAppl));
-		builder.append(ST_RIGHT);
-		builder.append(" "); //$NON-NLS-1$
-		builder.append(super.internalBuildPartTemplateTitle(stereotypePartTemplate, parameter));
-		return builder.toString();
+		return getLabel(parameter);
 	}
 
 	/**
@@ -145,5 +139,16 @@ public class UMLBodySectionPartTemplateTitleHelper extends BodySectionPartTempla
 		default:
 			return "Comments"; //$NON-NLS-1$
 		}
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.operations.BodySectionPartTemplateTitleOperations#getLabel(org.eclipse.emf.ecore.EObject)
+	 *
+	 * @param eobject
+	 * @return
+	 */
+	@Override
+	protected String getLabel(EObject eobject) {
+		return UMLDelegatingToEMFLabelProvider.UML_INSTANCE.getText(eobject);
 	}
 }
