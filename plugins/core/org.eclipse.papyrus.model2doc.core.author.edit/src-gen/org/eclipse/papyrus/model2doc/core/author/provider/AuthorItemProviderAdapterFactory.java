@@ -11,24 +11,19 @@
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
-package org.eclipse.papyrus.model2doc.core.generatorconfiguration.provider;
+package org.eclipse.papyrus.model2doc.core.author.provider;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
-import java.util.List;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
 
-import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.ChangeNotifier;
-import org.eclipse.emf.edit.provider.ChildCreationExtenderManager;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IChangeNotifier;
-import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IDisposable;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -37,8 +32,7 @@ import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
-import org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationPackage;
-import org.eclipse.papyrus.model2doc.core.generatorconfiguration.util.GeneratorConfigurationAdapterFactory;
+import org.eclipse.papyrus.model2doc.core.author.util.AuthorAdapterFactory;
 
 /**
  * This is the factory that is used to provide the interfaces needed to support Viewers.
@@ -47,15 +41,13 @@ import org.eclipse.papyrus.model2doc.core.generatorconfiguration.util.GeneratorC
  * Note that most of the adapters are shared among multiple instances.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- *
  * @generated
  */
-public class GeneratorConfigurationItemProviderAdapterFactory extends GeneratorConfigurationAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
+public class AuthorItemProviderAdapterFactory extends AuthorAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected ComposedAdapterFactory parentAdapterFactory;
@@ -64,25 +56,14 @@ public class GeneratorConfigurationItemProviderAdapterFactory extends GeneratorC
 	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
 
 	/**
-	 * This helps manage the child creation extenders.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(GeneratorconfigurationEditPlugin.INSTANCE, GeneratorConfigurationPackage.eNS_URI);
-
-	/**
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected Collection<Object> supportedTypes = new ArrayList<>();
@@ -91,10 +72,9 @@ public class GeneratorConfigurationItemProviderAdapterFactory extends GeneratorC
 	 * This constructs an instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
-	public GeneratorConfigurationItemProviderAdapterFactory() {
+	public AuthorItemProviderAdapterFactory() {
 		supportedTypes.add(IEditingDomainItemProvider.class);
 		supportedTypes.add(IStructuredItemContentProvider.class);
 		supportedTypes.add(ITreeItemContentProvider.class);
@@ -103,60 +83,32 @@ public class GeneratorConfigurationItemProviderAdapterFactory extends GeneratorC
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentStructureGeneratorConfiguration} instances.
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.core.author.Author} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
-	protected DefaultDocumentStructureGeneratorConfigurationItemProvider defaultDocumentStructureGeneratorConfigurationItemProvider;
+	protected AuthorItemProvider authorItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentStructureGeneratorConfiguration}.
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.core.author.Author}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
-	public Adapter createDefaultDocumentStructureGeneratorConfigurationAdapter() {
-		if (defaultDocumentStructureGeneratorConfigurationItemProvider == null) {
-			defaultDocumentStructureGeneratorConfigurationItemProvider = new DefaultDocumentStructureGeneratorConfigurationItemProvider(this);
+	public Adapter createAuthorAdapter() {
+		if (authorItemProvider == null) {
+			authorItemProvider = new AuthorItemProvider(this);
 		}
 
-		return defaultDocumentStructureGeneratorConfigurationItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentGeneratorConfiguration} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected DefaultDocumentGeneratorConfigurationItemProvider defaultDocumentGeneratorConfigurationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentGeneratorConfiguration}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public Adapter createDefaultDocumentGeneratorConfigurationAdapter() {
-		if (defaultDocumentGeneratorConfigurationItemProvider == null) {
-			defaultDocumentGeneratorConfigurationItemProvider = new DefaultDocumentGeneratorConfigurationItemProvider(this);
-		}
-
-		return defaultDocumentGeneratorConfigurationItemProvider;
+		return authorItemProvider;
 	}
 
 	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -168,7 +120,6 @@ public class GeneratorConfigurationItemProviderAdapterFactory extends GeneratorC
 	 * This sets the composed adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -179,7 +130,6 @@ public class GeneratorConfigurationItemProviderAdapterFactory extends GeneratorC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -191,7 +141,6 @@ public class GeneratorConfigurationItemProviderAdapterFactory extends GeneratorC
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -202,7 +151,6 @@ public class GeneratorConfigurationItemProviderAdapterFactory extends GeneratorC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -218,42 +166,9 @@ public class GeneratorConfigurationItemProviderAdapterFactory extends GeneratorC
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	public List<IChildCreationExtender> getChildCreationExtenders() {
-		return childCreationExtenderManager.getChildCreationExtenders();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public Collection<?> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
-		return childCreationExtenderManager.getNewChildDescriptors(object, editingDomain);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return childCreationExtenderManager;
-	}
-
-	/**
 	 * This adds a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -265,7 +180,6 @@ public class GeneratorConfigurationItemProviderAdapterFactory extends GeneratorC
 	 * This removes a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -277,7 +191,6 @@ public class GeneratorConfigurationItemProviderAdapterFactory extends GeneratorC
 	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -293,16 +206,12 @@ public class GeneratorConfigurationItemProviderAdapterFactory extends GeneratorC
 	 * This disposes all of the item providers created by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void dispose() {
-		if (defaultDocumentStructureGeneratorConfigurationItemProvider != null) {
-			defaultDocumentStructureGeneratorConfigurationItemProvider.dispose();
-		}
-		if (defaultDocumentGeneratorConfigurationItemProvider != null) {
-			defaultDocumentGeneratorConfigurationItemProvider.dispose();
+		if (authorItemProvider != null) {
+			authorItemProvider.dispose();
 		}
 	}
 

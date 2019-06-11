@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
+  <uml:Model xmi:id="_OmlRUIwlEemPH4WRSA0__A" name="Author" URI="http://www.eclipse.org/papyrus/model2doc/core/1.0.0/Author">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_OsAj4IwlEemPH4WRSA0__A">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_PbrtUIwlEemPH4WRSA0__A" name="IAuthor">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_tH2bQIwlEemPH4WRSA0__A" annotatedElement="_PbrtUIwlEemPH4WRSA0__A">
+        <body>This interface allows to represent a document's author with some basic informations</body>
+      </ownedComment>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_lSn5sIxMEemPH4WRSA0__A" name="getFirstName">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_TIz_MIxNEemPH4WRSA0__A" annotatedElement="_lSn5sIxMEemPH4WRSA0__A">
+          <body>This method returns the first name of the author.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_onzFwIxMEemPH4WRSA0__A" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_pBk3sIxMEemPH4WRSA0__A" name="getLastName">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_UHYgQIxNEemPH4WRSA0__A" annotatedElement="_pBk3sIxMEemPH4WRSA0__A">
+          <body>This method returns the last name of the author.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_pBk3sYxMEemPH4WRSA0__A" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_KLF2QIxNEemPH4WRSA0__A" name="setFirstName">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_WMM3sIxNEemPH4WRSA0__A" annotatedElement="_KLF2QIxNEemPH4WRSA0__A">
+          <body>This method allows to set the first name of the author.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_KLF2QYxNEemPH4WRSA0__A" name="firstName">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_NcR6MIxNEemPH4WRSA0__A" name="setLastName">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_XKz1AIxNEemPH4WRSA0__A" annotatedElement="_NcR6MIxNEemPH4WRSA0__A">
+          <body>This method allows to set the last name of the author.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_NcR6MYxNEemPH4WRSA0__A" name="firstName">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_iHynIIwlEemPH4WRSA0__A" name="Author">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_xxZHUIwnEemPH4WRSA0__A" annotatedElement="_iHynIIwlEemPH4WRSA0__A">
+        <body>Default implementation for the interface IBasicAuthor.</body>
+      </ownedComment>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_jSxh0IxMEemPH4WRSA0__A" name="firstName">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_jSxh0YxMEemPH4WRSA0__A" annotatedElement="_jSxh0IxMEemPH4WRSA0__A">
+          <body>The first name of the author.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jSxh0oxMEemPH4WRSA0__A"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_jSzXAIxMEemPH4WRSA0__A" name="lastName">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_jSzXAYxMEemPH4WRSA0__A" annotatedElement="_jSzXAIxMEemPH4WRSA0__A">
+          <body>The last name of the author.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jSzXAoxMEemPH4WRSA0__A"/>
+      </ownedAttribute>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_kkbBoIwlEemPH4WRSA0__A" client="_iHynIIwlEemPH4WRSA0__A" supplier="_PbrtUIwlEemPH4WRSA0__A" contract="_PbrtUIwlEemPH4WRSA0__A"/>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_xhiYUIwlEemPH4WRSA0__A">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xhlboIwlEemPH4WRSA0__A" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Ecore.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Model>
+  <Ecore:EPackage xmi:id="_z5z3QIwlEemPH4WRSA0__A" base_Package="_OmlRUIwlEemPH4WRSA0__A" packageName="author" nsPrefix="author" basePackage="org.eclipse.papyrus.model2doc.core" prefix="Author"/>
+</xmi:XMI>
