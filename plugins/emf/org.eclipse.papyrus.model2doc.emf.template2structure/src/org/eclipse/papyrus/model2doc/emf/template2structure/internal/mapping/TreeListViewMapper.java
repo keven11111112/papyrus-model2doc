@@ -107,6 +107,26 @@ public class TreeListViewMapper extends AbstractEMFTemplateToStructureMapper<Tre
 	 *         the list of the created {@link ExtendedTextListItem}
 	 */
 	private List<ExtendedTextListItem> createListItems(final IListItemTemplate itemTemplate, final EObject semanticModelElement) {
+		if (itemTemplate instanceof ILeafListItemTemplate || itemTemplate instanceof ILeafSubListItemTemplate) {
+			return createLeafListItems(itemTemplate, semanticModelElement);
+		}
+		if (itemTemplate instanceof IComposedListItemTemplate || itemTemplate instanceof IComposedSubListItemTemplate) {
+			return createComposedListItems(itemTemplate, semanticModelElement);
+		}
+		Activator.log.warn(NLS.bind("Element of type {0} is not managed.", itemTemplate.eClass().getName())); //$NON-NLS-1$
+		return Collections.emptyList();
+	}
+
+	/**
+	 *
+	 * @param itemTemplate
+	 *            an {@link IListItemTemplate}
+	 * @param semanticModelElement
+	 *            the semantic element
+	 * @return
+	 *         the list of the created {@link ExtendedTextListItem}
+	 */
+	private List<ExtendedTextListItem> createComposedListItems(final IListItemTemplate itemTemplate, final EObject semanticModelElement) {
 		final List<ExtendedTextListItem> createdItems = new ArrayList<>();
 		final List<Object> semanticItems = itemTemplate.getItems(semanticModelElement);
 		final Iterator<Object> semanticItemsIterator = semanticItems.iterator();
@@ -135,12 +155,7 @@ public class TreeListViewMapper extends AbstractEMFTemplateToStructureMapper<Tre
 				final Iterator<? extends IListItemTemplate> subTemplateIter = subTemplates.iterator();
 				while (subTemplateIter.hasNext()) {
 					final IListItemTemplate subListItem = subTemplateIter.next();
-					final List<ExtendedTextListItem> createdSubItem;
-					if (subListItem instanceof ILeafListItemTemplate || subListItem instanceof ILeafSubListItemTemplate) {
-						createdSubItem = createLeafListItems(subListItem, (EObject) currentSemanticItem);
-					} else {
-						createdSubItem = createListItems(subListItem, (EObject) currentSemanticItem);
-					}
+					final List<ExtendedTextListItem> createdSubItem = createListItems(subListItem, (EObject) currentSemanticItem);
 					if (null != textItem) {
 						textItem.getSubItems().addAll(createdSubItem);
 					} else {

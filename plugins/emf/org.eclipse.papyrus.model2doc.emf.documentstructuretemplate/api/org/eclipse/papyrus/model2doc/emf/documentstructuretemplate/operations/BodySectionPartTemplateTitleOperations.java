@@ -98,8 +98,8 @@ public class BodySectionPartTemplateTitleOperations {
 	 * @return
 	 */
 	private String buildTreeListViewTitle(final TreeListView partTemplate, final EObject object) {
-		final String contextLabel = DelegatingToEMFLabelProvider.INSTANCE.getText(object);
-		return NLS.bind("A List of sub elements for {0}", contextLabel); //$NON-NLS-1$
+		final String contextLabel = getLabel(object);
+		return NLS.bind("A List of sub properties for {0}", contextLabel); //$NON-NLS-1$
 	}
 
 	/**
