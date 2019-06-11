@@ -16,6 +16,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="documentGeneratorConfiguration"
         ordered="false" lowerBound="1" eType="ecore:EClass ../../org.eclipse.papyrus.model2doc.core.generatorconfiguration/model/generatorconfiguration.ecore#//IDocumentGeneratorConfiguration"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="author" ordered="false"
+        lowerBound="1" upperBound="-1" eType="ecore:EClass ../../org.eclipse.papyrus.model2doc.core.author/model/author.ecore#//IAuthor"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Body" eSuperTypes="#//TextDocumentPart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="bodyPart" ordered="false"

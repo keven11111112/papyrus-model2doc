@@ -29,6 +29,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.eclipse.papyrus.model2doc.core.author.IAuthor;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage;
@@ -44,6 +45,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocumentPart;
  * </p>
  * <ul>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TextDocumentImpl#getDocumentGeneratorConfiguration <em>Document Generator Configuration</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TextDocumentImpl#getAuthors <em>Author</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TextDocumentImpl#getMainTitle <em>Main Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TextDocumentImpl#getTextDocumentParts <em>Text Document Part</em>}</li>
  * </ul>
@@ -61,6 +63,17 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 	 * @ordered
 	 */
 	protected IDocumentGeneratorConfiguration documentGeneratorConfiguration;
+
+	/**
+	 * The cached value of the '{@link #getAuthors() <em>Author</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getAuthors()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<IAuthor> authors;
 
 	/**
 	 * The default value of the '{@link #getMainTitle() <em>Main Title</em>}' attribute.
@@ -179,6 +192,20 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 	 * @generated
 	 */
 	@Override
+	public EList<IAuthor> getAuthors() {
+		if (authors == null) {
+			authors = new EObjectContainmentEList<>(IAuthor.class, this, DocumentStructurePackage.TEXT_DOCUMENT__AUTHOR);
+		}
+		return authors;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public String getMainTitle() {
 		return mainTitle;
 	}
@@ -223,6 +250,8 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 		switch (featureID) {
 		case DocumentStructurePackage.TEXT_DOCUMENT__DOCUMENT_GENERATOR_CONFIGURATION:
 			return basicSetDocumentGeneratorConfiguration(null, msgs);
+		case DocumentStructurePackage.TEXT_DOCUMENT__AUTHOR:
+			return ((InternalEList<?>) getAuthors()).basicRemove(otherEnd, msgs);
 		case DocumentStructurePackage.TEXT_DOCUMENT__TEXT_DOCUMENT_PART:
 			return ((InternalEList<?>) getTextDocumentParts()).basicRemove(otherEnd, msgs);
 		}
@@ -240,6 +269,8 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 		switch (featureID) {
 		case DocumentStructurePackage.TEXT_DOCUMENT__DOCUMENT_GENERATOR_CONFIGURATION:
 			return getDocumentGeneratorConfiguration();
+		case DocumentStructurePackage.TEXT_DOCUMENT__AUTHOR:
+			return getAuthors();
 		case DocumentStructurePackage.TEXT_DOCUMENT__MAIN_TITLE:
 			return getMainTitle();
 		case DocumentStructurePackage.TEXT_DOCUMENT__TEXT_DOCUMENT_PART:
@@ -260,6 +291,10 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 		switch (featureID) {
 		case DocumentStructurePackage.TEXT_DOCUMENT__DOCUMENT_GENERATOR_CONFIGURATION:
 			setDocumentGeneratorConfiguration((IDocumentGeneratorConfiguration) newValue);
+			return;
+		case DocumentStructurePackage.TEXT_DOCUMENT__AUTHOR:
+			getAuthors().clear();
+			getAuthors().addAll((Collection<? extends IAuthor>) newValue);
 			return;
 		case DocumentStructurePackage.TEXT_DOCUMENT__MAIN_TITLE:
 			setMainTitle((String) newValue);
@@ -284,6 +319,9 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 		case DocumentStructurePackage.TEXT_DOCUMENT__DOCUMENT_GENERATOR_CONFIGURATION:
 			setDocumentGeneratorConfiguration((IDocumentGeneratorConfiguration) null);
 			return;
+		case DocumentStructurePackage.TEXT_DOCUMENT__AUTHOR:
+			getAuthors().clear();
+			return;
 		case DocumentStructurePackage.TEXT_DOCUMENT__MAIN_TITLE:
 			setMainTitle(MAIN_TITLE_EDEFAULT);
 			return;
@@ -305,6 +343,8 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 		switch (featureID) {
 		case DocumentStructurePackage.TEXT_DOCUMENT__DOCUMENT_GENERATOR_CONFIGURATION:
 			return documentGeneratorConfiguration != null;
+		case DocumentStructurePackage.TEXT_DOCUMENT__AUTHOR:
+			return authors != null && !authors.isEmpty();
 		case DocumentStructurePackage.TEXT_DOCUMENT__MAIN_TITLE:
 			return MAIN_TITLE_EDEFAULT == null ? mainTitle != null : !MAIN_TITLE_EDEFAULT.equals(mainTitle);
 		case DocumentStructurePackage.TEXT_DOCUMENT__TEXT_DOCUMENT_PART:

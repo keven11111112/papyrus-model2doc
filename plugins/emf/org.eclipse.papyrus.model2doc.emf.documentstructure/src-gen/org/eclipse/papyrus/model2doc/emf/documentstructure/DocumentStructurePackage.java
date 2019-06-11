@@ -98,6 +98,16 @@ public interface DocumentStructurePackage extends EPackage {
 	int DOCUMENT__DOCUMENT_GENERATOR_CONFIGURATION = 0;
 
 	/**
+	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT__AUTHOR = 1;
+
+	/**
 	 * The number of structural features of the '<em>Document</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -105,7 +115,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_FEATURE_COUNT = 1;
+	int DOCUMENT_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Document</em>' class.
@@ -137,6 +147,16 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @ordered
 	 */
 	int TEXT_DOCUMENT__DOCUMENT_GENERATOR_CONFIGURATION = DOCUMENT__DOCUMENT_GENERATOR_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_DOCUMENT__AUTHOR = DOCUMENT__AUTHOR;
 
 	/**
 	 * The feature id for the '<em><b>Main Title</b></em>' attribute.
@@ -1044,6 +1064,18 @@ public interface DocumentStructurePackage extends EPackage {
 	EReference getDocument_DocumentGeneratorConfiguration();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.Document#getAuthors <em>Author</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference list '<em>Author</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.Document#getAuthors()
+	 * @see #getDocument()
+	 * @generated
+	 */
+	EReference getDocument_Author();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.Body <em>Body</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1436,6 +1468,15 @@ public interface DocumentStructurePackage extends EPackage {
 		 * @generated
 		 */
 		EReference DOCUMENT__DOCUMENT_GENERATOR_CONFIGURATION = eINSTANCE.getDocument_DocumentGeneratorConfiguration();
+
+		/**
+		 * The meta object literal for the '<em><b>Author</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference DOCUMENT__AUTHOR = eINSTANCE.getDocument_Author();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.BodyImpl <em>Body</em>}' class.

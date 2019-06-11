@@ -159,6 +159,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.provider.DocumentStru
 
 import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 
+import org.eclipse.papyrus.model2doc.core.author.provider.AuthorItemProviderAdapterFactory;
 import org.eclipse.papyrus.model2doc.core.builtintypes.provider.BuiltInTypesItemProviderAdapterFactory;
 
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.provider.GeneratorConfigurationItemProviderAdapterFactory;
@@ -676,6 +677,7 @@ public class DocumentStructureEditor
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new DocumentStructureItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new AuthorItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new BuiltInTypesItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new GeneratorConfigurationItemProviderAdapterFactory());

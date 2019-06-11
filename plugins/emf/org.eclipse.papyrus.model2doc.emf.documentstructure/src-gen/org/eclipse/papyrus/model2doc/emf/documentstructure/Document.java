@@ -13,8 +13,10 @@
  */
 package org.eclipse.papyrus.model2doc.emf.documentstructure;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.papyrus.model2doc.core.author.IAuthor;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration;
 
 /**
@@ -27,6 +29,7 @@ import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGenera
  * </p>
  * <ul>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.Document#getDocumentGeneratorConfiguration <em>Document Generator Configuration</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.Document#getAuthors <em>Author</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage#getDocument()
@@ -62,5 +65,22 @@ public interface Document extends EObject {
 	 * @generated
 	 */
 	void setDocumentGeneratorConfiguration(IDocumentGeneratorConfiguration value);
+
+	/**
+	 * Returns the value of the '<em><b>Author</b></em>' containment reference list.
+	 * The list contents are of type {@link org.eclipse.papyrus.model2doc.core.author.IAuthor}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Author</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the value of the '<em>Author</em>' containment reference list.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage#getDocument_Author()
+	 * @model containment="true" required="true" ordered="false"
+	 * @generated
+	 */
+	EList<IAuthor> getAuthors();
 
 } // Document

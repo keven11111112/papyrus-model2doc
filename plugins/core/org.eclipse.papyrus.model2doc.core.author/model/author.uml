@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
   <uml:Model xmi:id="_OmlRUIwlEemPH4WRSA0__A" name="Author" URI="http://www.eclipse.org/papyrus/model2doc/core/1.0.0/Author">
-    <packageImport xmi:type="uml:PackageImport" xmi:id="_OsAj4IwlEemPH4WRSA0__A">
-      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
-    </packageImport>
     <packagedElement xmi:type="uml:Interface" xmi:id="_PbrtUIwlEemPH4WRSA0__A" name="IAuthor">
       <ownedComment xmi:type="uml:Comment" xmi:id="_tH2bQIwlEemPH4WRSA0__A" annotatedElement="_PbrtUIwlEemPH4WRSA0__A">
         <body>This interface allows to represent a document's author with some basic informations</body>
@@ -37,6 +34,32 @@
           <body>This method allows to set the last name of the author.</body>
         </ownedComment>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_NcR6MYxNEemPH4WRSA0__A" name="firstName">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Pz-mkIzrEem126L41vD09A" name="buildAuthorLabel">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Z7cJUIzsEem126L41vD09A" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aTjHUIzsEem126L41vD09A" key="body" value="return org.eclipse.papyrus.model2doc.core.author.internal.operations.IAuthorsOperations.buildAuthorLabel(this);"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_e9I-EIzrEem126L41vD09A" annotatedElement="_Pz-mkIzrEem126L41vD09A">
+          <body>This method returns the label to use for the author.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Uqj7AIzrEem126L41vD09A" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_AuKBgIzsEem126L41vD09A" name="buildMultiAuthorLabel" isStatic="true">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_phvv0IzsEem126L41vD09A" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_phvv0YzsEem126L41vD09A" key="body" value="return org.eclipse.papyrus.model2doc.core.author.internal.operations.IAuthorsOperations.buildMultiAuthorLabel(authors);"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_FFoYEIzsEem126L41vD09A" annotatedElement="_AuKBgIzsEem126L41vD09A">
+          <body>This method allows to build a label for a collection of author.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_IhUb0IzsEem126L41vD09A" name="authors" type="_PbrtUIwlEemPH4WRSA0__A">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B-rYwIztEem126L41vD09A"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B_OyYIztEem126L41vD09A" value="*"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_KQFqwIzsEem126L41vD09A" name="return" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         </ownedParameter>
       </ownedOperation>

@@ -45,6 +45,12 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="author.ecore#//IAuthor/setLastName">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="author.ecore#//IAuthor/setLastName/firstName"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="author.ecore#//IAuthor/buildAuthorLabel"
+          body="return org.eclipse.papyrus.model2doc.core.author.internal.operations.IAuthorsOperations.buildAuthorLabel(this);"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="author.ecore#//IAuthor/buildMultiAuthorLabel"
+          body="return org.eclipse.papyrus.model2doc.core.author.internal.operations.IAuthorsOperations.buildMultiAuthorLabel(authors);">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="author.ecore#//IAuthor/buildMultiAuthorLabel/authors"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="author.ecore#//Author">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute author.ecore#//Author/firstName"/>

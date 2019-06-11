@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.eclipse.papyrus.model2doc.core.author.AuthorPackage;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationPackage;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.Body;
@@ -416,6 +417,7 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		isInited = true;
 
 		// Initialize simple dependencies
+		AuthorPackage.eINSTANCE.eClass();
 		EcorePackage.eINSTANCE.eClass();
 		GeneratorConfigurationPackage.eINSTANCE.eClass();
 
@@ -519,6 +521,17 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	@Override
 	public EReference getDocumentTemplate_DocumentStructureGeneratorConfiguration() {
 		return (EReference) documentTemplateEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getDocumentTemplate_Author() {
+		return (EReference) documentTemplateEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1432,6 +1445,7 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		createEAttribute(documentTemplateEClass, DOCUMENT_TEMPLATE__DESCRIPTION);
 		createEAttribute(documentTemplateEClass, DOCUMENT_TEMPLATE__KIND_ID);
 		createEReference(documentTemplateEClass, DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION);
+		createEReference(documentTemplateEClass, DOCUMENT_TEMPLATE__AUTHOR);
 		createEOperation(documentTemplateEClass, DOCUMENT_TEMPLATE___GET_TYPE);
 		createEOperation(documentTemplateEClass, DOCUMENT_TEMPLATE___GET_ICON_PATH);
 
@@ -1579,6 +1593,7 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		// Obtain other dependent packages
 		EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		GeneratorConfigurationPackage theGeneratorConfigurationPackage = (GeneratorConfigurationPackage) EPackage.Registry.INSTANCE.getEPackage(GeneratorConfigurationPackage.eNS_URI);
+		AuthorPackage theAuthorPackage = (AuthorPackage) EPackage.Registry.INSTANCE.getEPackage(AuthorPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1632,6 +1647,8 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		initEAttribute(getDocumentTemplate_KindId(), ecorePackage.getEString(), "kindId", null, 1, 1, DocumentTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 		initEReference(getDocumentTemplate_DocumentStructureGeneratorConfiguration(), theGeneratorConfigurationPackage.getIDocumentStructureGeneratorConfiguration(), null, "documentStructureGeneratorConfiguration", null, 1, 1, DocumentTemplate.class, //$NON-NLS-1$
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getDocumentTemplate_Author(), theAuthorPackage.getIAuthor(), null, "author", null, 0, -1, DocumentTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, //$NON-NLS-1$
+				!IS_ORDERED);
 
 		initEOperation(getDocumentTemplate__GetType(), ecorePackage.getEString(), "getType", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 

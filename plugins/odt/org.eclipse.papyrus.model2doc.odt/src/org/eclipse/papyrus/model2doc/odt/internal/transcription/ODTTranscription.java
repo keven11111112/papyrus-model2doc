@@ -14,9 +14,12 @@
  *****************************************************************************/
 package org.eclipse.papyrus.model2doc.odt.internal.transcription;
 
+import java.util.Collection;
 import java.util.Iterator;
 
+import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.osgi.util.NLS;
+import org.eclipse.papyrus.model2doc.core.author.IAuthor;
 import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractList;
 import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractTable;
 import org.eclipse.papyrus.model2doc.core.builtintypes.BasicList;
@@ -38,7 +41,14 @@ import org.eclipse.papyrus.model2doc.odt.service.StyleServiceImpl;
 import org.eclipse.papyrus.model2doc.odt.service.WriteService;
 import org.eclipse.papyrus.model2doc.odt.service.WriteServiceImpl;
 
+import com.sun.star.beans.IllegalTypeException;
+import com.sun.star.beans.NotRemoveableException;
+import com.sun.star.beans.PropertyExistException;
+import com.sun.star.beans.UnknownPropertyException;
+import com.sun.star.beans.XPropertyContainer;
 import com.sun.star.beans.XPropertySet;
+import com.sun.star.document.XDocumentProperties;
+import com.sun.star.document.XDocumentPropertiesSupplier;
 import com.sun.star.lang.XMultiServiceFactory;
 import com.sun.star.style.BreakType;
 import com.sun.star.text.ControlCharacter;
@@ -48,6 +58,7 @@ import com.sun.star.text.XParagraphCursor;
 import com.sun.star.text.XText;
 import com.sun.star.text.XTextContent;
 import com.sun.star.text.XTextCursor;
+import com.sun.star.text.XTextDocument;
 import com.sun.star.text.XTextViewCursor;
 import com.sun.star.uno.Exception;
 import com.sun.star.uno.UnoRuntime;
@@ -319,4 +330,41 @@ public class ODTTranscription implements Transcription {
 		return (odtEditor.getXTextDocument() != null);
 	}
 
+	/**
+	 * @see org.eclipse.papyrus.model2doc.core.transcription.Transcription#writeAuthors(java.util.Collection)
+	 *
+	 * @param authors
+	 */
+	@Override
+	public void writeAuthors(final Collection<IAuthor> authors) {
+		if (authors.size() > 0) {
+			final XTextDocument document = odtEditor.getXTextDocument();
+			final XDocumentPropertiesSupplier xsDocProp = UnoRuntime.queryInterface(XDocumentPropertiesSupplier.class, document);
+			XDocumentProperties props = xsDocProp.getDocumentProperties();
+			final Iterator<IAuthor> iterator = authors.iterator();
+			String allAuthorsLabel = ""; //$NON-NLS-1$
+			if (iterator.hasNext()) {
+				final IAuthor firstAuthor = iterator.next();
+				allAuthorsLabel = firstAuthor.buildMultiAuthorLabel(ECollections.toEList(authors));
+				props.setAuthor(firstAuthor.buildAuthorLabel());
+			}
+
+			XPropertyContainer userDefined = props.getUserDefinedProperties();
+
+			// we need to remove the property if it already exist, in order to be change its value
+			try {
+				userDefined.removeProperty(CustomFields.AUTHORS);
+			} catch (UnknownPropertyException e) {
+				// nothing to do. If the property doesn't exist, we probably get an exception for nothing!
+			} catch (NotRemoveableException e) {
+				Activator.log.error(e);
+			}
+
+			try {
+				userDefined.addProperty(CustomFields.AUTHORS, com.sun.star.beans.PropertyAttribute.REMOVABLE, allAuthorsLabel);
+			} catch (IllegalArgumentException | PropertyExistException | IllegalTypeException e) {
+				Activator.log.error(e);
+			}
+		}
+	}
 }

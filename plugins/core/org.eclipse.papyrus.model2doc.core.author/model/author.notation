@@ -28,6 +28,14 @@
         <element xmi:type="uml:Operation" href="author.uml#_NcR6MIxNEemPH4WRSA0__A"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_QPPKAYxNEemPH4WRSA0__A"/>
       </children>
+      <children xmi:type="notation:Shape" xmi:id="_P0m4sIzrEem126L41vD09A" type="Operation_InterfaceOperationLabel">
+        <element xmi:type="uml:Operation" href="author.uml#_Pz-mkIzrEem126L41vD09A"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_P0m4sYzrEem126L41vD09A"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_Aun7kIzsEem126L41vD09A" type="Operation_InterfaceOperationLabel">
+        <element xmi:type="uml:Operation" href="author.uml#_AuKBgIzsEem126L41vD09A"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Aun7kYzsEem126L41vD09A"/>
+      </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_Pb2sdowlEemPH4WRSA0__A"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_Pb2sd4wlEemPH4WRSA0__A"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_Pb2seIwlEemPH4WRSA0__A"/>
@@ -40,7 +48,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Pb2sfowlEemPH4WRSA0__A"/>
     </children>
     <element xmi:type="uml:Interface" href="author.uml#_PbrtUIwlEemPH4WRSA0__A"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Pb0QMYwlEemPH4WRSA0__A" x="260" y="40" width="301" height="161"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Pb0QMYwlEemPH4WRSA0__A" x="260" y="40" width="301" height="181"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_iH1DYIwlEemPH4WRSA0__A" type="Class_Shape">
     <children xmi:type="notation:DecorationNode" xmi:id="_iH1DYowlEemPH4WRSA0__A" type="Class_NameLabel"/>

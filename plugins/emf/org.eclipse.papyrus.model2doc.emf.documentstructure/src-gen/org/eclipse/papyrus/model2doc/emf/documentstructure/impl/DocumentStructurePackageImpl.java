@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.eclipse.papyrus.model2doc.core.author.AuthorPackage;
 import org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesPackage;
 
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationPackage;
@@ -245,6 +246,7 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 		isInited = true;
 
 		// Initialize simple dependencies
+		AuthorPackage.eINSTANCE.eClass();
 		BuiltInTypesPackage.eINSTANCE.eClass();
 		EcorePackage.eINSTANCE.eClass();
 		GeneratorConfigurationPackage.eINSTANCE.eClass();
@@ -327,6 +329,17 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	@Override
 	public EReference getDocument_DocumentGeneratorConfiguration() {
 		return (EReference) documentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getDocument_Author() {
+		return (EReference) documentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -668,6 +681,7 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 
 		documentEClass = createEClass(DOCUMENT);
 		createEReference(documentEClass, DOCUMENT__DOCUMENT_GENERATOR_CONFIGURATION);
+		createEReference(documentEClass, DOCUMENT__AUTHOR);
 
 		bodyEClass = createEClass(BODY);
 		createEReference(bodyEClass, BODY__BODY_PART);
@@ -740,6 +754,7 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 
 		// Obtain other dependent packages
 		GeneratorConfigurationPackage theGeneratorConfigurationPackage = (GeneratorConfigurationPackage) EPackage.Registry.INSTANCE.getEPackage(GeneratorConfigurationPackage.eNS_URI);
+		AuthorPackage theAuthorPackage = (AuthorPackage) EPackage.Registry.INSTANCE.getEPackage(AuthorPackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		BuiltInTypesPackage theBuiltInTypesPackage = (BuiltInTypesPackage) EPackage.Registry.INSTANCE.getEPackage(BuiltInTypesPackage.eNS_URI);
 
@@ -775,6 +790,7 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 		initEClass(documentEClass, Document.class, "Document", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(getDocument_DocumentGeneratorConfiguration(), theGeneratorConfigurationPackage.getIDocumentGeneratorConfiguration(), null, "documentGeneratorConfiguration", null, 1, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, //$NON-NLS-1$
 				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getDocument_Author(), theAuthorPackage.getIAuthor(), null, "author", null, 1, -1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(bodyEClass, Body.class, "Body", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(getBody_BodyPart(), this.getBodyPart(), null, "bodyPart", null, 0, -1, Body.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$

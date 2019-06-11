@@ -32,6 +32,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.eclipse.papyrus.model2doc.core.author.IAuthor;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentPart;
@@ -54,6 +55,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentT
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl#getDescription <em>Description</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl#getKindId <em>Kind Id</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl#getDocumentStructureGeneratorConfiguration <em>Document Structure Generator Configuration</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl#getAuthors <em>Author</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl#getMainTitle <em>Main Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TextDocumentTemplateImpl#getDocumentParts <em>Document Part</em>}</li>
  * </ul>
@@ -170,6 +172,17 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 	 * @ordered
 	 */
 	protected IDocumentStructureGeneratorConfiguration documentStructureGeneratorConfiguration;
+
+	/**
+	 * The cached value of the '{@link #getAuthors() <em>Author</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getAuthors()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<IAuthor> authors;
 
 	/**
 	 * The default value of the '{@link #getMainTitle() <em>Main Title</em>}' attribute.
@@ -502,6 +515,20 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 	 * @generated
 	 */
 	@Override
+	public EList<IAuthor> getAuthors() {
+		if (authors == null) {
+			authors = new EObjectContainmentEList<>(IAuthor.class, this, DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__AUTHOR);
+		}
+		return authors;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public String getMainTitle() {
 		return mainTitle;
 	}
@@ -574,6 +601,8 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 		switch (featureID) {
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION:
 			return basicSetDocumentStructureGeneratorConfiguration(null, msgs);
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__AUTHOR:
+			return ((InternalEList<?>) getAuthors()).basicRemove(otherEnd, msgs);
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART:
 			return ((InternalEList<?>) getDocumentParts()).basicRemove(otherEnd, msgs);
 		}
@@ -612,6 +641,8 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 			return getKindId();
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION:
 			return getDocumentStructureGeneratorConfiguration();
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__AUTHOR:
+			return getAuthors();
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__MAIN_TITLE:
 			return getMainTitle();
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART:
@@ -650,6 +681,10 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 			return;
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION:
 			setDocumentStructureGeneratorConfiguration((IDocumentStructureGeneratorConfiguration) newValue);
+			return;
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__AUTHOR:
+			getAuthors().clear();
+			getAuthors().addAll((Collection<? extends IAuthor>) newValue);
 			return;
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__MAIN_TITLE:
 			setMainTitle((String) newValue);
@@ -692,6 +727,9 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION:
 			setDocumentStructureGeneratorConfiguration((IDocumentStructureGeneratorConfiguration) null);
 			return;
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__AUTHOR:
+			getAuthors().clear();
+			return;
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__MAIN_TITLE:
 			setMainTitle(MAIN_TITLE_EDEFAULT);
 			return;
@@ -725,6 +763,8 @@ public class TextDocumentTemplateImpl extends MinimalEObjectImpl.Container imple
 			return KIND_ID_EDEFAULT == null ? kindId != null : !KIND_ID_EDEFAULT.equals(kindId);
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION:
 			return documentStructureGeneratorConfiguration != null;
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__AUTHOR:
+			return authors != null && !authors.isEmpty();
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__MAIN_TITLE:
 			return MAIN_TITLE_EDEFAULT == null ? mainTitle != null : !MAIN_TITLE_EDEFAULT.equals(mainTitle);
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART:

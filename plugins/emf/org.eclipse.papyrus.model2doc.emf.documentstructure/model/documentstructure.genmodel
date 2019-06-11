@@ -12,7 +12,7 @@
     codeFormatting="true" commentFormatting="true" testsDirectory="/org.eclipse.papyrus.model2doc.emf.documentstructure.tests/src-gen"
     testSuiteClass="org.eclipse.papyrus.model2doc.emf.documentstructure.tests.DocumentstructureAllTests"
     importerID="org.eclipse.uml2.uml.ecore.importer" complianceLevel="8.0" copyrightFields="false"
-    usedGenPackages="../../org.eclipse.papyrus.model2doc.core.builtintypes/model/BuiltInTypes.genmodel#//builtintypes ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eclipse.papyrus.model2doc.core.generatorconfiguration/model/generatorconfiguration.genmodel#//generatorconfiguration"
+    usedGenPackages="../../org.eclipse.papyrus.model2doc.core.author/model/author.genmodel#//author ../../org.eclipse.papyrus.model2doc.core.builtintypes/model/BuiltInTypes.genmodel#//builtintypes ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eclipse.papyrus.model2doc.core.generatorconfiguration/model/generatorconfiguration.genmodel#//generatorconfiguration"
     operationReflection="true" importOrganizing="true" cleanup="true" oSGiCompatible="true"
     pluralizedGetters="true">
   <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
@@ -52,6 +52,8 @@
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructure.ecore#//Document">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference documentstructure.ecore#//Document/documentGeneratorConfiguration"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference documentstructure.ecore#//Document/author"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructure.ecore#//Body">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"

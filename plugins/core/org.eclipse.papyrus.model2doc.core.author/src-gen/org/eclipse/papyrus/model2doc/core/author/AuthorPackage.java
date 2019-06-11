@@ -124,13 +124,31 @@ public interface AuthorPackage extends EPackage {
 	int IAUTHOR___SET_LAST_NAME__STRING = 3;
 
 	/**
+	 * The operation id for the '<em>Build Author Label</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IAUTHOR___BUILD_AUTHOR_LABEL = 4;
+
+	/**
+	 * The operation id for the '<em>Build Multi Author Label</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IAUTHOR___BUILD_MULTI_AUTHOR_LABEL__ELIST = 5;
+
+	/**
 	 * The number of operations of the '<em>IAuthor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IAUTHOR_OPERATION_COUNT = 4;
+	int IAUTHOR_OPERATION_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.core.author.impl.AuthorImpl <em>Author</em>}' class.
@@ -206,6 +224,24 @@ public interface AuthorPackage extends EPackage {
 	int AUTHOR___SET_LAST_NAME__STRING = IAUTHOR___SET_LAST_NAME__STRING;
 
 	/**
+	 * The operation id for the '<em>Build Author Label</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTHOR___BUILD_AUTHOR_LABEL = IAUTHOR___BUILD_AUTHOR_LABEL;
+
+	/**
+	 * The operation id for the '<em>Build Multi Author Label</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTHOR___BUILD_MULTI_AUTHOR_LABEL__ELIST = IAUTHOR___BUILD_MULTI_AUTHOR_LABEL__ELIST;
+
+	/**
 	 * The number of operations of the '<em>Author</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -264,6 +300,26 @@ public interface AuthorPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getIAuthor__SetLastName__String();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.core.author.IAuthor#buildAuthorLabel() <em>Build Author Label</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Build Author Label</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.core.author.IAuthor#buildAuthorLabel()
+	 * @generated
+	 */
+	EOperation getIAuthor__BuildAuthorLabel();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.core.author.IAuthor#buildMultiAuthorLabel(org.eclipse.emf.common.util.EList) <em>Build Multi Author Label</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Build Multi Author Label</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.core.author.IAuthor#buildMultiAuthorLabel(org.eclipse.emf.common.util.EList)
+	 * @generated
+	 */
+	EOperation getIAuthor__BuildMultiAuthorLabel__EList();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.core.author.Author <em>Author</em>}'.
@@ -361,6 +417,22 @@ public interface AuthorPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IAUTHOR___SET_LAST_NAME__STRING = eINSTANCE.getIAuthor__SetLastName__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Build Author Label</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IAUTHOR___BUILD_AUTHOR_LABEL = eINSTANCE.getIAuthor__BuildAuthorLabel();
+
+		/**
+		 * The meta object literal for the '<em><b>Build Multi Author Label</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IAUTHOR___BUILD_MULTI_AUTHOR_LABEL__ELIST = eINSTANCE.getIAuthor__BuildMultiAuthorLabel__EList();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.core.author.impl.AuthorImpl <em>Author</em>}' class.

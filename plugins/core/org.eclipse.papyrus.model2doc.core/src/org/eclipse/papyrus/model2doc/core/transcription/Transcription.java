@@ -14,6 +14,9 @@
  *****************************************************************************/
 package org.eclipse.papyrus.model2doc.core.transcription;
 
+import java.util.Collection;
+
+import org.eclipse.papyrus.model2doc.core.author.IAuthor;
 import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractList;
 import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractTable;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration;
@@ -52,6 +55,15 @@ public interface Transcription {
 	 * @param documentTitle
 	 */
 	public void writeDocumentMainTitle(String documentTitle);
+
+
+	/**
+	 * this method allows to define the authors of the document
+	 *
+	 * @param authors
+	 *            the authors of the document
+	 */
+	public void writeAuthors(final Collection<IAuthor> authors);
 
 	/**
 	 * Write section title.
@@ -108,7 +120,6 @@ public interface Transcription {
 	 * @param image
 	 */
 	public void writeImageSubtitle(ImageDescription image);
-
 
 	/**
 	 * Save transcription.

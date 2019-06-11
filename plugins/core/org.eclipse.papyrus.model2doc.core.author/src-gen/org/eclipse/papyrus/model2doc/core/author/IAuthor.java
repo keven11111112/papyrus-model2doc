@@ -13,6 +13,7 @@
  */
 package org.eclipse.papyrus.model2doc.core.author;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -73,5 +74,29 @@ public interface IAuthor extends EObject {
 	 * @generated
 	 */
 	void setLastName(String firstName);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This method returns the label to use for the author.
+	 * <!-- end-model-doc -->
+	 * @model required="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.model2doc.core.author.internal.operations.IAuthorsOperations.buildAuthorLabel(this);'"
+	 * @generated
+	 */
+	String buildAuthorLabel();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This method allows to build a label for a collection of author.
+	 * <!-- end-model-doc -->
+	 * @model required="true" ordered="false" authorsMany="true" authorsOrdered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.model2doc.core.author.internal.operations.IAuthorsOperations.buildMultiAuthorLabel(authors);'"
+	 * @generated
+	 */
+	String buildMultiAuthorLabel(EList<IAuthor> authors);
 
 } // IAuthor

@@ -13,8 +13,10 @@
  */
 package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.papyrus.model2doc.core.author.IAuthor;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration;
 
 /**
@@ -33,6 +35,7 @@ import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStruct
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getDescription <em>Description</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getKindId <em>Kind Id</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getDocumentStructureGeneratorConfiguration <em>Document Structure Generator Configuration</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getAuthors <em>Author</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getDocumentTemplate()
@@ -241,6 +244,23 @@ public interface DocumentTemplate extends EObject {
 	 * @generated
 	 */
 	void setDocumentStructureGeneratorConfiguration(IDocumentStructureGeneratorConfiguration value);
+
+	/**
+	 * Returns the value of the '<em><b>Author</b></em>' containment reference list.
+	 * The list contents are of type {@link org.eclipse.papyrus.model2doc.core.author.IAuthor}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Author</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the value of the '<em>Author</em>' containment reference list.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getDocumentTemplate_Author()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	EList<IAuthor> getAuthors();
 
 	/**
 	 * <!-- begin-user-doc -->

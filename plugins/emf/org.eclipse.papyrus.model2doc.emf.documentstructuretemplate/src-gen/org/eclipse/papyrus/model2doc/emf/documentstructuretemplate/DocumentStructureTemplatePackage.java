@@ -157,6 +157,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION = 6;
 
 	/**
+	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT_TEMPLATE__AUTHOR = 7;
+
+	/**
 	 * The number of structural features of the '<em>Document Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -164,7 +174,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_TEMPLATE_FEATURE_COUNT = 7;
+	int DOCUMENT_TEMPLATE_FEATURE_COUNT = 8;
 
 	/**
 	 * The operation id for the '<em>Get Type</em>' operation.
@@ -347,6 +357,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @ordered
 	 */
 	int TEXT_DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION = DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_DOCUMENT_TEMPLATE__AUTHOR = DOCUMENT_TEMPLATE__AUTHOR;
 
 	/**
 	 * The feature id for the '<em><b>Main Title</b></em>' attribute.
@@ -3008,6 +3028,18 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	EReference getDocumentTemplate_DocumentStructureGeneratorConfiguration();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getAuthors <em>Author</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference list '<em>Author</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getAuthors()
+	 * @see #getDocumentTemplate()
+	 * @generated
+	 */
+	EReference getDocumentTemplate_Author();
+
+	/**
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate#getType() <em>Get Type</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4001,6 +4033,15 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 		 * @generated
 		 */
 		EReference DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION = eINSTANCE.getDocumentTemplate_DocumentStructureGeneratorConfiguration();
+
+		/**
+		 * The meta object literal for the '<em><b>Author</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference DOCUMENT_TEMPLATE__AUTHOR = eINSTANCE.getDocumentTemplate_Author();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Type</b></em>' operation.

@@ -59,10 +59,12 @@ public class StructureToODTTranscriber implements Transcriber {
 	 */
 	@Override
 	public void transcribe() {
-		final String mainTitle = textDocument.getMainTitle();
+		final String mainTitle = this.textDocument.getMainTitle();
 		if (mainTitle != null && !mainTitle.isEmpty()) {
-			transcription.writeDocumentMainTitle(mainTitle);
+			this.transcription.writeDocumentMainTitle(mainTitle);
+			this.transcription.writeAuthors(this.textDocument.getAuthors());
 		}
+
 
 		Iterator<TextDocumentPart> iter = textDocument.getTextDocumentParts().iterator();
 		while (iter.hasNext()) {

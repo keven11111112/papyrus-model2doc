@@ -20,6 +20,7 @@
 	<modules>
 		<module>ieee</module>
 		<module>nattable</module>
+		<module>org.eclipse.papyrus.model2doc.integration.core.author.properties</module>
 		<module>org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.modelexplorer</module>
 		<module>org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.properties</module>
 		<module>org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation</module>

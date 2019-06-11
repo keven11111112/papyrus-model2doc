@@ -165,6 +165,26 @@ public class AuthorPackageImpl extends EPackageImpl implements AuthorPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getIAuthor__BuildAuthorLabel() {
+		return iAuthorEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getIAuthor__BuildMultiAuthorLabel__EList() {
+		return iAuthorEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getAuthor() {
 		return authorEClass;
 	}
@@ -225,6 +245,8 @@ public class AuthorPackageImpl extends EPackageImpl implements AuthorPackage {
 		createEOperation(iAuthorEClass, IAUTHOR___GET_LAST_NAME);
 		createEOperation(iAuthorEClass, IAUTHOR___SET_FIRST_NAME__STRING);
 		createEOperation(iAuthorEClass, IAUTHOR___SET_LAST_NAME__STRING);
+		createEOperation(iAuthorEClass, IAUTHOR___BUILD_AUTHOR_LABEL);
+		createEOperation(iAuthorEClass, IAUTHOR___BUILD_MULTI_AUTHOR_LABEL__ELIST);
 
 		authorEClass = createEClass(AUTHOR);
 		createEAttribute(authorEClass, AUTHOR__FIRST_NAME);
@@ -275,6 +297,11 @@ public class AuthorPackageImpl extends EPackageImpl implements AuthorPackage {
 
 		op = initEOperation(getIAuthor__SetLastName__String(), null, "setLastName", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 		addEParameter(op, ecorePackage.getEString(), "firstName", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
+		initEOperation(getIAuthor__BuildAuthorLabel(), ecorePackage.getEString(), "buildAuthorLabel", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
+		op = initEOperation(getIAuthor__BuildMultiAuthorLabel__EList(), ecorePackage.getEString(), "buildMultiAuthorLabel", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+		addEParameter(op, this.getIAuthor(), "authors", 0, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(authorEClass, Author.class, "Author", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEAttribute(getAuthor_FirstName(), ecorePackage.getEString(), "firstName", null, 0, 1, Author.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$

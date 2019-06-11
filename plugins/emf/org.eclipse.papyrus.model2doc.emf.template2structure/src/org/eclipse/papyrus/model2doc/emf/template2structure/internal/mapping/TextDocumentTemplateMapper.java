@@ -21,6 +21,8 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.papyrus.model2doc.core.author.IAuthor;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Document;
@@ -60,6 +62,12 @@ public class TextDocumentTemplateMapper extends AbstractEMFTemplateToStructureMa
 		final IDocumentStructureGeneratorConfiguration structureGeneratorConfig = input.getDocumentStructureGeneratorConfiguration();
 		final IDocumentGeneratorConfiguration docGeneratorConfig = structureGeneratorConfig.createDocumentGeneratorConfiguration();
 		txtDocument.setDocumentGeneratorConfiguration(docGeneratorConfig);
+
+		final Iterator<IAuthor> authors = input.getAuthors().iterator();
+		while (authors.hasNext()) {
+			final IAuthor copiedAuthor = EcoreUtil.copy(authors.next());
+			txtDocument.getAuthors().add(copiedAuthor);
+		}
 
 		final EObject semanticContext = input.getSemanticContext();
 		List<DocumentPart> parts = input.getDocumentParts();

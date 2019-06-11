@@ -31,6 +31,19 @@
       </eAnnotations>
       <eParameters name="firstName" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
+    <eOperations name="buildAuthorLabel" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This method returns the label to use for the author."/>
+        <details key="body" value="return org.eclipse.papyrus.model2doc.core.author.internal.operations.IAuthorsOperations.buildAuthorLabel(this);"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="buildMultiAuthorLabel" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This method allows to build a label for a collection of author."/>
+        <details key="body" value="return org.eclipse.papyrus.model2doc.core.author.internal.operations.IAuthorsOperations.buildMultiAuthorLabel(authors);"/>
+      </eAnnotations>
+      <eParameters name="authors" ordered="false" upperBound="-1" eType="#//IAuthor"/>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Author" eSuperTypes="#//IAuthor">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

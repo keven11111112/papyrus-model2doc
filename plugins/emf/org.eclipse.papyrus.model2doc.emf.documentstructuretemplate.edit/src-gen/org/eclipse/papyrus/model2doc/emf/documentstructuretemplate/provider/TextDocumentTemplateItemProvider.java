@@ -36,6 +36,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import org.eclipse.papyrus.model2doc.core.author.AuthorFactory;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationFactory;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplateFactory;
@@ -252,6 +253,7 @@ public class TextDocumentTemplateItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION);
+			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.DOCUMENT_TEMPLATE__AUTHOR);
 			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART);
 		}
 		return childrenFeatures;
@@ -340,6 +342,7 @@ public class TextDocumentTemplateItemProvider
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION:
+		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__AUTHOR:
 		case DocumentStructureTemplatePackage.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
@@ -361,6 +364,9 @@ public class TextDocumentTemplateItemProvider
 
 		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.DOCUMENT_TEMPLATE__DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION,
 				GeneratorConfigurationFactory.eINSTANCE.createDefaultDocumentStructureGeneratorConfiguration()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.DOCUMENT_TEMPLATE__AUTHOR,
+				AuthorFactory.eINSTANCE.createAuthor()));
 
 		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART,
 				DocumentStructureTemplateFactory.eINSTANCE.createTableOfContents()));

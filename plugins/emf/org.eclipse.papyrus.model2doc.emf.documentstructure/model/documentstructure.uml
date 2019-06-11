@@ -98,6 +98,10 @@
       <ownedAttribute xmi:type="uml:Property" xmi:id="_9gsFcEmLEem4wpUXttaNpQ" name="documentGeneratorConfiguration" aggregation="composite" association="_9gqQQEmLEem4wpUXttaNpQ">
         <type xmi:type="uml:Interface" href="pathmap://GENERATOR_CONFIGURATION/generatorconfiguration.uml#_cN08EFB6EemNlsOH2YnpzQ"/>
       </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_hbx8QoxSEem126L41vD09A" name="author" aggregation="composite" association="_hbxVMIxSEem126L41vD09A">
+        <type xmi:type="uml:Interface" href="pathmap://MODEL2DOC/AUTHOR/author.uml#_PbrtUIwlEemPH4WRSA0__A"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hbyjUIxSEem126L41vD09A" value="*"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_ZnvK4EUGEemuabBpL8rs_Q" name="TableOfContents">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_qq5tMEl1Eem4wpUXttaNpQ" name="tocTitle">
@@ -184,6 +188,12 @@ Its allows us to have a common Table definition between DocumentStructure and th
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_J-gvcXsNEemUDJPY7edDLg" key="nature" value="UML_Nature"/>
       </eAnnotations>
       <ownedEnd xmi:type="uml:Property" xmi:id="_J-ikoXsNEemUDJPY7edDLg" name="extendedlistitem" type="_DBbBgHsNEemUDJPY7edDLg" association="_J98uwHsNEemUDJPY7edDLg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_hbxVMIxSEem126L41vD09A" memberEnd="_hbx8QoxSEem126L41vD09A _hbyjUYxSEem126L41vD09A">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hbx8QIxSEem126L41vD09A" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hbx8QYxSEem126L41vD09A" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_hbyjUYxSEem126L41vD09A" name="document" type="_zPfGsB4uEemmq_cjeiIGww" association="_hbxVMIxSEem126L41vD09A"/>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_llmqQB4mEemmq_cjeiIGww">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_lln4YB4mEemmq_cjeiIGww" source="http://www.eclipse.org/uml2/2.0.0/UML">

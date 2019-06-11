@@ -21,6 +21,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 
+import org.eclipse.papyrus.model2doc.core.author.provider.AuthorEditPlugin;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.provider.GeneratorconfigurationEditPlugin;
 
 /**
@@ -58,6 +59,7 @@ public final class DocumentStructureTemplateEditorPlugin extends EMFPlugin {
 	 */
 	public DocumentStructureTemplateEditorPlugin() {
 		super(new ResourceLocator[] {
+				AuthorEditPlugin.INSTANCE,
 				EcoreEditPlugin.INSTANCE,
 				GeneratorconfigurationEditPlugin.INSTANCE,
 		});

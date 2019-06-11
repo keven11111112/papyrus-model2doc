@@ -13,8 +13,10 @@
  */
 package org.eclipse.papyrus.model2doc.core.author.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -22,6 +24,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.papyrus.model2doc.core.author.Author;
 import org.eclipse.papyrus.model2doc.core.author.AuthorPackage;
+import org.eclipse.papyrus.model2doc.core.author.IAuthor;
 
 /**
  * <!-- begin-user-doc -->
@@ -151,6 +154,26 @@ public class AuthorImpl extends MinimalEObjectImpl.Container implements Author {
 	 * @generated
 	 */
 	@Override
+	public String buildAuthorLabel() {
+		return org.eclipse.papyrus.model2doc.core.author.internal.operations.IAuthorsOperations.buildAuthorLabel(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String buildMultiAuthorLabel(final EList<IAuthor> authors) {
+		return org.eclipse.papyrus.model2doc.core.author.internal.operations.IAuthorsOperations.buildMultiAuthorLabel(authors);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case AuthorPackage.AUTHOR__FIRST_NAME:
@@ -211,6 +234,23 @@ public class AuthorImpl extends MinimalEObjectImpl.Container implements Author {
 			return LAST_NAME_EDEFAULT == null ? lastName != null : !LAST_NAME_EDEFAULT.equals(lastName);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case AuthorPackage.AUTHOR___BUILD_AUTHOR_LABEL:
+			return buildAuthorLabel();
+		case AuthorPackage.AUTHOR___BUILD_MULTI_AUTHOR_LABEL__ELIST:
+			return buildMultiAuthorLabel((EList<IAuthor>) arguments.get(0));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

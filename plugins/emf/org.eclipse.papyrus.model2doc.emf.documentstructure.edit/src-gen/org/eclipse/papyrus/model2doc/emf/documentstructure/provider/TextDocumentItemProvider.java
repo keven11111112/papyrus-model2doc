@@ -36,6 +36,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import org.eclipse.papyrus.model2doc.core.author.AuthorFactory;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationFactory;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructureFactory;
@@ -120,6 +121,7 @@ public class TextDocumentItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DocumentStructurePackage.Literals.DOCUMENT__DOCUMENT_GENERATOR_CONFIGURATION);
+			childrenFeatures.add(DocumentStructurePackage.Literals.DOCUMENT__AUTHOR);
 			childrenFeatures.add(DocumentStructurePackage.Literals.TEXT_DOCUMENT__TEXT_DOCUMENT_PART);
 		}
 		return childrenFeatures;
@@ -194,6 +196,7 @@ public class TextDocumentItemProvider
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case DocumentStructurePackage.TEXT_DOCUMENT__DOCUMENT_GENERATOR_CONFIGURATION:
+		case DocumentStructurePackage.TEXT_DOCUMENT__AUTHOR:
 		case DocumentStructurePackage.TEXT_DOCUMENT__TEXT_DOCUMENT_PART:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
@@ -215,6 +218,9 @@ public class TextDocumentItemProvider
 
 		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.DOCUMENT__DOCUMENT_GENERATOR_CONFIGURATION,
 				GeneratorConfigurationFactory.eINSTANCE.createDefaultDocumentGeneratorConfiguration()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.DOCUMENT__AUTHOR,
+				AuthorFactory.eINSTANCE.createAuthor()));
 
 		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.TEXT_DOCUMENT__TEXT_DOCUMENT_PART,
 				DocumentStructureFactory.eINSTANCE.createBody()));
