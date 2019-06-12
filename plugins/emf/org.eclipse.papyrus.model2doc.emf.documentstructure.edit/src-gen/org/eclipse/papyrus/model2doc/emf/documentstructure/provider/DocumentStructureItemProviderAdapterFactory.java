@@ -393,6 +393,31 @@ public class DocumentStructureItemProviderAdapterFactory extends DocumentStructu
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructure.StringVersion} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected StringVersionItemProvider stringVersionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructure.StringVersion}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Adapter createStringVersionAdapter() {
+		if (stringVersionItemProvider == null) {
+			stringVersionItemProvider = new StringVersionItemProvider(this);
+		}
+
+		return stringVersionItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -570,6 +595,9 @@ public class DocumentStructureItemProviderAdapterFactory extends DocumentStructu
 		}
 		if (extendedTextListItemItemProvider != null) {
 			extendedTextListItemItemProvider.dispose();
+		}
+		if (stringVersionItemProvider != null) {
+			stringVersionItemProvider.dispose();
 		}
 	}
 

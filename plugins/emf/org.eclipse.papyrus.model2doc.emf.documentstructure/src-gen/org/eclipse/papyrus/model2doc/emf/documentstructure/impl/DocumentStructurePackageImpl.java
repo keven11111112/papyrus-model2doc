@@ -42,10 +42,12 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedTextListItem;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Image;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.LeafBodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Paragraph;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.StringVersion;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TableOfContents;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocumentPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Title;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.Version;
 
 /**
  * <!-- begin-user-doc -->
@@ -78,6 +80,14 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	 * @generated
 	 */
 	private EClass documentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass versionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -190,6 +200,14 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	 * @generated
 	 */
 	private EClass extendedTextListItemEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass stringVersionEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -340,6 +358,39 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	@Override
 	public EReference getDocument_Author() {
 		return (EReference) documentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getDocument_Version() {
+		return (EReference) documentEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getVersion() {
+		return versionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EOperation getVersion__GetVersion() {
+		return versionEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -646,6 +697,28 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	 * @generated
 	 */
 	@Override
+	public EClass getStringVersion() {
+		return stringVersionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getStringVersion_Version() {
+		return (EAttribute) stringVersionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public DocumentStructureFactory getDocumentStructureFactory() {
 		return (DocumentStructureFactory) getEFactoryInstance();
 	}
@@ -682,6 +755,10 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 		documentEClass = createEClass(DOCUMENT);
 		createEReference(documentEClass, DOCUMENT__DOCUMENT_GENERATOR_CONFIGURATION);
 		createEReference(documentEClass, DOCUMENT__AUTHOR);
+		createEReference(documentEClass, DOCUMENT__VERSION);
+
+		versionEClass = createEClass(VERSION);
+		createEOperation(versionEClass, VERSION___GET_VERSION);
 
 		bodyEClass = createEClass(BODY);
 		createEReference(bodyEClass, BODY__BODY_PART);
@@ -723,6 +800,9 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 
 		extendedTextListItemEClass = createEClass(EXTENDED_TEXT_LIST_ITEM);
 		createEReference(extendedTextListItemEClass, EXTENDED_TEXT_LIST_ITEM__DATASOURCE);
+
+		stringVersionEClass = createEClass(STRING_VERSION);
+		createEAttribute(stringVersionEClass, STRING_VERSION__VERSION);
 	}
 
 	/**
@@ -778,6 +858,7 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 		extendedBasicListEClass.getESuperTypes().add(theBuiltInTypesPackage.getBasicList());
 		extendedBasicListEClass.getESuperTypes().add(this.getLeafBodyPart());
 		extendedTextListItemEClass.getESuperTypes().add(theBuiltInTypesPackage.getTextListItem());
+		stringVersionEClass.getESuperTypes().add(this.getVersion());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(textDocumentEClass, TextDocument.class, "TextDocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
@@ -791,6 +872,11 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 		initEReference(getDocument_DocumentGeneratorConfiguration(), theGeneratorConfigurationPackage.getIDocumentGeneratorConfiguration(), null, "documentGeneratorConfiguration", null, 1, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, //$NON-NLS-1$
 				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getDocument_Author(), theAuthorPackage.getIAuthor(), null, "author", null, 1, -1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getDocument_Version(), this.getVersion(), null, "version", null, 0, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+
+		initEClass(versionEClass, Version.class, "Version", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEOperation(getVersion__GetVersion(), ecorePackage.getEString(), "getVersion", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(bodyEClass, Body.class, "Body", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(getBody_BodyPart(), this.getBodyPart(), null, "bodyPart", null, 0, -1, Body.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
@@ -838,6 +924,9 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 		initEClass(extendedTextListItemEClass, ExtendedTextListItem.class, "ExtendedTextListItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(getExtendedTextListItem_Datasource(), this.getDataSource(), null, "datasource", null, 0, 1, ExtendedTextListItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, //$NON-NLS-1$
 				!IS_DERIVED, !IS_ORDERED);
+
+		initEClass(stringVersionEClass, StringVersion.class, "StringVersion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(getStringVersion_Version(), ecorePackage.getEString(), "version", null, 1, 1, StringVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
 		// Create resource
 		createResource(eNS_URI);

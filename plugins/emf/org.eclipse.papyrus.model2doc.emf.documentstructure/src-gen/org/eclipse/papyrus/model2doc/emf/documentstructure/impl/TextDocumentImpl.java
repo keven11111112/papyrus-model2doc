@@ -35,6 +35,7 @@ import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGenera
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocumentPart;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.Version;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,6 +47,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocumentPart;
  * <ul>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TextDocumentImpl#getDocumentGeneratorConfiguration <em>Document Generator Configuration</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TextDocumentImpl#getAuthors <em>Author</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TextDocumentImpl#getVersion <em>Version</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TextDocumentImpl#getMainTitle <em>Main Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TextDocumentImpl#getTextDocumentParts <em>Text Document Part</em>}</li>
  * </ul>
@@ -74,6 +76,17 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 	 * @ordered
 	 */
 	protected EList<IAuthor> authors;
+
+	/**
+	 * The cached value of the '{@link #getVersion() <em>Version</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getVersion()
+	 * @generated
+	 * @ordered
+	 */
+	protected Version version;
 
 	/**
 	 * The default value of the '{@link #getMainTitle() <em>Main Title</em>}' attribute.
@@ -206,6 +219,62 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 	 * @generated
 	 */
 	@Override
+	public Version getVersion() {
+		return version;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public NotificationChain basicSetVersion(Version newVersion, NotificationChain msgs) {
+		Version oldVersion = version;
+		version = newVersion;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DocumentStructurePackage.TEXT_DOCUMENT__VERSION, oldVersion, newVersion);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setVersion(Version newVersion) {
+		if (newVersion != version) {
+			NotificationChain msgs = null;
+			if (version != null) {
+				msgs = ((InternalEObject) version).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DocumentStructurePackage.TEXT_DOCUMENT__VERSION, null, msgs);
+			}
+			if (newVersion != null) {
+				msgs = ((InternalEObject) newVersion).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DocumentStructurePackage.TEXT_DOCUMENT__VERSION, null, msgs);
+			}
+			msgs = basicSetVersion(newVersion, msgs);
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructurePackage.TEXT_DOCUMENT__VERSION, newVersion, newVersion));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public String getMainTitle() {
 		return mainTitle;
 	}
@@ -252,6 +321,8 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 			return basicSetDocumentGeneratorConfiguration(null, msgs);
 		case DocumentStructurePackage.TEXT_DOCUMENT__AUTHOR:
 			return ((InternalEList<?>) getAuthors()).basicRemove(otherEnd, msgs);
+		case DocumentStructurePackage.TEXT_DOCUMENT__VERSION:
+			return basicSetVersion(null, msgs);
 		case DocumentStructurePackage.TEXT_DOCUMENT__TEXT_DOCUMENT_PART:
 			return ((InternalEList<?>) getTextDocumentParts()).basicRemove(otherEnd, msgs);
 		}
@@ -271,6 +342,8 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 			return getDocumentGeneratorConfiguration();
 		case DocumentStructurePackage.TEXT_DOCUMENT__AUTHOR:
 			return getAuthors();
+		case DocumentStructurePackage.TEXT_DOCUMENT__VERSION:
+			return getVersion();
 		case DocumentStructurePackage.TEXT_DOCUMENT__MAIN_TITLE:
 			return getMainTitle();
 		case DocumentStructurePackage.TEXT_DOCUMENT__TEXT_DOCUMENT_PART:
@@ -295,6 +368,9 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 		case DocumentStructurePackage.TEXT_DOCUMENT__AUTHOR:
 			getAuthors().clear();
 			getAuthors().addAll((Collection<? extends IAuthor>) newValue);
+			return;
+		case DocumentStructurePackage.TEXT_DOCUMENT__VERSION:
+			setVersion((Version) newValue);
 			return;
 		case DocumentStructurePackage.TEXT_DOCUMENT__MAIN_TITLE:
 			setMainTitle((String) newValue);
@@ -322,6 +398,9 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 		case DocumentStructurePackage.TEXT_DOCUMENT__AUTHOR:
 			getAuthors().clear();
 			return;
+		case DocumentStructurePackage.TEXT_DOCUMENT__VERSION:
+			setVersion((Version) null);
+			return;
 		case DocumentStructurePackage.TEXT_DOCUMENT__MAIN_TITLE:
 			setMainTitle(MAIN_TITLE_EDEFAULT);
 			return;
@@ -345,6 +424,8 @@ public class TextDocumentImpl extends MinimalEObjectImpl.Container implements Te
 			return documentGeneratorConfiguration != null;
 		case DocumentStructurePackage.TEXT_DOCUMENT__AUTHOR:
 			return authors != null && !authors.isEmpty();
+		case DocumentStructurePackage.TEXT_DOCUMENT__VERSION:
+			return version != null;
 		case DocumentStructurePackage.TEXT_DOCUMENT__MAIN_TITLE:
 			return MAIN_TITLE_EDEFAULT == null ? mainTitle != null : !MAIN_TITLE_EDEFAULT.equals(mainTitle);
 		case DocumentStructurePackage.TEXT_DOCUMENT__TEXT_DOCUMENT_PART:

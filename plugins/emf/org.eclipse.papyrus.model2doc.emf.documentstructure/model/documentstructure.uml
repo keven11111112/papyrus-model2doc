@@ -102,6 +102,10 @@
         <type xmi:type="uml:Interface" href="pathmap://MODEL2DOC/AUTHOR/author.uml#_PbrtUIwlEemPH4WRSA0__A"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hbyjUIxSEem126L41vD09A" value="*"/>
       </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_ZfIZEYzyEem126L41vD09A" name="version" type="_8-8WEIzxEem126L41vD09A" aggregation="composite" association="_ZfHK8IzyEem126L41vD09A">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZfJAIIzyEem126L41vD09A"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZfJAIYzyEem126L41vD09A" value="1"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_ZnvK4EUGEemuabBpL8rs_Q" name="TableOfContents">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_qq5tMEl1Eem4wpUXttaNpQ" name="tocTitle">
@@ -194,6 +198,37 @@ Its allows us to have a common Table definition between DocumentStructure and th
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hbx8QYxSEem126L41vD09A" key="nature" value="UML_Nature"/>
       </eAnnotations>
       <ownedEnd xmi:type="uml:Property" xmi:id="_hbyjUYxSEem126L41vD09A" name="document" type="_zPfGsB4uEemmq_cjeiIGww" association="_hbxVMIxSEem126L41vD09A"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_8-8WEIzxEem126L41vD09A" name="Version">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_EujGEIzyEem126L41vD09A" annotatedElement="_8-8WEIzxEem126L41vD09A">
+        <body>This interface is used to define version of document.</body>
+      </ownedComment>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="__AAO4IzxEem126L41vD09A" name="getVersion">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_eoeRcIzyEem126L41vD09A" annotatedElement="__AAO4IzxEem126L41vD09A">
+          <body>This method returns the version as String.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_rCwA0IzyEem126L41vD09A" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_LphUIIzyEem126L41vD09A" name="StringVersion">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_UyZkMIzyEem126L41vD09A" annotatedElement="_LphUIIzyEem126L41vD09A">
+        <body>A class allowing to represent a version with a simple string.</body>
+      </ownedComment>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_ONoPoIzyEem126L41vD09A" name="version">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_SUA2MIzyEem126L41vD09A" annotatedElement="_ONoPoIzyEem126L41vD09A">
+          <body>The string representing the version.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedAttribute>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_WgTQcIzyEem126L41vD09A" client="_LphUIIzyEem126L41vD09A" supplier="_8-8WEIzxEem126L41vD09A" contract="_8-8WEIzxEem126L41vD09A"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_ZfHK8IzyEem126L41vD09A" memberEnd="_ZfIZEYzyEem126L41vD09A _ZfJAIozyEem126L41vD09A">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ZfHyAIzyEem126L41vD09A" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ZfIZEIzyEem126L41vD09A" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_ZfJAIozyEem126L41vD09A" name="document" type="_zPfGsB4uEemmq_cjeiIGww" association="_ZfHK8IzyEem126L41vD09A"/>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_llmqQB4mEemmq_cjeiIGww">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_lln4YB4mEemmq_cjeiIGww" source="http://www.eclipse.org/uml2/2.0.0/UML">

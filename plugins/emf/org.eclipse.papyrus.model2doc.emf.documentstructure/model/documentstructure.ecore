@@ -19,6 +19,18 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="author" ordered="false"
         lowerBound="1" upperBound="-1" eType="ecore:EClass ../../org.eclipse.papyrus.model2doc.core.author/model/author.ecore#//IAuthor"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="version" ordered="false"
+        eType="#//Version" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Version" abstract="true" interface="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This interface is used to define version of document."/>
+    </eAnnotations>
+    <eOperations name="getVersion" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This method returns the version as String."/>
+      </eAnnotations>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Body" eSuperTypes="#//TextDocumentPart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="bodyPart" ordered="false"
@@ -93,5 +105,16 @@
   <eClassifiers xsi:type="ecore:EClass" name="ExtendedTextListItem" eSuperTypes="../../org.eclipse.papyrus.model2doc.core.builtintypes/model/BuiltInTypes.ecore#//TextListItem">
     <eStructuralFeatures xsi:type="ecore:EReference" name="datasource" ordered="false"
         eType="#//DataSource" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StringVersion" eSuperTypes="#//Version">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A class allowing to represent a version with a simple string."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The string representing the version."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
 </ecore:EPackage>

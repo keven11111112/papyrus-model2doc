@@ -108,6 +108,16 @@ public interface DocumentStructurePackage extends EPackage {
 	int DOCUMENT__AUTHOR = 1;
 
 	/**
+	 * The feature id for the '<em><b>Version</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT__VERSION = 2;
+
+	/**
 	 * The number of structural features of the '<em>Document</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -115,7 +125,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_FEATURE_COUNT = 2;
+	int DOCUMENT_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Document</em>' class.
@@ -157,6 +167,16 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @ordered
 	 */
 	int TEXT_DOCUMENT__AUTHOR = DOCUMENT__AUTHOR;
+
+	/**
+	 * The feature id for the '<em><b>Version</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_DOCUMENT__VERSION = DOCUMENT__VERSION;
 
 	/**
 	 * The feature id for the '<em><b>Main Title</b></em>' attribute.
@@ -230,6 +250,47 @@ public interface DocumentStructurePackage extends EPackage {
 	int TEXT_DOCUMENT_PART_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.Version <em>Version</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.Version
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getVersion()
+	 * @generated
+	 */
+	int VERSION = 3;
+
+	/**
+	 * The number of structural features of the '<em>Version</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int VERSION_FEATURE_COUNT = 0;
+
+	/**
+	 * The operation id for the '<em>Get Version</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int VERSION___GET_VERSION = 0;
+
+	/**
+	 * The number of operations of the '<em>Version</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int VERSION_OPERATION_COUNT = 1;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.BodyImpl <em>Body</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -238,7 +299,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getBody()
 	 * @generated
 	 */
-	int BODY = 3;
+	int BODY = 4;
 
 	/**
 	 * The feature id for the '<em><b>Body Part</b></em>' containment reference list.
@@ -279,7 +340,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getBodyPart()
 	 * @generated
 	 */
-	int BODY_PART = 4;
+	int BODY_PART = 5;
 
 	/**
 	 * The feature id for the '<em><b>Data Source</b></em>' containment reference.
@@ -320,7 +381,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getDataSource()
 	 * @generated
 	 */
-	int DATA_SOURCE = 5;
+	int DATA_SOURCE = 6;
 
 	/**
 	 * The number of structural features of the '<em>Data Source</em>' class.
@@ -351,7 +412,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getComposedBodyPart()
 	 * @generated
 	 */
-	int COMPOSED_BODY_PART = 7;
+	int COMPOSED_BODY_PART = 8;
 
 	/**
 	 * The feature id for the '<em><b>Data Source</b></em>' containment reference.
@@ -402,7 +463,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getParagraph()
 	 * @generated
 	 */
-	int PARAGRAPH = 6;
+	int PARAGRAPH = 7;
 
 	/**
 	 * The feature id for the '<em><b>Data Source</b></em>' containment reference.
@@ -463,7 +524,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getTitle()
 	 * @generated
 	 */
-	int TITLE = 8;
+	int TITLE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Data Source</b></em>' containment reference.
@@ -534,7 +595,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getLeafBodyPart()
 	 * @generated
 	 */
-	int LEAF_BODY_PART = 10;
+	int LEAF_BODY_PART = 11;
 
 	/**
 	 * The feature id for the '<em><b>Data Source</b></em>' containment reference.
@@ -575,7 +636,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getImage()
 	 * @generated
 	 */
-	int IMAGE = 9;
+	int IMAGE = 10;
 
 	/**
 	 * The feature id for the '<em><b>Data Source</b></em>' containment reference.
@@ -636,7 +697,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getEMFDataSource()
 	 * @generated
 	 */
-	int EMF_DATA_SOURCE = 11;
+	int EMF_DATA_SOURCE = 12;
 
 	/**
 	 * The feature id for the '<em><b>Eobject</b></em>' reference.
@@ -687,7 +748,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getTableOfContents()
 	 * @generated
 	 */
-	int TABLE_OF_CONTENTS = 12;
+	int TABLE_OF_CONTENTS = 13;
 
 	/**
 	 * The feature id for the '<em><b>Toc Title</b></em>' attribute.
@@ -728,7 +789,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getExtendedBasicTable()
 	 * @generated
 	 */
-	int EXTENDED_BASIC_TABLE = 13;
+	int EXTENDED_BASIC_TABLE = 14;
 
 	/**
 	 * The feature id for the '<em><b>Caption</b></em>' attribute.
@@ -819,7 +880,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getExtendedTextCell()
 	 * @generated
 	 */
-	int EXTENDED_TEXT_CELL = 14;
+	int EXTENDED_TEXT_CELL = 15;
 
 	/**
 	 * The feature id for the '<em><b>Location</b></em>' attribute.
@@ -880,7 +941,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getExtendedBasicList()
 	 * @generated
 	 */
-	int EXTENDED_BASIC_LIST = 15;
+	int EXTENDED_BASIC_LIST = 16;
 
 	/**
 	 * The feature id for the '<em><b>Items</b></em>' containment reference list.
@@ -931,7 +992,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getExtendedTextListItem()
 	 * @generated
 	 */
-	int EXTENDED_TEXT_LIST_ITEM = 16;
+	int EXTENDED_TEXT_LIST_ITEM = 17;
 
 	/**
 	 * The feature id for the '<em><b>Sub Items</b></em>' containment reference list.
@@ -992,6 +1053,58 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @ordered
 	 */
 	int EXTENDED_TEXT_LIST_ITEM_OPERATION_COUNT = BuiltInTypesPackage.TEXT_LIST_ITEM_OPERATION_COUNT + 0;
+
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.StringVersionImpl <em>String Version</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.StringVersionImpl
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getStringVersion()
+	 * @generated
+	 */
+	int STRING_VERSION = 18;
+
+	/**
+	 * The feature id for the '<em><b>Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_VERSION__VERSION = VERSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>String Version</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_VERSION_FEATURE_COUNT = VERSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Version</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_VERSION___GET_VERSION = VERSION___GET_VERSION;
+
+	/**
+	 * The number of operations of the '<em>String Version</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_VERSION_OPERATION_COUNT = VERSION_OPERATION_COUNT + 0;
 
 
 	/**
@@ -1074,6 +1187,40 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDocument_Author();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.Document#getVersion <em>Version</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference '<em>Version</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.Document#getVersion()
+	 * @see #getDocument()
+	 * @generated
+	 */
+	EReference getDocument_Version();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.Version <em>Version</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>Version</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.Version
+	 * @generated
+	 */
+	EClass getVersion();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.Version#getVersion() <em>Get Version</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the '<em>Get Version</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.Version#getVersion()
+	 * @generated
+	 */
+	EOperation getVersion__GetVersion();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.Body <em>Body</em>}'.
@@ -1385,6 +1532,29 @@ public interface DocumentStructurePackage extends EPackage {
 	EReference getExtendedTextListItem_Datasource();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.StringVersion <em>String Version</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>String Version</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.StringVersion
+	 * @generated
+	 */
+	EClass getStringVersion();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.StringVersion#getVersion <em>Version</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Version</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.StringVersion#getVersion()
+	 * @see #getStringVersion()
+	 * @generated
+	 */
+	EAttribute getStringVersion_Version();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1477,6 +1647,35 @@ public interface DocumentStructurePackage extends EPackage {
 		 * @generated
 		 */
 		EReference DOCUMENT__AUTHOR = eINSTANCE.getDocument_Author();
+
+		/**
+		 * The meta object literal for the '<em><b>Version</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference DOCUMENT__VERSION = eINSTANCE.getDocument_Version();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.Version <em>Version</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.Version
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getVersion()
+		 * @generated
+		 */
+		EClass VERSION = eINSTANCE.getVersion();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Version</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EOperation VERSION___GET_VERSION = eINSTANCE.getVersion__GetVersion();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.BodyImpl <em>Body</em>}' class.
@@ -1748,6 +1947,26 @@ public interface DocumentStructurePackage extends EPackage {
 		 * @generated
 		 */
 		EReference EXTENDED_TEXT_LIST_ITEM__DATASOURCE = eINSTANCE.getExtendedTextListItem_Datasource();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.StringVersionImpl <em>String Version</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.StringVersionImpl
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getStringVersion()
+		 * @generated
+		 */
+		EClass STRING_VERSION = eINSTANCE.getStringVersion();
+
+		/**
+		 * The meta object literal for the '<em><b>Version</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute STRING_VERSION__VERSION = eINSTANCE.getStringVersion_Version();
 
 	}
 

@@ -54,6 +54,11 @@
           createChild="true" ecoreFeature="ecore:EReference documentstructure.ecore#//Document/documentGeneratorConfiguration"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference documentstructure.ecore#//Document/author"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference documentstructure.ecore#//Document/version"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructure.ecore#//Version">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="documentstructure.ecore#//Version/getVersion"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructure.ecore#//Body">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -98,6 +103,9 @@
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructure.ecore#//ExtendedTextListItem">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference documentstructure.ecore#//ExtendedTextListItem/datasource"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructure.ecore#//StringVersion">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructure.ecore#//StringVersion/version"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
