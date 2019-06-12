@@ -34,7 +34,7 @@ public interface Version extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This method returns the version as String.
+	 * This method returns the version as String. The returned string could be used as suffix of a file name, so it must be compliant with characters allowed in file name.
 	 * <!-- end-model-doc -->
 	 *
 	 * @model kind="operation" required="true" ordered="false"

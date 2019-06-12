@@ -205,7 +205,7 @@ Its allows us to have a common Table definition between DocumentStructure and th
       </ownedComment>
       <ownedOperation xmi:type="uml:Operation" xmi:id="__AAO4IzxEem126L41vD09A" name="getVersion">
         <ownedComment xmi:type="uml:Comment" xmi:id="_eoeRcIzyEem126L41vD09A" annotatedElement="__AAO4IzxEem126L41vD09A">
-          <body>This method returns the version as String.</body>
+          <body>This method returns the version as String. The returned string could be used as suffix of a file name, so it must be compliant with characters allowed in file name.</body>
         </ownedComment>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_rCwA0IzyEem126L41vD09A" name="return" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
@@ -217,8 +217,11 @@ Its allows us to have a common Table definition between DocumentStructure and th
         <body>A class allowing to represent a version with a simple string.</body>
       </ownedComment>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_ONoPoIzyEem126L41vD09A" name="version">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5EVnEI0EEem126L41vD09A" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__CF-8I0EEem126L41vD09A" key="propertyEditorFactory" value="editor://documentstructure/StringVersion/version"/>
+        </eAnnotations>
         <ownedComment xmi:type="uml:Comment" xmi:id="_SUA2MIzyEem126L41vD09A" annotatedElement="_ONoPoIzyEem126L41vD09A">
-          <body>The string representing the version.</body>
+          <body>The string representing the version of the generated Document.</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
       </ownedAttribute>

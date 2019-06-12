@@ -40,13 +40,14 @@ public interface StringVersion extends Version {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The string representing the version.
+	 * The string representing the version of the generated Document.
 	 * <!-- end-model-doc -->
 	 *
 	 * @return the value of the '<em>Version</em>' attribute.
 	 * @see #setVersion(String)
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage#getStringVersion_Version()
 	 * @model required="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel propertyEditorFactory='editor://documentstructure/StringVersion/version'"
 	 * @generated
 	 */
 	@Override

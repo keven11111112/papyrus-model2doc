@@ -28,7 +28,7 @@
     </eAnnotations>
     <eOperations name="getVersion" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This method returns the version as String."/>
+        <details key="documentation" value="This method returns the version as String. The returned string could be used as suffix of a file name, so it must be compliant with characters allowed in file name."/>
       </eAnnotations>
     </eOperations>
   </eClassifiers>
@@ -113,7 +113,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The string representing the version."/>
+        <details key="documentation" value="The string representing the version of the generated Document."/>
+        <details key="propertyEditorFactory" value="editor://documentstructure/StringVersion/version"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
