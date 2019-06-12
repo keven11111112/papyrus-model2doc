@@ -66,6 +66,13 @@ public interface Transcription {
 	public void writeAuthors(final Collection<IAuthor> authors);
 
 	/**
+	 *
+	 * @param version
+	 *            the version of the document
+	 */
+	public void writeVersion(final String version);
+
+	/**
 	 * Write section title.
 	 *
 	 * @param sectionTitle

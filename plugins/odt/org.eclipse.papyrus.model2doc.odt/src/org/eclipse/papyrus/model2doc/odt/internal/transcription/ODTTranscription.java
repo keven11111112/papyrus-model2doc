@@ -43,6 +43,7 @@ import org.eclipse.papyrus.model2doc.odt.service.WriteServiceImpl;
 
 import com.sun.star.beans.IllegalTypeException;
 import com.sun.star.beans.NotRemoveableException;
+import com.sun.star.beans.PropertyAttribute;
 import com.sun.star.beans.PropertyExistException;
 import com.sun.star.beans.UnknownPropertyException;
 import com.sun.star.beans.XPropertyContainer;
@@ -361,10 +362,42 @@ public class ODTTranscription implements Transcription {
 			}
 
 			try {
-				userDefined.addProperty(CustomFields.AUTHORS, com.sun.star.beans.PropertyAttribute.REMOVABLE, allAuthorsLabel);
+				userDefined.addProperty(CustomFields.AUTHORS, PropertyAttribute.REMOVABLE, allAuthorsLabel);
 			} catch (IllegalArgumentException | PropertyExistException | IllegalTypeException e) {
 				Activator.log.error(e);
 			}
 		}
 	}
+
+	/**
+	 * @see org.eclipse.papyrus.model2doc.core.transcription.Transcription#writeVersion(java.lang.String)
+	 *
+	 * @param version
+	 */
+	@Override
+	public void writeVersion(final String version) {
+		if (null == version || version.isEmpty()) {
+			return;
+		}
+
+		final XTextDocument document = odtEditor.getXTextDocument();
+		final XDocumentPropertiesSupplier xsDocProp = UnoRuntime.queryInterface(XDocumentPropertiesSupplier.class, document);
+		final XDocumentProperties props = xsDocProp.getDocumentProperties();
+
+		XPropertyContainer userDefined = props.getUserDefinedProperties();
+
+		// we need to remove the property if it already exist, in order to be change its value
+		try {
+			userDefined.removeProperty(CustomFields.VERSION);
+		} catch (UnknownPropertyException | NotRemoveableException e) {
+			// nothing to do
+		}
+
+		try {
+			userDefined.addProperty(CustomFields.VERSION, PropertyAttribute.REMOVABLE, version);
+		} catch (IllegalArgumentException | PropertyExistException | IllegalTypeException e) {
+			Activator.log.error(e);
+		}
+	}
+
 }

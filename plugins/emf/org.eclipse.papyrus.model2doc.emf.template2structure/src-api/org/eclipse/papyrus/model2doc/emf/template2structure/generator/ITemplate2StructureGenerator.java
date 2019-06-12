@@ -16,6 +16,7 @@
 package org.eclipse.papyrus.model2doc.emf.template2structure.generator;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Document;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.Version;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate;
 
 /**
@@ -29,14 +30,14 @@ public interface ITemplate2StructureGenerator {
 	 * @param docTemplate
 	 *            a document template
 	 * @return
-	 * 		<code>true</code> if the current generator manages this document template, <code>false</code> oterhwise
+	 *         <code>true</code> if the current generator manages this document template, <code>false</code> otherwise
 	 */
 	public boolean handles(final DocumentTemplate docTemplate);
 
 	/**
 	 *
 	 * @return
-	 * 		the identified of the current generator
+	 *         the identified of the current generator
 	 */
 	public String getGeneratorId();
 
@@ -44,15 +45,19 @@ public interface ITemplate2StructureGenerator {
 	 *
 	 * @param docTemplate
 	 *            a document template
+	 * @param documentVersion
+	 *            an object representing the version of the generated document.
+	 *            this object must be a String or a {@link Version}. Others elements will be ignored.
+	 *            <code>null</code> is allowed too
 	 * @return
-	 * 		the generated Document structure from the document template
+	 *         the generated Document structure from the document template
 	 */
-	public Document generate(final DocumentTemplate docTemplate);
+	public Document generate(final DocumentTemplate docTemplate, final Object documentVersion);
 
 	/**
 	 *
 	 * @return
-	 * 		a description for the current generator
+	 *         a description for the current generator
 	 */
 	public String getDescription();
 }

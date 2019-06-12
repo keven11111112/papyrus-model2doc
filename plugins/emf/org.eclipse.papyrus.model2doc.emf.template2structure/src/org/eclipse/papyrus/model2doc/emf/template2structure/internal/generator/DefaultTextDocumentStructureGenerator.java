@@ -20,9 +20,13 @@ import java.util.List;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.osgi.util.NLS;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Document;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructureFactory;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.StringVersion;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.Version;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentTemplate;
 import org.eclipse.papyrus.model2doc.emf.template2structure.Activator;
@@ -78,10 +82,11 @@ public class DefaultTextDocumentStructureGenerator implements ITemplate2Structur
 	 * @see org.eclipse.papyrus.model2doc.emf.template2structure.generator.ITemplate2StructureGenerator#generator(org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate)
 	 *
 	 * @param docTemplate
+	 * @param documentVersion
 	 * @return
 	 */
 	@Override
-	public Document generate(final DocumentTemplate docTemplate) {
+	public Document generate(final DocumentTemplate docTemplate, final Object documentVersion) {
 		// 1. we check we manage this kind of DocumentTemplate
 		if (false == handles(docTemplate)) {
 			Activator.log.warn(NLS.bind("The generator {0} is not able to create the document structure for {1}.", getClass().getSimpleName(), docTemplate.toString())); //$NON-NLS-1$
@@ -100,7 +105,58 @@ public class DefaultTextDocumentStructureGenerator implements ITemplate2Structur
 		Assert.isTrue(result.size() >= 1, "The generation contains more than one object as result"); //$NON-NLS-1$
 		final EObject res = result.iterator().next();
 		Assert.isTrue(res instanceof Document, "The result of the transformation is not Document."); //$NON-NLS-1$
-		return (Document) res;
+		final Document generatedDocument = (Document) res;
+
+		// define the version of the Document
+		if (null != documentVersion) {
+			if (documentVersion instanceof String) {
+				generatedDocument.setVersion(createVersionFromString((String) documentVersion));
+			} else if (documentVersion instanceof Version) {
+				generatedDocument.setVersion((Version) documentVersion);
+			}
+			// suffix the future file name with the version
+			updateGeneratedDocumentName(generatedDocument);
+		}
+
+		return generatedDocument;
+	}
+
+
+
+	/**
+	 *
+	 * @param version
+	 *            the version as string
+	 * @return
+	 *         the version to set to the DocumentStructure
+	 */
+	private Version createVersionFromString(final String version) {
+		if (null == version || version.isEmpty()) {
+			return null;
+		}
+		final StringVersion stringVersion = DocumentStructureFactory.eINSTANCE.createStringVersion();
+		stringVersion.setVersion(version);
+		return stringVersion;
+	}
+
+	/**
+	 * This method suffix the final document name to generate with the version number
+	 *
+	 * @param document
+	 *            the generated document
+	 */
+	private void updateGeneratedDocumentName(final Document document) {
+		final Version version = document.getVersion();
+		if (null != version) {
+			final String stringVersion = version.getVersion();
+			if (null != stringVersion && false == stringVersion.isEmpty()) {
+				final IDocumentGeneratorConfiguration conf = document.getDocumentGeneratorConfiguration();
+				final StringBuilder documentNameBuilder = new StringBuilder(conf.getDocumentName());
+				documentNameBuilder.append("_"); //$NON-NLS-1$
+				documentNameBuilder.append(stringVersion);
+				conf.setDocumentName(documentNameBuilder.toString());
+			}
+		}
 	}
 
 	/**

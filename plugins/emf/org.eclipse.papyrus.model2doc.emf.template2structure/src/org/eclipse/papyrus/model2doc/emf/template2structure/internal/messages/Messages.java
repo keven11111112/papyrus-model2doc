@@ -22,6 +22,8 @@ import org.eclipse.osgi.util.NLS;
  */
 public class Messages extends NLS {
 	private static final String BUNDLE_NAME = "org.eclipse.papyrus.model2doc.emf.template2structure.internal.messages.messages"; //$NON-NLS-1$
+	public static String GenerateDocumentStructureHandler_EnterTheDocumentVersion;
+	public static String GenerateDocumentStructureHandler_EnterTheDocumentVersionWithLastVersion;
 	public static String GenerateDocumentStructureHandler_TheGenerationOfDocumentStructureIsFinished;
 	static {
 		// initialize resource bundle

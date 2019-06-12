@@ -18,13 +18,14 @@ package org.eclipse.papyrus.model2doc.emf.documentstructure.edit.validators;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.eclipse.jface.dialogs.IInputValidator;
 import org.eclipse.jface.viewers.ICellEditorValidator;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.edit.internal.messages.Messages;
 
 /**
  * This validator checks the input version is compliant with a file name
  */
-public class StringVersionValidator implements ICellEditorValidator {
+public class StringVersionValidator implements ICellEditorValidator, IInputValidator {
 
 	/**
 	 * The regex used to check the string version
@@ -37,6 +38,7 @@ public class StringVersionValidator implements ICellEditorValidator {
 	 * @param newText
 	 * @return
 	 */
+	@Override
 	public String isValid(final String newText) {
 		if (newText.isEmpty()) {
 			return null;

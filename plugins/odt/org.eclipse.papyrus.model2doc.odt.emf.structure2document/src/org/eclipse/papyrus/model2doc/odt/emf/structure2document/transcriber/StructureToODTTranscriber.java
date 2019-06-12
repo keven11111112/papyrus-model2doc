@@ -63,6 +63,9 @@ public class StructureToODTTranscriber implements Transcriber {
 		if (mainTitle != null && !mainTitle.isEmpty()) {
 			this.transcription.writeDocumentMainTitle(mainTitle);
 			this.transcription.writeAuthors(this.textDocument.getAuthors());
+			if (null != this.textDocument.getVersion()) {
+				this.transcription.writeVersion(this.textDocument.getVersion().getVersion());
+			}
 		}
 
 

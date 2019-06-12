@@ -41,20 +41,26 @@ public class GeneratorConfigurationOperations {
 
 	private static final String SLASH = "/"; //$NON-NLS-1$
 
+	private static final String UNDERSCORE = "_"; //$NON-NLS-1$
+
 	/**
 	 *
 	 * @param generatorConfiguration
 	 *            a generatorConfiguration element
-	 * @param uriKind
-	 *            the kind of expected URI
 	 * @param fileExtension
 	 *            the extension file
+	 * @param optionalVersionSuffix
+	 *            a string representing the version of the generated document structure or <code>null</code>
 	 * @return
 	 *         the path of the document structure. The returned path, will be a string starting with platform:/resource/
 	 */
-	public static final URI getDocumentStructureFileEcoreURI(final IDocumentStructureGeneratorConfiguration generatorConfiguration, final String fileExtension) {
+	public static final URI getDocumentStructureFileEcoreURI(final IDocumentStructureGeneratorConfiguration generatorConfiguration, final String fileExtension, final String optionalVersionSuffix) {
 		final String folderName = generatorConfiguration.getStructureFolder();
-		final String documentName = generatorConfiguration.getDocumentName();
+		final StringBuilder documentNameBuilder = new StringBuilder(generatorConfiguration.getDocumentName());
+		if (null != optionalVersionSuffix && false == optionalVersionSuffix.isEmpty()) {
+			documentNameBuilder.append(UNDERSCORE);
+			documentNameBuilder.append(optionalVersionSuffix);
+		}
 		URI uri = URI.createURI(folderName);
 		final String scheme = uri.scheme(); // Windows C: for example
 
@@ -74,7 +80,7 @@ public class GeneratorConfigurationOperations {
 				Activator.log.warn(NLS.bind("The path {0} must not be a platform path", uri.toString())); //$NON-NLS-1$
 				return null;
 			}
-			return uri.appendSegment(documentName).appendFileExtension(fileExtension);
+			return uri.appendSegment(documentNameBuilder.toString()).appendFileExtension(fileExtension);
 		}
 		return null;
 	}
@@ -233,7 +239,7 @@ public class GeneratorConfigurationOperations {
 		final Collection<String> projectsToRefresh = new HashSet<>();
 
 		// 1. get the project name for the pds file
-		URI uri = getDocumentStructureFileEcoreURI(configuration, "dummyExtension"); //$NON-NLS-1$
+		URI uri = getDocumentStructureFileEcoreURI(configuration, "dummyExtension", null); //$NON-NLS-1$
 		if (null != uri) {
 			// get the project output for pds
 			if (uri.isPlatformResource() && uri.segmentCount() > 2) {

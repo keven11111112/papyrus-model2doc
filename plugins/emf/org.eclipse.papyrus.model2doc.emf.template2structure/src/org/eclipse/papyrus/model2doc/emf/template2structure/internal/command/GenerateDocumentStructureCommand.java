@@ -28,6 +28,7 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.operations.GeneratorConfigurationOperations;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Document;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.Version;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.internal.resource.DocumentStructureResource;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate;
 import org.eclipse.papyrus.model2doc.emf.template2structure.Activator;
@@ -55,6 +56,11 @@ public class GenerateDocumentStructureCommand extends RecordingCommand {
 	private ITemplate2StructureGenerator generator;
 
 	/**
+	 * the version of the generated document
+	 */
+	private String documentVersion;
+
+	/**
 	 *
 	 * Constructor.
 	 *
@@ -69,12 +75,22 @@ public class GenerateDocumentStructureCommand extends RecordingCommand {
 	}
 
 	/**
+	 *
+	 *
+	 * @param version
+	 *            the version of the generated document, the parameter can be <code>null</code>
+	 */
+	public void setVersion(final String version) {
+		documentVersion = version;
+	}
+
+	/**
 	 * @see org.eclipse.emf.transaction.RecordingCommand#doExecute()
 	 *
 	 */
 	@Override
 	protected void doExecute() {
-		final Document document = this.generator.generate(this.documentTemplate);
+		final Document document = this.generator.generate(this.documentTemplate, this.documentVersion);
 		if (document == null) {
 			return;
 		}
@@ -89,7 +105,8 @@ public class GenerateDocumentStructureCommand extends RecordingCommand {
 		URI documentStructureURI = null;
 		final IDocumentStructureGeneratorConfiguration configuration = this.documentTemplate.getDocumentStructureGeneratorConfiguration();
 		if (null != configuration) {
-			documentStructureURI = GeneratorConfigurationOperations.getDocumentStructureFileEcoreURI(configuration, DocumentStructureResource.FILE_EXTENSION);
+			final Version version = document.getVersion();
+			documentStructureURI = GeneratorConfigurationOperations.getDocumentStructureFileEcoreURI(configuration, DocumentStructureResource.FILE_EXTENSION, version != null ? version.getVersion() : null);
 		} else {
 			Activator.log.warn("The document structure can't be generated, the configuration is not defined in your model."); //$NON-NLS-1$
 			return;
