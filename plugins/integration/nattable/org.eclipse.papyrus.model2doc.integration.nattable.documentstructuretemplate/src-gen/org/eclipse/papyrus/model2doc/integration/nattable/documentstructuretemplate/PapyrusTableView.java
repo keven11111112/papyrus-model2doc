@@ -57,7 +57,6 @@ public interface PapyrusTableView extends ILeafBodyPartTemplate, ITemplatePartVi
 	 * @see #setTableKindId(String)
 	 * @see org.eclipse.papyrus.model2doc.integration.nattable.documentstructuretemplate.PapyrusNattableDocumentStructureTemplatePackage#getPapyrusTableView_TableKindId()
 	 * @model ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel propertyEditorFactory='editor://papyrusnattabledocumentstructuretemplate/PapyrusTableView/tableKindId/'"
 	 * @generated
 	 */
 	String getTableKindId();
@@ -83,7 +82,6 @@ public interface PapyrusTableView extends ILeafBodyPartTemplate, ITemplatePartVi
 	 * @see #setTableType(String)
 	 * @see org.eclipse.papyrus.model2doc.integration.nattable.documentstructuretemplate.PapyrusNattableDocumentStructureTemplatePackage#getPapyrusTableView_TableType()
 	 * @model ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel propertyEditorFactory='editor://papyrusnattabledocumentstructuretemplate/PapyrusTableView/tableType/'"
 	 * @generated
 	 */
 	String getTableType();
@@ -172,7 +170,6 @@ public interface PapyrusTableView extends ILeafBodyPartTemplate, ITemplatePartVi
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model required="true" ordered="false" tableContextRequired="true" tableContextOrdered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body=' return org.eclipse.papyrus.model2doc.integration.nattable.documentstructuretemplate.internal.operations.PapyrusNattableBodySectionPartTemplateTitleOperations.PAPYRUS_NATTABLE_INSTANCE.buildPartTemplateTitle(this, tableContext);'"
 	 * @generated
 	 */
 	@Override

@@ -125,11 +125,11 @@ public class EValidatorAdapter
 	 * so that we will know later that we have processed it and its sub-tree.
 	 * 
 	 * @param eObject
-	 *                    an element that we have validated
+	 *            an element that we have validated
 	 * @param context
-	 *                    the context (may be <code>null</code>)
+	 *            the context (may be <code>null</code>)
 	 * @param status
-	 *                    the element's validation status
+	 *            the element's validation status
 	 */
 	private void processed(EObject eObject, Map<Object, Object> context, IStatus status) {
 		if (context != null) {
@@ -143,9 +143,9 @@ public class EValidatorAdapter
 	 * only possible if we do, indeed, have a context.
 	 * 
 	 * @param eObject
-	 *                    an element to be validated (we hope not)
+	 *            an element to be validated (we hope not)
 	 * @param context
-	 *                    the context (may be <code>null</code>)
+	 *            the context (may be <code>null</code>)
 	 * @return <code>true</code> if the context is not <code>null</code> and
 	 *         the <code>eObject</code> or one of its containers has already been
 	 *         validated; <code>false</code>, otherwise
@@ -172,9 +172,9 @@ public class EValidatorAdapter
 	 * Converts a status result from the EMF validation service to diagnostics.
 	 * 
 	 * @param status
-	 *                        the EMF validation service's status result
+	 *            the EMF validation service's status result
 	 * @param diagnostics
-	 *                        a diagnostic chain to accumulate results on
+	 *            a diagnostic chain to accumulate results on
 	 */
 	private void appendDiagnostics(IStatus status, DiagnosticChain diagnostics) {
 		if (status.isMultiStatus()) {

@@ -27,6 +27,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import org.eclipse.papyrus.infra.emf.expressions.booleanexpressions.BooleanExpressionsFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplateFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate;
@@ -145,6 +146,7 @@ public class EReferencePartTemplateItemProvider extends EReferenceTemplateItemPr
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION);
 			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.ICOMPOSED_BODY_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE);
 		}
 		return childrenFeatures;
@@ -220,6 +222,7 @@ public class EReferencePartTemplateItemProvider extends EReferenceTemplateItemPr
 		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__CUSTOM_TITLE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
+		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION:
 		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
@@ -238,6 +241,27 @@ public class EReferencePartTemplateItemProvider extends EReferenceTemplateItemPr
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION,
+				BooleanExpressionsFactory.eINSTANCE.createOrExpression()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION,
+				BooleanExpressionsFactory.eINSTANCE.createAndExpression()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION,
+				BooleanExpressionsFactory.eINSTANCE.createNotExpression()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION,
+				BooleanExpressionsFactory.eINSTANCE.createLiteralTrueExpression()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION,
+				BooleanExpressionsFactory.eINSTANCE.createLiteralFalseExpression()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION,
+				BooleanExpressionsFactory.eINSTANCE.createReferenceBooleanExpression()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION,
+				BooleanExpressionsFactory.eINSTANCE.createSingleEAttributeValueEqualityExpression()));
 
 		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_BODY_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE,
 				DocumentStructureTemplateFactory.eINSTANCE.createEClassPartTemplate()));

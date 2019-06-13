@@ -36,6 +36,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import org.eclipse.papyrus.infra.emf.expressions.booleanexpressions.BooleanExpressionsFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplateFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TreeListView;
@@ -161,6 +162,7 @@ public class TreeListViewItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION);
 			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.TREE_LIST_VIEW__ROOT_LIST_ITEM_TEMPLATE);
 		}
 		return childrenFeatures;
@@ -247,6 +249,7 @@ public class TreeListViewItemProvider
 		case DocumentStructureTemplatePackage.TREE_LIST_VIEW__CUSTOM_TITLE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
+		case DocumentStructureTemplatePackage.TREE_LIST_VIEW__GENERATE_BRANCH_CONDITION:
 		case DocumentStructureTemplatePackage.TREE_LIST_VIEW__ROOT_LIST_ITEM_TEMPLATE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
@@ -265,6 +268,27 @@ public class TreeListViewItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION,
+				BooleanExpressionsFactory.eINSTANCE.createOrExpression()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION,
+				BooleanExpressionsFactory.eINSTANCE.createAndExpression()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION,
+				BooleanExpressionsFactory.eINSTANCE.createNotExpression()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION,
+				BooleanExpressionsFactory.eINSTANCE.createLiteralTrueExpression()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION,
+				BooleanExpressionsFactory.eINSTANCE.createLiteralFalseExpression()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION,
+				BooleanExpressionsFactory.eINSTANCE.createReferenceBooleanExpression()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION,
+				BooleanExpressionsFactory.eINSTANCE.createSingleEAttributeValueEqualityExpression()));
 
 		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.TREE_LIST_VIEW__ROOT_LIST_ITEM_TEMPLATE,
 				DocumentStructureTemplateFactory.eINSTANCE.createEReferenceListItemTemplate()));

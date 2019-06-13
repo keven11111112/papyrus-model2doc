@@ -1,13 +1,13 @@
 /**
  * Copyright (c) 2019 CEA LIST.
- * 
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-2.0/
- * 
+ *
  *  SPDX-License-Identifier: EPL-2.0
- * 
+ *
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Comment Choice</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplatePackage#getCommentChoice()
  * @model
  * @generated
@@ -34,7 +34,7 @@ public enum CommentChoice implements Enumerator {
 	 * The '<em><b>FIRST OWNED COMMENT</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #FIRST_OWNED_COMMENT_VALUE
 	 * @generated
 	 * @ordered
@@ -45,7 +45,7 @@ public enum CommentChoice implements Enumerator {
 	 * The '<em><b>ALL OWNED COMMENTS</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #ALL_OWNED_COMMENTS_VALUE
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public enum CommentChoice implements Enumerator {
 	 * The '<em><b>FIRST OWNED COMMENT</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #FIRST_OWNED_COMMENT
 	 * @model
 	 * @generated
@@ -68,7 +68,7 @@ public enum CommentChoice implements Enumerator {
 	 * The '<em><b>ALL OWNED COMMENTS</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #ALL_OWNED_COMMENTS
 	 * @model
 	 * @generated
@@ -80,7 +80,7 @@ public enum CommentChoice implements Enumerator {
 	 * An array of all the '<em><b>Comment Choice</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final CommentChoice[] VALUES_ARRAY = new CommentChoice[] {
@@ -92,7 +92,7 @@ public enum CommentChoice implements Enumerator {
 	 * A public read-only list of all the '<em><b>Comment Choice</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<CommentChoice> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -101,7 +101,7 @@ public enum CommentChoice implements Enumerator {
 	 * Returns the '<em><b>Comment Choice</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param literal
 	 *                    the literal.
 	 * @return the matching enumerator or <code>null</code>.
@@ -121,7 +121,7 @@ public enum CommentChoice implements Enumerator {
 	 * Returns the '<em><b>Comment Choice</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param name
 	 *                 the name.
 	 * @return the matching enumerator or <code>null</code>.
@@ -141,7 +141,7 @@ public enum CommentChoice implements Enumerator {
 	 * Returns the '<em><b>Comment Choice</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *                  the integer value.
 	 * @return the matching enumerator or <code>null</code>.
@@ -160,7 +160,7 @@ public enum CommentChoice implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -168,7 +168,7 @@ public enum CommentChoice implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -176,7 +176,7 @@ public enum CommentChoice implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -185,7 +185,7 @@ public enum CommentChoice implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private CommentChoice(int value, String name, String literal) {
@@ -197,7 +197,7 @@ public enum CommentChoice implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -208,7 +208,7 @@ public enum CommentChoice implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -219,7 +219,7 @@ public enum CommentChoice implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -231,7 +231,7 @@ public enum CommentChoice implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

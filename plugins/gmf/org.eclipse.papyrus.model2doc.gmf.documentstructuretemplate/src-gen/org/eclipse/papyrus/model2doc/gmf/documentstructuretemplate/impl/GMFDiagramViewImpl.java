@@ -17,16 +17,19 @@ import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.gmf.runtime.notation.Diagram;
 
+import org.eclipse.papyrus.infra.emf.expressions.booleanexpressions.IBooleanEObjectExpression;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodyPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate;
@@ -46,6 +49,7 @@ import org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDocumentSt
  * <li>{@link org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.impl.GMFDiagramViewImpl#isGenerate <em>Generate</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.impl.GMFDiagramViewImpl#isGenerateTitle <em>Generate Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.impl.GMFDiagramViewImpl#getCustomTitle <em>Custom Title</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.impl.GMFDiagramViewImpl#getGenerateBranchCondition <em>Generate Branch Condition</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.impl.GMFDiagramViewImpl#getDiagramType <em>Diagram Type</em>}</li>
  * </ul>
  *
@@ -117,6 +121,17 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 	 * @ordered
 	 */
 	protected String customTitle = CUSTOM_TITLE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getGenerateBranchCondition() <em>Generate Branch Condition</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getGenerateBranchCondition()
+	 * @generated
+	 * @ordered
+	 */
+	protected IBooleanEObjectExpression generateBranchCondition;
 
 	/**
 	 * The default value of the '{@link #getDiagramType() <em>Diagram Type</em>}' attribute.
@@ -246,6 +261,62 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	@Override
+	public IBooleanEObjectExpression getGenerateBranchCondition() {
+		return generateBranchCondition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public NotificationChain basicSetGenerateBranchCondition(IBooleanEObjectExpression newGenerateBranchCondition, NotificationChain msgs) {
+		IBooleanEObjectExpression oldGenerateBranchCondition = generateBranchCondition;
+		generateBranchCondition = newGenerateBranchCondition;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_BRANCH_CONDITION, oldGenerateBranchCondition, newGenerateBranchCondition);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setGenerateBranchCondition(IBooleanEObjectExpression newGenerateBranchCondition) {
+		if (newGenerateBranchCondition != generateBranchCondition) {
+			NotificationChain msgs = null;
+			if (generateBranchCondition != null) {
+				msgs = ((InternalEObject) generateBranchCondition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_BRANCH_CONDITION, null, msgs);
+			}
+			if (newGenerateBranchCondition != null) {
+				msgs = ((InternalEObject) newGenerateBranchCondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_BRANCH_CONDITION, null, msgs);
+			}
+			msgs = basicSetGenerateBranchCondition(newGenerateBranchCondition, msgs);
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_BRANCH_CONDITION, newGenerateBranchCondition, newGenerateBranchCondition));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public String getDiagramType() {
 		return diagramType;
 	}
@@ -283,10 +354,43 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	@Override
+	public boolean generateBranch(final EObject context) {
+		if (null == context) {
+			return false;
+		}
+		if (null == generateBranchCondition) {
+			return true;
+		}
+
+		return generateBranchCondition.evaluate(context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EList<Diagram> getMatchingDiagrams(EObject expectedDiagramContext) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_BRANCH_CONDITION:
+			return basicSetGenerateBranchCondition(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -304,6 +408,8 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 			return isGenerateTitle();
 		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__CUSTOM_TITLE:
 			return getCustomTitle();
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_BRANCH_CONDITION:
+			return getGenerateBranchCondition();
 		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DIAGRAM_TYPE:
 			return getDiagramType();
 		}
@@ -327,6 +433,9 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 			return;
 		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__CUSTOM_TITLE:
 			setCustomTitle((String) newValue);
+			return;
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_BRANCH_CONDITION:
+			setGenerateBranchCondition((IBooleanEObjectExpression) newValue);
 			return;
 		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DIAGRAM_TYPE:
 			setDiagramType((String) newValue);
@@ -353,6 +462,9 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__CUSTOM_TITLE:
 			setCustomTitle(CUSTOM_TITLE_EDEFAULT);
 			return;
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_BRANCH_CONDITION:
+			setGenerateBranchCondition((IBooleanEObjectExpression) null);
+			return;
 		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DIAGRAM_TYPE:
 			setDiagramType(DIAGRAM_TYPE_EDEFAULT);
 			return;
@@ -375,6 +487,8 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 			return generateTitle != GENERATE_TITLE_EDEFAULT;
 		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__CUSTOM_TITLE:
 			return CUSTOM_TITLE_EDEFAULT == null ? customTitle != null : !CUSTOM_TITLE_EDEFAULT.equals(customTitle);
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_BRANCH_CONDITION:
+			return generateBranchCondition != null;
 		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DIAGRAM_TYPE:
 			return DIAGRAM_TYPE_EDEFAULT == null ? diagramType != null : !DIAGRAM_TYPE_EDEFAULT.equals(diagramType);
 		}
@@ -397,6 +511,8 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 				return DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_TITLE;
 			case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__CUSTOM_TITLE:
 				return DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__CUSTOM_TITLE;
+			case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_BRANCH_CONDITION:
+				return DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION;
 			default:
 				return -1;
 			}
@@ -432,6 +548,8 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 				return GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_TITLE;
 			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__CUSTOM_TITLE:
 				return GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__CUSTOM_TITLE;
+			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION:
+				return GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_BRANCH_CONDITION;
 			default:
 				return -1;
 			}
@@ -463,6 +581,8 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 			switch (baseOperationID) {
 			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT:
 				return GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW___BUILD_PART_TEMPLATE_TITLE__EOBJECT;
+			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE___GENERATE_BRANCH__EOBJECT:
+				return GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW___GENERATE_BRANCH__EOBJECT;
 			default:
 				return -1;
 			}
@@ -493,6 +613,8 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 		switch (operationID) {
 		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW___BUILD_PART_TEMPLATE_TITLE__EOBJECT:
 			return buildPartTemplateTitle((EObject) arguments.get(0));
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW___GENERATE_BRANCH__EOBJECT:
+			return generateBranch((EObject) arguments.get(0));
 		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW___GET_MATCHING_DIAGRAMS__EOBJECT:
 			return getMatchingDiagrams((EObject) arguments.get(0));
 		}

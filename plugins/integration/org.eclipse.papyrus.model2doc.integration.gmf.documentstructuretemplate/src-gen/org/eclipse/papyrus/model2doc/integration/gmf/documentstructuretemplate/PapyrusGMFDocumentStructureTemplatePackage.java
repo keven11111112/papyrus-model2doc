@@ -118,6 +118,16 @@ public interface PapyrusGMFDocumentStructureTemplatePackage extends EPackage {
 	int PAPYRUS_GMF_DIAGRAM_VIEW__CUSTOM_TITLE = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Generate Branch Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int PAPYRUS_GMF_DIAGRAM_VIEW__GENERATE_BRANCH_CONDITION = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Diagram Kind Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -125,7 +135,7 @@ public interface PapyrusGMFDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_KIND_ID = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_FEATURE_COUNT + 3;
+	int PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_KIND_ID = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Diagram Type</b></em>' attribute.
@@ -135,7 +145,7 @@ public interface PapyrusGMFDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_TYPE = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_FEATURE_COUNT + 4;
+	int PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_TYPE = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Context Filter Rule</b></em>' attribute.
@@ -145,7 +155,7 @@ public interface PapyrusGMFDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAPYRUS_GMF_DIAGRAM_VIEW__CONTEXT_FILTER_RULE = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_FEATURE_COUNT + 5;
+	int PAPYRUS_GMF_DIAGRAM_VIEW__CONTEXT_FILTER_RULE = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Papyrus GMF Diagram View</em>' class.
@@ -155,7 +165,7 @@ public interface PapyrusGMFDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAPYRUS_GMF_DIAGRAM_VIEW_FEATURE_COUNT = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_FEATURE_COUNT + 6;
+	int PAPYRUS_GMF_DIAGRAM_VIEW_FEATURE_COUNT = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_FEATURE_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>Build Part Template Title</em>' operation.
@@ -168,6 +178,16 @@ public interface PapyrusGMFDocumentStructureTemplatePackage extends EPackage {
 	int PAPYRUS_GMF_DIAGRAM_VIEW___BUILD_PART_TEMPLATE_TITLE__EOBJECT = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_OPERATION_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Generate Branch</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int PAPYRUS_GMF_DIAGRAM_VIEW___GENERATE_BRANCH__EOBJECT = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_OPERATION_COUNT + 1;
+
+	/**
 	 * The operation id for the '<em>Get Matching Diagrams</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -175,7 +195,7 @@ public interface PapyrusGMFDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAPYRUS_GMF_DIAGRAM_VIEW___GET_MATCHING_DIAGRAMS__EOBJECT = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_OPERATION_COUNT + 1;
+	int PAPYRUS_GMF_DIAGRAM_VIEW___GET_MATCHING_DIAGRAMS__EOBJECT = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_OPERATION_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Papyrus GMF Diagram View</em>' class.
@@ -185,7 +205,7 @@ public interface PapyrusGMFDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAPYRUS_GMF_DIAGRAM_VIEW_OPERATION_COUNT = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_OPERATION_COUNT + 2;
+	int PAPYRUS_GMF_DIAGRAM_VIEW_OPERATION_COUNT = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_OPERATION_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.gmf.runtime.notation.Diagram <em>Diagram</em>}' class.

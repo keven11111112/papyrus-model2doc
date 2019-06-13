@@ -50,7 +50,6 @@ public interface EClassTemplate extends EObject {
 	 * @see #setEClass(EClass)
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getEClassTemplate_EClass()
 	 * @model ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel propertyEditorFactory='editor://documentstructuretemplate/EClassTemplate/EClass/'"
 	 * @generated
 	 */
 	EClass getEClass();
@@ -107,7 +106,6 @@ public interface EClassTemplate extends EObject {
 	 * <!-- end-model-doc -->
 	 *
 	 * @model required="true" ordered="false" inputEObjectRequired="true" inputEObjectOrdered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EClassTemplateOperations.isMatchingFilterRule(this, inputEObject);'"
 	 * @generated
 	 */
 	boolean isMatchingFilterRule(EObject inputEObject);

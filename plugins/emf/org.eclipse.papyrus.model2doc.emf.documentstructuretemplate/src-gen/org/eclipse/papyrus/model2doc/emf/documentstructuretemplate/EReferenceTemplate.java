@@ -51,7 +51,6 @@ public interface EReferenceTemplate extends EObject {
 	 * @see #setEReference(EReference)
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getEReferenceTemplate_EReference()
 	 * @model required="true" ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel propertyEditorFactory='editor://documentstructuretemplate/EReferenceTemplate/EReference/'"
 	 * @generated
 	 */
 	EReference getEReference();
@@ -76,7 +75,6 @@ public interface EReferenceTemplate extends EObject {
 	 * <!-- end-model-doc -->
 	 *
 	 * @model ordered="false" contextRequired="true" contextOrdered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EReferenceTemplateOperations.getEReferenceValues(this,context);'"
 	 * @generated
 	 */
 	EList<EObject> getEReferenceValues(EObject context);
@@ -90,7 +88,6 @@ public interface EReferenceTemplate extends EObject {
 	 * <!-- end-model-doc -->
 	 *
 	 * @model required="true" ordered="false" valueRequired="true" valueOrdered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EReferenceTemplateOperations.buildEReferenceValueLabel(this,value);'"
 	 * @generated
 	 */
 	String buildEReferenceValueLabel(EObject value);

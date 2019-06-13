@@ -249,6 +249,16 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	int STEREOTYPE_PART_TEMPLATE__CUSTOM_TITLE = MANDATORY_STEREOTYPE_WITH_ECLASS_TEMPLATE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Generate Branch Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int STEREOTYPE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION = MANDATORY_STEREOTYPE_WITH_ECLASS_TEMPLATE_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Body Part Template</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -256,7 +266,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PART_TEMPLATE__BODY_PART_TEMPLATE = MANDATORY_STEREOTYPE_WITH_ECLASS_TEMPLATE_FEATURE_COUNT + 3;
+	int STEREOTYPE_PART_TEMPLATE__BODY_PART_TEMPLATE = MANDATORY_STEREOTYPE_WITH_ECLASS_TEMPLATE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Stereotype Part Template</em>' class.
@@ -266,7 +276,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PART_TEMPLATE_FEATURE_COUNT = MANDATORY_STEREOTYPE_WITH_ECLASS_TEMPLATE_FEATURE_COUNT + 4;
+	int STEREOTYPE_PART_TEMPLATE_FEATURE_COUNT = MANDATORY_STEREOTYPE_WITH_ECLASS_TEMPLATE_FEATURE_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Is Matching Filter Rule</em>' operation.
@@ -299,6 +309,16 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	int STEREOTYPE_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT = MANDATORY_STEREOTYPE_WITH_ECLASS_TEMPLATE_OPERATION_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Generate Branch</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int STEREOTYPE_PART_TEMPLATE___GENERATE_BRANCH__EOBJECT = MANDATORY_STEREOTYPE_WITH_ECLASS_TEMPLATE_OPERATION_COUNT + 1;
+
+	/**
 	 * The number of operations of the '<em>Stereotype Part Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -306,7 +326,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PART_TEMPLATE_OPERATION_COUNT = MANDATORY_STEREOTYPE_WITH_ECLASS_TEMPLATE_OPERATION_COUNT + 1;
+	int STEREOTYPE_PART_TEMPLATE_OPERATION_COUNT = MANDATORY_STEREOTYPE_WITH_ECLASS_TEMPLATE_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypeTemplateImpl <em>Stereotype Template</em>}' class.
@@ -472,6 +492,16 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	int IUML_BODY_PART_TEMPLATE_TITLE__CUSTOM_TITLE = DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__CUSTOM_TITLE;
 
 	/**
+	 * The feature id for the '<em><b>Generate Branch Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IUML_BODY_PART_TEMPLATE_TITLE__GENERATE_BRANCH_CONDITION = DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION;
+
+	/**
 	 * The number of structural features of the '<em>IUML Body Part Template Title</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -490,6 +520,16 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @ordered
 	 */
 	int IUML_BODY_PART_TEMPLATE_TITLE___BUILD_PART_TEMPLATE_TITLE__EOBJECT = DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT;
+
+	/**
+	 * The operation id for the '<em>Generate Branch</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IUML_BODY_PART_TEMPLATE_TITLE___GENERATE_BRANCH__EOBJECT = DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE___GENERATE_BRANCH__EOBJECT;
 
 	/**
 	 * The number of operations of the '<em>IUML Body Part Template Title</em>' class.
@@ -654,6 +694,16 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	int STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__CUSTOM_TITLE = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Generate Branch Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Sub Body Part Template</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -661,7 +711,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 3;
+	int STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Stereotype Property Reference Part Template</em>' class.
@@ -671,7 +721,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE_FEATURE_COUNT = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 4;
+	int STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE_FEATURE_COUNT = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Get First Matching Stereotype Application</em>' operation.
@@ -704,6 +754,16 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	int STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT = STEREOTYPE_PROPERTY_TEMPLATE_OPERATION_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Generate Branch</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE___GENERATE_BRANCH__EOBJECT = STEREOTYPE_PROPERTY_TEMPLATE_OPERATION_COUNT + 1;
+
+	/**
 	 * The operation id for the '<em>Get Stereotype Property Reference Values</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -711,7 +771,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE___GET_STEREOTYPE_PROPERTY_REFERENCE_VALUES__EOBJECT = STEREOTYPE_PROPERTY_TEMPLATE_OPERATION_COUNT + 1;
+	int STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE___GET_STEREOTYPE_PROPERTY_REFERENCE_VALUES__EOBJECT = STEREOTYPE_PROPERTY_TEMPLATE_OPERATION_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Stereotype Property Reference Part Template</em>' class.
@@ -721,7 +781,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE_OPERATION_COUNT = STEREOTYPE_PROPERTY_TEMPLATE_OPERATION_COUNT + 2;
+	int STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE_OPERATION_COUNT = STEREOTYPE_PROPERTY_TEMPLATE_OPERATION_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.CommentAsParagraphImpl <em>Comment As Paragraph</em>}' class.
@@ -840,6 +900,16 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	int COMMENT_AS_PARAGRAPH__CUSTOM_TITLE = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE__CUSTOM_TITLE;
 
 	/**
+	 * The feature id for the '<em><b>Generate Branch Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT_AS_PARAGRAPH__GENERATE_BRANCH_CONDITION = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE__GENERATE_BRANCH_CONDITION;
+
+	/**
 	 * The feature id for the '<em><b>Comment Choice</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -868,6 +938,16 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @ordered
 	 */
 	int COMMENT_AS_PARAGRAPH___BUILD_PART_TEMPLATE_TITLE__EOBJECT = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT;
+
+	/**
+	 * The operation id for the '<em>Generate Branch</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT_AS_PARAGRAPH___GENERATE_BRANCH__EOBJECT = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE___GENERATE_BRANCH__EOBJECT;
 
 	/**
 	 * The operation id for the '<em>Get Matching Comments</em>' operation.
@@ -1160,6 +1240,16 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	int STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__CUSTOM_TITLE = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Generate Branch Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__GENERATE_BRANCH_CONDITION = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Columns</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1167,7 +1257,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__COLUMNS = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 3;
+	int STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__COLUMNS = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Generate Row Header</b></em>' attribute.
@@ -1177,7 +1267,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__GENERATE_ROW_HEADER = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 4;
+	int STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__GENERATE_ROW_HEADER = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Generate Column Header</b></em>' attribute.
@@ -1187,7 +1277,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__GENERATE_COLUMN_HEADER = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 5;
+	int STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__GENERATE_COLUMN_HEADER = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Stereotype Property Reference Table View</em>' class.
@@ -1197,7 +1287,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW_FEATURE_COUNT = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 6;
+	int STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW_FEATURE_COUNT = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>Get First Matching Stereotype Application</em>' operation.
@@ -1230,6 +1320,16 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	int STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW___BUILD_PART_TEMPLATE_TITLE__EOBJECT = STEREOTYPE_PROPERTY_TEMPLATE_OPERATION_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Generate Branch</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW___GENERATE_BRANCH__EOBJECT = STEREOTYPE_PROPERTY_TEMPLATE_OPERATION_COUNT + 1;
+
+	/**
 	 * The operation id for the '<em>Get Rows</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1237,7 +1337,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW___GET_ROWS__EOBJECT = STEREOTYPE_PROPERTY_TEMPLATE_OPERATION_COUNT + 1;
+	int STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW___GET_ROWS__EOBJECT = STEREOTYPE_PROPERTY_TEMPLATE_OPERATION_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Build Row Header Label</em>' operation.
@@ -1247,7 +1347,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW___BUILD_ROW_HEADER_LABEL__EOBJECT = STEREOTYPE_PROPERTY_TEMPLATE_OPERATION_COUNT + 2;
+	int STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW___BUILD_ROW_HEADER_LABEL__EOBJECT = STEREOTYPE_PROPERTY_TEMPLATE_OPERATION_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Stereotype Property Reference Table View</em>' class.
@@ -1257,7 +1357,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW_OPERATION_COUNT = STEREOTYPE_PROPERTY_TEMPLATE_OPERATION_COUNT + 3;
+	int STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW_OPERATION_COUNT = STEREOTYPE_PROPERTY_TEMPLATE_OPERATION_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypeListItemTemplateImpl <em>Stereotype List Item Template</em>}' class.

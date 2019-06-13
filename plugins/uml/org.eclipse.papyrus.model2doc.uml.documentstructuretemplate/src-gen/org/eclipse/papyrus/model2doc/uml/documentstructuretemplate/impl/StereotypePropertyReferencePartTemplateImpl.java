@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.eclipse.papyrus.infra.emf.expressions.booleanexpressions.IBooleanEObjectExpression;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodyPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate;
@@ -53,6 +54,7 @@ import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentSt
  * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyReferencePartTemplateImpl#isGenerate <em>Generate</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyReferencePartTemplateImpl#isGenerateTitle <em>Generate Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyReferencePartTemplateImpl#getCustomTitle <em>Custom Title</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyReferencePartTemplateImpl#getGenerateBranchCondition <em>Generate Branch Condition</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyReferencePartTemplateImpl#getSubBodyPartTemplates <em>Sub Body Part Template</em>}</li>
  * </ul>
  *
@@ -124,6 +126,17 @@ public class StereotypePropertyReferencePartTemplateImpl extends StereotypePrope
 	 * @ordered
 	 */
 	protected String customTitle = CUSTOM_TITLE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getGenerateBranchCondition() <em>Generate Branch Condition</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getGenerateBranchCondition()
+	 * @generated
+	 * @ordered
+	 */
+	protected IBooleanEObjectExpression generateBranchCondition;
 
 	/**
 	 * The cached value of the '{@link #getSubBodyPartTemplates() <em>Sub Body Part Template</em>}' containment reference list.
@@ -242,6 +255,62 @@ public class StereotypePropertyReferencePartTemplateImpl extends StereotypePrope
 	 * @generated
 	 */
 	@Override
+	public IBooleanEObjectExpression getGenerateBranchCondition() {
+		return generateBranchCondition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public NotificationChain basicSetGenerateBranchCondition(IBooleanEObjectExpression newGenerateBranchCondition, NotificationChain msgs) {
+		IBooleanEObjectExpression oldGenerateBranchCondition = generateBranchCondition;
+		generateBranchCondition = newGenerateBranchCondition;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION, oldGenerateBranchCondition, newGenerateBranchCondition);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setGenerateBranchCondition(IBooleanEObjectExpression newGenerateBranchCondition) {
+		if (newGenerateBranchCondition != generateBranchCondition) {
+			NotificationChain msgs = null;
+			if (generateBranchCondition != null) {
+				msgs = ((InternalEObject) generateBranchCondition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION, null, msgs);
+			}
+			if (newGenerateBranchCondition != null) {
+				msgs = ((InternalEObject) newGenerateBranchCondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION, null, msgs);
+			}
+			msgs = basicSetGenerateBranchCondition(newGenerateBranchCondition, msgs);
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION, newGenerateBranchCondition, newGenerateBranchCondition));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EList<ISubBodyPartTemplate> getSubBodyPartTemplates() {
 		if (subBodyPartTemplates == null) {
 			subBodyPartTemplates = new EObjectContainmentEList<>(ISubBodyPartTemplate.class, this, UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE);
@@ -258,6 +327,24 @@ public class StereotypePropertyReferencePartTemplateImpl extends StereotypePrope
 	@Override
 	public String buildPartTemplateTitle(final EObject context) {
 		return org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.internal.operations.UMLBodySectionPartTemplateTitleHelper.UML_INSTANCE.buildPartTemplateTitle(this, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public boolean generateBranch(final EObject context) {
+		if (null == context) {
+			return false;
+		}
+		if (null == generateBranchCondition) {
+			return true;
+		}
+
+		return generateBranchCondition.evaluate(context);
 	}
 
 	/**
@@ -285,6 +372,8 @@ public class StereotypePropertyReferencePartTemplateImpl extends StereotypePrope
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION:
+			return basicSetGenerateBranchCondition(null, msgs);
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
 			return ((InternalEList<?>) getSubBodyPartTemplates()).basicRemove(otherEnd, msgs);
 		}
@@ -306,6 +395,8 @@ public class StereotypePropertyReferencePartTemplateImpl extends StereotypePrope
 			return isGenerateTitle();
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__CUSTOM_TITLE:
 			return getCustomTitle();
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION:
+			return getGenerateBranchCondition();
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
 			return getSubBodyPartTemplates();
 		}
@@ -330,6 +421,9 @@ public class StereotypePropertyReferencePartTemplateImpl extends StereotypePrope
 			return;
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__CUSTOM_TITLE:
 			setCustomTitle((String) newValue);
+			return;
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION:
+			setGenerateBranchCondition((IBooleanEObjectExpression) newValue);
 			return;
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
 			getSubBodyPartTemplates().clear();
@@ -357,6 +451,9 @@ public class StereotypePropertyReferencePartTemplateImpl extends StereotypePrope
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__CUSTOM_TITLE:
 			setCustomTitle(CUSTOM_TITLE_EDEFAULT);
 			return;
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION:
+			setGenerateBranchCondition((IBooleanEObjectExpression) null);
+			return;
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
 			getSubBodyPartTemplates().clear();
 			return;
@@ -379,6 +476,8 @@ public class StereotypePropertyReferencePartTemplateImpl extends StereotypePrope
 			return generateTitle != GENERATE_TITLE_EDEFAULT;
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__CUSTOM_TITLE:
 			return CUSTOM_TITLE_EDEFAULT == null ? customTitle != null : !CUSTOM_TITLE_EDEFAULT.equals(customTitle);
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION:
+			return generateBranchCondition != null;
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
 			return subBodyPartTemplates != null && !subBodyPartTemplates.isEmpty();
 		}
@@ -401,6 +500,8 @@ public class StereotypePropertyReferencePartTemplateImpl extends StereotypePrope
 				return DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_TITLE;
 			case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__CUSTOM_TITLE:
 				return DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__CUSTOM_TITLE;
+			case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION:
+				return DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION;
 			default:
 				return -1;
 			}
@@ -450,6 +551,8 @@ public class StereotypePropertyReferencePartTemplateImpl extends StereotypePrope
 				return UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__GENERATE_TITLE;
 			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__CUSTOM_TITLE:
 				return UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__CUSTOM_TITLE;
+			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION:
+				return UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION;
 			default:
 				return -1;
 			}
@@ -495,6 +598,8 @@ public class StereotypePropertyReferencePartTemplateImpl extends StereotypePrope
 			switch (baseOperationID) {
 			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT:
 				return UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT;
+			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE___GENERATE_BRANCH__EOBJECT:
+				return UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE___GENERATE_BRANCH__EOBJECT;
 			default:
 				return -1;
 			}
@@ -537,6 +642,8 @@ public class StereotypePropertyReferencePartTemplateImpl extends StereotypePrope
 		switch (operationID) {
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT:
 			return buildPartTemplateTitle((EObject) arguments.get(0));
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE___GENERATE_BRANCH__EOBJECT:
+			return generateBranch((EObject) arguments.get(0));
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE___GET_STEREOTYPE_PROPERTY_REFERENCE_VALUES__EOBJECT:
 			return getStereotypePropertyReferenceValues((EObject) arguments.get(0));
 		}

@@ -50,7 +50,6 @@ public interface StereotypePropertyTemplate extends StereotypeTemplate {
 	 * @see #setPropertyName(String)
 	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplatePackage#getStereotypePropertyTemplate_PropertyName()
 	 * @model required="true" ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel propertyEditorFactory='editor://umldocumentstructuretemplate/StereotypePropertyTemplate/propertyName/'"
 	 * @generated
 	 */
 	String getPropertyName();
@@ -75,11 +74,6 @@ public interface StereotypePropertyTemplate extends StereotypeTemplate {
 	 * <!-- end-model-doc -->
 	 *
 	 * @model ordered="false" eobjectRequired="true" eobjectOrdered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='if (null == this.propertyName || this.propertyName.isEmpty()) {\n\treturn org.eclipse.emf.common.util.ECollections.emptyEList();\n}\n\tEObject stereotypeApplication = null;\nif (eobject
-	 *        instanceof org.eclipse.uml2.uml.Element) {\n\tstereotypeApplication = getFirstMatchingStereotypeApplication(eobject);\n} else {\n\tstereotypeApplication = eobject;\n}\nif (stereotypeApplication == null) {\n\treturn
-	 *        org.eclipse.emf.common.util.ECollections.emptyEList();\n}\nfinal org.eclipse.emf.ecore.EStructuralFeature feature = stereotypeApplication.eClass().getEStructuralFeature(this.propertyName);\nif (null == feature) {\n\treturn
-	 *        org.eclipse.emf.common.util.ECollections.emptyEList();\n}\n\nfinal Object featureValue = stereotypeApplication.eGet(feature, true);\nif (null == featureValue) {\n\treturn org.eclipse.emf.common.util.ECollections.emptyEList();\n}\nif
-	 *        (feature.isMany()) {\n\treturn org.eclipse.emf.common.util.ECollections.toEList((java.util.Collection&lt;?&gt;) featureValue);\n}\nreturn org.eclipse.emf.common.util.ECollections.singletonEList(featureValue);'"
 	 * @generated
 	 */
 	EList<Object> getStereotypePropertyValues(EObject eobject);

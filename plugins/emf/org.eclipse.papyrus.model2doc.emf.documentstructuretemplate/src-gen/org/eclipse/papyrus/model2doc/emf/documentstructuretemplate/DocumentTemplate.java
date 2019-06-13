@@ -267,7 +267,6 @@ public interface DocumentTemplate extends EObject {
 	 * <!-- end-user-doc -->
 	 *
 	 * @model kind="operation" required="true" ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='if (null != getDocumentTemplatePrototype()) {\n\treturn getDocumentTemplatePrototype().getType();\n}\nreturn null;'"
 	 * @generated
 	 */
 	String getType();
@@ -277,7 +276,6 @@ public interface DocumentTemplate extends EObject {
 	 * <!-- end-user-doc -->
 	 *
 	 * @model kind="operation" required="true" ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='if (null != getDocumentTemplatePrototype()) {\n\treturn getDocumentTemplatePrototype().getIconPath();\n}\nreturn null;'"
 	 * @generated
 	 */
 	String getIconPath();

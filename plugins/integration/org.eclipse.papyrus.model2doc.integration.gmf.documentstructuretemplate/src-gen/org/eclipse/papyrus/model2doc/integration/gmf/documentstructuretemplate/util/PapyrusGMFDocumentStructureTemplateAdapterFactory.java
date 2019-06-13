@@ -1,13 +1,13 @@
 /**
  * Copyright (c) 2019 CEA LIST.
- * 
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-2.0/
- * 
+ *
  *  SPDX-License-Identifier: EPL-2.0
- * 
+ *
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -34,7 +34,7 @@ import org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.*
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.PapyrusGMFDocumentStructureTemplatePackage
  * @generated
  */
@@ -43,7 +43,7 @@ public class PapyrusGMFDocumentStructureTemplateAdapterFactory extends AdapterFa
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static PapyrusGMFDocumentStructureTemplatePackage modelPackage;
@@ -52,7 +52,7 @@ public class PapyrusGMFDocumentStructureTemplateAdapterFactory extends AdapterFa
 	 * Creates an instance of the adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PapyrusGMFDocumentStructureTemplateAdapterFactory() {
@@ -66,7 +66,7 @@ public class PapyrusGMFDocumentStructureTemplateAdapterFactory extends AdapterFa
 	 * <!-- begin-user-doc -->
 	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
@@ -85,7 +85,7 @@ public class PapyrusGMFDocumentStructureTemplateAdapterFactory extends AdapterFa
 	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PapyrusGMFDocumentStructureTemplateSwitch<Adapter> modelSwitch = new PapyrusGMFDocumentStructureTemplateSwitch<Adapter>() {
@@ -129,7 +129,7 @@ public class PapyrusGMFDocumentStructureTemplateAdapterFactory extends AdapterFa
 	 * Creates an adapter for the <code>target</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param target
 	 *                   the object to adapt.
 	 * @return the adapter for the <code>target</code>.
@@ -147,7 +147,7 @@ public class PapyrusGMFDocumentStructureTemplateAdapterFactory extends AdapterFa
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.PapyrusGMFDiagramView
 	 * @generated
@@ -162,7 +162,7 @@ public class PapyrusGMFDocumentStructureTemplateAdapterFactory extends AdapterFa
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.gmf.runtime.notation.Diagram
 	 * @generated
@@ -177,7 +177,7 @@ public class PapyrusGMFDocumentStructureTemplateAdapterFactory extends AdapterFa
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITemplatePartView
 	 * @generated
@@ -192,7 +192,7 @@ public class PapyrusGMFDocumentStructureTemplateAdapterFactory extends AdapterFa
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate
 	 * @generated
@@ -207,7 +207,7 @@ public class PapyrusGMFDocumentStructureTemplateAdapterFactory extends AdapterFa
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodyPartTemplate
 	 * @generated
@@ -222,7 +222,7 @@ public class PapyrusGMFDocumentStructureTemplateAdapterFactory extends AdapterFa
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafBodyPartTemplate
 	 * @generated
@@ -236,7 +236,7 @@ public class PapyrusGMFDocumentStructureTemplateAdapterFactory extends AdapterFa
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @generated
 	 */

@@ -1,13 +1,13 @@
 /**
  * Copyright (c) 2019 CEA LIST.
- * 
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-2.0/
- * 
+ *
  *  SPDX-License-Identifier: EPL-2.0
- * 
+ *
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -37,7 +37,7 @@ import org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.*
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.PapyrusGMFDocumentStructureTemplatePackage
  * @generated
  */
@@ -46,7 +46,7 @@ public class PapyrusGMFDocumentStructureTemplateSwitch<T> extends Switch<T> {
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static PapyrusGMFDocumentStructureTemplatePackage modelPackage;
@@ -55,7 +55,7 @@ public class PapyrusGMFDocumentStructureTemplateSwitch<T> extends Switch<T> {
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PapyrusGMFDocumentStructureTemplateSwitch() {
@@ -68,7 +68,7 @@ public class PapyrusGMFDocumentStructureTemplateSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param ePackage
 	 *                     the package in question.
 	 * @return whether this is a switch for the given package.
@@ -83,7 +83,7 @@ public class PapyrusGMFDocumentStructureTemplateSwitch<T> extends Switch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
@@ -93,23 +93,29 @@ public class PapyrusGMFDocumentStructureTemplateSwitch<T> extends Switch<T> {
 		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW: {
 			PapyrusGMFDiagramView papyrusGMFDiagramView = (PapyrusGMFDiagramView) theEObject;
 			T result = casePapyrusGMFDiagramView(papyrusGMFDiagramView);
-			if (result == null)
+			if (result == null) {
 				result = caseITemplatePartView(papyrusGMFDiagramView);
-			if (result == null)
+			}
+			if (result == null) {
 				result = caseILeafBodyPartTemplate(papyrusGMFDiagramView);
-			if (result == null)
+			}
+			if (result == null) {
 				result = caseIBodyPartTemplate(papyrusGMFDiagramView);
-			if (result == null)
+			}
+			if (result == null) {
 				result = caseIBodySectionPartTemplate(papyrusGMFDiagramView);
-			if (result == null)
+			}
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
 		case PapyrusGMFDocumentStructureTemplatePackage.DIAGRAM: {
 			Diagram diagram = (Diagram) theEObject;
 			T result = caseDiagram(diagram);
-			if (result == null)
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
 		default:
@@ -123,7 +129,7 @@ public class PapyrusGMFDocumentStructureTemplateSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *                   the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Papyrus GMF Diagram View</em>'.
@@ -140,7 +146,7 @@ public class PapyrusGMFDocumentStructureTemplateSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *                   the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Diagram</em>'.
@@ -157,7 +163,7 @@ public class PapyrusGMFDocumentStructureTemplateSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *                   the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>ITemplate Part View</em>'.
@@ -174,7 +180,7 @@ public class PapyrusGMFDocumentStructureTemplateSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *                   the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>IBody Section Part Template</em>'.
@@ -191,7 +197,7 @@ public class PapyrusGMFDocumentStructureTemplateSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *                   the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>IBody Part Template</em>'.
@@ -208,7 +214,7 @@ public class PapyrusGMFDocumentStructureTemplateSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *                   the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>ILeaf Body Part Template</em>'.
@@ -225,7 +231,7 @@ public class PapyrusGMFDocumentStructureTemplateSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch, but this is the last case anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *                   the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.

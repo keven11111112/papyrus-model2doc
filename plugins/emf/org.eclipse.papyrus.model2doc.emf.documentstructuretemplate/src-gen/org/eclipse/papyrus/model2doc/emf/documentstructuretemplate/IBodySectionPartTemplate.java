@@ -14,6 +14,7 @@
 package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.papyrus.infra.emf.expressions.booleanexpressions.IBooleanEObjectExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,6 +28,7 @@ import org.eclipse.emf.ecore.EObject;
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate#isGenerate <em>Generate</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate#isGenerateTitle <em>Generate Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate#getCustomTitle <em>Custom Title</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate#getGenerateBranchCondition <em>Generate Branch Condition</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getIBodySectionPartTemplate()
@@ -122,6 +124,34 @@ public interface IBodySectionPartTemplate extends EObject {
 	void setCustomTitle(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Generate Branch Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * When the expression returns false, nothing will be generated for the object or for its child elements.
+	 * <!-- end-model-doc -->
+	 *
+	 * @return the value of the '<em>Generate Branch Condition</em>' containment reference.
+	 * @see #setGenerateBranchCondition(IBooleanEObjectExpression)
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getIBodySectionPartTemplate_GenerateBranchCondition()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	IBooleanEObjectExpression getGenerateBranchCondition();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate#getGenerateBranchCondition <em>Generate Branch Condition</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *                  the new value of the '<em>Generate Branch Condition</em>' containment reference.
+	 * @see #getGenerateBranchCondition()
+	 * @generated
+	 */
+	void setGenerateBranchCondition(IBooleanEObjectExpression value);
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -130,9 +160,20 @@ public interface IBodySectionPartTemplate extends EObject {
 	 * <!-- end-model-doc -->
 	 *
 	 * @model required="true" ordered="false" contextRequired="true" contextOrdered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.operations.BodySectionPartTemplateTitleOperations.INSTANCE.buildPartTemplateTitle(this,context);'"
 	 * @generated
 	 */
 	String buildPartTemplateTitle(EObject context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This method allows to check if we must generate something for the context or not.
+	 * <!-- end-model-doc -->
+	 *
+	 * @model required="true" ordered="false" contextRequired="true" contextOrdered="false"
+	 * @generated
+	 */
+	boolean generateBranch(EObject context);
 
 } // IBodySectionPartTemplate

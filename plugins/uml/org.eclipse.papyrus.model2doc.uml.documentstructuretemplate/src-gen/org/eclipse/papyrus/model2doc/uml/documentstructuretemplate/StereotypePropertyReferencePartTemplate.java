@@ -42,9 +42,6 @@ public interface StereotypePropertyReferencePartTemplate extends StereotypePrope
 	 * <!-- end-model-doc -->
 	 *
 	 * @model ordered="false" contextRequired="true" contextOrdered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='final java.util.List&lt;Object&gt; values = getStereotypePropertyValues(context);\nfinal java.util.List&lt;org.eclipse.emf.ecore.EObject&gt; eobjects =
-	 *        values.stream()\n\t\t.filter(org.eclipse.emf.ecore.EObject.class::isInstance)\n\t\t.map(org.eclipse.emf.ecore.EObject.class::cast)\n\t\t.collect(java.util.stream.Collectors.toList());\nreturn
-	 *        org.eclipse.emf.common.util.ECollections.toEList(eobjects);'"
 	 * @generated
 	 */
 	EList<EObject> getStereotypePropertyReferenceValues(EObject context);

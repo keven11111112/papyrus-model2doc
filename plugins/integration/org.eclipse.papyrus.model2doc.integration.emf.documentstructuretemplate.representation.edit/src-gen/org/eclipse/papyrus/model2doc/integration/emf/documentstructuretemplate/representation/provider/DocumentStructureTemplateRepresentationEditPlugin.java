@@ -25,8 +25,11 @@ import org.eclipse.papyrus.infra.constraints.provider.ConstraintsEditPlugin;
 
 import org.eclipse.papyrus.infra.core.architecture.provider.ArchitectureEditPlugin;
 
+import org.eclipse.papyrus.infra.emf.expressions.provider.ExpressionsEditPlugin;
 import org.eclipse.papyrus.infra.types.provider.TypesConfigurationsEditPlugin;
 
+import org.eclipse.papyrus.model2doc.core.author.provider.AuthorEditPlugin;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.provider.GeneratorconfigurationEditPlugin;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.provider.DocumentStructureTemplateEditPlugin;
 
 import org.osgi.framework.BundleActivator;
@@ -72,6 +75,9 @@ public final class DocumentStructureTemplateRepresentationEditPlugin extends EMF
 				EcoreEditPlugin.INSTANCE,
 				TypesConfigurationsEditPlugin.INSTANCE,
 				RepresentationEditPlugin.INSTANCE,
+				GeneratorconfigurationEditPlugin.INSTANCE,
+				AuthorEditPlugin.INSTANCE,
+				ExpressionsEditPlugin.INSTANCE,
 		});
 	}
 

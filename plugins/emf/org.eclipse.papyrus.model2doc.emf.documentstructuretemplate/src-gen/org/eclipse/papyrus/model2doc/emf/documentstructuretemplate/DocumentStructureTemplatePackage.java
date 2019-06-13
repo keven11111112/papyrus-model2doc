@@ -583,6 +583,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int IBODY_SECTION_PART_TEMPLATE__CUSTOM_TITLE = 2;
 
 	/**
+	 * The feature id for the '<em><b>Generate Branch Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION = 3;
+
+	/**
 	 * The number of structural features of the '<em>IBody Section Part Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -590,7 +600,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBODY_SECTION_PART_TEMPLATE_FEATURE_COUNT = 3;
+	int IBODY_SECTION_PART_TEMPLATE_FEATURE_COUNT = 4;
 
 	/**
 	 * The operation id for the '<em>Build Part Template Title</em>' operation.
@@ -603,6 +613,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int IBODY_SECTION_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT = 0;
 
 	/**
+	 * The operation id for the '<em>Generate Branch</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IBODY_SECTION_PART_TEMPLATE___GENERATE_BRANCH__EOBJECT = 1;
+
+	/**
 	 * The number of operations of the '<em>IBody Section Part Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -610,7 +630,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBODY_SECTION_PART_TEMPLATE_OPERATION_COUNT = 1;
+	int IBODY_SECTION_PART_TEMPLATE_OPERATION_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodyPartTemplate <em>IBody Part Template</em>}' class.
@@ -654,6 +674,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int IBODY_PART_TEMPLATE__CUSTOM_TITLE = IBODY_SECTION_PART_TEMPLATE__CUSTOM_TITLE;
 
 	/**
+	 * The feature id for the '<em><b>Generate Branch Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IBODY_PART_TEMPLATE__GENERATE_BRANCH_CONDITION = IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION;
+
+	/**
 	 * The number of structural features of the '<em>IBody Part Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -672,6 +702,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @ordered
 	 */
 	int IBODY_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT = IBODY_SECTION_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT;
+
+	/**
+	 * The operation id for the '<em>Generate Branch</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IBODY_PART_TEMPLATE___GENERATE_BRANCH__EOBJECT = IBODY_SECTION_PART_TEMPLATE___GENERATE_BRANCH__EOBJECT;
 
 	/**
 	 * The number of operations of the '<em>IBody Part Template</em>' class.
@@ -725,6 +765,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int ICOMPOSED_BODY_PART_TEMPLATE__CUSTOM_TITLE = IBODY_PART_TEMPLATE__CUSTOM_TITLE;
 
 	/**
+	 * The feature id for the '<em><b>Generate Branch Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ICOMPOSED_BODY_PART_TEMPLATE__GENERATE_BRANCH_CONDITION = IBODY_PART_TEMPLATE__GENERATE_BRANCH_CONDITION;
+
+	/**
 	 * The feature id for the '<em><b>Sub Body Part Template</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -753,6 +803,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @ordered
 	 */
 	int ICOMPOSED_BODY_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT = IBODY_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT;
+
+	/**
+	 * The operation id for the '<em>Generate Branch</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ICOMPOSED_BODY_PART_TEMPLATE___GENERATE_BRANCH__EOBJECT = IBODY_PART_TEMPLATE___GENERATE_BRANCH__EOBJECT;
 
 	/**
 	 * The number of operations of the '<em>IComposed Body Part Template</em>' class.
@@ -806,6 +866,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int ISUB_BODY_PART_TEMPLATE__CUSTOM_TITLE = IBODY_SECTION_PART_TEMPLATE__CUSTOM_TITLE;
 
 	/**
+	 * The feature id for the '<em><b>Generate Branch Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ISUB_BODY_PART_TEMPLATE__GENERATE_BRANCH_CONDITION = IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION;
+
+	/**
 	 * The number of structural features of the '<em>ISub Body Part Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -824,6 +894,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @ordered
 	 */
 	int ISUB_BODY_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT = IBODY_SECTION_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT;
+
+	/**
+	 * The operation id for the '<em>Generate Branch</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ISUB_BODY_PART_TEMPLATE___GENERATE_BRANCH__EOBJECT = IBODY_SECTION_PART_TEMPLATE___GENERATE_BRANCH__EOBJECT;
 
 	/**
 	 * The number of operations of the '<em>ISub Body Part Template</em>' class.
@@ -877,6 +957,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int ILEAF_BODY_PART_TEMPLATE__CUSTOM_TITLE = IBODY_PART_TEMPLATE__CUSTOM_TITLE;
 
 	/**
+	 * The feature id for the '<em><b>Generate Branch Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ILEAF_BODY_PART_TEMPLATE__GENERATE_BRANCH_CONDITION = IBODY_PART_TEMPLATE__GENERATE_BRANCH_CONDITION;
+
+	/**
 	 * The number of structural features of the '<em>ILeaf Body Part Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -895,6 +985,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @ordered
 	 */
 	int ILEAF_BODY_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT = IBODY_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT;
+
+	/**
+	 * The operation id for the '<em>Generate Branch</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ILEAF_BODY_PART_TEMPLATE___GENERATE_BRANCH__EOBJECT = IBODY_PART_TEMPLATE___GENERATE_BRANCH__EOBJECT;
 
 	/**
 	 * The number of operations of the '<em>ILeaf Body Part Template</em>' class.
@@ -948,6 +1048,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int ICOMPOSED_SUB_BODY_PART_TEMPLATE__CUSTOM_TITLE = ISUB_BODY_PART_TEMPLATE__CUSTOM_TITLE;
 
 	/**
+	 * The feature id for the '<em><b>Generate Branch Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ICOMPOSED_SUB_BODY_PART_TEMPLATE__GENERATE_BRANCH_CONDITION = ISUB_BODY_PART_TEMPLATE__GENERATE_BRANCH_CONDITION;
+
+	/**
 	 * The feature id for the '<em><b>Body Part Template</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -976,6 +1086,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @ordered
 	 */
 	int ICOMPOSED_SUB_BODY_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT = ISUB_BODY_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT;
+
+	/**
+	 * The operation id for the '<em>Generate Branch</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ICOMPOSED_SUB_BODY_PART_TEMPLATE___GENERATE_BRANCH__EOBJECT = ISUB_BODY_PART_TEMPLATE___GENERATE_BRANCH__EOBJECT;
 
 	/**
 	 * The number of operations of the '<em>IComposed Sub Body Part Template</em>' class.
@@ -1029,6 +1149,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int ILEAF_SUB_BODY_PART_TEMPLATE__CUSTOM_TITLE = ISUB_BODY_PART_TEMPLATE__CUSTOM_TITLE;
 
 	/**
+	 * The feature id for the '<em><b>Generate Branch Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ILEAF_SUB_BODY_PART_TEMPLATE__GENERATE_BRANCH_CONDITION = ISUB_BODY_PART_TEMPLATE__GENERATE_BRANCH_CONDITION;
+
+	/**
 	 * The number of structural features of the '<em>ILeaf Sub Body Part Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1047,6 +1177,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @ordered
 	 */
 	int ILEAF_SUB_BODY_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT = ISUB_BODY_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT;
+
+	/**
+	 * The operation id for the '<em>Generate Branch</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ILEAF_SUB_BODY_PART_TEMPLATE___GENERATE_BRANCH__EOBJECT = ISUB_BODY_PART_TEMPLATE___GENERATE_BRANCH__EOBJECT;
 
 	/**
 	 * The number of operations of the '<em>ILeaf Sub Body Part Template</em>' class.
@@ -1181,6 +1321,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int ECLASS_PART_TEMPLATE__CUSTOM_TITLE = ECLASS_TEMPLATE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Generate Branch Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ECLASS_PART_TEMPLATE__GENERATE_BRANCH_CONDITION = ECLASS_TEMPLATE_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Body Part Template</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1188,7 +1338,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECLASS_PART_TEMPLATE__BODY_PART_TEMPLATE = ECLASS_TEMPLATE_FEATURE_COUNT + 3;
+	int ECLASS_PART_TEMPLATE__BODY_PART_TEMPLATE = ECLASS_TEMPLATE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>EClass Part Template</em>' class.
@@ -1198,7 +1348,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECLASS_PART_TEMPLATE_FEATURE_COUNT = ECLASS_TEMPLATE_FEATURE_COUNT + 4;
+	int ECLASS_PART_TEMPLATE_FEATURE_COUNT = ECLASS_TEMPLATE_FEATURE_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Is Matching Filter Rule</em>' operation.
@@ -1221,6 +1371,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int ECLASS_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT = ECLASS_TEMPLATE_OPERATION_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Generate Branch</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ECLASS_PART_TEMPLATE___GENERATE_BRANCH__EOBJECT = ECLASS_TEMPLATE_OPERATION_COUNT + 1;
+
+	/**
 	 * The number of operations of the '<em>EClass Part Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1228,7 +1388,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECLASS_PART_TEMPLATE_OPERATION_COUNT = ECLASS_TEMPLATE_OPERATION_COUNT + 1;
+	int ECLASS_PART_TEMPLATE_OPERATION_COUNT = ECLASS_TEMPLATE_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceTemplateImpl <em>EReference Template</em>}' class.
@@ -1343,6 +1503,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int EREFERENCE_PART_TEMPLATE__CUSTOM_TITLE = EREFERENCE_TEMPLATE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Generate Branch Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION = EREFERENCE_TEMPLATE_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Sub Body Part Template</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1350,7 +1520,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE = EREFERENCE_TEMPLATE_FEATURE_COUNT + 3;
+	int EREFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE = EREFERENCE_TEMPLATE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>EReference Part Template</em>' class.
@@ -1360,7 +1530,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_PART_TEMPLATE_FEATURE_COUNT = EREFERENCE_TEMPLATE_FEATURE_COUNT + 4;
+	int EREFERENCE_PART_TEMPLATE_FEATURE_COUNT = EREFERENCE_TEMPLATE_FEATURE_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Get EReference Values</em>' operation.
@@ -1393,6 +1563,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int EREFERENCE_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT = EREFERENCE_TEMPLATE_OPERATION_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Generate Branch</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_PART_TEMPLATE___GENERATE_BRANCH__EOBJECT = EREFERENCE_TEMPLATE_OPERATION_COUNT + 1;
+
+	/**
 	 * The number of operations of the '<em>EReference Part Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1400,7 +1580,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_PART_TEMPLATE_OPERATION_COUNT = EREFERENCE_TEMPLATE_OPERATION_COUNT + 1;
+	int EREFERENCE_PART_TEMPLATE_OPERATION_COUNT = EREFERENCE_TEMPLATE_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITemplatePartView <em>ITemplate Part View</em>}' class.
@@ -1475,6 +1655,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int ITABLE_VIEW__CUSTOM_TITLE = ILEAF_BODY_PART_TEMPLATE__CUSTOM_TITLE;
 
 	/**
+	 * The feature id for the '<em><b>Generate Branch Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ITABLE_VIEW__GENERATE_BRANCH_CONDITION = ILEAF_BODY_PART_TEMPLATE__GENERATE_BRANCH_CONDITION;
+
+	/**
 	 * The feature id for the '<em><b>Columns</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1523,6 +1713,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @ordered
 	 */
 	int ITABLE_VIEW___BUILD_PART_TEMPLATE_TITLE__EOBJECT = ILEAF_BODY_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT;
+
+	/**
+	 * The operation id for the '<em>Generate Branch</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ITABLE_VIEW___GENERATE_BRANCH__EOBJECT = ILEAF_BODY_PART_TEMPLATE___GENERATE_BRANCH__EOBJECT;
 
 	/**
 	 * The operation id for the '<em>Get Rows</em>' operation.
@@ -1677,6 +1877,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int EREFERENCE_TABLE_VIEW__CUSTOM_TITLE = EREFERENCE_TEMPLATE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Generate Branch Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_TABLE_VIEW__GENERATE_BRANCH_CONDITION = EREFERENCE_TEMPLATE_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Columns</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1684,7 +1894,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_TABLE_VIEW__COLUMNS = EREFERENCE_TEMPLATE_FEATURE_COUNT + 3;
+	int EREFERENCE_TABLE_VIEW__COLUMNS = EREFERENCE_TEMPLATE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Generate Row Header</b></em>' attribute.
@@ -1694,7 +1904,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_TABLE_VIEW__GENERATE_ROW_HEADER = EREFERENCE_TEMPLATE_FEATURE_COUNT + 4;
+	int EREFERENCE_TABLE_VIEW__GENERATE_ROW_HEADER = EREFERENCE_TEMPLATE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Generate Column Header</b></em>' attribute.
@@ -1704,7 +1914,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_TABLE_VIEW__GENERATE_COLUMN_HEADER = EREFERENCE_TEMPLATE_FEATURE_COUNT + 5;
+	int EREFERENCE_TABLE_VIEW__GENERATE_COLUMN_HEADER = EREFERENCE_TEMPLATE_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>EReference Table View</em>' class.
@@ -1714,7 +1924,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_TABLE_VIEW_FEATURE_COUNT = EREFERENCE_TEMPLATE_FEATURE_COUNT + 6;
+	int EREFERENCE_TABLE_VIEW_FEATURE_COUNT = EREFERENCE_TEMPLATE_FEATURE_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>Get EReference Values</em>' operation.
@@ -1747,6 +1957,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int EREFERENCE_TABLE_VIEW___BUILD_PART_TEMPLATE_TITLE__EOBJECT = EREFERENCE_TEMPLATE_OPERATION_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Generate Branch</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_TABLE_VIEW___GENERATE_BRANCH__EOBJECT = EREFERENCE_TEMPLATE_OPERATION_COUNT + 1;
+
+	/**
 	 * The operation id for the '<em>Get Rows</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1754,7 +1974,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_TABLE_VIEW___GET_ROWS__EOBJECT = EREFERENCE_TEMPLATE_OPERATION_COUNT + 1;
+	int EREFERENCE_TABLE_VIEW___GET_ROWS__EOBJECT = EREFERENCE_TEMPLATE_OPERATION_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Build Row Header Label</em>' operation.
@@ -1764,7 +1984,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_TABLE_VIEW___BUILD_ROW_HEADER_LABEL__EOBJECT = EREFERENCE_TEMPLATE_OPERATION_COUNT + 2;
+	int EREFERENCE_TABLE_VIEW___BUILD_ROW_HEADER_LABEL__EOBJECT = EREFERENCE_TEMPLATE_OPERATION_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>EReference Table View</em>' class.
@@ -1774,7 +1994,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_TABLE_VIEW_OPERATION_COUNT = EREFERENCE_TEMPLATE_OPERATION_COUNT + 3;
+	int EREFERENCE_TABLE_VIEW_OPERATION_COUNT = EREFERENCE_TEMPLATE_OPERATION_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EStructuralFeatureTemplateImpl <em>EStructural Feature Template</em>}' class.
@@ -2881,6 +3101,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int TREE_LIST_VIEW__CUSTOM_TITLE = ILEAF_BODY_PART_TEMPLATE__CUSTOM_TITLE;
 
 	/**
+	 * The feature id for the '<em><b>Generate Branch Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TREE_LIST_VIEW__GENERATE_BRANCH_CONDITION = ILEAF_BODY_PART_TEMPLATE__GENERATE_BRANCH_CONDITION;
+
+	/**
 	 * The feature id for the '<em><b>Root List Item Template</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2909,6 +3139,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @ordered
 	 */
 	int TREE_LIST_VIEW___BUILD_PART_TEMPLATE_TITLE__EOBJECT = ILEAF_BODY_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT;
+
+	/**
+	 * The operation id for the '<em>Generate Branch</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TREE_LIST_VIEW___GENERATE_BRANCH__EOBJECT = ILEAF_BODY_PART_TEMPLATE___GENERATE_BRANCH__EOBJECT;
 
 	/**
 	 * The number of operations of the '<em>Tree List View</em>' class.
@@ -3271,6 +3511,18 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	EAttribute getIBodySectionPartTemplate_CustomTitle();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate#getGenerateBranchCondition <em>Generate Branch Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference '<em>Generate Branch Condition</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate#getGenerateBranchCondition()
+	 * @see #getIBodySectionPartTemplate()
+	 * @generated
+	 */
+	EReference getIBodySectionPartTemplate_GenerateBranchCondition();
+
+	/**
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate#buildPartTemplateTitle(org.eclipse.emf.ecore.EObject) <em>Build Part Template Title</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3280,6 +3532,17 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getIBodySectionPartTemplate__BuildPartTemplateTitle__EObject();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate#generateBranch(org.eclipse.emf.ecore.EObject) <em>Generate Branch</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the '<em>Generate Branch</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate#generateBranch(org.eclipse.emf.ecore.EObject)
+	 * @generated
+	 */
+	EOperation getIBodySectionPartTemplate__GenerateBranch__EObject();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedBodyPartTemplate <em>IComposed Body Part Template</em>}'.
@@ -4238,6 +4501,15 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 		EAttribute IBODY_SECTION_PART_TEMPLATE__CUSTOM_TITLE = eINSTANCE.getIBodySectionPartTemplate_CustomTitle();
 
 		/**
+		 * The meta object literal for the '<em><b>Generate Branch Condition</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION = eINSTANCE.getIBodySectionPartTemplate_GenerateBranchCondition();
+
+		/**
 		 * The meta object literal for the '<em><b>Build Part Template Title</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4245,6 +4517,15 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IBODY_SECTION_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT = eINSTANCE.getIBodySectionPartTemplate__BuildPartTemplateTitle__EObject();
+
+		/**
+		 * The meta object literal for the '<em><b>Generate Branch</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EOperation IBODY_SECTION_PART_TEMPLATE___GENERATE_BRANCH__EOBJECT = eINSTANCE.getIBodySectionPartTemplate__GenerateBranch__EObject();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedBodyPartTemplate <em>IComposed Body Part Template</em>}' class.

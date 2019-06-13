@@ -19,6 +19,8 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 
+import org.eclipse.papyrus.infra.emf.expressions.provider.ExpressionsEditPlugin;
+import org.eclipse.papyrus.model2doc.core.author.provider.AuthorEditPlugin;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.provider.GeneratorconfigurationEditPlugin;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.provider.DocumentStructureTemplateEditPlugin;
@@ -59,6 +61,8 @@ public final class PapyrusNattableDocumentStructureTemplateEditPlugin extends EM
 				DocumentStructureTemplateEditPlugin.INSTANCE,
 				EcoreEditPlugin.INSTANCE,
 				GeneratorconfigurationEditPlugin.INSTANCE,
+				AuthorEditPlugin.INSTANCE,
+				ExpressionsEditPlugin.INSTANCE,
 		});
 	}
 

@@ -109,6 +109,15 @@ public interface PapyrusNattableDocumentStructureTemplatePackage extends EPackag
 	int PAPYRUS_TABLE_VIEW__CUSTOM_TITLE = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE__CUSTOM_TITLE;
 
 	/**
+	 * The feature id for the '<em><b>Generate Branch Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAPYRUS_TABLE_VIEW__GENERATE_BRANCH_CONDITION = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE__GENERATE_BRANCH_CONDITION;
+
+	/**
 	 * The feature id for the '<em><b>Table Kind Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -161,6 +170,15 @@ public interface PapyrusNattableDocumentStructureTemplatePackage extends EPackag
 	 * @ordered
 	 */
 	int PAPYRUS_TABLE_VIEW___BUILD_PART_TEMPLATE_TITLE__EOBJECT = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT;
+
+	/**
+	 * The operation id for the '<em>Generate Branch</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAPYRUS_TABLE_VIEW___GENERATE_BRANCH__EOBJECT = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE___GENERATE_BRANCH__EOBJECT;
 
 	/**
 	 * The operation id for the '<em>Get Matching Tables</em>' operation.

@@ -27,6 +27,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import org.eclipse.papyrus.infra.emf.expressions.booleanexpressions.BooleanExpressionsFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplateFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTableView;
@@ -189,6 +190,7 @@ public class EReferenceTableViewItemProvider extends EReferenceTemplateItemProvi
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION);
 			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.ITABLE_VIEW__COLUMNS);
 		}
 		return childrenFeatures;
@@ -266,6 +268,7 @@ public class EReferenceTableViewItemProvider extends EReferenceTemplateItemProvi
 		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_COLUMN_HEADER:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
+		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_BRANCH_CONDITION:
 		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__COLUMNS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
@@ -284,6 +287,27 @@ public class EReferenceTableViewItemProvider extends EReferenceTemplateItemProvi
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION,
+				BooleanExpressionsFactory.eINSTANCE.createOrExpression()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION,
+				BooleanExpressionsFactory.eINSTANCE.createAndExpression()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION,
+				BooleanExpressionsFactory.eINSTANCE.createNotExpression()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION,
+				BooleanExpressionsFactory.eINSTANCE.createLiteralTrueExpression()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION,
+				BooleanExpressionsFactory.eINSTANCE.createLiteralFalseExpression()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION,
+				BooleanExpressionsFactory.eINSTANCE.createReferenceBooleanExpression()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION,
+				BooleanExpressionsFactory.eINSTANCE.createSingleEAttributeValueEqualityExpression()));
 
 		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ITABLE_VIEW__COLUMNS,
 				DocumentStructureTemplateFactory.eINSTANCE.createEStructuralFeatureColumn()));

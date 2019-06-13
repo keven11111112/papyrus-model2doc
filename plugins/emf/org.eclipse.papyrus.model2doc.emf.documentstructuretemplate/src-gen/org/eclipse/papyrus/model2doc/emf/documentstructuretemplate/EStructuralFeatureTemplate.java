@@ -47,7 +47,6 @@ public interface EStructuralFeatureTemplate extends EObject {
 	 * @see #setFeature(EStructuralFeature)
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getEStructuralFeatureTemplate_Feature()
 	 * @model required="true" ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel propertyEditorFactory='editor://documentstructuretemplate/EStructuralFeatureTemplate/EStructuralFeature/'"
 	 * @generated
 	 */
 	EStructuralFeature getFeature();
@@ -72,7 +71,6 @@ public interface EStructuralFeatureTemplate extends EObject {
 	 * <!-- end-model-doc -->
 	 *
 	 * @model ordered="false" contextRequired="true" contextOrdered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EStructuralFeatureTemplateOperations.getEStructuralFeatureValues(this,context);'"
 	 * @generated
 	 */
 	EList<Object> getEStructuralFeatureValues(EObject context);
@@ -86,7 +84,6 @@ public interface EStructuralFeatureTemplate extends EObject {
 	 * <!-- end-model-doc -->
 	 *
 	 * @model required="true" ordered="false" valueRequired="true" valueOrdered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EStructuralFeatureTemplateOperations.buildEStructuralFeatureValueLabel(this,value);'"
 	 * @generated
 	 */
 	String buildEStructuralFeatureValueLabel(Object value);

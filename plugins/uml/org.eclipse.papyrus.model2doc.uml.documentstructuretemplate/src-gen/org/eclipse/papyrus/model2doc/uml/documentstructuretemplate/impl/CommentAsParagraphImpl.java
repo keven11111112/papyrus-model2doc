@@ -17,14 +17,17 @@ import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.papyrus.infra.emf.expressions.booleanexpressions.IBooleanEObjectExpression;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.CommentAsParagraph;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.CommentChoice;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplatePackage;
@@ -42,6 +45,7 @@ import org.eclipse.uml2.uml.Comment;
  * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.CommentAsParagraphImpl#isGenerate <em>Generate</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.CommentAsParagraphImpl#isGenerateTitle <em>Generate Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.CommentAsParagraphImpl#getCustomTitle <em>Custom Title</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.CommentAsParagraphImpl#getGenerateBranchCondition <em>Generate Branch Condition</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.CommentAsParagraphImpl#getCommentChoice <em>Comment Choice</em>}</li>
  * </ul>
  *
@@ -113,6 +117,17 @@ public class CommentAsParagraphImpl extends MinimalEObjectImpl.Container impleme
 	 * @ordered
 	 */
 	protected String customTitle = CUSTOM_TITLE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getGenerateBranchCondition() <em>Generate Branch Condition</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getGenerateBranchCondition()
+	 * @generated
+	 * @ordered
+	 */
+	protected IBooleanEObjectExpression generateBranchCondition;
 
 	/**
 	 * The default value of the '{@link #getCommentChoice() <em>Comment Choice</em>}' attribute.
@@ -242,6 +257,62 @@ public class CommentAsParagraphImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	@Override
+	public IBooleanEObjectExpression getGenerateBranchCondition() {
+		return generateBranchCondition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public NotificationChain basicSetGenerateBranchCondition(IBooleanEObjectExpression newGenerateBranchCondition, NotificationChain msgs) {
+		IBooleanEObjectExpression oldGenerateBranchCondition = generateBranchCondition;
+		generateBranchCondition = newGenerateBranchCondition;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UMLDocumentStructureTemplatePackage.COMMENT_AS_PARAGRAPH__GENERATE_BRANCH_CONDITION, oldGenerateBranchCondition, newGenerateBranchCondition);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setGenerateBranchCondition(IBooleanEObjectExpression newGenerateBranchCondition) {
+		if (newGenerateBranchCondition != generateBranchCondition) {
+			NotificationChain msgs = null;
+			if (generateBranchCondition != null) {
+				msgs = ((InternalEObject) generateBranchCondition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UMLDocumentStructureTemplatePackage.COMMENT_AS_PARAGRAPH__GENERATE_BRANCH_CONDITION, null, msgs);
+			}
+			if (newGenerateBranchCondition != null) {
+				msgs = ((InternalEObject) newGenerateBranchCondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UMLDocumentStructureTemplatePackage.COMMENT_AS_PARAGRAPH__GENERATE_BRANCH_CONDITION, null, msgs);
+			}
+			msgs = basicSetGenerateBranchCondition(newGenerateBranchCondition, msgs);
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, UMLDocumentStructureTemplatePackage.COMMENT_AS_PARAGRAPH__GENERATE_BRANCH_CONDITION, newGenerateBranchCondition, newGenerateBranchCondition));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public CommentChoice getCommentChoice() {
 		return commentChoice;
 	}
@@ -279,6 +350,24 @@ public class CommentAsParagraphImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	@Override
+	public boolean generateBranch(final EObject context) {
+		if (null == context) {
+			return false;
+		}
+		if (null == generateBranchCondition) {
+			return true;
+		}
+
+		return generateBranchCondition.evaluate(context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EList<Comment> getMatchingComments(final EObject element) {
 		if (false == element instanceof org.eclipse.uml2.uml.Element) {
 			return org.eclipse.emf.common.util.ECollections.emptyEList();
@@ -307,6 +396,21 @@ public class CommentAsParagraphImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case UMLDocumentStructureTemplatePackage.COMMENT_AS_PARAGRAPH__GENERATE_BRANCH_CONDITION:
+			return basicSetGenerateBranchCondition(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case UMLDocumentStructureTemplatePackage.COMMENT_AS_PARAGRAPH__GENERATE:
@@ -315,6 +419,8 @@ public class CommentAsParagraphImpl extends MinimalEObjectImpl.Container impleme
 			return isGenerateTitle();
 		case UMLDocumentStructureTemplatePackage.COMMENT_AS_PARAGRAPH__CUSTOM_TITLE:
 			return getCustomTitle();
+		case UMLDocumentStructureTemplatePackage.COMMENT_AS_PARAGRAPH__GENERATE_BRANCH_CONDITION:
+			return getGenerateBranchCondition();
 		case UMLDocumentStructureTemplatePackage.COMMENT_AS_PARAGRAPH__COMMENT_CHOICE:
 			return getCommentChoice();
 		}
@@ -338,6 +444,9 @@ public class CommentAsParagraphImpl extends MinimalEObjectImpl.Container impleme
 			return;
 		case UMLDocumentStructureTemplatePackage.COMMENT_AS_PARAGRAPH__CUSTOM_TITLE:
 			setCustomTitle((String) newValue);
+			return;
+		case UMLDocumentStructureTemplatePackage.COMMENT_AS_PARAGRAPH__GENERATE_BRANCH_CONDITION:
+			setGenerateBranchCondition((IBooleanEObjectExpression) newValue);
 			return;
 		case UMLDocumentStructureTemplatePackage.COMMENT_AS_PARAGRAPH__COMMENT_CHOICE:
 			setCommentChoice((CommentChoice) newValue);
@@ -364,6 +473,9 @@ public class CommentAsParagraphImpl extends MinimalEObjectImpl.Container impleme
 		case UMLDocumentStructureTemplatePackage.COMMENT_AS_PARAGRAPH__CUSTOM_TITLE:
 			setCustomTitle(CUSTOM_TITLE_EDEFAULT);
 			return;
+		case UMLDocumentStructureTemplatePackage.COMMENT_AS_PARAGRAPH__GENERATE_BRANCH_CONDITION:
+			setGenerateBranchCondition((IBooleanEObjectExpression) null);
+			return;
 		case UMLDocumentStructureTemplatePackage.COMMENT_AS_PARAGRAPH__COMMENT_CHOICE:
 			setCommentChoice(COMMENT_CHOICE_EDEFAULT);
 			return;
@@ -386,6 +498,8 @@ public class CommentAsParagraphImpl extends MinimalEObjectImpl.Container impleme
 			return generateTitle != GENERATE_TITLE_EDEFAULT;
 		case UMLDocumentStructureTemplatePackage.COMMENT_AS_PARAGRAPH__CUSTOM_TITLE:
 			return CUSTOM_TITLE_EDEFAULT == null ? customTitle != null : !CUSTOM_TITLE_EDEFAULT.equals(customTitle);
+		case UMLDocumentStructureTemplatePackage.COMMENT_AS_PARAGRAPH__GENERATE_BRANCH_CONDITION:
+			return generateBranchCondition != null;
 		case UMLDocumentStructureTemplatePackage.COMMENT_AS_PARAGRAPH__COMMENT_CHOICE:
 			return commentChoice != COMMENT_CHOICE_EDEFAULT;
 		}
@@ -403,6 +517,8 @@ public class CommentAsParagraphImpl extends MinimalEObjectImpl.Container impleme
 		switch (operationID) {
 		case UMLDocumentStructureTemplatePackage.COMMENT_AS_PARAGRAPH___BUILD_PART_TEMPLATE_TITLE__EOBJECT:
 			return buildPartTemplateTitle((EObject) arguments.get(0));
+		case UMLDocumentStructureTemplatePackage.COMMENT_AS_PARAGRAPH___GENERATE_BRANCH__EOBJECT:
+			return generateBranch((EObject) arguments.get(0));
 		case UMLDocumentStructureTemplatePackage.COMMENT_AS_PARAGRAPH___GET_MATCHING_COMMENTS__EOBJECT:
 			return getMatchingComments((EObject) arguments.get(0));
 		}

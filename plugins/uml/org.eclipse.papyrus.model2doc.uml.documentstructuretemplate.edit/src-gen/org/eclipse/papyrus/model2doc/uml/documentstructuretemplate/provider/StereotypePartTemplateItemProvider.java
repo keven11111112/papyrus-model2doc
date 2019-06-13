@@ -1,13 +1,13 @@
 /**
  * Copyright (c) 2019 CEA LIST.
- * 
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-2.0/
- * 
+ *
  *  SPDX-License-Identifier: EPL-2.0
- * 
+ *
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -27,6 +27,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import org.eclipse.papyrus.infra.emf.expressions.booleanexpressions.BooleanExpressionsFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplateFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 
@@ -38,7 +39,7 @@ import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentSt
  * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePartTemplate} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class StereotypePartTemplateItemProvider extends MandatoryStereotypeWithEClassTemplateItemProvider {
@@ -46,7 +47,7 @@ public class StereotypePartTemplateItemProvider extends MandatoryStereotypeWithE
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public StereotypePartTemplateItemProvider(AdapterFactory adapterFactory) {
@@ -57,7 +58,7 @@ public class StereotypePartTemplateItemProvider extends MandatoryStereotypeWithE
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -76,7 +77,7 @@ public class StereotypePartTemplateItemProvider extends MandatoryStereotypeWithE
 	 * This adds a property descriptor for the Generate feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addGeneratePropertyDescriptor(Object object) {
@@ -97,7 +98,7 @@ public class StereotypePartTemplateItemProvider extends MandatoryStereotypeWithE
 	 * This adds a property descriptor for the Generate Title feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addGenerateTitlePropertyDescriptor(Object object) {
@@ -118,7 +119,7 @@ public class StereotypePartTemplateItemProvider extends MandatoryStereotypeWithE
 	 * This adds a property descriptor for the Custom Title feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addCustomTitlePropertyDescriptor(Object object) {
@@ -141,13 +142,14 @@ public class StereotypePartTemplateItemProvider extends MandatoryStereotypeWithE
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION);
 			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE);
 		}
 		return childrenFeatures;
@@ -156,7 +158,7 @@ public class StereotypePartTemplateItemProvider extends MandatoryStereotypeWithE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -171,7 +173,7 @@ public class StereotypePartTemplateItemProvider extends MandatoryStereotypeWithE
 	 * This returns StereotypePartTemplate.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -182,7 +184,7 @@ public class StereotypePartTemplateItemProvider extends MandatoryStereotypeWithE
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -194,7 +196,7 @@ public class StereotypePartTemplateItemProvider extends MandatoryStereotypeWithE
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -210,7 +212,7 @@ public class StereotypePartTemplateItemProvider extends MandatoryStereotypeWithE
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -223,6 +225,7 @@ public class StereotypePartTemplateItemProvider extends MandatoryStereotypeWithE
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__CUSTOM_TITLE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION:
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__BODY_PART_TEMPLATE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
@@ -235,12 +238,33 @@ public class StereotypePartTemplateItemProvider extends MandatoryStereotypeWithE
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION,
+				BooleanExpressionsFactory.eINSTANCE.createOrExpression()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION,
+				BooleanExpressionsFactory.eINSTANCE.createAndExpression()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION,
+				BooleanExpressionsFactory.eINSTANCE.createNotExpression()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION,
+				BooleanExpressionsFactory.eINSTANCE.createLiteralTrueExpression()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION,
+				BooleanExpressionsFactory.eINSTANCE.createLiteralFalseExpression()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION,
+				BooleanExpressionsFactory.eINSTANCE.createReferenceBooleanExpression()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION,
+				BooleanExpressionsFactory.eINSTANCE.createSingleEAttributeValueEqualityExpression()));
 
 		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE,
 				UMLDocumentStructureTemplateFactory.eINSTANCE.createStereotypePropertyReferencePartTemplate()));

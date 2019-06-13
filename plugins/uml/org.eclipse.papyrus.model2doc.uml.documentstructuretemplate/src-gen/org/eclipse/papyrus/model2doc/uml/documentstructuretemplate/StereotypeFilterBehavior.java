@@ -1,13 +1,13 @@
 /**
  * Copyright (c) 2019 CEA LIST.
- * 
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-2.0/
- * 
+ *
  *  SPDX-License-Identifier: EPL-2.0
- * 
+ *
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -27,7 +27,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * <!-- begin-model-doc -->
  * This enumeration allows to describe how to implement the filter rule in StereotypePartTemplate.
  * <!-- end-model-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplatePackage#getStereotypeFilterBehavior()
  * @model
  * @generated
@@ -37,7 +37,7 @@ public enum StereotypeFilterBehavior implements Enumerator {
 	 * The '<em><b>STEREOTYPE TYPE OF</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #STEREOTYPE_TYPE_OF_VALUE
 	 * @generated
 	 * @ordered
@@ -48,7 +48,7 @@ public enum StereotypeFilterBehavior implements Enumerator {
 	 * The '<em><b>STEREOTYPE KIND OF</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #STEREOTYPE_KIND_OF_VALUE
 	 * @generated
 	 * @ordered
@@ -59,7 +59,7 @@ public enum StereotypeFilterBehavior implements Enumerator {
 	 * The '<em><b>STEREOTYPE TYPE OF</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #STEREOTYPE_TYPE_OF
 	 * @model
 	 * @generated
@@ -71,7 +71,7 @@ public enum StereotypeFilterBehavior implements Enumerator {
 	 * The '<em><b>STEREOTYPE KIND OF</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #STEREOTYPE_KIND_OF
 	 * @model
 	 * @generated
@@ -83,7 +83,7 @@ public enum StereotypeFilterBehavior implements Enumerator {
 	 * An array of all the '<em><b>Stereotype Filter Behavior</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final StereotypeFilterBehavior[] VALUES_ARRAY = new StereotypeFilterBehavior[] {
@@ -95,7 +95,7 @@ public enum StereotypeFilterBehavior implements Enumerator {
 	 * A public read-only list of all the '<em><b>Stereotype Filter Behavior</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<StereotypeFilterBehavior> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -104,7 +104,7 @@ public enum StereotypeFilterBehavior implements Enumerator {
 	 * Returns the '<em><b>Stereotype Filter Behavior</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param literal
 	 *                    the literal.
 	 * @return the matching enumerator or <code>null</code>.
@@ -124,7 +124,7 @@ public enum StereotypeFilterBehavior implements Enumerator {
 	 * Returns the '<em><b>Stereotype Filter Behavior</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param name
 	 *                 the name.
 	 * @return the matching enumerator or <code>null</code>.
@@ -144,7 +144,7 @@ public enum StereotypeFilterBehavior implements Enumerator {
 	 * Returns the '<em><b>Stereotype Filter Behavior</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *                  the integer value.
 	 * @return the matching enumerator or <code>null</code>.
@@ -163,7 +163,7 @@ public enum StereotypeFilterBehavior implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -171,7 +171,7 @@ public enum StereotypeFilterBehavior implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -179,7 +179,7 @@ public enum StereotypeFilterBehavior implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -188,7 +188,7 @@ public enum StereotypeFilterBehavior implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private StereotypeFilterBehavior(int value, String name, String literal) {
@@ -200,7 +200,7 @@ public enum StereotypeFilterBehavior implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -211,7 +211,7 @@ public enum StereotypeFilterBehavior implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -222,7 +222,7 @@ public enum StereotypeFilterBehavior implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -234,7 +234,7 @@ public enum StereotypeFilterBehavior implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

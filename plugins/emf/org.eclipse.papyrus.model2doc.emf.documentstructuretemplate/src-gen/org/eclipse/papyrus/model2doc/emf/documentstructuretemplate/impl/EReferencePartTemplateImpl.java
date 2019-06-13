@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.eclipse.papyrus.infra.emf.expressions.booleanexpressions.IBooleanEObjectExpression;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodyPartTemplate;
@@ -49,6 +50,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubBodyPartT
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferencePartTemplateImpl#isGenerate <em>Generate</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferencePartTemplateImpl#isGenerateTitle <em>Generate Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferencePartTemplateImpl#getCustomTitle <em>Custom Title</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferencePartTemplateImpl#getGenerateBranchCondition <em>Generate Branch Condition</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferencePartTemplateImpl#getSubBodyPartTemplates <em>Sub Body Part Template</em>}</li>
  * </ul>
  *
@@ -120,6 +122,17 @@ public class EReferencePartTemplateImpl extends EReferenceTemplateImpl implement
 	 * @ordered
 	 */
 	protected String customTitle = CUSTOM_TITLE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getGenerateBranchCondition() <em>Generate Branch Condition</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getGenerateBranchCondition()
+	 * @generated
+	 * @ordered
+	 */
+	protected IBooleanEObjectExpression generateBranchCondition;
 
 	/**
 	 * The cached value of the '{@link #getSubBodyPartTemplates() <em>Sub Body Part Template</em>}' containment reference list.
@@ -238,6 +251,62 @@ public class EReferencePartTemplateImpl extends EReferenceTemplateImpl implement
 	 * @generated
 	 */
 	@Override
+	public IBooleanEObjectExpression getGenerateBranchCondition() {
+		return generateBranchCondition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public NotificationChain basicSetGenerateBranchCondition(IBooleanEObjectExpression newGenerateBranchCondition, NotificationChain msgs) {
+		IBooleanEObjectExpression oldGenerateBranchCondition = generateBranchCondition;
+		generateBranchCondition = newGenerateBranchCondition;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION, oldGenerateBranchCondition, newGenerateBranchCondition);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setGenerateBranchCondition(IBooleanEObjectExpression newGenerateBranchCondition) {
+		if (newGenerateBranchCondition != generateBranchCondition) {
+			NotificationChain msgs = null;
+			if (generateBranchCondition != null) {
+				msgs = ((InternalEObject) generateBranchCondition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION, null, msgs);
+			}
+			if (newGenerateBranchCondition != null) {
+				msgs = ((InternalEObject) newGenerateBranchCondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION, null, msgs);
+			}
+			msgs = basicSetGenerateBranchCondition(newGenerateBranchCondition, msgs);
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION, newGenerateBranchCondition, newGenerateBranchCondition));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EList<ISubBodyPartTemplate> getSubBodyPartTemplates() {
 		if (subBodyPartTemplates == null) {
 			subBodyPartTemplates = new EObjectContainmentEList<>(ISubBodyPartTemplate.class, this, DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE);
@@ -263,8 +332,28 @@ public class EReferencePartTemplateImpl extends EReferenceTemplateImpl implement
 	 * @generated
 	 */
 	@Override
+	public boolean generateBranch(final EObject context) {
+		if (null == context) {
+			return false;
+		}
+		if (null == generateBranchCondition) {
+			return true;
+		}
+
+		return generateBranchCondition.evaluate(context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION:
+			return basicSetGenerateBranchCondition(null, msgs);
 		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
 			return ((InternalEList<?>) getSubBodyPartTemplates()).basicRemove(otherEnd, msgs);
 		}
@@ -286,6 +375,8 @@ public class EReferencePartTemplateImpl extends EReferenceTemplateImpl implement
 			return isGenerateTitle();
 		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__CUSTOM_TITLE:
 			return getCustomTitle();
+		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION:
+			return getGenerateBranchCondition();
 		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
 			return getSubBodyPartTemplates();
 		}
@@ -310,6 +401,9 @@ public class EReferencePartTemplateImpl extends EReferenceTemplateImpl implement
 			return;
 		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__CUSTOM_TITLE:
 			setCustomTitle((String) newValue);
+			return;
+		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION:
+			setGenerateBranchCondition((IBooleanEObjectExpression) newValue);
 			return;
 		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
 			getSubBodyPartTemplates().clear();
@@ -337,6 +431,9 @@ public class EReferencePartTemplateImpl extends EReferenceTemplateImpl implement
 		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__CUSTOM_TITLE:
 			setCustomTitle(CUSTOM_TITLE_EDEFAULT);
 			return;
+		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION:
+			setGenerateBranchCondition((IBooleanEObjectExpression) null);
+			return;
 		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
 			getSubBodyPartTemplates().clear();
 			return;
@@ -359,6 +456,8 @@ public class EReferencePartTemplateImpl extends EReferenceTemplateImpl implement
 			return generateTitle != GENERATE_TITLE_EDEFAULT;
 		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__CUSTOM_TITLE:
 			return CUSTOM_TITLE_EDEFAULT == null ? customTitle != null : !CUSTOM_TITLE_EDEFAULT.equals(customTitle);
+		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION:
+			return generateBranchCondition != null;
 		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE:
 			return subBodyPartTemplates != null && !subBodyPartTemplates.isEmpty();
 		}
@@ -381,6 +480,8 @@ public class EReferencePartTemplateImpl extends EReferenceTemplateImpl implement
 				return DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_TITLE;
 			case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__CUSTOM_TITLE:
 				return DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__CUSTOM_TITLE;
+			case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION:
+				return DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION;
 			default:
 				return -1;
 			}
@@ -418,6 +519,8 @@ public class EReferencePartTemplateImpl extends EReferenceTemplateImpl implement
 				return DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__GENERATE_TITLE;
 			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__CUSTOM_TITLE:
 				return DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__CUSTOM_TITLE;
+			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION:
+				return DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION;
 			default:
 				return -1;
 			}
@@ -451,6 +554,8 @@ public class EReferencePartTemplateImpl extends EReferenceTemplateImpl implement
 			switch (baseOperationID) {
 			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT:
 				return DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT;
+			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE___GENERATE_BRANCH__EOBJECT:
+				return DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE___GENERATE_BRANCH__EOBJECT;
 			default:
 				return -1;
 			}
@@ -481,6 +586,8 @@ public class EReferencePartTemplateImpl extends EReferenceTemplateImpl implement
 		switch (operationID) {
 		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT:
 			return buildPartTemplateTitle((EObject) arguments.get(0));
+		case DocumentStructureTemplatePackage.EREFERENCE_PART_TEMPLATE___GENERATE_BRANCH__EOBJECT:
+			return generateBranch((EObject) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

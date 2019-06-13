@@ -1,13 +1,13 @@
 /**
  * Copyright (c) 2019 CEA LIST.
- * 
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-2.0/
- * 
+ *
  *  SPDX-License-Identifier: EPL-2.0
- * 
+ *
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -27,7 +27,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * <!-- begin-model-doc -->
  * This enumeration allows to define wich context must be used to find diagrams.
  * <!-- end-model-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.PapyrusGMFDocumentStructureTemplatePackage#getContextFilterBehavior()
  * @model
  * @generated
@@ -40,7 +40,7 @@ public enum ContextFilterBehavior implements Enumerator {
 	 * <!-- begin-model-doc -->
 	 * (In Papyrus, this concept is called Diagram Root Element)
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @see #SEMANTIC_CONTEXT_VALUE
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public enum ContextFilterBehavior implements Enumerator {
 	 * <!-- begin-model-doc -->
 	 * (In Papyrus, this concept is called Diagram Owner)
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @see #GRAPHICAL_CONTEXT_VALUE
 	 * @generated
 	 * @ordered
@@ -68,7 +68,7 @@ public enum ContextFilterBehavior implements Enumerator {
 	 * <!-- begin-model-doc -->
 	 * We look matching diagrams using the element as semantic context and graphical context.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @see #BOTH_VALUE
 	 * @generated
 	 * @ordered
@@ -82,7 +82,7 @@ public enum ContextFilterBehavior implements Enumerator {
 	 * <!-- begin-model-doc -->
 	 * (In Papyrus, this concept is called Diagram Root Element)
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @see #SEMANTIC_CONTEXT
 	 * @model
 	 * @generated
@@ -97,7 +97,7 @@ public enum ContextFilterBehavior implements Enumerator {
 	 * <!-- begin-model-doc -->
 	 * (In Papyrus, this concept is called Diagram Owner)
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @see #GRAPHICAL_CONTEXT
 	 * @model
 	 * @generated
@@ -112,7 +112,7 @@ public enum ContextFilterBehavior implements Enumerator {
 	 * <!-- begin-model-doc -->
 	 * We look matching diagrams using the element as semantic context and graphical context.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @see #BOTH
 	 * @model
 	 * @generated
@@ -124,7 +124,7 @@ public enum ContextFilterBehavior implements Enumerator {
 	 * An array of all the '<em><b>Context Filter Behavior</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final ContextFilterBehavior[] VALUES_ARRAY = new ContextFilterBehavior[] {
@@ -137,7 +137,7 @@ public enum ContextFilterBehavior implements Enumerator {
 	 * A public read-only list of all the '<em><b>Context Filter Behavior</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<ContextFilterBehavior> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -146,7 +146,7 @@ public enum ContextFilterBehavior implements Enumerator {
 	 * Returns the '<em><b>Context Filter Behavior</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param literal
 	 *                    the literal.
 	 * @return the matching enumerator or <code>null</code>.
@@ -166,7 +166,7 @@ public enum ContextFilterBehavior implements Enumerator {
 	 * Returns the '<em><b>Context Filter Behavior</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param name
 	 *                 the name.
 	 * @return the matching enumerator or <code>null</code>.
@@ -186,7 +186,7 @@ public enum ContextFilterBehavior implements Enumerator {
 	 * Returns the '<em><b>Context Filter Behavior</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *                  the integer value.
 	 * @return the matching enumerator or <code>null</code>.
@@ -207,7 +207,7 @@ public enum ContextFilterBehavior implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -215,7 +215,7 @@ public enum ContextFilterBehavior implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -223,7 +223,7 @@ public enum ContextFilterBehavior implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -232,7 +232,7 @@ public enum ContextFilterBehavior implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private ContextFilterBehavior(int value, String name, String literal) {
@@ -244,7 +244,7 @@ public enum ContextFilterBehavior implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -255,7 +255,7 @@ public enum ContextFilterBehavior implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -266,7 +266,7 @@ public enum ContextFilterBehavior implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -278,7 +278,7 @@ public enum ContextFilterBehavior implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

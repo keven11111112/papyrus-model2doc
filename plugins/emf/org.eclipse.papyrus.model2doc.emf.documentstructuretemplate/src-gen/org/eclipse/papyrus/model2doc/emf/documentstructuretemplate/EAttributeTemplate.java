@@ -73,7 +73,6 @@ public interface EAttributeTemplate extends EObject {
 	 * <!-- end-user-doc -->
 	 *
 	 * @model required="true" ordered="false" valueRequired="true" valueOrdered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EAttributeTemplateOperations.buildEAttributeValueLabel(this, value);'"
 	 * @generated
 	 */
 	String buildEAttributeValueLabel(Object value);
@@ -83,7 +82,6 @@ public interface EAttributeTemplate extends EObject {
 	 * <!-- end-user-doc -->
 	 *
 	 * @model ordered="false" contextRequired="true" contextOrdered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.internal.operations.EAttributeTemplateOperations.getEAttributeValues(this, context);'"
 	 * @generated
 	 */
 	EList<Object> getEAttributeValues(EObject context);

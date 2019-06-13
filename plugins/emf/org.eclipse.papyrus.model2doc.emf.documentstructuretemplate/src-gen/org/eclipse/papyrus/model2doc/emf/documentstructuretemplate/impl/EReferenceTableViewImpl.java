@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.eclipse.papyrus.infra.emf.expressions.booleanexpressions.IBooleanEObjectExpression;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTableView;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodyPartTemplate;
@@ -51,6 +52,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITemplatePart
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceTableViewImpl#isGenerate <em>Generate</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceTableViewImpl#isGenerateTitle <em>Generate Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceTableViewImpl#getCustomTitle <em>Custom Title</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceTableViewImpl#getGenerateBranchCondition <em>Generate Branch Condition</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceTableViewImpl#getColumns <em>Columns</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceTableViewImpl#isGenerateRowHeader <em>Generate Row Header</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EReferenceTableViewImpl#isGenerateColumnHeader <em>Generate Column Header</em>}</li>
@@ -124,6 +126,17 @@ public class EReferenceTableViewImpl extends EReferenceTemplateImpl implements E
 	 * @ordered
 	 */
 	protected String customTitle = CUSTOM_TITLE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getGenerateBranchCondition() <em>Generate Branch Condition</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getGenerateBranchCondition()
+	 * @generated
+	 * @ordered
+	 */
+	protected IBooleanEObjectExpression generateBranchCondition;
 
 	/**
 	 * The cached value of the '{@link #getColumns() <em>Columns</em>}' containment reference list.
@@ -286,6 +299,62 @@ public class EReferenceTableViewImpl extends EReferenceTemplateImpl implements E
 	 * @generated
 	 */
 	@Override
+	public IBooleanEObjectExpression getGenerateBranchCondition() {
+		return generateBranchCondition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public NotificationChain basicSetGenerateBranchCondition(IBooleanEObjectExpression newGenerateBranchCondition, NotificationChain msgs) {
+		IBooleanEObjectExpression oldGenerateBranchCondition = generateBranchCondition;
+		generateBranchCondition = newGenerateBranchCondition;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_BRANCH_CONDITION, oldGenerateBranchCondition, newGenerateBranchCondition);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setGenerateBranchCondition(IBooleanEObjectExpression newGenerateBranchCondition) {
+		if (newGenerateBranchCondition != generateBranchCondition) {
+			NotificationChain msgs = null;
+			if (generateBranchCondition != null) {
+				msgs = ((InternalEObject) generateBranchCondition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_BRANCH_CONDITION, null, msgs);
+			}
+			if (newGenerateBranchCondition != null) {
+				msgs = ((InternalEObject) newGenerateBranchCondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_BRANCH_CONDITION, null, msgs);
+			}
+			msgs = basicSetGenerateBranchCondition(newGenerateBranchCondition, msgs);
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_BRANCH_CONDITION, newGenerateBranchCondition, newGenerateBranchCondition));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EList<IColumn> getColumns() {
 		if (columns == null) {
 			columns = new EObjectContainmentEList<>(IColumn.class, this, DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__COLUMNS);
@@ -363,6 +432,24 @@ public class EReferenceTableViewImpl extends EReferenceTemplateImpl implements E
 	 * @generated
 	 */
 	@Override
+	public boolean generateBranch(final EObject context) {
+		if (null == context) {
+			return false;
+		}
+		if (null == generateBranchCondition) {
+			return true;
+		}
+
+		return generateBranchCondition.evaluate(context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EList<EObject> getRows(final EObject context) {
 		return getEReferenceValues(context);
 	}
@@ -387,6 +474,8 @@ public class EReferenceTableViewImpl extends EReferenceTemplateImpl implements E
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_BRANCH_CONDITION:
+			return basicSetGenerateBranchCondition(null, msgs);
 		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__COLUMNS:
 			return ((InternalEList<?>) getColumns()).basicRemove(otherEnd, msgs);
 		}
@@ -408,6 +497,8 @@ public class EReferenceTableViewImpl extends EReferenceTemplateImpl implements E
 			return isGenerateTitle();
 		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__CUSTOM_TITLE:
 			return getCustomTitle();
+		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_BRANCH_CONDITION:
+			return getGenerateBranchCondition();
 		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__COLUMNS:
 			return getColumns();
 		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_ROW_HEADER:
@@ -436,6 +527,9 @@ public class EReferenceTableViewImpl extends EReferenceTemplateImpl implements E
 			return;
 		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__CUSTOM_TITLE:
 			setCustomTitle((String) newValue);
+			return;
+		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_BRANCH_CONDITION:
+			setGenerateBranchCondition((IBooleanEObjectExpression) newValue);
 			return;
 		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__COLUMNS:
 			getColumns().clear();
@@ -469,6 +563,9 @@ public class EReferenceTableViewImpl extends EReferenceTemplateImpl implements E
 		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__CUSTOM_TITLE:
 			setCustomTitle(CUSTOM_TITLE_EDEFAULT);
 			return;
+		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_BRANCH_CONDITION:
+			setGenerateBranchCondition((IBooleanEObjectExpression) null);
+			return;
 		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__COLUMNS:
 			getColumns().clear();
 			return;
@@ -497,6 +594,8 @@ public class EReferenceTableViewImpl extends EReferenceTemplateImpl implements E
 			return generateTitle != GENERATE_TITLE_EDEFAULT;
 		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__CUSTOM_TITLE:
 			return CUSTOM_TITLE_EDEFAULT == null ? customTitle != null : !CUSTOM_TITLE_EDEFAULT.equals(customTitle);
+		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_BRANCH_CONDITION:
+			return generateBranchCondition != null;
 		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__COLUMNS:
 			return columns != null && !columns.isEmpty();
 		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_ROW_HEADER:
@@ -523,6 +622,8 @@ public class EReferenceTableViewImpl extends EReferenceTemplateImpl implements E
 				return DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_TITLE;
 			case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__CUSTOM_TITLE:
 				return DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__CUSTOM_TITLE;
+			case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_BRANCH_CONDITION:
+				return DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION;
 			default:
 				return -1;
 			}
@@ -576,6 +677,8 @@ public class EReferenceTableViewImpl extends EReferenceTemplateImpl implements E
 				return DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_TITLE;
 			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__CUSTOM_TITLE:
 				return DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__CUSTOM_TITLE;
+			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION:
+				return DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_BRANCH_CONDITION;
 			default:
 				return -1;
 			}
@@ -625,6 +728,8 @@ public class EReferenceTableViewImpl extends EReferenceTemplateImpl implements E
 			switch (baseOperationID) {
 			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT:
 				return DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW___BUILD_PART_TEMPLATE_TITLE__EOBJECT;
+			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE___GENERATE_BRANCH__EOBJECT:
+				return DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW___GENERATE_BRANCH__EOBJECT;
 			default:
 				return -1;
 			}
@@ -671,6 +776,8 @@ public class EReferenceTableViewImpl extends EReferenceTemplateImpl implements E
 		switch (operationID) {
 		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW___BUILD_PART_TEMPLATE_TITLE__EOBJECT:
 			return buildPartTemplateTitle((EObject) arguments.get(0));
+		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW___GENERATE_BRANCH__EOBJECT:
+			return generateBranch((EObject) arguments.get(0));
 		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW___GET_ROWS__EOBJECT:
 			return getRows((EObject) arguments.get(0));
 		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW___BUILD_ROW_HEADER_LABEL__EOBJECT:

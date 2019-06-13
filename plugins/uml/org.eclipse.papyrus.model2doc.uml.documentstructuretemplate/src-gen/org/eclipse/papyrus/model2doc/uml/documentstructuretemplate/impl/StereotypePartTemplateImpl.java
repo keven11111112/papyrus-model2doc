@@ -1,13 +1,13 @@
 /**
  * Copyright (c) 2019 CEA LIST.
- * 
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-2.0/
- * 
+ *
  *  SPDX-License-Identifier: EPL-2.0
- * 
+ *
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.eclipse.papyrus.infra.emf.expressions.booleanexpressions.IBooleanEObjectExpression;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodyPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate;
@@ -52,6 +53,7 @@ import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentSt
  * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePartTemplateImpl#isGenerate <em>Generate</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePartTemplateImpl#isGenerateTitle <em>Generate Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePartTemplateImpl#getCustomTitle <em>Custom Title</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePartTemplateImpl#getGenerateBranchCondition <em>Generate Branch Condition</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePartTemplateImpl#getBodyPartTemplates <em>Body Part Template</em>}</li>
  * </ul>
  *
@@ -62,7 +64,7 @@ public class StereotypePartTemplateImpl extends MandatoryStereotypeWithEClassTem
 	 * The default value of the '{@link #isGenerate() <em>Generate</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isGenerate()
 	 * @generated
 	 * @ordered
@@ -73,7 +75,7 @@ public class StereotypePartTemplateImpl extends MandatoryStereotypeWithEClassTem
 	 * The cached value of the '{@link #isGenerate() <em>Generate</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isGenerate()
 	 * @generated
 	 * @ordered
@@ -84,7 +86,7 @@ public class StereotypePartTemplateImpl extends MandatoryStereotypeWithEClassTem
 	 * The default value of the '{@link #isGenerateTitle() <em>Generate Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isGenerateTitle()
 	 * @generated
 	 * @ordered
@@ -95,7 +97,7 @@ public class StereotypePartTemplateImpl extends MandatoryStereotypeWithEClassTem
 	 * The cached value of the '{@link #isGenerateTitle() <em>Generate Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isGenerateTitle()
 	 * @generated
 	 * @ordered
@@ -106,7 +108,7 @@ public class StereotypePartTemplateImpl extends MandatoryStereotypeWithEClassTem
 	 * The default value of the '{@link #getCustomTitle() <em>Custom Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCustomTitle()
 	 * @generated
 	 * @ordered
@@ -117,7 +119,7 @@ public class StereotypePartTemplateImpl extends MandatoryStereotypeWithEClassTem
 	 * The cached value of the '{@link #getCustomTitle() <em>Custom Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCustomTitle()
 	 * @generated
 	 * @ordered
@@ -125,10 +127,21 @@ public class StereotypePartTemplateImpl extends MandatoryStereotypeWithEClassTem
 	protected String customTitle = CUSTOM_TITLE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getGenerateBranchCondition() <em>Generate Branch Condition</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getGenerateBranchCondition()
+	 * @generated
+	 * @ordered
+	 */
+	protected IBooleanEObjectExpression generateBranchCondition;
+
+	/**
 	 * The cached value of the '{@link #getBodyPartTemplates() <em>Body Part Template</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBodyPartTemplates()
 	 * @generated
 	 * @ordered
@@ -138,7 +151,7 @@ public class StereotypePartTemplateImpl extends MandatoryStereotypeWithEClassTem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected StereotypePartTemplateImpl() {
@@ -148,7 +161,7 @@ public class StereotypePartTemplateImpl extends MandatoryStereotypeWithEClassTem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -159,7 +172,7 @@ public class StereotypePartTemplateImpl extends MandatoryStereotypeWithEClassTem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -170,21 +183,22 @@ public class StereotypePartTemplateImpl extends MandatoryStereotypeWithEClassTem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setGenerate(boolean newGenerate) {
 		boolean oldGenerate = generate;
 		generate = newGenerate;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__GENERATE, oldGenerate, generate));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -195,21 +209,22 @@ public class StereotypePartTemplateImpl extends MandatoryStereotypeWithEClassTem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setGenerateTitle(boolean newGenerateTitle) {
 		boolean oldGenerateTitle = generateTitle;
 		generateTitle = newGenerateTitle;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__GENERATE_TITLE, oldGenerateTitle, generateTitle));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -220,27 +235,84 @@ public class StereotypePartTemplateImpl extends MandatoryStereotypeWithEClassTem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setCustomTitle(String newCustomTitle) {
 		String oldCustomTitle = customTitle;
 		customTitle = newCustomTitle;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__CUSTOM_TITLE, oldCustomTitle, customTitle));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
+	 * @generated
+	 */
+	@Override
+	public IBooleanEObjectExpression getGenerateBranchCondition() {
+		return generateBranchCondition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public NotificationChain basicSetGenerateBranchCondition(IBooleanEObjectExpression newGenerateBranchCondition, NotificationChain msgs) {
+		IBooleanEObjectExpression oldGenerateBranchCondition = generateBranchCondition;
+		generateBranchCondition = newGenerateBranchCondition;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION, oldGenerateBranchCondition, newGenerateBranchCondition);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setGenerateBranchCondition(IBooleanEObjectExpression newGenerateBranchCondition) {
+		if (newGenerateBranchCondition != generateBranchCondition) {
+			NotificationChain msgs = null;
+			if (generateBranchCondition != null) {
+				msgs = ((InternalEObject) generateBranchCondition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION, null, msgs);
+			}
+			if (newGenerateBranchCondition != null) {
+				msgs = ((InternalEObject) newGenerateBranchCondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION, null, msgs);
+			}
+			msgs = basicSetGenerateBranchCondition(newGenerateBranchCondition, msgs);
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION, newGenerateBranchCondition, newGenerateBranchCondition));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public EList<IBodyPartTemplate> getBodyPartTemplates() {
 		if (bodyPartTemplates == null) {
-			bodyPartTemplates = new EObjectContainmentEList<IBodyPartTemplate>(IBodyPartTemplate.class, this, UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__BODY_PART_TEMPLATE);
+			bodyPartTemplates = new EObjectContainmentEList<>(IBodyPartTemplate.class, this, UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__BODY_PART_TEMPLATE);
 		}
 		return bodyPartTemplates;
 	}
@@ -248,9 +320,10 @@ public class StereotypePartTemplateImpl extends MandatoryStereotypeWithEClassTem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public String buildPartTemplateTitle(final EObject context) {
 		return org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.internal.operations.UMLBodySectionPartTemplateTitleHelper.UML_INSTANCE.buildPartTemplateTitle(this, context);
 	}
@@ -258,12 +331,32 @@ public class StereotypePartTemplateImpl extends MandatoryStereotypeWithEClassTem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
+	 * @generated
+	 */
+	@Override
+	public boolean generateBranch(final EObject context) {
+		if (null == context) {
+			return false;
+		}
+		if (null == generateBranchCondition) {
+			return true;
+		}
+
+		return generateBranchCondition.evaluate(context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION:
+			return basicSetGenerateBranchCondition(null, msgs);
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__BODY_PART_TEMPLATE:
 			return ((InternalEList<?>) getBodyPartTemplates()).basicRemove(otherEnd, msgs);
 		}
@@ -273,7 +366,7 @@ public class StereotypePartTemplateImpl extends MandatoryStereotypeWithEClassTem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -285,6 +378,8 @@ public class StereotypePartTemplateImpl extends MandatoryStereotypeWithEClassTem
 			return isGenerateTitle();
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__CUSTOM_TITLE:
 			return getCustomTitle();
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION:
+			return getGenerateBranchCondition();
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__BODY_PART_TEMPLATE:
 			return getBodyPartTemplates();
 		}
@@ -294,7 +389,7 @@ public class StereotypePartTemplateImpl extends MandatoryStereotypeWithEClassTem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -310,6 +405,9 @@ public class StereotypePartTemplateImpl extends MandatoryStereotypeWithEClassTem
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__CUSTOM_TITLE:
 			setCustomTitle((String) newValue);
 			return;
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION:
+			setGenerateBranchCondition((IBooleanEObjectExpression) newValue);
+			return;
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__BODY_PART_TEMPLATE:
 			getBodyPartTemplates().clear();
 			getBodyPartTemplates().addAll((Collection<? extends IBodyPartTemplate>) newValue);
@@ -321,7 +419,7 @@ public class StereotypePartTemplateImpl extends MandatoryStereotypeWithEClassTem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -336,6 +434,9 @@ public class StereotypePartTemplateImpl extends MandatoryStereotypeWithEClassTem
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__CUSTOM_TITLE:
 			setCustomTitle(CUSTOM_TITLE_EDEFAULT);
 			return;
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION:
+			setGenerateBranchCondition((IBooleanEObjectExpression) null);
+			return;
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__BODY_PART_TEMPLATE:
 			getBodyPartTemplates().clear();
 			return;
@@ -346,7 +447,7 @@ public class StereotypePartTemplateImpl extends MandatoryStereotypeWithEClassTem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -358,6 +459,8 @@ public class StereotypePartTemplateImpl extends MandatoryStereotypeWithEClassTem
 			return generateTitle != GENERATE_TITLE_EDEFAULT;
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__CUSTOM_TITLE:
 			return CUSTOM_TITLE_EDEFAULT == null ? customTitle != null : !CUSTOM_TITLE_EDEFAULT.equals(customTitle);
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION:
+			return generateBranchCondition != null;
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__BODY_PART_TEMPLATE:
 			return bodyPartTemplates != null && !bodyPartTemplates.isEmpty();
 		}
@@ -367,7 +470,7 @@ public class StereotypePartTemplateImpl extends MandatoryStereotypeWithEClassTem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -380,6 +483,8 @@ public class StereotypePartTemplateImpl extends MandatoryStereotypeWithEClassTem
 				return DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_TITLE;
 			case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__CUSTOM_TITLE:
 				return DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__CUSTOM_TITLE;
+			case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION:
+				return DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION;
 			default:
 				return -1;
 			}
@@ -410,7 +515,7 @@ public class StereotypePartTemplateImpl extends MandatoryStereotypeWithEClassTem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -423,6 +528,8 @@ public class StereotypePartTemplateImpl extends MandatoryStereotypeWithEClassTem
 				return UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__GENERATE_TITLE;
 			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__CUSTOM_TITLE:
 				return UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__CUSTOM_TITLE;
+			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION:
+				return UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION;
 			default:
 				return -1;
 			}
@@ -453,7 +560,7 @@ public class StereotypePartTemplateImpl extends MandatoryStereotypeWithEClassTem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -462,6 +569,8 @@ public class StereotypePartTemplateImpl extends MandatoryStereotypeWithEClassTem
 			switch (baseOperationID) {
 			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT:
 				return UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT;
+			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE___GENERATE_BRANCH__EOBJECT:
+				return UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE___GENERATE_BRANCH__EOBJECT;
 			default:
 				return -1;
 			}
@@ -490,7 +599,7 @@ public class StereotypePartTemplateImpl extends MandatoryStereotypeWithEClassTem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -498,6 +607,8 @@ public class StereotypePartTemplateImpl extends MandatoryStereotypeWithEClassTem
 		switch (operationID) {
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT:
 			return buildPartTemplateTitle((EObject) arguments.get(0));
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE___GENERATE_BRANCH__EOBJECT:
+			return generateBranch((EObject) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -505,13 +616,14 @@ public class StereotypePartTemplateImpl extends MandatoryStereotypeWithEClassTem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (generate: "); //$NON-NLS-1$

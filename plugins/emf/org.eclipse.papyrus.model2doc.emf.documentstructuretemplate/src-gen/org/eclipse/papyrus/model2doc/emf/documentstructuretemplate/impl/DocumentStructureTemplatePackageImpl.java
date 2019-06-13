@@ -23,6 +23,8 @@ import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.eclipse.papyrus.infra.emf.expressions.ExpressionsPackage;
+import org.eclipse.papyrus.infra.emf.expressions.booleanexpressions.BooleanExpressionsPackage;
 import org.eclipse.papyrus.model2doc.core.author.AuthorPackage;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationPackage;
 
@@ -419,6 +421,7 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		// Initialize simple dependencies
 		AuthorPackage.eINSTANCE.eClass();
 		EcorePackage.eINSTANCE.eClass();
+		ExpressionsPackage.eINSTANCE.eClass();
 		GeneratorConfigurationPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
@@ -761,8 +764,30 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
+	public EReference getIBodySectionPartTemplate_GenerateBranchCondition() {
+		return (EReference) iBodySectionPartTemplateEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EOperation getIBodySectionPartTemplate__BuildPartTemplateTitle__EObject() {
 		return iBodySectionPartTemplateEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EOperation getIBodySectionPartTemplate__GenerateBranch__EObject() {
+		return iBodySectionPartTemplateEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -1473,7 +1498,9 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		createEAttribute(iBodySectionPartTemplateEClass, IBODY_SECTION_PART_TEMPLATE__GENERATE);
 		createEAttribute(iBodySectionPartTemplateEClass, IBODY_SECTION_PART_TEMPLATE__GENERATE_TITLE);
 		createEAttribute(iBodySectionPartTemplateEClass, IBODY_SECTION_PART_TEMPLATE__CUSTOM_TITLE);
+		createEReference(iBodySectionPartTemplateEClass, IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION);
 		createEOperation(iBodySectionPartTemplateEClass, IBODY_SECTION_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT);
+		createEOperation(iBodySectionPartTemplateEClass, IBODY_SECTION_PART_TEMPLATE___GENERATE_BRANCH__EOBJECT);
 
 		iComposedBodyPartTemplateEClass = createEClass(ICOMPOSED_BODY_PART_TEMPLATE);
 		createEReference(iComposedBodyPartTemplateEClass, ICOMPOSED_BODY_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE);
@@ -1594,6 +1621,7 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		GeneratorConfigurationPackage theGeneratorConfigurationPackage = (GeneratorConfigurationPackage) EPackage.Registry.INSTANCE.getEPackage(GeneratorConfigurationPackage.eNS_URI);
 		AuthorPackage theAuthorPackage = (AuthorPackage) EPackage.Registry.INSTANCE.getEPackage(AuthorPackage.eNS_URI);
+		BooleanExpressionsPackage theBooleanExpressionsPackage = (BooleanExpressionsPackage) EPackage.Registry.INSTANCE.getEPackage(BooleanExpressionsPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1683,8 +1711,13 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		initEAttribute(getIBodySectionPartTemplate_GenerateTitle(), ecorePackage.getEBoolean(), "generateTitle", "true", 1, 1, IBodySectionPartTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, //$NON-NLS-1$ //$NON-NLS-2$
 				!IS_ORDERED);
 		initEAttribute(getIBodySectionPartTemplate_CustomTitle(), ecorePackage.getEString(), "customTitle", null, 0, 1, IBodySectionPartTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getIBodySectionPartTemplate_GenerateBranchCondition(), theBooleanExpressionsPackage.getIBooleanEObjectExpression(), null, "generateBranchCondition", null, 0, 1, IBodySectionPartTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, //$NON-NLS-1$
+				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		EOperation op = initEOperation(getIBodySectionPartTemplate__BuildPartTemplateTitle__EObject(), ecorePackage.getEString(), "buildPartTemplateTitle", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+		addEParameter(op, theEcorePackage.getEObject(), "context", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
+		op = initEOperation(getIBodySectionPartTemplate__GenerateBranch__EObject(), ecorePackage.getEBoolean(), "generateBranch", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 		addEParameter(op, theEcorePackage.getEObject(), "context", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(iComposedBodyPartTemplateEClass, IComposedBodyPartTemplate.class, "IComposedBodyPartTemplate", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$

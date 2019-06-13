@@ -159,6 +159,8 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.provider.Docu
 
 import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 
+import org.eclipse.papyrus.infra.emf.expressions.booleanexpressions.provider.BooleanExpressionsItemProviderAdapterFactory;
+import org.eclipse.papyrus.infra.emf.expressions.provider.ExpressionsItemProviderAdapterFactory;
 import org.eclipse.papyrus.model2doc.core.author.provider.AuthorItemProviderAdapterFactory;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.provider.GeneratorConfigurationItemProviderAdapterFactory;
 
@@ -677,6 +679,8 @@ public class DocumentStructureTemplateEditor
 		adapterFactory.addAdapterFactory(new DocumentStructureTemplateItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new AuthorItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new ExpressionsItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new BooleanExpressionsItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new GeneratorConfigurationItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
@@ -702,7 +706,7 @@ public class DocumentStructureTemplateEditor
 						}
 						for (Iterator<PropertySheetPage> i = propertySheetPages.iterator(); i.hasNext();) {
 							PropertySheetPage propertySheetPage = i.next();
-							if (propertySheetPage.getControl().isDisposed()) {
+							if (propertySheetPage.getControl() == null || propertySheetPage.getControl().isDisposed()) {
 								i.remove();
 							} else {
 								propertySheetPage.refresh();

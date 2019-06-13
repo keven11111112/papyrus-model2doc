@@ -58,7 +58,6 @@ public interface PapyrusGMFDiagramView extends ITemplatePartView, ILeafBodyPartT
 	 * @see #setDiagramKindId(String)
 	 * @see org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.PapyrusGMFDocumentStructureTemplatePackage#getPapyrusGMFDiagramView_DiagramKindId()
 	 * @model ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel propertyEditorFactory='editor://papyrusgmfdocumentstructuretemplate/PapyrusGMFDiagramView/diagramKindId/'"
 	 * @generated
 	 */
 	String getDiagramKindId();
@@ -87,7 +86,6 @@ public interface PapyrusGMFDiagramView extends ITemplatePartView, ILeafBodyPartT
 	 * @see #setDiagramType(String)
 	 * @see org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.PapyrusGMFDocumentStructureTemplatePackage#getPapyrusGMFDiagramView_DiagramType()
 	 * @model ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel propertyEditorFactory='editor://papyrusgmfdocumentstructuretemplate/PapyrusGMFDiagramView/diagramType/'"
 	 * @generated
 	 */
 	String getDiagramType();
