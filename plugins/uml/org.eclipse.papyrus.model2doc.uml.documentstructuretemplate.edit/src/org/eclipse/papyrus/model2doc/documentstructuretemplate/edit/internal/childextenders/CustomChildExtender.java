@@ -13,7 +13,7 @@
  *
  *****************************************************************************/
 
-package org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.edit.internal.providers;
+package org.eclipse.papyrus.model2doc.documentstructuretemplate.edit.internal.childextenders;
 
 import java.util.ArrayList;
 import java.util.Collection;

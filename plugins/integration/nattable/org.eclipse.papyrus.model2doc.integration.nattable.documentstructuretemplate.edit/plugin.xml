@@ -34,6 +34,10 @@
       <extender
             uri="http://www.eclipse.org/papyrus/model2doc/emf/1.0.0/documentstructuretemplate"
             class="org.eclipse.papyrus.model2doc.integration.nattable.documentstructuretemplate.provider.PapyrusNattableDocumentStructureTemplateItemProviderAdapterFactory$DocumentStructureTemplateChildCreationExtender"/>
+      <extender
+            class="org.eclipse.papyrus.model2doc.integration.nattable.documentstructuretemplate.edit.internal.childextenders.CustomExpressionForPapyrusNattableDocumentStructureTemplateChildExtender"
+            uri="http://www.eclipse.org/papyrus/model2doc/emf/1.0.0/documentstructuretemplate">
+      </extender>
    </extension>
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertySections">

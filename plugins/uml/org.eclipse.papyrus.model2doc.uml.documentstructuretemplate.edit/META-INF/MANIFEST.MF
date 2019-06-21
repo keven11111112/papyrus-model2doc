@@ -28,7 +28,7 @@ Require-Bundle: org.eclipse.osgi;bundle-version="[3.0.0,4.0.0)",
  org.eclipse.emf.edit.ui;bundle-version="[2.16.0,3.0.0)",
  org.eclipse.uml2.uml;bundle-version="[5.5.0,6.0.0)",
  org.eclipse.core.resources;bundle-version="[3.13.0,4.0.0)",
- org.eclipse.papyrus.infra.emf.expressions;bundle-version="[1.0.0,2.0.0)",
- org.eclipse.papyrus.infra.emf.expressions.edit;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.papyrus.infra.emf.expressions;bundle-version="[1.1.0,2.0.0)",
+ org.eclipse.papyrus.infra.emf.expressions.edit;bundle-version="[1.1.0,2.0.0)",
  org.eclipse.papyrus.model2doc.core.author.edit;bundle-version="0.7.0"
 Bundle-ActivationPolicy: lazy

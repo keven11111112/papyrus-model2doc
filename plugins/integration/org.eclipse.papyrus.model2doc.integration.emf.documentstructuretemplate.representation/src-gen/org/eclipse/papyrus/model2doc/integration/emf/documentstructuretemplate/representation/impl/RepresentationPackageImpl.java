@@ -27,7 +27,6 @@ import org.eclipse.papyrus.infra.constraints.ConstraintsPackage;
 import org.eclipse.papyrus.infra.core.architecture.ArchitecturePackage;
 
 import org.eclipse.papyrus.infra.emf.expressions.ExpressionsPackage;
-import org.eclipse.papyrus.infra.emf.expressions.booleanexpressions.BooleanExpressionsPackage;
 import org.eclipse.papyrus.infra.types.ElementTypesConfigurationsPackage;
 
 import org.eclipse.papyrus.model2doc.core.author.AuthorPackage;
@@ -117,7 +116,6 @@ public class RepresentationPackageImpl extends EPackageImpl implements Represent
 		org.eclipse.papyrus.infra.architecture.representation.RepresentationPackage.eINSTANCE.eClass();
 		GeneratorConfigurationPackage.eINSTANCE.eClass();
 		AuthorPackage.eINSTANCE.eClass();
-		BooleanExpressionsPackage.eINSTANCE.eClass();
 		ExpressionsPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects

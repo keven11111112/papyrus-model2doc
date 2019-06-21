@@ -39,7 +39,11 @@
    <extension
          point="org.eclipse.emf.edit.childCreationExtenders">
       <extender
-            class="org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.edit.internal.providers.CustomChildExtender"
+            class="org.eclipse.papyrus.model2doc.documentstructuretemplate.edit.internal.childextenders.CustomChildExtender"
+            uri="http://www.eclipse.org/papyrus/model2doc/uml/1.0.0/documentstructuretemplate">
+      </extender>
+      <extender
+            class="org.eclipse.papyrus.model2doc.documentstructuretemplate.edit.internal.childextenders.CustomExpressionForUMLDocumentStructureTemplateChildExtender"
             uri="http://www.eclipse.org/papyrus/model2doc/uml/1.0.0/documentstructuretemplate">
       </extender>
    </extension>
