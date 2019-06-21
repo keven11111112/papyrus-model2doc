@@ -18,6 +18,8 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
+import org.eclipse.papyrus.model2doc.core.builtintypes.DefaultFileReference;
+import org.eclipse.papyrus.model2doc.core.builtintypes.IFileReference;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.*;
 
 /**
@@ -534,6 +536,35 @@ public class DocumentStructureTemplateSwitch<T> extends Switch<T> {
 			}
 			if (result == null) {
 				result = caseIBodySectionPartTemplate(treeListView);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case DocumentStructureTemplatePackage.INSERT_FILE_TEMPLATE: {
+			InsertFileTemplate insertFileTemplate = (InsertFileTemplate) theEObject;
+			T result = caseInsertFileTemplate(insertFileTemplate);
+			if (result == null) {
+				result = caseDefaultFileReference(insertFileTemplate);
+			}
+			if (result == null) {
+				result = caseILeafSubBodyPartTemplate(insertFileTemplate);
+			}
+			if (result == null) {
+				result = caseILeafBodyPartTemplate(insertFileTemplate);
+			}
+			if (result == null) {
+				result = caseIFileReference(insertFileTemplate);
+			}
+			if (result == null) {
+				result = caseISubBodyPartTemplate(insertFileTemplate);
+			}
+			if (result == null) {
+				result = caseIBodyPartTemplate(insertFileTemplate);
+			}
+			if (result == null) {
+				result = caseIBodySectionPartTemplate(insertFileTemplate);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
@@ -1137,6 +1168,57 @@ public class DocumentStructureTemplateSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTreeListView(TreeListView object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Insert File Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Insert File Template</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInsertFileTemplate(InsertFileTemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IFile Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IFile Reference</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIFileReference(IFileReference object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Default File Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Default File Reference</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDefaultFileReference(DefaultFileReference object) {
 		return null;
 	}
 

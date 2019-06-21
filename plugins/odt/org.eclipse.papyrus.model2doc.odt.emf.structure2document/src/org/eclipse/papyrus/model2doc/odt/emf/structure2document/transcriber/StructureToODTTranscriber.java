@@ -24,6 +24,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.Body;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.ComposedBodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Image;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.InsertedFile;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Paragraph;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TableOfContents;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument;
@@ -127,6 +128,8 @@ public class StructureToODTTranscriber implements Transcriber {
 			transcribeTable((AbstractTable) bodyPart);
 		} else if (bodyPart instanceof AbstractList) {
 			transcribeList((AbstractList) bodyPart);
+		} else if (bodyPart instanceof InsertedFile) {
+			transcribeInsertedFile(((InsertedFile) bodyPart));
 		}
 
 		// then we iterate on the children of the bodyPart
@@ -138,6 +141,13 @@ public class StructureToODTTranscriber implements Transcriber {
 		}
 
 		// at the end:
+	}
+
+	/**
+	 * @param insertedFile
+	 */
+	private void transcribeInsertedFile(final InsertedFile insertedFile) {
+		transcription.insertFile(insertedFile);
 	}
 
 	/**

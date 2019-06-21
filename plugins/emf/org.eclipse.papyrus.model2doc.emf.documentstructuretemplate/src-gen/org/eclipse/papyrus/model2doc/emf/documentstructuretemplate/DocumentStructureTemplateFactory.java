@@ -155,6 +155,16 @@ public interface DocumentStructureTemplateFactory extends EFactory {
 	TreeListView createTreeListView();
 
 	/**
+	 * Returns a new object of class '<em>Insert File Template</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>Insert File Template</em>'.
+	 * @generated
+	 */
+	InsertFileTemplate createInsertFileTemplate();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

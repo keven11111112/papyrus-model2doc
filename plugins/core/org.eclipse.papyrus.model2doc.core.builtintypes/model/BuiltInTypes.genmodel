@@ -83,5 +83,11 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute BuiltInTypes.ecore#//TextListItem/text"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="BuiltInTypes.ecore#//BasicList"/>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="BuiltInTypes.ecore#//IFileReference">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="BuiltInTypes.ecore#//IFileReference/getFilePath"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="BuiltInTypes.ecore#//DefaultFileReference">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute BuiltInTypes.ecore#//DefaultFileReference/filePath"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

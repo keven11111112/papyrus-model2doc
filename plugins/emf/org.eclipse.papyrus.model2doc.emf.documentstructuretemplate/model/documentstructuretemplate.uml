@@ -813,6 +813,16 @@ The goal of this method is to return a label for each element returned by the me
       </eAnnotations>
       <ownedEnd xmi:type="uml:Property" xmi:id="_ZRrHoo29EemcPPjkzx166Q" name="ibodysectionparttemplate" type="_XvipQFYUEemiOeXIb5muwQ" association="_ZRndQI29EemcPPjkzx166Q"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_TMKQ4JaPEem5SfdtnxxoKw" name="InsertFileTemplate">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_ZYyyQJaPEem5SfdtnxxoKw" annotatedElement="_TMKQ4JaPEem5SfdtnxxoKw">
+        <body>This element allows to insert the content of an existing file into the generated file.</body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_a5hlMJaPEem5SfdtnxxoKw">
+        <general xmi:type="uml:Class" href="pathmap://MODEL2DOC/BUILTIN_TYPES/BuiltInTypes.uml#_tL-NYJQUEemHKPZQudxUGA"/>
+      </generalization>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_eKveUJaPEem5SfdtnxxoKw" client="_TMKQ4JaPEem5SfdtnxxoKw" supplier="_e0vMUFX-EemKJasCEBKPhQ" contract="_e0vMUFX-EemKJasCEBKPhQ"/>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_e32b8JaPEem5SfdtnxxoKw" client="_TMKQ4JaPEem5SfdtnxxoKw" supplier="_R99HIFX-EemKJasCEBKPhQ" contract="_R99HIFX-EemKJasCEBKPhQ"/>
+    </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Dwr3IB2KEemmq_cjeiIGww">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DwseMB2KEemmq_cjeiIGww" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>

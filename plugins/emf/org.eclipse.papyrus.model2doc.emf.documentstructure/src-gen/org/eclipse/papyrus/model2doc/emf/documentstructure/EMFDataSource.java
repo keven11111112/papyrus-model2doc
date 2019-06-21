@@ -57,7 +57,7 @@ public interface EMFDataSource extends DataSource {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Eobject</em>' reference.
+	 *                  the new value of the '<em>Eobject</em>' reference.
 	 * @see #getEobject()
 	 * @generated
 	 */
@@ -86,7 +86,7 @@ public interface EMFDataSource extends DataSource {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Feature</em>' reference.
+	 *                  the new value of the '<em>Feature</em>' reference.
 	 * @see #getFeature()
 	 * @generated
 	 */

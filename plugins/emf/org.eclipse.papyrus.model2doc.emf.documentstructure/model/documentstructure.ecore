@@ -118,4 +118,9 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InsertedFile" eSuperTypes="../../org.eclipse.papyrus.model2doc.core.builtintypes/model/BuiltInTypes.ecore#//DefaultFileReference #//LeafBodyPart">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This element reference a file which will be inserted in the final document."/>
+    </eAnnotations>
+  </eClassifiers>
 </ecore:EPackage>

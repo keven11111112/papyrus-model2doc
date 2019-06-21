@@ -199,6 +199,9 @@ public class BodyItemProvider
 
 		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.BODY__BODY_PART_TEMPLATE,
 				DocumentStructureTemplateFactory.eINSTANCE.createTreeListView()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.BODY__BODY_PART_TEMPLATE,
+				DocumentStructureTemplateFactory.eINSTANCE.createInsertFileTemplate()));
 	}
 
 	/**

@@ -107,5 +107,6 @@
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructure.ecore#//StringVersion">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructure.ecore#//StringVersion/version"/>
     </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructure.ecore#//InsertedFile"/>
   </genPackages>
 </genmodel:GenModel>

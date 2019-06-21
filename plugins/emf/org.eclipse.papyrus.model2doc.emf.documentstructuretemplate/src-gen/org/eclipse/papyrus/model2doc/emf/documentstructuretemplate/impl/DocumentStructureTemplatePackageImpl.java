@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.eclipse.papyrus.infra.emf.expressions.ExpressionsPackage;
 import org.eclipse.papyrus.infra.emf.expressions.booleanexpressions.BooleanExpressionsPackage;
 import org.eclipse.papyrus.model2doc.core.author.AuthorPackage;
+import org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesPackage;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationPackage;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.Body;
@@ -63,6 +64,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubBodyPartT
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubListItemTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITemplatePartView;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.InsertFileTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TableOfContents;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TreeListView;
@@ -361,6 +363,14 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 *
 	 * @generated
 	 */
+	private EClass insertFileTemplateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
 	private EEnum eClassFilterBehaviorEEnum = null;
 
 	/**
@@ -420,6 +430,7 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 
 		// Initialize simple dependencies
 		AuthorPackage.eINSTANCE.eClass();
+		BuiltInTypesPackage.eINSTANCE.eClass();
 		EcorePackage.eINSTANCE.eClass();
 		ExpressionsPackage.eINSTANCE.eClass();
 		GeneratorConfigurationPackage.eINSTANCE.eClass();
@@ -1424,6 +1435,17 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
+	public EClass getInsertFileTemplate() {
+		return insertFileTemplateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EEnum getEClassFilterBehavior() {
 		return eClassFilterBehaviorEEnum;
 	}
@@ -1586,6 +1608,8 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		treeListViewEClass = createEClass(TREE_LIST_VIEW);
 		createEReference(treeListViewEClass, TREE_LIST_VIEW__ROOT_LIST_ITEM_TEMPLATE);
 
+		insertFileTemplateEClass = createEClass(INSERT_FILE_TEMPLATE);
+
 		// Create enums
 		eClassFilterBehaviorEEnum = createEEnum(ECLASS_FILTER_BEHAVIOR);
 	}
@@ -1622,6 +1646,7 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		GeneratorConfigurationPackage theGeneratorConfigurationPackage = (GeneratorConfigurationPackage) EPackage.Registry.INSTANCE.getEPackage(GeneratorConfigurationPackage.eNS_URI);
 		AuthorPackage theAuthorPackage = (AuthorPackage) EPackage.Registry.INSTANCE.getEPackage(AuthorPackage.eNS_URI);
 		BooleanExpressionsPackage theBooleanExpressionsPackage = (BooleanExpressionsPackage) EPackage.Registry.INSTANCE.getEPackage(BooleanExpressionsPackage.eNS_URI);
+		BuiltInTypesPackage theBuiltInTypesPackage = (BuiltInTypesPackage) EPackage.Registry.INSTANCE.getEPackage(BuiltInTypesPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1661,6 +1686,9 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		eClassListItemTemplateEClass.getESuperTypes().add(this.getIComposedSubListItemTemplate());
 		treeListViewEClass.getESuperTypes().add(this.getILeafBodyPartTemplate());
 		treeListViewEClass.getESuperTypes().add(this.getITemplatePartView());
+		insertFileTemplateEClass.getESuperTypes().add(theBuiltInTypesPackage.getDefaultFileReference());
+		insertFileTemplateEClass.getESuperTypes().add(this.getILeafSubBodyPartTemplate());
+		insertFileTemplateEClass.getESuperTypes().add(this.getILeafBodyPartTemplate());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(documentTemplateEClass, DocumentTemplate.class, "DocumentTemplate", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
@@ -1839,6 +1867,8 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		initEClass(treeListViewEClass, TreeListView.class, "TreeListView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(getTreeListView_RootListItemTemplate(), this.getIRootListItemTemplate(), null, "rootListItemTemplate", null, 0, -1, TreeListView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, //$NON-NLS-1$
 				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(insertFileTemplateEClass, InsertFileTemplate.class, "InsertFileTemplate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		// Initialize enums and add enum literals
 		initEEnum(eClassFilterBehaviorEEnum, EClassFilterBehavior.class, "EClassFilterBehavior"); //$NON-NLS-1$

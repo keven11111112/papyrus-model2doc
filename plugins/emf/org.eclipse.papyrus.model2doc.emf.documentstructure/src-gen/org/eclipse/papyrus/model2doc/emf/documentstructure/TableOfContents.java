@@ -55,7 +55,7 @@ public interface TableOfContents extends TextDocumentPart {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Toc Title</em>' attribute.
+	 *                  the new value of the '<em>Toc Title</em>' attribute.
 	 * @see #getTocTitle()
 	 * @generated
 	 */

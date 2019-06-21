@@ -194,6 +194,9 @@ public class BodyItemProvider
 
 		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY__BODY_PART,
 				DocumentStructureFactory.eINSTANCE.createExtendedBasicList()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY__BODY_PART,
+				DocumentStructureFactory.eINSTANCE.createInsertedFile()));
 	}
 
 	/**

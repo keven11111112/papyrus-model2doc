@@ -19,6 +19,7 @@ import java.util.Collection;
 import org.eclipse.papyrus.model2doc.core.author.IAuthor;
 import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractList;
 import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractTable;
+import org.eclipse.papyrus.model2doc.core.builtintypes.IFileReference;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration;
 
 
@@ -104,11 +105,20 @@ public interface Transcription {
 	public void writeTable(AbstractTable table);
 
 	/**
+	 * Insert the contents of a file in the document
+	 *
+	 * @param fileReference
+	 *            a reference to a file
+	 */
+	public void insertFile(final IFileReference fileReference);
+
+	/**
 	 * Import image.
 	 *
 	 * @param image
+	 *            the image to insert
 	 * @param caption
-	 *            TODO
+	 *            the caption of the inserted image
 	 */
 	public void importImage(ImageDescription image, String caption);
 

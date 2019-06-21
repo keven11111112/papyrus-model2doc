@@ -31,6 +31,8 @@ import org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesFactory;
 import org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesPackage;
 import org.eclipse.papyrus.model2doc.core.builtintypes.Cell;
 import org.eclipse.papyrus.model2doc.core.builtintypes.CellLocation;
+import org.eclipse.papyrus.model2doc.core.builtintypes.DefaultFileReference;
+import org.eclipse.papyrus.model2doc.core.builtintypes.IFileReference;
 import org.eclipse.papyrus.model2doc.core.builtintypes.ListItem;
 import org.eclipse.papyrus.model2doc.core.builtintypes.Row;
 import org.eclipse.papyrus.model2doc.core.builtintypes.TextCell;
@@ -123,6 +125,22 @@ public class BuiltInTypesPackageImpl extends EPackageImpl implements BuiltInType
 	 * @generated
 	 */
 	private EClass basicListEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass iFileReferenceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass defaultFileReferenceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -449,6 +467,50 @@ public class BuiltInTypesPackageImpl extends EPackageImpl implements BuiltInType
 	 * @generated
 	 */
 	@Override
+	public EClass getIFileReference() {
+		return iFileReferenceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EOperation getIFileReference__GetFilePath() {
+		return iFileReferenceEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getDefaultFileReference() {
+		return defaultFileReferenceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getDefaultFileReference_FilePath() {
+		return (EAttribute) defaultFileReferenceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EEnum getCellLocation() {
 		return cellLocationEEnum;
 	}
@@ -519,6 +581,12 @@ public class BuiltInTypesPackageImpl extends EPackageImpl implements BuiltInType
 
 		basicListEClass = createEClass(BASIC_LIST);
 
+		iFileReferenceEClass = createEClass(IFILE_REFERENCE);
+		createEOperation(iFileReferenceEClass, IFILE_REFERENCE___GET_FILE_PATH);
+
+		defaultFileReferenceEClass = createEClass(DEFAULT_FILE_REFERENCE);
+		createEAttribute(defaultFileReferenceEClass, DEFAULT_FILE_REFERENCE__FILE_PATH);
+
 		// Create enums
 		cellLocationEEnum = createEEnum(CELL_LOCATION);
 	}
@@ -560,6 +628,7 @@ public class BuiltInTypesPackageImpl extends EPackageImpl implements BuiltInType
 		textCellEClass.getESuperTypes().add(this.getCell());
 		textListItemEClass.getESuperTypes().add(this.getListItem());
 		basicListEClass.getESuperTypes().add(this.getAbstractList());
+		defaultFileReferenceEClass.getESuperTypes().add(this.getIFileReference());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(abstractTableEClass, AbstractTable.class, "AbstractTable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
@@ -597,6 +666,13 @@ public class BuiltInTypesPackageImpl extends EPackageImpl implements BuiltInType
 		initEAttribute(getTextListItem_Text(), ecorePackage.getEString(), "text", "", 1, 1, TextListItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
 
 		initEClass(basicListEClass, BasicList.class, "BasicList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEClass(iFileReferenceEClass, IFileReference.class, "IFileReference", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEOperation(getIFileReference__GetFilePath(), ecorePackage.getEString(), "getFilePath", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
+		initEClass(defaultFileReferenceEClass, DefaultFileReference.class, "DefaultFileReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(getDefaultFileReference_FilePath(), ecorePackage.getEString(), "filePath", null, 1, 1, DefaultFileReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
 		// Initialize enums and add enum literals
 		initEEnum(cellLocationEEnum, CellLocation.class, "CellLocation"); //$NON-NLS-1$

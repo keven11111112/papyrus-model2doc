@@ -40,6 +40,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedBasicTable;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedTextCell;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedTextListItem;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Image;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.InsertedFile;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.LeafBodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Paragraph;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.StringVersion;
@@ -208,6 +209,14 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	 * @generated
 	 */
 	private EClass stringVersionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass insertedFileEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -719,6 +728,17 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	 * @generated
 	 */
 	@Override
+	public EClass getInsertedFile() {
+		return insertedFileEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public DocumentStructureFactory getDocumentStructureFactory() {
 		return (DocumentStructureFactory) getEFactoryInstance();
 	}
@@ -803,6 +823,8 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 
 		stringVersionEClass = createEClass(STRING_VERSION);
 		createEAttribute(stringVersionEClass, STRING_VERSION__VERSION);
+
+		insertedFileEClass = createEClass(INSERTED_FILE);
 	}
 
 	/**
@@ -859,6 +881,8 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 		extendedBasicListEClass.getESuperTypes().add(this.getLeafBodyPart());
 		extendedTextListItemEClass.getESuperTypes().add(theBuiltInTypesPackage.getTextListItem());
 		stringVersionEClass.getESuperTypes().add(this.getVersion());
+		insertedFileEClass.getESuperTypes().add(theBuiltInTypesPackage.getDefaultFileReference());
+		insertedFileEClass.getESuperTypes().add(this.getLeafBodyPart());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(textDocumentEClass, TextDocument.class, "TextDocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
@@ -927,6 +951,8 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 
 		initEClass(stringVersionEClass, StringVersion.class, "StringVersion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEAttribute(getStringVersion_Version(), ecorePackage.getEString(), "version", null, 1, 1, StringVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+
+		initEClass(insertedFileEClass, InsertedFile.class, "InsertedFile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		// Create resource
 		createResource(eNS_URI);

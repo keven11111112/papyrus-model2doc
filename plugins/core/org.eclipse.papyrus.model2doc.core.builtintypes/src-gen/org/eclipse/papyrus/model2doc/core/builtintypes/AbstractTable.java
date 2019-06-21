@@ -91,7 +91,6 @@ public interface AbstractTable extends EObject {
 	 * <!-- end-model-doc -->
 	 *
 	 * @model kind="operation" required="true" ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return getRows().size();'"
 	 * @generated
 	 */
 	int getRowsNumber();
@@ -104,8 +103,6 @@ public interface AbstractTable extends EObject {
 	 * <!-- end-model-doc -->
 	 *
 	 * @model kind="operation" required="true" ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='if (getRowsNumber() &gt; 0) {\n\t// we assume all rows have the same number of cells.\n\tfinal Row firstRow = getRows().get(0);\n\tif (null != firstRow) {\n\t\treturn
-	 *        firstRow.getCells().size();\n\t}\n}\nreturn 0;'"
 	 * @generated
 	 */
 	int getColumnsNumber();
@@ -119,8 +116,6 @@ public interface AbstractTable extends EObject {
 	 * <!-- end-model-doc -->
 	 *
 	 * @model kind="operation" ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='final java.util.List&lt;Cell&gt; cells = new java.util.ArrayList&lt;Cell&gt;();\nfor (final Row row : getRows()) {\n\tcells.addAll(row.getCells());\n}\nreturn
-	 *        org.eclipse.emf.common.util.ECollections.toEList(cells);\n'"
 	 * @generated
 	 */
 	EList<Cell> getAllCells();

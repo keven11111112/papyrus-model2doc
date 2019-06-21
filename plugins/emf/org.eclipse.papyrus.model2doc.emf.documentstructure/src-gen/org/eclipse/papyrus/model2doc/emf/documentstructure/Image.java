@@ -58,7 +58,7 @@ public interface Image extends LeafBodyPart {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Image Path</em>' attribute.
+	 *                  the new value of the '<em>Image Path</em>' attribute.
 	 * @see #getImagePath()
 	 * @generated
 	 */
@@ -86,7 +86,7 @@ public interface Image extends LeafBodyPart {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Caption</em>' attribute.
+	 *                  the new value of the '<em>Caption</em>' attribute.
 	 * @see #getCaption()
 	 * @generated
 	 */

@@ -231,6 +231,31 @@ public class BuiltInTypesItemProviderAdapterFactory extends BuiltInTypesAdapterF
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.core.builtintypes.DefaultFileReference} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected DefaultFileReferenceItemProvider defaultFileReferenceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.core.builtintypes.DefaultFileReference}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Adapter createDefaultFileReferenceAdapter() {
+		if (defaultFileReferenceItemProvider == null) {
+			defaultFileReferenceItemProvider = new DefaultFileReferenceItemProvider(this);
+		}
+
+		return defaultFileReferenceItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -390,6 +415,9 @@ public class BuiltInTypesItemProviderAdapterFactory extends BuiltInTypesAdapterF
 		}
 		if (basicListItemProvider != null) {
 			basicListItemProvider.dispose();
+		}
+		if (defaultFileReferenceItemProvider != null) {
+			defaultFileReferenceItemProvider.dispose();
 		}
 	}
 

@@ -32,6 +32,9 @@ import org.eclipse.emf.ecore.EReference;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * Common interface to reference a file.
+ * <!-- end-model-doc -->
  *
  * @see org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesFactory
  * @model kind="package"
@@ -606,6 +609,98 @@ public interface BuiltInTypesPackage extends EPackage {
 	int BASIC_LIST_OPERATION_COUNT = ABSTRACT_LIST_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.core.builtintypes.IFileReference <em>IFile Reference</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.IFileReference
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.impl.BuiltInTypesPackageImpl#getIFileReference()
+	 * @generated
+	 */
+	int IFILE_REFERENCE = 10;
+
+	/**
+	 * The number of structural features of the '<em>IFile Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IFILE_REFERENCE_FEATURE_COUNT = 0;
+
+	/**
+	 * The operation id for the '<em>Get File Path</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IFILE_REFERENCE___GET_FILE_PATH = 0;
+
+	/**
+	 * The number of operations of the '<em>IFile Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IFILE_REFERENCE_OPERATION_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.core.builtintypes.impl.DefaultFileReferenceImpl <em>Default File Reference</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.impl.DefaultFileReferenceImpl
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.impl.BuiltInTypesPackageImpl#getDefaultFileReference()
+	 * @generated
+	 */
+	int DEFAULT_FILE_REFERENCE = 11;
+
+	/**
+	 * The feature id for the '<em><b>File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int DEFAULT_FILE_REFERENCE__FILE_PATH = IFILE_REFERENCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Default File Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int DEFAULT_FILE_REFERENCE_FEATURE_COUNT = IFILE_REFERENCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get File Path</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int DEFAULT_FILE_REFERENCE___GET_FILE_PATH = IFILE_REFERENCE___GET_FILE_PATH;
+
+	/**
+	 * The number of operations of the '<em>Default File Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int DEFAULT_FILE_REFERENCE_OPERATION_COUNT = IFILE_REFERENCE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.core.builtintypes.CellLocation <em>Cell Location</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -614,7 +709,7 @@ public interface BuiltInTypesPackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.impl.BuiltInTypesPackageImpl#getCellLocation()
 	 * @generated
 	 */
-	int CELL_LOCATION = 10;
+	int CELL_LOCATION = 12;
 
 
 	/**
@@ -866,6 +961,51 @@ public interface BuiltInTypesPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getBasicList();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.core.builtintypes.IFileReference <em>IFile Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>IFile Reference</em>'.
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.IFileReference
+	 * @generated
+	 */
+	EClass getIFileReference();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.core.builtintypes.IFileReference#getFilePath() <em>Get File Path</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the '<em>Get File Path</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.IFileReference#getFilePath()
+	 * @generated
+	 */
+	EOperation getIFileReference__GetFilePath();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.core.builtintypes.DefaultFileReference <em>Default File Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>Default File Reference</em>'.
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.DefaultFileReference
+	 * @generated
+	 */
+	EClass getDefaultFileReference();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.core.builtintypes.DefaultFileReference#getFilePath <em>File Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>File Path</em>'.
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.DefaultFileReference#getFilePath()
+	 * @see #getDefaultFileReference()
+	 * @generated
+	 */
+	EAttribute getDefaultFileReference_FilePath();
 
 	/**
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.model2doc.core.builtintypes.CellLocation <em>Cell Location</em>}'.
@@ -1120,6 +1260,46 @@ public interface BuiltInTypesPackage extends EPackage {
 		 * @generated
 		 */
 		EClass BASIC_LIST = eINSTANCE.getBasicList();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.core.builtintypes.IFileReference <em>IFile Reference</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.core.builtintypes.IFileReference
+		 * @see org.eclipse.papyrus.model2doc.core.builtintypes.impl.BuiltInTypesPackageImpl#getIFileReference()
+		 * @generated
+		 */
+		EClass IFILE_REFERENCE = eINSTANCE.getIFileReference();
+
+		/**
+		 * The meta object literal for the '<em><b>Get File Path</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EOperation IFILE_REFERENCE___GET_FILE_PATH = eINSTANCE.getIFileReference__GetFilePath();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.core.builtintypes.impl.DefaultFileReferenceImpl <em>Default File Reference</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.core.builtintypes.impl.DefaultFileReferenceImpl
+		 * @see org.eclipse.papyrus.model2doc.core.builtintypes.impl.BuiltInTypesPackageImpl#getDefaultFileReference()
+		 * @generated
+		 */
+		EClass DEFAULT_FILE_REFERENCE = eINSTANCE.getDefaultFileReference();
+
+		/**
+		 * The meta object literal for the '<em><b>File Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute DEFAULT_FILE_REFERENCE__FILE_PATH = eINSTANCE.getDefaultFileReference_FilePath();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.core.builtintypes.CellLocation <em>Cell Location</em>}' enum.

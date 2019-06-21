@@ -23,6 +23,7 @@ import org.eclipse.papyrus.model2doc.core.author.IAuthor;
 import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractList;
 import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractTable;
 import org.eclipse.papyrus.model2doc.core.builtintypes.BasicList;
+import org.eclipse.papyrus.model2doc.core.builtintypes.IFileReference;
 import org.eclipse.papyrus.model2doc.core.builtintypes.ListItem;
 import org.eclipse.papyrus.model2doc.core.builtintypes.TextListItem;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration;
@@ -398,6 +399,17 @@ public class ODTTranscription implements Transcription {
 		} catch (IllegalArgumentException | PropertyExistException | IllegalTypeException e) {
 			Activator.log.error(e);
 		}
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.model2doc.core.transcription.Transcription#insertFile(org.eclipse.papyrus.model2doc.core.builtintypes.IFileReference)
+	 *
+	 * @param fileReference
+	 */
+	@Override
+	public void insertFile(final IFileReference fileReference) {
+		final String path = fileReference.getFilePath();
+		this.writeService.insertTextFile(cursor, path);
 	}
 
 }

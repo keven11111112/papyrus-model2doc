@@ -61,7 +61,7 @@ public interface Document extends EObject {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Document Generator Configuration</em>' containment reference.
+	 *                  the new value of the '<em>Document Generator Configuration</em>' containment reference.
 	 * @see #getDocumentGeneratorConfiguration()
 	 * @generated
 	 */
@@ -107,7 +107,7 @@ public interface Document extends EObject {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Version</em>' containment reference.
+	 *                  the new value of the '<em>Version</em>' containment reference.
 	 * @see #getVersion()
 	 * @generated
 	 */

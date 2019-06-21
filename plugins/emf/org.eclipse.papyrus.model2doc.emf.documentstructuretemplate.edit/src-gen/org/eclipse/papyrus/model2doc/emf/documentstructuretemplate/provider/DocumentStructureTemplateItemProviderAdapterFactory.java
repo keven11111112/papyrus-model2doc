@@ -406,6 +406,31 @@ public class DocumentStructureTemplateItemProviderAdapterFactory extends Documen
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.InsertFileTemplate} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected InsertFileTemplateItemProvider insertFileTemplateItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.InsertFileTemplate}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Adapter createInsertFileTemplateAdapter() {
+		if (insertFileTemplateItemProvider == null) {
+			insertFileTemplateItemProvider = new InsertFileTemplateItemProvider(this);
+		}
+
+		return insertFileTemplateItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -586,6 +611,9 @@ public class DocumentStructureTemplateItemProviderAdapterFactory extends Documen
 		}
 		if (treeListViewItemProvider != null) {
 			treeListViewItemProvider.dispose();
+		}
+		if (insertFileTemplateItemProvider != null) {
+			insertFileTemplateItemProvider.dispose();
 		}
 	}
 

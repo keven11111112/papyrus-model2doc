@@ -268,16 +268,29 @@ public class GeneratorConfigurationOperations {
 	 *         the file uri as local path (in C:/ for windows), prefixed with file:/
 	 */
 	public static final String getTemplateFilePathInLocalPath(final IDocumentGeneratorConfiguration configuration) {
-		final String templateFile = configuration.getTemplateFile();
-		if (null == templateFile || templateFile.isEmpty()) {
+		return getFilePathInLocalPath(configuration, configuration.getTemplateFile());
+	}
+
+	/**
+	 *
+	 * @param eobject
+	 *            an eobject
+	 * @param filePath
+	 *            a path to convert , the path can be a platform:/plugin, and platform:/resource a just a string. In this case we build a path from the location of the EObject given in parameter
+	 * @return
+	 *         the file uri as local path (in C:/ for windows), prefixed with file:/
+	 *
+	 */
+	public static final String getFilePathInLocalPath(final EObject eobject, final String filePath) {
+		if (null == filePath || filePath.isEmpty()) {
 			return null;
 		}
-		URI templateURI = URI.createURI(templateFile);
+		URI templateURI = URI.createURI(filePath);
 		final String scheme = templateURI.scheme(); // Windows C: or platform for example
 		if (false == templateURI.isPlatform() && null != scheme && false == scheme.isEmpty()) {
-			return URI.createFileURI(templateFile).toString();// it add the file:/ before the path
+			return URI.createFileURI(filePath).toString();// it add the file:/ before the path
 		}
-		String res = convertToLocalPath(configuration, templateFile);
+		String res = convertToLocalPath(eobject, filePath);
 		return URI.createFileURI(res).toString();
 	}
 

@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -3161,6 +3162,117 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int TREE_LIST_VIEW_OPERATION_COUNT = ILEAF_BODY_PART_TEMPLATE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.InsertFileTemplateImpl <em>Insert File Template</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.InsertFileTemplateImpl
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getInsertFileTemplate()
+	 * @generated
+	 */
+	int INSERT_FILE_TEMPLATE = 35;
+
+	/**
+	 * The feature id for the '<em><b>File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int INSERT_FILE_TEMPLATE__FILE_PATH = BuiltInTypesPackage.DEFAULT_FILE_REFERENCE__FILE_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Generate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int INSERT_FILE_TEMPLATE__GENERATE = BuiltInTypesPackage.DEFAULT_FILE_REFERENCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Generate Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int INSERT_FILE_TEMPLATE__GENERATE_TITLE = BuiltInTypesPackage.DEFAULT_FILE_REFERENCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Custom Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int INSERT_FILE_TEMPLATE__CUSTOM_TITLE = BuiltInTypesPackage.DEFAULT_FILE_REFERENCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Generate Branch Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int INSERT_FILE_TEMPLATE__GENERATE_BRANCH_CONDITION = BuiltInTypesPackage.DEFAULT_FILE_REFERENCE_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Insert File Template</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int INSERT_FILE_TEMPLATE_FEATURE_COUNT = BuiltInTypesPackage.DEFAULT_FILE_REFERENCE_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Get File Path</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int INSERT_FILE_TEMPLATE___GET_FILE_PATH = BuiltInTypesPackage.DEFAULT_FILE_REFERENCE___GET_FILE_PATH;
+
+	/**
+	 * The operation id for the '<em>Build Part Template Title</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int INSERT_FILE_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT = BuiltInTypesPackage.DEFAULT_FILE_REFERENCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Generate Branch</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int INSERT_FILE_TEMPLATE___GENERATE_BRANCH__EOBJECT = BuiltInTypesPackage.DEFAULT_FILE_REFERENCE_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Insert File Template</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int INSERT_FILE_TEMPLATE_OPERATION_COUNT = BuiltInTypesPackage.DEFAULT_FILE_REFERENCE_OPERATION_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassFilterBehavior <em>EClass Filter Behavior</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3169,7 +3281,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEClassFilterBehavior()
 	 * @generated
 	 */
-	int ECLASS_FILTER_BEHAVIOR = 35;
+	int ECLASS_FILTER_BEHAVIOR = 36;
 
 
 	/**
@@ -4188,6 +4300,17 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	EReference getTreeListView_RootListItemTemplate();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.InsertFileTemplate <em>Insert File Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>Insert File Template</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.InsertFileTemplate
+	 * @generated
+	 */
+	EClass getInsertFileTemplate();
+
+	/**
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassFilterBehavior <em>EClass Filter Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5093,6 +5216,17 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 		 * @generated
 		 */
 		EReference TREE_LIST_VIEW__ROOT_LIST_ITEM_TEMPLATE = eINSTANCE.getTreeListView_RootListItemTemplate();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.InsertFileTemplateImpl <em>Insert File Template</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.InsertFileTemplateImpl
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getInsertFileTemplate()
+		 * @generated
+		 */
+		EClass INSERT_FILE_TEMPLATE = eINSTANCE.getInsertFileTemplate();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassFilterBehavior <em>EClass Filter Behavior</em>}' enum.

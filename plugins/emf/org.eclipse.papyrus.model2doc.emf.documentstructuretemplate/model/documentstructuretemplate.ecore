@@ -506,4 +506,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="rootListItemTemplate" ordered="false"
         upperBound="-1" eType="#//IRootListItemTemplate" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InsertFileTemplate" eSuperTypes="../../org.eclipse.papyrus.model2doc.core.builtintypes/model/BuiltInTypes.ecore#//DefaultFileReference #//ILeafSubBodyPartTemplate #//ILeafBodyPartTemplate">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This element allows to insert the content of an existing file into the generated file."/>
+    </eAnnotations>
+  </eClassifiers>
 </ecore:EPackage>

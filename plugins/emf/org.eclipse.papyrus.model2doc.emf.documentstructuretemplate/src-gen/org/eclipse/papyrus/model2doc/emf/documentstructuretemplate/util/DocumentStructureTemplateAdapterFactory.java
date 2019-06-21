@@ -20,6 +20,8 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.papyrus.model2doc.core.builtintypes.DefaultFileReference;
+import org.eclipse.papyrus.model2doc.core.builtintypes.IFileReference;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.*;
 
 /**
@@ -255,6 +257,21 @@ public class DocumentStructureTemplateAdapterFactory extends AdapterFactoryImpl 
 		@Override
 		public Adapter caseTreeListView(TreeListView object) {
 			return createTreeListViewAdapter();
+		}
+
+		@Override
+		public Adapter caseInsertFileTemplate(InsertFileTemplate object) {
+			return createInsertFileTemplateAdapter();
+		}
+
+		@Override
+		public Adapter caseIFileReference(IFileReference object) {
+			return createIFileReferenceAdapter();
+		}
+
+		@Override
+		public Adapter caseDefaultFileReference(DefaultFileReference object) {
+			return createDefaultFileReferenceAdapter();
 		}
 
 		@Override
@@ -801,6 +818,51 @@ public class DocumentStructureTemplateAdapterFactory extends AdapterFactoryImpl 
 	 * @generated
 	 */
 	public Adapter createTreeListViewAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.InsertFileTemplate <em>Insert File Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.InsertFileTemplate
+	 * @generated
+	 */
+	public Adapter createInsertFileTemplateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.core.builtintypes.IFileReference <em>IFile Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.IFileReference
+	 * @generated
+	 */
+	public Adapter createIFileReferenceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.core.builtintypes.DefaultFileReference <em>Default File Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.DefaultFileReference
+	 * @generated
+	 */
+	public Adapter createDefaultFileReferenceAdapter() {
 		return null;
 	}
 

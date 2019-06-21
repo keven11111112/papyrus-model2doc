@@ -94,6 +94,8 @@ public class DocumentStructureFactoryImpl extends EFactoryImpl implements Docume
 			return createExtendedTextListItem();
 		case DocumentStructurePackage.STRING_VERSION:
 			return createStringVersion();
+		case DocumentStructurePackage.INSERTED_FILE:
+			return createInsertedFile();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -241,6 +243,18 @@ public class DocumentStructureFactoryImpl extends EFactoryImpl implements Docume
 	public StringVersion createStringVersion() {
 		StringVersionImpl stringVersion = new StringVersionImpl();
 		return stringVersion;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public InsertedFile createInsertedFile() {
+		InsertedFileImpl insertedFile = new InsertedFileImpl();
+		return insertedFile;
 	}
 
 	/**

@@ -155,6 +155,16 @@ public interface DocumentStructureFactory extends EFactory {
 	StringVersion createStringVersion();
 
 	/**
+	 * Returns a new object of class '<em>Inserted File</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>Inserted File</em>'.
+	 * @generated
+	 */
+	InsertedFile createInsertedFile();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

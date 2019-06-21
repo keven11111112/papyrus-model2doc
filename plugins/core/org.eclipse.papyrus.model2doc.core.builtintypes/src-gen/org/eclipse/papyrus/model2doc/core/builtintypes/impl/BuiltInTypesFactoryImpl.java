@@ -81,6 +81,8 @@ public class BuiltInTypesFactoryImpl extends EFactoryImpl implements BuiltInType
 			return createTextListItem();
 		case BuiltInTypesPackage.BASIC_LIST:
 			return createBasicList();
+		case BuiltInTypesPackage.DEFAULT_FILE_REFERENCE:
+			return createDefaultFileReference();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -176,6 +178,18 @@ public class BuiltInTypesFactoryImpl extends EFactoryImpl implements BuiltInType
 	public BasicList createBasicList() {
 		BasicListImpl basicList = new BasicListImpl();
 		return basicList;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public DefaultFileReference createDefaultFileReference() {
+		DefaultFileReferenceImpl defaultFileReference = new DefaultFileReferenceImpl();
+		return defaultFileReference;
 	}
 
 	/**

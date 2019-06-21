@@ -22,6 +22,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassPartTem
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTableView;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.InsertFileTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TreeListView;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.providers.DelegatingToEMFLabelProvider;
 
@@ -88,17 +89,35 @@ public class BodySectionPartTemplateTitleOperations {
 		if (partTemplate instanceof TreeListView) {
 			return buildTreeListViewTitle((TreeListView) partTemplate, parameter);
 		}
+		if (partTemplate instanceof InsertFileTemplate) {
+			return buildInsertFileTemplateTitle((InsertFileTemplate) partTemplate, parameter);
+		}
 		return ""; //$NON-NLS-1$
 	}
 
 
 	/**
-	 * @param partTemplate
-	 * @param object
+	 * @param insertFileTemplate
+	 *            the insertFileTemplate element
+	 * @param parameter
+	 *            a parameter which could be used to create the title
 	 * @return
+	 *         the created title for insertFileTemplate
 	 */
-	private String buildTreeListViewTitle(final TreeListView partTemplate, final EObject object) {
-		final String contextLabel = getLabel(object);
+	private String buildInsertFileTemplateTitle(final InsertFileTemplate insertFileTemplate, final EObject parameter) {
+		return NLS.bind("Inserted File {0}", insertFileTemplate.getFilePath()); //$NON-NLS-1$
+	}
+
+	/**
+	 * @param treeListView
+	 *            the treeListView element
+	 * @param parameter
+	 *            a parameter used to create the title
+	 * @return
+	 *         the created title for the TreeListView
+	 */
+	private String buildTreeListViewTitle(final TreeListView treeListView, final EObject parameter) {
+		final String contextLabel = getLabel(parameter);
 		return NLS.bind("A List of sub properties for {0}", contextLabel); //$NON-NLS-1$
 	}
 

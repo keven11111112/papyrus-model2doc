@@ -418,6 +418,31 @@ public class DocumentStructureItemProviderAdapterFactory extends DocumentStructu
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructure.InsertedFile} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected InsertedFileItemProvider insertedFileItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructure.InsertedFile}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Adapter createInsertedFileAdapter() {
+		if (insertedFileItemProvider == null) {
+			insertedFileItemProvider = new InsertedFileItemProvider(this);
+		}
+
+		return insertedFileItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -598,6 +623,9 @@ public class DocumentStructureItemProviderAdapterFactory extends DocumentStructu
 		}
 		if (stringVersionItemProvider != null) {
 			stringVersionItemProvider.dispose();
+		}
+		if (insertedFileItemProvider != null) {
+			insertedFileItemProvider.dispose();
 		}
 	}
 

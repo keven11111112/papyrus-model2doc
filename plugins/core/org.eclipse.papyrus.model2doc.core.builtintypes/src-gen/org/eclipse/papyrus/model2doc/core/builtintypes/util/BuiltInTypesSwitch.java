@@ -178,6 +178,25 @@ public class BuiltInTypesSwitch<T> extends Switch<T> {
 			}
 			return result;
 		}
+		case BuiltInTypesPackage.IFILE_REFERENCE: {
+			IFileReference iFileReference = (IFileReference) theEObject;
+			T result = caseIFileReference(iFileReference);
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case BuiltInTypesPackage.DEFAULT_FILE_REFERENCE: {
+			DefaultFileReference defaultFileReference = (DefaultFileReference) theEObject;
+			T result = caseDefaultFileReference(defaultFileReference);
+			if (result == null) {
+				result = caseIFileReference(defaultFileReference);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -350,6 +369,40 @@ public class BuiltInTypesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBasicList(BasicList object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IFile Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IFile Reference</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIFileReference(IFileReference object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Default File Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Default File Reference</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDefaultFileReference(DefaultFileReference object) {
 		return null;
 	}
 

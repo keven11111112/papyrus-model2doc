@@ -162,6 +162,7 @@ import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 import org.eclipse.papyrus.infra.emf.expressions.booleanexpressions.provider.BooleanExpressionsItemProviderAdapterFactory;
 import org.eclipse.papyrus.infra.emf.expressions.provider.ExpressionsItemProviderAdapterFactory;
 import org.eclipse.papyrus.model2doc.core.author.provider.AuthorItemProviderAdapterFactory;
+import org.eclipse.papyrus.model2doc.core.builtintypes.provider.BuiltInTypesItemProviderAdapterFactory;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.provider.GeneratorConfigurationItemProviderAdapterFactory;
 
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
@@ -678,6 +679,7 @@ public class DocumentStructureTemplateEditor
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new DocumentStructureTemplateItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new AuthorItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new BuiltInTypesItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ExpressionsItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new BooleanExpressionsItemProviderAdapterFactory());

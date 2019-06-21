@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 
 import org.eclipse.papyrus.infra.emf.expressions.provider.ExpressionsEditPlugin;
 import org.eclipse.papyrus.model2doc.core.author.provider.AuthorEditPlugin;
+import org.eclipse.papyrus.model2doc.core.builtintypes.provider.BuiltInTypesEditPlugin;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.provider.GeneratorconfigurationEditPlugin;
 
 /**
@@ -61,6 +62,7 @@ public final class DocumentStructureTemplateEditorPlugin extends EMFPlugin {
 	public DocumentStructureTemplateEditorPlugin() {
 		super(new ResourceLocator[] {
 				AuthorEditPlugin.INSTANCE,
+				BuiltInTypesEditPlugin.INSTANCE,
 				EcoreEditPlugin.INSTANCE,
 				ExpressionsEditPlugin.INSTANCE,
 				GeneratorconfigurationEditPlugin.INSTANCE,

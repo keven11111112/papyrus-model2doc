@@ -62,8 +62,6 @@ public interface ListItem extends EObject {
 	 * <!-- end-model-doc -->
 	 *
 	 * @model kind="operation" required="true" ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='int level = 1;\norg.eclipse.emf.ecore.EObject eContainer = eContainer();\nwhile (eContainer != null &amp;&amp; eContainer instanceof
-	 *        org.eclipse.papyrus.model2doc.core.builtintypes.ListItem) {\n\tlevel++;\n\teContainer = eContainer.eContainer();\n}\nreturn level;'"
 	 * @generated
 	 */
 	int getLevel();

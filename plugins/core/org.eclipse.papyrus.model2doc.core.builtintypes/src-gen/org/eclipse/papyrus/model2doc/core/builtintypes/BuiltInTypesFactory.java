@@ -85,6 +85,16 @@ public interface BuiltInTypesFactory extends EFactory {
 	BasicList createBasicList();
 
 	/**
+	 * Returns a new object of class '<em>Default File Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>Default File Reference</em>'.
+	 * @generated
+	 */
+	DefaultFileReference createDefaultFileReference();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

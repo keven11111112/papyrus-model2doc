@@ -55,7 +55,7 @@ public interface ExtendedTextListItem extends TextListItem {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Datasource</em>' containment reference.
+	 *                  the new value of the '<em>Datasource</em>' containment reference.
 	 * @see #getDatasource()
 	 * @generated
 	 */
