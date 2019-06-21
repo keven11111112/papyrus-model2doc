@@ -101,6 +101,9 @@ public class PapyrusTableViewMapper extends AbstractTemplateToStructureMapper<Pa
 	 */
 	@Override
 	protected <T> List<T> doMap(final IMappingService mappingService, final PapyrusTableView papyrusTableView, final EObject semanticModelElement, final Class<T> returnedClassType) {
+		if (false == papyrusTableView.generateBranch(semanticModelElement)) {
+			return Collections.emptyList();
+		}
 		if (false == papyrusTableView.isGenerate()) {
 			// This element can't have children, so if isGenerate() returns false, we go out!
 			return Collections.emptyList();

@@ -62,6 +62,9 @@ public class PapyrusGMFDiagramViewMapper extends AbstractTemplateToStructureMapp
 	 */
 	@Override
 	protected <T> List<T> doMap(final IMappingService mappingService, final PapyrusGMFDiagramView gmfDiagramView, final EObject semanticModelElement, final Class<T> returnedClassType) {
+		if (false == gmfDiagramView.generateBranch(semanticModelElement)) {
+			return Collections.emptyList();
+		}
 		if (false == gmfDiagramView.isGenerate()) {
 			// This element can't have children, so if isGenerate() returns false, we go out!
 			return Collections.emptyList();

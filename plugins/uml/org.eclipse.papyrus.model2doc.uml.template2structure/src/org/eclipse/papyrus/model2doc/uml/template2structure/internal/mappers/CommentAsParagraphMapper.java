@@ -56,6 +56,9 @@ public class CommentAsParagraphMapper extends AbstractUMLTemplateToStructureMapp
 	 */
 	@Override
 	protected <T> List<T> doMap(final IMappingService mappingService, final CommentAsParagraph commentAsParagraph, final EObject semanticModelElement, final Class<T> returnedClassType) {
+		if (false == commentAsParagraph.generateBranch(semanticModelElement)) {
+			return Collections.emptyList();
+		}
 		if (false == commentAsParagraph.isGenerate() || false == semanticModelElement instanceof Element) {
 			// This element can't have children, so if isGenerate() returns false, we go out!
 			return Collections.emptyList();

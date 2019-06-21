@@ -17,6 +17,7 @@ package org.eclipse.papyrus.model2doc.emf.template2structure.internal.mapping;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -61,6 +62,10 @@ public class EReferenceTableViewMapper extends AbstractEMFTemplateToStructureMap
 	 */
 	@Override
 	protected <T> List<T> doMap(final IMappingService mappingService, final EReferenceTableView eReferenceTableView, final EObject semanticModelElement, final Class<T> expectedReturnedClass) {
+		if (false == eReferenceTableView.generateBranch(semanticModelElement)) {
+			return Collections.emptyList();
+		}
+
 		List<T> returnedElements = new ArrayList<>();
 
 		final Collection<EObject> rows = eReferenceTableView.getRows(semanticModelElement);

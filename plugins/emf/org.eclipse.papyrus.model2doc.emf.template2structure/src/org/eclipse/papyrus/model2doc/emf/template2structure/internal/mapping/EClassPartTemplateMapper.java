@@ -53,6 +53,9 @@ public class EClassPartTemplateMapper extends AbstractEMFTemplateToStructureMapp
 	 */
 	@Override
 	protected <T> List<T> doMap(final IMappingService mappingService, final EClassPartTemplate eClassPartTemplate, final EObject semanticModelElement, Class<T> expectedReturnedClass) {
+		if (false == eClassPartTemplate.generateBranch(semanticModelElement)) {
+			return Collections.emptyList();
+		}
 		if (false == eClassPartTemplate.isMatchingFilterRule(semanticModelElement)) {
 			return Collections.emptyList();
 		}

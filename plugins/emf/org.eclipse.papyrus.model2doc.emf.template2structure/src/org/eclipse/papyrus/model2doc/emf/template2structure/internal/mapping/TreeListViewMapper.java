@@ -64,6 +64,10 @@ public class TreeListViewMapper extends AbstractEMFTemplateToStructureMapper<Tre
 	 */
 	@Override
 	protected <T> List<T> doMap(final IMappingService mappingService, final TreeListView treeListView, final EObject semanticModelElement, final Class<T> expectedReturnedClass) {
+		if (false == treeListView.generateBranch(semanticModelElement)) {
+			return Collections.emptyList();
+		}
+
 		List<T> returnedElements = new ArrayList<>();
 
 

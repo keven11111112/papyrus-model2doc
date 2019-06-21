@@ -17,6 +17,7 @@ package org.eclipse.papyrus.model2doc.uml.template2structure.internal.mappers;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -60,6 +61,9 @@ public class StereotypePropertyReferenceTableViewMapper extends AbstractUMLTempl
 	 */
 	@Override
 	protected <T> List<T> doMap(final IMappingService mappingService, final StereotypePropertyReferenceTableView stereotypePropertyReferenceTableView, final EObject semanticModelElement, final Class<T> expectedReturnedClass) {
+		if (false == stereotypePropertyReferenceTableView.generateBranch(semanticModelElement)) {
+			return Collections.emptyList();
+		}
 		List<T> returnedElements = new ArrayList<>();
 
 		final Collection<EObject> rows = stereotypePropertyReferenceTableView.getRows(semanticModelElement);

@@ -56,6 +56,9 @@ public class StereotypePartTemplateMapper extends AbstractUMLTemplateToStructure
 	 */
 	@Override
 	protected <T> List<T> doMap(final IMappingService mappingService, final StereotypePartTemplate stereotypePartTemplate, final EObject semanticModelElement, final Class<T> expectedReturnedClass) {
+		if (false == stereotypePartTemplate.generateBranch(semanticModelElement)) {
+			return Collections.emptyList();
+		}
 		if (false == semanticModelElement instanceof Element || false == stereotypePartTemplate.isMatchingFilterRule(semanticModelElement)) {
 			return Collections.emptyList();
 		}
