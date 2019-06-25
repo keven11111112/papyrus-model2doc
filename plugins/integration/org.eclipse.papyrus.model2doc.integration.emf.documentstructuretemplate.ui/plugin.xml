@@ -35,7 +35,7 @@
       </editorDiagram>
       <actionBarContributor
             id="org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.ui.actionBarContributor"
-            implementingClass="org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.presentation.DocumentStructureTemplateActionBarContributor">
+            implementingClass="org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.ui.internal.editor.CustomDocumentStructureTemplateActionBarContributor">
       </actionBarContributor>
    </extension>
    <extension
