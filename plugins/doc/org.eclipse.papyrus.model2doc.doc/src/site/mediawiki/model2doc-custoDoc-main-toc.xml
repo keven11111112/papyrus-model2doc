@@ -1,9 +1,0 @@
-<?xml version='1.0' encoding='utf-8' ?>
-<toc label="Model2Doc">
-  <topic label="Model2Doc" >
-    <topic label="Customization" >
-       <link toc="target/site/generated-eclipse-help/customization.xml"/>
-       <anchor id="Customization"/>
-    </topic>
-  </topic>
-</toc>

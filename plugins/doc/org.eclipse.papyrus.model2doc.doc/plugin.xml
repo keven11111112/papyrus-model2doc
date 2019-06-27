@@ -3,10 +3,31 @@
 <plugin>
    <extension
          point="org.eclipse.help.toc">
-               <toc
-            file="src/site/mediawiki/model2doc-custoDoc-main-toc.xml"
+      <toc
+            category="org.eclipse.papyrus-model2doc"
+            file="target/site/generated-eclipse-help/model2doc-main-toc.xml"
+            primary="true">
+      </toc>
+          <toc
+            category="org.eclipse.papyrus-model2doc"
+            file="target/site/generated-eclipse-help/model2doc-devDoc-main-toc.xml"
             primary="false">
       </toc>
-   </extension>
+      <toc
+            category="org.eclipse.papyrus-model2doc"
+            file="target/site/generated-eclipse-help/model2doc-devDoc-toc.xml"
+            primary="false">
+      </toc>
+      <toc
+            category="org.eclipse.papyrus-model2doc"
+            file="target/site/generated-eclipse-help/model2doc-userDoc-main-toc.xml"
+            primary="false">
+      </toc>
+      <toc
+            category="org.eclipse.papyrus-model2doc"
+            file="target/site/generated-eclipse-help/model2doc-userDoc-toc.xml"
+            primary="false">
+      </toc>
+      </extension>
 
 </plugin>

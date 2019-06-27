@@ -1,7 +1,6 @@
 =User guide=
  
 ==Load PapyrusDocument in Customize Model Explorer==
-
 Open ''Model Explorer'' and load ''PapyrusDocument'' customization:
 
 [[Image:images/user/User01_Load Customizations.png]]

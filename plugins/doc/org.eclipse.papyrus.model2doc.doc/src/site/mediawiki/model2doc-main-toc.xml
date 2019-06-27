@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<toc label="Papyrus-Model2Doc">
+  <topic label="Developer Documentation" >
+       <anchor id="Papyrus-Model2Doc-DevDocAnchor"/>
+  </topic>
+  <topic label="User Documentation">
+     <anchor id="Papyrus-Model2Doc-UserDocAnchor"/>
+  </topic>
+</toc>
