@@ -1,265 +1,131 @@
-=Contribution of new customized document generation=
+=Architecture of Papyrus-Model2Doc=
+This framework has been developed to be hightly independant of Papyrus, with some execptions, like the reuse of the Papyrus Expressions framework. 
+
+==Git Architecture==
+*'''plugins'''
+**'''core''':contains ''pure'' java plugins, with reusable EMF metamodels
+**'''plugins/dev''': contains developer tools for Papyrus-Model2Doc
+**'''doc''': the documentation plugin
+**'''emf''': plugins created to work with EMF metamodels
+**'''gmf''': extension for GMF metamodel
+**'''integration''': plugins managing the integration of Model2Doc into Papyrus
+**'''odt''': required plugins to generate odt file
+**'''uml''': extension for UML metamodel
+
+
+=DocumentStructureTemplate metamodel=
+This metamodel allows to define how to cross a model, which information extract from him and how to include them in the final Document. 
+This metamodel is provided by the plugin '''org.eclipse.papyrus.model2doc.emf.documentstructuretemplate'''.
+
+[[Image:images/devDoc/devDoc_001_Document_Structure_Template.png]]
+This snapshot shows the basis elements of this metamodel.
+*'''DocumentTemplate''': the interface to realize to provide a new kind of DocumentTemplate.
+*'''TextDocumentTemplate''': this class allows to define a DocumentTemplate for text file. This kind of template is composed of '''DocumentPart'''
+*'''DocumentPart''': it can be a '''TableOfContents''' or a '''Body'''
+*'''Table Of Contents''': allow to define that the generated document will have a table of contents
+*'''Body''': this element is composed of '''IBodyPartTemplate'''
+*'''IBodyPartTemplate''': 
+**The construction of this element is very interesting, because we use a 2-level construction ('''IBodyPartTemplate''' and '''ISubBodyPartTemplate''' to allow to distinguish 2 kind of elements (below in the documentation, navigation between '''EReferencePartTemplate''' and '''EClassPartTemplate''', so we will be able to navigate alternatively between '''EReference''' and '''EClass''';
+**In addition, we define composed objects and leaf object.
+**'''IComposedBodyPartTemplate''' and '''IComposedsubBodyPartTemplate''' will be extend to create elements which can have children. Typically, a navigation from an EObject to an EReference which itself refers to others EObject. 
+**'''ILeafBodyPartTemplate''' and '''ILeafSubBodyPartTemplate''' will be extend to create elements with not children, typically to create a View in the document. 
+
+
+On the next snapshot we show the construction of the '''EReferencePartTemplate''' and '''EClassPartTemplate'''. As indicated upper, this construction allows to navigate alternatively between an object and a property of this object.
+[[Image:images/devDoc/devDoc-002_EMF-DiagramNavigation.png]]
+
+
+
+=How to provide new part template for the Body of a TextDocumentTemplate?=
+Here we can't explain all EMF tricks, configuration and so on, so we will give you only the most important steps. 
+
+#You must have installed the Papyrus Toolsmiths plugins
+#You must have installed the feature '''UML2 SDK Extender''' to be able to generate a EMF model from a UML one.
+
+==Create a new PartTemplate in a UML model==
+#There is 2 choices about the way to proceed
+##You can edit one of the DocumentStructureTemplate metamodel provided by Papyrus-Model2Doc and contribute it to the Eclipse Project
+##You create a new metamodel (and share it with Papyrus-Model2Doc project or not)
+#You need to define what you want to do:
+##a new navigation looking like an EMF EStructuralFeature? 
+###with possible sub-elements -> implements the interface '''IComposedBodyPartTemplate'''
+###with no sub-element -> implements the interface '''ILeafBodyPartTemplate'''
+##a new navigation looking like an EMF EClass?
+###with possible sub-elements -> implements the interface '''IComposedSubBodyPartTemplate'''
+###with no sub-element -> implements the interface '''ILeafSubBodyPartTemplate'''
+
+''N.B.: The UML element to implement a UML Interface in a UML model is the element'' '''''InterfaceRealization'''''.
+We advise against to extends others elements of this metamodel. 
+  
+In the general way, to provide a new view, we consider that a such element as no children and we use a feature to calculate the contents of the view. 
+That's why '''TreeListView''' and '''EReferenceTableView''' implements '''ILeafBodyPartTemplate'''.
+
+To illustrate this description, we advice you to look at the '''UMLDocumentStructureTemplate''' metamodel which extends the base metamodel '''DocumentStructureTemplate''' to provide support for '''UML Stereotype''' and '''Stereotype's properties'''. In this metamodel, '''StereotypePartTemplate''' is built to be at the same level than '''EClassPartTemplate''' and '''StereotypePropertyReferencePartTemplate''' to be at the same level than '''EReferencePartTemplate'''.
+In addition, this metamodel provides the object '''CommentAsParagraph''' considered as a view and described as an '''ILeafBodyPartTemplate''', to be at the same level than '''EReferencePartTemplate'''.
+
+==Generate==
+Once you created your new element, you need to generate it.
+#Open the existing '''genmodel''' file, then ''Right-Click->Reload'' (or create a new one, in case of new uml model).
+#On the root of this file, ''Right-Click->Generate Model'', then ''Generate Edit'' (and ''Generate Editor, only if you work on the metamodel '''DocumentStructureTemplate'''.
+
+''N.B. if you add a property to an interface and if this interface is implemented in sub-metamodel, you will need to regenerate all these sub-metamodels too!!!''
+
+==Implementation of IBodyPartTemplate#buildPartTemplateTitle==
+Due to the root interface '''IBodyPartTemplate''' of these element, you must provide an implementation of the method '''buildPartTemplateTitle'''. There is 2 ways for that: 
+#solution1: provide a factory override for your metamodel, then provides a custom implementation of the generated class implementing this method (see extension point '''"org.eclipse.emf.ecore.factory_override"''').
+#solution2:
+##in the UML model, create a new operation '''buildPartTemplateTitle''' in your element, then in the ''Advanced'' tab of the ''Property View'', edit the field '''redefined operations''' referencing the operation ''''''buildPartTemplateTitle''' of the parent interface. 
+##in your UML model, create an '''EAnnotation''' as child of your element (from the Papyrus ''ModelExplorer'' view, ''Right-Click->Create EAnnotation'';
+###in the ''Property View'', set '''http://www.eclipse.org/emf/2002/GenModel''' as ''source''.
+##always from the ''Model Explorer'' view, create a '''Details Entry''' as child of the '''EAnnotation''';
+###in the ''Property View'', set '''body''' as key and the java body of the method in the '''value''' field.
+##return into the '''genmodel''' file, reload model and regenerate all as done previously. 
+
+You can also provide a nice icon in the edit plugin for your created element. To provide an icon, erase the icon provided by default by the generation. 
+
+At this step, the new element will be available in the Creation menu of the DocumentTemplate editor. 
+
+==How to contribute to the EMF property view?==
+The default property view is already managed by the EMF-Framework. If you need to change the default edition of a property, you need to create an '''EAnnotation''' with a '''Details Entry''' in your UML model, as child of the property for which you need to provide a custom editor.
+*'''EAnnotation#source:'''http://www.eclipse.org/emf/2002/GenModel
+*'''DetailsEntry#key:'''propertyEditorFactory
+*'''DetailsEntry#value:''': a unique string, like this one for example:''editor://umldocumentstructuretemplate/StereotypePropertyTemplate/propertyName/''
+
+Then, you must register a new class extending <code>org.eclipse.emf.edit.provider.PropertyEditorFactory</code> to the extension point ''org.eclipse.emf.edit.propertyEditorFactories'' in the edit plugin for your model. 
+
+==How to contribute to the EMF property view embedded in Papyrus (Advanced Tab)?==
+This code should be done in a plugin called ''org.eclipse.papyrus.integration.xxx'' to respect the naming convention. 
+We advice you to manage the EMF property view, before embedding it in Papyrus (because there is common code between them). 
+===In case of new DocumentStructureTemplate metamodel===
+*A example, you can look at the plugin <code>org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.properties</code>
+*Contribute to the extension point <code>org.eclipse.ui.views.properties.tabbed.propertySections</code>, you should get something like this:
+  
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections
+            contributorId="TreeOutlinePage">
+         <propertySection
+               class="org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.properties.internal.DocumentStructureTemplatePropertySection"
+               filter="org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.properties.internal.DocumentStructureTemplatePackageSectionFilter"
+               id="org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.properties.propertySection1"
+               tab="advanced">
+            <input
+                  type="java.lang.Object">
+            </input>
+         </propertySection>
+      </propertySections>
+   </extension>
+
+*'''class''': we advice you to extends <code>org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.properties.sections.AbstractEObjectAdvancedPropertySection</code>. This class will provide a <code>org.eclipse.emf.edit.ui.provider.PropertySource</code>, this <code>PropertySource</code> will provide custom <code>org.eclipse.ui.views.properties.IPropertyDescriptor</code>.
+*'''filter''': a class implementing <code>org.eclipse.jface.viewers.IFilter</code> 
+
+===In case of new property in an existing metamodel===
+You just need to manage your new feature in the method <code>PropertySource.createPropertyDescriptor(IItemPropertyDescriptor)</code> of the existing <code>PropertySource</code>
+
+==How to contribute a new mapper?==
+The mappers are in charge to read the model and the DocumentTemplate to create the DocumentStructure. 
+As example, you can look the plugin <code>org.eclipse.papyrus.model2doc.emf.template2structure</code>.
+*Create a new class inheriting from <code>org.eclipse.papyrus.model2doc.emf.template2structure.mapping.AbstractTemplateToStructureMapper<INPUT></code>
+*Register it in the plugin.xml with the extension point <code>org.eclipse.papyrus.model2doc.emf.template2structure.structuregenerator</code>
+**the ''id'' field is the id of the generator you contribute. The generator's id provided by Papyrus-Model2Doc is ''TextDocumentStructureGenerator.default''
  
-==Introduction==
-For the contribution of new (or customized) document generation, five elements are important: 
-*'''Editor''': defines what kind of generated document and how it is generated.
-*'''Context''': defines how and when this new document generation should be available to user.
-*'''Transcription''': defines how the content (input) will be written on generated document (output).
-*'''Transcriber''': defines how to read the data source (e.g. UML model) and what information will be transcript. The transcriber send inputs to the Transcription.
-*'''Template''': defines the style of generated document.
-
-The developer does not need to contribute with new implementation of all fives elements. For each needs, the developer must be forced to implement one or more new elements. 
-In this documentation, we will explain a common case of contribution: The developer wants to contribute with a customization of the ODT document generator of UML model.  For more precision, in this use case, the developer needs are:
-*Define a new way to read a UML model and extract information to be transcript;
-*Define a new document style (e.g. add project logo on the first page);
-*Define how and when this new document generation should be available to user.
-
-From of these needs, the developer must implement a new '''Transcriber''', a new '''Template''' and a new '''Context'''. He will use the '''ODTEditor''' and '''ODTTranscription''' available in ''org.eclipse.papyrus.model2doc.odt'' plug-in.
-
-==Step 1. Define a new Transcriber==
-For defining a new Transcriber implementation, we must implement '''Transcriber''' interface available in ''org.eclipse.papyrus.model2doc.core'' plug-in. This interface has only one abstract method transcribe. See below an example of a Transcriber implementation:
-
-<source lang="java">
-public class MyUMLTranscriber implements Transcriber {
-
-	private Package root = null;
-
-	private Transcription transcription = null;
-
-	private List<Class> classes = new ArrayList<Class>();
-	
-	/**
-	 *
-	 * Constructor.
-	 *
-	 * @param rootPackage
-	 *            the root package
-	 * @param transcription
-	 *            the object in charge to do the transcription
-	 */
-	public MyUMLTranscriber(Package rootPackage, Transcription transcription) {
-		root = rootPackage;
-		this.transcription = transcription;
-		
-	}
-
-	/**
-	 * Read UML model and transcribe it.
-	 */
-	@Override
-	public void transcribe() {
-		// transcribe label of root package how document main title
-		transcription.writeDocumentMainTitle(root.getName());
-
-		// transcribe classes directly owned by root package
-		transcribeClasses(root);
-
-		// transcribe nested packages owned by root package
-		for (Package nestedPackage : root.getNestedPackages()) {
-			transcribeNestedPackages(nestedPackage, 1);
-
-		}
-
-		// save transcription
-		transcription.save(root.getName());
-	}
-	/**
-	 * Get nested packages and transcribe them.
-	 * 
-	 * @param owner
-	 *            owner package
-	 * @param level
-	 *            nested package level
-	 */
-	private void transcribeNestedPackages(Package owner, int level) {
-		// transcribe label of owner package how section title
-		transcription.writeSectionTitle(owner.getName(), level);
-
-		// transcribe classes directly owned by owner package
-		transcribeClasses(owner);
-
-		for (Package nestedPackage : owner.getNestedPackages()) {
-			// transcribe nested packages owned by owner package
-			transcribeNestedPackages(nestedPackage, level + 1);
-		}
-	}
-
-	/**
-	 * Get classes and transcribe them.
-	 * 
-	 * @param owner
-	 *            owner package
-	 */
-	private void transcribeClasses(Package owner) {
-		// get classes owned by owner package
-		for (Type type : owner.getOwnedTypes()) {
-			if (type instanceof Class) {
-				classes.add((Class) type);
-			}
-		}
-
-		// transcribe classes
-		for (Class clazz : classes) {
-			// transcribe label of class how paragraph
-			transcription.writeParagraph(clazz.getName(), false);
-			
-			classes.clear();
-		}
-	}
-}
-</source>
-
-==Step 2. Define a new Template==
-For defining a new Template, we must create and add in a plug-in an �ott� or �odt� file that defines the document style. After that, we must implement a class that extends '''TemplateResourceServiceImpl''' available in ''org.eclipse.papyrus.model2doc.core'' plug-in. See below an example of implementation:
-
-<source lang="java">
-public class MyUMLTemplate extends TemplateResourceServiceImpl {
-
-	/**
-	 * Get template file extensions.
-	 * @return
-	 */
-	@Override
-	public String[] getTemplateFileExtensions() {
-		return new String [] {"odt", "ott"}; //$NON-NLS-1$ //$NON-NLS-2$
-	}
-
-	/**
-	 * Get plug-in ID who contains the template.
-	 * 
-	 * @return
-	 */
-	@Override
-	public String getTemplatePlugInID() {
-		return Activator.PLUGIN_ID;
-	}
-
-	/**
-	 * Get template path in plug-in. 
-	 * 
-	 * @return
-	 */
-	@Override
-	public String getTemplatePathInPlugIn() {
-		return "/resources/template/MyUMLTemplate.ott"; //$NON-NLS-1$
-	}
-
-}
-</source>
-
-==Step 3. Define a new Context==
-For defining a new Context, we must create and add in a plug-in an �ott� or �odt� file that defines the document style. After that, we must implement a class that extends '''CreateDocumentViewEditorHandler''' available in ''org.eclipse.papyrus.model2doc.documentview.ui'' plug-in. See below an example of implementation:
-
-<source lang="java">
-public class MyUML2ODTHandler extends CreateDocumentViewEditorHandler {
-	
-	private String generatedDocumentFileURI;
-	
-	@Override
-	public Object execute(ExecutionEvent event) throws ExecutionException {
-		// never used
-		return null;
-	}
-	
-	@Override
-	public boolean generateDocument(String name) {
-		// instance an object of MyUMLTemplate (see Step 2)
-		TemplateResourceService myUMLTemplate =  new MyUMLTemplate();
-		
-		// get project folder from the select element in the UML model
-		String projectFolder = getWorkspaceResourceService().calculateProjectFolder(getSelection());
-		
-		/*
-		 * set generator configuration 
-		 */
-		GeneratorConfig generatorConfig = GeneratorConfigFactory.INSTANCE.getDefaultGeneratorConfig();
-		generatorConfig.setDocumentName(name);
-		generatorConfig.setOutputFolder(projectFolder);
-		generatorConfig.setProject(projectFolder);
-		generatorConfig.setTemplateStyleFileURI(myUMLTemplate.getTemplateURLFromPlugIn());
-		
-		try {
-			
-			// get ODT transcription 
-			Transcription odtTranscription = ODTTranscriptionFactory.INSTANCE.getDefaultODTTranscription(null, generatorConfig);
-			
-			// instance an object of MyUMLTranscriber(select element in the UML Model, transcription)
-			Transcriber myUMLTranscriber = new MyUMLTranscriber((Package) getSelection(), odtTranscription);
-			// run transcriber
-			myUMLTranscriber.transcribe();
-			
-			/*
-			 * set URI of generated document file
-			 */
-			StringBuilder uriBuilder = new StringBuilder();
-			uriBuilder.append(generatorConfig.getOutputFolder());
-			uriBuilder.append(File.separator);
-			uriBuilder.append(generatorConfig.getDocumentName());
-			uriBuilder.append(".odt"); //$NON-NLS-1$
-			
-			Path path = new Path (uriBuilder.toString());
-			generatedDocumentFileURI =  path.toString();
-			
-			// refresh Workspace after document generation
-			getWorkspaceResourceService().refreshWorkspace(generatorConfig.getProject());
-			return true;
-		} catch (Exception e) {
-			Activator.log.error(e);
-			return false;
-		}
-	}
-
-	@Override
-	public String getGeneratedDocumentFileURI() {
-		return generatedDocumentFileURI;
-	}
-}
-</source>
-
-Next step, we must define a new viewpoint, My UML Document, and define what context this viewpoint is available. For that we will use the Papyrus Architecture Framework (see more details [http://127.0.0.1:65243/help/topic/org.eclipse.papyrus.infra.architecture.doc/target/generated-eclipse-help/architecture.html?cp=19_1_7 here]). In this use case, the viewpoint will be available on UML Context. See below an example of architecture file definition:
-====1. Set domain====
-[[Image:images/customization/architecture/Architecture01_Domain.PNG]]
-
-====2. Set language====
-Select domain element, open menu context and select '''New Child > Description Language'''.
-
-[[Image:images/customization/architecture/Architecture02_Language.PNG]]
-====3. Set viewpoints====
-Select language element, open menu context and select '''New Child > Viewpoint'''.
-
-=====3.1 Add Software Analysis viewpoint=====
-[[Image:images/customization/architecture/Architecture03_Viewpoint_Software_Analysis.PNG]]
-
-=====3.2 Add Software Design viewpoint=====
-[[Image:images/customization/architecture/Architecture04_Viewpoint_Software_Design.PNG]] 
-
-====4. Set MyUMLDocument Representation====
-Select language element, open menu context and select '''New Child > Papyrus Document'''.
-=====4.1 Define MyUMLDocument Representation=====
-[[Image:images/customization/architecture/Architecture05_MyUMLDocument_Representation.PNG]] 
-
-'''Notes:'''
-* ''Creation Command Class:'' set the handler class defined in the beginning of this section. 
-* ''Document Kind:'' in this example, you must set '''odt'''
-
-=====4.2 Define Root=====
-[[Image:images/customization/architecture/Architecture06_Root_MyUMLDocument_Representation.PNG]] 
-
-=====4.3 Define Owner=====
-[[Image:images/customization/architecture/Architecture07_Owner_MyUMLDocument_Representation.PNG]] 
-
-====5. Load resource====
-In the end, we must load on the architecture file this resource 
-<source>
-platform:/plugin/org.eclipse.papyrus.model2doc.documentview.ui/resources/model/documentviewadvices.elementtypesconfigurations
-</source>
-
-==Result==
-Select model element (model or package), open menu context and select '''New Document > My UML Document'''.
-
-[[Image:images/customization/result/Result01_Menu_Generate_MyUMLDoc.PNG]] 
-
-Select document element in the '''Model Explorer''' and open it.
-
-[[Image:images/customization/result/Result02_Generated_MyUMLDoc.PNG]] 
-

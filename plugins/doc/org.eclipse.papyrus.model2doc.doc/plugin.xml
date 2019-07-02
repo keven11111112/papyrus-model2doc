@@ -28,6 +28,24 @@
             file="target/site/generated-eclipse-help/model2doc-userDoc-toc.xml"
             primary="false">
       </toc>
+      <toc
+            file="target/site/generated-eclipse-help/model2doc-papyrusUserDoc-main-toc.xml"
+            primary="false">
+      </toc>
+      <toc
+            file="target/site/generated-eclipse-help/model2doc-papyrusUserDoc-toc.xml"
+            primary="false">
+      </toc>
+      <toc
+            category="org.eclipse.papyrus-model2doc"
+            file="target/site/generated-eclipse-help/model2doc-papyrusDevDoc-main-toc.xml"
+            primary="false">
+      </toc>
+      <toc
+            category="org.eclipse.papyrus-model2doc"
+            file="target/site/generated-eclipse-help/model2doc-papyrusDevDoc-toc.xml"
+            primary="false">
+      </toc>
       </extension>
 
 </plugin>

@@ -1,26 +1,184 @@
-=User guide=
- 
-==Load PapyrusDocument in Customize Model Explorer==
-Open ''Model Explorer'' and load ''PapyrusDocument'' customization:
+=Introduction=
+Papyrus-Model2Doc is an EMF-based document generator for EMF models. To enhance the user experience compared to existing document generation frameworks, the proposed approach is fully model-based while separating the concerns of (1) how the source model is visited, and (2) what is the content of the generated document. Two EMF models are used to provide the description of these two concerns. A documentation-oriented metamodel allows the document-generator specifier to choose what to generate (titles, tables, lists, images for GMF Diagram, insertion of preexisting file...). The generation is done in two steps. The first one create a EMF Tree View of the structure of the final document and the second one, is the generation in the expected document format (currently this generator only target the LibreOffice format (odt file), but other output format can easily be developed). 
 
-[[Image:images/user/User01_Load Customizations.png]]
+[[Image:images/userDoc/userDoc_001_DocumentGenerationProcess.png]]
 
-====Generated Document====
-Select model element (model or package), open menu context and select '''New Document > Generic Document'''.
+This framework has mainly been developed for EMF, but as it is a subpart of the Papyrus project, several integration are already available:
+#GMF Diagram
+#UML
+#Papyrus
+##Papyrus integration with Architecture Framework, creation menu, ... 
+##Papyrus GMF Diagram support (Papyrus extends GMF Diagram Framewok)
+##Papyrus Nattable support
 
-[[Image:images/user/User02_Generate Document.png]]
+You will get all these parts if you installed all Model2Doc features.
 
-A ''Document Element'' is created in the model and in the project.
+=Model2Doc installation=
+<span style="font-size:150%; line-height: 1.31em;">Firstly, you need install LibreOffice SDK 6.0 (or upper) on your computer.</span>
 
-[[Image:images/user/User03_DocumentGenerated.png]]
+The update site for the nightly build is [https://hudson.eclipse.org/papyrus/job/Papyrus-Model2Doc/lastSuccessfulBuild/artifact/repository/].
 
-====Other Features====
-=====Send Document=====
-Select ''Document Element'' in the ''Model Explorer'', open menu context and select '''Send Document > E-mail Document...''' or '''Send Document > E-mail as PDF...'''.
+The update site provides these features:
+*'''Papyrus-Model2Doc''': the required plugins to generate a document from a EMF model. Papyrus won't be installed excepted some required plugins like Papyrus Expressions Framework.
+*'''Papyrus-Model2Doc Developper Tools''': some additional toolings for Model2Doc developpers (see developers documentation for further information)
+*'''Papyrus-Model2Doc GMF Support''': provides elements to integrate GMF Diagram as images in your document
+*'''Papyrus-Model2Doc Papyrus Integration''':
+**integration of Model2Doc as Papyrus editor
+**contribution to Papyrus menus, Architecture Framework, pre-configured DocumentTemplate,...
+**Papyrus GMF Diagram support
+**Papyrus NatTable support
+*'''Papyrus-Model2Doc UML Support''': extensions for UML, to support Profile, Stereotype and Stereotype's properties 
 
-[[Image:images/user/User04_SendDocument.png]]
+=DocumentStructureTemplate metamodel elements' description=
+In the document template file:
+*you can create new element by ''Right-Click''->''New Child''
+*you can edit there properties in the property view (''Right-Click''->''Show Property View''.
 
-=====Export Document=====
-Select ''Document Element'' in the ''Model Explorer'', open menu context and select '''Export Document > Export as PDF'''.
+*'''TextDocumentTemplate''': The root of the the DocumentTemplate. This element provides these fields:
+**'''Description''': a description of the current DocumentTemplate. This field is not used by the generation. 
+**'''Document Template Prototype''': reference the prototype used to create this DocumentStructure
+**'''Graphical Context''': reference the model element under which the DocumentTemplate will be displayed (mainly for Papyrus ModselExplorer integration)
+**'''Kind Id''': a string defining the kind of the DocumentTemplate (mainly for Papyrus Architecture Framework integration)
+**'''Main Title''': the main title displayed in the generated document
+**'''Semantic Context''': the model element from which the documentation process will start
 
-[[Image:images/user/User05_ExportDocument.png]]
+Children of the '''TextDocumentTemplate''':
+*'''DocumentStructureGeneratorConfiguration''': allows to configure the generation process. This element provides these fields:
+**'''DocumentFolder''':the folder where the generated document will be stored. Supported paths are:
+***''platform:/resource/aPluginName/aFolderName/...'' : the folder in an Eclipse project of the workspace
+***''folder1/folder2/...'': interpreted as ''platform:/resource/currentPluginName/folder1/folder2/...'' : folders owned by the current Eclipse project
+**'''DocumentGeneratorId''':the id of the generator to used to transform the DocumentStructure file into the final document.
+***We provide the odt generator, its id is ''org.eclipse.papyrus.model2doc.document.generator.odt''
+**'''DocumentName''': The name of the generated document file
+**'''ImageFolder''': the folder where we store the generated image. Supported path are
+***''platform:/resource/aPluginName/aFolderName/...'' : the folder in an Eclipse project of the workspace
+***''folder1/folder2/...'': interpreted as ''platform:/resource/currentPluginName/folder1/folder2/...'' : folders owned by the current Eclipse project
+**'''SaveDocumentStructure''':a boolean value indicating if the generated DocumentStructure must be kept at the end of the process
+**'''SaveImages''':a boolean value indicating if the generated DocumentStructure must be kept at the end of the process
+**'''StructureFolder''':the folder where we stored the generated DocumentStructure
+***''platform:/resource/aPluginName/aFolderName/...'' : the folder in an Eclipse project of the workspace
+***''folder1/folder2/...'': interpreted as ''platform:/resource/currentPluginName/folder1/folder2/...'' : folders owned by the current Eclipse project
+**'''StructureGeneratorId''':the id of the generator used to transform the DocumentTemplate into a DocumentStructure
+***The id of the provided generator is ''TextDocumentStructureGenerator.default''
+**'''TemplateFile''': this file is used to initialize the generated document. It can contains style definition, headers, ... For LibreOffice generation, it is an ''ott'' file. This file can be used to define the cover page too. The supported path are:
+***''platform:/resource/aPluginName/aFolderName/myTemplatefile'' : the template is located in an Eclipse project of the workspace
+***''folder1/folder2/myTemplateFile'': interpreted as ''platform:/resource/currentPluginName/folder1/folder2/myTemplateFile'' : template owned by the current Eclipse project
+***''platform:/plugin/aPluginName/aFolderName/myTemplatefile'' : the template is located in an installed Eclipse plugin
+***''OS file system ''C:\aFolder\myTemplatefile'': the template is located somewhere in the file sytem
+*'''TableOfContents''': this element allows to declare you want a TableOfContents
+**'''TocTitle''': the title to use for the TableOfContents. If nothing is defined, the table of contents will be name ''Table Of Contents'' in the generated file
+*'''Body''': The children of this element allows to define the contents of the document
+*'''Author''': allows to define authors of the document
+
+===Body's description===
+This element is the most important of the '''TextDocumentTemplate''' file. It defines the contents of the generated document. Here we declare how to process to cross the model. Basically, we start referencing an EReference (first level) to use to get values from the semantic context of the document, then an EClass (second level), then an EReference again to get the value of the found elements at the previous level, and again EClass, ... Of course others elements are possible, but the goal is to declare a navigation alternating EReference and EClass.
+
+The generation process will start taking values (for referenced features) on the '''semanticContext''' of the '''DocumentTemplate'''. These values will be filtered with the second levels of DocumentTemplate's elements, then we take these elements and use them as input of the third level which references features too, and we continue crossing the model and the DocumentTemplate. 
+
+
+#First level element
+##''pure EMF''
+###'''EReferencePartTemplate''': to choose a EReference to use. This element can have children
+###'''EReferenceTableView''': to create a table from a reference value (detail further in the documentation).
+###'''TreeListView''': to create a list from EStructuralFeature values (detail further in the documentation).
+###'''InsertFileTemplate''': allow to declare a path to a file to integrate into the generated document. It won't be a reference, but a copy of its contents into the generated file.
+##''GMF''
+###'''GMFDiagramView''': allow to define the type of the Diagram owned by the context element to include as image
+##''Papyrus GMF''
+###'''PapyrusGMFDiagramView''': used to import a Papyrus diagram as image. It allows to define:
+###*the type of the Diagram to include as image
+###*the kindId of the Diagram to include as image (Papyrus Architecture Framework information)
+###*a context filtering rule to find diagram by semanticContext (called Root element in the Papyrus interface) or graphicalContext (called owner in the Papyrus interface) (Papyrus integration)
+##''Papyrus NatTable''
+###'''PapyrusTableView''': used to import a Papyrus table. It allows to define:
+###*the type of the Table to include
+###*the kindId of the Table to include (Papyrus Architecture Framework information)
+###*a context filtering rule to find diagram by semanticContext (called Root element in the Papyrus interface) or graphicalContext (called owner in the Papyrus interface) (Papyrus integration)
+###*the import method, to import the table as an Image, or as a table in the generated document
+##''UML''
+###'''StereotypePropertyReferencePartTemplate''': to choose a stereotype's property type with a reference to cross the model
+###'''CommentAsParagraph''': to find owned comment and use their body to create paragraph in the final document
+###'''StereotypePropertyReferenceTableView''': to create a table from a stereotype's property value (detail further in the documentation).
+#Second level element
+##''pure EMF''
+###'''EClassPartTemplate''': to reference an EClass, to filter element found in the feature referenced in the previous level
+###'''InsertFileTemplate''': allow to declare a path to a file to integrate into the generated document. It won't be a reference, but a copy of its contents into the generated file.
+##''UML''
+###'''StereotypePartTemplate''': allow to reference a stereotype, to filter element found in the feature referenced in the previous level
+
+All the previous elements own these fields too:
+*''custom title'': a title to use instead of the default calculated title (generally the name of the feature, or the name/label of the element model)
+*''generate title'': if <code>true</code>, a title will be generated
+*''generate'': if <code>true</code> we will generate something to this step, if <code>false</code>, we will generate nothing, but we will process its children. The 'View' elements have this field too, but this field is useless for them and should always be keep to <code>true</code>
+*''generateBranchCondition'': this field is not displayed in the property view. It is set when you create an Expression as child of the element. When a such condition is defined, the whole branch will be managed only when the condition will return <code>true</code> for the evaluated element. For more information about the Expression, please read the Papyrus Expression Framework.  
+On the next snapshot the process to create a new expression.  
+[[Image:images/userDoc/userDoc_002_CreateGenerateBranchCondition.png]]
+
+
+=How to create a TreeListView?=
+You can create a '''TreeListView''' as child element of the '''Body''' of your '''TextDocumentTemplate''' itself, or as child of an '''EClassPartTemplate''' or a '''StereotypePartTemplate'''.
+Under a '''TreeListView''', you can create, these elements:
+#''pure EMF''
+##'''EReferenceListItemTemplate''': used to reference an EReference of the context model element of the list. The EReference value will be used to create the items in the document.
+##'''EAttributeListItemtemplate''': used to reference an EAttribute of the context model element of the list. The EReference value will be used to create the items in the document.
+#'UML'
+##'''StereotypePropertyReferenceListItemTemplate''': used to reference a Stereotype's property typed with a UML element of the context model element of the list. The property's value will be used to create the items in the document.
+##'''StereotypePropertyAttributeListItemTemplate''': used to reference a Stereotype's property typed with a PrimitiveType of the context model element of the list. The property's value will be used to create the items in the document.
+
+'''EReferenceListItemTemplate''' and '''StereotypePropertyReferenceListItem''' can have children to create sub items.
+#''pure EMF''
+##'''EClassListItemTemplate''': used to reference an '''EClass'''  to filter elements referenced by the feature from the previous level and create sub items. 
+#''UML''
+##'''StereotypeListItemTemplate''': used to reference a '''Stereotype''' to filter elements referenced by the feature from the previous level and create sub items. 
+
+=How to create an EReferenceTableView or a StereotypePropertyReferenceTableView?=
+A '''TableView''' allows you to display elements of your model with some of their properties' values. Your elements will be displayed as row : one row represents one element.
+You can create such '''TableView''' as child element of the '''Body''' of your '''TextDocumentTemplate''' itself, or as child of an '''EClassPartTemplate''' or a '''StereotypePartTemplate'''.
+Once one of these '''TableView ''' is created, you must fill these fields:
+*for '''EReferenceTableView''', the field '''EReference''' must be set. The value of this '''EReference''' will be used to create the rows of the table. 
+*for '''StereotypePropertyReferenceTableView''', the field '''propertyName''' and '''stereotypeQualifiedName''' must be set. The value of the '''propertyName''' will be used to create the rows of the table.
+
+Now we know how to obtain the rows, we need to declare the column. In order to do that, you need to create children for your '''TableView'''. Possible children are:
+#''pure EMF''
+##'''EStructuralFeatureColumn''': you choose an EStructuralFeature
+#''UML''
+##'''StereotypePropertyColumn''': you choose a stereotype's property
+For these 2 elements, you can define your own  Column Title. If not, we will use the name of the feature/property.
+
+That's all! The generator will ask the value of the column feature/property for each element represented in row to fill the the cell at the intersection of the row and the column.
+
+=How to generate the DocumentStructure from the DocumentTemplate?=
+Once you finished the configuration of your '''DocumentTemplate''', you can generate your '''DocumentStructure'''. in the opened DocumentTemplate editor, ''Right-Click'' on the '''DocumentTemplate''', then ''Generate DocumentStructure''. 
+
+[[Image:images/userDoc/userDoc_003_CreateDocumentStructureFromDocumentTemplate.png]]
+
+An input dialog asking you the version of the DocumentStructure to generate opens. You must fill a string value (with char allowed for a file name), then Press ''Enter''.
+At the end of the process, an dialog opens to inform you about the end of the process.
+The generated '''DocumentStructure''' has been created. This file is visible in the ''Project Explorer'' View.
+
+[[Image:images/userDoc/userDoc_004_A_pds_file_appeas in the ProjectExplorer.png]]
+
+=How to generate the final Document from the DocumentStructure?=
+Open the generated '''*.pds''' file, then select the root element of the file (here, Text Document), then ''Right-Click''->''Generate ODT File''. 
+A dialog opens at the end of the process and the generated document appears in the ''Project Explorer'' view. (Sometimes, you need to refresh yourself the workspce, pressing F5).
+
+
+=How to create a new LibreOffice template?=
+Here, we will talk about the ''*.ott'' file and not about the ''DocumentTemplate'' provided by Papyrus-Model2Doc.
+Of course, we advice you to read the LibreOffice documentation if required.
+Your LibreOffice template can define styles, header and footer and more generally all features provided by LibreOffice.  
+
+The goal of this documentation chapter is to present you the LibreOffice field used by Model2Doc.
+*native LibreOffice fields
+**''author'': to include the author of the document in your template. On the next snapshot, you see how to insert the author reference.
+[[Image:images/userDoc/userDoc_006_LibreOffice_InsertAuthor.png]]
+
+
+*custom LibreOffice fields: you must define these fields in your template. They will be used by our generator:
+**''Authors'': when you have several authors, you can display them in one string
+**''Version'': to define the version of your document
+To create these custom fields, go in the same submenu than to insert ''Author'': ''Insert->Field->More fields''. A dialog opens, go into the tab ''Variables'', select ''User fields'' and define the name of the variable ('''Authors''' or '''Version'''), the click on ''Insert'', as described on the next snapshot.
+
+[[Image:images/userDoc/userDoc_007_LibreOffice_CustomVariableDefinition.png]]
+
+

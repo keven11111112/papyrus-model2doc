@@ -1,0 +1,80 @@
+=Introduction=
+This chapter describes the Papyrus integration for Papyrus-Model2Doc.
+
+==How to register a DocumentTemplatePrototype into an existing Architecture file?==
+For this step, you can check the plugin <code>org.eclipse.papyrus.model2doc.integration.uml.architecture</code> which is used as example here.
+This plugin provides a generic DocumentTemplate for UML model.
+
+The next explanation deals about the contribution to existing Architecture Framework/Viewpoint defined by Papyrus UML. It is not necessary to define all contribution into a unique ''.architecture'' file, as you will see here. 
+
+====1. Set domain====
+[[Image:images/papyrusDevDoc/architecture/Architecture_001_SetDomain.png]]
+
+====2. Set language====
+Select domain element, open menu context and select '''New Child > Description Language'''.
+
+[[Image:images/papyrusDevDoc/architecture/Architecture_002_SetLanguage.png]]
+====3. Set viewpoints====
+Select language element, open menu context and select '''New Child > Viewpoint'''.
+
+=====3.1 Add Software Analysis viewpoint=====
+[[Image:images/papyrusDevDoc/architecture/Architecture_003_SetSotfwareAnalysisViewpoint.png]]
+
+=====3.2 Add Software Design viewpoint=====
+[[Image:images/papyrusDevDoc/architecture/Architecture_004_SetSotfwareDesignViewpoint.png]] 
+
+====4. Reference your DocumentTemplatePrototype====
+Select language element, open menu context and select '''New Child > Papyrus Document Prototype'''.
+=====4.1 Define DocumentPrototype Representation=====
+[[Image:images/papyrusDevDoc/architecture/Architecture_005_SetPapyrusDocumentPrototype.png]] 
+
+'''Notes:'''
+* load your pdst file containing the DocumentTemplatePrototype
+** reference it in the field ''Misc->Document Template Prototype''
+* in the field ''Implementation Id'', set the same value than the in the ''type'' field of your DocumentTemplatePrototype.
+
+=====4.2 Define Root=====
+[[Image:images/papyrusDevDoc/architecture/Architecture_006_DefineRoot.png]] 
+
+=====4.3 Define Owner=====
+[[Image:images/papyrusDevDoc/architecture/Architecture_007_DefineOwner.png]] 
+
+====5. Contribute this architecture file in the plugin.xml====
+Add a contribution to the extension point <code>org.eclipse.papyrus.infra.architecture.models</code>, and reference your file in the ''model'' field.
+[[Image:images/papyrusDevDoc/architecture/Architecture_008_PluginXML.png]] 
+
+
+==Result==
+Select model element (model or package), open menu context and select '''New Document Template > Generic Text Document'''.
+
+[[Image:images/papyrusDevDoc/architecture/Architecture_009_ResultInModelExplorer.png]] 
+
+
+=How to contribute to the EMF property view embedded in Papyrus (Advanced Tab)?=
+This code should be done in a plugin called ''org.eclipse.papyrus.integration.xxx'' to respect the naming convention. 
+We advice you to manage the EMF property view, before embedding it in Papyrus (because there is common code between them). 
+===In case of new DocumentStructureTemplate metamodel===
+#A example, you can look at the plugin <code>org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.properties</code>
+#Contribute to the extension point <code>org.eclipse.ui.views.properties.tabbed.propertySections</code>, you should get something like this:<code>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections
+            contributorId="TreeOutlinePage">
+         <propertySection
+               class="org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.properties.internal.DocumentStructureTemplatePropertySection"
+               filter="org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.properties.internal.DocumentStructureTemplatePackageSectionFilter"
+               id="org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.properties.propertySection1"
+               tab="advanced">
+            <input
+                  type="java.lang.Object">
+            </input>
+         </propertySection>
+      </propertySections>
+   </extension>
+</code>
+#'''class''': we advice you to extends <code>org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.properties.sections.AbstractEObjectAdvancedPropertySection</code>. This class will provide a <code>org.eclipse.emf.edit.ui.provider.PropertySource</code>, this <code>PropertySource</code> will provide custom <code>org.eclipse.ui.views.properties.IPropertyDescriptor</code>.
+#'''filter''': a class implementing <code>org.eclipse.jface.viewers.IFilter</code> 
+
+===In case of new property in an existing metamodel===
+You just need to manage your new feature in the method <code>PropertySource.createPropertyDescriptor(IItemPropertyDescriptor)</code> of the existing <code>PropertySource</code>
+

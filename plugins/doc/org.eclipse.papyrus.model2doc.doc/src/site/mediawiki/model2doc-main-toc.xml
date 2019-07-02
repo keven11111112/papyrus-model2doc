@@ -3,7 +3,13 @@
   <topic label="Developer Documentation" >
        <anchor id="Papyrus-Model2Doc-DevDocAnchor"/>
   </topic>
+  <topic label="Papyrus Developer Documentation" >
+       <anchor id="Papyrus-Model2Doc-PapyrusDevDocAnchor"/>
+  </topic>
   <topic label="User Documentation">
      <anchor id="Papyrus-Model2Doc-UserDocAnchor"/>
+  </topic>
+  <topic label="Papyrus User Documentation">
+        <anchor id="Papyrus-Model2Doc-PapyrusUserDocAnchor"/>
   </topic>
 </toc>

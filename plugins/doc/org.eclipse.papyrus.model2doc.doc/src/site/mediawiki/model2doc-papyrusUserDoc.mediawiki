@@ -1,0 +1,20 @@
+=Papyrus-Model2Doc Integration Introduction=
+This part of the documentation deals with features only accessible from the integration to Papyrus, so main part of the Documentation is in the previous chapter '''User Documentation'''
+
+For a better experience, you should activate the Papyrus Perspective before reading this documentation.
+=How to create a new DocumentTemplate in my UML model?=
+Once a UML model created, go into the ''Model Explorer'', select a UML element from which starting the document, then ''Right-Click''->''New Document Template''->''Generic Text Document''.
+[[Image:images/papyrusUserDoc/PapyrusUserDoc_002_CreateNewDocumentTemplate.png]]
+A tree editor opens in Papyrus. This editor allows you to describe how to traverse your model from the selected element to generate your documentation.
+
+[[Image:images/papyrusUserDoc/PapyrusUserDoc_003_DocumentTemplateEditor.png]]
+
+Now you can edit the default template provided by Papyrus according to your model.
+
+=How to show/hide DocumentTemplate in the ModelExplorer=
+The created DocumentTemplates are displayed in the ModelExplorer as children of the element referenced as '''Graphical Context'''.
+The EMF-Facet allowing to display them is '''Document Template'''. This customization is loaded by default.
+
+Open ''Model Explorer'' and load ''PapyrusDocument'' customization:
+
+[[Image:images/papyrusUserDoc/PapyrusUserDoc_001_Load_Customization.png]]
