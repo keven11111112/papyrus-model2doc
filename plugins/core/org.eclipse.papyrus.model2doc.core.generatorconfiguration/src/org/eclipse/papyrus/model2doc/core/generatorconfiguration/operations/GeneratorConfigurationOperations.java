@@ -72,7 +72,10 @@ public class GeneratorConfigurationOperations {
 		if (false == uri.isPlatform()) {
 			// we convert a local URI as platform resource URI
 			final String projectName = generatorConfiguration.eResource().getURI().segment(1);
-			uri = URI.createPlatformResourceURI(projectName, true).appendSegment(folderName);
+			uri = URI.createPlatformResourceURI(projectName, true);
+			for (final String current : folderName.split("/")) { //$NON-NLS-1$
+				uri = uri.appendSegment(current);
+			}
 		}
 
 		if (uri.isPlatform()) {
