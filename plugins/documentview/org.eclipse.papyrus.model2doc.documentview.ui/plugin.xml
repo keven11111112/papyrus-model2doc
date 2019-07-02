@@ -17,23 +17,6 @@
 
 <plugin>
    <extension
-         point="org.eclipse.ui.menus">
-      <menuContribution
-            allPopups="false"
-            locationURI="popup:org.eclipse.papyrus.views.modelexplorer.modelexplorer.popup?after=org.eclipse.papyrus.views.modelexplorer.popupmenu.creatediagram">
-         <menu
-               icon="platform:/plugin/org.eclipse.papyrus.model2doc.documentview.ui/resources/icon/new_document.png"
-               id="org.eclipse.papyrus.model2doc.ui.popupmenu.createdocument"
-               label="New Document"
-               tooltip="The Papyrus Document Menu">
-            <dynamic
-                  class="org.eclipse.papyrus.model2doc.documentview.ui.internal.menu.dynamiccontribution.DynamicPapyrusDocumentViewsMenuContribution"
-                  id="org.eclipse.papyrus.model2doc.documentview.ui.menu.dynamiccontribution.PapyrusDocumentViewsMenu">
-            </dynamic>
-         </menu>
-      </menuContribution>
-   </extension>
-   <extension
          point="org.eclipse.papyrus.infra.viewpoints.policy.viewType">
       <helper
             class="org.eclipse.papyrus.model2doc.documentview.ui.internal.viewpoint.helper.CreatePapyrusDocumentViewTypeCommandHelper"
