@@ -9,6 +9,26 @@
          <command
                commandId="org.eclipse.papyrus.model2doc.odt.emf.structure2document.generate.file"
                style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <with
+                     variable="selection">
+                  <and>
+                     <count
+                           value="1">
+                     </count>
+                     <iterate
+                           ifEmpty="false">
+                        <adapt
+                              type="org.eclipse.emf.ecore.EObject">
+                           <instanceof
+                                 value="org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument">
+                           </instanceof>
+                        </adapt>
+                     </iterate>
+                  </and>
+               </with>
+            </visibleWhen>
          </command>
       </menuContribution>
    </extension>
