@@ -1,20 +1,17 @@
 /*****************************************************************************
- * Copyright (c) 2019 CEA LIST and others.
+ * Copyright (c) 2019 CEA LIST.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-2.0/
+ * https://www.eclipse.org/legal/epl-2.0/
  *
  * SPDX-License-Identifier: EPL-2.0
  *
  * Contributors:
- * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
- *  Nicolas FAUVERGUE (CEA LIST) nicolas.fauvergue@cea.fr - Bug 548896
- *
+ *    Nicolas FAUVERGUE (CEA LIST) nicolas.fauvergue@cea.fr - Initial API and implementation
  *****************************************************************************/
-
-package org.eclipse.papyrus.model2doc.emf.template2structure.internal.handler;
+package org.eclipse.papyrus.model2doc.odt.emf.structure2document.internal.handler;
 
 import java.util.Collection;
 
@@ -29,10 +26,11 @@ import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate;
 import org.eclipse.papyrus.model2doc.emf.template2structure.command.Template2StructureCommandFactory;
-import org.eclipse.papyrus.model2doc.emf.template2structure.internal.messages.Messages;
 import org.eclipse.papyrus.model2doc.emf.template2structure.utils.GenerateDocumentStructureUtils;
+import org.eclipse.papyrus.model2doc.odt.emf.structure2document.internal.utils.GenerateODTFileUtils;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.ISelectionService;
 import org.eclipse.ui.IWorkbench;
@@ -40,17 +38,17 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 
 /**
- * Handler use to create a document structure from a document structure template
+ * This handler allows to generate the LibreOffice odt file from a DocumentStructure
  */
-public class GenerateDocumentStructureHandler extends AbstractHandler {
+public class GenerateDocumentStructureAndODTFileHandler extends AbstractHandler {
 
 	/**
-	 * the command to execute
+	 * The command to execute.
 	 */
 	private Command command;
 
 	/**
-	 * the editing domain
+	 * The editing domain.
 	 */
 	private TransactionalEditingDomain domain;
 
@@ -60,28 +58,32 @@ public class GenerateDocumentStructureHandler extends AbstractHandler {
 	private DocumentTemplate selectedDocumentTemplate;
 
 	/**
-	 * @see org.eclipse.core.commands.IHandler#execute(org.eclipse.core.commands.ExecutionEvent)
+	 * {@inheritDoc}
 	 *
-	 * @param event
-	 * @return
-	 * @throws ExecutionException
+	 * @see org.eclipse.core.commands.IHandler#execute(org.eclipse.core.commands.ExecutionEvent)
 	 */
 	@Override
-	public Object execute(ExecutionEvent event) throws ExecutionException {
-		final Collection<?> result = GenerateDocumentStructureUtils.generateDocumentStructure(domain, command, selectedDocumentTemplate);
+	public Object execute(final ExecutionEvent event) throws ExecutionException {
 
-		// we open a dialog at the end of the generation
-		MessageDialog.openInformation(Display.getDefault().getActiveShell(), GenerateDocumentStructureUtils.DIALOG_TITLE, Messages.GenerateDocumentStructureHandler_TheGenerationOfDocumentStructureIsFinished); // $NON-NLS-1$
+		// Execute the super command
+		final Collection<?> superResult = GenerateDocumentStructureUtils.generateDocumentStructure(domain, command, selectedDocumentTemplate);
 
-		resetFields();
+		// Get the Text document from the super execution
+		final TextDocument textDocument = getTextDocument(superResult);
+		if (null != textDocument) {
+			GenerateODTFileUtils.generateODTFile(textDocument);
 
-		return result;
+			// open a dialog add the end of the generation
+			MessageDialog.openInformation(Display.getDefault().getActiveShell(), GenerateDocumentStructureUtils.DIALOG_TITLE, "The DocumentStructure and the ODT file have been successfully generated."); //$NON-NLS-1$
+		}
+		return null;
 	}
 
 	/**
-	 * @see org.eclipse.core.commands.AbstractHandler#setEnabled(java.lang.Object)
+	 * {@inheritDoc}
+	 * This re-implementation allows to define the selected document template.
 	 *
-	 * @param evaluationContext
+	 * @see org.eclipse.core.commands.AbstractHandler#setEnabled(java.lang.Object)
 	 */
 	@Override
 	public void setEnabled(Object evaluationContext) {
@@ -93,7 +95,7 @@ public class GenerateDocumentStructureHandler extends AbstractHandler {
 	}
 
 	/**
-	 * calculate the value of editing domain and command
+	 * This allows to calculate the value of editing domain and command.
 	 */
 	private void initFields() {
 		resetFields();// to be sure
@@ -109,7 +111,7 @@ public class GenerateDocumentStructureHandler extends AbstractHandler {
 	}
 
 	/**
-	 * reset the editing domain and the command to <code>null</code>
+	 * This allows to reset the editing domain and the command to <code>null</code>.
 	 */
 	private void resetFields() {
 		this.domain = null;
@@ -118,9 +120,10 @@ public class GenerateDocumentStructureHandler extends AbstractHandler {
 	}
 
 	/**
+	 * Get the selected document template.
 	 *
 	 * @return
-	 *         the first selected document template
+	 *         The first selected document template.
 	 */
 	private DocumentTemplate getSelectedDocumentTemplate() {
 		Object firstSelectedElement = null;
@@ -146,4 +149,21 @@ public class GenerateDocumentStructureHandler extends AbstractHandler {
 
 		return null;
 	}
+
+	/**
+	 * Get the text document generated by the first generation (generation of document structure).
+	 *
+	 * @param result
+	 *            The result of first generation.
+	 * @return The TextDocument if exists, else <code>null</code>.
+	 */
+	private TextDocument getTextDocument(final Object result) {
+		if (result instanceof Collection<?>) {
+			return ((Collection<?>) result).stream().filter(TextDocument.class::isInstance).map(TextDocument.class::cast).findFirst().orElse(null);
+		} else if (result instanceof TextDocument) {
+			return (TextDocument) result;
+		}
+		return null;
+	}
+
 }

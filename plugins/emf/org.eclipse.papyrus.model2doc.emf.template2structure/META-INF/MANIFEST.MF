@@ -23,4 +23,5 @@ Automatic-Module-Name: org.eclipse.papyrus.model2doc.emf.template2structure
 Bundle-ActivationPolicy: lazy
 Export-Package: org.eclipse.papyrus.model2doc.emf.template2structure.command,
  org.eclipse.papyrus.model2doc.emf.template2structure.generator,
- org.eclipse.papyrus.model2doc.emf.template2structure.mapping
+ org.eclipse.papyrus.model2doc.emf.template2structure.mapping,
+ org.eclipse.papyrus.model2doc.emf.template2structure.utils

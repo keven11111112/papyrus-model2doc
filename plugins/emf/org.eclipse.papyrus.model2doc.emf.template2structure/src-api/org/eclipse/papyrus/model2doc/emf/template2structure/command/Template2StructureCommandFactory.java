@@ -27,15 +27,39 @@ import org.eclipse.papyrus.model2doc.emf.template2structure.internal.command.Gen
 public class Template2StructureCommandFactory {
 
 	/**
+	 * The singleton instance.
+	 */
+	public static Template2StructureCommandFactory eINSTANCE = getInstance();
+
+	/**
+	 * Get the instance.
+	 *
+	 * @return The instance.
+	 */
+	private static Template2StructureCommandFactory getInstance() {
+		if (null == eINSTANCE) {
+			eINSTANCE = new Template2StructureCommandFactory();
+		}
+		return eINSTANCE;
+	}
+
+	/**
+	 * Private constructor to avoid external initialization.
+	 */
+	private Template2StructureCommandFactory() {
+		// Do nothing
+	}
+
+	/**
 	 *
 	 * @param domain
 	 *            the editing domain
 	 * @param docTemplate
 	 *            the DocumentTemplate
 	 * @return
-	 * 		the command to create a {@link Document} from a {@link DocumentTemplate}
+	 *         the command to create a {@link Document} from a {@link DocumentTemplate}
 	 */
-	public static final Command getGenerateDocumentStructureCommand(final TransactionalEditingDomain domain, final DocumentTemplate docTemplate) {
+	public final Command getGenerateDocumentStructureCommand(final TransactionalEditingDomain domain, final DocumentTemplate docTemplate) {
 		return new GenerateDocumentStructureCommand(domain, docTemplate);
 	}
 }

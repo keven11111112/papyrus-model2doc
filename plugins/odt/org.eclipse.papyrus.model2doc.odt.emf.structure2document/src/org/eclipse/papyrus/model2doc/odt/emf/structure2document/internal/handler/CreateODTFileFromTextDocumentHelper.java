@@ -19,7 +19,7 @@ import org.eclipse.papyrus.model2doc.core.transcriber.Transcriber;
 import org.eclipse.papyrus.model2doc.core.transcription.Transcription;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument;
 import org.eclipse.papyrus.model2doc.odt.emf.structure2document.Activator;
-import org.eclipse.papyrus.model2doc.odt.emf.structure2document.transcriber.StructureToODTTranscriber;
+import org.eclipse.papyrus.model2doc.odt.emf.structure2document.internal.transcriber.StructureToODTTranscriber;
 import org.eclipse.papyrus.model2doc.odt.internal.editor.DefaultStyleEditor;
 import org.eclipse.papyrus.model2doc.odt.internal.transcription.ODTTranscription;
 

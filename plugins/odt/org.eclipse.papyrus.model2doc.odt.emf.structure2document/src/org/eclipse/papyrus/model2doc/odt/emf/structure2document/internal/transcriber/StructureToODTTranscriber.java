@@ -12,7 +12,7 @@
  *    Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *****************************************************************************/
 
-package org.eclipse.papyrus.model2doc.odt.emf.structure2document.transcriber;
+package org.eclipse.papyrus.model2doc.odt.emf.structure2document.internal.transcriber;
 
 import java.util.Iterator;
 
