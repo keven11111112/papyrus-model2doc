@@ -6,28 +6,28 @@
     <documentPart xmi:type="documentstructuretemplate:Body" xmi:id="_9oFyAEsMEemzsPCsrzvLCg">
       <bodyPartTemplate xmi:type="umldocumentstructuretemplate:CommentAsParagraph" xmi:id="_kMXE8GBJEemWAfcsLf8lYQ" generate="true" generateTitle="true" commentChoice="FIRST_OWNED_COMMENT"/>
       <bodyPartTemplate xmi:type="documentstructuretemplate:EReferencePartTemplate" xmi:id="_nu8k4FYXEemlbuO0By-TdQ" generate="true" generateTitle="true" customTitle="The Packages owned by the root root Package">
-        <subBodyPartTemplate xmi:type="documentstructuretemplate:EClassPartTemplate" xmi:id="_nu8k4VYXEemlbuO0By-TdQ" generate="true" generateTitle="true" filterRule="TYPE_OF">
+        <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
+        <subBodyPartTemplate xmi:type="documentstructuretemplate:EClassPartTemplate" xmi:id="_nu8k4VYXEemlbuO0By-TdQ" filterRule="TYPE_OF" generate="true" generateTitle="true">
+          <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
           <bodyPartTemplate xmi:type="documentstructuretemplate:EReferencePartTemplate" xmi:id="_sVhHYFYXEemlbuO0By-TdQ" generate="true" generateTitle="true" customTitle="Owned Classes">
-            <subBodyPartTemplate xmi:type="documentstructuretemplate:EClassPartTemplate" xmi:id="_sVhucFYXEemlbuO0By-TdQ" generate="true" generateTitle="true" filterRule="TYPE_OF">
+            <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
+            <subBodyPartTemplate xmi:type="documentstructuretemplate:EClassPartTemplate" xmi:id="_sVhucFYXEemlbuO0By-TdQ" filterRule="TYPE_OF" generate="true" generateTitle="true">
+              <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
               <bodyPartTemplate xmi:type="umldocumentstructuretemplate:CommentAsParagraph" xmi:id="_lIc5wGBJEemWAfcsLf8lYQ" generate="true" generateTitle="true" commentChoice="FIRST_OWNED_COMMENT"/>
               <bodyPartTemplate xmi:type="documentstructuretemplate_1:PapyrusGMFDiagramView" xmi:id="_Z9R3QGBIEemOLoTRcqjQow" generate="true" generateTitle="true" customTitle=""/>
-              <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
             </subBodyPartTemplate>
-            <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
           </bodyPartTemplate>
           <bodyPartTemplate xmi:type="umldocumentstructuretemplate:CommentAsParagraph" xmi:id="_mXA-oGBJEemWAfcsLf8lYQ" generate="true" generateTitle="true" commentChoice="FIRST_OWNED_COMMENT"/>
           <bodyPartTemplate xmi:type="documentstructuretemplate_1:PapyrusGMFDiagramView" xmi:id="_ZIu04GBIEemOLoTRcqjQow" generate="true" generateTitle="true" customTitle=""/>
-          <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
         </subBodyPartTemplate>
-        <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
       </bodyPartTemplate>
       <bodyPartTemplate xmi:type="documentstructuretemplate:EReferencePartTemplate" xmi:id="_WH4AgFYXEemlbuO0By-TdQ" generate="true" generateTitle="true" customTitle="The Class owned by the root root Package">
-        <subBodyPartTemplate xmi:type="documentstructuretemplate:EClassPartTemplate" xmi:id="_jV5hAFYXEemlbuO0By-TdQ" generate="true" generateTitle="true" filterRule="TYPE_OF">
+        <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
+        <subBodyPartTemplate xmi:type="documentstructuretemplate:EClassPartTemplate" xmi:id="_jV5hAFYXEemlbuO0By-TdQ" filterRule="TYPE_OF" generate="true" generateTitle="true">
+          <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
           <bodyPartTemplate xmi:type="umldocumentstructuretemplate:CommentAsParagraph" xmi:id="_kshywGBJEemWAfcsLf8lYQ" generate="true" generateTitle="true" commentChoice="FIRST_OWNED_COMMENT"/>
           <bodyPartTemplate xmi:type="documentstructuretemplate_1:PapyrusGMFDiagramView" xmi:id="_aRhB4GBIEemOLoTRcqjQow" generate="true" generateTitle="true" customTitle=""/>
-          <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
         </subBodyPartTemplate>
-        <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
       </bodyPartTemplate>
       <bodyPartTemplate xmi:type="documentstructuretemplate_1:PapyrusGMFDiagramView" xmi:id="_U9YOwGBIEemOLoTRcqjQow" generate="true" generateTitle="true" customTitle=""/>
     </documentPart>
