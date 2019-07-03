@@ -172,8 +172,8 @@ public class UMLDocumentStructureTemplateAdapterFactory extends AdapterFactoryIm
 		}
 
 		@Override
-		public Adapter caseStereotypePropertyReferenceListItem(StereotypePropertyReferenceListItem object) {
-			return createStereotypePropertyReferenceListItemAdapter();
+		public Adapter caseStereotypePropertyReferenceListItemTemplate(StereotypePropertyReferenceListItemTemplate object) {
+			return createStereotypePropertyReferenceListItemTemplateAdapter();
 		}
 
 		@Override
@@ -182,8 +182,8 @@ public class UMLDocumentStructureTemplateAdapterFactory extends AdapterFactoryIm
 		}
 
 		@Override
-		public Adapter caseStereotypePropertyAttributeListItem(StereotypePropertyAttributeListItem object) {
-			return createStereotypePropertyAttributeListItemAdapter();
+		public Adapter caseStereotypePropertyAttributeListItemTemplate(StereotypePropertyAttributeListItemTemplate object) {
+			return createStereotypePropertyAttributeListItemTemplateAdapter();
 		}
 
 		@Override
@@ -504,17 +504,17 @@ public class UMLDocumentStructureTemplateAdapterFactory extends AdapterFactoryIm
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferenceListItem <em>Stereotype Property Reference List Item</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferenceListItemTemplate <em>Stereotype Property Reference List Item Template</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferenceListItem
+	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferenceListItemTemplate
 	 * @generated
 	 */
-	public Adapter createStereotypePropertyReferenceListItemAdapter() {
+	public Adapter createStereotypePropertyReferenceListItemTemplateAdapter() {
 		return null;
 	}
 
@@ -534,17 +534,17 @@ public class UMLDocumentStructureTemplateAdapterFactory extends AdapterFactoryIm
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyAttributeListItem <em>Stereotype Property Attribute List Item</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyAttributeListItemTemplate <em>Stereotype Property Attribute List Item Template</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyAttributeListItem
+	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyAttributeListItemTemplate
 	 * @generated
 	 */
-	public Adapter createStereotypePropertyAttributeListItemAdapter() {
+	public Adapter createStereotypePropertyAttributeListItemTemplateAdapter() {
 		return null;
 	}
 

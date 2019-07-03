@@ -358,32 +358,32 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 			}
 			return result;
 		}
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM: {
-			StereotypePropertyReferenceListItem stereotypePropertyReferenceListItem = (StereotypePropertyReferenceListItem) theEObject;
-			T result = caseStereotypePropertyReferenceListItem(stereotypePropertyReferenceListItem);
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM_TEMPLATE: {
+			StereotypePropertyReferenceListItemTemplate stereotypePropertyReferenceListItemTemplate = (StereotypePropertyReferenceListItemTemplate) theEObject;
+			T result = caseStereotypePropertyReferenceListItemTemplate(stereotypePropertyReferenceListItemTemplate);
 			if (result == null) {
-				result = caseStereotypePropertyListItemTemplate(stereotypePropertyReferenceListItem);
+				result = caseStereotypePropertyListItemTemplate(stereotypePropertyReferenceListItemTemplate);
 			}
 			if (result == null) {
-				result = caseIComposedListItemTemplate(stereotypePropertyReferenceListItem);
+				result = caseIComposedListItemTemplate(stereotypePropertyReferenceListItemTemplate);
 			}
 			if (result == null) {
-				result = caseStereotypePropertyReference(stereotypePropertyReferenceListItem);
+				result = caseStereotypePropertyReference(stereotypePropertyReferenceListItemTemplate);
 			}
 			if (result == null) {
-				result = caseMandatoryStereotypePropertyTemplate(stereotypePropertyReferenceListItem);
+				result = caseMandatoryStereotypePropertyTemplate(stereotypePropertyReferenceListItemTemplate);
 			}
 			if (result == null) {
-				result = caseIRootListItemTemplate(stereotypePropertyReferenceListItem);
+				result = caseIRootListItemTemplate(stereotypePropertyReferenceListItemTemplate);
 			}
 			if (result == null) {
-				result = caseStereotypePropertyTemplate(stereotypePropertyReferenceListItem);
+				result = caseStereotypePropertyTemplate(stereotypePropertyReferenceListItemTemplate);
 			}
 			if (result == null) {
-				result = caseIListItemTemplate(stereotypePropertyReferenceListItem);
+				result = caseIListItemTemplate(stereotypePropertyReferenceListItemTemplate);
 			}
 			if (result == null) {
-				result = caseStereotypeTemplate(stereotypePropertyReferenceListItem);
+				result = caseStereotypeTemplate(stereotypePropertyReferenceListItemTemplate);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
@@ -410,32 +410,32 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 			}
 			return result;
 		}
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_ATTRIBUTE_LIST_ITEM: {
-			StereotypePropertyAttributeListItem stereotypePropertyAttributeListItem = (StereotypePropertyAttributeListItem) theEObject;
-			T result = caseStereotypePropertyAttributeListItem(stereotypePropertyAttributeListItem);
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_ATTRIBUTE_LIST_ITEM_TEMPLATE: {
+			StereotypePropertyAttributeListItemTemplate stereotypePropertyAttributeListItemTemplate = (StereotypePropertyAttributeListItemTemplate) theEObject;
+			T result = caseStereotypePropertyAttributeListItemTemplate(stereotypePropertyAttributeListItemTemplate);
 			if (result == null) {
-				result = caseStereotypePropertyListItemTemplate(stereotypePropertyAttributeListItem);
+				result = caseStereotypePropertyListItemTemplate(stereotypePropertyAttributeListItemTemplate);
 			}
 			if (result == null) {
-				result = caseILeafListItemTemplate(stereotypePropertyAttributeListItem);
+				result = caseILeafListItemTemplate(stereotypePropertyAttributeListItemTemplate);
 			}
 			if (result == null) {
-				result = caseStereotypePropertyAttribute(stereotypePropertyAttributeListItem);
+				result = caseStereotypePropertyAttribute(stereotypePropertyAttributeListItemTemplate);
 			}
 			if (result == null) {
-				result = caseMandatoryStereotypePropertyTemplate(stereotypePropertyAttributeListItem);
+				result = caseMandatoryStereotypePropertyTemplate(stereotypePropertyAttributeListItemTemplate);
 			}
 			if (result == null) {
-				result = caseIRootListItemTemplate(stereotypePropertyAttributeListItem);
+				result = caseIRootListItemTemplate(stereotypePropertyAttributeListItemTemplate);
 			}
 			if (result == null) {
-				result = caseStereotypePropertyTemplate(stereotypePropertyAttributeListItem);
+				result = caseStereotypePropertyTemplate(stereotypePropertyAttributeListItemTemplate);
 			}
 			if (result == null) {
-				result = caseIListItemTemplate(stereotypePropertyAttributeListItem);
+				result = caseIListItemTemplate(stereotypePropertyAttributeListItemTemplate);
 			}
 			if (result == null) {
-				result = caseStereotypeTemplate(stereotypePropertyAttributeListItem);
+				result = caseStereotypeTemplate(stereotypePropertyAttributeListItemTemplate);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
@@ -694,7 +694,7 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Stereotype Property Reference List Item</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Stereotype Property Reference List Item Template</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
@@ -702,11 +702,11 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 	 *
 	 * @param object
 	 *                   the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Stereotype Property Reference List Item</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Stereotype Property Reference List Item Template</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseStereotypePropertyReferenceListItem(StereotypePropertyReferenceListItem object) {
+	public T caseStereotypePropertyReferenceListItemTemplate(StereotypePropertyReferenceListItemTemplate object) {
 		return null;
 	}
 
@@ -728,7 +728,7 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Stereotype Property Attribute List Item</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Stereotype Property Attribute List Item Template</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
@@ -736,11 +736,11 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 	 *
 	 * @param object
 	 *                   the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Stereotype Property Attribute List Item</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Stereotype Property Attribute List Item Template</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseStereotypePropertyAttributeListItem(StereotypePropertyAttributeListItem object) {
+	public T caseStereotypePropertyAttributeListItemTemplate(StereotypePropertyAttributeListItemTemplate object) {
 		return null;
 	}
 

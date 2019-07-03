@@ -1,13 +1,13 @@
 /**
  * Copyright (c) 2019 CEA LIST.
- * 
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-2.0/
- * 
+ *
  *  SPDX-License-Identifier: EPL-2.0
- * 
+ *
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -22,24 +22,24 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyAttributeListItem;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyAttributeListItemTemplate;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyAttributeListItem} object.
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyAttributeListItemTemplate} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
-public class StereotypePropertyAttributeListItemItemProvider extends StereotypePropertyListItemTemplateItemProvider {
+public class StereotypePropertyAttributeListItemTemplateItemProvider extends StereotypePropertyListItemTemplateItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public StereotypePropertyAttributeListItemItemProvider(AdapterFactory adapterFactory) {
+	public StereotypePropertyAttributeListItemTemplateItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -47,7 +47,7 @@ public class StereotypePropertyAttributeListItemItemProvider extends StereotypeP
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -60,21 +60,21 @@ public class StereotypePropertyAttributeListItemItemProvider extends StereotypeP
 	}
 
 	/**
-	 * This returns StereotypePropertyAttributeListItem.gif.
+	 * This returns StereotypePropertyAttributeListItemTemplate.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/StereotypePropertyAttributeListItem")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/StereotypePropertyAttributeListItemTemplate")); //$NON-NLS-1$
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -86,14 +86,14 @@ public class StereotypePropertyAttributeListItemItemProvider extends StereotypeP
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((StereotypePropertyAttributeListItem) object).getCustomItemLabel();
-		return label == null || label.length() == 0 ? getString("_UI_StereotypePropertyAttributeListItem_type") : //$NON-NLS-1$
-				getString("_UI_StereotypePropertyAttributeListItem_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		String label = ((StereotypePropertyAttributeListItemTemplate) object).getStereotypeQualifiedName();
+		return label == null || label.length() == 0 ? getString("_UI_StereotypePropertyAttributeListItemTemplate_type") : //$NON-NLS-1$
+				getString("_UI_StereotypePropertyAttributeListItemTemplate_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 
@@ -102,7 +102,7 @@ public class StereotypePropertyAttributeListItemItemProvider extends StereotypeP
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -116,7 +116,7 @@ public class StereotypePropertyAttributeListItemItemProvider extends StereotypeP
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

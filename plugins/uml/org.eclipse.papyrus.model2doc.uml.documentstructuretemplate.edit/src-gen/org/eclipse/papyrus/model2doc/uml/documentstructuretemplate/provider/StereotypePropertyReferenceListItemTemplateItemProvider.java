@@ -1,13 +1,13 @@
 /**
  * Copyright (c) 2019 CEA LIST.
- * 
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-2.0/
- * 
+ *
  *  SPDX-License-Identifier: EPL-2.0
- * 
+ *
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -28,26 +28,26 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplateFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 
-import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferenceListItem;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferenceListItemTemplate;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplateFactory;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplatePackage;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferenceListItem} object.
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferenceListItemTemplate} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
-public class StereotypePropertyReferenceListItemItemProvider extends StereotypePropertyListItemTemplateItemProvider {
+public class StereotypePropertyReferenceListItemTemplateItemProvider extends StereotypePropertyListItemTemplateItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public StereotypePropertyReferenceListItemItemProvider(AdapterFactory adapterFactory) {
+	public StereotypePropertyReferenceListItemTemplateItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -55,7 +55,7 @@ public class StereotypePropertyReferenceListItemItemProvider extends StereotypeP
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -73,7 +73,7 @@ public class StereotypePropertyReferenceListItemItemProvider extends StereotypeP
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -88,7 +88,7 @@ public class StereotypePropertyReferenceListItemItemProvider extends StereotypeP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -100,21 +100,21 @@ public class StereotypePropertyReferenceListItemItemProvider extends StereotypeP
 	}
 
 	/**
-	 * This returns StereotypePropertyReferenceListItem.gif.
+	 * This returns StereotypePropertyReferenceListItemTemplate.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/StereotypePropertyReferenceListItem")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/StereotypePropertyReferenceListItemTemplate")); //$NON-NLS-1$
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -126,14 +126,14 @@ public class StereotypePropertyReferenceListItemItemProvider extends StereotypeP
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((StereotypePropertyReferenceListItem) object).getCustomItemLabel();
-		return label == null || label.length() == 0 ? getString("_UI_StereotypePropertyReferenceListItem_type") : //$NON-NLS-1$
-				getString("_UI_StereotypePropertyReferenceListItem_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		String label = ((StereotypePropertyReferenceListItemTemplate) object).getStereotypeQualifiedName();
+		return label == null || label.length() == 0 ? getString("_UI_StereotypePropertyReferenceListItemTemplate_type") : //$NON-NLS-1$
+				getString("_UI_StereotypePropertyReferenceListItemTemplate_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 
@@ -142,15 +142,15 @@ public class StereotypePropertyReferenceListItemItemProvider extends StereotypeP
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(StereotypePropertyReferenceListItem.class)) {
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM__SUB_LIST_ITEM_TEMPLATE:
+		switch (notification.getFeatureID(StereotypePropertyReferenceListItemTemplate.class)) {
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM_TEMPLATE__SUB_LIST_ITEM_TEMPLATE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -162,7 +162,7 @@ public class StereotypePropertyReferenceListItemItemProvider extends StereotypeP
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

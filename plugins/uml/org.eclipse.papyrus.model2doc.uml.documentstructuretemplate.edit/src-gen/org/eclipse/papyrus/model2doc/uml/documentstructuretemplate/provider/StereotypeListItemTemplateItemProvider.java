@@ -1,13 +1,13 @@
 /**
  * Copyright (c) 2019 CEA LIST.
- * 
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-2.0/
- * 
+ *
  *  SPDX-License-Identifier: EPL-2.0
- * 
+ *
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -38,7 +38,7 @@ import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentSt
  * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypeListItemTemplate} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class StereotypeListItemTemplateItemProvider extends MandatoryStereotypeWithEClassTemplateItemProvider {
@@ -46,7 +46,7 @@ public class StereotypeListItemTemplateItemProvider extends MandatoryStereotypeW
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public StereotypeListItemTemplateItemProvider(AdapterFactory adapterFactory) {
@@ -57,7 +57,7 @@ public class StereotypeListItemTemplateItemProvider extends MandatoryStereotypeW
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -75,7 +75,7 @@ public class StereotypeListItemTemplateItemProvider extends MandatoryStereotypeW
 	 * This adds a property descriptor for the Generate Item feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addGenerateItemPropertyDescriptor(Object object) {
@@ -96,7 +96,7 @@ public class StereotypeListItemTemplateItemProvider extends MandatoryStereotypeW
 	 * This adds a property descriptor for the Custom Item Label feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addCustomItemLabelPropertyDescriptor(Object object) {
@@ -119,7 +119,7 @@ public class StereotypeListItemTemplateItemProvider extends MandatoryStereotypeW
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +134,7 @@ public class StereotypeListItemTemplateItemProvider extends MandatoryStereotypeW
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -149,7 +149,7 @@ public class StereotypeListItemTemplateItemProvider extends MandatoryStereotypeW
 	 * This returns StereotypeListItemTemplate.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -160,7 +160,7 @@ public class StereotypeListItemTemplateItemProvider extends MandatoryStereotypeW
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -172,7 +172,7 @@ public class StereotypeListItemTemplateItemProvider extends MandatoryStereotypeW
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -188,7 +188,7 @@ public class StereotypeListItemTemplateItemProvider extends MandatoryStereotypeW
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -212,7 +212,7 @@ public class StereotypeListItemTemplateItemProvider extends MandatoryStereotypeW
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -220,10 +220,10 @@ public class StereotypeListItemTemplateItemProvider extends MandatoryStereotypeW
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_LIST_ITEM_TEMPLATE__LIST_ITEM_TEMPLATE,
-				UMLDocumentStructureTemplateFactory.eINSTANCE.createStereotypePropertyReferenceListItem()));
+				UMLDocumentStructureTemplateFactory.eINSTANCE.createStereotypePropertyReferenceListItemTemplate()));
 
 		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_LIST_ITEM_TEMPLATE__LIST_ITEM_TEMPLATE,
-				UMLDocumentStructureTemplateFactory.eINSTANCE.createStereotypePropertyAttributeListItem()));
+				UMLDocumentStructureTemplateFactory.eINSTANCE.createStereotypePropertyAttributeListItemTemplate()));
 
 		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_LIST_ITEM_TEMPLATE__LIST_ITEM_TEMPLATE,
 				DocumentStructureTemplateFactory.eINSTANCE.createEReferenceListItemTemplate()));

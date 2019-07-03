@@ -20,9 +20,8 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypeListItemTemplate;
-import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyAttribute;
-import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyAttributeListItem;
-import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferenceListItem;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyAttributeListItemTemplate;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferenceListItemTemplate;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyListItemTemplateImpl;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.internal.providers.UMLDelegatingToEMFLabelProvider;
 
@@ -37,11 +36,11 @@ public class StereotypePropertyListItemTemplateOperations {
 	 * @return
 	 */
 	public static String buildItemLabel(final StereotypePropertyListItemTemplateImpl stereotypePropertyListItemTemplateImpl, final Object item) {
-		if (stereotypePropertyListItemTemplateImpl instanceof StereotypePropertyAttribute) {
-			return buildAttributeItemLabel((StereotypePropertyAttributeListItem) stereotypePropertyListItemTemplateImpl, item);
+		if (stereotypePropertyListItemTemplateImpl instanceof StereotypePropertyAttributeListItemTemplate) {
+			return buildAttributeItemLabel((StereotypePropertyAttributeListItemTemplate) stereotypePropertyListItemTemplateImpl, item);
 		}
-		if (stereotypePropertyListItemTemplateImpl instanceof StereotypePropertyReferenceListItem) {
-			return buildReferenceItemLabel((StereotypePropertyReferenceListItem) stereotypePropertyListItemTemplateImpl, item);
+		if (stereotypePropertyListItemTemplateImpl instanceof StereotypePropertyReferenceListItemTemplate) {
+			return buildReferenceItemLabel((StereotypePropertyReferenceListItemTemplate) stereotypePropertyListItemTemplateImpl, item);
 		}
 		throw new UnsupportedOperationException(NLS.bind("The method StereotypePropertyListItemTemplateOperations#buildItemLabel doesn't support the argument {0}.", stereotypePropertyListItemTemplateImpl.eClass())); //$NON-NLS-1$
 	}
@@ -66,17 +65,17 @@ public class StereotypePropertyListItemTemplateOperations {
 	 * property and an item representing the value of the property.
 	 *
 	 *
-	 * @param stereotypePropertyAttributeListItem
+	 * @param stereotypePropertyAttributeListItemTemplate
 	 * @param item
 	 * @return
 	 */
-	private static final String buildAttributeItemLabel(final StereotypePropertyAttributeListItem stereotypePropertyAttributeListItem, final Object item) {
-		if (null == item || item == stereotypePropertyAttributeListItem) {
-			final String customLabel = stereotypePropertyAttributeListItem.getCustomItemLabel();
+	private static final String buildAttributeItemLabel(final StereotypePropertyAttributeListItemTemplate stereotypePropertyAttributeListItemTemplate, final Object item) {
+		if (null == item || item == stereotypePropertyAttributeListItemTemplate) {
+			final String customLabel = stereotypePropertyAttributeListItemTemplate.getCustomItemLabel();
 			if (null != customLabel && false == customLabel.isEmpty()) {
 				return customLabel;
 			}
-			final String propertyName = stereotypePropertyAttributeListItem.getPropertyName();
+			final String propertyName = stereotypePropertyAttributeListItemTemplate.getPropertyName();
 			if (null != propertyName && false == propertyName.isEmpty()) {
 				return propertyName;
 			}
@@ -88,16 +87,16 @@ public class StereotypePropertyListItemTemplateOperations {
 	/**
 	 * This method generates the label of the {@link StereotypePropertyReferenceListItem}
 	 *
-	 * @param stereotypePropertyReferenceListItem
+	 * @param stereotypePropertyReferenceListItemTemplate
 	 * @param item
 	 * @return
 	 */
-	private static final String buildReferenceItemLabel(final StereotypePropertyReferenceListItem stereotypePropertyReferenceListItem, final Object item) {
-		final String customLabel = stereotypePropertyReferenceListItem.getCustomItemLabel();
+	private static final String buildReferenceItemLabel(final StereotypePropertyReferenceListItemTemplate stereotypePropertyReferenceListItemTemplate, final Object item) {
+		final String customLabel = stereotypePropertyReferenceListItemTemplate.getCustomItemLabel();
 		if (null != customLabel && false == customLabel.isEmpty()) {
 			return customLabel;
 		}
-		final String propertyName = stereotypePropertyReferenceListItem.getPropertyName();
+		final String propertyName = stereotypePropertyReferenceListItemTemplate.getPropertyName();
 		if (null != propertyName && false == propertyName.isEmpty()) {
 			return propertyName;
 		}

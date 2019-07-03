@@ -1622,15 +1622,15 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	int STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE_OPERATION_COUNT = MANDATORY_STEREOTYPE_PROPERTY_TEMPLATE_OPERATION_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyReferenceListItemImpl <em>Stereotype Property Reference List Item</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyReferenceListItemTemplateImpl <em>Stereotype Property Reference List Item Template</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyReferenceListItemImpl
-	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.UMLDocumentStructureTemplatePackageImpl#getStereotypePropertyReferenceListItem()
+	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyReferenceListItemTemplateImpl
+	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.UMLDocumentStructureTemplatePackageImpl#getStereotypePropertyReferenceListItemTemplate()
 	 * @generated
 	 */
-	int STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM = 14;
+	int STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM_TEMPLATE = 14;
 
 	/**
 	 * The feature id for the '<em><b>Stereotype Filter Rule</b></em>' attribute.
@@ -1640,7 +1640,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM__STEREOTYPE_FILTER_RULE = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE__STEREOTYPE_FILTER_RULE;
+	int STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM_TEMPLATE__STEREOTYPE_FILTER_RULE = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE__STEREOTYPE_FILTER_RULE;
 
 	/**
 	 * The feature id for the '<em><b>Stereotype Qualified Name</b></em>' attribute.
@@ -1650,7 +1650,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM__STEREOTYPE_QUALIFIED_NAME = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE__STEREOTYPE_QUALIFIED_NAME;
+	int STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM_TEMPLATE__STEREOTYPE_QUALIFIED_NAME = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE__STEREOTYPE_QUALIFIED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Property Name</b></em>' attribute.
@@ -1660,7 +1660,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM__PROPERTY_NAME = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE__PROPERTY_NAME;
+	int STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM_TEMPLATE__PROPERTY_NAME = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE__PROPERTY_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Generate Item</b></em>' attribute.
@@ -1670,7 +1670,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM__GENERATE_ITEM = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE__GENERATE_ITEM;
+	int STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM_TEMPLATE__GENERATE_ITEM = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE__GENERATE_ITEM;
 
 	/**
 	 * The feature id for the '<em><b>Custom Item Label</b></em>' attribute.
@@ -1680,7 +1680,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM__CUSTOM_ITEM_LABEL = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE__CUSTOM_ITEM_LABEL;
+	int STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM_TEMPLATE__CUSTOM_ITEM_LABEL = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE__CUSTOM_ITEM_LABEL;
 
 	/**
 	 * The feature id for the '<em><b>Sub List Item Template</b></em>' containment reference list.
@@ -1690,17 +1690,17 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM__SUB_LIST_ITEM_TEMPLATE = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE_FEATURE_COUNT + 0;
+	int STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM_TEMPLATE__SUB_LIST_ITEM_TEMPLATE = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Stereotype Property Reference List Item</em>' class.
+	 * The number of structural features of the '<em>Stereotype Property Reference List Item Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM_FEATURE_COUNT = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE_FEATURE_COUNT + 1;
+	int STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM_TEMPLATE_FEATURE_COUNT = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Get First Matching Stereotype Application</em>' operation.
@@ -1710,7 +1710,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM___GET_FIRST_MATCHING_STEREOTYPE_APPLICATION__EOBJECT = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE___GET_FIRST_MATCHING_STEREOTYPE_APPLICATION__EOBJECT;
+	int STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM_TEMPLATE___GET_FIRST_MATCHING_STEREOTYPE_APPLICATION__EOBJECT = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE___GET_FIRST_MATCHING_STEREOTYPE_APPLICATION__EOBJECT;
 
 	/**
 	 * The operation id for the '<em>Get Stereotype Property Values</em>' operation.
@@ -1720,7 +1720,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM___GET_STEREOTYPE_PROPERTY_VALUES__EOBJECT = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE___GET_STEREOTYPE_PROPERTY_VALUES__EOBJECT;
+	int STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM_TEMPLATE___GET_STEREOTYPE_PROPERTY_VALUES__EOBJECT = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE___GET_STEREOTYPE_PROPERTY_VALUES__EOBJECT;
 
 	/**
 	 * The operation id for the '<em>Build Item Label</em>' operation.
@@ -1730,7 +1730,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM___BUILD_ITEM_LABEL__OBJECT = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE___BUILD_ITEM_LABEL__OBJECT;
+	int STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM_TEMPLATE___BUILD_ITEM_LABEL__OBJECT = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE___BUILD_ITEM_LABEL__OBJECT;
 
 	/**
 	 * The operation id for the '<em>Get Items</em>' operation.
@@ -1740,28 +1740,28 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM___GET_ITEMS__EOBJECT = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE___GET_ITEMS__EOBJECT;
+	int STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM_TEMPLATE___GET_ITEMS__EOBJECT = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE___GET_ITEMS__EOBJECT;
 
 	/**
-	 * The number of operations of the '<em>Stereotype Property Reference List Item</em>' class.
+	 * The number of operations of the '<em>Stereotype Property Reference List Item Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM_OPERATION_COUNT = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE_OPERATION_COUNT + 0;
+	int STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM_TEMPLATE_OPERATION_COUNT = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyAttributeListItemImpl <em>Stereotype Property Attribute List Item</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyAttributeListItemTemplateImpl <em>Stereotype Property Attribute List Item Template</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyAttributeListItemImpl
-	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.UMLDocumentStructureTemplatePackageImpl#getStereotypePropertyAttributeListItem()
+	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyAttributeListItemTemplateImpl
+	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.UMLDocumentStructureTemplatePackageImpl#getStereotypePropertyAttributeListItemTemplate()
 	 * @generated
 	 */
-	int STEREOTYPE_PROPERTY_ATTRIBUTE_LIST_ITEM = 16;
+	int STEREOTYPE_PROPERTY_ATTRIBUTE_LIST_ITEM_TEMPLATE = 16;
 
 	/**
 	 * The feature id for the '<em><b>Stereotype Filter Rule</b></em>' attribute.
@@ -1771,7 +1771,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_ATTRIBUTE_LIST_ITEM__STEREOTYPE_FILTER_RULE = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE__STEREOTYPE_FILTER_RULE;
+	int STEREOTYPE_PROPERTY_ATTRIBUTE_LIST_ITEM_TEMPLATE__STEREOTYPE_FILTER_RULE = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE__STEREOTYPE_FILTER_RULE;
 
 	/**
 	 * The feature id for the '<em><b>Stereotype Qualified Name</b></em>' attribute.
@@ -1781,7 +1781,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_ATTRIBUTE_LIST_ITEM__STEREOTYPE_QUALIFIED_NAME = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE__STEREOTYPE_QUALIFIED_NAME;
+	int STEREOTYPE_PROPERTY_ATTRIBUTE_LIST_ITEM_TEMPLATE__STEREOTYPE_QUALIFIED_NAME = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE__STEREOTYPE_QUALIFIED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Property Name</b></em>' attribute.
@@ -1791,7 +1791,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_ATTRIBUTE_LIST_ITEM__PROPERTY_NAME = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE__PROPERTY_NAME;
+	int STEREOTYPE_PROPERTY_ATTRIBUTE_LIST_ITEM_TEMPLATE__PROPERTY_NAME = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE__PROPERTY_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Generate Item</b></em>' attribute.
@@ -1801,7 +1801,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_ATTRIBUTE_LIST_ITEM__GENERATE_ITEM = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE__GENERATE_ITEM;
+	int STEREOTYPE_PROPERTY_ATTRIBUTE_LIST_ITEM_TEMPLATE__GENERATE_ITEM = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE__GENERATE_ITEM;
 
 	/**
 	 * The feature id for the '<em><b>Custom Item Label</b></em>' attribute.
@@ -1811,17 +1811,17 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_ATTRIBUTE_LIST_ITEM__CUSTOM_ITEM_LABEL = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE__CUSTOM_ITEM_LABEL;
+	int STEREOTYPE_PROPERTY_ATTRIBUTE_LIST_ITEM_TEMPLATE__CUSTOM_ITEM_LABEL = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE__CUSTOM_ITEM_LABEL;
 
 	/**
-	 * The number of structural features of the '<em>Stereotype Property Attribute List Item</em>' class.
+	 * The number of structural features of the '<em>Stereotype Property Attribute List Item Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_ATTRIBUTE_LIST_ITEM_FEATURE_COUNT = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE_FEATURE_COUNT + 0;
+	int STEREOTYPE_PROPERTY_ATTRIBUTE_LIST_ITEM_TEMPLATE_FEATURE_COUNT = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Get First Matching Stereotype Application</em>' operation.
@@ -1831,7 +1831,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_ATTRIBUTE_LIST_ITEM___GET_FIRST_MATCHING_STEREOTYPE_APPLICATION__EOBJECT = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE___GET_FIRST_MATCHING_STEREOTYPE_APPLICATION__EOBJECT;
+	int STEREOTYPE_PROPERTY_ATTRIBUTE_LIST_ITEM_TEMPLATE___GET_FIRST_MATCHING_STEREOTYPE_APPLICATION__EOBJECT = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE___GET_FIRST_MATCHING_STEREOTYPE_APPLICATION__EOBJECT;
 
 	/**
 	 * The operation id for the '<em>Get Stereotype Property Values</em>' operation.
@@ -1841,7 +1841,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_ATTRIBUTE_LIST_ITEM___GET_STEREOTYPE_PROPERTY_VALUES__EOBJECT = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE___GET_STEREOTYPE_PROPERTY_VALUES__EOBJECT;
+	int STEREOTYPE_PROPERTY_ATTRIBUTE_LIST_ITEM_TEMPLATE___GET_STEREOTYPE_PROPERTY_VALUES__EOBJECT = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE___GET_STEREOTYPE_PROPERTY_VALUES__EOBJECT;
 
 	/**
 	 * The operation id for the '<em>Build Item Label</em>' operation.
@@ -1851,7 +1851,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_ATTRIBUTE_LIST_ITEM___BUILD_ITEM_LABEL__OBJECT = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE___BUILD_ITEM_LABEL__OBJECT;
+	int STEREOTYPE_PROPERTY_ATTRIBUTE_LIST_ITEM_TEMPLATE___BUILD_ITEM_LABEL__OBJECT = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE___BUILD_ITEM_LABEL__OBJECT;
 
 	/**
 	 * The operation id for the '<em>Get Items</em>' operation.
@@ -1861,17 +1861,17 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_ATTRIBUTE_LIST_ITEM___GET_ITEMS__EOBJECT = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE___GET_ITEMS__EOBJECT;
+	int STEREOTYPE_PROPERTY_ATTRIBUTE_LIST_ITEM_TEMPLATE___GET_ITEMS__EOBJECT = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE___GET_ITEMS__EOBJECT;
 
 	/**
-	 * The number of operations of the '<em>Stereotype Property Attribute List Item</em>' class.
+	 * The number of operations of the '<em>Stereotype Property Attribute List Item Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_ATTRIBUTE_LIST_ITEM_OPERATION_COUNT = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE_OPERATION_COUNT + 0;
+	int STEREOTYPE_PROPERTY_ATTRIBUTE_LIST_ITEM_TEMPLATE_OPERATION_COUNT = STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyAttribute <em>Stereotype Property Attribute</em>}' class.
@@ -2187,15 +2187,15 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	EClass getStereotypeListItemTemplate();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferenceListItem <em>Stereotype Property Reference List Item</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferenceListItemTemplate <em>Stereotype Property Reference List Item Template</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the meta object for class '<em>Stereotype Property Reference List Item</em>'.
-	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferenceListItem
+	 * @return the meta object for class '<em>Stereotype Property Reference List Item Template</em>'.
+	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferenceListItemTemplate
 	 * @generated
 	 */
-	EClass getStereotypePropertyReferenceListItem();
+	EClass getStereotypePropertyReferenceListItemTemplate();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyListItemTemplate <em>Stereotype Property List Item Template</em>}'.
@@ -2209,15 +2209,15 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	EClass getStereotypePropertyListItemTemplate();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyAttributeListItem <em>Stereotype Property Attribute List Item</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyAttributeListItemTemplate <em>Stereotype Property Attribute List Item Template</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the meta object for class '<em>Stereotype Property Attribute List Item</em>'.
-	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyAttributeListItem
+	 * @return the meta object for class '<em>Stereotype Property Attribute List Item Template</em>'.
+	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyAttributeListItemTemplate
 	 * @generated
 	 */
-	EClass getStereotypePropertyAttributeListItem();
+	EClass getStereotypePropertyAttributeListItemTemplate();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyAttribute <em>Stereotype Property Attribute</em>}'.
@@ -2513,15 +2513,15 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 		EClass STEREOTYPE_LIST_ITEM_TEMPLATE = eINSTANCE.getStereotypeListItemTemplate();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyReferenceListItemImpl <em>Stereotype Property Reference List Item</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyReferenceListItemTemplateImpl <em>Stereotype Property Reference List Item Template</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
-		 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyReferenceListItemImpl
-		 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.UMLDocumentStructureTemplatePackageImpl#getStereotypePropertyReferenceListItem()
+		 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyReferenceListItemTemplateImpl
+		 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.UMLDocumentStructureTemplatePackageImpl#getStereotypePropertyReferenceListItemTemplate()
 		 * @generated
 		 */
-		EClass STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM = eINSTANCE.getStereotypePropertyReferenceListItem();
+		EClass STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM_TEMPLATE = eINSTANCE.getStereotypePropertyReferenceListItemTemplate();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyListItemTemplateImpl <em>Stereotype Property List Item Template</em>}' class.
@@ -2535,15 +2535,15 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 		EClass STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE = eINSTANCE.getStereotypePropertyListItemTemplate();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyAttributeListItemImpl <em>Stereotype Property Attribute List Item</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyAttributeListItemTemplateImpl <em>Stereotype Property Attribute List Item Template</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
-		 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyAttributeListItemImpl
-		 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.UMLDocumentStructureTemplatePackageImpl#getStereotypePropertyAttributeListItem()
+		 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyAttributeListItemTemplateImpl
+		 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.UMLDocumentStructureTemplatePackageImpl#getStereotypePropertyAttributeListItemTemplate()
 		 * @generated
 		 */
-		EClass STEREOTYPE_PROPERTY_ATTRIBUTE_LIST_ITEM = eINSTANCE.getStereotypePropertyAttributeListItem();
+		EClass STEREOTYPE_PROPERTY_ATTRIBUTE_LIST_ITEM_TEMPLATE = eINSTANCE.getStereotypePropertyAttributeListItemTemplate();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyAttribute <em>Stereotype Property Attribute</em>}' class.

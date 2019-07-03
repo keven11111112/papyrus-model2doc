@@ -144,12 +144,12 @@ public class UMLDocumentStructureTemplateValidator extends EObjectValidator {
 			return validateStereotypePropertyReferenceTableView((StereotypePropertyReferenceTableView) value, diagnostics, context);
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_LIST_ITEM_TEMPLATE:
 			return validateStereotypeListItemTemplate((StereotypeListItemTemplate) value, diagnostics, context);
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM:
-			return validateStereotypePropertyReferenceListItem((StereotypePropertyReferenceListItem) value, diagnostics, context);
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM_TEMPLATE:
+			return validateStereotypePropertyReferenceListItemTemplate((StereotypePropertyReferenceListItemTemplate) value, diagnostics, context);
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_LIST_ITEM_TEMPLATE:
 			return validateStereotypePropertyListItemTemplate((StereotypePropertyListItemTemplate) value, diagnostics, context);
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_ATTRIBUTE_LIST_ITEM:
-			return validateStereotypePropertyAttributeListItem((StereotypePropertyAttributeListItem) value, diagnostics, context);
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_ATTRIBUTE_LIST_ITEM_TEMPLATE:
+			return validateStereotypePropertyAttributeListItemTemplate((StereotypePropertyAttributeListItemTemplate) value, diagnostics, context);
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_ATTRIBUTE:
 			return validateStereotypePropertyAttribute((StereotypePropertyAttribute) value, diagnostics, context);
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_FILTER_BEHAVIOR:
@@ -307,8 +307,8 @@ public class UMLDocumentStructureTemplateValidator extends EObjectValidator {
 	 *
 	 * @generated
 	 */
-	public boolean validateStereotypePropertyReferenceListItem(StereotypePropertyReferenceListItem stereotypePropertyReferenceListItem, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(stereotypePropertyReferenceListItem, diagnostics, context);
+	public boolean validateStereotypePropertyReferenceListItemTemplate(StereotypePropertyReferenceListItemTemplate stereotypePropertyReferenceListItemTemplate, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(stereotypePropertyReferenceListItemTemplate, diagnostics, context);
 	}
 
 	/**
@@ -327,8 +327,8 @@ public class UMLDocumentStructureTemplateValidator extends EObjectValidator {
 	 *
 	 * @generated
 	 */
-	public boolean validateStereotypePropertyAttributeListItem(StereotypePropertyAttributeListItem stereotypePropertyAttributeListItem, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(stereotypePropertyAttributeListItem, diagnostics, context);
+	public boolean validateStereotypePropertyAttributeListItemTemplate(StereotypePropertyAttributeListItemTemplate stereotypePropertyAttributeListItemTemplate, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(stereotypePropertyAttributeListItemTemplate, diagnostics, context);
 	}
 
 	/**

@@ -1,13 +1,13 @@
 /**
  * Copyright (c) 2019 CEA LIST.
- * 
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-2.0/
- * 
+ *
  *  SPDX-License-Identifier: EPL-2.0
- * 
+ *
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -31,28 +31,28 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IRootListItem
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubListItemTemplate;
 
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReference;
-import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferenceListItem;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferenceListItemTemplate;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplatePackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Stereotype Property Reference List Item</b></em>'.
+ * An implementation of the model object '<em><b>Stereotype Property Reference List Item Template</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyReferenceListItemImpl#getSubListItemTemplates <em>Sub List Item Template</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyReferenceListItemTemplateImpl#getSubListItemTemplates <em>Sub List Item Template</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class StereotypePropertyReferenceListItemImpl extends StereotypePropertyListItemTemplateImpl implements StereotypePropertyReferenceListItem {
+public class StereotypePropertyReferenceListItemTemplateImpl extends StereotypePropertyListItemTemplateImpl implements StereotypePropertyReferenceListItemTemplate {
 	/**
 	 * The cached value of the '{@link #getSubListItemTemplates() <em>Sub List Item Template</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSubListItemTemplates()
 	 * @generated
 	 * @ordered
@@ -62,34 +62,34 @@ public class StereotypePropertyReferenceListItemImpl extends StereotypePropertyL
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	protected StereotypePropertyReferenceListItemImpl() {
+	protected StereotypePropertyReferenceListItemTemplateImpl() {
 		super();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return UMLDocumentStructureTemplatePackage.Literals.STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM;
+		return UMLDocumentStructureTemplatePackage.Literals.STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM_TEMPLATE;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EList<ISubListItemTemplate> getSubListItemTemplates() {
 		if (subListItemTemplates == null) {
-			subListItemTemplates = new EObjectContainmentEList<ISubListItemTemplate>(ISubListItemTemplate.class, this, UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM__SUB_LIST_ITEM_TEMPLATE);
+			subListItemTemplates = new EObjectContainmentEList<>(ISubListItemTemplate.class, this, UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM_TEMPLATE__SUB_LIST_ITEM_TEMPLATE);
 		}
 		return subListItemTemplates;
 	}
@@ -97,13 +97,13 @@ public class StereotypePropertyReferenceListItemImpl extends StereotypePropertyL
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM__SUB_LIST_ITEM_TEMPLATE:
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM_TEMPLATE__SUB_LIST_ITEM_TEMPLATE:
 			return ((InternalEList<?>) getSubListItemTemplates()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -112,13 +112,13 @@ public class StereotypePropertyReferenceListItemImpl extends StereotypePropertyL
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM__SUB_LIST_ITEM_TEMPLATE:
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM_TEMPLATE__SUB_LIST_ITEM_TEMPLATE:
 			return getSubListItemTemplates();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -127,14 +127,14 @@ public class StereotypePropertyReferenceListItemImpl extends StereotypePropertyL
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM__SUB_LIST_ITEM_TEMPLATE:
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM_TEMPLATE__SUB_LIST_ITEM_TEMPLATE:
 			getSubListItemTemplates().clear();
 			getSubListItemTemplates().addAll((Collection<? extends ISubListItemTemplate>) newValue);
 			return;
@@ -145,13 +145,13 @@ public class StereotypePropertyReferenceListItemImpl extends StereotypePropertyL
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM__SUB_LIST_ITEM_TEMPLATE:
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM_TEMPLATE__SUB_LIST_ITEM_TEMPLATE:
 			getSubListItemTemplates().clear();
 			return;
 		}
@@ -161,13 +161,13 @@ public class StereotypePropertyReferenceListItemImpl extends StereotypePropertyL
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM__SUB_LIST_ITEM_TEMPLATE:
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM_TEMPLATE__SUB_LIST_ITEM_TEMPLATE:
 			return subListItemTemplates != null && !subListItemTemplates.isEmpty();
 		}
 		return super.eIsSet(featureID);
@@ -176,7 +176,7 @@ public class StereotypePropertyReferenceListItemImpl extends StereotypePropertyL
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -189,7 +189,7 @@ public class StereotypePropertyReferenceListItemImpl extends StereotypePropertyL
 		}
 		if (baseClass == IComposedListItemTemplate.class) {
 			switch (derivedFeatureID) {
-			case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM__SUB_LIST_ITEM_TEMPLATE:
+			case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM_TEMPLATE__SUB_LIST_ITEM_TEMPLATE:
 				return DocumentStructureTemplatePackage.ICOMPOSED_LIST_ITEM_TEMPLATE__SUB_LIST_ITEM_TEMPLATE;
 			default:
 				return -1;
@@ -207,7 +207,7 @@ public class StereotypePropertyReferenceListItemImpl extends StereotypePropertyL
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -221,7 +221,7 @@ public class StereotypePropertyReferenceListItemImpl extends StereotypePropertyL
 		if (baseClass == IComposedListItemTemplate.class) {
 			switch (baseFeatureID) {
 			case DocumentStructureTemplatePackage.ICOMPOSED_LIST_ITEM_TEMPLATE__SUB_LIST_ITEM_TEMPLATE:
-				return UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM__SUB_LIST_ITEM_TEMPLATE;
+				return UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_LIST_ITEM_TEMPLATE__SUB_LIST_ITEM_TEMPLATE;
 			default:
 				return -1;
 			}
@@ -235,4 +235,4 @@ public class StereotypePropertyReferenceListItemImpl extends StereotypePropertyL
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
-} // StereotypePropertyReferenceListItemImpl
+} // StereotypePropertyReferenceListItemTemplateImpl

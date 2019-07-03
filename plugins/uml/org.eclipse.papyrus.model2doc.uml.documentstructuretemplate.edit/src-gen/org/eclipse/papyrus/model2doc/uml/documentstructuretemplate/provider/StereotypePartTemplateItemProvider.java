@@ -283,6 +283,9 @@ public class StereotypePartTemplateItemProvider extends MandatoryStereotypeWithE
 
 		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE,
 				DocumentStructureTemplateFactory.eINSTANCE.createTreeListView()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE,
+				DocumentStructureTemplateFactory.eINSTANCE.createInsertFileTemplate()));
 	}
 
 }

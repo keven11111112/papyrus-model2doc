@@ -374,7 +374,7 @@ In other case, this field is ignored.</body>
         <redefinedOperation xmi:type="uml:Operation" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_j4q7UHyBEemXM4G5UevpIQ"/>
       </ownedOperation>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_4btFgIg9EemnhdxpIjxH_A" name="StereotypePropertyReferenceListItem">
+    <packagedElement xmi:type="uml:Class" xmi:id="_4btFgIg9EemnhdxpIjxH_A" name="StereotypePropertyReferenceListItemTemplate">
       <generalization xmi:type="uml:Generalization" xmi:id="_Cfq8cIhMEemnhdxpIjxH_A" general="_vuOPoIhLEemnhdxpIjxH_A"/>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_FHEk4Ig-EemnhdxpIjxH_A" client="_4btFgIg9EemnhdxpIjxH_A">
         <supplier xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_D4L1oHxmEem8DZ1bmLpXuQ"/>
@@ -382,7 +382,7 @@ In other case, this field is ignored.</body>
       </interfaceRealization>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_esXHkIg_EemnhdxpIjxH_A" client="_4btFgIg9EemnhdxpIjxH_A" supplier="_3_UPAIg-EemnhdxpIjxH_A" contract="_3_UPAIg-EemnhdxpIjxH_A"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_7dNusIg9EemnhdxpIjxH_A" name="StereotypePropertyAttributeListItem">
+    <packagedElement xmi:type="uml:Class" xmi:id="_7dNusIg9EemnhdxpIjxH_A" name="StereotypePropertyAttributeListItemTemplate">
       <generalization xmi:type="uml:Generalization" xmi:id="_DQbrAIhMEemnhdxpIjxH_A" general="_vuOPoIhLEemnhdxpIjxH_A"/>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_FsZfgIg-EemnhdxpIjxH_A" client="_7dNusIg9EemnhdxpIjxH_A">
         <supplier xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_B9IeMHxmEem8DZ1bmLpXuQ"/>

@@ -271,6 +271,9 @@ public class StereotypePropertyReferencePartTemplateItemProvider extends Stereot
 
 		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_BODY_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE,
 				DocumentStructureTemplateFactory.eINSTANCE.createEClassPartTemplate()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_BODY_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE,
+				DocumentStructureTemplateFactory.eINSTANCE.createInsertFileTemplate()));
 	}
 
 }

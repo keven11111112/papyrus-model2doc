@@ -258,7 +258,7 @@
       </contents>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="StereotypePropertyReferenceListItem"
+  <eClassifiers xsi:type="ecore:EClass" name="StereotypePropertyReferenceListItemTemplate"
       eSuperTypes="#//StereotypePropertyListItemTemplate ../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.ecore#//IComposedListItemTemplate #//StereotypePropertyReference"/>
   <eClassifiers xsi:type="ecore:EClass" name="StereotypePropertyListItemTemplate"
       abstract="true" eSuperTypes="#//MandatoryStereotypePropertyTemplate ../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.ecore#//IListItemTemplate">
@@ -286,7 +286,7 @@
       </contents>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="StereotypePropertyAttributeListItem"
+  <eClassifiers xsi:type="ecore:EClass" name="StereotypePropertyAttributeListItemTemplate"
       eSuperTypes="#//StereotypePropertyListItemTemplate ../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.ecore#//ILeafListItemTemplate #//StereotypePropertyAttribute"/>
   <eClassifiers xsi:type="ecore:EClass" name="StereotypePropertyAttribute" abstract="true"
       interface="true">
