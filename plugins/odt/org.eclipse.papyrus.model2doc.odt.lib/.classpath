@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry exported="true" kind="lib" path="lib/odfdom-java-0.8.7.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/bootstrap-connector-1.0.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/juh-5.4.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jurt-5.4.2.jar" sourcepath="lib/jurt-5.4.2-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/ridl-5.4.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/unoil-5.4.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/unoloader-5.4.2.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/bootstrap-connector-1.0.0-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/juh-5.4.2-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jurt-5.4.2-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/ridl-5.4.2-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/unoil-5.4.2-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/unoloader-5.4.2-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/odfdom-java-0.8.7.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/odfdom-java-0.8.7-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/juh-6.2.2-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/juh-6.2.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jurt-6.2.2-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jurt-6.2.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ridl-6.2.2-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ridl-6.2.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/unoil-6.2.2-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/unoil-6.2.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/unoloader-6.2.2-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/unoloader-6.2.2.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="output" path="bin"/>
