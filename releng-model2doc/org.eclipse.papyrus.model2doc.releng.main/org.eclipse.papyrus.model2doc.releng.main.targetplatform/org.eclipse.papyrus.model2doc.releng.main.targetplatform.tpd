@@ -1,6 +1,10 @@
 target "Papyrus Model2Doc - 2019-03" with source requirements
 
 
+location "http://download.eclipse.org/releases/2019-06" eclipse-2019-06 {
+ org.eclipse.sdk.feature.group 
+}
+
 
 /** Manual dependencies */
 
@@ -15,17 +19,13 @@ location papyrusMasterToolsmithsN "https://hudson.eclipse.org/papyrus/job/Papyru
  org.eclipse.papyrus.junit.framework lazy
  org.eclipse.papyrus.toolsmiths.feature.feature.group lazy
 }
-
-location "http://download.eclipse.org/releases/2019-03" eclipse-2019-03 {
- org.eclipse.sdk.feature.group 
+ 
+ location Sysml "http://download.eclipse.org/modeling/mdt/papyrus/components/sysml14/2019-06"{
+ 	org.eclipse.papyrus.sysml14.feature.feature.group
 }
 
 
 /** Automatic dependencies */
- 
- location Sysml "http://download.eclipse.org/modeling/mdt/papyrus/components/sysml14/2018-09"{
- 	org.eclipse.papyrus.sysml14.feature.feature.group
-}
 
 //updateFrom("MDT UML2",0) 
 
@@ -35,18 +35,18 @@ location uml "http://download.eclipse.org/modeling/mdt/uml2/updates/5.5" {
 
 //updateFrom("EMF (Core)",0)
 
-location emf "http://download.eclipse.org/modeling/emf/emf/builds/release/2.17" {
+location emf "http://download.eclipse.org/modeling/emf/emf/builds/release/2.18" {
 	org.eclipse.emf.sdk.feature.group
 }
 
-//updateFrom("GMF Runtime",0)
+//updateFrom("GMF Runtime milestones",0)
 
-location gmfRuntime "http://download.eclipse.org/modeling/gmp/gmf-runtime/updates/releases/R201806010809" {
+location gmfRuntime "https://download.eclipse.org/modeling/gmp/gmf-runtime/updates/milestones/S201905141505" {
 	org.eclipse.gmf.runtime.sdk.feature.group
 }
 
-//updateFrom("GMF Runtime",1)
+//updateFrom("GMF Runtime milestones",1)
 
-location gmfNotation "http://download.eclipse.org/modeling/gmp/gmf-notation/updates/releases/R201805221301" {
+location gmfNotation "https://download.eclipse.org/modeling/gmp/gmf-notation/updates/releases/R201805221301" {
 	org.eclipse.gmf.runtime.notation.sdk.feature.group
 }

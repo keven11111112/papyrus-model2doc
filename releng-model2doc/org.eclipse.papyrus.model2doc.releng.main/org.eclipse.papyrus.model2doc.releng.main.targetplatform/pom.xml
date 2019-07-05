@@ -9,11 +9,11 @@
 		<version>0.7.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>org.eclipse.papyrus.model2doc.releng.main.targetplatform</artifactId>
-	<version>0.7.0-SNAPSHOT</version>
-	<packaging>pom</packaging>
+    <artifactId>org.eclipse.papyrus.model2doc.releng.main.targetplatform</artifactId>
+    <version>0.7.0-SNAPSHOT</version>
+    <packaging>eclipse-target-definition</packaging>
 
-	<modules>
-		<module>org.eclipse.papyrus.model2doc.targetplatform</module>
-	</modules>
+    <name>Papyrus Model to Documentation Target Definition</name>
+    <description>This plug-in contains the target definition for Papyrus Model to Documentation</description>
+    
 </project>

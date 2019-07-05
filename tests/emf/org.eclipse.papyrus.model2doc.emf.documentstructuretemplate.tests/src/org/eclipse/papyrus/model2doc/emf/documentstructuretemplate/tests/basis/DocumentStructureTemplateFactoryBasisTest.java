@@ -24,7 +24,7 @@ import org.junit.Test;
 
 
 @SuppressWarnings("nls")
-public class DocumentStructureTemplateFactoryBasisTests {
+public class DocumentStructureTemplateFactoryBasisTest {
 
 	/**
 	 * we check we found a factory
