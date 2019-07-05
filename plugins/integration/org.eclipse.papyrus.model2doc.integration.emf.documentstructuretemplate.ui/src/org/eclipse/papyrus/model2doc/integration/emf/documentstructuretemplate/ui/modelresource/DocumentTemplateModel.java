@@ -18,8 +18,9 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.papyrus.infra.core.resource.AbstractModelWithSharedResource;
+import org.eclipse.papyrus.infra.core.resource.AbstractDynamicModel;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.utils.DocumentStructureTemplateConstants;
 
 
 
@@ -28,7 +29,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTempl
  *
  *
  */
-public class DocumentTemplateModel extends AbstractModelWithSharedResource<DocumentTemplate> {
+public class DocumentTemplateModel extends AbstractDynamicModel<DocumentTemplate> {
 
 	/**
 	 * Document Model ID.
@@ -38,7 +39,7 @@ public class DocumentTemplateModel extends AbstractModelWithSharedResource<Docum
 	/**
 	 * the file extension where document are stored.
 	 */
-	public static final String DOCUMENT_MODEL_FILE_EXTENSION = "notation";// DocumentStructureTemplateResource.FILE_EXTENSION; // $NON-NLS-1$ //$NON-NLS-1$
+	public static final String DOCUMENT_MODEL_FILE_EXTENSION = DocumentStructureTemplateConstants.DOCUMENT_STRUCTURE_TEMPLATE_FILE_EXTENSION; // $NON-NLS-1$
 
 	/**
 	 *
@@ -47,17 +48,6 @@ public class DocumentTemplateModel extends AbstractModelWithSharedResource<Docum
 	 */
 	public DocumentTemplateModel() {
 		super();
-	}
-
-	/**
-	 * @see org.eclipse.papyrus.infra.core.resource.AbstractModelWithSharedResource#isModelRoot(org.eclipse.emf.ecore.EObject)
-	 *
-	 * @param object
-	 * @return
-	 */
-	@Override
-	protected boolean isModelRoot(EObject object) {
-		return object instanceof DocumentTemplate;
 	}
 
 	/**
@@ -81,12 +71,36 @@ public class DocumentTemplateModel extends AbstractModelWithSharedResource<Docum
 	}
 
 	/**
-	 * Add a new initialized document to the notation model.
+	 * @see org.eclipse.papyrus.infra.core.resource.AbstractBaseModel#loadModel(org.eclipse.emf.common.util.URI)
+	 *
+	 * @param uriWithoutExtension
+	 */
+	@Override
+	public void loadModel(URI uriWithoutExtension) {
+		// It is a common use case that this resource does not (and will not)
+		// exist
+		if (exists(uriWithoutExtension)) {
+			try {
+				super.loadModel(uriWithoutExtension);
+			} catch (Exception ex) {
+				createModel(uriWithoutExtension);
+			}
+		}
+
+		if (resource == null) {
+			createModel(uriWithoutExtension);
+		}
+	}
+
+	/**
+	 * Add a new initialized document to the pdst model.
 	 *
 	 * @param document
+	 * @param context
+	 *            we need the context to be able to calculate the resource name were the DocumentTemplate will be saved.
+	 *            because this value is maybe not yet set to {@link DocumentTemplate#setSemanticContext(EObject)}
 	 */
-	public void addDocument(final DocumentTemplate document) {
-		final EObject context = document.getSemanticContext();
+	public void addDocument(final DocumentTemplate document, final EObject context) {
 		if (context != null) { // we check the resource for control mode feature
 			Resource targetResource;
 			Resource contextResource = context.eResource();
@@ -105,4 +119,49 @@ public class DocumentTemplateModel extends AbstractModelWithSharedResource<Docum
 		}
 	}
 
+	/**
+	 *
+	 * @see org.eclipse.papyrus.infra.core.resource.IEMFModel#canPersist(org.eclipse.emf.ecore.EObject)
+	 *
+	 * @param object
+	 * @return
+	 */
+	@Override
+	public boolean canPersist(EObject object) {
+		return (getResource() != null) && isSupportedRoot(object);
+	}
+
+	/**
+	 *
+	 * @param object
+	 * @return
+	 */
+	protected boolean isSupportedRoot(EObject object) {
+		return object instanceof DocumentTemplate;
+	}
+
+	/**
+	 *
+	 * @see org.eclipse.papyrus.infra.core.resource.IEMFModel#persist(org.eclipse.emf.ecore.EObject)
+	 *
+	 * @param object
+	 */
+	@Override
+	public void persist(EObject object) {
+		if (!canPersist(object)) {
+			throw new IllegalArgumentException("cannot persist " + object); //$NON-NLS-1$
+		}
+
+		getResource().getContents().add(object);
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.infra.core.resource.AbstractBaseModel#configureResource(org.eclipse.emf.ecore.resource.Resource)
+	 *
+	 * @param resource
+	 */
+	@Override
+	protected void configureResource(Resource resource) {
+		super.configureResource(resource);
+	}
 }

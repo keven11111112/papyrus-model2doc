@@ -35,7 +35,7 @@ public class PapyrusDocumentTemplateViewPrototype extends ViewPrototype {
 	 * @param prototype
 	 *            The PapyrusDocument representation
 	 */
-	public PapyrusDocumentTemplateViewPrototype(PapyrusDocumentPrototype prototype, ICreateDocumentTemplateEditorCommand command) {
+	public PapyrusDocumentTemplateViewPrototype(final PapyrusDocumentPrototype prototype, final ICreateDocumentTemplateEditorCommand command) {
 		super(prototype);
 		this.command = command;
 	}

@@ -9,10 +9,9 @@
  * SPDX-License-Identifier: EPL-2.0
  *
  * Contributors:
- *  Yupanqui Munoz (CEA LIST) yupanqui.munozjulho@cea.fr - Initial API and implementation
- *	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *****************************************************************************/
-package org.eclipse.papyrus.model2doc.documentview.resource;
+package org.eclipse.papyrus.model2doc.integration.uml.architecture.internal.messages;
 
 import org.eclipse.papyrus.infra.core.log.LogHelper;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
@@ -23,35 +22,27 @@ import org.osgi.framework.BundleContext;
  */
 public class Activator extends AbstractUIPlugin {
 
-	// The plug-in ID
-	public static final String PLUGIN_ID = "org.eclipse.papyrus.model2doc.documentview.resource"; //$NON-NLS-1$
+	public static final String PLUGIN_ID = "org.eclipse.papyrus.model2doc.integration.uml.architecture"; //$NON-NLS-1$
 
 	// The shared instance
 	private static Activator plugin;
-	
-	// The log service
+
 	public static LogHelper log;
-	
+
 	/**
 	 * The constructor
 	 */
 	public Activator() {
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext)
-	 */
+	@Override
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		plugin = this;
-		log = new LogHelper(plugin);
+		log = new LogHelper(getDefault());
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.BundleContext)
-	 */
+	@Override
 	public void stop(BundleContext context) throws Exception {
 		plugin = null;
 		super.stop(context);

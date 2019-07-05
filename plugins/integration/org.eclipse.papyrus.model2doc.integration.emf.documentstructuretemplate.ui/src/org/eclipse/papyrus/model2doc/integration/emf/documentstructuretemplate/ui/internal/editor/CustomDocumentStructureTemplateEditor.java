@@ -29,6 +29,7 @@ import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
 import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.presentation.DocumentStructureTemplateEditor;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.provider.DocumentStructureTemplateItemProviderAdapterFactory;
+import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.views.properties.PropertySheetPage;
 
@@ -81,7 +82,7 @@ public class CustomDocumentStructureTemplateEditor extends DocumentStructureTemp
 	/**
 	 *
 	 * @return
-	 * 		the created ComposedAdapterFactory
+	 *         the created ComposedAdapterFactory
 	 */
 	protected ComposedAdapterFactory createComposedAdapterFactory() {
 		return new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
@@ -90,7 +91,7 @@ public class CustomDocumentStructureTemplateEditor extends DocumentStructureTemp
 	/**
 	 *
 	 * @return
-	 * 		the command stack
+	 *         the command stack
 	 */
 	protected BasicCommandStack createAndInitCommandStack() {
 		final BasicCommandStack commandStack = new BasicCommandStack();
@@ -145,6 +146,10 @@ public class CustomDocumentStructureTemplateEditor extends DocumentStructureTemp
 		 */
 		@Override
 		public void commandStackChanged(final EventObject event) {
+			final Composite container = getContainer();
+			if (container.isDisposed()) {
+				return; // to avoid an exception!
+			}
 			getContainer().getDisplay().asyncExec(new Runnable() {
 				@Override
 				public void run() {

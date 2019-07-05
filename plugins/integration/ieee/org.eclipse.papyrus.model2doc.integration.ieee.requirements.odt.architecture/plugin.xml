@@ -17,10 +17,4 @@
 -->
 
 <plugin>
-   <extension
-         point="org.eclipse.papyrus.infra.architecture.models">
-      <model
-            path="resources/ieeerequirements_odt.architecture">
-      </model>
-   </extension>
 </plugin>

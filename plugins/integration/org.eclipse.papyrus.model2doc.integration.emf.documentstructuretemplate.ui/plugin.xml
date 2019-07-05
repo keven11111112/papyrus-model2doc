@@ -52,7 +52,8 @@
          point="org.eclipse.papyrus.infra.core.model">
       <model
             classname="org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.ui.modelresource.DocumentTemplateModel"
-            description="Model for Papyrus Document Template View editors">
+            description="Model for Papyrus Document Template View editors"
+            fileExtension="pdst">
       </model>
    </extension>
    <extension

@@ -16,12 +16,5 @@
 -->
 
 <plugin>
-   <extension
-         point="org.eclipse.papyrus.infra.core.model">
-      <model
-            classname="org.eclipse.papyrus.model2doc.documentview.resource.notation.PapyrusDocumentNotationModel"
-            description="Model for Papyrus Document View editors">
-      </model>
-   </extension>
 
 </plugin>
