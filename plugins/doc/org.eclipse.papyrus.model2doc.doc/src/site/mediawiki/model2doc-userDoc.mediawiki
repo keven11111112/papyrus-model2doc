@@ -177,8 +177,11 @@ The goal of this documentation chapter is to present you the LibreOffice field u
 *custom LibreOffice fields: you must define these fields in your template. They will be used by our generator:
 **''Authors'': when you have several authors, you can display them in one string
 **''Version'': to define the version of your document
-To create these custom fields, go in the same submenu than to insert ''Author'': ''Insert->Field->More fields''. A dialog opens, go into the tab ''Variables'', select ''User fields'' and define the name of the variable ('''Authors''' or '''Version'''), the click on ''Insert'', as described on the next snapshot.
+To create these custom fields, go in the menu ''File->Properties->Custom Properties'' and create them.
+[[Image:images/userDoc/userDoc_007_LibreOffice_CreateNewVariables.png]]
 
-[[Image:images/userDoc/userDoc_007_LibreOffice_CustomVariableDefinition.png]]
+To insert them into the LibreOffice template, go into the menu ''Insert->Fields->More Fields''. A dialog opens, go into the tab ''Variables'', select ''User fields'' and you can insert these fieds clicking on ''Insert'', as described on the next snapshot.
+
+[[Image:images/userDoc/userDoc_008_LibreOffice_CustomVariableUsage.png]]
 
 

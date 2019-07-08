@@ -65,7 +65,7 @@ public final class CreatePapyrusDocumentTemplateEditorCommand extends AbstractCr
 	 */
 	private String getDefaultName(final ViewPrototype prototype, final EObject semanticContext) {
 		final StringBuilder nameBuilder = new StringBuilder("New"); //$NON-NLS-1$
-		nameBuilder.append(prototype.getLabel().trim());
+		nameBuilder.append(prototype.getLabel().replaceAll(" ", "")); //$NON-NLS-1$ //$NON-NLS-2$
 		final String nameWithIncrement = EditorNameInitializer.getNameWithIncrement(DocumentStructureTemplatePackage.eINSTANCE.getTextDocumentTemplate(), DocumentStructureTemplatePackage.eINSTANCE.getDocumentTemplate_Name(), nameBuilder.toString(),
 				semanticContext);
 		return nameWithIncrement;
