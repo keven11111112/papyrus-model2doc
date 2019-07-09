@@ -25,6 +25,8 @@ import org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.u
  * Represents a prototype of Document View for the viewpoints infrastructure.
  *
  */
+// TODO : this class is internal, but exported and used in the JUnit tests.
+// We must move it.
 public class PapyrusDocumentTemplateViewPrototype extends ViewPrototype {
 
 	private final ICreateDocumentTemplateEditorCommand command;
