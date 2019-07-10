@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Payrus-Model2Doc UML Architecture Integration (Incubation)
+Bundle-Name: Papyrus-Model2Doc - UML Architecture Integration (Incubation)
 Bundle-SymbolicName: org.eclipse.papyrus.model2doc.integration.uml.architecture;singleton:=true
 Bundle-Version: 0.7.0.qualifier
 Bundle-Vendor: Eclipse Modeling Project

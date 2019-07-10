@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Papyrus-Model2doc ODT EMF Structure To Document (Incubation)
+Bundle-Name: Papyrus-Model2Doc - ODT EMF Structure To Document (Incubation)
 Bundle-SymbolicName: org.eclipse.papyrus.model2doc.odt.emf.structure2document;singleton:=true
 Bundle-Version: 0.7.0.qualifier
 Bundle-Activator: org.eclipse.papyrus.model2doc.odt.emf.structure2document.Activator

@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Papyrus-Model2Doc GMF Template2structure (Incubation)
+Bundle-Name: Papyrus-Model2Doc - GMF Template2structure (Incubation)
 Bundle-SymbolicName: org.eclipse.papyrus.model2doc.gmf.template2structure;singleton:=true
 Bundle-Version: 0.7.0.qualifier
 Bundle-Activator: org.eclipse.papyrus.model2doc.gmf.template2structure.Activator

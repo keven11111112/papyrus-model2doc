@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Papyrus-Model2Doc Integration Architecture Tests
+Bundle-Name: Papyrus-Model2Doc - Integration Architecture Tests (Incubation)
 Bundle-SymbolicName: org.eclipse.papyrus.model2doc.integration.uml.architecture.tests;singleton:=true
 Bundle-Version: 0.7.0.qualifier
 Bundle-Vendor: Eclipse Modeling Project
