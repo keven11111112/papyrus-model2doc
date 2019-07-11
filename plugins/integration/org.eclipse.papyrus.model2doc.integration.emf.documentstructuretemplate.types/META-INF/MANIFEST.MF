@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Papyrus-Model2Doc - Integration EMF DocumentStructureTemplate Types (Incubation)
+Bundle-SymbolicName: org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.types;singleton:=true
+Bundle-Version: 0.7.0.qualifier
+Bundle-Vendor: Eclipse Modeling Project
+Automatic-Module-Name: org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.types
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.gmf.runtime.common.core;bundle-version="[1.7.0,2.0.0)",
+ org.eclipse.emf.ecore;bundle-version="[2.17.0,3.0.0)",
+ org.eclipse.gmf.runtime.emf.type.core;bundle-version="[1.9.0,2.0.0)",
+ org.eclipse.papyrus.infra.services.edit;bundle-version="[3.1.0,4.0.0)",
+ org.eclipse.papyrus.model2doc.emf.documentstructuretemplate;bundle-version="[0.7.0,1.0.0)"
+Export-Package: org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.types.internal.advices
+Bundle-ActivationPolicy: lazy

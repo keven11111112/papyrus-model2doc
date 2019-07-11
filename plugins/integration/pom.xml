@@ -25,6 +25,7 @@
 		<module>org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.properties</module>
 		<module>org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation</module>
 		<module>org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation.edit</module>
+		<module>org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.types</module>
 		<module>org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.ui</module>
 		<module>org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate</module>
 		<module>org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.edit</module>

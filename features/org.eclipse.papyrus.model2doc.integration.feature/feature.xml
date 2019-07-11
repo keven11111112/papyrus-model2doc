@@ -37,7 +37,7 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         
+
    <plugin
          id="org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.modelexplorer"
          download-size="0"
@@ -61,6 +61,13 @@
 
    <plugin
          id="org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         
+   <plugin
+         id="org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.types"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -110,7 +117,7 @@
          download-size="0"
          install-size="0"
          version="0.0.0"/>
-         
+
    <plugin
          id="org.eclipse.papyrus.model2doc.integration.uml.architecture"
          download-size="0"
