@@ -10,7 +10,7 @@
  *
  * Contributors:
  *    Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
- *
+ *    Vincent Lorenzo (CEA LIST) - bug 549183
  *****************************************************************************/
 
 package org.eclipse.papyrus.model2doc.integration.nattable.template2structure.internal.mapping;
@@ -304,10 +304,19 @@ public class PapyrusTableViewMapper extends AbstractTemplateToStructureMapper<Pa
 
 			// 8.2 add the body cells for the row
 			final CellIterator cellIterator = rowIterator.next();
-			while (cellIterator.hasNext()) {
-				final TextCell cell = DocumentStructureFactory.eINSTANCE.createExtendedTextCell();
-				cell.setText(cellIterator.next());
-				row.getCells().add(cell);
+			if (cellIterator != null) {
+				if (!cellIterator.hasNext()) {
+					// in case of tree table with only one column, the empty cells are not in the cellIterator...
+					// see bug 549183
+					final TextCell cell = DocumentStructureFactory.eINSTANCE.createExtendedTextCell();
+					row.getCells().add(cell);
+				} else {
+					while (cellIterator.hasNext()) {
+						final TextCell cell = DocumentStructureFactory.eINSTANCE.createExtendedTextCell();
+						cell.setText(cellIterator.next());
+						row.getCells().add(cell);
+					}
+				}
 			}
 		}
 		return basicTable;
