@@ -7,86 +7,88 @@ This framework has been developed to be hightly independant of Papyrus, with som
 **'''plugins/dev''': contains developer tools for Papyrus-Model2Doc
 **'''doc''': the documentation plugin
 **'''emf''': plugins created to work with EMF metamodels
-**'''gmf''': extension for GMF metamodel
+**'''gmf''': extension for the GMF metamodel
 **'''integration''': plugins managing the integration of Model2Doc into Papyrus
-**'''odt''': required plugins to generate odt file
-**'''uml''': extension for UML metamodel
+**'''odt''': required plugins to generate the odt file
+**'''uml''': extension for the UML metamodel
 
 
 =DocumentStructureTemplate metamodel=
-This metamodel allows to define how to cross a model, which information extract from him and how to include them in the final Document. 
+This metamodel defines how to parse a model, what information to extract from it and how to include them in the final Document. 
 This metamodel is provided by the plugin '''org.eclipse.papyrus.model2doc.emf.documentstructuretemplate'''.
 
 [[Image:images/devDoc/devDoc_001_Document_Structure_Template.png]]
-This snapshot shows the basis elements of this metamodel.
+This snapshot shows the basic elements of this metamodel.
 *'''DocumentTemplate''': the interface to realize to provide a new kind of DocumentTemplate.
-*'''TextDocumentTemplate''': this class allows to define a DocumentTemplate for text file. This kind of template is composed of '''DocumentPart'''
+*'''TextDocumentTemplate''': this class is used to define a DocumentTemplate for text file. This kind of template is composed of '''DocumentPart'''
 *'''DocumentPart''': it can be a '''TableOfContents''' or a '''Body'''
-*'''Table Of Contents''': allow to define that the generated document will have a table of contents
+*'''Table Of Contents''': defines that the generated document will contain a table of contents
 *'''Body''': this element is composed of '''IBodyPartTemplate'''
 *'''IBodyPartTemplate''': 
-**The construction of this element is very interesting, because we use a 2-level construction ('''IBodyPartTemplate''' and '''ISubBodyPartTemplate''' to allow to distinguish 2 kind of elements (below in the documentation, navigation between '''EReferencePartTemplate''' and '''EClassPartTemplate''', so we will be able to navigate alternatively between '''EReference''' and '''EClass''';
+**The construction of this element is very interesting, because we use a 2-level construction ('''IBodyPartTemplate''' and '''ISubBodyPartTemplate''' to distinguish 2 kind of elements (below in the documentation, '''EReferencePartTemplate''' and '''EClassPartTemplate''', so we will be able to navigate alternatively between '''EReference''' and '''EClass''';
 **In addition, we define composed objects and leaf object.
-**'''IComposedBodyPartTemplate''' and '''IComposedsubBodyPartTemplate''' will be extend to create elements which can have children. Typically, a navigation from an EObject to an EReference which itself refers to others EObject. 
-**'''ILeafBodyPartTemplate''' and '''ILeafSubBodyPartTemplate''' will be extend to create elements with not children, typically to create a View in the document. 
+**'''IComposedBodyPartTemplate''' and '''IComposedsubBodyPartTemplate''' will be extend to create elements that can have children. Typically, a navigation from an EObject to an EReference which itself refers to other EObject. 
+**'''ILeafBodyPartTemplate''' and '''ILeafSubBodyPartTemplate''' will be extended to create elements with no children, typically to create a View in the document. 
 
 
-On the next snapshot we show the construction of the '''EReferencePartTemplate''' and '''EClassPartTemplate'''. As indicated upper, this construction allows to navigate alternatively between an object and a property of this object.
+On the next snapshot we show the construction of the '''EReferencePartTemplate''' and '''EClassPartTemplate'''. As indicated previously, this construction allows the navigation between an object and a property of this object recursively.
 [[Image:images/devDoc/devDoc-002_EMF-DiagramNavigation.png]]
 
 
 
 =How to provide new part template for the Body of a TextDocumentTemplate?=
-Here we can't explain all EMF tricks, configuration and so on, so we will give you only the most important steps. 
+We can't explain all the EMF tricks employed, configuration and so on, but we will detail the most important ones. 
 
 #You must have installed the Papyrus Toolsmiths plugins
 #You must have installed the feature '''UML2 SDK Extender''' to be able to generate a EMF model from a UML one.
 
 ==Create a new PartTemplate in a UML model==
 #There is 2 choices about the way to proceed
-##You can edit one of the DocumentStructureTemplate metamodel provided by Papyrus-Model2Doc and contribute it to the Eclipse Project
-##You create a new metamodel (and share it with Papyrus-Model2Doc project or not)
-#You need to define what you want to do:
-##a new navigation looking like an EMF EStructuralFeature? 
-###with possible sub-elements -> implements the interface '''IComposedBodyPartTemplate'''
-###with no sub-element -> implements the interface '''ILeafBodyPartTemplate'''
-##a new navigation looking like an EMF EClass?
-###with possible sub-elements -> implements the interface '''IComposedSubBodyPartTemplate'''
-###with no sub-element -> implements the interface '''ILeafSubBodyPartTemplate'''
+##You can either edit one of the DocumentStructureTemplate metamodel provided by Papyrus-Model2Doc and contribute it to the Eclipse Project
+##Or you can create a new metamodel (and share it with Papyrus-Model2Doc project or not)
+
+#You then need to define what you want to do:
+##A new navigation looking like an EMF EStructuralFeature? 
+###With possible sub-elements -> implements the interface '''IComposedBodyPartTemplate'''
+###With no sub-element -> implements the interface '''ILeafBodyPartTemplate'''
+##A new navigation looking like an EMF EClass?
+###With possible sub-elements -> implements the interface '''IComposedSubBodyPartTemplate'''
+###With no sub-element -> implements the interface '''ILeafSubBodyPartTemplate'''
 
 ''N.B.: The UML element to implement a UML Interface in a UML model is the element'' '''''InterfaceRealization'''''.
-We advise against to extends others elements of this metamodel. 
+We advise against extending other elements of this metamodel. 
   
-In the general way, to provide a new view, we consider that a such element as no children and we use a feature to calculate the contents of the view. 
+In general, to provide a new view, we consider that such an element has no children and we use a feature to calculate the contents of the view. 
 That's why '''TreeListView''' and '''EReferenceTableView''' implements '''ILeafBodyPartTemplate'''.
 
-To illustrate this description, we advice you to look at the '''UMLDocumentStructureTemplate''' metamodel which extends the base metamodel '''DocumentStructureTemplate''' to provide support for '''UML Stereotype''' and '''Stereotype's properties'''. In this metamodel, '''StereotypePartTemplate''' is built to be at the same level than '''EClassPartTemplate''' and '''StereotypePropertyReferencePartTemplate''' to be at the same level than '''EReferencePartTemplate'''.
-In addition, this metamodel provides the object '''CommentAsParagraph''' considered as a view and described as an '''ILeafBodyPartTemplate''', to be at the same level than '''EReferencePartTemplate'''.
+To illustrate this description, we advise you to look at the '''UMLDocumentStructureTemplate''' metamodel which extends the base '''DocumentStructureTemplate''' metamodel to provide support for '''UML Stereotype''' and '''Stereotype's properties'''. In this metamodel, '''StereotypePartTemplate''' is defined to be at the same level than '''EClassPartTemplate''' and '''StereotypePropertyReferencePartTemplate''' to be at the same level than '''EReferencePartTemplate'''.
+In addition, this metamodel provides the '''CommentAsParagraph''' object, considered as a view and described as a '''ILeafBodyPartTemplate''', which is at the same level than the '''EReferencePartTemplate'''.
 
 ==Generate==
 Once you created your new element, you need to generate it.
-#Open the existing '''genmodel''' file, then ''Right-Click->Reload'' (or create a new one, in case of new uml model).
-#On the root of this file, ''Right-Click->Generate Model'', then ''Generate Edit'' (and ''Generate Editor, only if you work on the metamodel '''DocumentStructureTemplate'''.
+#Just open the existing '''genmodel''' file, then ''Right-Click->Reload'' (or create a new one, in case of new uml model).
+#On the root of this file, ''Right-Click->Generate Model'', then ''Generate Edit'' (you can ''Generate Editor'', but this should only be necessary if you need to work on the '''DocumentStructureTemplate''' metamodel).
 
 ''N.B. if you add a property to an interface and if this interface is implemented in sub-metamodel, you will need to regenerate all these sub-metamodels too!!!''
 
 ==Implementation of IBodyPartTemplate#buildPartTemplateTitle==
-Due to the root interface '''IBodyPartTemplate''' of these element, you must provide an implementation of the method '''buildPartTemplateTitle'''. There is 2 ways for that: 
-#solution1: provide a factory override for your metamodel, then provides a custom implementation of the generated class implementing this method (see extension point '''"org.eclipse.emf.ecore.factory_override"''').
+Due to the root interface '''IBodyPartTemplate''' of these element, you must provide an implementation of the method '''buildPartTemplateTitle'''. There is 2 ways to do this: 
+#solution1: 
+##Provide a factory override for your metamodel, then provides a custom implementation of the generated class implementing this method (see the '''"org.eclipse.emf.ecore.factory_override"''' extension point).
 #solution2:
-##in the UML model, create a new operation '''buildPartTemplateTitle''' in your element, then in the ''Advanced'' tab of the ''Property View'', edit the field '''redefined operations''' referencing the operation ''''''buildPartTemplateTitle''' of the parent interface. 
-##in your UML model, create an '''EAnnotation''' as child of your element (from the Papyrus ''ModelExplorer'' view, ''Right-Click->Create EAnnotation'';
-###in the ''Property View'', set '''http://www.eclipse.org/emf/2002/GenModel''' as ''source''.
-##always from the ''Model Explorer'' view, create a '''Details Entry''' as child of the '''EAnnotation''';
-###in the ''Property View'', set '''body''' as key and the java body of the method in the '''value''' field.
-##return into the '''genmodel''' file, reload model and regenerate all as done previously. 
+##Create a new '''buildPartTemplateTitle''' operation in your element, in the UML model, then, in the ''Advanced'' tab of the ''Property View'', edit the field '''redefined operations''' referencing the operation ''''''buildPartTemplateTitle''' of the parent interface. 
+##In your UML model, create an '''EAnnotation''' as child of your element (from the Papyrus ''ModelExplorer'' view, ''Right-Click->Create EAnnotation'';
+###In the ''Property View'', set '''http://www.eclipse.org/emf/2002/GenModel''' as ''source''.
+##From the ''Model Explorer'' view, create a '''Details Entry''' as child of the '''EAnnotation''';
+###In the ''Property View'', set '''body''' as key and the java body of the method in the '''value''' field.
+##Finally, return into the '''genmodel''' file, reload model and regenerate it all as previously explained. 
 
-You can also provide a nice icon in the edit plugin for your created element. To provide an icon, erase the icon provided by default by the generation. 
+You can also provide a nicer icon in the edit plugin for your created element, just replace the default icon provided by the generation. 
 
 At this step, the new element will be available in the Creation menu of the DocumentTemplate editor. 
 
 ==How to contribute to the EMF property view?==
-The default property view is already managed by the EMF-Framework. If you need to change the default edition of a property, you need to create an '''EAnnotation''' with a '''Details Entry''' in your UML model, as child of the property for which you need to provide a custom editor.
+The default property view is already managed by the EMF-Framework. If you need to change the default edition of a property, you need to create an '''EAnnotation''' with a '''Details Entry''' in your UML model as child of the property for which you need to provide a custom editor.
 *'''EAnnotation#source:'''http://www.eclipse.org/emf/2002/GenModel
 *'''DetailsEntry#key:'''propertyEditorFactory
 *'''DetailsEntry#value:''': a unique string, like this one for example:''editor://umldocumentstructuretemplate/StereotypePropertyTemplate/propertyName/''
@@ -95,10 +97,10 @@ Then, you must register a new class extending <code>org.eclipse.emf.edit.provide
 
 ==How to contribute to the EMF property view embedded in Papyrus (Advanced Tab)?==
 This code should be done in a plugin called ''org.eclipse.papyrus.integration.xxx'' to respect the naming convention. 
-We advice you to manage the EMF property view, before embedding it in Papyrus (because there is common code between them). 
+We advise you to manage the EMF property view, before embedding it in Papyrus (because there is shared code between them). 
 ===In case of new DocumentStructureTemplate metamodel===
-*A example, you can look at the plugin <code>org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.properties</code>
-*Contribute to the extension point <code>org.eclipse.ui.views.properties.tabbed.propertySections</code>, you should get something like this:
+*As an example, you can look at the plugin <code>org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.properties</code>
+*To contribute to the extension point <code>org.eclipse.ui.views.properties.tabbed.propertySections</code>, you should get something like this:
   
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertySections">
@@ -116,16 +118,16 @@ We advice you to manage the EMF property view, before embedding it in Papyrus (b
       </propertySections>
    </extension>
 
-*'''class''': we advice you to extends <code>org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.properties.sections.AbstractEObjectAdvancedPropertySection</code>. This class will provide a <code>org.eclipse.emf.edit.ui.provider.PropertySource</code>, this <code>PropertySource</code> will provide custom <code>org.eclipse.ui.views.properties.IPropertyDescriptor</code>.
+*'''class''': we advise you to extend <code>org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.properties.sections.AbstractEObjectAdvancedPropertySection</code>. This class will provide a <code>org.eclipse.emf.edit.ui.provider.PropertySource</code>, this <code>PropertySource</code> will provide a custom <code>org.eclipse.ui.views.properties.IPropertyDescriptor</code>.
 *'''filter''': a class implementing <code>org.eclipse.jface.viewers.IFilter</code> 
 
 ===In case of new property in an existing metamodel===
 You just need to manage your new feature in the method <code>PropertySource.createPropertyDescriptor(IItemPropertyDescriptor)</code> of the existing <code>PropertySource</code>
 
 ==How to contribute a new mapper?==
-The mappers are in charge to read the model and the DocumentTemplate to create the DocumentStructure. 
-As example, you can look the plugin <code>org.eclipse.papyrus.model2doc.emf.template2structure</code>.
+The mappers are in charge of reading the model and the DocumentTemplate to create the DocumentStructure. 
+As an example, you can look the plugin <code>org.eclipse.papyrus.model2doc.emf.template2structure</code>.
 *Create a new class inheriting from <code>org.eclipse.papyrus.model2doc.emf.template2structure.mapping.AbstractTemplateToStructureMapper<INPUT></code>
 *Register it in the plugin.xml with the extension point <code>org.eclipse.papyrus.model2doc.emf.template2structure.structuregenerator</code>
-**the ''id'' field is the id of the generator you contribute. The generator's id provided by Papyrus-Model2Doc is ''TextDocumentStructureGenerator.default''
+**the ''id'' field is the id of the generator you wish to contribute. The generator's id provided by Papyrus-Model2Doc is ''TextDocumentStructureGenerator.default''
  
