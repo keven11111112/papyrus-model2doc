@@ -21,6 +21,7 @@
 	<modules>
 		<module>emf</module>
 		<module>integration</module>
+		<module>org.eclipse.papyrus.model2doc.bundles.tests</module>
 	<!-- <module>org.eclipse.papyrus.model2doc.uml.tests</module> -->
 	<!-- <module>org.eclipse.papyrus.uml.model2doc.ieee.requirements.tests</module> -->
 	</modules>
