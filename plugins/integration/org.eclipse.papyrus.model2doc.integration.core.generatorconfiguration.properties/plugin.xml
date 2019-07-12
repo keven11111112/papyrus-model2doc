@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections
+            contributorId="TreeOutlinePage">
+         <propertySection
+               class="org.eclipse.papyrus.integration.core.generatorconfiguration.properties.internal.GeneratorConfigurationSection"
+               filter="org.eclipse.papyrus.integration.core.generatorconfiguration.properties.internal.GeneratorConfigurationSectionFilter"
+               id="org.eclipse.papyrus.model2doc.integration.core.generatorconfiguration.properties.propertySection1"
+               tab="advanced">
+            <input
+                  type="java.lang.Object">
+            </input>
+         </propertySection>
+      </propertySections>
+   </extension>
+
+</plugin>
