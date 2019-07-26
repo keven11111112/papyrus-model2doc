@@ -7,11 +7,10 @@
 	<parent>
 		<groupId>org.eclipse.papyrus.model2doc.releng-main</groupId>
 		<artifactId>releng-model2doc</artifactId>
-		<version>0.7.0-SNAPSHOT</version>
+		<version>0.8.0-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>org.eclipse.papyrus.model2doc.p2</artifactId>
-	<version>0.7.0-SNAPSHOT</version>
 	<packaging>eclipse-repository</packaging>
 
 	<name>Papyrus Model to Documentation p2</name>

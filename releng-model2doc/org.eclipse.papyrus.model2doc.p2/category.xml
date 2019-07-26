@@ -1,40 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/org.eclipse.papyrus.model2doc.feature_0.7.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.feature" version="0.7.0.qualifier">
+   <feature type="features/org.eclipse.papyrus.model2doc.feature_0.8.0.qualifier.jar" url="features/org.eclipse.papyrus.model2doc.feature_0.8.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.feature" version="0.8.0.qualifier">
       <category name="org.eclipse.papyrus.model2doc.category"/>
    </feature>
-   <feature url="features/org.eclipse.papyrus.model2doc.feature.source_0.7.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.feature.source" version="0.7.0.qualifier">
+   <feature url="features/org.eclipse.papyrus.model2doc.feature.source_0.8.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.feature.source" version="0.8.0.qualifier">
       <category name="org.eclipse.papyrus.model2doc.category"/>
    </feature>
-   <feature url="features/org.eclipse.papyrus.model2doc.gmf.feature_0.7.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.gmf.feature" version="0.7.0.qualifier">
+   <feature url="features/org.eclipse.papyrus.model2doc.gmf.feature_0.8.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.gmf.feature" version="0.8.0.qualifier">
       <category name="org.eclipse.papyrus.model2doc.gmf.category"/>
    </feature>
-   <feature url="features/org.eclipse.papyrus.model2doc.gmf.feature.source_0.7.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.gmf.feature.source" version="0.7.0.qualifier">
+   <feature url="features/org.eclipse.papyrus.model2doc.gmf.feature.source_0.8.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.gmf.feature.source" version="0.8.0.qualifier">
       <category name="org.eclipse.papyrus.model2doc.gmf.category"/>
    </feature>
-   <feature url="features/org.eclipse.papyrus.model2doc.uml.feature_0.7.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.uml.feature" version="0.7.0.qualifier">
+   <feature url="features/org.eclipse.papyrus.model2doc.uml.feature_0.8.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.uml.feature" version="0.8.0.qualifier">
       <category name="org.eclipse.papyrus.model2doc.uml.category"/>
    </feature>
-   <feature url="features/org.eclipse.papyrus.model2doc.uml.feature.source_0.7.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.uml.feature.source" version="0.7.0.qualifier">
+   <feature url="features/org.eclipse.papyrus.model2doc.uml.feature.source_0.8.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.uml.feature.source" version="0.8.0.qualifier">
       <category name="org.eclipse.papyrus.model2doc.uml.category"/>
    </feature>
-   <feature url="features/org.eclipse.papyrus.model2doc.integration.feature_0.7.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.integration.feature" version="0.7.0.qualifier">
+   <feature url="features/org.eclipse.papyrus.model2doc.integration.feature_0.8.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.integration.feature" version="0.8.0.qualifier">
       <category name="org.eclipse.papyrus.model2doc.integration.category"/>
    </feature>
-   <feature url="features/org.eclipse.papyrus.model2doc.integration.feature.source_0.7.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.integration.feature.source" version="0.7.0.qualifier">
+   <feature url="features/org.eclipse.papyrus.model2doc.integration.feature.source_0.8.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.integration.feature.source" version="0.8.0.qualifier">
       <category name="org.eclipse.papyrus.model2doc.integration.category"/>
    </feature>
-   <feature url="features/org.eclipse.papyrus.model2doc.integration.ieee.feature_0.7.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.integration.ieee.feature" version="0.7.0.qualifier">
+   <feature url="features/org.eclipse.papyrus.model2doc.integration.ieee.feature_0.8.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.integration.ieee.feature" version="0.8.0.qualifier">
       <category name="org.eclipse.papyrus.model2doc.integration.ieee.category"/>
    </feature>
-   <feature url="features/org.eclipse.papyrus.model2doc.integration.ieee.feature.source_0.7.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.integration.ieee.feature.source" version="0.7.0.qualifier">
+   <feature url="features/org.eclipse.papyrus.model2doc.integration.ieee.feature.source_0.8.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.integration.ieee.feature.source" version="0.8.0.qualifier">
       <category name="org.eclipse.papyrus.model2doc.integration.ieee.category"/>
    </feature>
-   <feature url="features/org.eclipse.papyrus.model2doc.dev.feature_0.7.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.dev.feature" version="0.7.0.qualifier">
+   <feature url="features/org.eclipse.papyrus.model2doc.dev.feature_0.8.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.dev.feature" version="0.8.0.qualifier">
       <category name="org.eclipse.papyrus.model2doc.dev.category"/>
    </feature>
-   <feature url="features/org.eclipse.papyrus.model2doc.dev.feature.source_0.7.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.dev.feature.source" version="0.7.0.qualifier">
+   <feature url="features/org.eclipse.papyrus.model2doc.dev.feature.source_0.8.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.dev.feature.source" version="0.8.0.qualifier">
       <category name="org.eclipse.papyrus.model2doc.dev.category"/>
+   </feature>
+   <feature url="features/org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.feature_0.8.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.feature" version="0.8.0.qualifier">
+      <category name="org.eclipse.papyrus.model2doc.integration.gmf.category"/>
    </feature>
    <category-def name="org.eclipse.papyrus.model2doc.category" label="Papyrus-Model2Doc">
       <description>
@@ -64,6 +67,11 @@
    <category-def name="org.eclipse.papyrus.model2doc.uml.category" label="Papyrus-Model2Doc UML Support">
       <description>
          Papyrus-Model2Doc : UML Model to Documentation.
+      </description>
+   </category-def>
+   <category-def name="org.eclipse.papyrus.model2doc.integration.gmf.category" label="Papyrus-Model2Doc Native GMF Integration">
+      <description>
+         Papyrus-Model2Doc : GMF View to Documentation integration for Papyrus
       </description>
    </category-def>
    <repository-reference location="http://download.eclipse.org/modeling/mdt/papyrus/components/sysml14" enabled="true" />

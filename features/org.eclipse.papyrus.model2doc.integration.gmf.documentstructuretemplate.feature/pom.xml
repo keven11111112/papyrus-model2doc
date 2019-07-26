@@ -10,10 +10,10 @@
 		<version>0.8.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>org.eclipse.papyrus.model2doc.uml.feature</artifactId>
+	<artifactId>org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.feature</artifactId>
 	<packaging>eclipse-feature</packaging>
 
-	<name>Papyrus Model to Documentation UML Support </name>
-	<description>Papyrus Model to Documentation UML Support Feature</description>
+	<name>Papyrus Model to Documentation Native GMF Integration</name>
+	<description>Papyrus Model to Documentation Native GMF Integration for Papyrus</description>
 
 </project>

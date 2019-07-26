@@ -9,6 +9,12 @@ This framework has been developed to be hightly independant of Papyrus, with som
 **'''emf''': plugins created to work with EMF metamodels
 **'''gmf''': extension for the GMF metamodel
 **'''integration''': plugins managing the integration of Model2Doc into Papyrus
+***'''integration.gmf''': 
+***#Here, it is a quite tricky, the 2 next plugins concern a specialized GMF metamodel version dedicated to Papyrus
+***#*''org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate''
+***#*''org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.edit''
+***#and the next plugin provides a property view for in the Papyrus context for the native GMF version.
+***#*''org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.properties''; this plugin is not linked to the 2 previous one. This plugin is linked to ''org.eclipse.papyrus.model2doc.gmf.*"" plugins
 **'''odt''': required plugins to generate the odt file
 **'''uml''': extension for the UML metamodel
 

@@ -1,0 +1,18 @@
+<plugin>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections
+            contributorId="TreeOutlinePage">
+         <propertySection
+               class="org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.properties.internal.GMFDocumentStructureTemplateSection"
+               filter="org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.properties.internal.GMFDocumentStructureTemplateSectionFilter"
+               id="org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.properties.propertySection1"
+               tab="advanced">
+            <input
+                  type="java.lang.Object">
+            </input>
+         </propertySection>
+      </propertySections>
+   </extension>
+
+</plugin>

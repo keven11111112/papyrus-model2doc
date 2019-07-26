@@ -2,7 +2,7 @@
 <feature
       id="org.eclipse.papyrus.model2doc.integration.ieee.feature"
       label="%featureName"
-      version="0.7.0.qualifier"
+      version="0.8.0.qualifier"
       provider-name="%providerName"
       license-feature="org.eclipse.license"
       license-feature-version="2.0.1">

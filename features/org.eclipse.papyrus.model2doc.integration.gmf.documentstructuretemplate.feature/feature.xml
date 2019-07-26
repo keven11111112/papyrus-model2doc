@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.eclipse.papyrus.model2doc.tests.feature"
+      id="org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.feature"
       label="%featureName"
       version="0.8.0.qualifier"
       provider-name="%providerName"
       license-feature="org.eclipse.license"
       license-feature-version="2.0.1">
 
-   <description url="http://www.example.com/description">
+   <description url="https://eclipse.org/papyrus/">
       %description
    </description>
 
@@ -23,17 +23,23 @@
          id="org.eclipse.papyrus.model2doc.feature"
          version="0.0.0"/>
 
+   <includes
+         id="org.eclipse.papyrus.model2doc.integration.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.papyrus.model2doc.gmf.feature"
+         version="0.0.0"/>
+
+   <requires>
+      <import feature="org.eclipse.papyrus.sdk.feature" version="4.2.0" match="compatible"/>
+   </requires>
+
    <plugin
-         id="org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.tests"
+         id="org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.properties"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-
-   <plugin
-         id="org.eclipse.papyrus.model2doc.integration.uml.architecture.tests"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
 
 </feature>

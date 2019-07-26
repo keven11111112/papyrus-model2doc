@@ -7,11 +7,10 @@
 	<parent>
 		<groupId>org.eclipse.papyrus-model2doc</groupId>
 		<artifactId>org.eclipse.papyrus.model2doc</artifactId>
-		<version>0.7.0-SNAPSHOT</version>
+		<version>0.8.0-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>org.eclipse.papyrus.model2doc-features</artifactId>
-	<version>0.7.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>Papyrus Model to Documentation Feature</name>
@@ -23,6 +22,7 @@
 		<module>org.eclipse.papyrus.model2doc.gmf.feature</module>
 		<module>org.eclipse.papyrus.model2doc.tests.feature</module>
 		<module>org.eclipse.papyrus.model2doc.uml.feature</module>
+		<module>org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.feature</module>
 		<module>org.eclipse.papyrus.model2doc.integration.ieee.feature</module>
 		<module>org.eclipse.papyrus.model2doc.integration.feature</module>
 	</modules>
