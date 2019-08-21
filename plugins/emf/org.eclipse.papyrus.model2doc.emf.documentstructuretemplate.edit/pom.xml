@@ -11,7 +11,7 @@
 	</parent>
 
 	<artifactId>org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.edit</artifactId>
-	<version>0.7.0-SNAPSHOT</version>
+	<version>0.8.0-SNAPSHOT</version>
 	<packaging>eclipse-plugin</packaging>
 
 </project>

@@ -3,12 +3,12 @@ Automatic-Module-Name: org.eclipse.papyrus.model2doc.integration.emf.documentstr
 Bundle-SymbolicName: org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.modelexplorer;singleton:=true
 Bundle-Name: %pluginName
 Bundle-Vendor: %providerName
-Bundle-Version: 0.7.0.qualifier
+Bundle-Version: 0.8.0.qualifier
 Bundle-Localization: plugin
-Require-Bundle: org.eclipse.ui;bundle-version="[3.0.0,4.0.0)",
- org.eclipse.core.runtime;bundle-version="[3.0.0,4.0.0)",
- org.eclipse.papyrus.infra.core.log;bundle-version="[1.0.0,2.0.0)",
- org.eclipse.emf.ecore;bundle-version="[2.0.0,3.0.0)",
+Require-Bundle: org.eclipse.ui;bundle-version="[3.113.0,4.0.0)",
+ org.eclipse.core.runtime;bundle-version="[3.15.0,4.0.0)",
+ org.eclipse.papyrus.infra.core.log;bundle-version="[1.2.0,2.0.0)",
+ org.eclipse.emf.ecore;bundle-version="[2.17.0,3.0.0)",
  org.eclipse.papyrus.emf.facet.efacet.core;bundle-version="[2.0.0,3.0.0)",
  org.eclipse.papyrus.emf.facet.query.java.core;bundle-version="[2.0.0,3.0.0)",
  org.eclipse.papyrus.emf.facet.custom.metamodel;bundle-version="[1.0.0,2.0.0)",
@@ -17,7 +17,7 @@ Require-Bundle: org.eclipse.ui;bundle-version="[3.0.0,4.0.0)",
  org.eclipse.papyrus.infra.emf;bundle-version="[3.0.0,4.0.0)",
  org.eclipse.papyrus.infra.ui;bundle-version="[2.0.0,3.0.0)",
  org.eclipse.papyrus.views.modelexplorer;bundle-version="[3.0.0,4.0.0)",
- org.eclipse.emf.transaction;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.emf.transaction;bundle-version="[1.9.0,2.0.0)",
  org.eclipse.gmf.runtime.emf.commands.core;bundle-version="[1.0.0,2.0.0)",
  org.eclipse.papyrus.infra.emf.gmf;bundle-version="[1.0.0,2.0.0)",
  org.eclipse.papyrus.infra.internationalization.utils;bundle-version="[1.0.0,2.0.0)",
