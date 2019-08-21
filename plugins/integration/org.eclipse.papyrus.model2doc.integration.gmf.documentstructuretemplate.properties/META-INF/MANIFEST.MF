@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Papyrus-Model2Doc - GMF (native) Document Structure template Papyrus Properties (Incubation)
+Bundle-Name: Papyrus-Model2Doc - Native GMF DocumentStructureTemplate Integration Properties (Incubation)
 Bundle-SymbolicName: org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.properties;singleton:=true
 Bundle-Version: 0.7.0.qualifier
 Bundle-Activator: org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.properties.Activator
