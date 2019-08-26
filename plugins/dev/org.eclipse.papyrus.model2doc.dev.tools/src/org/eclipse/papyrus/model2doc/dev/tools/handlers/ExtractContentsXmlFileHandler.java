@@ -36,15 +36,9 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.model2doc.dev.tools.Activator;
-import org.eclipse.ui.ISelectionService;
-import org.eclipse.ui.IWorkbench;
-import org.eclipse.ui.IWorkbenchWindow;
-import org.eclipse.ui.PlatformUI;
 import org.eclipse.wst.xml.core.internal.formatter.XMLFormatterFormatProcessor;
 
 /**
@@ -156,7 +150,7 @@ public class ExtractContentsXmlFileHandler extends AbstractHandler {
 	/**
 	 *
 	 * @return
-	 * 		the URI of the uml selected files
+	 *         the URI of the uml selected files
 	 */
 	private final List<URI> getSelectedOdtFileURI() {
 		final Iterator<?> iter = getCurrentStructuredSelection().iterator();
@@ -178,7 +172,6 @@ public class ExtractContentsXmlFileHandler extends AbstractHandler {
 		return uris;
 	}
 
-
 	/**
 	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#setEnabled(java.lang.Object)
@@ -190,55 +183,14 @@ public class ExtractContentsXmlFileHandler extends AbstractHandler {
 		super.setBaseEnabled(getSelectedOdtFileURI().size() > 0);
 	}
 
-
-	// TODO : these methods are duplicated from org.eclipse.papyrus.infra.ui.util.SelectionHelper
-
 	/**
 	 *
 	 * @return
-	 * 		the selection service or <code>null</code> if not found
-	 *
-	 */
-	public static final ISelectionService getSelectionService() {
-		IWorkbench wb = PlatformUI.getWorkbench();
-		if (wb != null) {
-			IWorkbenchWindow ww = wb.getActiveWorkbenchWindow();
-			if (ww != null) {
-				return ww.getService(ISelectionService.class);
-			}
-		}
-		return null;
-	}
-
-	/**
-	 *
-	 * @return
-	 * 		the current selection or an empty selection. can't be <code>null</code>
-	 */
-	public static final ISelection getCurrentSelection() {
-		final ISelectionService selectionService = getSelectionService();
-		if (selectionService != null) {
-			ISelection currentSelection = selectionService.getSelection();
-			if (currentSelection != null) {
-				return currentSelection;
-			}
-		}
-		return StructuredSelection.EMPTY;
-	}
-
-	/**
-	 *
-	 * @return
-	 * 		a structured selection.
+	 *         a structured selection.
 	 *         the returned value can't be <code>null</code>
 	 */
 	public static final IStructuredSelection getCurrentStructuredSelection() {
-		ISelection selection = getCurrentSelection();
-		if (selection instanceof IStructuredSelection) {
-			return (IStructuredSelection) selection;
-		}
-		return StructuredSelection.EMPTY;
+		return SelectionUtils.getCurrentStructuredSelection();
 	}
-
 
 }

@@ -23,6 +23,14 @@
                   checkEnabled="true">
             </visibleWhen>
             </command>
+               <command
+                     commandId="org.eclipse.papyrus.model2doc.dev.tools.createPrototypeFromTemplate"
+                     label="Create DocumentPrototype From DocumentTemplate"
+                     style="push">
+                  <visibleWhen
+                        checkEnabled="true">
+                  </visibleWhen>
+               </command>
             <separator
                   name="org.eclipse.papyrus.model2doc.dev.tools.ui.menu.separator.after"
                   visible="true">
@@ -36,6 +44,11 @@
             description="This command allows to extract the file Contents.xml from an odt file"
             id="org.eclipse.papyrus.model2doc.dev.tools.extractXMLContents"
             name="Extract Contents.xml file">
+      </command>
+      <command
+            description="This command allows to create a Document Prototype from a DocumentStructureTemplate"
+            id="org.eclipse.papyrus.model2doc.dev.tools.createPrototypeFromTemplate"
+            name="Create prototype">
       </command>
    </extension>
    <extension
@@ -65,6 +78,10 @@
                </iterate>
             </with>
          </activeWhen>
+      </handler>
+      <handler
+            class="org.eclipse.papyrus.model2doc.dev.tools.handlers.CreatePrototypeFromTemplateHandler"
+            commandId="org.eclipse.papyrus.model2doc.dev.tools.createPrototypeFromTemplate">
       </handler>
    </extension>
 
