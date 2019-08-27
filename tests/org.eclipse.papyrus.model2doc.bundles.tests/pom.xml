@@ -11,7 +11,72 @@
 	</parent>
 
 	<artifactId>org.eclipse.papyrus.model2doc.bundles.tests</artifactId>
-    <packaging>eclipse-test-plugin</packaging>
+	<packaging>eclipse-test-plugin</packaging>
+
+	<build>
+		<plugins>
+			<plugin>
+				<!-- By default, don't do tests -->
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-surefire-plugin</artifactId>
+				<version>${tycho-version}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<dependency-resolution>
+						<extraRequirements>
+							<!-- required to find all model2doc plugins to check them -->
+
+							<requirement>
+								<type>eclipse-feature</type>
+								<id>org.eclipse.papyrus.model2doc.dev.feature</id>
+								<versionRange>0.0.0</versionRange>
+							</requirement>
+							<requirement>
+								<type>eclipse-feature</type>
+								<id>org.eclipse.papyrus.model2doc.feature</id>
+								<versionRange>0.0.0</versionRange>
+							</requirement>
+							<requirement>
+								<type>eclipse-feature</type>
+								<id>org.eclipse.papyrus.model2doc.gmf.feature</id>
+								<versionRange>0.0.0</versionRange>
+							</requirement>
+							<requirement>
+								<type>eclipse-feature</type>
+								<id>org.eclipse.papyrus.model2doc.integration.feature</id>
+								<versionRange>0.0.0</versionRange>
+							</requirement>
+							<requirement>
+								<type>eclipse-feature</type>
+								<id>org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.feature</id>
+								<versionRange>0.0.0</versionRange>
+							</requirement>
+							<requirement>
+								<type>eclipse-feature</type>
+								<id>org.eclipse.papyrus.model2doc.integration.ieee.feature</id>
+								<versionRange>0.0.0</versionRange>
+							</requirement>
+							<!-- requirement>
+								<type>eclipse-feature</type>
+								<id>org.eclipse.papyrus.model2doc.tests.feature</id>
+								<versionRange>0.0.0</versionRange>
+							</requirement-->
+							<requirement>
+								<type>eclipse-feature</type>
+								<id>org.eclipse.papyrus.model2doc.uml.feature</id>
+								<versionRange>0.0.0</versionRange>
+							</requirement>
+						</extraRequirements>
+					</dependency-resolution>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
 
 
 </project>
