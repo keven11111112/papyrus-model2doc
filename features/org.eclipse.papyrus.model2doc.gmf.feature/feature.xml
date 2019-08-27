@@ -19,12 +19,9 @@
       %license
    </license>
 
-   <includes
-         id="org.eclipse.papyrus.model2doc.feature"
-         version="0.0.0"/>
-
    <requires>
       <import plugin="org.eclipse.gmf.runtime.notation" version="1.9.0" match="compatible"/>
+      <import feature="org.eclipse.papyrus.model2doc.feature" version="0.8.0" match="compatible"/>
    </requires>
 
    <plugin

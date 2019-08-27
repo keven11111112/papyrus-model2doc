@@ -24,7 +24,7 @@
          version="0.0.0"/>
 
    <requires>
-      <import feature="org.eclipse.uml2.sdk" version="5.5.0.qualifier" match="compatible"/>
+      <import feature="org.eclipse.uml2.sdk" version="5.5.0" match="compatible"/>
    </requires>
 
    <plugin

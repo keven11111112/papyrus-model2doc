@@ -75,4 +75,5 @@
       </description>
    </category-def>
    <repository-reference location="http://download.eclipse.org/modeling/mdt/papyrus/components/sysml14" enabled="true" />
+   <repository-reference location="https://download.eclipse.org/modeling/gmp/gmf-notation/updates/releases/R201805221301"  enabled="true" />
 </site>
