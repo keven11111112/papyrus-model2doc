@@ -162,7 +162,7 @@ public class UMLTranscriber implements Transcriber {
 
 		}
 
-		transcription.refreshTableOfContents();
+		transcription.refreshTablesOfIndexes();
 
 		// Save transcription
 		transcription.save(umlLabelInternationalization.getLabel(root));

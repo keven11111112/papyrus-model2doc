@@ -46,9 +46,18 @@ public interface Transcription {
 	public void writeTableOfContents(String tocTitle);
 
 	/**
-	 * Refresh the contents of the table Of Contents. Basically it must be called at the end of the transcription
+	 * Write the Table of Figure
+	 *
+	 * @param tofTitle
+	 *            the title to use for the Table Of Figures
 	 */
-	public void refreshTableOfContents();
+	public void writeTableOfFigures(String tofTitle);
+
+	/**
+	 * Refresh the contents of the table Of Contents, Table Of Index, ...
+	 * Basically it must be called at the end of the transcription
+	 */
+	public void refreshTablesOfIndexes();
 
 	/**
 	 * Write document main title.

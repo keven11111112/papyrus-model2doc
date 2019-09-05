@@ -14,8 +14,10 @@
  *****************************************************************************/
 package org.eclipse.papyrus.model2doc.odt.internal.transcription;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.List;
 
 import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.osgi.util.NLS;
@@ -53,6 +55,7 @@ import com.sun.star.document.XDocumentProperties;
 import com.sun.star.document.XDocumentPropertiesSupplier;
 import com.sun.star.lang.XMultiServiceFactory;
 import com.sun.star.style.BreakType;
+import com.sun.star.text.ChapterFormat;
 import com.sun.star.text.ControlCharacter;
 import com.sun.star.text.XDocumentIndex;
 import com.sun.star.text.XPageCursor;
@@ -71,6 +74,11 @@ import com.sun.star.uno.UnoRuntime;
  */
 public class ODTTranscription implements Transcription {
 
+
+	private static final String TABLE_OF_FIGURE_TYPE = "com.sun.star.text.IllustrationsIndex"; //$NON-NLS-1$
+
+	private static final String TABLE_OF_CONTENTS_TYPE = "com.sun.star.text.ContentIndex"; //$NON-NLS-1$
+
 	/** The text interface contains all methods and properties to manipulate the content from a text document. */
 	private XText text = null;
 
@@ -87,7 +95,7 @@ public class ODTTranscription implements Transcription {
 
 	private StyleService styleService = null;
 
-	private XDocumentIndex tableOfContents = null;
+	private List<XDocumentIndex> tablesOfIndexes = new ArrayList<>();
 
 	/**
 	 * Constructor.
@@ -183,10 +191,20 @@ public class ODTTranscription implements Transcription {
 	 * Refresh the table of contents
 	 */
 	@Override
-	public void refreshTableOfContents() {
-		if (null != this.tableOfContents) {
-			this.tableOfContents.update();
+	public void refreshTablesOfIndexes() {
+		for (final XDocumentIndex current : this.tablesOfIndexes) {
+			current.update();
 		}
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.model2doc.core.transcription.Transcription#writeTableOfFigures(java.lang.String)
+	 *
+	 * @param tofTitle
+	 */
+	@Override
+	public void writeTableOfFigures(String tofTitle) {
+		writePageOfContents(tofTitle, TABLE_OF_FIGURE_TYPE);
 	}
 
 	/**
@@ -194,7 +212,18 @@ public class ODTTranscription implements Transcription {
 	 */
 	@Override
 	public void writeTableOfContents(final String tocTitle) {
+		writePageOfContents(tocTitle, TABLE_OF_CONTENTS_TYPE);
+	}
 
+	/**
+	 * Common method used to create a Table Of Contents or a Table of Figure
+	 *
+	 * @param pageTitle
+	 *            the title of the page
+	 * @param libreOfficePagetype
+	 *            the type of the page to create
+	 */
+	protected void writePageOfContents(final String pageTitle, final String libreOfficePagetype) {
 		// TODO improve me
 		// we should be able to start of not the table of contents on a new page
 		// we should be able to go to the next page at the end of the table of content
@@ -211,35 +240,18 @@ public class ODTTranscription implements Transcription {
 			XParagraphCursor xParaCursor = UnoRuntime.queryInterface(XParagraphCursor.class, mxDocCursor);
 			xParaCursor.gotoPreviousParagraph(false);// TODO : it was false before
 
-			// Create a new ContentIndexMark and get its XPropertySet interface
-			// XPropertySet xEntry;
-
-			// xEntry = UnoRuntime.queryInterface(XPropertySet.class, mxDocFactory.createInstance("com.sun.star.text.ContentIndexMark"));
-
-			//
-			// // Set the text to be displayed in the index
-			// xEntry.setPropertyValue("AlternativeText", "Big dogs! Falling on my head!");
-
-			// The Level property _must_ be set
-			// xEntry.setPropertyValue("Level", Short.valueOf((short) 1));
-			// xEntry.setPropertyValue("Outline", true);
-
 			// Create a ContentIndex and access its XPropertySet interface
-			XPropertySet xIndex = UnoRuntime.queryInterface(XPropertySet.class, mxDocFactory.createInstance("com.sun.star.text.ContentIndex")); //$NON-NLS-1$
-
-			// Again, the Level property _must_ be set
-			// xIndex.setPropertyValue("Level", Short.valueOf((short) 10));
+			XPropertySet xIndex = UnoRuntime.queryInterface(XPropertySet.class, mxDocFactory.createInstance(libreOfficePagetype)); // $NON-NLS-1$
 
 			// to fill the table of contents according to the existing title
-			xIndex.setPropertyValue("CreateFromOutline", true); //$NON-NLS-1$
-			// XPropertySetInfo set = xIndex.getPropertySetInfo();
-			// for (Property tmp : set.getProperties()) {
-			// System.out.println("prop Name " + tmp.Name);
-			// System.out.println("prop attr " + tmp.Attributes);
-			// System.out.println("prop type " + tmp.Type);
-			// }
-
-			xIndex.setPropertyValue("Title", tocTitle); //$NON-NLS-1$
+			if (TABLE_OF_CONTENTS_TYPE.equals(libreOfficePagetype)) {
+				xIndex.setPropertyValue("CreateFromOutline", true); //$NON-NLS-1$
+			} else if (TABLE_OF_FIGURE_TYPE.equals(libreOfficePagetype)) {
+				xIndex.setPropertyValue("CreateFromLabels", true); //$NON-NLS-1$
+				xIndex.setPropertyValue("LabelCategory", "Figure"); //$NON-NLS-1$
+				xIndex.setPropertyValue("LabelDisplayType", ChapterFormat.NAME_NUMBER); //$NON-NLS-1$
+			}
+			xIndex.setPropertyValue("Title", pageTitle); //$NON-NLS-1$
 
 			// Access the XTextContent interfaces of both the Index and the
 			// IndexMark
@@ -255,18 +267,7 @@ public class ODTTranscription implements Transcription {
 
 			// And call its update method
 			xDocIndex.update();
-
-			tableOfContents = xDocIndex;
-
-
-			// xParaCursor.gotoNextParagraph(true);
-
-
-			// XText xText = mxDocCursor.getText();
-			// xText.insertControlCharacter(mxDocCursor, (short)BreakType.PAGE_AFTER_value, false);
-			// mxDocCursor.gotoEnd(false);
-			// WriteUtil.addControlCharacter(xTextCursor, controlCharacter);addControlCharacter
-
+			tablesOfIndexes.add(xDocIndex);
 			writeService.endParagraph(xParaCursor);
 
 
@@ -275,16 +276,15 @@ public class ODTTranscription implements Transcription {
 				// TODO
 				cursorProperty.setPropertyValue("BreakType", BreakType.PAGE_BEFORE); //$NON-NLS-1$ //NONE AND BOTH gave me the same result... -> it is not good
 				// BEFORE Allow that the next content (an image) will be on the next page... it seems me stupid...
-			} catch (Exception excp) {
-				System.err.println("Failed to create page break. Exception: " + excp); //$NON-NLS-1$
-				excp.printStackTrace(System.err);
+			} catch (Exception e) {
+				Activator.log.error("Failed to create page break. Exception: ", e); //$NON-NLS-1$
 			}
-			//
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Activator.log.error(e);
 		}
 	}
+
+
 
 	@Override
 	public void importImage(ImageDescription image, String caption) {

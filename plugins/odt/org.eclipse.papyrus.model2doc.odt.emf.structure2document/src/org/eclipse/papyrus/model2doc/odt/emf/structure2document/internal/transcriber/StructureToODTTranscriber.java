@@ -27,6 +27,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.Image;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.InsertedFile;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Paragraph;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TableOfContents;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.TableOfFigures;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocumentPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Title;
@@ -39,8 +40,6 @@ public class StructureToODTTranscriber implements Transcriber {
 	private Transcription transcription = null;
 
 	private TextDocument textDocument;
-
-	private boolean refreshTableOfContents = false;
 
 	/**
 	 *
@@ -74,9 +73,7 @@ public class StructureToODTTranscriber implements Transcriber {
 		while (iter.hasNext()) {
 			transcribe(iter.next());
 		}
-		if (this.refreshTableOfContents) {
-			this.transcription.refreshTableOfContents();// TODO should be done directly by the transcriptor
-		}
+		this.transcription.refreshTablesOfIndexes();// TODO should be done directly by the transcriptor
 		this.transcription.save(""); // TODO : remove this argument //$NON-NLS-1$
 	}
 
@@ -88,7 +85,9 @@ public class StructureToODTTranscriber implements Transcriber {
 	 */
 	private void transcribe(final TextDocumentPart part) {
 		if (part instanceof TableOfContents) {
-			transcribeTableOfContent((TableOfContents) part);
+			transcribeTableOfContents((TableOfContents) part);
+		} else if (part instanceof TableOfFigures) {
+			transcribeTableOfFigures((TableOfFigures) part);
 		} else if (part instanceof Body) {
 			transcribeBody((Body) part);
 		}
@@ -118,8 +117,6 @@ public class StructureToODTTranscriber implements Transcriber {
 	private void transcribeBodyPart(final BodyPart bodyPart) {
 		if (bodyPart instanceof Title) {
 			transcribeTitle((Title) bodyPart);
-		} else if (bodyPart instanceof TableOfContents) {
-			transcribeTableOfContent((TableOfContents) bodyPart);
 		} else if (bodyPart instanceof Paragraph) {
 			transcribteParagraph((Paragraph) bodyPart);
 		} else if (bodyPart instanceof Image) {
@@ -167,9 +164,18 @@ public class StructureToODTTranscriber implements Transcriber {
 	 * @param toc
 	 *            the table of contents
 	 */
-	private void transcribeTableOfContent(final TableOfContents toc) {
+	private void transcribeTableOfContents(final TableOfContents toc) {
 		transcription.writeTableOfContents(toc.getTocTitle());
-		this.refreshTableOfContents = true;
+	}
+
+	/**
+	 * This method creates a table of figures in the output document
+	 *
+	 * @param toc
+	 *            the table of contents
+	 */
+	private void transcribeTableOfFigures(final TableOfFigures tof) {
+		transcription.writeTableOfFigures(tof.getTofTitle());
 	}
 
 	/**

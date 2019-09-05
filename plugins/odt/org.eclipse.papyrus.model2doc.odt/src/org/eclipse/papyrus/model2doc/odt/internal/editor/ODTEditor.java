@@ -31,6 +31,7 @@ import com.sun.star.beans.PropertyValue;
 import com.sun.star.frame.XComponentLoader;
 import com.sun.star.frame.XController;
 import com.sun.star.frame.XDesktop;
+import com.sun.star.frame.XDispatchHelper;
 import com.sun.star.frame.XModel;
 import com.sun.star.frame.XStorable;
 import com.sun.star.io.IOException;
@@ -71,7 +72,13 @@ public class ODTEditor {
 	private XMultiComponentFactory xMultiComponentFactory = null;
 	private XMultiServiceFactory xMultiServiceFactory = null;
 	private XComponentContext xComponentContext = null;
-	// private String projectFolder = null;
+
+	/**
+	 * The dispatch helper (not yet used)
+	 */
+	private XDispatchHelper dispatchHelper = null;
+
+
 	private ODTFileIOService fileIOService = null;
 
 	/**
@@ -102,6 +109,12 @@ public class ODTEditor {
 			final String templateURL = GeneratorConfigurationOperations.getTemplateFilePathInLocalPath(generatorConfig);
 			createTextDocument(templateURL);
 			xMultiServiceFactory = UnoRuntime.queryInterface(XMultiServiceFactory.class, xTextDocument);
+			try {
+				Object dispatchHelperObject = this.xMultiComponentFactory.createInstanceWithContext("com.sun.star.frame.DispatchHelper", xComponentContext); //$NON-NLS-1$
+				this.dispatchHelper = UnoRuntime.queryInterface(XDispatchHelper.class, dispatchHelperObject);
+			} catch (com.sun.star.uno.Exception e) {
+				Activator.log.error(e);
+			}
 		}
 	}
 
@@ -560,5 +573,13 @@ public class ODTEditor {
 		return newFileURL;
 	}
 
+	/**
+	 *
+	 * @return
+	 *         the dispatch helper. This element can be called during the edition of the file to force a refresh
+	 */
+	public final XDispatchHelper getDispatchHelper() {
+		return this.dispatchHelper;
+	}
 
 }
