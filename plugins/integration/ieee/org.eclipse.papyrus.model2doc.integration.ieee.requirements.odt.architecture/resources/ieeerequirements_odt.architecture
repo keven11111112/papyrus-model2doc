@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <architecture:ArchitectureDomain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:architecture="http://www.eclipse.org/papyrus/infra/core/architecture" xmlns:documentviewrepresentation="http://www.eclipse.org/papyrus/model2doc/documentview/representation/1.0.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:elementtypesconfigurations="http://www.eclipse.org/papyrus/infra/elementtypesconfigurations/1.2" xmlns:representation="http://www.eclipse.org/papyrus/infra/core/architecture/representation" xmi:id="_pNW38LaHEeiKuPQLywy7Og" id="org.eclipse.papyrus.sysml14.systemsEngineering" name="Systems Engineering" description="" icon="platform:/plugin/org.eclipse.papyrus.uml.architecture/icons/domain.gif">
-  <contexts xmi:type="architecture:ArchitectureDescriptionLanguage" xmi:id="_-tAb0Lp2EeiViqj5DY8SRQ" id="org.eclipse.papyrus.sysml.architecture.SysML14" name="SysML 1.4">
+  <contexts xmi:type="architecture:ArchitectureDescriptionLanguage" xmi:id="_-tAb0Lp2EeiViqj5DY8SRQ" id="org.eclipse.papyrus.sysml.architecture.SysML14" name="SysML 1.4" creationCommandClass="org.eclipse.papyrus.sysml14.architecture.CreateSysML14ModelCommand">
     <viewpoints xmi:type="architecture:ArchitectureViewpoint" xmi:id="_dmWHgLp3EeiViqj5DY8SRQ" id="org.eclipse.papyrus.sysml14.standard.modeling" name="Standard SysML Modeling" description="" icon="platform:/plugin/org.eclipse.papyrus.uml.architecture/icons/viewpoint.gif" representationKinds="_navOULaIEeiKuPQLywy7Og"/>
     <elementTypes xmi:type="elementtypesconfigurations:ElementTypeSetConfiguration" href="platform:/plugin/org.eclipse.papyrus.model2doc.documentview.ui/resources/model/documentviewadvices.elementtypesconfigurations#_rWI4YHPzEeSnGJwaJWHCSg"/>
     <representationKinds xmi:type="documentviewrepresentation:PapyrusDocument" xmi:id="_navOULaIEeiKuPQLywy7Og" id="org.eclipse.papyrus.model2doc.documentation.odt.ieeererquirements" name="IEEE Requirements Document" description="Generate IEEE Requirements document (.odt) from IEEE Requirements model." icon="platform:/plugin/org.eclipse.papyrus.model2doc.integration.ieee.requirements.odt.ui/resources/icon/srs_document.png" implementationID="PapyrusIEEERequirements2ODTDocument" creationCommandClass="org.eclipse.papyrus.model2doc.integration.ieee.requirements.odt.ui.handler.GeneratorIEEERequirements2ODTHandler" documentKind="odt">
@@ -11,6 +11,7 @@
         <element xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement"/>
       </owningRules>
     </representationKinds>
+    <metamodel xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/5.0.0/UML#/"/>
     <profiles xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.4/SysML#//requirements"/>
     <profiles xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/docgenconfig/IEEERequirementsDocumentation#/"/>
   </contexts>
