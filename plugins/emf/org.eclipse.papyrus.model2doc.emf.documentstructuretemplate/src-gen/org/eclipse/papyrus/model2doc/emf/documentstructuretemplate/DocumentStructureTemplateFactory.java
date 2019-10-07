@@ -165,6 +165,16 @@ public interface DocumentStructureTemplateFactory extends EFactory {
 	InsertFileTemplate createInsertFileTemplate();
 
 	/**
+	 * Returns a new object of class '<em>Table Of Figures</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>Table Of Figures</em>'.
+	 * @generated
+	 */
+	TableOfFigures createTableOfFigures();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

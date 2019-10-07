@@ -85,7 +85,13 @@ This field is useless for usage outside of Papyrus, but we set its multiplicity 
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_nWOeEB5MEemmq_cjeiIGww" client="_tLqTYB17Eem3fboELVTtYQ" supplier="_pmiT0B5MEemmq_cjeiIGww" contract="_pmiT0B5MEemmq_cjeiIGww"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_f03L4DnLEem5-oyJMXJtFA" name="TableOfContents">
+      <ownedComment xmi:type="uml:Comment" xmi:id="__DSPoOj3Eem6Q8pIItgtwQ" annotatedElement="_f03L4DnLEem5-oyJMXJtFA">
+        <body>This element allows to declare that the generated document will contain a Table of Contents.</body>
+      </ownedComment>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_ikXfEDnLEem5-oyJMXJtFA" name="tocTitle">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_DACZEOj4Eem6Q8pIItgtwQ" annotatedElement="_ikXfEDnLEem5-oyJMXJtFA">
+          <body>This field allows to define the custom title for the table of contents.</body>
+        </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWkisX_EduPJbEsMYXjUQ"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_o4csQDnLEem5-oyJMXJtFA" value="Table Of Contents"/>
       </ownedAttribute>
@@ -822,6 +828,19 @@ The goal of this method is to return a label for each element returned by the me
       </generalization>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_eKveUJaPEem5SfdtnxxoKw" client="_TMKQ4JaPEem5SfdtnxxoKw" supplier="_e0vMUFX-EemKJasCEBKPhQ" contract="_e0vMUFX-EemKJasCEBKPhQ"/>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_e32b8JaPEem5SfdtnxxoKw" client="_TMKQ4JaPEem5SfdtnxxoKw" supplier="_R99HIFX-EemKJasCEBKPhQ" contract="_R99HIFX-EemKJasCEBKPhQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_iAWr8Oj3Eem6Q8pIItgtwQ" name="TableOfFigures">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_9VR1sOj3Eem6Q8pIItgtwQ" annotatedElement="_iAWr8Oj3Eem6Q8pIItgtwQ">
+        <body>This element allows to declare that the generated document will contain a Table of Figures.</body>
+      </ownedComment>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_tmYT4Oj3Eem6Q8pIItgtwQ" name="tofTitle">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_4sGrIOj3Eem6Q8pIItgtwQ" annotatedElement="_tmYT4Oj3Eem6Q8pIItgtwQ">
+          <body>This field allows to define the custom title for the table of figures.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWkisX_EduPJbEsMYXjUQ"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_tmYT4ej3Eem6Q8pIItgtwQ" value="Table Of Figures"/>
+      </ownedAttribute>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_JsEMMOj4Eem6Q8pIItgtwQ" client="_iAWr8Oj3Eem6Q8pIItgtwQ" supplier="_zXDZIDnLEem5-oyJMXJtFA" contract="_zXDZIDnLEem5-oyJMXJtFA"/>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Dwr3IB2KEemmq_cjeiIGww">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DwseMB2KEemmq_cjeiIGww" source="http://www.eclipse.org/uml2/2.0.0/UML">

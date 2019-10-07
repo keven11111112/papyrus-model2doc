@@ -238,5 +238,8 @@
           createChild="true" ecoreFeature="ecore:EReference documentstructuretemplate.ecore#//TreeListView/rootListItemTemplate"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructuretemplate.ecore#//InsertFileTemplate"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructuretemplate.ecore#//TableOfFigures">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//TableOfFigures/tofTitle"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

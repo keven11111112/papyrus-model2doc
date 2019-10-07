@@ -97,6 +97,8 @@ public class DocumentStructureTemplateFactoryImpl extends EFactoryImpl implement
 			return createTreeListView();
 		case DocumentStructureTemplatePackage.INSERT_FILE_TEMPLATE:
 			return createInsertFileTemplate();
+		case DocumentStructureTemplatePackage.TABLE_OF_FIGURES:
+			return createTableOfFigures();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -288,6 +290,18 @@ public class DocumentStructureTemplateFactoryImpl extends EFactoryImpl implement
 	public InsertFileTemplate createInsertFileTemplate() {
 		InsertFileTemplateImpl insertFileTemplate = new InsertFileTemplateImpl();
 		return insertFileTemplate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public TableOfFigures createTableOfFigures() {
+		TableOfFiguresImpl tableOfFigures = new TableOfFiguresImpl();
+		return tableOfFigures;
 	}
 
 	/**

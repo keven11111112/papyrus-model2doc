@@ -19,6 +19,10 @@ package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate;
  * A representation of the model object '<em><b>Table Of Contents</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * This element allows to declare that the generated document will contain a Table of Contents.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
@@ -40,6 +44,9 @@ public interface TableOfContents extends DocumentPart {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This field allows to define the custom title for the table of contents.
+	 * <!-- end-model-doc -->
 	 *
 	 * @return the value of the '<em>Toc Title</em>' attribute.
 	 * @see #setTocTitle(String)

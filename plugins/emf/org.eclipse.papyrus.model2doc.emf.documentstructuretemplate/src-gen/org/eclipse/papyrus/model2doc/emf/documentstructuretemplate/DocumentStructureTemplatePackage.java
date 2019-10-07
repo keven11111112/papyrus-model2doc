@@ -3273,6 +3273,47 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int INSERT_FILE_TEMPLATE_OPERATION_COUNT = BuiltInTypesPackage.DEFAULT_FILE_REFERENCE_OPERATION_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TableOfFiguresImpl <em>Table Of Figures</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TableOfFiguresImpl
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getTableOfFigures()
+	 * @generated
+	 */
+	int TABLE_OF_FIGURES = 36;
+
+	/**
+	 * The feature id for the '<em><b>Tof Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_OF_FIGURES__TOF_TITLE = DOCUMENT_PART_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Table Of Figures</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_OF_FIGURES_FEATURE_COUNT = DOCUMENT_PART_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Table Of Figures</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_OF_FIGURES_OPERATION_COUNT = DOCUMENT_PART_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassFilterBehavior <em>EClass Filter Behavior</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3281,7 +3322,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEClassFilterBehavior()
 	 * @generated
 	 */
-	int ECLASS_FILTER_BEHAVIOR = 36;
+	int ECLASS_FILTER_BEHAVIOR = 37;
 
 
 	/**
@@ -4311,6 +4352,29 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	EClass getInsertFileTemplate();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TableOfFigures <em>Table Of Figures</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>Table Of Figures</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TableOfFigures
+	 * @generated
+	 */
+	EClass getTableOfFigures();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TableOfFigures#getTofTitle <em>Tof Title</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Tof Title</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TableOfFigures#getTofTitle()
+	 * @see #getTableOfFigures()
+	 * @generated
+	 */
+	EAttribute getTableOfFigures_TofTitle();
+
+	/**
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassFilterBehavior <em>EClass Filter Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5227,6 +5291,26 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 		 * @generated
 		 */
 		EClass INSERT_FILE_TEMPLATE = eINSTANCE.getInsertFileTemplate();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TableOfFiguresImpl <em>Table Of Figures</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.TableOfFiguresImpl
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getTableOfFigures()
+		 * @generated
+		 */
+		EClass TABLE_OF_FIGURES = eINSTANCE.getTableOfFigures();
+
+		/**
+		 * The meta object literal for the '<em><b>Tof Title</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute TABLE_OF_FIGURES__TOF_TITLE = eINSTANCE.getTableOfFigures_TofTitle();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassFilterBehavior <em>EClass Filter Behavior</em>}' enum.

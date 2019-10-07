@@ -77,9 +77,16 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DocumentPart" abstract="true" interface="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="TableOfContents" eSuperTypes="#//DocumentPart">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This element allows to declare that the generated document will contain a Table of Contents."/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tocTitle" ordered="false"
         lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
-        defaultValueLiteral="Table Of Contents"/>
+        defaultValueLiteral="Table Of Contents">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This field allows to define the custom title for the table of contents."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Body" eSuperTypes="#//DocumentPart">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -510,5 +517,17 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This element allows to insert the content of an existing file into the generated file."/>
     </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TableOfFigures" eSuperTypes="#//DocumentPart">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This element allows to declare that the generated document will contain a Table of Figures."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tofTitle" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+        defaultValueLiteral="Table Of Figures">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This field allows to define the custom title for the table of figures."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
 </ecore:EPackage>

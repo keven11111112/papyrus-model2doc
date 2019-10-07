@@ -373,6 +373,9 @@ public class TextDocumentTemplateItemProvider
 
 		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART,
 				DocumentStructureTemplateFactory.eINSTANCE.createBody()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.TEXT_DOCUMENT_TEMPLATE__DOCUMENT_PART,
+				DocumentStructureTemplateFactory.eINSTANCE.createTableOfFigures()));
 	}
 
 	/**

@@ -66,6 +66,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITemplatePartView;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.InsertFileTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TableOfContents;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TableOfFigures;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TreeListView;
 
@@ -364,6 +365,14 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	private EClass insertFileTemplateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass tableOfFiguresEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1446,6 +1455,28 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
+	public EClass getTableOfFigures() {
+		return tableOfFiguresEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTableOfFigures_TofTitle() {
+		return (EAttribute) tableOfFiguresEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EEnum getEClassFilterBehavior() {
 		return eClassFilterBehaviorEEnum;
 	}
@@ -1610,6 +1641,9 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 
 		insertFileTemplateEClass = createEClass(INSERT_FILE_TEMPLATE);
 
+		tableOfFiguresEClass = createEClass(TABLE_OF_FIGURES);
+		createEAttribute(tableOfFiguresEClass, TABLE_OF_FIGURES__TOF_TITLE);
+
 		// Create enums
 		eClassFilterBehaviorEEnum = createEEnum(ECLASS_FILTER_BEHAVIOR);
 	}
@@ -1689,6 +1723,7 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		insertFileTemplateEClass.getESuperTypes().add(theBuiltInTypesPackage.getDefaultFileReference());
 		insertFileTemplateEClass.getESuperTypes().add(this.getILeafSubBodyPartTemplate());
 		insertFileTemplateEClass.getESuperTypes().add(this.getILeafBodyPartTemplate());
+		tableOfFiguresEClass.getESuperTypes().add(this.getDocumentPart());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(documentTemplateEClass, DocumentTemplate.class, "DocumentTemplate", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
@@ -1869,6 +1904,9 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(insertFileTemplateEClass, InsertFileTemplate.class, "InsertFileTemplate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEClass(tableOfFiguresEClass, TableOfFigures.class, "TableOfFigures", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(getTableOfFigures_TofTitle(), theEcorePackage.getEString(), "tofTitle", "Table Of Figures", 1, 1, TableOfFigures.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
 
 		// Initialize enums and add enum literals
 		initEEnum(eClassFilterBehaviorEEnum, EClassFilterBehavior.class, "EClassFilterBehavior"); //$NON-NLS-1$
