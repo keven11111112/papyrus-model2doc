@@ -91,6 +91,9 @@
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference documentstructure.ecore#//EMFDataSource/feature"/>
     </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructure.ecore#//TableOfFigures">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructure.ecore#//TableOfFigures/tofTitle"/>
+    </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructure.ecore#//TableOfContents">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructure.ecore#//TableOfContents/tocTitle"/>
     </genClasses>

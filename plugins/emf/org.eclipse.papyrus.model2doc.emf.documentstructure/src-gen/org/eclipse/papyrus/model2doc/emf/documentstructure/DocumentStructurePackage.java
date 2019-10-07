@@ -740,6 +740,47 @@ public interface DocumentStructurePackage extends EPackage {
 	int EMF_DATA_SOURCE_OPERATION_COUNT = DATA_SOURCE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TableOfFiguresImpl <em>Table Of Figures</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TableOfFiguresImpl
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getTableOfFigures()
+	 * @generated
+	 */
+	int TABLE_OF_FIGURES = 13;
+
+	/**
+	 * The feature id for the '<em><b>Tof Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_OF_FIGURES__TOF_TITLE = TEXT_DOCUMENT_PART_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Table Of Figures</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_OF_FIGURES_FEATURE_COUNT = TEXT_DOCUMENT_PART_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Table Of Figures</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_OF_FIGURES_OPERATION_COUNT = TEXT_DOCUMENT_PART_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TableOfContentsImpl <em>Table Of Contents</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -748,7 +789,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getTableOfContents()
 	 * @generated
 	 */
-	int TABLE_OF_CONTENTS = 13;
+	int TABLE_OF_CONTENTS = 14;
 
 	/**
 	 * The feature id for the '<em><b>Toc Title</b></em>' attribute.
@@ -789,7 +830,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getExtendedBasicTable()
 	 * @generated
 	 */
-	int EXTENDED_BASIC_TABLE = 14;
+	int EXTENDED_BASIC_TABLE = 15;
 
 	/**
 	 * The feature id for the '<em><b>Caption</b></em>' attribute.
@@ -880,7 +921,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getExtendedTextCell()
 	 * @generated
 	 */
-	int EXTENDED_TEXT_CELL = 15;
+	int EXTENDED_TEXT_CELL = 16;
 
 	/**
 	 * The feature id for the '<em><b>Location</b></em>' attribute.
@@ -941,7 +982,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getExtendedBasicList()
 	 * @generated
 	 */
-	int EXTENDED_BASIC_LIST = 16;
+	int EXTENDED_BASIC_LIST = 17;
 
 	/**
 	 * The feature id for the '<em><b>Items</b></em>' containment reference list.
@@ -992,7 +1033,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getExtendedTextListItem()
 	 * @generated
 	 */
-	int EXTENDED_TEXT_LIST_ITEM = 17;
+	int EXTENDED_TEXT_LIST_ITEM = 18;
 
 	/**
 	 * The feature id for the '<em><b>Sub Items</b></em>' containment reference list.
@@ -1064,7 +1105,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getStringVersion()
 	 * @generated
 	 */
-	int STRING_VERSION = 18;
+	int STRING_VERSION = 19;
 
 	/**
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
@@ -1116,7 +1157,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getInsertedFile()
 	 * @generated
 	 */
-	int INSERTED_FILE = 19;
+	int INSERTED_FILE = 20;
 
 	/**
 	 * The feature id for the '<em><b>File Path</b></em>' attribute.
@@ -1501,6 +1542,29 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEMFDataSource_Feature();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.TableOfFigures <em>Table Of Figures</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>Table Of Figures</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.TableOfFigures
+	 * @generated
+	 */
+	EClass getTableOfFigures();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.TableOfFigures#getTofTitle <em>Tof Title</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Tof Title</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.TableOfFigures#getTofTitle()
+	 * @see #getTableOfFigures()
+	 * @generated
+	 */
+	EAttribute getTableOfFigures_TofTitle();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.TableOfContents <em>Table Of Contents</em>}'.
@@ -1938,6 +2002,26 @@ public interface DocumentStructurePackage extends EPackage {
 		 * @generated
 		 */
 		EReference EMF_DATA_SOURCE__FEATURE = eINSTANCE.getEMFDataSource_Feature();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TableOfFiguresImpl <em>Table Of Figures</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TableOfFiguresImpl
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getTableOfFigures()
+		 * @generated
+		 */
+		EClass TABLE_OF_FIGURES = eINSTANCE.getTableOfFigures();
+
+		/**
+		 * The meta object literal for the '<em><b>Tof Title</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute TABLE_OF_FIGURES__TOF_TITLE = eINSTANCE.getTableOfFigures_TofTitle();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.TableOfContentsImpl <em>Table Of Contents</em>}' class.

@@ -95,6 +95,16 @@ public interface DocumentStructureFactory extends EFactory {
 	EMFDataSource createEMFDataSource();
 
 	/**
+	 * Returns a new object of class '<em>Table Of Figures</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>Table Of Figures</em>'.
+	 * @generated
+	 */
+	TableOfFigures createTableOfFigures();
+
+	/**
 	 * Returns a new object of class '<em>Table Of Contents</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

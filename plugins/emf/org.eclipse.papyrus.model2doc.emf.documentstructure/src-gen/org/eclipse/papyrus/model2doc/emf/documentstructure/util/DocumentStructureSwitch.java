@@ -231,6 +231,17 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 			}
 			return result;
 		}
+		case DocumentStructurePackage.TABLE_OF_FIGURES: {
+			TableOfFigures tableOfFigures = (TableOfFigures) theEObject;
+			T result = caseTableOfFigures(tableOfFigures);
+			if (result == null) {
+				result = caseTextDocumentPart(tableOfFigures);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
 		case DocumentStructurePackage.TABLE_OF_CONTENTS: {
 			TableOfContents tableOfContents = (TableOfContents) theEObject;
 			T result = caseTableOfContents(tableOfContents);
@@ -564,6 +575,23 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEMFDataSource(EMFDataSource object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Table Of Figures</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Table Of Figures</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTableOfFigures(TableOfFigures object) {
 		return null;
 	}
 

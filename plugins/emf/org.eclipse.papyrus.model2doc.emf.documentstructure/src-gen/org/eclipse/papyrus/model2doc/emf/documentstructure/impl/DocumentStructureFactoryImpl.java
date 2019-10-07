@@ -82,6 +82,8 @@ public class DocumentStructureFactoryImpl extends EFactoryImpl implements Docume
 			return createImage();
 		case DocumentStructurePackage.EMF_DATA_SOURCE:
 			return createEMFDataSource();
+		case DocumentStructurePackage.TABLE_OF_FIGURES:
+			return createTableOfFigures();
 		case DocumentStructurePackage.TABLE_OF_CONTENTS:
 			return createTableOfContents();
 		case DocumentStructurePackage.EXTENDED_BASIC_TABLE:
@@ -171,6 +173,18 @@ public class DocumentStructureFactoryImpl extends EFactoryImpl implements Docume
 	public EMFDataSource createEMFDataSource() {
 		EMFDataSourceImpl emfDataSource = new EMFDataSourceImpl();
 		return emfDataSource;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public TableOfFigures createTableOfFigures() {
+		TableOfFiguresImpl tableOfFigures = new TableOfFiguresImpl();
+		return tableOfFigures;
 	}
 
 	/**

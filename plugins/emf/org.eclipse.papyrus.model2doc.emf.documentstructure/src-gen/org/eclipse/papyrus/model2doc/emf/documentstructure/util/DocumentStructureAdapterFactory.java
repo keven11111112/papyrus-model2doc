@@ -159,6 +159,11 @@ public class DocumentStructureAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseTableOfFigures(TableOfFigures object) {
+			return createTableOfFiguresAdapter();
+		}
+
+		@Override
 		public Adapter caseTableOfContents(TableOfContents object) {
 			return createTableOfContentsAdapter();
 		}
@@ -457,6 +462,21 @@ public class DocumentStructureAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEMFDataSourceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.TableOfFigures <em>Table Of Figures</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.TableOfFigures
+	 * @generated
+	 */
+	public Adapter createTableOfFiguresAdapter() {
 		return null;
 	}
 

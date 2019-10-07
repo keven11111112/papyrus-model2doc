@@ -84,10 +84,29 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="feature" ordered="false"
         lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EStructuralFeature"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TableOfFigures" eSuperTypes="#//TextDocumentPart">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This element represents a Table Of Figures in the final document."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tofTitle" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="Table Of Figures">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The title to use for the created Table of Figures."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TableOfContents" eSuperTypes="#//TextDocumentPart">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This element represents a Table Of Contents in the final document."/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tocTitle" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral="Table Of Contents"/>
+        defaultValueLiteral="Table Of Contents">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The title to use for the created Table of Contents."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExtendedBasicTable" eSuperTypes="../../org.eclipse.papyrus.model2doc.core.builtintypes/model/BuiltInTypes.ecore#//BasicTable #//LeafBodyPart">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

@@ -45,6 +45,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.LeafBodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Paragraph;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.StringVersion;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TableOfContents;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.TableOfFigures;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocumentPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Title;
@@ -161,6 +162,14 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	 * @generated
 	 */
 	private EClass emfDataSourceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass tableOfFiguresEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -618,6 +627,28 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	 * @generated
 	 */
 	@Override
+	public EClass getTableOfFigures() {
+		return tableOfFiguresEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTableOfFigures_TofTitle() {
+		return (EAttribute) tableOfFiguresEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EClass getTableOfContents() {
 		return tableOfContentsEClass;
 	}
@@ -808,6 +839,9 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 		createEReference(emfDataSourceEClass, EMF_DATA_SOURCE__EOBJECT);
 		createEReference(emfDataSourceEClass, EMF_DATA_SOURCE__FEATURE);
 
+		tableOfFiguresEClass = createEClass(TABLE_OF_FIGURES);
+		createEAttribute(tableOfFiguresEClass, TABLE_OF_FIGURES__TOF_TITLE);
+
 		tableOfContentsEClass = createEClass(TABLE_OF_CONTENTS);
 		createEAttribute(tableOfContentsEClass, TABLE_OF_CONTENTS__TOC_TITLE);
 
@@ -873,6 +907,7 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 		imageEClass.getESuperTypes().add(this.getLeafBodyPart());
 		leafBodyPartEClass.getESuperTypes().add(this.getBodyPart());
 		emfDataSourceEClass.getESuperTypes().add(this.getDataSource());
+		tableOfFiguresEClass.getESuperTypes().add(this.getTextDocumentPart());
 		tableOfContentsEClass.getESuperTypes().add(this.getTextDocumentPart());
 		extendedBasicTableEClass.getESuperTypes().add(theBuiltInTypesPackage.getBasicTable());
 		extendedBasicTableEClass.getESuperTypes().add(this.getLeafBodyPart());
@@ -933,6 +968,9 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 				!IS_ORDERED);
 		initEReference(getEMFDataSource_Feature(), theEcorePackage.getEStructuralFeature(), null, "feature", null, 1, 1, EMFDataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, //$NON-NLS-1$
 				!IS_ORDERED);
+
+		initEClass(tableOfFiguresEClass, TableOfFigures.class, "TableOfFigures", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(getTableOfFigures_TofTitle(), ecorePackage.getEString(), "tofTitle", "Table Of Figures", 1, 1, TableOfFigures.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
 
 		initEClass(tableOfContentsEClass, TableOfContents.class, "TableOfContents", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEAttribute(getTableOfContents_TocTitle(), ecorePackage.getEString(), "tocTitle", "Table Of Contents", 1, 1, TableOfContents.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$

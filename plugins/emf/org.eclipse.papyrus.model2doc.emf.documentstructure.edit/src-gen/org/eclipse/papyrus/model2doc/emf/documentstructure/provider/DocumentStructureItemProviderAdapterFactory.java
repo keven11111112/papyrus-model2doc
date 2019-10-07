@@ -268,6 +268,31 @@ public class DocumentStructureItemProviderAdapterFactory extends DocumentStructu
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructure.TableOfFigures} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected TableOfFiguresItemProvider tableOfFiguresItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructure.TableOfFigures}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Adapter createTableOfFiguresAdapter() {
+		if (tableOfFiguresItemProvider == null) {
+			tableOfFiguresItemProvider = new TableOfFiguresItemProvider(this);
+		}
+
+		return tableOfFiguresItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructure.TableOfContents} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -605,6 +630,9 @@ public class DocumentStructureItemProviderAdapterFactory extends DocumentStructu
 		}
 		if (emfDataSourceItemProvider != null) {
 			emfDataSourceItemProvider.dispose();
+		}
+		if (tableOfFiguresItemProvider != null) {
+			tableOfFiguresItemProvider.dispose();
 		}
 		if (tableOfContentsItemProvider != null) {
 			tableOfContentsItemProvider.dispose();

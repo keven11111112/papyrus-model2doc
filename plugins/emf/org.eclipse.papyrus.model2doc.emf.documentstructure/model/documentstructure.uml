@@ -107,8 +107,27 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZfJAIYzyEem126L41vD09A" value="1"/>
       </ownedAttribute>
     </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Tk-G0Oj_Eem_UoEukOln_g" name="TableOfFigures">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_qsHokOj_Eem_UoEukOln_g" annotatedElement="_Tk-G0Oj_Eem_UoEukOln_g">
+        <body>This element represents a Table Of Figures in the final document.</body>
+      </ownedComment>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Tk-G0ej_Eem_UoEukOln_g" name="tofTitle">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_xpV5YOj_Eem_UoEukOln_g" annotatedElement="_Tk-G0ej_Eem_UoEukOln_g">
+          <body>The title to use for the created Table of Figures.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_Tk-G0uj_Eem_UoEukOln_g" name="DEFAULT_TOF_TITLE" value="Table Of Figures"/>
+      </ownedAttribute>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_Tk-G0-j_Eem_UoEukOln_g" client="_Tk-G0Oj_Eem_UoEukOln_g" supplier="_5oa5IEUGEemuabBpL8rs_Q" contract="_5oa5IEUGEemuabBpL8rs_Q"/>
+    </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_ZnvK4EUGEemuabBpL8rs_Q" name="TableOfContents">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_tEZHgOj_Eem_UoEukOln_g" annotatedElement="_ZnvK4EUGEemuabBpL8rs_Q">
+        <body>This element represents a Table Of Contents in the final document.</body>
+      </ownedComment>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_qq5tMEl1Eem4wpUXttaNpQ" name="tocTitle">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_wWCecOj_Eem_UoEukOln_g" annotatedElement="_qq5tMEl1Eem4wpUXttaNpQ">
+          <body>The title to use for the created Table of Contents.</body>
+        </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_ztZocEl1Eem4wpUXttaNpQ" name="DEFAULT_TOC_TITLE" value="Table Of Contents"/>
       </ownedAttribute>
