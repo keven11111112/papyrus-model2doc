@@ -38,6 +38,7 @@ import com.sun.star.beans.Property;
 import com.sun.star.beans.PropertyValue;
 import com.sun.star.beans.XPropertySet;
 import com.sun.star.beans.XPropertySetInfo;
+import com.sun.star.container.XNameAccess;
 import com.sun.star.container.XNameContainer;
 import com.sun.star.document.XDocumentInsertable;
 import com.sun.star.io.IOException;
@@ -47,13 +48,16 @@ import com.sun.star.text.ControlCharacter;
 import com.sun.star.text.SizeType;
 import com.sun.star.text.TextContentAnchorType;
 import com.sun.star.text.WrapTextMode;
+import com.sun.star.text.XDependentTextField;
 import com.sun.star.text.XParagraphCursor;
 import com.sun.star.text.XText;
 import com.sun.star.text.XTextContent;
 import com.sun.star.text.XTextCursor;
+import com.sun.star.text.XTextFieldsSupplier;
 import com.sun.star.text.XTextFrame;
 import com.sun.star.text.XTextTable;
 import com.sun.star.uno.UnoRuntime;
+import com.sun.star.util.NumberFormat;
 
 /**
  * Utility class for writing odt documents.
@@ -175,45 +179,38 @@ public class WriteUtil {
 
 			XParagraphCursor paragraphCursor = UnoRuntime.queryInterface(XParagraphCursor.class, localCursor);
 			XPropertySet paraSet = createXPropertySet(paragraphCursor);
-			paraSet.setPropertyValue("ParaStyleName", "Illustration");// it works!!! in fact we can't push style which have not been declared and which don't exist by default //$NON-NLS-1$ //$NON-NLS-2$
-
-
-
+			paraSet.setPropertyValue("ParaStyleName", "Figure");// it works!!! in fact we can't push style which have not been declared and which don't exist by default //$NON-NLS-1$ //$NON-NLS-2$
 			localCursor.getText().insertTextContent(localCursor, graphicContent, false);
 			localCursor.gotoEnd(true);
-			localCursor.getText().insertString(localCursor, "Illustration", false); //$NON-NLS-1$
 
 
-			// code to add the number of the illustration: doesn't work yet
-			// it is probably not a GetReference I should use...
-			// Object getReferenceObject = xMultiServiceFactory.createInstance("com.sun.star.text.textfield.GetReference");
-			//
-			//
-			// XTextContent xRef = UnoRuntime.queryInterface(XTextContent.class, getReferenceObject);
-			// XPropertySet xRefPropertySet = UnoRuntime.queryInterface(XPropertySet.class, getReferenceObject);
-			//
-			//
-			// xRefPropertySet.setPropertyValue("SourceName", "Illustration");// I get <text:sequence-ref
-			// xRefPropertySet.setPropertyValue("ReferenceFieldPart", ReferenceFieldPart.UP_DOWN);
-			// xRefPropertySet.setPropertyValue("ReferenceFieldSource", ReferenceFieldSource.SEQUENCE_FIELD);
-			// xRefPropertySet.setPropertyValue("SequenceNumber", (short) 2);
+			// managing the caption, we need a text field master
+			XTextFieldsSupplier supplier = UnoRuntime.queryInterface(XTextFieldsSupplier.class, odtEditor.getXTextDocument());
+			XNameAccess masters = supplier.getTextFieldMasters();
+			Object masterSetExpressionForFigure = masters.getByName("com.sun.star.text.fieldmaster.SetExpression.Figure"); //$NON-NLS-1$
 
-			// localCursor.getText().insertControlCharacter(localCursor, ControlCharacter.LINE_BREAK, false);// add style around it
+			// create a dependent SetExpression
+			Object textFieldSetExpression = xMultiServiceFactory.createInstance("com.sun.star.text.textfield.SetExpression"); //$NON-NLS-1$
+			XPropertySet textFieldSetExpressionPropertySet = UnoRuntime.queryInterface(XPropertySet.class, textFieldSetExpression);
+			textFieldSetExpressionPropertySet.setPropertyValue("NumberingType", com.sun.star.style.NumberingType.ARABIC); //$NON-NLS-1$
+			textFieldSetExpressionPropertySet.setPropertyValue("NumberFormat", NumberFormat.NUMBER); //$NON-NLS-1$
+			textFieldSetExpressionPropertySet.setPropertyValue("Content", "Figure + 1"); //$NON-NLS-1$ //$NON-NLS-2$
+			XDependentTextField xDependeantTextFIeld = UnoRuntime.queryInterface(XDependentTextField.class, textFieldSetExpression);
 
-			// localCursor.getText().insertTextContent(localCursor, xRef, false);
+			// attach the dependent SetExpression to its master
+			xDependeantTextFIeld.attachTextFieldMaster(UnoRuntime.queryInterface(XPropertySet.class, masterSetExpressionForFigure));
+
+			localCursor.getText().insertString(localCursor, "Figure ", false); //$NON-NLS-1$
+
+			// insert the SetExpression
+			localCursor.getText().insertTextContent(localCursor, xDependeantTextFIeld, true);
 
 
-			if (null != caption && false == caption.isEmpty()) {
-				StringBuilder builder = new StringBuilder();
-				builder.append(": "); //$NON-NLS-1$
-				builder.append(caption);
-				localCursor.getText().insertString(localCursor, builder.toString(), false);
+			if (caption != null && !caption.isEmpty()) {
+				localCursor.getText().insertString(localCursor, ": " + caption, false); //$NON-NLS-1$
 			}
 
-
 			endParagraph(xTextCursor);
-			// fileIOService.removeFile(new File(image.getPath()));
-
 		} catch (Exception e) {
 			Activator.log.error(e);
 		}

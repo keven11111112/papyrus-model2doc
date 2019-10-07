@@ -50,8 +50,15 @@ public class PropertySetUtil {
 	 */
 	public static Object getPropertyValue(Object object, String propertyName) {
 		Object propertyValue = null;
-		XPropertySet propertySet = UnoRuntime.queryInterface(XPropertySet.class, object);
-		if (propertySet != null) {
+		XPropertySet propertySet = null;
+		if (object instanceof XPropertySet) {
+			propertySet = (XPropertySet) object;
+		} else {
+			propertySet = UnoRuntime.queryInterface(XPropertySet.class, object);
+		}
+		if (propertySet != null)
+
+		{
 			try {
 				propertyValue = propertySet.getPropertyValue(propertyName);
 			} catch (Exception e) {
@@ -74,7 +81,7 @@ public class PropertySetUtil {
 			try {
 				propertySet.setPropertyValue(propertyName, propertyValue);
 			} catch (IllegalArgumentException e) {
-				Activator.log.error("Property " + propertyName + " argument is illegal", e); //$NON-NLS-1$
+				Activator.log.error("Property " + propertyName + " argument is illegal", e); //$NON-NLS-1$ //$NON-NLS-2$
 			} catch (UnknownPropertyException | PropertyVetoException | WrappedTargetException e) {
 				Activator.log.error("Could not set property " + propertyName, e); //$NON-NLS-1$
 			}
@@ -99,6 +106,7 @@ public class PropertySetUtil {
 			System.out.println("prop Name " + tmp.Name); //$NON-NLS-1$
 			System.out.println("prop attr " + tmp.Attributes); //$NON-NLS-1$
 			System.out.println("prop type " + tmp.Type); //$NON-NLS-1$
+			System.out.println("prop value " + getPropertyValue(propertySet, tmp.Name)); //$NON-NLS-1$
 			System.out.println("\n"); //$NON-NLS-1$
 		}
 	}
