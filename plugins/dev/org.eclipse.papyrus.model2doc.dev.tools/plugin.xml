@@ -31,6 +31,13 @@
                         checkEnabled="true">
                   </visibleWhen>
                </command>
+               <command
+                     commandId="org.eclipse.papyrus.model2doc.dev.tools.extractFullODTContents"
+                     style="push">
+                  <visibleWhen
+                        checkEnabled="true">
+                  </visibleWhen>
+               </command>
             <separator
                   name="org.eclipse.papyrus.model2doc.dev.tools.ui.menu.separator.after"
                   visible="true">
@@ -50,9 +57,18 @@
             id="org.eclipse.papyrus.model2doc.dev.tools.createPrototypeFromTemplate"
             name="Create prototype">
       </command>
+      <command
+            description="This command allows to extract all the contents of an odt file"
+            id="org.eclipse.papyrus.model2doc.dev.tools.extractFullODTContents"
+            name="Extract Full ODT file contents">
+      </command>
    </extension>
    <extension
          point="org.eclipse.ui.handlers">
+      <handler
+            class="org.eclipse.papyrus.model2doc.dev.tools.handlers.CreatePrototypeFromTemplateHandler"
+            commandId="org.eclipse.papyrus.model2doc.dev.tools.createPrototypeFromTemplate">
+      </handler>
       <handler
             class="org.eclipse.papyrus.model2doc.dev.tools.handlers.ExtractContentsXmlFileHandler"
             commandId="org.eclipse.papyrus.model2doc.dev.tools.extractXMLContents">
@@ -80,8 +96,30 @@
          </activeWhen>
       </handler>
       <handler
-            class="org.eclipse.papyrus.model2doc.dev.tools.handlers.CreatePrototypeFromTemplateHandler"
-            commandId="org.eclipse.papyrus.model2doc.dev.tools.createPrototypeFromTemplate">
+            class="org.eclipse.papyrus.model2doc.dev.tools.handlers.UnzipOdtFileHandler"
+            commandId="org.eclipse.papyrus.model2doc.dev.tools.extractFullODTContents">
+         <activeWhen>
+            <with
+                  variable="selection">
+               <iterate
+                     ifEmpty="false"
+                     operator="and">
+                  <adapt
+                        type="org.eclipse.core.resources.IFile">
+                     <or>
+                        <test
+                              property="org.eclipse.core.resources.name"
+                              value="*.odt">
+                        </test>
+                        <test
+                              property="org.eclipse.core.resources.name"
+                              value="*.ott">
+                        </test>
+                     </or>
+                  </adapt>
+               </iterate>
+            </with>
+         </activeWhen>
       </handler>
    </extension>
 
