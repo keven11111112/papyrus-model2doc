@@ -111,5 +111,26 @@ public class PropertySetUtil {
 		}
 	}
 
+	/**
+	 *
+	 * @param source
+	 *            the source property to copy
+	 * @param target
+	 *            the destination property
+	 */
+	public static final void copyPropertySet(final XPropertySet source, final XPropertySet target) {
+		final XPropertySetInfo pSetInfo = source.getPropertySetInfo();
+		for (Property tmp : pSetInfo.getProperties()) {
+			if (!PropertyUtil.isReadOnly(tmp)) {
+				final String propName = tmp.Name;
+				try {
+					target.setPropertyValue(propName, getPropertyValue(source, propName));
+				} catch (IllegalArgumentException | UnknownPropertyException | PropertyVetoException | WrappedTargetException e) {
+					Activator.log.error(NLS.bind("An error occured during the copy of a propertySet, for the property {0}", propName), e); //$NON-NLS-1$
+				}
+			}
+		}
+	}
+
 
 }
