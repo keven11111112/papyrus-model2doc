@@ -1,13 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Schema file written by PDE -->
-<schema targetNamespace="org.eclipse.papyrus.model2doc.emf.template2structure" xmlns="http://www.w3.org/2001/XMLSchema">
+<schema targetNamespace="org.eclipse.papyrus.model2doc.emf.structure2document" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
       <appinfo>
-         <meta.schema plugin="org.eclipse.papyrus.model2doc.emf.template2structure" id="structuregenerator" name="structuregenerator"/>
+         <meta.schema plugin="org.eclipse.papyrus.model2doc.emf.structure2document" id="documentgenerator" name="documentgenerator"/>
       </appinfo>
       <documentation>
-         This extension point is used to register generators allowing to convert a DocumentStructureTemplate into a DocumentStructure, traversing a user model. 
-This extension point also allows to register mapper classes in charge to create DocumentStructure element from DocumentStructureTemplate.
+         This extension point is used to register generators allowing to convert a DocumentStructure into the final Document.
       </documentation>
    </annotation>
 
@@ -18,9 +17,8 @@ This extension point also allows to register mapper classes in charge to create 
          </appinfo>
       </annotation>
       <complexType>
-         <choice>
-            <element ref="generator" minOccurs="0" maxOccurs="unbounded"/>
-            <element ref="mapper" minOccurs="0" maxOccurs="unbounded"/>
+         <choice minOccurs="1" maxOccurs="unbounded">
+            <element ref="generator"/>
          </choice>
          <attribute name="point" type="string" use="required">
             <annotation>
@@ -54,47 +52,17 @@ This extension point also allows to register mapper classes in charge to create 
          <attribute name="id" type="string" use="required">
             <annotation>
                <documentation>
-                  The id of the generator.
+                  The generator&apos;s id.
                </documentation>
             </annotation>
          </attribute>
          <attribute name="class" type="string" use="required">
             <annotation>
                <documentation>
-                  A class implementing org.eclipse.papyrus.model2doc.emf.template2structure.generator.ITemplate2StructureGenerator in charge of the document structure generation
+                  A class implementing org.eclipse.papyrus.model2doc.emf.structure2document.generator.IStructure2DocumentGenerator in charge of the document generation
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn=":org.eclipse.papyrus.model2doc.emf.template2structure.generator.ITemplate2StructureGenerator"/>
-               </appinfo>
-            </annotation>
-         </attribute>
-      </complexType>
-   </element>
-
-   <element name="mapper">
-      <annotation>
-         <documentation>
-            This element allows to define mapper classes.
-         </documentation>
-      </annotation>
-      <complexType>
-         <attribute name="generatorId" type="string" use="required">
-            <annotation>
-               <documentation>
-                  Reference an id defined for a org.eclipse.papyrus.model2doc.emf.template2structure.generator.
-               </documentation>
-               <appinfo>
-                  <meta.attribute kind="identifier" basedOn="org.eclipse.papyrus.model2doc.emf.template2structure.structuregenerator/generator/@id"/>
-               </appinfo>
-            </annotation>
-         </attribute>
-         <attribute name="class" type="string" use="required">
-            <annotation>
-               <documentation>
-                  Define a mapper class. This class must extends org.eclipse.papyrus.model2doc.emf.template2structure.mapping.service.AbtractTemplateToStructureMapper.
-               </documentation>
-               <appinfo>
-                  <meta.attribute kind="java" basedOn="org.eclipse.papyrus.model2doc.emf.template2structure.mapping.AbstractTemplateToStructureMapper:"/>
+                  <meta.attribute kind="java" basedOn=":org.eclipse.papyrus.model2doc.emf.structure2document.generator.IStructure2DocumentGenerator"/>
                </appinfo>
             </annotation>
          </attribute>
@@ -106,7 +74,7 @@ This extension point also allows to register mapper classes in charge to create 
          <meta.section type="since"/>
       </appinfo>
       <documentation>
-         Since 0.7.0
+         Since 0.8.0
       </documentation>
    </annotation>
 

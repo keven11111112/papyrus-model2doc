@@ -32,6 +32,10 @@
                </with>
             </visibleWhen>
          </command>
+         <dynamic
+               class="org.eclipse.papyrus.model2doc.emf.template2structure.internal.menu.GenerateStructureAndDocumentMenuContributionItem"
+               id="org.eclipse.papyrus.model2doc.emf.template2structure.generateStructureAndDocument.menu">
+         </dynamic>
       </menuContribution>
    </extension>
    <extension
@@ -59,12 +63,39 @@
                </with>
          </activeWhen>
       </handler>
+      <handler
+            class="org.eclipse.papyrus.model2doc.emf.template2structure.internal.handler.GenerateStructureAndDocumentHandler"
+            commandId="org.eclipse.papyrus.model2doc.emf.template2structure.generatestructureAndDocument">
+         <activeWhen>
+            <with
+                  variable="selection">
+               <and>
+                  <count
+                        value="1">
+                  </count>
+                  <iterate
+                        ifEmpty="false">
+                     <adapt
+                           type="org.eclipse.emf.ecore.EObject">
+                        <instanceof
+                              value="org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate">
+                        </instanceof>
+                     </adapt>
+                  </iterate>
+               </and>
+            </with>
+         </activeWhen>
+      </handler>
    </extension>
    <extension
          point="org.eclipse.ui.commands">
       <command
             id="org.eclipse.papyrus.model2doc.emf.template2structure.command"
             name="Generate EMF Document Structure">
+      </command>
+      <command
+            id="org.eclipse.papyrus.model2doc.emf.template2structure.generatestructureAndDocument"
+            name="Generate Structure and Document">
       </command>
    </extension>
    <extension

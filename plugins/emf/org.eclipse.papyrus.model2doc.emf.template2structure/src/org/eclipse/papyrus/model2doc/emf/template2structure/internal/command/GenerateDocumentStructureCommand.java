@@ -33,7 +33,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.internal.resource.Doc
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate;
 import org.eclipse.papyrus.model2doc.emf.template2structure.Activator;
 import org.eclipse.papyrus.model2doc.emf.template2structure.generator.ITemplate2StructureGenerator;
-import org.eclipse.papyrus.model2doc.emf.template2structure.internal.registry.Template2StructureRegistry;
+import org.eclipse.papyrus.model2doc.emf.template2structure.generator.Template2StructureRegistry;
 
 /**
  * The command is used to create the {@link Document} from a {@link DocumentTemplate}.

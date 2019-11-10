@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="documentgenerator" name="documentgenerator" schema="schema/documentgenerator.exsd"/>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.ui.popup.any">
+         <dynamic
+               class="org.eclipse.papyrus.model2doc.emf.structure2document.internal.menu.DocumentGenerationMenuContributionItem"
+               id="org.eclipse.papyrus.model2doc.emf.structure2document.documentgeneration.menu">
+         </dynamic>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="org.eclipse.papyrus.model2doc.emf.structure2document.generate.document"
+            name="Generate Document">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="org.eclipse.papyrus.model2doc.emf.structure2document.internal.handlers.GenerateDocumentFileHandler"
+            commandId="org.eclipse.papyrus.model2doc.emf.structure2document.generate.document">
+         <activeWhen>
+            <with
+                  variable="selection">
+               <and>
+                  <count
+                        value="1">
+                  </count>
+                  <iterate
+                        ifEmpty="false">
+                     <adapt
+                           type="org.eclipse.emf.ecore.EObject">
+                        <instanceof
+                              value="org.eclipse.papyrus.model2doc.emf.documentstructure.Document">
+                        </instanceof>
+                     </adapt>
+                  </iterate>
+               </and>
+            </with>
+         </activeWhen>
+      </handler>
+   </extension>
+
+</plugin>

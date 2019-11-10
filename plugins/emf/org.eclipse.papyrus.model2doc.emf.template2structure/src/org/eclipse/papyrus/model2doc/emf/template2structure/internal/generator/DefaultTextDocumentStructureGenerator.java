@@ -21,7 +21,6 @@ import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration;
-import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Document;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructureFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.StringVersion;
@@ -31,8 +30,8 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTempl
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentTemplate;
 import org.eclipse.papyrus.model2doc.emf.template2structure.Activator;
 import org.eclipse.papyrus.model2doc.emf.template2structure.generator.ITemplate2StructureGenerator;
+import org.eclipse.papyrus.model2doc.emf.template2structure.generator.Template2StructureRegistry;
 import org.eclipse.papyrus.model2doc.emf.template2structure.internal.mapping.TemplateToStructureMappingService;
-import org.eclipse.papyrus.model2doc.emf.template2structure.internal.registry.Template2StructureRegistry;
 import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.AbstractTemplateToStructureMapper;
 import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.IMappingService;
 
@@ -58,14 +57,9 @@ public class DefaultTextDocumentStructureGenerator implements ITemplate2Structur
 	 */
 	@Override
 	public boolean handles(final DocumentTemplate docTemplate) {
-		final IDocumentStructureGeneratorConfiguration conf = docTemplate.getDocumentStructureGeneratorConfiguration();
-		if (false == GENERATOR_ID.equals(conf.getStructureGeneratorId())) {
-			return false;
-		}
-		if (false == docTemplate instanceof TextDocumentTemplate) {
-			return false;
-		}
-		return true;
+		// we must not check the genrator id in this method.
+		// We just need to check the type of Documenttemplate
+		return docTemplate instanceof TextDocumentTemplate;
 	}
 
 	/**
@@ -166,7 +160,27 @@ public class DefaultTextDocumentStructureGenerator implements ITemplate2Structur
 	 */
 	@Override
 	public String getDescription() {
-		return NLS.bind("This generator converts a {0} into a {1} from the current user model", TextDocumentTemplate.class.getName(), TextDocument.class.getName()); //$NON-NLS-1$
+		return NLS.bind("This generator converts a {0} into a {1} from the current user model.", TextDocumentTemplate.class.getName(), TextDocument.class.getName()); //$NON-NLS-1$
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.model2doc.emf.template2structure.generator.ITemplate2StructureGenerator#getLabel()
+	 *
+	 * @return
+	 */
+	@Override
+	public String getEditorLabel() {
+		return "Text Structure - Default Generator"; //$NON-NLS-1$
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.model2doc.emf.template2structure.generator.ITemplate2StructureGenerator#getGenerateMenuLabel()
+	 *
+	 * @return
+	 */
+	@Override
+	public String getGenerateMenuLabel() {
+		return "Structure"; //$NON-NLS-1$
 	}
 
 }

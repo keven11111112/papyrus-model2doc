@@ -13,17 +13,16 @@
  *
  *****************************************************************************/
 
-package org.eclipse.papyrus.model2doc.emf.template2structure.generator;
+package org.eclipse.papyrus.model2doc.emf.structure2document.generator;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Document;
-import org.eclipse.papyrus.model2doc.emf.documentstructure.Version;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate;
+
 
 /**
  * Interface to use to implements template to structure generator and contribute to the extension point
- * org.eclipse.papyrus.model2doc.emf.template2structure/generator
+ * org.eclipse.papyrus.model2doc.emf.strucre2document.documentgenerator
  */
-public interface ITemplate2StructureGenerator {
+public interface IStructure2DocumentGenerator {
 
 	/**
 	 *
@@ -31,14 +30,14 @@ public interface ITemplate2StructureGenerator {
 	 *            a document template
 	 * @return
 	 *         <code>true</code> if the current generator manages this document template, <code>false</code> otherwise
-	 *         This method must NOT check the id of the declared generator
+	 *         This method must NOT use the declared generatorId to calculate its capability to manage it.
 	 */
-	public boolean handles(final DocumentTemplate docTemplate);
+	public boolean handles(final Document docTemplate);
 
 	/**
 	 *
 	 * @return
-	 *         the generator's identifier
+	 *         the identifier of the current generator
 	 */
 	public String getGeneratorId();
 
@@ -46,14 +45,11 @@ public interface ITemplate2StructureGenerator {
 	 *
 	 * @param docTemplate
 	 *            a document template
-	 * @param documentVersion
-	 *            an object representing the version of the generated document.
-	 *            this object must be a String or a {@link Version}. Others elements will be ignored.
-	 *            <code>null</code> is allowed too
 	 * @return
 	 *         the generated Document structure from the document template
 	 */
-	public Document generate(final DocumentTemplate docTemplate, final Object documentVersion);
+	// TODO : return type should be file/Ifile or better a list ?
+	public Object generate(final Document docTemplate);
 
 	/**
 	 *

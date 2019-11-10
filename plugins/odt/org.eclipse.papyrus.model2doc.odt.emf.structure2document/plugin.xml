@@ -116,5 +116,12 @@
          </activeWhen>
       </handler>
    </extension>
+   <extension
+         point="org.eclipse.papyrus.model2doc.emf.structure2document.documentgenerator">
+      <generator
+            class="org.eclipse.papyrus.model2doc.odt.emf.structure2document.internal.generators.TextDocumentToODTGenerator"
+            id="org.eclipse.papyrus.model2doc.document.generator.odt">
+      </generator>
+   </extension>
 
 </plugin>

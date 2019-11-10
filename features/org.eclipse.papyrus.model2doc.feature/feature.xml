@@ -223,6 +223,13 @@
          unpack="false"/>
 
    <plugin
+         id="org.eclipse.papyrus.model2doc.emf.structure2document"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         
+   <plugin
          id="org.eclipse.papyrus.model2doc.doc"
          download-size="0"
          install-size="0"

@@ -55,7 +55,9 @@ This code should be done in a plugin called ''org.eclipse.papyrus.integration.xx
 We advise you to manage the EMF property view, before embedding it in Papyrus (because there is shared code between them). 
 ===In case of new DocumentStructureTemplate metamodel===
 #As an example, you can look at the plugin <code>org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.properties</code>
-#Contribute to the extension point <code>org.eclipse.ui.views.properties.tabbed.propertySections</code> and you should get something like this:<code>
+#Contribute to the extension point <code>org.eclipse.ui.views.properties.tabbed.propertySections</code> and you should get something like this:
+
+
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertySections">
       <propertySections
@@ -71,10 +73,10 @@ We advise you to manage the EMF property view, before embedding it in Papyrus (b
          </propertySection>
       </propertySections>
    </extension>
-</code>
+
+
 #'''class''': we advise you to extends <code>org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.properties.sections.AbstractEObjectAdvancedPropertySection</code>. This class will provide a <code>org.eclipse.emf.edit.ui.provider.PropertySource</code>, this <code>PropertySource</code> will provide a custom <code>org.eclipse.ui.views.properties.IPropertyDescriptor</code>.
 #'''filter''': a class implementing <code>org.eclipse.jface.viewers.IFilter</code> 
 
 ===In case of new property in an existing metamodel===
 You just need to manage your new feature in the method <code>PropertySource.createPropertyDescriptor(IItemPropertyDescriptor)</code> of the existing <code>PropertySource</code>
-

@@ -13,7 +13,7 @@
  *
  *****************************************************************************/
 
-package org.eclipse.papyrus.model2doc.emf.template2structure.internal.registry;
+package org.eclipse.papyrus.model2doc.emf.template2structure.generator;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -30,7 +30,6 @@ import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate;
 import org.eclipse.papyrus.model2doc.emf.template2structure.Activator;
-import org.eclipse.papyrus.model2doc.emf.template2structure.generator.ITemplate2StructureGenerator;
 import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.AbstractTemplateToStructureMapper;
 
 /**
@@ -176,9 +175,9 @@ public final class Template2StructureRegistry {
 	 * @param generatorId
 	 *            the id of a generator
 	 * @return
-	 * 		the generator for this id or <code>null</code> if not found
+	 *         the generator for this id or <code>null</code> if not found
 	 */
-	private final ITemplate2StructureGenerator getGenerator(final String generatorId) {
+	public final ITemplate2StructureGenerator getGenerator(final String generatorId) {
 		Assert.isNotNull(generatorId);
 		final ITemplate2StructureGenerator generator = this.generators.get(generatorId);
 		if (null == generator) {
@@ -192,7 +191,7 @@ public final class Template2StructureRegistry {
 	 * @param docTemplate
 	 *            a document template
 	 * @return
-	 * 		the generator if found, or <code>null</code>
+	 *         the generator if found, or <code>null</code>
 	 */
 	public ITemplate2StructureGenerator getGenerator(final DocumentTemplate docTemplate) {
 		Assert.isNotNull(docTemplate);
@@ -208,7 +207,7 @@ public final class Template2StructureRegistry {
 	 * @param docTemplate
 	 *            a document template
 	 * @return
-	 * 		the mappers registered for the generator declared in the document template
+	 *         the mappers registered for the generator declared in the document template
 	 */
 	public List<AbstractTemplateToStructureMapper<?>> getMappers(final DocumentTemplate docTemplate) {
 		final String structureGeneratorId = docTemplate.getDocumentStructureGeneratorConfiguration().getStructureGeneratorId();
@@ -224,4 +223,20 @@ public final class Template2StructureRegistry {
 		return new LinkedList<>(returnedMappers);
 	}
 
+	/**
+	 *
+	 * @param docTemplate
+	 *            a document template
+	 * @return
+	 *         the list of generators for this document template
+	 */
+	public List<ITemplate2StructureGenerator> getAvailableGenerators(final DocumentTemplate docTemplate) {
+		final List<ITemplate2StructureGenerator> generators = new ArrayList<>();
+		for (ITemplate2StructureGenerator current : this.generators.values()) {
+			if (current.handles(docTemplate)) {
+				generators.add(current);
+			}
+		}
+		return generators;
+	}
 }

@@ -138,7 +138,7 @@ As an example, you can look the plugin <code>org.eclipse.papyrus.model2doc.emf.t
 **the ''id'' field is the id of the generator you wish to contribute. The generator's id provided by Papyrus-Model2Doc is ''TextDocumentStructureGenerator.default''
 
 
-==How to create a new DocumentTemplatePrototype from an existing DocumentTemplate?==
+=How to create a new DocumentTemplatePrototype from an existing DocumentTemplate?=
 The Papyrus-Model2Doc Developper Tools must be installed in your Eclipse.
 
 *Select a DocumentTemplate (also works from the Papyrus integration)
@@ -147,4 +147,13 @@ The Papyrus-Model2Doc Developper Tools must be installed in your Eclipse.
 *a dialog appears, fill the fields (Warning, values are not checked) and click '''OK'''
 [[Image:images/devDoc/devDoc-004_CreateDocumentPrototypeDialogToFill.png]]
 *a new file is created in your workspace, in the same plugin than the selected DocumentTemplate. You can move it to its final location.
- 
+
+=How to contribute new Document Structure generator=
+This generator is in charge to generate the DocumentStructure from your model and a DocumentStructureTemplate.
+You must create a new class implementing <code>org.eclipse.papyrus.model2doc.emf.template2structure.generator.ITemplate2StructureGenerator</code>
+This class must be registered with the extension point <code>org.eclipse.papyrus.model2doc.emf.template2structure.structuregenerator</code>
+
+=How to contribute a new Document generator=
+This generator is in charge to generate the final document from a DocumentStructure.
+You must create a new class implementing <code>org.eclipse.papyrus.model2doc.emf.structure2document.generator.IStructure2DocumentGenerator</code>.
+This class must be registered with the extension point <code>org.eclipse.papyrus.model2doc.emf.structure2document.documentgenerator</code>.
