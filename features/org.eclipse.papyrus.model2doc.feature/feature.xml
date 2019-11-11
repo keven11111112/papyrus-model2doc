@@ -172,7 +172,7 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-
+         
    <plugin
          id="org.eclipse.papyrus.model2doc.emf.documentstructure"
          download-size="0"
@@ -210,6 +210,13 @@
 
    <plugin
          id="org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.model2doc.emf.generatorconfiguration.properties"
          download-size="0"
          install-size="0"
          version="0.0.0"

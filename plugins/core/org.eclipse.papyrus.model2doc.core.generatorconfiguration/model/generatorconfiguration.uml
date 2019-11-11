@@ -20,6 +20,9 @@
       </ownedComment>
       <generalization xmi:type="uml:Generalization" xmi:id="_BuKTsE13EemE05tA7eq89g" general="_5Tg7AFCJEemNlsOH2YnpzQ"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_qrYv4E1bEemE05tA7eq89g" name="structureGeneratorId">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_IG2esAPPEeqj06gTey36fQ" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_IG2esQPPEeqj06gTey36fQ" key="propertyEditorFactory" value="editor://generatorconfiguration/AbstractDocumentStructureGeneratorConfiguration/structureGeneratorId/"/>
+        </eAnnotations>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4pELsE1bEemE05tA7eq89g"/>
       </ownedAttribute>
@@ -121,6 +124,9 @@ It can't be a system path (c:\myDocuments is not alloxed for example).</body>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_b0oqQl9zEemxcMQajU1fyA"/>
       </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_b0oqQ19zEemxcMQajU1fyA" name="documentGeneratorId">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_dbJfkAPLEeqj06gTey36fQ" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jD8UEAPLEeqj06gTey36fQ" key="propertyEditorFactory" value="editor://generatorconfiguration/AbstractDocumentGeneratorConfiguration/documentGeneratorId/"/>
+        </eAnnotations>
         <ownedComment xmi:type="uml:Comment" xmi:id="_b0oqRF9zEemxcMQajU1fyA" annotatedElement="_b0oqQ19zEemxcMQajU1fyA">
           <body>The identifier of the document generator to use.</body>
         </ownedComment>

@@ -22,6 +22,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -145,7 +146,8 @@ public class AbstractDocumentGeneratorConfigurationItemProvider
 				false,
 				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				null,
-				null));
+				null,
+				URI.createURI("editor://generatorconfiguration/AbstractDocumentGeneratorConfiguration/documentGeneratorId/")));
 	}
 
 	/**
