@@ -24,39 +24,66 @@ import org.eclipse.papyrus.model2doc.odt.internal.editor.DefaultStyleEditor;
 import org.eclipse.papyrus.model2doc.odt.internal.transcription.ODTTranscription;
 
 /**
- *
+ * This helper allows to create the ODT file from a {@link TextDocument}
  */
+// TODO : a such class should be API, without dependencies on ODT
 public class CreateODTFileFromTextDocumentHelper {
 
+	/**
+	 * The initial text document
+	 */
 	private TextDocument textDocument;
 
-	protected CreateODTFileFromTextDocumentHelper() {
-		// nothing to do
-	}
-
+	/**
+	 *
+	 * Constructor.
+	 *
+	 * @param textDocument
+	 *            the text document we want to process
+	 */
 	public CreateODTFileFromTextDocumentHelper(final TextDocument textDocument) {
-		setTextDocument(textDocument);
+		this.textDocument = textDocument;
 	}
 
 
-	public void generate() {
+	/**
+	 * This method generate the final odt document
+	 */
+	public void generate() {// TODO : must return the generated file
 		if (this.textDocument == null) {
 			Activator.log.warn("The TextDocument is null"); //$NON-NLS-1$
 			return;
 		}
 		final IDocumentGeneratorConfiguration ddgc = textDocument.getDocumentGeneratorConfiguration();
 
-		DefaultStyleEditor styleEditor = new DefaultStyleEditor();
-		Transcription transcription = new ODTTranscription(styleEditor, ddgc);
+		final Transcription transcription = createTranscription(ddgc);
 
-		Transcriber t = new StructureToODTTranscriber(textDocument, transcription);
+		Transcriber t = createTranscriber(textDocument, transcription);
 		t.transcribe();
 	}
 
+	/**
+	 *
+	 * @param ddgc
+	 *            the document generation configuration
+	 * @return
+	 *         the transcription to use to write the ODT documentF
+	 */
+	protected Transcription createTranscription(final IDocumentGeneratorConfiguration ddgc) {
+		return new ODTTranscription(new DefaultStyleEditor(), ddgc);
+	}
 
-
-	protected void setTextDocument(final TextDocument textDocument) {
-		this.textDocument = textDocument;
+	/**
+	 *
+	 * @param textDocument
+	 *            the text document
+	 * @param transcription
+	 *            the transcription to use
+	 * @return
+	 *         the Transcriber in charge to cross the TextDocument to write the final document using the Transcription element
+	 */
+	protected Transcriber createTranscriber(final TextDocument textDocument, final Transcription transcription) {
+		return new StructureToODTTranscriber(textDocument, transcription);
 	}
 
 }

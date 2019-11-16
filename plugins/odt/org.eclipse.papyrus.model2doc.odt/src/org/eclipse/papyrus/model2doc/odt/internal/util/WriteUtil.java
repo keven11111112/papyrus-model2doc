@@ -21,7 +21,6 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.core.runtime.Assert;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractTable;
 import org.eclipse.papyrus.model2doc.core.builtintypes.Cell;
@@ -34,11 +33,8 @@ import org.eclipse.papyrus.model2doc.odt.internal.editor.ODTEditor;
 import org.eclipse.papyrus.model2doc.odt.service.ODTFileIOService;
 import org.eclipse.papyrus.model2doc.odt.service.ODTFileIOServiceImpl;
 
-import com.sun.star.beans.Property;
 import com.sun.star.beans.PropertyValue;
 import com.sun.star.beans.XPropertySet;
-import com.sun.star.beans.XPropertySetInfo;
-import com.sun.star.container.XNameAccess;
 import com.sun.star.container.XNameContainer;
 import com.sun.star.document.XDocumentInsertable;
 import com.sun.star.io.IOException;
@@ -48,16 +44,13 @@ import com.sun.star.text.ControlCharacter;
 import com.sun.star.text.SizeType;
 import com.sun.star.text.TextContentAnchorType;
 import com.sun.star.text.WrapTextMode;
-import com.sun.star.text.XDependentTextField;
 import com.sun.star.text.XParagraphCursor;
 import com.sun.star.text.XText;
 import com.sun.star.text.XTextContent;
 import com.sun.star.text.XTextCursor;
-import com.sun.star.text.XTextFieldsSupplier;
 import com.sun.star.text.XTextFrame;
 import com.sun.star.text.XTextTable;
 import com.sun.star.uno.UnoRuntime;
-import com.sun.star.util.NumberFormat;
 
 /**
  * Utility class for writing odt documents.
@@ -88,17 +81,40 @@ public class WriteUtil {
 	 * Add Paragraph.
 	 *
 	 * @param xTextCursor
+	 *            the {@link XTextCursor} to use to edit the document
 	 * @param text
+	 *            the text to write
 	 * @param processRichText
+	 *            if <code>true</code> the text represents RichText contents
 	 */
 	public static void addParagraph(XTextCursor xTextCursor, String text, boolean processRichText) {
+		addParagraph(xTextCursor, text, processRichText, true);
+	}
+
+
+	/**
+	 * Add Paragraph.
+	 *
+	 * @param xTextCursor
+	 *            the {@link XTextCursor} to use to edit the document
+	 * @param text
+	 *            the text to write
+	 * @param processRichText
+	 *            if <code>true</code> the text represents RichText contents
+	 * @param endParagraph
+	 *            if <code>true</code>, we will add a new line at the end of the paragraph
+	 */
+	public static void addParagraph(final XTextCursor xTextCursor, final String text, final boolean processRichText, final boolean endParagraph) {
 		if (processRichText) {
 			addParagraphWithRichText(xTextCursor, text);
 		} else {
 			addText(xTextCursor, text);
-			endParagraph(xTextCursor);
+			if (endParagraph) {
+				endParagraph(xTextCursor);
+			}
 		}
 	}
+
 
 	/**
 	 * Add control character to end of document.
@@ -136,90 +152,8 @@ public class WriteUtil {
 	}
 
 	public static void addImageLink(String imageFilePath, String caption, XTextCursor xTextCursor, ODTEditor odtEditor) {
-		if (false == imageFilePath.startsWith(odtFileIOService.getODTFilePrefix())) {
-			imageFilePath = odtFileIOService.getODTFilePrefix() + imageFilePath;
-		}
-		try {
-			XMultiServiceFactory xMultiServiceFactory = odtEditor.getXMultiServiceFactory();
-
-			Object tmp = xMultiServiceFactory.createInstance("com.sun.star.text.TextFrame"); //$NON-NLS-1$
-			XTextFrame textFrame = UnoRuntime.queryInterface(XTextFrame.class, tmp);
-			XPropertySet framePropertySet = createXPropertySet(textFrame);
-			framePropertySet.setPropertyValue("SizeType", SizeType.VARIABLE); //$NON-NLS-1$
-			framePropertySet.setPropertyValue("AnchorType", TextContentAnchorType.AS_CHARACTER); //$NON-NLS-1$
-			framePropertySet.setPropertyValue("ZOrder", 1);// not really sure //$NON-NLS-1$
-			framePropertySet.setPropertyValue("TextWrap", WrapTextMode.THROUGH); //$NON-NLS-1$
-
-			// remove the margin around the image
-			framePropertySet.setPropertyValue(BaseFramePropertiesConstants.LEFT_BORDER_DISTANCE, 0);
-			framePropertySet.setPropertyValue(BaseFramePropertiesConstants.RIGHT_BORDER_DISTANCE, 0);
-			framePropertySet.setPropertyValue(BaseFramePropertiesConstants.TOP_BORDER_DISTANCE, 0);
-			framePropertySet.setPropertyValue(BaseFramePropertiesConstants.BOTTOM_BORDER_DISTANCE, 0);
-
-			// Creating the service GraphicObject
-			Object graphicObject = xMultiServiceFactory.createInstance("com.sun.star.text.TextGraphicObject"); //$NON-NLS-1$
-
-			// Creating TextContent for GraphicObject
-			XTextContent graphicContent = UnoRuntime.queryInterface(XTextContent.class, graphicObject);
-
-			// Creating bitmap container service
-			XNameContainer bitmapContainer = UnoRuntime.queryInterface(XNameContainer.class, xMultiServiceFactory.createInstance("com.sun.star.drawing.BitmapTable")); //$NON-NLS-1$
-
-			// Inserting image to the container
-			bitmapContainer.insertByName(imageFilePath, imageFilePath);
-
-			PropertySetUtil.setProperty(graphicContent, "AnchorType", TextContentAnchorType.AT_CHARACTER); //$NON-NLS-1$
-			PropertySetUtil.setProperty(graphicContent, "GraphicURL", bitmapContainer.getByName(imageFilePath)); //$NON-NLS-1$
-
-			graphicContent = ImageUtil.resizeImage(graphicContent, imageFilePath, odtEditor.getXTextDocument(), odtEditor.getXMultiComponentFactory(), odtEditor.getXComponentContext());
-
-			XPropertySet graphicPropSet = createXPropertySet(graphicContent);
-			Object heightValue = graphicPropSet.getPropertyValue("Height"); //$NON-NLS-1$
-			Object widthValue = graphicPropSet.getPropertyValue("Width"); //$NON-NLS-1$
-			XPropertySet textFrameSet = createXPropertySet(textFrame);
-			textFrameSet.setPropertyValue("Height", heightValue);// TODO don't work, and should be on the next level... //$NON-NLS-1$
-			textFrameSet.setPropertyValue("Width", widthValue); //$NON-NLS-1$
-
-			xTextCursor.getText().insertTextContent(xTextCursor, textFrame, false);
-			XTextCursor localCursor = textFrame.getText().createTextCursor();
-
-			XParagraphCursor paragraphCursor = UnoRuntime.queryInterface(XParagraphCursor.class, localCursor);
-			XPropertySet paraSet = createXPropertySet(paragraphCursor);
-			paraSet.setPropertyValue("ParaStyleName", "Figure");// it works!!! in fact we can't push style which have not been declared and which don't exist by default //$NON-NLS-1$ //$NON-NLS-2$
-			localCursor.getText().insertTextContent(localCursor, graphicContent, false);
-			localCursor.gotoEnd(true);
-
-
-			// managing the caption, we need a text field master
-			XTextFieldsSupplier supplier = UnoRuntime.queryInterface(XTextFieldsSupplier.class, odtEditor.getXTextDocument());
-			XNameAccess masters = supplier.getTextFieldMasters();
-			Object masterSetExpressionForFigure = masters.getByName("com.sun.star.text.fieldmaster.SetExpression.Figure"); //$NON-NLS-1$
-
-			// create a dependent SetExpression
-			Object textFieldSetExpression = xMultiServiceFactory.createInstance("com.sun.star.text.textfield.SetExpression"); //$NON-NLS-1$
-			XPropertySet textFieldSetExpressionPropertySet = UnoRuntime.queryInterface(XPropertySet.class, textFieldSetExpression);
-			textFieldSetExpressionPropertySet.setPropertyValue("NumberingType", com.sun.star.style.NumberingType.ARABIC); //$NON-NLS-1$
-			textFieldSetExpressionPropertySet.setPropertyValue("NumberFormat", NumberFormat.NUMBER); //$NON-NLS-1$
-			textFieldSetExpressionPropertySet.setPropertyValue("Content", "Figure + 1"); //$NON-NLS-1$ //$NON-NLS-2$
-			XDependentTextField xDependeantTextFIeld = UnoRuntime.queryInterface(XDependentTextField.class, textFieldSetExpression);
-
-			// attach the dependent SetExpression to its master
-			xDependeantTextFIeld.attachTextFieldMaster(UnoRuntime.queryInterface(XPropertySet.class, masterSetExpressionForFigure));
-
-			localCursor.getText().insertString(localCursor, "Figure ", false); //$NON-NLS-1$
-
-			// insert the SetExpression
-			localCursor.getText().insertTextContent(localCursor, xDependeantTextFIeld, true);
-
-
-			if (caption != null && !caption.isEmpty()) {
-				localCursor.getText().insertString(localCursor, ": " + caption, false); //$NON-NLS-1$
-			}
-
-			endParagraph(xTextCursor);
-		} catch (Exception e) {
-			Activator.log.error(e);
-		}
+		ParagraphImageWriter writer = new ParagraphImageWriter(odtEditor);
+		writer.writeImage(xTextCursor, imageFilePath, caption);
 	}
 
 	public static void addImageLink(ImageDescription image, String caption, XTextCursor xTextCursor, ODTEditor odtEditor) {
@@ -229,7 +163,7 @@ public class WriteUtil {
 			XMultiServiceFactory xMultiServiceFactory = odtEditor.getXMultiServiceFactory();
 
 			Object tmp = xMultiServiceFactory.createInstance("com.sun.star.text.TextFrame"); //$NON-NLS-1$
-			XTextFrame textFrame = UnoRuntime.queryInterface(XTextFrame.class, tmp);
+			final XTextFrame textFrame = UnoRuntime.queryInterface(XTextFrame.class, tmp);
 			XPropertySet framePropertySet = createXPropertySet(textFrame);
 			framePropertySet.setPropertyValue("SizeType", SizeType.VARIABLE); //$NON-NLS-1$
 			framePropertySet.setPropertyValue("AnchorType", TextContentAnchorType.AS_CHARACTER); //$NON-NLS-1$
@@ -318,24 +252,6 @@ public class WriteUtil {
 	private static final XPropertySet createXPropertySet(final Object object) {
 		return UnoRuntime.queryInterface(XPropertySet.class, object);
 	}
-
-	private static final void displayPropertySet(final XPropertySet propertySet, final String relativeObjectName) {
-		Assert.isNotNull(propertySet);
-		Assert.isNotNull(relativeObjectName);
-		System.out.println(NLS.bind("-----------------------properties of {0}--------------------", relativeObjectName)); //$NON-NLS-1$
-		XPropertySetInfo set12 = propertySet.getPropertySetInfo();
-		for (Property tmp : set12.getProperties()) {
-			System.out.println("prop Name " + tmp.Name); //$NON-NLS-1$
-			System.out.println("prop attr " + tmp.Attributes); //$NON-NLS-1$
-			System.out.println("prop type " + tmp.Type); //$NON-NLS-1$
-			System.out.println("\n"); //$NON-NLS-1$
-		}
-	}
-
-
-
-
-	// }
 
 	/**
 	 * End line.

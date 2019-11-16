@@ -34,6 +34,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.Title;
 
 /**
  * This class crosses a {@link TextDocument} to fill an odt file
+ * TODO : this class must be moved. it has no dependencies on odt
  */
 public class StructureToODTTranscriber implements Transcriber {
 

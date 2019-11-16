@@ -62,7 +62,9 @@ public class PropertySetUtil {
 			try {
 				propertyValue = propertySet.getPropertyValue(propertyName);
 			} catch (Exception e) {
-				Activator.log.error("Could not get property " + propertyName, e); //$NON-NLS-1$
+				// we don't display the expection, because it spam the console when we are debugging
+				propertyValue = "Not available : exception generated"; //$NON-NLS-1$
+				// Activator.log.error("Could not get property " + propertyName, e); //$NON-NLS-1$
 			}
 		}
 		return propertyValue;
@@ -110,6 +112,21 @@ public class PropertySetUtil {
 			System.out.println("\n"); //$NON-NLS-1$
 		}
 	}
+
+	/**
+	 *
+	 * A method for debug purpose
+	 *
+	 * @param propertySet
+	 *            a property set
+	 * @param relativeObjectName
+	 *            the name of the object for which we want explore the property set
+	 */
+	public static final void displayPropertySet(final Object object, final String relativeObjectName) {
+		XPropertySet propertySet = UnoRuntime.queryInterface(XPropertySet.class, object);
+		displayPropertySet(propertySet, relativeObjectName);
+	}
+
 
 	/**
 	 *

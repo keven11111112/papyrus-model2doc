@@ -38,6 +38,7 @@ import org.eclipse.papyrus.model2doc.odt.editor.StyleEditorFactory;
 import org.eclipse.papyrus.model2doc.odt.internal.constants.ParagraphPropertiesConstants;
 import org.eclipse.papyrus.model2doc.odt.internal.constants.ParagraphPropertiesValues;
 import org.eclipse.papyrus.model2doc.odt.internal.editor.ODTEditor;
+import org.eclipse.papyrus.model2doc.odt.internal.util.PropertySetUtil;
 import org.eclipse.papyrus.model2doc.odt.internal.util.WriteUtil;
 import org.eclipse.papyrus.model2doc.odt.service.StyleService;
 import org.eclipse.papyrus.model2doc.odt.service.StyleServiceImpl;
@@ -80,22 +81,22 @@ public class ODTTranscription implements Transcription {
 	private static final String TABLE_OF_CONTENTS_TYPE = "com.sun.star.text.ContentIndex"; //$NON-NLS-1$
 
 	/** The text interface contains all methods and properties to manipulate the content from a text document. */
-	private XText text = null;
+	protected XText text = null;
 
 	/** The cursor for walking through the model of the text document. */
-	private XTextCursor cursor = null;
+	protected XTextCursor cursor = null;
 
-	private StyleEditor styleEditor = null;
+	protected StyleEditor styleEditor = null;
 
-	private ODTEditor odtEditor = null;
+	protected ODTEditor odtEditor = null;
 
-	private IDocumentGeneratorConfiguration odtGeneratorConfig = null;
+	protected IDocumentGeneratorConfiguration odtGeneratorConfig = null;
 
-	private WriteService writeService = null;
+	protected WriteService writeService = null;
 
-	private StyleService styleService = null;
+	protected StyleService styleService = null;
 
-	private List<XDocumentIndex> tablesOfIndexes = new ArrayList<>();
+	protected List<XDocumentIndex> tablesOfIndexes = new ArrayList<>();
 
 	/**
 	 * Constructor.
@@ -248,7 +249,7 @@ public class ODTTranscription implements Transcription {
 				xIndex.setPropertyValue("CreateFromOutline", true); //$NON-NLS-1$
 			} else if (TABLE_OF_FIGURE_TYPE.equals(libreOfficePagetype)) {
 				xIndex.setPropertyValue("CreateFromLabels", true); //$NON-NLS-1$
-				xIndex.setPropertyValue("LabelCategory", "Figure"); //$NON-NLS-1$
+				xIndex.setPropertyValue("LabelCategory", "Figure"); //$NON-NLS-1$ //$NON-NLS-2$
 				xIndex.setPropertyValue("LabelDisplayType", ChapterFormat.NAME_NUMBER); //$NON-NLS-1$
 			}
 			xIndex.setPropertyValue("Title", pageTitle); //$NON-NLS-1$
@@ -353,7 +354,7 @@ public class ODTTranscription implements Transcription {
 
 			XPropertyContainer userDefined = props.getUserDefinedProperties();
 
-			// we need to remove the property if it already exist, in order to be change its value
+			// we need to remove the property if it already exist, in order to be able to change its value
 			try {
 				userDefined.removeProperty(CustomFields.AUTHORS);
 			} catch (UnknownPropertyException e) {
@@ -411,5 +412,48 @@ public class ODTTranscription implements Transcription {
 		final String path = fileReference.getFilePath();
 		this.writeService.insertTextFile(cursor, path);
 	}
+
+
+
+	/**
+	 * This method should works but has never been tested... here as reminder
+	 *
+	 * @param pageBreak
+	 */
+	private void addPageBreak(final PageBreak pageBreak) {
+		int breakValue = -1;
+		switch (pageBreak) {
+		case BEFORE:
+			breakValue = com.sun.star.style.BreakType.PAGE_BEFORE.getValue();
+			break;
+		case AFTER:
+			breakValue = com.sun.star.style.BreakType.PAGE_AFTER.getValue();
+			break;
+		case BOTH:
+			breakValue = com.sun.star.style.BreakType.PAGE_BOTH.getValue();
+			break;
+		default:
+			breakValue = com.sun.star.style.BreakType.PAGE_BOTH.getValue();
+		}
+		WriteUtil.addControlCharacter(cursor, (short) breakValue);
+	}
+
+	/**
+	 * This method should works but has never been tested... here as reminder
+	 */
+	private void addPageBreak() {
+		WriteUtil.addControlCharacter(cursor, (short) com.sun.star.style.BreakType.PAGE_AFTER.getValue());
+		PropertySetUtil.setProperty(cursor, "BreakType", 4); //$NON-NLS-1$
+		cursor.gotoEnd(false);
+		WriteUtil.addControlCharacter(cursor, (short) com.sun.star.style.BreakType.PAGE_AFTER.getValue());
+	}
+
+	/**
+	 * Kind of PageBreak according to the LibreOffice API
+	 */
+	private enum PageBreak {
+		BEFORE, AFTER, BOTH
+	}
+
 
 }

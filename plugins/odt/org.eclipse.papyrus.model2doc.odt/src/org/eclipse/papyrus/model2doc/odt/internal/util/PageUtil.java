@@ -15,6 +15,7 @@
 package org.eclipse.papyrus.model2doc.odt.internal.util;
 
 import org.eclipse.papyrus.model2doc.odt.Activator;
+
 import com.sun.star.awt.Size;
 import com.sun.star.beans.UnknownPropertyException;
 import com.sun.star.beans.XPropertySet;
@@ -26,7 +27,7 @@ import com.sun.star.text.XTextDocument;
  *
  */
 public class PageUtil {
-	
+
 	/**
 	 * Constructor.
 	 *
@@ -37,7 +38,7 @@ public class PageUtil {
 
 	/**
 	 * Get writable size.
-	 * 
+	 *
 	 * @param xTextDocument
 	 * @param familyStyleName
 	 * @param propertySetName
@@ -45,16 +46,16 @@ public class PageUtil {
 	 */
 	public static Size getWritableSize(XTextDocument xTextDocument, String familyStyleName, String propertySetName) {
 		XPropertySet propertySet = StyleUtil.getStylePropertySet(xTextDocument, familyStyleName, propertySetName);
-		
+
 		if (propertySet != null) {
 			try {
-				int width = ((Integer)propertySet.getPropertyValue(SizeConstants.WIDTH)).intValue();
-				int height = ((Integer)propertySet.getPropertyValue(SizeConstants.HEIGHT)).intValue();
-				int leftMargin = ((Integer)propertySet.getPropertyValue(SizeConstants.LEFT_MARGIN)).intValue();
-			    int rightMargin = ((Integer)propertySet.getPropertyValue(SizeConstants.RIGHT_MARGIN)).intValue();
-			    int topMargin = ((Integer)propertySet.getPropertyValue(SizeConstants.TOPMARGIN)).intValue();
-			    int bottomMargin = ((Integer)propertySet.getPropertyValue(SizeConstants.BOTTOM_MARGIN)).intValue();
-			    
+				int width = ((Integer) propertySet.getPropertyValue(SizeConstants.WIDTH)).intValue();
+				int height = ((Integer) propertySet.getPropertyValue(SizeConstants.HEIGHT)).intValue();
+				int leftMargin = ((Integer) propertySet.getPropertyValue(SizeConstants.LEFT_MARGIN)).intValue();
+				int rightMargin = ((Integer) propertySet.getPropertyValue(SizeConstants.RIGHT_MARGIN)).intValue();
+				int topMargin = ((Integer) propertySet.getPropertyValue(SizeConstants.TOPMARGIN)).intValue();
+				int bottomMargin = ((Integer) propertySet.getPropertyValue(SizeConstants.BOTTOM_MARGIN)).intValue();
+
 				return new Size(width - (leftMargin + rightMargin), height - (topMargin + bottomMargin));
 			} catch (UnknownPropertyException | WrappedTargetException e) {
 				Activator.log.error(e);
