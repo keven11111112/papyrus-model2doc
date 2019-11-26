@@ -150,6 +150,12 @@ public class WriteUtil {
 			framePropertySet.setPropertyValue("ZOrder", 1);// not really sure //$NON-NLS-1$
 			framePropertySet.setPropertyValue("TextWrap", WrapTextMode.THROUGH); //$NON-NLS-1$
 
+			// remove the margin around the image
+			framePropertySet.setPropertyValue(BaseFramePropertiesConstants.LEFT_BORDER_DISTANCE, 0);
+			framePropertySet.setPropertyValue(BaseFramePropertiesConstants.RIGHT_BORDER_DISTANCE, 0);
+			framePropertySet.setPropertyValue(BaseFramePropertiesConstants.TOP_BORDER_DISTANCE, 0);
+			framePropertySet.setPropertyValue(BaseFramePropertiesConstants.BOTTOM_BORDER_DISTANCE, 0);
+
 			// Creating the service GraphicObject
 			Object graphicObject = xMultiServiceFactory.createInstance("com.sun.star.text.TextGraphicObject"); //$NON-NLS-1$
 
@@ -229,6 +235,12 @@ public class WriteUtil {
 			framePropertySet.setPropertyValue("AnchorType", TextContentAnchorType.AS_CHARACTER); //$NON-NLS-1$
 			framePropertySet.setPropertyValue("ZOrder", 1);// not really sure //$NON-NLS-1$
 			framePropertySet.setPropertyValue("TextWrap", WrapTextMode.THROUGH); //$NON-NLS-1$
+
+			// remove the margin around the image
+			framePropertySet.setPropertyValue(BaseFramePropertiesConstants.LEFT_BORDER_DISTANCE, 0);
+			framePropertySet.setPropertyValue(BaseFramePropertiesConstants.RIGHT_BORDER_DISTANCE, 0);
+			framePropertySet.setPropertyValue(BaseFramePropertiesConstants.TOP_BORDER_DISTANCE, 0);
+			framePropertySet.setPropertyValue(BaseFramePropertiesConstants.BOTTOM_BORDER_DISTANCE, 0);
 
 			// Creating the service GraphicObject
 			Object graphicObject = xMultiServiceFactory.createInstance("com.sun.star.text.TextGraphicObject"); //$NON-NLS-1$
