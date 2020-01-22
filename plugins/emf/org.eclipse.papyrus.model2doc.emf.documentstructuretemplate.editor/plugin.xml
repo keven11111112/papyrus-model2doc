@@ -40,7 +40,7 @@
             name="%_UI_DocumentStructureTemplateEditor_label"
             icon="icons/full/obj16/DocumentStructureTemplateModelFile.gif"
             extensions="pdst"
-            class="org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.presentation.DocumentStructureTemplateEditor"
+            class="org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.presentation.TransactionalDocumentStructureTemplateEditor"
             contributorClass="org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.presentation.DocumentStructureTemplateActionBarContributor">
       </editor>
    </extension>

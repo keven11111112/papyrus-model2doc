@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2019 CEA LIST.
+ * Copyright (c) 2019-2020 CEA LIST.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -10,6 +10,7 @@
  *
  * Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Bug 559824
  *****************************************************************************/
 package org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.ui.internal.editor;
 
@@ -18,7 +19,6 @@ import java.util.Collections;
 
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.emf.common.command.BasicCommandStack;
 import org.eclipse.emf.common.command.CommandStack;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -34,6 +34,7 @@ import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 import org.eclipse.papyrus.infra.core.utils.ServiceUtils;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.presentation.TransactionalDocumentStructureTemplateEditor;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.provider.DocumentStructureTemplateItemProviderAdapterFactory;
 import org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.ui.Activator;
 import org.eclipse.ui.IEditorInput;
@@ -47,7 +48,7 @@ import org.eclipse.ui.IEditorSite;
  *
  * In order to get the new child menu, we register the action bar contribution using this same extension point and we use if for this editor.
  */
-public class NestedDocumentStructureTemplateViewEditor extends CustomDocumentStructureTemplateEditor {
+public class NestedDocumentStructureTemplateViewEditor extends TransactionalDocumentStructureTemplateEditor {
 
 	/** the service registry */
 	protected ServicesRegistry servicesRegistry;
@@ -91,7 +92,7 @@ public class NestedDocumentStructureTemplateViewEditor extends CustomDocumentStr
 
 	/**
 	 *
-	 * @see org.eclipse.emf.facet.widgets.nattable.workbench.editor.NatTableEditor#getEditingDomain()
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.presentation.DocumentStructureTemplateEditor#getEditingDomain()
 	 *
 	 * @return
 	 */
@@ -125,7 +126,13 @@ public class NestedDocumentStructureTemplateViewEditor extends CustomDocumentStr
 	public void doSaveAs() {
 	}
 
-	@SuppressWarnings("restriction")
+	/**
+	 *
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.presentation.DocumentStructureTemplateEditor#init(org.eclipse.ui.IEditorSite, org.eclipse.ui.IEditorInput)
+	 *
+	 * @param site
+	 * @param input
+	 */
 	@Override
 	public void init(IEditorSite site, IEditorInput input) {// throws PartInitException {
 		final DocumentStructureTemplateEditorInput documentViewEditorInput = new DocumentStructureTemplateEditorInput(this.document);
@@ -156,31 +163,18 @@ public class NestedDocumentStructureTemplateViewEditor extends CustomDocumentStr
 		return false;
 	}
 
-	/**
-	 *
-	 * @see org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.ui.internal.editor.CustomDocumentStructureTemplateEditor#createAndInitCommandStack()
-	 *
-	 * @return
-	 */
-	@Override
-	protected BasicCommandStack createAndInitCommandStack() {
-		final TransactionalEditingDomain domain = getEditingDomain();
-		final CommandStack stack = domain.getCommandStack();
-		Assert.isTrue(stack instanceof BasicCommandStack);
-		final BasicCommandStack bStack = (BasicCommandStack) stack;
-		addCommandStackListener(bStack);
-		return bStack;
-	}
 
 	/**
 	 *
 	 * @param commandStack
 	 */
 	@Override
-	protected void initEditingDomain(BasicCommandStack commandStack) {
+	protected void initDomainAndStack() {
 		final TransactionalEditingDomain domain = getEditingDomain();
 		Assert.isTrue(domain instanceof AdapterFactoryEditingDomain);
 		this.editingDomain = (AdapterFactoryEditingDomain) domain;
+		final CommandStack stack = this.editingDomain.getCommandStack();
+		addCommandStackListener(stack);
 	}
 
 	/**

@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2019 CEA LIST.
+ * Copyright (c) 2019-2020 CEA LIST.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -10,8 +10,10 @@
  *
  * Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - bug 559824
  *****************************************************************************/
-package org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.ui.internal.editor;
+
+package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.presentation;
 
 import java.util.EventObject;
 import java.util.HashMap;
@@ -27,7 +29,6 @@ import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
 import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.presentation.DocumentStructureTemplateEditor;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.provider.DocumentStructureTemplateItemProviderAdapterFactory;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IEditorPart;
@@ -36,7 +37,7 @@ import org.eclipse.ui.views.properties.PropertySheetPage;
 /**
  *
  * This class does the same work than its superclass {@link DocumentStructureTemplateEditor}
- * but here, we split or or override some methods to reuse them with a different implementation in a Papyrus Context
+ * but here, we split or we override some methods to reuse them with a different implementation in a Papyrus Context
  *
  */
 public class CustomDocumentStructureTemplateEditor extends DocumentStructureTemplateEditor {
@@ -65,14 +66,23 @@ public class CustomDocumentStructureTemplateEditor extends DocumentStructureTemp
 	@Override
 	protected void initializeEditingDomain() {
 		initAdapterFactory();
-		final BasicCommandStack commandStack = createAndInitCommandStack();
-		initEditingDomain(commandStack);
+		initDomainAndStack();
+	}
+
+	/**
+	 * this method is in charge to init the Editing Domain and the CommandStack
+	 */
+	protected void initDomainAndStack() {
+		final CommandStack commandStack = new BasicCommandStack();
+		addCommandStackListener(commandStack);
+		editingDomain = new AdapterFactoryEditingDomain(adapterFactory, commandStack, new HashMap<Resource, Boolean>());
 	}
 
 	/**
 	 * Init the adapter factory
 	 */
 	protected void initAdapterFactory() {
+		adapterFactory = createComposedAdapterFactory();
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new DocumentStructureTemplateItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());
@@ -88,27 +98,7 @@ public class CustomDocumentStructureTemplateEditor extends DocumentStructureTemp
 		return new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
 	}
 
-	/**
-	 *
-	 * @return
-	 *         the command stack
-	 */
-	protected BasicCommandStack createAndInitCommandStack() {
-		final BasicCommandStack commandStack = new BasicCommandStack();
-		addCommandStackListener(commandStack);
-		return commandStack;
-	}
 
-	/**
-	 * Init the editing domain of the editor
-	 *
-	 * @param commandStack
-	 *            the command stack
-	 */
-	protected void initEditingDomain(final BasicCommandStack commandStack) {
-		editingDomain = new AdapterFactoryEditingDomain(adapterFactory, commandStack, new HashMap<Resource, Boolean>());
-
-	}
 
 	/**
 	 * Add a listener on the command stack
@@ -116,7 +106,7 @@ public class CustomDocumentStructureTemplateEditor extends DocumentStructureTemp
 	 * @param commandStack
 	 *            the command stack
 	 */
-	protected void addCommandStackListener(final BasicCommandStack commandStack) {
+	protected void addCommandStackListener(final CommandStack commandStack) {
 		commandStack.addCommandStackListener(this.commandStackListener = new CustomCommandStackListener());
 	}
 

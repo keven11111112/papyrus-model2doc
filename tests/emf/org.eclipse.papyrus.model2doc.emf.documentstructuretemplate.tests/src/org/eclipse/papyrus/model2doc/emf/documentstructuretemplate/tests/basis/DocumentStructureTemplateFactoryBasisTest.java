@@ -29,6 +29,7 @@ public class DocumentStructureTemplateFactoryBasisTest {
 	/**
 	 * we check we found a factory
 	 */
+	@Test
 	public void checkFactory() {
 		DocumentStructureTemplateFactory.eINSTANCE.getClass();
 	}
@@ -59,6 +60,7 @@ public class DocumentStructureTemplateFactoryBasisTest {
 	/**
 	 * we check methods are implemented for {@link TextDocumentTemplate}, we expect default behavior
 	 */
+	@Test
 	public void checkTextDocumentTemplate() {
 		final TextDocumentTemplate template = DocumentStructureTemplateFactory.eINSTANCE.createTextDocumentTemplate();
 		Assert.assertNull(template.getType());
