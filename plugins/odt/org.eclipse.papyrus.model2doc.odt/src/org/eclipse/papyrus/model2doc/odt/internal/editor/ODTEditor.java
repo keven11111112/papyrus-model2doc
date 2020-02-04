@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2019 CEA LIST.
+ * Copyright (c) 2019-2020 CEA LIST.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -11,6 +11,7 @@
  * Contributors:
  *  Yupanqui Munoz (CEA LIST) yupanqui.munozjulho@cea.fr - Initial API and implementation
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - bug 559826
  *****************************************************************************/
 package org.eclipse.papyrus.model2doc.odt.internal.editor;
 
@@ -28,6 +29,8 @@ import org.eclipse.swt.widgets.Display;
 
 import com.sun.star.awt.XWindow;
 import com.sun.star.beans.PropertyValue;
+import com.sun.star.container.ElementExistException;
+import com.sun.star.container.XNameContainer;
 import com.sun.star.frame.XComponentLoader;
 import com.sun.star.frame.XController;
 import com.sun.star.frame.XDesktop;
@@ -36,6 +39,7 @@ import com.sun.star.frame.XModel;
 import com.sun.star.frame.XStorable;
 import com.sun.star.io.IOException;
 import com.sun.star.lang.IllegalArgumentException;
+import com.sun.star.lang.WrappedTargetException;
 import com.sun.star.lang.XComponent;
 import com.sun.star.lang.XMultiComponentFactory;
 import com.sun.star.lang.XMultiServiceFactory;
@@ -152,6 +156,37 @@ public class ODTEditor {
 	 */
 	public XComponentContext getXComponentContext() {
 		return xComponentContext;
+	}
+
+
+	/**
+	 * This method allows to insert the image in the final LibreOffice container (a bitmap table)
+	 * and return this container (which can be used to get the image and insert it in the generated document)
+	 *
+	 * @param imagePath
+	 *            the path of an image to insert in the document
+	 * @return
+	 *         the BitmapTable containing the image
+	 */
+	public XNameContainer getBitmapTable(final String imagePath) {
+		XNameContainer bitmapTable = null;
+		try {
+			// the system always returns the same instance
+			bitmapTable = UnoRuntime.queryInterface(XNameContainer.class, xMultiServiceFactory.createInstance("com.sun.star.drawing.BitmapTable")); //$NON-NLS-1$
+		} catch (com.sun.star.uno.Exception e) {
+			Activator.log.error(e);
+		}
+		// we need to check if the image is already inserted in the table, because if we don't check that,
+		// the image will be inserted only one time in the final document, even if we want it several time (image in footer for example)
+		//
+		if (bitmapTable != null && !bitmapTable.hasByName(imagePath)) {
+			try {
+				bitmapTable.insertByName(imagePath, imagePath);
+			} catch (IllegalArgumentException | ElementExistException | WrappedTargetException e) {
+				Activator.log.error(e);
+			}
+		}
+		return bitmapTable;
 	}
 
 	/**

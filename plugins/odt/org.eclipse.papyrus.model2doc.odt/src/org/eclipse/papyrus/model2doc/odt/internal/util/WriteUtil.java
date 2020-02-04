@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2019 CEA LIST.
+ * Copyright (c) 2019-2020 CEA LIST.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -11,6 +11,7 @@
  * Contributors:
  *  Yupanqui Munoz (CEA LIST) yupanqui.munozjulho@cea.fr - Initial API and implementation
  *	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - bug 559826
  *****************************************************************************/
 package org.eclipse.papyrus.model2doc.odt.internal.util;
 
@@ -183,14 +184,13 @@ public class WriteUtil {
 			XTextContent graphicContent = UnoRuntime.queryInterface(XTextContent.class, graphicObject);
 
 			// Creating bitmap container service
-			XNameContainer bitmapContainer = UnoRuntime.queryInterface(XNameContainer.class, xMultiServiceFactory.createInstance("com.sun.star.drawing.BitmapTable")); //$NON-NLS-1$
+			XNameContainer bitmapContainer = odtEditor.getBitmapTable(imageFilePath);
 
 			// Inserting image to the container
-			bitmapContainer.insertByName(imageFilePath, imageFilePath);
-
 			PropertySetUtil.setProperty(graphicContent, "AnchorType", TextContentAnchorType.AT_CHARACTER); //$NON-NLS-1$
-			PropertySetUtil.setProperty(graphicContent, "GraphicURL", bitmapContainer.getByName(imageFilePath)); //$NON-NLS-1$
-
+			if (bitmapContainer != null) {
+				PropertySetUtil.setProperty(graphicContent, "GraphicURL", bitmapContainer.getByName(imageFilePath)); //$NON-NLS-1$
+			}
 			graphicContent = ImageUtil.resizeImage(graphicContent, imageFilePath, odtEditor.getXTextDocument(), odtEditor.getXMultiComponentFactory(), odtEditor.getXComponentContext());
 
 			XPropertySet graphicPropSet = createXPropertySet(graphicContent);
