@@ -37,4 +37,16 @@ public class ParagraphPropertiesConstants {
 	 * The value type is String
 	 */
 	public static final String NUMBERING_STYLE = "NumberingStyleName"; //$NON-NLS-1$
+
+	/**
+	 * determines the top margin of the paragraph in 100th mm
+	 * The value type is long
+	 */
+	public static final String PARA_TOP_MARGIN = "ParaTopMargin"; //$NON-NLS-1$
+
+	/**
+	 * determines the bottom margin of the paragraph in 100th mm
+	 * The value type is long
+	 */
+	public static final String PARA_BOTTOM_MARGIN = "ParaBottomMargin"; //$NON-NLS-1$
 }
