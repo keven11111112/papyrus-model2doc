@@ -98,7 +98,7 @@ public class GMFDiagramViewMapper extends AbstractTemplateToStructureMapper<GMFD
 
 			String imagePath = GeneratorConfigurationOperations.getImageFileLocalPath(conf, imageNameBuilder.toString(), GMFDiagramImageUtils.SVG_EXTENSION);
 			imagePath = imagePath.replaceAll("file:/", ""); //$NON-NLS-1$ //$NON-NLS-2$
-			GMFDiagramImageUtils.generateImageOfDiagram(current, imagePath);
+			GMFDiagramImageUtils.generateImageOfDiagram(current, imagePath, gmfDiagramView.getDiagramImageMargin());
 			image.setImagePath(imagePath);
 			if (null == title) {
 				returnedValue.add(returnedClassType.cast(image));

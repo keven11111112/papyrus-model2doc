@@ -86,6 +86,7 @@ public class PapyrusGMFDiagramViewItemProvider
 			addDiagramKindIdPropertyDescriptor(object);
 			addDiagramTypePropertyDescriptor(object);
 			addContextFilterRulePropertyDescriptor(object);
+			addDiagramImageMarginPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -219,6 +220,27 @@ public class PapyrusGMFDiagramViewItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Diagram Image Margin feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected void addDiagramImageMarginPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_PapyrusGMFDiagramView_diagramImageMargin_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_PapyrusGMFDiagramView_diagramImageMargin_feature", "_UI_PapyrusGMFDiagramView_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				PapyrusGMFDocumentStructureTemplatePackage.Literals.PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_IMAGE_MARGIN,
+				true,
+				false,
+				false,
+				ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				null,
+				null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -307,6 +329,7 @@ public class PapyrusGMFDiagramViewItemProvider
 		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_KIND_ID:
 		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_TYPE:
 		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__CONTEXT_FILTER_RULE:
+		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_IMAGE_MARGIN:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__GENERATE_BRANCH_CONDITION:

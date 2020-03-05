@@ -137,6 +137,16 @@ public interface GMFDocumentStructureTemplatePackage extends EPackage {
 	int GMF_DIAGRAM_VIEW__DIAGRAM_TYPE = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Diagram Image Margin</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int GMF_DIAGRAM_VIEW__DIAGRAM_IMAGE_MARGIN = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>GMF Diagram View</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -144,7 +154,7 @@ public interface GMFDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GMF_DIAGRAM_VIEW_FEATURE_COUNT = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_FEATURE_COUNT + 5;
+	int GMF_DIAGRAM_VIEW_FEATURE_COUNT = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_FEATURE_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>Build Part Template Title</em>' operation.
@@ -242,6 +252,18 @@ public interface GMFDocumentStructureTemplatePackage extends EPackage {
 	EAttribute getGMFDiagramView_DiagramType();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDiagramView#getDiagramImageMargin <em>Diagram Image Margin</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Diagram Image Margin</em>'.
+	 * @see org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDiagramView#getDiagramImageMargin()
+	 * @see #getGMFDiagramView()
+	 * @generated
+	 */
+	EAttribute getGMFDiagramView_DiagramImageMargin();
+
+	/**
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDiagramView#getMatchingDiagrams(org.eclipse.emf.ecore.EObject) <em>Get Matching Diagrams</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -308,6 +330,15 @@ public interface GMFDocumentStructureTemplatePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute GMF_DIAGRAM_VIEW__DIAGRAM_TYPE = eINSTANCE.getGMFDiagramView_DiagramType();
+
+		/**
+		 * The meta object literal for the '<em><b>Diagram Image Margin</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute GMF_DIAGRAM_VIEW__DIAGRAM_IMAGE_MARGIN = eINSTANCE.getGMFDiagramView_DiagramImageMargin();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Matching Diagrams</b></em>' operation.

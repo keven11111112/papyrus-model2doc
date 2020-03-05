@@ -10,7 +10,7 @@
     nonNLSMarkers="true" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     codeFormatting="true" commentFormatting="true" testsDirectory="/org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.tests/src-gen"
     importerID="org.eclipse.uml2.uml.ecore.importer" complianceLevel="8.0" copyrightFields="false"
-    usedGenPackages="../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.genmodel#//documentstructuretemplate ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eclipse.papyrus.model2doc.core.generatorconfiguration/model/generatorconfiguration.genmodel#//generatorconfiguration ../../org.eclipse.papyrus.model2doc.core.author/model/author.genmodel#//author ../../org.eclipse.papyrus.infra.emf.expressions/model/expressions.genmodel#//expressions"
+    usedGenPackages="../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.genmodel#//documentstructuretemplate ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eclipse.papyrus.model2doc.core.generatorconfiguration/model/generatorconfiguration.genmodel#//generatorconfiguration ../../org.eclipse.papyrus.model2doc.core.author/model/author.genmodel#//author ../../org.eclipse.papyrus.infra.emf.expressions/model/expressions.genmodel#//expressions ../../org.eclipse.papyrus.model2doc.core.builtintypes/model/BuiltInTypes.genmodel#//builtintypes"
     operationReflection="true" importOrganizing="true" cleanup="true" oSGiCompatible="true"
     pluralizedGetters="true">
   <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
@@ -45,6 +45,7 @@
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="gmfdocumentstructuretemplate.ecore#//GMFDiagramView"
         labelFeature="../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.genmodel#//documentstructuretemplate/IBodySectionPartTemplate/customTitle">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute gmfdocumentstructuretemplate.ecore#//GMFDiagramView/diagramType"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute gmfdocumentstructuretemplate.ecore#//GMFDiagramView/diagramImageMargin"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="gmfdocumentstructuretemplate.ecore#//GMFDiagramView/getMatchingDiagrams">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="gmfdocumentstructuretemplate.ecore#//GMFDiagramView/getMatchingDiagrams/expectedDiagramContext"/>
       </genOperations>

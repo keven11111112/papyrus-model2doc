@@ -54,6 +54,7 @@ import org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.P
  * <li>{@link org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.impl.PapyrusGMFDiagramViewImpl#getDiagramKindId <em>Diagram Kind Id</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.impl.PapyrusGMFDiagramViewImpl#getDiagramType <em>Diagram Type</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.impl.PapyrusGMFDiagramViewImpl#getContextFilterRule <em>Context Filter Rule</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.impl.PapyrusGMFDiagramViewImpl#getDiagramImageMargin <em>Diagram Image Margin</em>}</li>
  * </ul>
  *
  * @generated
@@ -201,6 +202,28 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 	 * @ordered
 	 */
 	protected ContextFilterBehavior contextFilterRule = CONTEXT_FILTER_RULE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDiagramImageMargin() <em>Diagram Image Margin</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getDiagramImageMargin()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int DIAGRAM_IMAGE_MARGIN_EDEFAULT = 10;
+
+	/**
+	 * The cached value of the '{@link #getDiagramImageMargin() <em>Diagram Image Margin</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getDiagramImageMargin()
+	 * @generated
+	 * @ordered
+	 */
+	protected int diagramImageMargin = DIAGRAM_IMAGE_MARGIN_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -442,6 +465,32 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 	 * @generated
 	 */
 	@Override
+	public int getDiagramImageMargin() {
+		return diagramImageMargin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setDiagramImageMargin(int newDiagramImageMargin) {
+		int oldDiagramImageMargin = diagramImageMargin;
+		diagramImageMargin = newDiagramImageMargin;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_IMAGE_MARGIN, oldDiagramImageMargin, diagramImageMargin));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public String buildPartTemplateTitle(final EObject context) {
 		return org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.internal.operations.PapyrusGMFBodySectionPartTemplateTitleOperations.PAPYRUS_GMF_INSTANCE.buildPartTemplateTitle(this, context);
 	}
@@ -515,6 +564,8 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 			return getDiagramType();
 		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__CONTEXT_FILTER_RULE:
 			return getContextFilterRule();
+		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_IMAGE_MARGIN:
+			return getDiagramImageMargin();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -548,6 +599,9 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 			return;
 		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__CONTEXT_FILTER_RULE:
 			setContextFilterRule((ContextFilterBehavior) newValue);
+			return;
+		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_IMAGE_MARGIN:
+			setDiagramImageMargin((Integer) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -583,6 +637,9 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__CONTEXT_FILTER_RULE:
 			setContextFilterRule(CONTEXT_FILTER_RULE_EDEFAULT);
 			return;
+		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_IMAGE_MARGIN:
+			setDiagramImageMargin(DIAGRAM_IMAGE_MARGIN_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -610,6 +667,8 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 			return DIAGRAM_TYPE_EDEFAULT == null ? diagramType != null : !DIAGRAM_TYPE_EDEFAULT.equals(diagramType);
 		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__CONTEXT_FILTER_RULE:
 			return contextFilterRule != CONTEXT_FILTER_RULE_EDEFAULT;
+		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_IMAGE_MARGIN:
+			return diagramImageMargin != DIAGRAM_IMAGE_MARGIN_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -765,6 +824,8 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 		result.append(diagramType);
 		result.append(", contextFilterRule: "); //$NON-NLS-1$
 		result.append(contextFilterRule);
+		result.append(", diagramImageMargin: "); //$NON-NLS-1$
+		result.append(diagramImageMargin);
 		result.append(')');
 		return result.toString();
 	}

@@ -44,9 +44,10 @@ public class GMFDiagramImageUtils {
 	 *
 	 * @param diagram
 	 * @param pathRoot
+	 * @param margin
 	 * @return
 	 */
-	public static void generateImageOfDiagram(final Diagram diagram, final String pathRoot) {
+	public static void generateImageOfDiagram(final Diagram diagram, final String pathRoot, final int margin) {
 		// to be sure, but currently, we only propose svg, so, it should be ok.
 		Assert.isTrue(pathRoot.endsWith(SVG_EXTENSION));
 
@@ -61,7 +62,7 @@ public class GMFDiagramImageUtils {
 			}
 		}
 
-		final CopyToImageUtil copyImageUtil = new CopyToImageUtil();
+		final CopyToImageUtil copyImageUtil = new CustomCopyToImageUtils(margin);
 
 		try {
 			copyImageUtil.copyToImage(diagram, imagePath, ImageFileFormat.SVG, new NullProgressMonitor(),

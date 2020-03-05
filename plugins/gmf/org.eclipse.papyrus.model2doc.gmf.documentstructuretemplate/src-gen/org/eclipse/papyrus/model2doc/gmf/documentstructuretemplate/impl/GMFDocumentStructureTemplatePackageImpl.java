@@ -25,6 +25,7 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 
 import org.eclipse.papyrus.infra.emf.expressions.ExpressionsPackage;
 import org.eclipse.papyrus.model2doc.core.author.AuthorPackage;
+import org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesPackage;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationPackage;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
@@ -119,6 +120,7 @@ public class GMFDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 		GeneratorConfigurationPackage.eINSTANCE.eClass();
 		AuthorPackage.eINSTANCE.eClass();
 		ExpressionsPackage.eINSTANCE.eClass();
+		BuiltInTypesPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theGMFDocumentStructureTemplatePackage.createPackageContents();
@@ -154,6 +156,17 @@ public class GMFDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 	@Override
 	public EAttribute getGMFDiagramView_DiagramType() {
 		return (EAttribute) gmfDiagramViewEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getGMFDiagramView_DiagramImageMargin() {
+		return (EAttribute) gmfDiagramViewEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -214,6 +227,7 @@ public class GMFDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 		// Create classes and their features
 		gmfDiagramViewEClass = createEClass(GMF_DIAGRAM_VIEW);
 		createEAttribute(gmfDiagramViewEClass, GMF_DIAGRAM_VIEW__DIAGRAM_TYPE);
+		createEAttribute(gmfDiagramViewEClass, GMF_DIAGRAM_VIEW__DIAGRAM_IMAGE_MARGIN);
 		createEOperation(gmfDiagramViewEClass, GMF_DIAGRAM_VIEW___GET_MATCHING_DIAGRAMS__EOBJECT);
 
 		diagramEClass = createEClass(DIAGRAM);
@@ -261,6 +275,7 @@ public class GMFDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 		// Initialize classes, features, and operations; add parameters
 		initEClass(gmfDiagramViewEClass, GMFDiagramView.class, "GMFDiagramView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEAttribute(getGMFDiagramView_DiagramType(), ecorePackage.getEString(), "diagramType", null, 0, 1, GMFDiagramView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getGMFDiagramView_DiagramImageMargin(), theEcorePackage.getEInt(), "diagramImageMargin", "10", 1, 1, GMFDiagramView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
 
 		EOperation op = initEOperation(getGMFDiagramView__GetMatchingDiagrams__EObject(), this.getDiagram(), "getMatchingDiagrams", 0, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 		addEParameter(op, theEcorePackage.getEObject(), "expectedDiagramContext", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$

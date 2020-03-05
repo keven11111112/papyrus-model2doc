@@ -83,6 +83,7 @@ public class GMFDiagramViewItemProvider
 			addGenerateTitlePropertyDescriptor(object);
 			addCustomTitlePropertyDescriptor(object);
 			addDiagramTypePropertyDescriptor(object);
+			addDiagramImageMarginPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -167,6 +168,27 @@ public class GMFDiagramViewItemProvider
 				false,
 				false,
 				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				null,
+				null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Diagram Image Margin feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected void addDiagramImageMarginPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_GMFDiagramView_diagramImageMargin_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_GMFDiagramView_diagramImageMargin_feature", "_UI_GMFDiagramView_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				GMFDocumentStructureTemplatePackage.Literals.GMF_DIAGRAM_VIEW__DIAGRAM_IMAGE_MARGIN,
+				true,
+				false,
+				false,
+				ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				null,
 				null));
 	}
@@ -258,6 +280,7 @@ public class GMFDiagramViewItemProvider
 		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_TITLE:
 		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__CUSTOM_TITLE:
 		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DIAGRAM_TYPE:
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DIAGRAM_IMAGE_MARGIN:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_BRANCH_CONDITION:

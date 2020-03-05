@@ -15,6 +15,17 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_L5x48FbUEemQV827ZWTfig"/>
       </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_kd-rUF4vEeq9HfUuM3wZYw" name="diagramImageMargin">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_ngasIF4wEeq9HfUuM3wZYw" annotatedElement="_kd-rUF4vEeq9HfUuM3wZYw">
+          <body>This field allows to define the size of the margin around the diagram snapshot. The value is interpreted as Pixel. The default value is 10.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://ECORE_METAMODEL_LIBRARY/Ecore.uml#_SeWkZcX_EduPJbEsMYXjUQ"/>
+        <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_XN_mgF4wEeq9HfUuM3wZYw" name="DEFAULT_VALUE" value="10">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_4rHdkF4wEeq9HfUuM3wZYw" annotatedElement="_XN_mgF4wEeq9HfUuM3wZYw">
+            <body>Default value for the margin (10 pixels), to get the initial GMF behavior, we use the same value than declared in org.eclipse.gmf.runtime.diagram.ui.render.clipboard.DiagramGenerator.DEFAULT_IMAGE_MARGIN_PIXELS.</body>
+          </ownedComment>
+        </defaultValue>
+      </ownedAttribute>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_zuWPsFbTEemQV827ZWTfig" client="_cqi84FbTEemQV827ZWTfig">
         <supplier xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_DwGdIFYFEemKJasCEBKPhQ"/>
         <contract xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_DwGdIFYFEemKJasCEBKPhQ"/>

@@ -36,6 +36,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITemplatePart
  * </p>
  * <ul>
  * <li>{@link org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDiagramView#getDiagramType <em>Diagram Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDiagramView#getDiagramImageMargin <em>Diagram Image Margin</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDocumentStructureTemplatePackage#getGMFDiagramView()
@@ -70,6 +71,35 @@ public interface GMFDiagramView extends ITemplatePartView, ILeafBodyPartTemplate
 	 * @generated
 	 */
 	void setDiagramType(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Diagram Image Margin</b></em>' attribute.
+	 * The default value is <code>"10"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This field allows to define the size of the margin around the diagram snapshot. The value is interpreted as Pixel. The default value is 10.
+	 * <!-- end-model-doc -->
+	 *
+	 * @return the value of the '<em>Diagram Image Margin</em>' attribute.
+	 * @see #setDiagramImageMargin(int)
+	 * @see org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDocumentStructureTemplatePackage#getGMFDiagramView_DiagramImageMargin()
+	 * @model default="10" required="true" ordered="false"
+	 * @generated
+	 */
+	int getDiagramImageMargin();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDiagramView#getDiagramImageMargin <em>Diagram Image Margin</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *                  the new value of the '<em>Diagram Image Margin</em>' attribute.
+	 * @see #getDiagramImageMargin()
+	 * @generated
+	 */
+	void setDiagramImageMargin(int value);
 
 	/**
 	 * <!-- begin-user-doc -->

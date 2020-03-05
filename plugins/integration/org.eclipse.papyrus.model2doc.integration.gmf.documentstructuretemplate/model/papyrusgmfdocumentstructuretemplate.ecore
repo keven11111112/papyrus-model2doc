@@ -45,6 +45,13 @@
         <details key="documentation" value="This property allows to define how to use the parameter of the method getMatchingDiagram."/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="diagramImageMargin" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"
+        defaultValueLiteral="10">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This field allows to define the size of the margin around the diagram snapshot. The value is interpreted as Pixel. The default value is 10."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ContextFilterBehavior">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

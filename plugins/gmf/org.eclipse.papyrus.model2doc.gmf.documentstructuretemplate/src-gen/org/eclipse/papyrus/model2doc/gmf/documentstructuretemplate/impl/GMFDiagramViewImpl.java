@@ -51,6 +51,7 @@ import org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDocumentSt
  * <li>{@link org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.impl.GMFDiagramViewImpl#getCustomTitle <em>Custom Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.impl.GMFDiagramViewImpl#getGenerateBranchCondition <em>Generate Branch Condition</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.impl.GMFDiagramViewImpl#getDiagramType <em>Diagram Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.impl.GMFDiagramViewImpl#getDiagramImageMargin <em>Diagram Image Margin</em>}</li>
  * </ul>
  *
  * @generated
@@ -154,6 +155,28 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 	 * @ordered
 	 */
 	protected String diagramType = DIAGRAM_TYPE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDiagramImageMargin() <em>Diagram Image Margin</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getDiagramImageMargin()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int DIAGRAM_IMAGE_MARGIN_EDEFAULT = 10;
+
+	/**
+	 * The cached value of the '{@link #getDiagramImageMargin() <em>Diagram Image Margin</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getDiagramImageMargin()
+	 * @generated
+	 * @ordered
+	 */
+	protected int diagramImageMargin = DIAGRAM_IMAGE_MARGIN_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -343,6 +366,32 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	@Override
+	public int getDiagramImageMargin() {
+		return diagramImageMargin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setDiagramImageMargin(int newDiagramImageMargin) {
+		int oldDiagramImageMargin = diagramImageMargin;
+		diagramImageMargin = newDiagramImageMargin;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DIAGRAM_IMAGE_MARGIN, oldDiagramImageMargin, diagramImageMargin));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public String buildPartTemplateTitle(final EObject context) {
 		return org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.internal.operations.GMFBodySectionPartTemplateTitleOperations.GMF_INSTANCE.buildPartTemplateTitle(this, context);
 	}
@@ -412,6 +461,8 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 			return getGenerateBranchCondition();
 		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DIAGRAM_TYPE:
 			return getDiagramType();
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DIAGRAM_IMAGE_MARGIN:
+			return getDiagramImageMargin();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -439,6 +490,9 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 			return;
 		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DIAGRAM_TYPE:
 			setDiagramType((String) newValue);
+			return;
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DIAGRAM_IMAGE_MARGIN:
+			setDiagramImageMargin((Integer) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -468,6 +522,9 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DIAGRAM_TYPE:
 			setDiagramType(DIAGRAM_TYPE_EDEFAULT);
 			return;
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DIAGRAM_IMAGE_MARGIN:
+			setDiagramImageMargin(DIAGRAM_IMAGE_MARGIN_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -491,6 +548,8 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 			return generateBranchCondition != null;
 		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DIAGRAM_TYPE:
 			return DIAGRAM_TYPE_EDEFAULT == null ? diagramType != null : !DIAGRAM_TYPE_EDEFAULT.equals(diagramType);
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DIAGRAM_IMAGE_MARGIN:
+			return diagramImageMargin != DIAGRAM_IMAGE_MARGIN_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -642,6 +701,8 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 		result.append(customTitle);
 		result.append(", diagramType: "); //$NON-NLS-1$
 		result.append(diagramType);
+		result.append(", diagramImageMargin: "); //$NON-NLS-1$
+		result.append(diagramImageMargin);
 		result.append(')');
 		return result.toString();
 	}
