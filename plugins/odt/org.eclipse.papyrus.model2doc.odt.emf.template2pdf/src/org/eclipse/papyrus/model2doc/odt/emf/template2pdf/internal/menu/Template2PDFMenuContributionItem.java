@@ -12,7 +12,7 @@
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
-package org.eclipse.papyrus.model2doc.emf.template2document.internal.menu;
+package org.eclipse.papyrus.model2doc.odt.emf.template2pdf.internal.menu;
 
 import java.util.Collections;
 
@@ -23,8 +23,9 @@ import org.eclipse.core.commands.IHandler;
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.jface.action.ContributionItem;
 import org.eclipse.osgi.util.NLS;
-import org.eclipse.papyrus.model2doc.emf.template2document.Activator;
-import org.eclipse.papyrus.model2doc.emf.template2document.internal.messages.Messages;
+import org.eclipse.papyrus.model2doc.emf.template2document.internal.menu.Template2DocumentMenuConstants;
+import org.eclipse.papyrus.model2doc.odt.emf.template2pdf.Activator;
+import org.eclipse.papyrus.model2doc.odt.emf.template2pdf.internal.messages.Messages;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
@@ -34,18 +35,16 @@ import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.commands.ICommandService;
 
-/**
- * This menu allows to provide Generations menus with custom label for the provided generator
- */
-public class Template2DocumentMenuContributionItem extends ContributionItem {
+
+public class Template2PDFMenuContributionItem extends ContributionItem {
 
 	/**
 	 *
 	 * Constructor.
 	 *
 	 */
-	public Template2DocumentMenuContributionItem() {
-		super();
+	public Template2PDFMenuContributionItem() {
+		// nothing to do
 	}
 
 	/**
@@ -54,11 +53,13 @@ public class Template2DocumentMenuContributionItem extends ContributionItem {
 	 *
 	 * @param id
 	 */
-	public Template2DocumentMenuContributionItem(final String id) {
+	public Template2PDFMenuContributionItem(final String id) {
 		super(id);
+		// nothing to do
 	}
 
 	/**
+	 *
 	 * @see org.eclipse.jface.action.ContributionItem#fill(org.eclipse.swt.widgets.Menu, int)
 	 *
 	 * @param menu
@@ -66,6 +67,21 @@ public class Template2DocumentMenuContributionItem extends ContributionItem {
 	 */
 	@Override
 	public void fill(Menu menu, int index) {
+		createMenuItem(Template2PDFMenuConstants.GENERATE_STRUCTURE_DOCUMENT_AND_PDF_COMMAND, menu, 0);
+		createMenuItem(Template2PDFMenuConstants.GENERATE_STRUCTURE_DOCUMENT_AND_PDF_A1B_COMMAND, menu, 1);
+		createMenuItem(Template2PDFMenuConstants.GENERATE_STRUCTURE_DOCUMENT_AND_PDF_A2B_COMMAND, menu, 2);
+	}
+
+	/**
+	 *
+	 * @param commandId
+	 *            the id of the command for which we create a menu item
+	 * @param menu
+	 *            the menu owning the created item
+	 * @param index
+	 *            the index of the item to create
+	 */
+	protected void createMenuItem(final String commandId, final Menu menu, final int index) {
 		// 1. look for the IEclipseContext
 		final IEclipseContext ctx = getEclipseContext();
 
@@ -73,7 +89,7 @@ public class Template2DocumentMenuContributionItem extends ContributionItem {
 		final ICommandService serv = getCommandService();
 
 		// 3. find the command
-		final Command command = serv.getCommand(Template2DocumentMenuConstants.GENERATE_STRUCTURE_AND_DOCUMENT_COMMAND);
+		final Command command = serv.getCommand(commandId);
 
 		// 4. get the eclipse handler for this command
 		final IHandler handler = command.getHandler();
@@ -82,20 +98,22 @@ public class Template2DocumentMenuContributionItem extends ContributionItem {
 		// the call command.isEnabled() will edit this parameter
 		ctx.set(Template2DocumentMenuConstants.VARIABLE_GENERATOR_MENU_LABEL, Template2DocumentMenuConstants.NO_GENERATOR_ID);
 
-		if (command.isEnabled()) {
-			// required to call setEnable
-			// the handler#setEnable set a constant in the ctx to get the label of the generator
-			// we use this label in the created menu to get a better experience for the final user
+		if (command.isEnabled()) {// required to call setEnable and defining the label of the menu to propose
 			final String res = (String) ctx.get(Template2DocumentMenuConstants.VARIABLE_GENERATOR_MENU_LABEL);
+			String pdfVersion = (String) ctx.get(Template2PDFMenuConstants.VARIABLE_PDF_VERSION_MENU_LABEL);
+			if (pdfVersion == null || pdfVersion.isEmpty()) {
+				pdfVersion = Template2PDFMenuConstants.PDF;
+			}
 
 			final MenuItem item = new MenuItem(menu, SWT.PUSH, index);
 
 			final String menuName;
 			if (res != null && !res.isEmpty() && !res.equals(Template2DocumentMenuConstants.NO_GENERATOR_ID)) {
-				menuName = NLS.bind(Messages.Template2DocumentMenuContributionItem_GenerateAllWithParameterMenuLabel, res);
+				menuName = NLS.bind(Messages.Template2PDFMenuContributionItem_GenerateAllWith2Parameters, pdfVersion, res);
 			} else {
-				menuName = Messages.Template2DocumentMenuContributionItem_GenerateAllMenuLabel;
+				menuName = NLS.bind(Messages.Template2PDFMenuContributionItem_GenerateAllWithOneParameter, pdfVersion);
 			}
+
 			item.setText(menuName);
 			item.addSelectionListener(new SelectionListener() {
 
@@ -116,11 +134,9 @@ public class Template2DocumentMenuContributionItem extends ContributionItem {
 		}
 	}
 
-
 	/**
 	 *
-	 * @return
-	 *         the EclipseContext or <code>null</code> if not found
+	 * @return the EclipseContext or <code>null</code> if not found
 	 */
 	private IEclipseContext getEclipseContext() {
 		final IWorkbench workbench = getWorkbench();
@@ -132,8 +148,7 @@ public class Template2DocumentMenuContributionItem extends ContributionItem {
 
 	/**
 	 *
-	 * @return
-	 *         the current {@link IWorkbench} or <code>null</code> if not found
+	 * @return the current {@link IWorkbench} or <code>null</code> if not found
 	 */
 	private IWorkbench getWorkbench() {
 		return PlatformUI.getWorkbench();
@@ -141,8 +156,7 @@ public class Template2DocumentMenuContributionItem extends ContributionItem {
 
 	/**
 	 *
-	 * @return
-	 *         the current {@link ICommandService} or <code>null</code> if not found
+	 * @return the current {@link ICommandService} or <code>null</code> if not found
 	 */
 	private ICommandService getCommandService() {
 		final IWorkbench workbench = getWorkbench();

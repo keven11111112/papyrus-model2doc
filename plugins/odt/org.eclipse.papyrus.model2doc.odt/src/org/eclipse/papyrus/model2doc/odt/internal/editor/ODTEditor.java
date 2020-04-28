@@ -22,6 +22,7 @@ import org.eclipse.papyrus.model2doc.odt.Activator;
 import org.eclipse.papyrus.model2doc.odt.internal.message.Messages;
 import org.eclipse.papyrus.model2doc.odt.internal.util.ExtensionConstants;
 import org.eclipse.papyrus.model2doc.odt.internal.util.LibreOfficeInstallationPathUtil;
+import org.eclipse.papyrus.model2doc.odt.internal.util.ODTFileIOUtil;
 import org.eclipse.papyrus.model2doc.odt.service.ODTEditorService;
 import org.eclipse.papyrus.model2doc.odt.service.ODTFileIOService;
 import org.eclipse.papyrus.model2doc.odt.service.ODTFileIOServiceImpl;
@@ -63,11 +64,13 @@ import ooo.connector.BootstrapSocketConnector;
  */
 public class ODTEditor {
 
-	private static final String LIBREOFFICE_FILE_PREFIX = "file:///"; //$NON-NLS-1$
+	public static final String LIBREOFFICE_FILE_PREFIX = "file:///"; //$NON-NLS-1$
 
 	private static final String STANDART_FILE_PREFIX = "file:/";//$NON-NLS-1$
 
 	private static final String ODT_FILE_EXTENSION = "odt"; //$NON-NLS-1$
+
+	public static final String LIBREOFFICE_FILE_SEPARATOR = "/"; //$NON-NLS-1$
 
 	private XComponentLoader officeLoader = null;
 	private XTextDocument xTextDocument = null;
@@ -85,6 +88,12 @@ public class ODTEditor {
 
 	private ODTFileIOService fileIOService = null;
 
+	public ODTEditor() {
+		fileIOService = new ODTFileIOServiceImpl();
+		// Take LibreOffice Loader
+		loadOffice();
+	}
+
 	/**
 	 * Constructor.
 	 *
@@ -92,10 +101,9 @@ public class ODTEditor {
 	 *
 	 * @param generatorConfig
 	 */
+	@Deprecated
 	public ODTEditor(String projectFolder) {
-		fileIOService = new ODTFileIOServiceImpl();
-		// Take LibreOffice Loader
-		loadOffice();
+		this();
 	}
 
 	/**
@@ -224,9 +232,9 @@ public class ODTEditor {
 	 *
 	 * @param fileName
 	 */
-	public void save(String fileName) {
+	public String save(String fileName) {
 		// Save document
-		saveAs(fileName, ODTEditorService.DOCUMENT_KIND); // $NON-NLS-1$
+		return saveAs(fileName, ODTEditorService.DOCUMENT_KIND); // $NON-NLS-1$
 	}
 
 	/**
@@ -267,6 +275,44 @@ public class ODTEditor {
 		if (xComponent != null) {
 			xTextDocument = UnoRuntime.queryInterface(XTextDocument.class, xComponent);
 			return saveAs(fileName, extension);
+		}
+		return null;
+	}
+
+	/**
+	 *
+	 * @param inputFileURI
+	 *            the input file URI
+	 * @param outputFileURI
+	 *            the output file URI
+	 * @param storeProperties
+	 *            the configuration of the save represented by this array of {@link PropertyValue}
+	 * @return
+	 *         the output file URI, or {@link NullPointerException} when it fails
+	 * @throws Exception
+	 */
+	public String saveAs(String inputFileURI, String outputFileURI, final PropertyValue[] storeProperties) throws Exception {
+		inputFileURI = convertToLibreOfficeFileURI(inputFileURI);
+		if (!inputFileURI.startsWith(ODTFileIOUtil.ODT_FILE_PREFIX)) {
+			throw new Exception("The fileURI is not conform to the expected one"); //$NON-NLS-1$
+		}
+		outputFileURI = convertToLibreOfficeFileURI(outputFileURI);
+		if (!outputFileURI.startsWith(ODTFileIOUtil.ODT_FILE_PREFIX)) {
+			throw new Exception("The fileURI is not conform to the expected one"); //$NON-NLS-1$
+		}
+		XComponent xComponent = getDocument(inputFileURI);
+		if (xComponent != null) {
+			this.xTextDocument = UnoRuntime.queryInterface(XTextDocument.class, xComponent);
+
+			XStorable store = UnoRuntime.queryInterface(XStorable.class, xTextDocument);
+
+			try {
+				store.storeToURL(outputFileURI, storeProperties);
+				Activator.log.info("Saving document: " + outputFileURI);//$NON-NLS-1$
+				return outputFileURI;
+			} catch (com.sun.star.io.IOException e) {
+				Activator.log.error(outputFileURI + " have not been saved: ", e); //$NON-NLS-1$
+			}
 		}
 		return null;
 	}
@@ -522,22 +568,23 @@ public class ODTEditor {
 	 *
 	 * @return
 	 *         the full URL of exported document (LibreOffice format, ex.: file:///C:/folder/projectName/document.pdf)
+	 *         TODO : improve me, to return a java file or URI?!
 	 */
 	private String saveDocument(String fileName, String extension) {
 		XStorable store = UnoRuntime.queryInterface(XStorable.class, xTextDocument);
 
-		final String saveFileURL = convertToLibreOfficeFileURI(GeneratorConfigurationOperations.getDocumentFileLocalPath(configuration, ODT_FILE_EXTENSION));
+		final String saveFileURL = convertToLibreOfficeFileURI(GeneratorConfigurationOperations.getDocumentFileLocalPath(configuration, extension));
 
 		if (saveFileURL == null) {// not possible with the current implementation
 			return null;
 		}
 		PropertyValue[] storeProps = new PropertyValue[2];
 		storeProps[0] = new PropertyValue();
-		storeProps[0].Name = "Overwrite"; //$NON-NLS-1$
+		storeProps[0].Name = StorePropertiesConstants.OVERWRITE;
 		storeProps[0].Value = true;
 
 		storeProps[1] = new PropertyValue();
-		storeProps[1].Name = "FilterName"; //$NON-NLS-1$
+		storeProps[1].Name = StorePropertiesConstants.FILTER_NAME;
 		storeProps[1].Value = getFormat(extension);
 
 		try {
@@ -600,12 +647,20 @@ public class ODTEditor {
 	 * @return
 	 *         a file url starting with file:///
 	 */
-	private static final String convertToLibreOfficeFileURI(final String fileURL) {
-		String newFileURL = fileURL;
-		if (fileURL.startsWith(STANDART_FILE_PREFIX) && false == newFileURL.startsWith(LIBREOFFICE_FILE_PREFIX)) {
-			newFileURL = newFileURL.replaceFirst(STANDART_FILE_PREFIX, LIBREOFFICE_FILE_PREFIX);
+	public static final String convertToLibreOfficeFileURI(final String fileURI) {
+		String newFileURI = fileURI;
+		if (fileURI.startsWith(STANDART_FILE_PREFIX) && false == newFileURI.startsWith(LIBREOFFICE_FILE_PREFIX)) {
+			newFileURI = newFileURI.replaceFirst(STANDART_FILE_PREFIX, LIBREOFFICE_FILE_PREFIX);
 		}
-		return newFileURL;
+		return newFileURI;
+	}
+
+	public static final String convertToGenericFileURI(final String fileURI) {
+		String newFileURI = fileURI;
+		if (newFileURI.startsWith(LIBREOFFICE_FILE_PREFIX)) {
+			newFileURI = newFileURI.replaceFirst(LIBREOFFICE_FILE_PREFIX, STANDART_FILE_PREFIX);
+		}
+		return newFileURI;
 	}
 
 	/**

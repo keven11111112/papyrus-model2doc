@@ -31,6 +31,10 @@ public class Messages extends NLS {
 	public static String ODTEditor_SendMail;
 
 	public static String ODTEditor_MailClientWasNotFound;
+
+	public static String PDFExporter_GeneratePDF;
+
+	public static String PDFExporter_PDFHasBeenGenerated;
 	
 	static {
 		// initialize resource bundle

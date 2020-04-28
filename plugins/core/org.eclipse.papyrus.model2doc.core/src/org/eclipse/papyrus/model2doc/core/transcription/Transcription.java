@@ -151,8 +151,12 @@ public interface Transcription {
 	 * Save transcription.
 	 *
 	 * @param label
+	 *            the name of the new document
+	 * @return
+	 *         a string representing the path of the new document
+	 *         TODO : clarify the format of the returned string
 	 */
-	public void save(String label);
+	public String save(String label);
 
 	/**
 	 * Get configuration of document generation.

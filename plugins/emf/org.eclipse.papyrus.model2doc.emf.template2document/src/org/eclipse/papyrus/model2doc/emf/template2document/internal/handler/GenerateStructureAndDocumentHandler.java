@@ -15,7 +15,10 @@
 
 package org.eclipse.papyrus.model2doc.emf.template2document.internal.handler;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
@@ -33,7 +36,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate;
 import org.eclipse.papyrus.model2doc.emf.structure2document.generator.IStructure2DocumentGenerator;
 import org.eclipse.papyrus.model2doc.emf.structure2document.generator.Structure2DocumentRegistry;
-import org.eclipse.papyrus.model2doc.emf.template2document.internal.menu.MenuConstants;
+import org.eclipse.papyrus.model2doc.emf.template2document.internal.menu.Template2DocumentMenuConstants;
 import org.eclipse.papyrus.model2doc.emf.template2document.internal.messages.Messages;
 import org.eclipse.papyrus.model2doc.emf.template2structure.command.Template2StructureCommandFactory;
 import org.eclipse.papyrus.model2doc.emf.template2structure.generator.ITemplate2StructureGenerator;
@@ -97,15 +100,27 @@ public class GenerateStructureAndDocumentHandler extends AbstractHandler {
 	/**
 	 * {@inheritDoc}
 	 * This re-implementation allows to define the selected document template.
+	 * This method can't be overrided, use {@link #computeEnable(Object)} instead
 	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#setEnabled(java.lang.Object)
 	 */
 	@Override
-	public void setEnabled(Object evaluationContext) {
+	public final void setEnabled(final Object evaluationContext) {
+		setBaseEnabled(computeEnable(evaluationContext));
+	}
+
+	/**
+	 *
+	 * @param evaluationContext
+	 *            the evaluation context
+	 * @return
+	 *         <code>true</code> if the handler can be enable and false otherwise
+	 */
+	protected boolean computeEnable(final Object evaluationContext) {
 		initFields();
 		boolean enable = null != this.domain && null != this.command && this.command.canExecute();
 
-		String menuLabel = MenuConstants.NO_GENERATOR_ID;
+		String menuLabel = Template2DocumentMenuConstants.NO_GENERATOR_ID;
 		if (enable) {
 			enable = false;
 			final String s2docId = this.selectedDocumentTemplate.getDocumentStructureGeneratorConfiguration().getDocumentGeneratorId();
@@ -113,20 +128,38 @@ public class GenerateStructureAndDocumentHandler extends AbstractHandler {
 				final IStructure2DocumentGenerator s2docGenerator = Structure2DocumentRegistry.INSTANCE.getGenerator(s2docId);
 				final ITemplate2StructureGenerator t2sGenerator = Template2StructureRegistry.INSTANCE.getGenerator(this.selectedDocumentTemplate);
 				if (s2docGenerator != null && t2sGenerator != null) {
-					final StringBuilder builder = new StringBuilder();
-					builder.append(t2sGenerator.getGenerateMenuLabel());
-					builder.append(Messages.GenerateStructureAndDocumentHandler_PlusSymbole);
-					builder.append(s2docGenerator.getGenerateMenuLabel());
-					menuLabel = builder.toString();
+					final List<String> labels = new ArrayList<>();
+					labels.add(t2sGenerator.getGenerateMenuLabel());
+					labels.add(s2docGenerator.getGenerateMenuLabel());
+					menuLabel = createMenuLabel(labels);
 					enable = true;
 				}
 			}
 		}
 		if (evaluationContext instanceof IEvaluationContext) {
 			final IEvaluationContext iEvaluationContext = (IEvaluationContext) evaluationContext;
-			iEvaluationContext.addVariable(MenuConstants.VARIABLE_GENERATOR_MENU_LABEL, menuLabel);
+			iEvaluationContext.addVariable(Template2DocumentMenuConstants.VARIABLE_GENERATOR_MENU_LABEL, menuLabel);
 		}
-		setBaseEnabled(enable);
+		return enable;
+	}
+
+	/**
+	 *
+	 * @param labels
+	 *            the labels of the menu
+	 * @return
+	 *         the created labels to use by the menu using the handler
+	 */
+	protected String createMenuLabel(final List<String> labels) {
+		final StringBuilder builder = new StringBuilder();
+		final Iterator<String> iter = labels.iterator();
+		while (iter.hasNext()) {
+			builder.append(iter.next());
+			if (iter.hasNext()) {
+				builder.append(Messages.GenerateStructureAndDocumentHandler_PlusSymbole);
+			}
+		}
+		return builder.toString();
 	}
 
 	/**

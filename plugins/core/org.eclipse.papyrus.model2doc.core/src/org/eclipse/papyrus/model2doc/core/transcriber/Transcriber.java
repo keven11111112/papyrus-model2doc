@@ -17,11 +17,11 @@ package org.eclipse.papyrus.model2doc.core.transcriber;
 /**
  * Transcriber Interface.
  * The propose of this interface is to read any data source (e.g., UML model).
- * 
+ *
  */
 public interface Transcriber {
 	/**
 	 * Transcribe.
 	 */
-	public void transcribe();
+	public String transcribe();
 }

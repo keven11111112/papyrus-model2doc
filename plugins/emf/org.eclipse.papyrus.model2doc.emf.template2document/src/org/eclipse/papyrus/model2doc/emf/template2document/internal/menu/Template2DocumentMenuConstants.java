@@ -18,9 +18,9 @@ package org.eclipse.papyrus.model2doc.emf.template2document.internal.menu;
 /**
  * The constants used in the menus
  */
-public final class MenuConstants {
+public final class Template2DocumentMenuConstants {
 
-	private MenuConstants() {
+	private Template2DocumentMenuConstants() {
 		// to prevent instantication
 	}
 

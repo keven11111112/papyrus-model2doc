@@ -86,4 +86,14 @@ public class TextDocumentToODTGenerator implements IStructure2DocumentGenerator 
 		return "ODT"; //$NON-NLS-1$
 	}
 
+	/**
+	 * @see org.eclipse.papyrus.model2doc.emf.structure2document.generator.IStructure2DocumentGenerator#getOutputFileExtension()
+	 *
+	 * @return
+	 */
+	@Override
+	public String getOutputFileExtension() {
+		return "odt"; //$NON-NLS-1$
+	}
+
 }

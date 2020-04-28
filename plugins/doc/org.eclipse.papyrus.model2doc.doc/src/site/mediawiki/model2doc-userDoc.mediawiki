@@ -150,6 +150,17 @@ For these 2 elements, you can define your own  Column Title. If not, we will use
 
 That's all! The generator will ask the value of the column feature/property for each element represented in row to fill the the cell at the intersection of the row and the column.
 
+=Generation from the DocumentStructureTemplate=
+Model2Doc provides several generation menus, depending of what you want to do.
+All these menus are available in the ''Right-Click'' menu. 
+
+[[Image:images/userDoc/userDoc_009_GenerationFromDocumentStructureTemplate_Menu.png]]
+
+
+* ''Generate Document Structure'': only the intermediate DocumentStructure ( '''*.pds''') file will be generated.
+* ''Generate All (Structure + xxx)'': the intermediate DocumentStructure ('''*.pds''') file and the final document. '''xxx''' is the name of the used generator. In the main case, it is '''ODT'''
+* ''Generate All + PDF'': here, the '''*.pds''' file, the document and a PDF version of this document are generated. Several menus exist for PDF generation, to support several PDF format. The used exporter in the LibreOffice one. 
+
 =How to generate the DocumentStructure from the DocumentTemplate?=
 Once you finished the configuration of your '''DocumentTemplate''', you can generate your '''DocumentStructure'''. in the opened DocumentTemplate editor, ''Right-Click'' on the '''DocumentTemplate''', then ''Generate DocumentStructure''. 
 

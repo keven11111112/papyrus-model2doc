@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="org.eclipse.papyrus.model2doc.odt.emf.template2pdf.generateStructure_Document_PDF"
+            name="Generate Structure, Document and PDF">
+         <defaultHandler
+               class="org.eclipse.papyrus.model2doc.odt.emf.template2pdf.internal.handler.GenerateStructureDocumentAndPDFHandler">
+            <parameter
+                  name="org.eclipse.papyrus.model2doc.odt.emf.template2pdf.pdfVersion"
+                  value="default">
+            </parameter>
+         </defaultHandler>
+      </command>
+      <command
+            id="org.eclipse.papyrus.model2doc.odt.emf.template2pdf.generateStructure_Document_PDF_A1B"
+            name="Generate Structure, Document and PDF A-1B">
+         <defaultHandler
+               class="org.eclipse.papyrus.model2doc.odt.emf.template2pdf.internal.handler.GenerateStructureDocumentAndPDFHandler">
+            <parameter
+                  name="org.eclipse.papyrus.model2doc.odt.emf.template2pdf.pdfVersion"
+                  value="A-1B">
+            </parameter>
+         </defaultHandler>
+      </command>
+      <command
+            id="org.eclipse.papyrus.model2doc.odt.emf.template2pdf.generateStructure_Document_PDF_A2B"
+            name="Generate Structure, Document and PDF A-2B">
+         <defaultHandler
+               class="org.eclipse.papyrus.model2doc.odt.emf.template2pdf.internal.handler.GenerateStructureDocumentAndPDFHandler">
+            <parameter
+                  name="org.eclipse.papyrus.model2doc.odt.emf.template2pdf.pdfVersion"
+                  value="A-2B">
+            </parameter>
+         </defaultHandler>
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.ui.popup.any">
+         <menu
+               label="Generate All + PDF">
+            <dynamic
+                  class="org.eclipse.papyrus.model2doc.odt.emf.template2pdf.internal.menu.Template2PDFMenuContributionItem"
+                  id="org.eclipse.papyrus.model2doc.odt.emf.template2pdf.dynamic2">
+            </dynamic>
+         </menu>
+      </menuContribution>
+   </extension>
+
+</plugin>

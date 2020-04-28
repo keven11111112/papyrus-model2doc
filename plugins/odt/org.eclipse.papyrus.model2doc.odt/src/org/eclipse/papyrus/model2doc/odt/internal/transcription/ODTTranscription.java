@@ -302,13 +302,12 @@ public class ODTTranscription implements Transcription {
 	}
 
 	@Override
-	public void save(String label) {
-
+	public String save(String label) {
 		String documentName = odtGeneratorConfig.getDocumentName();
 		if ((documentName != null) && (!documentName.isEmpty())) {
-			odtEditor.save(documentName);
+			return odtEditor.save(documentName);
 		} else {
-			odtEditor.save(label);
+			return odtEditor.save(label);
 		}
 	}
 

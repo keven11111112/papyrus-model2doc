@@ -78,7 +78,7 @@ public class UMLTranscriber implements Transcriber {
 	 * Read UML model and transcribe it.
 	 */
 	@Override
-	public void transcribe() {
+	public String transcribe() {
 		// Transcribe label of root package how document main title
 		transcription.writeDocumentMainTitle(umlLabelInternationalization.getLabel(root));
 
@@ -165,7 +165,7 @@ public class UMLTranscriber implements Transcriber {
 		transcription.refreshTablesOfIndexes();
 
 		// Save transcription
-		transcription.save(umlLabelInternationalization.getLabel(root));
+		return transcription.save(umlLabelInternationalization.getLabel(root));
 	}
 
 	/**

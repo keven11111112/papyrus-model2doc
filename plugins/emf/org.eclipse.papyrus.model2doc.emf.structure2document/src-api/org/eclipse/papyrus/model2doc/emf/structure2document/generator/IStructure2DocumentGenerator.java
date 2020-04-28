@@ -72,4 +72,12 @@ public interface IStructure2DocumentGenerator {
 	 */
 	public String getGenerateMenuLabel();
 
+
+	/**
+	 *
+	 * @return
+	 *         the extension of the output file
+	 */
+	public String getOutputFileExtension();
+
 }

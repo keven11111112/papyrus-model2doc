@@ -21,6 +21,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument;
 import org.eclipse.papyrus.model2doc.odt.emf.structure2document.Activator;
 import org.eclipse.papyrus.model2doc.odt.emf.structure2document.internal.transcriber.StructureToODTTranscriber;
 import org.eclipse.papyrus.model2doc.odt.internal.editor.DefaultStyleEditor;
+import org.eclipse.papyrus.model2doc.odt.internal.editor.ODTEditor;
 import org.eclipse.papyrus.model2doc.odt.internal.transcription.ODTTranscription;
 
 /**
@@ -48,18 +49,21 @@ public class CreateODTFileFromTextDocumentHelper {
 
 	/**
 	 * This method generate the final odt document
+	 *
+	 * @return a string representing the path of the new document, starting with file:/
+	 *
 	 */
-	public void generate() {// TODO : must return the generated file
+	public String generate() {// TODO : must return the generated file
 		if (this.textDocument == null) {
 			Activator.log.warn("The TextDocument is null"); //$NON-NLS-1$
-			return;
+			return null;
 		}
 		final IDocumentGeneratorConfiguration ddgc = textDocument.getDocumentGeneratorConfiguration();
 
 		final Transcription transcription = createTranscription(ddgc);
 
 		Transcriber t = createTranscriber(textDocument, transcription);
-		t.transcribe();
+		return ODTEditor.convertToGenericFileURI(t.transcribe());
 	}
 
 	/**

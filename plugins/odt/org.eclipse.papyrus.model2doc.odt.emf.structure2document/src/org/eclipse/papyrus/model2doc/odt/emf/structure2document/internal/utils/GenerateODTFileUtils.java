@@ -36,10 +36,13 @@ public class GenerateODTFileUtils {
 	 *
 	 * @param textDocument
 	 *            The initial text from which one generate the ODT file.
+	 *
+	 * @return
+	 *         the path of the generated file
 	 */
-	public static void generateODTFile(final TextDocument textDocument) {
+	public static String generateODTFile(final TextDocument textDocument) {
 		final CreateODTFileFromTextDocumentHelper helper = new CreateODTFileFromTextDocumentHelper(textDocument);
-		helper.generate();
+		final String generatedFilePath = helper.generate();
 
 		// refresh workspace
 		String path = GeneratorConfigurationOperations.getDocumentFileLocalPath(textDocument.getDocumentGeneratorConfiguration(), "odt"); //$NON-NLS-1$
@@ -60,6 +63,7 @@ public class GenerateODTFileUtils {
 
 			}
 		}
+		return generatedFilePath;
 	}
 
 }

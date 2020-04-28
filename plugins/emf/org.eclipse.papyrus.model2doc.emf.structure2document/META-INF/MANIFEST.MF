@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Papyrus-Model2Doc - Structure2document (Incubation)
+Bundle-Name: Papyrus-Model2Doc - Structure2Document (Incubation)
 Bundle-SymbolicName: org.eclipse.papyrus.model2doc.emf.structure2document;singleton:=true
 Bundle-Version: 0.8.0.qualifier
 Bundle-Activator: org.eclipse.papyrus.model2doc.emf.structure2document.Activator

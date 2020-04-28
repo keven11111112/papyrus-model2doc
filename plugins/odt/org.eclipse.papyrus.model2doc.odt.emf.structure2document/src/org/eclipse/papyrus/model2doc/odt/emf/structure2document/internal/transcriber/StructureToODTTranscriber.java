@@ -59,7 +59,7 @@ public class StructureToODTTranscriber implements Transcriber {
 	 *
 	 */
 	@Override
-	public void transcribe() {
+	public String transcribe() {
 		final String mainTitle = this.textDocument.getMainTitle();
 		if (mainTitle != null && !mainTitle.isEmpty()) {
 			this.transcription.writeDocumentMainTitle(mainTitle);
@@ -75,7 +75,8 @@ public class StructureToODTTranscriber implements Transcriber {
 			transcribe(iter.next());
 		}
 		this.transcription.refreshTablesOfIndexes();// TODO should be done directly by the transcriptor
-		this.transcription.save(""); // TODO : remove this argument //$NON-NLS-1$
+
+		return this.transcription.save(""); // TODO : remove this argument //$NON-NLS-1$
 	}
 
 	/**
