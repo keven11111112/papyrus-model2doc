@@ -25,12 +25,6 @@ public class Messages extends NLS {
 	public static String GenerateDocumentStructureHandler_EnterTheDocumentVersion;
 	public static String GenerateDocumentStructureHandler_EnterTheDocumentVersionWithLastVersion;
 	public static String GenerateDocumentStructureHandler_TheGenerationOfDocumentStructureIsFinished;
-	public static String GenerateStructureAndDocumentHandler_GenerateAllActions;
-	public static String GenerateStructureAndDocumentHandler_GenerationNotSupportedErrorMessage;
-	public static String GenerateStructureAndDocumentHandler_PlusSymbole;
-	public static String GenerateStructureAndDocumentHandler_TheDocumentStructureHasNotBeenGeneratedError;
-	public static String GenerateStructureAndDocumentMenuContributionItem_GenerateAllMenuLabel;
-	public static String GenerateStructureAndDocumentMenuContributionItem_GenerateAllWithParameterMenuLabel;
 	static {
 		// initialize resource bundle
 		NLS.initializeMessages(BUNDLE_NAME, Messages.class);

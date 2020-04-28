@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+  <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="org.eclipse.papyrus.model2doc.emf.template2document.generatestructureAndDocument"
+            name="Generate Structure and Document">
+      </command>
+   </extension>
+  <extension
+        point="org.eclipse.ui.handlers">
+     <handler
+           class="org.eclipse.papyrus.model2doc.emf.template2document.internal.handler.GenerateStructureAndDocumentHandler"
+           commandId="org.eclipse.papyrus.model2doc.emf.template2document.generatestructureAndDocument">
+          <activeWhen>
+            <with
+                  variable="selection">
+               <and>
+                  <count
+                        value="1">
+                  </count>
+                  <iterate
+                        ifEmpty="false">
+                     <adapt
+                           type="org.eclipse.emf.ecore.EObject">
+                        <instanceof
+                              value="org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate">
+                        </instanceof>
+                     </adapt>
+                  </iterate>
+               </and>
+            </with>
+         </activeWhen>
+     </handler>
+  </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.ui.popup.any">
+         <dynamic
+               class="org.eclipse.papyrus.model2doc.emf.template2document.internal.menu.Template2DocumentMenuContributionItem"
+               id="org.eclipse.papyrus.model2doc.emf.template2document.template2document.menu">
+         </dynamic>
+      </menuContribution>
+   </extension>
+ 
+
+</plugin>

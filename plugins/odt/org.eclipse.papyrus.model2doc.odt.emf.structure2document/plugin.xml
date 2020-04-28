@@ -30,30 +30,6 @@
                </with>
             </visibleWhen>
          </command>
-         <command
-               commandId="org.eclipse.papyrus.model2doc.odt.emf.structure2document.generate.structure"
-               style="push">
-            <visibleWhen
-                  checkEnabled="false">
-               <with
-                     variable="selection">
-                  <and>
-                     <count
-                           value="1">
-                     </count>
-                     <iterate
-                           ifEmpty="false">
-                        <adapt
-                              type="org.eclipse.emf.ecore.EObject">
-                           <instanceof
-                                 value="org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate">
-                           </instanceof>
-                        </adapt>
-                     </iterate>
-                  </and>
-               </with>
-            </visibleWhen>
-         </command>
       </menuContribution>
    </extension>
    <extension
@@ -61,10 +37,6 @@
       <command
             id="org.eclipse.papyrus.model2doc.odt.emf.structure2document.generate.file"
             name="Generate ODT File">
-      </command>
-      <command
-            id="org.eclipse.papyrus.model2doc.odt.emf.structure2document.generate.structure"
-            name="Generate Structure and ODT File">
       </command>
    </extension>
    <extension
@@ -90,29 +62,6 @@
                      </iterate>
                   </and>
                </with>
-         </activeWhen>
-      </handler>
-      <handler
-            class="org.eclipse.papyrus.model2doc.odt.emf.structure2document.internal.handler.GenerateDocumentStructureAndODTFileHandler"
-            commandId="org.eclipse.papyrus.model2doc.odt.emf.structure2document.generate.structure">
-         <activeWhen>
-            <with
-                  variable="selection">
-               <and>
-                  <count
-                        value="1">
-                  </count>
-                  <iterate
-                        ifEmpty="false">
-                     <adapt
-                           type="org.eclipse.emf.ecore.EObject">
-                        <instanceof
-                              value="org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate">
-                        </instanceof>
-                     </adapt>
-                  </iterate>
-               </and>
-            </with>
          </activeWhen>
       </handler>
    </extension>

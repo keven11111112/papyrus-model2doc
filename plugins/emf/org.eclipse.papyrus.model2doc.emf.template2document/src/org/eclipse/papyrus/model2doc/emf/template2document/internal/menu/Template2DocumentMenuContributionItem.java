@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2019 CEA LIST and others.
+ * Copyright (c) 2020 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -12,7 +12,7 @@
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
-package org.eclipse.papyrus.model2doc.emf.template2structure.internal.menu;
+package org.eclipse.papyrus.model2doc.emf.template2document.internal.menu;
 
 import java.util.Collections;
 
@@ -23,8 +23,8 @@ import org.eclipse.core.commands.IHandler;
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.jface.action.ContributionItem;
 import org.eclipse.osgi.util.NLS;
-import org.eclipse.papyrus.model2doc.emf.template2structure.Activator;
-import org.eclipse.papyrus.model2doc.emf.template2structure.internal.messages.Messages;
+import org.eclipse.papyrus.model2doc.emf.template2document.Activator;
+import org.eclipse.papyrus.model2doc.emf.template2document.internal.messages.Messages;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
@@ -37,14 +37,14 @@ import org.eclipse.ui.commands.ICommandService;
 /**
  * This menu allows to provide Generations menus with custom label for the provided generator
  */
-public class GenerateStructureAndDocumentMenuContributionItem extends ContributionItem {
+public class Template2DocumentMenuContributionItem extends ContributionItem {
 
 	/**
 	 *
 	 * Constructor.
 	 *
 	 */
-	public GenerateStructureAndDocumentMenuContributionItem() {
+	public Template2DocumentMenuContributionItem() {
 		super();
 	}
 
@@ -54,7 +54,7 @@ public class GenerateStructureAndDocumentMenuContributionItem extends Contributi
 	 *
 	 * @param id
 	 */
-	public GenerateStructureAndDocumentMenuContributionItem(final String id) {
+	public Template2DocumentMenuContributionItem(final String id) {
 		super(id);
 	}
 
@@ -82,16 +82,19 @@ public class GenerateStructureAndDocumentMenuContributionItem extends Contributi
 		// the call command.isEnabled() will edit this parameter
 		ctx.set(MenuConstants.VARIABLE_GENERATOR_MENU_LABEL, MenuConstants.NO_GENERATOR_ID);
 
-		if (command.isEnabled()) {// required to call setEnable and defining the label of the menu to propose
+		if (command.isEnabled()) {
+			// required to call setEnable
+			// the handler#setEnable set a constant in the ctx to get the label of the generator
+			// we use this label in the created menu to get a better experience for the final user
 			final String res = (String) ctx.get(MenuConstants.VARIABLE_GENERATOR_MENU_LABEL);
 
 			final MenuItem item = new MenuItem(menu, SWT.PUSH, index);
 
 			final String menuName;
 			if (res != null && !res.isEmpty() && !res.equals(MenuConstants.NO_GENERATOR_ID)) {
-				menuName = NLS.bind(Messages.GenerateStructureAndDocumentMenuContributionItem_GenerateAllWithParameterMenuLabel, res);
+				menuName = NLS.bind(Messages.Template2DocumentMenuContributionItem_GenerateAllWithParameterMenuLabel, res);
 			} else {
-				menuName = Messages.GenerateStructureAndDocumentMenuContributionItem_GenerateAllMenuLabel;
+				menuName = Messages.Template2DocumentMenuContributionItem_GenerateAllMenuLabel;
 			}
 			item.setText(menuName);
 			item.addSelectionListener(new SelectionListener() {

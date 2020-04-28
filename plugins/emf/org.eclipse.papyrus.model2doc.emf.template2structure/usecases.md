@@ -1,4 +1,4 @@
-*Usecases*
+#plugin org.eclipse.papyrus.model2doc.emf.template2structure
 
 * The developer must be able to register a generator to convert DocumentTemplate (from DocumentStructureTemplate metamodel) into Document (from DocumentStructure metamodel)
     * use the extension point structuregenerator.exsd to register a generator

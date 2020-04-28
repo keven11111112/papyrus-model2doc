@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2019 CEA LIST and others.
+ * Copyright (c) 2020 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -13,7 +13,7 @@
  *
  *****************************************************************************/
 
-package org.eclipse.papyrus.model2doc.emf.template2structure.internal.menu;
+package org.eclipse.papyrus.model2doc.emf.template2document.internal.menu;
 
 /**
  * The constants used in the menus
@@ -27,7 +27,7 @@ public final class MenuConstants {
 	/**
 	 * the command's id for document generation
 	 */
-	public static final String GENERATE_STRUCTURE_AND_DOCUMENT_COMMAND = "org.eclipse.papyrus.model2doc.emf.template2structure.generatestructureAndDocument"; //$NON-NLS-1$
+	public static final String GENERATE_STRUCTURE_AND_DOCUMENT_COMMAND = "org.eclipse.papyrus.model2doc.emf.template2document.generatestructureAndDocument"; //$NON-NLS-1$
 
 	/**
 	 * the variable's name used to get the menu label

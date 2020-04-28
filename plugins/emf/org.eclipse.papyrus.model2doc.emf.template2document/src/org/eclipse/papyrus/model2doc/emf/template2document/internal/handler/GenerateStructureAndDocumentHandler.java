@@ -13,7 +13,7 @@
  *
  *****************************************************************************/
 
-package org.eclipse.papyrus.model2doc.emf.template2structure.internal.handler;
+package org.eclipse.papyrus.model2doc.emf.template2document.internal.handler;
 
 import java.util.Collection;
 
@@ -33,11 +33,11 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate;
 import org.eclipse.papyrus.model2doc.emf.structure2document.generator.IStructure2DocumentGenerator;
 import org.eclipse.papyrus.model2doc.emf.structure2document.generator.Structure2DocumentRegistry;
+import org.eclipse.papyrus.model2doc.emf.template2document.internal.menu.MenuConstants;
+import org.eclipse.papyrus.model2doc.emf.template2document.internal.messages.Messages;
 import org.eclipse.papyrus.model2doc.emf.template2structure.command.Template2StructureCommandFactory;
 import org.eclipse.papyrus.model2doc.emf.template2structure.generator.ITemplate2StructureGenerator;
 import org.eclipse.papyrus.model2doc.emf.template2structure.generator.Template2StructureRegistry;
-import org.eclipse.papyrus.model2doc.emf.template2structure.internal.menu.MenuConstants;
-import org.eclipse.papyrus.model2doc.emf.template2structure.internal.messages.Messages;
 import org.eclipse.papyrus.model2doc.emf.template2structure.utils.GenerateDocumentStructureUtils;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.ISelectionService;
@@ -72,7 +72,7 @@ public class GenerateStructureAndDocumentHandler extends AbstractHandler {
 	 */
 	@Override
 	public Object execute(final ExecutionEvent event) throws ExecutionException {
-
+		Object result = null;
 		// Execute the super command
 		final Collection<?> superResult = GenerateDocumentStructureUtils.generateDocumentStructure(domain, command, selectedDocumentTemplate);
 
@@ -81,7 +81,7 @@ public class GenerateStructureAndDocumentHandler extends AbstractHandler {
 		if (null != textDocument) {
 			final IStructure2DocumentGenerator generator = Structure2DocumentRegistry.INSTANCE.getGenerator(textDocument);
 			if (generator.handles(textDocument)) {
-				generator.generate(textDocument);
+				result = generator.generate(textDocument);
 			} else {
 				MessageDialog.openError(Display.getCurrent().getActiveShell(), Messages.GenerateStructureAndDocumentHandler_GenerateAllActions, Messages.GenerateStructureAndDocumentHandler_GenerationNotSupportedErrorMessage);
 			}
@@ -91,7 +91,7 @@ public class GenerateStructureAndDocumentHandler extends AbstractHandler {
 		} else {
 			MessageDialog.openError(Display.getCurrent().getActiveShell(), Messages.GenerateStructureAndDocumentHandler_GenerateAllActions, Messages.GenerateStructureAndDocumentHandler_TheDocumentStructureHasNotBeenGeneratedError);
 		}
-		return null;
+		return result;
 	}
 
 	/**
