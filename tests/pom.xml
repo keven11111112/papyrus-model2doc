@@ -19,6 +19,7 @@
 	<description>Container of the Papyrus Model to Documentation Tests Plugins</description>
 
 	<modules>
+		<module>core</module>
 		<module>emf</module>
 		<module>integration</module>
 		<module>org.eclipse.papyrus.model2doc.bundles.tests</module>
