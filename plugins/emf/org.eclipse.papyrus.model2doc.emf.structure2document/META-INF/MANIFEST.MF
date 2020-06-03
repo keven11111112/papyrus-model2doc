@@ -16,4 +16,6 @@ Require-Bundle: org.eclipse.ui;bundle-version="[3.113.0,4.0.0)",
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Automatic-Module-Name: org.eclipse.papyrus.model2doc.emf.structure2document
 Bundle-ActivationPolicy: lazy
-Export-Package: org.eclipse.papyrus.model2doc.emf.structure2document.generator
+Export-Package: org.eclipse.papyrus.model2doc.emf.structure2document.generator,
+ org.eclipse.papyrus.model2doc.emf.structure2document.internal.handlers;x-friends:="org.eclipse.papyrus.model2doc.odt.emf.structure2pdf",
+ org.eclipse.papyrus.model2doc.emf.structure2document.internal.menu;x-friends:="org.eclipse.papyrus.model2doc.odt.emf.structure2document,org.eclipse.papyrus.model2doc.odt.emf.structure2pdf"

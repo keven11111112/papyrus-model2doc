@@ -160,7 +160,7 @@
          unpack="false"/>
 		 
 	<plugin
-         id="org.eclipse.papyrus.model2doc.odt.emf.template2pdf"
+         id="org.eclipse.papyrus.model2doc.odt.emf.structure2pdf"
          download-size="0"
          install-size="0"
          version="0.0.0"

@@ -21,7 +21,7 @@ package org.eclipse.papyrus.model2doc.emf.template2document.internal.menu;
 public final class Template2DocumentMenuConstants {
 
 	private Template2DocumentMenuConstants() {
-		// to prevent instantication
+		// to prevent instantiation
 	}
 
 	/**

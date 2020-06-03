@@ -13,31 +13,31 @@
  *
  *****************************************************************************/
 
-package org.eclipse.papyrus.model2doc.odt.emf.template2pdf.internal.menu;
+package org.eclipse.papyrus.model2doc.odt.emf.structure2pdf.internal.menu;
 
 /**
  * The constants used in the menus
  */
-public final class Template2PDFMenuConstants {
+public final class Structure2PDFMenuConstants {
 
-	private Template2PDFMenuConstants() {
+	private Structure2PDFMenuConstants() {
 		// to prevent instantiation
 	}
 
 	/**
 	 * the command's id for document generation
 	 */
-	public static final String GENERATE_STRUCTURE_DOCUMENT_AND_PDF_COMMAND = "org.eclipse.papyrus.model2doc.odt.emf.template2pdf.generateStructure_Document_PDF"; //$NON-NLS-1$
+	public static final String GENERATE_DOCUMENT_AND_PDF_COMMAND = "org.eclipse.papyrus.model2doc.odt.emf.structure2pdf.generateDocument_PDF"; //$NON-NLS-1$
 
 	/**
 	 * the command's id for document generation
 	 */
-	public static final String GENERATE_STRUCTURE_DOCUMENT_AND_PDF_A1B_COMMAND = "org.eclipse.papyrus.model2doc.odt.emf.template2pdf.generateStructure_Document_PDF_A1B"; //$NON-NLS-1$
+	public static final String GENERATE_DOCUMENT_AND_PDF_A1B_COMMAND = "org.eclipse.papyrus.model2doc.odt.emf.structure2pdf.generateDocument_PDF_A1B"; //$NON-NLS-1$
 
 	/**
 	 * the command's id for document generation
 	 */
-	public static final String GENERATE_STRUCTURE_DOCUMENT_AND_PDF_A2B_COMMAND = "org.eclipse.papyrus.model2doc.odt.emf.template2pdf.generateStructure_Document_PDF_A2B"; //$NON-NLS-1$
+	public static final String GENERATE_DOCUMENT_AND_PDF_A2B_COMMAND = "org.eclipse.papyrus.model2doc.odt.emf.structure2pdf.generateDocument_PDF_A2B"; //$NON-NLS-1$
 
 	/**
 	 * the variable's name used to get the pdf version in the menu label

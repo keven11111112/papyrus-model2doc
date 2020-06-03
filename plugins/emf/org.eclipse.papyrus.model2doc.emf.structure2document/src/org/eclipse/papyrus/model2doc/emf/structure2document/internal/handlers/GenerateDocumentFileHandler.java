@@ -56,8 +56,7 @@ public class GenerateDocumentFileHandler extends AbstractHandler {
 	 */
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		generator.generate(this.selectedDocument);
-		return null;
+		return generator.generate(this.selectedDocument);
 	}
 
 	/**
@@ -66,7 +65,11 @@ public class GenerateDocumentFileHandler extends AbstractHandler {
 	 * @param evaluationContext
 	 */
 	@Override
-	public void setEnabled(Object evaluationContext) {
+	public final void setEnabled(Object evaluationContext) {
+		setBaseEnabled(computeEnable(evaluationContext));
+	}
+
+	protected boolean computeEnable(Object evaluationContext) {
 		this.selectedDocument = getSelectedDocument();
 		boolean enabled = this.selectedDocument != null;
 
@@ -80,6 +83,7 @@ public class GenerateDocumentFileHandler extends AbstractHandler {
 			final IEvaluationContext iEvaluationContext = (IEvaluationContext) evaluationContext;
 			iEvaluationContext.addVariable(MenuConstants.VARIABLE_GENERATOR_MENU_LABEL, this.generator.getEditorLabel());
 		} else {
+			enabled = false;
 			this.selectedDocument = null;
 			this.generator = null;
 			if (evaluationContext instanceof IEvaluationContext) {
@@ -87,7 +91,7 @@ public class GenerateDocumentFileHandler extends AbstractHandler {
 				iEvaluationContext.addVariable(MenuConstants.VARIABLE_GENERATOR_MENU_LABEL, MenuConstants.NO_GENERATOR_ID);
 			}
 		}
-		setBaseEnabled(enabled);
+		return enabled;
 	}
 
 	/**

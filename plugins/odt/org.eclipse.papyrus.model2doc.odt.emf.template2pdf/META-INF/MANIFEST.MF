@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Papyrus-Model2Doc - Structure2PDF (Incubation)
+Bundle-Name: Papyrus-Model2Doc - Template2PDF (Incubation)
 Bundle-SymbolicName: org.eclipse.papyrus.model2doc.odt.emf.template2pdf;singleton:=true
 Bundle-Version: 0.8.0.qualifier
 Bundle-Activator: org.eclipse.papyrus.model2doc.odt.emf.template2pdf.Activator

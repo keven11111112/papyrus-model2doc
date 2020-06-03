@@ -13,7 +13,7 @@
  *
  *****************************************************************************/
 
-package org.eclipse.papyrus.model2doc.odt.emf.template2pdf;
+package org.eclipse.papyrus.model2doc.odt.emf.structure2pdf;
 
 import org.eclipse.papyrus.infra.core.log.LogHelper;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
@@ -25,7 +25,7 @@ import org.osgi.framework.BundleContext;
 public class Activator extends AbstractUIPlugin {
 
 	// The plug-in ID
-	public static final String PLUGIN_ID = "org.eclipse.papyrus.model2doc.odt.emf.template2pdf"; //$NON-NLS-1$
+	public static final String PLUGIN_ID = "org.eclipse.papyrus.model2doc.odt.emf.structure2pdf"; //$NON-NLS-1$
 
 	// The shared instance
 	private static Activator plugin;
