@@ -35,6 +35,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStruc
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplatePrototype;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EAttributeAsParagraph;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EAttributeListItemTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EAttributeTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassFilterBehavior;
@@ -373,6 +374,14 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	private EClass tableOfFiguresEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eAttributeAsParagraphEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1477,6 +1486,17 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
+	public EClass getEAttributeAsParagraph() {
+		return eAttributeAsParagraphEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EEnum getEClassFilterBehavior() {
 		return eClassFilterBehaviorEEnum;
 	}
@@ -1644,6 +1664,8 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		tableOfFiguresEClass = createEClass(TABLE_OF_FIGURES);
 		createEAttribute(tableOfFiguresEClass, TABLE_OF_FIGURES__TOF_TITLE);
 
+		eAttributeAsParagraphEClass = createEClass(EATTRIBUTE_AS_PARAGRAPH);
+
 		// Create enums
 		eClassFilterBehaviorEEnum = createEEnum(ECLASS_FILTER_BEHAVIOR);
 	}
@@ -1724,6 +1746,9 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		insertFileTemplateEClass.getESuperTypes().add(this.getILeafSubBodyPartTemplate());
 		insertFileTemplateEClass.getESuperTypes().add(this.getILeafBodyPartTemplate());
 		tableOfFiguresEClass.getESuperTypes().add(this.getDocumentPart());
+		eAttributeAsParagraphEClass.getESuperTypes().add(this.getEAttributeTemplate());
+		eAttributeAsParagraphEClass.getESuperTypes().add(this.getILeafBodyPartTemplate());
+		eAttributeAsParagraphEClass.getESuperTypes().add(this.getITemplatePartView());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(documentTemplateEClass, DocumentTemplate.class, "DocumentTemplate", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
@@ -1907,6 +1932,8 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 
 		initEClass(tableOfFiguresEClass, TableOfFigures.class, "TableOfFigures", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEAttribute(getTableOfFigures_TofTitle(), theEcorePackage.getEString(), "tofTitle", "Table Of Figures", 1, 1, TableOfFigures.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
+
+		initEClass(eAttributeAsParagraphEClass, EAttributeAsParagraph.class, "EAttributeAsParagraph", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		// Initialize enums and add enum literals
 		initEEnum(eClassFilterBehaviorEEnum, EClassFilterBehavior.class, "EClassFilterBehavior"); //$NON-NLS-1$

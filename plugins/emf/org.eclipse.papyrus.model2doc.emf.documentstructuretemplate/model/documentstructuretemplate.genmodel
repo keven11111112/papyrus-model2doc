@@ -241,5 +241,6 @@
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructuretemplate.ecore#//TableOfFigures">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructuretemplate.ecore#//TableOfFigures/tofTitle"/>
     </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructuretemplate.ecore#//EAttributeAsParagraph"/>
   </genPackages>
 </genmodel:GenModel>

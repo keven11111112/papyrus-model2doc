@@ -175,6 +175,16 @@ public interface DocumentStructureTemplateFactory extends EFactory {
 	TableOfFigures createTableOfFigures();
 
 	/**
+	 * Returns a new object of class '<em>EAttribute As Paragraph</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EAttribute As Paragraph</em>'.
+	 * @generated
+	 */
+	EAttributeAsParagraph createEAttributeAsParagraph();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

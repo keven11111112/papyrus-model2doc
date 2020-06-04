@@ -202,6 +202,9 @@ public class BodyItemProvider
 
 		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.BODY__BODY_PART_TEMPLATE,
 				DocumentStructureTemplateFactory.eINSTANCE.createInsertFileTemplate()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.BODY__BODY_PART_TEMPLATE,
+				DocumentStructureTemplateFactory.eINSTANCE.createEAttributeAsParagraph()));
 	}
 
 	/**

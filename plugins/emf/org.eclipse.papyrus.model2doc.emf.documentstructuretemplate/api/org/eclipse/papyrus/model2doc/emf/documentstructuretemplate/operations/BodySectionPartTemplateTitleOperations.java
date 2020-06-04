@@ -18,6 +18,7 @@ package org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.operations;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.osgi.util.NLS;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EAttributeAsParagraph;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTableView;
@@ -92,6 +93,9 @@ public class BodySectionPartTemplateTitleOperations {
 		if (partTemplate instanceof InsertFileTemplate) {
 			return buildInsertFileTemplateTitle((InsertFileTemplate) partTemplate, parameter);
 		}
+		if (partTemplate instanceof EAttributeAsParagraph) {
+			return buildEAttributeAsParagraphTitle((EAttributeAsParagraph) partTemplate, parameter);
+		}
 		return ""; //$NON-NLS-1$
 	}
 
@@ -137,6 +141,24 @@ public class BodySectionPartTemplateTitleOperations {
 			return partTemplate.getEReference().getName();
 		}
 		return "No EReference"; //$NON-NLS-1$
+	}
+
+	/**
+	 *
+	 * @param partTemplate
+	 *            an {@link EAttributeAsParagraph}
+	 * @param parameter
+	 *            a parameter to use to build the title. This parameter can be <code>null</code>
+	 * @return
+	 *         the built title for the EAttributeAsParagraph or a default value if the EAttribute is <code>null</code>
+	 *
+	 *
+	 */
+	protected final String buildEAttributeAsParagraphTitle(final EAttributeAsParagraph partTemplate, final EObject parameter) {
+		if (null != partTemplate.getEAttribute()) {
+			return partTemplate.getEAttribute().getName();
+		}
+		return "No EAttribute"; //$NON-NLS-1$
 	}
 
 	/**

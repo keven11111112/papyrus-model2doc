@@ -3314,6 +3314,127 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int TABLE_OF_FIGURES_OPERATION_COUNT = DOCUMENT_PART_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EAttributeAsParagraphImpl <em>EAttribute As Paragraph</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EAttributeAsParagraphImpl
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEAttributeAsParagraph()
+	 * @generated
+	 */
+	int EATTRIBUTE_AS_PARAGRAPH = 37;
+
+	/**
+	 * The feature id for the '<em><b>EAttribute</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EATTRIBUTE_AS_PARAGRAPH__EATTRIBUTE = EATTRIBUTE_TEMPLATE__EATTRIBUTE;
+
+	/**
+	 * The feature id for the '<em><b>Generate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EATTRIBUTE_AS_PARAGRAPH__GENERATE = EATTRIBUTE_TEMPLATE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Generate Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EATTRIBUTE_AS_PARAGRAPH__GENERATE_TITLE = EATTRIBUTE_TEMPLATE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Custom Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EATTRIBUTE_AS_PARAGRAPH__CUSTOM_TITLE = EATTRIBUTE_TEMPLATE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Generate Branch Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EATTRIBUTE_AS_PARAGRAPH__GENERATE_BRANCH_CONDITION = EATTRIBUTE_TEMPLATE_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>EAttribute As Paragraph</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EATTRIBUTE_AS_PARAGRAPH_FEATURE_COUNT = EATTRIBUTE_TEMPLATE_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Build EAttribute Value Label</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EATTRIBUTE_AS_PARAGRAPH___BUILD_EATTRIBUTE_VALUE_LABEL__OBJECT = EATTRIBUTE_TEMPLATE___BUILD_EATTRIBUTE_VALUE_LABEL__OBJECT;
+
+	/**
+	 * The operation id for the '<em>Get EAttribute Values</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EATTRIBUTE_AS_PARAGRAPH___GET_EATTRIBUTE_VALUES__EOBJECT = EATTRIBUTE_TEMPLATE___GET_EATTRIBUTE_VALUES__EOBJECT;
+
+	/**
+	 * The operation id for the '<em>Build Part Template Title</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EATTRIBUTE_AS_PARAGRAPH___BUILD_PART_TEMPLATE_TITLE__EOBJECT = EATTRIBUTE_TEMPLATE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Generate Branch</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EATTRIBUTE_AS_PARAGRAPH___GENERATE_BRANCH__EOBJECT = EATTRIBUTE_TEMPLATE_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>EAttribute As Paragraph</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EATTRIBUTE_AS_PARAGRAPH_OPERATION_COUNT = EATTRIBUTE_TEMPLATE_OPERATION_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassFilterBehavior <em>EClass Filter Behavior</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3322,7 +3443,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEClassFilterBehavior()
 	 * @generated
 	 */
-	int ECLASS_FILTER_BEHAVIOR = 37;
+	int ECLASS_FILTER_BEHAVIOR = 38;
 
 
 	/**
@@ -4375,6 +4496,17 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	EAttribute getTableOfFigures_TofTitle();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EAttributeAsParagraph <em>EAttribute As Paragraph</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EAttribute As Paragraph</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EAttributeAsParagraph
+	 * @generated
+	 */
+	EClass getEAttributeAsParagraph();
+
+	/**
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassFilterBehavior <em>EClass Filter Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5311,6 +5443,17 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TABLE_OF_FIGURES__TOF_TITLE = eINSTANCE.getTableOfFigures_TofTitle();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EAttributeAsParagraphImpl <em>EAttribute As Paragraph</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EAttributeAsParagraphImpl
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.DocumentStructureTemplatePackageImpl#getEAttributeAsParagraph()
+		 * @generated
+		 */
+		EClass EATTRIBUTE_AS_PARAGRAPH = eINSTANCE.getEAttributeAsParagraph();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassFilterBehavior <em>EClass Filter Behavior</em>}' enum.

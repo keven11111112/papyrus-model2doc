@@ -842,6 +842,14 @@ The goal of this method is to return a label for each element returned by the me
       </ownedAttribute>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_JsEMMOj4Eem6Q8pIItgtwQ" client="_iAWr8Oj3Eem6Q8pIItgtwQ" supplier="_zXDZIDnLEem5-oyJMXJtFA" contract="_zXDZIDnLEem5-oyJMXJtFA"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_HHYlQKYvEeq9XbSh8ucBMA" name="EAttributeAsParagraph">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_QBNzEKY3Eeq9XbSh8ucBMA" annotatedElement="_HHYlQKYvEeq9XbSh8ucBMA">
+        <body>This element allows to create a paragraph from an EAttribute value.</body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_MPhjwKYvEeq9XbSh8ucBMA" general="_ezvVwHxpEem8DZ1bmLpXuQ"/>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_eG_UkKYvEeq9XbSh8ucBMA" client="_HHYlQKYvEeq9XbSh8ucBMA" supplier="_R99HIFX-EemKJasCEBKPhQ" contract="_R99HIFX-EemKJasCEBKPhQ"/>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_X_uk8KY7Eeq6fpXVt16RgA" client="_HHYlQKYvEeq9XbSh8ucBMA" supplier="_DwGdIFYFEemKJasCEBKPhQ" contract="_DwGdIFYFEemKJasCEBKPhQ"/>
+    </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Dwr3IB2KEemmq_cjeiIGww">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DwseMB2KEemmq_cjeiIGww" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>

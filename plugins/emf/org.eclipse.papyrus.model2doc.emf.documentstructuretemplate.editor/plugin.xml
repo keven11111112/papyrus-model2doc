@@ -34,7 +34,7 @@
    </extension>
 
    <extension point="org.eclipse.ui.editors">
-      <!-- @generated documentstructuretemplate -->
+      <!-- @generated NOT documentstructuretemplate -->
       <editor
             id="org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.presentation.DocumentStructureTemplateEditorID"
             name="%_UI_DocumentStructureTemplateEditor_label"

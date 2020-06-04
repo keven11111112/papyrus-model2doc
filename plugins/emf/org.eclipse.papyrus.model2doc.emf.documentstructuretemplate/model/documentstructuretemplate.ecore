@@ -530,4 +530,9 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EAttributeAsParagraph" eSuperTypes="#//EAttributeTemplate #//ILeafBodyPartTemplate #//ITemplatePartView">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This element allows to create a paragraph from an EAttribute value."/>
+    </eAnnotations>
+  </eClassifiers>
 </ecore:EPackage>

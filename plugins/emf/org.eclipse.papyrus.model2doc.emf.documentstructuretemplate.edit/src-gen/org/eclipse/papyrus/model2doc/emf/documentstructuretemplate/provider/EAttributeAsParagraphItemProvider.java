@@ -28,18 +28,18 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.eclipse.papyrus.infra.emf.expressions.booleanexpressions.BooleanExpressionsFactory;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplateFactory;
+
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EAttributeAsParagraph;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EClassPartTemplate} object.
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EAttributeAsParagraph} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class EClassPartTemplateItemProvider extends EClassTemplateItemProvider {
+public class EAttributeAsParagraphItemProvider extends EAttributeTemplateItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -47,7 +47,7 @@ public class EClassPartTemplateItemProvider extends EClassTemplateItemProvider {
 	 *
 	 * @generated
 	 */
-	public EClassPartTemplateItemProvider(AdapterFactory adapterFactory) {
+	public EAttributeAsParagraphItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -147,7 +147,6 @@ public class EClassPartTemplateItemProvider extends EClassTemplateItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION);
-			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE);
 		}
 		return childrenFeatures;
 	}
@@ -167,7 +166,7 @@ public class EClassPartTemplateItemProvider extends EClassTemplateItemProvider {
 	}
 
 	/**
-	 * This returns EClassPartTemplate.gif.
+	 * This returns EAttributeAsParagraph.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -175,7 +174,7 @@ public class EClassPartTemplateItemProvider extends EClassTemplateItemProvider {
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/EClassPartTemplate")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/EAttributeAsParagraph")); //$NON-NLS-1$
 	}
 
 	/**
@@ -198,9 +197,8 @@ public class EClassPartTemplateItemProvider extends EClassTemplateItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((EClassPartTemplate) object).getCustomTitle();
-		return label == null || label.length() == 0 ? getString("_UI_EClassPartTemplate_type") : //$NON-NLS-1$
-				getString("_UI_EClassPartTemplate_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		EAttributeAsParagraph eAttributeAsParagraph = (EAttributeAsParagraph) object;
+		return getString("_UI_EAttributeAsParagraph_type") + " " + eAttributeAsParagraph.isGenerate(); //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 
@@ -216,14 +214,13 @@ public class EClassPartTemplateItemProvider extends EClassTemplateItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(EClassPartTemplate.class)) {
-		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__GENERATE:
-		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__GENERATE_TITLE:
-		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__CUSTOM_TITLE:
+		switch (notification.getFeatureID(EAttributeAsParagraph.class)) {
+		case DocumentStructureTemplatePackage.EATTRIBUTE_AS_PARAGRAPH__GENERATE:
+		case DocumentStructureTemplatePackage.EATTRIBUTE_AS_PARAGRAPH__GENERATE_TITLE:
+		case DocumentStructureTemplatePackage.EATTRIBUTE_AS_PARAGRAPH__CUSTOM_TITLE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__GENERATE_BRANCH_CONDITION:
-		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__BODY_PART_TEMPLATE:
+		case DocumentStructureTemplatePackage.EATTRIBUTE_AS_PARAGRAPH__GENERATE_BRANCH_CONDITION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -262,21 +259,6 @@ public class EClassPartTemplateItemProvider extends EClassTemplateItemProvider {
 
 		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION,
 				BooleanExpressionsFactory.eINSTANCE.createSingleEAttributeValueEqualityExpression()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE,
-				DocumentStructureTemplateFactory.eINSTANCE.createEReferencePartTemplate()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE,
-				DocumentStructureTemplateFactory.eINSTANCE.createEReferenceTableView()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE,
-				DocumentStructureTemplateFactory.eINSTANCE.createTreeListView()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE,
-				DocumentStructureTemplateFactory.eINSTANCE.createInsertFileTemplate()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE,
-				DocumentStructureTemplateFactory.eINSTANCE.createEAttributeAsParagraph()));
 	}
 
 }

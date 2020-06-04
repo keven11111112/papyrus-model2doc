@@ -81,7 +81,8 @@ These values will be consummed by the second level of '''DocumentTemplate''' ele
 
 #First level element
 ##''pure EMF''
-###'''EReferencePartTemplate''': to choose which EReference to use. This element can have children
+###'''EAttributeAsParagraph''': to create a paragraph in the final document from the value of an EAttribute.
+###'''EReferencePartTemplate''': to choose which EReference to use. This element can have children.
 ###'''EReferenceTableView''': to create a table from a reference value (detail further in the documentation).
 ###'''TreeListView''': to create a list from EStructuralFeature values (detail further in the documentation).
 ###'''InsertFileTemplate''': to declare a path to a file to integrate into the generated document. It won't be a reference, but a copy of its contents into the generated file.

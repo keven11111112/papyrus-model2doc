@@ -99,6 +99,8 @@ public class DocumentStructureTemplateFactoryImpl extends EFactoryImpl implement
 			return createInsertFileTemplate();
 		case DocumentStructureTemplatePackage.TABLE_OF_FIGURES:
 			return createTableOfFigures();
+		case DocumentStructureTemplatePackage.EATTRIBUTE_AS_PARAGRAPH:
+			return createEAttributeAsParagraph();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -302,6 +304,18 @@ public class DocumentStructureTemplateFactoryImpl extends EFactoryImpl implement
 	public TableOfFigures createTableOfFigures() {
 		TableOfFiguresImpl tableOfFigures = new TableOfFiguresImpl();
 		return tableOfFigures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttributeAsParagraph createEAttributeAsParagraph() {
+		EAttributeAsParagraphImpl eAttributeAsParagraph = new EAttributeAsParagraphImpl();
+		return eAttributeAsParagraph;
 	}
 
 	/**

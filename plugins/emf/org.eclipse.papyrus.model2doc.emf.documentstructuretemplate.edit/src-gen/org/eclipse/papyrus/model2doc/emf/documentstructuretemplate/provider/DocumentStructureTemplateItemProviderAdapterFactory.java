@@ -456,6 +456,31 @@ public class DocumentStructureTemplateItemProviderAdapterFactory extends Documen
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EAttributeAsParagraph} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected EAttributeAsParagraphItemProvider eAttributeAsParagraphItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EAttributeAsParagraph}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Adapter createEAttributeAsParagraphAdapter() {
+		if (eAttributeAsParagraphItemProvider == null) {
+			eAttributeAsParagraphItemProvider = new EAttributeAsParagraphItemProvider(this);
+		}
+
+		return eAttributeAsParagraphItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -642,6 +667,9 @@ public class DocumentStructureTemplateItemProviderAdapterFactory extends Documen
 		}
 		if (tableOfFiguresItemProvider != null) {
 			tableOfFiguresItemProvider.dispose();
+		}
+		if (eAttributeAsParagraphItemProvider != null) {
+			eAttributeAsParagraphItemProvider.dispose();
 		}
 	}
 
