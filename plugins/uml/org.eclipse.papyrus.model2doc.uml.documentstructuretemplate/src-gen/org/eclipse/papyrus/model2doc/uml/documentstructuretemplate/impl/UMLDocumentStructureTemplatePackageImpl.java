@@ -42,6 +42,7 @@ import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypeFil
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypeListItemTemplate;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePartTemplate;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyAttribute;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyAttributeAsParagraph;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyAttributeListItemTemplate;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyColumn;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyListItemTemplate;
@@ -209,6 +210,14 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 	 * @generated
 	 */
 	private EClass stereotypePropertyAttributeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass stereotypePropertyAttributeAsParagraphEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -617,6 +626,17 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 	 * @generated
 	 */
 	@Override
+	public EClass getStereotypePropertyAttributeAsParagraph() {
+		return stereotypePropertyAttributeAsParagraphEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EEnum getStereotypeFilterBehavior() {
 		return stereotypeFilterBehaviorEEnum;
 	}
@@ -711,6 +731,8 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 
 		stereotypePropertyAttributeEClass = createEClass(STEREOTYPE_PROPERTY_ATTRIBUTE);
 
+		stereotypePropertyAttributeAsParagraphEClass = createEClass(STEREOTYPE_PROPERTY_ATTRIBUTE_AS_PARAGRAPH);
+
 		// Create enums
 		stereotypeFilterBehaviorEEnum = createEEnum(STEREOTYPE_FILTER_BEHAVIOR);
 		commentChoiceEEnum = createEEnum(COMMENT_CHOICE);
@@ -784,6 +806,11 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 		stereotypePropertyAttributeListItemTemplateEClass.getESuperTypes().add(this.getStereotypePropertyListItemTemplate());
 		stereotypePropertyAttributeListItemTemplateEClass.getESuperTypes().add(theDocumentStructureTemplatePackage.getILeafListItemTemplate());
 		stereotypePropertyAttributeListItemTemplateEClass.getESuperTypes().add(this.getStereotypePropertyAttribute());
+		stereotypePropertyAttributeAsParagraphEClass.getESuperTypes().add(this.getStereotypePropertyTemplate());
+		stereotypePropertyAttributeAsParagraphEClass.getESuperTypes().add(this.getStereotypePropertyAttribute());
+		stereotypePropertyAttributeAsParagraphEClass.getESuperTypes().add(theDocumentStructureTemplatePackage.getILeafBodyPartTemplate());
+		stereotypePropertyAttributeAsParagraphEClass.getESuperTypes().add(theDocumentStructureTemplatePackage.getITemplatePartView());
+		stereotypePropertyAttributeAsParagraphEClass.getESuperTypes().add(this.getIUMLBodyPartTemplateTitle());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(stereotypePartTemplateEClass, StereotypePartTemplate.class, "StereotypePartTemplate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
@@ -844,6 +871,8 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 		initEClass(stereotypePropertyAttributeListItemTemplateEClass, StereotypePropertyAttributeListItemTemplate.class, "StereotypePropertyAttributeListItemTemplate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		initEClass(stereotypePropertyAttributeEClass, StereotypePropertyAttribute.class, "StereotypePropertyAttribute", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEClass(stereotypePropertyAttributeAsParagraphEClass, StereotypePropertyAttributeAsParagraph.class, "StereotypePropertyAttributeAsParagraph", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		// Initialize enums and add enum literals
 		initEEnum(stereotypeFilterBehaviorEEnum, StereotypeFilterBehavior.class, "StereotypeFilterBehavior"); //$NON-NLS-1$

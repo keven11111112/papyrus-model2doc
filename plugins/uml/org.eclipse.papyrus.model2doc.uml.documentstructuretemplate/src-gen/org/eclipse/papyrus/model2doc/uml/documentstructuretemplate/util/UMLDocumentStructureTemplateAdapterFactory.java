@@ -192,6 +192,11 @@ public class UMLDocumentStructureTemplateAdapterFactory extends AdapterFactoryIm
 		}
 
 		@Override
+		public Adapter caseStereotypePropertyAttributeAsParagraph(StereotypePropertyAttributeAsParagraph object) {
+			return createStereotypePropertyAttributeAsParagraphAdapter();
+		}
+
+		@Override
 		public Adapter caseEClassTemplate(EClassTemplate object) {
 			return createEClassTemplateAdapter();
 		}
@@ -560,6 +565,21 @@ public class UMLDocumentStructureTemplateAdapterFactory extends AdapterFactoryIm
 	 * @generated
 	 */
 	public Adapter createStereotypePropertyAttributeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyAttributeAsParagraph <em>Stereotype Property Attribute As Paragraph</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyAttributeAsParagraph
+	 * @generated
+	 */
+	public Adapter createStereotypePropertyAttributeAsParagraphAdapter() {
 		return null;
 	}
 

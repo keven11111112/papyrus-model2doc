@@ -322,6 +322,31 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyAttributeAsParagraph} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected StereotypePropertyAttributeAsParagraphItemProvider stereotypePropertyAttributeAsParagraphItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyAttributeAsParagraph}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Adapter createStereotypePropertyAttributeAsParagraphAdapter() {
+		if (stereotypePropertyAttributeAsParagraphItemProvider == null) {
+			stereotypePropertyAttributeAsParagraphItemProvider = new StereotypePropertyAttributeAsParagraphItemProvider(this);
+		}
+
+		return stereotypePropertyAttributeAsParagraphItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -491,6 +516,9 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 		if (stereotypePropertyAttributeListItemTemplateItemProvider != null) {
 			stereotypePropertyAttributeListItemTemplateItemProvider.dispose();
 		}
+		if (stereotypePropertyAttributeAsParagraphItemProvider != null) {
+			stereotypePropertyAttributeAsParagraphItemProvider.dispose();
+		}
 	}
 
 	/**
@@ -556,6 +584,9 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 				newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.BODY__BODY_PART_TEMPLATE,
 						UMLDocumentStructureTemplateFactory.eINSTANCE.createStereotypePropertyReferenceTableView()));
 
+				newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.BODY__BODY_PART_TEMPLATE,
+						UMLDocumentStructureTemplateFactory.eINSTANCE.createStereotypePropertyAttributeAsParagraph()));
+
 				return null;
 			}
 
@@ -589,6 +620,9 @@ public class UMLDocumentStructureTemplateItemProviderAdapterFactory extends UMLD
 
 				newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE,
 						UMLDocumentStructureTemplateFactory.eINSTANCE.createStereotypePropertyReferenceTableView()));
+
+				newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE,
+						UMLDocumentStructureTemplateFactory.eINSTANCE.createStereotypePropertyAttributeAsParagraph()));
 
 				return null;
 			}

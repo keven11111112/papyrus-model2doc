@@ -450,6 +450,38 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 			}
 			return result;
 		}
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_ATTRIBUTE_AS_PARAGRAPH: {
+			StereotypePropertyAttributeAsParagraph stereotypePropertyAttributeAsParagraph = (StereotypePropertyAttributeAsParagraph) theEObject;
+			T result = caseStereotypePropertyAttributeAsParagraph(stereotypePropertyAttributeAsParagraph);
+			if (result == null) {
+				result = caseStereotypePropertyTemplate(stereotypePropertyAttributeAsParagraph);
+			}
+			if (result == null) {
+				result = caseStereotypePropertyAttribute(stereotypePropertyAttributeAsParagraph);
+			}
+			if (result == null) {
+				result = caseILeafBodyPartTemplate(stereotypePropertyAttributeAsParagraph);
+			}
+			if (result == null) {
+				result = caseITemplatePartView(stereotypePropertyAttributeAsParagraph);
+			}
+			if (result == null) {
+				result = caseIUMLBodyPartTemplateTitle(stereotypePropertyAttributeAsParagraph);
+			}
+			if (result == null) {
+				result = caseStereotypeTemplate(stereotypePropertyAttributeAsParagraph);
+			}
+			if (result == null) {
+				result = caseIBodyPartTemplate(stereotypePropertyAttributeAsParagraph);
+			}
+			if (result == null) {
+				result = caseIBodySectionPartTemplate(stereotypePropertyAttributeAsParagraph);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -758,6 +790,23 @@ public class UMLDocumentStructureTemplateSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseStereotypePropertyAttribute(StereotypePropertyAttribute object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Stereotype Property Attribute As Paragraph</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Stereotype Property Attribute As Paragraph</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStereotypePropertyAttributeAsParagraph(StereotypePropertyAttributeAsParagraph object) {
 		return null;
 	}
 

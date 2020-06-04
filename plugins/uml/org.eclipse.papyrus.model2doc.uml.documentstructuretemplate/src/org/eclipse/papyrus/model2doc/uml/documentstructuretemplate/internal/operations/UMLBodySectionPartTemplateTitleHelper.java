@@ -20,6 +20,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionP
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.operations.BodySectionPartTemplateTitleOperations;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.CommentAsParagraph;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePartTemplate;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyAttributeAsParagraph;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferencePartTemplate;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferenceTableView;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.internal.providers.UMLDelegatingToEMFLabelProvider;
@@ -76,7 +77,22 @@ public class UMLBodySectionPartTemplateTitleHelper extends BodySectionPartTempla
 		if (partTemplate instanceof StereotypePropertyReferenceTableView) {
 			return buildStereotypePropertyReferenceTableViewTitle((StereotypePropertyReferenceTableView) partTemplate);
 		}
+		if (partTemplate instanceof StereotypePropertyAttributeAsParagraph) {
+			return buildStereotypePropertyAttributeAsParagraphTitle((StereotypePropertyAttributeAsParagraph) partTemplate);
+
+		}
 		return super.internalBuildPartTemplateTitle(partTemplate, parameter);
+	}
+
+	/**
+	 * @param partTemplate
+	 * @return
+	 */
+	private String buildStereotypePropertyAttributeAsParagraphTitle(final StereotypePropertyAttributeAsParagraph partTemplate) {
+		if (null != partTemplate.getPropertyName() && false == partTemplate.getPropertyName().isEmpty()) {
+			return partTemplate.getPropertyName();
+		}
+		return "No Property Name";//$NON-NLS-1$
 	}
 
 	/**

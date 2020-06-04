@@ -87,6 +87,8 @@ public class UMLDocumentStructureTemplateFactoryImpl extends EFactoryImpl implem
 			return createStereotypePropertyReferenceListItemTemplate();
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_ATTRIBUTE_LIST_ITEM_TEMPLATE:
 			return createStereotypePropertyAttributeListItemTemplate();
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_ATTRIBUTE_AS_PARAGRAPH:
+			return createStereotypePropertyAttributeAsParagraph();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -222,6 +224,18 @@ public class UMLDocumentStructureTemplateFactoryImpl extends EFactoryImpl implem
 	public StereotypePropertyAttributeListItemTemplate createStereotypePropertyAttributeListItemTemplate() {
 		StereotypePropertyAttributeListItemTemplateImpl stereotypePropertyAttributeListItemTemplate = new StereotypePropertyAttributeListItemTemplateImpl();
 		return stereotypePropertyAttributeListItemTemplate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public StereotypePropertyAttributeAsParagraph createStereotypePropertyAttributeAsParagraph() {
+		StereotypePropertyAttributeAsParagraphImpl stereotypePropertyAttributeAsParagraph = new StereotypePropertyAttributeAsParagraphImpl();
+		return stereotypePropertyAttributeAsParagraph;
 	}
 
 	/**

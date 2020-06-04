@@ -104,5 +104,6 @@
         labelFeature="../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.genmodel#//documentstructuretemplate/IListItemTemplate/customItemLabel"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="umldocumentstructuretemplate.ecore#//StereotypePropertyAttributeListItemTemplate"/>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="umldocumentstructuretemplate.ecore#//StereotypePropertyAttribute"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="umldocumentstructuretemplate.ecore#//StereotypePropertyAttributeAsParagraph"/>
   </genPackages>
 </genmodel:GenModel>

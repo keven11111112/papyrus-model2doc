@@ -115,6 +115,16 @@ public interface UMLDocumentStructureTemplateFactory extends EFactory {
 	StereotypePropertyAttributeListItemTemplate createStereotypePropertyAttributeListItemTemplate();
 
 	/**
+	 * Returns a new object of class '<em>Stereotype Property Attribute As Paragraph</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>Stereotype Property Attribute As Paragraph</em>'.
+	 * @generated
+	 */
+	StereotypePropertyAttributeAsParagraph createStereotypePropertyAttributeAsParagraph();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -152,6 +152,8 @@ public class UMLDocumentStructureTemplateValidator extends EObjectValidator {
 			return validateStereotypePropertyAttributeListItemTemplate((StereotypePropertyAttributeListItemTemplate) value, diagnostics, context);
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_ATTRIBUTE:
 			return validateStereotypePropertyAttribute((StereotypePropertyAttribute) value, diagnostics, context);
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_ATTRIBUTE_AS_PARAGRAPH:
+			return validateStereotypePropertyAttributeAsParagraph((StereotypePropertyAttributeAsParagraph) value, diagnostics, context);
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_FILTER_BEHAVIOR:
 			return validateStereotypeFilterBehavior((StereotypeFilterBehavior) value, diagnostics, context);
 		case UMLDocumentStructureTemplatePackage.COMMENT_CHOICE:
@@ -339,6 +341,16 @@ public class UMLDocumentStructureTemplateValidator extends EObjectValidator {
 	 */
 	public boolean validateStereotypePropertyAttribute(StereotypePropertyAttribute stereotypePropertyAttribute, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(stereotypePropertyAttribute, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public boolean validateStereotypePropertyAttributeAsParagraph(StereotypePropertyAttributeAsParagraph stereotypePropertyAttributeAsParagraph, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(stereotypePropertyAttributeAsParagraph, diagnostics, context);
 	}
 
 	/**

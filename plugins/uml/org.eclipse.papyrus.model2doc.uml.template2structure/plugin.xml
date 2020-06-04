@@ -19,6 +19,10 @@
              class="org.eclipse.papyrus.model2doc.uml.template2structure.internal.mappers.StereotypePropertyReferenceTableViewMapper"
              generatorId="TextDocumentStructureGenerator.default">
        </mapper>
+       <mapper
+             class="org.eclipse.papyrus.model2doc.uml.template2structure.internal.mappers.StereotypePropertyAttributeAsParagraphMapper"
+             generatorId="TextDocumentStructureGenerator.default">
+       </mapper>
    </extension>
 
 </plugin>

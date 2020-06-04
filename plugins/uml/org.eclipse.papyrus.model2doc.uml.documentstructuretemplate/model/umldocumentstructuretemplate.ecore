@@ -294,4 +294,6 @@
       <details key="documentation" value="This interface is used to indicate that the referenced property must be an attribute (a primitive type)"/>
     </eAnnotations>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StereotypePropertyAttributeAsParagraph"
+      eSuperTypes="#//StereotypePropertyTemplate #//StereotypePropertyAttribute ../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.ecore#//ILeafBodyPartTemplate ../../org.eclipse.papyrus.model2doc.emf.documentstructuretemplate/model/documentstructuretemplate.ecore#//ITemplatePartView #//IUMLBodyPartTemplateTitle"/>
 </ecore:EPackage>

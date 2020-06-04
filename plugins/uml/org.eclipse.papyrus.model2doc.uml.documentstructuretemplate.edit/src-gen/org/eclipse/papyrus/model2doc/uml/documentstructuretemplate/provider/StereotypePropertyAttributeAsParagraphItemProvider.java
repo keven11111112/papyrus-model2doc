@@ -28,21 +28,20 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.eclipse.papyrus.infra.emf.expressions.booleanexpressions.BooleanExpressionsFactory;
-import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplateFactory;
+
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 
-import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePartTemplate;
-import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplateFactory;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyAttributeAsParagraph;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplatePackage;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePartTemplate} object.
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyAttributeAsParagraph} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class StereotypePartTemplateItemProvider extends MandatoryStereotypeWithEClassTemplateItemProvider {
+public class StereotypePropertyAttributeAsParagraphItemProvider extends StereotypePropertyTemplateItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -50,7 +49,7 @@ public class StereotypePartTemplateItemProvider extends MandatoryStereotypeWithE
 	 *
 	 * @generated
 	 */
-	public StereotypePartTemplateItemProvider(AdapterFactory adapterFactory) {
+	public StereotypePropertyAttributeAsParagraphItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -150,7 +149,6 @@ public class StereotypePartTemplateItemProvider extends MandatoryStereotypeWithE
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION);
-			childrenFeatures.add(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE);
 		}
 		return childrenFeatures;
 	}
@@ -170,7 +168,7 @@ public class StereotypePartTemplateItemProvider extends MandatoryStereotypeWithE
 	}
 
 	/**
-	 * This returns StereotypePartTemplate.gif.
+	 * This returns StereotypePropertyAttributeAsParagraph.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -178,7 +176,7 @@ public class StereotypePartTemplateItemProvider extends MandatoryStereotypeWithE
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/StereotypePartTemplate")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/StereotypePropertyAttributeAsParagraph")); //$NON-NLS-1$
 	}
 
 	/**
@@ -201,9 +199,9 @@ public class StereotypePartTemplateItemProvider extends MandatoryStereotypeWithE
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((StereotypePartTemplate) object).getCustomTitle();
-		return label == null || label.length() == 0 ? getString("_UI_StereotypePartTemplate_type") : //$NON-NLS-1$
-				getString("_UI_StereotypePartTemplate_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		String label = ((StereotypePropertyAttributeAsParagraph) object).getStereotypeQualifiedName();
+		return label == null || label.length() == 0 ? getString("_UI_StereotypePropertyAttributeAsParagraph_type") : //$NON-NLS-1$
+				getString("_UI_StereotypePropertyAttributeAsParagraph_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 
@@ -219,14 +217,13 @@ public class StereotypePartTemplateItemProvider extends MandatoryStereotypeWithE
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(StereotypePartTemplate.class)) {
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__GENERATE:
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__GENERATE_TITLE:
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__CUSTOM_TITLE:
+		switch (notification.getFeatureID(StereotypePropertyAttributeAsParagraph.class)) {
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_ATTRIBUTE_AS_PARAGRAPH__GENERATE:
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_ATTRIBUTE_AS_PARAGRAPH__GENERATE_TITLE:
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_ATTRIBUTE_AS_PARAGRAPH__CUSTOM_TITLE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION:
-		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PART_TEMPLATE__BODY_PART_TEMPLATE:
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_ATTRIBUTE_AS_PARAGRAPH__GENERATE_BRANCH_CONDITION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -265,33 +262,6 @@ public class StereotypePartTemplateItemProvider extends MandatoryStereotypeWithE
 
 		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION,
 				BooleanExpressionsFactory.eINSTANCE.createSingleEAttributeValueEqualityExpression()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE,
-				UMLDocumentStructureTemplateFactory.eINSTANCE.createStereotypePropertyReferencePartTemplate()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE,
-				UMLDocumentStructureTemplateFactory.eINSTANCE.createCommentAsParagraph()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE,
-				UMLDocumentStructureTemplateFactory.eINSTANCE.createStereotypePropertyReferenceTableView()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE,
-				UMLDocumentStructureTemplateFactory.eINSTANCE.createStereotypePropertyAttributeAsParagraph()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE,
-				DocumentStructureTemplateFactory.eINSTANCE.createEReferencePartTemplate()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE,
-				DocumentStructureTemplateFactory.eINSTANCE.createEReferenceTableView()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE,
-				DocumentStructureTemplateFactory.eINSTANCE.createTreeListView()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE,
-				DocumentStructureTemplateFactory.eINSTANCE.createInsertFileTemplate()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructureTemplatePackage.Literals.ICOMPOSED_SUB_BODY_PART_TEMPLATE__BODY_PART_TEMPLATE,
-				DocumentStructureTemplateFactory.eINSTANCE.createEAttributeAsParagraph()));
 	}
 
 }
