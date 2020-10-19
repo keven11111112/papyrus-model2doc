@@ -1,7 +1,7 @@
 target "Papyrus Model2Doc - 2019-03" with source requirements
 
 
-location "http://download.eclipse.org/releases/2019-06" eclipse-2019-06 {
+location "http://download.eclipse.org/releases/2020-06" eclipse-2020-06 {
  org.eclipse.sdk.feature.group 
 }
 
@@ -9,18 +9,18 @@ location "http://download.eclipse.org/releases/2019-06" eclipse-2019-06 {
 /** Manual dependencies */
 
 //manualUpdate
-location papyrusMasterN "https://hudson.eclipse.org/papyrus/job/Papyrus-Master/lastSuccessfulBuild/artifact/repository/" {
+location papyrusMaster "http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2020-06" {
  org.eclipse.papyrus.sdk.feature.feature.group lazy
 }
 
 //manualUpdate
-location papyrusMasterToolsmithsN "https://hudson.eclipse.org/papyrus/job/Papyrus-Master-Toolsmiths/lastSuccessfulBuild/artifact/repository/" {
+location papyrusMasterToolsmiths "https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2020-06/4.8.0/toolsmiths/" {
  org.eclipse.papyrus.junit.utils lazy
  org.eclipse.papyrus.junit.framework lazy
  org.eclipse.papyrus.toolsmiths.feature.feature.group lazy
 }
  
- location Sysml "http://download.eclipse.org/modeling/mdt/papyrus/components/sysml14/2019-06"{
+ location Sysml "https://hudson.eclipse.org/papyrus/job/papyrus-sysml14-master/lastSuccessfulBuild/artifact/releng/org.eclipse.papyrus.sysml14.p2/target/repository/"{
  	org.eclipse.papyrus.sysml14.feature.feature.group
 }
 
@@ -35,18 +35,18 @@ location uml "http://download.eclipse.org/modeling/mdt/uml2/updates/5.5" {
 
 //updateFrom("EMF (Core)",0)
 
-location emf "http://download.eclipse.org/modeling/emf/emf/builds/release/2.18" {
+location emf "http://download.eclipse.org/modeling/emf/emf/builds/release/2.22" {
 	org.eclipse.emf.sdk.feature.group
 }
 
 //updateFrom("GMF Runtime milestones",0)
 
-location gmfRuntime "https://download.eclipse.org/modeling/gmp/gmf-runtime/updates/milestones/S201905141505" {
+location gmfRuntime "https://download.eclipse.org/modeling/gmp/gmf-runtime/updates/releases/R202004160913" {
 	org.eclipse.gmf.runtime.sdk.feature.group
 }
 
 //updateFrom("GMF Runtime milestones",1)
 
-location gmfNotation "https://download.eclipse.org/modeling/gmp/gmf-notation/updates/releases/R201805221301" {
+location gmfNotation "https://download.eclipse.org/modeling/gmp/gmf-notation/updates/releases/R202004160913" {
 	org.eclipse.gmf.runtime.notation.sdk.feature.group
 }

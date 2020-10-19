@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
-<target name="Papyrus Model2Doc - 2019-03" sequenceNumber="1562331124">
+<target name="Papyrus Model2Doc - 2019-03" sequenceNumber="1603121310">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.sdk.feature.group" version="4.12.0.v20190605-1801"/>
-      <repository id="eclipse-2019-06" location="http://download.eclipse.org/releases/2019-06"/>
+      <unit id="org.eclipse.sdk.feature.group" version="4.16.0.v20200604-0951"/>
+      <repository id="eclipse-2020-06" location="http://download.eclipse.org/releases/2020-06"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.papyrus.sdk.feature.feature.group" version="0.0.0"/>
-      <repository id="papyrusMasterN" location="https://hudson.eclipse.org/papyrus/job/Papyrus-Master/lastSuccessfulBuild/artifact/repository/"/>
+      <repository id="papyrusMaster" location="http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2020-06"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.papyrus.junit.utils" version="0.0.0"/>
       <unit id="org.eclipse.papyrus.junit.framework" version="0.0.0"/>
       <unit id="org.eclipse.papyrus.toolsmiths.feature.feature.group" version="0.0.0"/>
-      <repository id="papyrusMasterToolsmithsN" location="https://hudson.eclipse.org/papyrus/job/Papyrus-Master-Toolsmiths/lastSuccessfulBuild/artifact/repository/"/>
+      <repository id="papyrusMasterToolsmiths" location="https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2020-06/4.8.0/toolsmiths/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.papyrus.sysml14.feature.feature.group" version="1.3.200"/>
-      <repository id="Sysml" location="http://download.eclipse.org/modeling/mdt/papyrus/components/sysml14/2019-06"/>
+      <unit id="org.eclipse.papyrus.sysml14.feature.feature.group" version="1.3.400.202007281234"/>
+      <repository id="Sysml" location="https://hudson.eclipse.org/papyrus/job/papyrus-sysml14-master/lastSuccessfulBuild/artifact/releng/org.eclipse.papyrus.sysml14.p2/target/repository/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.uml2.sdk.feature.group" version="5.5.0.v20181203-1331"/>
+      <unit id="org.eclipse.uml2.sdk.feature.group" version="5.5.1.v20200302-1312"/>
       <repository id="uml" location="http://download.eclipse.org/modeling/mdt/uml2/updates/5.5"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.emf.sdk.feature.group" version="2.18.0.v20190528-0845"/>
-      <repository id="emf" location="http://download.eclipse.org/modeling/emf/emf/builds/release/2.18"/>
+      <unit id="org.eclipse.emf.sdk.feature.group" version="2.22.0.v20200519-1135"/>
+      <repository id="emf" location="http://download.eclipse.org/modeling/emf/emf/builds/release/2.22"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.gmf.runtime.sdk.feature.group" version="1.12.1.201905141505"/>
-      <repository id="gmfRuntime" location="https://download.eclipse.org/modeling/gmp/gmf-runtime/updates/milestones/S201905141505"/>
+      <unit id="org.eclipse.gmf.runtime.sdk.feature.group" version="1.13.0.202004160913"/>
+      <repository id="gmfRuntime" location="https://download.eclipse.org/modeling/gmp/gmf-runtime/updates/releases/R202004160913"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.gmf.runtime.notation.sdk.feature.group" version="1.12.0.201805221301"/>
-      <repository id="gmfNotation" location="https://download.eclipse.org/modeling/gmp/gmf-notation/updates/releases/R201805221301"/>
+      <unit id="org.eclipse.gmf.runtime.notation.sdk.feature.group" version="1.13.0.202004160913"/>
+      <repository id="gmfNotation" location="https://download.eclipse.org/modeling/gmp/gmf-notation/updates/releases/R202004160913"/>
     </location>
   </locations>
 </target>
