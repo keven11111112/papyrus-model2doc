@@ -20,7 +20,7 @@
    </license>
 
    <requires>
-      <import feature="org.eclipse.papyrus.sdk.feature" version="4.2.0" match="compatible"/>
+      <import feature="org.eclipse.papyrus.sdk.feature" version="4.2.0" match="greaterOrEqual"/>
       <import feature="org.eclipse.papyrus.model2doc.feature" version="0.8.0" match="compatible"/>
       <import feature="org.eclipse.papyrus.model2doc.uml.feature" version="0.8.0" match="compatible"/>
    </requires>
