@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2019, 2020 CEA LIST.
+ * Copyright (c) 2020 CEA LIST.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -9,8 +9,7 @@
  * SPDX-License-Identifier: EPL-2.0
  *
  * Contributors:
- *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
- *  Pauline DEVILLE - Bug 568255 [Model2Doc][Docx] Add developer tools to extract files from Docx
+ *  Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - Initial API and implementation
  *****************************************************************************/
 package org.eclipse.papyrus.model2doc.dev.tools.handlers;
 
@@ -31,10 +30,10 @@ import org.eclipse.papyrus.model2doc.dev.tools.Activator;
 
 /**
  *
- * This class has been created to extract easily the file content.xml from an odt file
+ * This class has been created to extract easily the file document.xml from an docx file
  *
  */
-public class ExtractContentsXmlFileHandler extends AbstractZipFileHandler {
+public class ExtractDocxContentsXmlFileHandler extends AbstractZipFileHandler {
 
 	/**
 	 *
@@ -48,21 +47,21 @@ public class ExtractContentsXmlFileHandler extends AbstractZipFileHandler {
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		for (final URI uri : getSelectedFileURI()) {
 
-			// convert the current odt file platform/resource path into an xml path according to the OS (id for windows : C:\... or D:\...)
+			// convert the current file platform/resource path into an xml path according to the OS (id for windows : C:\... or D:\...)
 			final String contentXMLLocation = getOSPathFromURI(uri.trimFileExtension().appendFileExtension(XML_EXTENSION));
 
-			// same thing for the selected odt file
-			final String odtFileLocation = getOSPathFromURI(uri);
+			// same thing for the selected docx file
+			final String docxFileLocation = getOSPathFromURI(uri);
 
-			final File odtFile = new File(odtFileLocation);
+			final File docxFile = new File(docxFileLocation);
 			try {
-				final ZipFile odtZipFile = new ZipFile(odtFile);
-				final Enumeration<? extends ZipEntry> entries = odtZipFile.entries();
+				final ZipFile docxZipFile = new ZipFile(docxFile);
+				final Enumeration<? extends ZipEntry> entries = docxZipFile.entries();
 				final FileOutputStream outputStream = new FileOutputStream(contentXMLLocation);
 				while (entries.hasMoreElements()) {
 					final ZipEntry current = entries.nextElement();
-					if (IOdtConstants.CONTENT_XML_FILE.equals(current.getName())) {
-						final InputStream in = odtZipFile.getInputStream(current);
+					if (IDocxConstant.DOCX_CONTENT_FILE.equals(current.getName())) {
+						final InputStream in = docxZipFile.getInputStream(current);
 						while (0 < in.available()) {
 							final int read = in.read();
 							outputStream.write(read);
@@ -73,7 +72,7 @@ public class ExtractContentsXmlFileHandler extends AbstractZipFileHandler {
 					}
 				}
 
-				odtZipFile.close();
+				docxZipFile.close();
 				outputStream.close();
 				Activator.log.info(NLS.bind("XML file extracted from {0}", uri.toString())); //$NON-NLS-1$
 			} catch (FileNotFoundException e) {
@@ -100,7 +99,7 @@ public class ExtractContentsXmlFileHandler extends AbstractZipFileHandler {
 	 */
 	@Override
 	protected String getTemplateExtension() {
-		return IOdtConstants.OTT_EXTENSION;
+		return IDocxConstant.DOTX_EXTENSION;
 	}
 
 	/**
@@ -110,7 +109,7 @@ public class ExtractContentsXmlFileHandler extends AbstractZipFileHandler {
 	 */
 	@Override
 	protected String getFileExtension() {
-		return IOdtConstants.ODT_EXTENSION;
+		return IDocxConstant.DOCX_EXTENSION;
 	}
 
 }

@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2019, 2020 CEA LIST.
+ * Copyright (c) 2020 CEA LIST.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -9,8 +9,7 @@
  * SPDX-License-Identifier: EPL-2.0
  *
  * Contributors:
- *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
- *  Pauline DEVILLE - Bug 568255 [Model2Doc][Docx] Add developer tools to extract files from Docx
+ *  Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - Initial API and implementation
  *****************************************************************************/
 package org.eclipse.papyrus.model2doc.dev.tools.handlers;
 
@@ -35,10 +34,10 @@ import org.eclipse.papyrus.model2doc.dev.tools.utils.ZipUtils;
 
 /**
  *
- * This class has been created to extract easily all files owned by an odt file and format the xml files.
+ * This class has been created to extract easily all files owned by an docx file and format the xml files.
  *
  */
-public class UnzipOdtFileHandler extends AbstractZipFileHandler {
+public class UnzipDocxFileHandler extends AbstractZipFileHandler {
 
 	/**
 	 *
@@ -52,11 +51,11 @@ public class UnzipOdtFileHandler extends AbstractZipFileHandler {
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		for (final URI uri : getSelectedFileURI()) {
 
-			// same thing for the selected odt file
-			final String odtFileLocation = getOSPathFromURI(uri);
+			// same thing for the selected docx file
+			final String docxFileLocation = getOSPathFromURI(uri);
 
 			try {
-				ZipInputStream zipInputStream = new ZipInputStream(new FileInputStream(odtFileLocation));
+				ZipInputStream zipInputStream = new ZipInputStream(new FileInputStream(docxFileLocation));
 				final String outputFolder = getOSPathFromURI(uri.trimFileExtension());
 				File f = new File(outputFolder);
 
@@ -126,7 +125,7 @@ public class UnzipOdtFileHandler extends AbstractZipFileHandler {
 	 */
 	@Override
 	protected String getTemplateExtension() {
-		return IOdtConstants.OTT_EXTENSION;
+		return IDocxConstant.DOTX_EXTENSION;
 	}
 
 	/**
@@ -136,6 +135,6 @@ public class UnzipOdtFileHandler extends AbstractZipFileHandler {
 	 */
 	@Override
 	protected String getFileExtension() {
-		return IOdtConstants.ODT_EXTENSION;
+		return IDocxConstant.DOCX_EXTENSION;
 	}
 }

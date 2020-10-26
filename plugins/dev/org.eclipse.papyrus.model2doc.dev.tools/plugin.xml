@@ -55,6 +55,21 @@
                         checkEnabled="true">
                   </visibleWhen>
                </command>
+               <command
+                     commandId="org.eclipse.papyrus.model2doc.dev.tools.extractFullDocxContents"
+                     style="push">
+                  <visibleWhen
+                        checkEnabled="true">
+                  </visibleWhen>
+               </command>
+               <command
+                     commandId="org.eclipse.papyrus.model2doc.dev.tools.extractDocxXMLDocument"
+                     label="Extract Docx Document XML File"
+                     style="push">
+                  <visibleWhen
+                        checkEnabled="true">
+                  </visibleWhen>
+               </command>
             <separator
                   name="org.eclipse.papyrus.model2doc.dev.tools.ui.menu.separator.after"
                   visible="true">
@@ -78,6 +93,16 @@
             description="This command allows to extract all the contents of an odt file"
             id="org.eclipse.papyrus.model2doc.dev.tools.extractFullODTContents"
             name="Extract Full ODT file contents">
+      </command>
+      <command
+            description="This command allows to extract all the contents of an docx file"
+            id="org.eclipse.papyrus.model2doc.dev.tools.extractFullDocxContents"
+            name="Extract Full Docx file contents">
+      </command>
+      <command
+            description="This command allows to extract the file document.xml from an docx file"
+            id="org.eclipse.papyrus.model2doc.dev.tools.extractDocxXMLDocument"
+            name="Extract document.xml file">
       </command>
    </extension>
    <extension
@@ -131,6 +156,58 @@
                         <test
                               property="org.eclipse.core.resources.name"
                               value="*.ott">
+                        </test>
+                     </or>
+                  </adapt>
+               </iterate>
+            </with>
+         </activeWhen>
+      </handler>
+      <handler
+            class="org.eclipse.papyrus.model2doc.dev.tools.handlers.UnzipDocxFileHandler"
+            commandId="org.eclipse.papyrus.model2doc.dev.tools.extractFullDocxContents">
+         <activeWhen>
+            <with
+                  variable="selection">
+               <iterate
+                     ifEmpty="false"
+                     operator="and">
+                  <adapt
+                        type="org.eclipse.core.resources.IFile">
+                     <or>
+                        <test
+                              property="org.eclipse.core.resources.name"
+                              value="*.docx">
+                        </test>
+                        <test
+                              property="org.eclipse.core.resources.name"
+                              value="*.dotx">
+                        </test>
+                     </or>
+                  </adapt>
+               </iterate>
+            </with>
+         </activeWhen>
+      </handler>
+      <handler
+            class="org.eclipse.papyrus.model2doc.dev.tools.handlers.ExtractDocxContentsXmlFileHandler"
+            commandId="org.eclipse.papyrus.model2doc.dev.tools.extractDocxXMLDocument">
+         <activeWhen>
+            <with
+                  variable="selection">
+               <iterate
+                     ifEmpty="false"
+                     operator="and">
+                  <adapt
+                        type="org.eclipse.core.resources.IFile">
+                     <or>
+                        <test
+                              property="org.eclipse.core.resources.name"
+                              value="*.docx">
+                        </test>
+                        <test
+                              property="org.eclipse.core.resources.name"
+                              value="*.dotx">
                         </test>
                      </or>
                   </adapt>

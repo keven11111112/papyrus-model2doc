@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2019 CEA LIST and others.
+ * Copyright (c) 2019, 2020 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -9,13 +9,13 @@
  * SPDX-License-Identifier: EPL-2.0
  *
  * Contributors:
- *   CEA LIST - Initial API and implementation
- *
+ *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Bug 568483
+ *  Pauline DEVILLE - Bug 568255 [Model2Doc][Docx] Add developer tools to extract files from Docx
  *****************************************************************************/
 
 package org.eclipse.papyrus.model2doc.dev.tools.handlers;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -30,30 +30,14 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.model2doc.dev.tools.Activator;
-import org.eclipse.wst.xml.core.internal.formatter.XMLFormatterFormatProcessor;
 
 /**
- * TODO move me into an odt dev plugin
- *
- * Abstract handler used to manipulate ODT file
+ * Abstract handler used to manipulate zip file
  */
-public abstract class AbstractODTFileHandler extends AbstractHandler {
+public abstract class AbstractZipFileHandler extends AbstractHandler {
 
 	protected static final String XML_EXTENSION = "xml"; //$NON-NLS-1$
-
-	protected static final String ODT_EXTENSION = "odt"; //$NON-NLS-1$
-
-	protected static final String OTT_EXTENSION = "ott"; //$NON-NLS-1$
-
-	protected static final String CONTENT_XML_FILE = "content.xml"; //$NON-NLS-1$
-
-	/**
-	 * the format processor used to format XML files
-	 */
-	protected static final XMLFormatterFormatProcessor processor = new XMLFormatterFormatProcessor();
-
 
 	// TODO move me in a util class
 	protected static final String getOSPathFromURI(final URI uri) {
@@ -69,7 +53,7 @@ public abstract class AbstractODTFileHandler extends AbstractHandler {
 	 * @return
 	 *         the URI of the uml selected files
 	 */
-	protected final List<URI> getSelectedOdtFileURI() {
+	protected final List<URI> getSelectedFileURI() {
 		final Iterator<?> iter = getCurrentStructuredSelection().iterator();
 		final List<URI> uris = new ArrayList<>();
 		// 1. we iterate on the selection
@@ -82,12 +66,22 @@ public abstract class AbstractODTFileHandler extends AbstractHandler {
 				pathName = f.getFullPath().toPortableString();
 			}
 			final URI uri = URI.createPlatformResourceURI(pathName, true);
-			if (ODT_EXTENSION.equals(uri.fileExtension()) || OTT_EXTENSION.equals(uri.fileExtension())) {
+			if (getFileExtension().equals(uri.fileExtension()) || getTemplateExtension().equals(uri.fileExtension())) {
 				uris.add(uri);
 			}
 		}
 		return uris;
 	}
+
+	/**
+	 * @return
+	 */
+	protected abstract String getTemplateExtension();
+
+	/**
+	 * @return
+	 */
+	protected abstract String getFileExtension();
 
 	/**
 	 *
@@ -97,7 +91,7 @@ public abstract class AbstractODTFileHandler extends AbstractHandler {
 	 */
 	@Override
 	public void setEnabled(Object evaluationContext) {
-		super.setBaseEnabled(getSelectedOdtFileURI().size() > 0);
+		super.setBaseEnabled(getSelectedFileURI().size() > 0);
 	}
 
 	/**
@@ -130,16 +124,6 @@ public abstract class AbstractODTFileHandler extends AbstractHandler {
 	protected static final void formatXMLFile(final String filePath) {
 		// formatting file now
 		final IFile file = ResourcesPlugin.getWorkspace().getRoot().getFileForLocation(new Path(filePath));
-		// file.exists()
-		if (null != file) {
-			try {
-				processor.formatFile(file);
-				Activator.log.info(NLS.bind("XML file {0} is now formatted", filePath)); //$NON-NLS-1$
-			} catch (IOException ex) {
-				Activator.log.error(NLS.bind("IOException formating the XML file from {0}", filePath), ex); //$NON-NLS-1$
-			} catch (CoreException ex) {
-				Activator.log.error(NLS.bind("Exception during the formatting of {0}", filePath), ex); //$NON-NLS-1$
-			}
-		}
+		org.eclipse.papyrus.model2doc.dev.tools.utils.XMLFormatter.format(file);
 	}
 }
