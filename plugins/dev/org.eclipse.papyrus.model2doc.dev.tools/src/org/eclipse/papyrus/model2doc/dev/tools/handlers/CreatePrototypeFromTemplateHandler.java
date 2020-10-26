@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2019 CEA LIST and others.
+ * Copyright (c) 2019, 2020 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -10,7 +10,7 @@
  *
  * Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
- *
+ *  Pauline Deville (CEA LIST) pauline.deville@cea.fr - Bug 568400
  *****************************************************************************/
 
 
@@ -65,7 +65,7 @@ public class CreatePrototypeFromTemplateHandler extends AbstractHandler {
 			prototype.setDocumentTemplate(copy);
 			copy.setDocumentTemplatePrototype(prototype);
 
-			final NewDocumentPrototypeDialog d = new NewDocumentPrototypeDialog(Display.getDefault().getActiveShell(), prototype);
+			final NewDocumentPrototypeDialog d = new NewDocumentPrototypeDialog(Display.getCurrent().getActiveShell(), prototype);
 
 			if (d.open() == Dialog.OK) {
 

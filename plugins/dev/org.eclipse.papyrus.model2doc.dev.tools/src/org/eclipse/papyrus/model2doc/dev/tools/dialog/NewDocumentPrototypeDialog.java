@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2019 CEA LIST and others.
+ * Copyright (c) 2019, 2020 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -10,7 +10,7 @@
  *
  * Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
- *
+ *  Pauline Deville (CEA LIST) pauline.deville@cea.fr - Bug 568400
  *****************************************************************************/
 
 package org.eclipse.papyrus.model2doc.dev.tools.dialog;
@@ -149,7 +149,9 @@ public class NewDocumentPrototypeDialog extends Dialog {
 		documentPrototypeIconPath = new Text(grp, SWT.BORDER);
 		data = new GridData(SWT.FILL, SWT.BEGINNING, true, true);
 		documentPrototypeIconPath.setLayoutData(data);
-		documentPrototypeIconPath.setText(this.editedPrototype.getIconPath());
+		if (this.editedPrototype.getIconPath() != null) {
+			documentPrototypeIconPath.setText(this.editedPrototype.getIconPath());
+		}
 
 		// prototype description
 		final Label descriptionLabel = new Label(grp, SWT.None);
