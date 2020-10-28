@@ -13,7 +13,9 @@
  *****************************************************************************/
 package org.eclipse.papyrus.model2doc.docx.services;
 
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
+import org.apache.poi.xwpf.usermodel.XWPFTable;
 
 public interface StyleService {
 
@@ -37,6 +39,16 @@ public interface StyleService {
 	 * @return true if the style has been find, false otherwise
 	 */
 	boolean applySectionTitleStyle(XWPFParagraph paragraph, int sectionLevel);
+
+	/**
+	 * Apply the style to the table
+	 *
+	 * @param table
+	 *            the table on which the style will be applied
+	 * @param document
+	 *            the document owning the table
+	 */
+	boolean applyTableStyle(XWPFTable table, XWPFDocument document);
 
 	/**
 	 * Apply the style given as parameter styleName
