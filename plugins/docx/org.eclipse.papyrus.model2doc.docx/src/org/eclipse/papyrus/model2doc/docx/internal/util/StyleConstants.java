@@ -24,21 +24,6 @@ public class StyleConstants {
 	 */
 	// public static final String PAGESTYLES_FAMILY = "PageStyles"; //$NON-NLS-1$
 	//
-	// /**
-	// * Style property sets.
-	// */
-	// public static final String STANDARD_PROPERTYSET = "Standard"; //$NON-NLS-1$
-	//
-	// /**
-	// * Style properties.
-	// */
-	// public static final String PARASTYLENAME_PROPERTY = "ParaStyleName"; //$NON-NLS-1$
-	//
-	// public static final String NUMBERINGSTYLENAME_PROPERTY = "NumberingStyleName"; //$NON-NLS-1$
-	//
-	// public static final String PARAADJUST_PROPERTY = "ParaAdjust"; //$NON-NLS-1$
-	//
-	// public static final String CHARPOSTURE_PROPERTY = "CharPosture"; //$NON-NLS-1$
 
 	/**
 	 * Style values.
@@ -50,6 +35,8 @@ public class StyleConstants {
 	public static final String TITLE_STYLE_VALUE = "Heading"; //$NON-NLS-1$
 
 	public static final String HEADING_STYLE_VALUE = "Heading"; //$NON-NLS-1$
+
+	public static final String TABLE_STYLE_VALUE = "Grilledutableau"; //$NON-NLS-1$
 
 	// public static final String LIST_1_STYLE_VALUE = "List 1"; //$NON-NLS-1$
 

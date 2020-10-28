@@ -15,22 +15,65 @@ package org.eclipse.papyrus.model2doc.docx.services;
 
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
+import org.apache.poi.xwpf.usermodel.XWPFTable;
+import org.eclipse.osgi.util.NLS;
+import org.eclipse.papyrus.model2doc.docx.Activator;
 import org.eclipse.papyrus.model2doc.docx.internal.util.StyleConstants;
 
 public class StyleServiceImpl implements StyleService {
 
+	/**
+	 *
+	 * @see org.eclipse.papyrus.model2doc.docx.services.StyleService#applyDocumentMainTitleStyle(org.apache.poi.xwpf.usermodel.XWPFParagraph)
+	 *
+	 * @param paragraph
+	 * @return
+	 */
 	@Override
 	public boolean applyDocumentMainTitleStyle(XWPFParagraph paragraph) {
 		String style = getDocumentMainTitleStyle();
 		return applyStyle(paragraph, style);
 	}
 
+	/**
+	 *
+	 * @see org.eclipse.papyrus.model2doc.docx.services.StyleService#applySectionTitleStyle(org.apache.poi.xwpf.usermodel.XWPFParagraph, int)
+	 *
+	 * @param paragraph
+	 * @param sectionLevel
+	 * @return
+	 */
 	@Override
 	public boolean applySectionTitleStyle(XWPFParagraph paragraph, int sectionLevel) {
 		String style = getSectionTitleStyle(sectionLevel);
 		return applyStyle(paragraph, style);
 	}
 
+	/**
+	 * @see org.eclipse.papyrus.model2doc.docx.services.StyleService#applyTableStyle(org.apache.poi.xwpf.usermodel.XWPFTable, XWPFDocument)
+	 *
+	 * @param table
+	 * @return
+	 */
+	@Override
+	public boolean applyTableStyle(XWPFTable table, XWPFDocument document) {
+		String styleName = StyleConstants.TABLE_STYLE_VALUE;
+		if (document.getStyles().styleExist(styleName)) {
+			table.setStyleID(styleName);
+			return true;
+		}
+		Activator.log.warn(NLS.bind("the style {0} does not exist in the template file", styleName)); //$NON-NLS-1$
+		return false;
+	}
+
+	/**
+	 *
+	 * @see org.eclipse.papyrus.model2doc.docx.services.StyleService#applyStyle(org.apache.poi.xwpf.usermodel.XWPFParagraph, java.lang.String)
+	 *
+	 * @param paragraph
+	 * @param styleName
+	 * @return
+	 */
 	@Override
 	public boolean applyStyle(XWPFParagraph paragraph, String styleName) {
 		XWPFDocument document = paragraph.getDocument();
@@ -38,19 +81,39 @@ public class StyleServiceImpl implements StyleService {
 			paragraph.setStyle(styleName);
 			return true;
 		}
+		Activator.log.warn(NLS.bind("the style {0} does not exist in the template file", styleName)); //$NON-NLS-1$
 		return false;
 	}
 
+	/**
+	 *
+	 * @see org.eclipse.papyrus.model2doc.docx.services.StyleService#getDocumentMainTitleStyle()
+	 *
+	 * @return
+	 */
 	@Override
 	public String getDocumentMainTitleStyle() {
 		return StyleConstants.TITLE_STYLE_VALUE;
 	}
 
+	/**
+	 *
+	 * @see org.eclipse.papyrus.model2doc.docx.services.StyleService#getSectionTitleStyle(int)
+	 *
+	 * @param sectionLevel
+	 * @return
+	 */
 	@Override
 	public String getSectionTitleStyle(int sectionLevel) {
 		return getHeadingStyleValue() + sectionLevel;
 	}
 
+	/**
+	 *
+	 * @see org.eclipse.papyrus.model2doc.docx.services.StyleService#getHeadingStyleValue()
+	 *
+	 * @return
+	 */
 	@Override
 	public String getHeadingStyleValue() {
 		return StyleConstants.HEADING_STYLE_VALUE;
