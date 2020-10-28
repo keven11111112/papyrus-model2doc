@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.papyrus.model2doc.emf.structure2document.documentgenerator">
+      <generator
+            class="org.eclipse.papyrus.model2doc.docx.emf.structure2document.internal.generators.TextDocumentToDocxGenerator"
+            id="org.eclipse.papyrus.model2doc.document.generator.docx">
+      </generator>
+   </extension>
+
+</plugin>
