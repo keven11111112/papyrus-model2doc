@@ -99,6 +99,8 @@ public class BuiltInTypesFactoryImpl extends EFactoryImpl implements BuiltInType
 		switch (eDataType.getClassifierID()) {
 		case BuiltInTypesPackage.CELL_LOCATION:
 			return createCellLocationFromString(eDataType, initialValue);
+		case BuiltInTypesPackage.IMAGE_FORMAT:
+			return createImageFormatFromString(eDataType, initialValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -115,6 +117,8 @@ public class BuiltInTypesFactoryImpl extends EFactoryImpl implements BuiltInType
 		switch (eDataType.getClassifierID()) {
 		case BuiltInTypesPackage.CELL_LOCATION:
 			return convertCellLocationToString(eDataType, instanceValue);
+		case BuiltInTypesPackage.IMAGE_FORMAT:
+			return convertImageFormatToString(eDataType, instanceValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -214,6 +218,31 @@ public class BuiltInTypesFactoryImpl extends EFactoryImpl implements BuiltInType
 	 * @generated
 	 */
 	public String convertCellLocationToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public ImageFormat createImageFormatFromString(EDataType eDataType, String initialValue) {
+		ImageFormat result = ImageFormat.get(initialValue);
+		if (result == null)
+		 {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		}
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public String convertImageFormatToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

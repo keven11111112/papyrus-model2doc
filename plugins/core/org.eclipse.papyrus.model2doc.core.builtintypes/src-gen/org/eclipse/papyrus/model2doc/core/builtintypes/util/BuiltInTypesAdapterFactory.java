@@ -81,7 +81,7 @@ public class BuiltInTypesAdapterFactory extends AdapterFactoryImpl {
 	 *
 	 * @generated
 	 */
-	protected BuiltInTypesSwitch<Adapter> modelSwitch = new BuiltInTypesSwitch<Adapter>() {
+	protected BuiltInTypesSwitch<Adapter> modelSwitch = new BuiltInTypesSwitch<>() {
 		@Override
 		public Adapter caseAbstractTable(AbstractTable object) {
 			return createAbstractTableAdapter();
@@ -154,7 +154,7 @@ public class BuiltInTypesAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param target
-	 *                   the object to adapt.
+	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */

@@ -51,6 +51,16 @@ public interface StyleService {
 	boolean applyTableStyle(XWPFTable table, XWPFDocument document);
 
 	/**
+	 * Apply the caption style to the paragraph
+	 *
+	 * @param paragraph
+	 *            the paragraph on which the style will be applied
+	 * @param document
+	 *            the document owning the table
+	 */
+	boolean applyCaptionStyle(XWPFParagraph paragraph, XWPFDocument document);
+
+	/**
 	 * Apply the style given as parameter styleName
 	 *
 	 * @param paragraph
@@ -83,6 +93,13 @@ public interface StyleService {
 	 *
 	 * @return the heading style name
 	 */
-	String getHeadingStyleValue();
+	String getSectionStylePrefix();
+
+	/**
+	 * Get the caption style name
+	 *
+	 * @return the caption style name
+	 */
+	String getCaptionStyleValue();
 
 }

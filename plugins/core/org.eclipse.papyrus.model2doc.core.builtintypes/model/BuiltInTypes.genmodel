@@ -45,6 +45,10 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="BuiltInTypes.ecore#//CellLocation/ROW_HEADER"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="BuiltInTypes.ecore#//CellLocation/BODY"/>
     </genEnums>
+    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="BuiltInTypes.ecore#//ImageFormat">
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="BuiltInTypes.ecore#//ImageFormat/SVG"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="BuiltInTypes.ecore#//ImageFormat/PNG"/>
+    </genEnums>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="BuiltInTypes.ecore#//AbstractTable">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute BuiltInTypes.ecore#//AbstractTable/caption"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"

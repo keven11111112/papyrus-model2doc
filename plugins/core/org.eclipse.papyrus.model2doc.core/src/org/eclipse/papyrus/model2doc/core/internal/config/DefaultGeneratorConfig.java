@@ -10,26 +10,26 @@
  *
  * Contributors:
  *  Yupanqui Munoz (CEA LIST) yupanqui.munozjulho@cea.fr - Initial API and implementation
- *	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *****************************************************************************/
 package org.eclipse.papyrus.model2doc.core.internal.config;
 
 import org.eclipse.papyrus.model2doc.core.config.GeneratorConfig;
 
 /**
- * ODT Generator Configuration.
- * 
+ * Generator Configuration.
+ *
  */
 public class DefaultGeneratorConfig implements GeneratorConfig {
-	
+
 	private String documentName;
-	
+
 	private String project;
-	
+
 	private String outputFolder;
-	
+
 	private String templateStyleFileURI;
-	
+
 	@Override
 	public String getDocumentName() {
 		return documentName;
@@ -39,7 +39,7 @@ public class DefaultGeneratorConfig implements GeneratorConfig {
 	public void setDocumentName(String documentName) {
 		this.documentName = documentName;
 	}
-	
+
 	@Override
 	public String getProject() {
 		return project;
@@ -57,7 +57,7 @@ public class DefaultGeneratorConfig implements GeneratorConfig {
 
 	@Override
 	public void setOutputFolder(String outputFolder) {
-		this.outputFolder = outputFolder;		
+		this.outputFolder = outputFolder;
 	}
 
 	@Override
@@ -67,7 +67,7 @@ public class DefaultGeneratorConfig implements GeneratorConfig {
 
 	@Override
 	public void setTemplateStyleFileURI(String templateStyleFileURI) {
-		this.templateStyleFileURI = templateStyleFileURI;		
+		this.templateStyleFileURI = templateStyleFileURI;
 	}
 
 }

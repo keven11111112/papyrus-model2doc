@@ -30,7 +30,7 @@
 						</goals>
 						<configuration>
 							<excludes>
-								<plugin id="org.apache.xmlbeans" />
+								<plugin id="org.apache.poi.ooxml.schemas" />
 							</excludes>
 						</configuration>
 					</execution>

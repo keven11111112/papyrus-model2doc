@@ -22,10 +22,12 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
-import org.apache.poi.xwpf.usermodel.XWPFDocument;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.apache.poi.xwpf.usermodel.Document;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
 import org.apache.poi.xwpf.usermodel.XWPFTable;
+import org.eclipse.core.runtime.Assert;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.model2doc.core.author.IAuthor;
 import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractTable;
@@ -39,22 +41,35 @@ import org.eclipse.papyrus.model2doc.core.transcription.CoverPage;
 import org.eclipse.papyrus.model2doc.core.transcription.ImageDescription;
 import org.eclipse.papyrus.model2doc.core.transcription.Transcription;
 import org.eclipse.papyrus.model2doc.docx.Activator;
+import org.eclipse.papyrus.model2doc.docx.Messages;
+import org.eclipse.papyrus.model2doc.docx.internal.poi.CustomXWPFDocument;
+import org.eclipse.papyrus.model2doc.docx.internal.util.ImageUtils;
 import org.eclipse.papyrus.model2doc.docx.services.StyleService;
 import org.eclipse.papyrus.model2doc.docx.services.StyleServiceImpl;
+import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTR;
+import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTRPr;
+import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTSimpleField;
+import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTText;
 
 public class DocxTranscription implements Transcription {
 
 	private IDocumentGeneratorConfiguration docxGeneratorConfig;
 
-	private XWPFDocument document;
+	private CustomXWPFDocument document;
 
 	private StyleService styleService;
+
+	private int imageIndex = 1;
+
+	private static final String ECORE_URI_FILE_SEPARATOR = "/";//$NON-NLS-1$
 
 	private static final String DOCX_FILE_EXTENTION = "docx";//$NON-NLS-1$
 
 	private static final String ECORE_FILE_PREFIX = "file:"; //$NON-NLS-1$
 
 	private static final String EMPTY_STRING = ""; //$NON-NLS-1$
+
+	private static final String WHITE_SPACE = " "; //$NON-NLS-1$
 
 	public DocxTranscription(IDocumentGeneratorConfiguration dgc) {
 		this.docxGeneratorConfig = dgc;
@@ -63,13 +78,13 @@ public class DocxTranscription implements Transcription {
 		try {
 			InputStream template = getTemplateInputStream();
 			if (template != null) {
-				this.document = new XWPFDocument(template);
+				this.document = new CustomXWPFDocument(template);
 			} else {
-				this.document = new XWPFDocument();
+				this.document = new CustomXWPFDocument();
 			}
 		} catch (IOException e) {
-			Activator.log.warn("Cannot apply the template file");
-			this.document = new XWPFDocument();
+			Activator.log.warn("Cannot apply the template file"); //$NON-NLS-1$
+			this.document = new CustomXWPFDocument();
 		}
 	}
 
@@ -88,14 +103,20 @@ public class DocxTranscription implements Transcription {
 
 	@Override
 	public void writeTableOfContents(String tocTitle) {
-		// TODO Auto-generated method stub
+		XWPFParagraph p = document.createParagraph();
+		XWPFRun run = p.createRun();
+		run.setText(tocTitle);
 
+		document.createTOC();
 	}
 
 	@Override
 	public void writeTableOfFigures(String tofTitle) {
-		// TODO Auto-generated method stub
+		XWPFParagraph p = document.createParagraph();
+		XWPFRun run = p.createRun();
+		run.setText(tofTitle);
 
+		document.createTOF();
 	}
 
 	@Override
@@ -196,21 +217,40 @@ public class DocxTranscription implements Transcription {
 	}
 
 	@Override
-	public void importImage(ImageDescription image, String caption) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
 	public void writeImage(String imagePath, String caption) {
-		// TODO Auto-generated method stub
+		Assert.isTrue(false == imagePath.endsWith("svg"));//$NON-NLS-1$
 
-	}
+		// insert the picture
+		XWPFParagraph imageParagraph = document.createParagraph();
+		XWPFRun imageRun = imageParagraph.createRun();
+		FileInputStream inputStream;
+		try {
+			inputStream = new FileInputStream(imagePath);
+			String[] path = imagePath.split(ECORE_URI_FILE_SEPARATOR);
 
-	@Override
-	public void writeImageSubtitle(ImageDescription image) {
-		// TODO Auto-generated method stub
+			int[] size = ImageUtils.getImageSize(imagePath, document);
+			imageRun.addPicture(inputStream, Document.PICTURE_TYPE_PNG, path[path.length - 1], size[0], size[1]);
+		} catch (IOException | InvalidFormatException e) {
+			Activator.log.error(e);
+		}
 
+		// Write caption
+		XWPFParagraph captionParagraph = document.createParagraph();
+		styleService.applyCaptionStyle(captionParagraph, document);
+
+		XWPFRun captionRun = captionParagraph.createRun();
+		captionRun.setText(Messages.DocxTranscription_imageCaptionLabel + WHITE_SPACE);
+		CTSimpleField seq = captionParagraph.getCTP().addNewFldSimple();
+		seq.setInstr(" SEQ Figure \\* ARABIC "); //$NON-NLS-1$
+		CTR ctr = seq.addNewR();
+		CTRPr ctrpr = ctr.addNewRPr();
+		ctrpr.addNewNoProof();
+		CTText ctText = ctr.addNewT();
+		ctText.setStringValue(String.valueOf(imageIndex));
+		XWPFRun captionTextRun = captionParagraph.createRun();
+		captionTextRun.setText(": " + caption); //$NON-NLS-1$
+
+		imageIndex++;
 	}
 
 	@Override
@@ -238,6 +278,16 @@ public class DocxTranscription implements Transcription {
 	public boolean canExecute() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public void importImage(ImageDescription image, String caption) {
+		// FIXME This method should be removed
+	}
+
+	@Override
+	public void writeImageSubtitle(ImageDescription image) {
+		// FIXME This method should be removed
 	}
 
 }

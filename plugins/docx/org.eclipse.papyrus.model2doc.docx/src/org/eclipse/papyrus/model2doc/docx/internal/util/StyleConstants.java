@@ -20,27 +20,17 @@ package org.eclipse.papyrus.model2doc.docx.internal.util;
 public class StyleConstants {
 
 	/**
-	 * Style families.
-	 */
-	// public static final String PAGESTYLES_FAMILY = "PageStyles"; //$NON-NLS-1$
-	//
-
-	/**
 	 * Style values.
-	 *
-	 * WARNING : since a bug in {@link XWPFDocument.createTOC()} the style should
-	 * have a name bigger than 7 characters and if it should be reference in the TOC
-	 * it should start with "Heading" ({@link https://bz.apache.org/bugzilla/show_bug.cgi?id=55196})
 	 */
-	public static final String TITLE_STYLE_VALUE = "Heading"; //$NON-NLS-1$
-
-	public static final String HEADING_STYLE_VALUE = "Heading"; //$NON-NLS-1$
-
 	// This string should not be in french
 	// FIXME https://bugs.eclipse.org/bugs/show_bug.cgi?id=568598
+	public static final String TITLE_STYLE_VALUE = "Titre"; //$NON-NLS-1$
+
+	public static final String SECTION_STYLE_PREFIX = "Titre"; //$NON-NLS-1$
+
 	public static final String TABLE_STYLE_VALUE = "Grilledutableau"; //$NON-NLS-1$
 
-	// public static final String LIST_1_STYLE_VALUE = "List 1"; //$NON-NLS-1$
+	public static final String CAPTION_STYLE_VALUE = "Lgende"; //$NON-NLS-1$
 
 	/**
 	 * Constructor.

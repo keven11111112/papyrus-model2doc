@@ -6,14 +6,14 @@
     <documentPart xmi:type="documentstructuretemplate:TableOfContents" xmi:id="_74eOgEsMEemzsPCsrzvLCg" tocTitle="Table Of Contents"/>
     <documentPart xmi:type="documentstructuretemplate:Body" xmi:id="_9oFyAEsMEemzsPCsrzvLCg">
       <bodyPartTemplate xmi:type="umldocumentstructuretemplate:CommentAsParagraph" xmi:id="_kMXE8GBJEemWAfcsLf8lYQ" generate="true" generateTitle="true" customTitle="Description" commentChoice="FIRST_OWNED_COMMENT"/>
-      <bodyPartTemplate xmi:type="documentstructuretemplate_1:PapyrusGMFDiagramView" xmi:id="_U9YOwGBIEemOLoTRcqjQow" generate="true" generateTitle="true" customTitle="" diagramImageMargin="10"/>
+      <bodyPartTemplate xmi:type="documentstructuretemplate_1:PapyrusGMFDiagramView" xmi:id="_U9YOwGBIEemOLoTRcqjQow" generate="true" generateTitle="true" customTitle="" diagramImageMargin="10" imageFormat="png"/>
       <bodyPartTemplate xmi:type="documentstructuretemplate_2:PapyrusTableView" xmi:id="_R8SwUKFXEemosPVxvgaz8g" generate="true" generateTitle="true" contextFilterRule="SEMANTIC_CONTEXT" importMethod="TABLE"/>
       <bodyPartTemplate xmi:type="documentstructuretemplate:EReferencePartTemplate" xmi:id="_wEvYsJ81EemX5MA0aNJ2Ew" generate="true" generateTitle="true" customTitle="Owned Packages">
         <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
         <subBodyPartTemplate xmi:type="documentstructuretemplate:EClassPartTemplate" xmi:id="_wEvYsZ81EemX5MA0aNJ2Ew" filterRule="KIND_OF" generate="true" generateTitle="true">
           <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
           <bodyPartTemplate xmi:type="umldocumentstructuretemplate:CommentAsParagraph" xmi:id="_2abvcJ81EemX5MA0aNJ2Ew" generate="true" generateTitle="true" customTitle="Description" commentChoice="FIRST_OWNED_COMMENT"/>
-          <bodyPartTemplate xmi:type="documentstructuretemplate_1:PapyrusGMFDiagramView" xmi:id="_0YPOMJ81EemX5MA0aNJ2Ew" generate="true" generateTitle="true" customTitle="" diagramImageMargin="10"/>
+          <bodyPartTemplate xmi:type="documentstructuretemplate_1:PapyrusGMFDiagramView" xmi:id="_0YPOMJ81EemX5MA0aNJ2Ew" generate="true" generateTitle="true" customTitle="" diagramImageMargin="10" imageFormat="png"/>
           <bodyPartTemplate xmi:type="documentstructuretemplate_2:PapyrusTableView" xmi:id="_UDzPYKFXEemosPVxvgaz8g" generate="true" generateTitle="true" contextFilterRule="SEMANTIC_CONTEXT" importMethod="TABLE"/>
           <bodyPartTemplate xmi:type="documentstructuretemplate:EReferencePartTemplate" xmi:id="_4lgf4J81EemX5MA0aNJ2Ew" generate="true" generateTitle="true" customTitle="Owned Classes">
             <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
@@ -67,7 +67,7 @@
         <subBodyPartTemplate xmi:type="documentstructuretemplate:EClassPartTemplate" xmi:id="_jV5hAFYXEemlbuO0By-TdQ" filterRule="TYPE_OF" generate="true" generateTitle="true">
           <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
           <bodyPartTemplate xmi:type="umldocumentstructuretemplate:CommentAsParagraph" xmi:id="_kshywGBJEemWAfcsLf8lYQ" generate="true" generateTitle="true" customTitle="Description" commentChoice="FIRST_OWNED_COMMENT"/>
-          <bodyPartTemplate xmi:type="documentstructuretemplate_1:PapyrusGMFDiagramView" xmi:id="__ghxQJ81EemX5MA0aNJ2Ew" generate="true" generateTitle="true" diagramImageMargin="10"/>
+          <bodyPartTemplate xmi:type="documentstructuretemplate_1:PapyrusGMFDiagramView" xmi:id="__ghxQJ81EemX5MA0aNJ2Ew" generate="true" generateTitle="true" diagramImageMargin="10" imageFormat="png"/>
           <bodyPartTemplate xmi:type="documentstructuretemplate_2:PapyrusTableView" xmi:id="_VdN5YKFXEemosPVxvgaz8g" generate="true" generateTitle="true" contextFilterRule="SEMANTIC_CONTEXT" importMethod="TABLE"/>
           <bodyPartTemplate xmi:type="documentstructuretemplate:EReferenceTableView" xmi:id="_hZSEIJ8lEemosPVxvgaz8g" generate="true" generateTitle="true" customTitle="Owned Properties" generateRowHeader="true" generateColumnHeader="true">
             <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//StructuredClassifier/ownedAttribute"/>

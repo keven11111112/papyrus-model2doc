@@ -711,6 +711,17 @@ public interface BuiltInTypesPackage extends EPackage {
 	 */
 	int CELL_LOCATION = 12;
 
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.core.builtintypes.ImageFormat <em>Image Format</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.ImageFormat
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.impl.BuiltInTypesPackageImpl#getImageFormat()
+	 * @generated
+	 */
+	int IMAGE_FORMAT = 13;
+
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.core.builtintypes.AbstractTable <em>Abstract Table</em>}'.
@@ -1019,6 +1030,17 @@ public interface BuiltInTypesPackage extends EPackage {
 	EEnum getCellLocation();
 
 	/**
+	 * Returns the meta object for enum '{@link org.eclipse.papyrus.model2doc.core.builtintypes.ImageFormat <em>Image Format</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for enum '<em>Image Format</em>'.
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.ImageFormat
+	 * @generated
+	 */
+	EEnum getImageFormat();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1311,6 +1333,17 @@ public interface BuiltInTypesPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum CELL_LOCATION = eINSTANCE.getCellLocation();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.core.builtintypes.ImageFormat <em>Image Format</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.core.builtintypes.ImageFormat
+		 * @see org.eclipse.papyrus.model2doc.core.builtintypes.impl.BuiltInTypesPackageImpl#getImageFormat()
+		 * @generated
+		 */
+		EEnum IMAGE_FORMAT = eINSTANCE.getImageFormat();
 
 	}
 

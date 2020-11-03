@@ -18,11 +18,11 @@ location "https://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/mast
 
 
 //manualUpdate
-location orbit "https://download.eclipse.org/tools/orbit/downloads/drops/R20200529191137/repository" {
-	 org.apache.poi [3.9.0,4.0.0)
-	 org.apache.poi.ooxml [3.9.0,4.0.0)
-	 org.apache.poi.ooxml.schemas [3.9.0,4.0.0)
-	 org.apache.xmlbeans [2.6.0,3.0.0) //required because it doesn't work with previous version
+location orbit "https://download.eclipse.org/tools/orbit/downloads/drops/S20201027182932/repository" {
+	 org.apache.poi [4.1.0,5.0.0)
+	 org.apache.poi.ooxml [4.1.0,5.0.0)
+	 org.apache.poi.ooxml.schemas [4.1.0,5.0.0)
+	 org.apache.xmlbeans [3.1.0,4.0.0) //required because it doesn't work with previous version
 }
 
 //manualUpdate

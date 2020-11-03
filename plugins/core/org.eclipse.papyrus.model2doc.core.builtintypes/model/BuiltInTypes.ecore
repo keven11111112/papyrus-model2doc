@@ -140,4 +140,11 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ImageFormat">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This enumeration provide the list of format for images"/>
+    </eAnnotations>
+    <eLiterals name="SVG" literal="svg"/>
+    <eLiterals name="PNG" value="1" literal="png"/>
+  </eClassifiers>
 </ecore:EPackage>

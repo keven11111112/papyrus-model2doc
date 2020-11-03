@@ -67,6 +67,19 @@ public class StyleServiceImpl implements StyleService {
 	}
 
 	/**
+	 * @see org.eclipse.papyrus.model2doc.docx.services.StyleService#applyCaptionStyle(org.apache.poi.xwpf.usermodel.XWPFParagraph, org.apache.poi.xwpf.usermodel.XWPFDocument)
+	 *
+	 * @param paragraph
+	 * @param document
+	 * @return
+	 */
+	@Override
+	public boolean applyCaptionStyle(XWPFParagraph paragraph, XWPFDocument document) {
+		String style = getCaptionStyleValue();
+		return applyStyle(paragraph, style);
+	}
+
+	/**
 	 *
 	 * @see org.eclipse.papyrus.model2doc.docx.services.StyleService#applyStyle(org.apache.poi.xwpf.usermodel.XWPFParagraph, java.lang.String)
 	 *
@@ -105,17 +118,28 @@ public class StyleServiceImpl implements StyleService {
 	 */
 	@Override
 	public String getSectionTitleStyle(int sectionLevel) {
-		return getHeadingStyleValue() + sectionLevel;
+		return getSectionStylePrefix() + sectionLevel;
 	}
 
 	/**
 	 *
-	 * @see org.eclipse.papyrus.model2doc.docx.services.StyleService#getHeadingStyleValue()
+	 * @see org.eclipse.papyrus.model2doc.docx.services.StyleService#getSectionStylePrefix()
 	 *
 	 * @return
 	 */
 	@Override
-	public String getHeadingStyleValue() {
-		return StyleConstants.HEADING_STYLE_VALUE;
+	public String getSectionStylePrefix() {
+		return StyleConstants.SECTION_STYLE_PREFIX;
+	}
+
+	/**
+	 *
+	 * @see org.eclipse.papyrus.model2doc.docx.services.StyleService#getSectionStylePrefix()
+	 *
+	 * @return
+	 */
+	@Override
+	public String getCaptionStyleValue() {
+		return StyleConstants.CAPTION_STYLE_VALUE;
 	}
 }

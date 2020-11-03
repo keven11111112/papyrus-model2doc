@@ -90,7 +90,7 @@ public class GenerateStructureAndDocumentHandler extends AbstractHandler {
 			}
 
 			// open a dialog add the end of the generation
-			MessageDialog.openInformation(Display.getDefault().getActiveShell(), GenerateDocumentStructureUtils.DIALOG_TITLE, "The DocumentStructure and the ODT file have been successfully generated."); //$NON-NLS-1$
+			MessageDialog.openInformation(Display.getDefault().getActiveShell(), GenerateDocumentStructureUtils.DIALOG_TITLE, "The DocumentStructure and the file have been successfully generated."); //$NON-NLS-1$
 		} else {
 			MessageDialog.openError(Display.getCurrent().getActiveShell(), Messages.GenerateStructureAndDocumentHandler_GenerateAllActions, Messages.GenerateStructureAndDocumentHandler_TheDocumentStructureHasNotBeenGeneratedError);
 		}

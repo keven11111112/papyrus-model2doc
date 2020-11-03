@@ -16,25 +16,20 @@ package org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.gmf.runtime.notation.Diagram;
-
 import org.eclipse.papyrus.infra.emf.expressions.booleanexpressions.IBooleanEObjectExpression;
+import org.eclipse.papyrus.model2doc.core.builtintypes.ImageFormat;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodyPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafBodyPartTemplate;
-
 import org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.ContextFilterBehavior;
 import org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.PapyrusGMFDiagramView;
 import org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.PapyrusGMFDocumentStructureTemplatePackage;
@@ -55,6 +50,7 @@ import org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.P
  * <li>{@link org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.impl.PapyrusGMFDiagramViewImpl#getDiagramType <em>Diagram Type</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.impl.PapyrusGMFDiagramViewImpl#getContextFilterRule <em>Context Filter Rule</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.impl.PapyrusGMFDiagramViewImpl#getDiagramImageMargin <em>Diagram Image Margin</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.impl.PapyrusGMFDiagramViewImpl#getImageFormat <em>Image Format</em>}</li>
  * </ul>
  *
  * @generated
@@ -224,6 +220,28 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 	 * @ordered
 	 */
 	protected int diagramImageMargin = DIAGRAM_IMAGE_MARGIN_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getImageFormat() <em>Image Format</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getImageFormat()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final ImageFormat IMAGE_FORMAT_EDEFAULT = ImageFormat.SVG;
+
+	/**
+	 * The cached value of the '{@link #getImageFormat() <em>Image Format</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getImageFormat()
+	 * @generated
+	 * @ordered
+	 */
+	protected ImageFormat imageFormat = IMAGE_FORMAT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -491,6 +509,32 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 	 * @generated
 	 */
 	@Override
+	public ImageFormat getImageFormat() {
+		return imageFormat;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setImageFormat(ImageFormat newImageFormat) {
+		ImageFormat oldImageFormat = imageFormat;
+		imageFormat = newImageFormat == null ? IMAGE_FORMAT_EDEFAULT : newImageFormat;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__IMAGE_FORMAT, oldImageFormat, imageFormat));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public String buildPartTemplateTitle(final EObject context) {
 		return org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.internal.operations.PapyrusGMFBodySectionPartTemplateTitleOperations.PAPYRUS_GMF_INSTANCE.buildPartTemplateTitle(this, context);
 	}
@@ -566,6 +610,8 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 			return getContextFilterRule();
 		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_IMAGE_MARGIN:
 			return getDiagramImageMargin();
+		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__IMAGE_FORMAT:
+			return getImageFormat();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -602,6 +648,9 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 			return;
 		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_IMAGE_MARGIN:
 			setDiagramImageMargin((Integer) newValue);
+			return;
+		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__IMAGE_FORMAT:
+			setImageFormat((ImageFormat) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -640,6 +689,9 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_IMAGE_MARGIN:
 			setDiagramImageMargin(DIAGRAM_IMAGE_MARGIN_EDEFAULT);
 			return;
+		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__IMAGE_FORMAT:
+			setImageFormat(IMAGE_FORMAT_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -669,6 +721,8 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 			return contextFilterRule != CONTEXT_FILTER_RULE_EDEFAULT;
 		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_IMAGE_MARGIN:
 			return diagramImageMargin != DIAGRAM_IMAGE_MARGIN_EDEFAULT;
+		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__IMAGE_FORMAT:
+			return imageFormat != IMAGE_FORMAT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -826,6 +880,8 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 		result.append(contextFilterRule);
 		result.append(", diagramImageMargin: "); //$NON-NLS-1$
 		result.append(diagramImageMargin);
+		result.append(", imageFormat: "); //$NON-NLS-1$
+		result.append(imageFormat);
 		result.append(')');
 		return result.toString();
 	}

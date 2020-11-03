@@ -14,11 +14,9 @@
 package org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.gmf.runtime.notation.Diagram;
-
+import org.eclipse.papyrus.model2doc.core.builtintypes.ImageFormat;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ILeafBodyPartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITemplatePartView;
 
@@ -40,6 +38,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITemplatePart
  * <li>{@link org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.PapyrusGMFDiagramView#getDiagramType <em>Diagram Type</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.PapyrusGMFDiagramView#getContextFilterRule <em>Context Filter Rule</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.PapyrusGMFDiagramView#getDiagramImageMargin <em>Diagram Image Margin</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.PapyrusGMFDiagramView#getImageFormat <em>Image Format</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.PapyrusGMFDocumentStructureTemplatePackage#getPapyrusGMFDiagramView()
@@ -69,7 +68,7 @@ public interface PapyrusGMFDiagramView extends ITemplatePartView, ILeafBodyPartT
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *                  the new value of the '<em>Diagram Kind Id</em>' attribute.
+	 *            the new value of the '<em>Diagram Kind Id</em>' attribute.
 	 * @see #getDiagramKindId()
 	 * @generated
 	 */
@@ -97,7 +96,7 @@ public interface PapyrusGMFDiagramView extends ITemplatePartView, ILeafBodyPartT
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *                  the new value of the '<em>Diagram Type</em>' attribute.
+	 *            the new value of the '<em>Diagram Type</em>' attribute.
 	 * @see #getDiagramType()
 	 * @generated
 	 */
@@ -127,7 +126,7 @@ public interface PapyrusGMFDiagramView extends ITemplatePartView, ILeafBodyPartT
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *                  the new value of the '<em>Context Filter Rule</em>' attribute.
+	 *            the new value of the '<em>Context Filter Rule</em>' attribute.
 	 * @see org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.ContextFilterBehavior
 	 * @see #getContextFilterRule()
 	 * @generated
@@ -157,11 +156,43 @@ public interface PapyrusGMFDiagramView extends ITemplatePartView, ILeafBodyPartT
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *                  the new value of the '<em>Diagram Image Margin</em>' attribute.
+	 *            the new value of the '<em>Diagram Image Margin</em>' attribute.
 	 * @see #getDiagramImageMargin()
 	 * @generated
 	 */
 	void setDiagramImageMargin(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Image Format</b></em>' attribute.
+	 * The literals are from the enumeration {@link org.eclipse.papyrus.model2doc.core.builtintypes.ImageFormat}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Image Format</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the value of the '<em>Image Format</em>' attribute.
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.ImageFormat
+	 * @see #setImageFormat(ImageFormat)
+	 * @see org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.PapyrusGMFDocumentStructureTemplatePackage#getPapyrusGMFDiagramView_ImageFormat()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	ImageFormat getImageFormat();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.PapyrusGMFDiagramView#getImageFormat <em>Image Format</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *            the new value of the '<em>Image Format</em>' attribute.
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.ImageFormat
+	 * @see #getImageFormat()
+	 * @generated
+	 */
+	void setImageFormat(ImageFormat value);
 
 	/**
 	 * <!-- begin-user-doc -->

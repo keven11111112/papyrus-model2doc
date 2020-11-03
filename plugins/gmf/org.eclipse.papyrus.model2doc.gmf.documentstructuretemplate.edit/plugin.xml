@@ -35,6 +35,9 @@
       <extender
             uri="http://www.eclipse.org/papyrus/model2doc/emf/1.0.0/documentstructuretemplate"
             class="org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.provider.GMFDocumentStructureTemplateItemProviderAdapterFactory$DocumentStructureTemplateChildCreationExtender"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.edit.childCreationExtenders">
       <extender
             class="org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.edit.internal.childextenders.CustomExpressionForGMFDocumentStructureTemplateChildExtender"
             uri="http://www.eclipse.org/papyrus/model2doc/gmf/1.0.0/documentstructuretemplate">
