@@ -57,7 +57,7 @@ public interface Cell extends EObject {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *                  the new value of the '<em>Location</em>' attribute.
+	 *            the new value of the '<em>Location</em>' attribute.
 	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.CellLocation
 	 * @see #getLocation()
 	 * @generated

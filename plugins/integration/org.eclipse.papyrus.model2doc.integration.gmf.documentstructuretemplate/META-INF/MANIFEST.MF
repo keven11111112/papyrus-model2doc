@@ -8,16 +8,16 @@ Bundle-Activator: org.eclipse.papyrus.model2doc.integration.gmf.documentstructur
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Require-Bundle: org.eclipse.ui;bundle-version="[3.113.0,4.0.0)",
- org.eclipse.core.runtime;bundle-version="[3.15.0,4.0.0)";resolution:=optional;x-installation:=greedy,
+ org.eclipse.core.runtime;bundle-version="[3.15.0,4.0.0)";x-installation:=greedy;resolution:=optional,
  org.eclipse.gmf.runtime.notation;bundle-version="[1.9.0,2.0.0)",
  org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate;bundle-version="[0.7.0,1.0.0)",
- org.eclipse.papyrus.model2doc.emf.documentstructuretemplate;bundle-version="[0.7.0,1.0.0)",
- org.eclipse.papyrus.model2doc.core.generatorconfiguration;bundle-version="[0.7.0,1.0.0)",
- org.eclipse.emf.ecore;bundle-version="[2.17.0,3.0.0)",
+ org.eclipse.papyrus.model2doc.emf.documentstructuretemplate;bundle-version="[0.7.0,1.0.0)";visibility:=reexport,
+ org.eclipse.papyrus.model2doc.core.generatorconfiguration;bundle-version="[0.7.0,1.0.0)";visibility:=reexport,
+ org.eclipse.emf.ecore;bundle-version="[2.17.0,3.0.0)";visibility:=reexport,
  org.eclipse.papyrus.infra.gmfdiag.style;bundle-version="[2.0.0,3.0.0)",
- org.eclipse.papyrus.infra.emf.expressions;bundle-version="[1.1.0,2.0.0)",
- org.eclipse.papyrus.model2doc.core.author;bundle-version="[0.7.0,1.0.0)",
- org.eclipse.papyrus.model2doc.core.builtintypes;bundle-version="[0.7.0,1.0.0)"
+ org.eclipse.papyrus.infra.emf.expressions;bundle-version="[1.1.0,2.0.0)";visibility:=reexport,
+ org.eclipse.papyrus.model2doc.core.author;bundle-version="[0.7.0,1.0.0)";visibility:=reexport,
+ org.eclipse.papyrus.model2doc.core.builtintypes;bundle-version="[0.7.0,1.0.0)";visibility:=reexport
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate,
  org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.impl,

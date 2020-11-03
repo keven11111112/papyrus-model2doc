@@ -168,6 +168,16 @@ public interface PapyrusGMFDocumentStructureTemplatePackage extends EPackage {
 	int PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_IMAGE_MARGIN = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_FEATURE_COUNT + 7;
 
 	/**
+	 * The feature id for the '<em><b>Image Format</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int PAPYRUS_GMF_DIAGRAM_VIEW__IMAGE_FORMAT = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_FEATURE_COUNT + 8;
+
+	/**
 	 * The number of structural features of the '<em>Papyrus GMF Diagram View</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -175,7 +185,7 @@ public interface PapyrusGMFDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAPYRUS_GMF_DIAGRAM_VIEW_FEATURE_COUNT = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_FEATURE_COUNT + 8;
+	int PAPYRUS_GMF_DIAGRAM_VIEW_FEATURE_COUNT = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_FEATURE_COUNT + 9;
 
 	/**
 	 * The operation id for the '<em>Build Part Template Title</em>' operation.
@@ -320,6 +330,18 @@ public interface PapyrusGMFDocumentStructureTemplatePackage extends EPackage {
 	EAttribute getPapyrusGMFDiagramView_DiagramImageMargin();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.PapyrusGMFDiagramView#getImageFormat <em>Image Format</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Image Format</em>'.
+	 * @see org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.PapyrusGMFDiagramView#getImageFormat()
+	 * @see #getPapyrusGMFDiagramView()
+	 * @generated
+	 */
+	EAttribute getPapyrusGMFDiagramView_ImageFormat();
+
+	/**
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.PapyrusGMFDiagramView#getMatchingDiagrams(org.eclipse.emf.ecore.EObject) <em>Get Matching Diagrams</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -424,6 +446,15 @@ public interface PapyrusGMFDocumentStructureTemplatePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_IMAGE_MARGIN = eINSTANCE.getPapyrusGMFDiagramView_DiagramImageMargin();
+
+		/**
+		 * The meta object literal for the '<em><b>Image Format</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute PAPYRUS_GMF_DIAGRAM_VIEW__IMAGE_FORMAT = eINSTANCE.getPapyrusGMFDiagramView_ImageFormat();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Matching Diagrams</b></em>' operation.

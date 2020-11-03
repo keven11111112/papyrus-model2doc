@@ -17,7 +17,6 @@ package org.eclipse.papyrus.model2doc.integration.gmf.template2structure.interna
 
 import java.io.File;
 
-import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.NullProgressMonitor;
@@ -26,6 +25,7 @@ import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
 import org.eclipse.gmf.runtime.diagram.ui.image.ImageFileFormat;
 import org.eclipse.gmf.runtime.diagram.ui.render.util.CopyToImageUtil;
 import org.eclipse.gmf.runtime.notation.Diagram;
+import org.eclipse.papyrus.model2doc.core.builtintypes.ImageFormat;
 import org.eclipse.papyrus.model2doc.integration.gmf.template2structure.Activator;
 
 
@@ -40,17 +40,20 @@ public class GMFDiagramImageUtils {
 	public static final String SVG_EXTENSION = "svg"; //$NON-NLS-1$
 
 	/**
+	 * the png file extension
+	 */
+	public static final String PNG_EXTENSION = "png"; //$NON-NLS-1$
+
+	/**
 	 * Generate image of diagram.
 	 *
 	 * @param diagram
 	 * @param pathRoot
 	 * @param margin
+	 * @param format
 	 * @return
 	 */
-	public static void generateImageOfDiagram(final Diagram diagram, final String pathRoot, final int margin) {
-		// to be sure, but currently, we only propose svg, so, it should be ok.
-		Assert.isTrue(pathRoot.endsWith(SVG_EXTENSION));
-
+	public static void generateImageOfDiagram(final Diagram diagram, final String pathRoot, final int margin, ImageFormat format) {
 		final Path imagePath = new Path(pathRoot.toString());
 
 		// we check all folders tree already exists, and we create them if not
@@ -69,7 +72,7 @@ public class GMFDiagramImageUtils {
 			// Dimension d = new Dimension(1402, 757).scale(0.70);
 			// copyImageUtil.copyToConstrainedImage(diagram, imagePath, ImageFileFormat.SVG, d.width, d.height, new NullProgressMonitor(),
 			// PreferencesHint.USE_DEFAULTS, false);
-			copyImageUtil.copyToImage(diagram, imagePath, ImageFileFormat.SVG, new NullProgressMonitor(),
+			copyImageUtil.copyToImage(diagram, imagePath, getFileFormat(format), new NullProgressMonitor(),
 					PreferencesHint.USE_DEFAULTS);
 		} catch (CoreException e) {
 			Activator.log.error(e);
@@ -78,5 +81,19 @@ public class GMFDiagramImageUtils {
 			return;
 		}
 
+	}
+
+	/**
+	 * @param format
+	 * @return
+	 */
+	private static ImageFileFormat getFileFormat(ImageFormat format) {
+		switch (format) {
+		case PNG:
+			return ImageFileFormat.PNG;
+		case SVG:
+		default:
+			return ImageFileFormat.SVG;
+		}
 	}
 }

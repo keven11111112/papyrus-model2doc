@@ -67,8 +67,8 @@ public final class PapyrusGMFDocumentStructureTemplateEditPlugin extends EMFPlug
 				EcoreEditPlugin.INSTANCE,
 				GeneratorconfigurationEditPlugin.INSTANCE,
 				AuthorEditPlugin.INSTANCE,
-				ExpressionsEditPlugin.INSTANCE,
 				BuiltInTypesEditPlugin.INSTANCE,
+				ExpressionsEditPlugin.INSTANCE,
 		});
 	}
 

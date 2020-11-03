@@ -48,6 +48,13 @@ This View doesn't extend the GMFDiagramView provided by the model gmfdocumentstr
           </ownedComment>
         </defaultValue>
       </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_UYg-wB29EeuToo8VLEZPVg" name="imageFormat">
+        <type xmi:type="uml:Enumeration" href="pathmap://MODEL2DOC/BUILTIN_TYPES/BuiltInTypes.uml#_I9QFkBn9EeunG-PlCrg2Pg"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_iOBaMCAnEeuyYawtPCaZsA" name="SVG">
+          <type xmi:type="uml:Enumeration" href="pathmap://MODEL2DOC/BUILTIN_TYPES/BuiltInTypes.uml#_I9QFkBn9EeunG-PlCrg2Pg"/>
+          <instance xmi:type="uml:EnumerationLiteral" href="pathmap://MODEL2DOC/BUILTIN_TYPES/BuiltInTypes.uml#_qjV3oB28EeuC_v9WQLDVcQ"/>
+        </defaultValue>
+      </ownedAttribute>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_OV4vgF9aEemxcMQajU1fyA" client="_QbIxsF0eEemxcMQajU1fyA">
         <supplier xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_DwGdIFYFEemKJasCEBKPhQ"/>
         <contract xmi:type="uml:Interface" href="pathmap://DOCUMENT_STRUCTURE_TEMPLATE/documentstructuretemplate.uml#_DwGdIFYFEemKJasCEBKPhQ"/>

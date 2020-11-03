@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.eclipse.gmf.runtime.notation.Diagram;
 
 import org.eclipse.papyrus.infra.emf.expressions.ExpressionsPackage;
+import org.eclipse.papyrus.infra.emf.expressions.booleanexpressions.BooleanExpressionsPackage;
 import org.eclipse.papyrus.model2doc.core.author.AuthorPackage;
 import org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesPackage;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationPackage;
@@ -129,8 +130,9 @@ public class PapyrusGMFDocumentStructureTemplatePackageImpl extends EPackageImpl
 		EcorePackage.eINSTANCE.eClass();
 		GeneratorConfigurationPackage.eINSTANCE.eClass();
 		AuthorPackage.eINSTANCE.eClass();
-		ExpressionsPackage.eINSTANCE.eClass();
 		BuiltInTypesPackage.eINSTANCE.eClass();
+		BooleanExpressionsPackage.eINSTANCE.eClass();
+		ExpressionsPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		thePapyrusGMFDocumentStructureTemplatePackage.createPackageContents();
@@ -208,6 +210,17 @@ public class PapyrusGMFDocumentStructureTemplatePackageImpl extends EPackageImpl
 	 * @generated
 	 */
 	@Override
+	public EAttribute getPapyrusGMFDiagramView_ImageFormat() {
+		return (EAttribute) papyrusGMFDiagramViewEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EOperation getPapyrusGMFDiagramView__GetMatchingDiagrams__EObject() {
 		return papyrusGMFDiagramViewEClass.getEOperations().get(0);
 	}
@@ -273,6 +286,7 @@ public class PapyrusGMFDocumentStructureTemplatePackageImpl extends EPackageImpl
 		createEAttribute(papyrusGMFDiagramViewEClass, PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_TYPE);
 		createEAttribute(papyrusGMFDiagramViewEClass, PAPYRUS_GMF_DIAGRAM_VIEW__CONTEXT_FILTER_RULE);
 		createEAttribute(papyrusGMFDiagramViewEClass, PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_IMAGE_MARGIN);
+		createEAttribute(papyrusGMFDiagramViewEClass, PAPYRUS_GMF_DIAGRAM_VIEW__IMAGE_FORMAT);
 		createEOperation(papyrusGMFDiagramViewEClass, PAPYRUS_GMF_DIAGRAM_VIEW___GET_MATCHING_DIAGRAMS__EOBJECT);
 
 		diagramEClass = createEClass(DIAGRAM);
@@ -311,6 +325,7 @@ public class PapyrusGMFDocumentStructureTemplatePackageImpl extends EPackageImpl
 		// Obtain other dependent packages
 		DocumentStructureTemplatePackage theDocumentStructureTemplatePackage = (DocumentStructureTemplatePackage) EPackage.Registry.INSTANCE.getEPackage(DocumentStructureTemplatePackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+		BuiltInTypesPackage theBuiltInTypesPackage = (BuiltInTypesPackage) EPackage.Registry.INSTANCE.getEPackage(BuiltInTypesPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -327,6 +342,8 @@ public class PapyrusGMFDocumentStructureTemplatePackageImpl extends EPackageImpl
 		initEAttribute(getPapyrusGMFDiagramView_ContextFilterRule(), this.getContextFilterBehavior(), "contextFilterRule", null, 1, 1, PapyrusGMFDiagramView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, //$NON-NLS-1$
 				!IS_ORDERED);
 		initEAttribute(getPapyrusGMFDiagramView_DiagramImageMargin(), theEcorePackage.getEInt(), "diagramImageMargin", "10", 1, 1, PapyrusGMFDiagramView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, //$NON-NLS-1$ //$NON-NLS-2$
+				!IS_ORDERED);
+		initEAttribute(getPapyrusGMFDiagramView_ImageFormat(), theBuiltInTypesPackage.getImageFormat(), "imageFormat", "SVG", 1, 1, PapyrusGMFDiagramView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, //$NON-NLS-1$ //$NON-NLS-2$
 				!IS_ORDERED);
 
 		EOperation op = initEOperation(getPapyrusGMFDiagramView__GetMatchingDiagrams__EObject(), this.getDiagram(), "getMatchingDiagrams", 0, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$

@@ -21,135 +21,87 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Cell Location</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Image Format</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * <!-- begin-model-doc -->
- * This enumeration allows to define the location of each cell.
+ * This enumeration provide the list of format for images
  * <!-- end-model-doc -->
  *
- * @see org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesPackage#getCellLocation()
+ * @see org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesPackage#getImageFormat()
  * @model
  * @generated
  */
-public enum CellLocation implements Enumerator {
+public enum ImageFormat implements Enumerator {
 	/**
-	 * The '<em><b>CORNER</b></em>' literal object.
+	 * The '<em><b>SVG</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see #CORNER_VALUE
+	 * @see #SVG_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	CORNER(0, "CORNER", "CORNER"), //$NON-NLS-1$ //$NON-NLS-2$
+	SVG(0, "SVG", "SVG"), //$NON-NLS-1$ //$NON-NLS-2$
 
 	/**
-	 * The '<em><b>COLUMN HEADER</b></em>' literal object.
+	 * The '<em><b>PNG</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see #COLUMN_HEADER_VALUE
+	 * @see #PNG_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	COLUMN_HEADER(1, "COLUMN_HEADER", "COLUMN_HEADER"), //$NON-NLS-1$ //$NON-NLS-2$
+	PNG(1, "PNG", "PNG"); //$NON-NLS-1$ //$NON-NLS-2$
 
 	/**
-	 * The '<em><b>ROW HEADER</b></em>' literal object.
+	 * The '<em><b>SVG</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see #ROW_HEADER_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	ROW_HEADER(2, "ROW_HEADER", "ROW_HEADER"), //$NON-NLS-1$ //$NON-NLS-2$
-
-	/**
-	 * The '<em><b>BODY</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see #BODY_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	BODY(3, "BODY", "BODY"); //$NON-NLS-1$ //$NON-NLS-2$
-
-	/**
-	 * The '<em><b>CORNER</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see #CORNER
+	 * @see #SVG
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CORNER_VALUE = 0;
+	public static final int SVG_VALUE = 0;
 
 	/**
-	 * The '<em><b>COLUMN HEADER</b></em>' literal value.
+	 * The '<em><b>PNG</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see #COLUMN_HEADER
+	 * @see #PNG
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int COLUMN_HEADER_VALUE = 1;
+	public static final int PNG_VALUE = 1;
 
 	/**
-	 * The '<em><b>ROW HEADER</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see #ROW_HEADER
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int ROW_HEADER_VALUE = 2;
-
-	/**
-	 * The '<em><b>BODY</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see #BODY
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int BODY_VALUE = 3;
-
-	/**
-	 * An array of all the '<em><b>Cell Location</b></em>' enumerators.
+	 * An array of all the '<em><b>Image Format</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 */
-	private static final CellLocation[] VALUES_ARRAY = new CellLocation[] {
-			CORNER,
-			COLUMN_HEADER,
-			ROW_HEADER,
-			BODY,
+	private static final ImageFormat[] VALUES_ARRAY = new ImageFormat[] {
+			SVG,
+			PNG,
 	};
 
 	/**
-	 * A public read-only list of all the '<em><b>Cell Location</b></em>' enumerators.
+	 * A public read-only list of all the '<em><b>Image Format</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 */
-	public static final List<CellLocation> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<ImageFormat> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
-	 * Returns the '<em><b>Cell Location</b></em>' literal with the specified literal value.
+	 * Returns the '<em><b>Image Format</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -158,9 +110,9 @@ public enum CellLocation implements Enumerator {
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static CellLocation get(String literal) {
+	public static ImageFormat get(String literal) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			CellLocation result = VALUES_ARRAY[i];
+			ImageFormat result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -169,7 +121,7 @@ public enum CellLocation implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Cell Location</b></em>' literal with the specified name.
+	 * Returns the '<em><b>Image Format</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -178,9 +130,9 @@ public enum CellLocation implements Enumerator {
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static CellLocation getByName(String name) {
+	public static ImageFormat getByName(String name) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			CellLocation result = VALUES_ARRAY[i];
+			ImageFormat result = VALUES_ARRAY[i];
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -189,7 +141,7 @@ public enum CellLocation implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Cell Location</b></em>' literal with the specified integer value.
+	 * Returns the '<em><b>Image Format</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -198,16 +150,12 @@ public enum CellLocation implements Enumerator {
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static CellLocation get(int value) {
+	public static ImageFormat get(int value) {
 		switch (value) {
-		case CORNER_VALUE:
-			return CORNER;
-		case COLUMN_HEADER_VALUE:
-			return COLUMN_HEADER;
-		case ROW_HEADER_VALUE:
-			return ROW_HEADER;
-		case BODY_VALUE:
-			return BODY;
+		case SVG_VALUE:
+			return SVG;
+		case PNG_VALUE:
+			return PNG;
 		}
 		return null;
 	}
@@ -243,7 +191,7 @@ public enum CellLocation implements Enumerator {
 	 *
 	 * @generated
 	 */
-	private CellLocation(int value, String name, String literal) {
+	private ImageFormat(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;
@@ -294,4 +242,4 @@ public enum CellLocation implements Enumerator {
 		return literal;
 	}
 
-} // CellLocation
+} // ImageFormat

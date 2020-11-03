@@ -33,6 +33,7 @@ import org.eclipse.papyrus.model2doc.core.builtintypes.Cell;
 import org.eclipse.papyrus.model2doc.core.builtintypes.CellLocation;
 import org.eclipse.papyrus.model2doc.core.builtintypes.DefaultFileReference;
 import org.eclipse.papyrus.model2doc.core.builtintypes.IFileReference;
+import org.eclipse.papyrus.model2doc.core.builtintypes.ImageFormat;
 import org.eclipse.papyrus.model2doc.core.builtintypes.ListItem;
 import org.eclipse.papyrus.model2doc.core.builtintypes.Row;
 import org.eclipse.papyrus.model2doc.core.builtintypes.TextCell;
@@ -149,6 +150,14 @@ public class BuiltInTypesPackageImpl extends EPackageImpl implements BuiltInType
 	 * @generated
 	 */
 	private EEnum cellLocationEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EEnum imageFormatEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -522,6 +531,17 @@ public class BuiltInTypesPackageImpl extends EPackageImpl implements BuiltInType
 	 * @generated
 	 */
 	@Override
+	public EEnum getImageFormat() {
+		return imageFormatEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public BuiltInTypesFactory getBuiltInTypesFactory() {
 		return (BuiltInTypesFactory) getEFactoryInstance();
 	}
@@ -589,6 +609,7 @@ public class BuiltInTypesPackageImpl extends EPackageImpl implements BuiltInType
 
 		// Create enums
 		cellLocationEEnum = createEEnum(CELL_LOCATION);
+		imageFormatEEnum = createEEnum(IMAGE_FORMAT);
 	}
 
 	/**
@@ -680,6 +701,10 @@ public class BuiltInTypesPackageImpl extends EPackageImpl implements BuiltInType
 		addEEnumLiteral(cellLocationEEnum, CellLocation.COLUMN_HEADER);
 		addEEnumLiteral(cellLocationEEnum, CellLocation.ROW_HEADER);
 		addEEnumLiteral(cellLocationEEnum, CellLocation.BODY);
+
+		initEEnum(imageFormatEEnum, ImageFormat.class, "ImageFormat"); //$NON-NLS-1$
+		addEEnumLiteral(imageFormatEEnum, ImageFormat.SVG);
+		addEEnumLiteral(imageFormatEEnum, ImageFormat.PNG);
 
 		// Create resource
 		createResource(eNS_URI);

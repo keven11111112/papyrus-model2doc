@@ -14,6 +14,7 @@
 package org.eclipse.papyrus.model2doc.docx.internal.transcription;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -22,10 +23,15 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.apache.poi.xwpf.usermodel.Document;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
 import org.apache.poi.xwpf.usermodel.XWPFTable;
+import org.apache.xmlbeans.XmlException;
+import org.apache.xmlbeans.XmlToken;
+import org.eclipse.core.runtime.Assert;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.model2doc.core.author.IAuthor;
 import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractTable;
@@ -39,8 +45,12 @@ import org.eclipse.papyrus.model2doc.core.transcription.CoverPage;
 import org.eclipse.papyrus.model2doc.core.transcription.ImageDescription;
 import org.eclipse.papyrus.model2doc.core.transcription.Transcription;
 import org.eclipse.papyrus.model2doc.docx.Activator;
+import org.eclipse.papyrus.model2doc.docx.internal.util.ImageUtils;
 import org.eclipse.papyrus.model2doc.docx.services.StyleService;
 import org.eclipse.papyrus.model2doc.docx.services.StyleServiceImpl;
+import org.openxmlformats.schemas.drawingml.x2006.main.CTNonVisualDrawingProps;
+import org.openxmlformats.schemas.drawingml.x2006.main.CTPositiveSize2D;
+import org.openxmlformats.schemas.drawingml.x2006.wordprocessingDrawing.CTInline;
 
 public class DocxTranscription implements Transcription {
 
@@ -203,8 +213,92 @@ public class DocxTranscription implements Transcription {
 
 	@Override
 	public void writeImage(String imagePath, String caption) {
-		// TODO Auto-generated method stub
+		Assert.isTrue(false == imagePath.endsWith("svg"));
 
+		// XWPFParagraph paragraph = document.createParagraph();
+		// XWPFRun run = paragraph.createRun();
+		FileInputStream inputStream;
+		try {
+			inputStream = new FileInputStream(imagePath);
+			String imageId = document.addPictureData(inputStream, Document.PICTURE_TYPE_PNG); // TODO move to import image
+
+			// XWPFPicture picture = run.addPicture(inputStream, Document.PICTURE_TYPE_PNG, imageId, Units.toEMU(100), Units.toEMU(100));
+			// CTBlipFillProperties blipFill = picture.getCTPicture().addNewBlipFill();
+			// CTBlip blip = blipFill.addNewBlip();
+			// blip.setEmbed(imageId);
+			int[] size = ImageUtils.getImageSize(imagePath, document);
+			createPicture(imageId, document.getNextPicNameNumber(Document.PICTURE_TYPE_PNG), size[0], size[1]);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InvalidFormatException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public void createPicture(String blipId, int id, int width, int height) {
+		final int EMU = 9525;
+		// width *= EMU;
+		// height *= EMU;
+		// String blipId = getAllPictures().get(id).getPackageRelationship().getId();
+
+
+		CTInline inline = document.createParagraph().createRun().getCTR().addNewDrawing().addNewInline();
+
+		String picXml = "" +
+				"<a:graphic xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\">" +
+				"   <a:graphicData uri=\"http://schemas.openxmlformats.org/drawingml/2006/picture\">" +
+				"      <pic:pic xmlns:pic=\"http://schemas.openxmlformats.org/drawingml/2006/picture\">" +
+				"         <pic:nvPicPr>" +
+				"            <pic:cNvPr id=\"" + id + "\" name=\"GrapheEtats1$Implementation$diagramme__9HrYoDaVEeqBYNTyU5E5qA.png\"/>" + // Changed
+				"            <pic:cNvPicPr/>" +
+				"         </pic:nvPicPr>" +
+				"         <pic:blipFill>" +
+				"            <a:blip r:embed=\"" + blipId + "\" xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"/>" +
+				"            <a:stretch>" +
+				"               <a:fillRect/>" +
+				"            </a:stretch>" +
+				"         </pic:blipFill>" +
+				"         <pic:spPr>" +
+				"            <a:xfrm>" +
+				"               <a:off x=\"0\" y=\"0\"/>" +
+				"               <a:ext cx=\"" + width + "\" cy=\"" + height + "\"/>" +
+				"            </a:xfrm>" +
+				"            <a:prstGeom prst=\"rect\">" +
+				"               <a:avLst/>" +
+				"            </a:prstGeom>" +
+				"         </pic:spPr>" +
+				"      </pic:pic>" +
+				"   </a:graphicData>" +
+				"</a:graphic>";
+
+		// CTGraphicalObjectData graphicData = inline.addNewGraphic().addNewGraphicData();
+		XmlToken xmlToken = null;
+		try {
+			xmlToken = XmlToken.Factory.parse(picXml);
+		} catch (XmlException xe) {
+			xe.printStackTrace();
+		}
+		inline.set(xmlToken);
+		// graphicData.set(xmlToken);
+
+		inline.setDistT(0);
+		inline.setDistB(0);
+		inline.setDistL(0);
+		inline.setDistR(0);
+
+		CTPositiveSize2D extent = inline.addNewExtent();
+		extent.setCx(width);// Changed
+		extent.setCy(height);// Changed
+
+		CTNonVisualDrawingProps docPr = inline.addNewDocPr();
+		docPr.setId(id);
+		docPr.setName("Drawing " + id);// Changed
+		docPr.setDescr("Generated");
 	}
 
 	@Override
