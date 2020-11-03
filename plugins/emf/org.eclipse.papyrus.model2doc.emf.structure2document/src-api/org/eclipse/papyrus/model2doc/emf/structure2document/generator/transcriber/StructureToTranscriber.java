@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2019 CEA LIST.
+ * Copyright (c) 2019, 2020 CEA LIST.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -10,9 +10,10 @@
  *
  * Contributors:
  *    Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ *    Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - bug 568341
  *****************************************************************************/
 
-package org.eclipse.papyrus.model2doc.odt.emf.structure2document.internal.transcriber;
+package org.eclipse.papyrus.model2doc.emf.structure2document.generator.transcriber;
 
 import java.util.Iterator;
 
@@ -33,10 +34,9 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocumentPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Title;
 
 /**
- * This class crosses a {@link TextDocument} to fill an odt file
- * TODO : this class must be moved. it has no dependencies on odt
+ * This class crosses a {@link TextDocument} to fill a file
  */
-public class StructureToODTTranscriber implements Transcriber {
+public class StructureToTranscriber implements Transcriber {
 
 	private Transcription transcription = null;
 
@@ -49,7 +49,7 @@ public class StructureToODTTranscriber implements Transcriber {
 	 * @param document
 	 * @param transcription
 	 */
-	public StructureToODTTranscriber(final TextDocument document, final Transcription transcription) {
+	public StructureToTranscriber(final TextDocument document, final Transcription transcription) {
 		this.textDocument = document;
 		this.transcription = transcription;
 	}

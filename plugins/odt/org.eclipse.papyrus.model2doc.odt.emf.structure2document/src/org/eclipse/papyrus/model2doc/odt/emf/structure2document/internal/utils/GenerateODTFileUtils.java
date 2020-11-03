@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2019 CEA LIST and others.
+ * Copyright (c) 2019, 2020 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -10,7 +10,7 @@
  *
  * Contributors:
  *   Nicolas FAUVERGUE (CEA LIST) nicolas.fauvergue@cea.fr - Initial API and implementation
- *
+ *   Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - bug 568430
  *****************************************************************************/
 
 package org.eclipse.papyrus.model2doc.odt.emf.structure2document.internal.utils;
@@ -23,8 +23,8 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.operations.GeneratorConfigurationOperations;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument;
+import org.eclipse.papyrus.model2doc.emf.structure2document.generator.helpers.CreateFileFromTextDocumentHelper;
 import org.eclipse.papyrus.model2doc.odt.emf.structure2document.Activator;
-import org.eclipse.papyrus.model2doc.odt.emf.structure2document.internal.handler.CreateODTFileFromTextDocumentHelper;
 
 /**
  * This allows to create utility methods and functions for the generation of ODT files.
@@ -41,7 +41,7 @@ public class GenerateODTFileUtils {
 	 *         the path of the generated file
 	 */
 	public static String generateODTFile(final TextDocument textDocument) {
-		final CreateODTFileFromTextDocumentHelper helper = new CreateODTFileFromTextDocumentHelper(textDocument);
+		final CreateFileFromTextDocumentHelper helper = new CreateFileFromTextDocumentHelper(textDocument, new ODTTranscriptionFactory());
 		final String generatedFilePath = helper.generate();
 
 		// refresh workspace

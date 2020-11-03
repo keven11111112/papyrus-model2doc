@@ -23,6 +23,4 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Automatic-Module-Name: org.eclipse.papyrus.model2doc.emf.stucture2odt
 Bundle-ActivationPolicy: lazy
 Export-Package: org.eclipse.papyrus.model2doc.odt.emf.structure2document.internal.generators,
- org.eclipse.papyrus.model2doc.odt.emf.structure2document.internal.handler,
- org.eclipse.papyrus.model2doc.odt.emf.structure2document.internal.transcriber,
  org.eclipse.papyrus.model2doc.odt.emf.structure2document.internal.utils
