@@ -24,5 +24,12 @@
             class="org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation.RepresentationPackage"
             genModel="model/DocumentStructureTemplateRepresentation.genmodel"/>
    </extension>
+   <extension
+         point="org.eclipse.emf.ecore.factory_override">
+      <factory
+            class="org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation.internal.custom.CustomRepresentationFactoryImpl"
+            uri="http://www.eclipse.org/papyrus/model2doc/integration/1.0.0/emf/documentstructuretemplate/representation">
+      </factory>
+   </extension>
 
 </plugin>

@@ -16,8 +16,10 @@ package org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
@@ -30,12 +32,14 @@ import org.eclipse.papyrus.infra.emf.expressions.ExpressionsPackage;
 import org.eclipse.papyrus.infra.types.ElementTypesConfigurationsPackage;
 
 import org.eclipse.papyrus.model2doc.core.author.AuthorPackage;
+import org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesPackage;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationPackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 
 import org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation.PapyrusDocumentPrototype;
 import org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation.RepresentationFactory;
 import org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation.RepresentationPackage;
+import org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation.util.RepresentationValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -117,12 +121,22 @@ public class RepresentationPackageImpl extends EPackageImpl implements Represent
 		GeneratorConfigurationPackage.eINSTANCE.eClass();
 		AuthorPackage.eINSTANCE.eClass();
 		ExpressionsPackage.eINSTANCE.eClass();
+		BuiltInTypesPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theRepresentationPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theRepresentationPackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put(theRepresentationPackage,
+				new EValidator.Descriptor() {
+					@Override
+					public EValidator getEValidator() {
+						return RepresentationValidator.INSTANCE;
+					}
+				});
 
 		// Mark meta-data to indicate it can't be changed
 		theRepresentationPackage.freeze();
@@ -172,6 +186,17 @@ public class RepresentationPackageImpl extends EPackageImpl implements Represent
 	 * @generated
 	 */
 	@Override
+	public EOperation getPapyrusDocumentPrototype__IsValidClass__DiagnosticChain_Map() {
+		return papyrusDocumentPrototypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public RepresentationFactory getRepresentationFactory() {
 		return (RepresentationFactory) getEFactoryInstance();
 	}
@@ -202,6 +227,7 @@ public class RepresentationPackageImpl extends EPackageImpl implements Represent
 		papyrusDocumentPrototypeEClass = createEClass(PAPYRUS_DOCUMENT_PROTOTYPE);
 		createEReference(papyrusDocumentPrototypeEClass, PAPYRUS_DOCUMENT_PROTOTYPE__DOCUMENT_TEMPLATE_PROTOTYPE);
 		createEAttribute(papyrusDocumentPrototypeEClass, PAPYRUS_DOCUMENT_PROTOTYPE__CREATION_COMMAND_CLASS);
+		createEOperation(papyrusDocumentPrototypeEClass, PAPYRUS_DOCUMENT_PROTOTYPE___IS_VALID_CLASS__DIAGNOSTICCHAIN_MAP);
 	}
 
 	/**
@@ -235,6 +261,7 @@ public class RepresentationPackageImpl extends EPackageImpl implements Represent
 		org.eclipse.papyrus.infra.architecture.representation.RepresentationPackage theRepresentationPackage_1 = (org.eclipse.papyrus.infra.architecture.representation.RepresentationPackage) EPackage.Registry.INSTANCE
 				.getEPackage(org.eclipse.papyrus.infra.architecture.representation.RepresentationPackage.eNS_URI);
 		DocumentStructureTemplatePackage theDocumentStructureTemplatePackage = (DocumentStructureTemplatePackage) EPackage.Registry.INSTANCE.getEPackage(DocumentStructureTemplatePackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -247,10 +274,17 @@ public class RepresentationPackageImpl extends EPackageImpl implements Represent
 		initEClass(papyrusDocumentPrototypeEClass, PapyrusDocumentPrototype.class, "PapyrusDocumentPrototype", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(getPapyrusDocumentPrototype_DocumentTemplatePrototype(), theDocumentStructureTemplatePackage.getDocumentTemplatePrototype(), null, "documentTemplatePrototype", null, 1, 1, PapyrusDocumentPrototype.class, !IS_TRANSIENT, !IS_VOLATILE, //$NON-NLS-1$
 				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		EGenericType g1 = createEGenericType(ecorePackage.getEJavaClass());
-		EGenericType g2 = createEGenericType();
+		initEAttribute(getPapyrusDocumentPrototype_CreationCommandClass(), theEcorePackage.getEString(), "creationCommandClass", null, 1, 1, PapyrusDocumentPrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, //$NON-NLS-1$
+				!IS_DERIVED, IS_ORDERED);
+
+		EOperation op = initEOperation(getPapyrusDocumentPrototype__IsValidClass__DiagnosticChain_Map(), theEcorePackage.getEBoolean(), "isValidClass", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "chain", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
+		EGenericType g1 = createEGenericType(theEcorePackage.getEMap());
+		EGenericType g2 = createEGenericType(theEcorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
-		initEAttribute(getPapyrusDocumentPrototype_CreationCommandClass(), g1, "creationCommandClass", null, 1, 1, PapyrusDocumentPrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		g2 = createEGenericType(theEcorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 
 		// Create resource
 		createResource(eNS_URI);

@@ -86,7 +86,7 @@ public class RepresentationAdapterFactory extends AdapterFactoryImpl {
 	 *
 	 * @generated
 	 */
-	protected RepresentationSwitch<Adapter> modelSwitch = new RepresentationSwitch<Adapter>() {
+	protected RepresentationSwitch<Adapter> modelSwitch = new RepresentationSwitch<>() {
 		@Override
 		public Adapter casePapyrusDocumentPrototype(PapyrusDocumentPrototype object) {
 			return createPapyrusDocumentPrototypeAdapter();
@@ -119,7 +119,7 @@ public class RepresentationAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param target
-	 *                   the object to adapt.
+	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */

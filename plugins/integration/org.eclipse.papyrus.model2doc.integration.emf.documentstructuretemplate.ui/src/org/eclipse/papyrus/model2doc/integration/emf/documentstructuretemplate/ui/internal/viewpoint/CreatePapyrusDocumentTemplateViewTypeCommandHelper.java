@@ -13,6 +13,8 @@
  *****************************************************************************/
 package org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.ui.internal.viewpoint;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,13 +23,14 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.papyrus.infra.architecture.ArchitectureDomainManager;
 import org.eclipse.papyrus.infra.architecture.representation.PapyrusRepresentationKind;
+import org.eclipse.papyrus.infra.tools.util.ClassLoaderHelper;
 import org.eclipse.papyrus.infra.viewpoints.policy.IViewTypeHelper;
 import org.eclipse.papyrus.infra.viewpoints.policy.PolicyChecker;
 import org.eclipse.papyrus.infra.viewpoints.policy.ViewPrototype;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate;
 import org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation.PapyrusDocumentPrototype;
+import org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation.command.ICreateDocumentTemplateEditorCommand;
 import org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.ui.Activator;
-import org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.ui.internal.command.ICreateDocumentTemplateEditorCommand;
 
 /**
  * Represents a helper for the handling of Papyrus Document View Type creation commands.
@@ -81,16 +84,31 @@ public class CreatePapyrusDocumentTemplateViewTypeCommandHelper implements IView
 		if (cache.containsKey(papyrusDocument)) {
 			return cache.get(papyrusDocument);
 		}
-		Class<?> creationCommandClass = papyrusDocument.getCreationCommandClass();
-		try {
-			ICreateDocumentTemplateEditorCommand command = (ICreateDocumentTemplateEditorCommand) creationCommandClass.newInstance();
-			PapyrusDocumentTemplateViewPrototype proto = new PapyrusDocumentTemplateViewPrototype(papyrusDocument, command);
-			cache.put(papyrusDocument, proto);
-			return proto;
-		} catch (InstantiationException | IllegalAccessException e) {
-			Activator.log.error(e);
+		String creationCommandClassName = papyrusDocument.getCreationCommandClass();
+		if (creationCommandClassName == null || creationCommandClassName.isEmpty()) {
 			return null;
 		}
+
+		Class<?> creationCommandClass = ClassLoaderHelper.loadClass(creationCommandClassName);
+		if (creationCommandClass != null) {
+			try {
+				final Constructor<?> constructor = creationCommandClass.getDeclaredConstructor(new Class[0]);
+				Object newInstance = constructor.newInstance();
+				if (newInstance instanceof ICreateDocumentTemplateEditorCommand) {
+					ICreateDocumentTemplateEditorCommand command = (ICreateDocumentTemplateEditorCommand) newInstance;
+					PapyrusDocumentTemplateViewPrototype proto = new PapyrusDocumentTemplateViewPrototype(papyrusDocument, command);
+					cache.put(papyrusDocument, proto);
+					return proto;
+				}
+			} catch (InstantiationException | IllegalAccessException | NoSuchMethodException | SecurityException e) {
+				Activator.log.error(e);
+			} catch (IllegalArgumentException e) {
+				Activator.log.error(e);
+			} catch (InvocationTargetException e) {
+				Activator.log.error(e);
+			}
+		}
+		return null;
 	}
 
 	/**

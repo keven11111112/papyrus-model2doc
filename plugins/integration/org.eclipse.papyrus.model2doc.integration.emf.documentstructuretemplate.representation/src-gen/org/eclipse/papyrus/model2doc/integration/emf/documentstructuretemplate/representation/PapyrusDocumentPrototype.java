@@ -13,6 +13,8 @@
  */
 package org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.papyrus.infra.architecture.representation.PapyrusRepresentationKind;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplatePrototype;
@@ -65,7 +67,7 @@ public interface PapyrusDocumentPrototype extends PapyrusRepresentationKind {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *                  the new value of the '<em>Document Template Prototype</em>' reference.
+	 *            the new value of the '<em>Document Template Prototype</em>' reference.
 	 * @see #getDocumentTemplatePrototype()
 	 * @generated
 	 */
@@ -76,16 +78,16 @@ public interface PapyrusDocumentPrototype extends PapyrusRepresentationKind {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This feature allows to define the class to use to create the new document.
+	 * This feature allows to define the class to use to create the new document. The class must implements ICreateDocumentTemplateEditorCommand.
 	 * <!-- end-model-doc -->
 	 *
 	 * @return the value of the '<em>Creation Command Class</em>' attribute.
-	 * @see #setCreationCommandClass(Class)
+	 * @see #setCreationCommandClass(String)
 	 * @see org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation.RepresentationPackage#getPapyrusDocumentPrototype_CreationCommandClass()
 	 * @model required="true"
 	 * @generated
 	 */
-	Class<?> getCreationCommandClass();
+	String getCreationCommandClass();
 
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation.PapyrusDocumentPrototype#getCreationCommandClass <em>Creation Command Class</em>}' attribute.
@@ -93,10 +95,22 @@ public interface PapyrusDocumentPrototype extends PapyrusRepresentationKind {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *                  the new value of the '<em>Creation Command Class</em>' attribute.
+	 *            the new value of the '<em>Creation Command Class</em>' attribute.
 	 * @see #getCreationCommandClass()
 	 * @generated
 	 */
-	void setCreationCommandClass(Class<?> value);
+	void setCreationCommandClass(String value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * this methid is used by the emf validation framework
+	 * <!-- end-model-doc -->
+	 *
+	 * @model
+	 * @generated
+	 */
+	boolean isValidClass(DiagnosticChain chain, Map<Object, Object> context);
 
 } // PapyrusDocumentPrototype

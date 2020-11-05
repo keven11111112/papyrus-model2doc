@@ -16,12 +16,11 @@ package org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation.*;
+import org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation.PapyrusDocumentPrototype;
+import org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation.RepresentationFactory;
+import org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation.RepresentationPackage;
 
 /**
  * <!-- begin-user-doc -->

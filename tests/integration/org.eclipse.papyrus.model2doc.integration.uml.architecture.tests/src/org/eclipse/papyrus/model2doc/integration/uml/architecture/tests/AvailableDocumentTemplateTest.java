@@ -20,7 +20,7 @@ import java.util.List;
 
 import org.eclipse.papyrus.junit.utils.rules.PluginResource;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplatePrototype;
-import org.eclipse.papyrus.model2doc.integration.uml.architecture.DocumentTemplatePrototypeTypeConstants;
+import org.eclipse.papyrus.model2doc.integration.odt.uml.architecture.internal.utils.ODT_Document_Constants;
 import org.eclipse.uml2.uml.Package;
 import org.junit.Assert;
 import org.junit.Test;
@@ -35,8 +35,8 @@ public class AvailableDocumentTemplateTest extends AbstractDocumentTemplateCreat
 	private static final List<String> KNOWN_DOCUMENT_TEMPLATE_TYPES = new ArrayList<>();
 
 	static {
-		KNOWN_DOCUMENT_TEMPLATE_TYPES.add(DocumentTemplatePrototypeTypeConstants.GENERIC_UML_DOCUMENT_TEMPLATE_TYPE);
-		KNOWN_DOCUMENT_TEMPLATE_TYPES.add(DocumentTemplatePrototypeTypeConstants.EMPTY_UML_DOCUMENT_TEMPLATE_TYPE);
+		KNOWN_DOCUMENT_TEMPLATE_TYPES.add(ODT_Document_Constants.ODT_GENERIC_UML_DOCUMENT_TEMPLATE_TYPE);
+		KNOWN_DOCUMENT_TEMPLATE_TYPES.add(ODT_Document_Constants.ODT_EMPTY_UML_DOCUMENT_TEMPLATE_TYPE);
 	}
 
 

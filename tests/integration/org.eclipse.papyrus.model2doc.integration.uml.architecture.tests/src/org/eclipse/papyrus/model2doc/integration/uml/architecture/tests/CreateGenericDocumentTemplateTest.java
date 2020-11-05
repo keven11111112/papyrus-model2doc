@@ -16,7 +16,7 @@
 package org.eclipse.papyrus.model2doc.integration.uml.architecture.tests;
 
 import org.eclipse.papyrus.junit.utils.rules.PluginResource;
-import org.eclipse.papyrus.model2doc.integration.uml.architecture.DocumentTemplatePrototypeTypeConstants;
+import org.eclipse.papyrus.model2doc.integration.odt.uml.architecture.internal.utils.ODT_Document_Constants;
 import org.junit.Test;
 
 /**
@@ -28,6 +28,6 @@ public class CreateGenericDocumentTemplateTest extends AbstractDocumentTemplateC
 
 	@Test
 	public void textGenericDocumentTemplateCreation() throws Exception {
-		checkDocumentCreation(DocumentTemplatePrototypeTypeConstants.GENERIC_UML_DOCUMENT_TEMPLATE_TYPE);
+		checkDocumentCreation(ODT_Document_Constants.ODT_GENERIC_UML_DOCUMENT_TEMPLATE_TYPE);
 	}
 }

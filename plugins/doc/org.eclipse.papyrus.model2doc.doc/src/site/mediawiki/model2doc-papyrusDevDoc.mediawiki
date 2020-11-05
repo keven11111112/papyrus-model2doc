@@ -32,6 +32,9 @@ Select the language element, open the contextual menu and select '''New Child > 
 * load your pdst file containing the DocumentTemplatePrototype
 ** reference it in the field ''Misc->Document Template Prototype''
 * in the field ''Implementation Id'', set the same value as the in the ''type'' field of your DocumentTemplatePrototype.
+* in the field ''Creation Command Class'', the registered command must implements '''org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation.command.ICreateDocumentTemplateEditorCommand'''
+** you can use '''org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation.architecture.CreatePapyrusDocumentTemplateEditorCommand'''
+** the plugin providing the creation command must be added as dependency of your plugin.
 
 =====4.2 Define Root=====
 [[Image:images/papyrusDevDoc/architecture/Architecture_006_DefineRoot.png]] 

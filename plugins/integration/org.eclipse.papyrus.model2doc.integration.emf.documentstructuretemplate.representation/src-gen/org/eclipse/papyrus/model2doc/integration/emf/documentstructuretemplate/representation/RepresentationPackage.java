@@ -15,6 +15,7 @@ package org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -157,6 +158,16 @@ public interface RepresentationPackage extends EPackage {
 	int PAPYRUS_DOCUMENT_PROTOTYPE__CONCERNS = org.eclipse.papyrus.infra.architecture.representation.RepresentationPackage.PAPYRUS_REPRESENTATION_KIND__CONCERNS;
 
 	/**
+	 * The feature id for the '<em><b>Grayed Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int PAPYRUS_DOCUMENT_PROTOTYPE__GRAYED_ICON = org.eclipse.papyrus.infra.architecture.representation.RepresentationPackage.PAPYRUS_REPRESENTATION_KIND__GRAYED_ICON;
+
+	/**
 	 * The feature id for the '<em><b>Parent</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -227,6 +238,16 @@ public interface RepresentationPackage extends EPackage {
 	int PAPYRUS_DOCUMENT_PROTOTYPE_FEATURE_COUNT = org.eclipse.papyrus.infra.architecture.representation.RepresentationPackage.PAPYRUS_REPRESENTATION_KIND_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Is Valid Class</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int PAPYRUS_DOCUMENT_PROTOTYPE___IS_VALID_CLASS__DIAGNOSTICCHAIN_MAP = org.eclipse.papyrus.infra.architecture.representation.RepresentationPackage.PAPYRUS_REPRESENTATION_KIND_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Papyrus Document Prototype</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -234,7 +255,7 @@ public interface RepresentationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAPYRUS_DOCUMENT_PROTOTYPE_OPERATION_COUNT = org.eclipse.papyrus.infra.architecture.representation.RepresentationPackage.PAPYRUS_REPRESENTATION_KIND_OPERATION_COUNT + 0;
+	int PAPYRUS_DOCUMENT_PROTOTYPE_OPERATION_COUNT = org.eclipse.papyrus.infra.architecture.representation.RepresentationPackage.PAPYRUS_REPRESENTATION_KIND_OPERATION_COUNT + 1;
 
 
 	/**
@@ -271,6 +292,18 @@ public interface RepresentationPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getPapyrusDocumentPrototype_CreationCommandClass();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation.PapyrusDocumentPrototype#isValidClass(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Is Valid Class</em>}'
+	 * operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the '<em>Is Valid Class</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation.PapyrusDocumentPrototype#isValidClass(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getPapyrusDocumentPrototype__IsValidClass__DiagnosticChain_Map();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -325,6 +358,15 @@ public interface RepresentationPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PAPYRUS_DOCUMENT_PROTOTYPE__CREATION_COMMAND_CLASS = eINSTANCE.getPapyrusDocumentPrototype_CreationCommandClass();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Valid Class</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EOperation PAPYRUS_DOCUMENT_PROTOTYPE___IS_VALID_CLASS__DIAGNOSTICCHAIN_MAP = eINSTANCE.getPapyrusDocumentPrototype__IsValidClass__DiagnosticChain_Map();
 
 	}
 

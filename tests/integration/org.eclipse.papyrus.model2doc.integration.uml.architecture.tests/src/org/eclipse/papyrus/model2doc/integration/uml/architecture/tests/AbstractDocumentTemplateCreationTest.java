@@ -21,6 +21,7 @@ import java.util.Collection;
 import org.eclipse.emf.common.command.CommandStack;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.papyrus.infra.tools.util.ClassLoaderHelper;
 import org.eclipse.papyrus.infra.viewpoints.policy.PolicyChecker;
 import org.eclipse.papyrus.infra.viewpoints.policy.ViewPrototype;
 import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
@@ -29,7 +30,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTempl
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.utils.DocumentStructureTemplateConstants;
 import org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation.PapyrusDocumentPrototype;
-import org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.ui.internal.command.ICreateDocumentTemplateEditorCommand;
+import org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation.command.ICreateDocumentTemplateEditorCommand;
 import org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.ui.internal.viewpoint.PapyrusDocumentTemplateViewPrototype;
 import org.junit.Assert;
 import org.junit.Rule;
@@ -165,11 +166,12 @@ public abstract class AbstractDocumentTemplateCreationTest extends AbstractPapyr
 		Assert.assertFalse("The pdst file exists, but it should not, because it is empty and nothing has already been stored inside it.", pdstFileExists);
 
 		// 5. get the creation command
-		final Class<?> cmdClass = ((PapyrusDocumentPrototype) docProto.getRepresentationKind()).getCreationCommandClass();
-		Assert.assertNotNull("The creation command to create the document of type " + documentType + " is not registered", cmdClass);
+		final String cmdClassName = ((PapyrusDocumentPrototype) docProto.getRepresentationKind()).getCreationCommandClass();
+		Assert.assertNotNull("The creation command to create the document of type " + documentType + " is not registered", cmdClassName);
+		Class<?> cmdClass = ClassLoaderHelper.loadClass(cmdClassName);
 		Object newClass = null;
 		try {
-			newClass = cmdClass.newInstance();
+			newClass = cmdClass.getDeclaredConstructor(new Class<?>[0]).newInstance(new Object[0]);
 		} catch (InstantiationException | IllegalAccessException e) {
 			throw e; // we propagate the exception
 		}
