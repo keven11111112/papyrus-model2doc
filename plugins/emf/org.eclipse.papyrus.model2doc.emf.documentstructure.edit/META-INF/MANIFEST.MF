@@ -8,7 +8,7 @@ Bundle-ClassPath: .
 Bundle-Activator: org.eclipse.papyrus.model2doc.emf.documentstructure.provider.DocumentstructureEditPlugin$Implementation$Activator
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: org.eclipse.papyrus.model2doc.emf.documentstructure.edit.validators,
  org.eclipse.papyrus.model2doc.emf.documentstructure.provider
 Require-Bundle: org.eclipse.osgi;bundle-version="[3.0.0,4.0.0)",

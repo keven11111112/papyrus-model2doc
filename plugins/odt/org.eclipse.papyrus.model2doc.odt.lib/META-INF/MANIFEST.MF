@@ -5,7 +5,7 @@ Bundle-Vendor: %providerName
 Bundle-Version: 0.8.0.qualifier
 Bundle-Localization: plugin
 Bundle-SymbolicName: org.eclipse.papyrus.model2doc.odt.lib;singleton:=true
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .,
  lib/bootstrap-connector-1.0.0-sources.jar,

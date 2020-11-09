@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Automatic-Module-Name: org.eclipse.papyrus.model2doc.uml.documentstructuretemplate
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: org.eclipse.papyrus.model2doc.uml.documentstructuretemplate,
  org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl,
  org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.util
@@ -18,6 +18,6 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.15.0,4.0.0)";resolut
  org.eclipse.uml2.uml;bundle-version="[5.5.0,6.0.0)",
  org.eclipse.jface;bundle-version="[3.0.0,4.0.0)",
  org.eclipse.papyrus.model2doc.core.author;bundle-version="[0.7.0,1.0.0)",
- org.eclipse.papyrus.infra.emf.expressions;bundle-version="[1.1.0,2.0.0)",
+ org.eclipse.papyrus.infra.emf.expressions;bundle-version="[2.0.0,3.0.0)",
  org.eclipse.papyrus.model2doc.core.builtintypes;bundle-version="[0.7.0,1.0.0)"
 Bundle-ActivationPolicy: lazy

@@ -1,7 +1,7 @@
 target "Papyrus Model2Doc - 2020-06" with source requirements
 
 
-location "http://download.eclipse.org/releases/2020-06" eclipse-2020-06 {
+location "http://download.eclipse.org/releases/2020-12" eclipse-2020-12 {
  org.eclipse.sdk.feature.group 
 }
 
@@ -9,16 +9,13 @@ location "http://download.eclipse.org/releases/2020-06" eclipse-2020-06 {
 /** Manual dependencies */
 
 //manualUpdate
-location papyrusMaster "http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2020-06" {
+location "https://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/master/" Papyrus-2020-12 {
+ org.eclipse.papyrus.junit.feature.feature.group lazy
+ org.eclipse.papyrus.junit.framework lazy 
  org.eclipse.papyrus.sdk.feature.feature.group lazy
-}
-
-//manualUpdate
-location papyrusMasterToolsmiths "https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2020-06/4.8.0/toolsmiths/" {
- org.eclipse.papyrus.junit.utils lazy
- org.eclipse.papyrus.junit.framework lazy
  org.eclipse.papyrus.toolsmiths.feature.feature.group lazy
 }
+
 
 //manualUpdate
 location orbit "https://download.eclipse.org/tools/orbit/downloads/drops/R20200529191137/repository" {
@@ -44,7 +41,7 @@ location uml "https://download.eclipse.org/modeling/mdt/uml2/updates/5.5" {
 
 //updateFrom("EMF (Core)",0)
 
-location emf "http://download.eclipse.org/modeling/emf/emf/builds/release/2.22" {
+location emf "https://download.eclipse.org/modeling/emf/emf/builds/milestone/S202010050141" {
 	org.eclipse.emf.sdk.feature.group
 }
 

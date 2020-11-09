@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
-<target name="Papyrus Model2Doc - 2020-06" sequenceNumber="1604420127">
+<target name="Papyrus Model2Doc - 2020-06" sequenceNumber="1605270592">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.sdk.feature.group" version="4.16.0.v20200604-0951"/>
-      <repository id="eclipse-2020-06" location="http://download.eclipse.org/releases/2020-06"/>
+      <unit id="org.eclipse.sdk.feature.group" version="4.18.0.v20201028-2203"/>
+      <repository id="eclipse-2020-12" location="http://download.eclipse.org/releases/2020-12"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.papyrus.sdk.feature.feature.group" version="0.0.0"/>
-      <repository id="papyrusMaster" location="http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2020-06"/>
-    </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.papyrus.junit.utils" version="0.0.0"/>
+      <unit id="org.eclipse.papyrus.junit.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.papyrus.junit.framework" version="0.0.0"/>
+      <unit id="org.eclipse.papyrus.sdk.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.papyrus.toolsmiths.feature.feature.group" version="0.0.0"/>
-      <repository id="papyrusMasterToolsmiths" location="https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2020-06/4.8.0/toolsmiths/"/>
+      <repository id="Papyrus-2020-12" location="https://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/master/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.apache.poi" version="3.9.0.v201405241750"/>
@@ -25,7 +22,7 @@
       <repository id="orbit" location="https://download.eclipse.org/tools/orbit/downloads/drops/R20200529191137/repository"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.papyrus.sysml14.feature.feature.group" version="1.3.400.202007281234"/>
+      <unit id="org.eclipse.papyrus.sysml14.feature.feature.group" version="2.0.0.202011091859"/>
       <repository id="Sysml" location="https://ci.eclipse.org/papyrus/job/papyrus-sysml14-master/lastSuccessfulBuild/artifact/releng/org.eclipse.papyrus.sysml14.p2/target/repository/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
@@ -33,8 +30,8 @@
       <repository id="uml" location="https://download.eclipse.org/modeling/mdt/uml2/updates/5.5"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.emf.sdk.feature.group" version="2.22.0.v20200519-1135"/>
-      <repository id="emf" location="http://download.eclipse.org/modeling/emf/emf/builds/release/2.22"/>
+      <unit id="org.eclipse.emf.sdk.feature.group" version="2.24.0.v20200917-1439"/>
+      <repository id="emf" location="https://download.eclipse.org/modeling/emf/emf/builds/milestone/S202010050141"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.gmf.runtime.sdk.feature.group" version="1.13.0.202004160913"/>

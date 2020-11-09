@@ -15,7 +15,7 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>org.eclipse.papyrus.model2doc.releng.main</module>
-		<module>org.eclipse.papyrus.model2doc.p2</module>
+		<module>category</module>
+		<module>targetplatform</module>
 	</modules>
 </project>

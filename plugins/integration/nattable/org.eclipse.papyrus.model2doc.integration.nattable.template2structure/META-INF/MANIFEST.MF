@@ -14,12 +14,18 @@ Require-Bundle: org.eclipse.ui;bundle-version="[3.113.0,4.0.0)",
  org.eclipse.papyrus.model2doc.emf.documentstructuretemplate;bundle-version="[0.7.0,1.0.0)",
  org.eclipse.papyrus.model2doc.core.generatorconfiguration;bundle-version="[0.7.0,1.0.0)",
  org.eclipse.emf.common;bundle-version="[2.15.0,3.0.0)",
- org.eclipse.papyrus.infra.nattable.model;bundle-version="[4.1.0,5.0.0)",
- org.eclipse.papyrus.infra.emf;bundle-version="[3.0.0,4.0.0)",
- org.eclipse.papyrus.infra.core.sasheditor;bundle-version="[2.1.0,3.0.0)",
- org.eclipse.papyrus.infra.ui;bundle-version="[2.0.0,3.0.0)",
- org.eclipse.papyrus.infra.nattable;bundle-version="[6.2.0,7.0.0)",
- org.eclipse.papyrus.model2doc.core.builtintypes;bundle-version="[0.7.0,1.0.0)"
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+ org.eclipse.papyrus.infra.nattable.model;bundle-version="[5.0.0,6.0.0)",
+ org.eclipse.papyrus.infra.emf;bundle-version="[4.0.0,5.0.0)",
+ org.eclipse.papyrus.infra.core.sasheditor;bundle-version="[3.0.0,4.0.0)",
+ org.eclipse.papyrus.infra.ui;bundle-version="[3.0.0,4.0.0)",
+ org.eclipse.papyrus.infra.nattable;bundle-version="[7.0.0,8.0.0)",
+ org.eclipse.papyrus.model2doc.core.builtintypes;bundle-version="[0.7.0,1.0.0)",
+ org.eclipse.papyrus.infra.core.log;bundle-version="[2.0.0,3.0.0)",
+ org.eclipse.emf.ecore.xmi;bundle-version="[2.16.0,3.0.0)",
+ org.eclipse.papyrus.infra.core.sashwindows.di;bundle-version="[2.0.0,3.0.0)",
+ org.eclipse.papyrus.infra.core;bundle-version="[4.0.0,5.0.0)",
+ org.eclipse.nebula.widgets.nattable.core;bundle-version="[1.5.0,2.0.0)",
+ org.eclipse.papyrus.infra.services.labelprovider;bundle-version="[3.0.0,4.0.0)"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Automatic-Module-Name: org.eclipse.papyrus_model2doc.integration.nattable.template2structure
 Bundle-ActivationPolicy: lazy

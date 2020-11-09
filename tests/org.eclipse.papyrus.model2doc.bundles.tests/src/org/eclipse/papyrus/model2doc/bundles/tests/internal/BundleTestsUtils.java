@@ -42,7 +42,7 @@ public class BundleTestsUtils {
 	/**
 	 * Duplicated fields, because the class org.eclipse.papyrus.bundles.tests.BundleTestsUtils is not distributed
 	 */
-	public static final String JAVA_VERSION_8 = "JavaSE-1.8"; //$NON-NLS-1$
+	public static final String JAVA_VERSION_11 = "JavaSE-11"; //$NON-NLS-1$
 
 	public static final String BUNDLE_REQUIREDEXECUTIONENVIRONMENT = "Bundle-RequiredExecutionEnvironment"; //$NON-NLS-1$
 
@@ -66,7 +66,7 @@ public class BundleTestsUtils {
 	/**
 	 * The allowed java version for the Model2Doc bundles
 	 */
-	public static final String JAVA_VERSION_REGEX = Stream.of(JAVA_VERSION_8).map(Pattern::quote).collect(Collectors.joining("|")); //$NON-NLS-1$
+	public static final String JAVA_VERSION_REGEX = Stream.of(JAVA_VERSION_11).map(Pattern::quote).collect(Collectors.joining("|")); //$NON-NLS-1$
 
 
 	/**
@@ -135,7 +135,7 @@ public class BundleTestsUtils {
 	 */
 	public static final void testManifestProperty(final List<Bundle> bundles, final String property, final String regex,
 			final boolean mustBeNull, final boolean onlyOnJavaProject) {
-		org.hamcrest.Matcher<String> regexMatcher = new org.hamcrest.BaseMatcher<String>() {
+		org.hamcrest.Matcher<String> regexMatcher = new org.hamcrest.BaseMatcher<>() {
 
 			@Override
 			public boolean matches(Object item) {
@@ -217,7 +217,7 @@ public class BundleTestsUtils {
 	 *            if <code>true</code> the bundle name must contains the Incubation word
 	 */
 	public static final void checkBundleNameContainsIncubationTest(final List<Bundle> bundles, final boolean mustContains) {
-		org.hamcrest.Matcher<String> matcher = new BaseMatcher<String>() {
+		org.hamcrest.Matcher<String> matcher = new BaseMatcher<>() {
 
 			@Override
 			public boolean matches(Object item) {
@@ -245,7 +245,7 @@ public class BundleTestsUtils {
 	 *            a list of bundles
 	 */
 	public static final void checkBundleNameDontContainsDoubleSpace(final List<Bundle> bundles) {
-		org.hamcrest.Matcher<String> matcher = new BaseMatcher<String>() {
+		org.hamcrest.Matcher<String> matcher = new BaseMatcher<>() {
 
 			@Override
 			public boolean matches(Object item) {
@@ -269,7 +269,7 @@ public class BundleTestsUtils {
 	 *            the string for which we want to verify its spelling (uppercase/lowercase
 	 */
 	public static final void checkBundleNameCaseSentivity(final List<Bundle> bundles, final String toTest) {
-		org.hamcrest.Matcher<String> matcher = new BaseMatcher<String>() {
+		org.hamcrest.Matcher<String> matcher = new BaseMatcher<>() {
 
 			@Override
 			public boolean matches(Object item) {
@@ -301,7 +301,7 @@ public class BundleTestsUtils {
 	 *            the expected prefix for all bundles
 	 */
 	public static final void checkBundleNamePrefix(final List<Bundle> bundles, final String prefix) {
-		org.hamcrest.Matcher<String> matcher = new BaseMatcher<String>() {
+		org.hamcrest.Matcher<String> matcher = new BaseMatcher<>() {
 
 			@Override
 			public boolean matches(Object item) {

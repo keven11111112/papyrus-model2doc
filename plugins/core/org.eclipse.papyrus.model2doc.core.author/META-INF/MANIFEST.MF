@@ -3,11 +3,11 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.eclipse.papyrus.model2doc.core.author;singleton:=true
 Automatic-Module-Name: org.eclipse.papyrus.model2doc.core.author
-Bundle-Version: 0.7.0.qualifier
+Bundle-Version: 0.8.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: org.eclipse.papyrus.model2doc.core.author,
  org.eclipse.papyrus.model2doc.core.author.impl,
  org.eclipse.papyrus.model2doc.core.author.util
