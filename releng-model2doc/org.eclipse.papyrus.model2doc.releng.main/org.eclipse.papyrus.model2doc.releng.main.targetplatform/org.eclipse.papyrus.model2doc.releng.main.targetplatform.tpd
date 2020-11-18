@@ -29,7 +29,7 @@ location orbit "https://download.eclipse.org/tools/orbit/downloads/drops/R202005
 }
 
 //manualUpdate
-location Sysml "https://ci.eclipse.org/papyrus/job/papyrus-sysml14-master/lastSuccessfulBuild/artifact/releng/org.eclipse.papyrus.sysml14.p2/target/repository/"{
+location Sysml "https://download.eclipse.org/modeling/mdt/papyrus/components/sysml14/"{
  	org.eclipse.papyrus.sysml14.feature.feature.group
 }
 
