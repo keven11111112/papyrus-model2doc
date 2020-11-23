@@ -154,7 +154,7 @@ public class ParagraphImageWriter {
 	}
 
 	/**
-	 * @param endPAragraph
+	 * @param endParagraph
 	 *            if <code>true</code> we will add an empty line after the image insertion
 	 */
 	public final void setEndParagraph(final boolean endParagraph) {
@@ -240,7 +240,7 @@ public class ParagraphImageWriter {
 			XTextContent graphicContent = UnoRuntime.queryInterface(XTextContent.class, graphicObject);
 
 			PropertySetUtil.setProperty(graphicContent, "AnchorType", this.imageAnchor); //$NON-NLS-1$
-			
+
 			XNameContainer bitmapContainer = odtEditor.getBitmapTable(imageFilePath);
 			if (bitmapContainer != null) {
 				PropertySetUtil.setProperty(graphicContent, "GraphicURL", bitmapContainer.getByName(imageFilePath)); //$NON-NLS-1$
