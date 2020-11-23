@@ -25,6 +25,7 @@ import java.util.List;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.xwpf.usermodel.Document;
+import org.apache.poi.xwpf.usermodel.TableWidthType;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
@@ -216,7 +217,7 @@ public class DocxTranscription implements Transcription {
 		}
 
 		// apply style
-
+		xwpfTable.setWidthType(TableWidthType.PCT); // resize table to use the page width
 		styleService.applyTableStyle(xwpfTable, document, table);
 	}
 
