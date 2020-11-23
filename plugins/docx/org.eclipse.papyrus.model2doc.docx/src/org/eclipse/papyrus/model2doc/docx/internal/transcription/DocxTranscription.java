@@ -10,6 +10,7 @@
  *
  * Contributors:
  * 	 Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - Initial API and implementation
+ *   Vincent LORENZO (CEA LIST) vincent.lorenzo@cea.fr - bug 569059
  *****************************************************************************/
 package org.eclipse.papyrus.model2doc.docx.internal.transcription;
 
@@ -24,9 +25,12 @@ import java.util.List;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.xwpf.usermodel.Document;
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
+import org.apache.poi.xwpf.usermodel.XWPFStyles;
 import org.apache.poi.xwpf.usermodel.XWPFTable;
+import org.apache.xmlbeans.XmlException;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.model2doc.core.author.IAuthor;
@@ -74,17 +78,20 @@ public class DocxTranscription implements Transcription {
 	public DocxTranscription(IDocumentGeneratorConfiguration dgc) {
 		this.docxGeneratorConfig = dgc;
 		this.styleService = new StyleServiceImpl();
-
+		this.document = new CustomXWPFDocument();
 		try {
 			InputStream template = getTemplateInputStream();
 			if (template != null) {
-				this.document = new CustomXWPFDocument(template);
-			} else {
-				this.document = new CustomXWPFDocument();
+				// bug 569059 - see https://stackoverrun.com/fr/q/4419808 for solution
+				XWPFDocument templateDocument = new XWPFDocument(template);
+				final XWPFStyles newStyles = this.document.createStyles();
+				newStyles.setStyles(templateDocument.getStyle());
+				templateDocument.close();
 			}
 		} catch (IOException e) {
 			Activator.log.warn("Cannot apply the template file"); //$NON-NLS-1$
-			this.document = new CustomXWPFDocument();
+		} catch (XmlException e) {
+			Activator.log.warn("Cannot apply the template file"); //$NON-NLS-1$
 		}
 	}
 
@@ -261,6 +268,7 @@ public class DocxTranscription implements Transcription {
 			OutputStream outputStream = new FileOutputStream(stringUri);
 			document.write(outputStream);
 			outputStream.close();
+			document.close();
 		} catch (IOException e) {
 			Activator.log.error(e);
 		}
