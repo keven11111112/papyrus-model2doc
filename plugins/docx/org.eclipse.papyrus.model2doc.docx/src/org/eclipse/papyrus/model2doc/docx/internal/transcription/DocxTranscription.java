@@ -47,9 +47,9 @@ import org.eclipse.papyrus.model2doc.core.transcription.Transcription;
 import org.eclipse.papyrus.model2doc.docx.Activator;
 import org.eclipse.papyrus.model2doc.docx.Messages;
 import org.eclipse.papyrus.model2doc.docx.internal.poi.CustomXWPFDocument;
+import org.eclipse.papyrus.model2doc.docx.internal.services.StyleServiceImpl;
 import org.eclipse.papyrus.model2doc.docx.internal.util.ImageUtils;
 import org.eclipse.papyrus.model2doc.docx.services.StyleService;
-import org.eclipse.papyrus.model2doc.docx.services.StyleServiceImpl;
 import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTR;
 import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTRPr;
 import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTSimpleField;
@@ -61,7 +61,7 @@ public class DocxTranscription implements Transcription {
 
 	private CustomXWPFDocument document;
 
-	private StyleService styleService;
+	protected StyleService styleService;
 
 	private int imageIndex = 1;
 
@@ -198,7 +198,6 @@ public class DocxTranscription implements Transcription {
 
 		// create and fill the table
 		XWPFTable xwpfTable = document.createTable(rowsNumber, colNumbers);
-		styleService.applyTableStyle(xwpfTable, document);
 		Iterator<Row> rowIter = table.getRows().iterator();
 		int rowNumber = 0;
 		while (rowIter.hasNext()) {
@@ -215,6 +214,10 @@ public class DocxTranscription implements Transcription {
 			}
 			rowNumber++;
 		}
+
+		// apply style
+
+		styleService.applyTableStyle(xwpfTable, document, table);
 	}
 
 	@Override

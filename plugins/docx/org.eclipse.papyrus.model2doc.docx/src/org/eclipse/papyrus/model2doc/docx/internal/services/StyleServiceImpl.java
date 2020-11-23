@@ -11,14 +11,20 @@
  * Contributors:
  * 	 Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - Initial API and implementation
  *****************************************************************************/
-package org.eclipse.papyrus.model2doc.docx.services;
+package org.eclipse.papyrus.model2doc.docx.internal.services;
+
+import java.util.List;
 
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFTable;
 import org.eclipse.osgi.util.NLS;
+import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractTable;
+import org.eclipse.papyrus.model2doc.core.builtintypes.CellLocation;
+import org.eclipse.papyrus.model2doc.core.builtintypes.Row;
 import org.eclipse.papyrus.model2doc.docx.Activator;
 import org.eclipse.papyrus.model2doc.docx.internal.util.StyleConstants;
+import org.eclipse.papyrus.model2doc.docx.services.StyleService;
 
 public class StyleServiceImpl implements StyleService {
 
@@ -50,16 +56,45 @@ public class StyleServiceImpl implements StyleService {
 	}
 
 	/**
-	 * @see org.eclipse.papyrus.model2doc.docx.services.StyleService#applyTableStyle(org.apache.poi.xwpf.usermodel.XWPFTable, XWPFDocument)
+	 * @see org.eclipse.papyrus.model2doc.docx.services.StyleService#applyTableStyle(org.apache.poi.xwpf.usermodel.XWPFTable, XWPFDocument, String)
 	 *
-	 * @param table
+	 * @param xwpfTable
+	 * @param document
+	 * @param tableDescription
 	 * @return
 	 */
 	@Override
-	public boolean applyTableStyle(XWPFTable table, XWPFDocument document) {
-		String styleName = StyleConstants.TABLE_STYLE_VALUE;
+	public boolean applyTableStyle(XWPFTable xwpfTable, XWPFDocument document, AbstractTable tableDescription) {
+		String styleName;
+		boolean isRowHeader = false;
+		boolean isColumnHeader = false;
+		if (tableDescription.getRowsNumber() != 0) {
+			List<Row> rows = tableDescription.getRows();
+			isRowHeader = rows.stream()
+					.allMatch(
+							r -> r.getCells().get(0).getLocation().equals(CellLocation.ROW_HEADER)
+									|| r.getCells().get(0).getLocation().equals(CellLocation.CORNER));
+		}
+		if (tableDescription.getColumnsNumber() != 0) {
+			List<Row> rows = tableDescription.getRows();
+			isColumnHeader = rows.get(0).getCells().stream()
+					.allMatch(
+							c -> c.getLocation() == CellLocation.COLUMN_HEADER
+									|| c.getLocation() == CellLocation.CORNER);
+		}
+
+		if (isRowHeader && isColumnHeader) {
+			styleName = StyleConstants.ROW_AND_COLUMN_HEADER_STYLE_VALUE;
+		} else if (isRowHeader) {
+			styleName = StyleConstants.ROW_HEADER_ONLY_STYLE_VALUE;
+		} else if (isColumnHeader) {
+			styleName = StyleConstants.COLUMN_HEADER_ONLY_STYLE_VALUE;
+		} else {
+			styleName = StyleConstants.NO_HEADER_STYLE_VALUE;
+		}
+
 		if (document.getStyles().styleExist(styleName)) {
-			table.setStyleID(styleName);
+			xwpfTable.setStyleID(styleName);
 			return true;
 		}
 		Activator.log.warn(NLS.bind("the style {0} does not exist in the template file", styleName)); //$NON-NLS-1$

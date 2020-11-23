@@ -28,9 +28,15 @@ public class StyleConstants {
 
 	public static final String SECTION_STYLE_PREFIX = "Titre"; //$NON-NLS-1$
 
-	public static final String TABLE_STYLE_VALUE = "Grilledutableau"; //$NON-NLS-1$
-
 	public static final String CAPTION_STYLE_VALUE = "Lgende"; //$NON-NLS-1$
+
+	public static final String ROW_AND_COLUMN_HEADER_STYLE_VALUE = "TableStyleWithBothHeader"; //$NON-NLS-1$
+
+	public static final String ROW_HEADER_ONLY_STYLE_VALUE = "TableStyleWithRowHeaderOnly"; //$NON-NLS-1$
+
+	public static final String COLUMN_HEADER_ONLY_STYLE_VALUE = "TableStyleWithColumnHeaderOnly"; //$NON-NLS-1$
+
+	public static final String NO_HEADER_STYLE_VALUE = "TableWithoutHeader"; //$NON-NLS-1$
 
 	/**
 	 * Constructor.

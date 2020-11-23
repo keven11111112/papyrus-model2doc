@@ -16,6 +16,7 @@ package org.eclipse.papyrus.model2doc.docx.services;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFTable;
+import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractTable;
 
 public interface StyleService {
 
@@ -43,12 +44,14 @@ public interface StyleService {
 	/**
 	 * Apply the style to the table
 	 *
-	 * @param table
+	 * @param xwpfTable
 	 *            the table on which the style will be applied
 	 * @param document
 	 *            the document owning the table
+	 * @param tableDescription
+	 *            the description of the table
 	 */
-	boolean applyTableStyle(XWPFTable table, XWPFDocument document);
+	boolean applyTableStyle(XWPFTable xwpfTable, XWPFDocument document, AbstractTable tableDescription);
 
 	/**
 	 * Apply the caption style to the paragraph
