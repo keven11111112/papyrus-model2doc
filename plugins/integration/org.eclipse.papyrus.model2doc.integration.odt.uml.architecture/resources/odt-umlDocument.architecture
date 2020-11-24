@@ -13,14 +13,14 @@
       </owningRules>
       <documentTemplatePrototype xmi:type="documentstructuretemplate:DocumentTemplatePrototype" href="platform:/plugin/org.eclipse.papyrus.model2doc.integration.odt.uml.architecture/resources/odt-emptyTextDocumentPrototype.pdst#ODT-EmptyUMLDocumentStructureTemplateType"/>
     </representationKinds>
-    <representationKinds xmi:type="representation:PapyrusDocumentPrototype" xmi:id="_4TetkCi7EeuXVsN3JsOSRg" id="org.eclipse.papyrus.model2doc.integration.odt.uml.architecture.genericDocument" name="ODT - Generic Text Document" description="Generate generic odt document from UML models." icon="platform:/plugin/org.eclipse.papyrus.model2doc.odt/icons/odt_generic_document.png" implementationID="ODT-GenericUMLDocumentStructureTemplate" creationCommandClass="org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation.architecture.CreatePapyrusDocumentTemplateEditorCommand">
+    <representationKinds xmi:type="representation:PapyrusDocumentPrototype" xmi:id="_4TetkCi7EeuXVsN3JsOSRg" id="org.eclipse.papyrus.model2doc.integration.odt.uml.architecture.genericDocument" name="ODT - Generic Text Document" description="Generate generic odt document from UML models." icon="platform:/plugin/org.eclipse.papyrus.model2doc.odt/icons/odt_generic_document.png" implementationID="ODT-GenericUMLDocumentStructureTemplateType" creationCommandClass="org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation.architecture.CreatePapyrusDocumentTemplateEditorCommand">
       <modelRules xmi:type="representation_1:ModelRule" xmi:id="_4TetkSi7EeuXVsN3JsOSRg" permit="true" elementMultiplicity="1" multiplicity="-1">
         <element xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement"/>
       </modelRules>
       <owningRules xmi:type="representation_1:OwningRule" xmi:id="_4Tetkii7EeuXVsN3JsOSRg" permit="true" multiplicity="-1">
         <element xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement"/>
       </owningRules>
-      <documentTemplatePrototype xmi:type="documentstructuretemplate:DocumentTemplatePrototype" href="platform:/plugin/org.eclipse.papyrus.model2doc.integration.odt.uml.architecture/resources/odt-genericTextDocumentPrototype.pdst#ODT-GenericUMLDocumentStructureTemplate"/>
+      <documentTemplatePrototype xmi:type="documentstructuretemplate:DocumentTemplatePrototype" href="platform:/plugin/org.eclipse.papyrus.model2doc.integration.odt.uml.architecture/resources/odt-genericTextDocumentPrototype.pdst#ODT-GenericUMLDocumentStructureTemplateType"/>
     </representationKinds>
     <metamodel xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/5.0.0/UML#/"/>
   </contexts>
