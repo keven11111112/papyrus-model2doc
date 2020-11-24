@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
 import org.eclipse.papyrus.model2doc.core.builtintypes.*;
+import org.eclipse.papyrus.model2doc.core.styles.StyledElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -63,7 +64,7 @@ public class BuiltInTypesSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param ePackage
-	 *            the package in question.
+	 *                     the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
@@ -103,6 +104,9 @@ public class BuiltInTypesSwitch<T> extends Switch<T> {
 			Cell cell = (Cell) theEObject;
 			T result = caseCell(cell);
 			if (result == null) {
+				result = caseStyledElement(cell);
+			}
+			if (result == null) {
 				result = defaultCase(theEObject);
 			}
 			return result;
@@ -134,6 +138,9 @@ public class BuiltInTypesSwitch<T> extends Switch<T> {
 			T result = caseTextCell(textCell);
 			if (result == null) {
 				result = caseCell(textCell);
+			}
+			if (result == null) {
+				result = caseStyledElement(textCell);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
@@ -210,7 +217,7 @@ public class BuiltInTypesSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *            the target of the switch.
+	 *                   the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Abstract Table</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -227,7 +234,7 @@ public class BuiltInTypesSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *            the target of the switch.
+	 *                   the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Row</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -244,7 +251,7 @@ public class BuiltInTypesSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *            the target of the switch.
+	 *                   the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Cell</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -261,7 +268,7 @@ public class BuiltInTypesSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *            the target of the switch.
+	 *                   the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Basic Table</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -278,7 +285,7 @@ public class BuiltInTypesSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *            the target of the switch.
+	 *                   the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Basic Row</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -295,7 +302,7 @@ public class BuiltInTypesSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *            the target of the switch.
+	 *                   the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Text Cell</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -312,7 +319,7 @@ public class BuiltInTypesSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *            the target of the switch.
+	 *                   the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Abstract List</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -329,7 +336,7 @@ public class BuiltInTypesSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *            the target of the switch.
+	 *                   the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>List Item</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -346,7 +353,7 @@ public class BuiltInTypesSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *            the target of the switch.
+	 *                   the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Text List Item</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -363,7 +370,7 @@ public class BuiltInTypesSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *            the target of the switch.
+	 *                   the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Basic List</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -380,7 +387,7 @@ public class BuiltInTypesSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *            the target of the switch.
+	 *                   the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>IFile Reference</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -397,12 +404,29 @@ public class BuiltInTypesSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *            the target of the switch.
+	 *                   the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Default File Reference</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
 	public T caseDefaultFileReference(DefaultFileReference object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Styled Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Styled Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStyledElement(StyledElement object) {
 		return null;
 	}
 
@@ -414,7 +438,7 @@ public class BuiltInTypesSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param object
-	 *            the target of the switch.
+	 *                   the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated

@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.papyrus.model2doc.core.styles.StylesPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -212,6 +213,16 @@ public interface BuiltInTypesPackage extends EPackage {
 	int CELL = 2;
 
 	/**
+	 * The feature id for the '<em><b>Named Styles</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int CELL__NAMED_STYLES = StylesPackage.STYLED_ELEMENT__NAMED_STYLES;
+
+	/**
 	 * The feature id for the '<em><b>Location</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -219,7 +230,7 @@ public interface BuiltInTypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CELL__LOCATION = 0;
+	int CELL__LOCATION = StylesPackage.STYLED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Cell</em>' class.
@@ -229,7 +240,17 @@ public interface BuiltInTypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CELL_FEATURE_COUNT = 1;
+	int CELL_FEATURE_COUNT = StylesPackage.STYLED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Named Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int CELL___GET_NAMED_STYLE__STRING = StylesPackage.STYLED_ELEMENT___GET_NAMED_STYLE__STRING;
 
 	/**
 	 * The number of operations of the '<em>Cell</em>' class.
@@ -239,7 +260,7 @@ public interface BuiltInTypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CELL_OPERATION_COUNT = 0;
+	int CELL_OPERATION_COUNT = StylesPackage.STYLED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.core.builtintypes.impl.BasicTableImpl <em>Basic Table</em>}' class.
@@ -375,6 +396,16 @@ public interface BuiltInTypesPackage extends EPackage {
 	int TEXT_CELL = 5;
 
 	/**
+	 * The feature id for the '<em><b>Named Styles</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_CELL__NAMED_STYLES = CELL__NAMED_STYLES;
+
+	/**
 	 * The feature id for the '<em><b>Location</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -403,6 +434,16 @@ public interface BuiltInTypesPackage extends EPackage {
 	 * @ordered
 	 */
 	int TEXT_CELL_FEATURE_COUNT = CELL_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Named Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_CELL___GET_NAMED_STYLE__STRING = CELL___GET_NAMED_STYLE__STRING;
 
 	/**
 	 * The number of operations of the '<em>Text Cell</em>' class.

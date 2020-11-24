@@ -21,6 +21,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.papyrus.model2doc.core.builtintypes.*;
+import org.eclipse.papyrus.model2doc.core.styles.StyledElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -143,6 +144,11 @@ public class BuiltInTypesAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseStyledElement(StyledElement object) {
+			return createStyledElementAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -154,7 +160,7 @@ public class BuiltInTypesAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param target
-	 *            the object to adapt.
+	 *                   the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
@@ -341,6 +347,21 @@ public class BuiltInTypesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDefaultFileReferenceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.core.styles.StyledElement <em>Styled Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.core.styles.StyledElement
+	 * @generated
+	 */
+	public Adapter createStyledElementAdapter() {
 		return null;
 	}
 

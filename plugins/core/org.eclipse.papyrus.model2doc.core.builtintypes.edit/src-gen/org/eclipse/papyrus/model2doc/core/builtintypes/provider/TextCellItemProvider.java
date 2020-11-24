@@ -22,6 +22,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -36,6 +37,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesPackage;
 import org.eclipse.papyrus.model2doc.core.builtintypes.TextCell;
+import org.eclipse.papyrus.model2doc.core.styles.StylesFactory;
+import org.eclipse.papyrus.model2doc.core.styles.StylesPackage;
 
 /**
  * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.core.builtintypes.TextCell} object.
@@ -124,6 +127,38 @@ public class TextCellItemProvider
 	}
 
 	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(StylesPackage.Literals.STYLED_ELEMENT__NAMED_STYLES);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
+	}
+
+	/**
 	 * This returns TextCell.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -178,6 +213,9 @@ public class TextCellItemProvider
 		case BuiltInTypesPackage.TEXT_CELL__TEXT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
+		case BuiltInTypesPackage.TEXT_CELL__NAMED_STYLES:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -193,6 +231,30 @@ public class TextCellItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add(createChildParameter(StylesPackage.Literals.STYLED_ELEMENT__NAMED_STYLES,
+				StylesFactory.eINSTANCE.createIntNamedStyle()));
+
+		newChildDescriptors.add(createChildParameter(StylesPackage.Literals.STYLED_ELEMENT__NAMED_STYLES,
+				StylesFactory.eINSTANCE.createStringNamedStyle()));
+
+		newChildDescriptors.add(createChildParameter(StylesPackage.Literals.STYLED_ELEMENT__NAMED_STYLES,
+				StylesFactory.eINSTANCE.createBooleanNamedStyle()));
+
+		newChildDescriptors.add(createChildParameter(StylesPackage.Literals.STYLED_ELEMENT__NAMED_STYLES,
+				StylesFactory.eINSTANCE.createDoubleNamedStyle()));
+
+		newChildDescriptors.add(createChildParameter(StylesPackage.Literals.STYLED_ELEMENT__NAMED_STYLES,
+				StylesFactory.eINSTANCE.createIntListNamedStyle()));
+
+		newChildDescriptors.add(createChildParameter(StylesPackage.Literals.STYLED_ELEMENT__NAMED_STYLES,
+				StylesFactory.eINSTANCE.createStringListNamedStyle()));
+
+		newChildDescriptors.add(createChildParameter(StylesPackage.Literals.STYLED_ELEMENT__NAMED_STYLES,
+				StylesFactory.eINSTANCE.createBooleanListNamedStyle()));
+
+		newChildDescriptors.add(createChildParameter(StylesPackage.Literals.STYLED_ELEMENT__NAMED_STYLES,
+				StylesFactory.eINSTANCE.createDoubleListNamedStyle()));
 	}
 
 	/**

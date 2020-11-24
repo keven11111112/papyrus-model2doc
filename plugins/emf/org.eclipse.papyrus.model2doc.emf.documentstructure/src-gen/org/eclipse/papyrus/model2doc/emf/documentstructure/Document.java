@@ -14,9 +14,11 @@
 package org.eclipse.papyrus.model2doc.emf.documentstructure;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.papyrus.model2doc.core.author.IAuthor;
+
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration;
 
 /**

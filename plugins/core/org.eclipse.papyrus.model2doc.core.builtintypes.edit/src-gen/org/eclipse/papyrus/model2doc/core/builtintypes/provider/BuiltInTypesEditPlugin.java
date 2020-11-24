@@ -17,6 +17,7 @@ import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.papyrus.model2doc.core.styles.provider.StylesEditPlugin;
 import org.osgi.framework.BundleActivator;
 
 /**
@@ -54,6 +55,7 @@ public final class BuiltInTypesEditPlugin extends EMFPlugin {
 	 */
 	public BuiltInTypesEditPlugin() {
 		super(new ResourceLocator[] {
+				StylesEditPlugin.INSTANCE,
 		});
 	}
 

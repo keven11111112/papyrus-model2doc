@@ -58,7 +58,7 @@ public interface DefaultFileReference extends IFileReference {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>File Path</em>' attribute.
+	 *                  the new value of the '<em>File Path</em>' attribute.
 	 * @see #getFilePath()
 	 * @generated
 	 */

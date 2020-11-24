@@ -13,16 +13,24 @@
  */
 package org.eclipse.papyrus.model2doc.core.builtintypes.impl;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesPackage;
 import org.eclipse.papyrus.model2doc.core.builtintypes.CellLocation;
 import org.eclipse.papyrus.model2doc.core.builtintypes.TextCell;
+import org.eclipse.papyrus.model2doc.core.styles.NamedStyle;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,6 +40,7 @@ import org.eclipse.papyrus.model2doc.core.builtintypes.TextCell;
  * The following features are implemented:
  * </p>
  * <ul>
+ * <li>{@link org.eclipse.papyrus.model2doc.core.builtintypes.impl.TextCellImpl#getNamedStyles <em>Named Styles</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.core.builtintypes.impl.TextCellImpl#getLocation <em>Location</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.core.builtintypes.impl.TextCellImpl#getText <em>Text</em>}</li>
  * </ul>
@@ -39,6 +48,17 @@ import org.eclipse.papyrus.model2doc.core.builtintypes.TextCell;
  * @generated
  */
 public class TextCellImpl extends MinimalEObjectImpl.Container implements TextCell {
+	/**
+	 * The cached value of the '{@link #getNamedStyles() <em>Named Styles</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getNamedStyles()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<NamedStyle> namedStyles;
+
 	/**
 	 * The default value of the '{@link #getLocation() <em>Location</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -111,6 +131,20 @@ public class TextCellImpl extends MinimalEObjectImpl.Container implements TextCe
 	 * @generated
 	 */
 	@Override
+	public EList<NamedStyle> getNamedStyles() {
+		if (namedStyles == null) {
+			namedStyles = new EObjectContainmentEList<>(NamedStyle.class, this, BuiltInTypesPackage.TEXT_CELL__NAMED_STYLES);
+		}
+		return namedStyles;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public CellLocation getLocation() {
 		return location;
 	}
@@ -163,8 +197,36 @@ public class TextCellImpl extends MinimalEObjectImpl.Container implements TextCe
 	 * @generated
 	 */
 	@Override
+	public NamedStyle getNamedStyle(final String name) {
+		return org.eclipse.papyrus.model2doc.core.styles.internal.operations.NamedStyleOperations.INSTANCE.getNamedStyle(getNamedStyles(), name);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case BuiltInTypesPackage.TEXT_CELL__NAMED_STYLES:
+			return ((InternalEList<?>) getNamedStyles()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case BuiltInTypesPackage.TEXT_CELL__NAMED_STYLES:
+			return getNamedStyles();
 		case BuiltInTypesPackage.TEXT_CELL__LOCATION:
 			return getLocation();
 		case BuiltInTypesPackage.TEXT_CELL__TEXT:
@@ -179,9 +241,14 @@ public class TextCellImpl extends MinimalEObjectImpl.Container implements TextCe
 	 *
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+		case BuiltInTypesPackage.TEXT_CELL__NAMED_STYLES:
+			getNamedStyles().clear();
+			getNamedStyles().addAll((Collection<? extends NamedStyle>) newValue);
+			return;
 		case BuiltInTypesPackage.TEXT_CELL__LOCATION:
 			setLocation((CellLocation) newValue);
 			return;
@@ -201,6 +268,9 @@ public class TextCellImpl extends MinimalEObjectImpl.Container implements TextCe
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+		case BuiltInTypesPackage.TEXT_CELL__NAMED_STYLES:
+			getNamedStyles().clear();
+			return;
 		case BuiltInTypesPackage.TEXT_CELL__LOCATION:
 			setLocation(LOCATION_EDEFAULT);
 			return;
@@ -220,12 +290,29 @@ public class TextCellImpl extends MinimalEObjectImpl.Container implements TextCe
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case BuiltInTypesPackage.TEXT_CELL__NAMED_STYLES:
+			return namedStyles != null && !namedStyles.isEmpty();
 		case BuiltInTypesPackage.TEXT_CELL__LOCATION:
 			return location != LOCATION_EDEFAULT;
 		case BuiltInTypesPackage.TEXT_CELL__TEXT:
 			return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case BuiltInTypesPackage.TEXT_CELL___GET_NAMED_STYLE__STRING:
+			return getNamedStyle((String) arguments.get(0));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

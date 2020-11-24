@@ -24,20 +24,19 @@ import org.eclipse.papyrus.model2doc.core.builtintypes.provider.BuiltInTypesEdit
 
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.provider.GeneratorconfigurationEditPlugin;
 
+import org.eclipse.papyrus.model2doc.core.styles.provider.StylesEditPlugin;
 import org.osgi.framework.BundleActivator;
 
 /**
- * This is the central singleton for the Documentstructure edit plugin.
- * <!-- begin-user-doc -->
- * <!-- end-user-doc -->
+ * This is the central singleton for the Documentstructure edit plugin. <!--
+ * begin-user-doc --> <!-- end-user-doc -->
  *
  * @generated
  */
 public final class DocumentstructureEditPlugin extends EMFPlugin {
 	/**
 	 * Keep track of the singleton.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @generated
 	 */
@@ -45,8 +44,7 @@ public final class DocumentstructureEditPlugin extends EMFPlugin {
 
 	/**
 	 * Keep track of the singleton.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @generated
 	 */
@@ -54,8 +52,7 @@ public final class DocumentstructureEditPlugin extends EMFPlugin {
 
 	/**
 	 * Create the instance.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @generated
 	 */
@@ -65,6 +62,7 @@ public final class DocumentstructureEditPlugin extends EMFPlugin {
 				BuiltInTypesEditPlugin.INSTANCE,
 				EcoreEditPlugin.INSTANCE,
 				GeneratorconfigurationEditPlugin.INSTANCE,
+				StylesEditPlugin.INSTANCE,
 		});
 	}
 
@@ -95,16 +93,15 @@ public final class DocumentstructureEditPlugin extends EMFPlugin {
 
 	/**
 	 * The actual implementation of the Eclipse <b>Plugin</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
 	 *
 	 * @generated
 	 */
 	public static class Implementation extends EclipsePlugin {
 		/**
 		 * Creates an instance.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @generated
 		 */
@@ -118,8 +115,7 @@ public final class DocumentstructureEditPlugin extends EMFPlugin {
 
 		/**
 		 * The actual implementation of the purely OSGi-compatible <b>Bundle Activator</b>.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @generated
 		 */

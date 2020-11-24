@@ -111,6 +111,20 @@
          unpack="false"/>
 
    <plugin
+         id="org.eclipse.papyrus.model2doc.core.styles"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.model2doc.core.styles.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
          id="org.eclipse.papyrus.model2doc.documentview.model"
          download-size="0"
          install-size="0"

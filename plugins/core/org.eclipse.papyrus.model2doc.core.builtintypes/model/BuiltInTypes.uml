@@ -7,6 +7,9 @@
     <packageImport xmi:type="uml:PackageImport" xmi:id="_WaIYkHAKEemJ-foOn68QUw">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
     </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_fmeeoC8ZEeuTioAhh-QJ3Q">
+      <importedPackage xmi:type="uml:Model" href="pathmap://MODEL2DOC/STYLES/Styles.uml#_tASnMC5PEeud9Ihhf94UEg"/>
+    </packageImport>
     <packagedElement xmi:type="uml:Class" xmi:id="_lYIB4HAKEemJ-foOn68QUw" name="AbstractTable" isAbstract="true">
       <ownedComment xmi:type="uml:Comment" xmi:id="_8e9l4HCfEemJ-foOn68QUw" annotatedElement="_lYIB4HAKEemJ-foOn68QUw">
         <body>Abstract class used to represent a Table in the Model2Doc API.</body>
@@ -84,6 +87,9 @@ The 3 first cells will represents the first row, then the cell, 4, 5 and 6, will
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_C7ojEHALEemJ-foOn68QUw" client="__NYvsHAKEemJ-foOn68QUw" supplier="_-Rcr4HAKEemJ-foOn68QUw" contract="_-Rcr4HAKEemJ-foOn68QUw"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_EUUNQHALEemJ-foOn68QUw" name="Cell">
+      <generalization xmi:type="uml:Generalization" xmi:id="_lEiCwC8ZEeuTioAhh-QJ3Q">
+        <general xmi:type="uml:Interface" href="pathmap://MODEL2DOC/STYLES/Styles.uml#_cPAPwC5ZEeud9Ihhf94UEg"/>
+      </generalization>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_RDZH8HALEemJ-foOn68QUw" name="location" type="_H_dCQHALEemJ-foOn68QUw">
         <ownedComment xmi:type="uml:Comment" xmi:id="_f1hq0HCgEemJ-foOn68QUw" annotatedElement="_RDZH8HALEemJ-foOn68QUw">
           <body>The location of the cells.</body>

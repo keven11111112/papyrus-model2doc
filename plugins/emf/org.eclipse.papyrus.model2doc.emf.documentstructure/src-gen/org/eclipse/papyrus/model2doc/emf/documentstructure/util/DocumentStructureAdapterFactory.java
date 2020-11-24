@@ -30,7 +30,7 @@ import org.eclipse.papyrus.model2doc.core.builtintypes.IFileReference;
 import org.eclipse.papyrus.model2doc.core.builtintypes.ListItem;
 import org.eclipse.papyrus.model2doc.core.builtintypes.TextCell;
 import org.eclipse.papyrus.model2doc.core.builtintypes.TextListItem;
-
+import org.eclipse.papyrus.model2doc.core.styles.StyledElement;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.*;
 
 /**
@@ -92,7 +92,7 @@ public class DocumentStructureAdapterFactory extends AdapterFactoryImpl {
 	 *
 	 * @generated
 	 */
-	protected DocumentStructureSwitch<Adapter> modelSwitch = new DocumentStructureSwitch<Adapter>() {
+	protected DocumentStructureSwitch<Adapter> modelSwitch = new DocumentStructureSwitch<>() {
 		@Override
 		public Adapter caseTextDocument(TextDocument object) {
 			return createTextDocumentAdapter();
@@ -206,6 +206,11 @@ public class DocumentStructureAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseBasicTable(BasicTable object) {
 			return createBasicTableAdapter();
+		}
+
+		@Override
+		public Adapter caseStyledElement(StyledElement object) {
+			return createStyledElementAdapter();
 		}
 
 		@Override
@@ -612,6 +617,21 @@ public class DocumentStructureAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBasicTableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.core.styles.StyledElement <em>Styled Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.core.styles.StyledElement
+	 * @generated
+	 */
+	public Adapter createStyledElementAdapter() {
 		return null;
 	}
 

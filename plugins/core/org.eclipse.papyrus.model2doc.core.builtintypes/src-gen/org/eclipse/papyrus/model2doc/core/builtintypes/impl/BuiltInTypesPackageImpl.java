@@ -38,6 +38,7 @@ import org.eclipse.papyrus.model2doc.core.builtintypes.ListItem;
 import org.eclipse.papyrus.model2doc.core.builtintypes.Row;
 import org.eclipse.papyrus.model2doc.core.builtintypes.TextCell;
 import org.eclipse.papyrus.model2doc.core.builtintypes.TextListItem;
+import org.eclipse.papyrus.model2doc.core.styles.StylesPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -212,6 +213,9 @@ public class BuiltInTypesPackageImpl extends EPackageImpl implements BuiltInType
 		BuiltInTypesPackageImpl theBuiltInTypesPackage = registeredBuiltInTypesPackage instanceof BuiltInTypesPackageImpl ? (BuiltInTypesPackageImpl) registeredBuiltInTypesPackage : new BuiltInTypesPackageImpl();
 
 		isInited = true;
+
+		// Initialize simple dependencies
+		StylesPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theBuiltInTypesPackage.createPackageContents();
@@ -639,11 +643,15 @@ public class BuiltInTypesPackageImpl extends EPackageImpl implements BuiltInType
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		StylesPackage theStylesPackage = (StylesPackage) EPackage.Registry.INSTANCE.getEPackage(StylesPackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		cellEClass.getESuperTypes().add(theStylesPackage.getStyledElement());
 		basicTableEClass.getESuperTypes().add(this.getAbstractTable());
 		basicRowEClass.getESuperTypes().add(this.getRow());
 		textCellEClass.getESuperTypes().add(this.getCell());

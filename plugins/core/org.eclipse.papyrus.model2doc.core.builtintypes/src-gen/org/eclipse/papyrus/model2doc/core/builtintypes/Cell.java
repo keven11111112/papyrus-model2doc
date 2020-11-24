@@ -13,7 +13,7 @@
  */
 package org.eclipse.papyrus.model2doc.core.builtintypes;
 
-import org.eclipse.emf.ecore.EObject;
+import org.eclipse.papyrus.model2doc.core.styles.StyledElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface Cell extends EObject {
+public interface Cell extends StyledElement {
 	/**
 	 * Returns the value of the '<em><b>Location</b></em>' attribute.
 	 * The default value is <code>"BODY"</code>.
@@ -57,7 +57,7 @@ public interface Cell extends EObject {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Location</em>' attribute.
+	 *                  the new value of the '<em>Location</em>' attribute.
 	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.CellLocation
 	 * @see #getLocation()
 	 * @generated

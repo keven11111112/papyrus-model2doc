@@ -23,10 +23,11 @@ import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.eclipse.papyrus.model2doc.core.author.AuthorPackage;
-import org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesPackage;
 
+import org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesPackage;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationPackage;
 
+import org.eclipse.papyrus.model2doc.core.styles.StylesPackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Body;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.ComposedBodyPart;
@@ -286,6 +287,7 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 		BuiltInTypesPackage.eINSTANCE.eClass();
 		EcorePackage.eINSTANCE.eClass();
 		GeneratorConfigurationPackage.eINSTANCE.eClass();
+		StylesPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theDocumentStructurePackage.createPackageContents();

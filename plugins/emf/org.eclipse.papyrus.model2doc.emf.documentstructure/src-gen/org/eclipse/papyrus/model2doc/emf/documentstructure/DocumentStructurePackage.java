@@ -924,6 +924,16 @@ public interface DocumentStructurePackage extends EPackage {
 	int EXTENDED_TEXT_CELL = 16;
 
 	/**
+	 * The feature id for the '<em><b>Named Styles</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_TEXT_CELL__NAMED_STYLES = BuiltInTypesPackage.TEXT_CELL__NAMED_STYLES;
+
+	/**
 	 * The feature id for the '<em><b>Location</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -962,6 +972,16 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @ordered
 	 */
 	int EXTENDED_TEXT_CELL_FEATURE_COUNT = BuiltInTypesPackage.TEXT_CELL_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Named Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_TEXT_CELL___GET_NAMED_STYLE__STRING = BuiltInTypesPackage.TEXT_CELL___GET_NAMED_STYLE__STRING;
 
 	/**
 	 * The number of operations of the '<em>Extended Text Cell</em>' class.
@@ -1095,7 +1115,6 @@ public interface DocumentStructurePackage extends EPackage {
 	 */
 	int EXTENDED_TEXT_LIST_ITEM_OPERATION_COUNT = BuiltInTypesPackage.TEXT_LIST_ITEM_OPERATION_COUNT + 0;
 
-
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.StringVersionImpl <em>String Version</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -1146,7 +1165,6 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @ordered
 	 */
 	int STRING_VERSION_OPERATION_COUNT = VERSION_OPERATION_COUNT + 0;
-
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.InsertedFileImpl <em>Inserted File</em>}' class.

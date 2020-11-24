@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel"
+    copyrightText="Copyright (c) 2020 CEA LIST.&#xA;&#xA; All rights reserved. This program and the accompanying materials&#xA; are made available under the terms of the Eclipse Public License 2.0&#xA; which accompanies this distribution, and is available at&#xA; https://www.eclipse.org/legal/epl-2.0/&#xA;&#xA; SPDX-License-Identifier: EPL-2.0&#xA;&#xA; Contributors:&#xA; Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - Initial API and implementation"
+    modelDirectory="/org.eclipse.papyrus.model2doc.core.styles/src-gen" creationIcons="false"
+    editDirectory="/org.eclipse.papyrus.model2doc.core.styles.edit/src-gen" editorDirectory="/org.eclipse.papyrus.model2doc.core.styles.editor/src-gen"
+    modelPluginID="org.eclipse.papyrus.model2doc.core.styles" modelName="Styles" nonNLSMarkers="true"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    commentFormatting="true" testsDirectory="/org.eclipse.papyrus.model2doc.core.styles.tests/src-gen"
+    importerID="org.eclipse.uml2.uml.ecore.importer" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true" cleanup="true" oSGiCompatible="true"
+    pluralizedGetters="true">
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
+    <details key="OPPOSITE_ROLE_NAMES" value="IGNORE"/>
+    <details key="DUPLICATE_FEATURES" value="DISCARD"/>
+    <details key="ANNOTATION_DETAILS" value="PROCESS"/>
+    <details key="PROPERTY_DEFAULT_EXPRESSIONS" value="IGNORE"/>
+    <details key="DUPLICATE_FEATURE_INHERITANCE" value="DISCARD"/>
+    <details key="COMMENTS" value="PROCESS"/>
+    <details key="DERIVED_FEATURES" value="PROCESS"/>
+    <details key="SUPER_CLASS_ORDER" value="PROCESS"/>
+    <details key="DUPLICATE_OPERATION_INHERITANCE" value="DISCARD"/>
+    <details key="REDEFINING_OPERATIONS" value="REPORT"/>
+    <details key="INVARIANT_CONSTRAINTS" value="PROCESS"/>
+    <details key="UNION_PROPERTIES" value="REPORT"/>
+    <details key="DUPLICATE_OPERATIONS" value="DISCARD"/>
+    <details key="NON_API_INVARIANTS" value="IGNORE"/>
+    <details key="CAMEL_CASE_NAMES" value="IGNORE"/>
+    <details key="SUBSETTING_PROPERTIES" value="REPORT"/>
+    <details key="OPERATION_BODIES" value="IGNORE"/>
+    <details key="ECORE_TAGGED_VALUES" value="PROCESS"/>
+    <details key="UNTYPED_PROPERTIES" value="REPORT"/>
+    <details key="REDEFINING_PROPERTIES" value="REPORT"/>
+    <details key="INVOCATION_DELEGATES" value="IGNORE"/>
+    <details key="VALIDATION_DELEGATES" value="IGNORE"/>
+  </genAnnotations>
+  <foreignModel>Styles.uml</foreignModel>
+  <genPackages xsi:type="genmodel:GenPackage" prefix="Styles" basePackage="org.eclipse.papyrus.model2doc.core"
+      disposableProviderFactory="true" ecorePackage="Styles.ecore#/">
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="Styles.ecore#//NamedStyle">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Styles.ecore#//NamedStyle/name"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="Styles.ecore#//IntNamedStyle">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Styles.ecore#//IntNamedStyle/value"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="Styles.ecore#//StringNamedStyle">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Styles.ecore#//StringNamedStyle/value"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="Styles.ecore#//BooleanNamedStyle">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Styles.ecore#//BooleanNamedStyle/value"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="Styles.ecore#//DoubleNamedStyle">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Styles.ecore#//DoubleNamedStyle/value"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="Styles.ecore#//IntListNamedStyle">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Styles.ecore#//IntListNamedStyle/values"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="Styles.ecore#//StringListNamedStyle">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Styles.ecore#//StringListNamedStyle/values"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="Styles.ecore#//BooleanListNamedStyle">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Styles.ecore#//BooleanListNamedStyle/values"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="Styles.ecore#//DoubleListNamedStyle">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Styles.ecore#//DoubleListNamedStyle/values"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="Styles.ecore#//StyledElement">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference Styles.ecore#//StyledElement/namedStyles"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Styles.ecore#//StyledElement/getNamedStyle"
+          body="return org.eclipse.papyrus.model2doc.core.styles.NamedStyleOperations.INSTANCE.getNamedStyle(getNamedStyles(), name);">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Styles.ecore#//StyledElement/getNamedStyle/name"/>
+      </genOperations>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

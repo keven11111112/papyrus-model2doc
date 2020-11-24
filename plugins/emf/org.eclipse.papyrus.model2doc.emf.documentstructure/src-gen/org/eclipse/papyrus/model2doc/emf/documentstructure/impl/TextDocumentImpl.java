@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.papyrus.model2doc.core.author.IAuthor;
+
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage;

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
+  <uml:Model xmi:id="_tASnMC5PEeud9Ihhf94UEg" name="Styles" URI="http://www.eclipse.org/papyrus/model2doc/core/1.0.0/Styles">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_tCiC4C5PEeud9Ihhf94UEg">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_fJpLAC5QEeud9Ihhf94UEg" name="NamedStyle">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_18ssEC5QEeud9Ihhf94UEg" name="name">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_F7Ur8C5REeud9Ihhf94UEg" name="IntNamedStyle">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_90Fs0C5VEeud9Ihhf94UEg" annotatedElement="_F7Ur8C5REeud9Ihhf94UEg">
+        <body>NamedStyle with an int as value</body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_zGLVcC5REeud9Ihhf94UEg" general="_fJpLAC5QEeud9Ihhf94UEg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_6nitwC5UEeud9Ihhf94UEg" name="value">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_WqfX8C5REeud9Ihhf94UEg" name="StringNamedStyle">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_FFe20C5WEeud9Ihhf94UEg" annotatedElement="_WqfX8C5REeud9Ihhf94UEg">
+        <body>NamedStyle with a string as value</body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_zaZ5AC5REeud9Ihhf94UEg" general="_fJpLAC5QEeud9Ihhf94UEg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_WqfX8S5REeud9Ihhf94UEg" name="value">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_dN_hMC5REeud9Ihhf94UEg" name="BooleanNamedStyle">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_Hj6BEC5WEeud9Ihhf94UEg" annotatedElement="_dN_hMC5REeud9Ihhf94UEg">
+        <body>NamedStyle with a boolean as value</body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_zu7XgC5REeud9Ihhf94UEg" general="_fJpLAC5QEeud9Ihhf94UEg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_dOAIQC5REeud9Ihhf94UEg" name="value">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_pAF2QC5REeud9Ihhf94UEg" name="DoubleNamedStyle">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_JWoi8C5WEeud9Ihhf94UEg" annotatedElement="_pAF2QC5REeud9Ihhf94UEg">
+        <body>NamedStyle with a double as value</body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_0Q3m8C5REeud9Ihhf94UEg" general="_fJpLAC5QEeud9Ihhf94UEg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_pAF2QS5REeud9Ihhf94UEg" name="value">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDouble"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Sf5xYC5SEeud9Ihhf94UEg" name="IntListNamedStyle">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_LVKsMC5WEeud9Ihhf94UEg" annotatedElement="_Sf5xYC5SEeud9Ihhf94UEg">
+        <body>NamedStyle with a list of int as value</body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_Sf5xYS5SEeud9Ihhf94UEg" general="_fJpLAC5QEeud9Ihhf94UEg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Sf5xYi5SEeud9Ihhf94UEg" name="values">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XLGVMC5SEeud9Ihhf94UEg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XLdhkC5SEeud9Ihhf94UEg" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Y9QPUC5SEeud9Ihhf94UEg" name="StringListNamedStyle">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_M7g-8C5WEeud9Ihhf94UEg" annotatedElement="_Y9QPUC5SEeud9Ihhf94UEg">
+        <body>NamedStyle with a list of string as value</body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_Y9QPUS5SEeud9Ihhf94UEg" general="_fJpLAC5QEeud9Ihhf94UEg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Y9QPUi5SEeud9Ihhf94UEg" name="values">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Y9QPUy5SEeud9Ihhf94UEg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Y9QPVC5SEeud9Ihhf94UEg" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ZArWwC5SEeud9Ihhf94UEg" name="BooleanListNamedStyle">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_Onib4C5WEeud9Ihhf94UEg" annotatedElement="_ZArWwC5SEeud9Ihhf94UEg">
+        <body>NamedStyle with a list of boolean as value</body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_ZArWwS5SEeud9Ihhf94UEg" general="_fJpLAC5QEeud9Ihhf94UEg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_ZArWwi5SEeud9Ihhf94UEg" name="values">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZArWwy5SEeud9Ihhf94UEg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZArWxC5SEeud9Ihhf94UEg" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ZTzuIC5SEeud9Ihhf94UEg" name="DoubleListNamedStyle">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_QubP4C5WEeud9Ihhf94UEg" annotatedElement="_ZTzuIC5SEeud9Ihhf94UEg">
+        <body>NamedStyle with a list of double as value</body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_ZTzuIS5SEeud9Ihhf94UEg" general="_fJpLAC5QEeud9Ihhf94UEg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_ZTzuIi5SEeud9Ihhf94UEg" name="values">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDouble"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZTzuIy5SEeud9Ihhf94UEg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZTzuJC5SEeud9Ihhf94UEg" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_ROwyQC5VEeud9Ihhf94UEg" memberEnd="_RO5VIC5VEeud9Ihhf94UEg _RPNeMC5VEeud9Ihhf94UEg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_RO4HAC5VEeud9Ihhf94UEg" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_RO4uEC5VEeud9Ihhf94UEg" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_RPNeMC5VEeud9Ihhf94UEg" name="styledelement" type="_cPAPwC5ZEeud9Ihhf94UEg" association="_ROwyQC5VEeud9Ihhf94UEg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_cPAPwC5ZEeud9Ihhf94UEg" name="StyledElement">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_RO5VIC5VEeud9Ihhf94UEg" name="namedStyles" type="_fJpLAC5QEeud9Ihhf94UEg" aggregation="composite" association="_ROwyQC5VEeud9Ihhf94UEg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RO9mkC5VEeud9Ihhf94UEg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RPE7UC5VEeud9Ihhf94UEg" value="*"/>
+      </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_kxSZ4C5ZEeud9Ihhf94UEg" name="getNamedStyle">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_kxSZ4S5ZEeud9Ihhf94UEg" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_kxSZ4i5ZEeud9Ihhf94UEg" key="body" value="return org.eclipse.papyrus.model2doc.core.styles.internal.operations.NamedStyleOperations.INSTANCE.getNamedStyle(getNamedStyles(), name);"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_kxSZ4y5ZEeud9Ihhf94UEg" annotatedElement="_kxSZ4C5ZEeud9Ihhf94UEg">
+          <body>This method return the NamedStyle corresponding to the given name</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_kxSZ5C5ZEeud9Ihhf94UEg" name="ret" type="_fJpLAC5QEeud9Ihhf94UEg" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_kxSZ5S5ZEeud9Ihhf94UEg" name="name">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_A9CpgC5QEeud9Ihhf94UEg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_A9Fs0C5QEeud9Ihhf94UEg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Ecore.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Model>
+  <Ecore:EPackage xmi:id="_BhHm8C5QEeud9Ihhf94UEg" base_Package="_tASnMC5PEeud9Ihhf94UEg" packageName="styles" nsPrefix="styles" basePackage="org.eclipse.papyrus.model2doc.core" prefix="Styles"/>
+</xmi:XMI>

@@ -28,7 +28,7 @@ import org.eclipse.papyrus.model2doc.core.builtintypes.IFileReference;
 import org.eclipse.papyrus.model2doc.core.builtintypes.ListItem;
 import org.eclipse.papyrus.model2doc.core.builtintypes.TextCell;
 import org.eclipse.papyrus.model2doc.core.builtintypes.TextListItem;
-
+import org.eclipse.papyrus.model2doc.core.styles.StyledElement;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.*;
 
 /**
@@ -281,6 +281,9 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 			}
 			if (result == null) {
 				result = caseCell(extendedTextCell);
+			}
+			if (result == null) {
+				result = caseStyledElement(extendedTextCell);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
@@ -745,6 +748,23 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBasicTable(BasicTable object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Styled Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *                   the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Styled Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStyledElement(StyledElement object) {
 		return null;
 	}
 
