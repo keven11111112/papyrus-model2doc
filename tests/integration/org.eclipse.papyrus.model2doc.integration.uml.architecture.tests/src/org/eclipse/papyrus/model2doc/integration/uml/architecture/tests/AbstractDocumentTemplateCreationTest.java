@@ -26,6 +26,7 @@ import org.eclipse.papyrus.infra.viewpoints.policy.PolicyChecker;
 import org.eclipse.papyrus.infra.viewpoints.policy.ViewPrototype;
 import org.eclipse.papyrus.junit.framework.classification.tests.AbstractPapyrusTest;
 import org.eclipse.papyrus.junit.utils.rules.PapyrusEditorFixture;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplatePrototype;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TextDocumentTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.utils.DocumentStructureTemplateConstants;
@@ -180,8 +181,8 @@ public abstract class AbstractDocumentTemplateCreationTest extends AbstractPapyr
 		final ICreateDocumentTemplateEditorCommand createEditorCommand = (ICreateDocumentTemplateEditorCommand) newClass;
 
 		// 6. create a new document template
-		boolean result = createEditorCommand.execute(docProto, this.fixture.getRoot(), "niceDocumentTemplate");
-		Assert.assertTrue("The creation of document of type " + documentType + " failed", result);
+		DocumentTemplate result = createEditorCommand.execute(docProto, "niceDocumentTemplate", this.fixture.getRoot(), true);
+		Assert.assertNotNull("The creation of document of type " + documentType + " failed", result);
 
 		Assert.assertEquals("The pdst file doesn't contains the expected number of element.", 1, pdstResource.getContents().size());
 		final EObject pdstContents = pdstResource.getContents().get(0);

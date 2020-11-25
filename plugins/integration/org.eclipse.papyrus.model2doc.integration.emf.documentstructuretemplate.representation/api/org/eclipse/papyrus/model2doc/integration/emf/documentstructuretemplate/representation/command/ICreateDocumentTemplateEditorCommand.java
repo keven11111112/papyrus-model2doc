@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2019 CEA LIST.
+ * Copyright (c) 2019, 2020 CEA LIST.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -10,12 +10,14 @@
  *
  * Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Bug 569246
  *****************************************************************************/
 
 package org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation.command;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.infra.viewpoints.policy.ViewPrototype;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate;
 
 
 /**
@@ -29,13 +31,32 @@ public interface ICreateDocumentTemplateEditorCommand {
 	 *
 	 * @param prototype
 	 *            a view prototype (should be a PapyrusDocumentTemplateViewPrototype)
-	 * @param semanticContext
-	 *            the semantic context
 	 * @param name
 	 *            the name of the new DocumentTemplate to create
+	 * @param semanticContext
+	 *            the semantic context
+	 * @param open
+	 *            open after creation
 	 * @return
-	 *         <code>true</code> if the creation worked fined
+	 *         the created document template
 	 */
-	public boolean execute(final ViewPrototype prototype, final EObject semanticContext, final String name);
+	public DocumentTemplate execute(final ViewPrototype prototype, final String name, final EObject semanticContext, boolean open);
+
+	/**
+	 *
+	 * @param prototype
+	 *            a view prototype (should be a PapyrusDocumentTemplateViewPrototype)
+	 * @param name
+	 *            the name of the new DocumentTemplate to create
+	 * @param semanticContext
+	 *            the semantic context
+	 * @param graphicalContext
+	 *            the graphical context
+	 * @param open
+	 *            open after creation
+	 * @return
+	 *         the created document template
+	 */
+	public DocumentTemplate execute(final ViewPrototype prototype, final String name, final EObject semanticContext, final EObject graphicalContext, final boolean open);
 
 }

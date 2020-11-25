@@ -26,7 +26,7 @@ import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTVMerge;
 import org.openxmlformats.schemas.wordprocessingml.x2006.main.STMerge;
 
 /**
- *
+ * This custom implementation allow to add some missing methods in the apache api
  */
 public class CustomXWPFTable extends XWPFTable {
 

@@ -27,7 +27,7 @@ import org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.r
  */
 // TODO : this class is internal, but exported and used in the JUnit tests.
 // We must move it.
-public class PapyrusDocumentTemplateViewPrototype extends ViewPrototype {
+public class PapyrusDocumentTemplateViewPrototype extends ViewPrototype implements ExtendedViewPrototype<DocumentTemplate> {
 
 	private final ICreateDocumentTemplateEditorCommand command;
 
@@ -54,6 +54,19 @@ public class PapyrusDocumentTemplateViewPrototype extends ViewPrototype {
 	}
 
 	/**
+	 * @see org.eclipse.papyrus.infra.viewpoints.policy.ViewPrototype#instantiateOn(org.eclipse.emf.ecore.EObject, java.lang.String, boolean)
+	 *
+	 * @param owner
+	 * @param name
+	 * @param openCreatedView
+	 * @return
+	 */
+	@Override
+	public boolean instantiateOn(EObject owner, String name, boolean openCreatedView) {
+		return instantiateOn(owner, owner, name, openCreatedView) != null;
+	}
+
+	/**
 	 * @see org.eclipse.papyrus.infra.viewpoints.policy.ViewPrototype#instantiateOn(org.eclipse.emf.ecore.EObject)
 	 *
 	 * @param owner
@@ -73,7 +86,7 @@ public class PapyrusDocumentTemplateViewPrototype extends ViewPrototype {
 	 */
 	@Override
 	public boolean instantiateOn(EObject owner, String name) {
-		return command.execute(this, owner, name);
+		return instantiateOn(owner, name, true);
 	}
 
 	/**
@@ -170,6 +183,20 @@ public class PapyrusDocumentTemplateViewPrototype extends ViewPrototype {
 	public EObject getRootOf(EObject view) {
 		// it is semantic context
 		return ((DocumentTemplate) view).getSemanticContext();
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.ui.internal.viewpoint.ExtendedViewPrototype#instantiateOn(org.eclipse.emf.ecore.EObject, org.eclipse.emf.ecore.EObject, java.lang.String, boolean)
+	 *
+	 * @param semanticOwner
+	 * @param graphicalOwner
+	 * @param name
+	 * @param openCreatedView
+	 * @return
+	 */
+	@Override
+	public DocumentTemplate instantiateOn(final EObject semanticOwner, final EObject graphicalOwner, final String name, final boolean openCreatedView) {
+		return command.execute(this, name, semanticOwner, graphicalOwner, openCreatedView);
 	}
 
 }
