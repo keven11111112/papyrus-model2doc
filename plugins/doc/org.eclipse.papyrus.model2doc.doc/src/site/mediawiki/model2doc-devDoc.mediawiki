@@ -158,3 +158,35 @@ This class must be registered with the extension point <code>org.eclipse.papyrus
 This generator is in charge to generate the final document from a DocumentStructure.
 You must create a new class implementing <code>org.eclipse.papyrus.model2doc.emf.structure2document.generator.IStructure2DocumentGenerator</code>.
 This class must be registered with the extension point <code>org.eclipse.papyrus.model2doc.emf.structure2document.documentgenerator</code>.
+
+=Styles=
+The '''org.eclipse.papyrus.model2doc.core.styles''' plugin provide style metamodel. It define NamedStyle for Integer, String, Boolean and Double using single or multiple references.
+
+==How to add new NamedStyle==
+*You should add the new NamedStyle name in '''org.eclipse.papyrus.model2doc.core.styles.NamedStyleConstants'''
+*Update the transcription to use your new NamedStyle
+*Don't forget the update this documentation to be sure that the list of NamedStyles is updated
+
+==Existing NamedStyles==
+{| class="wikitable"
+! Name
+! Description
+! Value type
+! Applies to
+! Odt
+! Docx
+|-
+|mergedWithRightCell
+|Merge the cell with the cell located just to the right
+|Boolean
+|Cell
+|[[Image:images/devDoc/false.jpg]]
+|[[Image:images/devDoc/true.jpg]]
+|-
+|mergedWithBottomCell
+|Merge the cell with the cell located just to below
+|Boolean
+|Cell
+|[[Image:images/devDoc/false.jpg]]
+|[[Image:images/devDoc/true.jpg]]
+|}

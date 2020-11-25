@@ -20,6 +20,7 @@ import java.io.InputStream;
 
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
+import org.apache.poi.xwpf.usermodel.XWPFTable;
 import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP;
 import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTSimpleField;
 import org.openxmlformats.schemas.wordprocessingml.x2006.main.STOnOff;
@@ -70,6 +71,34 @@ public class CustomXWPFDocument extends XWPFDocument {
 		CTSimpleField toc = paragraph.getCTP().addNewFldSimple();
 		toc.setInstr("TOC \\c \"figure\" \\* MERGEFORMAT"); //$NON-NLS-1$
 		toc.setDirty(STOnOff.TRUE); // FIXME a pop up appear when we open the document
+	}
+
+	/**
+	 * Create an empty table with one row and one column as default.
+	 *
+	 * @return a new table
+	 */
+	@Override
+	public XWPFTable createTable() {
+		XWPFTable table = new CustomXWPFTable(getDocument().getBody().addNewTbl(), this);
+		bodyElements.add(table);
+		tables.add(table);
+		return table;
+	}
+
+	/**
+	 * Create an empty table with a number of rows and cols specified
+	 *
+	 * @param rows
+	 * @param cols
+	 * @return table
+	 */
+	@Override
+	public XWPFTable createTable(int rows, int cols) {
+		XWPFTable table = new CustomXWPFTable(getDocument().getBody().addNewTbl(), this, rows, cols);
+		bodyElements.add(table);
+		tables.add(table);
+		return table;
 	}
 
 }

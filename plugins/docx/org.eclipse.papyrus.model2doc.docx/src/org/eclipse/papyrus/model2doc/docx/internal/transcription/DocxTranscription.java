@@ -19,6 +19,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -42,12 +43,15 @@ import org.eclipse.papyrus.model2doc.core.builtintypes.Row;
 import org.eclipse.papyrus.model2doc.core.builtintypes.TextCell;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.operations.GeneratorConfigurationOperations;
+import org.eclipse.papyrus.model2doc.core.styles.BooleanNamedStyle;
+import org.eclipse.papyrus.model2doc.core.styles.NamedStyleConstants;
 import org.eclipse.papyrus.model2doc.core.transcription.CoverPage;
 import org.eclipse.papyrus.model2doc.core.transcription.ImageDescription;
 import org.eclipse.papyrus.model2doc.core.transcription.Transcription;
 import org.eclipse.papyrus.model2doc.docx.Activator;
 import org.eclipse.papyrus.model2doc.docx.Messages;
 import org.eclipse.papyrus.model2doc.docx.internal.poi.CustomXWPFDocument;
+import org.eclipse.papyrus.model2doc.docx.internal.poi.CustomXWPFTable;
 import org.eclipse.papyrus.model2doc.docx.internal.services.StyleServiceImpl;
 import org.eclipse.papyrus.model2doc.docx.internal.util.ImageUtils;
 import org.eclipse.papyrus.model2doc.docx.services.StyleService;
@@ -200,25 +204,116 @@ public class DocxTranscription implements Transcription {
 		// create and fill the table
 		XWPFTable xwpfTable = document.createTable(rowsNumber, colNumbers);
 		Iterator<Row> rowIter = table.getRows().iterator();
-		int rowNumber = 0;
+		int rowIndex = 0;
 		while (rowIter.hasNext()) {
 			Row row = rowIter.next();
 			Iterator<Cell> cellIter = row.getCells().iterator();
-			int cellNumber = 0;
+			int cellIndex = 0;
 			while (cellIter.hasNext()) {
 				Cell cell = cellIter.next();
 				if (cell instanceof TextCell) {
 					TextCell textCell = (TextCell) cell;
-					xwpfTable.getRow(rowNumber).getCell(cellNumber).setText(textCell.getText());
+					xwpfTable.getRow(rowIndex).getCell(cellIndex).setText(textCell.getText());
 				}
-				cellNumber++;
+				cellIndex++;
 			}
-			rowNumber++;
+			rowIndex++;
 		}
 
-		// apply style
+		// apply styles
+		rowIter = table.getRows().iterator();
+		List<Cell> verticalMergedCells = new ArrayList<>();
+		while (rowIter.hasNext()) {
+			Row row = rowIter.next();
+			Iterator<Cell> cellIter = row.getCells().iterator();
+			while (cellIter.hasNext()) {
+				Cell cell = cellIter.next();
+
+				// Horizontal cell merge
+				BooleanNamedStyle style = (BooleanNamedStyle) cell.getNamedStyle(NamedStyleConstants.MERGED_WITH_RIGHT_CELL);
+				if (null != style && style.isValue()) {
+					Cell lastMergedCell = findLastHorizontalMergedCell(cellIter);
+
+					if (lastMergedCell != null && xwpfTable instanceof CustomXWPFTable) {
+						((CustomXWPFTable) xwpfTable).horizontalCellMerge(
+								table.getRows().indexOf(row),
+								row.getCells().indexOf(cell),
+								row.getCells().indexOf(lastMergedCell));
+					}
+				}
+
+				// Vertical cell merge
+				style = (BooleanNamedStyle) cell.getNamedStyle(NamedStyleConstants.MERGED_WITH_BOTTOM_CELL);
+				if (null != style && style.isValue()) {
+					if (false == verticalMergedCells.contains(cell)) { // otherwise it is already managed
+						Row lastMergedRow = findVerticalMergedCells(table, row, cell, verticalMergedCells);
+						if (lastMergedRow != null && xwpfTable instanceof CustomXWPFTable) {
+							((CustomXWPFTable) xwpfTable).verticalCellMerge(
+									row.getCells().indexOf(cell),
+									table.getRows().indexOf(row),
+									table.getRows().indexOf(lastMergedRow));
+						}
+					}
+				}
+			}
+		}
+
 		xwpfTable.setWidthType(TableWidthType.PCT); // resize table to use the page width
 		styleService.applyTableStyle(xwpfTable, document, table);
+	}
+
+	/**
+	 * Find the first cell following the iterator which does not have the {@link NamedStyleConstants.MERGED_WITH_RIGHT_CELL} style
+	 *
+	 * @param cellIter
+	 *            the start of the research
+	 * @return the last cell concerning by the merge
+	 */
+	private Cell findLastHorizontalMergedCell(Iterator<Cell> cellIter) {
+		while (cellIter.hasNext()) {
+			Cell cell = cellIter.next();
+			BooleanNamedStyle style = (BooleanNamedStyle) cell.getNamedStyle(NamedStyleConstants.MERGED_WITH_RIGHT_CELL);
+			if (null != style && style.isValue()) {
+				continue;
+			} else {
+				return cell;
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * This method add every cells that must be merged with the firstCell (according to the {@link NamedStyleConstants.MERGED_WITH_BOTTOM_CELL} style)
+	 * to the mergedCells collection then it return the row of the laster merged cell
+	 *
+	 * @param table
+	 *            the table
+	 * @param row
+	 *            the row of the first cell of the merge
+	 * @param firstCell
+	 *            the first cell of the merge
+	 * @param mergedCells
+	 *            the list of merged cells
+	 * @return the row of the last merged cell
+	 */
+	private Row findVerticalMergedCells(final AbstractTable table, final Row row, final Cell firstCell, List<Cell> mergedCells) {
+		int columnIndex = row.getCells().indexOf(firstCell);
+		int rowIndex = table.getRows().indexOf(row) + 1;
+
+		while (rowIndex < table.getRowsNumber()) {
+			Cell cell = table.getRows().get(rowIndex).getCells().get(columnIndex);
+
+			BooleanNamedStyle style = (BooleanNamedStyle) cell.getNamedStyle(NamedStyleConstants.MERGED_WITH_BOTTOM_CELL);
+			if (null != style && style.isValue()) {
+				mergedCells.add(cell);
+			} else {
+				mergedCells.add(cell);
+				return table.getRows().get(rowIndex);
+			}
+			rowIndex++;
+		}
+
+		return null;
 	}
 
 	@Override
