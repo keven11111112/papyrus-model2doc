@@ -19,9 +19,13 @@ import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.expressions.IEvaluationContext;
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.papyrus.model2doc.core.status.GenerationStatus;
+import org.eclipse.papyrus.model2doc.core.status.GenerationStatusDialogHelper;
+import org.eclipse.papyrus.model2doc.core.status.IGenerationStatus;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Document;
 import org.eclipse.papyrus.model2doc.emf.structure2document.generator.IStructure2DocumentGenerator;
 import org.eclipse.papyrus.model2doc.emf.structure2document.generator.Structure2DocumentRegistry;
@@ -56,7 +60,21 @@ public class GenerateDocumentFileHandler extends AbstractHandler {
 	 */
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		return generator.generate(this.selectedDocument);
+		final IGenerationStatus status = generate();
+		GenerationStatusDialogHelper.INSTANCE.openMessageDialog(status);
+		return status;
+	}
+
+	/**
+	 *
+	 * @return
+	 *         the status of the generation
+	 */
+	protected IGenerationStatus generate() {
+		final Object result = this.generator.generate(this.selectedDocument);
+		IGenerationStatus status = new GenerationStatus(IStatus.OK, org.eclipse.papyrus.model2doc.emf.structure2document.Activator.PLUGIN_ID, "The file has been generated."); //$NON-NLS-1$
+		status.setResult(result);
+		return status;
 	}
 
 	/**

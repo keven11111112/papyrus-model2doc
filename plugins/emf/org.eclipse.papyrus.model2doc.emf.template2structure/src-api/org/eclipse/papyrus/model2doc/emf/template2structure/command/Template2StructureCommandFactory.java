@@ -56,10 +56,12 @@ public class Template2StructureCommandFactory {
 	 *            the editing domain
 	 * @param docTemplate
 	 *            the DocumentTemplate
+	 * @param version
+	 *            the version of the document structure to generate
 	 * @return
 	 *         the command to create a {@link Document} from a {@link DocumentTemplate}
 	 */
-	public final Command getGenerateDocumentStructureCommand(final TransactionalEditingDomain domain, final DocumentTemplate docTemplate) {
-		return new GenerateDocumentStructureCommand(domain, docTemplate);
+	public final Command getGenerateDocumentStructureCommand(final TransactionalEditingDomain domain, final DocumentTemplate docTemplate, final String version) {
+		return new GenerateDocumentStructureCommand(domain, docTemplate, version);
 	}
 }

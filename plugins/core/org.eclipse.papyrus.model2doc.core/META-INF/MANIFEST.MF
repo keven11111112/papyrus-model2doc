@@ -4,7 +4,7 @@ Bundle-Name: %pluginName
 Bundle-Vendor: %providerName
 Bundle-Version: 0.8.0.qualifier
 Bundle-Localization: plugin
-Bundle-SymbolicName: org.eclipse.papyrus.model2doc.core;singleton:=true
+Bundle-SymbolicName: org.eclipse.papyrus.model2doc.core
 Bundle-Activator: org.eclipse.papyrus.model2doc.core.Activator
 Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.15.0,4.0.0)",
  org.eclipse.core.commands;bundle-version="[3.0.0,4.0.0)",
@@ -29,6 +29,8 @@ Export-Package: org.eclipse.papyrus.model2doc.core.internal.transcriber;x-intern
  org.eclipse.papyrus.model2doc.core.internal.transcription;x-internal:=true,
  org.eclipse.papyrus.model2doc.core.internal.util;x-internal:=true,
  org.eclipse.papyrus.model2doc.core.service,
+ org.eclipse.papyrus.model2doc.core.status,
  org.eclipse.papyrus.model2doc.core.transcriber,
- org.eclipse.papyrus.model2doc.core.transcription
+ org.eclipse.papyrus.model2doc.core.transcription,
+ org.eclipse.papyrus.model2doc.core.utils
 Automatic-Module-Name: org.eclipse.papyrus.model2doc.core

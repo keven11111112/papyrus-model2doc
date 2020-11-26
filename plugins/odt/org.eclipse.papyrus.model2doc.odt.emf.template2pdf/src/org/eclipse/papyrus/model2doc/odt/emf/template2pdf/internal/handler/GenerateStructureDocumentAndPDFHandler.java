@@ -18,12 +18,14 @@ package org.eclipse.papyrus.model2doc.odt.emf.template2pdf.internal.handler;
 import java.util.List;
 import java.util.Map;
 
-import org.eclipse.core.commands.ExecutionEvent;
-import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.expressions.IEvaluationContext;
+import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExecutableExtension;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.papyrus.model2doc.core.status.GenerationStatus;
+import org.eclipse.papyrus.model2doc.core.status.IGenerationStatus;
 import org.eclipse.papyrus.model2doc.emf.template2document.internal.handler.GenerateStructureAndDocumentHandler;
 import org.eclipse.papyrus.model2doc.odt.emf.template2pdf.Activator;
 import org.eclipse.papyrus.model2doc.odt.emf.template2pdf.internal.menu.Template2PDFMenuConstants;
@@ -48,27 +50,32 @@ public class GenerateStructureDocumentAndPDFHandler extends GenerateStructureAnd
 	 */
 	private PDFVersion pdfVersion = PDFVersion.PDF_DEFAULT;
 
+
 	/**
-	 * {@inheritDoc}
+	 * @see org.eclipse.papyrus.model2doc.emf.template2document.internal.handler.GenerateStructureAndDocumentHandler#generate()
 	 *
-	 * @see org.eclipse.core.commands.IHandler#execute(org.eclipse.core.commands.ExecutionEvent)
-	 * @return the path of the generated file
+	 * @return
 	 */
 	@Override
-	public Object execute(final ExecutionEvent event) throws ExecutionException {
-		final Object result = super.execute(event);
-		if (result instanceof String) {
-			String generatedDocumentPath = (String) result;
+	protected IGenerationStatus generate() {
+		final IGenerationStatus status = super.generate();
+		if (status.isOK()) {
+			final String generatedDocumentPath = status.getAdaptedResult(String.class);
+			Assert.isNotNull(generatedDocumentPath);
 			PDFExporter exporter = new PDFExporter();
 			exporter.setPDFVersion(this.pdfVersion);
-			exporter.setOpenEndDialog(true);
+			exporter.setOpenEndDialog(false);
 			try {
-				return exporter.exportToPDF(generatedDocumentPath);
+				final String pdfPath = exporter.exportToPDF(generatedDocumentPath);
+				final IGenerationStatus newStatus = new GenerationStatus(IStatus.OK, Activator.PLUGIN_ID, "The generation of pdf file succeed"); //$NON-NLS-1$
+				newStatus.setResult(pdfPath);
+				return newStatus;
 			} catch (Exception e) {
 				Activator.log.error(e);
+				return new GenerationStatus(IStatus.ERROR, Activator.PLUGIN_ID, "The PDF generation failed with an Exception", e); //$NON-NLS-1$
 			}
 		}
-		return null;
+		return status;
 	}
 
 	/**

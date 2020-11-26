@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2019 CEA LIST and others.
+ * Copyright (c) 2019, 2020 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -10,7 +10,7 @@
  *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
- *
+ *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Bug 569252
  *****************************************************************************/
 
 package org.eclipse.papyrus.model2doc.emf.template2structure.internal.command;
@@ -19,12 +19,18 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.operations.GeneratorConfigurationOperations;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Document;
@@ -36,7 +42,8 @@ import org.eclipse.papyrus.model2doc.emf.template2structure.generator.ITemplate2
 import org.eclipse.papyrus.model2doc.emf.template2structure.generator.Template2StructureRegistry;
 
 /**
- * The command is used to create the {@link Document} from a {@link DocumentTemplate}.
+ * The command is used to create the {@link Document} from a {@link DocumentTemplate}.+
+ * At the end of the execution, the command refresh the workspace
  */
 public class GenerateDocumentStructureCommand extends RecordingCommand {
 
@@ -68,20 +75,13 @@ public class GenerateDocumentStructureCommand extends RecordingCommand {
 	 *            the editing domain to use for this command
 	 * @param docTemplate
 	 *            the document template to map on a {@link Document}
+	 * @param documentVersion
+	 *            the version of the document to generate
 	 */
-	public GenerateDocumentStructureCommand(final TransactionalEditingDomain domain, final DocumentTemplate docTemplate) {
+	public GenerateDocumentStructureCommand(final TransactionalEditingDomain domain, final DocumentTemplate docTemplate, final String version) {
 		super(domain, "Generate Document Structure Command", "Create the Document Structure Object and store it in a new file"); //$NON-NLS-1$ //$NON-NLS-2$
 		this.documentTemplate = docTemplate;
-	}
-
-	/**
-	 *
-	 *
-	 * @param version
-	 *            the version of the generated document, the parameter can be <code>null</code>
-	 */
-	public void setVersion(final String version) {
-		documentVersion = version;
+		this.documentVersion = version;
 	}
 
 	/**
@@ -96,12 +96,7 @@ public class GenerateDocumentStructureCommand extends RecordingCommand {
 		}
 		this.result.add(document);
 
-
-
 		// We create the new resource for this document
-		final Resource templateResource = this.documentTemplate.eResource();
-		ResourceSet resourceSet = templateResource.getResourceSet();
-
 		URI documentStructureURI = null;
 		final IDocumentStructureGeneratorConfiguration configuration = this.documentTemplate.getDocumentStructureGeneratorConfiguration();
 		if (null != configuration) {
@@ -112,11 +107,9 @@ public class GenerateDocumentStructureCommand extends RecordingCommand {
 			return;
 		}
 
-		// 2. we create a new resource
-		ResourceSet rSet = new ResourceSetImpl();
-		// TODO : integrate me in the Papyrus resourceset ?
-		resourceSet = rSet;
-		final Resource structureResource = resourceSet.createResource(documentStructureURI);
+		// 2. we create a new ResourceSet
+		final ResourceSet structureResourceSet = new ResourceSetImpl();
+		final Resource structureResource = structureResourceSet.createResource(documentStructureURI);
 
 		structureResource.getContents().add(document);
 		try {
@@ -124,6 +117,8 @@ public class GenerateDocumentStructureCommand extends RecordingCommand {
 		} catch (IOException e) {
 			Activator.log.error(e);
 		}
+
+		refreshWorkspace();
 	}
 
 	/**
@@ -160,4 +155,31 @@ public class GenerateDocumentStructureCommand extends RecordingCommand {
 	public Collection<?> getResult() {
 		return result;
 	}
+
+	/**
+	 * Refresh the workspace
+	 */
+	protected void refreshWorkspace() {
+		refreshProjects(this.documentTemplate);
+	}
+
+
+	/**
+	 * This method refresh the project concerned by the DocumentStructure generation.
+	 */
+	private static void refreshProjects(final DocumentTemplate documentTemplate) {
+		final Collection<String> projectsToRefresh = GeneratorConfigurationOperations.getWorkspaceProjectToRefresh(documentTemplate.getDocumentStructureGeneratorConfiguration());
+		for (final String current : projectsToRefresh) {
+			final IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(current);
+			if (null != project) {
+				try {
+					project.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
+				} catch (CoreException e) {
+					Activator.log.error(NLS.bind("An exception occurred refresh the project {0}", current), e); //$NON-NLS-1$
+				}
+			}
+		}
+	}
+
+
 }

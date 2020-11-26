@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2020 CEA LIST and others.
+ * Copyright (c) 2019, 2020 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -22,10 +22,7 @@ import org.eclipse.osgi.util.NLS;
  */
 public class Messages extends NLS {
 	private static final String BUNDLE_NAME = "org.eclipse.papyrus.model2doc.emf.template2document.internal.messages.messages"; //$NON-NLS-1$
-	public static String GenerateStructureAndDocumentHandler_GenerateAllActions;
-	public static String GenerateStructureAndDocumentHandler_GenerationNotSupportedErrorMessage;
 	public static String GenerateStructureAndDocumentHandler_PlusSymbole;
-	public static String GenerateStructureAndDocumentHandler_TheDocumentStructureHasNotBeenGeneratedError;
 	public static String Template2DocumentMenuContributionItem_GenerateAllMenuLabel;
 	public static String Template2DocumentMenuContributionItem_GenerateAllWithParameterMenuLabel;
 	static {

@@ -13,13 +13,10 @@
  *****************************************************************************/
 package org.eclipse.papyrus.model2doc.docx.emf.structure2document.internal.generators;
 
-import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.papyrus.model2doc.docx.emf.structure2document.internal.utils.GenerateDocxFileUtils;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Document;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument;
 import org.eclipse.papyrus.model2doc.emf.structure2document.generator.IStructure2DocumentGenerator;
-import org.eclipse.papyrus.model2doc.emf.template2structure.utils.GenerateDocumentStructureUtils;
-import org.eclipse.swt.widgets.Display;
 
 public class TextDocumentToDocxGenerator implements IStructure2DocumentGenerator {
 
@@ -61,11 +58,7 @@ public class TextDocumentToDocxGenerator implements IStructure2DocumentGenerator
 	public Object generate(final Document docTemplate) {
 		// TODO : the generation must return a list of generated file
 		if (docTemplate instanceof TextDocument) {
-			GenerateDocxFileUtils.generateDocxFile((TextDocument) docTemplate);
-
-			// TODO : this dialog should be open at the end of the process by the calling handler
-			// open a dialog add the end of the generation
-			MessageDialog.openInformation(Display.getDefault().getActiveShell(), GenerateDocumentStructureUtils.DIALOG_TITLE, "The docx file has been generated."); //$NON-NLS-1$
+			return GenerateDocxFileUtils.generateDocxFile((TextDocument) docTemplate);
 		}
 		return null;
 	}

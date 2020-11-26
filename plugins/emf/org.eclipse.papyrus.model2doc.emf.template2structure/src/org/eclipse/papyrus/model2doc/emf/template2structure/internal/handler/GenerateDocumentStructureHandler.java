@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2019 CEA LIST and others.
+ * Copyright (c) 2019, 2020 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -11,29 +11,24 @@
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *  Nicolas FAUVERGUE (CEA LIST) nicolas.fauvergue@cea.fr - Bug 548896
- *
+ *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Bug 569252
  *****************************************************************************/
 
 package org.eclipse.papyrus.model2doc.emf.template2structure.internal.handler;
-
-import java.util.Collection;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.emf.transaction.util.TransactionUtil;
-import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.papyrus.model2doc.core.status.GenerationStatusDialogHelper;
+import org.eclipse.papyrus.model2doc.core.status.IGenerationStatus;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate;
-import org.eclipse.papyrus.model2doc.emf.template2structure.command.Template2StructureCommandFactory;
-import org.eclipse.papyrus.model2doc.emf.template2structure.internal.messages.Messages;
-import org.eclipse.papyrus.model2doc.emf.template2structure.utils.GenerateDocumentStructureUtils;
-import org.eclipse.swt.widgets.Display;
+import org.eclipse.papyrus.model2doc.emf.template2structure.generator.Template2StructureGeneratorWrapper;
+import org.eclipse.papyrus.model2doc.emf.template2structure.helpers.DocumentStructureVersionHelper;
+import org.eclipse.papyrus.model2doc.emf.template2structure.helpers.DocumentStructureVersionUIHelper;
 import org.eclipse.ui.ISelectionService;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchWindow;
@@ -43,16 +38,6 @@ import org.eclipse.ui.PlatformUI;
  * Handler use to create a document structure from a document structure template
  */
 public class GenerateDocumentStructureHandler extends AbstractHandler {
-
-	/**
-	 * the command to execute
-	 */
-	private Command command;
-
-	/**
-	 * the editing domain
-	 */
-	private TransactionalEditingDomain domain;
 
 	/**
 	 * The selected document template used for the generation
@@ -68,14 +53,11 @@ public class GenerateDocumentStructureHandler extends AbstractHandler {
 	 */
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		final Collection<?> result = GenerateDocumentStructureUtils.generateDocumentStructure(domain, command, selectedDocumentTemplate);
-
-		// we open a dialog at the end of the generation
-		MessageDialog.openInformation(Display.getDefault().getActiveShell(), GenerateDocumentStructureUtils.DIALOG_TITLE, Messages.GenerateDocumentStructureHandler_TheGenerationOfDocumentStructureIsFinished); // $NON-NLS-1$
-
-		resetFields();
-
-		return result;
+		final DocumentStructureVersionHelper versionHelper = new DocumentStructureVersionUIHelper(this.selectedDocumentTemplate);
+		final Template2StructureGeneratorWrapper wrapper = new Template2StructureGeneratorWrapper(this.selectedDocumentTemplate, versionHelper);
+		final IGenerationStatus status = wrapper.generateDocumentStructure();
+		GenerationStatusDialogHelper.INSTANCE.openMessageDialog(status);
+		return status;
 	}
 
 	/**
@@ -86,35 +68,10 @@ public class GenerateDocumentStructureHandler extends AbstractHandler {
 	@Override
 	public void setEnabled(Object evaluationContext) {
 		super.setEnabled(evaluationContext);
-		if (isEnabled()) {
-			initFields();
-			setBaseEnabled(null != this.domain && null != this.command && this.command.canExecute());
-		}
-	}
-
-	/**
-	 * calculate the value of editing domain and command
-	 */
-	private void initFields() {
-		resetFields();// to be sure
 		this.selectedDocumentTemplate = getSelectedDocumentTemplate();
-		if (null == this.selectedDocumentTemplate) {
-			return;
+		if (isEnabled()) {
+			setBaseEnabled(this.selectedDocumentTemplate != null);
 		}
-		this.domain = TransactionUtil.getEditingDomain(this.selectedDocumentTemplate);
-		if (null == domain) {
-			return;
-		}
-		this.command = Template2StructureCommandFactory.eINSTANCE.getGenerateDocumentStructureCommand(domain, this.selectedDocumentTemplate);
-	}
-
-	/**
-	 * reset the editing domain and the command to <code>null</code>
-	 */
-	private void resetFields() {
-		this.domain = null;
-		this.command = null;
-		this.selectedDocumentTemplate = null;
 	}
 
 	/**

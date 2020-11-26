@@ -48,7 +48,7 @@ public interface IStructure2DocumentGenerator {
 	 * @return
 	 *         the generated Document structure from the document template
 	 */
-	// TODO : return type should be file/Ifile or better a list ?
+	// TODO : return type should be file/Ifile or better a list ? or a ResultStatus ?
 	public Object generate(final Document docTemplate);
 
 	/**

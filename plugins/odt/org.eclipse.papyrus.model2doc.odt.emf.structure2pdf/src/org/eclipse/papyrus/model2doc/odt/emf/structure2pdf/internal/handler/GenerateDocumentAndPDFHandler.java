@@ -10,20 +10,22 @@
  *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
- *
+ *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Bug 569252
  *****************************************************************************/
 
 package org.eclipse.papyrus.model2doc.odt.emf.structure2pdf.internal.handler;
 
 import java.util.Map;
 
-import org.eclipse.core.commands.ExecutionEvent;
-import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.expressions.IEvaluationContext;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExecutableExtension;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.papyrus.model2doc.core.status.GenerationStatus;
+import org.eclipse.papyrus.model2doc.core.status.IGenerationStatus;
 import org.eclipse.papyrus.model2doc.emf.structure2document.internal.handlers.GenerateDocumentFileHandler;
+import org.eclipse.papyrus.model2doc.odt.emf.structure2pdf.Activator;
 import org.eclipse.papyrus.model2doc.odt.emf.structure2pdf.internal.menu.Structure2PDFMenuConstants;
 import org.eclipse.papyrus.model2doc.odt.internal.pdf.PDFExporter;
 import org.eclipse.papyrus.model2doc.odt.internal.pdf.PDFVersion;
@@ -42,21 +44,33 @@ public class GenerateDocumentAndPDFHandler extends GenerateDocumentFileHandler i
 	 */
 	private PDFVersion pdfVersion = PDFVersion.PDF_DEFAULT;
 
+	/**
+	 * @see org.eclipse.papyrus.model2doc.emf.structure2document.internal.handlers.GenerateDocumentFileHandler#generate()
+	 *
+	 * @return
+	 */
 	@Override
-	public Object execute(ExecutionEvent event) throws ExecutionException {
-		final Object result = super.execute(event);
-		if (result instanceof String) {
-			String generatedDocumentPath = (String) result;
+	protected IGenerationStatus generate() {
+		IGenerationStatus status = super.generate();
+		if (status.isOK() && status.getResult() instanceof String) {
+			String generatedDocumentPath = (String) status.getResult();
 			PDFExporter exporter = new PDFExporter();
 			exporter.setPDFVersion(this.pdfVersion);
-			exporter.setOpenEndDialog(true);
+			exporter.setOpenEndDialog(false);
 			try {
-				return exporter.exportToPDF(generatedDocumentPath);
+				final String result = exporter.exportToPDF(generatedDocumentPath);
+				if (result != null) {
+					status = new GenerationStatus(IStatus.OK, Activator.PLUGIN_ID, "The pdf creation succeeded."); //$NON-NLS-1$
+					status.setResult(result);
+					return status;
+				}
+
 			} catch (Exception e) {
 				org.eclipse.papyrus.model2doc.odt.emf.structure2pdf.Activator.log.error(e);
+				return new GenerationStatus(IStatus.ERROR, Activator.PLUGIN_ID, "The pdf creation failed.", e); //$NON-NLS-1$
 			}
 		}
-		return null;
+		return new GenerationStatus(IStatus.ERROR, Activator.PLUGIN_ID, "The pdf creation failed with no exception."); //$NON-NLS-1$
 	}
 
 	/**

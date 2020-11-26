@@ -359,12 +359,13 @@ public class DocxTranscription implements Transcription {
 		imageIndex++;
 	}
 
+	// TODO : define clearly the kind of the returned String between docx and odt generator
 	@Override
 	public String save(String label) {
-		String stringUri = GeneratorConfigurationOperations.getDocumentFileLocalPath(docxGeneratorConfig, DOCX_FILE_EXTENTION);
-		stringUri = stringUri.replaceFirst(ECORE_FILE_PREFIX, EMPTY_STRING);
+		final String ecoreURi = GeneratorConfigurationOperations.getDocumentFileLocalPath(docxGeneratorConfig, DOCX_FILE_EXTENTION);
+		String docxURI = ecoreURi.replaceFirst(ECORE_FILE_PREFIX, EMPTY_STRING);
 		try {
-			OutputStream outputStream = new FileOutputStream(stringUri);
+			OutputStream outputStream = new FileOutputStream(docxURI);
 			document.write(outputStream);
 			outputStream.close();
 			document.close();
@@ -372,7 +373,7 @@ public class DocxTranscription implements Transcription {
 			Activator.log.error(e);
 		}
 
-		return null;
+		return ecoreURi;
 	}
 
 	@Override

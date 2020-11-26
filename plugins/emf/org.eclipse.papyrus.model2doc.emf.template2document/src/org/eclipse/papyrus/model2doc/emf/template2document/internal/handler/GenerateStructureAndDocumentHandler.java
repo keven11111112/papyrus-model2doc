@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2019 CEA LIST and others.
+ * Copyright (c) 2019, 2020 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -10,13 +10,12 @@
  *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
- *
+ *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Bug 569252
  *****************************************************************************/
 
 package org.eclipse.papyrus.model2doc.emf.template2document.internal.handler;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
@@ -25,24 +24,15 @@ import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.expressions.IEvaluationContext;
 import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.emf.transaction.util.TransactionUtil;
-import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument;
+import org.eclipse.papyrus.model2doc.core.status.GenerationStatusDialogHelper;
+import org.eclipse.papyrus.model2doc.core.status.IGenerationStatus;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate;
-import org.eclipse.papyrus.model2doc.emf.structure2document.generator.IStructure2DocumentGenerator;
-import org.eclipse.papyrus.model2doc.emf.structure2document.generator.Structure2DocumentRegistry;
+import org.eclipse.papyrus.model2doc.emf.template2document.internal.generators.Template2DocumentGeneratorUI;
 import org.eclipse.papyrus.model2doc.emf.template2document.internal.menu.Template2DocumentMenuConstants;
 import org.eclipse.papyrus.model2doc.emf.template2document.internal.messages.Messages;
-import org.eclipse.papyrus.model2doc.emf.template2structure.command.Template2StructureCommandFactory;
-import org.eclipse.papyrus.model2doc.emf.template2structure.generator.ITemplate2StructureGenerator;
-import org.eclipse.papyrus.model2doc.emf.template2structure.generator.Template2StructureRegistry;
-import org.eclipse.papyrus.model2doc.emf.template2structure.utils.GenerateDocumentStructureUtils;
-import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.ISelectionService;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchWindow;
@@ -54,19 +44,9 @@ import org.eclipse.ui.PlatformUI;
 public class GenerateStructureAndDocumentHandler extends AbstractHandler {
 
 	/**
-	 * The command to execute.
+	 * the generator used to create the final document from the template
 	 */
-	private Command command;
-
-	/**
-	 * The editing domain.
-	 */
-	private TransactionalEditingDomain domain;
-
-	/**
-	 * The selected document template used for the generation
-	 */
-	private DocumentTemplate selectedDocumentTemplate;
+	private Template2DocumentGeneratorUI generator = null;
 
 	/**
 	 * {@inheritDoc}
@@ -75,26 +55,19 @@ public class GenerateStructureAndDocumentHandler extends AbstractHandler {
 	 */
 	@Override
 	public Object execute(final ExecutionEvent event) throws ExecutionException {
-		Object result = null;
-		// Execute the super command
-		final Collection<?> superResult = GenerateDocumentStructureUtils.generateDocumentStructure(domain, command, selectedDocumentTemplate);
+		final IGenerationStatus status = generate();
+		GenerationStatusDialogHelper.INSTANCE.openMessageDialog(status);
+		return status;
+	}
 
-		// Get the Text document from the super execution
-		final TextDocument textDocument = getTextDocument(superResult);
-		if (null != textDocument) {
-			final IStructure2DocumentGenerator generator = Structure2DocumentRegistry.INSTANCE.getGenerator(textDocument);
-			if (generator.handles(textDocument)) {
-				result = generator.generate(textDocument);
-			} else {
-				MessageDialog.openError(Display.getCurrent().getActiveShell(), Messages.GenerateStructureAndDocumentHandler_GenerateAllActions, Messages.GenerateStructureAndDocumentHandler_GenerationNotSupportedErrorMessage);
-			}
-
-			// open a dialog add the end of the generation
-			MessageDialog.openInformation(Display.getDefault().getActiveShell(), GenerateDocumentStructureUtils.DIALOG_TITLE, "The DocumentStructure and the file have been successfully generated."); //$NON-NLS-1$
-		} else {
-			MessageDialog.openError(Display.getCurrent().getActiveShell(), Messages.GenerateStructureAndDocumentHandler_GenerateAllActions, Messages.GenerateStructureAndDocumentHandler_TheDocumentStructureHasNotBeenGeneratedError);
-		}
-		return result;
+	/**
+	 *
+	 * @return
+	 *         the status of the generation
+	 */
+	protected IGenerationStatus generate() {
+		final IGenerationStatus resultStatus = this.generator.generate();
+		return resultStatus;
 	}
 
 	/**
@@ -115,31 +88,27 @@ public class GenerateStructureAndDocumentHandler extends AbstractHandler {
 	 *            the evaluation context
 	 * @return
 	 *         <code>true</code> if the handler can be enable and false otherwise
+	 *         + build the name of the action provided in the contextual menu
 	 */
 	protected boolean computeEnable(final Object evaluationContext) {
-		initFields();
-		boolean enable = null != this.domain && null != this.command && this.command.canExecute();
-
+		final DocumentTemplate template = getSelectedDocumentTemplate();
 		String menuLabel = Template2DocumentMenuConstants.NO_GENERATOR_ID;
+		boolean enable = template != null;
 		if (enable) {
-			enable = false;
-			final String s2docId = this.selectedDocumentTemplate.getDocumentStructureGeneratorConfiguration().getDocumentGeneratorId();
-			if (s2docId != null) {
-				final IStructure2DocumentGenerator s2docGenerator = Structure2DocumentRegistry.INSTANCE.getGenerator(s2docId);
-				final ITemplate2StructureGenerator t2sGenerator = Template2StructureRegistry.INSTANCE.getGenerator(this.selectedDocumentTemplate);
-				if (s2docGenerator != null && t2sGenerator != null) {
-					final List<String> labels = new ArrayList<>();
-					labels.add(t2sGenerator.getGenerateMenuLabel());
-					labels.add(s2docGenerator.getGenerateMenuLabel());
-					menuLabel = createMenuLabel(labels);
-					enable = true;
-				}
+			this.generator = new Template2DocumentGeneratorUI(template);
+			// we create the name of the menu
+			if (enable && evaluationContext instanceof IEvaluationContext) {
+				final List<String> labels = new ArrayList<>();
+				labels.add(this.generator.getTemplate2StructureGeneratorMenuLabel());
+				labels.add(this.generator.getStructure2DocumentGeneratorMenuLabel());
+				menuLabel = createMenuLabel(labels);
 			}
 		}
 		if (evaluationContext instanceof IEvaluationContext) {
 			final IEvaluationContext iEvaluationContext = (IEvaluationContext) evaluationContext;
 			iEvaluationContext.addVariable(Template2DocumentMenuConstants.VARIABLE_GENERATOR_MENU_LABEL, menuLabel);
 		}
+
 		return enable;
 	}
 
@@ -160,31 +129,6 @@ public class GenerateStructureAndDocumentHandler extends AbstractHandler {
 			}
 		}
 		return builder.toString();
-	}
-
-	/**
-	 * This allows to calculate the value of editing domain and command.
-	 */
-	private void initFields() {
-		resetFields();// to be sure
-		this.selectedDocumentTemplate = getSelectedDocumentTemplate();
-		if (null == this.selectedDocumentTemplate) {
-			return;
-		}
-		this.domain = TransactionUtil.getEditingDomain(this.selectedDocumentTemplate);
-		if (null == domain) {
-			return;
-		}
-		this.command = Template2StructureCommandFactory.eINSTANCE.getGenerateDocumentStructureCommand(domain, this.selectedDocumentTemplate);
-	}
-
-	/**
-	 * This allows to reset the editing domain and the command to <code>null</code>.
-	 */
-	private void resetFields() {
-		this.domain = null;
-		this.command = null;
-		this.selectedDocumentTemplate = null;
 	}
 
 	/**
@@ -215,22 +159,6 @@ public class GenerateStructureAndDocumentHandler extends AbstractHandler {
 			return (DocumentTemplate) firstSelectedElement;
 		}
 
-		return null;
-	}
-
-	/**
-	 * Get the text document generated by the first generation (generation of document structure).
-	 *
-	 * @param result
-	 *            The result of first generation.
-	 * @return The TextDocument if exists, else <code>null</code>.
-	 */
-	private TextDocument getTextDocument(final Object result) {
-		if (result instanceof Collection<?>) {
-			return ((Collection<?>) result).stream().filter(TextDocument.class::isInstance).map(TextDocument.class::cast).findFirst().orElse(null);
-		} else if (result instanceof TextDocument) {
-			return (TextDocument) result;
-		}
 		return null;
 	}
 

@@ -27,7 +27,7 @@ public final class Template2DocumentMenuConstants {
 	/**
 	 * the command's id for document generation
 	 */
-	public static final String GENERATE_STRUCTURE_AND_DOCUMENT_COMMAND = "org.eclipse.papyrus.model2doc.emf.template2document.generatestructureAndDocument"; //$NON-NLS-1$
+	public static final String GENERATE_STRUCTURE_AND_DOCUMENT_COMMAND = "org.eclipse.papyrus.model2doc.emf.template2document.generateStructureAndDocument"; //$NON-NLS-1$
 
 	/**
 	 * the variable's name used to get the menu label

@@ -58,7 +58,7 @@ public class DefaultTextDocumentStructureGenerator implements ITemplate2Structur
 	@Override
 	public boolean handles(final DocumentTemplate docTemplate) {
 		// we must not check the genrator id in this method.
-		// We just need to check the type of Documenttemplate
+		// We just need to check the type of TextDocumentTemplate
 		return docTemplate instanceof TextDocumentTemplate;
 	}
 

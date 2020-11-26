@@ -45,7 +45,7 @@ public class DocxTranscriptionFactory implements ITranscriptionFactory {
 	@Override
 	public String createFileURI(String fileURI) {
 		// TODO Auto-generated method stub
-		return "";
+		return fileURI;
 	}
 
 }
