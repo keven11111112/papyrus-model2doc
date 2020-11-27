@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2019 CEA LIST and others.
+ * Copyright (c) 2019, 2020 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -10,6 +10,7 @@
  *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ * 	Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - Bug 569251
  *
  *****************************************************************************/
 
@@ -57,7 +58,7 @@ public final class TemplateToStructureMappingService implements IMappingService 
 	 * @param expectedReturnedEClass
 	 *            the expected EClass for the result of the mapping
 	 * @return
-	 * 		the contributor answering to this mapping, or <code>null</code> when not found
+	 *         the contributor answering to this mapping, or <code>null</code> when not found
 	 */
 	private AbstractTemplateToStructureMapper<?> getContributorFor(final EObject documentTemplateElement, final Class<?> expectedReturnedEClass) {
 		return getContributorFor(documentTemplateElement.eClass(), expectedReturnedEClass);
@@ -70,7 +71,7 @@ public final class TemplateToStructureMappingService implements IMappingService 
 	 * @param expectedReturnedEClass
 	 *            the expected EClass for the result of the mapping
 	 * @return
-	 * 		the contributor answering to this mapping, or <code>null</code> when not found
+	 *         the contributor answering to this mapping, or <code>null</code> when not found
 	 */
 	private AbstractTemplateToStructureMapper<?> getContributorFor(final EClass eClassTemplateElement, final Class<?> expectedReturnedEClass) {
 		AbstractTemplateToStructureMapper<?> contributor = null;
@@ -96,7 +97,7 @@ public final class TemplateToStructureMappingService implements IMappingService 
 	 * @param expectedReturnedClass
 	 *            the expected EClass for the result of the mapping
 	 * @return
-	 * 		the collection of created object answering to the mapping request
+	 *         the collection of created object answering to the mapping request
 	 */
 	@Override
 	public <T> List<T> map(final EObject documentTemplateElement, final EObject semanticModelElement, final Class<T> expectedReturnedClass) {
@@ -110,6 +111,7 @@ public final class TemplateToStructureMappingService implements IMappingService 
 			}
 		} else {
 			Activator.log.info(NLS.bind("No mapper found for input {0} with an output of kind {1}.", documentTemplateElement, expectedReturnedClass)); //$NON-NLS-1$
+			result = Collections.emptyList();
 		}
 
 		return result;
