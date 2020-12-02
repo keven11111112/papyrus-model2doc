@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2019 CEA LIST.
+ * Copyright (c) 2019, 2020 CEA LIST.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -10,6 +10,7 @@
  *
  * Contributors:
  *    Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ *    Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - bug 569382
  *****************************************************************************/
 
 package org.eclipse.papyrus.model2doc.core.generatorconfiguration.operations;
@@ -42,6 +43,8 @@ public class GeneratorConfigurationOperations {
 	private static final String SLASH = "/"; //$NON-NLS-1$
 
 	private static final String UNDERSCORE = "_"; //$NON-NLS-1$
+
+	private static final String FILE_PREFIX = "file:/"; //$NON-NLS-1$
 
 	/**
 	 *
@@ -174,8 +177,14 @@ public class GeneratorConfigurationOperations {
 			}
 			uri = uri.appendSegment(fileName).appendFileExtension(fileExtension);
 		}
-		final IPath res = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(uri.toPlatformString(true))).getLocation();
-		return URI.createFileURI(res.toPortableString()).toString();// uri.toString();
+		final IPath path = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(uri.toPlatformString(true))).getLocation();
+
+		// here, the special char must not be encoded
+		// for example we want a real space instead %20
+		final StringBuilder builder = new StringBuilder();
+		builder.append(FILE_PREFIX);
+		builder.append(path.toPortableString());
+		return builder.toString();
 	}
 
 	/**
