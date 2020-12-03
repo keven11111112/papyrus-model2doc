@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2019 CEA LIST and others.
+ * Copyright (c) 2019, 2020 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -10,7 +10,7 @@
  *
  * Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
- *
+ *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - bug 569419
  *****************************************************************************/
 
 package org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.ui.internal.editor;
@@ -23,6 +23,7 @@ import java.util.Map;
 
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.action.IContributionManager;
+import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.presentation.DocumentStructureTemplateActionBarContributor;
@@ -47,6 +48,16 @@ public class CustomDocumentStructureTemplateActionBarContributor extends Documen
 	 */
 	public CustomDocumentStructureTemplateActionBarContributor() {
 		super();
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.presentation.DocumentStructureTemplateActionBarContributor#contributeToMenu(org.eclipse.jface.action.IMenuManager)
+	 *
+	 * @param menuManager
+	 */
+	@Override
+	public void contributeToMenu(IMenuManager menuManager) {
+		// avoid to get the main menu see bug 569419
 	}
 
 	/**
