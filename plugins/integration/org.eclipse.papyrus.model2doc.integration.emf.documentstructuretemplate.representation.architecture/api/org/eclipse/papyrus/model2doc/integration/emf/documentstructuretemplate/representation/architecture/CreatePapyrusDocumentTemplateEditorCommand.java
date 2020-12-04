@@ -10,7 +10,7 @@
  *
  * Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
- *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Bug 569246
+ *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Bug 569246, 569460
  *****************************************************************************/
 
 package org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation.architecture;
@@ -31,7 +31,7 @@ import org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.u
 /**
  * This class allows to create new DocumentTemplate instance and open the papyrus editor for it
  */
-public final class CreatePapyrusDocumentTemplateEditorCommand extends AbstractCreateDocumentTemplateEditorCommand implements ICreateDocumentTemplateEditorCommand {
+public class CreatePapyrusDocumentTemplateEditorCommand extends AbstractCreateDocumentTemplateEditorCommand implements ICreateDocumentTemplateEditorCommand {
 
 	/**
 	 * Prompts the user the future document's name
