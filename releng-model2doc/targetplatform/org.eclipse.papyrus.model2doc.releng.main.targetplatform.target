@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
-<target name="Papyrus Model2Doc - 2020-06" sequenceNumber="1605524900">
+<target name="Papyrus-Model2Doc - 2020-12" sequenceNumber="1607364785">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.sdk.feature.group" version="4.18.0.v20201028-2203"/>
+      <unit id="org.eclipse.sdk.feature.group" version="4.18.0.v20201125-2302"/>
       <repository id="eclipse-2020-12" location="http://download.eclipse.org/releases/2020-12"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
@@ -19,6 +19,7 @@
       <unit id="org.apache.poi.ooxml" version="4.1.1.v20200820-1148"/>
       <unit id="org.apache.poi.ooxml.schemas" version="4.1.1.v20200922-2105"/>
       <unit id="org.apache.xmlbeans" version="3.1.0.v20200922-1359"/>
+      <unit id="org.apache.commons.compress" version="1.19.0.v20200106-2343"/>
       <repository id="orbit" location="https://download.eclipse.org/tools/orbit/downloads/drops/S20201027182932/repository"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">

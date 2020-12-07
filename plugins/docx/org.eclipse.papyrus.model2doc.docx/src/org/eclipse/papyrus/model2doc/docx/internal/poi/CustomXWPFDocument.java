@@ -18,6 +18,7 @@ package org.eclipse.papyrus.model2doc.docx.internal.poi;
 import java.io.IOException;
 import java.io.InputStream;
 
+import org.apache.commons.compress.utils.IOUtils;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFTable;
@@ -29,6 +30,13 @@ import org.openxmlformats.schemas.wordprocessingml.x2006.main.STOnOff;
  * This custom implementation allow to add some missing methods in the apache api
  */
 public class CustomXWPFDocument extends XWPFDocument {
+
+	/**
+	 * just here to be sure we have the dependency on org.apache.commons.compress which is implicitly required by {@link CustomXWPFDocument}
+	 * see bug 569530
+	 */
+	@SuppressWarnings("unused")
+	private IOUtils utils;
 
 	/**
 	 * Constructor.

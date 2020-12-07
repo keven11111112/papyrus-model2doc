@@ -17,7 +17,8 @@ Require-Bundle: org.eclipse.ui;bundle-version="[3.113.0,4.0.0)",
  org.eclipse.papyrus.model2doc.core.styles;bundle-version="[0.8.0,1.0.0)",
  org.apache.xmlbeans;bundle-version="[3.1.0,4.0.0)",
  org.apache.poi.ooxml.schemas;bundle-version="[4.1.0,5.0.0)",
- org.apache.poi;bundle-version="[4.1.0,5.0.0)"
+ org.apache.poi;bundle-version="[4.1.0,5.0.0)",
+ org.apache.commons.compress;bundle-version="[1.19.0,2.0.0)"
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Automatic-Module-Name: org.eclipse.papyrus.model2doc.docx
 Bundle-ActivationPolicy: lazy
