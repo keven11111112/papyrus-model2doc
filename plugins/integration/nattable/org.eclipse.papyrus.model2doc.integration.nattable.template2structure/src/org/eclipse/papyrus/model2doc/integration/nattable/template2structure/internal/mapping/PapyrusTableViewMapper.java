@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2019 CEA LIST and others.
+ * Copyright (c) 2019, 2020 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -11,6 +11,7 @@
  * Contributors:
  *    Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *    Vincent Lorenzo (CEA LIST) - bug 549183
+ * 	  Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - Bug 569249
  *****************************************************************************/
 
 package org.eclipse.papyrus.model2doc.integration.nattable.template2structure.internal.mapping;
@@ -18,6 +19,7 @@ package org.eclipse.papyrus.model2doc.integration.nattable.template2structure.in
 import java.io.File;
 import java.io.StringReader;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
@@ -58,6 +60,7 @@ import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStruct
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.operations.GeneratorConfigurationOperations;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructureFactory;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.EmptyLine;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedBasicTable;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedTextCell;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Image;
@@ -124,17 +127,16 @@ public class PapyrusTableViewMapper extends AbstractTemplateToStructureMapper<Pa
 			// the table mapping
 			// we log info, because it can take times
 			Activator.log.info(NLS.bind("Start the export of the table {0}.", current.getName())); //$NON-NLS-1$
-			final BodyPart mapResult = mapTable(papyrusTableView, current);
+			final List<BodyPart> mapResult = mapTable(papyrusTableView, current);
 			Activator.log.info(NLS.bind("End the export of the table {0}.", current.getName())); //$NON-NLS-1$
 
-
-			if (null == mapResult) {
+			if (null == mapResult || mapResult.isEmpty()) {
 				Activator.log.warn(NLS.bind("We fail to import the table {0}.", current.getName())); //$NON-NLS-1$
 			}
 			if (null == title) {
-				returnedValue.add(returnedClassType.cast(mapResult));
+				returnedValue.addAll((Collection<? extends T>) mapResult);
 			} else {
-				title.getSubBodyParts().add(mapResult);
+				title.getSubBodyParts().addAll(mapResult);
 			}
 		}
 		return returnedValue;
@@ -150,7 +152,7 @@ public class PapyrusTableViewMapper extends AbstractTemplateToStructureMapper<Pa
 	 * @return
 	 *         a body part representing the table, or <code>null</code> in case of failure
 	 */
-	private BodyPart mapTable(final PapyrusTableView papyrusTableView, final Table table) {
+	private List<BodyPart> mapTable(final PapyrusTableView papyrusTableView, final Table table) {
 		// 1. get the page manager
 		final IPageManager pageManager = getIPageManager(table);
 		if (null == pageManager) {
@@ -179,14 +181,18 @@ public class PapyrusTableViewMapper extends AbstractTemplateToStructureMapper<Pa
 		}
 
 		// 6. call method to create the output BodyPart
-		final BodyPart bodyPart;
+		final List<BodyPart> bodyParts = new ArrayList<>();
 		switch (papyrusTableView.getImportMethod()) {
 		case IMAGE:
-			bodyPart = mapTableAsImage(manager, papyrusTableView, table);
+			bodyParts.add(mapTableAsImage(manager, papyrusTableView, table));
 			break;
 		case TABLE: // this is the default case
 		default:
-			bodyPart = mapTableAsTable(manager, papyrusTableView, table);
+			bodyParts.add(mapTableAsTable(manager, papyrusTableView, table));
+
+			// add a empty line (Bug 569249)
+			final EmptyLine emptyLine = DocumentStructureFactory.eINSTANCE.createEmptyLine();
+			bodyParts.add(emptyLine);
 		}
 
 		// 7. close the table if required
@@ -200,7 +206,7 @@ public class PapyrusTableViewMapper extends AbstractTemplateToStructureMapper<Pa
 		// pageManager.selectPage(DocumentStructureTemplateUtils.getDocumentTemplate(papyrusTableView));
 		// flushEventLoop();
 
-		return bodyPart;
+		return bodyParts;
 	}
 
 	/**
@@ -260,7 +266,7 @@ public class PapyrusTableViewMapper extends AbstractTemplateToStructureMapper<Pa
 			columnRowHeader.getCells().add(cell);
 		}
 
-		// 8. now we will iterate on the clipboard contents, adding row header for each new line
+		// 8. now we will iterate on the clipboard contents, adding row header for each empty line
 		final RowIterator rowIterator = parser.parse();
 		final Iterator<Object> rowIter = manager.getRowElementsList().iterator();
 
@@ -319,6 +325,7 @@ public class PapyrusTableViewMapper extends AbstractTemplateToStructureMapper<Pa
 				}
 			}
 		}
+
 		return basicTable;
 	}
 

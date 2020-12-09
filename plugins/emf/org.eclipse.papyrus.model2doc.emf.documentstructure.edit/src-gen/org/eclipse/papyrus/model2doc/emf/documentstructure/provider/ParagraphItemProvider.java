@@ -253,6 +253,9 @@ public class ParagraphItemProvider
 
 		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.COMPOSED_BODY_PART__SUB_BODY_PART,
 				DocumentStructureFactory.eINSTANCE.createInsertedFile()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.COMPOSED_BODY_PART__SUB_BODY_PART,
+				DocumentStructureFactory.eINSTANCE.createEmptyLine()));
 	}
 
 	/**

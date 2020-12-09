@@ -142,4 +142,5 @@
       <details key="documentation" value="This element reference a file which will be inserted in the final document."/>
     </eAnnotations>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EmptyLine" eSuperTypes="#//LeafBodyPart"/>
 </ecore:EPackage>

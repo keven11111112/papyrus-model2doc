@@ -12,7 +12,7 @@ Export-Package: org.eclipse.papyrus.model2doc.emf.documentstructure,
  org.eclipse.papyrus.model2doc.emf.documentstructure.impl,
  org.eclipse.papyrus.model2doc.emf.documentstructure.internal.resource,
  org.eclipse.papyrus.model2doc.emf.documentstructure.util
-Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.15.0,4.0.0)";resolution:=optional;x-installation:=greedy,
+Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.15.0,4.0.0)";x-installation:=greedy;resolution:=optional,
  org.eclipse.emf.ecore;bundle-version="[2.17.0,3.0.0)",
  org.eclipse.papyrus.model2doc.core.generatorconfiguration;bundle-version="[0.7.0,1.0.0)",
  org.eclipse.papyrus.model2doc.core.styles;bundle-version="[0.8.0,1.0.0)",

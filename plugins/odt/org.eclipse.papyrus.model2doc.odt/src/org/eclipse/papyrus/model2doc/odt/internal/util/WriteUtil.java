@@ -12,6 +12,8 @@
  *  Yupanqui Munoz (CEA LIST) yupanqui.munozjulho@cea.fr - Initial API and implementation
  *	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - bug 559826
+ * 	Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - Bug 569249
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.model2doc.odt.internal.util;
 
@@ -103,7 +105,7 @@ public class WriteUtil {
 	 * @param processRichText
 	 *            if <code>true</code> the text represents RichText contents
 	 * @param endParagraph
-	 *            if <code>true</code>, we will add a new line at the end of the paragraph
+	 *            if <code>true</code>, we will add a empty line at the end of the paragraph
 	 */
 	public static void addParagraph(final XTextCursor xTextCursor, final String text, final boolean processRichText, final boolean endParagraph) {
 		if (processRichText) {
@@ -381,7 +383,6 @@ public class WriteUtil {
 			textTable.initialize(rowsNumber, colNumbers);
 			Activator.log.info("--Add the new empty table to the the document"); //$NON-NLS-1$
 			addTextContent(xTextCursor, textTable);
-			endParagraph(xTextCursor);
 
 			// Set cell's contents
 			Activator.log.info("--Request Libreoffice to get the cells."); //$NON-NLS-1$

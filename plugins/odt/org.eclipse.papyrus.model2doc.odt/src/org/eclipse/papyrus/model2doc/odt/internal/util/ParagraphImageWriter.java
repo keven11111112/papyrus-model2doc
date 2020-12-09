@@ -52,7 +52,7 @@ public class ParagraphImageWriter {
 	private boolean generateCaption;
 
 	/**
-	 * if <code>true</code>, we will end the paragraph (new line) at the end of the insertion
+	 * if <code>true</code>, we will end the paragraph (empty line) at the end of the insertion
 	 */
 	private boolean endParagraph;
 

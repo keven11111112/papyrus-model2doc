@@ -98,6 +98,8 @@ public class DocumentStructureFactoryImpl extends EFactoryImpl implements Docume
 			return createStringVersion();
 		case DocumentStructurePackage.INSERTED_FILE:
 			return createInsertedFile();
+		case DocumentStructurePackage.NEW_LINE:
+			return createEmptyLine();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -269,6 +271,18 @@ public class DocumentStructureFactoryImpl extends EFactoryImpl implements Docume
 	public InsertedFile createInsertedFile() {
 		InsertedFileImpl insertedFile = new InsertedFileImpl();
 		return insertedFile;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EmptyLine createEmptyLine() {
+		EmptyLineImpl emptyLine = new EmptyLineImpl();
+		return emptyLine;
 	}
 
 	/**

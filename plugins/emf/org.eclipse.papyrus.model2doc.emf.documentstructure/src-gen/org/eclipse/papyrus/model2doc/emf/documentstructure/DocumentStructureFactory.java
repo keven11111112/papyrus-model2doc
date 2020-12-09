@@ -175,6 +175,16 @@ public interface DocumentStructureFactory extends EFactory {
 	InsertedFile createInsertedFile();
 
 	/**
+	 * Returns a new object of class '<em>Empty Line</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>Empty Line</em>'.
+	 * @generated
+	 */
+	EmptyLine createEmptyLine();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

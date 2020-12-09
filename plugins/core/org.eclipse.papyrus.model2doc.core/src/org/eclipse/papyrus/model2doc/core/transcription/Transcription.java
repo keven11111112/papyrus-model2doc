@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2019 CEA LIST.
+ * Copyright (c) 2019, 2020 CEA LIST.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -11,6 +11,8 @@
  * Contributors:
  *  Yupanqui Munoz (CEA LIST) yupanqui.munozjulho@cea.fr - Initial API and implementation
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ * 	Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - Bug 569249
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.model2doc.core.transcription;
 
@@ -146,6 +148,11 @@ public interface Transcription {
 	 * @param image
 	 */
 	public void writeImageSubtitle(ImageDescription image);
+
+	/**
+	 * Insert an empty empty line
+	 */
+	public void insertEmptyLine();
 
 	/**
 	 * Save transcription.

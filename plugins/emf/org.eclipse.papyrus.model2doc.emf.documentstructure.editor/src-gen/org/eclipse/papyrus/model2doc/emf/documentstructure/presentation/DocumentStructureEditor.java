@@ -164,6 +164,7 @@ import org.eclipse.papyrus.model2doc.core.builtintypes.provider.BuiltInTypesItem
 
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.provider.GeneratorConfigurationItemProviderAdapterFactory;
 
+import org.eclipse.papyrus.model2doc.core.styles.provider.StylesItemProviderAdapterFactory;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
 
@@ -681,6 +682,7 @@ public class DocumentStructureEditor
 		adapterFactory.addAdapterFactory(new BuiltInTypesItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new GeneratorConfigurationItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new StylesItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.

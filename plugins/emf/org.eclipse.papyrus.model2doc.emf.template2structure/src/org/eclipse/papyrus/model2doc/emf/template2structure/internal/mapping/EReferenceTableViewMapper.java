@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2019 CEA LIST and others.
+ * Copyright (c) 2019, 2020 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -10,6 +10,7 @@
  *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ * 	Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - Bug 569249
  *
  *****************************************************************************/
 
@@ -28,6 +29,7 @@ import org.eclipse.papyrus.model2doc.core.builtintypes.Cell;
 import org.eclipse.papyrus.model2doc.core.builtintypes.CellLocation;
 import org.eclipse.papyrus.model2doc.core.builtintypes.TextCell;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.EmptyLine;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedBasicTable;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Title;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTableView;
@@ -84,11 +86,14 @@ public class EReferenceTableViewMapper extends AbstractEMFTemplateToStructureMap
 
 
 		final ExtendedBasicTable table = STRUCTURE_EFACTORY.createExtendedBasicTable();
+		final EmptyLine emptyLine = STRUCTURE_EFACTORY.createEmptyLine(); // Bug 569249
 
 		if (title != null) {
 			title.getSubBodyParts().add(table);
+			title.getSubBodyParts().add(emptyLine);
 		} else {
 			returnedElements.add(expectedReturnedClass.cast(table));
+			returnedElements.add(expectedReturnedClass.cast(emptyLine));
 		}
 
 		// column header generation
@@ -142,6 +147,7 @@ public class EReferenceTableViewMapper extends AbstractEMFTemplateToStructureMap
 				bodyRow.getCells().add(bodyCell);
 			}
 		}
+
 
 		return returnedElements;
 	}

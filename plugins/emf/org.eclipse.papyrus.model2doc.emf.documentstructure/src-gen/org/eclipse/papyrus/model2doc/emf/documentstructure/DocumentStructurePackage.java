@@ -1229,6 +1229,48 @@ public interface DocumentStructurePackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.EmptyLineImpl <em>Empty Line</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.EmptyLineImpl
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getEmptyLine()
+	 * @generated
+	 */
+	int NEW_LINE = 21;
+
+	/**
+	 * The feature id for the '<em><b>Data Source</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int NEW_LINE__DATA_SOURCE = LEAF_BODY_PART__DATA_SOURCE;
+
+	/**
+	 * The number of structural features of the '<em>Empty Line</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int NEW_LINE_FEATURE_COUNT = LEAF_BODY_PART_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Empty Line</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int NEW_LINE_OPERATION_COUNT = LEAF_BODY_PART_OPERATION_COUNT + 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument <em>Text Document</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1710,6 +1752,17 @@ public interface DocumentStructurePackage extends EPackage {
 	EClass getInsertedFile();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.EmptyLine <em>Empty Line</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>Empty Line</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.EmptyLine
+	 * @generated
+	 */
+	EClass getEmptyLine();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2153,6 +2206,17 @@ public interface DocumentStructurePackage extends EPackage {
 		 * @generated
 		 */
 		EClass INSERTED_FILE = eINSTANCE.getInsertedFile();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.EmptyLineImpl <em>Empty Line</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.EmptyLineImpl
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getEmptyLine()
+		 * @generated
+		 */
+		EClass NEW_LINE = eINSTANCE.getEmptyLine();
 
 	}
 

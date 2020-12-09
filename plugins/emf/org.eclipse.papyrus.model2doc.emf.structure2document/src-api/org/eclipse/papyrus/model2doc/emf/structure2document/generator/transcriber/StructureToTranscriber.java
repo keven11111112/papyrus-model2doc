@@ -11,6 +11,7 @@
  * Contributors:
  *    Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *    Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - bug 568341
+ *
  *****************************************************************************/
 
 package org.eclipse.papyrus.model2doc.emf.structure2document.generator.transcriber;
@@ -26,6 +27,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.ComposedBodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Image;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.InsertedFile;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.EmptyLine;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Paragraph;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TableOfContents;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TableOfFigures;
@@ -129,6 +131,8 @@ public class StructureToTranscriber implements Transcriber {
 			transcribeList((AbstractList) bodyPart);
 		} else if (bodyPart instanceof InsertedFile) {
 			transcribeInsertedFile(((InsertedFile) bodyPart));
+		} else if (bodyPart instanceof EmptyLine) {
+			transcribeEmptyLine();
 		}
 
 		// then we iterate on the children of the bodyPart
@@ -218,5 +222,12 @@ public class StructureToTranscriber implements Transcriber {
 	 */
 	private void transcribeList(final AbstractList list) {
 		transcription.writeList(list, false);
+	}
+
+	/**
+	 * This method transcribe a {@link EmptyLine} into a new empty line in the document
+	 */
+	private void transcribeEmptyLine() {
+		transcription.insertEmptyLine();
 	}
 }

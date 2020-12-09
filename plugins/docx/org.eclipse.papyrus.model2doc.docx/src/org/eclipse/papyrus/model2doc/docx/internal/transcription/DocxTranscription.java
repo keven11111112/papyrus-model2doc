@@ -11,6 +11,8 @@
  * Contributors:
  * 	 Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - Initial API and implementation
  *   Vincent LORENZO (CEA LIST) vincent.lorenzo@cea.fr - bug 569059
+ * 	 Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - Bug 569249
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.model2doc.docx.internal.transcription;
 
@@ -374,6 +376,15 @@ public class DocxTranscription implements Transcription {
 		}
 
 		return ecoreURi;
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.model2doc.core.transcription.Transcription#insertEmptyLine()
+	 *
+	 */
+	@Override
+	public void insertEmptyLine() {
+		document.createParagraph();
 	}
 
 	@Override

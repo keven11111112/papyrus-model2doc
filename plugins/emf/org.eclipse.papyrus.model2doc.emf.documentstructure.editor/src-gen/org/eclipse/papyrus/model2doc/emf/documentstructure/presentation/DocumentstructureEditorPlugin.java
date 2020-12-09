@@ -25,6 +25,7 @@ import org.eclipse.papyrus.model2doc.core.author.provider.AuthorEditPlugin;
 import org.eclipse.papyrus.model2doc.core.builtintypes.provider.BuiltInTypesEditPlugin;
 
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.provider.GeneratorconfigurationEditPlugin;
+import org.eclipse.papyrus.model2doc.core.styles.provider.StylesEditPlugin;
 
 /**
  * This is the central singleton for the Documentstructure editor plugin.
@@ -65,6 +66,7 @@ public final class DocumentstructureEditorPlugin extends EMFPlugin {
 				BuiltInTypesEditPlugin.INSTANCE,
 				EcoreEditPlugin.INSTANCE,
 				GeneratorconfigurationEditPlugin.INSTANCE,
+				StylesEditPlugin.INSTANCE,
 		});
 	}
 

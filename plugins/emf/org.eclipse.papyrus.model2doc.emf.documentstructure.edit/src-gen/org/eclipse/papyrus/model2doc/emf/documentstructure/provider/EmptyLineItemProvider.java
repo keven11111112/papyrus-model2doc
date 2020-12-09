@@ -24,7 +24,6 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -32,22 +31,21 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructureFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage;
-import org.eclipse.papyrus.model2doc.emf.documentstructure.Title;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.EmptyLine;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructure.Title} object.
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructure.EmptyLine} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class TitleItemProvider
+public class EmptyLineItemProvider
 		extends ItemProviderAdapter
 		implements
 		IEditingDomainItemProvider,
@@ -62,7 +60,7 @@ public class TitleItemProvider
 	 *
 	 * @generated
 	 */
-	public TitleItemProvider(AdapterFactory adapterFactory) {
+	public EmptyLineItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -78,52 +76,8 @@ public class TitleItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSubBodyPartPropertyDescriptor(object);
-			addTitlePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Sub Body Part feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected void addSubBodyPartPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_ComposedBodyPart_subBodyPart_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_ComposedBodyPart_subBodyPart_feature", "_UI_ComposedBodyPart_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				DocumentStructurePackage.Literals.COMPOSED_BODY_PART__SUB_BODY_PART,
-				true,
-				false,
-				true,
-				null,
-				null,
-				null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Title feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected void addTitlePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Title_title_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_Title_title_feature", "_UI_Title_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				DocumentStructurePackage.Literals.TITLE__TITLE,
-				true,
-				false,
-				false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				null,
-				null));
 	}
 
 	/**
@@ -140,7 +94,6 @@ public class TitleItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DocumentStructurePackage.Literals.BODY_PART__DATA_SOURCE);
-			childrenFeatures.add(DocumentStructurePackage.Literals.COMPOSED_BODY_PART__SUB_BODY_PART);
 		}
 		return childrenFeatures;
 	}
@@ -160,7 +113,7 @@ public class TitleItemProvider
 	}
 
 	/**
-	 * This returns Title.gif.
+	 * This returns EmptyLine.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -168,7 +121,7 @@ public class TitleItemProvider
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Title")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/EmptyLine")); //$NON-NLS-1$
 	}
 
 	/**
@@ -191,9 +144,7 @@ public class TitleItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Title) object).getTitle();
-		return label == null || label.length() == 0 ? getString("_UI_Title_type") : //$NON-NLS-1$
-				getString("_UI_Title_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		return getString("_UI_EmptyLine_type"); //$NON-NLS-1$
 	}
 
 
@@ -209,12 +160,8 @@ public class TitleItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Title.class)) {
-		case DocumentStructurePackage.TITLE__TITLE:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		case DocumentStructurePackage.TITLE__DATA_SOURCE:
-		case DocumentStructurePackage.TITLE__SUB_BODY_PART:
+		switch (notification.getFeatureID(EmptyLine.class)) {
+		case DocumentStructurePackage.NEW_LINE__DATA_SOURCE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -235,27 +182,6 @@ public class TitleItemProvider
 
 		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY_PART__DATA_SOURCE,
 				DocumentStructureFactory.eINSTANCE.createEMFDataSource()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.COMPOSED_BODY_PART__SUB_BODY_PART,
-				DocumentStructureFactory.eINSTANCE.createParagraph()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.COMPOSED_BODY_PART__SUB_BODY_PART,
-				DocumentStructureFactory.eINSTANCE.createTitle()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.COMPOSED_BODY_PART__SUB_BODY_PART,
-				DocumentStructureFactory.eINSTANCE.createImage()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.COMPOSED_BODY_PART__SUB_BODY_PART,
-				DocumentStructureFactory.eINSTANCE.createExtendedBasicTable()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.COMPOSED_BODY_PART__SUB_BODY_PART,
-				DocumentStructureFactory.eINSTANCE.createExtendedBasicList()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.COMPOSED_BODY_PART__SUB_BODY_PART,
-				DocumentStructureFactory.eINSTANCE.createInsertedFile()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.COMPOSED_BODY_PART__SUB_BODY_PART,
-				DocumentStructureFactory.eINSTANCE.createEmptyLine()));
 	}
 
 	/**
