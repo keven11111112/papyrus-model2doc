@@ -109,4 +109,17 @@ public class CustomXWPFDocument extends XWPFDocument {
 		return table;
 	}
 
+	/**
+	 * Appends a new {@link CustomXWPFParagraph} to this document
+	 *
+	 * @return the new customXWPFParagraph
+	 */
+	@Override
+	public XWPFParagraph createParagraph() {
+		XWPFParagraph p = new CustomXWPFParagraph(getDocument().getBody().addNewP(), this);
+		bodyElements.add(p);
+		paragraphs.add(p);
+		return p;
+	}
+
 }

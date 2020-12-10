@@ -38,6 +38,8 @@ public class StyleConstants {
 
 	public static final String NO_HEADER_STYLE_VALUE = "TableWithoutHeader"; //$NON-NLS-1$
 
+	public static final String LIST_STYLE_VALUE = "Paragraphedeliste"; //$NON-NLS-1$
+
 	/**
 	 * Constructor.
 	 *

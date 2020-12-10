@@ -54,6 +54,15 @@ public interface StyleService {
 	boolean applyTableStyle(XWPFTable xwpfTable, XWPFDocument document, AbstractTable tableDescription);
 
 	/**
+	 * Apply the list style
+	 *
+	 * @param paragraph
+	 *            the paragraph on which the list style will be applied
+	 * @return true if the style has been find, false otherwise
+	 */
+	boolean applyListStyle(XWPFParagraph paragraph);
+
+	/**
 	 * Apply the caption style to the paragraph
 	 *
 	 * @param paragraph
@@ -104,5 +113,12 @@ public interface StyleService {
 	 * @return the caption style name
 	 */
 	String getCaptionStyleValue();
+
+	/**
+	 * Get the list style name
+	 *
+	 * @return the list style name
+	 */
+	String getListStyleValue();
 
 }

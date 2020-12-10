@@ -21,6 +21,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -36,11 +37,15 @@ import org.apache.poi.xwpf.usermodel.XWPFTable;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.model2doc.core.author.IAuthor;
+import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractList;
 import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractTable;
+import org.eclipse.papyrus.model2doc.core.builtintypes.BasicList;
 import org.eclipse.papyrus.model2doc.core.builtintypes.Cell;
 import org.eclipse.papyrus.model2doc.core.builtintypes.IFileReference;
+import org.eclipse.papyrus.model2doc.core.builtintypes.ListItem;
 import org.eclipse.papyrus.model2doc.core.builtintypes.Row;
 import org.eclipse.papyrus.model2doc.core.builtintypes.TextCell;
+import org.eclipse.papyrus.model2doc.core.builtintypes.TextListItem;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.operations.GeneratorConfigurationOperations;
 import org.eclipse.papyrus.model2doc.core.styles.BooleanNamedStyle;
@@ -51,6 +56,7 @@ import org.eclipse.papyrus.model2doc.core.transcription.Transcription;
 import org.eclipse.papyrus.model2doc.docx.Activator;
 import org.eclipse.papyrus.model2doc.docx.Messages;
 import org.eclipse.papyrus.model2doc.docx.internal.poi.CustomXWPFDocument;
+import org.eclipse.papyrus.model2doc.docx.internal.poi.CustomXWPFParagraph;
 import org.eclipse.papyrus.model2doc.docx.internal.poi.CustomXWPFTable;
 import org.eclipse.papyrus.model2doc.docx.internal.services.StyleServiceImpl;
 import org.eclipse.papyrus.model2doc.docx.internal.util.ImageUtils;
@@ -200,9 +206,44 @@ public class DocxTranscription implements Transcription {
 	}
 
 	@Override
-	public void writeList(org.eclipse.papyrus.model2doc.core.builtintypes.AbstractList list, boolean processRichText) {
-		// TODO Auto-generated method stub
+	public void writeList(AbstractList abstractList, boolean processRichText) {
+		if (false == abstractList instanceof BasicList) {
+			Activator.log.warn(NLS.bind("The list of type {0} is not supported by {1}.", abstractList.eClass().getName(), getClass().getName())); //$NON-NLS-1$
+			return;
+		}
+		final BasicList basicList = (BasicList) abstractList;
+		final Iterator<ListItem> iter = basicList.getItems().iterator();
+		while (iter.hasNext()) {
+			writeListItem(iter.next());
+		}
+	}
 
+	/**
+	 * Write the list for the given item
+	 *
+	 * @param listItem
+	 *            the item to write
+	 */
+	private void writeListItem(ListItem listItem) {
+		final int itemLevel = listItem.getLevel();
+		if (false == listItem instanceof TextListItem) {
+			Activator.log.warn(NLS.bind("The list item  of type {0} is not supported by {1}.", listItem.eClass().getName(), getClass().getName())); //$NON-NLS-1$
+			return;
+		}
+		XWPFParagraph paragraph = document.createParagraph();
+		paragraph.setNumID(BigInteger.ONE); // this correspond to the id of the abstractNum which is in the numbering file it start at 1
+		if (paragraph instanceof CustomXWPFParagraph) {
+			((CustomXWPFParagraph) paragraph).setItemLevel(itemLevel - 1);
+		}
+		XWPFRun run = paragraph.createRun();
+		run.setText(((TextListItem) listItem).getText());
+
+		styleService.applyListStyle(paragraph);
+
+		final Iterator<ListItem> subItemIterator = listItem.getSubItems().iterator();
+		while (subItemIterator.hasNext()) {
+			writeListItem(subItemIterator.next());
+		}
 	}
 
 	@Override

@@ -115,6 +115,18 @@ public class StyleServiceImpl implements StyleService {
 	}
 
 	/**
+	 * @see org.eclipse.papyrus.model2doc.docx.services.StyleService#applyListStyle(org.apache.poi.xwpf.usermodel.XWPFParagraph)
+	 *
+	 * @param paragraph
+	 * @return
+	 */
+	@Override
+	public boolean applyListStyle(XWPFParagraph paragraph) {
+		String style = getListStyleValue();
+		return applyStyle(paragraph, style);
+	}
+
+	/**
 	 *
 	 * @see org.eclipse.papyrus.model2doc.docx.services.StyleService#applyStyle(org.apache.poi.xwpf.usermodel.XWPFParagraph, java.lang.String)
 	 *
@@ -176,5 +188,15 @@ public class StyleServiceImpl implements StyleService {
 	@Override
 	public String getCaptionStyleValue() {
 		return StyleConstants.CAPTION_STYLE_VALUE;
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.model2doc.docx.services.StyleService#getListStyleValue()
+	 *
+	 * @return
+	 */
+	@Override
+	public String getListStyleValue() {
+		return StyleConstants.LIST_STYLE_VALUE;
 	}
 }
