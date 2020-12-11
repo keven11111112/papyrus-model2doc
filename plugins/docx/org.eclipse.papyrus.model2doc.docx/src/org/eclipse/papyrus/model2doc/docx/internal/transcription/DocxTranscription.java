@@ -27,14 +27,12 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.apache.poi.openxml4j.opc.OPCPackage;
 import org.apache.poi.xwpf.usermodel.Document;
 import org.apache.poi.xwpf.usermodel.TableWidthType;
-import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
-import org.apache.poi.xwpf.usermodel.XWPFStyles;
 import org.apache.poi.xwpf.usermodel.XWPFTable;
-import org.apache.xmlbeans.XmlException;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.model2doc.core.author.IAuthor;
@@ -64,6 +62,10 @@ import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTText;
 
 public class DocxTranscription implements Transcription {
 
+	private static final String DOTX_SCHEMA = "application/vnd.openxmlformats-officedocument.wordprocessingml.template.main+xml";//$NON-NLS-1$
+
+	private static final String DOCX_SCHEMA = "application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml";//$NON-NLS-1$
+
 	private IDocumentGeneratorConfiguration docxGeneratorConfig;
 
 	private CustomXWPFDocument document;
@@ -85,28 +87,49 @@ public class DocxTranscription implements Transcription {
 	public DocxTranscription(IDocumentGeneratorConfiguration dgc) {
 		this.docxGeneratorConfig = dgc;
 		this.styleService = new StyleServiceImpl();
-		this.document = new CustomXWPFDocument();
 		try {
-			InputStream template = getTemplateInputStream();
-			if (template != null) {
-				// bug 569059 - see https://stackoverrun.com/fr/q/4419808 for solution
-				XWPFDocument templateDocument = new XWPFDocument(template);
-				final XWPFStyles newStyles = this.document.createStyles();
-				newStyles.setStyles(templateDocument.getStyle());
-				templateDocument.close();
+			final InputStream templateInputStream = getFileWithTemplateLoaded();
+			if (templateInputStream != null) {
+				// bug 569059 - see https://stackoverflow.com/questions/16264247/create-document-from-dotx-template-with-apache-poi-hwpf for solution
+				this.document = new CustomXWPFDocument(templateInputStream);
+				templateInputStream.close();
 			}
 		} catch (IOException e) {
 			Activator.log.warn("Cannot apply the template file"); //$NON-NLS-1$
-		} catch (XmlException e) {
-			Activator.log.warn("Cannot apply the template file"); //$NON-NLS-1$
+		} catch (InvalidFormatException e1) {
+			Activator.log.error("Cannot apply the template file", e1);//$NON-NLS-1$
+		}
+		if (this.document == null) {
+			this.document = new CustomXWPFDocument();
 		}
 	}
 
-	private InputStream getTemplateInputStream() throws IOException {
-		String stringUri = GeneratorConfigurationOperations.getTemplateFilePathInLocalPath(docxGeneratorConfig);
-		stringUri = stringUri.replaceFirst(ECORE_FILE_PREFIX, EMPTY_STRING);
-		InputStream stream = new FileInputStream(stringUri);
-		return stream;
+	/**
+	 * This method open the destination file and replace it by the the template
+	 *
+	 * @return an inputStream on the destination file
+	 * @throws IOException
+	 * @throws InvalidFormatException
+	 */
+	private InputStream getFileWithTemplateLoaded() throws IOException, InvalidFormatException {
+		String templateURI = GeneratorConfigurationOperations.getTemplateFilePathInLocalPath(docxGeneratorConfig);
+		if (templateURI != null) {
+			templateURI = templateURI.replaceFirst(ECORE_FILE_PREFIX, EMPTY_STRING);
+			String destURI = GeneratorConfigurationOperations.getDocumentFileLocalPath(docxGeneratorConfig, DOCX_FILE_EXTENTION);
+			destURI = destURI.replaceFirst(ECORE_FILE_PREFIX, EMPTY_STRING);
+			FileInputStream templateIS = new FileInputStream(templateURI);
+			FileOutputStream destIS = new FileOutputStream(destURI);
+
+			OPCPackage pkg = OPCPackage.open(templateIS);
+			pkg.replaceContentType(DOTX_SCHEMA, DOCX_SCHEMA);
+			pkg.save(destIS);
+
+			templateIS.close();
+			destIS.close();
+
+			return new FileInputStream(destURI);
+		}
+		return null;
 	}
 
 	@Override

@@ -303,7 +303,10 @@ public class GeneratorConfigurationOperations {
 			return URI.createFileURI(filePath).toString();// it add the file:/ before the path
 		}
 		String res = convertToLocalPath(eobject, filePath);
-		return URI.createFileURI(res).toString();
+		if (res != null) {
+			return URI.createFileURI(res).toString();
+		}
+		return null;
 	}
 
 	/**

@@ -93,7 +93,7 @@ public class StyleServiceImpl implements StyleService {
 			styleName = StyleConstants.NO_HEADER_STYLE_VALUE;
 		}
 
-		if (document.getStyles().styleExist(styleName)) {
+		if (document.getStyles() != null && document.getStyles().styleExist(styleName)) {
 			xwpfTable.setStyleID(styleName);
 			return true;
 		}
