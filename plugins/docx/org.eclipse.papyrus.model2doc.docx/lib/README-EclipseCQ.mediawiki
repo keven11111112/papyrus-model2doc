@@ -1,0 +1,18 @@
+poi, poi-ooxml and poi-ooxml-schemas are avalable in orbit. However, there are two versions of the poi-ooxml-schemas 
+the lite and the full version (see https://poi.apache.org/help/faq.html#faq-N10025). For the insert of file in docx 
+we need the full version, named ooxml-schemas.
+
+Since we need the full version of ooxml-schemas we can not use libraries dependant of it from orbit otherwith there 
+are two diffente versions of the same code.
+
+ooxml-schemas CQ
+* https://dev.eclipse.org/ipzilla/show_bug.cgi?id=22905
+* binary and source code comes from https://archive.apache.org/dist/poi/release/maven/ooxml-schemas/
+
+poi-ooxml CQ
+* https://dev.eclipse.org/ipzilla/show_bug.cgi?id=22906
+* binary and source code comes from https://archive.apache.org/dist/poi/release/maven/poi-ooxml/
+
+poi CQ
+* http://dev.eclipse.org/ipzilla/show_bug.cgi?id=22907
+* binary and source code comes from https://archive.apache.org/dist/poi/release/maven/poi/

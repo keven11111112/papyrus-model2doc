@@ -17,11 +17,23 @@ package org.eclipse.papyrus.model2doc.docx.internal.poi;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import org.apache.commons.compress.utils.IOUtils;
+import org.apache.poi.openxml4j.opc.OPCPackage;
+import org.apache.poi.openxml4j.opc.PackagePart;
+import org.apache.poi.openxml4j.opc.PackagePartName;
+import org.apache.poi.openxml4j.opc.PackagingURIHelper;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
+import org.apache.poi.xwpf.usermodel.XWPFRun;
 import org.apache.poi.xwpf.usermodel.XWPFTable;
+import org.eclipse.osgi.util.NLS;
+import org.eclipse.papyrus.model2doc.docx.Activator;
 import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP;
 import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTSimpleField;
 import org.openxmlformats.schemas.wordprocessingml.x2006.main.STOnOff;
@@ -30,6 +42,17 @@ import org.openxmlformats.schemas.wordprocessingml.x2006.main.STOnOff;
  * This custom implementation allow to add some missing methods in the apache api
  */
 public class CustomXWPFDocument extends XWPFDocument {
+
+	private static int fileIndex = 0;
+
+	/**
+	 * With the insertFile method we can insert files, we don't know exactly the list of file we can insert.
+	 * We know that following files can be inserted. In other case often the document even can not be open.
+	 */
+	private static final List<String> TESTED_FILE_INSERTION = new ArrayList<>(Arrays.asList(
+			"html", //$NON-NLS-1$
+			"docx", //$NON-NLS-1$
+			"txt")); //$NON-NLS-1$
 
 	/**
 	 * just here to be sure we have the dependency on org.apache.commons.compress which is implicitly required by {@link CustomXWPFDocument}
@@ -120,6 +143,76 @@ public class CustomXWPFDocument extends XWPFDocument {
 		bodyElements.add(p);
 		paragraphs.add(p);
 		return p;
+	}
+
+	/**
+	 * This method insert a file in the document by using the altChunk element
+	 *
+	 * @param filePath
+	 *            the path of the file to insert
+	 * @return the newly created CustomXWPFPart
+	 * @throws Exception
+	 */
+	public CustomXWPFPart insertFile(String filePath) throws Exception {
+		String fileExtension = getFileExtension(filePath);
+
+		// Check if the extension is supported
+		if (false == isTestedFileExtension(fileExtension)) {
+			Activator.log.warn(NLS.bind("We only the insertion of {0} files are supported", TESTED_FILE_INSERTION)); //$NON-NLS-1$
+
+			XWPFParagraph paragraph = createParagraph();
+			XWPFRun run = paragraph.createRun();
+			run.setText(NLS.bind("[The file {0} cannot be inserted]", filePath)); //$NON-NLS-1$
+			run.setColor("FF0000"); // red //$NON-NLS-1$
+			run.setItalic(true);
+			return null;
+		}
+
+		// Build a unique id
+		String id = "file" + fileIndex; //$NON-NLS-1$
+
+		// Build the path of the new file into the archive
+		StringBuilder partPathBuilder = new StringBuilder("/word/media/"); //$NON-NLS-1$
+		partPathBuilder.append(id);
+		partPathBuilder.append("."); //$NON-NLS-1$
+		partPathBuilder.append(fileExtension);
+
+		// Create the new file by coping the file in the archive
+		OPCPackage opcPackage = getPackage();
+		PackagePartName partName = PackagingURIHelper.createPartName(partPathBuilder.toString());
+		String contentType = Files.probeContentType(Paths.get(filePath.replaceFirst("/", ""))); //$NON-NLS-1$ //$NON-NLS-2$
+		if (contentType == null) {
+			contentType = "text/plain"; //$NON-NLS-1$
+		}
+		PackagePart packagePart = opcPackage.createPart(partName, contentType);
+		CustomXWPFPart part = new CustomXWPFPart(packagePart, id, filePath);
+
+		// Add the relation between the new file in the archive and the altChunk id
+		addRelation(part.getId(), new CustomXWPFGenericRelation(contentType), part);
+
+		// Add the altChunk into the document
+		getDocument().getBody().addNewAltChunk().setId(id);
+
+		fileIndex++;
+		return part;
+	}
+
+	/**
+	 * This method just write a message in the console if we are not sure that the extension of the file is supported
+	 */
+	private boolean isTestedFileExtension(String extension) {
+		return TESTED_FILE_INSERTION.stream().anyMatch(s -> s.equalsIgnoreCase(extension));
+	}
+
+	/**
+	 * Get the file extension
+	 *
+	 * @param filePath
+	 * @return the file extension
+	 */
+	private String getFileExtension(String filePath) {
+		String[] split = filePath.split("\\."); //$NON-NLS-1$
+		return split[split.length - 1];
 	}
 
 }

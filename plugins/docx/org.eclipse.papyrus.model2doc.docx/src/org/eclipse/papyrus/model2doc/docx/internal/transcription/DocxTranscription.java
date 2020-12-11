@@ -383,10 +383,18 @@ public class DocxTranscription implements Transcription {
 		return null;
 	}
 
+	/**
+	 * @see org.eclipse.papyrus.model2doc.core.transcription.Transcription#insertFile(org.eclipse.papyrus.model2doc.core.builtintypes.IFileReference)
+	 *
+	 * @param fileReference
+	 */
 	@Override
 	public void insertFile(IFileReference fileReference) {
-		// TODO Auto-generated method stub
-
+		try {
+			document.insertFile(fileReference.getFilePath().replaceFirst(ECORE_FILE_PREFIX, EMPTY_STRING));
+		} catch (Exception e) {
+			Activator.log.warn(NLS.bind("The {0} file can not be inserted", fileReference.getFilePath())); //$NON-NLS-1$
+		}
 	}
 
 	@Override

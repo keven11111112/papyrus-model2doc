@@ -15,9 +15,6 @@
       <repository id="Papyrus-2020-12" location="https://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/master/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.apache.poi" version="4.1.1.v20200604-1524"/>
-      <unit id="org.apache.poi.ooxml" version="4.1.1.v20200820-1148"/>
-      <unit id="org.apache.poi.ooxml.schemas" version="4.1.1.v20200922-2105"/>
       <unit id="org.apache.xmlbeans" version="3.1.0.v20200922-1359"/>
       <unit id="org.apache.commons.compress" version="1.19.0.v20200106-2343"/>
       <repository id="orbit" location="https://download.eclipse.org/tools/orbit/downloads/drops/S20201027182932/repository"/>

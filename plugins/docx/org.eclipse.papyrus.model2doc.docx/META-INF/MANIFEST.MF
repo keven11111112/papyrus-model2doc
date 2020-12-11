@@ -9,18 +9,19 @@ Require-Bundle: org.eclipse.ui;bundle-version="[3.113.0,4.0.0)",
  org.eclipse.core.runtime;bundle-version="[3.15.0,4.0.0)",
  org.eclipse.emf.ecore;bundle-version="[2.17.0,3.0.0)",
  org.eclipse.papyrus.infra.core.log;bundle-version="[2.0.0,3.0.0)",
- org.apache.poi.ooxml;bundle-version="[4.1.0,5.0.0)",
  org.eclipse.papyrus.model2doc.core;bundle-version="[0.8.0,1.0.0)",
  org.eclipse.papyrus.model2doc.core.generatorconfiguration;bundle-version="[0.8.0,1.0.0)",
  org.eclipse.papyrus.model2doc.core.builtintypes;bundle-version="[0.8.0,1.0.0)",
  org.eclipse.papyrus.model2doc.core.author;bundle-version="[0.7.0,1.0.0)",
  org.eclipse.papyrus.model2doc.core.styles;bundle-version="[0.8.0,1.0.0)",
  org.apache.xmlbeans;bundle-version="[3.1.0,4.0.0)",
- org.apache.poi.ooxml.schemas;bundle-version="[4.1.0,5.0.0)",
- org.apache.poi;bundle-version="[4.1.0,5.0.0)",
  org.apache.commons.compress;bundle-version="[1.19.0,2.0.0)"
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Automatic-Module-Name: org.eclipse.papyrus.model2doc.docx
 Bundle-ActivationPolicy: lazy
 Export-Package: org.eclipse.papyrus.model2doc.docx.internal.transcription
 Bundle-Vendor: %providerName
+Bundle-ClassPath: .,
+ lib/ooxml-schemas-1.4.jar,
+ lib/poi-4.1.1.jar,
+ lib/poi-ooxml-4.1.1.jar
