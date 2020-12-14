@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.EPackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- *
+ * 
  * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationFactory
  * @model kind="package"
  *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='GeneratorConfiguration'"
@@ -41,7 +41,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	String eNAME = "generatorconfiguration"; //$NON-NLS-1$
@@ -50,7 +50,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/model2doc/1.0.0/generatorconfiguration"; //$NON-NLS-1$
@@ -59,7 +59,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	String eNS_PREFIX = "generatorconfiguration"; //$NON-NLS-1$
@@ -68,7 +68,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	GeneratorConfigurationPackage eINSTANCE = org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.GeneratorConfigurationPackageImpl.init();
@@ -77,7 +77,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.IGeneratorConfiguration <em>IGenerator Configuration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.IGeneratorConfiguration
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.GeneratorConfigurationPackageImpl#getIGeneratorConfiguration()
 	 * @generated
@@ -88,7 +88,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>IGenerator Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -98,7 +98,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Get Document Name</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -108,7 +108,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Get Document Folder</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -118,7 +118,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Get Document Generator Id</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -128,7 +128,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Set Document Name</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -138,7 +138,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The number of operations of the '<em>IGenerator Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -148,7 +148,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.AbstractDocumentGeneratorConfigurationImpl <em>Abstract Document Generator Configuration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.AbstractDocumentGeneratorConfigurationImpl
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.GeneratorConfigurationPackageImpl#getAbstractDocumentGeneratorConfiguration()
 	 * @generated
@@ -159,7 +159,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Save Document Structure</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -169,7 +169,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Save Images</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -179,7 +179,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Template File</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -189,7 +189,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Document Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -199,7 +199,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Document Folder</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -209,7 +209,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Document Generator Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -219,7 +219,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>Abstract Document Generator Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -229,7 +229,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Get Document Name</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -239,7 +239,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Get Document Folder</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -249,7 +249,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Get Document Generator Id</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -259,7 +259,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Set Document Name</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -269,7 +269,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The number of operations of the '<em>Abstract Document Generator Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -279,7 +279,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.AbstractDocumentStructureGeneratorConfigurationImpl <em>Abstract Document Structure Generator Configuration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.AbstractDocumentStructureGeneratorConfigurationImpl
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.GeneratorConfigurationPackageImpl#getAbstractDocumentStructureGeneratorConfiguration()
 	 * @generated
@@ -290,7 +290,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Save Document Structure</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -300,7 +300,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Save Images</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -310,7 +310,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Template File</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -320,7 +320,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Document Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -330,7 +330,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Document Folder</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -340,7 +340,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Document Generator Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -350,7 +350,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Structure Generator Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -360,7 +360,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Image Folder</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -370,7 +370,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Structure Folder</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -380,7 +380,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>Abstract Document Structure Generator Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -390,7 +390,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Get Document Name</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -400,7 +400,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Get Document Folder</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -410,7 +410,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Get Document Generator Id</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -420,7 +420,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Set Document Name</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -430,7 +430,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The number of operations of the '<em>Abstract Document Structure Generator Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -440,7 +440,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.DefaultDocumentStructureGeneratorConfigurationImpl <em>Default Document Structure Generator Configuration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.DefaultDocumentStructureGeneratorConfigurationImpl
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.GeneratorConfigurationPackageImpl#getDefaultDocumentStructureGeneratorConfiguration()
 	 * @generated
@@ -451,7 +451,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Save Document Structure</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -461,7 +461,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Save Images</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -471,7 +471,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Template File</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -481,7 +481,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Document Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -491,7 +491,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Document Folder</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -501,7 +501,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Document Generator Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -511,7 +511,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Structure Generator Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -521,7 +521,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Image Folder</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -531,7 +531,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Structure Folder</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -541,7 +541,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>Default Document Structure Generator Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -551,7 +551,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Get Document Name</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -561,7 +561,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Get Document Folder</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -571,7 +571,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Get Document Generator Id</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -581,7 +581,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Set Document Name</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -591,7 +591,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Create Document Generator Configuration</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -601,7 +601,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Get Structure Generator Id</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -611,7 +611,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Get Image Folder</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -621,27 +621,37 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Get Structure Folder</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int DEFAULT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___GET_STRUCTURE_FOLDER = ABSTRACT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION_OPERATION_COUNT + 3;
 
 	/**
-	 * The number of operations of the '<em>Default Document Structure Generator Configuration</em>' class.
+	 * The operation id for the '<em>Create Document Structure URI</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int DEFAULT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION_OPERATION_COUNT = ABSTRACT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION_OPERATION_COUNT + 4;
+	int DEFAULT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___CREATE_DOCUMENT_STRUCTURE_URI__STRING_STRING = ABSTRACT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION_OPERATION_COUNT + 4;
+
+	/**
+	 * The number of operations of the '<em>Default Document Structure Generator Configuration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int DEFAULT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION_OPERATION_COUNT = ABSTRACT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION_OPERATION_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration <em>IDocument Structure Generator Configuration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.GeneratorConfigurationPackageImpl#getIDocumentStructureGeneratorConfiguration()
 	 * @generated
@@ -649,10 +659,32 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	int IDOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION = 4;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration <em>IDocument Generator Configuration</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration
+	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.GeneratorConfigurationPackageImpl#getIDocumentGeneratorConfiguration()
+	 * @generated
+	 */
+	int IDOCUMENT_GENERATOR_CONFIGURATION = 5;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.emf.common.util.URI <em>URI</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see org.eclipse.emf.common.util.URI
+	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.GeneratorConfigurationPackageImpl#getURI()
+	 * @generated
+	 */
+	int URI = 6;
+
+	/**
 	 * The number of structural features of the '<em>IDocument Structure Generator Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -662,7 +694,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Get Document Name</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -672,7 +704,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Get Document Folder</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -682,7 +714,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Get Document Generator Id</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -692,7 +724,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Set Document Name</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -702,7 +734,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Create Document Generator Configuration</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -712,7 +744,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Get Structure Generator Id</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -722,7 +754,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Get Image Folder</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -732,38 +764,37 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Get Structure Folder</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int IDOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___GET_STRUCTURE_FOLDER = IGENERATOR_CONFIGURATION_OPERATION_COUNT + 3;
 
 	/**
-	 * The number of operations of the '<em>IDocument Structure Generator Configuration</em>' class.
+	 * The operation id for the '<em>Create Document Structure URI</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int IDOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION_OPERATION_COUNT = IGENERATOR_CONFIGURATION_OPERATION_COUNT + 4;
+	int IDOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___CREATE_DOCUMENT_STRUCTURE_URI__STRING_STRING = IGENERATOR_CONFIGURATION_OPERATION_COUNT + 4;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration <em>IDocument Generator Configuration</em>}' class.
+	 * The number of operations of the '<em>IDocument Structure Generator Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration
-	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.GeneratorConfigurationPackageImpl#getIDocumentGeneratorConfiguration()
+	 * 
 	 * @generated
+	 * @ordered
 	 */
-	int IDOCUMENT_GENERATOR_CONFIGURATION = 5;
+	int IDOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION_OPERATION_COUNT = IGENERATOR_CONFIGURATION_OPERATION_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>IDocument Generator Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -773,7 +804,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Get Document Name</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -783,7 +814,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Get Document Folder</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -793,7 +824,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Get Document Generator Id</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -803,7 +834,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Set Document Name</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -813,7 +844,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Is Save Document Structure</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -823,7 +854,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Is Save Images</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -833,7 +864,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Get Template File</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -843,28 +874,48 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The number of operations of the '<em>IDocument Generator Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int IDOCUMENT_GENERATOR_CONFIGURATION_OPERATION_COUNT = IGENERATOR_CONFIGURATION_OPERATION_COUNT + 3;
 
 	/**
+	 * The number of structural features of the '<em>URI</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int URI_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>URI</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int URI_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.DefaultDocumentGeneratorConfigurationImpl <em>Default Document Generator Configuration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.DefaultDocumentGeneratorConfigurationImpl
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.GeneratorConfigurationPackageImpl#getDefaultDocumentGeneratorConfiguration()
 	 * @generated
 	 */
-	int DEFAULT_DOCUMENT_GENERATOR_CONFIGURATION = 6;
+	int DEFAULT_DOCUMENT_GENERATOR_CONFIGURATION = 7;
 
 	/**
 	 * The feature id for the '<em><b>Save Document Structure</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -874,7 +925,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Save Images</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -884,7 +935,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Template File</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -894,7 +945,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Document Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -904,7 +955,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Document Folder</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -914,7 +965,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Document Generator Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -924,7 +975,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>Default Document Generator Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -934,7 +985,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Get Document Name</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -944,7 +995,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Get Document Folder</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -954,7 +1005,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Get Document Generator Id</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -964,7 +1015,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Set Document Name</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -974,7 +1025,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Is Save Document Structure</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -984,7 +1035,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Is Save Images</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -994,7 +1045,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Get Template File</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1004,7 +1055,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * The number of operations of the '<em>Default Document Generator Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1015,7 +1066,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentStructureGeneratorConfiguration <em>Default Document Structure Generator Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for class '<em>Default Document Structure Generator Configuration</em>'.
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentStructureGeneratorConfiguration
 	 * @generated
@@ -1026,7 +1077,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentStructureGeneratorConfiguration <em>Abstract Document Structure Generator Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for class '<em>Abstract Document Structure Generator Configuration</em>'.
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentStructureGeneratorConfiguration
 	 * @generated
@@ -1037,7 +1088,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentStructureGeneratorConfiguration#getStructureGeneratorId <em>Structure Generator Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for the attribute '<em>Structure Generator Id</em>'.
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentStructureGeneratorConfiguration#getStructureGeneratorId()
 	 * @see #getAbstractDocumentStructureGeneratorConfiguration()
@@ -1049,7 +1100,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentStructureGeneratorConfiguration#getImageFolder <em>Image Folder</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for the attribute '<em>Image Folder</em>'.
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentStructureGeneratorConfiguration#getImageFolder()
 	 * @see #getAbstractDocumentStructureGeneratorConfiguration()
@@ -1061,7 +1112,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentStructureGeneratorConfiguration#getStructureFolder <em>Structure Folder</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for the attribute '<em>Structure Folder</em>'.
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentStructureGeneratorConfiguration#getStructureFolder()
 	 * @see #getAbstractDocumentStructureGeneratorConfiguration()
@@ -1073,7 +1124,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentGeneratorConfiguration <em>Abstract Document Generator Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for class '<em>Abstract Document Generator Configuration</em>'.
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentGeneratorConfiguration
 	 * @generated
@@ -1084,7 +1135,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentGeneratorConfiguration#isSaveDocumentStructure <em>Save Document Structure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for the attribute '<em>Save Document Structure</em>'.
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentGeneratorConfiguration#isSaveDocumentStructure()
 	 * @see #getAbstractDocumentGeneratorConfiguration()
@@ -1096,7 +1147,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentGeneratorConfiguration#isSaveImages <em>Save Images</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for the attribute '<em>Save Images</em>'.
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentGeneratorConfiguration#isSaveImages()
 	 * @see #getAbstractDocumentGeneratorConfiguration()
@@ -1108,7 +1159,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentGeneratorConfiguration#getTemplateFile <em>Template File</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for the attribute '<em>Template File</em>'.
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentGeneratorConfiguration#getTemplateFile()
 	 * @see #getAbstractDocumentGeneratorConfiguration()
@@ -1120,7 +1171,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentGeneratorConfiguration#getDocumentName <em>Document Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for the attribute '<em>Document Name</em>'.
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentGeneratorConfiguration#getDocumentName()
 	 * @see #getAbstractDocumentGeneratorConfiguration()
@@ -1132,7 +1183,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentGeneratorConfiguration#getDocumentFolder <em>Document Folder</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for the attribute '<em>Document Folder</em>'.
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentGeneratorConfiguration#getDocumentFolder()
 	 * @see #getAbstractDocumentGeneratorConfiguration()
@@ -1144,7 +1195,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentGeneratorConfiguration#getDocumentGeneratorId <em>Document Generator Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for the attribute '<em>Document Generator Id</em>'.
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentGeneratorConfiguration#getDocumentGeneratorId()
 	 * @see #getAbstractDocumentGeneratorConfiguration()
@@ -1156,7 +1207,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.IGeneratorConfiguration <em>IGenerator Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for class '<em>IGenerator Configuration</em>'.
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.IGeneratorConfiguration
 	 * @generated
@@ -1167,7 +1218,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.IGeneratorConfiguration#getDocumentName() <em>Get Document Name</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for the '<em>Get Document Name</em>' operation.
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.IGeneratorConfiguration#getDocumentName()
 	 * @generated
@@ -1178,7 +1229,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.IGeneratorConfiguration#getDocumentFolder() <em>Get Document Folder</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for the '<em>Get Document Folder</em>' operation.
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.IGeneratorConfiguration#getDocumentFolder()
 	 * @generated
@@ -1189,7 +1240,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.IGeneratorConfiguration#getDocumentGeneratorId() <em>Get Document Generator Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for the '<em>Get Document Generator Id</em>' operation.
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.IGeneratorConfiguration#getDocumentGeneratorId()
 	 * @generated
@@ -1200,7 +1251,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.IGeneratorConfiguration#setDocumentName(java.lang.String) <em>Set Document Name</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for the '<em>Set Document Name</em>' operation.
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.IGeneratorConfiguration#setDocumentName(java.lang.String)
 	 * @generated
@@ -1211,7 +1262,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration <em>IDocument Structure Generator Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for class '<em>IDocument Structure Generator Configuration</em>'.
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration
 	 * @generated
@@ -1222,7 +1273,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration#createDocumentGeneratorConfiguration() <em>Create Document Generator Configuration</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for the '<em>Create Document Generator Configuration</em>' operation.
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration#createDocumentGeneratorConfiguration()
 	 * @generated
@@ -1233,7 +1284,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration#getStructureGeneratorId() <em>Get Structure Generator Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for the '<em>Get Structure Generator Id</em>' operation.
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration#getStructureGeneratorId()
 	 * @generated
@@ -1244,7 +1295,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration#getImageFolder() <em>Get Image Folder</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for the '<em>Get Image Folder</em>' operation.
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration#getImageFolder()
 	 * @generated
@@ -1255,7 +1306,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration#getStructureFolder() <em>Get Structure Folder</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for the '<em>Get Structure Folder</em>' operation.
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration#getStructureFolder()
 	 * @generated
@@ -1263,10 +1314,21 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	EOperation getIDocumentStructureGeneratorConfiguration__GetStructureFolder();
 
 	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration#createDocumentStructureURI(java.lang.String, java.lang.String) <em>Create Document Structure URI</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the '<em>Create Document Structure URI</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration#createDocumentStructureURI(java.lang.String, java.lang.String)
+	 * @generated
+	 */
+	EOperation getIDocumentStructureGeneratorConfiguration__CreateDocumentStructureURI__String_String();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration <em>IDocument Generator Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for class '<em>IDocument Generator Configuration</em>'.
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration
 	 * @generated
@@ -1277,7 +1339,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration#isSaveDocumentStructure() <em>Is Save Document Structure</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for the '<em>Is Save Document Structure</em>' operation.
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration#isSaveDocumentStructure()
 	 * @generated
@@ -1288,7 +1350,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration#isSaveImages() <em>Is Save Images</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for the '<em>Is Save Images</em>' operation.
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration#isSaveImages()
 	 * @generated
@@ -1299,7 +1361,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration#getTemplateFile() <em>Get Template File</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for the '<em>Get Template File</em>' operation.
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration#getTemplateFile()
 	 * @generated
@@ -1307,10 +1369,22 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	EOperation getIDocumentGeneratorConfiguration__GetTemplateFile();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.emf.common.util.URI <em>URI</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>URI</em>'.
+	 * @see org.eclipse.emf.common.util.URI
+	 * @model instanceClass="org.eclipse.emf.common.util.URI"
+	 * @generated
+	 */
+	EClass getURI();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentGeneratorConfiguration <em>Default Document Generator Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the meta object for class '<em>Default Document Generator Configuration</em>'.
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentGeneratorConfiguration
 	 * @generated
@@ -1321,7 +1395,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -1338,7 +1412,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	interface Literals {
@@ -1346,7 +1420,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.DefaultDocumentStructureGeneratorConfigurationImpl <em>Default Document Structure Generator Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
+		 * 
 		 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.DefaultDocumentStructureGeneratorConfigurationImpl
 		 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.GeneratorConfigurationPackageImpl#getDefaultDocumentStructureGeneratorConfiguration()
 		 * @generated
@@ -1357,7 +1431,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.AbstractDocumentStructureGeneratorConfigurationImpl <em>Abstract Document Structure Generator Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
+		 * 
 		 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.AbstractDocumentStructureGeneratorConfigurationImpl
 		 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.GeneratorConfigurationPackageImpl#getAbstractDocumentStructureGeneratorConfiguration()
 		 * @generated
@@ -1368,7 +1442,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Structure Generator Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		EAttribute ABSTRACT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION__STRUCTURE_GENERATOR_ID = eINSTANCE.getAbstractDocumentStructureGeneratorConfiguration_StructureGeneratorId();
@@ -1377,7 +1451,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Image Folder</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		EAttribute ABSTRACT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION__IMAGE_FOLDER = eINSTANCE.getAbstractDocumentStructureGeneratorConfiguration_ImageFolder();
@@ -1386,7 +1460,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Structure Folder</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		EAttribute ABSTRACT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION__STRUCTURE_FOLDER = eINSTANCE.getAbstractDocumentStructureGeneratorConfiguration_StructureFolder();
@@ -1395,7 +1469,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.AbstractDocumentGeneratorConfigurationImpl <em>Abstract Document Generator Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
+		 * 
 		 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.AbstractDocumentGeneratorConfigurationImpl
 		 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.GeneratorConfigurationPackageImpl#getAbstractDocumentGeneratorConfiguration()
 		 * @generated
@@ -1406,7 +1480,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Save Document Structure</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		EAttribute ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__SAVE_DOCUMENT_STRUCTURE = eINSTANCE.getAbstractDocumentGeneratorConfiguration_SaveDocumentStructure();
@@ -1415,7 +1489,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Save Images</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		EAttribute ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__SAVE_IMAGES = eINSTANCE.getAbstractDocumentGeneratorConfiguration_SaveImages();
@@ -1424,7 +1498,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Template File</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		EAttribute ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__TEMPLATE_FILE = eINSTANCE.getAbstractDocumentGeneratorConfiguration_TemplateFile();
@@ -1433,7 +1507,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Document Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		EAttribute ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__DOCUMENT_NAME = eINSTANCE.getAbstractDocumentGeneratorConfiguration_DocumentName();
@@ -1442,7 +1516,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Document Folder</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		EAttribute ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__DOCUMENT_FOLDER = eINSTANCE.getAbstractDocumentGeneratorConfiguration_DocumentFolder();
@@ -1451,7 +1525,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Document Generator Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		EAttribute ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__DOCUMENT_GENERATOR_ID = eINSTANCE.getAbstractDocumentGeneratorConfiguration_DocumentGeneratorId();
@@ -1460,7 +1534,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.IGeneratorConfiguration <em>IGenerator Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
+		 * 
 		 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.IGeneratorConfiguration
 		 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.GeneratorConfigurationPackageImpl#getIGeneratorConfiguration()
 		 * @generated
@@ -1471,7 +1545,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Get Document Name</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		EOperation IGENERATOR_CONFIGURATION___GET_DOCUMENT_NAME = eINSTANCE.getIGeneratorConfiguration__GetDocumentName();
@@ -1480,7 +1554,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Get Document Folder</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		EOperation IGENERATOR_CONFIGURATION___GET_DOCUMENT_FOLDER = eINSTANCE.getIGeneratorConfiguration__GetDocumentFolder();
@@ -1489,7 +1563,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Get Document Generator Id</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		EOperation IGENERATOR_CONFIGURATION___GET_DOCUMENT_GENERATOR_ID = eINSTANCE.getIGeneratorConfiguration__GetDocumentGeneratorId();
@@ -1498,7 +1572,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Set Document Name</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		EOperation IGENERATOR_CONFIGURATION___SET_DOCUMENT_NAME__STRING = eINSTANCE.getIGeneratorConfiguration__SetDocumentName__String();
@@ -1507,7 +1581,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration <em>IDocument Structure Generator Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
+		 * 
 		 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration
 		 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.GeneratorConfigurationPackageImpl#getIDocumentStructureGeneratorConfiguration()
 		 * @generated
@@ -1518,7 +1592,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Create Document Generator Configuration</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		EOperation IDOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___CREATE_DOCUMENT_GENERATOR_CONFIGURATION = eINSTANCE.getIDocumentStructureGeneratorConfiguration__CreateDocumentGeneratorConfiguration();
@@ -1527,7 +1601,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Get Structure Generator Id</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		EOperation IDOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___GET_STRUCTURE_GENERATOR_ID = eINSTANCE.getIDocumentStructureGeneratorConfiguration__GetStructureGeneratorId();
@@ -1536,7 +1610,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Get Image Folder</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		EOperation IDOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___GET_IMAGE_FOLDER = eINSTANCE.getIDocumentStructureGeneratorConfiguration__GetImageFolder();
@@ -1545,16 +1619,25 @@ public interface GeneratorConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Get Structure Folder</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		EOperation IDOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___GET_STRUCTURE_FOLDER = eINSTANCE.getIDocumentStructureGeneratorConfiguration__GetStructureFolder();
 
 		/**
+		 * The meta object literal for the '<em><b>Create Document Structure URI</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EOperation IDOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___CREATE_DOCUMENT_STRUCTURE_URI__STRING_STRING = eINSTANCE.getIDocumentStructureGeneratorConfiguration__CreateDocumentStructureURI__String_String();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration <em>IDocument Generator Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
+		 * 
 		 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration
 		 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.GeneratorConfigurationPackageImpl#getIDocumentGeneratorConfiguration()
 		 * @generated
@@ -1565,7 +1648,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Save Document Structure</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		EOperation IDOCUMENT_GENERATOR_CONFIGURATION___IS_SAVE_DOCUMENT_STRUCTURE = eINSTANCE.getIDocumentGeneratorConfiguration__IsSaveDocumentStructure();
@@ -1574,7 +1657,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Save Images</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		EOperation IDOCUMENT_GENERATOR_CONFIGURATION___IS_SAVE_IMAGES = eINSTANCE.getIDocumentGeneratorConfiguration__IsSaveImages();
@@ -1583,16 +1666,27 @@ public interface GeneratorConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Get Template File</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		EOperation IDOCUMENT_GENERATOR_CONFIGURATION___GET_TEMPLATE_FILE = eINSTANCE.getIDocumentGeneratorConfiguration__GetTemplateFile();
 
 		/**
+		 * The meta object literal for the '{@link org.eclipse.emf.common.util.URI <em>URI</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * 
+		 * @see org.eclipse.emf.common.util.URI
+		 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.GeneratorConfigurationPackageImpl#getURI()
+		 * @generated
+		 */
+		EClass URI = eINSTANCE.getURI();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.DefaultDocumentGeneratorConfigurationImpl <em>Default Document Generator Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 *
+		 * 
 		 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.DefaultDocumentGeneratorConfigurationImpl
 		 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.GeneratorConfigurationPackageImpl#getDefaultDocumentGeneratorConfiguration()
 		 * @generated

@@ -32,7 +32,7 @@ public interface IDocumentGeneratorConfiguration extends IGeneratorConfiguration
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
@@ -41,7 +41,7 @@ public interface IDocumentGeneratorConfiguration extends IGeneratorConfiguration
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
@@ -50,7 +50,7 @@ public interface IDocumentGeneratorConfiguration extends IGeneratorConfiguration
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */

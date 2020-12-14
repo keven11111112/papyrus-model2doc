@@ -29,7 +29,7 @@ public class DefaultDocumentGeneratorConfigurationImpl extends AbstractDocumentG
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected DefaultDocumentGeneratorConfigurationImpl() {
@@ -39,7 +39,7 @@ public class DefaultDocumentGeneratorConfigurationImpl extends AbstractDocumentG
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

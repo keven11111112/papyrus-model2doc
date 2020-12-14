@@ -41,11 +41,4 @@
             provider="Eclipse Modeling Project">
       </library>
    </extension>
-   <extension
-         point="org.eclipse.emf.ecore.factory_override">
-      <factory
-            class="org.eclipse.papyrus.model2doc.core.generatorconfiguration.internal.imp.CustomGeneratorConfigurationFactoryImpl"
-            uri="http://www.eclipse.org/papyrus/model2doc/1.0.0/generatorconfiguration">
-      </factory>
-   </extension>
 </plugin>

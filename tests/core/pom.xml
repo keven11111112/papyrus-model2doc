@@ -19,6 +19,7 @@
 
 	<modules>
 		<module>org.eclipse.papyrus.model2doc.core.author.tests</module>
+		<module>org.eclipse.papyrus.model2doc.core.generatorconfiguration.tests</module>
 	</modules>
 
 </project>

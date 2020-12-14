@@ -10,6 +10,34 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Default implementation to define the Document Structure generator.&#xD;&#xA;These is no inheritance between DefaultDocumentGeneratorConfiguration and DefaultDocumentStructureGeneratorConfiguration, in order to constraint by type the kind of generator to use the the DocumentStructureTemplate and DocumentStructure models."/>
     </eAnnotations>
+    <eAnnotations source="duplicates">
+      <contents xsi:type="ecore:EOperation" name="createDocumentStructureURI" ordered="false"
+          lowerBound="1" eType="#//URI">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The platform:/resource URI of the document structure to create or &lt;code>null&lt;/code> if we failed to create a valid URI"/>
+          <details key="body" value="return org.eclipse.papyrus.model2doc.core.generatorconfiguration.internal.operations.DefaultDocumentStructureGeneratorConfigurationOperations.createDocumentStructureURI(this,fileExtension,version);"/>
+        </eAnnotations>
+        <eAnnotations source="redefines" references="#//IDocumentStructureGeneratorConfiguration/createDocumentStructureURI"/>
+        <eParameters name="fileExtension" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="a string representing the extension of the document structure file to use. &#xD;&#xA;This parameter can't be null."/>
+          </eAnnotations>
+        </eParameters>
+        <eParameters name="version" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Optional parameter. A string indicating the version of the document. This string will be a part of the file name."/>
+          </eAnnotations>
+        </eParameters>
+      </contents>
+      <contents xsi:type="ecore:EOperation" name="createDocumentGeneratorConfiguration"
+          ordered="false" lowerBound="1" eType="#//IDocumentGeneratorConfiguration">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Creates a IDocumentGeneratorConfiguration from the current configuration."/>
+          <details key="body" value="return org.eclipse.papyrus.model2doc.core.generatorconfiguration.internal.operations.DefaultDocumentStructureGeneratorConfigurationOperations.createDocumentGeneratorConfiguration(this);"/>
+        </eAnnotations>
+        <eAnnotations source="redefines" references="#//IDocumentStructureGeneratorConfiguration/createDocumentGeneratorConfiguration"/>
+      </contents>
+    </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractDocumentStructureGeneratorConfiguration"
       abstract="true" eSuperTypes="#//AbstractDocumentGeneratorConfiguration">
@@ -89,13 +117,33 @@
   <eClassifiers xsi:type="ecore:EClass" name="IDocumentStructureGeneratorConfiguration"
       abstract="true" interface="true" eSuperTypes="#//IGeneratorConfiguration">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="Common Interface to define the Document Structure generatorto in the model."/>
+      <details key="documentation" value="Common Interface to define the Document Structure generator in the model."/>
     </eAnnotations>
     <eOperations name="createDocumentGeneratorConfiguration" ordered="false" lowerBound="1"
-        eType="#//IDocumentGeneratorConfiguration"/>
+        eType="#//IDocumentGeneratorConfiguration">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Creates a IDocumentGeneratorConfiguration from the current configuration."/>
+      </eAnnotations>
+    </eOperations>
     <eOperations name="getStructureGeneratorId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="getImageFolder" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="getStructureFolder" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations name="createDocumentStructureURI" ordered="false" lowerBound="1"
+        eType="#//URI">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The platform:/resource URI of the document structure to create or &lt;code>null&lt;/code> if we failed to create a valid URI"/>
+      </eAnnotations>
+      <eParameters name="fileExtension" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="a string representing the extension of the document structure file to use. &#xD;&#xA;This parameter can't be null."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="version" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Optional parameter. A string indicating the version of the document. This string will be a part of the file name."/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IDocumentGeneratorConfiguration" abstract="true"
       interface="true" eSuperTypes="#//IGeneratorConfiguration">
@@ -106,6 +154,8 @@
     <eOperations name="isSaveImages" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eOperations name="getTemplateFile" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="URI" instanceClassName="org.eclipse.emf.common.util.URI"
+      abstract="true" interface="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="DefaultDocumentGeneratorConfiguration"
       eSuperTypes="#//AbstractDocumentGeneratorConfiguration #//IDocumentGeneratorConfiguration">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

@@ -33,7 +33,7 @@ public interface IGeneratorConfiguration extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
@@ -42,7 +42,7 @@ public interface IGeneratorConfiguration extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
@@ -51,7 +51,7 @@ public interface IGeneratorConfiguration extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
@@ -60,7 +60,7 @@ public interface IGeneratorConfiguration extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @model documentNameRequired="true" documentNameOrdered="false"
 	 * @generated
 	 */

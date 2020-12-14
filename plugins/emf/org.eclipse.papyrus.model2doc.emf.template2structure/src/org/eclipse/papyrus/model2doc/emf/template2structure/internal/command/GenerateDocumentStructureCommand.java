@@ -18,6 +18,7 @@ package org.eclipse.papyrus.model2doc.emf.template2structure.internal.command;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
@@ -94,16 +95,20 @@ public class GenerateDocumentStructureCommand extends RecordingCommand {
 		if (document == null) {
 			return;
 		}
-		this.result.add(document);
 
-		// We create the new resource for this document
+		// 1. We create the new resource for this document
 		URI documentStructureURI = null;
 		final IDocumentStructureGeneratorConfiguration configuration = this.documentTemplate.getDocumentStructureGeneratorConfiguration();
 		if (null != configuration) {
 			final Version version = document.getVersion();
-			documentStructureURI = GeneratorConfigurationOperations.getDocumentStructureFileEcoreURI(configuration, DocumentStructureResource.FILE_EXTENSION, version != null ? version.getVersion() : null);
+			documentStructureURI = configuration.createDocumentStructureURI(DocumentStructureResource.FILE_EXTENSION, version != null ? version.getVersion() : null);
 		} else {
 			Activator.log.warn("The document structure can't be generated, the configuration is not defined in your model."); //$NON-NLS-1$
+			return;
+		}
+
+		if (documentStructureURI == null) {
+			Activator.log.warn("The document structure URI file can't be created."); //$NON-NLS-1$
 			return;
 		}
 
@@ -113,11 +118,13 @@ public class GenerateDocumentStructureCommand extends RecordingCommand {
 
 		structureResource.getContents().add(document);
 		try {
-			structureResource.save(null);// TODO : option for save ?
+			structureResource.save(Collections.emptyMap());
 		} catch (IOException e) {
 			Activator.log.error(e);
 		}
 
+		// 3. we set the result only at the end of the generation when all is OK
+		this.result.add(document);
 		refreshWorkspace();
 	}
 
@@ -167,6 +174,7 @@ public class GenerateDocumentStructureCommand extends RecordingCommand {
 	/**
 	 * This method refresh the project concerned by the DocumentStructure generation.
 	 */
+	// TODO : move me outside of the command
 	private static void refreshProjects(final DocumentTemplate documentTemplate) {
 		final Collection<String> projectsToRefresh = GeneratorConfigurationOperations.getWorkspaceProjectToRefresh(documentTemplate.getDocumentStructureGeneratorConfiguration());
 		for (final String current : projectsToRefresh) {

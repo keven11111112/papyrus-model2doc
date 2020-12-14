@@ -65,10 +65,13 @@ It can't be a system path (c:\myDocuments is not alloxed for example).</body>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_fUlRoFB6EemNlsOH2YnpzQ" name="IDocumentStructureGeneratorConfiguration">
       <ownedComment xmi:type="uml:Comment" xmi:id="_0_5HgFB6EemNlsOH2YnpzQ" annotatedElement="_fUlRoFB6EemNlsOH2YnpzQ">
-        <body>Common Interface to define the Document Structure generatorto in the model.</body>
+        <body>Common Interface to define the Document Structure generator in the model.</body>
       </ownedComment>
       <generalization xmi:type="uml:Generalization" xmi:id="__b06QF91EemxcMQajU1fyA" general="_67KS0F9yEemxcMQajU1fyA"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_Y7WrsE16EemE05tA7eq89g" name="createDocumentGeneratorConfiguration">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_ZkGeID4PEeuntfnsZuNAfg" annotatedElement="_Y7WrsE16EemE05tA7eq89g">
+          <body>Creates a IDocumentGeneratorConfiguration from the current configuration.</body>
+        </ownedComment>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_d5vRQE16EemE05tA7eq89g" name="return" type="_cN08EFB6EemNlsOH2YnpzQ" direction="return"/>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_3qUXsF9zEemxcMQajU1fyA" name="getStructureGeneratorId">
@@ -85,6 +88,26 @@ It can't be a system path (c:\myDocuments is not alloxed for example).</body>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_AwGbAF91EemxcMQajU1fyA" name="return " direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_7_d_wD4HEeufs8vjtFQYVQ" name="createDocumentStructureURI">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_rRvW0D4KEeux05jxrKZ5Sw" annotatedElement="_7_d_wD4HEeufs8vjtFQYVQ">
+          <body>The platform:/resource URI of the document structure to create or &lt;code>null&lt;/code> if we failed to create a valid URI</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_LyU0gD4IEeufs8vjtFQYVQ" name="fileExtension">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_4cm1oD4KEeux05jxrKZ5Sw" annotatedElement="_LyU0gD4IEeufs8vjtFQYVQ">
+            <body>a string representing the extension of the document structure file to use. &#xD;
+This parameter can't be null.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_HqifwD4IEeufs8vjtFQYVQ" name="version">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_-dWQED4KEeux05jxrKZ5Sw" annotatedElement="_HqifwD4IEeufs8vjtFQYVQ">
+            <body>Optional parameter. A string indicating the version of the document. This string will be a part of the file name.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zmVqQD4KEeux05jxrKZ5Sw"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_U5J2ID4IEeufs8vjtFQYVQ" name="URI" type="_zoA6sD4JEeux05jxrKZ5Sw" direction="return"/>
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_5Tg7AFCJEemNlsOH2YnpzQ" name="AbstractDocumentGeneratorConfiguration" isAbstract="true">
@@ -138,6 +161,38 @@ It can't be a system path (c:\myDocuments is not alloxed for example).</body>
     <packagedElement xmi:type="uml:Class" xmi:id="_P3A9IFCKEemNlsOH2YnpzQ" name="DefaultDocumentStructureGeneratorConfiguration">
       <generalization xmi:type="uml:Generalization" xmi:id="_XHEqYFCKEemNlsOH2YnpzQ" general="_PyJqUE1gEemE05tA7eq89g"/>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_nZY58FCYEemNlsOH2YnpzQ" client="_P3A9IFCKEemNlsOH2YnpzQ" supplier="_fUlRoFB6EemNlsOH2YnpzQ" contract="_fUlRoFB6EemNlsOH2YnpzQ"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PwhoED4LEeux05jxrKZ5Sw" name="createDocumentStructureURI" redefinedOperation="_7_d_wD4HEeufs8vjtFQYVQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SRhlMD4LEeux05jxrKZ5Sw" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_kNNusD4LEeux05jxrKZ5Sw" key="body" value="return org.eclipse.papyrus.model2doc.core.generatorconfiguration.internal.operations.DefaultDocumentStructureGeneratorConfigurationOperations.createDocumentStructureURI(this,fileExtension,version);"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_PwhoET4LEeux05jxrKZ5Sw" annotatedElement="_PwhoED4LEeux05jxrKZ5Sw">
+          <body>The platform:/resource URI of the document structure to create or &lt;code>null&lt;/code> if we failed to create a valid URI</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PwhoEj4LEeux05jxrKZ5Sw" name="fileExtension">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_PwhoEz4LEeux05jxrKZ5Sw" annotatedElement="_PwhoEj4LEeux05jxrKZ5Sw">
+            <body>a string representing the extension of the document structure file to use. &#xD;
+This parameter can't be null.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PwhoFD4LEeux05jxrKZ5Sw" name="version">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_PwhoFT4LEeux05jxrKZ5Sw" annotatedElement="_PwhoFD4LEeux05jxrKZ5Sw">
+            <body>Optional parameter. A string indicating the version of the document. This string will be a part of the file name.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PwhoFj4LEeux05jxrKZ5Sw"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PwhoFz4LEeux05jxrKZ5Sw" name="URI" type="_zoA6sD4JEeux05jxrKZ5Sw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_fWRjAD4NEeux05jxrKZ5Sw" name="createDocumentGeneratorConfiguration" redefinedOperation="_Y7WrsE16EemE05tA7eq89g">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ioZbED4NEeux05jxrKZ5Sw" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ioZbET4NEeux05jxrKZ5Sw" key="body" value="return org.eclipse.papyrus.model2doc.core.generatorconfiguration.internal.operations.DefaultDocumentStructureGeneratorConfigurationOperations.createDocumentGeneratorConfiguration(this);"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_puH1sD4PEeuntfnsZuNAfg" annotatedElement="_fWRjAD4NEeux05jxrKZ5Sw">
+          <body>Creates a IDocumentGeneratorConfiguration from the current configuration.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_fWRjAT4NEeux05jxrKZ5Sw" name="return" type="_cN08EFB6EemNlsOH2YnpzQ" direction="return"/>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_67KS0F9yEemxcMQajU1fyA" name="IGeneratorConfiguration">
       <ownedComment xmi:type="uml:Comment" xmi:id="_yAG_EE15EemE05tA7eq89g" annotatedElement="_67KS0F9yEemxcMQajU1fyA">
@@ -164,6 +219,7 @@ It can't be a system path (c:\myDocuments is not alloxed for example).</body>
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_zoA6sD4JEeux05jxrKZ5Sw" name="URI"/>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_ttYQgE13EemE05tA7eq89g">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ttiBgE13EemE05tA7eq89g" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>
@@ -172,4 +228,5 @@ It can't be a system path (c:\myDocuments is not alloxed for example).</body>
     </profileApplication>
   </uml:Model>
   <Ecore:EPackage xmi:id="_Cv3EcE17EemE05tA7eq89g" base_Package="_sirwEE1YEem_xbrXUzuwJg" packageName="generatorconfiguration" nsPrefix="generatorconfiguration" basePackage="org.eclipse.papyrus.model2doc.core" prefix="GeneratorConfiguration"/>
+  <Ecore:EClass xmi:id="_7OJloD4JEeux05jxrKZ5Sw" instanceClassName="org.eclipse.emf.common.util.URI" base_Interface="_zoA6sD4JEeux05jxrKZ5Sw" className="URI"/>
 </xmi:XMI>

@@ -13,6 +13,8 @@
  */
 package org.eclipse.papyrus.model2doc.core.generatorconfiguration;
 
+import org.eclipse.emf.common.util.URI;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +22,7 @@ package org.eclipse.papyrus.model2doc.core.generatorconfiguration;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Common Interface to define the Document Structure generatorto in the model.
+ * Common Interface to define the Document Structure generator in the model.
  * <!-- end-model-doc -->
  *
  *
@@ -32,6 +34,9 @@ public interface IDocumentStructureGeneratorConfiguration extends IGeneratorConf
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Creates a IDocumentGeneratorConfiguration from the current configuration.
+	 * <!-- end-model-doc -->
 	 *
 	 * @model required="true" ordered="false"
 	 * @generated
@@ -64,5 +69,22 @@ public interface IDocumentStructureGeneratorConfiguration extends IGeneratorConf
 	 * @generated
 	 */
 	String getStructureFolder();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The platform:/resource URI of the document structure to create or <code>null</code> if we failed to create a valid URI
+	 *
+	 * @param fileExtension
+	 *            a string representing the extension of the document structure file to use.
+	 *            This parameter can't be null.
+	 * @param version
+	 *            Optional parameter. A string indicating the version of the document. This string will be a part of the file name.
+	 *            <!-- end-model-doc -->
+	 * @model type="org.eclipse.papyrus.model2doc.core.generatorconfiguration.URI" required="true" ordered="false" fileExtensionRequired="true" fileExtensionOrdered="false" versionOrdered="false"
+	 * @generated
+	 */
+	URI createDocumentStructureURI(String fileExtension, String version);
 
 } // IDocumentStructureGeneratorConfiguration

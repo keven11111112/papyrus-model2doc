@@ -27,7 +27,7 @@ import org.eclipse.papyrus.model2doc.core.generatorconfiguration.*;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public class GeneratorConfigurationFactoryImpl extends EFactoryImpl implements GeneratorConfigurationFactory {
@@ -35,7 +35,7 @@ public class GeneratorConfigurationFactoryImpl extends EFactoryImpl implements G
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public static GeneratorConfigurationFactory init() {
@@ -54,7 +54,7 @@ public class GeneratorConfigurationFactoryImpl extends EFactoryImpl implements G
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public GeneratorConfigurationFactoryImpl() {
@@ -64,7 +64,7 @@ public class GeneratorConfigurationFactoryImpl extends EFactoryImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -82,7 +82,7 @@ public class GeneratorConfigurationFactoryImpl extends EFactoryImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -94,7 +94,7 @@ public class GeneratorConfigurationFactoryImpl extends EFactoryImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -106,7 +106,7 @@ public class GeneratorConfigurationFactoryImpl extends EFactoryImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -117,7 +117,7 @@ public class GeneratorConfigurationFactoryImpl extends EFactoryImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @deprecated
 	 * @generated
 	 */

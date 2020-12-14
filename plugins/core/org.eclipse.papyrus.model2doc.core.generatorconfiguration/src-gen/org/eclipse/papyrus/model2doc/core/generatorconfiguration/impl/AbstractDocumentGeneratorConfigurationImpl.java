@@ -46,7 +46,7 @@ public abstract class AbstractDocumentGeneratorConfigurationImpl extends Minimal
 	 * The default value of the '{@link #isSaveDocumentStructure() <em>Save Document Structure</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #isSaveDocumentStructure()
 	 * @generated
 	 * @ordered
@@ -57,7 +57,7 @@ public abstract class AbstractDocumentGeneratorConfigurationImpl extends Minimal
 	 * The cached value of the '{@link #isSaveDocumentStructure() <em>Save Document Structure</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #isSaveDocumentStructure()
 	 * @generated
 	 * @ordered
@@ -68,7 +68,7 @@ public abstract class AbstractDocumentGeneratorConfigurationImpl extends Minimal
 	 * The default value of the '{@link #isSaveImages() <em>Save Images</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #isSaveImages()
 	 * @generated
 	 * @ordered
@@ -79,7 +79,7 @@ public abstract class AbstractDocumentGeneratorConfigurationImpl extends Minimal
 	 * The cached value of the '{@link #isSaveImages() <em>Save Images</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #isSaveImages()
 	 * @generated
 	 * @ordered
@@ -90,7 +90,7 @@ public abstract class AbstractDocumentGeneratorConfigurationImpl extends Minimal
 	 * The default value of the '{@link #getTemplateFile() <em>Template File</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getTemplateFile()
 	 * @generated
 	 * @ordered
@@ -101,7 +101,7 @@ public abstract class AbstractDocumentGeneratorConfigurationImpl extends Minimal
 	 * The cached value of the '{@link #getTemplateFile() <em>Template File</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getTemplateFile()
 	 * @generated
 	 * @ordered
@@ -112,7 +112,7 @@ public abstract class AbstractDocumentGeneratorConfigurationImpl extends Minimal
 	 * The default value of the '{@link #getDocumentName() <em>Document Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getDocumentName()
 	 * @generated
 	 * @ordered
@@ -123,7 +123,7 @@ public abstract class AbstractDocumentGeneratorConfigurationImpl extends Minimal
 	 * The cached value of the '{@link #getDocumentName() <em>Document Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getDocumentName()
 	 * @generated
 	 * @ordered
@@ -134,7 +134,7 @@ public abstract class AbstractDocumentGeneratorConfigurationImpl extends Minimal
 	 * The default value of the '{@link #getDocumentFolder() <em>Document Folder</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getDocumentFolder()
 	 * @generated
 	 * @ordered
@@ -145,7 +145,7 @@ public abstract class AbstractDocumentGeneratorConfigurationImpl extends Minimal
 	 * The cached value of the '{@link #getDocumentFolder() <em>Document Folder</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getDocumentFolder()
 	 * @generated
 	 * @ordered
@@ -156,7 +156,7 @@ public abstract class AbstractDocumentGeneratorConfigurationImpl extends Minimal
 	 * The default value of the '{@link #getDocumentGeneratorId() <em>Document Generator Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getDocumentGeneratorId()
 	 * @generated
 	 * @ordered
@@ -167,7 +167,7 @@ public abstract class AbstractDocumentGeneratorConfigurationImpl extends Minimal
 	 * The cached value of the '{@link #getDocumentGeneratorId() <em>Document Generator Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getDocumentGeneratorId()
 	 * @generated
 	 * @ordered
@@ -177,7 +177,7 @@ public abstract class AbstractDocumentGeneratorConfigurationImpl extends Minimal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected AbstractDocumentGeneratorConfigurationImpl() {
@@ -187,7 +187,7 @@ public abstract class AbstractDocumentGeneratorConfigurationImpl extends Minimal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -198,7 +198,7 @@ public abstract class AbstractDocumentGeneratorConfigurationImpl extends Minimal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -209,22 +209,21 @@ public abstract class AbstractDocumentGeneratorConfigurationImpl extends Minimal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setSaveDocumentStructure(boolean newSaveDocumentStructure) {
 		boolean oldSaveDocumentStructure = saveDocumentStructure;
 		saveDocumentStructure = newSaveDocumentStructure;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GeneratorConfigurationPackage.ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__SAVE_DOCUMENT_STRUCTURE, oldSaveDocumentStructure, saveDocumentStructure));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -235,22 +234,21 @@ public abstract class AbstractDocumentGeneratorConfigurationImpl extends Minimal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setSaveImages(boolean newSaveImages) {
 		boolean oldSaveImages = saveImages;
 		saveImages = newSaveImages;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GeneratorConfigurationPackage.ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__SAVE_IMAGES, oldSaveImages, saveImages));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -261,22 +259,21 @@ public abstract class AbstractDocumentGeneratorConfigurationImpl extends Minimal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setTemplateFile(String newTemplateFile) {
 		String oldTemplateFile = templateFile;
 		templateFile = newTemplateFile;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GeneratorConfigurationPackage.ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__TEMPLATE_FILE, oldTemplateFile, templateFile));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -287,22 +284,21 @@ public abstract class AbstractDocumentGeneratorConfigurationImpl extends Minimal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setDocumentName(String newDocumentName) {
 		String oldDocumentName = documentName;
 		documentName = newDocumentName;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GeneratorConfigurationPackage.ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__DOCUMENT_NAME, oldDocumentName, documentName));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -313,22 +309,21 @@ public abstract class AbstractDocumentGeneratorConfigurationImpl extends Minimal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setDocumentFolder(String newDocumentFolder) {
 		String oldDocumentFolder = documentFolder;
 		documentFolder = newDocumentFolder;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GeneratorConfigurationPackage.ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__DOCUMENT_FOLDER, oldDocumentFolder, documentFolder));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -339,22 +334,21 @@ public abstract class AbstractDocumentGeneratorConfigurationImpl extends Minimal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setDocumentGeneratorId(String newDocumentGeneratorId) {
 		String oldDocumentGeneratorId = documentGeneratorId;
 		documentGeneratorId = newDocumentGeneratorId;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GeneratorConfigurationPackage.ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION__DOCUMENT_GENERATOR_ID, oldDocumentGeneratorId, documentGeneratorId));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -379,7 +373,7 @@ public abstract class AbstractDocumentGeneratorConfigurationImpl extends Minimal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -410,7 +404,7 @@ public abstract class AbstractDocumentGeneratorConfigurationImpl extends Minimal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -441,7 +435,7 @@ public abstract class AbstractDocumentGeneratorConfigurationImpl extends Minimal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -466,14 +460,13 @@ public abstract class AbstractDocumentGeneratorConfigurationImpl extends Minimal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (saveDocumentStructure: "); //$NON-NLS-1$
