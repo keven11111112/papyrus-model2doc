@@ -153,13 +153,28 @@
     <eOperations name="isSaveDocumentStructure" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eOperations name="isSaveImages" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eOperations name="getTemplateFile" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations name="createTemplateFileURL" ordered="false" lowerBound="1" eType="#//URL">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Create a java.net.URL to access to the template or null if it don't exist."/>
+      </eAnnotations>
+    </eOperations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="URI" instanceClassName="org.eclipse.emf.common.util.URI"
-      abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="URL" instanceClassName="java.net.URL"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="URI" instanceClassName="org.eclipse.emf.common.util.URI"/>
   <eClassifiers xsi:type="ecore:EClass" name="DefaultDocumentGeneratorConfiguration"
       eSuperTypes="#//AbstractDocumentGeneratorConfiguration #//IDocumentGeneratorConfiguration">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Default implementation to define the DocumentGeneratorConfiguration.&#xD;&#xA;These is no inheritance between DefaultDocumentGeneratorConfiguration and DefaultDocumentStructureGeneratorConfiguration, in order to constraint by type the kind of generator to use the the DocumentStructureTemplate and DocumentStructure models."/>
+    </eAnnotations>
+    <eAnnotations source="duplicates">
+      <contents xsi:type="ecore:EOperation" name="createTemplateFileURL" ordered="false"
+          lowerBound="1" eType="#//URL">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Create a java.net.URL to access to the template or null if it don't exist."/>
+          <details key="body" value="return org.eclipse.papyrus.model2doc.core.generatorconfiguration.internal.operations.DefaultDocumentGeneratorConfigurationOperations.createTemplateFileURL(this);"/>
+        </eAnnotations>
+        <eAnnotations source="redefines" references="#//IDocumentGeneratorConfiguration/createTemplateFileURL"/>
+      </contents>
     </eAnnotations>
   </eClassifiers>
 </ecore:EPackage>

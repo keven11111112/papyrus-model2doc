@@ -64,7 +64,6 @@ Children of the '''TextDocumentTemplate''':
 ***''platform:/resource/aPluginName/aFolderName/myTemplatefile'' : the template is located in an Eclipse project of the workspace
 ***''folder1/folder2/myTemplateFile'': interpreted as ''platform:/resource/currentPluginName/folder1/folder2/myTemplateFile'' : template owned by the current Eclipse project
 ***''platform:/plugin/aPluginName/aFolderName/myTemplatefile'' : the template is located in an installed Eclipse plugin
-***''OS file system ''C:\aFolder\myTemplatefile'': the template is located somewhere in the file sytem
 *'''TableOfContents''': this element is used to declare that you want a Table Of Contents
 **'''TocTitle''': the title to use for the TableOfContents. If nothing is defined, the table of contents will be name ''Table Of Contents'' in the generated file
 *'''TableOfFigures''': this element is used to declare that you want a Table Of Fiures

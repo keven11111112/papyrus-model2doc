@@ -12,7 +12,7 @@
  * 	 Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - Initial API and implementation
  *   Vincent LORENZO (CEA LIST) vincent.lorenzo@cea.fr - bug 569059
  * 	 Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - Bug 569249
- *
+ *   Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - bug 569817
  *****************************************************************************/
 package org.eclipse.papyrus.model2doc.docx.internal.transcription;
 
@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.math.BigInteger;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -118,12 +119,12 @@ public class DocxTranscription implements Transcription {
 	 * @throws InvalidFormatException
 	 */
 	private InputStream getFileWithTemplateLoaded() throws IOException, InvalidFormatException {
-		String templateURI = GeneratorConfigurationOperations.getTemplateFilePathInLocalPath(docxGeneratorConfig);
-		if (templateURI != null) {
-			templateURI = templateURI.replaceFirst(ECORE_FILE_PREFIX, EMPTY_STRING);
+		final URL templateURL = this.docxGeneratorConfig.createTemplateFileURL();
+
+		if (templateURL != null) {
 			String destURI = GeneratorConfigurationOperations.getDocumentFileLocalPath(docxGeneratorConfig, DOCX_FILE_EXTENTION);
 			destURI = destURI.replaceFirst(ECORE_FILE_PREFIX, EMPTY_STRING);
-			FileInputStream templateIS = new FileInputStream(templateURI);
+			InputStream templateIS = templateURL.openStream();
 			FileOutputStream destIS = new FileOutputStream(destURI);
 
 			OPCPackage pkg = OPCPackage.open(templateIS);

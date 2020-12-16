@@ -40,6 +40,8 @@
   <genPackages xsi:type="genmodel:GenPackage" prefix="GeneratorConfiguration" basePackage="org.eclipse.papyrus.model2doc.core"
       disposableProviderFactory="true" extensibleProviderFactory="true" childCreationExtenders="true"
       ecorePackage="generatorconfiguration.ecore#/">
+    <genDataTypes xsi:type="genmodel:GenDataType" ecoreDataType="generatorconfiguration.ecore#//URL"/>
+    <genDataTypes xsi:type="genmodel:GenDataType" ecoreDataType="generatorconfiguration.ecore#//URI"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="generatorconfiguration.ecore#//DefaultDocumentStructureGeneratorConfiguration"/>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="generatorconfiguration.ecore#//AbstractDocumentStructureGeneratorConfiguration">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute generatorconfiguration.ecore#//AbstractDocumentStructureGeneratorConfiguration/structureGeneratorId"/>
@@ -76,8 +78,8 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="generatorconfiguration.ecore#//IDocumentGeneratorConfiguration/isSaveDocumentStructure"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="generatorconfiguration.ecore#//IDocumentGeneratorConfiguration/isSaveImages"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="generatorconfiguration.ecore#//IDocumentGeneratorConfiguration/getTemplateFile"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="generatorconfiguration.ecore#//IDocumentGeneratorConfiguration/createTemplateFileURL"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="generatorconfiguration.ecore#//URI"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="generatorconfiguration.ecore#//DefaultDocumentGeneratorConfiguration"/>
   </genPackages>
 </genmodel:GenModel>

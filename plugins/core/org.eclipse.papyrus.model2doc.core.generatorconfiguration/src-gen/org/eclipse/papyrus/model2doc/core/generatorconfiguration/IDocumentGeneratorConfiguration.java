@@ -13,6 +13,8 @@
  */
 package org.eclipse.papyrus.model2doc.core.generatorconfiguration;
 
+import java.net.URL;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -32,7 +34,7 @@ public interface IDocumentGeneratorConfiguration extends IGeneratorConfiguration
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
@@ -41,7 +43,7 @@ public interface IDocumentGeneratorConfiguration extends IGeneratorConfiguration
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
@@ -50,10 +52,22 @@ public interface IDocumentGeneratorConfiguration extends IGeneratorConfiguration
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
 	String getTemplateFile();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Create a java.net.URL to access to the template or null if it don't exist.
+	 * <!-- end-model-doc -->
+	 *
+	 * @model dataType="org.eclipse.papyrus.model2doc.core.generatorconfiguration.URL" required="true" ordered="false"
+	 * @generated
+	 */
+	URL createTemplateFileURL();
 
 } // IDocumentGeneratorConfiguration

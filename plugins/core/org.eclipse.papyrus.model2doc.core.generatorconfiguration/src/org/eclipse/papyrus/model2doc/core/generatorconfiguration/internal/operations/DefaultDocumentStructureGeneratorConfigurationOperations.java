@@ -86,7 +86,7 @@ public final class DefaultDocumentStructureGeneratorConfigurationOperations {
 		final String scheme = uri.scheme(); // Windows C: for example
 
 		if (null != scheme && false == scheme.isEmpty() && !uri.isPlatform()) {
-			Activator.log.warn(NLS.bind("A such path for DocumentStructure is not supported, path= ", uri.toString())); //$NON-NLS-1$
+			Activator.log.warn(NLS.bind("A such path for DocumentStructure is not supported, path= {0} ", uri.toString())); //$NON-NLS-1$
 			return null;
 		}
 

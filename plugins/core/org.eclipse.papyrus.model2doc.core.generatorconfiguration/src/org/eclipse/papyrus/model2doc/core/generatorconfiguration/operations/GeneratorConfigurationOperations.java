@@ -11,6 +11,7 @@
  * Contributors:
  *    Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *    Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - bug 569382
+ *    Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - bug 569817
  *****************************************************************************/
 
 package org.eclipse.papyrus.model2doc.core.generatorconfiguration.operations;
@@ -226,18 +227,6 @@ public class GeneratorConfigurationOperations {
 		}
 
 		return projectsToRefresh;
-	}
-
-
-	/**
-	 *
-	 * @param configuration
-	 *            the generator configuration
-	 * @return
-	 *         the file uri as local path (in C:/ for windows), prefixed with file:/
-	 */
-	public static final String getTemplateFilePathInLocalPath(final IDocumentGeneratorConfiguration configuration) {
-		return getFilePathInLocalPath(configuration, configuration.getTemplateFile());
 	}
 
 	/**

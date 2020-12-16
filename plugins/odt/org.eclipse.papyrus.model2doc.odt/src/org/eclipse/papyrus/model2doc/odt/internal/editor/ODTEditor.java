@@ -12,6 +12,7 @@
  *  Yupanqui Munoz (CEA LIST) yupanqui.munozjulho@cea.fr - Initial API and implementation
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - bug 559826
+ *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - bug 569817
  *****************************************************************************/
 package org.eclipse.papyrus.model2doc.odt.internal.editor;
 
@@ -118,7 +119,7 @@ public class ODTEditor {
 		if (officeLoader != null) {
 			// Create text document
 			fileIOService = new ODTFileIOServiceImpl();
-			final String templateURL = GeneratorConfigurationOperations.getTemplateFilePathInLocalPath(generatorConfig);
+			final String templateURL = generatorConfig.createTemplateFileURL().toString();
 			createTextDocument(templateURL);
 			xMultiServiceFactory = UnoRuntime.queryInterface(XMultiServiceFactory.class, xTextDocument);
 			try {

@@ -13,6 +13,15 @@
       </ownedComment>
       <generalization xmi:type="uml:Generalization" xmi:id="_MWW50FCKEemNlsOH2YnpzQ" general="_5Tg7AFCJEemNlsOH2YnpzQ"/>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_oKUnoFCYEemNlsOH2YnpzQ" client="_TQ7eUE1gEemE05tA7eq89g" supplier="_cN08EFB6EemNlsOH2YnpzQ" contract="_cN08EFB6EemNlsOH2YnpzQ"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_J78tEEBKEeugb8n0tn-ypw" name="createTemplateFileURL" redefinedOperation="_rfhm4EBJEeugb8n0tn-ypw">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_i2WVIEBKEeugb8n0tn-ypw" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_joNP4EBKEeugb8n0tn-ypw" key="body" value="return org.eclipse.papyrus.model2doc.core.generatorconfiguration.internal.operations.DefaultDocumentGeneratorConfigurationOperations.createTemplateFileURL(this);"/>
+        </eAnnotations>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_J78tEUBKEeugb8n0tn-ypw" annotatedElement="_J78tEEBKEeugb8n0tn-ypw">
+          <body>Create a java.net.URL to access to the template or null if it don't exist.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_J78tEkBKEeugb8n0tn-ypw" name="return" type="_bH3iUEBREeugb8n0tn-ypw" direction="return"/>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_PyJqUE1gEemE05tA7eq89g" name="AbstractDocumentStructureGeneratorConfiguration" isAbstract="true">
       <ownedComment xmi:type="uml:Comment" xmi:id="_U0gyIE16EemE05tA7eq89g" annotatedElement="_P3A9IFCKEemNlsOH2YnpzQ">
@@ -62,6 +71,12 @@ It can't be a system path (c:\myDocuments is not alloxed for example).</body>
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_rfhm4EBJEeugb8n0tn-ypw" name="createTemplateFileURL">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_En9D4EBKEeugb8n0tn-ypw" annotatedElement="_rfhm4EBJEeugb8n0tn-ypw">
+          <body>Create a java.net.URL to access to the template or null if it don't exist.</body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_96EPkEBJEeugb8n0tn-ypw" name="return" type="_bH3iUEBREeugb8n0tn-ypw" direction="return"/>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_fUlRoFB6EemNlsOH2YnpzQ" name="IDocumentStructureGeneratorConfiguration">
       <ownedComment xmi:type="uml:Comment" xmi:id="_0_5HgFB6EemNlsOH2YnpzQ" annotatedElement="_fUlRoFB6EemNlsOH2YnpzQ">
@@ -107,7 +122,7 @@ This parameter can't be null.</body>
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zmVqQD4KEeux05jxrKZ5Sw"/>
         </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_U5J2ID4IEeufs8vjtFQYVQ" name="URI" type="_zoA6sD4JEeux05jxrKZ5Sw" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_U5J2ID4IEeufs8vjtFQYVQ" name="URI" type="_DkkaoEBSEeugb8n0tn-ypw" direction="return"/>
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_5Tg7AFCJEemNlsOH2YnpzQ" name="AbstractDocumentGeneratorConfiguration" isAbstract="true">
@@ -182,7 +197,7 @@ This parameter can't be null.</body>
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PwhoFj4LEeux05jxrKZ5Sw"/>
         </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PwhoFz4LEeux05jxrKZ5Sw" name="URI" type="_zoA6sD4JEeux05jxrKZ5Sw" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PwhoFz4LEeux05jxrKZ5Sw" name="URI" type="_DkkaoEBSEeugb8n0tn-ypw" direction="return"/>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_fWRjAD4NEeux05jxrKZ5Sw" name="createDocumentGeneratorConfiguration" redefinedOperation="_Y7WrsE16EemE05tA7eq89g">
         <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ioZbED4NEeux05jxrKZ5Sw" source="http://www.eclipse.org/emf/2002/GenModel">
@@ -219,7 +234,8 @@ This parameter can't be null.</body>
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
-    <packagedElement xmi:type="uml:Interface" xmi:id="_zoA6sD4JEeux05jxrKZ5Sw" name="URI"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_bH3iUEBREeugb8n0tn-ypw" name="URL"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_DkkaoEBSEeugb8n0tn-ypw" name="URI"/>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_ttYQgE13EemE05tA7eq89g">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ttiBgE13EemE05tA7eq89g" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>
@@ -228,5 +244,6 @@ This parameter can't be null.</body>
     </profileApplication>
   </uml:Model>
   <Ecore:EPackage xmi:id="_Cv3EcE17EemE05tA7eq89g" base_Package="_sirwEE1YEem_xbrXUzuwJg" packageName="generatorconfiguration" nsPrefix="generatorconfiguration" basePackage="org.eclipse.papyrus.model2doc.core" prefix="GeneratorConfiguration"/>
-  <Ecore:EClass xmi:id="_7OJloD4JEeux05jxrKZ5Sw" instanceClassName="org.eclipse.emf.common.util.URI" base_Interface="_zoA6sD4JEeux05jxrKZ5Sw" className="URI"/>
+  <Ecore:EDataType xmi:id="_dpysgEBREeugb8n0tn-ypw" instanceClassName="java.net.URL" base_PrimitiveType="_bH3iUEBREeugb8n0tn-ypw" dataTypeName="URL"/>
+  <Ecore:EDataType xmi:id="_GSq_oEBSEeugb8n0tn-ypw" instanceClassName="org.eclipse.emf.common.util.URI" base_PrimitiveType="_DkkaoEBSEeugb8n0tn-ypw" dataTypeName="URI"/>
 </xmi:XMI>

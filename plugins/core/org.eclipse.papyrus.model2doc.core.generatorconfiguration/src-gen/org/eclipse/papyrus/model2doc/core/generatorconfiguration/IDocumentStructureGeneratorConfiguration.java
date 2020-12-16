@@ -82,7 +82,7 @@ public interface IDocumentStructureGeneratorConfiguration extends IGeneratorConf
 	 * @param version
 	 *            Optional parameter. A string indicating the version of the document. This string will be a part of the file name.
 	 *            <!-- end-model-doc -->
-	 * @model type="org.eclipse.papyrus.model2doc.core.generatorconfiguration.URI" required="true" ordered="false" fileExtensionRequired="true" fileExtensionOrdered="false" versionOrdered="false"
+	 * @model dataType="org.eclipse.papyrus.model2doc.core.generatorconfiguration.URI" required="true" ordered="false" fileExtensionRequired="true" fileExtensionOrdered="false" versionOrdered="false"
 	 * @generated
 	 */
 	URI createDocumentStructureURI(String fileExtension, String version);

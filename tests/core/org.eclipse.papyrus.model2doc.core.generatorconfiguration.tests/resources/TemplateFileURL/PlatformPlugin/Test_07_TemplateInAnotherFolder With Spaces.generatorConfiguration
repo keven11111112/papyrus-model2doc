@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<generatorconfiguration:DefaultDocumentGeneratorConfiguration
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:generatorconfiguration="http://www.eclipse.org/papyrus/model2doc/1.0.0/generatorconfiguration"
+    templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.core.generatorconfiguration.tests/resources/TemplateFileURL/PlatformPlugin/AnotherFolder With Spaces/Test_07_TemplateInAnotherFolder With Spaces.dotx"/>

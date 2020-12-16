@@ -21,9 +21,10 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * This class checks the methods provided by the elements of the metamodel
+ * This class checks the method {@link DefaultDocumentStructureGeneratorConfiguration#createDocumentStructureURI(String, String)}
+ *
  */
-public class GeneratorConfigurationTest extends AbstractGeneratorConfigurationTests {
+public class DocumentGeneratorConfigurationCreationTest extends AbstractGeneratorConfigurationTests {
 
 	/**
 	 * This method checks the method {@link DefaultDocumentStructureGeneratorConfiguration#createDocumentGeneratorConfiguration()}
@@ -31,7 +32,7 @@ public class GeneratorConfigurationTest extends AbstractGeneratorConfigurationTe
 	 */
 	@Test
 	public void createDocumentGeneratorConfiguration_Test1() {
-		final DefaultDocumentStructureGeneratorConfiguration defaultConf = createDocumentGeneratorConfiguration();
+		final DefaultDocumentStructureGeneratorConfiguration defaultConf = createDocumentStructureGeneratorConfiguration();
 
 		final IDocumentGeneratorConfiguration conf = defaultConf.createDocumentGeneratorConfiguration();
 		Assert.assertNotNull("The creation of DocumentGeneratorConfiguration failed", conf); //$NON-NLS-1$
@@ -44,7 +45,7 @@ public class GeneratorConfigurationTest extends AbstractGeneratorConfigurationTe
 	 */
 	@Test
 	public void createDocumentGeneratorConfiguration_Test2() {
-		final DefaultDocumentStructureGeneratorConfiguration defaultConf = createDocumentGeneratorConfiguration();
+		final DefaultDocumentStructureGeneratorConfiguration defaultConf = createDocumentStructureGeneratorConfiguration();
 
 		// we test with the other boolean value
 		defaultConf.setSaveDocumentStructure(!defaultConf.isSaveDocumentStructure());

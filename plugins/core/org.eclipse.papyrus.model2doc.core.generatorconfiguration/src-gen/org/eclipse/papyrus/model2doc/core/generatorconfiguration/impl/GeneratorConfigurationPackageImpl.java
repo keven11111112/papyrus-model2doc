@@ -15,6 +15,7 @@ package org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -34,14 +35,14 @@ import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IGeneratorConfi
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class GeneratorConfigurationPackageImpl extends EPackageImpl implements GeneratorConfigurationPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass defaultDocumentStructureGeneratorConfigurationEClass = null;
@@ -49,7 +50,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass abstractDocumentStructureGeneratorConfigurationEClass = null;
@@ -57,7 +58,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass abstractDocumentGeneratorConfigurationEClass = null;
@@ -65,7 +66,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass iGeneratorConfigurationEClass = null;
@@ -73,7 +74,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass iDocumentStructureGeneratorConfigurationEClass = null;
@@ -81,7 +82,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass iDocumentGeneratorConfigurationEClass = null;
@@ -89,18 +90,26 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	private EClass uriEClass = null;
+	private EClass defaultDocumentGeneratorConfigurationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	private EClass defaultDocumentGeneratorConfigurationEClass = null;
+	private EDataType urlEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EDataType uriEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -113,7 +122,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	 * if one already exists.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationPackage#eNS_URI
 	 * @see #init()
@@ -126,7 +135,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -139,15 +148,16 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static GeneratorConfigurationPackage init() {
-		if (isInited)
+		if (isInited) {
 			return (GeneratorConfigurationPackage) EPackage.Registry.INSTANCE.getEPackage(GeneratorConfigurationPackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
 		Object registeredGeneratorConfigurationPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
@@ -173,7 +183,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -184,7 +194,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -195,7 +205,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -206,7 +216,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -217,7 +227,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -228,7 +238,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -239,7 +249,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -250,7 +260,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -261,7 +271,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -272,7 +282,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -283,7 +293,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -294,7 +304,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -305,7 +315,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -316,7 +326,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -327,7 +337,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -338,7 +348,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -349,7 +359,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -360,7 +370,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -371,7 +381,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -382,7 +392,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -393,7 +403,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -404,7 +414,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -415,7 +425,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -426,7 +436,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -437,7 +447,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -448,7 +458,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -459,7 +469,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -470,18 +480,29 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public EClass getURI() {
-		return uriEClass;
+	public EOperation getIDocumentGeneratorConfiguration__CreateTemplateFileURL() {
+		return iDocumentGeneratorConfigurationEClass.getEOperations().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
+	 * @generated
+	 */
+	@Override
+	public EDataType getURI() {
+		return uriEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -492,7 +513,18 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
+	 * @generated
+	 */
+	@Override
+	public EDataType getURL() {
+		return urlEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -503,7 +535,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -513,12 +545,13 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated)
+		if (isCreated) {
 			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -554,16 +587,19 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 		createEOperation(iDocumentGeneratorConfigurationEClass, IDOCUMENT_GENERATOR_CONFIGURATION___IS_SAVE_DOCUMENT_STRUCTURE);
 		createEOperation(iDocumentGeneratorConfigurationEClass, IDOCUMENT_GENERATOR_CONFIGURATION___IS_SAVE_IMAGES);
 		createEOperation(iDocumentGeneratorConfigurationEClass, IDOCUMENT_GENERATOR_CONFIGURATION___GET_TEMPLATE_FILE);
-
-		uriEClass = createEClass(URI);
+		createEOperation(iDocumentGeneratorConfigurationEClass, IDOCUMENT_GENERATOR_CONFIGURATION___CREATE_TEMPLATE_FILE_URL);
 
 		defaultDocumentGeneratorConfigurationEClass = createEClass(DEFAULT_DOCUMENT_GENERATOR_CONFIGURATION);
+
+		// Create data types
+		urlEDataType = createEDataType(URL);
+		uriEDataType = createEDataType(URI);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -573,12 +609,13 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized)
+		if (isInitialized) {
 			return;
+		}
 		isInitialized = true;
 
 		// Initialize package
@@ -658,9 +695,13 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 
 		initEOperation(getIDocumentGeneratorConfiguration__GetTemplateFile(), ecorePackage.getEString(), "getTemplateFile", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(uriEClass, org.eclipse.emf.common.util.URI.class, "URI", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEOperation(getIDocumentGeneratorConfiguration__CreateTemplateFileURL(), this.getURL(), "createTemplateFileURL", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(defaultDocumentGeneratorConfigurationEClass, DefaultDocumentGeneratorConfiguration.class, "DefaultDocumentGeneratorConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		// Initialize data types
+		initEDataType(urlEDataType, java.net.URL.class, "URL", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEDataType(uriEDataType, org.eclipse.emf.common.util.URI.class, "URI", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		// Create resource
 		createResource(eNS_URI);
@@ -676,7 +717,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	 * Initializes the annotations for <b>http://www.eclipse.org/uml2/2.0.0/UML</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void createUMLAnnotations() {
@@ -692,12 +733,16 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	 * Initializes the annotations for <b>duplicates</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void createDuplicatesAnnotations() {
 		String source = "duplicates"; //$NON-NLS-1$
 		addAnnotation(defaultDocumentStructureGeneratorConfigurationEClass,
+				source,
+				new String[] {
+				});
+		addAnnotation(defaultDocumentGeneratorConfigurationEClass,
 				source,
 				new String[] {
 				});

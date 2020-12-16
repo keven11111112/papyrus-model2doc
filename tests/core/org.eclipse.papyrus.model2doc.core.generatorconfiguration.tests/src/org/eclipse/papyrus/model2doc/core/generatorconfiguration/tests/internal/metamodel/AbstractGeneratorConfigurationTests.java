@@ -19,6 +19,7 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentStructureGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationFactory;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.tests.Activator;
@@ -27,7 +28,6 @@ import org.eclipse.papyrus.model2doc.core.generatorconfiguration.tests.Activator
  * This abstract class provides useful method for JUnit tests of GeneratorConfiguration
  */
 public abstract class AbstractGeneratorConfigurationTests {
-
 
 	protected static final String DOCUMENT_FOLDER = "DocumentFolder"; //$NON-NLS-1$
 
@@ -72,12 +72,12 @@ public abstract class AbstractGeneratorConfigurationTests {
 	}
 
 	/**
-	 * this method create {@link DefaultDocumentStructureGeneratorConfiguration} with default field values
+	 * this method creates a {@link DefaultDocumentStructureGeneratorConfiguration} with default field values
 	 *
 	 * @return
 	 *         a new {@link DefaultDocumentStructureGeneratorConfiguration}
 	 */
-	protected DefaultDocumentStructureGeneratorConfiguration createDocumentGeneratorConfiguration() {
+	protected DefaultDocumentStructureGeneratorConfiguration createDocumentStructureGeneratorConfiguration() {
 		final DefaultDocumentStructureGeneratorConfiguration defaultConf = GeneratorConfigurationFactory.eINSTANCE.createDefaultDocumentStructureGeneratorConfiguration();
 		defaultConf.setDocumentFolder(DOCUMENT_FOLDER);
 		defaultConf.setDocumentGeneratorId(GENERATOR_DOCUMENT_ID);
@@ -90,6 +90,25 @@ public abstract class AbstractGeneratorConfigurationTests {
 		defaultConf.setSaveDocumentStructure(SAVE_DOCUMENT_STRUCTURE_TRUE);
 		defaultConf.setSaveImages(SAVE_IMAGE_TRUE);
 
+		return defaultConf;
+	}
+
+
+	/**
+	 * this method creates a {@link DefaultDocumentGeneratorConfiguration} with default field values
+	 *
+	 * @return
+	 *         a new {@link DefaultDocumentGeneratorConfiguration}
+	 */
+	protected DefaultDocumentGeneratorConfiguration createDefaultDocumentGeneratorConfiguration() {
+		final DefaultDocumentGeneratorConfiguration defaultConf = GeneratorConfigurationFactory.eINSTANCE.createDefaultDocumentGeneratorConfiguration();
+		defaultConf.setDocumentFolder(DOCUMENT_FOLDER);
+		defaultConf.setDocumentGeneratorId(GENERATOR_DOCUMENT_ID);
+		defaultConf.setDocumentName(DOCUMENT_NAME);
+		defaultConf.setTemplateFile(TEMPLATE_FILE);
+
+		defaultConf.setSaveDocumentStructure(SAVE_DOCUMENT_STRUCTURE_TRUE);
+		defaultConf.setSaveImages(SAVE_IMAGE_TRUE);
 		return defaultConf;
 	}
 

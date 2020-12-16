@@ -26,7 +26,7 @@ package org.eclipse.papyrus.model2doc.core.generatorconfiguration;
  *
  *
  * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationPackage#getDefaultDocumentGeneratorConfiguration()
- * @model
+ * @model annotation="duplicates"
  * @generated
  */
 public interface DefaultDocumentGeneratorConfiguration extends AbstractDocumentGeneratorConfiguration, IDocumentGeneratorConfiguration {

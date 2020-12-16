@@ -63,11 +63,13 @@ public class DocumentStructureURITest extends AbstractGeneratorConfigurationTest
 	 */
 	private ResourceSet resourceSet;
 
+	// TODO check calling the method to an object not yet attache to a resource
+
 	/**
 	 * init the test
 	 */
 	@Before
-	public void startUp() {
+	public void setUp() {
 		this.projectForTest = createProject(PROJECT_NAME);
 		Assert.assertNotNull(this.projectForTest);
 		resourceSet = new ResourceSetImpl();
@@ -536,7 +538,7 @@ public class DocumentStructureURITest extends AbstractGeneratorConfigurationTest
 	 *            the version of the created document structure
 	 */
 	private void checkDocumentStructureURI(final String expectedResult, final String documentName, final String documentStructureOutputFolder, final String documentVersion) {
-		final DefaultDocumentStructureGeneratorConfiguration conf = createDocumentGeneratorConfiguration();
+		final DefaultDocumentStructureGeneratorConfiguration conf = createDocumentStructureGeneratorConfiguration();
 		conf.setStructureFolder(documentStructureOutputFolder);
 		conf.setDocumentName(documentName);
 		org.junit.Assert.assertTrue("The save of the tested GeneratorConfiguration failed", saveConfiguration(conf)); //$NON-NLS-1$
