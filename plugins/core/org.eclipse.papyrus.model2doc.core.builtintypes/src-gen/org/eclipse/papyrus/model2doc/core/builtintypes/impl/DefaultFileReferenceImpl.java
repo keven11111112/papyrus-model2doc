@@ -13,8 +13,10 @@
  */
 package org.eclipse.papyrus.model2doc.core.builtintypes.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -22,6 +24,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesPackage;
 import org.eclipse.papyrus.model2doc.core.builtintypes.DefaultFileReference;
+import org.eclipse.papyrus.model2doc.core.builtintypes.accessors.IInputFileAccessor;
 
 /**
  * <!-- begin-user-doc -->
@@ -113,6 +116,17 @@ public class DefaultFileReferenceImpl extends MinimalEObjectImpl.Container imple
 	 * @generated
 	 */
 	@Override
+	public IInputFileAccessor getFileAccessor() {
+		return new org.eclipse.papyrus.model2doc.core.builtintypes.internal.accessors.FileReferenceAccessor(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case BuiltInTypesPackage.DEFAULT_FILE_REFERENCE__FILE_PATH:
@@ -166,6 +180,21 @@ public class DefaultFileReferenceImpl extends MinimalEObjectImpl.Container imple
 			return FILE_PATH_EDEFAULT == null ? filePath != null : !FILE_PATH_EDEFAULT.equals(filePath);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case BuiltInTypesPackage.DEFAULT_FILE_REFERENCE___GET_FILE_ACCESSOR:
+			return getFileAccessor();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

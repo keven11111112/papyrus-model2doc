@@ -15,6 +15,7 @@ package org.eclipse.papyrus.model2doc.core.builtintypes;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
@@ -681,6 +682,16 @@ public interface BuiltInTypesPackage extends EPackage {
 	int IFILE_REFERENCE___GET_FILE_PATH = 0;
 
 	/**
+	 * The operation id for the '<em>Get File Accessor</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IFILE_REFERENCE___GET_FILE_ACCESSOR = 1;
+
+	/**
 	 * The number of operations of the '<em>IFile Reference</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -688,7 +699,7 @@ public interface BuiltInTypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IFILE_REFERENCE_OPERATION_COUNT = 1;
+	int IFILE_REFERENCE_OPERATION_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.core.builtintypes.impl.DefaultFileReferenceImpl <em>Default File Reference</em>}' class.
@@ -732,6 +743,16 @@ public interface BuiltInTypesPackage extends EPackage {
 	int DEFAULT_FILE_REFERENCE___GET_FILE_PATH = IFILE_REFERENCE___GET_FILE_PATH;
 
 	/**
+	 * The operation id for the '<em>Get File Accessor</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int DEFAULT_FILE_REFERENCE___GET_FILE_ACCESSOR = IFILE_REFERENCE___GET_FILE_ACCESSOR;
+
+	/**
 	 * The number of operations of the '<em>Default File Reference</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -762,6 +783,18 @@ public interface BuiltInTypesPackage extends EPackage {
 	 * @generated
 	 */
 	int IMAGE_FORMAT = 13;
+
+
+	/**
+	 * The meta object id for the '<em>IInput File Accessor</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.accessors.IInputFileAccessor
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.impl.BuiltInTypesPackageImpl#getIInputFileAccessor()
+	 * @generated
+	 */
+	int IINPUT_FILE_ACCESSOR = 14;
 
 
 	/**
@@ -1037,6 +1070,17 @@ public interface BuiltInTypesPackage extends EPackage {
 	EOperation getIFileReference__GetFilePath();
 
 	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.core.builtintypes.IFileReference#getFileAccessor() <em>Get File Accessor</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the '<em>Get File Accessor</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.IFileReference#getFileAccessor()
+	 * @generated
+	 */
+	EOperation getIFileReference__GetFileAccessor();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.core.builtintypes.DefaultFileReference <em>Default File Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1080,6 +1124,21 @@ public interface BuiltInTypesPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getImageFormat();
+
+	/**
+	 * Returns the meta object for data type '{@link org.eclipse.papyrus.model2doc.core.builtintypes.accessors.IInputFileAccessor <em>IInput File Accessor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Returns a file accessor to access to the file path.
+	 * <!-- end-model-doc -->
+	 *
+	 * @return the meta object for data type '<em>IInput File Accessor</em>'.
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.accessors.IInputFileAccessor
+	 * @model instanceClass="org.eclipse.papyrus.model2doc.core.builtintypes.accessors.IInputFileAccessor"
+	 * @generated
+	 */
+	EDataType getIInputFileAccessor();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1345,6 +1404,15 @@ public interface BuiltInTypesPackage extends EPackage {
 		EOperation IFILE_REFERENCE___GET_FILE_PATH = eINSTANCE.getIFileReference__GetFilePath();
 
 		/**
+		 * The meta object literal for the '<em><b>Get File Accessor</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EOperation IFILE_REFERENCE___GET_FILE_ACCESSOR = eINSTANCE.getIFileReference__GetFileAccessor();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.core.builtintypes.impl.DefaultFileReferenceImpl <em>Default File Reference</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1385,6 +1453,17 @@ public interface BuiltInTypesPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum IMAGE_FORMAT = eINSTANCE.getImageFormat();
+
+		/**
+		 * The meta object literal for the '<em>IInput File Accessor</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.core.builtintypes.accessors.IInputFileAccessor
+		 * @see org.eclipse.papyrus.model2doc.core.builtintypes.impl.BuiltInTypesPackageImpl#getIInputFileAccessor()
+		 * @generated
+		 */
+		EDataType IINPUT_FILE_ACCESSOR = eINSTANCE.getIInputFileAccessor();
 
 	}
 

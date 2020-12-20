@@ -15,6 +15,7 @@ package org.eclipse.papyrus.model2doc.core.builtintypes.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
@@ -38,6 +39,7 @@ import org.eclipse.papyrus.model2doc.core.builtintypes.ListItem;
 import org.eclipse.papyrus.model2doc.core.builtintypes.Row;
 import org.eclipse.papyrus.model2doc.core.builtintypes.TextCell;
 import org.eclipse.papyrus.model2doc.core.builtintypes.TextListItem;
+import org.eclipse.papyrus.model2doc.core.builtintypes.accessors.IInputFileAccessor;
 import org.eclipse.papyrus.model2doc.core.styles.StylesPackage;
 
 /**
@@ -159,6 +161,14 @@ public class BuiltInTypesPackageImpl extends EPackageImpl implements BuiltInType
 	 * @generated
 	 */
 	private EEnum imageFormatEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EDataType iInputFileAccessorEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -502,6 +512,17 @@ public class BuiltInTypesPackageImpl extends EPackageImpl implements BuiltInType
 	 * @generated
 	 */
 	@Override
+	public EOperation getIFileReference__GetFileAccessor() {
+		return iFileReferenceEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EClass getDefaultFileReference() {
 		return defaultFileReferenceEClass;
 	}
@@ -537,6 +558,17 @@ public class BuiltInTypesPackageImpl extends EPackageImpl implements BuiltInType
 	@Override
 	public EEnum getImageFormat() {
 		return imageFormatEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EDataType getIInputFileAccessor() {
+		return iInputFileAccessorEDataType;
 	}
 
 	/**
@@ -607,6 +639,7 @@ public class BuiltInTypesPackageImpl extends EPackageImpl implements BuiltInType
 
 		iFileReferenceEClass = createEClass(IFILE_REFERENCE);
 		createEOperation(iFileReferenceEClass, IFILE_REFERENCE___GET_FILE_PATH);
+		createEOperation(iFileReferenceEClass, IFILE_REFERENCE___GET_FILE_ACCESSOR);
 
 		defaultFileReferenceEClass = createEClass(DEFAULT_FILE_REFERENCE);
 		createEAttribute(defaultFileReferenceEClass, DEFAULT_FILE_REFERENCE__FILE_PATH);
@@ -614,6 +647,9 @@ public class BuiltInTypesPackageImpl extends EPackageImpl implements BuiltInType
 		// Create enums
 		cellLocationEEnum = createEEnum(CELL_LOCATION);
 		imageFormatEEnum = createEEnum(IMAGE_FORMAT);
+
+		// Create data types
+		iInputFileAccessorEDataType = createEDataType(IINPUT_FILE_ACCESSOR);
 	}
 
 	/**
@@ -700,6 +736,8 @@ public class BuiltInTypesPackageImpl extends EPackageImpl implements BuiltInType
 
 		initEOperation(getIFileReference__GetFilePath(), ecorePackage.getEString(), "getFilePath", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
+		initEOperation(getIFileReference__GetFileAccessor(), this.getIInputFileAccessor(), "getFileAccessor", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
 		initEClass(defaultFileReferenceEClass, DefaultFileReference.class, "DefaultFileReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEAttribute(getDefaultFileReference_FilePath(), ecorePackage.getEString(), "filePath", null, 1, 1, DefaultFileReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
@@ -714,12 +752,17 @@ public class BuiltInTypesPackageImpl extends EPackageImpl implements BuiltInType
 		addEEnumLiteral(imageFormatEEnum, ImageFormat.SVG);
 		addEEnumLiteral(imageFormatEEnum, ImageFormat.PNG);
 
+		// Initialize data types
+		initEDataType(iInputFileAccessorEDataType, IInputFileAccessor.class, "IInputFileAccessor", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
 		// Create resource
 		createResource(eNS_URI);
 
 		// Create annotations
 		// http://www.eclipse.org/uml2/2.0.0/UML
 		createUMLAnnotations();
+		// duplicates
+		createDuplicatesAnnotations();
 	}
 
 	/**
@@ -735,6 +778,21 @@ public class BuiltInTypesPackageImpl extends EPackageImpl implements BuiltInType
 				source,
 				new String[] {
 						"originalName", "BuiltInTypes" //$NON-NLS-1$ //$NON-NLS-2$
+				});
+	}
+
+	/**
+	 * Initializes the annotations for <b>duplicates</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected void createDuplicatesAnnotations() {
+		String source = "duplicates"; //$NON-NLS-1$
+		addAnnotation(defaultFileReferenceEClass,
+				source,
+				new String[] {
 				});
 	}
 

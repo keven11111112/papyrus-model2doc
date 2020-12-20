@@ -31,7 +31,7 @@ package org.eclipse.papyrus.model2doc.core.builtintypes;
  * </ul>
  *
  * @see org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesPackage#getDefaultFileReference()
- * @model
+ * @model annotation="duplicates"
  * @generated
  */
 public interface DefaultFileReference extends IFileReference {

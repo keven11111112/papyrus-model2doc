@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import org.eclipse.papyrus.model2doc.core.builtintypes.*;
+import org.eclipse.papyrus.model2doc.core.builtintypes.accessors.IInputFileAccessor;
 
 /**
  * <!-- begin-user-doc -->
@@ -101,6 +102,8 @@ public class BuiltInTypesFactoryImpl extends EFactoryImpl implements BuiltInType
 			return createCellLocationFromString(eDataType, initialValue);
 		case BuiltInTypesPackage.IMAGE_FORMAT:
 			return createImageFormatFromString(eDataType, initialValue);
+		case BuiltInTypesPackage.IINPUT_FILE_ACCESSOR:
+			return createIInputFileAccessorFromString(eDataType, initialValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -119,6 +122,8 @@ public class BuiltInTypesFactoryImpl extends EFactoryImpl implements BuiltInType
 			return convertCellLocationToString(eDataType, instanceValue);
 		case BuiltInTypesPackage.IMAGE_FORMAT:
 			return convertImageFormatToString(eDataType, instanceValue);
+		case BuiltInTypesPackage.IINPUT_FILE_ACCESSOR:
+			return convertIInputFileAccessorToString(eDataType, instanceValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -244,6 +249,26 @@ public class BuiltInTypesFactoryImpl extends EFactoryImpl implements BuiltInType
 	 */
 	public String convertImageFormatToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public IInputFileAccessor createIInputFileAccessorFromString(EDataType eDataType, String initialValue) {
+		return (IInputFileAccessor) super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public String convertIInputFileAccessorToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

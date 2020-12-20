@@ -21,11 +21,11 @@
     <details key="COMMENTS" value="PROCESS"/>
     <details key="DERIVED_FEATURES" value="PROCESS"/>
     <details key="SUPER_CLASS_ORDER" value="PROCESS"/>
-    <details key="DUPLICATE_OPERATION_INHERITANCE" value="DISCARD"/>
-    <details key="REDEFINING_OPERATIONS" value="REPORT"/>
+    <details key="DUPLICATE_OPERATION_INHERITANCE" value="PROCESS"/>
+    <details key="REDEFINING_OPERATIONS" value="PROCESS"/>
     <details key="INVARIANT_CONSTRAINTS" value="PROCESS"/>
     <details key="UNION_PROPERTIES" value="REPORT"/>
-    <details key="DUPLICATE_OPERATIONS" value="DISCARD"/>
+    <details key="DUPLICATE_OPERATIONS" value="PROCESS"/>
     <details key="NON_API_INVARIANTS" value="IGNORE"/>
     <details key="CAMEL_CASE_NAMES" value="IGNORE"/>
     <details key="SUBSETTING_PROPERTIES" value="REPORT"/>
@@ -50,6 +50,7 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="BuiltInTypes.ecore#//ImageFormat/SVG"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="BuiltInTypes.ecore#//ImageFormat/PNG"/>
     </genEnums>
+    <genDataTypes xsi:type="genmodel:GenDataType" ecoreDataType="BuiltInTypes.ecore#//IInputFileAccessor"/>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="BuiltInTypes.ecore#//AbstractTable">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute BuiltInTypes.ecore#//AbstractTable/caption"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -90,6 +91,7 @@
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="BuiltInTypes.ecore#//BasicList"/>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="BuiltInTypes.ecore#//IFileReference">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="BuiltInTypes.ecore#//IFileReference/getFilePath"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="BuiltInTypes.ecore#//IFileReference/getFileAccessor"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="BuiltInTypes.ecore#//DefaultFileReference">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute BuiltInTypes.ecore#//DefaultFileReference/filePath"/>

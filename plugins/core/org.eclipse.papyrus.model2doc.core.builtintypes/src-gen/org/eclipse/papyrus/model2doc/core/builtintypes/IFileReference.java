@@ -14,6 +14,7 @@
 package org.eclipse.papyrus.model2doc.core.builtintypes;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.papyrus.model2doc.core.builtintypes.accessors.IInputFileAccessor;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,5 +38,14 @@ public interface IFileReference extends EObject {
 	 * @generated
 	 */
 	String getFilePath();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @model kind="operation" dataType="org.eclipse.papyrus.model2doc.core.builtintypes.IInputFileAccessor" required="true" ordered="false"
+	 * @generated
+	 */
+	IInputFileAccessor getFileAccessor();
 
 } // IFileReference
