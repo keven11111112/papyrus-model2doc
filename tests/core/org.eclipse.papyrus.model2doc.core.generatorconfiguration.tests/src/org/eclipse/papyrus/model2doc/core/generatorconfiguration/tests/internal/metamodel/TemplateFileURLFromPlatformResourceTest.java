@@ -15,9 +15,13 @@
 
 package org.eclipse.papyrus.model2doc.core.generatorconfiguration.tests.internal.metamodel;
 
+import java.io.File;
+import java.net.URISyntaxException;
 import java.net.URL;
 
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentGeneratorConfiguration;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.tests.Activator;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -69,111 +73,98 @@ public class TemplateFileURLFromPlatformResourceTest extends AbstractTemplateFil
 	private static final String TEST_11_DECLARED_TEMPLATE_FILE_NAME = TEST_11_FOLDER + "/" + TEST_11_TEMPLATE_FILE_NAME; //$NON-NLS-1$
 
 	private static final String TEST_12_FOLDER = "resources"; //$NON-NLS-1$
-	private static final String TEST_12_TEMPLATE_FILE_NAME = "Test_12_TemplateInPlatformResourceURI"; //$NON-NLS-1$
+	private static final String TEST_12_TEMPLATE_FILE_NAME = "Test_12_TemplateInPlatformResourceURI.dotx"; //$NON-NLS-1$
 	private static final String TEST_12_DECLARED_TEMPLATE_FILE_NAME = "platform:/resource/" + PROJECT_NAME + "/" + TEST_12_FOLDER + "/" + TEST_12_TEMPLATE_FILE_NAME; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 
 
-	private static final String TEST_13_TEMPLATE_FILE_NAME = "Test_13_TemplateInPlatformResourceURI"; //$NON-NLS-1$
+	private static final String TEST_13_TEMPLATE_FILE_NAME = "Test_13_TemplateInPlatformResourceURI.dotx"; //$NON-NLS-1$
 	private static final String TEST_13_DECLARED_TEMPLATE_FILE_NAME = "C:/Somewhereplatform" + "/" + TEST_13_TEMPLATE_FILE_NAME; //$NON-NLS-1$ //$NON-NLS-2$
 
 
-	protected void checkCreatedURL(final URL url, final String expectedEndResult) {
-		if (expectedEndResult == null) {
-			Assert.assertNull(url);
-		} else {
-			url.toString().endsWith(expectedEndResult);
+	private void checkCreatedURL(final URL url) {
+		Assert.assertNotNull("The URL must not be null", url); //$NON-NLS-1$
+		File f = null;
+		try {
+			f = new File(url.toURI());
+		} catch (URISyntaxException e1) {
+			Activator.log.error(e1);
 		}
-	}
-
-	protected String buildExpectedTemplateURIAsString(final String folderName, final String templateName) {
-		return this.projectForTest.getName() + "/" + folderName + "/" + templateName; //$NON-NLS-1$ //$NON-NLS-2$
+		Assert.assertNotNull(NLS.bind("The file can't be created from url {0}", url), f); //$NON-NLS-1$
+		Assert.assertTrue(NLS.bind("The file with the url {0} doesn't exist", url), f.exists()); //$NON-NLS-1$
 	}
 
 	@Test
 	public void test_01_TemplateInPlatformPluginURI() {
 		final DefaultDocumentGeneratorConfiguration conf = createDefaultDocumentGeneratorConfiguration(TEST_01_TEMPLATE_DECLARED_FILE_NAME);
-		final String expectedResult = "org.eclipse.papyrus.model2doc.core.generatorconfiguration.tests/resources/TemplateFileURL/PlatformPlugin/Test_01_TemplateInPlatformPluginURI.dotx"; //$NON-NLS-1$
-		checkCreatedURL(conf.createTemplateFileURL(), expectedResult);
+		checkCreatedURL(conf.createTemplateFileURL());
 	}
 
 	@Test
 	public void test_02_TemplateWithRelativeURI() {
 		createFileInProject(TEST_02_FOLDER, TEST_02_TEMPLATE_FILE_NAME);
 		final DefaultDocumentGeneratorConfiguration conf = createDefaultDocumentGeneratorConfiguration(TEST_02_DECLARED_TEMPLATE_FILE_NAME);
-		final String expectedResult = buildExpectedTemplateURIAsString(TEST_02_FOLDER, TEST_02_TEMPLATE_FILE_NAME);
-		checkCreatedURL(conf.createTemplateFileURL(), expectedResult);
+		checkCreatedURL(conf.createTemplateFileURL());
 	}
 
 	@Test
 	public void test_03_TemplateWithRelativeURI() {
 		createFileInProject(TEST_03_FOLDER, TEST_03_TEMPLATE_FILE_NAME);
 		final DefaultDocumentGeneratorConfiguration conf = createDefaultDocumentGeneratorConfiguration(TEST_03_DECLARED_TEMPLATE_FILE_NAME);
-		final String expectedResult = buildExpectedTemplateURIAsString(TEST_03_FOLDER, TEST_03_TEMPLATE_FILE_NAME);
-		checkCreatedURL(conf.createTemplateFileURL(), expectedResult);
+		checkCreatedURL(conf.createTemplateFileURL());
 	}
 
 	@Test
 	public void test_04_TemplateURIWithSpaces() {
 		createFileInProject(TEST_04_FOLDER, TEST_04_TEMPLATE_FILE_NAME);
 		final DefaultDocumentGeneratorConfiguration conf = createDefaultDocumentGeneratorConfiguration(TEST_04_DECLARED_TEMPLATE_FILE_NAME);
-		final String expectedResult = buildExpectedTemplateURIAsString(TEST_04_FOLDER, TEST_04_TEMPLATE_FILE_NAME);
-		checkCreatedURL(conf.createTemplateFileURL(), expectedResult);
+		checkCreatedURL(conf.createTemplateFileURL());
 	}
 
 	@Test
 	public void test_05_TemplateURIWithAccentuatedChar() {
 		createFileInProject(TEST_05_FOLDER, TEST_05_TEMPLATE_FILE_NAME);
 		final DefaultDocumentGeneratorConfiguration conf = createDefaultDocumentGeneratorConfiguration(TEST_05_DECLARED_TEMPLATE_FILE_NAME);
-		final String expectedResult = buildExpectedTemplateURIAsString(TEST_05_FOLDER, TEST_05_TEMPLATE_FILE_NAME);
-		checkCreatedURL(conf.createTemplateFileURL(), expectedResult);
+		checkCreatedURL(conf.createTemplateFileURL());
 	}
-
 
 	@Test
 	public void test_06_TemplateInAnotherFolder() {
 		createFileInProject(TEST_06_FOLDER, TEST_06_TEMPLATE_FILE_NAME);
 		final DefaultDocumentGeneratorConfiguration conf = createDefaultDocumentGeneratorConfiguration(TEST_06_DECLARED_TEMPLATE_FILE_NAME);
-		final String expectedResult = buildExpectedTemplateURIAsString(TEST_06_FOLDER, TEST_06_TEMPLATE_FILE_NAME);
-		checkCreatedURL(conf.createTemplateFileURL(), expectedResult);
+		checkCreatedURL(conf.createTemplateFileURL());
 	}
 
 	@Test
 	public void test_07_TemplateInAnotherFolderWithSpaces() {
 		createFileInProject(TEST_07_FOLDER, TEST_07_TEMPLATE_FILE_NAME);
 		final DefaultDocumentGeneratorConfiguration conf = createDefaultDocumentGeneratorConfiguration(TEST_07_DECLARED_TEMPLATE_FILE_NAME);
-		final String expectedResult = buildExpectedTemplateURIAsString(TEST_07_FOLDER, TEST_07_TEMPLATE_FILE_NAME);
-		checkCreatedURL(conf.createTemplateFileURL(), expectedResult);
+		checkCreatedURL(conf.createTemplateFileURL());
 	}
 
 	@Test
 	public void test_08_TemplateInAnotherFolderWithAccentuatedChar() {
 		createFileInProject(TEST_08_FOLDER, TEST_08_TEMPLATE_FILE_NAME);
 		final DefaultDocumentGeneratorConfiguration conf = createDefaultDocumentGeneratorConfiguration(TEST_08_DECLARED_TEMPLATE_FILE_NAME);
-		final String expectedResult = buildExpectedTemplateURIAsString(TEST_08_FOLDER, TEST_08_TEMPLATE_FILE_NAME);
-		checkCreatedURL(conf.createTemplateFileURL(), expectedResult);
-
+		checkCreatedURL(conf.createTemplateFileURL());
 	}
 
 	@Test
 	public void test_09_NullTemplateURI() {
 		final DefaultDocumentGeneratorConfiguration conf = createDefaultDocumentGeneratorConfiguration(TEST_09_DECLARED_TEMPLATE_FILE_NAME);
-		final String expectedResult = null;
-		checkCreatedURL(conf.createTemplateFileURL(), expectedResult);
+		Assert.assertNull(conf.createTemplateFileURL());
 	}
 
 	@Test
 	public void test_10_EmptyTemplateURI() {
 		final DefaultDocumentGeneratorConfiguration conf = createDefaultDocumentGeneratorConfiguration(TEST_10_DECLARED_TEMPLATE_FILE_NAME);
-		final String expectedResult = null;
-		checkCreatedURL(conf.createTemplateFileURL(), expectedResult);
+		Assert.assertNull(conf.createTemplateFileURL());
 	}
 
 	@Test
 	public void test_11_TemplateNotFound() {
 		createFolderInContainer(this.projectForTest, TEST_11_FOLDER); // we don't create the file in it the goal of the test
 		final DefaultDocumentGeneratorConfiguration conf = createDefaultDocumentGeneratorConfiguration(TEST_11_DECLARED_TEMPLATE_FILE_NAME);
-		final String expectedResult = null;
-		checkCreatedURL(conf.createTemplateFileURL(), expectedResult);
+		Assert.assertNull(conf.createTemplateFileURL());
 	}
 
 	/**
@@ -183,17 +174,14 @@ public class TemplateFileURLFromPlatformResourceTest extends AbstractTemplateFil
 	public void test_12_TemplateInPlatformResource() {
 		createFileInProject(TEST_12_FOLDER, TEST_12_TEMPLATE_FILE_NAME);
 		final DefaultDocumentGeneratorConfiguration conf = createDefaultDocumentGeneratorConfiguration(TEST_12_DECLARED_TEMPLATE_FILE_NAME);
-		final String expectedResult = buildExpectedTemplateURIAsString(TEST_12_FOLDER, TEST_12_TEMPLATE_FILE_NAME);
-		checkCreatedURL(conf.createTemplateFileURL(), expectedResult);
+		checkCreatedURL(conf.createTemplateFileURL());
 	}
 
 
 	@Test
 	public void test_13_TemplateURIOSPath() {
 		final DefaultDocumentGeneratorConfiguration conf = createDefaultDocumentGeneratorConfiguration(TEST_13_DECLARED_TEMPLATE_FILE_NAME);
-		final String expectedResult = null;
-		checkCreatedURL(conf.createTemplateFileURL(), expectedResult);
+		Assert.assertNull(conf.createTemplateFileURL());
 	}
-
 
 }

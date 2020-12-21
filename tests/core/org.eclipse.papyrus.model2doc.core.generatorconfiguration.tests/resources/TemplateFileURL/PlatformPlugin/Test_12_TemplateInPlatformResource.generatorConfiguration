@@ -3,4 +3,4 @@
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:generatorconfiguration="http://www.eclipse.org/papyrus/model2doc/1.0.0/generatorconfiguration"
-    templateFile="platform:/resource/org.eclipse.papyrus.model2doc.core.generatorconfiguration.tests/fantomFile.txt"/>
+    templateFile="platform:/resource/Test_12_TemplateInPlatformResource/resources/Test_12_TemplateInPlatformResource.dotx"/>

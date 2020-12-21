@@ -15,21 +15,27 @@
 
 package org.eclipse.papyrus.model2doc.core.generatorconfiguration.tests.internal.metamodel;
 
+import java.io.File;
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
 
+import org.eclipse.core.resources.IProject;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentGeneratorConfiguration;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.tests.Activator;
 import org.junit.Assert;
 import org.junit.Test;
 
 /**
  * Check the calculus of the URL of the referenced template when the Generator configuration is in a Plaform plugin
  */
-public class TemplateFileURLFromPlatformPluginTest {
+public class TemplateFileURLFromPlatformPluginTest extends AbstractGeneratorConfigurationTests {
 
 
 	private static final String TEST_01 = "Test_01_TemplateInPlatformPluginURI.generatorConfiguration"; //$NON-NLS-1$
@@ -59,90 +65,85 @@ public class TemplateFileURLFromPlatformPluginTest {
 		final EObject root = res.getContents().get(0);
 		Assert.assertTrue(root instanceof DefaultDocumentGeneratorConfiguration);
 		DefaultDocumentGeneratorConfiguration conf = (DefaultDocumentGeneratorConfiguration) root;
-
 		return conf.createTemplateFileURL();
 	}
 
-	protected void checkCreatedURL(final URL url, final String expectedEndResult) {
-		if (expectedEndResult == null) {
-			Assert.assertNull(url);
-		} else {
-			url.toString().endsWith(expectedEndResult);
+	private void checkCreatedURL(final URL url) {
+		Assert.assertNotNull("The URL must not be null", url); //$NON-NLS-1$
+		File f = null;
+		try {
+			f = new File(url.toURI());
+		} catch (URISyntaxException e1) {
+			Activator.log.error(e1);
 		}
+		Assert.assertNotNull(NLS.bind("The file can't be created from url {0}", url), f); //$NON-NLS-1$
+		Assert.assertTrue(NLS.bind("The file with the url {0} doesn't exist", url), f.exists()); //$NON-NLS-1$
 	}
 
 	@Test
 	public void test_01_TemplateInPlatformPluginURI() {
 		final URL templateURL = getTemplateURL(createURI(TEST_01));
-		final String expectedResult = "Test_01_TemplateInPlatformPluginURI.dotx"; //$NON-NLS-1$
-		checkCreatedURL(templateURL, expectedResult);
+		checkCreatedURL(templateURL);
 	}
 
 	@Test
 	public void test_02_TemplateWithRelativeURI() {
 		final URL templateURL = getTemplateURL(createURI(TEST_02));
-		checkCreatedURL(templateURL, null);
+		Assert.assertNull(templateURL);
 	}
 
 	@Test
 	public void test_03_TemplateWithRelativeURI() {
 		final URL templateURL = getTemplateURL(createURI(TEST_03));
-		checkCreatedURL(templateURL, null);
+		Assert.assertNull(templateURL);
 	}
 
 	@Test
 	public void test_04_TemplateURIWithSpaces() {
 		final URL templateURL = getTemplateURL(createURI(TEST_04));
-		final String expectedResult = "Test_04_TemplateURI With Spaces.dotx"; //$NON-NLS-1$
-		checkCreatedURL(templateURL, expectedResult);
+		checkCreatedURL(templateURL);
 	}
 
 	@Test
 	public void test_05_TemplateURIWithAccentuatedChar() {
 		final URL templateURL = getTemplateURL(createURI(TEST_05));
-		final String expectedResult = "Test_05_TemplateURIWithAccentuatedCharéàù"; //$NON-NLS-1$
-		checkCreatedURL(templateURL, expectedResult);
+		checkCreatedURL(templateURL);
 	}
 
 	@Test
 	public void test_06_TemplateInAnotherFolder() {
 		final URL templateURL = getTemplateURL(createURI(TEST_06));
-		final String expectedResult = "AnotherFolder/Test_06_TemplateInAnotherFolder.dotx"; //$NON-NLS-1$
-		checkCreatedURL(templateURL, expectedResult);
+		checkCreatedURL(templateURL);
 	}
 
 	@Test
 	public void test_07_TemplateInAnotherFolderWithSpaces() {
 		final URL templateURL = getTemplateURL(createURI(TEST_07));
-		final String expectedResult = "AnotherFolder With Spaces/Test_07_TemplateInAnotherFolder With Spaces.dotx"; //$NON-NLS-1$
-
-		checkCreatedURL(templateURL, expectedResult);
+		checkCreatedURL(templateURL);
 	}
 
 	@Test
 	public void test_08_TemplateInAnotherFolderWithAccentuatedChar() {
 		final URL templateURL = getTemplateURL(createURI(TEST_08));
-
-		final String expectedResult = "AnotherFolderWithAccentuatedCharéàù/Test_08_TemplateInAnotherFolderWithAccentuatedCharéàù.dotx"; //$NON-NLS-1$
-		checkCreatedURL(templateURL, expectedResult);
+		checkCreatedURL(templateURL);
 	}
 
 	@Test
 	public void test_09_NullTemplateURI() {
 		final URL templateURL = getTemplateURL(createURI(TEST_09));
-		checkCreatedURL(templateURL, null);
+		Assert.assertNull(templateURL);
 	}
 
 	@Test
 	public void test_10_EmptyTemplateURI() {
 		final URL templateURL = getTemplateURL(createURI(TEST_10));
-		checkCreatedURL(templateURL, null);
+		Assert.assertNull(templateURL);
 	}
 
 	@Test
 	public void test_11_TemplateNotFound() {
 		final URL templateURL = getTemplateURL(createURI(TEST_11));
-		checkCreatedURL(templateURL, null);
+		Assert.assertNull(templateURL);
 	}
 
 	/**
@@ -150,7 +151,28 @@ public class TemplateFileURLFromPlatformPluginTest {
 	 */
 	@Test
 	public void test_12_TemplateInPlatformResource() {
-		final URL templateURL = getTemplateURL(createURI(TEST_12));
-		checkCreatedURL(templateURL, null);
+		// we create a real project, with an real file, the goal is to check we don't found it
+		final URI uri = createURI(TEST_12);
+		ResourceSet rSet = new ResourceSetImpl();
+		final Resource res = rSet.getResource(uri, true);
+		final DefaultDocumentGeneratorConfiguration conf = (DefaultDocumentGeneratorConfiguration) res.getContents().get(0);
+		final String filePath = conf.getTemplateFile();
+		// create an empty resource to be sure it is available for the tests
+		// the goal of this test is to NOT find it. (we refuse the reference of a platform:/resource from a platform:/plugin
+		final URI txtFileURI = URI.createURI(filePath);
+		final String projectName = txtFileURI.segment(1);
+		final IProject project = createProject(projectName);
+		final Resource txtFile = rSet.createResource(txtFileURI);
+		try {
+			txtFile.save(null);
+		} catch (IOException e) {
+			Activator.log.error(e);
+		}
+		Assert.assertNotNull(txtFile);
+
+		final URL templateURL = getTemplateURL(uri);
+		Assert.assertNull(templateURL);
+		destroyProject(project);
 	}
+
 }

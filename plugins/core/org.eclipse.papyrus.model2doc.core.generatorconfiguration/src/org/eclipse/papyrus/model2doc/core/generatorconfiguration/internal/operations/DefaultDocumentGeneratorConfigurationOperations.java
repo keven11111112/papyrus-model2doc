@@ -87,7 +87,7 @@ public final class DefaultDocumentGeneratorConfigurationOperations {
 			// should always be true
 			Assert.isTrue(documentURI.isPlatform());
 			final String projectName = documentURI.segmentsList().get(1);
-			URI templateURIPath = URI.createPlatformResourceURI(projectName, false);
+			URI templateURIPath = URI.createPlatformResourceURI(projectName, true);
 			templateURI = templateURIPath.appendSegments(templateURI.segments());
 		}
 
@@ -139,7 +139,13 @@ public final class DefaultDocumentGeneratorConfigurationOperations {
 			}
 			try {
 				// convert the URL of the file in the compiled eclipse bundle into an URL in D:git/... in my installation (useful or not ? )
-				return FileLocator.toFileURL(eclipseURL);
+				URL url = FileLocator.toFileURL(eclipseURL);
+				// here we get space that must be replace by %20
+				// there is a bug with FileLocator (see bug https://bugs.eclipse.org/bugs/show_bug.cgi?id=145096)
+				if (url.toString().contains(" ")) { //$NON-NLS-1$
+					url = new URL(url.toString().replace(" ", "%20")); //$NON-NLS-1$ //$NON-NLS-2$
+				}
+				return url;
 			} catch (IOException e) {
 				Activator.log.error(e);
 			}

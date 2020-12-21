@@ -17,6 +17,8 @@ package org.eclipse.papyrus.model2doc.core.generatorconfiguration.tests.internal
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
@@ -30,6 +32,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.tests.Activator;
 import org.junit.After;
@@ -41,6 +44,11 @@ import org.junit.Before;
  */
 public abstract class AbstractTemplateFileURLTests extends AbstractGeneratorConfigurationTests {
 
+	private static final Map<Object, Object> SAVE_OPTIONS = new HashMap<>();
+
+	static {
+		SAVE_OPTIONS.put(XMIResource.OPTION_ENCODING, "UTF-8"); //$NON-NLS-1$
+	}
 
 	/**
 	 * the name of the project created in the workspace
@@ -179,7 +187,7 @@ public abstract class AbstractTemplateFileURLTests extends AbstractGeneratorConf
 		final Resource res = this.resourceSet.createResource(uri);
 		res.getContents().add(conf);
 		try {
-			res.save(null);
+			res.save(SAVE_OPTIONS);
 			return true;
 		} catch (IOException e) {
 			Activator.log.error(e);
