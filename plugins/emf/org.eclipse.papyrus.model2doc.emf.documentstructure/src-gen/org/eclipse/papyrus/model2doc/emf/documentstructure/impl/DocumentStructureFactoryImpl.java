@@ -98,7 +98,7 @@ public class DocumentStructureFactoryImpl extends EFactoryImpl implements Docume
 			return createStringVersion();
 		case DocumentStructurePackage.INSERTED_FILE:
 			return createInsertedFile();
-		case DocumentStructurePackage.NEW_LINE:
+		case DocumentStructurePackage.EMPTY_LINE:
 			return createEmptyLine();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$

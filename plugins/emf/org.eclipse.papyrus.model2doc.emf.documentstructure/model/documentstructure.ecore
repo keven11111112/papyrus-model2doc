@@ -59,7 +59,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Image" eSuperTypes="#//LeafBodyPart">
+  <eClassifiers xsi:type="ecore:EClass" name="Image" eSuperTypes="../../org.eclipse.papyrus.model2doc.core.builtintypes/model/BuiltInTypes.ecore#//DefaultFileReference #//LeafBodyPart">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This object represents an image inserted in the document."/>
     </eAnnotations>

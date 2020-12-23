@@ -161,7 +161,7 @@ public class EmptyLineItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(EmptyLine.class)) {
-		case DocumentStructurePackage.NEW_LINE__DATA_SOURCE:
+		case DocumentStructurePackage.EMPTY_LINE__DATA_SOURCE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}

@@ -19,23 +19,14 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IChildCreationExtender;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import org.eclipse.papyrus.model2doc.core.builtintypes.provider.DefaultFileReferenceItemProvider;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructureFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Image;
@@ -48,13 +39,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.Image;
  * @generated
  */
 public class ImageItemProvider
-		extends ItemProviderAdapter
-		implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+		extends DefaultFileReferenceItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -190,7 +175,7 @@ public class ImageItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Image) object).getImagePath();
+		String label = ((Image) object).getFilePath();
 		return label == null || label.length() == 0 ? getString("_UI_Image_type") : //$NON-NLS-1$
 				getString("_UI_Image_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
@@ -234,18 +219,6 @@ public class ImageItemProvider
 
 		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY_PART__DATA_SOURCE,
 				DocumentStructureFactory.eINSTANCE.createEMFDataSource()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
 	}
 
 }

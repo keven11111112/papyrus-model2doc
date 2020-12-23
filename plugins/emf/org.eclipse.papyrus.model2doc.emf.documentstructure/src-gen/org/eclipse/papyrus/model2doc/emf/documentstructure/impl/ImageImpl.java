@@ -20,11 +20,12 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
+import org.eclipse.papyrus.model2doc.core.builtintypes.impl.DefaultFileReferenceImpl;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DataSource;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Image;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.LeafBodyPart;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,7 +42,7 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.Image;
  *
  * @generated
  */
-public class ImageImpl extends MinimalEObjectImpl.Container implements Image {
+public class ImageImpl extends DefaultFileReferenceImpl implements Image {
 	/**
 	 * The cached value of the '{@link #getDataSource() <em>Data Source</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -321,6 +322,56 @@ public class ImageImpl extends MinimalEObjectImpl.Container implements Image {
 			return CAPTION_EDEFAULT == null ? caption != null : !CAPTION_EDEFAULT.equals(caption);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == BodyPart.class) {
+			switch (derivedFeatureID) {
+			case DocumentStructurePackage.IMAGE__DATA_SOURCE:
+				return DocumentStructurePackage.BODY_PART__DATA_SOURCE;
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == LeafBodyPart.class) {
+			switch (derivedFeatureID) {
+			default:
+				return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == BodyPart.class) {
+			switch (baseFeatureID) {
+			case DocumentStructurePackage.BODY_PART__DATA_SOURCE:
+				return DocumentStructurePackage.IMAGE__DATA_SOURCE;
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == LeafBodyPart.class) {
+			switch (baseFeatureID) {
+			default:
+				return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**

@@ -59,6 +59,9 @@
       <ownedComment xmi:type="uml:Comment" xmi:id="_YhIsgFwuEemF3-UZXrtb4g" annotatedElement="_bYgy4B4gEemmq_cjeiIGww">
         <body>This object represents an image inserted in the document.</body>
       </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_Ubc1AEUwEeuZlM4bILw9_g">
+        <general xmi:type="uml:Class" href="pathmap://MODEL2DOC/BUILTIN_TYPES/BuiltInTypes.uml#_tL-NYJQUEemHKPZQudxUGA"/>
+      </generalization>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_A6mgEFwuEemF3-UZXrtb4g" name="imagePath">
         <ownedComment xmi:type="uml:Comment" xmi:id="_TkU0QFwuEemF3-UZXrtb4g" annotatedElement="_A6mgEFwuEemF3-UZXrtb4g">
           <body>The path can be in the user workspace in platform:/resource or, somewhere on the user computer, so for windows, it will be in C:/ for example.</body>

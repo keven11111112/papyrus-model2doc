@@ -69,7 +69,7 @@ public class EmptyLineImpl extends MinimalEObjectImpl.Container implements Empty
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return DocumentStructurePackage.Literals.NEW_LINE;
+		return DocumentStructurePackage.Literals.EMPTY_LINE;
 	}
 
 	/**
@@ -93,7 +93,7 @@ public class EmptyLineImpl extends MinimalEObjectImpl.Container implements Empty
 		DataSource oldDataSource = dataSource;
 		dataSource = newDataSource;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DocumentStructurePackage.NEW_LINE__DATA_SOURCE, oldDataSource, newDataSource);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DocumentStructurePackage.EMPTY_LINE__DATA_SOURCE, oldDataSource, newDataSource);
 			if (msgs == null) {
 				msgs = notification;
 			} else {
@@ -114,17 +114,17 @@ public class EmptyLineImpl extends MinimalEObjectImpl.Container implements Empty
 		if (newDataSource != dataSource) {
 			NotificationChain msgs = null;
 			if (dataSource != null) {
-				msgs = ((InternalEObject) dataSource).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DocumentStructurePackage.NEW_LINE__DATA_SOURCE, null, msgs);
+				msgs = ((InternalEObject) dataSource).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DocumentStructurePackage.EMPTY_LINE__DATA_SOURCE, null, msgs);
 			}
 			if (newDataSource != null) {
-				msgs = ((InternalEObject) newDataSource).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DocumentStructurePackage.NEW_LINE__DATA_SOURCE, null, msgs);
+				msgs = ((InternalEObject) newDataSource).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DocumentStructurePackage.EMPTY_LINE__DATA_SOURCE, null, msgs);
 			}
 			msgs = basicSetDataSource(newDataSource, msgs);
 			if (msgs != null) {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructurePackage.NEW_LINE__DATA_SOURCE, newDataSource, newDataSource));
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructurePackage.EMPTY_LINE__DATA_SOURCE, newDataSource, newDataSource));
 		}
 	}
 
@@ -137,7 +137,7 @@ public class EmptyLineImpl extends MinimalEObjectImpl.Container implements Empty
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case DocumentStructurePackage.NEW_LINE__DATA_SOURCE:
+		case DocumentStructurePackage.EMPTY_LINE__DATA_SOURCE:
 			return basicSetDataSource(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -152,7 +152,7 @@ public class EmptyLineImpl extends MinimalEObjectImpl.Container implements Empty
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case DocumentStructurePackage.NEW_LINE__DATA_SOURCE:
+		case DocumentStructurePackage.EMPTY_LINE__DATA_SOURCE:
 			return getDataSource();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -167,7 +167,7 @@ public class EmptyLineImpl extends MinimalEObjectImpl.Container implements Empty
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DocumentStructurePackage.NEW_LINE__DATA_SOURCE:
+		case DocumentStructurePackage.EMPTY_LINE__DATA_SOURCE:
 			setDataSource((DataSource) newValue);
 			return;
 		}
@@ -183,7 +183,7 @@ public class EmptyLineImpl extends MinimalEObjectImpl.Container implements Empty
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DocumentStructurePackage.NEW_LINE__DATA_SOURCE:
+		case DocumentStructurePackage.EMPTY_LINE__DATA_SOURCE:
 			setDataSource((DataSource) null);
 			return;
 		}
@@ -199,7 +199,7 @@ public class EmptyLineImpl extends MinimalEObjectImpl.Container implements Empty
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case DocumentStructurePackage.NEW_LINE__DATA_SOURCE:
+		case DocumentStructurePackage.EMPTY_LINE__DATA_SOURCE:
 			return dataSource != null;
 		}
 		return super.eIsSet(featureID);

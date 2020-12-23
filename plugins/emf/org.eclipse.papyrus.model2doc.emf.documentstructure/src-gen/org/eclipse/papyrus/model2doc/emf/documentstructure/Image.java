@@ -13,6 +13,8 @@
  */
 package org.eclipse.papyrus.model2doc.emf.documentstructure;
 
+import org.eclipse.papyrus.model2doc.core.builtintypes.DefaultFileReference;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -35,7 +37,7 @@ package org.eclipse.papyrus.model2doc.emf.documentstructure;
  * @model
  * @generated
  */
-public interface Image extends LeafBodyPart {
+public interface Image extends DefaultFileReference, LeafBodyPart {
 	/**
 	 * Returns the value of the '<em><b>Image Path</b></em>' attribute.
 	 * <!-- begin-user-doc -->

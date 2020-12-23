@@ -598,6 +598,97 @@ public interface DocumentStructurePackage extends EPackage {
 	int LEAF_BODY_PART = 11;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ImageImpl <em>Image</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ImageImpl
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getImage()
+	 * @generated
+	 */
+	int IMAGE = 10;
+
+	/**
+	 * The feature id for the '<em><b>File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE__FILE_PATH = BuiltInTypesPackage.DEFAULT_FILE_REFERENCE__FILE_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Data Source</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE__DATA_SOURCE = BuiltInTypesPackage.DEFAULT_FILE_REFERENCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Image Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE__IMAGE_PATH = BuiltInTypesPackage.DEFAULT_FILE_REFERENCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Caption</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE__CAPTION = BuiltInTypesPackage.DEFAULT_FILE_REFERENCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Image</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_FEATURE_COUNT = BuiltInTypesPackage.DEFAULT_FILE_REFERENCE_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Get File Path</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE___GET_FILE_PATH = BuiltInTypesPackage.DEFAULT_FILE_REFERENCE___GET_FILE_PATH;
+
+	/**
+	 * The operation id for the '<em>Get File Accessor</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE___GET_FILE_ACCESSOR = BuiltInTypesPackage.DEFAULT_FILE_REFERENCE___GET_FILE_ACCESSOR;
+
+	/**
+	 * The number of operations of the '<em>Image</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_OPERATION_COUNT = BuiltInTypesPackage.DEFAULT_FILE_REFERENCE_OPERATION_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Data Source</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -626,67 +717,6 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @ordered
 	 */
 	int LEAF_BODY_PART_OPERATION_COUNT = BODY_PART_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ImageImpl <em>Image</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ImageImpl
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getImage()
-	 * @generated
-	 */
-	int IMAGE = 10;
-
-	/**
-	 * The feature id for the '<em><b>Data Source</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE__DATA_SOURCE = LEAF_BODY_PART__DATA_SOURCE;
-
-	/**
-	 * The feature id for the '<em><b>Image Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE__IMAGE_PATH = LEAF_BODY_PART_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Caption</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE__CAPTION = LEAF_BODY_PART_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Image</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE_FEATURE_COUNT = LEAF_BODY_PART_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Image</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE_OPERATION_COUNT = LEAF_BODY_PART_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.EMFDataSourceImpl <em>EMF Data Source</em>}' class.
@@ -1218,6 +1248,16 @@ public interface DocumentStructurePackage extends EPackage {
 	int INSERTED_FILE___GET_FILE_PATH = BuiltInTypesPackage.DEFAULT_FILE_REFERENCE___GET_FILE_PATH;
 
 	/**
+	 * The operation id for the '<em>Get File Accessor</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int INSERTED_FILE___GET_FILE_ACCESSOR = BuiltInTypesPackage.DEFAULT_FILE_REFERENCE___GET_FILE_ACCESSOR;
+
+	/**
 	 * The number of operations of the '<em>Inserted File</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1237,7 +1277,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getEmptyLine()
 	 * @generated
 	 */
-	int NEW_LINE = 21;
+	int EMPTY_LINE = 21;
 
 	/**
 	 * The feature id for the '<em><b>Data Source</b></em>' containment reference.
@@ -1247,7 +1287,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NEW_LINE__DATA_SOURCE = LEAF_BODY_PART__DATA_SOURCE;
+	int EMPTY_LINE__DATA_SOURCE = LEAF_BODY_PART__DATA_SOURCE;
 
 	/**
 	 * The number of structural features of the '<em>Empty Line</em>' class.
@@ -1257,7 +1297,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NEW_LINE_FEATURE_COUNT = LEAF_BODY_PART_FEATURE_COUNT + 0;
+	int EMPTY_LINE_FEATURE_COUNT = LEAF_BODY_PART_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Empty Line</em>' class.
@@ -1267,8 +1307,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NEW_LINE_OPERATION_COUNT = LEAF_BODY_PART_OPERATION_COUNT + 0;
-
+	int EMPTY_LINE_OPERATION_COUNT = LEAF_BODY_PART_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument <em>Text Document</em>}'.
@@ -2216,7 +2255,7 @@ public interface DocumentStructurePackage extends EPackage {
 		 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getEmptyLine()
 		 * @generated
 		 */
-		EClass NEW_LINE = eINSTANCE.getEmptyLine();
+		EClass EMPTY_LINE = eINSTANCE.getEmptyLine();
 
 	}
 

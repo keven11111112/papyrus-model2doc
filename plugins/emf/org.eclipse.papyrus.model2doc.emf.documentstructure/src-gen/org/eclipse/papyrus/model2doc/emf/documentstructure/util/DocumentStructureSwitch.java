@@ -199,7 +199,13 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 			Image image = (Image) theEObject;
 			T result = caseImage(image);
 			if (result == null) {
+				result = caseDefaultFileReference(image);
+			}
+			if (result == null) {
 				result = caseLeafBodyPart(image);
+			}
+			if (result == null) {
+				result = caseIFileReference(image);
 			}
 			if (result == null) {
 				result = caseBodyPart(image);
@@ -355,7 +361,7 @@ public class DocumentStructureSwitch<T> extends Switch<T> {
 			}
 			return result;
 		}
-		case DocumentStructurePackage.NEW_LINE: {
+		case DocumentStructurePackage.EMPTY_LINE: {
 			EmptyLine emptyLine = (EmptyLine) theEObject;
 			T result = caseEmptyLine(emptyLine);
 			if (result == null) {

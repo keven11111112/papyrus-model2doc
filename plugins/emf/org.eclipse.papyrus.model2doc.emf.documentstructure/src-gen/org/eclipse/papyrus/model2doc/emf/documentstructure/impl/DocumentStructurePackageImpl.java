@@ -882,7 +882,7 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 
 		insertedFileEClass = createEClass(INSERTED_FILE);
 
-		emptyLineEClass = createEClass(NEW_LINE);
+		emptyLineEClass = createEClass(EMPTY_LINE);
 	}
 
 	/**
@@ -928,6 +928,7 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 		paragraphEClass.getESuperTypes().add(this.getComposedBodyPart());
 		composedBodyPartEClass.getESuperTypes().add(this.getBodyPart());
 		titleEClass.getESuperTypes().add(this.getComposedBodyPart());
+		imageEClass.getESuperTypes().add(theBuiltInTypesPackage.getDefaultFileReference());
 		imageEClass.getESuperTypes().add(this.getLeafBodyPart());
 		leafBodyPartEClass.getESuperTypes().add(this.getBodyPart());
 		emfDataSourceEClass.getESuperTypes().add(this.getDataSource());

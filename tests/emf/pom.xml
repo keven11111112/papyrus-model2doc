@@ -18,6 +18,7 @@
 	<description>Container of the Papyrus Model to Documentation EMF Tests Plugins</description>
 
 	<modules>
+		<module>org.eclipse.papyrus.model2doc.emf.documentstructure.tests</module>
 		<module>org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.tests</module>
 		<module>org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.editor.tests</module>
 	</modules>

@@ -204,6 +204,16 @@ public class DocumentStructureAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseIFileReference(IFileReference object) {
+			return createIFileReferenceAdapter();
+		}
+
+		@Override
+		public Adapter caseDefaultFileReference(DefaultFileReference object) {
+			return createDefaultFileReferenceAdapter();
+		}
+
+		@Override
 		public Adapter caseAbstractTable(AbstractTable object) {
 			return createAbstractTableAdapter();
 		}
@@ -246,16 +256,6 @@ public class DocumentStructureAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseTextListItem(TextListItem object) {
 			return createTextListItemAdapter();
-		}
-
-		@Override
-		public Adapter caseIFileReference(IFileReference object) {
-			return createIFileReferenceAdapter();
-		}
-
-		@Override
-		public Adapter caseDefaultFileReference(DefaultFileReference object) {
-			return createDefaultFileReferenceAdapter();
 		}
 
 		@Override
