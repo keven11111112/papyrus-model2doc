@@ -81,7 +81,6 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="documentstructure.ecore#//Title/getLevel"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="documentstructure.ecore#//Image">
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructure.ecore#//Image/imagePath"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute documentstructure.ecore#//Image/caption"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="documentstructure.ecore#//LeafBodyPart"/>

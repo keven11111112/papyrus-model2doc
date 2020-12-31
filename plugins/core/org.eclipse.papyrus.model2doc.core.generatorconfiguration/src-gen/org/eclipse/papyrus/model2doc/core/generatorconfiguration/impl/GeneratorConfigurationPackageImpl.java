@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.eclipse.papyrus.model2doc.core.builtintypes.accessors.IInputFileAccessor;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentStructureGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentGeneratorConfiguration;
@@ -30,6 +31,7 @@ import org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfig
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IGeneratorConfiguration;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.accessors.IOutputFileAccessor;
 
 /**
  * <!-- begin-user-doc -->
@@ -101,7 +103,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	 *
 	 * @generated
 	 */
-	private EDataType urlEDataType = null;
+	private EDataType iInputFileAccessorEDataType = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -109,7 +111,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	 *
 	 * @generated
 	 */
-	private EDataType uriEDataType = null;
+	private EDataType iOutputFileAccessorEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -429,8 +431,19 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	 * @generated
 	 */
 	@Override
-	public EOperation getIDocumentStructureGeneratorConfiguration__CreateDocumentStructureURI__String_String() {
+	public EOperation getIDocumentStructureGeneratorConfiguration__CreateDocumentStructureOutputAccessor() {
 		return iDocumentStructureGeneratorConfigurationEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EOperation getIDocumentStructureGeneratorConfiguration__CreateImageOutputAccessor() {
+		return iDocumentStructureGeneratorConfigurationEClass.getEOperations().get(5);
 	}
 
 	/**
@@ -484,7 +497,7 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	 * @generated
 	 */
 	@Override
-	public EOperation getIDocumentGeneratorConfiguration__CreateTemplateFileURL() {
+	public EOperation getIDocumentGeneratorConfiguration__CreateTemplateFileInputAccessor() {
 		return iDocumentGeneratorConfigurationEClass.getEOperations().get(3);
 	}
 
@@ -495,8 +508,8 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	 * @generated
 	 */
 	@Override
-	public EDataType getURI() {
-		return uriEDataType;
+	public EOperation getIDocumentGeneratorConfiguration__CreateDocumentOutputAccessor() {
+		return iDocumentGeneratorConfigurationEClass.getEOperations().get(4);
 	}
 
 	/**
@@ -517,8 +530,19 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 	 * @generated
 	 */
 	@Override
-	public EDataType getURL() {
-		return urlEDataType;
+	public EDataType getIInputFileAccessor() {
+		return iInputFileAccessorEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EDataType getIOutputFileAccessor() {
+		return iOutputFileAccessorEDataType;
 	}
 
 	/**
@@ -581,19 +605,21 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 		createEOperation(iDocumentStructureGeneratorConfigurationEClass, IDOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___GET_STRUCTURE_GENERATOR_ID);
 		createEOperation(iDocumentStructureGeneratorConfigurationEClass, IDOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___GET_IMAGE_FOLDER);
 		createEOperation(iDocumentStructureGeneratorConfigurationEClass, IDOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___GET_STRUCTURE_FOLDER);
-		createEOperation(iDocumentStructureGeneratorConfigurationEClass, IDOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___CREATE_DOCUMENT_STRUCTURE_URI__STRING_STRING);
+		createEOperation(iDocumentStructureGeneratorConfigurationEClass, IDOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___CREATE_DOCUMENT_STRUCTURE_OUTPUT_ACCESSOR);
+		createEOperation(iDocumentStructureGeneratorConfigurationEClass, IDOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___CREATE_IMAGE_OUTPUT_ACCESSOR);
 
 		iDocumentGeneratorConfigurationEClass = createEClass(IDOCUMENT_GENERATOR_CONFIGURATION);
 		createEOperation(iDocumentGeneratorConfigurationEClass, IDOCUMENT_GENERATOR_CONFIGURATION___IS_SAVE_DOCUMENT_STRUCTURE);
 		createEOperation(iDocumentGeneratorConfigurationEClass, IDOCUMENT_GENERATOR_CONFIGURATION___IS_SAVE_IMAGES);
 		createEOperation(iDocumentGeneratorConfigurationEClass, IDOCUMENT_GENERATOR_CONFIGURATION___GET_TEMPLATE_FILE);
-		createEOperation(iDocumentGeneratorConfigurationEClass, IDOCUMENT_GENERATOR_CONFIGURATION___CREATE_TEMPLATE_FILE_URL);
+		createEOperation(iDocumentGeneratorConfigurationEClass, IDOCUMENT_GENERATOR_CONFIGURATION___CREATE_TEMPLATE_FILE_INPUT_ACCESSOR);
+		createEOperation(iDocumentGeneratorConfigurationEClass, IDOCUMENT_GENERATOR_CONFIGURATION___CREATE_DOCUMENT_OUTPUT_ACCESSOR);
 
 		defaultDocumentGeneratorConfigurationEClass = createEClass(DEFAULT_DOCUMENT_GENERATOR_CONFIGURATION);
 
 		// Create data types
-		urlEDataType = createEDataType(URL);
-		uriEDataType = createEDataType(URI);
+		iInputFileAccessorEDataType = createEDataType(IINPUT_FILE_ACCESSOR);
+		iOutputFileAccessorEDataType = createEDataType(IOUTPUT_FILE_ACCESSOR);
 	}
 
 	/**
@@ -683,9 +709,9 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 
 		initEOperation(getIDocumentStructureGeneratorConfiguration__GetStructureFolder(), ecorePackage.getEString(), "getStructureFolder", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
-		op = initEOperation(getIDocumentStructureGeneratorConfiguration__CreateDocumentStructureURI__String_String(), this.getURI(), "createDocumentStructureURI", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
-		addEParameter(op, ecorePackage.getEString(), "fileExtension", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
-		addEParameter(op, ecorePackage.getEString(), "version", 0, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+		initEOperation(getIDocumentStructureGeneratorConfiguration__CreateDocumentStructureOutputAccessor(), this.getIOutputFileAccessor(), "createDocumentStructureOutputAccessor", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
+		initEOperation(getIDocumentStructureGeneratorConfiguration__CreateImageOutputAccessor(), this.getIOutputFileAccessor(), "createImageOutputAccessor", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(iDocumentGeneratorConfigurationEClass, IDocumentGeneratorConfiguration.class, "IDocumentGeneratorConfiguration", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
@@ -695,13 +721,15 @@ public class GeneratorConfigurationPackageImpl extends EPackageImpl implements G
 
 		initEOperation(getIDocumentGeneratorConfiguration__GetTemplateFile(), ecorePackage.getEString(), "getTemplateFile", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
-		initEOperation(getIDocumentGeneratorConfiguration__CreateTemplateFileURL(), this.getURL(), "createTemplateFileURL", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+		initEOperation(getIDocumentGeneratorConfiguration__CreateTemplateFileInputAccessor(), this.getIInputFileAccessor(), "createTemplateFileInputAccessor", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
+		initEOperation(getIDocumentGeneratorConfiguration__CreateDocumentOutputAccessor(), this.getIOutputFileAccessor(), "createDocumentOutputAccessor", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(defaultDocumentGeneratorConfigurationEClass, DefaultDocumentGeneratorConfiguration.class, "DefaultDocumentGeneratorConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		// Initialize data types
-		initEDataType(urlEDataType, java.net.URL.class, "URL", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEDataType(uriEDataType, org.eclipse.emf.common.util.URI.class, "URI", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEDataType(iInputFileAccessorEDataType, IInputFileAccessor.class, "IInputFileAccessor", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEDataType(iOutputFileAccessorEDataType, IOutputFileAccessor.class, "IOutputFileAccessor", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		// Create resource
 		createResource(eNS_URI);

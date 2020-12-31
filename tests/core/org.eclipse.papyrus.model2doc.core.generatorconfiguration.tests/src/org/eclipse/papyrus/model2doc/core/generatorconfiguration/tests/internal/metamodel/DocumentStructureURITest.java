@@ -543,10 +543,8 @@ public class DocumentStructureURITest extends AbstractGeneratorConfigurationTest
 		conf.setDocumentName(documentName);
 		org.junit.Assert.assertTrue("The save of the tested GeneratorConfiguration failed", saveConfiguration(conf)); //$NON-NLS-1$
 
-		final URI newURi = conf.createDocumentStructureURI("pds", documentVersion); //$NON-NLS-1$
+		final URI newURi = conf.createDocumentStructureOutputAccessor().createOutputFileURI(conf.getDocumentName(), "pds", documentVersion); //$NON-NLS-1$
 		Assert.assertEquals(expectedResult, newURi == null ? newURi : newURi.toString());
-
-
 	}
 
 	/**

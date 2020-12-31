@@ -13,7 +13,8 @@
  */
 package org.eclipse.papyrus.model2doc.core.generatorconfiguration;
 
-import java.net.URL;
+import org.eclipse.papyrus.model2doc.core.builtintypes.accessors.IInputFileAccessor;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.accessors.IOutputFileAccessor;
 
 
 /**
@@ -62,12 +63,24 @@ public interface IDocumentGeneratorConfiguration extends IGeneratorConfiguration
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Create a java.net.URL to access to the template or null if it don't exist.
+	 * Return an accessor to get the template.
 	 * <!-- end-model-doc -->
 	 *
-	 * @model dataType="org.eclipse.papyrus.model2doc.core.generatorconfiguration.URL" required="true" ordered="false"
+	 * @model dataType="org.eclipse.papyrus.model2doc.core.generatorconfiguration.IInputFileAccessor" required="true" ordered="false"
 	 * @generated
 	 */
-	URL createTemplateFileURL();
+	IInputFileAccessor createTemplateFileInputAccessor();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Return an accessor for the generated output document.
+	 * <!-- end-model-doc -->
+	 *
+	 * @model dataType="org.eclipse.papyrus.model2doc.core.generatorconfiguration.IOutputFileAccessor" required="true" ordered="false"
+	 * @generated
+	 */
+	IOutputFileAccessor createDocumentOutputAccessor();
 
 } // IDocumentGeneratorConfiguration

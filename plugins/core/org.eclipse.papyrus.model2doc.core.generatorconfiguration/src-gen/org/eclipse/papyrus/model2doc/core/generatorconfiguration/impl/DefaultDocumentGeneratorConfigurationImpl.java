@@ -14,13 +14,14 @@
 package org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl;
 
 import java.lang.reflect.InvocationTargetException;
-import java.net.URL;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.papyrus.model2doc.core.builtintypes.accessors.IInputFileAccessor;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationPackage;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.accessors.IOutputFileAccessor;
 
 /**
  * <!-- begin-user-doc -->
@@ -58,8 +59,19 @@ public class DefaultDocumentGeneratorConfigurationImpl extends AbstractDocumentG
 	 * @generated
 	 */
 	@Override
-	public URL createTemplateFileURL() {
-		return org.eclipse.papyrus.model2doc.core.generatorconfiguration.internal.operations.DefaultDocumentGeneratorConfigurationOperations.createTemplateFileURL(this);
+	public IInputFileAccessor createTemplateFileInputAccessor() {
+		return new org.eclipse.papyrus.model2doc.core.generatorconfiguration.internal.accessors.TemplateInputFileAccessor(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public IOutputFileAccessor createDocumentOutputAccessor() {
+		return new org.eclipse.papyrus.model2doc.core.generatorconfiguration.internal.accessors.DocumentOutputFileAccessor(this);
 	}
 
 	/**
@@ -78,8 +90,10 @@ public class DefaultDocumentGeneratorConfigurationImpl extends AbstractDocumentG
 				return GeneratorConfigurationPackage.DEFAULT_DOCUMENT_GENERATOR_CONFIGURATION___IS_SAVE_IMAGES;
 			case GeneratorConfigurationPackage.IDOCUMENT_GENERATOR_CONFIGURATION___GET_TEMPLATE_FILE:
 				return GeneratorConfigurationPackage.DEFAULT_DOCUMENT_GENERATOR_CONFIGURATION___GET_TEMPLATE_FILE;
-			case GeneratorConfigurationPackage.IDOCUMENT_GENERATOR_CONFIGURATION___CREATE_TEMPLATE_FILE_URL:
-				return GeneratorConfigurationPackage.DEFAULT_DOCUMENT_GENERATOR_CONFIGURATION___CREATE_TEMPLATE_FILE_URL;
+			case GeneratorConfigurationPackage.IDOCUMENT_GENERATOR_CONFIGURATION___CREATE_TEMPLATE_FILE_INPUT_ACCESSOR:
+				return GeneratorConfigurationPackage.DEFAULT_DOCUMENT_GENERATOR_CONFIGURATION___CREATE_TEMPLATE_FILE_INPUT_ACCESSOR;
+			case GeneratorConfigurationPackage.IDOCUMENT_GENERATOR_CONFIGURATION___CREATE_DOCUMENT_OUTPUT_ACCESSOR:
+				return GeneratorConfigurationPackage.DEFAULT_DOCUMENT_GENERATOR_CONFIGURATION___CREATE_DOCUMENT_OUTPUT_ACCESSOR;
 			default:
 				return -1;
 			}
@@ -96,8 +110,10 @@ public class DefaultDocumentGeneratorConfigurationImpl extends AbstractDocumentG
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case GeneratorConfigurationPackage.DEFAULT_DOCUMENT_GENERATOR_CONFIGURATION___CREATE_TEMPLATE_FILE_URL:
-			return createTemplateFileURL();
+		case GeneratorConfigurationPackage.DEFAULT_DOCUMENT_GENERATOR_CONFIGURATION___CREATE_TEMPLATE_FILE_INPUT_ACCESSOR:
+			return createTemplateFileInputAccessor();
+		case GeneratorConfigurationPackage.DEFAULT_DOCUMENT_GENERATOR_CONFIGURATION___CREATE_DOCUMENT_OUTPUT_ACCESSOR:
+			return createDocumentOutputAccessor();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

@@ -13,7 +13,7 @@
  */
 package org.eclipse.papyrus.model2doc.core.generatorconfiguration;
 
-import org.eclipse.emf.common.util.URI;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.accessors.IOutputFileAccessor;
 
 
 /**
@@ -74,17 +74,24 @@ public interface IDocumentStructureGeneratorConfiguration extends IGeneratorConf
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The platform:/resource URI of the document structure to create or <code>null</code> if we failed to create a valid URI
+	 * Return an accessor for the output Document Structure file.
+	 * <!-- end-model-doc -->
 	 *
-	 * @param fileExtension
-	 *            a string representing the extension of the document structure file to use.
-	 *            This parameter can't be null.
-	 * @param version
-	 *            Optional parameter. A string indicating the version of the document. This string will be a part of the file name.
-	 *            <!-- end-model-doc -->
-	 * @model dataType="org.eclipse.papyrus.model2doc.core.generatorconfiguration.URI" required="true" ordered="false" fileExtensionRequired="true" fileExtensionOrdered="false" versionOrdered="false"
+	 * @model dataType="org.eclipse.papyrus.model2doc.core.generatorconfiguration.IOutputFileAccessor" required="true" ordered="false"
 	 * @generated
 	 */
-	URI createDocumentStructureURI(String fileExtension, String version);
+	IOutputFileAccessor createDocumentStructureOutputAccessor();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Return an accessor for the output image files
+	 * <!-- end-model-doc -->
+	 *
+	 * @model dataType="org.eclipse.papyrus.model2doc.core.generatorconfiguration.IOutputFileAccessor" required="true" ordered="false"
+	 * @generated
+	 */
+	IOutputFileAccessor createImageOutputAccessor();
 
 } // IDocumentStructureGeneratorConfiguration

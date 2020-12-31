@@ -36,7 +36,6 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.LeafBodyPart;
  * </p>
  * <ul>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ImageImpl#getDataSource <em>Data Source</em>}</li>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ImageImpl#getImagePath <em>Image Path</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ImageImpl#getCaption <em>Caption</em>}</li>
  * </ul>
  *
@@ -53,28 +52,6 @@ public class ImageImpl extends DefaultFileReferenceImpl implements Image {
 	 * @ordered
 	 */
 	protected DataSource dataSource;
-
-	/**
-	 * The default value of the '{@link #getImagePath() <em>Image Path</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see #getImagePath()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String IMAGE_PATH_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getImagePath() <em>Image Path</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see #getImagePath()
-	 * @generated
-	 * @ordered
-	 */
-	protected String imagePath = IMAGE_PATH_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCaption() <em>Caption</em>}' attribute.
@@ -182,32 +159,6 @@ public class ImageImpl extends DefaultFileReferenceImpl implements Image {
 	 * @generated
 	 */
 	@Override
-	public String getImagePath() {
-		return imagePath;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public void setImagePath(String newImagePath) {
-		String oldImagePath = imagePath;
-		imagePath = newImagePath;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructurePackage.IMAGE__IMAGE_PATH, oldImagePath, imagePath));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
 	public String getCaption() {
 		return caption;
 	}
@@ -253,8 +204,6 @@ public class ImageImpl extends DefaultFileReferenceImpl implements Image {
 		switch (featureID) {
 		case DocumentStructurePackage.IMAGE__DATA_SOURCE:
 			return getDataSource();
-		case DocumentStructurePackage.IMAGE__IMAGE_PATH:
-			return getImagePath();
 		case DocumentStructurePackage.IMAGE__CAPTION:
 			return getCaption();
 		}
@@ -272,9 +221,6 @@ public class ImageImpl extends DefaultFileReferenceImpl implements Image {
 		switch (featureID) {
 		case DocumentStructurePackage.IMAGE__DATA_SOURCE:
 			setDataSource((DataSource) newValue);
-			return;
-		case DocumentStructurePackage.IMAGE__IMAGE_PATH:
-			setImagePath((String) newValue);
 			return;
 		case DocumentStructurePackage.IMAGE__CAPTION:
 			setCaption((String) newValue);
@@ -295,9 +241,6 @@ public class ImageImpl extends DefaultFileReferenceImpl implements Image {
 		case DocumentStructurePackage.IMAGE__DATA_SOURCE:
 			setDataSource((DataSource) null);
 			return;
-		case DocumentStructurePackage.IMAGE__IMAGE_PATH:
-			setImagePath(IMAGE_PATH_EDEFAULT);
-			return;
 		case DocumentStructurePackage.IMAGE__CAPTION:
 			setCaption(CAPTION_EDEFAULT);
 			return;
@@ -316,8 +259,6 @@ public class ImageImpl extends DefaultFileReferenceImpl implements Image {
 		switch (featureID) {
 		case DocumentStructurePackage.IMAGE__DATA_SOURCE:
 			return dataSource != null;
-		case DocumentStructurePackage.IMAGE__IMAGE_PATH:
-			return IMAGE_PATH_EDEFAULT == null ? imagePath != null : !IMAGE_PATH_EDEFAULT.equals(imagePath);
 		case DocumentStructurePackage.IMAGE__CAPTION:
 			return CAPTION_EDEFAULT == null ? caption != null : !CAPTION_EDEFAULT.equals(caption);
 		}
@@ -387,9 +328,7 @@ public class ImageImpl extends DefaultFileReferenceImpl implements Image {
 		}
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (imagePath: "); //$NON-NLS-1$
-		result.append(imagePath);
-		result.append(", caption: "); //$NON-NLS-1$
+		result.append(" (caption: "); //$NON-NLS-1$
 		result.append(caption);
 		result.append(')');
 		return result.toString();

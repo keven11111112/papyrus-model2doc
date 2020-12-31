@@ -58,7 +58,7 @@ public class FileReferenceURLFromInTheAirTest extends AbstractFileReferenceURLTe
 		final DefaultFileReference conf = createFileReference();
 		conf.setFilePath(TEST_01_FILE_REFERENCE_DECLARED_FILE_NAME);
 		Assert.assertNull(conf.eResource());
-		checkCreatedURL(conf.getFileAccessor().createFileURL());
+		checkCreatedURL(conf.getFileAccessor().createInputFileURL());
 	}
 
 	@Test
@@ -67,7 +67,7 @@ public class FileReferenceURLFromInTheAirTest extends AbstractFileReferenceURLTe
 		final DefaultFileReference conf = createFileReference();
 		conf.setFilePath(TEST_02_DECLARED_FILE_REFERENCE_FILE_NAME);
 		Assert.assertNull(conf.eResource());
-		checkCreatedURL(conf.getFileAccessor().createFileURL());
+		checkCreatedURL(conf.getFileAccessor().createInputFileURL());
 	}
 
 	@Test
@@ -76,7 +76,7 @@ public class FileReferenceURLFromInTheAirTest extends AbstractFileReferenceURLTe
 		final DefaultFileReference conf = createFileReference();
 		conf.setFilePath(TEST_03_DECLARED_FILE_REFERENCE_FILE_NAME);
 		Assert.assertNull(conf.eResource());
-		Assert.assertNull(conf.getFileAccessor().createFileURL());
+		Assert.assertNull(conf.getFileAccessor().createInputFileURL());
 	}
 
 }

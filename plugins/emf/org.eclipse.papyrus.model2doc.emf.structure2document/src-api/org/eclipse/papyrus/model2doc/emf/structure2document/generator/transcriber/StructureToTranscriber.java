@@ -25,9 +25,9 @@ import org.eclipse.papyrus.model2doc.core.transcription.Transcription;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Body;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.ComposedBodyPart;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.EmptyLine;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Image;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.InsertedFile;
-import org.eclipse.papyrus.model2doc.emf.documentstructure.EmptyLine;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Paragraph;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TableOfContents;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TableOfFigures;
@@ -191,7 +191,8 @@ public class StructureToTranscriber implements Transcriber {
 	 *            an image
 	 */
 	private void transcribeImage(final Image image) {
-		transcription.writeImage(image.getImagePath(), image.getCaption());
+		// TODO allow to transcription to take an URL instead of a String?!
+		transcription.writeImage(image.getFileAccessor().createInputFileURL().toString(), image.getCaption());
 	}
 
 	/**

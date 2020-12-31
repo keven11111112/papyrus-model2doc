@@ -11,31 +11,29 @@
       <details key="documentation" value="Default implementation to define the Document Structure generator.&#xD;&#xA;These is no inheritance between DefaultDocumentGeneratorConfiguration and DefaultDocumentStructureGeneratorConfiguration, in order to constraint by type the kind of generator to use the the DocumentStructureTemplate and DocumentStructure models."/>
     </eAnnotations>
     <eAnnotations source="duplicates">
-      <contents xsi:type="ecore:EOperation" name="createDocumentStructureURI" ordered="false"
-          lowerBound="1" eType="#//URI">
+      <contents xsi:type="ecore:EOperation" name="createDocumentStructureOutputAccessor"
+          ordered="false" lowerBound="1" eType="#//IOutputFileAccessor">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The platform:/resource URI of the document structure to create or &lt;code>null&lt;/code> if we failed to create a valid URI"/>
-          <details key="body" value="return org.eclipse.papyrus.model2doc.core.generatorconfiguration.internal.operations.DefaultDocumentStructureGeneratorConfigurationOperations.createDocumentStructureURI(this,fileExtension,version);"/>
+          <details key="documentation" value="Return an accessor for the output Document Structure file."/>
+          <details key="body" value="return new org.eclipse.papyrus.model2doc.core.generatorconfiguration.internal.accessors.DocumentStructureOutputFileAccessor(this);"/>
         </eAnnotations>
-        <eAnnotations source="redefines" references="#//IDocumentStructureGeneratorConfiguration/createDocumentStructureURI"/>
-        <eParameters name="fileExtension" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="a string representing the extension of the document structure file to use. &#xD;&#xA;This parameter can't be null."/>
-          </eAnnotations>
-        </eParameters>
-        <eParameters name="version" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Optional parameter. A string indicating the version of the document. This string will be a part of the file name."/>
-          </eAnnotations>
-        </eParameters>
+        <eAnnotations source="redefines" references="#//IDocumentStructureGeneratorConfiguration/createDocumentStructureOutputAccessor"/>
       </contents>
       <contents xsi:type="ecore:EOperation" name="createDocumentGeneratorConfiguration"
           ordered="false" lowerBound="1" eType="#//IDocumentGeneratorConfiguration">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Creates a IDocumentGeneratorConfiguration from the current configuration."/>
-          <details key="body" value="return org.eclipse.papyrus.model2doc.core.generatorconfiguration.internal.operations.DefaultDocumentStructureGeneratorConfigurationOperations.createDocumentGeneratorConfiguration(this);"/>
+          <details key="body" value="final DefaultDocumentGeneratorConfiguration newConf = GeneratorConfigurationFactory.eINSTANCE.createDefaultDocumentGeneratorConfiguration();&#xA;final Iterator&lt;EAttribute> iter = newConf.eClass().getEAllAttributes().iterator();&#xA;while (iter.hasNext()) {&#xA;&#x9;final EStructuralFeature feature = iter.next();&#xA;&#x9;newConf.eSet(feature, configuration.eGet(feature));&#xA;}&#xA;return newConf;"/>
         </eAnnotations>
         <eAnnotations source="redefines" references="#//IDocumentStructureGeneratorConfiguration/createDocumentGeneratorConfiguration"/>
+      </contents>
+      <contents xsi:type="ecore:EOperation" name="createImageOutputAccessor" ordered="false"
+          lowerBound="1" eType="#//IOutputFileAccessor">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Return an accessor for the output image files"/>
+          <details key="body" value="return new org.eclipse.papyrus.model2doc.core.generatorconfiguration.internal.accessors.ImageOutputFileAccessor(this);"/>
+        </eAnnotations>
+        <eAnnotations source="redefines" references="#//IDocumentStructureGeneratorConfiguration/createImageOutputAccessor"/>
       </contents>
     </eAnnotations>
   </eClassifiers>
@@ -128,21 +126,16 @@
     <eOperations name="getStructureGeneratorId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="getImageFolder" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="getStructureFolder" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eOperations name="createDocumentStructureURI" ordered="false" lowerBound="1"
-        eType="#//URI">
+    <eOperations name="createDocumentStructureOutputAccessor" ordered="false" lowerBound="1"
+        eType="#//IOutputFileAccessor">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The platform:/resource URI of the document structure to create or &lt;code>null&lt;/code> if we failed to create a valid URI"/>
+        <details key="documentation" value="Return an accessor for the output Document Structure file."/>
       </eAnnotations>
-      <eParameters name="fileExtension" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="a string representing the extension of the document structure file to use. &#xD;&#xA;This parameter can't be null."/>
-        </eAnnotations>
-      </eParameters>
-      <eParameters name="version" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Optional parameter. A string indicating the version of the document. This string will be a part of the file name."/>
-        </eAnnotations>
-      </eParameters>
+    </eOperations>
+    <eOperations name="createImageOutputAccessor" ordered="false" lowerBound="1" eType="#//IOutputFileAccessor">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Return an accessor for the output image files"/>
+      </eAnnotations>
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IDocumentGeneratorConfiguration" abstract="true"
@@ -153,27 +146,42 @@
     <eOperations name="isSaveDocumentStructure" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eOperations name="isSaveImages" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eOperations name="getTemplateFile" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eOperations name="createTemplateFileURL" ordered="false" lowerBound="1" eType="#//URL">
+    <eOperations name="createTemplateFileInputAccessor" ordered="false" lowerBound="1"
+        eType="#//IInputFileAccessor">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Create a java.net.URL to access to the template or null if it don't exist."/>
+        <details key="documentation" value="Return an accessor to get the template."/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="createDocumentOutputAccessor" ordered="false" lowerBound="1"
+        eType="#//IOutputFileAccessor">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Return an accessor for the generated output document."/>
       </eAnnotations>
     </eOperations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EDataType" name="URL" instanceClassName="java.net.URL"/>
-  <eClassifiers xsi:type="ecore:EDataType" name="URI" instanceClassName="org.eclipse.emf.common.util.URI"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="IInputFileAccessor" instanceClassName="org.eclipse.papyrus.model2doc.core.builtintypes.accessors.IInputFileAccessor"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="IOutputFileAccessor" instanceClassName="org.eclipse.papyrus.model2doc.core.generatorconfiguration.accessors.IOutputFileAccessor"/>
   <eClassifiers xsi:type="ecore:EClass" name="DefaultDocumentGeneratorConfiguration"
       eSuperTypes="#//AbstractDocumentGeneratorConfiguration #//IDocumentGeneratorConfiguration">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Default implementation to define the DocumentGeneratorConfiguration.&#xD;&#xA;These is no inheritance between DefaultDocumentGeneratorConfiguration and DefaultDocumentStructureGeneratorConfiguration, in order to constraint by type the kind of generator to use the the DocumentStructureTemplate and DocumentStructure models."/>
     </eAnnotations>
     <eAnnotations source="duplicates">
-      <contents xsi:type="ecore:EOperation" name="createTemplateFileURL" ordered="false"
-          lowerBound="1" eType="#//URL">
+      <contents xsi:type="ecore:EOperation" name="createTemplateFileInputAccessor"
+          ordered="false" lowerBound="1" eType="#//IInputFileAccessor">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Create a java.net.URL to access to the template or null if it don't exist."/>
-          <details key="body" value="return org.eclipse.papyrus.model2doc.core.generatorconfiguration.internal.operations.DefaultDocumentGeneratorConfigurationOperations.createTemplateFileURL(this);"/>
+          <details key="documentation" value="Return an accessor to get the template."/>
+          <details key="body" value="return new org.eclipse.papyrus.model2doc.core.generatorconfiguration.internal.accessors.TemplateInputFileAccessor(this);"/>
         </eAnnotations>
-        <eAnnotations source="redefines" references="#//IDocumentGeneratorConfiguration/createTemplateFileURL"/>
+        <eAnnotations source="redefines" references="#//IDocumentGeneratorConfiguration/createTemplateFileInputAccessor"/>
+      </contents>
+      <contents xsi:type="ecore:EOperation" name="createDocumentOutputAccessor" ordered="false"
+          lowerBound="1" eType="#//IOutputFileAccessor">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Return an accessor for the generated output document."/>
+          <details key="body" value="return new org.eclipse.papyrus.model2doc.core.generatorconfiguration.internal.accessors.DocumentOutputFileAccessor(this);"/>
+        </eAnnotations>
+        <eAnnotations source="redefines" references="#//IDocumentGeneratorConfiguration/createDocumentOutputAccessor"/>
       </contents>
     </eAnnotations>
   </eClassifiers>

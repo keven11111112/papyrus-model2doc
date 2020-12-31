@@ -29,12 +29,12 @@ public interface IInputFileAccessor {
 	 * @return
 	 *         the url of the file
 	 */
-	public URL createFileURL();
+	public URL createInputFileURL();
 
 	/**
 	 *
 	 * @return
 	 *         the platform URI for the file
 	 */
-	public URI createPlatformURI();
+	public URI createInputFilePlatformURI();
 }

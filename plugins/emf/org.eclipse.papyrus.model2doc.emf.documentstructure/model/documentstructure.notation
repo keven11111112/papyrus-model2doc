@@ -153,10 +153,6 @@
         <layoutConstraint xmi:type="notation:Location" xmi:id="_bYhZ9B4gEemmq_cjeiIGww" y="15"/>
       </children>
       <children xmi:type="notation:BasicCompartment" xmi:id="_bYhZ9R4gEemmq_cjeiIGww" type="Class_AttributeCompartment">
-        <children xmi:type="notation:Shape" xmi:id="_BHJHQFwuEemF3-UZXrtb4g" type="Property_ClassAttributeLabel">
-          <element xmi:type="uml:Property" href="documentstructure.uml#_A6mgEFwuEemF3-UZXrtb4g"/>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_BHJuUFwuEemF3-UZXrtb4g"/>
-        </children>
         <children xmi:type="notation:Shape" xmi:id="_BfmDgFwuEemF3-UZXrtb4g" type="Property_ClassAttributeLabel">
           <element xmi:type="uml:Property" href="documentstructure.uml#_BcdP8FwuEemF3-UZXrtb4g"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_BfmDgVwuEemF3-UZXrtb4g"/>

@@ -629,14 +629,24 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	int DEFAULT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___GET_STRUCTURE_FOLDER = ABSTRACT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION_OPERATION_COUNT + 3;
 
 	/**
-	 * The operation id for the '<em>Create Document Structure URI</em>' operation.
+	 * The operation id for the '<em>Create Document Structure Output Accessor</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int DEFAULT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___CREATE_DOCUMENT_STRUCTURE_URI__STRING_STRING = ABSTRACT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION_OPERATION_COUNT + 4;
+	int DEFAULT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___CREATE_DOCUMENT_STRUCTURE_OUTPUT_ACCESSOR = ABSTRACT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION_OPERATION_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Create Image Output Accessor</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int DEFAULT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___CREATE_IMAGE_OUTPUT_ACCESSOR = ABSTRACT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION_OPERATION_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Default Document Structure Generator Configuration</em>' class.
@@ -646,7 +656,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEFAULT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION_OPERATION_COUNT = ABSTRACT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION_OPERATION_COUNT + 5;
+	int DEFAULT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION_OPERATION_COUNT = ABSTRACT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION_OPERATION_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration <em>IDocument Structure Generator Configuration</em>}' class.
@@ -669,17 +679,6 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * @generated
 	 */
 	int IDOCUMENT_GENERATOR_CONFIGURATION = 5;
-
-	/**
-	 * The meta object id for the '<em>URI</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @see org.eclipse.emf.common.util.URI
-	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.GeneratorConfigurationPackageImpl#getURI()
-	 * @generated
-	 */
-	int URI = 8;
 
 	/**
 	 * The number of structural features of the '<em>IDocument Structure Generator Configuration</em>' class.
@@ -772,14 +771,24 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	int IDOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___GET_STRUCTURE_FOLDER = IGENERATOR_CONFIGURATION_OPERATION_COUNT + 3;
 
 	/**
-	 * The operation id for the '<em>Create Document Structure URI</em>' operation.
+	 * The operation id for the '<em>Create Document Structure Output Accessor</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int IDOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___CREATE_DOCUMENT_STRUCTURE_URI__STRING_STRING = IGENERATOR_CONFIGURATION_OPERATION_COUNT + 4;
+	int IDOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___CREATE_DOCUMENT_STRUCTURE_OUTPUT_ACCESSOR = IGENERATOR_CONFIGURATION_OPERATION_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Create Image Output Accessor</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IDOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___CREATE_IMAGE_OUTPUT_ACCESSOR = IGENERATOR_CONFIGURATION_OPERATION_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>IDocument Structure Generator Configuration</em>' class.
@@ -789,7 +798,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IDOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION_OPERATION_COUNT = IGENERATOR_CONFIGURATION_OPERATION_COUNT + 5;
+	int IDOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION_OPERATION_COUNT = IGENERATOR_CONFIGURATION_OPERATION_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>IDocument Generator Configuration</em>' class.
@@ -872,14 +881,24 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	int IDOCUMENT_GENERATOR_CONFIGURATION___GET_TEMPLATE_FILE = IGENERATOR_CONFIGURATION_OPERATION_COUNT + 2;
 
 	/**
-	 * The operation id for the '<em>Create Template File URL</em>' operation.
+	 * The operation id for the '<em>Create Template File Input Accessor</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int IDOCUMENT_GENERATOR_CONFIGURATION___CREATE_TEMPLATE_FILE_URL = IGENERATOR_CONFIGURATION_OPERATION_COUNT + 3;
+	int IDOCUMENT_GENERATOR_CONFIGURATION___CREATE_TEMPLATE_FILE_INPUT_ACCESSOR = IGENERATOR_CONFIGURATION_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Create Document Output Accessor</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IDOCUMENT_GENERATOR_CONFIGURATION___CREATE_DOCUMENT_OUTPUT_ACCESSOR = IGENERATOR_CONFIGURATION_OPERATION_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>IDocument Generator Configuration</em>' class.
@@ -889,7 +908,7 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IDOCUMENT_GENERATOR_CONFIGURATION_OPERATION_COUNT = IGENERATOR_CONFIGURATION_OPERATION_COUNT + 4;
+	int IDOCUMENT_GENERATOR_CONFIGURATION_OPERATION_COUNT = IGENERATOR_CONFIGURATION_OPERATION_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.DefaultDocumentGeneratorConfigurationImpl <em>Default Document Generator Configuration</em>}' class.
@@ -1043,14 +1062,24 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	int DEFAULT_DOCUMENT_GENERATOR_CONFIGURATION___GET_TEMPLATE_FILE = ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION_OPERATION_COUNT + 2;
 
 	/**
-	 * The operation id for the '<em>Create Template File URL</em>' operation.
+	 * The operation id for the '<em>Create Template File Input Accessor</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int DEFAULT_DOCUMENT_GENERATOR_CONFIGURATION___CREATE_TEMPLATE_FILE_URL = ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION_OPERATION_COUNT + 3;
+	int DEFAULT_DOCUMENT_GENERATOR_CONFIGURATION___CREATE_TEMPLATE_FILE_INPUT_ACCESSOR = ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Create Document Output Accessor</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int DEFAULT_DOCUMENT_GENERATOR_CONFIGURATION___CREATE_DOCUMENT_OUTPUT_ACCESSOR = ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION_OPERATION_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Default Document Generator Configuration</em>' class.
@@ -1060,20 +1089,30 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEFAULT_DOCUMENT_GENERATOR_CONFIGURATION_OPERATION_COUNT = ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION_OPERATION_COUNT + 4;
+	int DEFAULT_DOCUMENT_GENERATOR_CONFIGURATION_OPERATION_COUNT = ABSTRACT_DOCUMENT_GENERATOR_CONFIGURATION_OPERATION_COUNT + 5;
 
 
 	/**
-	 * The meta object id for the '<em>URL</em>' data type.
+	 * The meta object id for the '<em>IInput File Accessor</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @see java.net.URL
-	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.GeneratorConfigurationPackageImpl#getURL()
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.accessors.IInputFileAccessor
+	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.GeneratorConfigurationPackageImpl#getIInputFileAccessor()
 	 * @generated
 	 */
-	int URL = 7;
+	int IINPUT_FILE_ACCESSOR = 7;
 
+	/**
+	 * The meta object id for the '<em>IOutput File Accessor</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.accessors.IOutputFileAccessor
+	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.GeneratorConfigurationPackageImpl#getIOutputFileAccessor()
+	 * @generated
+	 */
+	int IOUTPUT_FILE_ACCESSOR = 8;
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentStructureGeneratorConfiguration <em>Default Document Structure Generator Configuration</em>}'.
@@ -1327,15 +1366,26 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	EOperation getIDocumentStructureGeneratorConfiguration__GetStructureFolder();
 
 	/**
-	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration#createDocumentStructureURI(java.lang.String, java.lang.String) <em>Create Document Structure URI</em>}' operation.
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration#createDocumentStructureOutputAccessor() <em>Create Document Structure Output Accessor</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the meta object for the '<em>Create Document Structure URI</em>' operation.
-	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration#createDocumentStructureURI(java.lang.String, java.lang.String)
+	 * @return the meta object for the '<em>Create Document Structure Output Accessor</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration#createDocumentStructureOutputAccessor()
 	 * @generated
 	 */
-	EOperation getIDocumentStructureGeneratorConfiguration__CreateDocumentStructureURI__String_String();
+	EOperation getIDocumentStructureGeneratorConfiguration__CreateDocumentStructureOutputAccessor();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration#createImageOutputAccessor() <em>Create Image Output Accessor</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the '<em>Create Image Output Accessor</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration#createImageOutputAccessor()
+	 * @generated
+	 */
+	EOperation getIDocumentStructureGeneratorConfiguration__CreateImageOutputAccessor();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration <em>IDocument Generator Configuration</em>}'.
@@ -1382,27 +1432,26 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	EOperation getIDocumentGeneratorConfiguration__GetTemplateFile();
 
 	/**
-	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration#createTemplateFileURL() <em>Create Template File URL</em>}' operation.
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration#createTemplateFileInputAccessor() <em>Create Template File Input Accessor</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the meta object for the '<em>Create Template File URL</em>' operation.
-	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration#createTemplateFileURL()
+	 * @return the meta object for the '<em>Create Template File Input Accessor</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration#createTemplateFileInputAccessor()
 	 * @generated
 	 */
-	EOperation getIDocumentGeneratorConfiguration__CreateTemplateFileURL();
+	EOperation getIDocumentGeneratorConfiguration__CreateTemplateFileInputAccessor();
 
 	/**
-	 * Returns the meta object for data type '{@link org.eclipse.emf.common.util.URI <em>URI</em>}'.
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration#createDocumentOutputAccessor() <em>Create Document Output Accessor</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the meta object for data type '<em>URI</em>'.
-	 * @see org.eclipse.emf.common.util.URI
-	 * @model instanceClass="org.eclipse.emf.common.util.URI"
+	 * @return the meta object for the '<em>Create Document Output Accessor</em>' operation.
+	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration#createDocumentOutputAccessor()
 	 * @generated
 	 */
-	EDataType getURI();
+	EOperation getIDocumentGeneratorConfiguration__CreateDocumentOutputAccessor();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentGeneratorConfiguration <em>Default Document Generator Configuration</em>}'.
@@ -1416,16 +1465,28 @@ public interface GeneratorConfigurationPackage extends EPackage {
 	EClass getDefaultDocumentGeneratorConfiguration();
 
 	/**
-	 * Returns the meta object for data type '{@link java.net.URL <em>URL</em>}'.
+	 * Returns the meta object for data type '{@link org.eclipse.papyrus.model2doc.core.builtintypes.accessors.IInputFileAccessor <em>IInput File Accessor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
-	 * @return the meta object for data type '<em>URL</em>'.
-	 * @see java.net.URL
-	 * @model instanceClass="java.net.URL"
+	 * @return the meta object for data type '<em>IInput File Accessor</em>'.
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.accessors.IInputFileAccessor
+	 * @model instanceClass="org.eclipse.papyrus.model2doc.core.builtintypes.accessors.IInputFileAccessor"
 	 * @generated
 	 */
-	EDataType getURL();
+	EDataType getIInputFileAccessor();
+
+	/**
+	 * Returns the meta object for data type '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.accessors.IOutputFileAccessor <em>IOutput File Accessor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for data type '<em>IOutput File Accessor</em>'.
+	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.accessors.IOutputFileAccessor
+	 * @model instanceClass="org.eclipse.papyrus.model2doc.core.generatorconfiguration.accessors.IOutputFileAccessor"
+	 * @generated
+	 */
+	EDataType getIOutputFileAccessor();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1661,13 +1722,22 @@ public interface GeneratorConfigurationPackage extends EPackage {
 		EOperation IDOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___GET_STRUCTURE_FOLDER = eINSTANCE.getIDocumentStructureGeneratorConfiguration__GetStructureFolder();
 
 		/**
-		 * The meta object literal for the '<em><b>Create Document Structure URI</b></em>' operation.
+		 * The meta object literal for the '<em><b>Create Document Structure Output Accessor</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
 		 * @generated
 		 */
-		EOperation IDOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___CREATE_DOCUMENT_STRUCTURE_URI__STRING_STRING = eINSTANCE.getIDocumentStructureGeneratorConfiguration__CreateDocumentStructureURI__String_String();
+		EOperation IDOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___CREATE_DOCUMENT_STRUCTURE_OUTPUT_ACCESSOR = eINSTANCE.getIDocumentStructureGeneratorConfiguration__CreateDocumentStructureOutputAccessor();
+
+		/**
+		 * The meta object literal for the '<em><b>Create Image Output Accessor</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EOperation IDOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___CREATE_IMAGE_OUTPUT_ACCESSOR = eINSTANCE.getIDocumentStructureGeneratorConfiguration__CreateImageOutputAccessor();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration <em>IDocument Generator Configuration</em>}' class.
@@ -1708,24 +1778,22 @@ public interface GeneratorConfigurationPackage extends EPackage {
 		EOperation IDOCUMENT_GENERATOR_CONFIGURATION___GET_TEMPLATE_FILE = eINSTANCE.getIDocumentGeneratorConfiguration__GetTemplateFile();
 
 		/**
-		 * The meta object literal for the '<em><b>Create Template File URL</b></em>' operation.
+		 * The meta object literal for the '<em><b>Create Template File Input Accessor</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
 		 * @generated
 		 */
-		EOperation IDOCUMENT_GENERATOR_CONFIGURATION___CREATE_TEMPLATE_FILE_URL = eINSTANCE.getIDocumentGeneratorConfiguration__CreateTemplateFileURL();
+		EOperation IDOCUMENT_GENERATOR_CONFIGURATION___CREATE_TEMPLATE_FILE_INPUT_ACCESSOR = eINSTANCE.getIDocumentGeneratorConfiguration__CreateTemplateFileInputAccessor();
 
 		/**
-		 * The meta object literal for the '<em>URI</em>' data type.
+		 * The meta object literal for the '<em><b>Create Document Output Accessor</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
-		 * @see org.eclipse.emf.common.util.URI
-		 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.GeneratorConfigurationPackageImpl#getURI()
 		 * @generated
 		 */
-		EDataType URI = eINSTANCE.getURI();
+		EOperation IDOCUMENT_GENERATOR_CONFIGURATION___CREATE_DOCUMENT_OUTPUT_ACCESSOR = eINSTANCE.getIDocumentGeneratorConfiguration__CreateDocumentOutputAccessor();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.DefaultDocumentGeneratorConfigurationImpl <em>Default Document Generator Configuration</em>}' class.
@@ -1739,15 +1807,26 @@ public interface GeneratorConfigurationPackage extends EPackage {
 		EClass DEFAULT_DOCUMENT_GENERATOR_CONFIGURATION = eINSTANCE.getDefaultDocumentGeneratorConfiguration();
 
 		/**
-		 * The meta object literal for the '<em>URL</em>' data type.
+		 * The meta object literal for the '<em>IInput File Accessor</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 *
-		 * @see java.net.URL
-		 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.GeneratorConfigurationPackageImpl#getURL()
+		 * @see org.eclipse.papyrus.model2doc.core.builtintypes.accessors.IInputFileAccessor
+		 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.GeneratorConfigurationPackageImpl#getIInputFileAccessor()
 		 * @generated
 		 */
-		EDataType URL = eINSTANCE.getURL();
+		EDataType IINPUT_FILE_ACCESSOR = eINSTANCE.getIInputFileAccessor();
+
+		/**
+		 * The meta object literal for the '<em>IOutput File Accessor</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.accessors.IOutputFileAccessor
+		 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl.GeneratorConfigurationPackageImpl#getIOutputFileAccessor()
+		 * @generated
+		 */
+		EDataType IOUTPUT_FILE_ACCESSOR = eINSTANCE.getIOutputFileAccessor();
 
 	}
 

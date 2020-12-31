@@ -97,7 +97,7 @@ public class FileReferenceURLFromPlatformResourceTest extends AbstractFileRefere
 	@Test
 	public void test_01_FileReferenceInPlatformPluginURI() {
 		final IFileReference iFileReference = createFileReference(TEST_01_DECLARED_REFERENCED_FILE_NAME);
-		checkCreatedURL(iFileReference.getFileAccessor().createFileURL());
+		checkCreatedURL(iFileReference.getFileAccessor().createInputFileURL());
 	}
 
 	// TODO : check me
@@ -105,68 +105,68 @@ public class FileReferenceURLFromPlatformResourceTest extends AbstractFileRefere
 	public void test_02_FileReferenceWithRelativeURI() {
 		createFileInProject(TEST_02_FOLDER, TEST_02_REFERENCED_FILE_NAME);
 		final IFileReference iFileReference = createFileReference(TEST_02_DECLARED_REFERENCED_FILE_NAME);
-		checkCreatedURL(iFileReference.getFileAccessor().createFileURL());
+		checkCreatedURL(iFileReference.getFileAccessor().createInputFileURL());
 	}
 
 	@Test
 	public void test_03_FileReferenceWithRelativeURI() {
 		createFileInProject(TEST_03_FOLDER, TEST_03_REFERENCED_FILE_NAME);
 		final IFileReference iFileReference = createFileReference(TEST_03_DECLARED_REFERENCED_FILE_NAME);
-		checkCreatedURL(iFileReference.getFileAccessor().createFileURL());
+		checkCreatedURL(iFileReference.getFileAccessor().createInputFileURL());
 	}
 
 	@Test
 	public void test_04_FileReferenceURIWithSpaces() {
 		createFileInProject(TEST_04_FOLDER, TEST_04_REFERENCED_FILE_NAME);
 		final IFileReference iFileReference = createFileReference(TEST_04_DECLARED_REFERENCED_FILE_NAME);
-		checkCreatedURL(iFileReference.getFileAccessor().createFileURL());
+		checkCreatedURL(iFileReference.getFileAccessor().createInputFileURL());
 	}
 
 	@Test
 	public void test_05_FileReferenceURIWithAccentuatedChar() {
 		createFileInProject(TEST_05_FOLDER, TEST_05_REFERENCED_FILE_NAME);
 		final IFileReference iFileReference = createFileReference(TEST_05_DECLARED_REFERENCED_FILE_NAME);
-		checkCreatedURL(iFileReference.getFileAccessor().createFileURL());
+		checkCreatedURL(iFileReference.getFileAccessor().createInputFileURL());
 	}
 
 	@Test
 	public void test_06_FileReferenceInAnotherFolder() {
 		createFileInProject(TEST_06_FOLDER, TEST_06_REFERENCED_FILE_NAME);
 		final IFileReference iFileReference = createFileReference(TEST_06_DECLARED_REFERENCED_FILE_NAME);
-		checkCreatedURL(iFileReference.getFileAccessor().createFileURL());
+		checkCreatedURL(iFileReference.getFileAccessor().createInputFileURL());
 	}
 
 	@Test
 	public void test_07_FileReferenceInAnotherFolderWithSpaces() {
 		createFileInProject(TEST_07_FOLDER, TEST_07_REFERENCED_FILE_NAME);
 		final IFileReference iFileReference = createFileReference(TEST_07_DECLARED_REFERENCED_FILE_NAME);
-		checkCreatedURL(iFileReference.getFileAccessor().createFileURL());
+		checkCreatedURL(iFileReference.getFileAccessor().createInputFileURL());
 	}
 
 	@Test
 	public void test_08_FileReferenceInAnotherFolderWithAccentuatedChar() {
 		createFileInProject(TEST_08_FOLDER, TEST_08_REFERENCED_FILE_NAME);
 		final IFileReference iFileReference = createFileReference(TEST_08_DECLARED_REFERENCED_FILE_NAME);
-		checkCreatedURL(iFileReference.getFileAccessor().createFileURL());
+		checkCreatedURL(iFileReference.getFileAccessor().createInputFileURL());
 	}
 
 	@Test
 	public void test_09_NullFileReferenceURI() {
 		final IFileReference iFileReference = createFileReference(TEST_09_DECLARED_REFERENCED_FILE_NAME);
-		Assert.assertNull(iFileReference.getFileAccessor().createFileURL());
+		Assert.assertNull(iFileReference.getFileAccessor().createInputFileURL());
 	}
 
 	@Test
 	public void test_10_EmptyFileReferenceURI() {
 		final IFileReference iFileReference = createFileReference(TEST_10_DECLARED_REFERENCED_FILE_NAME);
-		Assert.assertNull(iFileReference.getFileAccessor().createFileURL());
+		Assert.assertNull(iFileReference.getFileAccessor().createInputFileURL());
 	}
 
 	@Test
 	public void test_11_FileReferenceNotFound() {
 		createFolderInContainer(this.projectForTest, TEST_11_FOLDER); // we don't create the file in it the goal of the test
 		final IFileReference iFileReference = createFileReference(TEST_11_DECLARED_REFERENCED_FILE_NAME);
-		Assert.assertNull(iFileReference.getFileAccessor().createFileURL());
+		Assert.assertNull(iFileReference.getFileAccessor().createInputFileURL());
 	}
 
 	/**
@@ -176,14 +176,14 @@ public class FileReferenceURLFromPlatformResourceTest extends AbstractFileRefere
 	public void test_12_FileReferenceInPlatformResource() {
 		createFileInProject(TEST_12_FOLDER, TEST_12_REFERENCED_FILE_NAME);
 		final IFileReference iFileReference = createFileReference(TEST_12_DECLARED_REFERENCED_FILE_NAME);
-		checkCreatedURL(iFileReference.getFileAccessor().createFileURL());
+		checkCreatedURL(iFileReference.getFileAccessor().createInputFileURL());
 	}
 
 
 	@Test
 	public void test_13_FileReferenceURIOSPath() {
 		final IFileReference iFileReference = createFileReference(TEST_13_DECLARED_REFERENCED_FILE_NAME);
-		Assert.assertNull(iFileReference.getFileAccessor().createFileURL());
+		Assert.assertNull(iFileReference.getFileAccessor().createInputFileURL());
 	}
 
 }

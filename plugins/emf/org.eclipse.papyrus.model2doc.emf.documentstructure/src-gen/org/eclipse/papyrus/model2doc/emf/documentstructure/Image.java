@@ -29,7 +29,6 @@ import org.eclipse.papyrus.model2doc.core.builtintypes.DefaultFileReference;
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.Image#getImagePath <em>Image Path</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.Image#getCaption <em>Caption</em>}</li>
  * </ul>
  *
@@ -38,34 +37,6 @@ import org.eclipse.papyrus.model2doc.core.builtintypes.DefaultFileReference;
  * @generated
  */
 public interface Image extends DefaultFileReference, LeafBodyPart {
-	/**
-	 * Returns the value of the '<em><b>Image Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The path can be in the user workspace in platform:/resource or, somewhere on the user computer, so for windows, it will be in C:/ for example.
-	 * <!-- end-model-doc -->
-	 *
-	 * @return the value of the '<em>Image Path</em>' attribute.
-	 * @see #setImagePath(String)
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage#getImage_ImagePath()
-	 * @model required="true" ordered="false"
-	 * @generated
-	 */
-	String getImagePath();
-
-	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.Image#getImagePath <em>Image Path</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *                  the new value of the '<em>Image Path</em>' attribute.
-	 * @see #getImagePath()
-	 * @generated
-	 */
-	void setImagePath(String value);
-
 	/**
 	 * Returns the value of the '<em><b>Caption</b></em>' attribute.
 	 * <!-- begin-user-doc -->

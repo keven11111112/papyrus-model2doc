@@ -20,7 +20,6 @@ import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.papyrus.model2doc.core.generatorconfiguration.operations.GeneratorConfigurationOperations;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.InsertedFile;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Title;
@@ -69,7 +68,7 @@ public class InsertFileTemplateMapper extends AbstractEMFTemplateToStructureMapp
 		}
 
 		final InsertedFile insertedFile = STRUCTURE_EFACTORY.createInsertedFile();
-		final String path = GeneratorConfigurationOperations.getFilePathInLocalPath(insertFileTemplate, insertFileTemplate.getFilePath());
+		final String path = insertFileTemplate.getFileAccessor().createInputFilePlatformURI().toPlatformString(true);
 		insertedFile.setFilePath(path);
 
 		if (null != title) {

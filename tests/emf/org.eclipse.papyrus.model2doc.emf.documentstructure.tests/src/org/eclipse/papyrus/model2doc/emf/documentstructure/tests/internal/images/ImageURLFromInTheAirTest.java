@@ -58,7 +58,7 @@ public class ImageURLFromInTheAirTest extends AbstractImageURLTests {
 		final Image image = createImage();
 		image.setFilePath(TEST_01_IMAGE_DECLARED_FILE_NAME);
 		Assert.assertNull(image.eResource());
-		checkCreatedURL(image.getFileAccessor().createFileURL());
+		checkCreatedURL(image.getFileAccessor().createInputFileURL());
 	}
 
 	@Test
@@ -67,7 +67,7 @@ public class ImageURLFromInTheAirTest extends AbstractImageURLTests {
 		final Image image = createImage();
 		image.setFilePath(TEST_02_DECLARED_IMAGE_NAME);
 		Assert.assertNull(image.eResource());
-		checkCreatedURL(image.getFileAccessor().createFileURL());
+		checkCreatedURL(image.getFileAccessor().createInputFileURL());
 	}
 
 	@Test
@@ -76,7 +76,7 @@ public class ImageURLFromInTheAirTest extends AbstractImageURLTests {
 		final Image image = createImage();
 		image.setFilePath(TEST_03_DECLARED_IMAGE_NAME);
 		Assert.assertNull(image.eResource());
-		Assert.assertNull(image.getFileAccessor().createFileURL());
+		Assert.assertNull(image.getFileAccessor().createInputFileURL());
 	}
 
 }

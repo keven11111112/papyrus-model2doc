@@ -58,7 +58,7 @@ public class TemplateFileURLFromInTheAirTest extends AbstractTemplateFileURLTest
 		final DefaultDocumentGeneratorConfiguration conf = createDefaultDocumentGeneratorConfiguration();
 		conf.setTemplateFile(TEST_01_TEMPLATE_DECLARED_FILE_NAME);
 		Assert.assertNull(conf.eResource());
-		checkCreatedURL(conf.createTemplateFileURL());
+		checkCreatedURL(conf.createTemplateFileInputAccessor().createInputFileURL());
 	}
 
 	@Test
@@ -67,7 +67,7 @@ public class TemplateFileURLFromInTheAirTest extends AbstractTemplateFileURLTest
 		final DefaultDocumentGeneratorConfiguration conf = createDefaultDocumentGeneratorConfiguration();
 		conf.setTemplateFile(TEST_02_DECLARED_TEMPLATE_FILE_NAME);
 		Assert.assertNull(conf.eResource());
-		checkCreatedURL(conf.createTemplateFileURL());
+		checkCreatedURL(conf.createTemplateFileInputAccessor().createInputFileURL());
 	}
 
 	@Test
@@ -76,7 +76,7 @@ public class TemplateFileURLFromInTheAirTest extends AbstractTemplateFileURLTest
 		final DefaultDocumentGeneratorConfiguration conf = createDefaultDocumentGeneratorConfiguration();
 		conf.setTemplateFile(TEST_03_DECLARED_TEMPLATE_FILE_NAME);
 		Assert.assertNull(conf.eResource());
-		Assert.assertNull(conf.createTemplateFileURL());
+		Assert.assertNull(conf.createTemplateFileInputAccessor().createInputFileURL());
 	}
 
 }

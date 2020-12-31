@@ -16,6 +16,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.model2doc.docx.internal.transcription;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -36,6 +37,9 @@ import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
 import org.apache.poi.xwpf.usermodel.XWPFTable;
 import org.eclipse.core.runtime.Assert;
+import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.Path;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.model2doc.core.author.IAuthor;
 import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractList;
@@ -48,7 +52,7 @@ import org.eclipse.papyrus.model2doc.core.builtintypes.Row;
 import org.eclipse.papyrus.model2doc.core.builtintypes.TextCell;
 import org.eclipse.papyrus.model2doc.core.builtintypes.TextListItem;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration;
-import org.eclipse.papyrus.model2doc.core.generatorconfiguration.operations.GeneratorConfigurationOperations;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.accessors.IOutputFileAccessor;
 import org.eclipse.papyrus.model2doc.core.styles.BooleanNamedStyle;
 import org.eclipse.papyrus.model2doc.core.styles.NamedStyleConstants;
 import org.eclipse.papyrus.model2doc.core.transcription.CoverPage;
@@ -119,11 +123,25 @@ public class DocxTranscription implements Transcription {
 	 * @throws InvalidFormatException
 	 */
 	private InputStream getFileWithTemplateLoaded() throws IOException, InvalidFormatException {
-		final URL templateURL = this.docxGeneratorConfig.createTemplateFileURL();
+		final URL templateURL = this.docxGeneratorConfig.createTemplateFileInputAccessor().createInputFileURL();
 
 		if (templateURL != null) {
-			String destURI = GeneratorConfigurationOperations.getDocumentFileLocalPath(docxGeneratorConfig, DOCX_FILE_EXTENTION);
-			destURI = destURI.replaceFirst(ECORE_FILE_PREFIX, EMPTY_STRING);
+			URL destURL = this.docxGeneratorConfig.createDocumentOutputAccessor().createOutputFileURL(docxGeneratorConfig.getDocumentName(), DOCX_FILE_EXTENTION);
+			String destURI = destURL.getPath().replaceFirst(ECORE_FILE_PREFIX, EMPTY_STRING);
+
+			// create intermediate folder when they don't exist.
+			// TODO : make common method with image generation and odt
+			// TODO : what to do when dest project doesn't yet exist ?
+			final Path imagePath = new Path(destURI);
+			// we check all folders tree already exists, and we create them if not
+			if (imagePath.segmentCount() > 1) {
+				final IPath folderPath = imagePath.removeLastSegments(1);
+				final File folder = folderPath.toFile();
+				if (false == folder.exists()) {
+					folder.mkdirs();
+				}
+			}
+
 			InputStream templateIS = templateURL.openStream();
 			FileOutputStream destIS = new FileOutputStream(destURI);
 
@@ -134,7 +152,7 @@ public class DocxTranscription implements Transcription {
 			templateIS.close();
 			destIS.close();
 
-			return new FileInputStream(destURI);
+			return destURL.openStream();
 		}
 		return null;
 	}
@@ -400,7 +418,7 @@ public class DocxTranscription implements Transcription {
 	@Override
 	public void writeImage(String imagePath, String caption) {
 		Assert.isTrue(false == imagePath.endsWith("svg"));//$NON-NLS-1$
-
+		imagePath = imagePath.replaceFirst(ECORE_FILE_PREFIX, EMPTY_STRING);
 		// insert the picture
 		XWPFParagraph imageParagraph = document.createParagraph();
 		XWPFRun imageRun = imageParagraph.createRun();
@@ -437,10 +455,12 @@ public class DocxTranscription implements Transcription {
 	// TODO : define clearly the kind of the returned String between docx and odt generator
 	@Override
 	public String save(String label) {
-		final String ecoreURi = GeneratorConfigurationOperations.getDocumentFileLocalPath(docxGeneratorConfig, DOCX_FILE_EXTENTION);
-		String docxURI = ecoreURi.replaceFirst(ECORE_FILE_PREFIX, EMPTY_STRING);
+		final IOutputFileAccessor accessor = docxGeneratorConfig.createDocumentOutputAccessor();
+		final URI ecoreURI = accessor.createOutputFileURI(docxGeneratorConfig.getDocumentName(), DOCX_FILE_EXTENTION);
+		final URL destURL = accessor.convertToURL(ecoreURI);
 		try {
-			OutputStream outputStream = new FileOutputStream(docxURI);
+			final String destPath = destURL.toString().replace(ECORE_FILE_PREFIX, EMPTY_STRING);
+			OutputStream outputStream = new FileOutputStream(destPath);
 			document.write(outputStream);
 			outputStream.close();
 			document.close();
@@ -448,7 +468,7 @@ public class DocxTranscription implements Transcription {
 			Activator.log.error(e);
 		}
 
-		return ecoreURi;
+		return destURL.toString();
 	}
 
 	/**

@@ -65,7 +65,7 @@ public class ImageURLFromPlatformPluginTest extends AbstractDocumentStructureTes
 		final EObject root = res.getContents().get(0);
 		Assert.assertTrue(root instanceof Image);
 		Image image = (Image) root;
-		return image.getFileAccessor().createFileURL();
+		return image.getFileAccessor().createInputFileURL();
 	}
 
 	private void checkCreatedURL(final URL url) {

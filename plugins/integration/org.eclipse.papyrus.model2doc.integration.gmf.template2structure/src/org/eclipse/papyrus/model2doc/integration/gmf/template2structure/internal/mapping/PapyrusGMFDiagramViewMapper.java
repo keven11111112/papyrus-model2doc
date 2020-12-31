@@ -20,11 +20,12 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration;
-import org.eclipse.papyrus.model2doc.core.generatorconfiguration.operations.GeneratorConfigurationOperations;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.accessors.IOutputFileAccessor;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructureFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Image;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Title;
@@ -105,10 +106,12 @@ public class PapyrusGMFDiagramViewMapper extends AbstractTemplateToStructureMapp
 					imageNameBuilder.append(XMI_ID);
 				}
 			}
-			String imagePath = GeneratorConfigurationOperations.getImageFileLocalPath(conf, imageNameBuilder.toString(), gmfDiagramView.getImageFormat().getLiteral());
+			final IOutputFileAccessor accessor = conf.createImageOutputAccessor();
+			final URI uri = accessor.createOutputFileURI(imageNameBuilder.toString(), gmfDiagramView.getImageFormat().getLiteral());
+			String imagePath = accessor.convertToURL(uri).toString();
 			imagePath = imagePath.replaceAll("file:/", ""); //$NON-NLS-1$ //$NON-NLS-2$
 			GMFDiagramImageUtils.generateImageOfDiagram(current, imagePath, gmfDiagramView.getDiagramImageMargin(), gmfDiagramView.getImageFormat());
-			image.setImagePath(imagePath);
+			image.setFilePath(uri.toString());
 			if (null == title) {
 				returnedValue.add(returnedClassType.cast(image));
 			} else {

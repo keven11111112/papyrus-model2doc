@@ -299,7 +299,8 @@ public class ODTTranscription implements Transcription {
 
 	@Override
 	public void writeImage(final String imagePath, final String caption) {
-		writeService.addImageLink(imagePath, caption, cursor, odtEditor);
+		final String newImagePath = ODTEditor.convertToLibreOfficeFileURI(imagePath);
+		writeService.addImageLink(newImagePath, caption, cursor, odtEditor);
 		styleEditor.applyImageStyle(cursor);
 	}
 

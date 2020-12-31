@@ -629,16 +629,6 @@ public interface DocumentStructurePackage extends EPackage {
 	int IMAGE__DATA_SOURCE = BuiltInTypesPackage.DEFAULT_FILE_REFERENCE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Image Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE__IMAGE_PATH = BuiltInTypesPackage.DEFAULT_FILE_REFERENCE_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Caption</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -646,7 +636,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE__CAPTION = BuiltInTypesPackage.DEFAULT_FILE_REFERENCE_FEATURE_COUNT + 2;
+	int IMAGE__CAPTION = BuiltInTypesPackage.DEFAULT_FILE_REFERENCE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Image</em>' class.
@@ -656,7 +646,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_FEATURE_COUNT = BuiltInTypesPackage.DEFAULT_FILE_REFERENCE_FEATURE_COUNT + 3;
+	int IMAGE_FEATURE_COUNT = BuiltInTypesPackage.DEFAULT_FILE_REFERENCE_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get File Path</em>' operation.
@@ -1573,18 +1563,6 @@ public interface DocumentStructurePackage extends EPackage {
 	EClass getImage();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.Image#getImagePath <em>Image Path</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the meta object for the attribute '<em>Image Path</em>'.
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.Image#getImagePath()
-	 * @see #getImage()
-	 * @generated
-	 */
-	EAttribute getImage_ImagePath();
-
-	/**
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.Image#getCaption <em>Caption</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2054,15 +2032,6 @@ public interface DocumentStructurePackage extends EPackage {
 		 * @generated
 		 */
 		EClass IMAGE = eINSTANCE.getImage();
-
-		/**
-		 * The meta object literal for the '<em><b>Image Path</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 *
-		 * @generated
-		 */
-		EAttribute IMAGE__IMAGE_PATH = eINSTANCE.getImage_ImagePath();
 
 		/**
 		 * The meta object literal for the '<em><b>Caption</b></em>' attribute feature.

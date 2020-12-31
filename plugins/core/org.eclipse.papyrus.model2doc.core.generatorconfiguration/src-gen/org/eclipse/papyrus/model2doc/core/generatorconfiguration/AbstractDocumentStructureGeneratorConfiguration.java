@@ -40,7 +40,7 @@ public interface AbstractDocumentStructureGeneratorConfiguration extends Abstrac
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Structure Generator Id</em>' attribute.
 	 * @see #setStructureGeneratorId(String)
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationPackage#getAbstractDocumentStructureGeneratorConfiguration_StructureGeneratorId()
@@ -53,9 +53,9 @@ public interface AbstractDocumentStructureGeneratorConfiguration extends Abstrac
 	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentStructureGeneratorConfiguration#getStructureGeneratorId <em>Structure Generator Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *            the new value of the '<em>Structure Generator Id</em>' attribute.
+	 *                  the new value of the '<em>Structure Generator Id</em>' attribute.
 	 * @see #getStructureGeneratorId()
 	 * @generated
 	 */
@@ -69,7 +69,7 @@ public interface AbstractDocumentStructureGeneratorConfiguration extends Abstrac
 	 * The output image folder. It can be a full path (platform:/resource/projectName/...) or a path in the current plugin (generation/outputImageFolder, interpreted as platform:/resource/projectName/generation/outputImageFolder) or a system path (ex:
 	 * c:\MyDocuments).
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Image Folder</em>' attribute.
 	 * @see #setImageFolder(String)
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationPackage#getAbstractDocumentStructureGeneratorConfiguration_ImageFolder()
@@ -82,9 +82,9 @@ public interface AbstractDocumentStructureGeneratorConfiguration extends Abstrac
 	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentStructureGeneratorConfiguration#getImageFolder <em>Image Folder</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *            the new value of the '<em>Image Folder</em>' attribute.
+	 *                  the new value of the '<em>Image Folder</em>' attribute.
 	 * @see #getImageFolder()
 	 * @generated
 	 */
@@ -98,7 +98,7 @@ public interface AbstractDocumentStructureGeneratorConfiguration extends Abstrac
 	 * The output image folder. It can be a full path (platform:/resource/projectName/...) or a path in the current plugin (generation/outputImageFolder, interpreted as platform:/resource/projectName/generation/outputImageFolder).
 	 * It can't be a system path (c:\myDocuments is not alloxed for example).
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Structure Folder</em>' attribute.
 	 * @see #setStructureFolder(String)
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationPackage#getAbstractDocumentStructureGeneratorConfiguration_StructureFolder()
@@ -111,9 +111,9 @@ public interface AbstractDocumentStructureGeneratorConfiguration extends Abstrac
 	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentStructureGeneratorConfiguration#getStructureFolder <em>Structure Folder</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *            the new value of the '<em>Structure Folder</em>' attribute.
+	 *                  the new value of the '<em>Structure Folder</em>' attribute.
 	 * @see #getStructureFolder()
 	 * @generated
 	 */

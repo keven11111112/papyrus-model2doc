@@ -13,8 +13,6 @@
  */
 package org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl;
 
-import java.net.URL;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -24,7 +22,9 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import org.eclipse.papyrus.model2doc.core.builtintypes.accessors.IInputFileAccessor;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.*;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.accessors.IOutputFileAccessor;
 
 /**
  * <!-- begin-user-doc -->
@@ -91,10 +91,10 @@ public class GeneratorConfigurationFactoryImpl extends EFactoryImpl implements G
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-		case GeneratorConfigurationPackage.URL:
-			return createURLFromString(eDataType, initialValue);
-		case GeneratorConfigurationPackage.URI:
-			return createURIFromString(eDataType, initialValue);
+		case GeneratorConfigurationPackage.IINPUT_FILE_ACCESSOR:
+			return createIInputFileAccessorFromString(eDataType, initialValue);
+		case GeneratorConfigurationPackage.IOUTPUT_FILE_ACCESSOR:
+			return createIOutputFileAccessorFromString(eDataType, initialValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -109,10 +109,10 @@ public class GeneratorConfigurationFactoryImpl extends EFactoryImpl implements G
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-		case GeneratorConfigurationPackage.URL:
-			return convertURLToString(eDataType, instanceValue);
-		case GeneratorConfigurationPackage.URI:
-			return convertURIToString(eDataType, instanceValue);
+		case GeneratorConfigurationPackage.IINPUT_FILE_ACCESSOR:
+			return convertIInputFileAccessorToString(eDataType, instanceValue);
+		case GeneratorConfigurationPackage.IOUTPUT_FILE_ACCESSOR:
+			return convertIOutputFileAccessorToString(eDataType, instanceValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -148,8 +148,8 @@ public class GeneratorConfigurationFactoryImpl extends EFactoryImpl implements G
 	 *
 	 * @generated
 	 */
-	public URL createURLFromString(EDataType eDataType, String initialValue) {
-		return (URL) super.createFromString(eDataType, initialValue);
+	public IInputFileAccessor createIInputFileAccessorFromString(EDataType eDataType, String initialValue) {
+		return (IInputFileAccessor) super.createFromString(eDataType, initialValue);
 	}
 
 	/**
@@ -158,7 +158,7 @@ public class GeneratorConfigurationFactoryImpl extends EFactoryImpl implements G
 	 *
 	 * @generated
 	 */
-	public String convertURLToString(EDataType eDataType, Object instanceValue) {
+	public String convertIInputFileAccessorToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 
@@ -168,8 +168,8 @@ public class GeneratorConfigurationFactoryImpl extends EFactoryImpl implements G
 	 *
 	 * @generated
 	 */
-	public URI createURIFromString(EDataType eDataType, String initialValue) {
-		return (URI) super.createFromString(eDataType, initialValue);
+	public IOutputFileAccessor createIOutputFileAccessorFromString(EDataType eDataType, String initialValue) {
+		return (IOutputFileAccessor) super.createFromString(eDataType, initialValue);
 	}
 
 	/**
@@ -178,7 +178,7 @@ public class GeneratorConfigurationFactoryImpl extends EFactoryImpl implements G
 	 *
 	 * @generated
 	 */
-	public String convertURIToString(EDataType eDataType, Object instanceValue) {
+	public String convertIOutputFileAccessorToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 

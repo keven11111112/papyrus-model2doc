@@ -65,7 +65,7 @@ public class TemplateFileURLFromPlatformPluginTest extends AbstractGeneratorConf
 		final EObject root = res.getContents().get(0);
 		Assert.assertTrue(root instanceof DefaultDocumentGeneratorConfiguration);
 		DefaultDocumentGeneratorConfiguration conf = (DefaultDocumentGeneratorConfiguration) root;
-		return conf.createTemplateFileURL();
+		return conf.createTemplateFileInputAccessor().createInputFileURL();
 	}
 
 	private void checkCreatedURL(final URL url) {

@@ -14,16 +14,19 @@
 package org.eclipse.papyrus.model2doc.core.generatorconfiguration.impl;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.Iterator;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.URI;
-
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentStructureGeneratorConfiguration;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationFactory;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationPackage;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.accessors.IOutputFileAccessor;
 
 /**
  * <!-- begin-user-doc -->
@@ -62,7 +65,13 @@ public class DefaultDocumentStructureGeneratorConfigurationImpl extends Abstract
 	 */
 	@Override
 	public IDocumentGeneratorConfiguration createDocumentGeneratorConfiguration() {
-		return org.eclipse.papyrus.model2doc.core.generatorconfiguration.internal.operations.DefaultDocumentStructureGeneratorConfigurationOperations.createDocumentGeneratorConfiguration(this);
+		final DefaultDocumentGeneratorConfiguration newConf = GeneratorConfigurationFactory.eINSTANCE.createDefaultDocumentGeneratorConfiguration();
+		final Iterator<EAttribute> iter = newConf.eClass().getEAllAttributes().iterator();
+		while (iter.hasNext()) {
+			final EStructuralFeature feature = iter.next();
+			newConf.eSet(feature, eGet(feature));
+		}
+		return newConf;
 	}
 
 	/**
@@ -72,8 +81,19 @@ public class DefaultDocumentStructureGeneratorConfigurationImpl extends Abstract
 	 * @generated
 	 */
 	@Override
-	public URI createDocumentStructureURI(final String fileExtension, final String version) {
-		return org.eclipse.papyrus.model2doc.core.generatorconfiguration.internal.operations.DefaultDocumentStructureGeneratorConfigurationOperations.createDocumentStructureURI(this, fileExtension, version);
+	public IOutputFileAccessor createDocumentStructureOutputAccessor() {
+		return new org.eclipse.papyrus.model2doc.core.generatorconfiguration.internal.accessors.DocumentStructureOutputFileAccessor(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public IOutputFileAccessor createImageOutputAccessor() {
+		return new org.eclipse.papyrus.model2doc.core.generatorconfiguration.internal.accessors.ImageOutputFileAccessor(this);
 	}
 
 	/**
@@ -94,8 +114,10 @@ public class DefaultDocumentStructureGeneratorConfigurationImpl extends Abstract
 				return GeneratorConfigurationPackage.DEFAULT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___GET_IMAGE_FOLDER;
 			case GeneratorConfigurationPackage.IDOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___GET_STRUCTURE_FOLDER:
 				return GeneratorConfigurationPackage.DEFAULT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___GET_STRUCTURE_FOLDER;
-			case GeneratorConfigurationPackage.IDOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___CREATE_DOCUMENT_STRUCTURE_URI__STRING_STRING:
-				return GeneratorConfigurationPackage.DEFAULT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___CREATE_DOCUMENT_STRUCTURE_URI__STRING_STRING;
+			case GeneratorConfigurationPackage.IDOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___CREATE_DOCUMENT_STRUCTURE_OUTPUT_ACCESSOR:
+				return GeneratorConfigurationPackage.DEFAULT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___CREATE_DOCUMENT_STRUCTURE_OUTPUT_ACCESSOR;
+			case GeneratorConfigurationPackage.IDOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___CREATE_IMAGE_OUTPUT_ACCESSOR:
+				return GeneratorConfigurationPackage.DEFAULT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___CREATE_IMAGE_OUTPUT_ACCESSOR;
 			default:
 				return -1;
 			}
@@ -114,8 +136,10 @@ public class DefaultDocumentStructureGeneratorConfigurationImpl extends Abstract
 		switch (operationID) {
 		case GeneratorConfigurationPackage.DEFAULT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___CREATE_DOCUMENT_GENERATOR_CONFIGURATION:
 			return createDocumentGeneratorConfiguration();
-		case GeneratorConfigurationPackage.DEFAULT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___CREATE_DOCUMENT_STRUCTURE_URI__STRING_STRING:
-			return createDocumentStructureURI((String) arguments.get(0), (String) arguments.get(1));
+		case GeneratorConfigurationPackage.DEFAULT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___CREATE_DOCUMENT_STRUCTURE_OUTPUT_ACCESSOR:
+			return createDocumentStructureOutputAccessor();
+		case GeneratorConfigurationPackage.DEFAULT_DOCUMENT_STRUCTURE_GENERATOR_CONFIGURATION___CREATE_IMAGE_OUTPUT_ACCESSOR:
+			return createImageOutputAccessor();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

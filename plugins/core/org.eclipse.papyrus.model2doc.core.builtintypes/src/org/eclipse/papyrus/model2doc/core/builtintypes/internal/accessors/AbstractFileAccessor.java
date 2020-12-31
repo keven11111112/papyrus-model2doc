@@ -9,11 +9,11 @@
  * SPDX-License-Identifier: EPL-2.0
  *
  * Contributors:
- *    Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
 
-package org.eclipse.papyrus.model2doc.core.generatorconfiguration.internal.operations;
+package org.eclipse.papyrus.model2doc.core.builtintypes.internal.accessors;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -28,56 +28,74 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.osgi.util.NLS;
-import org.eclipse.papyrus.model2doc.core.generatorconfiguration.DefaultDocumentGeneratorConfiguration;
-import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration;
-import org.eclipse.papyrus.model2doc.core.generatorconfiguration.internal.Activator;
+import org.eclipse.papyrus.model2doc.core.builtintypes.Activator;
 import org.osgi.framework.Bundle;
 
 /**
- * Operations for {@link DefaultDocumentGeneratorConfiguration}
+ * Abstract class used to create File
+ * TODO: try to put this file in model2doc.core directly, to avoid that generatorconfiguration get a dependency on this plugin
  */
-public final class DefaultDocumentGeneratorConfigurationOperations {
+public class AbstractFileAccessor<T extends EObject> {
+
+	/**
+	 * the space char
+	 */
+	protected static final String SPACE = " "; //$NON-NLS-1$
+
+	/**
+	 * the encoded space char
+	 */
+	protected static final String ENCODED_SPACE = "%20"; //$NON-NLS-1$
+
+	/**
+	 * the {@link EObject} referencing a file
+	 */
+	private final T eobject;
 
 	/**
 	 *
-	 * @param configuration
-	 *            an {@link IDocumentGeneratorConfiguration}
-	 * @return
-	 *         the URL allowing to access to an existing file used as document template for the generation
+	 * Constructor.
+	 *
+	 * @param eobject
+	 *            the {@link EObject} referencing a file
 	 */
-	public static final URL createTemplateFileURL(final IDocumentGeneratorConfiguration configuration) {
-		final URI uri = createPlatformURIFromFilePath(configuration, configuration.getTemplateFile());
-		if (uri == null) {
-			return null;
-		}
-		if (uri.isPlatformResource() && configuration.eResource() != null && configuration.eResource().getURI().isPlatformPlugin()) {
-			Activator.log.warn("We can't get a file referenced as platform:/resource from a file saved as platform:/plugin"); //$NON-NLS-1$
-			return null;
-		}
-		return getFileURLFromPlatformURI(uri);
+	public AbstractFileAccessor(final T eobject) {
+		this.eobject = eobject;
+		Assert.isNotNull(this.eobject);
 	}
 
 	/**
 	 *
+	 * @return
+	 *         the eobject
+	 */
+	protected T getEObject() {
+		return this.eobject;
+	}
+
+
+	/**
+	 *
 	 * @param eobject
-	 *            an eobject
-	 * @param filePath
-	 *            a path to convert , the path can be a platform:/plugin, and platform:/resource a just a string. In this case we build a path from the location of the EObject given in parameter
+	 *            an eobject used to create URI if required
+	 * @param path
+	 *            a path to convert, the path can be a platform:/plugin or platform:/resource or just a string. In this case we build a path from the location of the EObject given in parameter
 	 * @return
 	 *         a platform URI
 	 *
 	 */
-	private static final URI createPlatformURIFromFilePath(final EObject eobject, final String filePath) {
-		if (null == filePath || filePath.isEmpty()) {
+	protected URI createPlatformURIFromPath(final EObject eobject, String path) {
+		if (path == null) {
+			path = ""; // $NON-NLS-1 //$NON-NLS-1$
+		}
+
+		URI pathAsURI = URI.createURI(path, true);
+		final String scheme = pathAsURI.scheme(); // Windows C: or platform for example is not supported
+		if (false == pathAsURI.isPlatform() && null != scheme && false == scheme.isEmpty()) {
+			Activator.log.warn(NLS.bind("File system path like {0} are not supported", path)); //$NON-NLS-1$
 			return null;
 		}
-		URI templateURI = URI.createURI(filePath, true);
-		final String scheme = templateURI.scheme(); // Windows C: or platform for example is not supported
-		if (false == templateURI.isPlatform() && null != scheme && false == scheme.isEmpty()) {
-			Activator.log.warn(NLS.bind("File system path like {0} are not supported", filePath)); //$NON-NLS-1$
-			return null;
-		}
-		if (false == templateURI.isPlatform()) {
+		if (false == pathAsURI.isPlatform()) {
 			if (eobject.eResource() == null) {
 				Activator.log.warn(NLS.bind("The EObject {0} must be attached to a Resource.", eobject)); //$NON-NLS-1$
 				return null;
@@ -87,14 +105,15 @@ public final class DefaultDocumentGeneratorConfigurationOperations {
 			// should always be true
 			Assert.isTrue(documentURI.isPlatform());
 			final String projectName = documentURI.segmentsList().get(1);
-			URI templateURIPath = URI.createPlatformResourceURI(projectName, true);
-			templateURI = templateURIPath.appendSegments(templateURI.segments());
+			URI fileURIPath = URI.createPlatformResourceURI(projectName, false);
+			pathAsURI = fileURIPath.appendSegments(pathAsURI.segments());
 		}
 
 		// should always be true;
-		Assert.isTrue(templateURI.isPlatform());
-		return templateURI;
+		Assert.isTrue(pathAsURI.isPlatform());
+		return pathAsURI;
 	}
+
 
 
 	/**
@@ -106,7 +125,7 @@ public final class DefaultDocumentGeneratorConfigurationOperations {
 	 * @return
 	 *         the full path of the file, conformed to the OS, or <code>null</code> if not found
 	 */
-	private static final URL getFileURLFromPlatformURI(final URI uri) {
+	protected final URL getFileURLFromPlatformURI(final URI uri) {
 		if (uri == null) {
 			return null;
 		}
@@ -141,9 +160,9 @@ public final class DefaultDocumentGeneratorConfigurationOperations {
 				// convert the URL of the file in the compiled eclipse bundle into an URL in D:git/... in my installation (useful or not ? )
 				URL url = FileLocator.toFileURL(eclipseURL);
 				// here we get space that must be replace by %20
-				// there is a bug with FileLocator (see bug https://bugs.eclipse.org/bugs/show_bug.cgi?id=145096)
-				if (url.toString().contains(" ")) { //$NON-NLS-1$
-					url = new URL(url.toString().replace(" ", "%20")); //$NON-NLS-1$ //$NON-NLS-2$
+				// see bug https://bugs.eclipse.org/bugs/show_bug.cgi?id=145096
+				if (url.toString().contains(SPACE)) {
+					url = new URL(url.toString().replace(SPACE, ENCODED_SPACE));
 				}
 				return url;
 			} catch (IOException e) {
@@ -152,14 +171,23 @@ public final class DefaultDocumentGeneratorConfigurationOperations {
 
 		} else if (uri.isPlatformResource()) {
 			final IFile f = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(uri.toPlatformString(true)));
-			if (f.exists()) {
-				try {
-					return f.getLocationURI().toURL();
-				} catch (MalformedURLException e) {
-					Activator.log.error(e);
-				}
-			}
+			return createURLFromFile(f);
+		}
+		return null;
+	}
 
+	/**
+	 *
+	 * @param file
+	 *            a file
+	 * @return
+	 *         the URL for the file
+	 */
+	protected URL createURLFromFile(final IFile file) {
+		try {
+			return file.getLocationURI().toURL();
+		} catch (MalformedURLException e) {
+			Activator.log.error(e);
 		}
 		return null;
 	}

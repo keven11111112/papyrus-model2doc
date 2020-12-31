@@ -63,31 +63,9 @@ public class ImageItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addImagePathPropertyDescriptor(object);
 			addCaptionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Image Path feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected void addImagePathPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Image_imagePath_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_Image_imagePath_feature", "_UI_Image_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				DocumentStructurePackage.Literals.IMAGE__IMAGE_PATH,
-				true,
-				false,
-				false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				null,
-				null));
 	}
 
 	/**
@@ -194,7 +172,6 @@ public class ImageItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Image.class)) {
-		case DocumentStructurePackage.IMAGE__IMAGE_PATH:
 		case DocumentStructurePackage.IMAGE__CAPTION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;

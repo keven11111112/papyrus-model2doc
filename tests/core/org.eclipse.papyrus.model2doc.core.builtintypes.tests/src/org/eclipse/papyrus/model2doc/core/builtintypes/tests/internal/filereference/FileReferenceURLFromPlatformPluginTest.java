@@ -66,7 +66,7 @@ public class FileReferenceURLFromPlatformPluginTest extends AbstractBuiltInTypes
 		final EObject root = res.getContents().get(0);
 		Assert.assertTrue(root instanceof DefaultFileReference);
 		IFileReference fileReference = (DefaultFileReference) root;
-		return fileReference.getFileAccessor().createFileURL();
+		return fileReference.getFileAccessor().createInputFileURL();
 	}
 
 	private void checkCreatedURL(final URL url) {

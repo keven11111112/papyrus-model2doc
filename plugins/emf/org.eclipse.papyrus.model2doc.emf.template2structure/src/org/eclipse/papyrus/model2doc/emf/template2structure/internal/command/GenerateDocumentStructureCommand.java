@@ -33,7 +33,6 @@ import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration;
-import org.eclipse.papyrus.model2doc.core.generatorconfiguration.operations.GeneratorConfigurationOperations;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Document;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Version;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.internal.resource.DocumentStructureResource;
@@ -101,7 +100,7 @@ public class GenerateDocumentStructureCommand extends RecordingCommand {
 		final IDocumentStructureGeneratorConfiguration configuration = this.documentTemplate.getDocumentStructureGeneratorConfiguration();
 		if (null != configuration) {
 			final Version version = document.getVersion();
-			documentStructureURI = configuration.createDocumentStructureURI(DocumentStructureResource.FILE_EXTENSION, version != null ? version.getVersion() : null);
+			documentStructureURI = configuration.createDocumentStructureOutputAccessor().createOutputFileURI(configuration.getDocumentName(), DocumentStructureResource.FILE_EXTENSION, version != null ? version.getVersion() : null);
 		} else {
 			Activator.log.warn("The document structure can't be generated, the configuration is not defined in your model."); //$NON-NLS-1$
 			return;
@@ -176,7 +175,17 @@ public class GenerateDocumentStructureCommand extends RecordingCommand {
 	 */
 	// TODO : move me outside of the command
 	private static void refreshProjects(final DocumentTemplate documentTemplate) {
-		final Collection<String> projectsToRefresh = GeneratorConfigurationOperations.getWorkspaceProjectToRefresh(documentTemplate.getDocumentStructureGeneratorConfiguration());
+		final Collection<String> projectsToRefresh = new ArrayList<>();
+		final String structureProjectToRefresh = documentTemplate.getDocumentStructureGeneratorConfiguration().createDocumentStructureOutputAccessor().getProjectName();
+		final String imageProjectToRefresh = documentTemplate.getDocumentStructureGeneratorConfiguration().createImageOutputAccessor().getProjectName();
+		if (structureProjectToRefresh != null && structureProjectToRefresh.isEmpty()) {
+			projectsToRefresh.add(structureProjectToRefresh);
+		}
+		if (imageProjectToRefresh != null && imageProjectToRefresh.isEmpty()) {
+			projectsToRefresh.add(imageProjectToRefresh);
+		}
+
+
 		for (final String current : projectsToRefresh) {
 			final IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(current);
 			if (null != project) {

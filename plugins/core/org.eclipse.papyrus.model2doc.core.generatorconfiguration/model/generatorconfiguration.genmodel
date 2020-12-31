@@ -38,10 +38,10 @@
   </genAnnotations>
   <foreignModel>generatorconfiguration.uml</foreignModel>
   <genPackages xsi:type="genmodel:GenPackage" prefix="GeneratorConfiguration" basePackage="org.eclipse.papyrus.model2doc.core"
-      disposableProviderFactory="true" extensibleProviderFactory="true" childCreationExtenders="true"
-      ecorePackage="generatorconfiguration.ecore#/">
-    <genDataTypes xsi:type="genmodel:GenDataType" ecoreDataType="generatorconfiguration.ecore#//URL"/>
-    <genDataTypes xsi:type="genmodel:GenDataType" ecoreDataType="generatorconfiguration.ecore#//URI"/>
+      disposableProviderFactory="true" generateModelWizard="false" extensibleProviderFactory="true"
+      childCreationExtenders="true" ecorePackage="generatorconfiguration.ecore#/">
+    <genDataTypes xsi:type="genmodel:GenDataType" ecoreDataType="generatorconfiguration.ecore#//IInputFileAccessor"/>
+    <genDataTypes xsi:type="genmodel:GenDataType" ecoreDataType="generatorconfiguration.ecore#//IOutputFileAccessor"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="generatorconfiguration.ecore#//DefaultDocumentStructureGeneratorConfiguration"/>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="generatorconfiguration.ecore#//AbstractDocumentStructureGeneratorConfiguration">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute generatorconfiguration.ecore#//AbstractDocumentStructureGeneratorConfiguration/structureGeneratorId"/>
@@ -69,16 +69,15 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="generatorconfiguration.ecore#//IDocumentStructureGeneratorConfiguration/getStructureGeneratorId"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="generatorconfiguration.ecore#//IDocumentStructureGeneratorConfiguration/getImageFolder"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="generatorconfiguration.ecore#//IDocumentStructureGeneratorConfiguration/getStructureFolder"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="generatorconfiguration.ecore#//IDocumentStructureGeneratorConfiguration/createDocumentStructureURI">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="generatorconfiguration.ecore#//IDocumentStructureGeneratorConfiguration/createDocumentStructureURI/fileExtension"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="generatorconfiguration.ecore#//IDocumentStructureGeneratorConfiguration/createDocumentStructureURI/version"/>
-      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="generatorconfiguration.ecore#//IDocumentStructureGeneratorConfiguration/createDocumentStructureOutputAccessor"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="generatorconfiguration.ecore#//IDocumentStructureGeneratorConfiguration/createImageOutputAccessor"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="generatorconfiguration.ecore#//IDocumentGeneratorConfiguration">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="generatorconfiguration.ecore#//IDocumentGeneratorConfiguration/isSaveDocumentStructure"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="generatorconfiguration.ecore#//IDocumentGeneratorConfiguration/isSaveImages"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="generatorconfiguration.ecore#//IDocumentGeneratorConfiguration/getTemplateFile"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="generatorconfiguration.ecore#//IDocumentGeneratorConfiguration/createTemplateFileURL"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="generatorconfiguration.ecore#//IDocumentGeneratorConfiguration/createTemplateFileInputAccessor"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="generatorconfiguration.ecore#//IDocumentGeneratorConfiguration/createDocumentOutputAccessor"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="generatorconfiguration.ecore#//DefaultDocumentGeneratorConfiguration"/>
   </genPackages>

@@ -26,6 +26,7 @@ import java.util.List;
 
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.nebula.widgets.nattable.NatTable;
@@ -57,7 +58,7 @@ import org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesFactory;
 import org.eclipse.papyrus.model2doc.core.builtintypes.CellLocation;
 import org.eclipse.papyrus.model2doc.core.builtintypes.TextCell;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStructureGeneratorConfiguration;
-import org.eclipse.papyrus.model2doc.core.generatorconfiguration.operations.GeneratorConfigurationOperations;
+import org.eclipse.papyrus.model2doc.core.generatorconfiguration.accessors.IOutputFileAccessor;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructureFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.EmptyLine;
@@ -356,8 +357,9 @@ public class PapyrusTableViewMapper extends AbstractTemplateToStructureMapper<Pa
 				imageNameBuilder.append(XMI_ID);
 			}
 		}
-
-		String imagePath = GeneratorConfigurationOperations.getImageFileLocalPath(conf, imageNameBuilder.toString(), ImageFormat.PNG.getImageExtension());
+		final IOutputFileAccessor accessor = conf.createImageOutputAccessor();
+		final URI uri = accessor.createOutputFileURI(imageNameBuilder.toString(), ImageFormat.PNG.getImageExtension());
+		String imagePath = accessor.convertToURL(uri).toString();
 		imagePath = imagePath.replaceAll("file:/", ""); //$NON-NLS-1$ //$NON-NLS-2$
 
 		// 2. configure the image generation, changing some values in the ConfigRegistry of the NatTable instance
@@ -377,7 +379,7 @@ public class PapyrusTableViewMapper extends AbstractTemplateToStructureMapper<Pa
 		// 5. we create and return the image
 		final Image image = DocumentStructureFactory.eINSTANCE.createImage();
 		image.setCaption(table.getName());
-		image.setImagePath(imagePath);
+		image.setFilePath(uri.toString());
 
 		// 6. we reset the previous values in the NatTable instance
 		configureTableForExport(natTable, (boolean) previousValues[0], (boolean) previousValues[1], (String) previousValues[2], (ImageFormat) previousValues[3]);

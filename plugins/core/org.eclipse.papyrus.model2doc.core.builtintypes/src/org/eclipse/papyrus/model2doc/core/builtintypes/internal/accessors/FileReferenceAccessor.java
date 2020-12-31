@@ -16,7 +16,6 @@
 package org.eclipse.papyrus.model2doc.core.builtintypes.internal.accessors;
 
 import org.eclipse.papyrus.model2doc.core.builtintypes.IFileReference;
-import org.eclipse.papyrus.model2doc.core.builtintypes.accessors.AbstractInputFileAccessor;
 
 /**
  * Accessor used to access to file referenced by {@link IFileReference}

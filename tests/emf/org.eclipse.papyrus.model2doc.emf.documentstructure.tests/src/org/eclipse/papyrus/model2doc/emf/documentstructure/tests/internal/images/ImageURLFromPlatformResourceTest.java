@@ -97,75 +97,75 @@ public class ImageURLFromPlatformResourceTest extends AbstractImageURLTests {
 	@Test
 	public void test_01_ImageInPlatformPluginURI() {
 		final Image imageReference = createImageFileReference(TEST_01_DECLARED_REFERENCED_FILE_NAME);
-		checkCreatedURL(imageReference.getFileAccessor().createFileURL());
+		checkCreatedURL(imageReference.getFileAccessor().createInputFileURL());
 	}
 
 	@Test
 	public void test_02_ImageWithRelativeURI() {
 		createFileInProject(TEST_02_FOLDER, TEST_02_REFERENCED_FILE_NAME);
 		final Image imageReference = createImageFileReference(TEST_02_DECLARED_REFERENCED_FILE_NAME);
-		checkCreatedURL(imageReference.getFileAccessor().createFileURL());
+		checkCreatedURL(imageReference.getFileAccessor().createInputFileURL());
 	}
 
 	@Test
 	public void test_03_ImageWithRelativeURI() {
 		createFileInProject(TEST_03_FOLDER, TEST_03_REFERENCED_FILE_NAME);
 		final Image imageReference = createImageFileReference(TEST_03_DECLARED_REFERENCED_FILE_NAME);
-		checkCreatedURL(imageReference.getFileAccessor().createFileURL());
+		checkCreatedURL(imageReference.getFileAccessor().createInputFileURL());
 	}
 
 	@Test
 	public void test_04_ImageURIWithSpaces() {
 		createFileInProject(TEST_04_FOLDER, TEST_04_REFERENCED_FILE_NAME);
 		final Image imageReference = createImageFileReference(TEST_04_DECLARED_REFERENCED_FILE_NAME);
-		checkCreatedURL(imageReference.getFileAccessor().createFileURL());
+		checkCreatedURL(imageReference.getFileAccessor().createInputFileURL());
 	}
 
 	@Test
 	public void test_05_ImageURIWithAccentuatedChar() {
 		createFileInProject(TEST_05_FOLDER, TEST_05_REFERENCED_FILE_NAME);
 		final Image imageReference = createImageFileReference(TEST_05_DECLARED_REFERENCED_FILE_NAME);
-		checkCreatedURL(imageReference.getFileAccessor().createFileURL());
+		checkCreatedURL(imageReference.getFileAccessor().createInputFileURL());
 	}
 
 	@Test
 	public void test_06_ImageInAnotherFolder() {
 		createFileInProject(TEST_06_FOLDER, TEST_06_REFERENCED_FILE_NAME);
 		final Image imageReference = createImageFileReference(TEST_06_DECLARED_REFERENCED_FILE_NAME);
-		checkCreatedURL(imageReference.getFileAccessor().createFileURL());
+		checkCreatedURL(imageReference.getFileAccessor().createInputFileURL());
 	}
 
 	@Test
 	public void test_07_ImageInAnotherFolderWithSpaces() {
 		createFileInProject(TEST_07_FOLDER, TEST_07_REFERENCED_FILE_NAME);
 		final Image imageReference = createImageFileReference(TEST_07_DECLARED_REFERENCED_FILE_NAME);
-		checkCreatedURL(imageReference.getFileAccessor().createFileURL());
+		checkCreatedURL(imageReference.getFileAccessor().createInputFileURL());
 	}
 
 	@Test
 	public void test_08_ImageInAnotherFolderWithAccentuatedChar() {
 		createFileInProject(TEST_08_FOLDER, TEST_08_REFERENCED_FILE_NAME);
 		final Image imageReference = createImageFileReference(TEST_08_DECLARED_REFERENCED_FILE_NAME);
-		checkCreatedURL(imageReference.getFileAccessor().createFileURL());
+		checkCreatedURL(imageReference.getFileAccessor().createInputFileURL());
 	}
 
 	@Test
 	public void test_09_NullFileReferenceURI() {
 		final Image imageReference = createImageFileReference(TEST_09_DECLARED_REFERENCED_FILE_NAME);
-		Assert.assertNull(imageReference.getFileAccessor().createFileURL());
+		Assert.assertNull(imageReference.getFileAccessor().createInputFileURL());
 	}
 
 	@Test
 	public void test_10_EmptyFileReferenceURI() {
 		final Image imageReference = createImageFileReference(TEST_10_DECLARED_REFERENCED_FILE_NAME);
-		Assert.assertNull(imageReference.getFileAccessor().createFileURL());
+		Assert.assertNull(imageReference.getFileAccessor().createInputFileURL());
 	}
 
 	@Test
 	public void test_11_ImageNotFound() {
 		createFolderInContainer(this.projectForTest, TEST_11_FOLDER); // we don't create the file in it the goal of the test
 		final Image imageReference = createImageFileReference(TEST_11_DECLARED_REFERENCED_FILE_NAME);
-		Assert.assertNull(imageReference.getFileAccessor().createFileURL());
+		Assert.assertNull(imageReference.getFileAccessor().createInputFileURL());
 	}
 
 	/**
@@ -175,13 +175,13 @@ public class ImageURLFromPlatformResourceTest extends AbstractImageURLTests {
 	public void test_12_ImageInPlatformResource() {
 		createFileInProject(TEST_12_FOLDER, TEST_12_REFERENCED_FILE_NAME);
 		final Image imageReference = createImageFileReference(TEST_12_DECLARED_REFERENCED_FILE_NAME);
-		checkCreatedURL(imageReference.getFileAccessor().createFileURL());
+		checkCreatedURL(imageReference.getFileAccessor().createInputFileURL());
 	}
 
 	@Test
 	public void test_13_ImageURIOSPath() {
 		final Image imageReference = createImageFileReference(TEST_13_DECLARED_REFERENCED_FILE_NAME);
-		Assert.assertNull(imageReference.getFileAccessor().createFileURL());
+		Assert.assertNull(imageReference.getFileAccessor().createInputFileURL());
 	}
 
 }

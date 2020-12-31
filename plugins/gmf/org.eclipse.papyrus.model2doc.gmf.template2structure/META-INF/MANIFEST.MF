@@ -17,7 +17,8 @@ Require-Bundle: org.eclipse.ui;bundle-version="[3.113.0,4.0.0)",
  org.eclipse.gmf.runtime.diagram.core;bundle-version="[1.7.0,2.0.0)",
  org.eclipse.gmf.runtime.diagram.ui;bundle-version="[1.8.0,2.0.0)",
  org.eclipse.gmf.runtime.diagram.ui.render;bundle-version="[1.7.0,2.0.0)",
- org.eclipse.papyrus.infra.core.log;bundle-version="[2.0.0,3.0.0)"
+ org.eclipse.papyrus.infra.core.log;bundle-version="[2.0.0,3.0.0)",
+ org.eclipse.papyrus.model2doc.core.builtintypes;bundle-version="[0.8.0,1.0.0)"
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Automatic-Module-Name: org.eclipse.papyrus.model2doc.gmf.template2structure
 Bundle-ActivationPolicy: lazy

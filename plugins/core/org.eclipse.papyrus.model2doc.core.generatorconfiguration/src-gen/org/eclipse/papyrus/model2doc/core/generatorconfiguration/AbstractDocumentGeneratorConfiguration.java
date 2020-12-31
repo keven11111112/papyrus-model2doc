@@ -44,7 +44,7 @@ public interface AbstractDocumentGeneratorConfiguration extends IGeneratorConfig
 	 * <!-- begin-model-doc -->
 	 * If true, the document structure model will be kept after the generation. If false, it will be destroyed.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Save Document Structure</em>' attribute.
 	 * @see #setSaveDocumentStructure(boolean)
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationPackage#getAbstractDocumentGeneratorConfiguration_SaveDocumentStructure()
@@ -57,9 +57,9 @@ public interface AbstractDocumentGeneratorConfiguration extends IGeneratorConfig
 	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentGeneratorConfiguration#isSaveDocumentStructure <em>Save Document Structure</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *            the new value of the '<em>Save Document Structure</em>' attribute.
+	 *                  the new value of the '<em>Save Document Structure</em>' attribute.
 	 * @see #isSaveDocumentStructure()
 	 * @generated
 	 */
@@ -73,7 +73,7 @@ public interface AbstractDocumentGeneratorConfiguration extends IGeneratorConfig
 	 * <!-- begin-model-doc -->
 	 * If true, the generated images will be kept after the generation. If false, we will erase them.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Save Images</em>' attribute.
 	 * @see #setSaveImages(boolean)
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationPackage#getAbstractDocumentGeneratorConfiguration_SaveImages()
@@ -86,9 +86,9 @@ public interface AbstractDocumentGeneratorConfiguration extends IGeneratorConfig
 	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentGeneratorConfiguration#isSaveImages <em>Save Images</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *            the new value of the '<em>Save Images</em>' attribute.
+	 *                  the new value of the '<em>Save Images</em>' attribute.
 	 * @see #isSaveImages()
 	 * @generated
 	 */
@@ -101,7 +101,7 @@ public interface AbstractDocumentGeneratorConfiguration extends IGeneratorConfig
 	 * <!-- begin-model-doc -->
 	 * The path to the file to use as template. This file contains de style description and maybe the cover page too.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Template File</em>' attribute.
 	 * @see #setTemplateFile(String)
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationPackage#getAbstractDocumentGeneratorConfiguration_TemplateFile()
@@ -114,9 +114,9 @@ public interface AbstractDocumentGeneratorConfiguration extends IGeneratorConfig
 	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentGeneratorConfiguration#getTemplateFile <em>Template File</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *            the new value of the '<em>Template File</em>' attribute.
+	 *                  the new value of the '<em>Template File</em>' attribute.
 	 * @see #getTemplateFile()
 	 * @generated
 	 */
@@ -129,7 +129,7 @@ public interface AbstractDocumentGeneratorConfiguration extends IGeneratorConfig
 	 * <!-- begin-model-doc -->
 	 * The name of the document, without its extension.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Document Name</em>' attribute.
 	 * @see #setDocumentName(String)
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationPackage#getAbstractDocumentGeneratorConfiguration_DocumentName()
@@ -143,9 +143,9 @@ public interface AbstractDocumentGeneratorConfiguration extends IGeneratorConfig
 	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentGeneratorConfiguration#getDocumentName <em>Document Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *            the new value of the '<em>Document Name</em>' attribute.
+	 *                  the new value of the '<em>Document Name</em>' attribute.
 	 * @see #getDocumentName()
 	 * @generated
 	 */
@@ -159,7 +159,7 @@ public interface AbstractDocumentGeneratorConfiguration extends IGeneratorConfig
 	 * <!-- begin-model-doc -->
 	 * The output folder. It can be a full path (platform:/resource/projectName/...) or a path in the current plugin (generation/outputFolder, interpreted as platform:/resource/projectName/generation/outputFolder), or a system path (ex: c:\MyDocuments).
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Document Folder</em>' attribute.
 	 * @see #setDocumentFolder(String)
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationPackage#getAbstractDocumentGeneratorConfiguration_DocumentFolder()
@@ -173,9 +173,9 @@ public interface AbstractDocumentGeneratorConfiguration extends IGeneratorConfig
 	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentGeneratorConfiguration#getDocumentFolder <em>Document Folder</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *            the new value of the '<em>Document Folder</em>' attribute.
+	 *                  the new value of the '<em>Document Folder</em>' attribute.
 	 * @see #getDocumentFolder()
 	 * @generated
 	 */
@@ -188,7 +188,7 @@ public interface AbstractDocumentGeneratorConfiguration extends IGeneratorConfig
 	 * <!-- begin-model-doc -->
 	 * The identifier of the document generator to use.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Document Generator Id</em>' attribute.
 	 * @see #setDocumentGeneratorId(String)
 	 * @see org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationPackage#getAbstractDocumentGeneratorConfiguration_DocumentGeneratorId()
@@ -202,9 +202,9 @@ public interface AbstractDocumentGeneratorConfiguration extends IGeneratorConfig
 	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.core.generatorconfiguration.AbstractDocumentGeneratorConfiguration#getDocumentGeneratorId <em>Document Generator Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *            the new value of the '<em>Document Generator Id</em>' attribute.
+	 *                  the new value of the '<em>Document Generator Id</em>' attribute.
 	 * @see #getDocumentGeneratorId()
 	 * @generated
 	 */

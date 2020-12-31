@@ -13,6 +13,13 @@
  *****************************************************************************/
 package org.eclipse.papyrus.model2doc.docx.emf.structure2document.internal.utils;
 
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.osgi.util.NLS;
+import org.eclipse.papyrus.model2doc.docx.emf.structure2document.Activator;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument;
 import org.eclipse.papyrus.model2doc.emf.structure2document.generator.helpers.CreateFileFromTextDocumentHelper;
 
@@ -25,6 +32,21 @@ public class GenerateDocxFileUtils {
 	public static String generateDocxFile(final TextDocument docTemplate) {
 		final CreateFileFromTextDocumentHelper helper = new CreateFileFromTextDocumentHelper(docTemplate, new DocxTranscriptionFactory());
 		final String generatedFilePath = helper.generate();
+
+		// refresh workspace
+		// TODO make common method with odt generation
+		final String projectToRefresh = docTemplate.getDocumentGeneratorConfiguration().createDocumentOutputAccessor().getProjectName();
+		if (projectToRefresh != null && !projectToRefresh.isEmpty()) {
+			final IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(projectToRefresh);
+			if (null != project) {
+				try {
+					// refresh project
+					project.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
+				} catch (CoreException e) {
+					Activator.log.error(NLS.bind("An exception occured during the refresh of the project {0}", projectToRefresh), e); //$NON-NLS-1$
+				}
+			}
+		}
 
 		return generatedFilePath;
 	}

@@ -572,19 +572,8 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	 * @generated
 	 */
 	@Override
-	public EAttribute getImage_ImagePath() {
-		return (EAttribute) imageEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
 	public EAttribute getImage_Caption() {
-		return (EAttribute) imageEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) imageEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -852,7 +841,6 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 		createEOperation(titleEClass, TITLE___GET_LEVEL);
 
 		imageEClass = createEClass(IMAGE);
-		createEAttribute(imageEClass, IMAGE__IMAGE_PATH);
 		createEAttribute(imageEClass, IMAGE__CAPTION);
 
 		leafBodyPartEClass = createEClass(LEAF_BODY_PART);
@@ -984,7 +972,6 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 		initEOperation(getTitle__GetLevel(), theEcorePackage.getEInt(), "getLevel", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(imageEClass, Image.class, "Image", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getImage_ImagePath(), ecorePackage.getEString(), "imagePath", null, 1, 1, Image.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 		initEAttribute(getImage_Caption(), ecorePackage.getEString(), "caption", null, 0, 1, Image.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(leafBodyPartEClass, LeafBodyPart.class, "LeafBodyPart", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$

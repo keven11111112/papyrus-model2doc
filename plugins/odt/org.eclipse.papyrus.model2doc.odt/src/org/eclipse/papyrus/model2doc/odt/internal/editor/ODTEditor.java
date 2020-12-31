@@ -18,7 +18,6 @@ package org.eclipse.papyrus.model2doc.odt.internal.editor;
 
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration;
-import org.eclipse.papyrus.model2doc.core.generatorconfiguration.operations.GeneratorConfigurationOperations;
 import org.eclipse.papyrus.model2doc.odt.Activator;
 import org.eclipse.papyrus.model2doc.odt.internal.message.Messages;
 import org.eclipse.papyrus.model2doc.odt.internal.util.ExtensionConstants;
@@ -119,7 +118,7 @@ public class ODTEditor {
 		if (officeLoader != null) {
 			// Create text document
 			fileIOService = new ODTFileIOServiceImpl();
-			final String templateURL = generatorConfig.createTemplateFileURL().toString();
+			final String templateURL = generatorConfig.createTemplateFileInputAccessor().createInputFileURL().toString();
 			createTextDocument(templateURL);
 			xMultiServiceFactory = UnoRuntime.queryInterface(XMultiServiceFactory.class, xTextDocument);
 			try {
@@ -574,7 +573,7 @@ public class ODTEditor {
 	private String saveDocument(String fileName, String extension) {
 		XStorable store = UnoRuntime.queryInterface(XStorable.class, xTextDocument);
 
-		final String saveFileURL = convertToLibreOfficeFileURI(GeneratorConfigurationOperations.getDocumentFileLocalPath(configuration, extension));
+		final String saveFileURL = convertToLibreOfficeFileURI(configuration.createDocumentOutputAccessor().createOutputFileURL(configuration.getDocumentName(), extension).toString());
 
 		if (saveFileURL == null) {// not possible with the current implementation
 			return null;

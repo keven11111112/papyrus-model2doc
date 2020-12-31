@@ -96,75 +96,75 @@ public class TemplateFileURLFromPlatformResourceTest extends AbstractTemplateFil
 	@Test
 	public void test_01_TemplateInPlatformPluginURI() {
 		final DefaultDocumentGeneratorConfiguration conf = createDefaultDocumentGeneratorConfiguration(TEST_01_TEMPLATE_DECLARED_FILE_NAME);
-		checkCreatedURL(conf.createTemplateFileURL());
+		checkCreatedURL(conf.createTemplateFileInputAccessor().createInputFileURL());
 	}
 
 	@Test
 	public void test_02_TemplateWithRelativeURI() {
 		createFileInProject(TEST_02_FOLDER, TEST_02_TEMPLATE_FILE_NAME);
 		final DefaultDocumentGeneratorConfiguration conf = createDefaultDocumentGeneratorConfiguration(TEST_02_DECLARED_TEMPLATE_FILE_NAME);
-		checkCreatedURL(conf.createTemplateFileURL());
+		checkCreatedURL(conf.createTemplateFileInputAccessor().createInputFileURL());
 	}
 
 	@Test
 	public void test_03_TemplateWithRelativeURI() {
 		createFileInProject(TEST_03_FOLDER, TEST_03_TEMPLATE_FILE_NAME);
 		final DefaultDocumentGeneratorConfiguration conf = createDefaultDocumentGeneratorConfiguration(TEST_03_DECLARED_TEMPLATE_FILE_NAME);
-		checkCreatedURL(conf.createTemplateFileURL());
+		checkCreatedURL(conf.createTemplateFileInputAccessor().createInputFileURL());
 	}
 
 	@Test
 	public void test_04_TemplateURIWithSpaces() {
 		createFileInProject(TEST_04_FOLDER, TEST_04_TEMPLATE_FILE_NAME);
 		final DefaultDocumentGeneratorConfiguration conf = createDefaultDocumentGeneratorConfiguration(TEST_04_DECLARED_TEMPLATE_FILE_NAME);
-		checkCreatedURL(conf.createTemplateFileURL());
+		checkCreatedURL(conf.createTemplateFileInputAccessor().createInputFileURL());
 	}
 
 	@Test
 	public void test_05_TemplateURIWithAccentuatedChar() {
 		createFileInProject(TEST_05_FOLDER, TEST_05_TEMPLATE_FILE_NAME);
 		final DefaultDocumentGeneratorConfiguration conf = createDefaultDocumentGeneratorConfiguration(TEST_05_DECLARED_TEMPLATE_FILE_NAME);
-		checkCreatedURL(conf.createTemplateFileURL());
+		checkCreatedURL(conf.createTemplateFileInputAccessor().createInputFileURL());
 	}
 
 	@Test
 	public void test_06_TemplateInAnotherFolder() {
 		createFileInProject(TEST_06_FOLDER, TEST_06_TEMPLATE_FILE_NAME);
 		final DefaultDocumentGeneratorConfiguration conf = createDefaultDocumentGeneratorConfiguration(TEST_06_DECLARED_TEMPLATE_FILE_NAME);
-		checkCreatedURL(conf.createTemplateFileURL());
+		checkCreatedURL(conf.createTemplateFileInputAccessor().createInputFileURL());
 	}
 
 	@Test
 	public void test_07_TemplateInAnotherFolderWithSpaces() {
 		createFileInProject(TEST_07_FOLDER, TEST_07_TEMPLATE_FILE_NAME);
 		final DefaultDocumentGeneratorConfiguration conf = createDefaultDocumentGeneratorConfiguration(TEST_07_DECLARED_TEMPLATE_FILE_NAME);
-		checkCreatedURL(conf.createTemplateFileURL());
+		checkCreatedURL(conf.createTemplateFileInputAccessor().createInputFileURL());
 	}
 
 	@Test
 	public void test_08_TemplateInAnotherFolderWithAccentuatedChar() {
 		createFileInProject(TEST_08_FOLDER, TEST_08_TEMPLATE_FILE_NAME);
 		final DefaultDocumentGeneratorConfiguration conf = createDefaultDocumentGeneratorConfiguration(TEST_08_DECLARED_TEMPLATE_FILE_NAME);
-		checkCreatedURL(conf.createTemplateFileURL());
+		checkCreatedURL(conf.createTemplateFileInputAccessor().createInputFileURL());
 	}
 
 	@Test
 	public void test_09_NullTemplateURI() {
 		final DefaultDocumentGeneratorConfiguration conf = createDefaultDocumentGeneratorConfiguration(TEST_09_DECLARED_TEMPLATE_FILE_NAME);
-		Assert.assertNull(conf.createTemplateFileURL());
+		Assert.assertNull(conf.createTemplateFileInputAccessor().createInputFileURL());
 	}
 
 	@Test
 	public void test_10_EmptyTemplateURI() {
 		final DefaultDocumentGeneratorConfiguration conf = createDefaultDocumentGeneratorConfiguration(TEST_10_DECLARED_TEMPLATE_FILE_NAME);
-		Assert.assertNull(conf.createTemplateFileURL());
+		Assert.assertNull(conf.createTemplateFileInputAccessor().createInputFileURL());
 	}
 
 	@Test
 	public void test_11_TemplateNotFound() {
 		createFolderInContainer(this.projectForTest, TEST_11_FOLDER); // we don't create the file in it the goal of the test
 		final DefaultDocumentGeneratorConfiguration conf = createDefaultDocumentGeneratorConfiguration(TEST_11_DECLARED_TEMPLATE_FILE_NAME);
-		Assert.assertNull(conf.createTemplateFileURL());
+		Assert.assertNull(conf.createTemplateFileInputAccessor().createInputFileURL());
 	}
 
 	/**
@@ -174,14 +174,14 @@ public class TemplateFileURLFromPlatformResourceTest extends AbstractTemplateFil
 	public void test_12_TemplateInPlatformResource() {
 		createFileInProject(TEST_12_FOLDER, TEST_12_TEMPLATE_FILE_NAME);
 		final DefaultDocumentGeneratorConfiguration conf = createDefaultDocumentGeneratorConfiguration(TEST_12_DECLARED_TEMPLATE_FILE_NAME);
-		checkCreatedURL(conf.createTemplateFileURL());
+		checkCreatedURL(conf.createTemplateFileInputAccessor().createInputFileURL());
 	}
 
 
 	@Test
 	public void test_13_TemplateURIOSPath() {
 		final DefaultDocumentGeneratorConfiguration conf = createDefaultDocumentGeneratorConfiguration(TEST_13_DECLARED_TEMPLATE_FILE_NAME);
-		Assert.assertNull(conf.createTemplateFileURL());
+		Assert.assertNull(conf.createTemplateFileInputAccessor().createInputFileURL());
 	}
 
 }
