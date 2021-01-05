@@ -126,10 +126,7 @@ public class PapyrusTableViewMapper extends AbstractTemplateToStructureMapper<Pa
 			Table current = tableIter.next();
 
 			// the table mapping
-			// we log info, because it can take times
-			Activator.log.info(NLS.bind("Start the export of the table {0}.", current.getName())); //$NON-NLS-1$
 			final List<BodyPart> mapResult = mapTable(papyrusTableView, current);
-			Activator.log.info(NLS.bind("End the export of the table {0}.", current.getName())); //$NON-NLS-1$
 
 			if (null == mapResult || mapResult.isEmpty()) {
 				Activator.log.warn(NLS.bind("We fail to import the table {0}.", current.getName())); //$NON-NLS-1$

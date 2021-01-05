@@ -369,9 +369,6 @@ public class WriteUtil {
 			return;
 		}
 
-		Activator.log.info(NLS.bind("Start the creation of the table {0} in LibreOffice", table.getCaption())); //$NON-NLS-1$
-		Activator.log.info(NLS.bind("--This table have {0} columns and {1} rows", colNumbers, rowsNumber)); //$NON-NLS-1$
-
 		try {
 			XMultiServiceFactory xMultiServiceFactory = odtEditor.getXMultiServiceFactory();
 			// create a text table
@@ -379,13 +376,10 @@ public class WriteUtil {
 			XTextTable textTable = UnoRuntime.queryInterface(XTextTable.class, obj);
 
 			// Initialize and add table
-			Activator.log.info("--Intializing LibreOffice Table."); //$NON-NLS-1$
 			textTable.initialize(rowsNumber, colNumbers);
-			Activator.log.info("--Add the new empty table to the the document"); //$NON-NLS-1$
 			addTextContent(xTextCursor, textTable);
 
 			// Set cell's contents
-			Activator.log.info("--Request Libreoffice to get the cells."); //$NON-NLS-1$
 			final List<String> cellNames = Arrays.asList(textTable.getCellNames());
 
 			if (cellNames.size() != allCells.size()) {
@@ -400,7 +394,6 @@ public class WriteUtil {
 			final Iterator<String> libreOfficeCellNamesIter = cellNames.iterator();
 			final Iterator<Cell> tableCellIterator = allCells.iterator();
 
-			int i = 0;
 			while (libreOfficeCellNamesIter.hasNext() && tableCellIterator.hasNext()) {
 				final XText cellText = UnoRuntime.queryInterface(XText.class, textTable.getCellByName(libreOfficeCellNamesIter.next()));
 				final Cell cell = tableCellIterator.next();
@@ -420,17 +413,11 @@ public class WriteUtil {
 				default:
 					// do nothing
 				}
-				if (i % 100 == 0) {
-					Activator.log.info(NLS.bind("----Fill {0}/{1} cells-----", i, totalCells)); //$NON-NLS-1$
-				}
-				i++;
 			}
 
 		} catch (com.sun.star.uno.Exception e) {
 			Activator.log.error(e);
 		}
-
-		Activator.log.info(NLS.bind("Finish the creation of the table {0}", table.getCaption())); //$NON-NLS-1$
 
 	}
 }

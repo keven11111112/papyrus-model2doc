@@ -22,8 +22,6 @@ import java.util.ListIterator;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.osgi.util.NLS;
-import org.eclipse.papyrus.model2doc.emf.template2structure.Activator;
 import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.AbstractTemplateToStructureMapper;
 import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.IMappingService;
 
@@ -82,9 +80,6 @@ public final class TemplateToStructureMappingService implements IMappingService 
 				contributor = current;
 			}
 		}
-		if (null == contributor) {
-			Activator.log.info(NLS.bind("No Mapper found for input {0} and output {1}.", eClassTemplateElement, expectedReturnedEClass)); //$NON-NLS-1$
-		}
 		return contributor;
 	}
 
@@ -106,11 +101,9 @@ public final class TemplateToStructureMappingService implements IMappingService 
 		if (null != contributor) {
 			result = contributor.map(this, documentTemplateElement, semanticModelElement, expectedReturnedClass);
 			if (null == result) {
-				Activator.log.info(NLS.bind("Mapping failed for input {0} and output {1}.", documentTemplateElement, expectedReturnedClass)); //$NON-NLS-1$
 				result = Collections.emptyList();
 			}
 		} else {
-			Activator.log.info(NLS.bind("No mapper found for input {0} with an output of kind {1}.", documentTemplateElement, expectedReturnedClass)); //$NON-NLS-1$
 			result = Collections.emptyList();
 		}
 

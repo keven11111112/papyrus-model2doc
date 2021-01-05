@@ -283,9 +283,6 @@ public class DocxTranscription implements Transcription {
 			return;
 		}
 
-		Activator.log.info(NLS.bind("Start the creation of the table {0}", table.getCaption())); //$NON-NLS-1$
-		Activator.log.info(NLS.bind("--This table have {0} columns and {1} rows", colNumbers, rowsNumber)); //$NON-NLS-1$
-
 		// create and fill the table
 		XWPFTable xwpfTable = document.createTable(rowsNumber, colNumbers);
 		Iterator<Row> rowIter = table.getRows().iterator();

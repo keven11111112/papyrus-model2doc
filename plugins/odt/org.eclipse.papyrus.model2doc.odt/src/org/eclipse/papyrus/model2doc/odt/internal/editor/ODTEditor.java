@@ -308,7 +308,6 @@ public class ODTEditor {
 
 			try {
 				store.storeToURL(outputFileURI, storeProperties);
-				Activator.log.info("Saving document: " + outputFileURI);//$NON-NLS-1$
 				return outputFileURI;
 			} catch (com.sun.star.io.IOException e) {
 				Activator.log.error(outputFileURI + " have not been saved: ", e); //$NON-NLS-1$
@@ -589,7 +588,6 @@ public class ODTEditor {
 
 		try {
 			store.storeToURL(saveFileURL, storeProps);
-			Activator.log.info("Saving document: " + saveFileURL);//$NON-NLS-1$
 		} catch (com.sun.star.io.IOException e) {
 			Activator.log.error(saveFileURL + " have not been saved: ", e); //$NON-NLS-1$
 		}
@@ -628,9 +626,7 @@ public class ODTEditor {
 		try {
 			boolean isOfficeTerminated = xDesktop.terminate();
 
-			if (isOfficeTerminated) {
-				Activator.log.info("LibreOffice terminated."); //$NON-NLS-1$
-			} else {
+			if (false == isOfficeTerminated) {
 				Activator.log.warn("LibreOffice failed to terminate."); //$NON-NLS-1$
 			}
 		} catch (com.sun.star.lang.DisposedException e) {
