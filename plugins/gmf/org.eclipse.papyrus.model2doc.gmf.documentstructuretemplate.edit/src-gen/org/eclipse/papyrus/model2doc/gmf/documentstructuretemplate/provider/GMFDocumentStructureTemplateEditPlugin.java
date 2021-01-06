@@ -24,6 +24,7 @@ import org.eclipse.papyrus.model2doc.core.author.provider.AuthorEditPlugin;
 import org.eclipse.papyrus.model2doc.core.builtintypes.provider.BuiltInTypesEditPlugin;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.provider.GeneratorconfigurationEditPlugin;
 
+import org.eclipse.papyrus.model2doc.core.styles.provider.StylesEditPlugin;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.provider.DocumentStructureTemplateEditPlugin;
 
 import org.osgi.framework.BundleActivator;
@@ -69,6 +70,7 @@ public final class GMFDocumentStructureTemplateEditPlugin extends EMFPlugin {
 				AuthorEditPlugin.INSTANCE,
 				ExpressionsEditPlugin.INSTANCE,
 				BuiltInTypesEditPlugin.INSTANCE,
+				StylesEditPlugin.INSTANCE,
 		});
 	}
 

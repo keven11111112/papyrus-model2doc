@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2019 CEA LIST and others.
+ * Copyright (c) 2019, 2021 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -10,6 +10,7 @@
  *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ * 	Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - Bug 570133
  *
  *****************************************************************************/
 
@@ -23,16 +24,17 @@ import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Paragraph;
-import org.eclipse.papyrus.model2doc.emf.documentstructure.Title;
+import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.AbstractBodyPartTemplateToStructureMapper;
 import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.IMappingService;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.CommentAsParagraph;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplatePackage;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Element;
 
 /**
  * This class does the mapping between {@link CommentAsParagraph} and {@link Paragraph}
  */
-public class CommentAsParagraphMapper extends AbstractUMLTemplateToStructureMapper<CommentAsParagraph> {
+public class CommentAsParagraphMapper extends AbstractBodyPartTemplateToStructureMapper<CommentAsParagraph> {
 
 	/**
 	 * Constructor.
@@ -41,7 +43,7 @@ public class CommentAsParagraphMapper extends AbstractUMLTemplateToStructureMapp
 	 * @param outputEClass
 	 */
 	public CommentAsParagraphMapper() {
-		super(TEMPLATE_EPACKAGE.getCommentAsParagraph(), BodyPart.class);
+		super(UMLDocumentStructureTemplatePackage.eINSTANCE.getCommentAsParagraph(), BodyPart.class);
 	}
 
 	/**
@@ -63,25 +65,17 @@ public class CommentAsParagraphMapper extends AbstractUMLTemplateToStructureMapp
 			// This element can't have children, so if isGenerate() returns false, we go out!
 			return Collections.emptyList();
 		}
-		final List<T> returnedValue = new ArrayList<>();
+		final List<T> generatedElements = new ArrayList<>();
 
 		final Iterator<Comment> commentIter = commentAsParagraph.getMatchingComments(semanticModelElement).iterator();
-		Title title = null;
-		if (commentIter.hasNext() && commentAsParagraph.isGenerateTitle()) {
-			title = STRUCTURE_EFACTORY.createTitle();
-			title.setTitle(commentAsParagraph.buildPartTemplateTitle(null));
-			returnedValue.add(returnedClassType.cast(title));
-		}
+
 		while (commentIter.hasNext()) {
 			final Paragraph paragraph = STRUCTURE_EFACTORY.createParagraph();
 			paragraph.setText(commentIter.next().getBody());
-			if (null == title) {
-				returnedValue.add(returnedClassType.cast(paragraph));
-			} else {
-				title.getSubBodyParts().add(paragraph);
-			}
+			generatedElements.add(returnedClassType.cast(paragraph));
 		}
-		return returnedValue;
+
+		return buildMapperResult(commentAsParagraph, semanticModelElement, returnedClassType, generatedElements);
 	}
 
 }

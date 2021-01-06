@@ -29,6 +29,8 @@ import org.eclipse.papyrus.infra.emf.expressions.booleanexpressions.IBooleanEObj
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate#isGenerateTitle <em>Generate Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate#getCustomTitle <em>Custom Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate#getGenerateBranchCondition <em>Generate Branch Condition</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate#isGenerateIfEmpty <em>Generate If Empty</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate#getDefaultTextIfEmpty <em>Default Text If Empty</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getIBodySectionPartTemplate()
@@ -150,6 +152,66 @@ public interface IBodySectionPartTemplate extends EObject {
 	 * @generated
 	 */
 	void setGenerateBranchCondition(IBooleanEObjectExpression value);
+
+	/**
+	 * Returns the value of the '<em><b>Generate If Empty</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Generate If Empty</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the value of the '<em>Generate If Empty</em>' attribute.
+	 * @see #setGenerateIfEmpty(boolean)
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getIBodySectionPartTemplate_GenerateIfEmpty()
+	 * @model default="false" required="true" ordered="false"
+	 * @generated
+	 */
+	boolean isGenerateIfEmpty();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate#isGenerateIfEmpty <em>Generate If Empty</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *                  the new value of the '<em>Generate If Empty</em>' attribute.
+	 * @see #isGenerateIfEmpty()
+	 * @generated
+	 */
+	void setGenerateIfEmpty(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Default Text If Empty</b></em>' attribute.
+	 * The default value is <code>"N/A"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Default Text If Empty</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the value of the '<em>Default Text If Empty</em>' attribute.
+	 * @see #setDefaultTextIfEmpty(String)
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage#getIBodySectionPartTemplate_DefaultTextIfEmpty()
+	 * @model default="N/A" required="true" ordered="false"
+	 * @generated
+	 */
+	String getDefaultTextIfEmpty();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate#getDefaultTextIfEmpty <em>Default Text If Empty</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *                  the new value of the '<em>Default Text If Empty</em>' attribute.
+	 * @see #getDefaultTextIfEmpty()
+	 * @generated
+	 */
+	void setDefaultTextIfEmpty(String value);
 
 	/**
 	 * <!-- begin-user-doc -->

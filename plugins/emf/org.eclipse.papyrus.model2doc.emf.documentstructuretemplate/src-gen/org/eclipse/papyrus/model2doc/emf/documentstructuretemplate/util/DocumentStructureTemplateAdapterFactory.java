@@ -83,7 +83,7 @@ public class DocumentStructureTemplateAdapterFactory extends AdapterFactoryImpl 
 	 *
 	 * @generated
 	 */
-	protected DocumentStructureTemplateSwitch<Adapter> modelSwitch = new DocumentStructureTemplateSwitch<Adapter>() {
+	protected DocumentStructureTemplateSwitch<Adapter> modelSwitch = new DocumentStructureTemplateSwitch<>() {
 		@Override
 		public Adapter caseDocumentTemplate(DocumentTemplate object) {
 			return createDocumentTemplateAdapter();

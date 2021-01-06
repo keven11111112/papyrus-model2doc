@@ -46,6 +46,8 @@ import org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.P
  * <li>{@link org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.impl.PapyrusGMFDiagramViewImpl#isGenerateTitle <em>Generate Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.impl.PapyrusGMFDiagramViewImpl#getCustomTitle <em>Custom Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.impl.PapyrusGMFDiagramViewImpl#getGenerateBranchCondition <em>Generate Branch Condition</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.impl.PapyrusGMFDiagramViewImpl#isGenerateIfEmpty <em>Generate If Empty</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.impl.PapyrusGMFDiagramViewImpl#getDefaultTextIfEmpty <em>Default Text If Empty</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.impl.PapyrusGMFDiagramViewImpl#getDiagramKindId <em>Diagram Kind Id</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.impl.PapyrusGMFDiagramViewImpl#getDiagramType <em>Diagram Type</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.impl.PapyrusGMFDiagramViewImpl#getContextFilterRule <em>Context Filter Rule</em>}</li>
@@ -132,6 +134,50 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 	 * @ordered
 	 */
 	protected IBooleanEObjectExpression generateBranchCondition;
+
+	/**
+	 * The default value of the '{@link #isGenerateIfEmpty() <em>Generate If Empty</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #isGenerateIfEmpty()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean GENERATE_IF_EMPTY_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isGenerateIfEmpty() <em>Generate If Empty</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #isGenerateIfEmpty()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean generateIfEmpty = GENERATE_IF_EMPTY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDefaultTextIfEmpty() <em>Default Text If Empty</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getDefaultTextIfEmpty()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DEFAULT_TEXT_IF_EMPTY_EDEFAULT = "N/A"; //$NON-NLS-1$
+
+	/**
+	 * The cached value of the '{@link #getDefaultTextIfEmpty() <em>Default Text If Empty</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getDefaultTextIfEmpty()
+	 * @generated
+	 * @ordered
+	 */
+	protected String defaultTextIfEmpty = DEFAULT_TEXT_IF_EMPTY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDiagramKindId() <em>Diagram Kind Id</em>}' attribute.
@@ -405,6 +451,58 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 	 * @generated
 	 */
 	@Override
+	public boolean isGenerateIfEmpty() {
+		return generateIfEmpty;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setGenerateIfEmpty(boolean newGenerateIfEmpty) {
+		boolean oldGenerateIfEmpty = generateIfEmpty;
+		generateIfEmpty = newGenerateIfEmpty;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__GENERATE_IF_EMPTY, oldGenerateIfEmpty, generateIfEmpty));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public String getDefaultTextIfEmpty() {
+		return defaultTextIfEmpty;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setDefaultTextIfEmpty(String newDefaultTextIfEmpty) {
+		String oldDefaultTextIfEmpty = defaultTextIfEmpty;
+		defaultTextIfEmpty = newDefaultTextIfEmpty;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__DEFAULT_TEXT_IF_EMPTY, oldDefaultTextIfEmpty, defaultTextIfEmpty));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public String getDiagramKindId() {
 		return diagramKindId;
 	}
@@ -602,6 +700,10 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 			return getCustomTitle();
 		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__GENERATE_BRANCH_CONDITION:
 			return getGenerateBranchCondition();
+		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__GENERATE_IF_EMPTY:
+			return isGenerateIfEmpty();
+		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__DEFAULT_TEXT_IF_EMPTY:
+			return getDefaultTextIfEmpty();
 		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_KIND_ID:
 			return getDiagramKindId();
 		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_TYPE:
@@ -636,6 +738,12 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 			return;
 		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__GENERATE_BRANCH_CONDITION:
 			setGenerateBranchCondition((IBooleanEObjectExpression) newValue);
+			return;
+		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__GENERATE_IF_EMPTY:
+			setGenerateIfEmpty((Boolean) newValue);
+			return;
+		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__DEFAULT_TEXT_IF_EMPTY:
+			setDefaultTextIfEmpty((String) newValue);
 			return;
 		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_KIND_ID:
 			setDiagramKindId((String) newValue);
@@ -677,6 +785,12 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__GENERATE_BRANCH_CONDITION:
 			setGenerateBranchCondition((IBooleanEObjectExpression) null);
 			return;
+		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__GENERATE_IF_EMPTY:
+			setGenerateIfEmpty(GENERATE_IF_EMPTY_EDEFAULT);
+			return;
+		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__DEFAULT_TEXT_IF_EMPTY:
+			setDefaultTextIfEmpty(DEFAULT_TEXT_IF_EMPTY_EDEFAULT);
+			return;
 		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_KIND_ID:
 			setDiagramKindId(DIAGRAM_KIND_ID_EDEFAULT);
 			return;
@@ -713,6 +827,10 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 			return CUSTOM_TITLE_EDEFAULT == null ? customTitle != null : !CUSTOM_TITLE_EDEFAULT.equals(customTitle);
 		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__GENERATE_BRANCH_CONDITION:
 			return generateBranchCondition != null;
+		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__GENERATE_IF_EMPTY:
+			return generateIfEmpty != GENERATE_IF_EMPTY_EDEFAULT;
+		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__DEFAULT_TEXT_IF_EMPTY:
+			return DEFAULT_TEXT_IF_EMPTY_EDEFAULT == null ? defaultTextIfEmpty != null : !DEFAULT_TEXT_IF_EMPTY_EDEFAULT.equals(defaultTextIfEmpty);
 		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_KIND_ID:
 			return DIAGRAM_KIND_ID_EDEFAULT == null ? diagramKindId != null : !DIAGRAM_KIND_ID_EDEFAULT.equals(diagramKindId);
 		case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_TYPE:
@@ -745,6 +863,10 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 				return DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__CUSTOM_TITLE;
 			case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__GENERATE_BRANCH_CONDITION:
 				return DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION;
+			case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__GENERATE_IF_EMPTY:
+				return DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_IF_EMPTY;
+			case PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__DEFAULT_TEXT_IF_EMPTY:
+				return DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY;
 			default:
 				return -1;
 			}
@@ -782,6 +904,10 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 				return PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__CUSTOM_TITLE;
 			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION:
 				return PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__GENERATE_BRANCH_CONDITION;
+			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_IF_EMPTY:
+				return PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__GENERATE_IF_EMPTY;
+			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY:
+				return PapyrusGMFDocumentStructureTemplatePackage.PAPYRUS_GMF_DIAGRAM_VIEW__DEFAULT_TEXT_IF_EMPTY;
 			default:
 				return -1;
 			}
@@ -872,6 +998,10 @@ public class PapyrusGMFDiagramViewImpl extends MinimalEObjectImpl.Container impl
 		result.append(generateTitle);
 		result.append(", customTitle: "); //$NON-NLS-1$
 		result.append(customTitle);
+		result.append(", generateIfEmpty: "); //$NON-NLS-1$
+		result.append(generateIfEmpty);
+		result.append(", defaultTextIfEmpty: "); //$NON-NLS-1$
+		result.append(defaultTextIfEmpty);
 		result.append(", diagramKindId: "); //$NON-NLS-1$
 		result.append(diagramKindId);
 		result.append(", diagramType: "); //$NON-NLS-1$

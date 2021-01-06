@@ -30,6 +30,7 @@ import org.eclipse.papyrus.model2doc.core.author.AuthorPackage;
 import org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesPackage;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationPackage;
 
+import org.eclipse.papyrus.model2doc.core.styles.StylesPackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 
 import org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.ContextFilterBehavior;
@@ -133,6 +134,7 @@ public class PapyrusGMFDocumentStructureTemplatePackageImpl extends EPackageImpl
 		BuiltInTypesPackage.eINSTANCE.eClass();
 		BooleanExpressionsPackage.eINSTANCE.eClass();
 		ExpressionsPackage.eINSTANCE.eClass();
+		StylesPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		thePapyrusGMFDocumentStructureTemplatePackage.createPackageContents();

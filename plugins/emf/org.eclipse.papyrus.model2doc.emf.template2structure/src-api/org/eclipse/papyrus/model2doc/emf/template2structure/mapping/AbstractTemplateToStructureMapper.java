@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2019 CEA LIST and others.
+ * Copyright (c) 2019, 2021 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -10,6 +10,7 @@
  *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ * 	Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - Bug 570133
  *
  *****************************************************************************/
 
@@ -21,12 +22,18 @@ import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.osgi.util.NLS;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructureFactory;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage;
 
 /**
  * Abstract class for all mappers. The extension of this class must have a constructor without parameters and be registered with the extension point structuregenerator.generator
  *
  */
 public abstract class AbstractTemplateToStructureMapper<INPUT extends EObject> {
+
+	protected static final DocumentStructureFactory STRUCTURE_EFACTORY = DocumentStructureFactory.eINSTANCE;
+
+	protected static final DocumentStructurePackage STRUCTURE_EPACKAGE = DocumentStructurePackage.eINSTANCE;
 
 	/**
 	 * the handled input eClass
@@ -60,7 +67,7 @@ public abstract class AbstractTemplateToStructureMapper<INPUT extends EObject> {
 	/**
 	 *
 	 * @return
-	 * 		the EClass supported as input by the current mapper
+	 *         the EClass supported as input by the current mapper
 	 */
 	public final EClass getInputEClass() {
 		return inputEClass;
@@ -71,7 +78,7 @@ public abstract class AbstractTemplateToStructureMapper<INPUT extends EObject> {
 	 * @param eobject
 	 *            an EObejct
 	 * @return
-	 * 		<code>true</code> if the EObject is handler by this mapper
+	 *         <code>true</code> if the EObject is handler by this mapper
 	 */
 	private final boolean handlesInput(final EObject eobject) {
 		return handlesInput(eobject.eClass());
@@ -81,7 +88,7 @@ public abstract class AbstractTemplateToStructureMapper<INPUT extends EObject> {
 	 *
 	 * @param eClass
 	 * @return
-	 * 		<code>true</code> if the EClass matches the supported EClass
+	 *         <code>true</code> if the EClass matches the supported EClass
 	 */
 	public final boolean handlesInput(final EClass eClass) {
 		return this.inputEClass == eClass;
@@ -91,7 +98,7 @@ public abstract class AbstractTemplateToStructureMapper<INPUT extends EObject> {
 	 *
 	 * @param clazz
 	 * @return
-	 * 		<code>true</code> if the Class is a super type of the output EClass supported by the mapper
+	 *         <code>true</code> if the Class is a super type of the output EClass supported by the mapper
 	 */
 	public final boolean handlesExpectedOutput(final Class<?> clazz) {
 		return clazz.isAssignableFrom(this.outputClass);
@@ -109,7 +116,7 @@ public abstract class AbstractTemplateToStructureMapper<INPUT extends EObject> {
 	 * @param expectedReturnedClass
 	 *            the returned elements must be instance of this EClass
 	 * @return
-	 * 		a collection of T containing the created elements to answer to this mapping request
+	 *         a collection of T containing the created elements to answer to this mapping request
 	 */
 	@SuppressWarnings("unchecked")
 	public final <T> List<T> map(final IMappingService mappingService, final EObject documentTemplateElement, final EObject semanticModelElement, final Class<T> expectedReturnedClass) {
@@ -134,7 +141,7 @@ public abstract class AbstractTemplateToStructureMapper<INPUT extends EObject> {
 	 * @param expectedReturnedClass
 	 *            the wanted return type
 	 * @return
-	 * 		the created document structure element or <code>null</code>
+	 *         the created document structure element or <code>null</code>
 	 */
 	protected abstract <T> List<T> doMap(final IMappingService mappingService, final INPUT documentTemplateElement, final EObject semanticModelElement, final Class<T> expectedReturnedClass);
 }

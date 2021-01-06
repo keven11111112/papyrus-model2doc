@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2019 CEA LIST and others.
+ * Copyright (c) 2019, 2021 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -10,6 +10,7 @@
  *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ * 	Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - Bug 570133
  *
  *****************************************************************************/
 
@@ -24,14 +25,16 @@ import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Title;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferencePartTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubBodyPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.AbstractBodyPartTemplateToStructureMapper;
 import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.IMappingService;
 
 /**
  * This class ensures the transformation of the {@link EReferencePartTemplateMapper} into a {@link BodyPart} ({@link Title}) and delegate the mapping of the {@link EReferencePartTemplateMapper} subelements.
  */
-public class EReferencePartTemplateMapper extends AbstractEMFTemplateToStructureMapper<EReferencePartTemplate> {
+public class EReferencePartTemplateMapper extends AbstractBodyPartTemplateToStructureMapper<EReferencePartTemplate> {
 
 	/**
 	 * Constructor.
@@ -40,7 +43,7 @@ public class EReferencePartTemplateMapper extends AbstractEMFTemplateToStructure
 	 * @param outputEClass
 	 */
 	public EReferencePartTemplateMapper() {
-		super(TEMPLATE_EPACKAGE.getEReferencePartTemplate(), BodyPart.class);
+		super(DocumentStructureTemplatePackage.eINSTANCE.getEReferencePartTemplate(), BodyPart.class);
 	}
 
 	/**
@@ -56,19 +59,11 @@ public class EReferencePartTemplateMapper extends AbstractEMFTemplateToStructure
 		if (false == referencePartTemplate.generateBranch(semanticModelElement)) {
 			return Collections.emptyList();
 		}
-		List<T> returnedElements = new ArrayList<>();
+		List<T> generatedElements = new ArrayList<>();
 
 		final Collection<EObject> matchingElements = referencePartTemplate.getEReferenceValues(semanticModelElement);
 		if (matchingElements.isEmpty()) {
 			return null;
-		}
-		Title title = null;
-		if (referencePartTemplate.isGenerate()) {
-			if (referencePartTemplate.isGenerateTitle()) {
-				title = STRUCTURE_EFACTORY.createTitle();
-				title.setTitle(referencePartTemplate.buildPartTemplateTitle(null));
-				returnedElements.add(expectedReturnedClass.cast(title));
-			}
 		}
 
 		// we iterate firstly on the elements of the document structure
@@ -83,15 +78,11 @@ public class EReferencePartTemplateMapper extends AbstractEMFTemplateToStructure
 				if (result == null) {
 					continue;
 				}
-				if (title != null) {
-					title.getSubBodyParts().addAll(result);
-				} else {
-					result.stream().forEach(a -> returnedElements.add(expectedReturnedClass.cast(a)));
-				}
+				result.stream().forEach(a -> generatedElements.add(expectedReturnedClass.cast(a)));
 			}
 		}
 
-		return returnedElements;
+		return buildMapperResult(referencePartTemplate, semanticModelElement, expectedReturnedClass, generatedElements);
 	}
 
 }

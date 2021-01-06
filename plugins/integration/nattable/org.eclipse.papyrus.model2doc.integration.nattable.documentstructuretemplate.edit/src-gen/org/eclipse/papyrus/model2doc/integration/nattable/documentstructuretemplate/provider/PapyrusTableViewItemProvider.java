@@ -80,6 +80,8 @@ public class PapyrusTableViewItemProvider
 			addGeneratePropertyDescriptor(object);
 			addGenerateTitlePropertyDescriptor(object);
 			addCustomTitlePropertyDescriptor(object);
+			addGenerateIfEmptyPropertyDescriptor(object);
+			addDefaultTextIfEmptyPropertyDescriptor(object);
 			addTableKindIdPropertyDescriptor(object);
 			addTableTypePropertyDescriptor(object);
 			addContextFilterRulePropertyDescriptor(object);
@@ -140,6 +142,46 @@ public class PapyrusTableViewItemProvider
 				getString("_UI_IBodySectionPartTemplate_customTitle_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_IBodySectionPartTemplate_customTitle_feature", "_UI_IBodySectionPartTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__CUSTOM_TITLE,
+				true,
+				false,
+				false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				null,
+				null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Generate If Empty feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addGenerateIfEmptyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_IBodySectionPartTemplate_generateIfEmpty_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_IBodySectionPartTemplate_generateIfEmpty_feature", "_UI_IBodySectionPartTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_IF_EMPTY,
+				true,
+				false,
+				false,
+				ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				null,
+				null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Default Text If Empty feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDefaultTextIfEmptyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_IBodySectionPartTemplate_defaultTextIfEmpty_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_IBodySectionPartTemplate_defaultTextIfEmpty_feature", "_UI_IBodySectionPartTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY,
 				true,
 				false,
 				false,
@@ -310,6 +352,8 @@ public class PapyrusTableViewItemProvider
 		case PapyrusNattableDocumentStructureTemplatePackage.PAPYRUS_TABLE_VIEW__GENERATE:
 		case PapyrusNattableDocumentStructureTemplatePackage.PAPYRUS_TABLE_VIEW__GENERATE_TITLE:
 		case PapyrusNattableDocumentStructureTemplatePackage.PAPYRUS_TABLE_VIEW__CUSTOM_TITLE:
+		case PapyrusNattableDocumentStructureTemplatePackage.PAPYRUS_TABLE_VIEW__GENERATE_IF_EMPTY:
+		case PapyrusNattableDocumentStructureTemplatePackage.PAPYRUS_TABLE_VIEW__DEFAULT_TEXT_IF_EMPTY:
 		case PapyrusNattableDocumentStructureTemplatePackage.PAPYRUS_TABLE_VIEW__TABLE_KIND_ID:
 		case PapyrusNattableDocumentStructureTemplatePackage.PAPYRUS_TABLE_VIEW__TABLE_TYPE:
 		case PapyrusNattableDocumentStructureTemplatePackage.PAPYRUS_TABLE_VIEW__CONTEXT_FILTER_RULE:

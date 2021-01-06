@@ -144,6 +144,12 @@
         <details key="documentation" value="When the expression returns false, nothing will be generated for the object or for its child elements."/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="generateIfEmpty" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultTextIfEmpty" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="N/A"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="EClassFilterBehavior">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

@@ -594,6 +594,26 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION = 3;
 
 	/**
+	 * The feature id for the '<em><b>Generate If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IBODY_SECTION_PART_TEMPLATE__GENERATE_IF_EMPTY = 4;
+
+	/**
+	 * The feature id for the '<em><b>Default Text If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IBODY_SECTION_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY = 5;
+
+	/**
 	 * The number of structural features of the '<em>IBody Section Part Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -601,7 +621,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBODY_SECTION_PART_TEMPLATE_FEATURE_COUNT = 4;
+	int IBODY_SECTION_PART_TEMPLATE_FEATURE_COUNT = 6;
 
 	/**
 	 * The operation id for the '<em>Build Part Template Title</em>' operation.
@@ -683,6 +703,26 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @ordered
 	 */
 	int IBODY_PART_TEMPLATE__GENERATE_BRANCH_CONDITION = IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION;
+
+	/**
+	 * The feature id for the '<em><b>Generate If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IBODY_PART_TEMPLATE__GENERATE_IF_EMPTY = IBODY_SECTION_PART_TEMPLATE__GENERATE_IF_EMPTY;
+
+	/**
+	 * The feature id for the '<em><b>Default Text If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IBODY_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY = IBODY_SECTION_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY;
 
 	/**
 	 * The number of structural features of the '<em>IBody Part Template</em>' class.
@@ -774,6 +814,26 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @ordered
 	 */
 	int ICOMPOSED_BODY_PART_TEMPLATE__GENERATE_BRANCH_CONDITION = IBODY_PART_TEMPLATE__GENERATE_BRANCH_CONDITION;
+
+	/**
+	 * The feature id for the '<em><b>Generate If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ICOMPOSED_BODY_PART_TEMPLATE__GENERATE_IF_EMPTY = IBODY_PART_TEMPLATE__GENERATE_IF_EMPTY;
+
+	/**
+	 * The feature id for the '<em><b>Default Text If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ICOMPOSED_BODY_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY = IBODY_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY;
 
 	/**
 	 * The feature id for the '<em><b>Sub Body Part Template</b></em>' containment reference list.
@@ -877,6 +937,26 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int ISUB_BODY_PART_TEMPLATE__GENERATE_BRANCH_CONDITION = IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION;
 
 	/**
+	 * The feature id for the '<em><b>Generate If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ISUB_BODY_PART_TEMPLATE__GENERATE_IF_EMPTY = IBODY_SECTION_PART_TEMPLATE__GENERATE_IF_EMPTY;
+
+	/**
+	 * The feature id for the '<em><b>Default Text If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ISUB_BODY_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY = IBODY_SECTION_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY;
+
+	/**
 	 * The number of structural features of the '<em>ISub Body Part Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -968,6 +1048,26 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int ILEAF_BODY_PART_TEMPLATE__GENERATE_BRANCH_CONDITION = IBODY_PART_TEMPLATE__GENERATE_BRANCH_CONDITION;
 
 	/**
+	 * The feature id for the '<em><b>Generate If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ILEAF_BODY_PART_TEMPLATE__GENERATE_IF_EMPTY = IBODY_PART_TEMPLATE__GENERATE_IF_EMPTY;
+
+	/**
+	 * The feature id for the '<em><b>Default Text If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ILEAF_BODY_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY = IBODY_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY;
+
+	/**
 	 * The number of structural features of the '<em>ILeaf Body Part Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1057,6 +1157,26 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @ordered
 	 */
 	int ICOMPOSED_SUB_BODY_PART_TEMPLATE__GENERATE_BRANCH_CONDITION = ISUB_BODY_PART_TEMPLATE__GENERATE_BRANCH_CONDITION;
+
+	/**
+	 * The feature id for the '<em><b>Generate If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ICOMPOSED_SUB_BODY_PART_TEMPLATE__GENERATE_IF_EMPTY = ISUB_BODY_PART_TEMPLATE__GENERATE_IF_EMPTY;
+
+	/**
+	 * The feature id for the '<em><b>Default Text If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ICOMPOSED_SUB_BODY_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY = ISUB_BODY_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY;
 
 	/**
 	 * The feature id for the '<em><b>Body Part Template</b></em>' containment reference list.
@@ -1158,6 +1278,26 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @ordered
 	 */
 	int ILEAF_SUB_BODY_PART_TEMPLATE__GENERATE_BRANCH_CONDITION = ISUB_BODY_PART_TEMPLATE__GENERATE_BRANCH_CONDITION;
+
+	/**
+	 * The feature id for the '<em><b>Generate If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ILEAF_SUB_BODY_PART_TEMPLATE__GENERATE_IF_EMPTY = ISUB_BODY_PART_TEMPLATE__GENERATE_IF_EMPTY;
+
+	/**
+	 * The feature id for the '<em><b>Default Text If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ILEAF_SUB_BODY_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY = ISUB_BODY_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY;
 
 	/**
 	 * The number of structural features of the '<em>ILeaf Sub Body Part Template</em>' class.
@@ -1332,6 +1472,26 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int ECLASS_PART_TEMPLATE__GENERATE_BRANCH_CONDITION = ECLASS_TEMPLATE_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Generate If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ECLASS_PART_TEMPLATE__GENERATE_IF_EMPTY = ECLASS_TEMPLATE_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Default Text If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ECLASS_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY = ECLASS_TEMPLATE_FEATURE_COUNT + 5;
+
+	/**
 	 * The feature id for the '<em><b>Body Part Template</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1339,7 +1499,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECLASS_PART_TEMPLATE__BODY_PART_TEMPLATE = ECLASS_TEMPLATE_FEATURE_COUNT + 4;
+	int ECLASS_PART_TEMPLATE__BODY_PART_TEMPLATE = ECLASS_TEMPLATE_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>EClass Part Template</em>' class.
@@ -1349,7 +1509,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECLASS_PART_TEMPLATE_FEATURE_COUNT = ECLASS_TEMPLATE_FEATURE_COUNT + 5;
+	int ECLASS_PART_TEMPLATE_FEATURE_COUNT = ECLASS_TEMPLATE_FEATURE_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>Is Matching Filter Rule</em>' operation.
@@ -1514,6 +1674,26 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int EREFERENCE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION = EREFERENCE_TEMPLATE_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Generate If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_PART_TEMPLATE__GENERATE_IF_EMPTY = EREFERENCE_TEMPLATE_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Default Text If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY = EREFERENCE_TEMPLATE_FEATURE_COUNT + 5;
+
+	/**
 	 * The feature id for the '<em><b>Sub Body Part Template</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1521,7 +1701,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE = EREFERENCE_TEMPLATE_FEATURE_COUNT + 4;
+	int EREFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE = EREFERENCE_TEMPLATE_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>EReference Part Template</em>' class.
@@ -1531,7 +1711,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_PART_TEMPLATE_FEATURE_COUNT = EREFERENCE_TEMPLATE_FEATURE_COUNT + 5;
+	int EREFERENCE_PART_TEMPLATE_FEATURE_COUNT = EREFERENCE_TEMPLATE_FEATURE_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>Get EReference Values</em>' operation.
@@ -1664,6 +1844,26 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @ordered
 	 */
 	int ITABLE_VIEW__GENERATE_BRANCH_CONDITION = ILEAF_BODY_PART_TEMPLATE__GENERATE_BRANCH_CONDITION;
+
+	/**
+	 * The feature id for the '<em><b>Generate If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ITABLE_VIEW__GENERATE_IF_EMPTY = ILEAF_BODY_PART_TEMPLATE__GENERATE_IF_EMPTY;
+
+	/**
+	 * The feature id for the '<em><b>Default Text If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int ITABLE_VIEW__DEFAULT_TEXT_IF_EMPTY = ILEAF_BODY_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY;
 
 	/**
 	 * The feature id for the '<em><b>Columns</b></em>' containment reference list.
@@ -1888,6 +2088,26 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int EREFERENCE_TABLE_VIEW__GENERATE_BRANCH_CONDITION = EREFERENCE_TEMPLATE_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Generate If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_TABLE_VIEW__GENERATE_IF_EMPTY = EREFERENCE_TEMPLATE_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Default Text If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EREFERENCE_TABLE_VIEW__DEFAULT_TEXT_IF_EMPTY = EREFERENCE_TEMPLATE_FEATURE_COUNT + 5;
+
+	/**
 	 * The feature id for the '<em><b>Columns</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1895,7 +2115,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_TABLE_VIEW__COLUMNS = EREFERENCE_TEMPLATE_FEATURE_COUNT + 4;
+	int EREFERENCE_TABLE_VIEW__COLUMNS = EREFERENCE_TEMPLATE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Generate Row Header</b></em>' attribute.
@@ -1905,7 +2125,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_TABLE_VIEW__GENERATE_ROW_HEADER = EREFERENCE_TEMPLATE_FEATURE_COUNT + 5;
+	int EREFERENCE_TABLE_VIEW__GENERATE_ROW_HEADER = EREFERENCE_TEMPLATE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Generate Column Header</b></em>' attribute.
@@ -1915,7 +2135,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_TABLE_VIEW__GENERATE_COLUMN_HEADER = EREFERENCE_TEMPLATE_FEATURE_COUNT + 6;
+	int EREFERENCE_TABLE_VIEW__GENERATE_COLUMN_HEADER = EREFERENCE_TEMPLATE_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>EReference Table View</em>' class.
@@ -1925,7 +2145,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EREFERENCE_TABLE_VIEW_FEATURE_COUNT = EREFERENCE_TEMPLATE_FEATURE_COUNT + 7;
+	int EREFERENCE_TABLE_VIEW_FEATURE_COUNT = EREFERENCE_TEMPLATE_FEATURE_COUNT + 9;
 
 	/**
 	 * The operation id for the '<em>Get EReference Values</em>' operation.
@@ -3112,6 +3332,26 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int TREE_LIST_VIEW__GENERATE_BRANCH_CONDITION = ILEAF_BODY_PART_TEMPLATE__GENERATE_BRANCH_CONDITION;
 
 	/**
+	 * The feature id for the '<em><b>Generate If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TREE_LIST_VIEW__GENERATE_IF_EMPTY = ILEAF_BODY_PART_TEMPLATE__GENERATE_IF_EMPTY;
+
+	/**
+	 * The feature id for the '<em><b>Default Text If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int TREE_LIST_VIEW__DEFAULT_TEXT_IF_EMPTY = ILEAF_BODY_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY;
+
+	/**
 	 * The feature id for the '<em><b>Root List Item Template</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3223,6 +3463,26 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int INSERT_FILE_TEMPLATE__GENERATE_BRANCH_CONDITION = BuiltInTypesPackage.DEFAULT_FILE_REFERENCE_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Generate If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int INSERT_FILE_TEMPLATE__GENERATE_IF_EMPTY = BuiltInTypesPackage.DEFAULT_FILE_REFERENCE_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Default Text If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int INSERT_FILE_TEMPLATE__DEFAULT_TEXT_IF_EMPTY = BuiltInTypesPackage.DEFAULT_FILE_REFERENCE_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Insert File Template</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3230,7 +3490,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSERT_FILE_TEMPLATE_FEATURE_COUNT = BuiltInTypesPackage.DEFAULT_FILE_REFERENCE_FEATURE_COUNT + 4;
+	int INSERT_FILE_TEMPLATE_FEATURE_COUNT = BuiltInTypesPackage.DEFAULT_FILE_REFERENCE_FEATURE_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>Get File Path</em>' operation.
@@ -3241,6 +3501,16 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @ordered
 	 */
 	int INSERT_FILE_TEMPLATE___GET_FILE_PATH = BuiltInTypesPackage.DEFAULT_FILE_REFERENCE___GET_FILE_PATH;
+
+	/**
+	 * The operation id for the '<em>Get File Accessor</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int INSERT_FILE_TEMPLATE___GET_FILE_ACCESSOR = BuiltInTypesPackage.DEFAULT_FILE_REFERENCE___GET_FILE_ACCESSOR;
 
 	/**
 	 * The operation id for the '<em>Build Part Template Title</em>' operation.
@@ -3375,6 +3645,26 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	int EATTRIBUTE_AS_PARAGRAPH__GENERATE_BRANCH_CONDITION = EATTRIBUTE_TEMPLATE_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Generate If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EATTRIBUTE_AS_PARAGRAPH__GENERATE_IF_EMPTY = EATTRIBUTE_TEMPLATE_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Default Text If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EATTRIBUTE_AS_PARAGRAPH__DEFAULT_TEXT_IF_EMPTY = EATTRIBUTE_TEMPLATE_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>EAttribute As Paragraph</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3382,7 +3672,7 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EATTRIBUTE_AS_PARAGRAPH_FEATURE_COUNT = EATTRIBUTE_TEMPLATE_FEATURE_COUNT + 4;
+	int EATTRIBUTE_AS_PARAGRAPH_FEATURE_COUNT = EATTRIBUTE_TEMPLATE_FEATURE_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>Build EAttribute Value Label</em>' operation.
@@ -3795,6 +4085,30 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getIBodySectionPartTemplate_GenerateBranchCondition();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate#isGenerateIfEmpty <em>Generate If Empty</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Generate If Empty</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate#isGenerateIfEmpty()
+	 * @see #getIBodySectionPartTemplate()
+	 * @generated
+	 */
+	EAttribute getIBodySectionPartTemplate_GenerateIfEmpty();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate#getDefaultTextIfEmpty <em>Default Text If Empty</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Default Text If Empty</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate#getDefaultTextIfEmpty()
+	 * @see #getIBodySectionPartTemplate()
+	 * @generated
+	 */
+	EAttribute getIBodySectionPartTemplate_DefaultTextIfEmpty();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodySectionPartTemplate#buildPartTemplateTitle(org.eclipse.emf.ecore.EObject) <em>Build Part Template Title</em>}' operation.
@@ -4827,6 +5141,24 @@ public interface DocumentStructureTemplatePackage extends EPackage {
 		 * @generated
 		 */
 		EReference IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION = eINSTANCE.getIBodySectionPartTemplate_GenerateBranchCondition();
+
+		/**
+		 * The meta object literal for the '<em><b>Generate If Empty</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute IBODY_SECTION_PART_TEMPLATE__GENERATE_IF_EMPTY = eINSTANCE.getIBodySectionPartTemplate_GenerateIfEmpty();
+
+		/**
+		 * The meta object literal for the '<em><b>Default Text If Empty</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute IBODY_SECTION_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY = eINSTANCE.getIBodySectionPartTemplate_DefaultTextIfEmpty();
 
 		/**
 		 * The meta object literal for the '<em><b>Build Part Template Title</b></em>' operation.

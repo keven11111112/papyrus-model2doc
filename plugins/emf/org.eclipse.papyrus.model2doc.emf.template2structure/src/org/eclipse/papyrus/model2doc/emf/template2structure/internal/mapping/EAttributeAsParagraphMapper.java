@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2020 CEA LIST and others.
+ * Copyright (c) 2020, 2021 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -10,6 +10,7 @@
  *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ * 	Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - Bug 570133
  *
  *****************************************************************************/
 
@@ -23,14 +24,15 @@ import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Paragraph;
-import org.eclipse.papyrus.model2doc.emf.documentstructure.Title;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EAttributeAsParagraph;
+import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.AbstractBodyPartTemplateToStructureMapper;
 import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.IMappingService;
 
 /**
  * This mapper is in charge to create {@link Paragraph} from EAttribute values
  */
-public class EAttributeAsParagraphMapper extends AbstractEMFTemplateToStructureMapper<EAttributeAsParagraph> {
+public class EAttributeAsParagraphMapper extends AbstractBodyPartTemplateToStructureMapper<EAttributeAsParagraph> {
 
 	private static final String EMPTY_STRING = ""; //$NON-NLS-1$
 
@@ -41,7 +43,7 @@ public class EAttributeAsParagraphMapper extends AbstractEMFTemplateToStructureM
 	 * @param outputClass
 	 */
 	public EAttributeAsParagraphMapper() {
-		super(TEMPLATE_EPACKAGE.getEAttributeAsParagraph(), BodyPart.class);
+		super(DocumentStructureTemplatePackage.eINSTANCE.getEAttributeAsParagraph(), BodyPart.class);
 	}
 
 	/**
@@ -66,13 +68,7 @@ public class EAttributeAsParagraphMapper extends AbstractEMFTemplateToStructureM
 		}
 
 		final Iterator<Object> eAttributeValuesIter = documentTemplateElement.getEAttributeValues(semanticModelElement).iterator();
-		Title title = null;
-		List<T> returnedElements = new ArrayList<>();
-		if (eAttributeValuesIter.hasNext() && documentTemplateElement.isGenerateTitle()) {
-			title = STRUCTURE_EFACTORY.createTitle();
-			title.setTitle(documentTemplateElement.buildPartTemplateTitle(semanticModelElement));
-			returnedElements.add(expectedReturnedClass.cast(title));
-		}
+		List<T> generatedElements = new ArrayList<>();
 
 		while (eAttributeValuesIter.hasNext()) {
 			final Paragraph paragraph = STRUCTURE_EFACTORY.createParagraph();
@@ -81,14 +77,10 @@ public class EAttributeAsParagraphMapper extends AbstractEMFTemplateToStructureM
 				value = EMPTY_STRING;
 			}
 			paragraph.setText(value.toString());
-			if (null == title) {
-				returnedElements.add(expectedReturnedClass.cast(paragraph));
-			} else {
-				title.getSubBodyParts().add(paragraph);
-			}
+			generatedElements.add(expectedReturnedClass.cast(paragraph));
 		}
 
-		return returnedElements;
+		return buildMapperResult(documentTemplateElement, semanticModelElement, expectedReturnedClass, generatedElements);
 	}
 
 }

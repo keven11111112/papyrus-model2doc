@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2019 CEA LIST and others.
+ * Copyright (c) 2019, 2021 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -10,6 +10,7 @@
  *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ * 	Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - Bug 570133
  *
  *****************************************************************************/
 
@@ -22,12 +23,14 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructureFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.TableOfFigures;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
+import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.AbstractTemplateToStructureMapper;
 import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.IMappingService;
 
 /**
  * This class ensures the transformation of the {@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TableOfFigures} into a {@link BodyPart} ({@link TableOfFigures})
  */
-public class TableOfFiguresMapper extends AbstractEMFTemplateToStructureMapper<org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TableOfFigures> {
+public class TableOfFiguresMapper extends AbstractTemplateToStructureMapper<org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TableOfFigures> {
 
 	/**
 	 *
@@ -35,7 +38,7 @@ public class TableOfFiguresMapper extends AbstractEMFTemplateToStructureMapper<o
 	 *
 	 */
 	public TableOfFiguresMapper() {
-		super(TEMPLATE_EPACKAGE.getTableOfFigures(), TableOfFigures.class);
+		super(DocumentStructureTemplatePackage.eINSTANCE.getTableOfFigures(), TableOfFigures.class);
 	}
 
 	/**

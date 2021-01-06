@@ -50,6 +50,8 @@ import org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.GMFDocumentSt
  * <li>{@link org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.impl.GMFDiagramViewImpl#isGenerateTitle <em>Generate Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.impl.GMFDiagramViewImpl#getCustomTitle <em>Custom Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.impl.GMFDiagramViewImpl#getGenerateBranchCondition <em>Generate Branch Condition</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.impl.GMFDiagramViewImpl#isGenerateIfEmpty <em>Generate If Empty</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.impl.GMFDiagramViewImpl#getDefaultTextIfEmpty <em>Default Text If Empty</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.impl.GMFDiagramViewImpl#getDiagramType <em>Diagram Type</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.gmf.documentstructuretemplate.impl.GMFDiagramViewImpl#getDiagramImageMargin <em>Diagram Image Margin</em>}</li>
  * </ul>
@@ -133,6 +135,50 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 	 * @ordered
 	 */
 	protected IBooleanEObjectExpression generateBranchCondition;
+
+	/**
+	 * The default value of the '{@link #isGenerateIfEmpty() <em>Generate If Empty</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #isGenerateIfEmpty()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean GENERATE_IF_EMPTY_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isGenerateIfEmpty() <em>Generate If Empty</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #isGenerateIfEmpty()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean generateIfEmpty = GENERATE_IF_EMPTY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDefaultTextIfEmpty() <em>Default Text If Empty</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getDefaultTextIfEmpty()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DEFAULT_TEXT_IF_EMPTY_EDEFAULT = "N/A"; //$NON-NLS-1$
+
+	/**
+	 * The cached value of the '{@link #getDefaultTextIfEmpty() <em>Default Text If Empty</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getDefaultTextIfEmpty()
+	 * @generated
+	 * @ordered
+	 */
+	protected String defaultTextIfEmpty = DEFAULT_TEXT_IF_EMPTY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDiagramType() <em>Diagram Type</em>}' attribute.
@@ -340,6 +386,58 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	@Override
+	public boolean isGenerateIfEmpty() {
+		return generateIfEmpty;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setGenerateIfEmpty(boolean newGenerateIfEmpty) {
+		boolean oldGenerateIfEmpty = generateIfEmpty;
+		generateIfEmpty = newGenerateIfEmpty;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_IF_EMPTY, oldGenerateIfEmpty, generateIfEmpty));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public String getDefaultTextIfEmpty() {
+		return defaultTextIfEmpty;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setDefaultTextIfEmpty(String newDefaultTextIfEmpty) {
+		String oldDefaultTextIfEmpty = defaultTextIfEmpty;
+		defaultTextIfEmpty = newDefaultTextIfEmpty;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DEFAULT_TEXT_IF_EMPTY, oldDefaultTextIfEmpty, defaultTextIfEmpty));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public String getDiagramType() {
 		return diagramType;
 	}
@@ -459,6 +557,10 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 			return getCustomTitle();
 		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_BRANCH_CONDITION:
 			return getGenerateBranchCondition();
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_IF_EMPTY:
+			return isGenerateIfEmpty();
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DEFAULT_TEXT_IF_EMPTY:
+			return getDefaultTextIfEmpty();
 		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DIAGRAM_TYPE:
 			return getDiagramType();
 		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DIAGRAM_IMAGE_MARGIN:
@@ -487,6 +589,12 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 			return;
 		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_BRANCH_CONDITION:
 			setGenerateBranchCondition((IBooleanEObjectExpression) newValue);
+			return;
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_IF_EMPTY:
+			setGenerateIfEmpty((Boolean) newValue);
+			return;
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DEFAULT_TEXT_IF_EMPTY:
+			setDefaultTextIfEmpty((String) newValue);
 			return;
 		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DIAGRAM_TYPE:
 			setDiagramType((String) newValue);
@@ -519,6 +627,12 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_BRANCH_CONDITION:
 			setGenerateBranchCondition((IBooleanEObjectExpression) null);
 			return;
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_IF_EMPTY:
+			setGenerateIfEmpty(GENERATE_IF_EMPTY_EDEFAULT);
+			return;
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DEFAULT_TEXT_IF_EMPTY:
+			setDefaultTextIfEmpty(DEFAULT_TEXT_IF_EMPTY_EDEFAULT);
+			return;
 		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DIAGRAM_TYPE:
 			setDiagramType(DIAGRAM_TYPE_EDEFAULT);
 			return;
@@ -546,6 +660,10 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 			return CUSTOM_TITLE_EDEFAULT == null ? customTitle != null : !CUSTOM_TITLE_EDEFAULT.equals(customTitle);
 		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_BRANCH_CONDITION:
 			return generateBranchCondition != null;
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_IF_EMPTY:
+			return generateIfEmpty != GENERATE_IF_EMPTY_EDEFAULT;
+		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DEFAULT_TEXT_IF_EMPTY:
+			return DEFAULT_TEXT_IF_EMPTY_EDEFAULT == null ? defaultTextIfEmpty != null : !DEFAULT_TEXT_IF_EMPTY_EDEFAULT.equals(defaultTextIfEmpty);
 		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DIAGRAM_TYPE:
 			return DIAGRAM_TYPE_EDEFAULT == null ? diagramType != null : !DIAGRAM_TYPE_EDEFAULT.equals(diagramType);
 		case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DIAGRAM_IMAGE_MARGIN:
@@ -572,6 +690,10 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 				return DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__CUSTOM_TITLE;
 			case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_BRANCH_CONDITION:
 				return DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION;
+			case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_IF_EMPTY:
+				return DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_IF_EMPTY;
+			case GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DEFAULT_TEXT_IF_EMPTY:
+				return DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY;
 			default:
 				return -1;
 			}
@@ -609,6 +731,10 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 				return GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__CUSTOM_TITLE;
 			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION:
 				return GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_BRANCH_CONDITION;
+			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_IF_EMPTY:
+				return GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__GENERATE_IF_EMPTY;
+			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY:
+				return GMFDocumentStructureTemplatePackage.GMF_DIAGRAM_VIEW__DEFAULT_TEXT_IF_EMPTY;
 			default:
 				return -1;
 			}
@@ -699,6 +825,10 @@ public class GMFDiagramViewImpl extends MinimalEObjectImpl.Container implements 
 		result.append(generateTitle);
 		result.append(", customTitle: "); //$NON-NLS-1$
 		result.append(customTitle);
+		result.append(", generateIfEmpty: "); //$NON-NLS-1$
+		result.append(generateIfEmpty);
+		result.append(", defaultTextIfEmpty: "); //$NON-NLS-1$
+		result.append(defaultTextIfEmpty);
 		result.append(", diagramType: "); //$NON-NLS-1$
 		result.append(diagramType);
 		result.append(", diagramImageMargin: "); //$NON-NLS-1$

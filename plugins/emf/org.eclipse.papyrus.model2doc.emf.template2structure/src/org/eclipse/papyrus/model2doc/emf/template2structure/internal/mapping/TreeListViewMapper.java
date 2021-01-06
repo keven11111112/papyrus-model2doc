@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2019 CEA LIST and others.
+ * Copyright (c) 2019, 2021 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -10,6 +10,7 @@
  *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ * 	Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - Bug 570133
  *
  *****************************************************************************/
 
@@ -26,7 +27,7 @@ import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedBasicList;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedTextListItem;
-import org.eclipse.papyrus.model2doc.emf.documentstructure.Title;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EAttributeListItemTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceListItemTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IComposedListItemTemplate;
@@ -37,12 +38,13 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IListItemTemp
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IRootListItemTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.TreeListView;
 import org.eclipse.papyrus.model2doc.emf.template2structure.Activator;
+import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.AbstractBodyPartTemplateToStructureMapper;
 import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.IMappingService;
 
 /**
  * This class ensures the transformation of the {@link TreeListView} into a {@link BodyPart}
  */
-public class TreeListViewMapper extends AbstractEMFTemplateToStructureMapper<TreeListView> {
+public class TreeListViewMapper extends AbstractBodyPartTemplateToStructureMapper<TreeListView> {
 
 	/**
 	 * Constructor.
@@ -51,7 +53,7 @@ public class TreeListViewMapper extends AbstractEMFTemplateToStructureMapper<Tre
 	 * @param outputEClass
 	 */
 	public TreeListViewMapper() {
-		super(TEMPLATE_EPACKAGE.getTreeListView(), BodyPart.class);
+		super(DocumentStructureTemplatePackage.eINSTANCE.getTreeListView(), BodyPart.class);
 	}
 
 	/**
@@ -68,7 +70,7 @@ public class TreeListViewMapper extends AbstractEMFTemplateToStructureMapper<Tre
 			return Collections.emptyList();
 		}
 
-		List<T> returnedElements = new ArrayList<>();
+		List<T> generatedElements = new ArrayList<>();
 
 
 		final Iterator<IRootListItemTemplate> itemIterator = treeListView.getRootListItemTemplates().iterator();
@@ -82,23 +84,11 @@ public class TreeListViewMapper extends AbstractEMFTemplateToStructureMapper<Tre
 		if (createdListItems.isEmpty()) {
 			return null;
 		}
-		Title title = null;
-		if (treeListView.isGenerate()) {
-			if (treeListView.isGenerateTitle()) {
-				title = STRUCTURE_EFACTORY.createTitle();
-				title.setTitle(treeListView.buildPartTemplateTitle(semanticModelElement));
-				returnedElements.add(expectedReturnedClass.cast(title));
-			}
-		}
-		STRUCTURE_EFACTORY.createExtendedBasicList();
 		final ExtendedBasicList list = STRUCTURE_EFACTORY.createExtendedBasicList();
 		list.getItems().addAll(createdListItems);
-		if (null != title) {
-			title.getSubBodyParts().add(list);
-		} else {
-			returnedElements.add(expectedReturnedClass.cast(list));
-		}
-		return returnedElements;
+
+		generatedElements.add(expectedReturnedClass.cast(list));
+		return buildMapperResult(treeListView, semanticModelElement, expectedReturnedClass, generatedElements);
 	}
 
 	/**

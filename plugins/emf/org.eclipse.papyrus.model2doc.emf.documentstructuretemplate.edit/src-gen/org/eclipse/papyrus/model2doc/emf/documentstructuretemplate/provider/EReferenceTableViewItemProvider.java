@@ -66,6 +66,8 @@ public class EReferenceTableViewItemProvider extends EReferenceTemplateItemProvi
 			addGeneratePropertyDescriptor(object);
 			addGenerateTitlePropertyDescriptor(object);
 			addCustomTitlePropertyDescriptor(object);
+			addGenerateIfEmptyPropertyDescriptor(object);
+			addDefaultTextIfEmptyPropertyDescriptor(object);
 			addGenerateRowHeaderPropertyDescriptor(object);
 			addGenerateColumnHeaderPropertyDescriptor(object);
 		}
@@ -127,6 +129,48 @@ public class EReferenceTableViewItemProvider extends EReferenceTemplateItemProvi
 				getString("_UI_IBodySectionPartTemplate_customTitle_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_IBodySectionPartTemplate_customTitle_feature", "_UI_IBodySectionPartTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__CUSTOM_TITLE,
+				true,
+				false,
+				false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				null,
+				null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Generate If Empty feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected void addGenerateIfEmptyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_IBodySectionPartTemplate_generateIfEmpty_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_IBodySectionPartTemplate_generateIfEmpty_feature", "_UI_IBodySectionPartTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__GENERATE_IF_EMPTY,
+				true,
+				false,
+				false,
+				ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				null,
+				null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Default Text If Empty feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected void addDefaultTextIfEmptyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_IBodySectionPartTemplate_defaultTextIfEmpty_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_IBodySectionPartTemplate_defaultTextIfEmpty_feature", "_UI_IBodySectionPartTemplate_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				DocumentStructureTemplatePackage.Literals.IBODY_SECTION_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY,
 				true,
 				false,
 				false,
@@ -264,6 +308,8 @@ public class EReferenceTableViewItemProvider extends EReferenceTemplateItemProvi
 		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE:
 		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_TITLE:
 		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__CUSTOM_TITLE:
+		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_IF_EMPTY:
+		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__DEFAULT_TEXT_IF_EMPTY:
 		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_ROW_HEADER:
 		case DocumentStructureTemplatePackage.EREFERENCE_TABLE_VIEW__GENERATE_COLUMN_HEADER:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

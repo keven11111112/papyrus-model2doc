@@ -100,7 +100,7 @@ public class UMLDocumentStructureTemplateAdapterFactory extends AdapterFactoryIm
 	 *
 	 * @generated
 	 */
-	protected UMLDocumentStructureTemplateSwitch<Adapter> modelSwitch = new UMLDocumentStructureTemplateSwitch<Adapter>() {
+	protected UMLDocumentStructureTemplateSwitch<Adapter> modelSwitch = new UMLDocumentStructureTemplateSwitch<>() {
 		@Override
 		public Adapter caseStereotypePartTemplate(StereotypePartTemplate object) {
 			return createStereotypePartTemplateAdapter();

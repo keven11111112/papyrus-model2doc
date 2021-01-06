@@ -118,6 +118,24 @@ public interface PapyrusNattableDocumentStructureTemplatePackage extends EPackag
 	int PAPYRUS_TABLE_VIEW__GENERATE_BRANCH_CONDITION = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE__GENERATE_BRANCH_CONDITION;
 
 	/**
+	 * The feature id for the '<em><b>Generate If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAPYRUS_TABLE_VIEW__GENERATE_IF_EMPTY = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE__GENERATE_IF_EMPTY;
+
+	/**
+	 * The feature id for the '<em><b>Default Text If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAPYRUS_TABLE_VIEW__DEFAULT_TEXT_IF_EMPTY = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY;
+
+	/**
 	 * The feature id for the '<em><b>Table Kind Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2019 CEA LIST and others.
+ * Copyright (c) 2019, 2021 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -10,6 +10,7 @@
  *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ * 	Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - Bug 570133
  *
  *****************************************************************************/
 
@@ -23,17 +24,18 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
-import org.eclipse.papyrus.model2doc.emf.documentstructure.Title;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubBodyPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.AbstractBodyPartTemplateToStructureMapper;
 import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.IMappingService;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyReferencePartTemplate;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplatePackage;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.util.UMLUtil;
 
 /**
  * This mapper converts the StereotypePropertyPartTemplate into BodyPart
  */
-public class StereotypePropertyReferencePartTemplateMapper extends AbstractUMLTemplateToStructureMapper<StereotypePropertyReferencePartTemplate> {
+public class StereotypePropertyReferencePartTemplateMapper extends AbstractBodyPartTemplateToStructureMapper<StereotypePropertyReferencePartTemplate> {
 
 	/**
 	 * Constructor.
@@ -42,7 +44,7 @@ public class StereotypePropertyReferencePartTemplateMapper extends AbstractUMLTe
 	 * @param outputClass
 	 */
 	public StereotypePropertyReferencePartTemplateMapper() {
-		super(TEMPLATE_EPACKAGE.getStereotypePropertyReferencePartTemplate(), BodyPart.class);
+		super(UMLDocumentStructureTemplatePackage.eINSTANCE.getStereotypePropertyReferencePartTemplate(), BodyPart.class);
 	}
 
 	/**
@@ -66,14 +68,6 @@ public class StereotypePropertyReferencePartTemplateMapper extends AbstractUMLTe
 		if (matchingElements.isEmpty()) {
 			return null;
 		}
-		Title title = null;
-		if (stereotypePropertyPartTemplate.isGenerate()) {
-			if (stereotypePropertyPartTemplate.isGenerateTitle()) {
-				title = STRUCTURE_EFACTORY.createTitle();
-				title.setTitle(stereotypePropertyPartTemplate.buildPartTemplateTitle(null));
-				returnedElements.add(expectedReturnedClass.cast(title));
-			}
-		}
 
 		// we iterate firstly on the elements of the document structure
 		final Iterator<ISubBodyPartTemplate> subBodyPartTemplate = stereotypePropertyPartTemplate.getSubBodyPartTemplates().iterator();
@@ -93,15 +87,11 @@ public class StereotypePropertyReferencePartTemplateMapper extends AbstractUMLTe
 				if (result == null) {
 					continue;
 				}
-				if (title != null) {
-					title.getSubBodyParts().addAll(result);
-				} else {
-					result.stream().forEach(a -> returnedElements.add(expectedReturnedClass.cast(a)));
-				}
+				result.stream().forEach(a -> returnedElements.add(expectedReturnedClass.cast(a)));
 			}
 		}
 
-		return returnedElements;
+		return buildMapperResult(stereotypePropertyPartTemplate, semanticModelElement, expectedReturnedClass, returnedElements);
 	}
 
 }

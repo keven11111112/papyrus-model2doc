@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2019 CEA LIST and others.
+ * Copyright (c) 2019, 2021 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -10,6 +10,7 @@
  *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ * 	Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - Bug 570133
  *
  *****************************************************************************/
 
@@ -23,14 +24,16 @@ import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.Body;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IBodyPartTemplate;
+import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.AbstractTemplateToStructureMapper;
 import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.IMappingService;
 
 /**
  * This class create the DocumentStructure Body for the DocumentStructureTemplate Body
  *
  */
-public class BodyMapper extends AbstractEMFTemplateToStructureMapper<Body> {
+public class BodyMapper extends AbstractTemplateToStructureMapper<Body> {
 
 	/**
 	 *
@@ -38,7 +41,7 @@ public class BodyMapper extends AbstractEMFTemplateToStructureMapper<Body> {
 	 *
 	 */
 	public BodyMapper() {
-		super(TEMPLATE_EPACKAGE.getBody(), org.eclipse.papyrus.model2doc.emf.documentstructure.Body.class);
+		super(DocumentStructureTemplatePackage.eINSTANCE.getBody(), org.eclipse.papyrus.model2doc.emf.documentstructure.Body.class);
 	}
 
 	/**

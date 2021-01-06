@@ -88,7 +88,7 @@ public class GMFDocumentStructureTemplateAdapterFactory extends AdapterFactoryIm
 	 *
 	 * @generated
 	 */
-	protected GMFDocumentStructureTemplateSwitch<Adapter> modelSwitch = new GMFDocumentStructureTemplateSwitch<Adapter>() {
+	protected GMFDocumentStructureTemplateSwitch<Adapter> modelSwitch = new GMFDocumentStructureTemplateSwitch<>() {
 		@Override
 		public Adapter caseGMFDiagramView(GMFDiagramView object) {
 			return createGMFDiagramViewAdapter();

@@ -57,6 +57,8 @@ import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentSt
  * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyReferenceTableViewImpl#isGenerateTitle <em>Generate Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyReferenceTableViewImpl#getCustomTitle <em>Custom Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyReferenceTableViewImpl#getGenerateBranchCondition <em>Generate Branch Condition</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyReferenceTableViewImpl#isGenerateIfEmpty <em>Generate If Empty</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyReferenceTableViewImpl#getDefaultTextIfEmpty <em>Default Text If Empty</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyReferenceTableViewImpl#getColumns <em>Columns</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyReferenceTableViewImpl#isGenerateRowHeader <em>Generate Row Header</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.impl.StereotypePropertyReferenceTableViewImpl#isGenerateColumnHeader <em>Generate Column Header</em>}</li>
@@ -141,6 +143,50 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 	 * @ordered
 	 */
 	protected IBooleanEObjectExpression generateBranchCondition;
+
+	/**
+	 * The default value of the '{@link #isGenerateIfEmpty() <em>Generate If Empty</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #isGenerateIfEmpty()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean GENERATE_IF_EMPTY_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isGenerateIfEmpty() <em>Generate If Empty</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #isGenerateIfEmpty()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean generateIfEmpty = GENERATE_IF_EMPTY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDefaultTextIfEmpty() <em>Default Text If Empty</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getDefaultTextIfEmpty()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DEFAULT_TEXT_IF_EMPTY_EDEFAULT = "N/A"; //$NON-NLS-1$
+
+	/**
+	 * The cached value of the '{@link #getDefaultTextIfEmpty() <em>Default Text If Empty</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getDefaultTextIfEmpty()
+	 * @generated
+	 * @ordered
+	 */
+	protected String defaultTextIfEmpty = DEFAULT_TEXT_IF_EMPTY_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getColumns() <em>Columns</em>}' containment reference list.
@@ -359,6 +405,58 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 	 * @generated
 	 */
 	@Override
+	public boolean isGenerateIfEmpty() {
+		return generateIfEmpty;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setGenerateIfEmpty(boolean newGenerateIfEmpty) {
+		boolean oldGenerateIfEmpty = generateIfEmpty;
+		generateIfEmpty = newGenerateIfEmpty;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__GENERATE_IF_EMPTY, oldGenerateIfEmpty, generateIfEmpty));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public String getDefaultTextIfEmpty() {
+		return defaultTextIfEmpty;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setDefaultTextIfEmpty(String newDefaultTextIfEmpty) {
+		String oldDefaultTextIfEmpty = defaultTextIfEmpty;
+		defaultTextIfEmpty = newDefaultTextIfEmpty;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__DEFAULT_TEXT_IF_EMPTY, oldDefaultTextIfEmpty, defaultTextIfEmpty));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EList<IColumn> getColumns() {
 		if (columns == null) {
 			columns = new EObjectContainmentEList<>(IColumn.class, this, UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__COLUMNS);
@@ -509,6 +607,10 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 			return getCustomTitle();
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__GENERATE_BRANCH_CONDITION:
 			return getGenerateBranchCondition();
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__GENERATE_IF_EMPTY:
+			return isGenerateIfEmpty();
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__DEFAULT_TEXT_IF_EMPTY:
+			return getDefaultTextIfEmpty();
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__COLUMNS:
 			return getColumns();
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__GENERATE_ROW_HEADER:
@@ -540,6 +642,12 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 			return;
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__GENERATE_BRANCH_CONDITION:
 			setGenerateBranchCondition((IBooleanEObjectExpression) newValue);
+			return;
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__GENERATE_IF_EMPTY:
+			setGenerateIfEmpty((Boolean) newValue);
+			return;
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__DEFAULT_TEXT_IF_EMPTY:
+			setDefaultTextIfEmpty((String) newValue);
 			return;
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__COLUMNS:
 			getColumns().clear();
@@ -576,6 +684,12 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__GENERATE_BRANCH_CONDITION:
 			setGenerateBranchCondition((IBooleanEObjectExpression) null);
 			return;
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__GENERATE_IF_EMPTY:
+			setGenerateIfEmpty(GENERATE_IF_EMPTY_EDEFAULT);
+			return;
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__DEFAULT_TEXT_IF_EMPTY:
+			setDefaultTextIfEmpty(DEFAULT_TEXT_IF_EMPTY_EDEFAULT);
+			return;
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__COLUMNS:
 			getColumns().clear();
 			return;
@@ -606,6 +720,10 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 			return CUSTOM_TITLE_EDEFAULT == null ? customTitle != null : !CUSTOM_TITLE_EDEFAULT.equals(customTitle);
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__GENERATE_BRANCH_CONDITION:
 			return generateBranchCondition != null;
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__GENERATE_IF_EMPTY:
+			return generateIfEmpty != GENERATE_IF_EMPTY_EDEFAULT;
+		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__DEFAULT_TEXT_IF_EMPTY:
+			return DEFAULT_TEXT_IF_EMPTY_EDEFAULT == null ? defaultTextIfEmpty != null : !DEFAULT_TEXT_IF_EMPTY_EDEFAULT.equals(defaultTextIfEmpty);
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__COLUMNS:
 			return columns != null && !columns.isEmpty();
 		case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__GENERATE_ROW_HEADER:
@@ -634,6 +752,10 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 				return DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__CUSTOM_TITLE;
 			case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__GENERATE_BRANCH_CONDITION:
 				return DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION;
+			case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__GENERATE_IF_EMPTY:
+				return DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_IF_EMPTY;
+			case UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__DEFAULT_TEXT_IF_EMPTY:
+				return DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY;
 			default:
 				return -1;
 			}
@@ -701,6 +823,10 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 				return UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__CUSTOM_TITLE;
 			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION:
 				return UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__GENERATE_BRANCH_CONDITION;
+			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_IF_EMPTY:
+				return UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__GENERATE_IF_EMPTY;
+			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY:
+				return UMLDocumentStructureTemplatePackage.STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__DEFAULT_TEXT_IF_EMPTY;
 			default:
 				return -1;
 			}
@@ -851,6 +977,10 @@ public class StereotypePropertyReferenceTableViewImpl extends StereotypeProperty
 		result.append(generateTitle);
 		result.append(", customTitle: "); //$NON-NLS-1$
 		result.append(customTitle);
+		result.append(", generateIfEmpty: "); //$NON-NLS-1$
+		result.append(generateIfEmpty);
+		result.append(", defaultTextIfEmpty: "); //$NON-NLS-1$
+		result.append(defaultTextIfEmpty);
 		result.append(", generateRowHeader: "); //$NON-NLS-1$
 		result.append(generateRowHeader);
 		result.append(", generateColumnHeader: "); //$NON-NLS-1$

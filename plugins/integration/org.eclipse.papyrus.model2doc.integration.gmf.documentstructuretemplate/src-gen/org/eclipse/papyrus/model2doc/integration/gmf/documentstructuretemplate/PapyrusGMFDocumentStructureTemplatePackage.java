@@ -128,6 +128,26 @@ public interface PapyrusGMFDocumentStructureTemplatePackage extends EPackage {
 	int PAPYRUS_GMF_DIAGRAM_VIEW__GENERATE_BRANCH_CONDITION = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Generate If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int PAPYRUS_GMF_DIAGRAM_VIEW__GENERATE_IF_EMPTY = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Default Text If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int PAPYRUS_GMF_DIAGRAM_VIEW__DEFAULT_TEXT_IF_EMPTY = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_FEATURE_COUNT + 5;
+
+	/**
 	 * The feature id for the '<em><b>Diagram Kind Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -135,7 +155,7 @@ public interface PapyrusGMFDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_KIND_ID = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_FEATURE_COUNT + 4;
+	int PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_KIND_ID = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Diagram Type</b></em>' attribute.
@@ -145,7 +165,7 @@ public interface PapyrusGMFDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_TYPE = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_FEATURE_COUNT + 5;
+	int PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_TYPE = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Context Filter Rule</b></em>' attribute.
@@ -155,7 +175,7 @@ public interface PapyrusGMFDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAPYRUS_GMF_DIAGRAM_VIEW__CONTEXT_FILTER_RULE = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_FEATURE_COUNT + 6;
+	int PAPYRUS_GMF_DIAGRAM_VIEW__CONTEXT_FILTER_RULE = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Diagram Image Margin</b></em>' attribute.
@@ -165,7 +185,7 @@ public interface PapyrusGMFDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_IMAGE_MARGIN = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_FEATURE_COUNT + 7;
+	int PAPYRUS_GMF_DIAGRAM_VIEW__DIAGRAM_IMAGE_MARGIN = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Image Format</b></em>' attribute.
@@ -175,7 +195,7 @@ public interface PapyrusGMFDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAPYRUS_GMF_DIAGRAM_VIEW__IMAGE_FORMAT = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_FEATURE_COUNT + 8;
+	int PAPYRUS_GMF_DIAGRAM_VIEW__IMAGE_FORMAT = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of structural features of the '<em>Papyrus GMF Diagram View</em>' class.
@@ -185,7 +205,7 @@ public interface PapyrusGMFDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAPYRUS_GMF_DIAGRAM_VIEW_FEATURE_COUNT = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_FEATURE_COUNT + 9;
+	int PAPYRUS_GMF_DIAGRAM_VIEW_FEATURE_COUNT = DocumentStructureTemplatePackage.ITEMPLATE_PART_VIEW_FEATURE_COUNT + 11;
 
 	/**
 	 * The operation id for the '<em>Build Part Template Title</em>' operation.

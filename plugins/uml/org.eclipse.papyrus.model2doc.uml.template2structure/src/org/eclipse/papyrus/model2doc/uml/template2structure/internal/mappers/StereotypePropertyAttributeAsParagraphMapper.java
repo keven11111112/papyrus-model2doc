@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2020 CEA LIST and others.
+ * Copyright (c) 2020, 2021 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -10,6 +10,7 @@
  *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ * 	Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - Bug 570133
  *
  *****************************************************************************/
 
@@ -23,15 +24,16 @@ import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Paragraph;
-import org.eclipse.papyrus.model2doc.emf.documentstructure.Title;
+import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.AbstractBodyPartTemplateToStructureMapper;
 import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.IMappingService;
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.StereotypePropertyAttributeAsParagraph;
+import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.UMLDocumentStructureTemplatePackage;
 import org.eclipse.uml2.uml.Element;
 
 /**
  * This mapper converts the StereotypePropertyAttributeAsParagraph into {@link Paragraph}
  */
-public class StereotypePropertyAttributeAsParagraphMapper extends AbstractUMLTemplateToStructureMapper<StereotypePropertyAttributeAsParagraph> {
+public class StereotypePropertyAttributeAsParagraphMapper extends AbstractBodyPartTemplateToStructureMapper<StereotypePropertyAttributeAsParagraph> {
 
 	private static final String EMPTY_STRING = ""; //$NON-NLS-1$
 
@@ -42,7 +44,7 @@ public class StereotypePropertyAttributeAsParagraphMapper extends AbstractUMLTem
 	 * @param outputClass
 	 */
 	public StereotypePropertyAttributeAsParagraphMapper() {
-		super(TEMPLATE_EPACKAGE.getStereotypePropertyAttributeAsParagraph(), BodyPart.class);
+		super(UMLDocumentStructureTemplatePackage.eINSTANCE.getStereotypePropertyAttributeAsParagraph(), BodyPart.class);
 	}
 
 	/**
@@ -68,12 +70,6 @@ public class StereotypePropertyAttributeAsParagraphMapper extends AbstractUMLTem
 		final List<T> returnedValue = new ArrayList<>();
 
 		final Iterator<Object> commentIter = documentTemplateElement.getStereotypePropertyValues(semanticModelElement).iterator();
-		Title title = null;
-		if (commentIter.hasNext() && documentTemplateElement.isGenerateTitle()) {
-			title = STRUCTURE_EFACTORY.createTitle();
-			title.setTitle(documentTemplateElement.buildPartTemplateTitle(null));
-			returnedValue.add(expectedReturnedClass.cast(title));
-		}
 		while (commentIter.hasNext()) {
 			final Paragraph paragraph = STRUCTURE_EFACTORY.createParagraph();
 			Object value = commentIter.next();
@@ -81,13 +77,9 @@ public class StereotypePropertyAttributeAsParagraphMapper extends AbstractUMLTem
 				value = EMPTY_STRING;
 			}
 			paragraph.setText(value.toString());
-			if (null == title) {
-				returnedValue.add(expectedReturnedClass.cast(paragraph));
-			} else {
-				title.getSubBodyParts().add(paragraph);
-			}
+			returnedValue.add(expectedReturnedClass.cast(paragraph));
 		}
-		return returnedValue;
+		return buildMapperResult(documentTemplateElement, semanticModelElement, expectedReturnedClass, returnedValue);
 	}
 
 }

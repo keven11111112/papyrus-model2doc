@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2019, 2020 CEA LIST and others.
+ * Copyright (c) 2019-2021 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -11,7 +11,9 @@
  * Contributors:
  *    Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *    Vincent Lorenzo (CEA LIST) - bug 549183
- * 	  Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - Bug 569249
+ *    Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - Bug 569249
+ *    Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - Bug 570133
+ *
  *****************************************************************************/
 
 package org.eclipse.papyrus.model2doc.integration.nattable.template2structure.internal.mapping;
@@ -65,10 +67,9 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.EmptyLine;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedBasicTable;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedTextCell;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Image;
-import org.eclipse.papyrus.model2doc.emf.documentstructure.Title;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.utils.DocumentStructureTemplateUtils;
-import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.AbstractTemplateToStructureMapper;
+import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.AbstractBodyPartTemplateToStructureMapper;
 import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.IMappingService;
 import org.eclipse.papyrus.model2doc.integration.nattable.documentstructuretemplate.PapyrusNattableDocumentStructureTemplatePackage;
 import org.eclipse.papyrus.model2doc.integration.nattable.documentstructuretemplate.PapyrusTableView;
@@ -79,7 +80,7 @@ import org.eclipse.ui.IEditorPart;
 /**
  * This class create the DocumentStructure {@link Image} or Table from a {@link PapyrusTableView}
  */
-public class PapyrusTableViewMapper extends AbstractTemplateToStructureMapper<PapyrusTableView> {
+public class PapyrusTableViewMapper extends AbstractBodyPartTemplateToStructureMapper<PapyrusTableView> {
 
 	/**
 	 * Constructor.
@@ -116,12 +117,7 @@ public class PapyrusTableViewMapper extends AbstractTemplateToStructureMapper<Pa
 
 
 		final Iterator<Table> tableIter = papyrusTableView.getMatchingTables(semanticModelElement).iterator();
-		Title title = null;
-		if (tableIter.hasNext() && papyrusTableView.isGenerateTitle()) {
-			title = DocumentStructureFactory.eINSTANCE.createTitle();
-			title.setTitle(papyrusTableView.buildPartTemplateTitle(semanticModelElement));
-			returnedValue.add(returnedClassType.cast(title));
-		}
+
 		while (tableIter.hasNext()) {
 			Table current = tableIter.next();
 
@@ -131,13 +127,10 @@ public class PapyrusTableViewMapper extends AbstractTemplateToStructureMapper<Pa
 			if (null == mapResult || mapResult.isEmpty()) {
 				Activator.log.warn(NLS.bind("We fail to import the table {0}.", current.getName())); //$NON-NLS-1$
 			}
-			if (null == title) {
-				returnedValue.addAll((Collection<? extends T>) mapResult);
-			} else {
-				title.getSubBodyParts().addAll(mapResult);
-			}
+			returnedValue.addAll((Collection<? extends T>) mapResult);
+
 		}
-		return returnedValue;
+		return buildMapperResult(papyrusTableView, semanticModelElement, returnedClassType, returnedValue);
 	}
 
 
@@ -525,6 +518,5 @@ public class PapyrusTableViewMapper extends AbstractTemplateToStructureMapper<Pa
 			}
 		});
 	}
-
 
 }

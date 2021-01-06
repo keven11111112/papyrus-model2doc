@@ -29,6 +29,7 @@ import org.eclipse.papyrus.model2doc.core.author.AuthorPackage;
 import org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesPackage;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationPackage;
 
+import org.eclipse.papyrus.model2doc.core.styles.StylesPackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.Body;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplateFactory;
@@ -452,6 +453,7 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		EcorePackage.eINSTANCE.eClass();
 		ExpressionsPackage.eINSTANCE.eClass();
 		GeneratorConfigurationPackage.eINSTANCE.eClass();
+		StylesPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theDocumentStructureTemplatePackage.createPackageContents();
@@ -795,6 +797,28 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 	@Override
 	public EReference getIBodySectionPartTemplate_GenerateBranchCondition() {
 		return (EReference) iBodySectionPartTemplateEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getIBodySectionPartTemplate_GenerateIfEmpty() {
+		return (EAttribute) iBodySectionPartTemplateEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getIBodySectionPartTemplate_DefaultTextIfEmpty() {
+		return (EAttribute) iBodySectionPartTemplateEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1572,6 +1596,8 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		createEAttribute(iBodySectionPartTemplateEClass, IBODY_SECTION_PART_TEMPLATE__GENERATE_TITLE);
 		createEAttribute(iBodySectionPartTemplateEClass, IBODY_SECTION_PART_TEMPLATE__CUSTOM_TITLE);
 		createEReference(iBodySectionPartTemplateEClass, IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION);
+		createEAttribute(iBodySectionPartTemplateEClass, IBODY_SECTION_PART_TEMPLATE__GENERATE_IF_EMPTY);
+		createEAttribute(iBodySectionPartTemplateEClass, IBODY_SECTION_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY);
 		createEOperation(iBodySectionPartTemplateEClass, IBODY_SECTION_PART_TEMPLATE___BUILD_PART_TEMPLATE_TITLE__EOBJECT);
 		createEOperation(iBodySectionPartTemplateEClass, IBODY_SECTION_PART_TEMPLATE___GENERATE_BRANCH__EOBJECT);
 
@@ -1801,6 +1827,10 @@ public class DocumentStructureTemplatePackageImpl extends EPackageImpl implement
 		initEAttribute(getIBodySectionPartTemplate_CustomTitle(), ecorePackage.getEString(), "customTitle", null, 0, 1, IBodySectionPartTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 		initEReference(getIBodySectionPartTemplate_GenerateBranchCondition(), theBooleanExpressionsPackage.getIBooleanEObjectExpression(), null, "generateBranchCondition", null, 0, 1, IBodySectionPartTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, //$NON-NLS-1$
 				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getIBodySectionPartTemplate_GenerateIfEmpty(), ecorePackage.getEBoolean(), "generateIfEmpty", "false", 1, 1, IBodySectionPartTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, //$NON-NLS-1$ //$NON-NLS-2$
+				!IS_ORDERED);
+		initEAttribute(getIBodySectionPartTemplate_DefaultTextIfEmpty(), ecorePackage.getEString(), "defaultTextIfEmpty", "N/A", 1, 1, IBodySectionPartTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, //$NON-NLS-1$ //$NON-NLS-2$
+				!IS_DERIVED, !IS_ORDERED);
 
 		EOperation op = initEOperation(getIBodySectionPartTemplate__BuildPartTemplateTitle__EObject(), ecorePackage.getEString(), "buildPartTemplateTitle", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 		addEParameter(op, theEcorePackage.getEObject(), "context", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$

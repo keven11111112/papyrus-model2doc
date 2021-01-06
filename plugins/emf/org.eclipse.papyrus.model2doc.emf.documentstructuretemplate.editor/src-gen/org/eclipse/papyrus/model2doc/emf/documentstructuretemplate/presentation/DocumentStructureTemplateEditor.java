@@ -165,6 +165,7 @@ import org.eclipse.papyrus.model2doc.core.author.provider.AuthorItemProviderAdap
 import org.eclipse.papyrus.model2doc.core.builtintypes.provider.BuiltInTypesItemProviderAdapterFactory;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.provider.GeneratorConfigurationItemProviderAdapterFactory;
 
+import org.eclipse.papyrus.model2doc.core.styles.provider.StylesItemProviderAdapterFactory;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
 
@@ -684,6 +685,7 @@ public class DocumentStructureTemplateEditor
 		adapterFactory.addAdapterFactory(new ExpressionsItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new BooleanExpressionsItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new GeneratorConfigurationItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new StylesItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.

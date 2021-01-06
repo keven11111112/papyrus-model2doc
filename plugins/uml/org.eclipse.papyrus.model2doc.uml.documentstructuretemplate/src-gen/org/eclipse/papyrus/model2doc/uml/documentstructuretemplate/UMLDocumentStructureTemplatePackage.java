@@ -259,6 +259,26 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	int STEREOTYPE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION = MANDATORY_STEREOTYPE_WITH_ECLASS_TEMPLATE_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Generate If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int STEREOTYPE_PART_TEMPLATE__GENERATE_IF_EMPTY = MANDATORY_STEREOTYPE_WITH_ECLASS_TEMPLATE_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Default Text If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int STEREOTYPE_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY = MANDATORY_STEREOTYPE_WITH_ECLASS_TEMPLATE_FEATURE_COUNT + 5;
+
+	/**
 	 * The feature id for the '<em><b>Body Part Template</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -266,7 +286,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PART_TEMPLATE__BODY_PART_TEMPLATE = MANDATORY_STEREOTYPE_WITH_ECLASS_TEMPLATE_FEATURE_COUNT + 4;
+	int STEREOTYPE_PART_TEMPLATE__BODY_PART_TEMPLATE = MANDATORY_STEREOTYPE_WITH_ECLASS_TEMPLATE_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Stereotype Part Template</em>' class.
@@ -276,7 +296,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PART_TEMPLATE_FEATURE_COUNT = MANDATORY_STEREOTYPE_WITH_ECLASS_TEMPLATE_FEATURE_COUNT + 5;
+	int STEREOTYPE_PART_TEMPLATE_FEATURE_COUNT = MANDATORY_STEREOTYPE_WITH_ECLASS_TEMPLATE_FEATURE_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>Is Matching Filter Rule</em>' operation.
@@ -502,6 +522,26 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	int IUML_BODY_PART_TEMPLATE_TITLE__GENERATE_BRANCH_CONDITION = DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION;
 
 	/**
+	 * The feature id for the '<em><b>Generate If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IUML_BODY_PART_TEMPLATE_TITLE__GENERATE_IF_EMPTY = DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_IF_EMPTY;
+
+	/**
+	 * The feature id for the '<em><b>Default Text If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IUML_BODY_PART_TEMPLATE_TITLE__DEFAULT_TEXT_IF_EMPTY = DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY;
+
+	/**
 	 * The number of structural features of the '<em>IUML Body Part Template Title</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -704,6 +744,26 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	int STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__GENERATE_BRANCH_CONDITION = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Generate If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__GENERATE_IF_EMPTY = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Default Text If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 5;
+
+	/**
 	 * The feature id for the '<em><b>Sub Body Part Template</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -711,7 +771,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 4;
+	int STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE__SUB_BODY_PART_TEMPLATE = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Stereotype Property Reference Part Template</em>' class.
@@ -721,7 +781,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE_FEATURE_COUNT = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 5;
+	int STEREOTYPE_PROPERTY_REFERENCE_PART_TEMPLATE_FEATURE_COUNT = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>Get First Matching Stereotype Application</em>' operation.
@@ -908,6 +968,26 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @ordered
 	 */
 	int COMMENT_AS_PARAGRAPH__GENERATE_BRANCH_CONDITION = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE__GENERATE_BRANCH_CONDITION;
+
+	/**
+	 * The feature id for the '<em><b>Generate If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT_AS_PARAGRAPH__GENERATE_IF_EMPTY = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE__GENERATE_IF_EMPTY;
+
+	/**
+	 * The feature id for the '<em><b>Default Text If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT_AS_PARAGRAPH__DEFAULT_TEXT_IF_EMPTY = DocumentStructureTemplatePackage.ILEAF_BODY_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY;
 
 	/**
 	 * The feature id for the '<em><b>Comment Choice</b></em>' attribute.
@@ -1250,6 +1330,26 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	int STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__GENERATE_BRANCH_CONDITION = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Generate If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__GENERATE_IF_EMPTY = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Default Text If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__DEFAULT_TEXT_IF_EMPTY = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 5;
+
+	/**
 	 * The feature id for the '<em><b>Columns</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1257,7 +1357,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__COLUMNS = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 4;
+	int STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__COLUMNS = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Generate Row Header</b></em>' attribute.
@@ -1267,7 +1367,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__GENERATE_ROW_HEADER = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 5;
+	int STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__GENERATE_ROW_HEADER = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Generate Column Header</b></em>' attribute.
@@ -1277,7 +1377,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__GENERATE_COLUMN_HEADER = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 6;
+	int STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW__GENERATE_COLUMN_HEADER = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Stereotype Property Reference Table View</em>' class.
@@ -1287,7 +1387,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW_FEATURE_COUNT = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 7;
+	int STEREOTYPE_PROPERTY_REFERENCE_TABLE_VIEW_FEATURE_COUNT = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 9;
 
 	/**
 	 * The operation id for the '<em>Get First Matching Stereotype Application</em>' operation.
@@ -1986,6 +2086,26 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	int STEREOTYPE_PROPERTY_ATTRIBUTE_AS_PARAGRAPH__GENERATE_BRANCH_CONDITION = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Generate If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int STEREOTYPE_PROPERTY_ATTRIBUTE_AS_PARAGRAPH__GENERATE_IF_EMPTY = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Default Text If Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int STEREOTYPE_PROPERTY_ATTRIBUTE_AS_PARAGRAPH__DEFAULT_TEXT_IF_EMPTY = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Stereotype Property Attribute As Paragraph</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1993,7 +2113,7 @@ public interface UMLDocumentStructureTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEREOTYPE_PROPERTY_ATTRIBUTE_AS_PARAGRAPH_FEATURE_COUNT = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 4;
+	int STEREOTYPE_PROPERTY_ATTRIBUTE_AS_PARAGRAPH_FEATURE_COUNT = STEREOTYPE_PROPERTY_TEMPLATE_FEATURE_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>Get First Matching Stereotype Application</em>' operation.

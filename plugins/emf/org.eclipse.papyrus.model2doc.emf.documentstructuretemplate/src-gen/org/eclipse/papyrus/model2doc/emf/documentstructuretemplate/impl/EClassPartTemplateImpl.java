@@ -51,6 +51,8 @@ import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ISubBodyPartT
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassPartTemplateImpl#isGenerateTitle <em>Generate Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassPartTemplateImpl#getCustomTitle <em>Custom Title</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassPartTemplateImpl#getGenerateBranchCondition <em>Generate Branch Condition</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassPartTemplateImpl#isGenerateIfEmpty <em>Generate If Empty</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassPartTemplateImpl#getDefaultTextIfEmpty <em>Default Text If Empty</em>}</li>
  * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.impl.EClassPartTemplateImpl#getBodyPartTemplates <em>Body Part Template</em>}</li>
  * </ul>
  *
@@ -133,6 +135,50 @@ public class EClassPartTemplateImpl extends EClassTemplateImpl implements EClass
 	 * @ordered
 	 */
 	protected IBooleanEObjectExpression generateBranchCondition;
+
+	/**
+	 * The default value of the '{@link #isGenerateIfEmpty() <em>Generate If Empty</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #isGenerateIfEmpty()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean GENERATE_IF_EMPTY_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isGenerateIfEmpty() <em>Generate If Empty</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #isGenerateIfEmpty()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean generateIfEmpty = GENERATE_IF_EMPTY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDefaultTextIfEmpty() <em>Default Text If Empty</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getDefaultTextIfEmpty()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DEFAULT_TEXT_IF_EMPTY_EDEFAULT = "N/A"; //$NON-NLS-1$
+
+	/**
+	 * The cached value of the '{@link #getDefaultTextIfEmpty() <em>Default Text If Empty</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getDefaultTextIfEmpty()
+	 * @generated
+	 * @ordered
+	 */
+	protected String defaultTextIfEmpty = DEFAULT_TEXT_IF_EMPTY_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getBodyPartTemplates() <em>Body Part Template</em>}' containment reference list.
@@ -307,6 +353,58 @@ public class EClassPartTemplateImpl extends EClassTemplateImpl implements EClass
 	 * @generated
 	 */
 	@Override
+	public boolean isGenerateIfEmpty() {
+		return generateIfEmpty;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setGenerateIfEmpty(boolean newGenerateIfEmpty) {
+		boolean oldGenerateIfEmpty = generateIfEmpty;
+		generateIfEmpty = newGenerateIfEmpty;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__GENERATE_IF_EMPTY, oldGenerateIfEmpty, generateIfEmpty));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public String getDefaultTextIfEmpty() {
+		return defaultTextIfEmpty;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setDefaultTextIfEmpty(String newDefaultTextIfEmpty) {
+		String oldDefaultTextIfEmpty = defaultTextIfEmpty;
+		defaultTextIfEmpty = newDefaultTextIfEmpty;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY, oldDefaultTextIfEmpty, defaultTextIfEmpty));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EList<IBodyPartTemplate> getBodyPartTemplates() {
 		if (bodyPartTemplates == null) {
 			bodyPartTemplates = new EObjectContainmentEList<>(IBodyPartTemplate.class, this, DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__BODY_PART_TEMPLATE);
@@ -377,6 +475,10 @@ public class EClassPartTemplateImpl extends EClassTemplateImpl implements EClass
 			return getCustomTitle();
 		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__GENERATE_BRANCH_CONDITION:
 			return getGenerateBranchCondition();
+		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__GENERATE_IF_EMPTY:
+			return isGenerateIfEmpty();
+		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY:
+			return getDefaultTextIfEmpty();
 		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__BODY_PART_TEMPLATE:
 			return getBodyPartTemplates();
 		}
@@ -404,6 +506,12 @@ public class EClassPartTemplateImpl extends EClassTemplateImpl implements EClass
 			return;
 		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__GENERATE_BRANCH_CONDITION:
 			setGenerateBranchCondition((IBooleanEObjectExpression) newValue);
+			return;
+		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__GENERATE_IF_EMPTY:
+			setGenerateIfEmpty((Boolean) newValue);
+			return;
+		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY:
+			setDefaultTextIfEmpty((String) newValue);
 			return;
 		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__BODY_PART_TEMPLATE:
 			getBodyPartTemplates().clear();
@@ -434,6 +542,12 @@ public class EClassPartTemplateImpl extends EClassTemplateImpl implements EClass
 		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__GENERATE_BRANCH_CONDITION:
 			setGenerateBranchCondition((IBooleanEObjectExpression) null);
 			return;
+		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__GENERATE_IF_EMPTY:
+			setGenerateIfEmpty(GENERATE_IF_EMPTY_EDEFAULT);
+			return;
+		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY:
+			setDefaultTextIfEmpty(DEFAULT_TEXT_IF_EMPTY_EDEFAULT);
+			return;
 		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__BODY_PART_TEMPLATE:
 			getBodyPartTemplates().clear();
 			return;
@@ -458,6 +572,10 @@ public class EClassPartTemplateImpl extends EClassTemplateImpl implements EClass
 			return CUSTOM_TITLE_EDEFAULT == null ? customTitle != null : !CUSTOM_TITLE_EDEFAULT.equals(customTitle);
 		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__GENERATE_BRANCH_CONDITION:
 			return generateBranchCondition != null;
+		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__GENERATE_IF_EMPTY:
+			return generateIfEmpty != GENERATE_IF_EMPTY_EDEFAULT;
+		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY:
+			return DEFAULT_TEXT_IF_EMPTY_EDEFAULT == null ? defaultTextIfEmpty != null : !DEFAULT_TEXT_IF_EMPTY_EDEFAULT.equals(defaultTextIfEmpty);
 		case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__BODY_PART_TEMPLATE:
 			return bodyPartTemplates != null && !bodyPartTemplates.isEmpty();
 		}
@@ -482,6 +600,10 @@ public class EClassPartTemplateImpl extends EClassTemplateImpl implements EClass
 				return DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__CUSTOM_TITLE;
 			case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__GENERATE_BRANCH_CONDITION:
 				return DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION;
+			case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__GENERATE_IF_EMPTY:
+				return DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_IF_EMPTY;
+			case DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY:
+				return DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY;
 			default:
 				return -1;
 			}
@@ -521,6 +643,10 @@ public class EClassPartTemplateImpl extends EClassTemplateImpl implements EClass
 				return DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__CUSTOM_TITLE;
 			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_BRANCH_CONDITION:
 				return DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__GENERATE_BRANCH_CONDITION;
+			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__GENERATE_IF_EMPTY:
+				return DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__GENERATE_IF_EMPTY;
+			case DocumentStructureTemplatePackage.IBODY_SECTION_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY:
+				return DocumentStructureTemplatePackage.ECLASS_PART_TEMPLATE__DEFAULT_TEXT_IF_EMPTY;
 			default:
 				return -1;
 			}
@@ -611,6 +737,10 @@ public class EClassPartTemplateImpl extends EClassTemplateImpl implements EClass
 		result.append(generateTitle);
 		result.append(", customTitle: "); //$NON-NLS-1$
 		result.append(customTitle);
+		result.append(", generateIfEmpty: "); //$NON-NLS-1$
+		result.append(generateIfEmpty);
+		result.append(", defaultTextIfEmpty: "); //$NON-NLS-1$
+		result.append(defaultTextIfEmpty);
 		result.append(')');
 		return result.toString();
 	}

@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2019, 2020 CEA LIST and others.
+ * Copyright (c) 2019-2021 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -11,6 +11,7 @@
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  * 	Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - Bug 569249
+ * 	Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - Bug 570133
  *
  *****************************************************************************/
 
@@ -29,17 +30,18 @@ import org.eclipse.papyrus.model2doc.core.builtintypes.Cell;
 import org.eclipse.papyrus.model2doc.core.builtintypes.CellLocation;
 import org.eclipse.papyrus.model2doc.core.builtintypes.TextCell;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
-import org.eclipse.papyrus.model2doc.emf.documentstructure.EmptyLine;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedBasicTable;
-import org.eclipse.papyrus.model2doc.emf.documentstructure.Title;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.EReferenceTableView;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.IColumn;
+import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.ITableView;
+import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.AbstractBodyPartTemplateToStructureMapper;
 import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.IMappingService;
 
 /**
  * This class ensures the transformation of the {@link EReferenceTableView} into an {@link ExtendedBasicTable}
  */
-public class EReferenceTableViewMapper extends AbstractEMFTemplateToStructureMapper<EReferenceTableView> {
+public class EReferenceTableViewMapper extends AbstractBodyPartTemplateToStructureMapper<EReferenceTableView> {
 
 	/**
 	 * Constructor.
@@ -48,7 +50,7 @@ public class EReferenceTableViewMapper extends AbstractEMFTemplateToStructureMap
 	 * @param outputClass
 	 */
 	public EReferenceTableViewMapper() {
-		super(TEMPLATE_EPACKAGE.getEReferenceTableView(), BodyPart.class);
+		super(DocumentStructureTemplatePackage.eINSTANCE.getEReferenceTableView(), BodyPart.class);
 	}
 
 	/**
@@ -64,37 +66,18 @@ public class EReferenceTableViewMapper extends AbstractEMFTemplateToStructureMap
 	 */
 	@Override
 	protected <T> List<T> doMap(final IMappingService mappingService, final EReferenceTableView eReferenceTableView, final EObject semanticModelElement, final Class<T> expectedReturnedClass) {
+		final List<T> returnedElements = new ArrayList<>();
 		if (false == eReferenceTableView.generateBranch(semanticModelElement)) {
 			return Collections.emptyList();
 		}
-
-		List<T> returnedElements = new ArrayList<>();
 
 		final Collection<EObject> rows = eReferenceTableView.getRows(semanticModelElement);
 		final Collection<IColumn> columns = eReferenceTableView.getColumns();
 		if (rows.isEmpty() || columns.isEmpty()) {
 			return null;
 		}
-		Title title = null;
-		if (eReferenceTableView.isGenerate()) {
-			if (eReferenceTableView.isGenerateTitle()) {
-				title = STRUCTURE_EFACTORY.createTitle();
-				title.setTitle(eReferenceTableView.buildPartTemplateTitle(null));
-				returnedElements.add(expectedReturnedClass.cast(title));
-			}
-		}
-
 
 		final ExtendedBasicTable table = STRUCTURE_EFACTORY.createExtendedBasicTable();
-		final EmptyLine emptyLine = STRUCTURE_EFACTORY.createEmptyLine(); // Bug 569249
-
-		if (title != null) {
-			title.getSubBodyParts().add(table);
-			title.getSubBodyParts().add(emptyLine);
-		} else {
-			returnedElements.add(expectedReturnedClass.cast(table));
-			returnedElements.add(expectedReturnedClass.cast(emptyLine));
-		}
 
 		// column header generation
 		if (eReferenceTableView.isGenerateColumnHeader()) {
@@ -149,7 +132,24 @@ public class EReferenceTableViewMapper extends AbstractEMFTemplateToStructureMap
 		}
 
 
-		return returnedElements;
+		if (!isEmptyTable(table, eReferenceTableView)) {
+			returnedElements.add(expectedReturnedClass.cast(table));
+			returnedElements.add(expectedReturnedClass.cast(STRUCTURE_EFACTORY.createEmptyLine()));
+		}
+
+		return buildMapperResult(eReferenceTableView, semanticModelElement, expectedReturnedClass, returnedElements);
+	}
+
+	/**
+	 *
+	 * @param table
+	 *            the created table
+	 * @param tableView
+	 * @return
+	 */
+	private boolean isEmptyTable(final ExtendedBasicTable table, final ITableView tableView) {
+		return table.getRowsNumber() == 0 && tableView.isGenerateColumnHeader() == false
+				|| table.getRowsNumber() == 1 && tableView.isGenerateColumnHeader();
 	}
 
 }

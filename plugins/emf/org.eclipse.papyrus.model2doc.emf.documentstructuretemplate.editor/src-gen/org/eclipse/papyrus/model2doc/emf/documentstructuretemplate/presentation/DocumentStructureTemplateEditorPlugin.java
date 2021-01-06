@@ -25,6 +25,7 @@ import org.eclipse.papyrus.infra.emf.expressions.provider.ExpressionsEditPlugin;
 import org.eclipse.papyrus.model2doc.core.author.provider.AuthorEditPlugin;
 import org.eclipse.papyrus.model2doc.core.builtintypes.provider.BuiltInTypesEditPlugin;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.provider.GeneratorconfigurationEditPlugin;
+import org.eclipse.papyrus.model2doc.core.styles.provider.StylesEditPlugin;
 
 /**
  * This is the central singleton for the Documentstructuretemplate editor plugin.
@@ -66,6 +67,7 @@ public final class DocumentStructureTemplateEditorPlugin extends EMFPlugin {
 				EcoreEditPlugin.INSTANCE,
 				ExpressionsEditPlugin.INSTANCE,
 				GeneratorconfigurationEditPlugin.INSTANCE,
+				StylesEditPlugin.INSTANCE,
 		});
 	}
 

@@ -68,7 +68,7 @@ public interface PapyrusGMFDiagramView extends ITemplatePartView, ILeafBodyPartT
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Diagram Kind Id</em>' attribute.
+	 *                  the new value of the '<em>Diagram Kind Id</em>' attribute.
 	 * @see #getDiagramKindId()
 	 * @generated
 	 */
@@ -96,7 +96,7 @@ public interface PapyrusGMFDiagramView extends ITemplatePartView, ILeafBodyPartT
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Diagram Type</em>' attribute.
+	 *                  the new value of the '<em>Diagram Type</em>' attribute.
 	 * @see #getDiagramType()
 	 * @generated
 	 */
@@ -126,7 +126,7 @@ public interface PapyrusGMFDiagramView extends ITemplatePartView, ILeafBodyPartT
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Context Filter Rule</em>' attribute.
+	 *                  the new value of the '<em>Context Filter Rule</em>' attribute.
 	 * @see org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.ContextFilterBehavior
 	 * @see #getContextFilterRule()
 	 * @generated
@@ -156,7 +156,7 @@ public interface PapyrusGMFDiagramView extends ITemplatePartView, ILeafBodyPartT
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Diagram Image Margin</em>' attribute.
+	 *                  the new value of the '<em>Diagram Image Margin</em>' attribute.
 	 * @see #getDiagramImageMargin()
 	 * @generated
 	 */
@@ -187,7 +187,7 @@ public interface PapyrusGMFDiagramView extends ITemplatePartView, ILeafBodyPartT
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Image Format</em>' attribute.
+	 *                  the new value of the '<em>Image Format</em>' attribute.
 	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.ImageFormat
 	 * @see #getImageFormat()
 	 * @generated

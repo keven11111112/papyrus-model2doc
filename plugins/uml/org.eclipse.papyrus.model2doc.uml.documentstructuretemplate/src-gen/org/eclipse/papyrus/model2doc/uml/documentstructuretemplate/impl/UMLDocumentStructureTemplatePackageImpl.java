@@ -30,6 +30,7 @@ import org.eclipse.papyrus.model2doc.core.author.AuthorPackage;
 import org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesPackage;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.GeneratorConfigurationPackage;
 
+import org.eclipse.papyrus.model2doc.core.styles.StylesPackage;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentStructureTemplatePackage;
 
 import org.eclipse.papyrus.model2doc.uml.documentstructuretemplate.CommentAsParagraph;
@@ -298,6 +299,7 @@ public class UMLDocumentStructureTemplatePackageImpl extends EPackageImpl implem
 		AuthorPackage.eINSTANCE.eClass();
 		ExpressionsPackage.eINSTANCE.eClass();
 		BuiltInTypesPackage.eINSTANCE.eClass();
+		StylesPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theUMLDocumentStructureTemplatePackage.createPackageContents();

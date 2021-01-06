@@ -88,7 +88,7 @@ public class PapyrusGMFDocumentStructureTemplateAdapterFactory extends AdapterFa
 	 *
 	 * @generated
 	 */
-	protected PapyrusGMFDocumentStructureTemplateSwitch<Adapter> modelSwitch = new PapyrusGMFDocumentStructureTemplateSwitch<Adapter>() {
+	protected PapyrusGMFDocumentStructureTemplateSwitch<Adapter> modelSwitch = new PapyrusGMFDocumentStructureTemplateSwitch<>() {
 		@Override
 		public Adapter casePapyrusGMFDiagramView(PapyrusGMFDiagramView object) {
 			return createPapyrusGMFDiagramViewAdapter();

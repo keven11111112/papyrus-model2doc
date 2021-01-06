@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2019 CEA LIST and others.
+ * Copyright (c) 2019, 2021 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -10,6 +10,7 @@
  *
  * Contributors:
  *    Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ *    Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - Bug 570133
  *
  *****************************************************************************/
 
@@ -28,9 +29,8 @@ import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentStruct
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.accessors.IOutputFileAccessor;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructureFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Image;
-import org.eclipse.papyrus.model2doc.emf.documentstructure.Title;
 import org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.DocumentTemplate;
-import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.AbstractTemplateToStructureMapper;
+import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.AbstractBodyPartTemplateToStructureMapper;
 import org.eclipse.papyrus.model2doc.emf.template2structure.mapping.IMappingService;
 import org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.PapyrusGMFDiagramView;
 import org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.PapyrusGMFDocumentStructureTemplatePackage;
@@ -39,7 +39,7 @@ import org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.P
 /**
  * this class is in charge to create {@link Image} from {@link PapyrusGMFDiagramView}
  */
-public class PapyrusGMFDiagramViewMapper extends AbstractTemplateToStructureMapper<PapyrusGMFDiagramView> {
+public class PapyrusGMFDiagramViewMapper extends AbstractBodyPartTemplateToStructureMapper<PapyrusGMFDiagramView> {
 
 	/**
 	 * Constructor.
@@ -74,12 +74,7 @@ public class PapyrusGMFDiagramViewMapper extends AbstractTemplateToStructureMapp
 
 
 		final Iterator<Diagram> diagramIter = gmfDiagramView.getMatchingDiagrams(semanticModelElement).iterator();
-		Title title = null;
-		if (diagramIter.hasNext() && gmfDiagramView.isGenerateTitle()) {
-			title = DocumentStructureFactory.eINSTANCE.createTitle();
-			title.setTitle(gmfDiagramView.buildPartTemplateTitle(semanticModelElement));
-			returnedValue.add(returnedClassType.cast(title));
-		}
+
 		while (diagramIter.hasNext()) {
 			Image image = DocumentStructureFactory.eINSTANCE.createImage();
 			Diagram current = diagramIter.next();
@@ -112,14 +107,9 @@ public class PapyrusGMFDiagramViewMapper extends AbstractTemplateToStructureMapp
 			imagePath = imagePath.replaceAll("file:/", ""); //$NON-NLS-1$ //$NON-NLS-2$
 			GMFDiagramImageUtils.generateImageOfDiagram(current, imagePath, gmfDiagramView.getDiagramImageMargin(), gmfDiagramView.getImageFormat());
 			image.setFilePath(uri.toString());
-			if (null == title) {
-				returnedValue.add(returnedClassType.cast(image));
-			} else {
-				title.getSubBodyParts().add(image);
-			}
+			returnedValue.add(returnedClassType.cast(image));
 		}
-		return returnedValue;
+		return buildMapperResult(gmfDiagramView, semanticModelElement, returnedClassType, returnedValue);
 	}
-
 
 }
