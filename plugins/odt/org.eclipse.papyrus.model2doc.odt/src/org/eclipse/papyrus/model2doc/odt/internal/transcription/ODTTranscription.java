@@ -16,6 +16,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.model2doc.odt.internal.transcription;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -411,8 +412,8 @@ public class ODTTranscription implements Transcription {
 	 */
 	@Override
 	public void insertFile(final IFileReference fileReference) {
-		final String path = fileReference.getFilePath();
-		this.writeService.insertTextFile(cursor, path);
+		final URL url = fileReference.getFileAccessor().createInputFileURL();
+		this.writeService.insertTextFile(cursor, url.toString());
 	}
 
 	/**

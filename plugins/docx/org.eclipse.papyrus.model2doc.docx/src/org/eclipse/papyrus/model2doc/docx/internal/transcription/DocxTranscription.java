@@ -406,7 +406,9 @@ public class DocxTranscription implements Transcription {
 	@Override
 	public void insertFile(IFileReference fileReference) {
 		try {
-			document.insertFile(fileReference.getFilePath().replaceFirst(ECORE_FILE_PREFIX, EMPTY_STRING));
+			final URL url = fileReference.getFileAccessor().createInputFileURL();
+			final String path = url.toString().replace(ECORE_FILE_PREFIX, EMPTY_STRING);
+			document.insertFile(path);
 		} catch (Exception e) {
 			Activator.log.warn(NLS.bind("The {0} file can not be inserted", fileReference.getFilePath())); //$NON-NLS-1$
 		}

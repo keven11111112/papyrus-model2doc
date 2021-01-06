@@ -68,7 +68,7 @@ public class InsertFileTemplateMapper extends AbstractEMFTemplateToStructureMapp
 		}
 
 		final InsertedFile insertedFile = STRUCTURE_EFACTORY.createInsertedFile();
-		final String path = insertFileTemplate.getFileAccessor().createInputFilePlatformURI().toPlatformString(true);
+		final String path = insertFileTemplate.getFileAccessor().createInputFilePlatformURI().toString();
 		insertedFile.setFilePath(path);
 
 		if (null != title) {
