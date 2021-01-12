@@ -428,6 +428,7 @@ public class DocxTranscription implements Transcription {
 
 			int[] size = ImageUtils.getImageSize(imagePath, document);
 			imageRun.addPicture(inputStream, Document.PICTURE_TYPE_PNG, path[path.length - 1], size[0], size[1]);
+			inputStream.close();
 		} catch (IOException | InvalidFormatException e) {
 			Activator.log.error(e);
 		}
