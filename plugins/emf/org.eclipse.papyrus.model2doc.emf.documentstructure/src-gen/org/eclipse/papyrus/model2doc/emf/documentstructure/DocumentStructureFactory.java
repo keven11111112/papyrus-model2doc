@@ -185,6 +185,26 @@ public interface DocumentStructureFactory extends EFactory {
 	EmptyLine createEmptyLine();
 
 	/**
+	 * Returns a new object of class '<em>Extended File Reference Cell</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>Extended File Reference Cell</em>'.
+	 * @generated
+	 */
+	ExtendedFileReferenceCell createExtendedFileReferenceCell();
+
+	/**
+	 * Returns a new object of class '<em>Inserted Generated File</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>Inserted Generated File</em>'.
+	 * @generated
+	 */
+	InsertedGeneratedFile createInsertedGeneratedFile();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

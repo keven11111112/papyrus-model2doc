@@ -33,6 +33,7 @@ import org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesPackage;
 import org.eclipse.papyrus.model2doc.core.builtintypes.Cell;
 import org.eclipse.papyrus.model2doc.core.builtintypes.CellLocation;
 import org.eclipse.papyrus.model2doc.core.builtintypes.DefaultFileReference;
+import org.eclipse.papyrus.model2doc.core.builtintypes.FileReferenceCell;
 import org.eclipse.papyrus.model2doc.core.builtintypes.IFileReference;
 import org.eclipse.papyrus.model2doc.core.builtintypes.ImageFormat;
 import org.eclipse.papyrus.model2doc.core.builtintypes.ListItem;
@@ -145,6 +146,14 @@ public class BuiltInTypesPackageImpl extends EPackageImpl implements BuiltInType
 	 * @generated
 	 */
 	private EClass defaultFileReferenceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass fileReferenceCellEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -545,6 +554,28 @@ public class BuiltInTypesPackageImpl extends EPackageImpl implements BuiltInType
 	 * @generated
 	 */
 	@Override
+	public EClass getFileReferenceCell() {
+		return fileReferenceCellEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getFileReferenceCell_FileReference() {
+		return (EReference) fileReferenceCellEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EEnum getCellLocation() {
 		return cellLocationEEnum;
 	}
@@ -644,6 +675,9 @@ public class BuiltInTypesPackageImpl extends EPackageImpl implements BuiltInType
 		defaultFileReferenceEClass = createEClass(DEFAULT_FILE_REFERENCE);
 		createEAttribute(defaultFileReferenceEClass, DEFAULT_FILE_REFERENCE__FILE_PATH);
 
+		fileReferenceCellEClass = createEClass(FILE_REFERENCE_CELL);
+		createEReference(fileReferenceCellEClass, FILE_REFERENCE_CELL__FILE_REFERENCE);
+
 		// Create enums
 		cellLocationEEnum = createEEnum(CELL_LOCATION);
 		imageFormatEEnum = createEEnum(IMAGE_FORMAT);
@@ -694,6 +728,7 @@ public class BuiltInTypesPackageImpl extends EPackageImpl implements BuiltInType
 		textListItemEClass.getESuperTypes().add(this.getListItem());
 		basicListEClass.getESuperTypes().add(this.getAbstractList());
 		defaultFileReferenceEClass.getESuperTypes().add(this.getIFileReference());
+		fileReferenceCellEClass.getESuperTypes().add(this.getCell());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(abstractTableEClass, AbstractTable.class, "AbstractTable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
@@ -740,6 +775,10 @@ public class BuiltInTypesPackageImpl extends EPackageImpl implements BuiltInType
 
 		initEClass(defaultFileReferenceEClass, DefaultFileReference.class, "DefaultFileReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEAttribute(getDefaultFileReference_FilePath(), ecorePackage.getEString(), "filePath", null, 1, 1, DefaultFileReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+
+		initEClass(fileReferenceCellEClass, FileReferenceCell.class, "FileReferenceCell", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getFileReferenceCell_FileReference(), this.getIFileReference(), null, "fileReference", null, 0, 1, FileReferenceCell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, //$NON-NLS-1$
+				!IS_DERIVED, !IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(cellLocationEEnum, CellLocation.class, "CellLocation"); //$NON-NLS-1$

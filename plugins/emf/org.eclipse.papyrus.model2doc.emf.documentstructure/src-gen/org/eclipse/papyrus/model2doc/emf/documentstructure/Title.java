@@ -54,7 +54,7 @@ public interface Title extends ComposedBodyPart {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *                  the new value of the '<em>Title</em>' attribute.
+	 *            the new value of the '<em>Title</em>' attribute.
 	 * @see #getTitle()
 	 * @generated
 	 */

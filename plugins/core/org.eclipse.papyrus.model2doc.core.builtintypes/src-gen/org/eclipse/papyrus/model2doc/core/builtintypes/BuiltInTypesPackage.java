@@ -763,6 +763,77 @@ public interface BuiltInTypesPackage extends EPackage {
 	int DEFAULT_FILE_REFERENCE_OPERATION_COUNT = IFILE_REFERENCE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.core.builtintypes.impl.FileReferenceCellImpl <em>File Reference Cell</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.impl.FileReferenceCellImpl
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.impl.BuiltInTypesPackageImpl#getFileReferenceCell()
+	 * @generated
+	 */
+	int FILE_REFERENCE_CELL = 12;
+
+	/**
+	 * The feature id for the '<em><b>Named Styles</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_REFERENCE_CELL__NAMED_STYLES = CELL__NAMED_STYLES;
+
+	/**
+	 * The feature id for the '<em><b>Location</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_REFERENCE_CELL__LOCATION = CELL__LOCATION;
+
+	/**
+	 * The feature id for the '<em><b>File Reference</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_REFERENCE_CELL__FILE_REFERENCE = CELL_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>File Reference Cell</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_REFERENCE_CELL_FEATURE_COUNT = CELL_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Named Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_REFERENCE_CELL___GET_NAMED_STYLE__STRING = CELL___GET_NAMED_STYLE__STRING;
+
+	/**
+	 * The number of operations of the '<em>File Reference Cell</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_REFERENCE_CELL_OPERATION_COUNT = CELL_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.core.builtintypes.CellLocation <em>Cell Location</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -771,7 +842,7 @@ public interface BuiltInTypesPackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.impl.BuiltInTypesPackageImpl#getCellLocation()
 	 * @generated
 	 */
-	int CELL_LOCATION = 12;
+	int CELL_LOCATION = 13;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.core.builtintypes.ImageFormat <em>Image Format</em>}' enum.
@@ -782,7 +853,7 @@ public interface BuiltInTypesPackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.impl.BuiltInTypesPackageImpl#getImageFormat()
 	 * @generated
 	 */
-	int IMAGE_FORMAT = 13;
+	int IMAGE_FORMAT = 14;
 
 
 	/**
@@ -794,7 +865,7 @@ public interface BuiltInTypesPackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.impl.BuiltInTypesPackageImpl#getIInputFileAccessor()
 	 * @generated
 	 */
-	int IINPUT_FILE_ACCESSOR = 14;
+	int IINPUT_FILE_ACCESSOR = 15;
 
 
 	/**
@@ -1102,6 +1173,29 @@ public interface BuiltInTypesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDefaultFileReference_FilePath();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.core.builtintypes.FileReferenceCell <em>File Reference Cell</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>File Reference Cell</em>'.
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.FileReferenceCell
+	 * @generated
+	 */
+	EClass getFileReferenceCell();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.model2doc.core.builtintypes.FileReferenceCell#getFileReference <em>File Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference '<em>File Reference</em>'.
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.FileReferenceCell#getFileReference()
+	 * @see #getFileReferenceCell()
+	 * @generated
+	 */
+	EReference getFileReferenceCell_FileReference();
 
 	/**
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.model2doc.core.builtintypes.CellLocation <em>Cell Location</em>}'.
@@ -1431,6 +1525,26 @@ public interface BuiltInTypesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DEFAULT_FILE_REFERENCE__FILE_PATH = eINSTANCE.getDefaultFileReference_FilePath();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.core.builtintypes.impl.FileReferenceCellImpl <em>File Reference Cell</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.core.builtintypes.impl.FileReferenceCellImpl
+		 * @see org.eclipse.papyrus.model2doc.core.builtintypes.impl.BuiltInTypesPackageImpl#getFileReferenceCell()
+		 * @generated
+		 */
+		EClass FILE_REFERENCE_CELL = eINSTANCE.getFileReferenceCell();
+
+		/**
+		 * The meta object literal for the '<em><b>File Reference</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference FILE_REFERENCE_CELL__FILE_REFERENCE = eINSTANCE.getFileReferenceCell_FileReference();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.core.builtintypes.CellLocation <em>Cell Location</em>}' enum.

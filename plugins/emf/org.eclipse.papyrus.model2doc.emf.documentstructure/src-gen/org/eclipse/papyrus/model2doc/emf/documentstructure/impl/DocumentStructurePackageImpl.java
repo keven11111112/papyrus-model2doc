@@ -38,10 +38,13 @@ import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePack
 import org.eclipse.papyrus.model2doc.emf.documentstructure.EMFDataSource;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedBasicList;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedBasicTable;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedFileReferenceCell;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedTextCell;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedTextListItem;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.IGeneratedFile;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Image;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.InsertedFile;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.InsertedGeneratedFile;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.LeafBodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.EmptyLine;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Paragraph;
@@ -163,6 +166,14 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	 *
 	 * @generated
 	 */
+	private EClass iGeneratedFileEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
 	private EClass emfDataSourceEClass = null;
 
 	/**
@@ -236,6 +247,22 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	 * @generated
 	 */
 	private EClass emptyLineEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass extendedFileReferenceCellEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass insertedGeneratedFileEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -594,6 +621,17 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	 * @generated
 	 */
 	@Override
+	public EClass getIGeneratedFile() {
+		return iGeneratedFileEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EClass getEMFDataSource() {
 		return emfDataSourceEClass;
 	}
@@ -781,6 +819,39 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 	 * @generated
 	 */
 	@Override
+	public EClass getExtendedFileReferenceCell() {
+		return extendedFileReferenceCellEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getExtendedFileReferenceCell_Datasource() {
+		return (EReference) extendedFileReferenceCellEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getInsertedGeneratedFile() {
+		return insertedGeneratedFileEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public DocumentStructureFactory getDocumentStructureFactory() {
 		return (DocumentStructureFactory) getEFactoryInstance();
 	}
@@ -845,6 +916,8 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 
 		leafBodyPartEClass = createEClass(LEAF_BODY_PART);
 
+		iGeneratedFileEClass = createEClass(IGENERATED_FILE);
+
 		emfDataSourceEClass = createEClass(EMF_DATA_SOURCE);
 		createEReference(emfDataSourceEClass, EMF_DATA_SOURCE__EOBJECT);
 		createEReference(emfDataSourceEClass, EMF_DATA_SOURCE__FEATURE);
@@ -871,6 +944,11 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 		insertedFileEClass = createEClass(INSERTED_FILE);
 
 		emptyLineEClass = createEClass(EMPTY_LINE);
+
+		extendedFileReferenceCellEClass = createEClass(EXTENDED_FILE_REFERENCE_CELL);
+		createEReference(extendedFileReferenceCellEClass, EXTENDED_FILE_REFERENCE_CELL__DATASOURCE);
+
+		insertedGeneratedFileEClass = createEClass(INSERTED_GENERATED_FILE);
 	}
 
 	/**
@@ -918,7 +996,9 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 		titleEClass.getESuperTypes().add(this.getComposedBodyPart());
 		imageEClass.getESuperTypes().add(theBuiltInTypesPackage.getDefaultFileReference());
 		imageEClass.getESuperTypes().add(this.getLeafBodyPart());
+		imageEClass.getESuperTypes().add(this.getIGeneratedFile());
 		leafBodyPartEClass.getESuperTypes().add(this.getBodyPart());
+		iGeneratedFileEClass.getESuperTypes().add(theBuiltInTypesPackage.getIFileReference());
 		emfDataSourceEClass.getESuperTypes().add(this.getDataSource());
 		tableOfFiguresEClass.getESuperTypes().add(this.getTextDocumentPart());
 		tableOfContentsEClass.getESuperTypes().add(this.getTextDocumentPart());
@@ -932,6 +1012,9 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 		insertedFileEClass.getESuperTypes().add(theBuiltInTypesPackage.getDefaultFileReference());
 		insertedFileEClass.getESuperTypes().add(this.getLeafBodyPart());
 		emptyLineEClass.getESuperTypes().add(this.getLeafBodyPart());
+		extendedFileReferenceCellEClass.getESuperTypes().add(theBuiltInTypesPackage.getFileReferenceCell());
+		insertedGeneratedFileEClass.getESuperTypes().add(this.getInsertedFile());
+		insertedGeneratedFileEClass.getESuperTypes().add(this.getIGeneratedFile());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(textDocumentEClass, TextDocument.class, "TextDocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
@@ -976,6 +1059,8 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 
 		initEClass(leafBodyPartEClass, LeafBodyPart.class, "LeafBodyPart", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
+		initEClass(iGeneratedFileEClass, IGeneratedFile.class, "IGeneratedFile", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
 		initEClass(emfDataSourceEClass, EMFDataSource.class, "EMFDataSource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(getEMFDataSource_Eobject(), theEcorePackage.getEObject(), null, "eobject", null, 1, 1, EMFDataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, //$NON-NLS-1$
 				!IS_ORDERED);
@@ -1006,6 +1091,12 @@ public class DocumentStructurePackageImpl extends EPackageImpl implements Docume
 		initEClass(insertedFileEClass, InsertedFile.class, "InsertedFile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		initEClass(emptyLineEClass, EmptyLine.class, "EmptyLine", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEClass(extendedFileReferenceCellEClass, ExtendedFileReferenceCell.class, "ExtendedFileReferenceCell", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getExtendedFileReferenceCell_Datasource(), this.getDataSource(), null, "datasource", null, 0, 1, ExtendedFileReferenceCell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, //$NON-NLS-1$
+				!IS_DERIVED, !IS_ORDERED);
+
+		initEClass(insertedGeneratedFileEClass, InsertedGeneratedFile.class, "InsertedGeneratedFile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		// Create resource
 		createResource(eNS_URI);

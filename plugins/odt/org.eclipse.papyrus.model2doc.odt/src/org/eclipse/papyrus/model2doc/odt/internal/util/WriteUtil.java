@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2019-2020 CEA LIST.
+ * Copyright (c) 2019-2021 CEA LIST.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -13,11 +13,13 @@
  *	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - bug 559826
  * 	Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - Bug 569249
+ * 	Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - Bug 570290
  *
  *****************************************************************************/
 package org.eclipse.papyrus.model2doc.odt.internal.util;
 
 import java.io.File;
+import java.net.URL;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Iterator;
@@ -27,6 +29,7 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractTable;
 import org.eclipse.papyrus.model2doc.core.builtintypes.Cell;
+import org.eclipse.papyrus.model2doc.core.builtintypes.FileReferenceCell;
 import org.eclipse.papyrus.model2doc.core.builtintypes.TextCell;
 import org.eclipse.papyrus.model2doc.core.service.FileIOService;
 import org.eclipse.papyrus.model2doc.core.service.FileIOServiceImpl;
@@ -399,6 +402,10 @@ public class WriteUtil {
 				final Cell cell = tableCellIterator.next();
 				if (cell instanceof TextCell) {
 					cellText.setString(((TextCell) cell).getText());
+				} else if (cell instanceof FileReferenceCell) {
+					XTextCursor cursor = cellText.createTextCursor();
+					final URL url = ((FileReferenceCell) cell).getFileReference().getFileAccessor().createInputFileURL();
+					insertTextFile(cursor, url.toString());
 				} else {
 					Activator.log.warn(NLS.bind("--The cell eClass {0} is not managed by the transcription", cell.eClass().getName())); //$NON-NLS-1$
 				}

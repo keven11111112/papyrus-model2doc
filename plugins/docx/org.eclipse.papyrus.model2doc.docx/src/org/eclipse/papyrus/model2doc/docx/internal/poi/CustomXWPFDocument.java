@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2020 CEA LIST and others.
+ * Copyright (c) 2020, 2021 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -9,7 +9,8 @@
  * SPDX-License-Identifier: EPL-2.0
  *
  * Contributors:
- *   Pauline DEVILLE (CEA LIST) <pauline.deville@cea.fr> - Initial API and implementation
+ *   Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - Initial API and implementation
+ *   Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - Bug 570290
  *
  *****************************************************************************/
 
@@ -24,6 +25,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.apache.commons.compress.utils.IOUtils;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.openxml4j.opc.OPCPackage;
 import org.apache.poi.openxml4j.opc.PackagePart;
 import org.apache.poi.openxml4j.opc.PackagePartName;
@@ -146,14 +148,53 @@ public class CustomXWPFDocument extends XWPFDocument {
 	}
 
 	/**
-	 * This method insert a file in the document by using the altChunk element
+	 * Copy the file in the archive and add relation to be able to insert it by AltChunk in the document
+	 *
+	 * @param filePath
+	 *            the file path of the original file
+	 * @return the id of the importedFile
+	 * @throws IOException
+	 * @throws InvalidFormatException
+	 */
+	public String importFile(String filePath) throws IOException, InvalidFormatException {
+		String fileExtension = getFileExtension(filePath);
+
+		// Build a unique id
+		String id = "file" + fileIndex; //$NON-NLS-1$
+		fileIndex++;
+
+		// Build the path of the new file into the archive
+		StringBuilder partPathBuilder = new StringBuilder("/word/media/"); //$NON-NLS-1$
+		partPathBuilder.append(id);
+		partPathBuilder.append("."); //$NON-NLS-1$
+		partPathBuilder.append(fileExtension);
+
+		// Create the new file by coping the file in the archive
+		OPCPackage opcPackage = getPackage();
+		PackagePartName partName;
+		partName = PackagingURIHelper.createPartName(partPathBuilder.toString());
+
+		String contentType = Files.probeContentType(Paths.get(filePath.replaceFirst("/", ""))); //$NON-NLS-1$ //$NON-NLS-2$
+		if (contentType == null) {
+			contentType = "text/plain"; //$NON-NLS-1$
+		}
+		PackagePart packagePart = opcPackage.createPart(partName, contentType);
+		CustomXWPFPart part = new CustomXWPFPart(packagePart, id, filePath);
+
+		// Add the relation between the new file in the archive and the altChunk id
+		addRelation(part.getId(), new CustomXWPFGenericRelation(contentType), part);
+		return id;
+	}
+
+	/**
+	 * This method import and insert a file in the document by using the altChunk element
 	 *
 	 * @param filePath
 	 *            the path of the file to insert
 	 * @return the newly created CustomXWPFPart
 	 * @throws Exception
 	 */
-	public CustomXWPFPart insertFile(String filePath) throws Exception {
+	public void insertFile(String filePath) {
 		String fileExtension = getFileExtension(filePath);
 
 		// Check if the extension is supported
@@ -165,36 +206,18 @@ public class CustomXWPFDocument extends XWPFDocument {
 			run.setText(NLS.bind("[The file {0} cannot be inserted]", filePath)); //$NON-NLS-1$
 			run.setColor("FF0000"); // red //$NON-NLS-1$
 			run.setItalic(true);
-			return null;
+			return;
 		}
 
-		// Build a unique id
-		String id = "file" + fileIndex; //$NON-NLS-1$
+		try {
+			String id = importFile(filePath);
 
-		// Build the path of the new file into the archive
-		StringBuilder partPathBuilder = new StringBuilder("/word/media/"); //$NON-NLS-1$
-		partPathBuilder.append(id);
-		partPathBuilder.append("."); //$NON-NLS-1$
-		partPathBuilder.append(fileExtension);
-
-		// Create the new file by coping the file in the archive
-		OPCPackage opcPackage = getPackage();
-		PackagePartName partName = PackagingURIHelper.createPartName(partPathBuilder.toString());
-		String contentType = Files.probeContentType(Paths.get(filePath.replaceFirst("/", ""))); //$NON-NLS-1$ //$NON-NLS-2$
-		if (contentType == null) {
-			contentType = "text/plain"; //$NON-NLS-1$
+			// Add the altChunk into the document
+			getDocument().getBody().addNewAltChunk().setId(id);
+		} catch (InvalidFormatException | IOException e) {
+			Activator.log.error(e);
 		}
-		PackagePart packagePart = opcPackage.createPart(partName, contentType);
-		CustomXWPFPart part = new CustomXWPFPart(packagePart, id, filePath);
 
-		// Add the relation between the new file in the archive and the altChunk id
-		addRelation(part.getId(), new CustomXWPFGenericRelation(contentType), part);
-
-		// Add the altChunk into the document
-		getDocument().getBody().addNewAltChunk().setId(id);
-
-		fileIndex++;
-		return part;
 	}
 
 	/**

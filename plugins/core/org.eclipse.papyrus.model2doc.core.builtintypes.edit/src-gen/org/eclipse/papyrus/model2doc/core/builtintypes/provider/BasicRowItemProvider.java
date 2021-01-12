@@ -182,6 +182,9 @@ public class BasicRowItemProvider
 
 		newChildDescriptors.add(createChildParameter(BuiltInTypesPackage.Literals.ROW__CELLS,
 				BuiltInTypesFactory.eINSTANCE.createTextCell()));
+
+		newChildDescriptors.add(createChildParameter(BuiltInTypesPackage.Literals.ROW__CELLS,
+				BuiltInTypesFactory.eINSTANCE.createFileReferenceCell()));
 	}
 
 	/**

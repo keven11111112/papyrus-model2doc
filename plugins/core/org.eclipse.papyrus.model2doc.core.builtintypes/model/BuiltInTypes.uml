@@ -232,6 +232,22 @@ The 3 first cells will represents the first row, then the cell, 4, 5 and 6, will
         <body>Returns a file accessor to access to the file path.</body>
       </ownedComment>
     </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_aLJGMFcMEeuBqtWKTOr8pw" name="FileReferenceCell">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_dqKKwFcMEeuBqtWKTOr8pw" name="fileReference" type="_o1CCUJQUEemHKPZQudxUGA" aggregation="composite" association="_dqJjsFcMEeuBqtWKTOr8pw">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dqKKwVcMEeuBqtWKTOr8pw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dqKKwlcMEeuBqtWKTOr8pw" value="1"/>
+      </ownedAttribute>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_nV3bEFcMEeuBqtWKTOr8pw" client="_aLJGMFcMEeuBqtWKTOr8pw">
+        <supplier xmi:type="uml:Interface" href="pathmap://MODEL2DOC/BUILTIN_TYPES/BuiltInTypes.uml#_EUUNQHALEemJ-foOn68QUw"/>
+        <contract xmi:type="uml:Interface" href="pathmap://MODEL2DOC/BUILTIN_TYPES/BuiltInTypes.uml#_EUUNQHALEemJ-foOn68QUw"/>
+      </interfaceRealization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_dqJjsFcMEeuBqtWKTOr8pw" memberEnd="_dqKKwFcMEeuBqtWKTOr8pw _dqKKw1cMEeuBqtWKTOr8pw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_dqJjsVcMEeuBqtWKTOr8pw" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_dqJjslcMEeuBqtWKTOr8pw" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_dqKKw1cMEeuBqtWKTOr8pw" name="filereferencecell" type="_aLJGMFcMEeuBqtWKTOr8pw" association="_dqJjsFcMEeuBqtWKTOr8pw"/>
+    </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_txSQgHCfEemJ-foOn68QUw">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_txVT0HCfEemJ-foOn68QUw" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>

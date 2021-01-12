@@ -24,6 +24,7 @@ import org.eclipse.papyrus.model2doc.core.builtintypes.impl.DefaultFileReference
 import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DataSource;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.IGeneratedFile;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Image;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.LeafBodyPart;
 
@@ -287,6 +288,12 @@ public class ImageImpl extends DefaultFileReferenceImpl implements Image {
 				return -1;
 			}
 		}
+		if (baseClass == IGeneratedFile.class) {
+			switch (derivedFeatureID) {
+			default:
+				return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -307,6 +314,12 @@ public class ImageImpl extends DefaultFileReferenceImpl implements Image {
 			}
 		}
 		if (baseClass == LeafBodyPart.class) {
+			switch (baseFeatureID) {
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == IGeneratedFile.class) {
 			switch (baseFeatureID) {
 			default:
 				return -1;

@@ -70,6 +70,7 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IBx-IFwuEemF3-UZXrtb4g"/>
       </ownedAttribute>
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_S5BmEHDKEemmSqLtBrVBMA" client="_bYgy4B4gEemmq_cjeiIGww" supplier="_vCXFoG_VEemJ-foOn68QUw" contract="_vCXFoG_VEemJ-foOn68QUw"/>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="__SecAFTZEeuQxZMd2JwdqQ" client="_bYgy4B4gEemmq_cjeiIGww" supplier="_bS4BIFTZEeuQxZMd2JwdqQ" contract="_bS4BIFTZEeuQxZMd2JwdqQ"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_TufmIB4jEemmq_cjeiIGww" name="EMFDataSource">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_pbjvgB4jEemmq_cjeiIGww" name="eobject">
@@ -260,6 +261,39 @@ Its allows us to have a common Table definition between DocumentStructure and th
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_k-65kDoHEeutb_jRObmUug" name="EmptyLine">
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_wRFKUDoHEeutb_jRObmUug" client="_k-65kDoHEeutb_jRObmUug" supplier="_vCXFoG_VEemJ-foOn68QUw" contract="_vCXFoG_VEemJ-foOn68QUw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_vJYuAFTYEeuQxZMd2JwdqQ" name="ExtendedFileReferenceCell">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_QoqAgFThEeuQxZMd2JwdqQ" annotatedElement="_vJYuAFTYEeuQxZMd2JwdqQ">
+        <body>Insert a file into the cell</body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_FAOLIFcNEeuBqtWKTOr8pw">
+        <general xmi:type="uml:Class" href="../../org.eclipse.papyrus.model2doc.core.builtintypes/model/BuiltInTypes.uml#_aLJGMFcMEeuBqtWKTOr8pw"/>
+      </generalization>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Meq7ElTbEeuQxZMd2JwdqQ" name="datasource" type="_VMCiMB4jEemmq_cjeiIGww" aggregation="composite" association="_MeqUAFTbEeuQxZMd2JwdqQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MeriIFTbEeuQxZMd2JwdqQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MeriIVTbEeuQxZMd2JwdqQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_bS4BIFTZEeuQxZMd2JwdqQ" name="IGeneratedFile">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_7N0TwFTZEeuQxZMd2JwdqQ" annotatedElement="_bS4BIFTZEeuQxZMd2JwdqQ">
+        <body>Generated files that could be deleted at the end of the process.</body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_3lCPAFmWEeuW5fxFuhFNyw">
+        <general xmi:type="uml:Interface" href="pathmap://MODEL2DOC/BUILTIN_TYPES/BuiltInTypes.uml#_o1CCUJQUEemHKPZQudxUGA"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_BnLCgFTaEeuQxZMd2JwdqQ" name="InsertedGeneratedFile">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_MqN1AFThEeuQxZMd2JwdqQ" annotatedElement="_BnLCgFTaEeuQxZMd2JwdqQ">
+        <body>This element reference a generated file which will be inserted in the final document.</body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_I8qpYFTaEeuQxZMd2JwdqQ" general="_fUOtIJcXEemjzoOvLRrzSw"/>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_G-Y-0FTaEeuQxZMd2JwdqQ" client="_BnLCgFTaEeuQxZMd2JwdqQ" supplier="_bS4BIFTZEeuQxZMd2JwdqQ" contract="_bS4BIFTZEeuQxZMd2JwdqQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_MeqUAFTbEeuQxZMd2JwdqQ" memberEnd="_Meq7ElTbEeuQxZMd2JwdqQ _MeriIlTbEeuQxZMd2JwdqQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Meq7EFTbEeuQxZMd2JwdqQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Meq7EVTbEeuQxZMd2JwdqQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_MeriIlTbEeuQxZMd2JwdqQ" name="filereferencecell" type="_vJYuAFTYEeuQxZMd2JwdqQ" association="_MeqUAFTbEeuQxZMd2JwdqQ"/>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_llmqQB4mEemmq_cjeiIGww">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_lln4YB4mEemmq_cjeiIGww" source="http://www.eclipse.org/uml2/2.0.0/UML">

@@ -26,6 +26,7 @@ import org.eclipse.papyrus.model2doc.core.builtintypes.BasicList;
 import org.eclipse.papyrus.model2doc.core.builtintypes.BasicTable;
 import org.eclipse.papyrus.model2doc.core.builtintypes.Cell;
 import org.eclipse.papyrus.model2doc.core.builtintypes.DefaultFileReference;
+import org.eclipse.papyrus.model2doc.core.builtintypes.FileReferenceCell;
 import org.eclipse.papyrus.model2doc.core.builtintypes.IFileReference;
 import org.eclipse.papyrus.model2doc.core.builtintypes.ListItem;
 import org.eclipse.papyrus.model2doc.core.builtintypes.TextCell;
@@ -154,6 +155,11 @@ public class DocumentStructureAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseIGeneratedFile(IGeneratedFile object) {
+			return createIGeneratedFileAdapter();
+		}
+
+		@Override
 		public Adapter caseEMFDataSource(EMFDataSource object) {
 			return createEMFDataSourceAdapter();
 		}
@@ -201,6 +207,16 @@ public class DocumentStructureAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseEmptyLine(EmptyLine object) {
 			return createEmptyLineAdapter();
+		}
+
+		@Override
+		public Adapter caseExtendedFileReferenceCell(ExtendedFileReferenceCell object) {
+			return createExtendedFileReferenceCellAdapter();
+		}
+
+		@Override
+		public Adapter caseInsertedGeneratedFile(InsertedGeneratedFile object) {
+			return createInsertedGeneratedFileAdapter();
 		}
 
 		@Override
@@ -259,6 +275,11 @@ public class DocumentStructureAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseFileReferenceCell(FileReferenceCell object) {
+			return createFileReferenceCellAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -270,7 +291,7 @@ public class DocumentStructureAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param target
-	 *                   the object to adapt.
+	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
@@ -461,6 +482,21 @@ public class DocumentStructureAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.IGeneratedFile <em>IGenerated File</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.IGeneratedFile
+	 * @generated
+	 */
+	public Adapter createIGeneratedFileAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.EMFDataSource <em>EMF Data Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -607,6 +643,51 @@ public class DocumentStructureAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEmptyLineAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedFileReferenceCell <em>Extended File Reference Cell</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedFileReferenceCell
+	 * @generated
+	 */
+	public Adapter createExtendedFileReferenceCellAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.core.builtintypes.FileReferenceCell <em>File Reference Cell</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.core.builtintypes.FileReferenceCell
+	 * @generated
+	 */
+	public Adapter createFileReferenceCellAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.InsertedGeneratedFile <em>Inserted Generated File</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.InsertedGeneratedFile
+	 * @generated
+	 */
+	public Adapter createInsertedGeneratedFileAdapter() {
 		return null;
 	}
 

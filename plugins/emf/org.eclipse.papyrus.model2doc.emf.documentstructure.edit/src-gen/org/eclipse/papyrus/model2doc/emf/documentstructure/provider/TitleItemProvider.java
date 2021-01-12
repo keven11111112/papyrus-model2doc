@@ -256,6 +256,9 @@ public class TitleItemProvider
 
 		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.COMPOSED_BODY_PART__SUB_BODY_PART,
 				DocumentStructureFactory.eINSTANCE.createEmptyLine()));
+
+		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.COMPOSED_BODY_PART__SUB_BODY_PART,
+				DocumentStructureFactory.eINSTANCE.createInsertedGeneratedFile()));
 	}
 
 	/**

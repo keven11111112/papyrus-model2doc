@@ -13,25 +13,29 @@
  */
 package org.eclipse.papyrus.model2doc.emf.documentstructure;
 
-import org.eclipse.papyrus.model2doc.core.builtintypes.TextListItem;
+import org.eclipse.papyrus.model2doc.core.builtintypes.FileReferenceCell;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Extended Text List Item</b></em>'.
+ * A representation of the model object '<em><b>Extended File Reference Cell</b></em>'.
  * <!-- end-user-doc -->
+ *
+ * <!-- begin-model-doc -->
+ * Insert a file into the cell
+ * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedTextListItem#getDatasource <em>Datasource</em>}</li>
+ * <li>{@link org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedFileReferenceCell#getDatasource <em>Datasource</em>}</li>
  * </ul>
  *
- * @see org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage#getExtendedTextListItem()
+ * @see org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage#getExtendedFileReferenceCell()
  * @model
  * @generated
  */
-public interface ExtendedTextListItem extends TextListItem {
+public interface ExtendedFileReferenceCell extends FileReferenceCell {
 	/**
 	 * Returns the value of the '<em><b>Datasource</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -43,14 +47,14 @@ public interface ExtendedTextListItem extends TextListItem {
 	 *
 	 * @return the value of the '<em>Datasource</em>' containment reference.
 	 * @see #setDatasource(DataSource)
-	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage#getExtendedTextListItem_Datasource()
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage#getExtendedFileReferenceCell_Datasource()
 	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
 	DataSource getDatasource();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedTextListItem#getDatasource <em>Datasource</em>}' containment reference.
+	 * Sets the value of the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedFileReferenceCell#getDatasource <em>Datasource</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -61,4 +65,4 @@ public interface ExtendedTextListItem extends TextListItem {
 	 */
 	void setDatasource(DataSource value);
 
-} // ExtendedTextListItem
+} // ExtendedFileReferenceCell

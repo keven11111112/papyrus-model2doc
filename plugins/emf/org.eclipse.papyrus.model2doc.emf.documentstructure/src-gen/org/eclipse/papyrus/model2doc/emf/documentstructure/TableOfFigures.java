@@ -58,7 +58,7 @@ public interface TableOfFigures extends TextDocumentPart {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *                  the new value of the '<em>Tof Title</em>' attribute.
+	 *            the new value of the '<em>Tof Title</em>' attribute.
 	 * @see #getTofTitle()
 	 * @generated
 	 */

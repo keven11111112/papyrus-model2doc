@@ -36,7 +36,7 @@ public class CustomXWPFPart extends POIXMLDocumentPart {
 	private String id;
 
 
-	public CustomXWPFPart(PackagePart part, String id, String filePath) throws Exception {
+	public CustomXWPFPart(PackagePart part, String id, String filePath) {
 		super(part);
 		this.filePath = filePath;
 		this.id = id;

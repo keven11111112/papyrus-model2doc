@@ -96,5 +96,9 @@
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="BuiltInTypes.ecore#//DefaultFileReference">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute BuiltInTypes.ecore#//DefaultFileReference/filePath"/>
     </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="BuiltInTypes.ecore#//FileReferenceCell">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference BuiltInTypes.ecore#//FileReferenceCell/fileReference"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

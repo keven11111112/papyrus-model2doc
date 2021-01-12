@@ -36,7 +36,7 @@ import org.eclipse.papyrus.model2doc.core.builtintypes.DefaultFileReference;
  * @model
  * @generated
  */
-public interface Image extends DefaultFileReference, LeafBodyPart {
+public interface Image extends DefaultFileReference, LeafBodyPart, IGeneratedFile {
 	/**
 	 * Returns the value of the '<em><b>Caption</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -59,7 +59,7 @@ public interface Image extends DefaultFileReference, LeafBodyPart {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *                  the new value of the '<em>Caption</em>' attribute.
+	 *            the new value of the '<em>Caption</em>' attribute.
 	 * @see #getCaption()
 	 * @generated
 	 */

@@ -95,6 +95,16 @@ public interface BuiltInTypesFactory extends EFactory {
 	DefaultFileReference createDefaultFileReference();
 
 	/**
+	 * Returns a new object of class '<em>File Reference Cell</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>File Reference Cell</em>'.
+	 * @generated
+	 */
+	FileReferenceCell createFileReferenceCell();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

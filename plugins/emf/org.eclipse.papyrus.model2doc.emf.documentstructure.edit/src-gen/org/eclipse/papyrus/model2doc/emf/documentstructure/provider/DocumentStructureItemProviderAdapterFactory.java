@@ -45,6 +45,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
 import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractList;
 import org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesPackage;
+import org.eclipse.papyrus.model2doc.core.builtintypes.FileReferenceCell;
 import org.eclipse.papyrus.model2doc.core.builtintypes.ListItem;
 import org.eclipse.papyrus.model2doc.core.builtintypes.Row;
 
@@ -493,6 +494,56 @@ public class DocumentStructureItemProviderAdapterFactory extends DocumentStructu
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedFileReferenceCell} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected ExtendedFileReferenceCellItemProvider extendedFileReferenceCellItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedFileReferenceCell}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Adapter createExtendedFileReferenceCellAdapter() {
+		if (extendedFileReferenceCellItemProvider == null) {
+			extendedFileReferenceCellItemProvider = new ExtendedFileReferenceCellItemProvider(this);
+		}
+
+		return extendedFileReferenceCellItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.model2doc.emf.documentstructure.InsertedGeneratedFile} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected InsertedGeneratedFileItemProvider insertedGeneratedFileItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructure.InsertedGeneratedFile}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Adapter createInsertedGeneratedFileAdapter() {
+		if (insertedGeneratedFileItemProvider == null) {
+			insertedGeneratedFileItemProvider = new InsertedGeneratedFileItemProvider(this);
+		}
+
+		return insertedGeneratedFileItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -683,6 +734,12 @@ public class DocumentStructureItemProviderAdapterFactory extends DocumentStructu
 		if (emptyLineItemProvider != null) {
 			emptyLineItemProvider.dispose();
 		}
+		if (extendedFileReferenceCellItemProvider != null) {
+			extendedFileReferenceCellItemProvider.dispose();
+		}
+		if (insertedGeneratedFileItemProvider != null) {
+			insertedGeneratedFileItemProvider.dispose();
+		}
 	}
 
 	/**
@@ -742,6 +799,9 @@ public class DocumentStructureItemProviderAdapterFactory extends DocumentStructu
 				newChildDescriptors.add(createChildParameter(BuiltInTypesPackage.Literals.ROW__CELLS,
 						DocumentStructureFactory.eINSTANCE.createExtendedTextCell()));
 
+				newChildDescriptors.add(createChildParameter(BuiltInTypesPackage.Literals.ROW__CELLS,
+						DocumentStructureFactory.eINSTANCE.createExtendedFileReferenceCell()));
+
 				return null;
 			}
 
@@ -769,6 +829,26 @@ public class DocumentStructureItemProviderAdapterFactory extends DocumentStructu
 			public Object caseListItem(ListItem object) {
 				newChildDescriptors.add(createChildParameter(BuiltInTypesPackage.Literals.LIST_ITEM__SUB_ITEMS,
 						DocumentStructureFactory.eINSTANCE.createExtendedTextListItem()));
+
+				return null;
+			}
+
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 *
+			 * @generated
+			 */
+			@Override
+			public Object caseFileReferenceCell(FileReferenceCell object) {
+				newChildDescriptors.add(createChildParameter(BuiltInTypesPackage.Literals.FILE_REFERENCE_CELL__FILE_REFERENCE,
+						DocumentStructureFactory.eINSTANCE.createImage()));
+
+				newChildDescriptors.add(createChildParameter(BuiltInTypesPackage.Literals.FILE_REFERENCE_CELL__FILE_REFERENCE,
+						DocumentStructureFactory.eINSTANCE.createInsertedFile()));
+
+				newChildDescriptors.add(createChildParameter(BuiltInTypesPackage.Literals.FILE_REFERENCE_CELL__FILE_REFERENCE,
+						DocumentStructureFactory.eINSTANCE.createInsertedGeneratedFile()));
 
 				return null;
 			}

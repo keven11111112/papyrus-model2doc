@@ -20,39 +20,28 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
 
-import org.eclipse.emf.edit.provider.IChildCreationExtender;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.eclipse.papyrus.model2doc.emf.documentstructure.Body;
+import org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesPackage;
+import org.eclipse.papyrus.model2doc.core.builtintypes.CellLocation;
+
+import org.eclipse.papyrus.model2doc.core.builtintypes.provider.FileReferenceCellItemProvider;
+
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructureFactory;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage;
+import org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedFileReferenceCell;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructure.Body} object.
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedFileReferenceCell} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class BodyItemProvider
-		extends ItemProviderAdapter
-		implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class ExtendedFileReferenceCellItemProvider extends FileReferenceCellItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -60,7 +49,7 @@ public class BodyItemProvider
 	 *
 	 * @generated
 	 */
-	public BodyItemProvider(AdapterFactory adapterFactory) {
+	public ExtendedFileReferenceCellItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -93,7 +82,7 @@ public class BodyItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(DocumentStructurePackage.Literals.BODY__BODY_PART);
+			childrenFeatures.add(DocumentStructurePackage.Literals.EXTENDED_FILE_REFERENCE_CELL__DATASOURCE);
 		}
 		return childrenFeatures;
 	}
@@ -113,7 +102,7 @@ public class BodyItemProvider
 	}
 
 	/**
-	 * This returns Body.gif.
+	 * This returns ExtendedFileReferenceCell.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -121,7 +110,7 @@ public class BodyItemProvider
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Body")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ExtendedFileReferenceCell")); //$NON-NLS-1$
 	}
 
 	/**
@@ -144,7 +133,10 @@ public class BodyItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Body_type"); //$NON-NLS-1$
+		CellLocation labelValue = ((ExtendedFileReferenceCell) object).getLocation();
+		String label = labelValue == null ? null : labelValue.toString();
+		return label == null || label.length() == 0 ? getString("_UI_ExtendedFileReferenceCell_type") : //$NON-NLS-1$
+				getString("_UI_ExtendedFileReferenceCell_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 
@@ -160,8 +152,8 @@ public class BodyItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Body.class)) {
-		case DocumentStructurePackage.BODY__BODY_PART:
+		switch (notification.getFeatureID(ExtendedFileReferenceCell.class)) {
+		case DocumentStructurePackage.EXTENDED_FILE_REFERENCE_CELL__DATASOURCE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -180,41 +172,17 @@ public class BodyItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY__BODY_PART,
-				DocumentStructureFactory.eINSTANCE.createParagraph()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY__BODY_PART,
-				DocumentStructureFactory.eINSTANCE.createTitle()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY__BODY_PART,
+		newChildDescriptors.add(createChildParameter(BuiltInTypesPackage.Literals.FILE_REFERENCE_CELL__FILE_REFERENCE,
 				DocumentStructureFactory.eINSTANCE.createImage()));
 
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY__BODY_PART,
-				DocumentStructureFactory.eINSTANCE.createExtendedBasicTable()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY__BODY_PART,
-				DocumentStructureFactory.eINSTANCE.createExtendedBasicList()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY__BODY_PART,
+		newChildDescriptors.add(createChildParameter(BuiltInTypesPackage.Literals.FILE_REFERENCE_CELL__FILE_REFERENCE,
 				DocumentStructureFactory.eINSTANCE.createInsertedFile()));
 
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY__BODY_PART,
-				DocumentStructureFactory.eINSTANCE.createEmptyLine()));
-
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY__BODY_PART,
+		newChildDescriptors.add(createChildParameter(BuiltInTypesPackage.Literals.FILE_REFERENCE_CELL__FILE_REFERENCE,
 				DocumentStructureFactory.eINSTANCE.createInsertedGeneratedFile()));
-	}
 
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
+		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.EXTENDED_FILE_REFERENCE_CELL__DATASOURCE,
+				DocumentStructureFactory.eINSTANCE.createEMFDataSource()));
 	}
 
 }

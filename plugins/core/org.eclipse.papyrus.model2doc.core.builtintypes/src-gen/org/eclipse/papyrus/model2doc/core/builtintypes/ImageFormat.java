@@ -106,7 +106,7 @@ public enum ImageFormat implements Enumerator {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param literal
-	 *                    the literal.
+	 *            the literal.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
@@ -126,7 +126,7 @@ public enum ImageFormat implements Enumerator {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param name
-	 *                 the name.
+	 *            the name.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
@@ -146,7 +146,7 @@ public enum ImageFormat implements Enumerator {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *                  the integer value.
+	 *            the integer value.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */

@@ -61,7 +61,7 @@ public interface AbstractTable extends EObject {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *                  the new value of the '<em>Caption</em>' attribute.
+	 *            the new value of the '<em>Caption</em>' attribute.
 	 * @see #getCaption()
 	 * @generated
 	 */

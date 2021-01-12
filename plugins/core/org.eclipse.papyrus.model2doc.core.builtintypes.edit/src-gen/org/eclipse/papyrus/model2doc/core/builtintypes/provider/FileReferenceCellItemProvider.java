@@ -11,7 +11,7 @@
  *  Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
-package org.eclipse.papyrus.model2doc.emf.documentstructure.provider;
+package org.eclipse.papyrus.model2doc.core.builtintypes.provider;
 
 
 import java.util.Collection;
@@ -24,6 +24,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -31,21 +32,26 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.eclipse.papyrus.model2doc.emf.documentstructure.Body;
-import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructureFactory;
-import org.eclipse.papyrus.model2doc.emf.documentstructure.DocumentStructurePackage;
+import org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesFactory;
+import org.eclipse.papyrus.model2doc.core.builtintypes.BuiltInTypesPackage;
+import org.eclipse.papyrus.model2doc.core.builtintypes.CellLocation;
+import org.eclipse.papyrus.model2doc.core.builtintypes.FileReferenceCell;
+
+import org.eclipse.papyrus.model2doc.core.styles.StylesFactory;
+import org.eclipse.papyrus.model2doc.core.styles.StylesPackage;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.emf.documentstructure.Body} object.
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.model2doc.core.builtintypes.FileReferenceCell} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class BodyItemProvider
+public class FileReferenceCellItemProvider
 		extends ItemProviderAdapter
 		implements
 		IEditingDomainItemProvider,
@@ -60,7 +66,7 @@ public class BodyItemProvider
 	 *
 	 * @generated
 	 */
-	public BodyItemProvider(AdapterFactory adapterFactory) {
+	public FileReferenceCellItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -76,8 +82,30 @@ public class BodyItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addLocationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Location feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected void addLocationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_Cell_location_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_Cell_location_feature", "_UI_Cell_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				BuiltInTypesPackage.Literals.CELL__LOCATION,
+				true,
+				false,
+				false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				null,
+				null));
 	}
 
 	/**
@@ -93,7 +121,8 @@ public class BodyItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(DocumentStructurePackage.Literals.BODY__BODY_PART);
+			childrenFeatures.add(StylesPackage.Literals.STYLED_ELEMENT__NAMED_STYLES);
+			childrenFeatures.add(BuiltInTypesPackage.Literals.FILE_REFERENCE_CELL__FILE_REFERENCE);
 		}
 		return childrenFeatures;
 	}
@@ -113,7 +142,7 @@ public class BodyItemProvider
 	}
 
 	/**
-	 * This returns Body.gif.
+	 * This returns FileReferenceCell.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
@@ -121,7 +150,7 @@ public class BodyItemProvider
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Body")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/FileReferenceCell")); //$NON-NLS-1$
 	}
 
 	/**
@@ -144,7 +173,10 @@ public class BodyItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Body_type"); //$NON-NLS-1$
+		CellLocation labelValue = ((FileReferenceCell) object).getLocation();
+		String label = labelValue == null ? null : labelValue.toString();
+		return label == null || label.length() == 0 ? getString("_UI_FileReferenceCell_type") : //$NON-NLS-1$
+				getString("_UI_FileReferenceCell_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 
@@ -160,8 +192,12 @@ public class BodyItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Body.class)) {
-		case DocumentStructurePackage.BODY__BODY_PART:
+		switch (notification.getFeatureID(FileReferenceCell.class)) {
+		case BuiltInTypesPackage.FILE_REFERENCE_CELL__LOCATION:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case BuiltInTypesPackage.FILE_REFERENCE_CELL__NAMED_STYLES:
+		case BuiltInTypesPackage.FILE_REFERENCE_CELL__FILE_REFERENCE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -180,29 +216,32 @@ public class BodyItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY__BODY_PART,
-				DocumentStructureFactory.eINSTANCE.createParagraph()));
+		newChildDescriptors.add(createChildParameter(StylesPackage.Literals.STYLED_ELEMENT__NAMED_STYLES,
+				StylesFactory.eINSTANCE.createIntNamedStyle()));
 
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY__BODY_PART,
-				DocumentStructureFactory.eINSTANCE.createTitle()));
+		newChildDescriptors.add(createChildParameter(StylesPackage.Literals.STYLED_ELEMENT__NAMED_STYLES,
+				StylesFactory.eINSTANCE.createStringNamedStyle()));
 
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY__BODY_PART,
-				DocumentStructureFactory.eINSTANCE.createImage()));
+		newChildDescriptors.add(createChildParameter(StylesPackage.Literals.STYLED_ELEMENT__NAMED_STYLES,
+				StylesFactory.eINSTANCE.createBooleanNamedStyle()));
 
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY__BODY_PART,
-				DocumentStructureFactory.eINSTANCE.createExtendedBasicTable()));
+		newChildDescriptors.add(createChildParameter(StylesPackage.Literals.STYLED_ELEMENT__NAMED_STYLES,
+				StylesFactory.eINSTANCE.createDoubleNamedStyle()));
 
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY__BODY_PART,
-				DocumentStructureFactory.eINSTANCE.createExtendedBasicList()));
+		newChildDescriptors.add(createChildParameter(StylesPackage.Literals.STYLED_ELEMENT__NAMED_STYLES,
+				StylesFactory.eINSTANCE.createIntListNamedStyle()));
 
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY__BODY_PART,
-				DocumentStructureFactory.eINSTANCE.createInsertedFile()));
+		newChildDescriptors.add(createChildParameter(StylesPackage.Literals.STYLED_ELEMENT__NAMED_STYLES,
+				StylesFactory.eINSTANCE.createStringListNamedStyle()));
 
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY__BODY_PART,
-				DocumentStructureFactory.eINSTANCE.createEmptyLine()));
+		newChildDescriptors.add(createChildParameter(StylesPackage.Literals.STYLED_ELEMENT__NAMED_STYLES,
+				StylesFactory.eINSTANCE.createBooleanListNamedStyle()));
 
-		newChildDescriptors.add(createChildParameter(DocumentStructurePackage.Literals.BODY__BODY_PART,
-				DocumentStructureFactory.eINSTANCE.createInsertedGeneratedFile()));
+		newChildDescriptors.add(createChildParameter(StylesPackage.Literals.STYLED_ELEMENT__NAMED_STYLES,
+				StylesFactory.eINSTANCE.createDoubleListNamedStyle()));
+
+		newChildDescriptors.add(createChildParameter(BuiltInTypesPackage.Literals.FILE_REFERENCE_CELL__FILE_REFERENCE,
+				BuiltInTypesFactory.eINSTANCE.createDefaultFileReference()));
 	}
 
 	/**

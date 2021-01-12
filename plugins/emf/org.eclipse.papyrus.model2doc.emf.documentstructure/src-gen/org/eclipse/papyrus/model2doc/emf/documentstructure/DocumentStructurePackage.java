@@ -709,6 +709,57 @@ public interface DocumentStructurePackage extends EPackage {
 	int LEAF_BODY_PART_OPERATION_COUNT = BODY_PART_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.IGeneratedFile <em>IGenerated File</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.IGeneratedFile
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getIGeneratedFile()
+	 * @generated
+	 */
+	int IGENERATED_FILE = 12;
+
+	/**
+	 * The number of structural features of the '<em>IGenerated File</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IGENERATED_FILE_FEATURE_COUNT = BuiltInTypesPackage.IFILE_REFERENCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get File Path</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IGENERATED_FILE___GET_FILE_PATH = BuiltInTypesPackage.IFILE_REFERENCE___GET_FILE_PATH;
+
+	/**
+	 * The operation id for the '<em>Get File Accessor</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IGENERATED_FILE___GET_FILE_ACCESSOR = BuiltInTypesPackage.IFILE_REFERENCE___GET_FILE_ACCESSOR;
+
+	/**
+	 * The number of operations of the '<em>IGenerated File</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int IGENERATED_FILE_OPERATION_COUNT = BuiltInTypesPackage.IFILE_REFERENCE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.EMFDataSourceImpl <em>EMF Data Source</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -717,7 +768,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getEMFDataSource()
 	 * @generated
 	 */
-	int EMF_DATA_SOURCE = 12;
+	int EMF_DATA_SOURCE = 13;
 
 	/**
 	 * The feature id for the '<em><b>Eobject</b></em>' reference.
@@ -768,7 +819,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getTableOfFigures()
 	 * @generated
 	 */
-	int TABLE_OF_FIGURES = 13;
+	int TABLE_OF_FIGURES = 14;
 
 	/**
 	 * The feature id for the '<em><b>Tof Title</b></em>' attribute.
@@ -809,7 +860,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getTableOfContents()
 	 * @generated
 	 */
-	int TABLE_OF_CONTENTS = 14;
+	int TABLE_OF_CONTENTS = 15;
 
 	/**
 	 * The feature id for the '<em><b>Toc Title</b></em>' attribute.
@@ -850,7 +901,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getExtendedBasicTable()
 	 * @generated
 	 */
-	int EXTENDED_BASIC_TABLE = 15;
+	int EXTENDED_BASIC_TABLE = 16;
 
 	/**
 	 * The feature id for the '<em><b>Caption</b></em>' attribute.
@@ -941,7 +992,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getExtendedTextCell()
 	 * @generated
 	 */
-	int EXTENDED_TEXT_CELL = 16;
+	int EXTENDED_TEXT_CELL = 17;
 
 	/**
 	 * The feature id for the '<em><b>Named Styles</b></em>' containment reference list.
@@ -1022,7 +1073,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getExtendedBasicList()
 	 * @generated
 	 */
-	int EXTENDED_BASIC_LIST = 17;
+	int EXTENDED_BASIC_LIST = 18;
 
 	/**
 	 * The feature id for the '<em><b>Items</b></em>' containment reference list.
@@ -1073,7 +1124,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getExtendedTextListItem()
 	 * @generated
 	 */
-	int EXTENDED_TEXT_LIST_ITEM = 18;
+	int EXTENDED_TEXT_LIST_ITEM = 19;
 
 	/**
 	 * The feature id for the '<em><b>Sub Items</b></em>' containment reference list.
@@ -1144,7 +1195,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getStringVersion()
 	 * @generated
 	 */
-	int STRING_VERSION = 19;
+	int STRING_VERSION = 20;
 
 	/**
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
@@ -1195,7 +1246,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getInsertedFile()
 	 * @generated
 	 */
-	int INSERTED_FILE = 20;
+	int INSERTED_FILE = 21;
 
 	/**
 	 * The feature id for the '<em><b>File Path</b></em>' attribute.
@@ -1267,7 +1318,7 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getEmptyLine()
 	 * @generated
 	 */
-	int EMPTY_LINE = 21;
+	int EMPTY_LINE = 22;
 
 	/**
 	 * The feature id for the '<em><b>Data Source</b></em>' containment reference.
@@ -1298,6 +1349,158 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @ordered
 	 */
 	int EMPTY_LINE_OPERATION_COUNT = LEAF_BODY_PART_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ExtendedFileReferenceCellImpl <em>Extended File Reference Cell</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ExtendedFileReferenceCellImpl
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getExtendedFileReferenceCell()
+	 * @generated
+	 */
+	int EXTENDED_FILE_REFERENCE_CELL = 23;
+
+	/**
+	 * The feature id for the '<em><b>Named Styles</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_FILE_REFERENCE_CELL__NAMED_STYLES = BuiltInTypesPackage.FILE_REFERENCE_CELL__NAMED_STYLES;
+
+	/**
+	 * The feature id for the '<em><b>Location</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_FILE_REFERENCE_CELL__LOCATION = BuiltInTypesPackage.FILE_REFERENCE_CELL__LOCATION;
+
+	/**
+	 * The feature id for the '<em><b>File Reference</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_FILE_REFERENCE_CELL__FILE_REFERENCE = BuiltInTypesPackage.FILE_REFERENCE_CELL__FILE_REFERENCE;
+
+	/**
+	 * The feature id for the '<em><b>Datasource</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_FILE_REFERENCE_CELL__DATASOURCE = BuiltInTypesPackage.FILE_REFERENCE_CELL_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Extended File Reference Cell</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_FILE_REFERENCE_CELL_FEATURE_COUNT = BuiltInTypesPackage.FILE_REFERENCE_CELL_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Named Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_FILE_REFERENCE_CELL___GET_NAMED_STYLE__STRING = BuiltInTypesPackage.FILE_REFERENCE_CELL___GET_NAMED_STYLE__STRING;
+
+	/**
+	 * The number of operations of the '<em>Extended File Reference Cell</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_FILE_REFERENCE_CELL_OPERATION_COUNT = BuiltInTypesPackage.FILE_REFERENCE_CELL_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.InsertedGeneratedFileImpl <em>Inserted Generated File</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.InsertedGeneratedFileImpl
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getInsertedGeneratedFile()
+	 * @generated
+	 */
+	int INSERTED_GENERATED_FILE = 24;
+
+	/**
+	 * The feature id for the '<em><b>File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int INSERTED_GENERATED_FILE__FILE_PATH = INSERTED_FILE__FILE_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Data Source</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int INSERTED_GENERATED_FILE__DATA_SOURCE = INSERTED_FILE__DATA_SOURCE;
+
+	/**
+	 * The number of structural features of the '<em>Inserted Generated File</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int INSERTED_GENERATED_FILE_FEATURE_COUNT = INSERTED_FILE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get File Path</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int INSERTED_GENERATED_FILE___GET_FILE_PATH = INSERTED_FILE___GET_FILE_PATH;
+
+	/**
+	 * The operation id for the '<em>Get File Accessor</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int INSERTED_GENERATED_FILE___GET_FILE_ACCESSOR = INSERTED_FILE___GET_FILE_ACCESSOR;
+
+	/**
+	 * The number of operations of the '<em>Inserted Generated File</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int INSERTED_GENERATED_FILE_OPERATION_COUNT = INSERTED_FILE_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.TextDocument <em>Text Document</em>}'.
@@ -1586,6 +1789,17 @@ public interface DocumentStructurePackage extends EPackage {
 	EClass getLeafBodyPart();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.IGeneratedFile <em>IGenerated File</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>IGenerated File</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.IGeneratedFile
+	 * @generated
+	 */
+	EClass getIGeneratedFile();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.EMFDataSource <em>EMF Data Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1778,6 +1992,40 @@ public interface DocumentStructurePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getEmptyLine();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedFileReferenceCell <em>Extended File Reference Cell</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>Extended File Reference Cell</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedFileReferenceCell
+	 * @generated
+	 */
+	EClass getExtendedFileReferenceCell();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedFileReferenceCell#getDatasource <em>Datasource</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference '<em>Datasource</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.ExtendedFileReferenceCell#getDatasource()
+	 * @see #getExtendedFileReferenceCell()
+	 * @generated
+	 */
+	EReference getExtendedFileReferenceCell_Datasource();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.InsertedGeneratedFile <em>Inserted Generated File</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>Inserted Generated File</em>'.
+	 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.InsertedGeneratedFile
+	 * @generated
+	 */
+	EClass getInsertedGeneratedFile();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2054,6 +2302,17 @@ public interface DocumentStructurePackage extends EPackage {
 		EClass LEAF_BODY_PART = eINSTANCE.getLeafBodyPart();
 
 		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.IGeneratedFile <em>IGenerated File</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.IGeneratedFile
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getIGeneratedFile()
+		 * @generated
+		 */
+		EClass IGENERATED_FILE = eINSTANCE.getIGeneratedFile();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.EMFDataSourceImpl <em>EMF Data Source</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2225,6 +2484,37 @@ public interface DocumentStructurePackage extends EPackage {
 		 * @generated
 		 */
 		EClass EMPTY_LINE = eINSTANCE.getEmptyLine();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ExtendedFileReferenceCellImpl <em>Extended File Reference Cell</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.ExtendedFileReferenceCellImpl
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getExtendedFileReferenceCell()
+		 * @generated
+		 */
+		EClass EXTENDED_FILE_REFERENCE_CELL = eINSTANCE.getExtendedFileReferenceCell();
+
+		/**
+		 * The meta object literal for the '<em><b>Datasource</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EXTENDED_FILE_REFERENCE_CELL__DATASOURCE = eINSTANCE.getExtendedFileReferenceCell_Datasource();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.model2doc.emf.documentstructure.impl.InsertedGeneratedFileImpl <em>Inserted Generated File</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.InsertedGeneratedFileImpl
+		 * @see org.eclipse.papyrus.model2doc.emf.documentstructure.impl.DocumentStructurePackageImpl#getInsertedGeneratedFile()
+		 * @generated
+		 */
+		EClass INSERTED_GENERATED_FILE = eINSTANCE.getInsertedGeneratedFile();
 
 	}
 

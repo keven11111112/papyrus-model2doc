@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2020 CEA LIST.
+ * Copyright (c) 2020, 2021 CEA LIST.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -13,6 +13,8 @@
  *   Vincent LORENZO (CEA LIST) vincent.lorenzo@cea.fr - bug 569059
  * 	 Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - Bug 569249
  *   Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - bug 569817
+ *   Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - Bug 570290
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.model2doc.docx.internal.transcription;
 
@@ -36,6 +38,7 @@ import org.apache.poi.xwpf.usermodel.TableWidthType;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
 import org.apache.poi.xwpf.usermodel.XWPFTable;
+import org.apache.poi.xwpf.usermodel.XWPFTableCell;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
@@ -46,6 +49,7 @@ import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractList;
 import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractTable;
 import org.eclipse.papyrus.model2doc.core.builtintypes.BasicList;
 import org.eclipse.papyrus.model2doc.core.builtintypes.Cell;
+import org.eclipse.papyrus.model2doc.core.builtintypes.FileReferenceCell;
 import org.eclipse.papyrus.model2doc.core.builtintypes.IFileReference;
 import org.eclipse.papyrus.model2doc.core.builtintypes.ListItem;
 import org.eclipse.papyrus.model2doc.core.builtintypes.Row;
@@ -296,6 +300,9 @@ public class DocxTranscription implements Transcription {
 				if (cell instanceof TextCell) {
 					TextCell textCell = (TextCell) cell;
 					xwpfTable.getRow(rowIndex).getCell(cellIndex).setText(textCell.getText());
+				} else if (cell instanceof FileReferenceCell) {
+					XWPFTableCell xwpfCell = xwpfTable.getRow(rowIndex).getCell(cellIndex);
+					insertFileInTableCell(((FileReferenceCell) cell).getFileReference(), xwpfCell);
 				}
 				cellIndex++;
 			}
@@ -411,6 +418,31 @@ public class DocxTranscription implements Transcription {
 			document.insertFile(path);
 		} catch (Exception e) {
 			Activator.log.warn(NLS.bind("The {0} file can not be inserted", fileReference.getFilePath())); //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * Insert the contents of a file in table cell
+	 *
+	 * @param fileReference
+	 *            a reference to a file
+	 * @param cell
+	 *            the cell receiving the file
+	 */
+	private void insertFileInTableCell(IFileReference fileReference, XWPFTableCell xwpfCell) {
+		final URL url = fileReference.getFileAccessor().createInputFileURL();
+		if (url != null) {
+			final String path = url.toString().replace(ECORE_FILE_PREFIX, EMPTY_STRING);
+			try {
+				for (int i = 0; i < xwpfCell.getParagraphs().size(); i++) {
+					// when the cell is created, a paragraph is also created, to avoid a useless blank line we remove it
+					xwpfCell.removeParagraph(i);
+				}
+				String id = document.importFile(path);
+				xwpfCell.getCTTc().addNewAltChunk().setId(id);
+			} catch (InvalidFormatException | IOException e) {
+				Activator.log.warn(NLS.bind("The {0} file can not be inserted", fileReference.getFilePath())); //$NON-NLS-1$
+			}
 		}
 	}
 

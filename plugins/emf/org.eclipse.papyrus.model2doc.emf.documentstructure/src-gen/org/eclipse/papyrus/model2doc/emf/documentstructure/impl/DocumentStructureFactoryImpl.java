@@ -100,6 +100,10 @@ public class DocumentStructureFactoryImpl extends EFactoryImpl implements Docume
 			return createInsertedFile();
 		case DocumentStructurePackage.EMPTY_LINE:
 			return createEmptyLine();
+		case DocumentStructurePackage.EXTENDED_FILE_REFERENCE_CELL:
+			return createExtendedFileReferenceCell();
+		case DocumentStructurePackage.INSERTED_GENERATED_FILE:
+			return createInsertedGeneratedFile();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -283,6 +287,30 @@ public class DocumentStructureFactoryImpl extends EFactoryImpl implements Docume
 	public EmptyLine createEmptyLine() {
 		EmptyLineImpl emptyLine = new EmptyLineImpl();
 		return emptyLine;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public ExtendedFileReferenceCell createExtendedFileReferenceCell() {
+		ExtendedFileReferenceCellImpl extendedFileReferenceCell = new ExtendedFileReferenceCellImpl();
+		return extendedFileReferenceCell;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public InsertedGeneratedFile createInsertedGeneratedFile() {
+		InsertedGeneratedFileImpl insertedGeneratedFile = new InsertedGeneratedFileImpl();
+		return insertedGeneratedFile;
 	}
 
 	/**

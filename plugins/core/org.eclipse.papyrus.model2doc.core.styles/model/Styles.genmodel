@@ -68,7 +68,7 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference Styles.ecore#//StyledElement/namedStyles"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Styles.ecore#//StyledElement/getNamedStyle"
-          body="return org.eclipse.papyrus.model2doc.core.styles.NamedStyleOperations.INSTANCE.getNamedStyle(getNamedStyles(), name);">
+          body="return org.eclipse.papyrus.model2doc.core.styles.internal.operations.NamedStyleOperations.INSTANCE.getNamedStyle(getNamedStyles(), name);">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Styles.ecore#//StyledElement/getNamedStyle/name"/>
       </genOperations>
     </genClasses>

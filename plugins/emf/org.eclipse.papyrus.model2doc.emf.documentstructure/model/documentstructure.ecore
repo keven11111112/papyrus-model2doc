@@ -59,7 +59,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Image" eSuperTypes="../../org.eclipse.papyrus.model2doc.core.builtintypes/model/BuiltInTypes.ecore#//DefaultFileReference #//LeafBodyPart">
+  <eClassifiers xsi:type="ecore:EClass" name="Image" eSuperTypes="../../org.eclipse.papyrus.model2doc.core.builtintypes/model/BuiltInTypes.ecore#//DefaultFileReference #//LeafBodyPart #//IGeneratedFile">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This object represents an image inserted in the document."/>
     </eAnnotations>
@@ -72,6 +72,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LeafBodyPart" abstract="true" interface="true"
       eSuperTypes="#//BodyPart"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IGeneratedFile" abstract="true" interface="true"
+      eSuperTypes="../../org.eclipse.papyrus.model2doc.core.builtintypes/model/BuiltInTypes.ecore#//IFileReference">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Generated files that could be deleted at the end of the process."/>
+    </eAnnotations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EMFDataSource" eSuperTypes="#//DataSource">
     <eStructuralFeatures xsi:type="ecore:EReference" name="eobject" ordered="false"
         lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
@@ -137,4 +143,16 @@
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EmptyLine" eSuperTypes="#//LeafBodyPart"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExtendedFileReferenceCell" eSuperTypes="../../org.eclipse.papyrus.model2doc.core.builtintypes/model/BuiltInTypes.ecore#//FileReferenceCell">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Insert a file into the cell"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="datasource" ordered="false"
+        eType="#//DataSource" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InsertedGeneratedFile" eSuperTypes="#//InsertedFile #//IGeneratedFile">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This element reference a generated file which will be inserted in the final document."/>
+    </eAnnotations>
+  </eClassifiers>
 </ecore:EPackage>

@@ -55,7 +55,7 @@ public interface BodyPart extends EObject {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *                  the new value of the '<em>Data Source</em>' containment reference.
+	 *            the new value of the '<em>Data Source</em>' containment reference.
 	 * @see #getDataSource()
 	 * @generated
 	 */
