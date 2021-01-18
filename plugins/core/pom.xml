@@ -27,6 +27,7 @@
 		<module>org.eclipse.papyrus.model2doc.core.generatorconfiguration</module>
 		<module>org.eclipse.papyrus.model2doc.core.generatorconfiguration.edit</module>
 		<module>org.eclipse.papyrus.model2doc.core.onefile</module>
+		<module>org.eclipse.papyrus.model2doc.core.styledstring</module>
 		<module>org.eclipse.papyrus.model2doc.core.styles</module>
 		<module>org.eclipse.papyrus.model2doc.core.styles.edit</module>
 		<module>org.eclipse.papyrus.model2doc.core.ui</module>
