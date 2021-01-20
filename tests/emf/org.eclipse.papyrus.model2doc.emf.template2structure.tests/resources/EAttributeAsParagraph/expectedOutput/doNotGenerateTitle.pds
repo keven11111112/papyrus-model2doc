@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<documentstructure:TextDocument xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:documentstructure="http://www.eclipse.org/papyrus/model2doc/emf/1.0.0/documentstructure" xmlns:generatorconfiguration="http://www.eclipse.org/papyrus/model2doc/1.0.0/generatorconfiguration" xmi:id="_kH00EFp1EeuzrPif1Xho0g" mainTitle="EAttributeAsParagraph">
+  <documentGeneratorConfiguration xmi:type="generatorconfiguration:DefaultDocumentGeneratorConfiguration" xmi:id="_kH00EVp1EeuzrPif1Xho0g" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.docx/templates/PapyrusTemplate.dotx" documentName="doNotGenerateTitle" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.docx"/>
+  <textDocumentPart xmi:type="documentstructure:Body" xmi:id="_kH00Elp1EeuzrPif1Xho0g">
+    <bodyPart xmi:type="documentstructure:Paragraph" xmi:id="_kH00E1p1EeuzrPif1Xho0g" text="EAttributeAsParagraph"/>
+  </textDocumentPart>
+</documentstructure:TextDocument>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<documentstructure:TextDocument xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:documentstructure="http://www.eclipse.org/papyrus/model2doc/emf/1.0.0/documentstructure" xmlns:generatorconfiguration="http://www.eclipse.org/papyrus/model2doc/1.0.0/generatorconfiguration" xmi:id="_8QPmUFsJEeuDoZTWnd0Jog" mainTitle="InsertFileTemplate">
+  <documentGeneratorConfiguration xmi:type="generatorconfiguration:DefaultDocumentGeneratorConfiguration" xmi:id="_8QPmUVsJEeuDoZTWnd0Jog" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.docx/templates/PapyrusTemplate.dotx" documentName="default" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.docx"/>
+  <textDocumentPart xmi:type="documentstructure:Body" xmi:id="_8QPmUlsJEeuDoZTWnd0Jog">
+    <bodyPart xmi:type="documentstructure:Title" xmi:id="_8QPmU1sJEeuDoZTWnd0Jog" title="Inserted File platform:/plugin/org.eclipse.papyrus.model2doc.emf.template2structure.tests/resources/InsertFileTemplate/filéàê space.txt">
+      <subBodyPart xmi:type="documentstructure:InsertedFile" xmi:id="_8QPmVFsJEeuDoZTWnd0Jog" filePath="platform:/plugin/org.eclipse.papyrus.model2doc.emf.template2structure.tests/resources/InsertFileTemplate/filéàê space.txt"/>
+    </bodyPart>
+  </textDocumentPart>
+</documentstructure:TextDocument>

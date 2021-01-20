@@ -65,23 +65,26 @@ public abstract class AbstractBodyPartTemplateToStructureMapper<INPUT extends IB
 			if (documentTemplateElement.isGenerateTitle()) {
 				title = STRUCTURE_EFACTORY.createTitle();
 				title.setTitle(documentTemplateElement.buildPartTemplateTitle(semanticModelElement));
-				returnedElements.add(expectedReturnedClass.cast(title));
 			} else {
 				title = null;
 			}
 
 			// we generate an empty paragraph if the contents is empty and if it is required
-			if (generatedElements.isEmpty() && documentTemplateElement.isGenerateIfEmpty()) {
-				final Paragraph paragraph = STRUCTURE_EFACTORY.createParagraph();
-				paragraph.setText(documentTemplateElement.getDefaultTextIfEmpty());
-				if (title != null) {
-					title.getSubBodyParts().add(paragraph);
-				} else {
-					returnedElements.add(expectedReturnedClass.cast(paragraph));
+			if (generatedElements.isEmpty()) {
+				if (documentTemplateElement.isGenerateIfEmpty()) {
+					final Paragraph paragraph = STRUCTURE_EFACTORY.createParagraph();
+					paragraph.setText(documentTemplateElement.getDefaultTextIfEmpty());
+					if (title != null) {
+						returnedElements.add(expectedReturnedClass.cast(title));
+						title.getSubBodyParts().add(paragraph);
+					} else {
+						returnedElements.add(expectedReturnedClass.cast(paragraph));
+					}
 				}
 			} else {
 				// the contents was not empty
 				if (title != null) {
+					returnedElements.add(expectedReturnedClass.cast(title));
 					generatedElements.forEach(ge -> title.getSubBodyParts().add((BodyPart) ge));
 				} else {
 					returnedElements.addAll(generatedElements);

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<documentstructure:TextDocument xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:documentstructure="http://www.eclipse.org/papyrus/model2doc/emf/1.0.0/documentstructure" xmlns:generatorconfiguration="http://www.eclipse.org/papyrus/model2doc/1.0.0/generatorconfiguration" xmi:id="_B4riwFs8EeunP5nEef8ySw" mainTitle="EClassPartTemplate">
+  <documentGeneratorConfiguration xmi:type="generatorconfiguration:DefaultDocumentGeneratorConfiguration" xmi:id="_B4riwVs8EeunP5nEef8ySw" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.docx/templates/PapyrusTemplate.dotx" documentName="default" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.docx"/>
+  <textDocumentPart xmi:type="documentstructure:Body" xmi:id="_B4riwls8EeunP5nEef8ySw">
+    <bodyPart xmi:type="documentstructure:Title" xmi:id="_B4riw1s8EeunP5nEef8ySw" title="Class2">
+      <subBodyPart xmi:type="documentstructure:Title" xmi:id="_B4rixFs8EeunP5nEef8ySw" title="isAbstract">
+        <subBodyPart xmi:type="documentstructure:Paragraph" xmi:id="_B4rixVs8EeunP5nEef8ySw" text="false"/>
+      </subBodyPart>
+    </bodyPart>
+  </textDocumentPart>
+</documentstructure:TextDocument>

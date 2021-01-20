@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.BodyPart;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.InsertedFile;
@@ -64,12 +65,14 @@ public class InsertFileTemplateMapper extends AbstractBodyPartTemplateToStructur
 
 		List<T> returnedElements = new ArrayList<>();
 
-		final InsertedFile insertedFile = STRUCTURE_EFACTORY.createInsertedFile();
-		// we include the file into the document structure only if we are able to find the file
-		if (isFileExist(insertFileTemplate)) {
-			final String path = insertFileTemplate.getFileAccessor().createInputFilePlatformURI().toPlatformString(true);
-			insertedFile.setFilePath(path);
-			returnedElements.add(expectedReturnedClass.cast(insertedFile));
+		if (insertFileTemplate.isGenerate()) {
+			final InsertedFile insertedFile = STRUCTURE_EFACTORY.createInsertedFile();
+			// we include the file into the document structure only if we are able to find the file
+			if (isFileExist(insertFileTemplate)) {
+				final String path = URI.decode(insertFileTemplate.getFileAccessor().createInputFilePlatformURI().toString());
+				insertedFile.setFilePath(path);
+				returnedElements.add(expectedReturnedClass.cast(insertedFile));
+			}
 		}
 
 		return buildMapperResult(insertFileTemplate, semanticModelElement, expectedReturnedClass, returnedElements);
@@ -88,7 +91,7 @@ public class InsertFileTemplateMapper extends AbstractBodyPartTemplateToStructur
 
 		URL url = insertFileTemplate.getFileAccessor().createInputFileURL();
 		if (url != null) {
-			File file = new File(url.getPath().replaceFirst(ecoreFilePrefix, emptyString));
+			File file = new File(URI.decode(url.getPath()).replaceFirst(ecoreFilePrefix, emptyString));
 			return file.exists();
 		}
 		return false;

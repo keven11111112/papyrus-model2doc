@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<documentstructuretemplate:TextDocumentTemplate xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:documentstructuretemplate="http://www.eclipse.org/papyrus/model2doc/emf/1.0.0/documentstructuretemplate" xmlns:generatorconfiguration="http://www.eclipse.org/papyrus/model2doc/1.0.0/generatorconfiguration" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_E-qKIFsZEeuDoZTWnd0Jog" name="default" kindId="org.eclipse.papyrus.model2doc.integration.docx.uml.architecture.emptyDocument" mainTitle="TableOfFigures">
+  <semanticContext xmi:type="uml:Model" href="TableOfFigures.uml#_DXc7wFsZEeuDoZTWnd0Jog"/>
+  <graphicalContext xmi:type="uml:Model" href="TableOfFigures.uml#_DXc7wFsZEeuDoZTWnd0Jog"/>
+  <documentTemplatePrototype xmi:type="documentstructuretemplate:DocumentTemplatePrototype" href="platform:/plugin/org.eclipse.papyrus.model2doc.integration.docx.uml.architecture/resources/docx-emptyTextDocumentPrototype.pdst#DOCX-EmptyUMLDocumentStructureTemplateType"/>
+  <documentStructureGeneratorConfiguration xmi:type="generatorconfiguration:DefaultDocumentStructureGeneratorConfiguration" xmi:id="_E-qKIVsZEeuDoZTWnd0Jog" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.docx/templates/PapyrusTemplate.dotx" documentName="default" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.docx" structureGeneratorId="TextDocumentStructureGenerator.default" imageFolder="output/images" structureFolder="output"/>
+  <documentPart xmi:type="documentstructuretemplate:TableOfFigures" xmi:id="_HK5_QFsZEeuDoZTWnd0Jog" tofTitle="Table Of Figures"/>
+  <documentPart xmi:type="documentstructuretemplate:Body" xmi:id="_E-qKJFsZEeuDoZTWnd0Jog"/>
+</documentstructuretemplate:TextDocumentTemplate>

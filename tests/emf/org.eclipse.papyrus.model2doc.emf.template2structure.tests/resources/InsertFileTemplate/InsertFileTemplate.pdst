@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:booleanexpressions="http://www.eclipse.org/papyrus/expressions/booleanexpressions" xmlns:documentstructuretemplate="http://www.eclipse.org/papyrus/model2doc/emf/1.0.0/documentstructuretemplate" xmlns:generatorconfiguration="http://www.eclipse.org/papyrus/model2doc/1.0.0/generatorconfiguration" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/papyrus/expressions/booleanexpressions http://www.eclipse.org/papyrus/expressions#//booleanexpressions">
+  <documentstructuretemplate:TextDocumentTemplate xmi:id="_MZ_VQFsDEeuDoZTWnd0Jog" name="default" kindId="org.eclipse.papyrus.model2doc.integration.docx.uml.architecture.emptyDocument" mainTitle="InsertFileTemplate">
+    <semanticContext xmi:type="uml:Model" href="InsertFileTemplate.uml#_KNqAkFsDEeuDoZTWnd0Jog"/>
+    <graphicalContext xmi:type="uml:Model" href="InsertFileTemplate.uml#_KNqAkFsDEeuDoZTWnd0Jog"/>
+    <documentTemplatePrototype xmi:type="documentstructuretemplate:DocumentTemplatePrototype" href="platform:/plugin/org.eclipse.papyrus.model2doc.integration.docx.uml.architecture/resources/docx-emptyTextDocumentPrototype.pdst#DOCX-EmptyUMLDocumentStructureTemplateType"/>
+    <documentStructureGeneratorConfiguration xmi:type="generatorconfiguration:DefaultDocumentStructureGeneratorConfiguration" xmi:id="_MZ_VQVsDEeuDoZTWnd0Jog" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.docx/templates/PapyrusTemplate.dotx" documentName="default" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.docx" structureGeneratorId="TextDocumentStructureGenerator.default" imageFolder="output/images" structureFolder="output"/>
+    <documentPart xmi:type="documentstructuretemplate:Body" xmi:id="_MZ_VRFsDEeuDoZTWnd0Jog">
+      <bodyPartTemplate xmi:type="documentstructuretemplate:InsertFileTemplate" xmi:id="_OVRWMFsDEeuDoZTWnd0Jog" filePath="platform:/plugin/org.eclipse.papyrus.model2doc.emf.template2structure.tests/resources/InsertFileTemplate/filéàê space.txt" generate="true" generateTitle="true" generateIfEmpty="false" defaultTextIfEmpty="N/A"/>
+    </documentPart>
+  </documentstructuretemplate:TextDocumentTemplate>
+  <documentstructuretemplate:TextDocumentTemplate xmi:id="_wDt74FsFEeuDoZTWnd0Jog" name="customTitle" kindId="org.eclipse.papyrus.model2doc.integration.docx.uml.architecture.emptyDocument" mainTitle="InsertFileTemplate">
+    <semanticContext xmi:type="uml:Model" href="InsertFileTemplate.uml#_KNqAkFsDEeuDoZTWnd0Jog"/>
+    <graphicalContext xmi:type="uml:Model" href="InsertFileTemplate.uml#_KNqAkFsDEeuDoZTWnd0Jog"/>
+    <documentTemplatePrototype xmi:type="documentstructuretemplate:DocumentTemplatePrototype" href="platform:/plugin/org.eclipse.papyrus.model2doc.integration.docx.uml.architecture/resources/docx-emptyTextDocumentPrototype.pdst#DOCX-EmptyUMLDocumentStructureTemplateType"/>
+    <documentStructureGeneratorConfiguration xmi:type="generatorconfiguration:DefaultDocumentStructureGeneratorConfiguration" xmi:id="_wDt74VsFEeuDoZTWnd0Jog" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.docx/templates/PapyrusTemplate.dotx" documentName="customTitle" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.docx" structureGeneratorId="TextDocumentStructureGenerator.default" imageFolder="output/images" structureFolder="output"/>
+    <documentPart xmi:type="documentstructuretemplate:Body" xmi:id="_wDt75FsFEeuDoZTWnd0Jog">
+      <bodyPartTemplate xmi:type="documentstructuretemplate:InsertFileTemplate" xmi:id="_vu6MsFsJEeuDoZTWnd0Jog" filePath="platform:/plugin/org.eclipse.papyrus.model2doc.emf.template2structure.tests/resources/InsertFileTemplate/filéàê space.txt" generate="true" generateTitle="true" customTitle="My custom title" generateIfEmpty="false" defaultTextIfEmpty="N/A"/>
+    </documentPart>
+  </documentstructuretemplate:TextDocumentTemplate>
+  <documentstructuretemplate:TextDocumentTemplate xmi:id="_xnolsFsFEeuDoZTWnd0Jog" name="doNotGenerate" kindId="org.eclipse.papyrus.model2doc.integration.docx.uml.architecture.emptyDocument" mainTitle="InsertFileTemplate">
+    <semanticContext xmi:type="uml:Model" href="InsertFileTemplate.uml#_KNqAkFsDEeuDoZTWnd0Jog"/>
+    <graphicalContext xmi:type="uml:Model" href="InsertFileTemplate.uml#_KNqAkFsDEeuDoZTWnd0Jog"/>
+    <documentTemplatePrototype xmi:type="documentstructuretemplate:DocumentTemplatePrototype" href="platform:/plugin/org.eclipse.papyrus.model2doc.integration.docx.uml.architecture/resources/docx-emptyTextDocumentPrototype.pdst#DOCX-EmptyUMLDocumentStructureTemplateType"/>
+    <documentStructureGeneratorConfiguration xmi:type="generatorconfiguration:DefaultDocumentStructureGeneratorConfiguration" xmi:id="_xnolsVsFEeuDoZTWnd0Jog" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.docx/templates/PapyrusTemplate.dotx" documentName="doNotGenerate" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.docx" structureGeneratorId="TextDocumentStructureGenerator.default" imageFolder="output/images" structureFolder="output"/>
+    <documentPart xmi:type="documentstructuretemplate:Body" xmi:id="_xnoltFsFEeuDoZTWnd0Jog">
+      <bodyPartTemplate xmi:type="documentstructuretemplate:InsertFileTemplate" xmi:id="_v18o0FsJEeuDoZTWnd0Jog" filePath="platform:/plugin/org.eclipse.papyrus.model2doc.emf.template2structure.tests/resources/InsertFileTemplate/filéàê space.txt" generate="false" generateTitle="true" generateIfEmpty="false" defaultTextIfEmpty="N/A"/>
+    </documentPart>
+  </documentstructuretemplate:TextDocumentTemplate>
+  <documentstructuretemplate:TextDocumentTemplate xmi:id="_zSZeYFsFEeuDoZTWnd0Jog" name="doNotGenerateTitle" kindId="org.eclipse.papyrus.model2doc.integration.docx.uml.architecture.emptyDocument" mainTitle="InsertFileTemplate">
+    <semanticContext xmi:type="uml:Model" href="InsertFileTemplate.uml#_KNqAkFsDEeuDoZTWnd0Jog"/>
+    <graphicalContext xmi:type="uml:Model" href="InsertFileTemplate.uml#_KNqAkFsDEeuDoZTWnd0Jog"/>
+    <documentTemplatePrototype xmi:type="documentstructuretemplate:DocumentTemplatePrototype" href="platform:/plugin/org.eclipse.papyrus.model2doc.integration.docx.uml.architecture/resources/docx-emptyTextDocumentPrototype.pdst#DOCX-EmptyUMLDocumentStructureTemplateType"/>
+    <documentStructureGeneratorConfiguration xmi:type="generatorconfiguration:DefaultDocumentStructureGeneratorConfiguration" xmi:id="_zSZeYVsFEeuDoZTWnd0Jog" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.docx/templates/PapyrusTemplate.dotx" documentName="doNotGenerateTitle" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.docx" structureGeneratorId="TextDocumentStructureGenerator.default" imageFolder="output/images" structureFolder="output"/>
+    <documentPart xmi:type="documentstructuretemplate:Body" xmi:id="_zSZeZFsFEeuDoZTWnd0Jog">
+      <bodyPartTemplate xmi:type="documentstructuretemplate:InsertFileTemplate" xmi:id="_v8zewFsJEeuDoZTWnd0Jog" filePath="platform:/plugin/org.eclipse.papyrus.model2doc.emf.template2structure.tests/resources/InsertFileTemplate/filéàê space.txt" generate="true" generateTitle="false" generateIfEmpty="false" defaultTextIfEmpty="N/A"/>
+    </documentPart>
+  </documentstructuretemplate:TextDocumentTemplate>
+  <documentstructuretemplate:TextDocumentTemplate xmi:id="_2J86UFsFEeuDoZTWnd0Jog" name="generateIfEmpty" kindId="org.eclipse.papyrus.model2doc.integration.docx.uml.architecture.emptyDocument" mainTitle="InsertFileTemplate">
+    <semanticContext xmi:type="uml:Model" href="InsertFileTemplate.uml#_KNqAkFsDEeuDoZTWnd0Jog"/>
+    <graphicalContext xmi:type="uml:Model" href="InsertFileTemplate.uml#_KNqAkFsDEeuDoZTWnd0Jog"/>
+    <documentTemplatePrototype xmi:type="documentstructuretemplate:DocumentTemplatePrototype" href="platform:/plugin/org.eclipse.papyrus.model2doc.integration.docx.uml.architecture/resources/docx-emptyTextDocumentPrototype.pdst#DOCX-EmptyUMLDocumentStructureTemplateType"/>
+    <documentStructureGeneratorConfiguration xmi:type="generatorconfiguration:DefaultDocumentStructureGeneratorConfiguration" xmi:id="_2J86UVsFEeuDoZTWnd0Jog" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.docx/templates/PapyrusTemplate.dotx" documentName="generateIfEmpty" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.docx" structureGeneratorId="TextDocumentStructureGenerator.default" imageFolder="output/images" structureFolder="output"/>
+    <documentPart xmi:type="documentstructuretemplate:Body" xmi:id="_2J86VFsFEeuDoZTWnd0Jog">
+      <bodyPartTemplate xmi:type="documentstructuretemplate:InsertFileTemplate" xmi:id="_wDvNMFsJEeuDoZTWnd0Jog" filePath="platform:/resource/org.eclipse.papyrus.model2doc.emf.template2structure.tests/resources/InsertFileTemplate/does not exist file.txt" generate="true" generateTitle="true" generateIfEmpty="true" defaultTextIfEmpty="N/A"/>
+    </documentPart>
+  </documentstructuretemplate:TextDocumentTemplate>
+  <documentstructuretemplate:TextDocumentTemplate xmi:id="_8zFYMFsKEeuDoZTWnd0Jog" name="withExpression" kindId="org.eclipse.papyrus.model2doc.integration.docx.uml.architecture.emptyDocument" mainTitle="InsertFileTemplate">
+    <semanticContext xmi:type="uml:Model" href="InsertFileTemplate.uml#_KNqAkFsDEeuDoZTWnd0Jog"/>
+    <graphicalContext xmi:type="uml:Model" href="InsertFileTemplate.uml#_KNqAkFsDEeuDoZTWnd0Jog"/>
+    <documentTemplatePrototype xmi:type="documentstructuretemplate:DocumentTemplatePrototype" href="platform:/plugin/org.eclipse.papyrus.model2doc.integration.docx.uml.architecture/resources/docx-emptyTextDocumentPrototype.pdst#DOCX-EmptyUMLDocumentStructureTemplateType"/>
+    <documentStructureGeneratorConfiguration xmi:type="generatorconfiguration:DefaultDocumentStructureGeneratorConfiguration" xmi:id="_8zFYMVsKEeuDoZTWnd0Jog" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.docx/templates/PapyrusTemplate.dotx" documentName="withExpression" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.docx" structureGeneratorId="TextDocumentStructureGenerator.default" imageFolder="output/images" structureFolder="output"/>
+    <documentPart xmi:type="documentstructuretemplate:Body" xmi:id="_8zFYNFsKEeuDoZTWnd0Jog">
+      <bodyPartTemplate xmi:type="documentstructuretemplate:InsertFileTemplate" xmi:id="_ACesYFsLEeuDoZTWnd0Jog" filePath="platform:/plugin/org.eclipse.papyrus.model2doc.emf.template2structure.tests/resources/InsertFileTemplate/filéàê space.txt" generate="true" generateTitle="true" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+        <generateBranchCondition xmi:type="booleanexpressions:LiteralFalseExpression" xmi:id="_AwaJYFsLEeuDoZTWnd0Jog"/>
+      </bodyPartTemplate>
+    </documentPart>
+  </documentstructuretemplate:TextDocumentTemplate>
+  <documentstructuretemplate:TextDocumentTemplate xmi:id="_peveEFsoEeuDoZTWnd0Jog" name="empty" kindId="org.eclipse.papyrus.model2doc.integration.docx.uml.architecture.emptyDocument" mainTitle="InsertFileTemplate">
+    <semanticContext xmi:type="uml:Model" href="InsertFileTemplate.uml#_KNqAkFsDEeuDoZTWnd0Jog"/>
+    <graphicalContext xmi:type="uml:Model" href="InsertFileTemplate.uml#_KNqAkFsDEeuDoZTWnd0Jog"/>
+    <documentTemplatePrototype xmi:type="documentstructuretemplate:DocumentTemplatePrototype" href="platform:/plugin/org.eclipse.papyrus.model2doc.integration.docx.uml.architecture/resources/docx-emptyTextDocumentPrototype.pdst#DOCX-EmptyUMLDocumentStructureTemplateType"/>
+    <documentStructureGeneratorConfiguration xmi:type="generatorconfiguration:DefaultDocumentStructureGeneratorConfiguration" xmi:id="_peveEVsoEeuDoZTWnd0Jog" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.docx/templates/PapyrusTemplate.dotx" documentName="empty" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.docx" structureGeneratorId="TextDocumentStructureGenerator.default" imageFolder="output/images" structureFolder="output"/>
+    <documentPart xmi:type="documentstructuretemplate:Body" xmi:id="_peveFFsoEeuDoZTWnd0Jog">
+      <bodyPartTemplate xmi:type="documentstructuretemplate:InsertFileTemplate" xmi:id="_sQsBQFsoEeuDoZTWnd0Jog" filePath="platform:/resource/org.eclipse.papyrus.model2doc.emf.template2structure.tests/resources/InsertFileTemplate/does not exist file.txt" generate="true" generateTitle="true" generateIfEmpty="false" defaultTextIfEmpty="N/A"/>
+    </documentPart>
+  </documentstructuretemplate:TextDocumentTemplate>
+</xmi:XMI>

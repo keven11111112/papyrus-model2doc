@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<documentstructure:TextDocument xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:builtintypes="http://www.eclipse.org/papyrus/model2doc/core/1.0.0/BuiltInTypes" xmlns:documentstructure="http://www.eclipse.org/papyrus/model2doc/emf/1.0.0/documentstructure" xmlns:generatorconfiguration="http://www.eclipse.org/papyrus/model2doc/1.0.0/generatorconfiguration" xmi:id="_sAhTgGCoEeuFTaFuwUniCA" mainTitle="EReferenceTableView">
+  <documentGeneratorConfiguration xmi:type="generatorconfiguration:DefaultDocumentGeneratorConfiguration" xmi:id="_sAhTgWCoEeuFTaFuwUniCA" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.docx/templates/PapyrusTemplate.dotx" documentName="doNotGenerateRowHeader" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.docx"/>
+  <textDocumentPart xmi:type="documentstructure:Body" xmi:id="_sAhTgmCoEeuFTaFuwUniCA">
+    <bodyPart xmi:type="documentstructure:Title" xmi:id="_sAhTg2CoEeuFTaFuwUniCA" title="packagedElement">
+      <subBodyPart xmi:type="documentstructure:ExtendedBasicTable" xmi:id="_sAhThGCoEeuFTaFuwUniCA">
+        <rows xmi:type="builtintypes:BasicRow" xmi:id="_sAhThWCoEeuFTaFuwUniCA">
+          <cells xmi:type="builtintypes:TextCell" xmi:id="_sAhThmCoEeuFTaFuwUniCA" location="COLUMN_HEADER" text="name"/>
+          <cells xmi:type="builtintypes:TextCell" xmi:id="_sAhTh2CoEeuFTaFuwUniCA" location="COLUMN_HEADER" text="ownedElement"/>
+        </rows>
+        <rows xmi:type="builtintypes:BasicRow" xmi:id="_sAhTiGCoEeuFTaFuwUniCA">
+          <cells xmi:type="builtintypes:TextCell" xmi:id="_sAhTiWCoEeuFTaFuwUniCA" location="BODY" text="Class2"/>
+          <cells xmi:type="builtintypes:TextCell" xmi:id="_sAhTimCoEeuFTaFuwUniCA" location="BODY" text="Property1 : Class4, Property2 : Class2, Property3 : Class3 [1..*]"/>
+        </rows>
+        <rows xmi:type="builtintypes:BasicRow" xmi:id="_sAhTi2CoEeuFTaFuwUniCA">
+          <cells xmi:type="builtintypes:TextCell" xmi:id="_sAhTjGCoEeuFTaFuwUniCA" location="BODY" text="Class3"/>
+          <cells xmi:type="builtintypes:TextCell" xmi:id="_sAhTjWCoEeuFTaFuwUniCA" location="BODY" text="Operation1 (in1 : Class4) : Class2"/>
+        </rows>
+        <rows xmi:type="builtintypes:BasicRow" xmi:id="_sAhTjmCoEeuFTaFuwUniCA">
+          <cells xmi:type="builtintypes:TextCell" xmi:id="_sAhTj2CoEeuFTaFuwUniCA" location="BODY" text="Class4"/>
+          <cells xmi:type="builtintypes:TextCell" xmi:id="_sAhTkGCoEeuFTaFuwUniCA" location="BODY" text=""/>
+        </rows>
+      </subBodyPart>
+      <subBodyPart xmi:type="documentstructure:EmptyLine" xmi:id="_sAhTkWCoEeuFTaFuwUniCA"/>
+    </bodyPart>
+  </textDocumentPart>
+</documentstructure:TextDocument>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<documentstructure:TextDocument xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:documentstructure="http://www.eclipse.org/papyrus/model2doc/emf/1.0.0/documentstructure" xmlns:generatorconfiguration="http://www.eclipse.org/papyrus/model2doc/1.0.0/generatorconfiguration" xmi:id="_SMTWgFshEeuDoZTWnd0Jog" mainTitle="TreeListView">
+  <documentGeneratorConfiguration xmi:type="generatorconfiguration:DefaultDocumentGeneratorConfiguration" xmi:id="_SMTWgVshEeuDoZTWnd0Jog" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.docx/templates/PapyrusTemplate.dotx" documentName="doNotGenerateTitle" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.docx"/>
+  <textDocumentPart xmi:type="documentstructure:Body" xmi:id="_SMTWglshEeuDoZTWnd0Jog">
+    <bodyPart xmi:type="documentstructure:ExtendedBasicList" xmi:id="_SMTWg1shEeuDoZTWnd0Jog">
+      <items xmi:type="documentstructure:ExtendedTextListItem" xmi:id="_SMTWhFshEeuDoZTWnd0Jog" text="packagedElement">
+        <subItems xmi:type="documentstructure:ExtendedTextListItem" xmi:id="_SMTWhVshEeuDoZTWnd0Jog" text="Class2">
+          <subItems xmi:type="documentstructure:ExtendedTextListItem" xmi:id="_SMTWhlshEeuDoZTWnd0Jog" text="isAbstract">
+            <subItems xmi:type="documentstructure:ExtendedTextListItem" xmi:id="_SMTWh1shEeuDoZTWnd0Jog" text="false"/>
+          </subItems>
+        </subItems>
+        <subItems xmi:type="documentstructure:ExtendedTextListItem" xmi:id="_SMTWiFshEeuDoZTWnd0Jog" text="Class3">
+          <subItems xmi:type="documentstructure:ExtendedTextListItem" xmi:id="_SMTWiVshEeuDoZTWnd0Jog" text="isAbstract">
+            <subItems xmi:type="documentstructure:ExtendedTextListItem" xmi:id="_SMTWilshEeuDoZTWnd0Jog" text="true"/>
+          </subItems>
+        </subItems>
+        <subItems xmi:type="documentstructure:ExtendedTextListItem" xmi:id="_SMTWi1shEeuDoZTWnd0Jog" text="Class4">
+          <subItems xmi:type="documentstructure:ExtendedTextListItem" xmi:id="_SMTWjFshEeuDoZTWnd0Jog" text="isAbstract">
+            <subItems xmi:type="documentstructure:ExtendedTextListItem" xmi:id="_SMTWjVshEeuDoZTWnd0Jog" text="false"/>
+          </subItems>
+        </subItems>
+      </items>
+      <items xmi:type="documentstructure:ExtendedTextListItem" xmi:id="_SMTWjlshEeuDoZTWnd0Jog" text="visibility">
+        <subItems xmi:type="documentstructure:ExtendedTextListItem" xmi:id="_SMTWj1shEeuDoZTWnd0Jog" text="public"/>
+      </items>
+    </bodyPart>
+  </textDocumentPart>
+</documentstructure:TextDocument>

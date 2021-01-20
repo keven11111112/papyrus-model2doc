@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<documentstructure:TextDocument xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:documentstructure="http://www.eclipse.org/papyrus/model2doc/emf/1.0.0/documentstructure" xmlns:generatorconfiguration="http://www.eclipse.org/papyrus/model2doc/1.0.0/generatorconfiguration" xmi:id="_Onyt8FshEeuDoZTWnd0Jog" mainTitle="TreeListView">
+  <documentGeneratorConfiguration xmi:type="generatorconfiguration:DefaultDocumentGeneratorConfiguration" xmi:id="_Onyt8VshEeuDoZTWnd0Jog" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.docx/templates/PapyrusTemplate.dotx" documentName="eAttributeListItemDoNotGenerate" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.docx"/>
+  <textDocumentPart xmi:type="documentstructure:Body" xmi:id="_Onyt8lshEeuDoZTWnd0Jog">
+    <bodyPart xmi:type="documentstructure:Title" xmi:id="_Onyt81shEeuDoZTWnd0Jog" title="A List of sub properties for TreeListView">
+      <subBodyPart xmi:type="documentstructure:ExtendedBasicList" xmi:id="_Onyt9FshEeuDoZTWnd0Jog">
+        <items xmi:type="documentstructure:ExtendedTextListItem" xmi:id="_Onyt9VshEeuDoZTWnd0Jog" text="packagedElement">
+          <subItems xmi:type="documentstructure:ExtendedTextListItem" xmi:id="_Onyt9lshEeuDoZTWnd0Jog" text="Class2">
+            <subItems xmi:type="documentstructure:ExtendedTextListItem" xmi:id="_Onyt91shEeuDoZTWnd0Jog" text="isAbstract">
+              <subItems xmi:type="documentstructure:ExtendedTextListItem" xmi:id="_Onyt-FshEeuDoZTWnd0Jog" text="false"/>
+            </subItems>
+          </subItems>
+          <subItems xmi:type="documentstructure:ExtendedTextListItem" xmi:id="_Onyt-VshEeuDoZTWnd0Jog" text="Class3">
+            <subItems xmi:type="documentstructure:ExtendedTextListItem" xmi:id="_Onyt-lshEeuDoZTWnd0Jog" text="isAbstract">
+              <subItems xmi:type="documentstructure:ExtendedTextListItem" xmi:id="_Onyt-1shEeuDoZTWnd0Jog" text="true"/>
+            </subItems>
+          </subItems>
+          <subItems xmi:type="documentstructure:ExtendedTextListItem" xmi:id="_Onyt_FshEeuDoZTWnd0Jog" text="Class4">
+            <subItems xmi:type="documentstructure:ExtendedTextListItem" xmi:id="_Onyt_VshEeuDoZTWnd0Jog" text="isAbstract">
+              <subItems xmi:type="documentstructure:ExtendedTextListItem" xmi:id="_Onyt_lshEeuDoZTWnd0Jog" text="false"/>
+            </subItems>
+          </subItems>
+        </items>
+        <items xmi:type="documentstructure:ExtendedTextListItem" xmi:id="_Onyt_1shEeuDoZTWnd0Jog" text="public"/>
+      </subBodyPart>
+    </bodyPart>
+  </textDocumentPart>
+</documentstructure:TextDocument>

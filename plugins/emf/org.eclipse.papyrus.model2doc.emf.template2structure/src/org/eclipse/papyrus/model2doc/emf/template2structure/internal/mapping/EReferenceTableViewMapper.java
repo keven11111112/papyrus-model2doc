@@ -71,70 +71,69 @@ public class EReferenceTableViewMapper extends AbstractBodyPartTemplateToStructu
 			return Collections.emptyList();
 		}
 
-		final Collection<EObject> rows = eReferenceTableView.getRows(semanticModelElement);
-		final Collection<IColumn> columns = eReferenceTableView.getColumns();
-		if (rows.isEmpty() || columns.isEmpty()) {
-			return null;
-		}
+		if (eReferenceTableView.isGenerate()) {
+			final Collection<EObject> rows = eReferenceTableView.getRows(semanticModelElement);
+			final Collection<IColumn> columns = eReferenceTableView.getColumns();
+			if (false == rows.isEmpty() && false == columns.isEmpty()) {
+				final ExtendedBasicTable table = STRUCTURE_EFACTORY.createExtendedBasicTable();
 
-		final ExtendedBasicTable table = STRUCTURE_EFACTORY.createExtendedBasicTable();
+				// column header generation
+				if (eReferenceTableView.isGenerateColumnHeader()) {
+					// we create the row for column header
+					final BasicRow columnHeader = BuiltInTypesFactory.eINSTANCE.createBasicRow();
+					table.getRows().add(columnHeader);
+					if (eReferenceTableView.isGenerateRowHeader()) {
+						// we create the corner cell
+						final Cell cornerCell = BuiltInTypesFactory.eINSTANCE.createTextCell();
+						cornerCell.setLocation(CellLocation.CORNER);
+						columnHeader.getCells().add(cornerCell);
+					}
 
-		// column header generation
-		if (eReferenceTableView.isGenerateColumnHeader()) {
-			// we create the row for column header
-			final BasicRow columnHeader = BuiltInTypesFactory.eINSTANCE.createBasicRow();
-			table.getRows().add(columnHeader);
-			if (eReferenceTableView.isGenerateRowHeader()) {
-				// we create the corner cell
-				final Cell cornerCell = BuiltInTypesFactory.eINSTANCE.createTextCell();
-				cornerCell.setLocation(CellLocation.CORNER);
-				columnHeader.getCells().add(cornerCell);
+					// we create the column
+					final Iterator<IColumn> colIter = columns.iterator();
+					while (colIter.hasNext()) {
+						final IColumn column = colIter.next();
+						final TextCell colHeaderCell = BuiltInTypesFactory.eINSTANCE.createTextCell();
+						colHeaderCell.setLocation(CellLocation.COLUMN_HEADER);
+						colHeaderCell.setText(column.buildColumnHeaderLabel());
+						columnHeader.getCells().add(colHeaderCell);
+					}
+				}
+
+
+				// row header and body generation
+				final Iterator<EObject> rowsIterator = rows.iterator();
+				while (rowsIterator.hasNext()) {
+					final EObject rowElement = rowsIterator.next();
+					final BasicRow bodyRow = BuiltInTypesFactory.eINSTANCE.createBasicRow();
+					table.getRows().add(bodyRow);
+
+					// row header creation
+					if (eReferenceTableView.isGenerateRowHeader()) {
+						// we create the corner cell
+						final TextCell rowHeaderCell = BuiltInTypesFactory.eINSTANCE.createTextCell();
+						rowHeaderCell.setLocation(CellLocation.ROW_HEADER);
+						rowHeaderCell.setText(eReferenceTableView.buildRowHeaderLabel(rowElement));
+						bodyRow.getCells().add(rowHeaderCell);
+					}
+
+					// body creation
+					// we create the column
+					final Iterator<IColumn> colIter = columns.iterator();
+					while (colIter.hasNext()) {
+						final IColumn column = colIter.next();
+						final TextCell bodyCell = BuiltInTypesFactory.eINSTANCE.createTextCell();
+						bodyCell.setLocation(CellLocation.BODY);
+						bodyCell.setText(column.buildCellLabel(column.getCellValue(rowElement)));
+						bodyRow.getCells().add(bodyCell);
+					}
+				}
+
+				if (!isEmptyTable(table, eReferenceTableView)) {
+					returnedElements.add(expectedReturnedClass.cast(table));
+					returnedElements.add(expectedReturnedClass.cast(STRUCTURE_EFACTORY.createEmptyLine()));
+				}
 			}
-
-			// we create the column
-			final Iterator<IColumn> colIter = columns.iterator();
-			while (colIter.hasNext()) {
-				final IColumn column = colIter.next();
-				final TextCell colHeaderCell = BuiltInTypesFactory.eINSTANCE.createTextCell();
-				colHeaderCell.setLocation(CellLocation.COLUMN_HEADER);
-				colHeaderCell.setText(column.buildColumnHeaderLabel());
-				columnHeader.getCells().add(colHeaderCell);
-			}
-		}
-
-
-		// row header and body generation
-		final Iterator<EObject> rowsIterator = rows.iterator();
-		while (rowsIterator.hasNext()) {
-			final EObject rowElement = rowsIterator.next();
-			final BasicRow bodyRow = BuiltInTypesFactory.eINSTANCE.createBasicRow();
-			table.getRows().add(bodyRow);
-
-			// row header creation
-			if (eReferenceTableView.isGenerateRowHeader()) {
-				// we create the corner cell
-				final TextCell rowHeaderCell = BuiltInTypesFactory.eINSTANCE.createTextCell();
-				rowHeaderCell.setLocation(CellLocation.ROW_HEADER);
-				rowHeaderCell.setText(eReferenceTableView.buildRowHeaderLabel(rowElement));
-				bodyRow.getCells().add(rowHeaderCell);
-			}
-
-			// body creation
-			// we create the column
-			final Iterator<IColumn> colIter = columns.iterator();
-			while (colIter.hasNext()) {
-				final IColumn column = colIter.next();
-				final TextCell bodyCell = BuiltInTypesFactory.eINSTANCE.createTextCell();
-				bodyCell.setLocation(CellLocation.BODY);
-				bodyCell.setText(column.buildCellLabel(column.getCellValue(rowElement)));
-				bodyRow.getCells().add(bodyCell);
-			}
-		}
-
-
-		if (!isEmptyTable(table, eReferenceTableView)) {
-			returnedElements.add(expectedReturnedClass.cast(table));
-			returnedElements.add(expectedReturnedClass.cast(STRUCTURE_EFACTORY.createEmptyLine()));
 		}
 
 		return buildMapperResult(eReferenceTableView, semanticModelElement, expectedReturnedClass, returnedElements);

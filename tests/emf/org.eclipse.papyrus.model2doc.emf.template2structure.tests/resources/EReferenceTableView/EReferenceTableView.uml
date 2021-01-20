@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_SfSjwFr8EeuDoZTWnd0Jog" name="EReferenceTableView">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_SgdocFr8EeuDoZTWnd0Jog">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_CAh10Fr9EeuDoZTWnd0Jog" name="Class2">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_KTsl4Fr9EeuDoZTWnd0Jog" name="Property1" type="_ClC4IFr9EeuDoZTWnd0Jog"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_KiJ4oFr9EeuDoZTWnd0Jog" name="Property2" type="_CAh10Fr9EeuDoZTWnd0Jog"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_Kj-dkFr9EeuDoZTWnd0Jog" name="Property3" type="_CNCn0Fr9EeuDoZTWnd0Jog">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RgI-cFr9EeuDoZTWnd0Jog" value="*"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_CNCn0Fr9EeuDoZTWnd0Jog" name="Class3">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_L9E-gFr9EeuDoZTWnd0Jog" name="Operation1">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_XrH6AFr9EeuDoZTWnd0Jog" name="in1" type="_ClC4IFr9EeuDoZTWnd0Jog"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_asVBMFr9EeuDoZTWnd0Jog" name="out" type="_CAh10Fr9EeuDoZTWnd0Jog" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_ClC4IFr9EeuDoZTWnd0Jog" name="Class4"/>
+</uml:Model>

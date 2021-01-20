@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:booleanexpressions="http://www.eclipse.org/papyrus/expressions/booleanexpressions" xmlns:documentstructuretemplate="http://www.eclipse.org/papyrus/model2doc/emf/1.0.0/documentstructuretemplate" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:generatorconfiguration="http://www.eclipse.org/papyrus/model2doc/1.0.0/generatorconfiguration" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/papyrus/expressions/booleanexpressions http://www.eclipse.org/papyrus/expressions#//booleanexpressions">
+  <documentstructuretemplate:TextDocumentTemplate xmi:id="_vrqbsFsaEeuDoZTWnd0Jog" name="default" kindId="org.eclipse.papyrus.model2doc.integration.docx.uml.architecture.emptyDocument" mainTitle="TreeListView">
+    <semanticContext xmi:type="uml:Model" href="TreeListView.uml#_tfs6cFsaEeuDoZTWnd0Jog"/>
+    <graphicalContext xmi:type="uml:Model" href="TreeListView.uml#_tfs6cFsaEeuDoZTWnd0Jog"/>
+    <documentTemplatePrototype xmi:type="documentstructuretemplate:DocumentTemplatePrototype" href="platform:/plugin/org.eclipse.papyrus.model2doc.integration.docx.uml.architecture/resources/docx-emptyTextDocumentPrototype.pdst#DOCX-EmptyUMLDocumentStructureTemplateType"/>
+    <documentStructureGeneratorConfiguration xmi:type="generatorconfiguration:DefaultDocumentStructureGeneratorConfiguration" xmi:id="_vrqbsVsaEeuDoZTWnd0Jog" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.docx/templates/PapyrusTemplate.dotx" documentName="default" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.docx" structureGeneratorId="TextDocumentStructureGenerator.default" imageFolder="output/images" structureFolder="output"/>
+    <documentPart xmi:type="documentstructuretemplate:Body" xmi:id="_vrqbtFsaEeuDoZTWnd0Jog">
+      <bodyPartTemplate xmi:type="documentstructuretemplate:TreeListView" xmi:id="_2HzYsFsaEeuDoZTWnd0Jog" generate="true" generateTitle="true" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+        <rootListItemTemplate xmi:type="documentstructuretemplate:EReferenceListItemTemplate" xmi:id="_njQ7wFsbEeuDoZTWnd0Jog" generateItem="true">
+          <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
+          <subListItemTemplate xmi:type="documentstructuretemplate:EClassListItemTemplate" xmi:id="_uQUpoFsbEeuDoZTWnd0Jog" filterRule="TYPE_OF" generateItem="true">
+            <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+            <listItemTemplate xmi:type="documentstructuretemplate:EAttributeListItemTemplate" xmi:id="_4YDHkFsbEeuDoZTWnd0Jog" generateItem="true">
+              <eAttribute xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier/isAbstract"/>
+            </listItemTemplate>
+          </subListItemTemplate>
+        </rootListItemTemplate>
+        <rootListItemTemplate xmi:type="documentstructuretemplate:EAttributeListItemTemplate" xmi:id="_EVo68FscEeuDoZTWnd0Jog" generateItem="true">
+          <eAttribute xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/visibility"/>
+        </rootListItemTemplate>
+      </bodyPartTemplate>
+    </documentPart>
+  </documentstructuretemplate:TextDocumentTemplate>
+  <documentstructuretemplate:TextDocumentTemplate xmi:id="_S_ncEFscEeuDoZTWnd0Jog" name="customTitle" kindId="org.eclipse.papyrus.model2doc.integration.docx.uml.architecture.emptyDocument" mainTitle="TreeListView">
+    <semanticContext xmi:type="uml:Model" href="TreeListView.uml#_tfs6cFsaEeuDoZTWnd0Jog"/>
+    <graphicalContext xmi:type="uml:Model" href="TreeListView.uml#_tfs6cFsaEeuDoZTWnd0Jog"/>
+    <documentTemplatePrototype xmi:type="documentstructuretemplate:DocumentTemplatePrototype" href="platform:/plugin/org.eclipse.papyrus.model2doc.integration.docx.uml.architecture/resources/docx-emptyTextDocumentPrototype.pdst#DOCX-EmptyUMLDocumentStructureTemplateType"/>
+    <documentStructureGeneratorConfiguration xmi:type="generatorconfiguration:DefaultDocumentStructureGeneratorConfiguration" xmi:id="_S_ncEVscEeuDoZTWnd0Jog" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.docx/templates/PapyrusTemplate.dotx" documentName="customTitle" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.docx" structureGeneratorId="TextDocumentStructureGenerator.default" imageFolder="output/images" structureFolder="output"/>
+    <documentPart xmi:type="documentstructuretemplate:Body" xmi:id="_S_ncFFscEeuDoZTWnd0Jog">
+      <bodyPartTemplate xmi:type="documentstructuretemplate:TreeListView" xmi:id="_dFlmgFscEeuDoZTWnd0Jog" generate="true" generateTitle="true" customTitle="My custom title" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+        <rootListItemTemplate xmi:type="documentstructuretemplate:EReferenceListItemTemplate" xmi:id="_dFmNkFscEeuDoZTWnd0Jog" generateItem="true">
+          <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
+          <subListItemTemplate xmi:type="documentstructuretemplate:EClassListItemTemplate" xmi:id="_dFmNkVscEeuDoZTWnd0Jog" filterRule="TYPE_OF" generateItem="true">
+            <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+            <listItemTemplate xmi:type="documentstructuretemplate:EAttributeListItemTemplate" xmi:id="_dFmNklscEeuDoZTWnd0Jog" generateItem="true">
+              <eAttribute xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier/isAbstract"/>
+            </listItemTemplate>
+          </subListItemTemplate>
+        </rootListItemTemplate>
+        <rootListItemTemplate xmi:type="documentstructuretemplate:EAttributeListItemTemplate" xmi:id="_dFm0oFscEeuDoZTWnd0Jog" generateItem="true">
+          <eAttribute xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/visibility"/>
+        </rootListItemTemplate>
+      </bodyPartTemplate>
+    </documentPart>
+  </documentstructuretemplate:TextDocumentTemplate>
+  <documentstructuretemplate:TextDocumentTemplate xmi:id="_UjEy4FscEeuDoZTWnd0Jog" name="doNotGenerate" kindId="org.eclipse.papyrus.model2doc.integration.docx.uml.architecture.emptyDocument" mainTitle="TreeListView">
+    <semanticContext xmi:type="uml:Model" href="TreeListView.uml#_tfs6cFsaEeuDoZTWnd0Jog"/>
+    <graphicalContext xmi:type="uml:Model" href="TreeListView.uml#_tfs6cFsaEeuDoZTWnd0Jog"/>
+    <documentTemplatePrototype xmi:type="documentstructuretemplate:DocumentTemplatePrototype" href="platform:/plugin/org.eclipse.papyrus.model2doc.integration.docx.uml.architecture/resources/docx-emptyTextDocumentPrototype.pdst#DOCX-EmptyUMLDocumentStructureTemplateType"/>
+    <documentStructureGeneratorConfiguration xmi:type="generatorconfiguration:DefaultDocumentStructureGeneratorConfiguration" xmi:id="_UjEy4VscEeuDoZTWnd0Jog" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.docx/templates/PapyrusTemplate.dotx" documentName="doNotGenerate" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.docx" structureGeneratorId="TextDocumentStructureGenerator.default" imageFolder="output/images" structureFolder="output"/>
+    <documentPart xmi:type="documentstructuretemplate:Body" xmi:id="_UjEy5FscEeuDoZTWnd0Jog">
+      <bodyPartTemplate xmi:type="documentstructuretemplate:TreeListView" xmi:id="_dNflUFscEeuDoZTWnd0Jog" generate="false" generateTitle="true" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+        <rootListItemTemplate xmi:type="documentstructuretemplate:EReferenceListItemTemplate" xmi:id="_dNflUVscEeuDoZTWnd0Jog" generateItem="true">
+          <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
+          <subListItemTemplate xmi:type="documentstructuretemplate:EClassListItemTemplate" xmi:id="_dNflUlscEeuDoZTWnd0Jog" filterRule="TYPE_OF" generateItem="true">
+            <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+            <listItemTemplate xmi:type="documentstructuretemplate:EAttributeListItemTemplate" xmi:id="_dNflU1scEeuDoZTWnd0Jog" generateItem="true">
+              <eAttribute xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier/isAbstract"/>
+            </listItemTemplate>
+          </subListItemTemplate>
+        </rootListItemTemplate>
+        <rootListItemTemplate xmi:type="documentstructuretemplate:EAttributeListItemTemplate" xmi:id="_dNflVFscEeuDoZTWnd0Jog" generateItem="true">
+          <eAttribute xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/visibility"/>
+        </rootListItemTemplate>
+      </bodyPartTemplate>
+    </documentPart>
+  </documentstructuretemplate:TextDocumentTemplate>
+  <documentstructuretemplate:TextDocumentTemplate xmi:id="_Vi7tYFscEeuDoZTWnd0Jog" name="doNotGenerateTitle" kindId="org.eclipse.papyrus.model2doc.integration.docx.uml.architecture.emptyDocument" mainTitle="TreeListView">
+    <semanticContext xmi:type="uml:Model" href="TreeListView.uml#_tfs6cFsaEeuDoZTWnd0Jog"/>
+    <graphicalContext xmi:type="uml:Model" href="TreeListView.uml#_tfs6cFsaEeuDoZTWnd0Jog"/>
+    <documentTemplatePrototype xmi:type="documentstructuretemplate:DocumentTemplatePrototype" href="platform:/plugin/org.eclipse.papyrus.model2doc.integration.docx.uml.architecture/resources/docx-emptyTextDocumentPrototype.pdst#DOCX-EmptyUMLDocumentStructureTemplateType"/>
+    <documentStructureGeneratorConfiguration xmi:type="generatorconfiguration:DefaultDocumentStructureGeneratorConfiguration" xmi:id="_Vi7tYVscEeuDoZTWnd0Jog" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.docx/templates/PapyrusTemplate.dotx" documentName="doNotGenerateTitle" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.docx" structureGeneratorId="TextDocumentStructureGenerator.default" imageFolder="output/images" structureFolder="output"/>
+    <documentPart xmi:type="documentstructuretemplate:Body" xmi:id="_Vi8UclscEeuDoZTWnd0Jog">
+      <bodyPartTemplate xmi:type="documentstructuretemplate:TreeListView" xmi:id="_dVN98FscEeuDoZTWnd0Jog" generate="true" generateTitle="false" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+        <rootListItemTemplate xmi:type="documentstructuretemplate:EReferenceListItemTemplate" xmi:id="_dVN98VscEeuDoZTWnd0Jog" generateItem="true">
+          <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
+          <subListItemTemplate xmi:type="documentstructuretemplate:EClassListItemTemplate" xmi:id="_dVOlAFscEeuDoZTWnd0Jog" filterRule="TYPE_OF" generateItem="true">
+            <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+            <listItemTemplate xmi:type="documentstructuretemplate:EAttributeListItemTemplate" xmi:id="_dVOlAVscEeuDoZTWnd0Jog" generateItem="true">
+              <eAttribute xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier/isAbstract"/>
+            </listItemTemplate>
+          </subListItemTemplate>
+        </rootListItemTemplate>
+        <rootListItemTemplate xmi:type="documentstructuretemplate:EAttributeListItemTemplate" xmi:id="_dVOlAlscEeuDoZTWnd0Jog" generateItem="true">
+          <eAttribute xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/visibility"/>
+        </rootListItemTemplate>
+      </bodyPartTemplate>
+    </documentPart>
+  </documentstructuretemplate:TextDocumentTemplate>
+  <documentstructuretemplate:TextDocumentTemplate xmi:id="_Xx--4FscEeuDoZTWnd0Jog" name="generateIfEmpty" kindId="org.eclipse.papyrus.model2doc.integration.docx.uml.architecture.emptyDocument" mainTitle="TreeListView">
+    <semanticContext xmi:type="uml:Model" href="TreeListView.uml#_tfs6cFsaEeuDoZTWnd0Jog"/>
+    <graphicalContext xmi:type="uml:Model" href="TreeListView.uml#_tfs6cFsaEeuDoZTWnd0Jog"/>
+    <documentTemplatePrototype xmi:type="documentstructuretemplate:DocumentTemplatePrototype" href="platform:/plugin/org.eclipse.papyrus.model2doc.integration.docx.uml.architecture/resources/docx-emptyTextDocumentPrototype.pdst#DOCX-EmptyUMLDocumentStructureTemplateType"/>
+    <documentStructureGeneratorConfiguration xmi:type="generatorconfiguration:DefaultDocumentStructureGeneratorConfiguration" xmi:id="_Xx--4VscEeuDoZTWnd0Jog" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.docx/templates/PapyrusTemplate.dotx" documentName="generateIfEmpty" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.docx" structureGeneratorId="TextDocumentStructureGenerator.default" imageFolder="output/images" structureFolder="output"/>
+    <documentPart xmi:type="documentstructuretemplate:Body" xmi:id="_Xx_l8lscEeuDoZTWnd0Jog">
+      <bodyPartTemplate xmi:type="documentstructuretemplate:TreeListView" xmi:id="_dd_fcFscEeuDoZTWnd0Jog" generate="true" generateTitle="true" generateIfEmpty="true" defaultTextIfEmpty="N/A">
+        <rootListItemTemplate xmi:type="documentstructuretemplate:EReferenceListItemTemplate" xmi:id="_ulGxYFscEeuDoZTWnd0Jog" generateItem="true">
+          <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element/ownedComment"/>
+        </rootListItemTemplate>
+      </bodyPartTemplate>
+    </documentPart>
+  </documentstructuretemplate:TextDocumentTemplate>
+  <documentstructuretemplate:TextDocumentTemplate xmi:id="_ZjG-QFscEeuDoZTWnd0Jog" name="withExpression" kindId="org.eclipse.papyrus.model2doc.integration.docx.uml.architecture.emptyDocument" mainTitle="TreeListView">
+    <semanticContext xmi:type="uml:Model" href="TreeListView.uml#_tfs6cFsaEeuDoZTWnd0Jog"/>
+    <graphicalContext xmi:type="uml:Model" href="TreeListView.uml#_tfs6cFsaEeuDoZTWnd0Jog"/>
+    <documentTemplatePrototype xmi:type="documentstructuretemplate:DocumentTemplatePrototype" href="platform:/plugin/org.eclipse.papyrus.model2doc.integration.docx.uml.architecture/resources/docx-emptyTextDocumentPrototype.pdst#DOCX-EmptyUMLDocumentStructureTemplateType"/>
+    <documentStructureGeneratorConfiguration xmi:type="generatorconfiguration:DefaultDocumentStructureGeneratorConfiguration" xmi:id="_ZjHlUFscEeuDoZTWnd0Jog" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.docx/templates/PapyrusTemplate.dotx" documentName="withExpression" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.docx" structureGeneratorId="TextDocumentStructureGenerator.default" imageFolder="output/images" structureFolder="output"/>
+    <documentPart xmi:type="documentstructuretemplate:Body" xmi:id="_ZjHlU1scEeuDoZTWnd0Jog">
+      <bodyPartTemplate xmi:type="documentstructuretemplate:TreeListView" xmi:id="_dnwfcFscEeuDoZTWnd0Jog" generate="true" generateTitle="true" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+        <generateBranchCondition xmi:type="booleanexpressions:LiteralFalseExpression" xmi:id="_ntNFcFscEeuDoZTWnd0Jog"/>
+        <rootListItemTemplate xmi:type="documentstructuretemplate:EReferenceListItemTemplate" xmi:id="_dnwfcVscEeuDoZTWnd0Jog" generateItem="true">
+          <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
+          <subListItemTemplate xmi:type="documentstructuretemplate:EClassListItemTemplate" xmi:id="_dnxGgFscEeuDoZTWnd0Jog" filterRule="TYPE_OF" generateItem="true">
+            <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+            <listItemTemplate xmi:type="documentstructuretemplate:EAttributeListItemTemplate" xmi:id="_dnxGgVscEeuDoZTWnd0Jog" generateItem="true">
+              <eAttribute xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier/isAbstract"/>
+            </listItemTemplate>
+          </subListItemTemplate>
+        </rootListItemTemplate>
+        <rootListItemTemplate xmi:type="documentstructuretemplate:EAttributeListItemTemplate" xmi:id="_dnxGglscEeuDoZTWnd0Jog" generateItem="true">
+          <eAttribute xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/visibility"/>
+        </rootListItemTemplate>
+      </bodyPartTemplate>
+    </documentPart>
+  </documentstructuretemplate:TextDocumentTemplate>
+  <documentstructuretemplate:TextDocumentTemplate xmi:id="_Wg08MFsgEeuDoZTWnd0Jog" name="eReferenceListItemCustomItemLabel" kindId="org.eclipse.papyrus.model2doc.integration.docx.uml.architecture.emptyDocument" mainTitle="TreeListView">
+    <semanticContext xmi:type="uml:Model" href="TreeListView.uml#_tfs6cFsaEeuDoZTWnd0Jog"/>
+    <graphicalContext xmi:type="uml:Model" href="TreeListView.uml#_tfs6cFsaEeuDoZTWnd0Jog"/>
+    <documentTemplatePrototype xmi:type="documentstructuretemplate:DocumentTemplatePrototype" href="platform:/plugin/org.eclipse.papyrus.model2doc.integration.docx.uml.architecture/resources/docx-emptyTextDocumentPrototype.pdst#DOCX-EmptyUMLDocumentStructureTemplateType"/>
+    <documentStructureGeneratorConfiguration xmi:type="generatorconfiguration:DefaultDocumentStructureGeneratorConfiguration" xmi:id="_Wg08MVsgEeuDoZTWnd0Jog" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.docx/templates/PapyrusTemplate.dotx" documentName="eReferenceListItemCustomItemLabel" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.docx" structureGeneratorId="TextDocumentStructureGenerator.default" imageFolder="output/images" structureFolder="output"/>
+    <documentPart xmi:type="documentstructuretemplate:Body" xmi:id="_Wg08NFsgEeuDoZTWnd0Jog">
+      <bodyPartTemplate xmi:type="documentstructuretemplate:TreeListView" xmi:id="_8QZf4FsgEeuDoZTWnd0Jog" generate="true" generateTitle="true" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+        <rootListItemTemplate xmi:type="documentstructuretemplate:EReferenceListItemTemplate" xmi:id="_8QaG8FsgEeuDoZTWnd0Jog" generateItem="true" customItemLabel="My custom item label">
+          <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
+          <subListItemTemplate xmi:type="documentstructuretemplate:EClassListItemTemplate" xmi:id="_8QaG8VsgEeuDoZTWnd0Jog" filterRule="TYPE_OF" generateItem="true">
+            <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+            <listItemTemplate xmi:type="documentstructuretemplate:EAttributeListItemTemplate" xmi:id="_8QaG8lsgEeuDoZTWnd0Jog" generateItem="true">
+              <eAttribute xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier/isAbstract"/>
+            </listItemTemplate>
+          </subListItemTemplate>
+        </rootListItemTemplate>
+        <rootListItemTemplate xmi:type="documentstructuretemplate:EAttributeListItemTemplate" xmi:id="_8QaG81sgEeuDoZTWnd0Jog" generateItem="true">
+          <eAttribute xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/visibility"/>
+        </rootListItemTemplate>
+      </bodyPartTemplate>
+    </documentPart>
+  </documentstructuretemplate:TextDocumentTemplate>
+  <documentstructuretemplate:TextDocumentTemplate xmi:id="_dHPPgFsgEeuDoZTWnd0Jog" name="eReferenceListItemDoNotGenerate" kindId="org.eclipse.papyrus.model2doc.integration.docx.uml.architecture.emptyDocument" mainTitle="TreeListView">
+    <semanticContext xmi:type="uml:Model" href="TreeListView.uml#_tfs6cFsaEeuDoZTWnd0Jog"/>
+    <graphicalContext xmi:type="uml:Model" href="TreeListView.uml#_tfs6cFsaEeuDoZTWnd0Jog"/>
+    <documentTemplatePrototype xmi:type="documentstructuretemplate:DocumentTemplatePrototype" href="platform:/plugin/org.eclipse.papyrus.model2doc.integration.docx.uml.architecture/resources/docx-emptyTextDocumentPrototype.pdst#DOCX-EmptyUMLDocumentStructureTemplateType"/>
+    <documentStructureGeneratorConfiguration xmi:type="generatorconfiguration:DefaultDocumentStructureGeneratorConfiguration" xmi:id="_dHP2kFsgEeuDoZTWnd0Jog" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.docx/templates/PapyrusTemplate.dotx" documentName="eReferenceListItemDoNotGenerate" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.docx" structureGeneratorId="TextDocumentStructureGenerator.default" imageFolder="output/images" structureFolder="output"/>
+    <documentPart xmi:type="documentstructuretemplate:Body" xmi:id="_dHP2k1sgEeuDoZTWnd0Jog">
+      <bodyPartTemplate xmi:type="documentstructuretemplate:TreeListView" xmi:id="_8b_r4FsgEeuDoZTWnd0Jog" generate="true" generateTitle="true" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+        <rootListItemTemplate xmi:type="documentstructuretemplate:EReferenceListItemTemplate" xmi:id="_8b_r4VsgEeuDoZTWnd0Jog" generateItem="false">
+          <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
+          <subListItemTemplate xmi:type="documentstructuretemplate:EClassListItemTemplate" xmi:id="_8b_r4lsgEeuDoZTWnd0Jog" filterRule="TYPE_OF" generateItem="true">
+            <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+            <listItemTemplate xmi:type="documentstructuretemplate:EAttributeListItemTemplate" xmi:id="_8b_r41sgEeuDoZTWnd0Jog" generateItem="true">
+              <eAttribute xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier/isAbstract"/>
+            </listItemTemplate>
+          </subListItemTemplate>
+        </rootListItemTemplate>
+        <rootListItemTemplate xmi:type="documentstructuretemplate:EAttributeListItemTemplate" xmi:id="_8b_r5FsgEeuDoZTWnd0Jog" generateItem="true">
+          <eAttribute xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/visibility"/>
+        </rootListItemTemplate>
+      </bodyPartTemplate>
+    </documentPart>
+  </documentstructuretemplate:TextDocumentTemplate>
+  <documentstructuretemplate:TextDocumentTemplate xmi:id="_j15f4FsgEeuDoZTWnd0Jog" name="eClassListItemDoNotGenerate" kindId="org.eclipse.papyrus.model2doc.integration.docx.uml.architecture.emptyDocument" mainTitle="TreeListView">
+    <semanticContext xmi:type="uml:Model" href="TreeListView.uml#_tfs6cFsaEeuDoZTWnd0Jog"/>
+    <graphicalContext xmi:type="uml:Model" href="TreeListView.uml#_tfs6cFsaEeuDoZTWnd0Jog"/>
+    <documentTemplatePrototype xmi:type="documentstructuretemplate:DocumentTemplatePrototype" href="platform:/plugin/org.eclipse.papyrus.model2doc.integration.docx.uml.architecture/resources/docx-emptyTextDocumentPrototype.pdst#DOCX-EmptyUMLDocumentStructureTemplateType"/>
+    <documentStructureGeneratorConfiguration xmi:type="generatorconfiguration:DefaultDocumentStructureGeneratorConfiguration" xmi:id="_j16G8FsgEeuDoZTWnd0Jog" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.docx/templates/PapyrusTemplate.dotx" documentName="eClassListItemDoNotGenerate" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.docx" structureGeneratorId="TextDocumentStructureGenerator.default" imageFolder="output/images" structureFolder="output"/>
+    <documentPart xmi:type="documentstructuretemplate:Body" xmi:id="_j16G81sgEeuDoZTWnd0Jog">
+      <bodyPartTemplate xmi:type="documentstructuretemplate:TreeListView" xmi:id="_8kHGEFsgEeuDoZTWnd0Jog" generate="true" generateTitle="true" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+        <rootListItemTemplate xmi:type="documentstructuretemplate:EReferenceListItemTemplate" xmi:id="_8kHGEVsgEeuDoZTWnd0Jog" generateItem="true">
+          <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
+          <subListItemTemplate xmi:type="documentstructuretemplate:EClassListItemTemplate" xmi:id="_8kHGElsgEeuDoZTWnd0Jog" filterRule="TYPE_OF" generateItem="false">
+            <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+            <listItemTemplate xmi:type="documentstructuretemplate:EAttributeListItemTemplate" xmi:id="_8kHGE1sgEeuDoZTWnd0Jog" generateItem="true">
+              <eAttribute xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier/isAbstract"/>
+            </listItemTemplate>
+          </subListItemTemplate>
+        </rootListItemTemplate>
+        <rootListItemTemplate xmi:type="documentstructuretemplate:EAttributeListItemTemplate" xmi:id="_8kHGFFsgEeuDoZTWnd0Jog" generateItem="true">
+          <eAttribute xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/visibility"/>
+        </rootListItemTemplate>
+      </bodyPartTemplate>
+    </documentPart>
+  </documentstructuretemplate:TextDocumentTemplate>
+  <documentstructuretemplate:TextDocumentTemplate xmi:id="_oPv1AFsgEeuDoZTWnd0Jog" name="eClassListItemCustomItemLabel" kindId="org.eclipse.papyrus.model2doc.integration.docx.uml.architecture.emptyDocument" mainTitle="TreeListView">
+    <semanticContext xmi:type="uml:Model" href="TreeListView.uml#_tfs6cFsaEeuDoZTWnd0Jog"/>
+    <graphicalContext xmi:type="uml:Model" href="TreeListView.uml#_tfs6cFsaEeuDoZTWnd0Jog"/>
+    <documentTemplatePrototype xmi:type="documentstructuretemplate:DocumentTemplatePrototype" href="platform:/plugin/org.eclipse.papyrus.model2doc.integration.docx.uml.architecture/resources/docx-emptyTextDocumentPrototype.pdst#DOCX-EmptyUMLDocumentStructureTemplateType"/>
+    <documentStructureGeneratorConfiguration xmi:type="generatorconfiguration:DefaultDocumentStructureGeneratorConfiguration" xmi:id="_oPwcEFsgEeuDoZTWnd0Jog" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.docx/templates/PapyrusTemplate.dotx" documentName="eClassListItemCustomItemLabel" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.docx" structureGeneratorId="TextDocumentStructureGenerator.default" imageFolder="output/images" structureFolder="output"/>
+    <documentPart xmi:type="documentstructuretemplate:Body" xmi:id="_oPwcE1sgEeuDoZTWnd0Jog">
+      <bodyPartTemplate xmi:type="documentstructuretemplate:TreeListView" xmi:id="_8sEvQFsgEeuDoZTWnd0Jog" generate="true" generateTitle="true" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+        <rootListItemTemplate xmi:type="documentstructuretemplate:EReferenceListItemTemplate" xmi:id="_8sEvQVsgEeuDoZTWnd0Jog" generateItem="true">
+          <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
+          <subListItemTemplate xmi:type="documentstructuretemplate:EClassListItemTemplate" xmi:id="_8sEvQlsgEeuDoZTWnd0Jog" filterRule="TYPE_OF" generateItem="true" customItemLabel="My custom item label">
+            <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+            <listItemTemplate xmi:type="documentstructuretemplate:EAttributeListItemTemplate" xmi:id="_8sEvQ1sgEeuDoZTWnd0Jog" generateItem="true">
+              <eAttribute xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier/isAbstract"/>
+            </listItemTemplate>
+          </subListItemTemplate>
+        </rootListItemTemplate>
+        <rootListItemTemplate xmi:type="documentstructuretemplate:EAttributeListItemTemplate" xmi:id="_8sEvRFsgEeuDoZTWnd0Jog" generateItem="true">
+          <eAttribute xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/visibility"/>
+        </rootListItemTemplate>
+      </bodyPartTemplate>
+    </documentPart>
+  </documentstructuretemplate:TextDocumentTemplate>
+  <documentstructuretemplate:TextDocumentTemplate xmi:id="_vDcWYFsgEeuDoZTWnd0Jog" name="eClassListItemKindOf" kindId="org.eclipse.papyrus.model2doc.integration.docx.uml.architecture.emptyDocument" mainTitle="TreeListView">
+    <semanticContext xmi:type="uml:Model" href="TreeListView.uml#_tfs6cFsaEeuDoZTWnd0Jog"/>
+    <graphicalContext xmi:type="uml:Model" href="TreeListView.uml#_tfs6cFsaEeuDoZTWnd0Jog"/>
+    <documentTemplatePrototype xmi:type="documentstructuretemplate:DocumentTemplatePrototype" href="platform:/plugin/org.eclipse.papyrus.model2doc.integration.docx.uml.architecture/resources/docx-emptyTextDocumentPrototype.pdst#DOCX-EmptyUMLDocumentStructureTemplateType"/>
+    <documentStructureGeneratorConfiguration xmi:type="generatorconfiguration:DefaultDocumentStructureGeneratorConfiguration" xmi:id="_vDcWYVsgEeuDoZTWnd0Jog" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.docx/templates/PapyrusTemplate.dotx" documentName="eClassListItemKindOf" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.docx" structureGeneratorId="TextDocumentStructureGenerator.default" imageFolder="output/images" structureFolder="output"/>
+    <documentPart xmi:type="documentstructuretemplate:Body" xmi:id="_vDcWZFsgEeuDoZTWnd0Jog">
+      <bodyPartTemplate xmi:type="documentstructuretemplate:TreeListView" xmi:id="_8zatYFsgEeuDoZTWnd0Jog" generate="true" generateTitle="true" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+        <rootListItemTemplate xmi:type="documentstructuretemplate:EReferenceListItemTemplate" xmi:id="_8zatYVsgEeuDoZTWnd0Jog" generateItem="true">
+          <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
+          <subListItemTemplate xmi:type="documentstructuretemplate:EClassListItemTemplate" xmi:id="_8zbUcFsgEeuDoZTWnd0Jog" filterRule="KIND_OF" generateItem="true">
+            <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+            <listItemTemplate xmi:type="documentstructuretemplate:EAttributeListItemTemplate" xmi:id="_8zbUcVsgEeuDoZTWnd0Jog" generateItem="true">
+              <eAttribute xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier/isAbstract"/>
+            </listItemTemplate>
+          </subListItemTemplate>
+        </rootListItemTemplate>
+        <rootListItemTemplate xmi:type="documentstructuretemplate:EAttributeListItemTemplate" xmi:id="_8zbUclsgEeuDoZTWnd0Jog" generateItem="true">
+          <eAttribute xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/visibility"/>
+        </rootListItemTemplate>
+      </bodyPartTemplate>
+    </documentPart>
+  </documentstructuretemplate:TextDocumentTemplate>
+  <documentstructuretemplate:TextDocumentTemplate xmi:id="_1qyd0FsgEeuDoZTWnd0Jog" name="eAttributeListItemDoNotGenerate" kindId="org.eclipse.papyrus.model2doc.integration.docx.uml.architecture.emptyDocument" mainTitle="TreeListView">
+    <semanticContext xmi:type="uml:Model" href="TreeListView.uml#_tfs6cFsaEeuDoZTWnd0Jog"/>
+    <graphicalContext xmi:type="uml:Model" href="TreeListView.uml#_tfs6cFsaEeuDoZTWnd0Jog"/>
+    <documentTemplatePrototype xmi:type="documentstructuretemplate:DocumentTemplatePrototype" href="platform:/plugin/org.eclipse.papyrus.model2doc.integration.docx.uml.architecture/resources/docx-emptyTextDocumentPrototype.pdst#DOCX-EmptyUMLDocumentStructureTemplateType"/>
+    <documentStructureGeneratorConfiguration xmi:type="generatorconfiguration:DefaultDocumentStructureGeneratorConfiguration" xmi:id="_1qyd0VsgEeuDoZTWnd0Jog" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.docx/templates/PapyrusTemplate.dotx" documentName="eAttributeListItemDoNotGenerate" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.docx" structureGeneratorId="TextDocumentStructureGenerator.default" imageFolder="output/images" structureFolder="output"/>
+    <documentPart xmi:type="documentstructuretemplate:Body" xmi:id="_1qyd1FsgEeuDoZTWnd0Jog">
+      <bodyPartTemplate xmi:type="documentstructuretemplate:TreeListView" xmi:id="_880hAFsgEeuDoZTWnd0Jog" generate="true" generateTitle="true" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+        <rootListItemTemplate xmi:type="documentstructuretemplate:EReferenceListItemTemplate" xmi:id="_880hAVsgEeuDoZTWnd0Jog" generateItem="true">
+          <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
+          <subListItemTemplate xmi:type="documentstructuretemplate:EClassListItemTemplate" xmi:id="_881IEFsgEeuDoZTWnd0Jog" filterRule="TYPE_OF" generateItem="true">
+            <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+            <listItemTemplate xmi:type="documentstructuretemplate:EAttributeListItemTemplate" xmi:id="_881IEVsgEeuDoZTWnd0Jog" generateItem="true">
+              <eAttribute xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier/isAbstract"/>
+            </listItemTemplate>
+          </subListItemTemplate>
+        </rootListItemTemplate>
+        <rootListItemTemplate xmi:type="documentstructuretemplate:EAttributeListItemTemplate" xmi:id="_881IElsgEeuDoZTWnd0Jog" generateItem="false">
+          <eAttribute xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/visibility"/>
+        </rootListItemTemplate>
+      </bodyPartTemplate>
+    </documentPart>
+  </documentstructuretemplate:TextDocumentTemplate>
+  <documentstructuretemplate:TextDocumentTemplate xmi:id="_3iqlcFsgEeuDoZTWnd0Jog" name="eAttributeListItemCustomItemLabel" kindId="org.eclipse.papyrus.model2doc.integration.docx.uml.architecture.emptyDocument" mainTitle="TreeListView">
+    <semanticContext xmi:type="uml:Model" href="TreeListView.uml#_tfs6cFsaEeuDoZTWnd0Jog"/>
+    <graphicalContext xmi:type="uml:Model" href="TreeListView.uml#_tfs6cFsaEeuDoZTWnd0Jog"/>
+    <documentTemplatePrototype xmi:type="documentstructuretemplate:DocumentTemplatePrototype" href="platform:/plugin/org.eclipse.papyrus.model2doc.integration.docx.uml.architecture/resources/docx-emptyTextDocumentPrototype.pdst#DOCX-EmptyUMLDocumentStructureTemplateType"/>
+    <documentStructureGeneratorConfiguration xmi:type="generatorconfiguration:DefaultDocumentStructureGeneratorConfiguration" xmi:id="_3iqlcVsgEeuDoZTWnd0Jog" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.docx/templates/PapyrusTemplate.dotx" documentName="eAttributeListItemCustomItemLabel" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.docx" structureGeneratorId="TextDocumentStructureGenerator.default" imageFolder="output/images" structureFolder="output"/>
+    <documentPart xmi:type="documentstructuretemplate:Body" xmi:id="_3iqldFsgEeuDoZTWnd0Jog">
+      <bodyPartTemplate xmi:type="documentstructuretemplate:TreeListView" xmi:id="_9KBPgFsgEeuDoZTWnd0Jog" generate="true" generateTitle="true" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+        <rootListItemTemplate xmi:type="documentstructuretemplate:EReferenceListItemTemplate" xmi:id="_9KB2kFsgEeuDoZTWnd0Jog" generateItem="true">
+          <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
+          <subListItemTemplate xmi:type="documentstructuretemplate:EClassListItemTemplate" xmi:id="_9KB2kVsgEeuDoZTWnd0Jog" filterRule="TYPE_OF" generateItem="true">
+            <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+            <listItemTemplate xmi:type="documentstructuretemplate:EAttributeListItemTemplate" xmi:id="_9KB2klsgEeuDoZTWnd0Jog" generateItem="true">
+              <eAttribute xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier/isAbstract"/>
+            </listItemTemplate>
+          </subListItemTemplate>
+        </rootListItemTemplate>
+        <rootListItemTemplate xmi:type="documentstructuretemplate:EAttributeListItemTemplate" xmi:id="_9KCdoFsgEeuDoZTWnd0Jog" generateItem="true" customItemLabel="My custom item label">
+          <eAttribute xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/visibility"/>
+        </rootListItemTemplate>
+      </bodyPartTemplate>
+    </documentPart>
+  </documentstructuretemplate:TextDocumentTemplate>
+  <documentstructuretemplate:TextDocumentTemplate xmi:id="_QjqdYFskEeuDoZTWnd0Jog" name="eAttributeListItemEmpty" kindId="org.eclipse.papyrus.model2doc.integration.docx.uml.architecture.emptyDocument" mainTitle="TreeListView">
+    <semanticContext xmi:type="uml:Model" href="TreeListView.uml#_tfs6cFsaEeuDoZTWnd0Jog"/>
+    <graphicalContext xmi:type="uml:Model" href="TreeListView.uml#_tfs6cFsaEeuDoZTWnd0Jog"/>
+    <documentTemplatePrototype xmi:type="documentstructuretemplate:DocumentTemplatePrototype" href="platform:/plugin/org.eclipse.papyrus.model2doc.integration.docx.uml.architecture/resources/docx-emptyTextDocumentPrototype.pdst#DOCX-EmptyUMLDocumentStructureTemplateType"/>
+    <documentStructureGeneratorConfiguration xmi:type="generatorconfiguration:DefaultDocumentStructureGeneratorConfiguration" xmi:id="_QjqdYVskEeuDoZTWnd0Jog" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.docx/templates/PapyrusTemplate.dotx" documentName="eAttributeListItemEmpty" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.docx" structureGeneratorId="TextDocumentStructureGenerator.default" imageFolder="output/images" structureFolder="output"/>
+    <documentPart xmi:type="documentstructuretemplate:Body" xmi:id="_QjqdZFskEeuDoZTWnd0Jog">
+      <bodyPartTemplate xmi:type="documentstructuretemplate:TreeListView" xmi:id="_T2zpIFskEeuDoZTWnd0Jog" generate="true" generateTitle="true" customTitle="" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+        <rootListItemTemplate xmi:type="documentstructuretemplate:EAttributeListItemTemplate" xmi:id="_T20QMlskEeuDoZTWnd0Jog" generateItem="true">
+          <eAttribute xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//RedefinableElement/isLeaf"/>
+        </rootListItemTemplate>
+      </bodyPartTemplate>
+    </documentPart>
+  </documentstructuretemplate:TextDocumentTemplate>
+</xmi:XMI>

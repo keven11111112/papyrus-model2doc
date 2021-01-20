@@ -21,6 +21,7 @@
 		<module>org.eclipse.papyrus.model2doc.emf.documentstructure.tests</module>
 		<module>org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.tests</module>
 		<module>org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.editor.tests</module>
+		<module>org.eclipse.papyrus.model2doc.emf.template2structure.tests</module>
 	</modules>
 
 </project>

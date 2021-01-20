@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<documentstructure:TextDocument xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:documentstructure="http://www.eclipse.org/papyrus/model2doc/emf/1.0.0/documentstructure" xmlns:generatorconfiguration="http://www.eclipse.org/papyrus/model2doc/1.0.0/generatorconfiguration" xmi:id="_kerYUFs6EeunP5nEef8ySw" mainTitle="EReferencePartTemplate">
+  <documentGeneratorConfiguration xmi:type="generatorconfiguration:DefaultDocumentGeneratorConfiguration" xmi:id="_kerYUVs6EeunP5nEef8ySw" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.docx/templates/PapyrusTemplate.dotx" documentName="doNotGenerate" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.docx"/>
+  <textDocumentPart xmi:type="documentstructure:Body" xmi:id="_ker_YFs6EeunP5nEef8ySw">
+    <bodyPart xmi:type="documentstructure:Title" xmi:id="_ker_YVs6EeunP5nEef8ySw" title="Class2">
+      <subBodyPart xmi:type="documentstructure:Paragraph" xmi:id="_ker_Yls6EeunP5nEef8ySw" text="N/A"/>
+    </bodyPart>
+    <bodyPart xmi:type="documentstructure:Title" xmi:id="_ker_Y1s6EeunP5nEef8ySw" title="Class3">
+      <subBodyPart xmi:type="documentstructure:Paragraph" xmi:id="_ker_ZFs6EeunP5nEef8ySw" text="N/A"/>
+    </bodyPart>
+    <bodyPart xmi:type="documentstructure:Title" xmi:id="_ker_ZVs6EeunP5nEef8ySw" title="Class4">
+      <subBodyPart xmi:type="documentstructure:Paragraph" xmi:id="_ker_Zls6EeunP5nEef8ySw" text="N/A"/>
+    </bodyPart>
+  </textDocumentPart>
+</documentstructure:TextDocument>

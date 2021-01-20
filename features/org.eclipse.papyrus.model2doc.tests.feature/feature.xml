@@ -30,6 +30,12 @@
    </requires>
 
    <plugin
+         id="org.eclipse.papyrus.model2doc.emf.documentstructure.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
          id="org.eclipse.papyrus.model2doc.emf.documentstructuretemplate.tests"
          download-size="0"
          install-size="0"
@@ -42,6 +48,12 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.model2doc.emf.template2structure.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
 
    <plugin
          id="org.eclipse.papyrus.model2doc.integration.uml.architecture.tests"
@@ -71,12 +83,6 @@
 
    <plugin
          id="org.eclipse.papyrus.model2doc.core.builtintypes.tests"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
-
-   <plugin
-         id="org.eclipse.papyrus.model2doc.emf.documentstructure.tests"
          download-size="0"
          install-size="0"
          version="0.0.0"/>

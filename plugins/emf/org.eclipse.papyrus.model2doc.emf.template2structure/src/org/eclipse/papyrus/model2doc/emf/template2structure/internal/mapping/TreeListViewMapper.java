@@ -72,22 +72,22 @@ public class TreeListViewMapper extends AbstractBodyPartTemplateToStructureMappe
 
 		List<T> generatedElements = new ArrayList<>();
 
+		if (treeListView.isGenerate()) {
+			final Iterator<IRootListItemTemplate> itemIterator = treeListView.getRootListItemTemplates().iterator();
+			final List<ExtendedTextListItem> createdListItems = new ArrayList<>();
+			while (itemIterator.hasNext()) {
+				final IRootListItemTemplate current = itemIterator.next();
+				createdListItems.addAll(createListItems(current, semanticModelElement));
+			}
 
-		final Iterator<IRootListItemTemplate> itemIterator = treeListView.getRootListItemTemplates().iterator();
-		final List<ExtendedTextListItem> createdListItems = new ArrayList<>();
-		while (itemIterator.hasNext()) {
-			final IRootListItemTemplate current = itemIterator.next();
-			createdListItems.addAll(createListItems(current, semanticModelElement));
+			if (false == createdListItems.isEmpty()) {
+				final ExtendedBasicList list = STRUCTURE_EFACTORY.createExtendedBasicList();
+				list.getItems().addAll(createdListItems);
+
+				generatedElements.add(expectedReturnedClass.cast(list));
+			}
 		}
 
-
-		if (createdListItems.isEmpty()) {
-			return null;
-		}
-		final ExtendedBasicList list = STRUCTURE_EFACTORY.createExtendedBasicList();
-		list.getItems().addAll(createdListItems);
-
-		generatedElements.add(expectedReturnedClass.cast(list));
 		return buildMapperResult(treeListView, semanticModelElement, expectedReturnedClass, generatedElements);
 	}
 

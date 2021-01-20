@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:author="http://www.eclipse.org/papyrus/model2doc/core/1.0.0/Author" xmlns:booleanexpressions="http://www.eclipse.org/papyrus/expressions/booleanexpressions" xmlns:documentstructuretemplate="http://www.eclipse.org/papyrus/model2doc/emf/1.0.0/documentstructuretemplate" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:generatorconfiguration="http://www.eclipse.org/papyrus/model2doc/1.0.0/generatorconfiguration" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/papyrus/expressions/booleanexpressions http://www.eclipse.org/papyrus/expressions#//booleanexpressions">
+  <documentstructuretemplate:TextDocumentTemplate xmi:id="_tgK48Fp0EeuzrPif1Xho0g" name="default" kindId="org.eclipse.papyrus.model2doc.integration.docx.uml.architecture.emptyDocument" mainTitle="EAttributeAsParagraph">
+    <semanticContext xmi:type="uml:Model" href="EAttributeAsParagraph.uml#_ykreEKIjEemnzshfQ11WZw"/>
+    <graphicalContext xmi:type="uml:Model" href="EAttributeAsParagraph.uml#_ykreEKIjEemnzshfQ11WZw"/>
+    <documentTemplatePrototype xmi:type="documentstructuretemplate:DocumentTemplatePrototype" href="platform:/plugin/org.eclipse.papyrus.model2doc.integration.docx.uml.architecture/resources/docx-emptyTextDocumentPrototype.pdst#DOCX-EmptyUMLDocumentStructureTemplateType"/>
+    <documentStructureGeneratorConfiguration xmi:type="generatorconfiguration:DefaultDocumentStructureGeneratorConfiguration" xmi:id="_tgK48Vp0EeuzrPif1Xho0g" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.docx/templates/PapyrusTemplate.dotx" documentName="default" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.docx" structureGeneratorId="TextDocumentStructureGenerator.default" imageFolder="output/images" structureFolder="output"/>
+    <documentPart xmi:type="documentstructuretemplate:Body" xmi:id="_tgK49Fp0EeuzrPif1Xho0g">
+      <bodyPartTemplate xmi:type="documentstructuretemplate:EAttributeAsParagraph" xmi:id="_uwXVgFp0EeuzrPif1Xho0g" generate="true" generateTitle="true" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+        <eAttribute xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/qualifiedName"/>
+      </bodyPartTemplate>
+    </documentPart>
+  </documentstructuretemplate:TextDocumentTemplate>
+  <documentstructuretemplate:TextDocumentTemplate xmi:id="_2nozwFp0EeuzrPif1Xho0g" name="customTitle" kindId="org.eclipse.papyrus.model2doc.integration.docx.uml.architecture.emptyDocument" mainTitle="EAttributeAsParagraph">
+    <semanticContext xmi:type="uml:Model" href="EAttributeAsParagraph.uml#_ykreEKIjEemnzshfQ11WZw"/>
+    <graphicalContext xmi:type="uml:Model" href="EAttributeAsParagraph.uml#_ykreEKIjEemnzshfQ11WZw"/>
+    <documentTemplatePrototype xmi:type="documentstructuretemplate:DocumentTemplatePrototype" href="platform:/plugin/org.eclipse.papyrus.model2doc.integration.docx.uml.architecture/resources/docx-emptyTextDocumentPrototype.pdst#DOCX-EmptyUMLDocumentStructureTemplateType"/>
+    <documentStructureGeneratorConfiguration xmi:type="generatorconfiguration:DefaultDocumentStructureGeneratorConfiguration" xmi:id="_2nozwVp0EeuzrPif1Xho0g" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.docx/templates/PapyrusTemplate.dotx" documentName="customTitle" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.docx" structureGeneratorId="TextDocumentStructureGenerator.default" imageFolder="output/images" structureFolder="output"/>
+    <documentPart xmi:type="documentstructuretemplate:Body" xmi:id="_2nozxFp0EeuzrPif1Xho0g">
+      <bodyPartTemplate xmi:type="documentstructuretemplate:EAttributeAsParagraph" xmi:id="_PVEW0Fp1EeuzrPif1Xho0g" generate="true" generateTitle="true" customTitle="My Custom Title" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+        <eAttribute xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/qualifiedName"/>
+      </bodyPartTemplate>
+    </documentPart>
+  </documentstructuretemplate:TextDocumentTemplate>
+  <documentstructuretemplate:TextDocumentTemplate xmi:id="_73qi8Fp0EeuzrPif1Xho0g" name="doNotGenerate" kindId="org.eclipse.papyrus.model2doc.integration.docx.uml.architecture.emptyDocument" mainTitle="EAttributeAsParagraph">
+    <semanticContext xmi:type="uml:Model" href="EAttributeAsParagraph.uml#_ykreEKIjEemnzshfQ11WZw"/>
+    <graphicalContext xmi:type="uml:Model" href="EAttributeAsParagraph.uml#_ykreEKIjEemnzshfQ11WZw"/>
+    <documentTemplatePrototype xmi:type="documentstructuretemplate:DocumentTemplatePrototype" href="platform:/plugin/org.eclipse.papyrus.model2doc.integration.docx.uml.architecture/resources/docx-emptyTextDocumentPrototype.pdst#DOCX-EmptyUMLDocumentStructureTemplateType"/>
+    <documentStructureGeneratorConfiguration xmi:type="generatorconfiguration:DefaultDocumentStructureGeneratorConfiguration" xmi:id="_73qi8Vp0EeuzrPif1Xho0g" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.docx/templates/PapyrusTemplate.dotx" documentName="doNotGenerate" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.docx" structureGeneratorId="TextDocumentStructureGenerator.default" imageFolder="output/images" structureFolder="output"/>
+    <documentPart xmi:type="documentstructuretemplate:Body" xmi:id="_73qi9Fp0EeuzrPif1Xho0g">
+      <bodyPartTemplate xmi:type="documentstructuretemplate:EAttributeAsParagraph" xmi:id="_PezhoFp1EeuzrPif1Xho0g" generate="false" generateTitle="true" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+        <eAttribute xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/qualifiedName"/>
+      </bodyPartTemplate>
+    </documentPart>
+  </documentstructuretemplate:TextDocumentTemplate>
+  <documentstructuretemplate:TextDocumentTemplate xmi:id="_I8ENYFp1EeuzrPif1Xho0g" name="doNotGenerateTitle" kindId="org.eclipse.papyrus.model2doc.integration.docx.uml.architecture.emptyDocument" mainTitle="EAttributeAsParagraph">
+    <semanticContext xmi:type="uml:Model" href="EAttributeAsParagraph.uml#_ykreEKIjEemnzshfQ11WZw"/>
+    <graphicalContext xmi:type="uml:Model" href="EAttributeAsParagraph.uml#_ykreEKIjEemnzshfQ11WZw"/>
+    <documentTemplatePrototype xmi:type="documentstructuretemplate:DocumentTemplatePrototype" href="platform:/plugin/org.eclipse.papyrus.model2doc.integration.docx.uml.architecture/resources/docx-emptyTextDocumentPrototype.pdst#DOCX-EmptyUMLDocumentStructureTemplateType"/>
+    <documentStructureGeneratorConfiguration xmi:type="generatorconfiguration:DefaultDocumentStructureGeneratorConfiguration" xmi:id="_I8ENYVp1EeuzrPif1Xho0g" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.docx/templates/PapyrusTemplate.dotx" documentName="doNotGenerateTitle" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.docx" structureGeneratorId="TextDocumentStructureGenerator.default" imageFolder="output/images" structureFolder="output"/>
+    <documentPart xmi:type="documentstructuretemplate:Body" xmi:id="_I8E0clp1EeuzrPif1Xho0g">
+      <bodyPartTemplate xmi:type="documentstructuretemplate:EAttributeAsParagraph" xmi:id="_PmuukFp1EeuzrPif1Xho0g" generate="true" generateTitle="false" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+        <eAttribute xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/qualifiedName"/>
+      </bodyPartTemplate>
+    </documentPart>
+  </documentstructuretemplate:TextDocumentTemplate>
+  <documentstructuretemplate:TextDocumentTemplate xmi:id="_ZAPboFp1EeuzrPif1Xho0g" name="withExpression" kindId="org.eclipse.papyrus.model2doc.integration.docx.uml.architecture.emptyDocument" mainTitle="EAttributeAsParagraph">
+    <semanticContext xmi:type="uml:Model" href="EAttributeAsParagraph.uml#_ykreEKIjEemnzshfQ11WZw"/>
+    <graphicalContext xmi:type="uml:Model" href="EAttributeAsParagraph.uml#_ykreEKIjEemnzshfQ11WZw"/>
+    <documentTemplatePrototype xmi:type="documentstructuretemplate:DocumentTemplatePrototype" href="platform:/plugin/org.eclipse.papyrus.model2doc.integration.docx.uml.architecture/resources/docx-emptyTextDocumentPrototype.pdst#DOCX-EmptyUMLDocumentStructureTemplateType"/>
+    <documentStructureGeneratorConfiguration xmi:type="generatorconfiguration:DefaultDocumentStructureGeneratorConfiguration" xmi:id="_ZAPboVp1EeuzrPif1Xho0g" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.docx/templates/PapyrusTemplate.dotx" documentName="withExpression" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.docx" structureGeneratorId="TextDocumentStructureGenerator.default" imageFolder="output/images" structureFolder="output"/>
+    <author xmi:type="author:Author" xmi:id="_ZAPbolp1EeuzrPif1Xho0g" firstName="Papyrus-Model2Doc" lastName="Generator"/>
+    <documentPart xmi:type="documentstructuretemplate:TableOfContents" xmi:id="_ZAPbo1p1EeuzrPif1Xho0g" tocTitle="Table Of Contents"/>
+    <documentPart xmi:type="documentstructuretemplate:Body" xmi:id="_ZAPbpFp1EeuzrPif1Xho0g">
+      <bodyPartTemplate xmi:type="documentstructuretemplate:EAttributeAsParagraph" xmi:id="_dAPtYFp1EeuzrPif1Xho0g" generate="true" generateTitle="true" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+        <eAttribute xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/qualifiedName"/>
+        <generateBranchCondition xmi:type="booleanexpressions:LiteralFalseExpression" xmi:id="_gf5EEFp1EeuzrPif1Xho0g"/>
+      </bodyPartTemplate>
+    </documentPart>
+  </documentstructuretemplate:TextDocumentTemplate>
+  <documentstructuretemplate:TextDocumentTemplate xmi:id="_QpyBkFsmEeuDoZTWnd0Jog" name="empty" kindId="org.eclipse.papyrus.model2doc.integration.docx.uml.architecture.emptyDocument" mainTitle="EAttributeAsParagraph">
+    <semanticContext xmi:type="uml:Model" href="EAttributeAsParagraph.uml#_ykreEKIjEemnzshfQ11WZw"/>
+    <graphicalContext xmi:type="uml:Model" href="EAttributeAsParagraph.uml#_ykreEKIjEemnzshfQ11WZw"/>
+    <documentTemplatePrototype xmi:type="documentstructuretemplate:DocumentTemplatePrototype" href="platform:/plugin/org.eclipse.papyrus.model2doc.integration.docx.uml.architecture/resources/docx-emptyTextDocumentPrototype.pdst#DOCX-EmptyUMLDocumentStructureTemplateType"/>
+    <documentStructureGeneratorConfiguration xmi:type="generatorconfiguration:DefaultDocumentStructureGeneratorConfiguration" xmi:id="_QpyBkVsmEeuDoZTWnd0Jog" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.docx/templates/PapyrusTemplate.dotx" documentName="empty" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.docx" structureGeneratorId="TextDocumentStructureGenerator.default" imageFolder="output/images" structureFolder="output"/>
+    <documentPart xmi:type="documentstructuretemplate:Body" xmi:id="_QpyooFsmEeuDoZTWnd0Jog">
+      <bodyPartTemplate xmi:type="documentstructuretemplate:EAttributeAsParagraph" xmi:id="_VeV8wFsmEeuDoZTWnd0Jog" generate="true" generateTitle="true" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+        <eAttribute xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//RedefinableElement/isLeaf"/>
+      </bodyPartTemplate>
+    </documentPart>
+  </documentstructuretemplate:TextDocumentTemplate>
+  <documentstructuretemplate:TextDocumentTemplate xmi:id="_SMDFkFsmEeuDoZTWnd0Jog" name="generateIfEmpty" kindId="org.eclipse.papyrus.model2doc.integration.docx.uml.architecture.emptyDocument" mainTitle="EAttributeAsParagraph">
+    <semanticContext xmi:type="uml:Model" href="EAttributeAsParagraph.uml#_ykreEKIjEemnzshfQ11WZw"/>
+    <graphicalContext xmi:type="uml:Model" href="EAttributeAsParagraph.uml#_ykreEKIjEemnzshfQ11WZw"/>
+    <documentTemplatePrototype xmi:type="documentstructuretemplate:DocumentTemplatePrototype" href="platform:/plugin/org.eclipse.papyrus.model2doc.integration.docx.uml.architecture/resources/docx-emptyTextDocumentPrototype.pdst#DOCX-EmptyUMLDocumentStructureTemplateType"/>
+    <documentStructureGeneratorConfiguration xmi:type="generatorconfiguration:DefaultDocumentStructureGeneratorConfiguration" xmi:id="_SMDFkVsmEeuDoZTWnd0Jog" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.docx/templates/PapyrusTemplate.dotx" documentName="generateIfEmpty" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.docx" structureGeneratorId="TextDocumentStructureGenerator.default" imageFolder="output/images" structureFolder="output"/>
+    <documentPart xmi:type="documentstructuretemplate:Body" xmi:id="_SMDsoVsmEeuDoZTWnd0Jog">
+      <bodyPartTemplate xmi:type="documentstructuretemplate:EAttributeAsParagraph" xmi:id="_VlIhQFsmEeuDoZTWnd0Jog" generate="true" generateTitle="true" generateIfEmpty="true" defaultTextIfEmpty="N/A">
+        <eAttribute xmi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//RedefinableElement/isLeaf"/>
+      </bodyPartTemplate>
+    </documentPart>
+  </documentstructuretemplate:TextDocumentTemplate>
+</xmi:XMI>
