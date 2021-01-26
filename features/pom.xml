@@ -23,7 +23,7 @@
 		<module>org.eclipse.papyrus.model2doc.tests.feature</module>
 		<module>org.eclipse.papyrus.model2doc.uml.feature</module>
 		<module>org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.feature</module>
-		<module>org.eclipse.papyrus.model2doc.integration.ieee.feature</module>
+		<module>org.eclipse.papyrus.model2doc.integration.ieee.sysml14.odt.feature</module>
 		<module>org.eclipse.papyrus.model2doc.integration.feature</module>
 	</modules>
 

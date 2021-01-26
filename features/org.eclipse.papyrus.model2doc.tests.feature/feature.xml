@@ -25,7 +25,7 @@
       <import feature="org.eclipse.papyrus.model2doc.gmf.feature" version="0.8.0" match="compatible"/>
       <import feature="org.eclipse.papyrus.model2doc.integration.feature" version="0.8.0" match="compatible"/>
       <import feature="org.eclipse.papyrus.model2doc.integration.gmf.documentstructuretemplate.feature" version="0.8.0" match="compatible"/>
-      <import feature="org.eclipse.papyrus.model2doc.integration.ieee.feature" version="0.8.0" match="compatible"/>
+      <import feature="org.eclipse.papyrus.model2doc.integration.ieee.sysml14.odt.feature" version="0.8.0" match="compatible"/>
       <import feature="org.eclipse.papyrus.model2doc.uml.feature" version="0.8.0" match="compatible"/>
    </requires>
 

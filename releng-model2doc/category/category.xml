@@ -24,11 +24,11 @@
    <feature url="features/org.eclipse.papyrus.model2doc.integration.feature.source_0.8.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.integration.feature.source" version="0.8.0.qualifier">
       <category name="org.eclipse.papyrus.model2doc.integration.category"/>
    </feature>
-   <feature url="features/org.eclipse.papyrus.model2doc.integration.ieee.feature_0.8.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.integration.ieee.feature" version="0.8.0.qualifier">
-      <category name="org.eclipse.papyrus.model2doc.integration.ieee.category"/>
+   <feature url="features/org.eclipse.papyrus.model2doc.integration.ieee.sysml14.odt.feature_0.8.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.integration.ieee.sysml14.odt.feature" version="0.8.0.qualifier">
+      <category name="org.eclipse.papyrus.model2doc.integration.ieee.sysml14.odt.category"/>
    </feature>
-   <feature url="features/org.eclipse.papyrus.model2doc.integration.ieee.feature.source_0.8.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.integration.ieee.feature.source" version="0.8.0.qualifier">
-      <category name="org.eclipse.papyrus.model2doc.integration.ieee.category"/>
+   <feature url="features/org.eclipse.papyrus.model2doc.integration.ieee.sysml14.odt.feature.source_0.8.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.integration.ieee.sysml14.odt.feature.source" version="0.8.0.qualifier">
+      <category name="org.eclipse.papyrus.model2doc.integration.ieee.sysml14.odt.category"/>
    </feature>
    <feature url="features/org.eclipse.papyrus.model2doc.dev.feature_0.8.0.qualifier.jar" id="org.eclipse.papyrus.model2doc.dev.feature" version="0.8.0.qualifier">
       <category name="org.eclipse.papyrus.model2doc.dev.category"/>
@@ -49,9 +49,9 @@
          Papyrus-Model2Doc : Integration as Papyrus Editor.
       </description>
    </category-def>
-   <category-def name="org.eclipse.papyrus.model2doc.integration.ieee.category" label="Papyrus-Model2Doc Papyrus IEEE Integration">
+   <category-def name="org.eclipse.papyrus.model2doc.integration.ieee.sysml14.odt.category" label="Papyrus-Model2Doc Papyrus IEEE Integration for SysML 1.4 (ODT format)">
       <description>
-         Papyrus-Model2Doc : Documentation Tools to generate SysML Requirements as recommended by IEEE.
+         Papyrus-Model2Doc : Documentation Tools to generate SysML 1.4 Requirements as recommended by IEEE under the ODT format.
       </description>
    </category-def>
    <category-def name="org.eclipse.papyrus.model2doc.dev.category" label="Papyrus-Model2Doc Developer Tools">
@@ -75,5 +75,5 @@
       </description>
    </category-def>
    <repository-reference location="http://download.eclipse.org/modeling/mdt/papyrus/components/sysml14" enabled="true" />
-   <repository-reference location="https://download.eclipse.org/modeling/gmp/gmf-notation/updates/releases/R201805221301"  enabled="true" />
+   <repository-reference location="https://download.eclipse.org/modeling/gmp/gmf-notation/updates/releases/R201805221301" enabled="true" />
 </site>
