@@ -1,0 +1,43 @@
+=IEEE For SysML=
+==Description==
+This feature provides a template to generate the documentation of SysML Requirements according to the IEEE Recommendation ('''[https://ieeexplore.ieee.org/document/720574 830-1998 - IEEE Recommended Practice for Software Requirements Specifications]'''). 
+Currently '''Papyrus-Model2doc''' only provides this feature for '''SysML 1.4''' and only allows to generate an odt file (LibreOffice format).
+
+This feature has been though as a demonstrator of Model2Doc capacities, but it can easily be customized for your own application.
+
+==Requirements==
+*'''LibreOffice''' must be installed on your computer (read ''Model2Doc Installation'' chapter for further information)
+*You need to install the model2doc feature called '''Papyrus-Model2Doc Papyrus IEEE Integration for SysML 1.4 (ODT format)'''
+**This feature requires '''Papyrus''' and the Papyrus Add-on '''SysML 1.4'''
+
+==How to use it?==
+* Create a new SysML model as usual
+* In the ModelExplorer View, select the root element of your model, then '''Right-Click > Create IEEE Requirements Structure For SysML 1.4'''
+** This action applies the required profile '''IEEERequirementsDocumentation'''
+[[Image:images/ieee/IEEE_Create_Requirements_Structure.png|frame|The menu to select to create the IEEE Structure]]
+** This action creates several stereotyped Packages (The applied stereotypes come from the profile '''IEEERequirementsDocumentation''').
+[[Image:images/ieee/IEEE_Created_Packages_Structure.png|frame|The created Structure]]
+* Now you can create your requirements, but they must be owned by one of these created Packages:
+** UserInterfaceRequirements
+** HWInterfacesRequirements
+** SWInterfacesRequirements
+** CommunicationInterfacesRequirements
+** FunctionalRequirements_Mode_1
+** FunctionalRequirements_Mode_2
+** FunctionalRequirements_Mode_3
+*** NB: Your can create more FunctionRequirements_Mode_x package if required. Don't forgot to apply on it the Stereotype '''<<IEEEFunctionalRequirements>>''' and to configure these properties '''mode''' and '''category'''. in addition, you need to complete the provide DocumentStructureTemplate before launching the document generation.
+** PerformanceRequirements
+** DesignConstraintsRequirements
+** SoftwareSystemAttributeRequirements
+** OtherRequirements
+
+Please notice, that the document generation only use the field '''name''' and '''text''' of your requirements, so it is better if you fill these fields.
+Once you created your requirements, you can use the Document Template provided for IEEE.
+* In the ModelExplorer View, select the root of your model, then '''Right-Click > New Document Template -> ODT - IEEE SysML 1.4 Requirements Documentation'''
+[[Image:images/ieee/IEEE_Create_Document_Template.png|frame|The menu to create the Document Template]]
+* This action creates the IEEE Document Template, and open the editor. If you created new Package in your model, you need to adapt the provided Template to your structure.
+* From the opened editor, select the root element named '''Text Document Template xxx''', then '''Right-Click > Generate All (Structure + ODT)'''. 
+** The created odt file will appears in your workspace inside a created '''output''' folder.
+
+===Result===
+The result is a LibreOffice document with the same structure than your SysML model, where the UML Package becomes titles, the '''Requirement#name''' becomes sub-title, and the '''Requirement#text''' becomes a paragraph.

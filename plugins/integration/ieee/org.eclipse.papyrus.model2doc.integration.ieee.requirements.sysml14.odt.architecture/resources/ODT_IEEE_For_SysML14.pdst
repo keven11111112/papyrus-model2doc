@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<documentstructuretemplate:DocumentTemplatePrototype xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:author="http://www.eclipse.org/papyrus/model2doc/core/1.0.0/Author" xmlns:documentstructuretemplate="http://www.eclipse.org/papyrus/model2doc/emf/1.0.0/documentstructuretemplate" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:generatorconfiguration="http://www.eclipse.org/papyrus/model2doc/1.0.0/generatorconfiguration" xmlns:umldocumentstructuretemplate="http://www.eclipse.org/papyrus/model2doc/uml/1.0.0/documentstructuretemplate" xmlns:umlexpressions="http://www.eclipse.org/papyrus/umlexpressions" xmi:id="IEEE_For_Sysml14_ODT_DocumentStructureTemplate_Prototype" type="IEEE_For_Sysml14_ODT_DocumentStructureTemplateType" iconPath="platform:/plugin/org.eclipse.papyrus.model2doc.integration.ieee.requirements.sysml14.odt.architecture/resources/icons/srs_document.png" description="This prototype allows to create a Document conforms to IEEE specifications with a SysML14 profile.">
+  <documentTemplate xmi:type="documentstructuretemplate:TextDocumentTemplate" xmi:id="_UyXLAadBEeqvT9U277n1TQ" documentTemplatePrototype="IEEE_For_Sysml14_ODT_DocumentStructureTemplate_Prototype" name="NewIEEEDocument" description="This template allows to create a Document conforms to IEEE specifications with a SysML14 profile." kindId="IEEE_For_Sysml14_ODT_DocumentStructureTemplateKindId" mainTitle="Requirements">
+    <documentStructureGeneratorConfiguration xmi:type="generatorconfiguration:DefaultDocumentStructureGeneratorConfiguration" xmi:id="_UyXLAqdBEeqvT9U277n1TQ" saveDocumentStructure="true" saveImages="true" templateFile="platform:/plugin/org.eclipse.papyrus.model2doc.integration.ieee.requirements.sysml14.odt.architecture/resources/srs_template_ieee.ott" documentName="IEEE Document" documentFolder="output" documentGeneratorId="org.eclipse.papyrus.model2doc.document.generator.odt" structureGeneratorId="TextDocumentStructureGenerator.default" imageFolder="output/images" structureFolder="output"/>
+    <author xmi:type="author:Author" xmi:id="_UyXLA6dBEeqvT9U277n1TQ" firstName="Papyrus-Model2Doc" lastName="Generator"/>
+    <documentPart xmi:type="documentstructuretemplate:TableOfContents" xmi:id="_UyXLBKdBEeqvT9U277n1TQ" tocTitle="Table Of Contents"/>
+    <documentPart xmi:type="documentstructuretemplate:Body" xmi:id="_UyXLBadBEeqvT9U277n1TQ">
+      <bodyPartTemplate xmi:type="documentstructuretemplate:EReferencePartTemplate" xmi:id="_UyXLBqdBEeqvT9U277n1TQ" generate="true" generateTitle="true" customTitle="Specific Requirements" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+        <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/nestedPackage"/>
+        <subBodyPartTemplate xmi:type="documentstructuretemplate:EClassPartTemplate" xmi:id="_UyXLB6dBEeqvT9U277n1TQ" filterRule="TYPE_OF" generate="true" generateTitle="true" customTitle="External Interfaces Requirements" generateIfEmpty="true" defaultTextIfEmpty="N/A">
+          <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+          <generateBranchCondition xmi:type="umlexpressions:SingleStereotypeAttributeEqualityExpression" xmi:id="_XMzKEFzQEeu-q84CS9c2Lw" stereotypeQualifiedName="IEEERequirementsDocumentation::IEEERequirements" expectedValue="EXTERNAL_INTERFACES_REQUIREMENTS" propertyName="category"/>
+          <bodyPartTemplate xmi:type="documentstructuretemplate:EReferencePartTemplate" xmi:id="_UyXLCadBEeqvT9U277n1TQ" generate="true" generateTitle="false" customTitle="" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+            <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/nestedPackage"/>
+            <subBodyPartTemplate xmi:type="documentstructuretemplate:EClassPartTemplate" xmi:id="_UyXLCqdBEeqvT9U277n1TQ" filterRule="TYPE_OF" generate="true" generateTitle="true" customTitle="User Interfaces" generateIfEmpty="true" defaultTextIfEmpty="N/A">
+              <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+              <generateBranchCondition xmi:type="umlexpressions:SingleStereotypeAttributeEqualityExpression" xmi:id="_UyXLC6dBEeqvT9U277n1TQ" stereotypeQualifiedName="IEEERequirementsDocumentation::IEEERequirements" expectedValue="USER_INTERFACES" propertyName="category"/>
+              <bodyPartTemplate xmi:type="documentstructuretemplate:EReferencePartTemplate" xmi:id="_UyXLDKdBEeqvT9U277n1TQ" generate="true" generateTitle="false" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+                <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Namespace/ownedMember"/>
+                <subBodyPartTemplate xmi:type="umldocumentstructuretemplate:StereotypePartTemplate" xmi:id="_UyXLDadBEeqvT9U277n1TQ" filterRule="TYPE_OF" stereotypeFilterRule="STEREOTYPE_KIND_OF" stereotypeQualifiedName="SysML::Requirements::Requirement" generate="true" generateTitle="true" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+                  <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+                  <bodyPartTemplate xmi:type="umldocumentstructuretemplate:StereotypePropertyAttributeAsParagraph" xmi:id="_UyXLDqdBEeqvT9U277n1TQ" stereotypeFilterRule="STEREOTYPE_KIND_OF" stereotypeQualifiedName="SysML::Requirements::Requirement" propertyName="text" generate="true" generateTitle="false" generateIfEmpty="false" defaultTextIfEmpty="N/A"/>
+                </subBodyPartTemplate>
+              </bodyPartTemplate>
+            </subBodyPartTemplate>
+            <subBodyPartTemplate xmi:type="documentstructuretemplate:EClassPartTemplate" xmi:id="_UyXLD6dBEeqvT9U277n1TQ" filterRule="TYPE_OF" generate="true" generateTitle="true" customTitle="Hardware Interfaces" generateIfEmpty="true" defaultTextIfEmpty="N/A">
+              <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+              <generateBranchCondition xmi:type="umlexpressions:SingleStereotypeAttributeEqualityExpression" xmi:id="_UyXLEKdBEeqvT9U277n1TQ" stereotypeQualifiedName="IEEERequirementsDocumentation::IEEERequirements" expectedValue="HARDWARE_INTERFACES" propertyName="category"/>
+              <bodyPartTemplate xmi:type="documentstructuretemplate:EReferencePartTemplate" xmi:id="_UyXLEadBEeqvT9U277n1TQ" generate="true" generateTitle="false" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+                <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Namespace/ownedMember"/>
+                <subBodyPartTemplate xmi:type="umldocumentstructuretemplate:StereotypePartTemplate" xmi:id="_UyXLEqdBEeqvT9U277n1TQ" filterRule="TYPE_OF" stereotypeFilterRule="STEREOTYPE_KIND_OF" stereotypeQualifiedName="SysML::Requirements::Requirement" generate="true" generateTitle="true" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+                  <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+                  <bodyPartTemplate xmi:type="umldocumentstructuretemplate:StereotypePropertyAttributeAsParagraph" xmi:id="_UyXLE6dBEeqvT9U277n1TQ" stereotypeFilterRule="STEREOTYPE_KIND_OF" stereotypeQualifiedName="SysML::Requirements::Requirement" propertyName="text" generate="true" generateTitle="false" generateIfEmpty="false" defaultTextIfEmpty="N/A"/>
+                </subBodyPartTemplate>
+              </bodyPartTemplate>
+            </subBodyPartTemplate>
+            <subBodyPartTemplate xmi:type="documentstructuretemplate:EClassPartTemplate" xmi:id="_UyXLFKdBEeqvT9U277n1TQ" filterRule="TYPE_OF" generate="true" generateTitle="true" customTitle="Software Interfaces" generateIfEmpty="true" defaultTextIfEmpty="N/A">
+              <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+              <generateBranchCondition xmi:type="umlexpressions:SingleStereotypeAttributeEqualityExpression" xmi:id="_UyXLFadBEeqvT9U277n1TQ" stereotypeQualifiedName="IEEERequirementsDocumentation::IEEERequirements" expectedValue="SOFTWARE_INTERFACES" propertyName="category"/>
+              <bodyPartTemplate xmi:type="documentstructuretemplate:EReferencePartTemplate" xmi:id="_UyXLFqdBEeqvT9U277n1TQ" generate="true" generateTitle="false" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+                <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Namespace/ownedMember"/>
+                <subBodyPartTemplate xmi:type="umldocumentstructuretemplate:StereotypePartTemplate" xmi:id="_UyXLF6dBEeqvT9U277n1TQ" filterRule="TYPE_OF" stereotypeFilterRule="STEREOTYPE_KIND_OF" stereotypeQualifiedName="SysML::Requirements::Requirement" generate="true" generateTitle="true" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+                  <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+                  <bodyPartTemplate xmi:type="umldocumentstructuretemplate:StereotypePropertyAttributeAsParagraph" xmi:id="_UyXLGKdBEeqvT9U277n1TQ" stereotypeFilterRule="STEREOTYPE_KIND_OF" stereotypeQualifiedName="SysML::Requirements::Requirement" propertyName="text" generate="true" generateTitle="false" generateIfEmpty="false" defaultTextIfEmpty="N/A"/>
+                </subBodyPartTemplate>
+              </bodyPartTemplate>
+            </subBodyPartTemplate>
+            <subBodyPartTemplate xmi:type="documentstructuretemplate:EClassPartTemplate" xmi:id="_UyXLGadBEeqvT9U277n1TQ" filterRule="TYPE_OF" generate="true" generateTitle="true" customTitle="Communication Interfaces" generateIfEmpty="true" defaultTextIfEmpty="N/A">
+              <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+              <generateBranchCondition xmi:type="umlexpressions:SingleStereotypeAttributeEqualityExpression" xmi:id="_UyXLGqdBEeqvT9U277n1TQ" stereotypeQualifiedName="IEEERequirementsDocumentation::IEEERequirements" expectedValue="COMMUNICATION_INTERFACES" propertyName="category"/>
+              <bodyPartTemplate xmi:type="documentstructuretemplate:EReferencePartTemplate" xmi:id="_UyXLG6dBEeqvT9U277n1TQ" generate="true" generateTitle="false" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+                <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Namespace/ownedMember"/>
+                <subBodyPartTemplate xmi:type="umldocumentstructuretemplate:StereotypePartTemplate" xmi:id="_UyXLHKdBEeqvT9U277n1TQ" filterRule="TYPE_OF" stereotypeFilterRule="STEREOTYPE_KIND_OF" stereotypeQualifiedName="SysML::Requirements::Requirement" generate="true" generateTitle="true" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+                  <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+                  <bodyPartTemplate xmi:type="umldocumentstructuretemplate:StereotypePropertyAttributeAsParagraph" xmi:id="_UyXLHadBEeqvT9U277n1TQ" stereotypeFilterRule="STEREOTYPE_KIND_OF" stereotypeQualifiedName="SysML::Requirements::Requirement" propertyName="text" generate="true" generateTitle="false" generateIfEmpty="false" defaultTextIfEmpty="N/A"/>
+                </subBodyPartTemplate>
+              </bodyPartTemplate>
+            </subBodyPartTemplate>
+          </bodyPartTemplate>
+        </subBodyPartTemplate>
+        <subBodyPartTemplate xmi:type="documentstructuretemplate:EClassPartTemplate" xmi:id="_UyXLHqdBEeqvT9U277n1TQ" filterRule="TYPE_OF" generate="true" generateTitle="true" customTitle="Functional Requirements" generateIfEmpty="true" defaultTextIfEmpty="N/A">
+          <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+          <generateBranchCondition xmi:type="umlexpressions:SingleStereotypeAttributeEqualityExpression" xmi:id="_LKOhUFzWEeu-q84CS9c2Lw" stereotypeQualifiedName="IEEERequirementsDocumentation::IEEERequirements" expectedValue="FUNCTIONAL_REQUIREMENTS" propertyName="category"/>
+          <bodyPartTemplate xmi:type="documentstructuretemplate:EReferencePartTemplate" xmi:id="_UyXLIKdBEeqvT9U277n1TQ" generate="true" generateTitle="false" customTitle="" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+            <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/nestedPackage"/>
+            <subBodyPartTemplate xmi:type="documentstructuretemplate:EClassPartTemplate" xmi:id="_UyXLIadBEeqvT9U277n1TQ" filterRule="TYPE_OF" generate="true" generateTitle="true" customTitle="mode 1" generateIfEmpty="true" defaultTextIfEmpty="N/A">
+              <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+              <generateBranchCondition xmi:type="umlexpressions:SingleStereotypeAttributeEqualityExpression" xmi:id="_UyXLIqdBEeqvT9U277n1TQ" stereotypeQualifiedName="IEEERequirementsDocumentation::IEEEFunctionalRequirements" expectedValue="1" propertyName="mode"/>
+              <bodyPartTemplate xmi:type="documentstructuretemplate:EReferencePartTemplate" xmi:id="_UyXLI6dBEeqvT9U277n1TQ" generate="true" generateTitle="false" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+                <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Namespace/ownedMember"/>
+                <subBodyPartTemplate xmi:type="umldocumentstructuretemplate:StereotypePartTemplate" xmi:id="_UyXLJKdBEeqvT9U277n1TQ" filterRule="TYPE_OF" stereotypeFilterRule="STEREOTYPE_KIND_OF" stereotypeQualifiedName="SysML::Requirements::Requirement" generate="true" generateTitle="true" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+                  <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+                  <bodyPartTemplate xmi:type="umldocumentstructuretemplate:StereotypePropertyAttributeAsParagraph" xmi:id="_UyXLJadBEeqvT9U277n1TQ" stereotypeFilterRule="STEREOTYPE_KIND_OF" stereotypeQualifiedName="SysML::Requirements::Requirement" propertyName="text" generate="true" generateTitle="false" generateIfEmpty="false" defaultTextIfEmpty="N/A"/>
+                </subBodyPartTemplate>
+              </bodyPartTemplate>
+            </subBodyPartTemplate>
+            <subBodyPartTemplate xmi:type="documentstructuretemplate:EClassPartTemplate" xmi:id="_UyXLJqdBEeqvT9U277n1TQ" filterRule="TYPE_OF" generate="true" generateTitle="true" customTitle="mode 2" generateIfEmpty="true" defaultTextIfEmpty="N/A">
+              <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+              <generateBranchCondition xmi:type="umlexpressions:SingleStereotypeAttributeEqualityExpression" xmi:id="_UyXLJ6dBEeqvT9U277n1TQ" stereotypeQualifiedName="IEEERequirementsDocumentation::IEEEFunctionalRequirements" expectedValue="2" propertyName="mode"/>
+              <bodyPartTemplate xmi:type="documentstructuretemplate:EReferencePartTemplate" xmi:id="_UyXLKKdBEeqvT9U277n1TQ" generate="true" generateTitle="false" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+                <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Namespace/ownedMember"/>
+                <subBodyPartTemplate xmi:type="umldocumentstructuretemplate:StereotypePartTemplate" xmi:id="_UyXLKadBEeqvT9U277n1TQ" filterRule="TYPE_OF" stereotypeFilterRule="STEREOTYPE_KIND_OF" stereotypeQualifiedName="SysML::Requirements::Requirement" generate="true" generateTitle="true" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+                  <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+                  <bodyPartTemplate xmi:type="umldocumentstructuretemplate:StereotypePropertyAttributeAsParagraph" xmi:id="_UyXLKqdBEeqvT9U277n1TQ" stereotypeFilterRule="STEREOTYPE_KIND_OF" stereotypeQualifiedName="SysML::Requirements::Requirement" propertyName="text" generate="true" generateTitle="false" generateIfEmpty="false" defaultTextIfEmpty="N/A"/>
+                </subBodyPartTemplate>
+              </bodyPartTemplate>
+            </subBodyPartTemplate>
+            <subBodyPartTemplate xmi:type="documentstructuretemplate:EClassPartTemplate" xmi:id="_UyXLK6dBEeqvT9U277n1TQ" filterRule="TYPE_OF" generate="true" generateTitle="true" customTitle="mode 3" generateIfEmpty="true" defaultTextIfEmpty="N/A">
+              <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+              <generateBranchCondition xmi:type="umlexpressions:SingleStereotypeAttributeEqualityExpression" xmi:id="_UyXLLKdBEeqvT9U277n1TQ" stereotypeQualifiedName="IEEERequirementsDocumentation::IEEEFunctionalRequirements" expectedValue="3" propertyName="mode"/>
+              <bodyPartTemplate xmi:type="documentstructuretemplate:EReferencePartTemplate" xmi:id="_UyXLLadBEeqvT9U277n1TQ" generate="true" generateTitle="false" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+                <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Namespace/ownedMember"/>
+                <subBodyPartTemplate xmi:type="umldocumentstructuretemplate:StereotypePartTemplate" xmi:id="_UyXLLqdBEeqvT9U277n1TQ" filterRule="TYPE_OF" stereotypeFilterRule="STEREOTYPE_KIND_OF" stereotypeQualifiedName="SysML::Requirements::Requirement" generate="true" generateTitle="true" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+                  <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+                  <bodyPartTemplate xmi:type="umldocumentstructuretemplate:StereotypePropertyAttributeAsParagraph" xmi:id="_UyXLL6dBEeqvT9U277n1TQ" stereotypeFilterRule="STEREOTYPE_KIND_OF" stereotypeQualifiedName="SysML::Requirements::Requirement" propertyName="text" generate="true" generateTitle="false" generateIfEmpty="false" defaultTextIfEmpty="N/A"/>
+                </subBodyPartTemplate>
+              </bodyPartTemplate>
+            </subBodyPartTemplate>
+          </bodyPartTemplate>
+        </subBodyPartTemplate>
+        <subBodyPartTemplate xmi:type="documentstructuretemplate:EClassPartTemplate" xmi:id="_UyXLMKdBEeqvT9U277n1TQ" filterRule="TYPE_OF" generate="true" generateTitle="true" customTitle="Performance Requirements" generateIfEmpty="true" defaultTextIfEmpty="N/A">
+          <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+          <generateBranchCondition xmi:type="umlexpressions:SingleStereotypeAttributeEqualityExpression" xmi:id="_UyXLMadBEeqvT9U277n1TQ" name="IsPerformanceRequirements" description="" stereotypeQualifiedName="IEEERequirementsDocumentation::IEEERequirements" expectedValue="PERFORMANCE_REQUIREMENTS" propertyName="category"/>
+          <bodyPartTemplate xmi:type="documentstructuretemplate:EReferencePartTemplate" xmi:id="_UyXLMqdBEeqvT9U277n1TQ" generate="true" generateTitle="false" customTitle="" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+            <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Namespace/ownedMember"/>
+            <subBodyPartTemplate xmi:type="umldocumentstructuretemplate:StereotypePartTemplate" xmi:id="_UyXLM6dBEeqvT9U277n1TQ" filterRule="TYPE_OF" stereotypeFilterRule="STEREOTYPE_KIND_OF" stereotypeQualifiedName="SysML::Requirements::Requirement" generate="true" generateTitle="true" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+              <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+              <bodyPartTemplate xmi:type="umldocumentstructuretemplate:StereotypePropertyAttributeAsParagraph" xmi:id="_UyXLNKdBEeqvT9U277n1TQ" stereotypeFilterRule="STEREOTYPE_KIND_OF" stereotypeQualifiedName="SysML::Requirements::Requirement" propertyName="text" generate="true" generateTitle="false" generateIfEmpty="false" defaultTextIfEmpty="N/A"/>
+            </subBodyPartTemplate>
+          </bodyPartTemplate>
+        </subBodyPartTemplate>
+        <subBodyPartTemplate xmi:type="documentstructuretemplate:EClassPartTemplate" xmi:id="_UyXLNadBEeqvT9U277n1TQ" filterRule="TYPE_OF" generate="true" generateTitle="true" customTitle="Design Constraints" generateIfEmpty="true" defaultTextIfEmpty="N/A">
+          <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+          <generateBranchCondition xmi:type="umlexpressions:SingleStereotypeAttributeEqualityExpression" xmi:id="_UyXLNqdBEeqvT9U277n1TQ" name="IsDesignConstraints" description="" stereotypeQualifiedName="IEEERequirementsDocumentation::IEEERequirements" expectedValue="DESIGN_CONSTRAINTS" propertyName="category"/>
+          <bodyPartTemplate xmi:type="documentstructuretemplate:EReferencePartTemplate" xmi:id="_UyXLN6dBEeqvT9U277n1TQ" generate="true" generateTitle="false" customTitle="Design Constraints" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+            <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Namespace/ownedMember"/>
+            <subBodyPartTemplate xmi:type="umldocumentstructuretemplate:StereotypePartTemplate" xmi:id="_UyXLOKdBEeqvT9U277n1TQ" filterRule="TYPE_OF" stereotypeFilterRule="STEREOTYPE_KIND_OF" stereotypeQualifiedName="SysML::Requirements::Requirement" generate="true" generateTitle="true" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+              <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+              <bodyPartTemplate xmi:type="umldocumentstructuretemplate:StereotypePropertyAttributeAsParagraph" xmi:id="_UyXLOadBEeqvT9U277n1TQ" stereotypeFilterRule="STEREOTYPE_KIND_OF" stereotypeQualifiedName="SysML::Requirements::Requirement" propertyName="text" generate="true" generateTitle="false" generateIfEmpty="false" defaultTextIfEmpty="N/A"/>
+            </subBodyPartTemplate>
+          </bodyPartTemplate>
+        </subBodyPartTemplate>
+        <subBodyPartTemplate xmi:type="documentstructuretemplate:EClassPartTemplate" xmi:id="_UyXLOqdBEeqvT9U277n1TQ" filterRule="TYPE_OF" generate="true" generateTitle="true" customTitle="Software System Attributes" generateIfEmpty="true" defaultTextIfEmpty="N/A">
+          <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+          <generateBranchCondition xmi:type="umlexpressions:SingleStereotypeAttributeEqualityExpression" xmi:id="_UyXLO6dBEeqvT9U277n1TQ" name="IsSoftwareSystemAttributes" description="" stereotypeQualifiedName="IEEERequirementsDocumentation::IEEERequirements" expectedValue="SOFTWARE_SYSTEM_ATTRIBUTES" propertyName="category"/>
+          <bodyPartTemplate xmi:type="documentstructuretemplate:EReferencePartTemplate" xmi:id="_UyXLPKdBEeqvT9U277n1TQ" generate="true" generateTitle="false" customTitle="" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+            <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Namespace/ownedMember"/>
+            <subBodyPartTemplate xmi:type="umldocumentstructuretemplate:StereotypePartTemplate" xmi:id="_UyXLPadBEeqvT9U277n1TQ" filterRule="TYPE_OF" stereotypeFilterRule="STEREOTYPE_KIND_OF" stereotypeQualifiedName="SysML::Requirements::Requirement" generate="true" generateTitle="true" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+              <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+              <bodyPartTemplate xmi:type="umldocumentstructuretemplate:StereotypePropertyAttributeAsParagraph" xmi:id="_UyXLPqdBEeqvT9U277n1TQ" stereotypeFilterRule="STEREOTYPE_KIND_OF" stereotypeQualifiedName="SysML::Requirements::Requirement" propertyName="text" generate="true" generateTitle="false" generateIfEmpty="false" defaultTextIfEmpty="N/A"/>
+            </subBodyPartTemplate>
+          </bodyPartTemplate>
+        </subBodyPartTemplate>
+        <subBodyPartTemplate xmi:type="documentstructuretemplate:EClassPartTemplate" xmi:id="_UyXLP6dBEeqvT9U277n1TQ" filterRule="TYPE_OF" generate="true" generateTitle="true" customTitle="Other Requirements" generateIfEmpty="true" defaultTextIfEmpty="N/A">
+          <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+          <generateBranchCondition xmi:type="umlexpressions:SingleStereotypeAttributeEqualityExpression" xmi:id="_UyXLQKdBEeqvT9U277n1TQ" name="IsOtherRequirements" description="" stereotypeQualifiedName="IEEERequirementsDocumentation::IEEERequirements" expectedValue="OTHER_REQUIREMENTS" propertyName="category"/>
+          <bodyPartTemplate xmi:type="documentstructuretemplate:EReferencePartTemplate" xmi:id="_UyXLQadBEeqvT9U277n1TQ" generate="true" generateTitle="false" customTitle="" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+            <eReference xmi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Namespace/ownedMember"/>
+            <subBodyPartTemplate xmi:type="umldocumentstructuretemplate:StereotypePartTemplate" xmi:id="_UyXLQqdBEeqvT9U277n1TQ" filterRule="TYPE_OF" stereotypeFilterRule="STEREOTYPE_KIND_OF" stereotypeQualifiedName="SysML::Requirements::Requirement" generate="true" generateTitle="true" generateIfEmpty="false" defaultTextIfEmpty="N/A">
+              <eClass xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+              <bodyPartTemplate xmi:type="umldocumentstructuretemplate:StereotypePropertyAttributeAsParagraph" xmi:id="_UyXLQ6dBEeqvT9U277n1TQ" stereotypeFilterRule="STEREOTYPE_KIND_OF" stereotypeQualifiedName="SysML::Requirements::Requirement" propertyName="text" generate="true" generateTitle="false" generateIfEmpty="false" defaultTextIfEmpty="N/A"/>
+            </subBodyPartTemplate>
+          </bodyPartTemplate>
+        </subBodyPartTemplate>
+      </bodyPartTemplate>
+    </documentPart>
+  </documentTemplate>
+</documentstructuretemplate:DocumentTemplatePrototype>

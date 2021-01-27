@@ -237,7 +237,7 @@ public abstract class AbstractRequirementsImpl extends MinimalEObjectImpl.Contai
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (reqCategory: "); //$NON-NLS-1$
 		result.append(reqCategory);
 		result.append(')');

@@ -168,7 +168,7 @@ public class IEEEFunctionalRequirementsImpl extends IEEERequirementsImpl impleme
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (mode: "); //$NON-NLS-1$
 		result.append(mode);
 		result.append(')');

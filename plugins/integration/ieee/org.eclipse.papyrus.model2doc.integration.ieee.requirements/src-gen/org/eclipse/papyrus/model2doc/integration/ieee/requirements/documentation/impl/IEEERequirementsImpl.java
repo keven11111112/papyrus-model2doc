@@ -169,7 +169,7 @@ public class IEEERequirementsImpl extends AbstractRequirementsImpl implements IE
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (category: "); //$NON-NLS-1$
 		result.append(category);
 		result.append(')');

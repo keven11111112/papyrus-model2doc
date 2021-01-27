@@ -29,7 +29,7 @@
       <details key="documentation" value="&lt;p>Abstract Stereotype created to ease future extension&lt;/p>&#xA;"/>
     </eAnnotations>
     <eLiterals name="SPECIFIC_REQUIREMENTS"/>
-    <eLiterals name="EXTERNAL_INTERFACE_REQUIREMENTS" value="1"/>
+    <eLiterals name="EXTERNAL_INTERFACES_REQUIREMENTS" value="1"/>
     <eLiterals name="USER_INTERFACES" value="2"/>
     <eLiterals name="HARDWARE_INTERFACES" value="3"/>
     <eLiterals name="SOFTWARE_INTERFACES" value="4"/>

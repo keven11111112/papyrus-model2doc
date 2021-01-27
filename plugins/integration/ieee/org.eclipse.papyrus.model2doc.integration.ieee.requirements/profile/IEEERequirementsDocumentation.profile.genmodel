@@ -2,8 +2,8 @@
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel"
     copyrightText="Copyright (c) 2019 CEA LIST.&#xA;&#xA; All rights reserved. This program and the accompanying materials&#xA; are made available under the terms of the Eclipse Public License 2.0&#xA; which accompanies this distribution, and is available at&#xA; https://www.eclipse.org/legal/epl-2.0/&#xA;&#xA; SPDX-License-Identifier: EPL-2.0&#xA;&#xA; Contributors:&#xA;Yupanqui Munoz (CEA LIST) yupanqui.munozjulho@cea.fr - Initial API and implementation&#xA; Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation"
-    modelDirectory="/org.eclipse.papyrus.model2doc.integration.ieee.requirements/src-gen" creationCommands="false"
-    editDirectory="/org.eclipse.papyrus.model2doc.integration.ieee.requirements.edit/src-gen"
+    modelDirectory="/org.eclipse.papyrus.model2doc.integration.ieee.requirements/src-gen"
+    creationCommands="false" editDirectory="/org.eclipse.papyrus.model2doc.integration.ieee.requirements.edit/src-gen"
     editorDirectory="/org.eclipse.papyrus.model2doc.integration.ieee.requirements.editor/src-gen"
     modelPluginID="org.eclipse.papyrus.model2doc.integration.ieee.requirements" modelName="IEEERequirementsDocumentation"
     nonNLSMarkers="true" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
@@ -39,31 +39,31 @@
   <genPackages xsi:type="genmodel:GenPackage" prefix="IEEERequirementsDocumentation"
       basePackage="org.eclipse.papyrus.model2doc.integration.ieee.requirements" disposableProviderFactory="true"
       multipleEditorPages="false" generateModelWizard="false" childCreationExtenders="true"
-      ecorePackage="IEEERequirementsDocumentation.ecore#/">
-    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="IEEERequirementsDocumentation.ecore#//IEEERequirementCategory">
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="IEEERequirementsDocumentation.ecore#//IEEERequirementCategory/SPECIFIC_REQUIREMENTS"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="IEEERequirementsDocumentation.ecore#//IEEERequirementCategory/EXTERNAL_INTERFACE_REQUIREMENTS"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="IEEERequirementsDocumentation.ecore#//IEEERequirementCategory/USER_INTERFACES"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="IEEERequirementsDocumentation.ecore#//IEEERequirementCategory/HARDWARE_INTERFACES"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="IEEERequirementsDocumentation.ecore#//IEEERequirementCategory/SOFTWARE_INTERFACES"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="IEEERequirementsDocumentation.ecore#//IEEERequirementCategory/COMMUNICATION_INTERFACES"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="IEEERequirementsDocumentation.ecore#//IEEERequirementCategory/FUNCTIONAL_REQUIREMENTS"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="IEEERequirementsDocumentation.ecore#//IEEERequirementCategory/PERFORMANCE_REQUIREMENTS"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="IEEERequirementsDocumentation.ecore#//IEEERequirementCategory/DESIGN_CONSTRAINTS"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="IEEERequirementsDocumentation.ecore#//IEEERequirementCategory/SOFTWARE_SYSTEM_ATTRIBUTES"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="IEEERequirementsDocumentation.ecore#//IEEERequirementCategory/OTHER_REQUIREMENTS"/>
+      ecorePackage="IEEERequirementsDocumentation.profile.ecore#/">
+    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="IEEERequirementsDocumentation.profile.ecore#//IEEERequirementCategory">
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="IEEERequirementsDocumentation.profile.ecore#//IEEERequirementCategory/SPECIFIC_REQUIREMENTS"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="IEEERequirementsDocumentation.profile.ecore#//IEEERequirementCategory/EXTERNAL_INTERFACES_REQUIREMENTS"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="IEEERequirementsDocumentation.profile.ecore#//IEEERequirementCategory/USER_INTERFACES"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="IEEERequirementsDocumentation.profile.ecore#//IEEERequirementCategory/HARDWARE_INTERFACES"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="IEEERequirementsDocumentation.profile.ecore#//IEEERequirementCategory/SOFTWARE_INTERFACES"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="IEEERequirementsDocumentation.profile.ecore#//IEEERequirementCategory/COMMUNICATION_INTERFACES"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="IEEERequirementsDocumentation.profile.ecore#//IEEERequirementCategory/FUNCTIONAL_REQUIREMENTS"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="IEEERequirementsDocumentation.profile.ecore#//IEEERequirementCategory/PERFORMANCE_REQUIREMENTS"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="IEEERequirementsDocumentation.profile.ecore#//IEEERequirementCategory/DESIGN_CONSTRAINTS"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="IEEERequirementsDocumentation.profile.ecore#//IEEERequirementCategory/SOFTWARE_SYSTEM_ATTRIBUTES"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="IEEERequirementsDocumentation.profile.ecore#//IEEERequirementCategory/OTHER_REQUIREMENTS"/>
     </genEnums>
-    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="IEEERequirementsDocumentation.ecore#//AbstractRequirementCategory"/>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="IEEERequirementsDocumentation.ecore#//IEEERequirements">
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute IEEERequirementsDocumentation.ecore#//IEEERequirements/category"/>
+    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="IEEERequirementsDocumentation.profile.ecore#//AbstractRequirementCategory"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="IEEERequirementsDocumentation.profile.ecore#//IEEERequirements">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute IEEERequirementsDocumentation.profile.ecore#//IEEERequirements/category"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="IEEERequirementsDocumentation.ecore#//AbstractRequirements">
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="IEEERequirementsDocumentation.profile.ecore#//AbstractRequirements">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference IEEERequirementsDocumentation.ecore#//AbstractRequirements/base_Package"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute IEEERequirementsDocumentation.ecore#//AbstractRequirements/reqCategory"/>
+          propertySortChoices="true" ecoreFeature="ecore:EReference IEEERequirementsDocumentation.profile.ecore#//AbstractRequirements/base_Package"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute IEEERequirementsDocumentation.profile.ecore#//AbstractRequirements/reqCategory"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="IEEERequirementsDocumentation.ecore#//IEEEFunctionalRequirements">
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute IEEERequirementsDocumentation.ecore#//IEEEFunctionalRequirements/mode"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="IEEERequirementsDocumentation.profile.ecore#//IEEEFunctionalRequirements">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute IEEERequirementsDocumentation.profile.ecore#//IEEEFunctionalRequirements/mode"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -119,9 +119,10 @@ public class IEEERequirementsDocumentationPackageImpl extends EPackageImpl imple
 		}
 
 		// Obtain or create and register package
-		IEEERequirementsDocumentationPackageImpl theIEEERequirementsDocumentationPackage = (IEEERequirementsDocumentationPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof IEEERequirementsDocumentationPackageImpl
-				? EPackage.Registry.INSTANCE.get(eNS_URI)
-				: new IEEERequirementsDocumentationPackageImpl());
+		Object registeredIEEERequirementsDocumentationPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		IEEERequirementsDocumentationPackageImpl theIEEERequirementsDocumentationPackage = registeredIEEERequirementsDocumentationPackage instanceof IEEERequirementsDocumentationPackageImpl
+				? (IEEERequirementsDocumentationPackageImpl) registeredIEEERequirementsDocumentationPackage
+				: new IEEERequirementsDocumentationPackageImpl();
 
 		isInited = true;
 
@@ -138,7 +139,6 @@ public class IEEERequirementsDocumentationPackageImpl extends EPackageImpl imple
 
 		// Mark meta-data to indicate it can't be changed
 		theIEEERequirementsDocumentationPackage.freeze();
-
 
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(IEEERequirementsDocumentationPackage.eNS_URI, theIEEERequirementsDocumentationPackage);
@@ -334,7 +334,7 @@ public class IEEERequirementsDocumentationPackageImpl extends EPackageImpl imple
 		// Initialize enums and add enum literals
 		initEEnum(ieeeRequirementCategoryEEnum, IEEERequirementCategory.class, "IEEERequirementCategory"); //$NON-NLS-1$
 		addEEnumLiteral(ieeeRequirementCategoryEEnum, IEEERequirementCategory.SPECIFIC_REQUIREMENTS);
-		addEEnumLiteral(ieeeRequirementCategoryEEnum, IEEERequirementCategory.EXTERNAL_INTERFACE_REQUIREMENTS);
+		addEEnumLiteral(ieeeRequirementCategoryEEnum, IEEERequirementCategory.EXTERNAL_INTERFACES_REQUIREMENTS);
 		addEEnumLiteral(ieeeRequirementCategoryEEnum, IEEERequirementCategory.USER_INTERFACES);
 		addEEnumLiteral(ieeeRequirementCategoryEEnum, IEEERequirementCategory.HARDWARE_INTERFACES);
 		addEEnumLiteral(ieeeRequirementCategoryEEnum, IEEERequirementCategory.SOFTWARE_INTERFACES);

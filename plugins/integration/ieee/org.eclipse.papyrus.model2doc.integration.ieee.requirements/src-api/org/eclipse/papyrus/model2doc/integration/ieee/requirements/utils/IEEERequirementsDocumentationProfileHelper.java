@@ -9,8 +9,8 @@
  * SPDX-License-Identifier: EPL-2.0
  *
  * Contributors:
- *  Yupanqui Munoz (CEA LIST) yupanqui.munozjulho@cea.fr - Initial API and implementation
- *	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ *   Yupanqui Munoz (CEA LIST) yupanqui.munozjulho@cea.fr - Initial API and implementation
+ *	 Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *****************************************************************************/
 package org.eclipse.papyrus.model2doc.integration.ieee.requirements.utils;
 
@@ -27,6 +27,9 @@ import org.eclipse.papyrus.model2doc.integration.ieee.requirements.documentation
 import org.eclipse.papyrus.model2doc.integration.ieee.requirements.documentation.IEEERequirements;
 import org.eclipse.uml2.uml.Package;
 
+/**
+ * Helper provding all Packages identified by the IEEE stereotypes
+ */
 public class IEEERequirementsDocumentationProfileHelper {
 	/**
 	 * the package used to start the cross of the model
@@ -36,26 +39,26 @@ public class IEEERequirementsDocumentationProfileHelper {
 	/**
 	 * Collections and Map used to group the package by category
 	 */
-	private final Collection<Package> specificRequirements = new ArrayList<Package>();
-	private final Collection<Package> externalInterfaceRequirements = new ArrayList<Package>();
-	private final Collection<Package> userInterfaces = new ArrayList<Package>();
-	private final Collection<Package> hardwaresInterfaces = new ArrayList<Package>();
-	private final Collection<Package> softwareInterfaces = new ArrayList<Package>();
-	private final Collection<Package> communicationInterfaces = new ArrayList<Package>();
-	private final Collection<Package> functionalRequirementsWithoutMode = new ArrayList<Package>();
-	private final Map<Integer, Collection<Package>> functionalRequirementsWithMode = new HashMap<Integer, Collection<Package>>();
-	private final Collection<Package> performanceRequirements = new ArrayList<Package>();
-	private final Collection<Package> designConstraints = new ArrayList<Package>();
-	private final Collection<Package> softwareSystemAttributes = new ArrayList<Package>();
-	private final Collection<Package> otherRequirements = new ArrayList<Package>();
+	private final Collection<Package> specificRequirements = new ArrayList<>();
+	private final Collection<Package> externalInterfaceRequirements = new ArrayList<>();
+	private final Collection<Package> userInterfaces = new ArrayList<>();
+	private final Collection<Package> hardwaresInterfaces = new ArrayList<>();
+	private final Collection<Package> softwareInterfaces = new ArrayList<>();
+	private final Collection<Package> communicationInterfaces = new ArrayList<>();
+	private final Collection<Package> functionalRequirementsWithoutMode = new ArrayList<>();
+	private final Map<Integer, Collection<Package>> functionalRequirementsWithMode = new HashMap<>();
+	private final Collection<Package> performanceRequirements = new ArrayList<>();
+	private final Collection<Package> designConstraints = new ArrayList<>();
+	private final Collection<Package> softwareSystemAttributes = new ArrayList<>();
+	private final Collection<Package> otherRequirements = new ArrayList<>();
 
 	/**
 	 * the list of package stereotyped with a stereotype extending one provided by the IEEE profile, but not provided by our profile itself
 	 */
-	final Collection<Package> unknownRequirements = new ArrayList<Package>();
+	final Collection<Package> unknownRequirements = new ArrayList<>();
 
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 *
 	 * @param aPackage
@@ -68,7 +71,7 @@ public class IEEERequirementsDocumentationProfileHelper {
 
 	/**
 	 * This method allows to fill the fields list and map of this class
-	 * 
+	 *
 	 * TODO : warning, this algorithm won't be efficient
 	 */
 	protected void fillCollections(final Package pack) {
@@ -82,11 +85,11 @@ public class IEEERequirementsDocumentationProfileHelper {
 
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param pack
 	 *            a package
-	 * 
+	 *
 	 *            this method add the package to one of the field lists of the classes when it is stereotyped as IEEE Requirements
 	 */
 	protected void addToCollection(final Package pack) {
@@ -96,7 +99,7 @@ public class IEEERequirementsDocumentationProfileHelper {
 				final Integer mode = Integer.valueOf(reqSte.getMode());
 				Collection<Package> packages = this.functionalRequirementsWithMode.get(mode);
 				if (null == packages) {
-					packages = new ArrayList<Package>();
+					packages = new ArrayList<>();
 					this.functionalRequirementsWithMode.put(mode, packages);
 				}
 				packages.add(pack);
@@ -107,7 +110,7 @@ public class IEEERequirementsDocumentationProfileHelper {
 				case SPECIFIC_REQUIREMENTS:
 					this.specificRequirements.add(pack);
 					break;
-				case EXTERNAL_INTERFACE_REQUIREMENTS:
+				case EXTERNAL_INTERFACES_REQUIREMENTS:
 					this.externalInterfaceRequirements.add(pack);
 					break;
 				case USER_INTERFACES:

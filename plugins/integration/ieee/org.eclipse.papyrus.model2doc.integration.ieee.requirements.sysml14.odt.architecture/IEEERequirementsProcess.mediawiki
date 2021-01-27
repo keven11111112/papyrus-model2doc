@@ -1,0 +1,31 @@
+The IEEERequirementsTranscriber generate a document with this pattern:
+#Title 'Specific Requirements'
+##Title 'External interfaces Requirements'
+###Title 'User Interface'
+####A Title for each of these requirements
+#####A paragraph with the text of the requirement
+###Title 'Hardwares Interfaces'
+####A Title for each of these requirements
+#####A paragraph with the text of the requirement
+###Title 'Software Interfaces'
+####A Title for each of these requirements
+#####A paragraph with the text of the requirement
+###Title 'Communication Interfaces'
+####A Title for each of these requirements
+#####A paragraph with the text of the requirement
+#Title 'Functional Requirements'
+##A title per mode of the requirements
+###A Title for each of these requirements
+####A paragraph with the text of the requirement
+#Title 'Performance Requirements'
+##A Title for each of these requirements
+###A paragraph with the text of the requirement
+#Title 'Design Constraints'
+##A Title for each of these requirements
+###A paragraph with the text of the requirement
+#Title 'Software System Attributes'
+##A Title for each of these requirements
+###A paragraph with the text of the requirement
+#Title 'Other Requirements'
+##A Title for each of these requirements
+###A paragraph with the text of the requirement

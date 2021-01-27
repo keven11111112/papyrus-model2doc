@@ -26,9 +26,12 @@ import org.eclipse.emf.common.util.Enumerator;
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * <!-- begin-model-doc -->
- * <p>Abstract Stereotype created to ease future extension</p>
+ * <p>
+ * Abstract Stereotype created to ease future extension
+ * </p>
  *
  * <!-- end-model-doc -->
+ *
  * @see org.eclipse.papyrus.model2doc.integration.ieee.requirements.documentation.IEEERequirementsDocumentationPackage#getIEEERequirementCategory()
  * @model extendedMetaData="baseType='AbstractRequirementCategory'"
  * @generated
@@ -38,6 +41,7 @@ public enum IEEERequirementCategory implements Enumerator {
 	 * The '<em><b>SPECIFIC REQUIREMENTS</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #SPECIFIC_REQUIREMENTS_VALUE
 	 * @generated
 	 * @ordered
@@ -45,19 +49,21 @@ public enum IEEERequirementCategory implements Enumerator {
 	SPECIFIC_REQUIREMENTS(0, "SPECIFIC_REQUIREMENTS", "SPECIFIC_REQUIREMENTS"), //$NON-NLS-1$ //$NON-NLS-2$
 
 	/**
-	 * The '<em><b>EXTERNAL INTERFACE REQUIREMENTS</b></em>' literal object.
+	 * The '<em><b>EXTERNAL INTERFACES REQUIREMENTS</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #EXTERNAL_INTERFACE_REQUIREMENTS_VALUE
+	 *
+	 * @see #EXTERNAL_INTERFACES_REQUIREMENTS_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	EXTERNAL_INTERFACE_REQUIREMENTS(1, "EXTERNAL_INTERFACE_REQUIREMENTS", "EXTERNAL_INTERFACE_REQUIREMENTS"), //$NON-NLS-1$ //$NON-NLS-2$
+	EXTERNAL_INTERFACES_REQUIREMENTS(1, "EXTERNAL_INTERFACES_REQUIREMENTS", "EXTERNAL_INTERFACES_REQUIREMENTS"), //$NON-NLS-1$ //$NON-NLS-2$
 
 	/**
 	 * The '<em><b>USER INTERFACES</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #USER_INTERFACES_VALUE
 	 * @generated
 	 * @ordered
@@ -68,6 +74,7 @@ public enum IEEERequirementCategory implements Enumerator {
 	 * The '<em><b>HARDWARE INTERFACES</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #HARDWARE_INTERFACES_VALUE
 	 * @generated
 	 * @ordered
@@ -78,6 +85,7 @@ public enum IEEERequirementCategory implements Enumerator {
 	 * The '<em><b>SOFTWARE INTERFACES</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #SOFTWARE_INTERFACES_VALUE
 	 * @generated
 	 * @ordered
@@ -88,6 +96,7 @@ public enum IEEERequirementCategory implements Enumerator {
 	 * The '<em><b>COMMUNICATION INTERFACES</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #COMMUNICATION_INTERFACES_VALUE
 	 * @generated
 	 * @ordered
@@ -98,6 +107,7 @@ public enum IEEERequirementCategory implements Enumerator {
 	 * The '<em><b>FUNCTIONAL REQUIREMENTS</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #FUNCTIONAL_REQUIREMENTS_VALUE
 	 * @generated
 	 * @ordered
@@ -108,6 +118,7 @@ public enum IEEERequirementCategory implements Enumerator {
 	 * The '<em><b>PERFORMANCE REQUIREMENTS</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #PERFORMANCE_REQUIREMENTS_VALUE
 	 * @generated
 	 * @ordered
@@ -118,6 +129,7 @@ public enum IEEERequirementCategory implements Enumerator {
 	 * The '<em><b>DESIGN CONSTRAINTS</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #DESIGN_CONSTRAINTS_VALUE
 	 * @generated
 	 * @ordered
@@ -128,6 +140,7 @@ public enum IEEERequirementCategory implements Enumerator {
 	 * The '<em><b>SOFTWARE SYSTEM ATTRIBUTES</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #SOFTWARE_SYSTEM_ATTRIBUTES_VALUE
 	 * @generated
 	 * @ordered
@@ -138,6 +151,7 @@ public enum IEEERequirementCategory implements Enumerator {
 	 * The '<em><b>OTHER REQUIREMENTS</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #OTHER_REQUIREMENTS_VALUE
 	 * @generated
 	 * @ordered
@@ -152,6 +166,7 @@ public enum IEEERequirementCategory implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #SPECIFIC_REQUIREMENTS
 	 * @model
 	 * @generated
@@ -160,19 +175,20 @@ public enum IEEERequirementCategory implements Enumerator {
 	public static final int SPECIFIC_REQUIREMENTS_VALUE = 0;
 
 	/**
-	 * The '<em><b>EXTERNAL INTERFACE REQUIREMENTS</b></em>' literal value.
+	 * The '<em><b>EXTERNAL INTERFACES REQUIREMENTS</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>EXTERNAL INTERFACE REQUIREMENTS</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>EXTERNAL INTERFACES REQUIREMENTS</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #EXTERNAL_INTERFACE_REQUIREMENTS
+	 *
+	 * @see #EXTERNAL_INTERFACES_REQUIREMENTS
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int EXTERNAL_INTERFACE_REQUIREMENTS_VALUE = 1;
+	public static final int EXTERNAL_INTERFACES_REQUIREMENTS_VALUE = 1;
 
 	/**
 	 * The '<em><b>USER INTERFACES</b></em>' literal value.
@@ -182,6 +198,7 @@ public enum IEEERequirementCategory implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #USER_INTERFACES
 	 * @model
 	 * @generated
@@ -197,6 +214,7 @@ public enum IEEERequirementCategory implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #HARDWARE_INTERFACES
 	 * @model
 	 * @generated
@@ -212,6 +230,7 @@ public enum IEEERequirementCategory implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #SOFTWARE_INTERFACES
 	 * @model
 	 * @generated
@@ -227,6 +246,7 @@ public enum IEEERequirementCategory implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #COMMUNICATION_INTERFACES
 	 * @model
 	 * @generated
@@ -242,6 +262,7 @@ public enum IEEERequirementCategory implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #FUNCTIONAL_REQUIREMENTS
 	 * @model
 	 * @generated
@@ -257,6 +278,7 @@ public enum IEEERequirementCategory implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #PERFORMANCE_REQUIREMENTS
 	 * @model
 	 * @generated
@@ -272,6 +294,7 @@ public enum IEEERequirementCategory implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #DESIGN_CONSTRAINTS
 	 * @model
 	 * @generated
@@ -287,6 +310,7 @@ public enum IEEERequirementCategory implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #SOFTWARE_SYSTEM_ATTRIBUTES
 	 * @model
 	 * @generated
@@ -302,6 +326,7 @@ public enum IEEERequirementCategory implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #OTHER_REQUIREMENTS
 	 * @model
 	 * @generated
@@ -313,11 +338,12 @@ public enum IEEERequirementCategory implements Enumerator {
 	 * An array of all the '<em><b>IEEE Requirement Category</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private static final IEEERequirementCategory[] VALUES_ARRAY = new IEEERequirementCategory[] {
 			SPECIFIC_REQUIREMENTS,
-			EXTERNAL_INTERFACE_REQUIREMENTS,
+			EXTERNAL_INTERFACES_REQUIREMENTS,
 			USER_INTERFACES,
 			HARDWARE_INTERFACES,
 			SOFTWARE_INTERFACES,
@@ -333,6 +359,7 @@ public enum IEEERequirementCategory implements Enumerator {
 	 * A public read-only list of all the '<em><b>IEEE Requirement Category</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static final List<IEEERequirementCategory> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -341,7 +368,9 @@ public enum IEEERequirementCategory implements Enumerator {
 	 * Returns the '<em><b>IEEE Requirement Category</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param literal the literal.
+	 *
+	 * @param literal
+	 *            the literal.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
@@ -359,7 +388,9 @@ public enum IEEERequirementCategory implements Enumerator {
 	 * Returns the '<em><b>IEEE Requirement Category</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param name the name.
+	 *
+	 * @param name
+	 *            the name.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
@@ -377,7 +408,9 @@ public enum IEEERequirementCategory implements Enumerator {
 	 * Returns the '<em><b>IEEE Requirement Category</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the integer value.
+	 *
+	 * @param value
+	 *            the integer value.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
@@ -385,8 +418,8 @@ public enum IEEERequirementCategory implements Enumerator {
 		switch (value) {
 		case SPECIFIC_REQUIREMENTS_VALUE:
 			return SPECIFIC_REQUIREMENTS;
-		case EXTERNAL_INTERFACE_REQUIREMENTS_VALUE:
-			return EXTERNAL_INTERFACE_REQUIREMENTS;
+		case EXTERNAL_INTERFACES_REQUIREMENTS_VALUE:
+			return EXTERNAL_INTERFACES_REQUIREMENTS;
 		case USER_INTERFACES_VALUE:
 			return USER_INTERFACES;
 		case HARDWARE_INTERFACES_VALUE:
@@ -412,6 +445,7 @@ public enum IEEERequirementCategory implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -419,6 +453,7 @@ public enum IEEERequirementCategory implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -426,6 +461,7 @@ public enum IEEERequirementCategory implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -434,6 +470,7 @@ public enum IEEERequirementCategory implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private IEEERequirementCategory(int value, String name, String literal) {
@@ -445,6 +482,7 @@ public enum IEEERequirementCategory implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -455,6 +493,7 @@ public enum IEEERequirementCategory implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -465,6 +504,7 @@ public enum IEEERequirementCategory implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -476,6 +516,7 @@ public enum IEEERequirementCategory implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -483,4 +524,4 @@ public enum IEEERequirementCategory implements Enumerator {
 		return literal;
 	}
 
-} //IEEERequirementCategory
+} // IEEERequirementCategory

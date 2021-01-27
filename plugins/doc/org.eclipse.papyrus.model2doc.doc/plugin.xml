@@ -29,10 +29,12 @@
             primary="false">
       </toc>
       <toc
+            category="org.eclipse.papyrus-model2doc"
             file="target/site/generated-eclipse-help/model2doc-papyrusUserDoc-main-toc.xml"
             primary="false">
       </toc>
       <toc
+            category="org.eclipse.papyrus-model2doc"
             file="target/site/generated-eclipse-help/model2doc-papyrusUserDoc-toc.xml"
             primary="false">
       </toc>
@@ -44,6 +46,16 @@
       <toc
             category="org.eclipse.papyrus-model2doc"
             file="target/site/generated-eclipse-help/model2doc-papyrusDevDoc-toc.xml"
+            primary="false">
+      </toc>
+      <toc
+            category="org.eclipse.papyrus-model2doc"
+            file="target/site/generated-eclipse-help/IEEE_For_SysML-papyrusUserDoc-main-toc.xml"
+            primary="false">
+      </toc>
+      <toc
+            category="org.eclipse.papyrus-model2doc"
+            file="target/site/generated-eclipse-help/IEEE_For_SysML-papyrusUserDoc-toc.xml"
             primary="false">
       </toc>
       </extension>
