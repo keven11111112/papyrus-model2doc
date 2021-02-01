@@ -16,6 +16,7 @@
 
 package org.eclipse.papyrus.model2doc.gmf.template2structure.internal.mapping;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -94,8 +95,8 @@ public class GMFDiagramViewMapper extends AbstractBodyPartTemplateToStructureMap
 
 			final IOutputFileAccessor accessor = conf.createImageOutputAccessor();
 			final URI uri = accessor.createOutputFileURI(imageNameBuilder.toString(), GMFDiagramImageUtils.SVG_EXTENSION);
-			String imagePath = accessor.convertToURL(uri).toString();
-			imagePath = imagePath.replaceAll("file:/", ""); //$NON-NLS-1$ //$NON-NLS-2$
+			final URL url = accessor.convertToURL(uri);
+			final String imagePath = accessor.urlToPathString(url, true);
 			GMFDiagramImageUtils.generateImageOfDiagram(current, imagePath, gmfDiagramView.getDiagramImageMargin());
 			image.setFilePath(uri.toString());
 			returnedValue.add(returnedClassType.cast(image));

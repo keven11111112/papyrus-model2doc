@@ -14,7 +14,7 @@
  * 	 Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - Bug 569249
  *   Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - bug 569817
  *   Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - Bug 570290
- *
+ *   Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - bug 570803
  *****************************************************************************/
 package org.eclipse.papyrus.model2doc.docx.internal.transcription;
 
@@ -55,6 +55,7 @@ import org.eclipse.papyrus.model2doc.core.builtintypes.ListItem;
 import org.eclipse.papyrus.model2doc.core.builtintypes.Row;
 import org.eclipse.papyrus.model2doc.core.builtintypes.TextCell;
 import org.eclipse.papyrus.model2doc.core.builtintypes.TextListItem;
+import org.eclipse.papyrus.model2doc.core.builtintypes.accessors.IInputFileAccessor;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.IDocumentGeneratorConfiguration;
 import org.eclipse.papyrus.model2doc.core.generatorconfiguration.accessors.IOutputFileAccessor;
 import org.eclipse.papyrus.model2doc.core.styles.BooleanNamedStyle;
@@ -130,16 +131,17 @@ public class DocxTranscription implements Transcription {
 		final URL templateURL = this.docxGeneratorConfig.createTemplateFileInputAccessor().createInputFileURL();
 
 		if (templateURL != null) {
-			URL destURL = this.docxGeneratorConfig.createDocumentOutputAccessor().createOutputFileURL(docxGeneratorConfig.getDocumentName(), DOCX_FILE_EXTENTION);
-			String destURI = destURL.getPath().replaceFirst(ECORE_FILE_PREFIX, EMPTY_STRING);
+			final IOutputFileAccessor outputAccessor = this.docxGeneratorConfig.createDocumentOutputAccessor();
+			final URL destURL = outputAccessor.createOutputFileURL(docxGeneratorConfig.getDocumentName(), DOCX_FILE_EXTENTION);
 
+			String destURI = outputAccessor.urlToPathString(destURL, true);
 			// create intermediate folder when they don't exist.
 			// TODO : make common method with image generation and odt
 			// TODO : what to do when dest project doesn't yet exist ?
-			final Path imagePath = new Path(destURI);
+			final Path targetPath = new Path(destURI);
 			// we check all folders tree already exists, and we create them if not
-			if (imagePath.segmentCount() > 1) {
-				final IPath folderPath = imagePath.removeLastSegments(1);
+			if (targetPath.segmentCount() > 1) {
+				final IPath folderPath = targetPath.removeLastSegments(1);
 				final File folder = folderPath.toFile();
 				if (false == folder.exists()) {
 					folder.mkdirs();
@@ -413,8 +415,9 @@ public class DocxTranscription implements Transcription {
 	@Override
 	public void insertFile(IFileReference fileReference) {
 		try {
-			final URL url = fileReference.getFileAccessor().createInputFileURL();
-			final String path = url.toString().replace(ECORE_FILE_PREFIX, EMPTY_STRING);
+			final IInputFileAccessor accessor = fileReference.getFileAccessor();
+			final URL url = accessor.createInputFileURL();
+			final String path = accessor.urlToPathString(url, true);
 			document.insertFile(path);
 		} catch (Exception e) {
 			Activator.log.warn(NLS.bind("The {0} file can not be inserted", fileReference.getFilePath())); //$NON-NLS-1$
@@ -430,9 +433,10 @@ public class DocxTranscription implements Transcription {
 	 *            the cell receiving the file
 	 */
 	private void insertFileInTableCell(IFileReference fileReference, XWPFTableCell xwpfCell) {
-		final URL url = fileReference.getFileAccessor().createInputFileURL();
+		final IInputFileAccessor accessor = fileReference.getFileAccessor();
+		final URL url = accessor.createInputFileURL();
 		if (url != null) {
-			final String path = url.toString().replace(ECORE_FILE_PREFIX, EMPTY_STRING);
+			final String path = accessor.urlToPathString(url, true);
 			try {
 				for (int i = 0; i < xwpfCell.getParagraphs().size(); i++) {
 					// when the cell is created, a paragraph is also created, to avoid a useless blank line we remove it
@@ -491,7 +495,7 @@ public class DocxTranscription implements Transcription {
 		final URI ecoreURI = accessor.createOutputFileURI(docxGeneratorConfig.getDocumentName(), DOCX_FILE_EXTENTION);
 		final URL destURL = accessor.convertToURL(ecoreURI);
 		try {
-			final String destPath = destURL.toString().replace(ECORE_FILE_PREFIX, EMPTY_STRING);
+			String destPath = accessor.urlToPathString(destURL, true);
 			OutputStream outputStream = new FileOutputStream(destPath);
 			document.write(outputStream);
 			outputStream.close();

@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2019, 2020 CEA LIST.
+ * Copyright (c) 2019 - 2021 CEA LIST.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -11,15 +11,17 @@
  * Contributors:
  *    Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *    Pauline DEVILLE (CEA LIST) pauline.deville@cea.fr - bug 568341
- *
+ *    Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - bug 570803 
  *****************************************************************************/
 
 package org.eclipse.papyrus.model2doc.emf.structure2document.generator.transcriber;
 
+import java.net.URL;
 import java.util.Iterator;
 
 import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractList;
 import org.eclipse.papyrus.model2doc.core.builtintypes.AbstractTable;
+import org.eclipse.papyrus.model2doc.core.builtintypes.accessors.IInputFileAccessor;
 import org.eclipse.papyrus.model2doc.core.transcriber.Transcriber;
 import org.eclipse.papyrus.model2doc.core.transcription.Transcription;
 import org.eclipse.papyrus.model2doc.emf.documentstructure.Body;
@@ -191,8 +193,11 @@ public class StructureToTranscriber implements Transcriber {
 	 *            an image
 	 */
 	private void transcribeImage(final Image image) {
+		final IInputFileAccessor fileAccessor = image.getFileAccessor();
+		final URL url = fileAccessor.createInputFileURL();
+		final String imagePath = fileAccessor.urlToPathString(url, true);
 		// TODO allow to transcription to take an URL instead of a String?!
-		transcription.writeImage(image.getFileAccessor().createInputFileURL().toString(), image.getCaption());
+		transcription.writeImage(imagePath, image.getCaption());
 	}
 
 	/**

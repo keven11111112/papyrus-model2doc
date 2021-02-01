@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Copyright (c) 2020 CEA LIST and others.
+ * Copyright (c) 2020, 2021 CEA LIST and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -10,7 +10,7 @@
  *
  * Contributors:
  *   Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
- *
+ *   Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - bug 570803
  *****************************************************************************/
 
 package org.eclipse.papyrus.model2doc.core.generatorconfiguration.accessors;
@@ -80,6 +80,18 @@ public interface IOutputFileAccessor {
 	 *         the URL corresponding to this URI
 	 */
 	public URL convertToURL(final URI uri);
+
+	/**
+	 * This method converts the URL into string, removing the prefix "file:" and decoding the path if required
+	 *
+	 * @param url
+	 *            the url
+	 * @param decode
+	 *            if <code>true</code>, we replace the %20 by the space char
+	 * @return
+	 *         the path string corresponding to the URL
+	 */
+	public String urlToPathString(final URL url, final boolean decode);
 
 	/**
 	 *
