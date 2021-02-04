@@ -1,8 +1,0 @@
-Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: Papyrus-Model2Doc - UML Tests (Incubation)
-Bundle-SymbolicName: org.eclipse.papyrus.model2doc.uml.tests
-Bundle-Version: 0.8.0.qualifier
-Bundle-Vendor: Eclipse Modeling Project
-Automatic-Module-Name: org.eclipse.papyrus.model2doc.uml.tests
-Bundle-RequiredExecutionEnvironment: JavaSE-11

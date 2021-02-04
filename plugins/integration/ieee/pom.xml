@@ -19,9 +19,6 @@
 
 	<modules>
 		<module>org.eclipse.papyrus.model2doc.integration.ieee.requirements</module>
-		<module>org.eclipse.papyrus.model2doc.integration.ieee.requirements.odt</module>
-		<module>org.eclipse.papyrus.model2doc.integration.ieee.requirements.odt.architecture</module>
-		<module>org.eclipse.papyrus.model2doc.integration.ieee.requirements.odt.ui</module>
 		<module>org.eclipse.papyrus.model2doc.integration.ieee.requirements.sysml14.odt.architecture</module>
 	</modules>
 </project>

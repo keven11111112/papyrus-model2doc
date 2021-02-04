@@ -174,13 +174,6 @@
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.papyrus.model2doc.odt.architecture"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.eclipse.papyrus.model2doc.odt.emf.structure2document"
          download-size="0"
          install-size="0"
@@ -196,13 +189,6 @@
 
    <plugin
          id="org.eclipse.papyrus.model2doc.odt.lib"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.papyrus.model2doc.odt.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"

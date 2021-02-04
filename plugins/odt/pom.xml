@@ -19,12 +19,10 @@
 
 	<modules>
 		<module>org.eclipse.papyrus.model2doc.odt</module>
-		<module>org.eclipse.papyrus.model2doc.odt.architecture</module>
 		<module>org.eclipse.papyrus.model2doc.odt.emf.structure2document</module>
 		<module>org.eclipse.papyrus.model2doc.odt.emf.structure2pdf</module>
 		<module>org.eclipse.papyrus.model2doc.odt.emf.template2pdf</module>
 		<module>org.eclipse.papyrus.model2doc.odt.lib</module>
-		<module>org.eclipse.papyrus.model2doc.odt.ui</module>
 		
 	</modules>
 </project>
