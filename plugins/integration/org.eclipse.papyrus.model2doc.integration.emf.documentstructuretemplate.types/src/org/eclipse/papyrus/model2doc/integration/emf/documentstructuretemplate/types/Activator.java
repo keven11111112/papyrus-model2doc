@@ -13,9 +13,9 @@
  *
  *****************************************************************************/
 
-package org.eclipse.papyrus.model2doc.integration.ieee.requirements.sysml14.odt.architecture;
+package org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.types;
 
-import org.eclipse.papyrus.infra.core.log.LogHelper;
+
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
@@ -25,18 +25,10 @@ import org.osgi.framework.BundleContext;
 public class Activator extends AbstractUIPlugin {
 
 	// The plug-in ID
-	public static final String PLUGIN_ID = "org.eclipse.papyrus.model2doc.integration.ieee.requirements.sysml14.odt.architecture"; //$NON-NLS-1$
+	public static final String PLUGIN_ID = "org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.types"; //$NON-NLS-1$
 
 	// The shared instance
 	private static Activator plugin;
-
-	public static LogHelper log;
-
-	/**
-	 * to be sure we don't lose this dependency (required by the architecture file)
-	 */
-	@SuppressWarnings("unused")
-	private AbstractUIPlugin activator = org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.types.Activator.getDefault();
 
 	/**
 	 * The constructor
@@ -48,7 +40,6 @@ public class Activator extends AbstractUIPlugin {
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		plugin = this;
-		log = new LogHelper(this);
 	}
 
 	@Override

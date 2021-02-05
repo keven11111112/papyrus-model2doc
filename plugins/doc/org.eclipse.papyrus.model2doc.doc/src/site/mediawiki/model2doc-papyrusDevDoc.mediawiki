@@ -12,6 +12,8 @@ The following points deal about the contribution to existing Architecture Framew
 
 ====2. Set language====
 Select the domain element, open the contextual menu and select '''New Child > Description Language'''.
+The field '''Element types''' must reference the '''ElementTypeSetConfiguration''' called '''DocumentTemplateContext'''. This element type allows that when the semantic object from your UML model is destroyed by the user, the associated DocumentTemplate are destroyed too. 
+This element type to reference is provided by the file '''documenttemplate-context.elementtypesconfigurations''' inside the plugin '''org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.types'''.
 
 [[Image:images/papyrusDevDoc/architecture/Architecture_002_SetLanguage.png]]
 ====3. Set viewpoints====

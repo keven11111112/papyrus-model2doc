@@ -28,6 +28,12 @@ public class Activator extends AbstractUIPlugin {
 	private static Activator plugin;
 
 	/**
+	 * to be sure we don't lose this dependency (required by the architecture file)
+	 */
+	@SuppressWarnings("unused")
+	private AbstractUIPlugin activator = org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.types.Activator.getDefault();
+
+	/**
 	 * The constructor
 	 */
 	public Activator() {
