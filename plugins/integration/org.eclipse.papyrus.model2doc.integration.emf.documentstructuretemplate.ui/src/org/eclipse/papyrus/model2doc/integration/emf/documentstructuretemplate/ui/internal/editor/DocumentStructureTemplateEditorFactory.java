@@ -35,7 +35,7 @@ import org.eclipse.ui.part.EditorActionBarContributor;
 
 
 /**
- * Factory for the DocumentViewEditor
+ * Factory for the DocumentStructureTemplateEditor
  *
  */
 public class DocumentStructureTemplateEditorFactory extends AbstractEditorFactory {
@@ -50,7 +50,7 @@ public class DocumentStructureTemplateEditorFactory extends AbstractEditorFactor
 	 *            the type of editor
 	 */
 	public DocumentStructureTemplateEditorFactory() {
-		// we don't use the type for the DocumentView models
+		// we don't use the type for the DocumentStructureTemplate models
 		super(NestedDocumentStructureTemplateViewEditor.class, ""); //$NON-NLS-1$
 	}
 

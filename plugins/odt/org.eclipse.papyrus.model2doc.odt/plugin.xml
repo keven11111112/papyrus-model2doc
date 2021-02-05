@@ -17,14 +17,6 @@
 -->
 
 <plugin>
- <extension
-       point="org.eclipse.papyrus.infra.core.service">
-    <service
-          classname="org.eclipse.papyrus.model2doc.odt.internal.service.OpenCloseODTDocumentService"
-          priority="1"
-          startKind="startup">
-    </service>
- </extension>*
    <extension
          point="org.eclipse.papyrus.infra.onefile.diViewFilter">
       <filter

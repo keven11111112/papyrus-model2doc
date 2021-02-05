@@ -22,7 +22,7 @@ import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IPersistableElement;
 
 /**
- * DocumentView EditorInput.
+ * DocumentStructureTemplate EditorInput.
  *
  */
 public class DocumentStructureTemplateEditorInput implements IEditorInput {
@@ -81,7 +81,7 @@ public class DocumentStructureTemplateEditorInput implements IEditorInput {
 	@Override
 	public String getName() {
 		final String name = this.documentInstance.getName();
-		return name == null || name.isEmpty() ? Messages.DocumentViewEditorInput_0 : name;
+		return name == null || name.isEmpty() ? Messages.DocumentStructureTemplateEditorInput_NoName : name;
 	}
 
 	/**
@@ -102,7 +102,7 @@ public class DocumentStructureTemplateEditorInput implements IEditorInput {
 	 */
 	private String getDescription() {
 		final String description = this.documentInstance.getDescription();
-		return description == null || description.isEmpty() ? Messages.DocumentViewEditorInput_1 : description;
+		return description == null || description.isEmpty() ? Messages.DocumentStructureTemplateEditorInput_NoDescription : description;
 	}
 
 	/**
@@ -113,7 +113,7 @@ public class DocumentStructureTemplateEditorInput implements IEditorInput {
 	 */
 	@Override
 	public String getToolTipText() {
-		return NLS.bind(Messages.DocumentViewEditorInput_2, getName(), getDescription());
+		return NLS.bind(Messages.DocumentStructureTemplateEditorInput_Tooltip, getName(), getDescription());
 	}
 
 	/**

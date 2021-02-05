@@ -22,9 +22,9 @@ import org.eclipse.osgi.util.NLS;
  */
 public class Messages extends NLS {
 	private static final String BUNDLE_NAME = "org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.ui.internal.messages.messages"; //$NON-NLS-1$
-	public static String DocumentViewEditorInput_0;
-	public static String DocumentViewEditorInput_1;
-	public static String DocumentViewEditorInput_2;
+	public static String DocumentStructureTemplateEditorInput_NoName;
+	public static String DocumentStructureTemplateEditorInput_NoDescription;
+	public static String DocumentStructureTemplateEditorInput_Tooltip;
 	static {
 		// initialize resource bundle
 		NLS.initializeMessages(BUNDLE_NAME, Messages.class);

@@ -22,7 +22,7 @@ import org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.r
 import org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.representation.command.ICreateDocumentTemplateEditorCommand;
 
 /**
- * Represents a prototype of Document View for the viewpoints infrastructure.
+ * Represents a prototype of Document Template View for the viewpoints infrastructure.
  *
  */
 // TODO : this class is internal, but exported and used in the JUnit tests.

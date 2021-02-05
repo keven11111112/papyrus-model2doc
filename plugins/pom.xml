@@ -23,7 +23,6 @@
 		<module>dev</module>
 		<module>doc</module>
 		<module>docx</module>
-		<module>documentview</module>
 		<module>emf</module>
 		<module>integration</module>
 		<module>gmf</module>

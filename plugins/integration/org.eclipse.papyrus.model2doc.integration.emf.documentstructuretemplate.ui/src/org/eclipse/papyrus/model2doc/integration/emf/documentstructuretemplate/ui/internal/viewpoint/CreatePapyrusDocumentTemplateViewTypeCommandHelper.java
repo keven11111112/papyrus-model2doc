@@ -33,7 +33,7 @@ import org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.r
 import org.eclipse.papyrus.model2doc.integration.emf.documentstructuretemplate.ui.Activator;
 
 /**
- * Represents a helper for the handling of Papyrus Document View Type creation commands.
+ * Represents a helper for the handling of Papyrus Document Template View Type creation commands.
  *
  */
 public class CreatePapyrusDocumentTemplateViewTypeCommandHelper implements IViewTypeHelper {
