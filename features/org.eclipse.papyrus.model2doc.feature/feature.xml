@@ -34,20 +34,6 @@
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.papyrus.model2doc.core.onefile"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.papyrus.model2doc.core.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.eclipse.papyrus.model2doc.core.generatorconfiguration"
          download-size="0"
          install-size="0"
